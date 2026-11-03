@@ -1,0 +1,711 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Мои кредиты</title>
+<meta name="description" content="Учёт кредитов, платежей и золота">
+<meta name="theme-color" content="#11805A">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Кредиты">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Golos+Text:wght@400;500;600&display=swap">
+<style>
+  html,body{margin:0}
+  html{-webkit-text-size-adjust:100%}
+  :root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+  #installBar:not(:empty){margin-bottom:14px}
+  .install{display:flex; align-items:center; gap:11px; background:var(--brand-weak); border:1px solid color-mix(in srgb,var(--brand) 30%,transparent); border-radius:14px; padding:12px 14px;}
+  .install .it{flex:1; min-width:0; font-size:.9rem; color:var(--brand-ink); font-weight:600}
+  .install .ib{font-family:var(--font-num); font-weight:700; background:var(--brand); color:#fff; border-radius:11px; padding:10px 15px; flex:none}
+  .install .ix{flex:none; width:34px; height:34px; border-radius:9px; color:var(--brand-ink); background:transparent; border:none; font-size:1rem}
+  :root{
+    --font-num:'Manrope', system-ui, -apple-system, sans-serif;
+    --font-body:'Golos Text', system-ui, -apple-system, sans-serif;
+    --bg:#F5F4F0; --surface:#FFFFFF; --surface-2:#F3F2ED;
+    --ink:#1A1D1C; --muted:#737975; --line:#EAE8E1;
+    --brand:#11805A; --brand-ink:#0C6447; --brand-weak:#E6F1EB;
+    --gold:#C8921E; --track:#E6E4DD;
+    --warn:#A8690A; --warn-weak:#FBF0D8; --danger:#B8402C; --danger-weak:#FAE8E3;
+    --shadow:0 1px 2px rgba(26,29,28,.04), 0 8px 24px rgba(26,29,28,.06);
+    --shadow-lg:0 2px 8px rgba(26,29,28,.06), 0 18px 48px rgba(26,29,28,.10);
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --bg:#121614; --surface:#1A1F1D; --surface-2:#202623; --ink:#EAEDEB; --muted:#929995; --line:#29302C;
+    --brand:#2FB27E; --brand-ink:#63CF9F; --brand-weak:#15302454; --gold:#E0B04A; --track:#2A312D;
+    --warn:#E0A53E; --warn-weak:#2E2713; --danger:#E06A52; --danger-weak:#331F1B;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35); --shadow-lg:0 2px 10px rgba(0,0,0,.4), 0 20px 50px rgba(0,0,0,.5); color-scheme:dark; }}
+  :root[data-theme="dark"]{
+    --bg:#121614; --surface:#1A1F1D; --surface-2:#202623; --ink:#EAEDEB; --muted:#929995; --line:#29302C;
+    --brand:#2FB27E; --brand-ink:#63CF9F; --brand-weak:#15302454; --gold:#E0B04A; --track:#2A312D;
+    --warn:#E0A53E; --warn-weak:#2E2713; --danger:#E06A52; --danger-weak:#331F1B;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35); --shadow-lg:0 2px 10px rgba(0,0,0,.4), 0 20px 50px rgba(0,0,0,.5); color-scheme:dark; }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg); color:var(--ink); font-family:var(--font-body); line-height:1.45; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:540px; margin:0 auto; padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); padding-block:16px 116px;}
+
+  header{display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:18px;}
+  .title{font-family:var(--font-num); font-weight:800; font-size:1.4rem; letter-spacing:-.01em;}
+  .title small{display:block; font-family:var(--font-body); font-weight:500; font-size:.78rem; color:var(--muted); margin-top:1px;}
+  .hbtns{display:flex; gap:8px;}
+
+  button{font-family:inherit; cursor:pointer; border:none; background:none; color:inherit;}
+  .btn{display:inline-flex; align-items:center; justify-content:center; gap:7px; font-family:var(--font-num); font-weight:700; border-radius:14px; padding:13px 18px; font-size:1rem; transition:transform .08s ease, filter .15s ease; min-height:50px;}
+  .btn:active{transform:scale(.975)}
+  .btn-primary{background:var(--brand); color:#fff;} .btn-primary:active{filter:brightness(.95)}
+  .btn-ghost{background:var(--surface-2); color:var(--ink); border:1px solid var(--line);}
+  .btn-danger{background:var(--danger-weak); color:var(--danger);} .btn-full{width:100%}
+  .icon-btn{width:42px; height:42px; border-radius:12px; display:inline-flex; align-items:center; justify-content:center; background:var(--surface); border:1px solid var(--line); color:var(--ink); box-shadow:var(--shadow);}
+  .icon-btn:active{transform:scale(.94)} .icon-btn svg{width:19px; height:19px;}
+
+  .ava{flex:none; width:44px; height:44px; border-radius:13px; display:inline-flex; align-items:center; justify-content:center; color:#fff; font-family:var(--font-num); font-weight:800; font-size:1.15rem; overflow:hidden; box-shadow:inset 0 1px 0 rgba(255,255,255,.16), inset 0 -2px 3px rgba(0,0,0,.08);}
+  .ava.sm{width:30px; height:30px; border-radius:9px; font-size:.86rem;}
+  .ava.gold{background:linear-gradient(135deg,#F0C64E,#C8921E); color:#4a3608;}
+  .ava img{width:100%; height:100%; object-fit:cover; display:block;}
+  .icon-row{display:flex; align-items:center; gap:10px;}
+  .icon-up{flex:1; min-height:46px; padding:12px 14px; font-size:.95rem;}
+  .icon-up input{display:none;}
+
+  .hero{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:22px 20px; box-shadow:var(--shadow-lg); margin-bottom:14px;}
+  .hero-top{display:flex; align-items:center; gap:18px;} .hero-text{flex:1; min-width:0;}
+  .hero .cap{font-size:.82rem; color:var(--muted); font-weight:500;}
+  .hero .big{font-family:var(--font-num); font-weight:800; font-size:2.3rem; letter-spacing:-.025em; line-height:1.05; margin:3px 0 4px;}
+  .hero .sub{font-size:.85rem; color:var(--muted);} .hero .sub b{color:var(--brand-ink); font-weight:600;}
+  .hero-msg{margin-top:16px; background:var(--brand-weak); color:var(--brand-ink); border-radius:13px; padding:11px 14px; font-size:.9rem; font-weight:500; display:flex; gap:9px; align-items:center;}
+  .hero-stats{display:flex; gap:10px; margin-top:12px;}
+  .hero-stats > div{flex:1; min-width:0; background:var(--surface-2); border:1px solid var(--line); border-radius:13px; padding:11px 12px;}
+  .hero-stats .num{display:block; font-family:var(--font-num); font-weight:800; font-size:1.02rem; font-variant-numeric:tabular-nums;}
+  .hero-stats small{color:var(--muted); font-size:.74rem;}
+  .strat{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:16px; box-shadow:var(--shadow);}
+  .strat-desc{font-size:.82rem; color:var(--muted); margin:2px 0 12px;}
+  .strat-list{display:flex; flex-direction:column; gap:8px;}
+  .strat-item{display:flex; align-items:center; gap:11px; padding:10px 11px; border-radius:12px; background:var(--surface-2); border:1px solid var(--line);}
+  .strat-item.first{background:var(--brand-weak); border-color:color-mix(in srgb,var(--brand) 35%,transparent);}
+  .strat-rank{font-family:var(--font-num); font-weight:800; width:20px; text-align:center; color:var(--muted); flex:none;}
+  .strat-item.first .strat-rank{color:var(--brand-ink);}
+  .strat-nm{flex:1; min-width:0; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .strat-first-tag{font-family:var(--font-num); font-weight:700; font-size:.68rem; color:var(--brand-ink); background:var(--surface); padding:3px 8px; border-radius:99px; flex:none;}
+  .strat-amt{font-family:var(--font-num); font-weight:700; font-variant-numeric:tabular-nums; font-size:.88rem; flex:none;}
+  .strat-hint{font-size:.78rem; color:var(--muted); margin-top:10px;}
+  .seg.seg4{flex-wrap:wrap;} .seg.seg4 button{flex:1 1 calc(50% - 4px);}
+
+  .ring{position:relative; flex:none; width:84px; height:84px;}
+  .ring svg{width:100%; height:100%; transform:rotate(-90deg); display:block;}
+  .ring circle{fill:none; stroke-width:5;}
+  .ring-track{stroke:color-mix(in srgb, var(--brand) 18%, transparent);}
+  .ring-fill{stroke:var(--brand); stroke-linecap:round; transition:stroke-dashoffset 1s cubic-bezier(.2,.7,.2,1);}
+  .ring-num{position:absolute; inset:0; display:flex; align-items:center; justify-content:center; gap:1px; font-family:var(--font-num); font-variant-numeric:tabular-nums; color:var(--ink);}
+  .ring-num b{font-weight:800; font-size:1.35rem; line-height:1;} .ring-num i{font-style:normal; font-weight:700; font-size:.66rem; color:var(--muted); margin-top:4px;}
+  .ring.lg{width:120px; height:120px;} .ring.lg .ring-num b{font-size:2rem;}
+  @media (prefers-reduced-motion:reduce){ .ring-fill{transition:none} }
+
+  .tip{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:11px 14px; margin-bottom:14px; font-size:.86rem; box-shadow:var(--shadow);}
+  .tip .x{margin-left:auto; color:var(--muted); width:28px; height:28px; border-radius:8px; flex:none; display:inline-flex; align-items:center; justify-content:center; font-size:.9rem;}
+
+  .nextpay{display:flex; align-items:center; gap:14px; border-radius:18px; padding:16px; margin-bottom:22px; box-shadow:var(--shadow); background:var(--surface); border:1px solid var(--line);}
+  .nextpay.soon{background:var(--warn-weak); border-color:color-mix(in srgb,var(--warn) 28%,transparent);}
+  .nextpay.urgent{background:var(--danger-weak); border-color:color-mix(in srgb,var(--danger) 32%,transparent);}
+  .np-main{flex:1; min-width:0;}
+  .np-cap{font-size:.76rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.04em;}
+  .np-bank{display:flex; align-items:center; gap:9px; font-family:var(--font-num); font-weight:700; font-size:1.08rem; margin:5px 0 3px; min-width:0;}
+  .np-bank span.nm{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .np-when{font-size:.84rem; color:var(--muted); font-weight:500;}
+  .np-when.soon{color:var(--warn);} .np-when.urgent{color:var(--danger); font-weight:600;}
+  .np-right{display:flex; flex-direction:column; align-items:flex-end; gap:8px; flex:none;}
+  .np-amt{font-family:var(--font-num); font-weight:800; font-size:1.15rem; font-variant-numeric:tabular-nums;}
+  .np-right .btn{padding:9px 16px; min-height:40px; font-size:.92rem; border-radius:12px;}
+  .nextpay.calm{justify-content:center; text-align:center; color:var(--brand-ink); font-weight:600; background:var(--brand-weak); border-color:transparent; font-family:var(--font-num);}
+
+  .section-h{display:flex; align-items:baseline; justify-content:space-between; margin:0 2px 12px;}
+  .section-h h2{font-family:var(--font-num); font-weight:700; font-size:1.08rem;}
+  .section-h .count{font-size:.82rem; color:var(--muted);}
+  .add-link{font-family:var(--font-num); font-weight:700; color:var(--brand-ink); font-size:.88rem; padding:4px 2px;}
+
+  .cards{display:flex; flex-direction:column; gap:10px;}
+  .card{display:flex; align-items:center; gap:13px; width:100%; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:17px; padding:14px; box-shadow:var(--shadow); transition:transform .08s ease;}
+  .card:active{transform:scale(.99)}
+  .c-main{flex:1; min-width:0;}
+  .c-top{display:flex; align-items:baseline; justify-content:space-between; gap:10px;}
+  .c-name{font-family:var(--font-num); font-weight:700; font-size:1.05rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;}
+  .c-name .gb{color:var(--gold); margin-left:5px; font-size:.82rem;}
+  .c-rem{font-family:var(--font-num); font-weight:800; font-variant-numeric:tabular-nums; flex:none;}
+  .c-rem.done{color:var(--brand-ink);}
+  .cbar{height:7px; border-radius:99px; background:var(--track); overflow:hidden; margin:9px 0 7px;}
+  .cbar > i{display:block; height:100%; border-radius:99px; background:var(--brand); width:0; transition:width .8s cubic-bezier(.2,.7,.2,1);}
+  .c-sub{display:flex; justify-content:space-between; gap:10px; font-size:.78rem; color:var(--muted);}
+  .c-sub .mo{color:var(--brand-ink); font-weight:600; font-family:var(--font-num);}
+  .c-chev{flex:none; color:var(--muted); opacity:.6}
+  @media (prefers-reduced-motion:reduce){ .cbar>i{transition:none} }
+
+  .gold-card{background:var(--surface); border:1px solid var(--line); border-radius:17px; padding:16px; box-shadow:var(--shadow);}
+  .gc-top{display:flex; align-items:center; gap:13px;}
+  .gc-main{flex:1; min-width:0;}
+  .gc-g{font-family:var(--font-num); font-weight:800; font-size:1.15rem;}
+  .gc-cap{font-size:.78rem; color:var(--muted);}
+  .gc-val{font-family:var(--font-num); font-weight:800; font-size:1.15rem; font-variant-numeric:tabular-nums; flex:none;}
+  .gc-split{display:flex; gap:10px; margin-top:14px;}
+  .gc-cell{flex:1; min-width:0; background:var(--surface-2); border:1px solid var(--line); border-radius:13px; padding:12px;}
+  .gc-cell .k{font-size:.76rem; color:var(--muted);}
+  .gc-cell .v{font-family:var(--font-num); font-weight:700; font-size:1.05rem; margin-top:3px; font-variant-numeric:tabular-nums;}
+  .gc-cell .s{font-size:.78rem; color:var(--muted); font-variant-numeric:tabular-nums;}
+  .gold-empty .c-name{font-family:var(--font-num); font-weight:700; font-size:1.02rem;}
+  .card.closed{background:var(--surface-2); box-shadow:none; opacity:.9;}
+
+  .dyn{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:18px; box-shadow:var(--shadow); margin-top:22px;}
+  .dyn-h{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:3px;}
+  .dyn-h h3{font-family:var(--font-num); font-weight:700; font-size:1.05rem;}
+  .dyn-h .drop{font-family:var(--font-num); font-weight:800; font-size:.92rem; color:var(--brand-ink); font-variant-numeric:tabular-nums;}
+  .dyn-sub{font-size:.8rem; color:var(--muted); margin-bottom:14px;}
+  .chart{width:100%; height:auto; display:block;}
+  .chart .line{fill:none; stroke:var(--brand); stroke-width:2.5; stroke-linejoin:round; stroke-linecap:round;}
+  .chart .dot{fill:var(--brand); stroke:var(--surface); stroke-width:2.5;}
+  .chart .gl{stroke:var(--line); stroke-width:1;}
+  .chart text{fill:var(--muted); font-size:9px; font-family:var(--font-num);}
+  .hist{margin-top:16px;}
+  .hist h4{font-size:.74rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:.04em; margin:0 0 6px;}
+  .hrow{display:flex; align-items:center; gap:10px; padding:9px 0; border-top:1px solid var(--line); font-size:.9rem;}
+  .hrow .hn{flex:1; min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .hrow .hd{color:var(--muted); font-size:.8rem;} .hrow .ha{font-family:var(--font-num); font-weight:700; color:var(--brand-ink); font-variant-numeric:tabular-nums;}
+
+  .empty{text-align:center; padding:36px 20px; color:var(--muted);}
+  .empty .em{font-size:2.1rem; margin-bottom:10px;} .empty p{margin:0 0 18px; font-size:.95rem;}
+  .example-note{display:flex; align-items:center; gap:8px; flex-wrap:wrap; justify-content:center; margin-top:18px; font-size:.82rem; color:var(--muted);}
+  .example-note button{font-weight:700; color:var(--brand-ink); font-family:var(--font-num); text-decoration:underline;}
+  .sync{display:flex; align-items:center; gap:7px; justify-content:center; margin-top:14px; font-size:.78rem; color:var(--muted);}
+  .sync .dot{width:7px; height:7px; border-radius:50%; background:var(--muted);}
+  .sync.on .dot{background:var(--brand);}
+
+  .fab{position:fixed; left:0; right:0; bottom:0; padding:12px 16px; padding-bottom:max(12px, env(safe-area-inset-bottom,0px)); padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px)); background:linear-gradient(to top, var(--bg) 60%, transparent); z-index:20;}
+  .fab .inner{max-width:540px; margin:0 auto;}
+
+  .overlay{position:fixed; inset:0; background:rgba(10,14,13,.5); z-index:40; display:none; align-items:flex-end; justify-content:center; backdrop-filter:blur(2px);}
+  .overlay.open{display:flex;}
+  .sheet{background:var(--surface); width:100%; max-width:540px; border-radius:24px 24px 0 0; padding:22px 20px; padding-bottom:max(22px, env(safe-area-inset-bottom,0px)); max-height:92vh; overflow-y:auto; box-shadow:0 -12px 44px rgba(0,0,0,.28); animation:rise .24s cubic-bezier(.2,.75,.2,1);}
+  @media (min-width:540px){ .overlay{align-items:center;} .sheet{border-radius:24px; max-height:88vh;} }
+  @keyframes rise{from{transform:translateY(26px); opacity:.5} to{transform:none; opacity:1}}
+  @media (prefers-reduced-motion:reduce){ .sheet{animation:none} }
+
+  .sheet h3{font-family:var(--font-num); font-weight:800; font-size:1.3rem; margin:0; display:flex; align-items:center; gap:11px;}
+  .sheet .lead{color:var(--muted); font-size:.88rem; margin:4px 0 18px;}
+  .detail-ring{display:flex; justify-content:center; margin:6px 0 18px;}
+  .detail-grid{display:flex; gap:10px; margin-bottom:16px;}
+  .dcell{flex:1; min-width:0; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:13px;}
+  .dcell .k{font-size:.74rem; color:var(--muted);} .dcell .v{font-family:var(--font-num); font-weight:700; font-size:1.08rem; margin-top:3px; font-variant-numeric:tabular-nums;}
+  .dcell .v.rem{color:var(--danger);} .dcell .v.rem.done{color:var(--brand-ink);}
+  .dnext{display:flex; align-items:center; gap:9px; background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:13px; margin-bottom:16px; font-size:.9rem;}
+  .dnext .k{color:var(--muted);} .dnext .amt{margin-left:auto; font-family:var(--font-num); font-weight:700;}
+  .dnext.soon{background:var(--warn-weak); border-color:transparent; color:var(--warn);} .dnext.urgent{background:var(--danger-weak); border-color:transparent; color:var(--danger);}
+  .dnext.gold{background:color-mix(in srgb,var(--gold) 14%,var(--surface-2)); border-color:transparent; color:var(--ink);}
+  .sheet-row{display:flex; gap:10px; margin-top:10px;} .sheet-row .btn{flex:1;}
+
+  .field{margin-bottom:14px;}
+  .field label{display:block; font-size:.82rem; font-weight:600; margin-bottom:6px;}
+  .field .hint{font-weight:400; color:var(--muted);}
+  .field input{width:100%; font-family:var(--font-body); font-size:1.05rem; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:12px; padding:13px 14px;}
+  .field input:focus{outline:none; border-color:var(--brand);}
+  .field.n input{font-family:var(--font-num); font-variant-numeric:tabular-nums;}
+  .check{display:flex; align-items:center; gap:10px; cursor:pointer; font-size:.95rem; font-weight:500; padding:4px 0;}
+  .check input{width:20px; height:20px; accent-color:var(--brand); flex:none;}
+  .two{display:flex; gap:10px;} .two .field{flex:1; min-width:0;}
+  .err{color:var(--danger); font-size:.82rem; margin:-4px 0 12px; display:none;} .err.show{display:block;}
+
+  .calc-out{background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:2px 14px; margin:6px 0 16px;}
+  .co-row{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; border-top:1px solid var(--line); font-size:.92rem;}
+  .co-row:first-child{border-top:none;} .co-row span{color:var(--muted);}
+  .co-row b{font-family:var(--font-num); font-weight:700; font-variant-numeric:tabular-nums; font-size:1.05rem;}
+  .co-row.big b{color:var(--brand-ink); font-size:1.25rem;}
+  .seg{display:flex; gap:8px; margin-bottom:16px;}
+  .seg button{flex:1; font-family:var(--font-num); font-weight:700; font-size:.92rem; padding:11px; border-radius:12px; background:var(--surface-2); border:1.5px solid var(--line); color:var(--muted);}
+  .seg button.on{background:var(--brand-weak); border-color:var(--brand); color:var(--brand-ink);}
+  .cur-pick{display:flex; gap:7px; flex-wrap:wrap; margin-bottom:14px;}
+  .cur-pick button{font-family:var(--font-num); font-weight:700; font-size:.9rem; padding:9px 14px; border-radius:11px; background:var(--surface-2); border:1.5px solid var(--line); color:var(--ink);}
+  .cur-pick button.on{background:var(--brand-weak); border-color:var(--brand); color:var(--brand-ink);}
+
+  .ta{width:100%; font-family:var(--font-num); font-size:.84rem; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:12px; padding:11px 12px; resize:vertical; min-height:68px; word-break:break-all; line-height:1.4;}
+  .ta:focus{outline:none; border-color:var(--brand);}
+  .note{font-size:.8rem; color:var(--muted); margin:8px 0 0; line-height:1.45;}
+  .sec-block{margin-top:20px; padding-top:18px; border-top:1px solid var(--line);} .sec-block > label{font-size:.82rem; font-weight:600; display:block; margin-bottom:8px;}
+
+  .lock{position:fixed; inset:0; background:var(--bg); z-index:90; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:24px; padding-top:max(24px, env(safe-area-inset-top,0px));}
+  .lock .lk-t{font-family:var(--font-num); font-weight:800; font-size:1.3rem;}
+  .lock input{width:170px; text-align:center; letter-spacing:.4em; font-size:1.6rem; font-family:var(--font-num); background:var(--surface-2); border:1.5px solid var(--line); border-radius:14px; padding:14px; color:var(--ink);}
+  .lock input:focus{outline:none; border-color:var(--brand);} .lock .lk-e{color:var(--danger); font-size:.85rem; min-height:1.1em;}
+
+  .toast{position:fixed; left:50%; transform:translateX(-50%) translateY(20px); bottom:96px; background:var(--ink); color:var(--bg); font-family:var(--font-num); font-weight:600; font-size:.9rem; padding:12px 20px; border-radius:99px; z-index:100; opacity:0; pointer-events:none; transition:opacity .2s, transform .2s;}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+  :focus-visible{outline:2.5px solid var(--brand); outline-offset:2px; border-radius:8px;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="title">Мои кредиты<small>Банки и платежи</small></div>
+    <div class="hbtns">
+      <button class="icon-btn" id="dataTop" aria-label="Данные и безопасность"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></button>
+      <button class="icon-btn" id="calcTop" aria-label="Калькулятор"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M8 7h8M8 11h.01M12 11h.01M16 11v6M8 15h.01M12 15h.01M8 18h.01M12 18h.01"/></svg></button>
+      <button class="icon-btn" id="addTop" aria-label="Добавить банк"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button>
+    </div>
+  </header>
+
+  <div id="installBar"></div>
+  <section id="hero"></section>
+  <div id="tip"></div>
+  <section id="nextPay"></section>
+
+  <div class="section-h"><h2>Мои банки</h2><span class="count" id="bankCount"></span></div>
+  <div id="cards" class="cards"></div>
+
+  <section id="strategy" style="margin-top:22px"></section>
+  <section id="goldSection" style="margin-top:22px"></section>
+  <section id="dynamics"></section>
+  <section id="closed" style="margin-top:22px"></section>
+  <div id="exampleNote"></div>
+  <div id="syncLine"></div>
+</div>
+
+<div class="fab"><div class="inner">
+  <button class="btn btn-primary btn-full" id="addMain"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> Добавить банк</button>
+</div></div>
+
+<div class="overlay" id="overlay"><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ===== Хранение: сервер (база артефакта) + копия в браузере ===== */
+const LKEY='app_v2';
+function loadLocal(){ try{const r=localStorage.getItem(LKEY); if(r) return JSON.parse(r);}catch(e){} return null; }
+function persistLocal(){ try{ localStorage.setItem(LKEY, JSON.stringify({loans:state.loans,payments:state.payments,gold:state.gold})); }catch(e){} }
+function persist(){ persistLocal(); }
+
+const CUR={ USD:'10.7', RUB:'0.12', EUR:'11.5' };
+
+function examples(){ return [
+  {id:'ex1', name:'Коммерцбанк',  short:'КБ', color:'#0E7C86', note:'Потребительский', total:30000, paid:21000, monthly:2600, dueDay:10, rate:18, example:true},
+  {id:'ex2', name:'Банк Эсхата',  short:'Э',  color:'#1E8A50', note:'Под залог золота',total:12000, paid:3600,  monthly:1200, dueDay:25, rate:22, gold:10, example:true},
+  {id:'ex3', name:'Спитамен Банк', short:'С', color:'#2E5BBE', note:'',                total:8000,  paid:8000,  monthly:1000, dueDay:5,  rate:16, example:true},
+  {id:'ex4', name:'ICB',           short:'IC',color:'#8A2433', note:'Карта',           total:15000, paid:4500,  monthly:1500, dueDay:18, rate:15, example:true},
+]; }
+function monthsAgo(n, day){ const d=new Date(); d.setDate(1); d.setMonth(d.getMonth()-n); d.setDate(day); return d.toISOString().slice(0,10); }
+function examplePayments(){ return [
+  {id:'p1',loanId:'ex1',amount:2600,date:monthsAgo(5,10)},{id:'p2',loanId:'ex2',amount:1200,date:monthsAgo(5,25)},{id:'p3',loanId:'ex4',amount:1500,date:monthsAgo(5,18)},
+  {id:'p4',loanId:'ex1',amount:2600,date:monthsAgo(4,10)},{id:'p5',loanId:'ex3',amount:1000,date:monthsAgo(4,5)},
+  {id:'p6',loanId:'ex1',amount:2600,date:monthsAgo(3,10)},{id:'p7',loanId:'ex2',amount:1200,date:monthsAgo(3,25)},{id:'p8',loanId:'ex4',amount:1500,date:monthsAgo(3,18)},
+  {id:'p9',loanId:'ex1',amount:2600,date:monthsAgo(2,10)},{id:'p10',loanId:'ex3',amount:1000,date:monthsAgo(2,5)},
+  {id:'p11',loanId:'ex1',amount:2600,date:monthsAgo(1,10)},{id:'p12',loanId:'ex4',amount:1500,date:monthsAgo(1,18)},
+]; }
+
+const cached=loadLocal();
+const state = cached ? {loans:cached.loans||[], payments:cached.payments||[], gold:cached.gold||null}
+                     : {loans:examples(), payments:examplePayments(), gold:{grams:500, price:700}};
+
+/* ---- помощники ---- */
+function money(n){ return new Intl.NumberFormat('ru-RU').format(Math.round(n)) + ' с.'; }
+function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+const AVA=['#5B6CF0','#0EA5A3','#8B5CF6','#E0557B','#E08A2B','#2E8BE0','#1F9D6B','#D9476B'];
+function avaColor(n){ let h=0; for(const c of String(n)) h=(h+c.charCodeAt(0))%AVA.length; return AVA[h]; }
+function avaHTML(l,cls){
+  if(l.icon){ return `<span class="ava ${cls||''}" style="background:var(--surface-2)"><img src="${esc(l.icon)}" alt=""></span>`; }
+  const col=l.color||avaColor(l.name);
+  const txt=l.short||((l.name||'?').trim().charAt(0).toUpperCase()||'?');
+  const fs=txt.length>=3?';font-size:.66rem':txt.length===2?';font-size:.82rem':'';
+  return `<span class="ava ${cls||''}" style="background:${col}${fs}">${esc(txt)}</span>`;
+}
+function clampDay(y,m,d){ const last=new Date(y,m+1,0).getDate(); return Math.min(d,last); }
+function nextDueDate(dueDay,from){ from=from||new Date(); const t=new Date(from.getFullYear(),from.getMonth(),from.getDate());
+  let y=t.getFullYear(),m=t.getMonth(),c=new Date(y,m,clampDay(y,m,dueDay)); if(c<t){ m+=1; if(m>11){m=0;y+=1;} c=new Date(y,m,clampDay(y,m,dueDay)); } return c; }
+function daysUntil(d,from){ from=from||new Date(); const a=new Date(from.getFullYear(),from.getMonth(),from.getDate()); const b=new Date(d.getFullYear(),d.getMonth(),d.getDate()); return Math.round((b-a)/86400000); }
+function fmtDate(d){ return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'long'}).format(d); }
+function fmtShort(d){ return new Intl.DateTimeFormat('ru-RU',{day:'numeric',month:'short'}).format(d); }
+const nf=new Intl.NumberFormat('ru-RU'), rf=new Intl.NumberFormat('ru-RU',{maximumFractionDigits:2});
+function plural(n,f){ const a=n%10,b=n%100; if(a===1&&b!==11)return f[0]; if(a>=2&&a<=4&&(b<10||b>=20))return f[1]; return f[2]; }
+function whenText(days){ if(days===0)return'сегодня'; if(days===1)return'завтра'; if(days<0)return Math.abs(days)+' '+plural(Math.abs(days),['день','дня','дней'])+' назад'; return 'через '+days+' '+plural(days,['день','дня','дней']); }
+function addMonths(d,n){ const x=new Date(d); x.setDate(1); x.setMonth(x.getMonth()+n); return x; }
+// За сколько месяцев закроется долг и сколько ещё процентов набежит (аннуитет)
+function payoffSim(remaining, monthly, annualPct){
+  if(remaining<=0) return {months:0, interest:0};
+  if(monthly<=0) return null;
+  const r=(annualPct||0)/100/12;
+  if(r<=0) return {months:Math.ceil(remaining/monthly), interest:0};
+  if(monthly <= remaining*r) return null;           // платёж не покрывает проценты — не закроется
+  let bal=remaining, interest=0, months=0;
+  while(bal>0 && months<1200){ const i=bal*r; interest+=i; bal=bal+i-monthly; months++; }
+  return {months, interest:Math.max(0,Math.round(interest))};
+}
+
+const REMIND=7;
+function analyze(loan){
+  const total=Math.max(0,+loan.total||0), paid=Math.min(total,Math.max(0,+loan.paid||0)), remaining=Math.max(0,total-paid);
+  const pct=total>0?Math.min(100,Math.round(paid/total*100)):0, done=remaining<=0, monthly=Math.max(0,+loan.monthly||0);
+  const due=nextDueDate(loan.dueDay||1), days=daysUntil(due);
+  let monthsLeft=null, interestLeft=0;
+  if(!done && monthly>0){ const sim=payoffSim(remaining,monthly,+loan.rate||0); if(sim){ monthsLeft=sim.months; interestLeft=sim.interest; } }
+  let urg='none'; if(!done){ if(days<=3)urg='urgent'; else if(days<=REMIND)urg='soon'; }
+  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg};
+}
+
+const RC=2*Math.PI*20;
+function ringHTML(pct,cls){ pct=Math.max(0,Math.min(100,Math.round(pct))); const off=RC*(1-pct/100);
+  return `<div class="ring ${cls||''}"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="ring-track" cx="24" cy="24" r="20"></circle><circle class="ring-fill" cx="24" cy="24" r="20" stroke-dasharray="${RC.toFixed(2)}" stroke-dashoffset="${RC.toFixed(2)}" data-off="${off.toFixed(2)}"></circle></svg><div class="ring-num"><b>${pct}</b><i>%</i></div></div>`; }
+function animateRings(root){ const red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  (root||document).querySelectorAll('.ring-fill').forEach(el=>{ const off=el.getAttribute('data-off'); if(red){el.style.strokeDashoffset=off;return;} requestAnimationFrame(()=>requestAnimationFrame(()=>{el.style.strokeDashoffset=off;})); }); }
+function encouragement(pct,has){ if(!has)return'Добавьте первый банк, чтобы начать'; if(pct>=100)return'Все кредиты закрыты! Поздравляю 🎉'; if(pct>=80)return'Совсем немного осталось — вы почти у цели!'; if(pct>=50)return'Больше половины позади 👏'; if(pct>=20)return'Хороший темп, долг уменьшается'; return'Начало положено — шаг за шагом'; }
+
+function celebrate(){ if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const c=document.createElement('canvas'); Object.assign(c.style,{position:'fixed',inset:'0',width:'100%',height:'100%',pointerEvents:'none',zIndex:95}); document.body.appendChild(c);
+  const ctx=c.getContext('2d'),DPR=Math.min(2,devicePixelRatio||1); c.width=innerWidth*DPR; c.height=innerHeight*DPR;
+  const cols=['#11805A','#2FB27E','#E08A2B','#5B6CF0','#E0557B','#2E8BE0'],ps=[];
+  for(let i=0;i<90;i++) ps.push({x:innerWidth/2*DPR,y:innerHeight*0.3*DPR,vx:(Math.random()-0.5)*9*DPR,vy:(Math.random()*-9-4)*DPR,g:0.28*DPR,r:(4+Math.random()*5)*DPR,rot:Math.random()*6,vr:(Math.random()-0.5)*0.4,col:cols[i%cols.length]});
+  const s=performance.now(); (function f(t){ const el=t-s; ctx.clearRect(0,0,c.width,c.height);
+    for(const p of ps){ p.vy+=p.g;p.x+=p.vx;p.y+=p.vy;p.rot+=p.vr; ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot);ctx.globalAlpha=Math.max(0,1-el/1600);ctx.fillStyle=p.col;ctx.fillRect(-p.r/2,-p.r/2,p.r,p.r*0.6);ctx.restore(); }
+    if(el<1600)requestAnimationFrame(f); else c.remove(); })(s); }
+
+/* ===================== Отрисовка ===================== */
+const $ = s => document.querySelector(s);
+function byId(id){ return state.loans.find(l=>l.id===id); }
+function pledgedGrams(){ return state.loans.reduce((s,l)=>s+(+l.gold||0),0); }
+
+function render(){
+  const list=state.loans.map(l=>({loan:l,a:analyze(l)}));
+  renderHero(list); renderTip(); renderNextPay(list); renderCards(list); renderStrategy(list); renderGold(list); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync();
+  const act=list.filter(x=>!x.a.done).length;
+  $('#bankCount').textContent = act ? act+' '+plural(act,['банк','банка','банков']) : '';
+  checkMilestone(list); animateRings();
+}
+function renderHero(list){
+  const total=list.reduce((s,x)=>s+x.a.total,0),paid=list.reduce((s,x)=>s+x.a.paid,0),rem=list.reduce((s,x)=>s+x.a.remaining,0),pct=total>0?Math.round(paid/total*100):0;
+  const active=list.filter(x=>!x.a.done);
+  const monthlyTotal=active.reduce((s,x)=>s+x.a.monthly,0);
+  let freedom='';
+  if(active.length){ const ms=active.map(x=>x.a.monthsLeft); if(ms.every(m=>m!=null)){ const d=addMonths(new Date(),Math.max(...ms)); freedom=new Intl.DateTimeFormat('ru-RU',{month:'short',year:'numeric'}).format(d); } }
+  const stats = active.length ? `<div class="hero-stats"><div><span class="num">${money(monthlyTotal)}</span><small>в этом месяце</small></div><div><span class="num">${freedom||'—'}</span><small>свобода от долгов</small></div></div>` : '';
+  $('#hero').innerHTML=`<div class="hero"><div class="hero-top"><div class="hero-text"><div class="cap">Осталось выплатить</div><div class="big">${money(rem)}</div><div class="sub">из ${money(total)} · выплачено <b>${money(paid)}</b></div></div>${ringHTML(pct,'lg')}</div><div class="hero-msg"><span>${pct>=100?'🎉':'🌱'}</span>${encouragement(pct,list.length>0)}</div>${stats}</div>`;
+}
+function renderTip(){ let seen=false; try{seen=localStorage.getItem('tip_v1')==='1';}catch(e){}
+  $('#tip').innerHTML=(seen||!state.loans.length)?'':`<div class="tip"><span>💡</span><span>Нажмите на банк, чтобы открыть детали и внести платёж.</span><button class="x" id="tipX" aria-label="Скрыть">✕</button></div>`; }
+function renderNextPay(list){
+  const box=$('#nextPay'); if(!list.length){box.innerHTML='';return;}
+  const up=list.filter(x=>!x.a.done).sort((a,b)=>a.a.days-b.a.days)[0];
+  if(!up){ box.innerHTML=`<div class="nextpay calm">✓ Все кредиты выплачены</div>`; return; }
+  const {loan,a}=up;
+  box.innerHTML=`<div class="nextpay ${a.urg}"><div class="np-main"><div class="np-cap">Ближайший платёж</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when ${a.urg}">${fmtDate(a.due)} · ${whenText(a.days)}</div></div><div class="np-right"><div class="np-amt">${money(a.monthly||0)}</div><button class="btn btn-primary" data-action="pay" data-id="${loan.id}">Оплатить</button></div></div>`;
+}
+function renderCards(list){
+  if(!list.length){ $('#cards').innerHTML=`<div class="empty"><div class="em">🏦</div><p>Пока нет банков.<br>Добавьте первый кредит.</p><button class="btn btn-primary" id="addEmpty">Добавить банк</button></div>`; return; }
+  const active=list.filter(x=>!x.a.done);
+  if(!active.length){ $('#cards').innerHTML=`<div class="empty" style="padding:28px 20px"><div class="em">🎉</div><p>Активных кредитов нет — всё выплачено!<br>Закрытые смотрите в истории ниже.</p></div>`; return; }
+  $('#cards').innerHTML=active.map(({loan,a})=>{
+    const right=a.done?`<span class="c-rem done">Погашен ✓</span>`:`<span class="c-rem">${money(a.remaining)}</span>`;
+    const gold=loan.gold?`<span class="gb" title="Под залог золота">🔶</span>`:'';
+    const sub=a.done?`<span>100% выплачено</span><span class="mo">Закрыт</span>`:`<span>${a.pct}% выплачено</span>${a.monthsLeft?`<span class="mo">≈ ${a.monthsLeft} ${plural(a.monthsLeft,['платёж','платежа','платежей'])}</span>`:''}`;
+    return `<div class="card" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}, открыть">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}${gold}</span>${right}</div><div class="cbar"><i style="width:${a.pct}%"></i></div><div class="c-sub">${sub}</div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`;
+  }).join('');
+}
+function renderGold(list){
+  const box=$('#goldSection'), g=state.gold, pg=pledgedGrams();
+  if(!g || !(+g.grams>0)){
+    box.innerHTML=`<div class="section-h"><h2>Золото</h2></div><div class="card gold-empty" role="button" tabindex="0" data-action="goldedit" aria-label="Добавить золото"><span class="ava gold">Au</span><div class="c-main"><div class="c-name">Добавить золото</div><div class="c-sub"><span>Укажите вес и курс — посчитаем стоимость</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`;
+    return;
+  }
+  const grams=+g.grams||0, price=+g.price||0, value=grams*price;
+  const pledged=Math.min(grams,pg), free=Math.max(0,grams-pg);
+  box.innerHTML=`<div class="section-h"><h2>Золото</h2><button class="add-link" data-action="goldedit">Изменить</button></div>
+    <div class="gold-card"><div class="gc-top"><span class="ava gold">Au</span><div class="gc-main"><div class="gc-g">${rf.format(grams)} г</div><div class="gc-cap">по курсу ${rf.format(price)} с./г</div></div><div class="gc-val">${money(value)}</div></div>
+    <div class="gc-split"><div class="gc-cell"><div class="k">🔶 Под залогом</div><div class="v">${rf.format(pledged)} г</div><div class="s">${money(pledged*price)}</div></div><div class="gc-cell"><div class="k">✅ Свободно</div><div class="v">${rf.format(free)} г</div><div class="s">${money(free*price)}</div></div></div></div>`;
+}
+function renderStrategy(list){
+  const box=$('#strategy'), active=list.filter(x=>!x.a.done);
+  if(active.length<2){ box.innerHTML=''; return; }
+  let method='snowball'; try{ method=localStorage.getItem('strat_v1')||'snowball'; }catch(e){}
+  let order;
+  if(method==='avalanche') order=[...active].sort((a,b)=>((b.loan.rate||-1)-(a.loan.rate||-1))||(a.a.remaining-b.a.remaining));
+  else order=[...active].sort((a,b)=>a.a.remaining-b.a.remaining);
+  const desc = method==='avalanche' ? 'Сначала гасите кредит с самой высокой ставкой — так переплатите банкам меньше всего.' : 'Сначала гасите самый маленький остаток — быстрая победа даёт мотивацию двигаться дальше.';
+  const noRates = method==='avalanche' && active.some(x=>!(x.loan.rate>0));
+  const items=order.map((x,i)=>`<div class="strat-item ${i===0?'first':''}"><span class="strat-rank">${i+1}</span><span class="strat-nm">${esc(x.loan.name)}</span>${i===0?'<span class="strat-first-tag">гасить первым</span>':''}<span class="strat-amt">${money(x.a.remaining)}</span></div>`).join('');
+  box.innerHTML=`<div class="section-h"><h2>Стратегия погашения</h2></div><div class="strat"><div class="seg"><button data-strat="snowball" class="${method==='snowball'?'on':''}">Снежный ком</button><button data-strat="avalanche" class="${method==='avalanche'?'on':''}">Лавина</button></div><div class="strat-desc">${desc}</div><div class="strat-list">${items}</div>${noRates?'<div class="strat-hint">Добавьте ставку % у кредитов («Изменить»), чтобы «Лавина» считала точнее.</div>':''}</div>`;
+}
+function checkMilestone(list){
+  const total=list.reduce((s,x)=>s+x.a.total,0), paid=list.reduce((s,x)=>s+x.a.paid,0);
+  if(total<=0) return; const pct=Math.round(paid/total*100);
+  let last=null; try{ const v=localStorage.getItem('ms_v1'); last=(v==null)?null:+v; }catch(e){}
+  let hit=0; for(const m of [25,50,75]) if(pct>=m) hit=m;
+  if(last==null){ try{localStorage.setItem('ms_v1',String(hit));}catch(e){} return; }
+  if(hit>last && pct<100){ try{localStorage.setItem('ms_v1',String(hit));}catch(e){} setTimeout(()=>{ toast('Отметка '+hit+'% пройдена! 👏'); celebrate(); },300); return; }
+  if(hit!==last){ try{localStorage.setItem('ms_v1',String(hit));}catch(e){} }
+}
+function renderClosed(list){
+  const box=$('#closed'), closed=list.filter(x=>x.a.done);
+  if(!closed.length){ box.innerHTML=''; return; }
+  box.innerHTML=`<div class="section-h"><h2>История · закрытые</h2><span class="count">${closed.length}</span></div><div class="cards">${closed.map(({loan,a})=>`<div class="card closed" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}, открыть">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem done">Погашен ✓</span></div><div class="c-sub"><span>Выплачено ${money(a.paid)}</span><span class="mo">Закрыт</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`).join('')}</div>`;
+}
+function renderExampleNote(){ $('#exampleNote').innerHTML=state.loans.some(l=>l.example)?`<div class="example-note"><span>Показаны примеры.</span><button id="clearEx">Очистить и ввести свои →</button></div>`:''; }
+function renderSync(){ $('#syncLine').innerHTML=`<div class="sync on"><span class="dot"></span>Данные хранятся в этом телефоне — не забывайте делать копию</div>`; }
+
+function buildChart(pts){
+  const W=320,H=120,padT=10,padB=20,padX=8; const xs=pts.map(p=>p.ts),xmin=Math.min(...xs),xmax=Math.max(...xs),ymax=Math.max(...pts.map(p=>p.y),1),Yb=H-padB;
+  const X=ts=>xmax===xmin?W/2:padX+(ts-xmin)/(xmax-xmin)*(W-2*padX), Y=v=>padT+(1-v/ymax)*(Yb-padT);
+  const line=pts.map((p,i)=>`${i?'L':'M'}${X(p.ts).toFixed(1)},${Y(p.y).toFixed(1)}`).join(' ');
+  const area=`${line} L${X(xmax).toFixed(1)},${Yb} L${X(xmin).toFixed(1)},${Yb} Z`, last=pts[pts.length-1], fmtM=ts=>new Intl.DateTimeFormat('ru-RU',{month:'short'}).format(new Date(ts));
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="График снижения долга"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity="0.22"></stop><stop offset="1" stop-color="var(--brand)" stop-opacity="0"></stop></linearGradient></defs><line class="gl" x1="${padX}" y1="${Yb}" x2="${W-padX}" y2="${Yb}"></line><path d="${area}" fill="url(#g1)"></path><path class="line" d="${line}"></path><circle class="dot" cx="${X(last.ts).toFixed(1)}" cy="${Y(last.y).toFixed(1)}" r="4"></circle><text x="${padX}" y="${H-6}">${fmtM(xmin)}</text><text x="${W-padX}" y="${H-6}" text-anchor="end">сейчас</text></svg>`;
+}
+function renderDynamics(list){
+  const box=$('#dynamics'); if(!list.length){box.innerHTML='';return;}
+  const totalRem=list.reduce((s,x)=>s+x.a.remaining,0), pays=[...state.payments].sort((a,b)=>a.date.localeCompare(b.date));
+  if(pays.length<2){ box.innerHTML=`<div class="dyn"><div class="dyn-h"><h3>Как уменьшается долг</h3></div><div class="dyn-sub">График появится здесь, когда вы внесёте несколько платежей.</div></div>`; return; }
+  const totalLogged=pays.reduce((s,p)=>s+p.amount,0); let running=totalRem+totalLogged;
+  const pts=[{ts:new Date(pays[0].date).getTime(),y:running}];
+  for(const p of pays){ running-=p.amount; pts.push({ts:new Date(p.date).getTime(),y:Math.max(0,running)}); }
+  pts.push({ts:Date.now(),y:totalRem});
+  const recent=[...state.payments].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
+  const rows=recent.map(p=>{ const l=byId(p.loanId); return `<div class="hrow">${l?avaHTML(l,'sm'):''}<span class="hn">${l?esc(l.name):'—'}</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${money(p.amount)}</span></div>`; }).join('');
+  box.innerHTML=`<div class="dyn"><div class="dyn-h"><h3>Как уменьшается долг</h3><span class="drop">−${money(totalLogged)}</span></div><div class="dyn-sub">Чем ниже линия — тем меньше долг. Так держать!</div>${buildChart(pts)}<div class="hist"><h4>Последние платежи</h4>${rows}</div></div>`;
+}
+
+/* ===================== Окна ===================== */
+const overlay=$('#overlay'), sheet=$('#sheet');
+function openSheet(html){ sheet.innerHTML=html; overlay.classList.add('open'); animateRings(sheet); }
+function closeSheet(){ overlay.classList.remove('open'); }
+overlay.addEventListener('click', e=>{ if(e.target===overlay) closeSheet(); });
+
+function detailSheet(loan){
+  const a=analyze(loan);
+  const nextLine=a.done?`<div class="dnext"><span class="k">Кредит полностью выплачен ✓</span></div>`:`<div class="dnext ${a.urg}"><span class="k">След. платёж:</span><span>${fmtDate(a.due)} · ${whenText(a.days)}</span><span class="amt">${money(a.monthly||0)}</span></div>`;
+  const goldLine=loan.gold?`<div class="dnext gold"><span class="k">🔶 Под залог золота:</span><span class="amt">${rf.format(+loan.gold||0)} г</span></div>`:'';
+  const lpays=state.payments.filter(p=>p.loanId===loan.id).sort((x,y)=>y.date.localeCompare(x.date)).slice(0,5);
+  const hist=lpays.length?`<div class="hist"><h4>Платежи по этому банку</h4>${lpays.map(p=>`<div class="hrow"><span class="hn">Платёж</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${money(p.amount)}</span></div>`).join('')}</div>`:'';
+  openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3><p class="lead">${loan.note?esc(loan.note):'Кредит'}</p><div class="detail-ring">${ringHTML(a.pct,'lg')}</div>
+    <div class="detail-grid"><div class="dcell"><div class="k">Выплачено</div><div class="v">${money(a.paid)}</div></div><div class="dcell"><div class="k">Осталось</div><div class="v rem ${a.done?'done':''}">${money(a.remaining)}</div></div></div>
+    ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">Внести платёж</button>`}
+    <div class="sheet-row"><button class="btn btn-ghost" data-action="edit" data-id="${loan.id}">Изменить</button><button class="btn btn-danger" data-action="del" data-id="${loan.id}">Удалить</button></div>${hist}`);
+}
+
+function fileToIconDataURL(file){
+  return new Promise((resolve,reject)=>{
+    const img=new Image(); const url=URL.createObjectURL(file);
+    img.onload=()=>{ try{
+      const size=120, c=document.createElement('canvas'); c.width=size; c.height=size;
+      const ctx=c.getContext('2d');
+      const s=Math.min(img.naturalWidth,img.naturalHeight), sx=(img.naturalWidth-s)/2, sy=(img.naturalHeight-s)/2;
+      ctx.drawImage(img,sx,sy,s,s,0,0,size,size);
+      URL.revokeObjectURL(url); resolve(c.toDataURL('image/jpeg',0.82));
+    }catch(err){ URL.revokeObjectURL(url); reject(err); } };
+    img.onerror=()=>{ URL.revokeObjectURL(url); reject(new Error('img')); };
+    img.src=url;
+  });
+}
+function loanForm(loan, prefill){
+  const isNew=!loan; loan=loan||prefill||{name:'',note:'',total:'',paid:'',monthly:'',dueDay:'',gold:''};
+  openSheet(`<h3>${isNew?'Новый кредит':'Изменить кредит'}</h3><p class="lead">Заполните данные по банку</p>
+    <div class="field"><label>Название банка</label><input id="f-name" value="${esc(loan.name)}" placeholder="Напр. Эсхата" autocomplete="off"></div>
+    <div class="field"><label>Пометка <span class="hint">(необязательно)</span></label><input id="f-note" value="${esc(loan.note||'')}" placeholder="Напр. потребительский" autocomplete="off"></div>
+    <div class="field"><label>Логотип банка <span class="hint">(необязательно)</span></label><div class="icon-row"><span id="icon-prev"></span><label class="btn btn-ghost icon-up"><input type="file" accept="image/*" id="f-icon">Загрузить фото</label><button type="button" class="icon-btn" id="icon-clear" aria-label="Убрать логотип" ${loan.icon?'':'hidden'}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div></div>
+    <div class="two"><div class="field n"><label>Сумма кредита</label><input id="f-total" type="number" inputmode="numeric" min="0" value="${loan.total}" placeholder="30000"></div><div class="field n"><label>Уже выплачено</label><input id="f-paid" type="number" inputmode="numeric" min="0" value="${loan.paid}" placeholder="0"></div></div>
+    <div class="two"><div class="field n"><label>Платёж в месяц</label><input id="f-monthly" type="number" inputmode="numeric" min="0" value="${loan.monthly}" placeholder="2000"></div><div class="field n"><label>День платежа</label><input id="f-day" type="number" inputmode="numeric" min="1" max="31" value="${loan.dueDay}" placeholder="10"></div></div>
+    <div class="field n"><label>Ставка, % в год <span class="hint">(для расчётов и стратегии)</span></label><input id="f-rate" type="number" inputmode="decimal" min="0" value="${loan.rate||''}" placeholder="18"></div>
+    <div class="field"><label class="check"><input type="checkbox" id="f-gold" ${loan.gold?'checked':''}> Под залог золота</label></div>
+    <div class="field n" id="f-gold-wrap" ${loan.gold?'':'hidden'}><label>Сколько грамм золота в залоге</label><input id="f-gold-g" type="number" inputmode="decimal" min="0" value="${loan.gold||''}" placeholder="10"></div>
+    <div class="err" id="f-err"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>Отмена</button><button class="btn btn-primary" id="f-save">Сохранить</button></div>`);
+  const gc=$('#f-gold'), gw=$('#f-gold-wrap');
+  gc.addEventListener('change',()=>{ gw.hidden=!gc.checked; if(gc.checked) $('#f-gold-g').focus(); });
+  // логотип банка (загрузка фото как в профиле)
+  let iconUrl=loan.icon||null;
+  function renderPrev(){ const p=$('#icon-prev'); if(p) p.innerHTML=avaHTML({name:($('#f-name')&&$('#f-name').value)||loan.name,color:loan.color,short:loan.short,icon:iconUrl}); const cl=$('#icon-clear'); if(cl) cl.hidden=!iconUrl; }
+  renderPrev();
+  $('#f-name').addEventListener('input',renderPrev);
+  $('#f-icon').addEventListener('change', async ev=>{
+    const file=ev.target.files&&ev.target.files[0]; if(!file) return;
+    if(!/^image\//.test(file.type)){ toast('Нужен файл изображения'); return; }
+    try{ iconUrl=await fileToIconDataURL(file); renderPrev(); toast('Логотип добавлен ✓'); }
+    catch(err){ toast('Не удалось обработать фото'); }
+  });
+  $('#icon-clear').onclick=()=>{ iconUrl=null; renderPrev(); };
+  $('#f-name').focus();
+  $('#f-save').onclick=()=>{
+    const name=$('#f-name').value.trim(), total=+$('#f-total').value, paid=+($('#f-paid').value||0), monthly=+($('#f-monthly').value||0), dueDay=+$('#f-day').value, err=$('#f-err');
+    const gold=gc.checked?(+$('#f-gold-g').value||0):0;
+    if(!name) return showErr(err,'Введите название банка');
+    if(!(total>0)) return showErr(err,'Введите сумму кредита');
+    if(!(dueDay>=1&&dueDay<=31)) return showErr(err,'День платежа — число от 1 до 31');
+    if(gc.checked && !(gold>0)) return showErr(err,'Укажите граммы золота в залоге');
+    const rate=+($('#f-rate').value||0);
+    const data={name,note:$('#f-note').value.trim(),total,paid,monthly,dueDay,rate,gold,icon:iconUrl||null};
+    if(loan.color) data.color=loan.color; if(loan.short) data.short=loan.short;
+    if(isNew){ state.loans.push({id:'l'+Date.now(),...data}); toast('Банк добавлен'); } else { delete loan.example; Object.assign(loan,data); toast('Сохранено'); }
+    persist(); closeSheet(); render();
+  };
+}
+function showErr(el,msg){ el.textContent=msg; el.classList.add('show'); }
+
+function payForm(loan){
+  const rem=Math.max(0,(loan.total||0)-(loan.paid||0));
+  openSheet(`<h3>Внести платёж</h3><p class="lead">${esc(loan.name)} · осталось ${money(rem)}</p>
+    <div class="field n"><label>Сумма платежа</label><input id="p-amt" type="number" inputmode="numeric" min="0" value="${loan.monthly||''}" placeholder="2000"></div>
+    <div class="err" id="p-err"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>Отмена</button><button class="btn btn-primary" id="p-save">Записать</button></div>`);
+  const inp=$('#p-amt'); inp.focus(); inp.select();
+  $('#p-save').onclick=()=>{
+    const amt=+inp.value; if(!(amt>0)) return showErr($('#p-err'),'Введите сумму платежа');
+    const before=+loan.paid||0; loan.paid=Math.min(loan.total, before+amt); const applied=Math.max(0,loan.paid-before)||amt;
+    state.payments.push({id:'p'+Date.now(),loanId:loan.id,amount:applied,date:new Date().toISOString().slice(0,10)});
+    const payoff=loan.paid>=loan.total; persist(); closeSheet(); render();
+    try{ navigator.vibrate && navigator.vibrate(payoff?[18,50,18]:12); }catch(e){}
+    if(payoff) celebrate();
+    toast(payoff?'Кредит погашен! 🎉':'Платёж записан ✓');
+  };
+}
+function confirmDelete(loan){
+  openSheet(`<h3>Удалить банк?</h3><p class="lead">«${esc(loan.name)}» будет удалён. Это нельзя отменить.</p><div class="sheet-row"><button class="btn btn-ghost" data-close>Отмена</button><button class="btn btn-danger" id="d-yes">Удалить</button></div>`);
+  $('#d-yes').onclick=()=>{ state.loans=state.loans.filter(l=>l.id!==loan.id); state.payments=state.payments.filter(p=>p.loanId!==loan.id); persist(); closeSheet(); render(); toast('Банк удалён'); };
+}
+
+/* ---- золото ---- */
+function goldEditForm(){
+  const g=state.gold||{grams:'',price:''}, pg=pledgedGrams();
+  openSheet(`<h3>🔶 Золото</h3><p class="lead">Сколько у вас золота и цена за грамм по курсу</p>
+    <div class="two"><div class="field n"><label>Всего, граммы</label><input id="gg" type="number" inputmode="decimal" min="0" value="${g.grams}" placeholder="500"></div><div class="field n"><label>Цена за грамм, с.</label><input id="gp" type="number" inputmode="decimal" min="0" value="${g.price}" placeholder="700"></div></div>
+    <div class="calc-out"><div class="co-row"><span>Стоимость всего</span><b id="gv">—</b></div><div class="co-row"><span>🔶 Под залогом (${rf.format(pg)} г)</span><b id="gpl">—</b></div><div class="co-row big"><span>✅ Свободно</span><b id="gfr">—</b></div></div>
+    <div class="err" id="g-err"></div>
+    <button class="btn btn-primary btn-full" id="g-save">Сохранить</button>
+    ${state.gold?`<div class="sheet-row"><button class="btn btn-danger" id="g-del">Убрать золото</button></div>`:''}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>Отмена</button></div>`);
+  const gg=$('#gg'),gp=$('#gp');
+  function upd(){ const grams=+gg.value||0,price=+gp.value||0; $('#gv').textContent=grams*price>0?money(grams*price):'—'; $('#gpl').textContent=grams*price>0?money(Math.min(grams,pg)*price):'—'; $('#gfr').textContent=grams*price>0?money(Math.max(0,grams-pg)*price):'—'; }
+  [gg,gp].forEach(e=>e.addEventListener('input',upd)); upd(); gg.focus();
+  $('#g-save').onclick=()=>{ const grams=+gg.value,price=+gp.value; if(!(grams>0))return showErr($('#g-err'),'Введите вес золота'); if(!(price>0))return showErr($('#g-err'),'Введите цену за грамм'); state.gold={grams,price}; persist(); closeSheet(); render(); toast('Золото сохранено'); };
+  if(state.gold){ $('#g-del').onclick=()=>{ state.gold=null; persist(); closeSheet(); render(); toast('Золото убрано'); }; }
+}
+
+/* ---- калькулятор ---- */
+function calcSheet(){
+  let mode='loan';
+  function draw(){
+    openSheet(`<h3>🧮 Калькулятор</h3><div class="seg seg4"><button data-m="loan" class="${mode==='loan'?'on':''}">Кредит</button><button data-m="early" class="${mode==='early'?'on':''}">Досрочно</button><button data-m="gold" class="${mode==='gold'?'on':''}">Золото</button><button data-m="conv" class="${mode==='conv'?'on':''}">Валюта</button></div><div id="calc-body"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>Закрыть</button></div>`);
+    sheet.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{ mode=b.dataset.m; draw(); });
+    const body=$('#calc-body'); if(mode==='loan') loanCalc(body); else if(mode==='early') earlyCalc(body); else if(mode==='gold') goldCalc(body); else convCalc(body);
+  }
+  draw();
+}
+function loanCalc(body){
+  body.innerHTML=`<div class="field n"><label>Сумма кредита</label><input id="c-sum" type="number" inputmode="numeric" min="0" placeholder="30000"></div><div class="two"><div class="field n"><label>Ставка, % в год</label><input id="c-rate" type="number" inputmode="decimal" min="0" placeholder="18"></div><div class="field n"><label>Срок, месяцев</label><input id="c-term" type="number" inputmode="numeric" min="1" placeholder="12"></div></div><div class="calc-out"><div class="co-row"><span>Платёж в месяц</span><b id="co-pay">—</b></div><div class="co-row"><span>Всего выплатите</span><b id="co-total">—</b></div><div class="co-row big"><span>Переплата</span><b id="co-over">—</b></div></div><button class="btn btn-primary btn-full" id="c-create">Создать кредит из расчёта</button>`;
+  const sum=$('#c-sum'),rate=$('#c-rate'),term=$('#c-term'); let last=null;
+  function calc(){ const P=+sum.value,an=+rate.value||0,n=Math.round(+term.value); if(!(P>0)||!(n>=1)){ $('#co-pay').textContent='—';$('#co-total').textContent='—';$('#co-over').textContent='—'; last=null; return; }
+    const r=an/100/12, pay=r>0?P*r/(1-Math.pow(1+r,-n)):P/n, total=pay*n, over=total-P; $('#co-pay').textContent=money(pay); $('#co-total').textContent=money(total); $('#co-over').textContent=money(over)+` · ${Math.round(over/P*100)}%`; last={P,pay:Math.round(pay)}; }
+  [sum,rate,term].forEach(e=>e.addEventListener('input',calc)); sum.focus();
+  $('#c-create').onclick=()=>{ if(!last){toast('Заполните сумму и срок');return;} loanForm(null,{name:'',note:'',total:last.P,paid:0,monthly:last.pay,dueDay:'',gold:''}); };
+}
+function goldCalc(body){
+  body.innerHTML=`<p class="lead" style="margin-top:-6px">Сколько стоит золото по курсу</p><div class="two"><div class="field n"><label>Вес, граммы</label><input id="gc-g" type="number" inputmode="decimal" min="0" placeholder="500"></div><div class="field n"><label>Цена за грамм, с.</label><input id="gc-p" type="number" inputmode="decimal" min="0" placeholder="700"></div></div><div class="calc-out"><div class="co-row big"><span>Стоимость золота</span><b id="gc-v">—</b></div></div>`;
+  const g=$('#gc-g'),p=$('#gc-p'); function v(){ const val=(+g.value||0)*(+p.value||0); $('#gc-v').textContent=val>0?money(val):'—'; } [g,p].forEach(e=>e.addEventListener('input',v)); g.focus();
+}
+function convCalc(body){
+  let cur='USD';
+  function sub(){
+    body.innerHTML=`<p class="lead" style="margin-top:-6px">Перевод валюты в сомони</p><div class="cur-pick">${Object.keys(CUR).map(c=>`<button data-c="${c}" class="${cur===c?'on':''}">${c}</button>`).join('')}</div><div class="two"><div class="field n"><label>Сумма, ${cur}</label><input id="cv-a" type="number" inputmode="decimal" min="0" placeholder="500"></div><div class="field n"><label>Курс: 1 ${cur} = ? с.</label><input id="cv-r" type="number" inputmode="decimal" min="0" placeholder="${CUR[cur]}"></div></div><div class="calc-out"><div class="co-row big"><span>В сомони</span><b id="cv-v">—</b></div></div>`;
+    body.querySelectorAll('.cur-pick button').forEach(b=>b.onclick=()=>{ cur=b.dataset.c; sub(); });
+    const a=$('#cv-a'),r=$('#cv-r'); function v(){ const val=(+a.value||0)*(+r.value||0); $('#cv-v').textContent=val>0?money(val):'—'; } [a,r].forEach(e=>e.addEventListener('input',v)); a.focus();
+  }
+  sub();
+}
+
+function earlyCalc(body){
+  body.innerHTML=`<p class="lead" style="margin-top:-6px">Что даст доплата сверх платежа</p>
+    <div class="two"><div class="field n"><label>Остаток долга</label><input id="e-rem" type="number" inputmode="numeric" min="0" placeholder="20000"></div><div class="field n"><label>Платёж в месяц</label><input id="e-mon" type="number" inputmode="numeric" min="0" placeholder="2000"></div></div>
+    <div class="two"><div class="field n"><label>Ставка, % в год</label><input id="e-rate" type="number" inputmode="decimal" min="0" placeholder="18"></div><div class="field n"><label>Доплата в месяц</label><input id="e-extra" type="number" inputmode="numeric" min="0" placeholder="1000"></div></div>
+    <div class="calc-out"><div class="co-row"><span>Закроете раньше на</span><b id="e-mo">—</b></div><div class="co-row big"><span>Сэкономите на процентах</span><b id="e-sv">—</b></div></div>`;
+  const rem=$('#e-rem'),mon=$('#e-mon'),rate=$('#e-rate'),extra=$('#e-extra');
+  function calc(){ const R=+rem.value,M=+mon.value,an=+rate.value||0,ex=+extra.value||0;
+    if(!(R>0)||!(M>0)){ $('#e-mo').textContent='—'; $('#e-sv').textContent='—'; return; }
+    const base=payoffSim(R,M,an), fast=payoffSim(R,M+ex,an);
+    if(!base||!fast){ $('#e-mo').textContent='платёж мал'; $('#e-sv').textContent='—'; return; }
+    const mo=Math.max(0,base.months-fast.months), sv=Math.max(0,base.interest-fast.interest);
+    $('#e-mo').textContent=mo+' '+plural(mo,['месяц','месяца','месяцев']); $('#e-sv').textContent=money(sv); }
+  [rem,mon,rate,extra].forEach(e=>e.addEventListener('input',calc)); rem.focus();
+}
+
+/* ---- данные и безопасность ---- */
+function backupData(){ return JSON.stringify({v:2, loans:state.loans, payments:state.payments, gold:state.gold}); }
+function restoreData(str){ const o=JSON.parse(str); if(!o||!Array.isArray(o.loans)) throw new Error('bad'); state.loans=o.loans; state.payments=Array.isArray(o.payments)?o.payments:[]; state.gold=o.gold||null; persist(); }
+function hashPin(p){ let h=5381; for(const c of String(p)) h=((h<<5)+h+c.charCodeAt(0))>>>0; return 'h'+h; }
+function getPin(){ try{return localStorage.getItem('pin_v1')||'';}catch(e){return'';} }
+function setPinVal(p){ try{localStorage.setItem('pin_v1',hashPin(p));}catch(e){} }
+function clearPin(){ try{localStorage.removeItem('pin_v1');}catch(e){} }
+
+function dataSheet(){
+  const hasPin=!!getPin();
+  openSheet(`<h3>🛡️ Данные и безопасность</h3>
+    <p class="lead">Данные хранятся только в этом телефоне и никуда не отправляются. Сохраняются сами после каждого изменения. Чтобы не потерять их при смене или очистке телефона — делайте резервную копию ниже.</p>
+    <div class="field"><label>Резервная копия</label><textarea id="bk-out" class="ta" readonly>${esc(backupData())}</textarea></div>
+    <button class="btn btn-ghost btn-full" id="bk-copy">Скопировать копию</button>
+    <p class="note">Вставьте этот текст себе в Заметки или в Телеграм «Избранное». По нему можно всё восстановить на любом телефоне.</p>
+    <div class="field" style="margin-top:18px"><label>Восстановить из копии</label><textarea id="bk-in" class="ta" placeholder="Вставьте сюда сохранённую копию"></textarea></div>
+    <button class="btn btn-ghost btn-full" id="bk-restore">Восстановить данные</button><div class="err" id="bk-err"></div>
+    <div class="sec-block"><label>Код-пароль на вход</label>${hasPin?`<p class="note" style="margin-top:0">Код-пароль включён.</p><div class="sheet-row"><button class="btn btn-ghost" id="pin-change">Изменить код</button><button class="btn btn-danger" id="pin-off">Убрать код</button></div>`:`<p class="note" style="margin-top:0">Защитите приложение 4-значным кодом, чтобы никто другой не увидел ваши финансы. Если забудете код, вход вернуть можно будет только сбросом — поэтому держите резервную копию.</p><button class="btn btn-ghost btn-full" id="pin-on">Установить код-пароль</button>`}</div>
+    <div class="sheet-row" style="margin-top:16px"><button class="btn btn-ghost" data-close>Закрыть</button></div>`);
+  $('#bk-copy').onclick=async()=>{ const ta=$('#bk-out'); try{ await navigator.clipboard.writeText(ta.value); toast('Копия скопирована ✓'); }catch(e){ ta.focus(); ta.select(); toast('Выделено — скопируйте вручную'); } };
+  $('#bk-restore').onclick=()=>{ const v=$('#bk-in').value.trim(); if(!v) return showErr($('#bk-err'),'Вставьте текст копии'); try{ restoreData(v); closeSheet(); render(); toast('Данные восстановлены ✓'); }catch(e){ showErr($('#bk-err'),'Не похоже на резервную копию'); } };
+  if($('#pin-on')) $('#pin-on').onclick=()=>pinSet();
+  if($('#pin-change')) $('#pin-change').onclick=()=>pinSet();
+  if($('#pin-off')) $('#pin-off').onclick=()=>{ clearPin(); toast('Код-пароль убран'); dataSheet(); };
+}
+function pinSet(){
+  openSheet(`<h3>Код-пароль</h3><p class="lead">Придумайте 4-значный код для входа</p><div class="field n"><label>Код (4 цифры)</label><input id="pn" type="tel" inputmode="numeric" maxlength="4" placeholder="1234"></div><div class="err" id="pn-err"></div><div class="sheet-row"><button class="btn btn-ghost" id="pn-back">Назад</button><button class="btn btn-primary" id="pn-save">Сохранить</button></div>`);
+  const inp=$('#pn'); inp.focus(); $('#pn-back').onclick=()=>dataSheet();
+  $('#pn-save').onclick=()=>{ const v=inp.value.trim(); if(!/^\d{4}$/.test(v)) return showErr($('#pn-err'),'Нужно ровно 4 цифры'); setPinVal(v); closeSheet(); toast('Код-пароль установлен ✓'); };
+}
+function maybeLock(){
+  const pin=getPin(); if(!pin) return;
+  const lock=document.createElement('div'); lock.className='lock';
+  lock.innerHTML=`<div style="font-size:2.2rem">🔒</div><div class="lk-t">Введите код</div><input id="lk" type="tel" inputmode="numeric" maxlength="4" placeholder="••••"><div class="lk-e" id="lk-e"></div>`;
+  document.body.appendChild(lock); const inp=lock.querySelector('#lk'); setTimeout(()=>inp.focus(),50);
+  inp.addEventListener('input',()=>{ const e=lock.querySelector('#lk-e'); if(inp.value.length===4){ if(hashPin(inp.value)===pin){ lock.remove(); } else { e.textContent='Неверный код'; inp.value=''; } } else e.textContent=''; });
+}
+
+/* ===================== Клики ===================== */
+document.addEventListener('click', e=>{
+  if(e.target.closest('[data-close]')){ closeSheet(); return; }
+  if(e.target.closest('#tipX')){ try{localStorage.setItem('tip_v1','1');}catch(e){} renderTip(); return; }
+  const st=e.target.closest('[data-strat]'); if(st){ try{localStorage.setItem('strat_v1',st.dataset.strat);}catch(e){} render(); return; }
+  const act=e.target.closest('[data-action]');
+  if(act){ const a=act.dataset.action;
+    if(a==='goldedit'){ goldEditForm(); return; }
+    const loan=byId(act.dataset.id); if(!loan) return;
+    if(a==='open') detailSheet(loan); if(a==='pay') payForm(loan); if(a==='edit') loanForm(loan); if(a==='del') confirmDelete(loan); return; }
+  if(e.target.closest('#dataTop')) dataSheet();
+  if(e.target.closest('#calcTop')) calcSheet();
+  if(e.target.closest('#addTop')||e.target.closest('#addMain')||e.target.closest('#addEmpty')) loanForm(null);
+  if(e.target.closest('#clearEx')){ state.loans=[]; state.payments=[]; state.gold=null; persist(); render(); toast('Готово — добавьте свои банки'); loanForm(null); }
+});
+document.addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && e.target.matches('.card[data-action]')){ e.preventDefault(); e.target.click(); } });
+
+let tt; function toast(msg){ const t=$('#toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>t.classList.remove('show'),2200); }
+
+/* ===== PWA: установка на телефон и офлайн ===== */
+let deferredPrompt=null;
+function renderInstall(){
+  const bar=document.getElementById('installBar'); if(!bar) return;
+  bar.innerHTML = deferredPrompt
+    ? '<div class="install"><span style="font-size:1.3rem">\uD83D\uDCF2</span><span class="it">Установить приложение на телефон</span><button class="ib" id="installBtn">Установить</button><button class="ix" id="installX" aria-label="Скрыть">\u2715</button></div>'
+    : '';
+}
+window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; renderInstall(); });
+window.addEventListener('appinstalled', ()=>{ deferredPrompt=null; renderInstall(); toast('Приложение установлено \u2713'); });
+document.addEventListener('click', async e=>{
+  if(e.target.closest('#installX')){ deferredPrompt=null; renderInstall(); return; }
+  if(e.target.closest('#installBtn') && deferredPrompt){ const p=deferredPrompt; deferredPrompt=null; renderInstall(); try{ p.prompt(); await p.userChoice; }catch(_){} }
+});
+function initPWA(){ renderInstall(); if('serviceWorker' in navigator){ navigator.serviceWorker.register('service-worker.js').catch(()=>{}); } }
+
+render();
+maybeLock();
+initPWA();
+</script>
+</body>
+</html>
