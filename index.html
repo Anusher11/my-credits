@@ -227,6 +227,141 @@
   .two{display:flex; gap:10px;} .two .field{flex:1; min-width:0;}
   .err{color:var(--danger); font-size:.82rem; margin:-4px 0 12px; display:none;} .err.show{display:block;}
 
+  /* Точка безубыточности */
+  .be-card{background:var(--surface); border:1px solid var(--line); border-radius:17px; padding:16px; box-shadow:var(--shadow);}
+  .be-cap{font-size:.74rem; color:var(--muted); font-weight:800; letter-spacing:.5px; text-transform:uppercase;}
+  .be-big{font-family:var(--font-num); font-size:1.75rem; font-weight:800; letter-spacing:-.6px; margin-top:3px;}
+  .be-sub{font-size:.84rem; color:var(--muted); font-weight:600; margin-top:2px;}
+  .be-bar{height:9px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin:14px 0 7px; display:flex;}
+  .be-bar i{display:block; height:100%;}
+  .be-leg{display:flex; gap:14px; flex-wrap:wrap; font-size:.76rem; color:var(--muted); font-weight:700;}
+  .be-leg span{display:inline-flex; align-items:center; gap:5px;}
+  .be-leg em{width:9px; height:9px; border-radius:3px; display:inline-block; font-style:normal;}
+  .be-rows{margin-top:13px; border-top:1px solid var(--line); padding-top:8px;}
+  .be-row{display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:5px 0; font-size:.92rem;}
+  .be-row > span{color:var(--muted); font-weight:600;}
+  .be-row > b{font-family:var(--font-num); font-weight:800;}
+  .be-note{margin-top:11px; background:var(--brand-weak); border-radius:12px; padding:10px 12px; font-size:.83rem; color:var(--brand-ink); font-weight:600; line-height:1.5;}
+  /* Нижняя панель разделов */
+  :root{--navh:64px;}
+  .bnav{position:fixed; left:0; right:0; bottom:0; z-index:25; display:flex; justify-content:center; background:var(--surface); border-top:1px solid var(--line); padding-bottom:env(safe-area-inset-bottom,0px); box-shadow:0 -4px 18px rgba(0,0,0,.06);}
+  .bnav .bn-in{display:flex; width:100%; max-width:540px;}
+  .bnav button{flex:1; min-width:0; height:var(--navh); border:none; background:transparent; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; font-family:inherit; color:var(--muted); cursor:pointer; -webkit-tap-highlight-color:transparent; padding:0 2px;}
+  .bnav .bi{font-size:1.2rem; line-height:1; width:48px; height:28px; display:flex; align-items:center; justify-content:center; border-radius:99px; filter:grayscale(.7); opacity:.7; transition:background .15s;}
+  .bnav .bl{font-size:.68rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;}
+  .bnav button.on{color:var(--brand-ink);}
+  .bnav button.on .bi{background:var(--brand-weak); filter:none; opacity:1;}
+  .bnav button.on .bl{font-weight:800;}
+  .fab{bottom:calc(var(--navh) + env(safe-area-inset-bottom,0px)); padding-bottom:10px;}
+  .wrap{padding-block:16px calc(160px + env(safe-area-inset-bottom,0px));}
+  .toast{bottom:calc(150px + env(safe-area-inset-bottom,0px));}
+  .link-btn{border:none; background:none; color:var(--brand-ink); font-weight:800; font-family:inherit; font-size:inherit; padding:0; cursor:pointer; text-decoration:underline;}
+  .day-btn{margin-top:16px; font-size:1rem; padding:14px;}
+  /* Записать день */
+  .dy-sec{background:var(--surface-2); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  .dy-sec.rev{background:var(--brand-weak); border-color:color-mix(in srgb,var(--brand) 30%,transparent); margin-bottom:16px;}
+  .dy-row{display:flex; align-items:center; gap:10px; padding:7px 10px 7px 13px; border-bottom:1px solid var(--line); margin:0; cursor:text;}
+  .dy-sec .dy-row:last-child{border-bottom:none;}
+  .dy-n{flex:1; min-width:0; font-weight:700; font-size:.95rem;}
+  .dy-sec.rev .dy-n{color:var(--brand-ink); font-size:1rem; font-weight:800;}
+  .dy-row input{width:44%; max-width:160px; text-align:right; font-family:var(--font-num); font-weight:800; font-size:1.05rem; border:1.5px solid var(--line); background:var(--surface); border-radius:10px; padding:9px 10px; color:var(--ink);}
+  .dy-row input:focus{outline:none; border-color:var(--brand);}
+  .dy-row input::-webkit-outer-spin-button, .dy-row input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
+  .dy-row input[type=number]{-moz-appearance:textfield; appearance:textfield;}
+  .dy-row input::placeholder{color:var(--muted); opacity:.35; font-weight:600;}
+  .dy-h{font-size:.74rem; font-weight:800; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; margin:0 2px 8px;}
+  .dy-tot{display:flex; gap:10px; margin-top:12px;}
+  .dy-tot > div{flex:1; background:var(--surface-2); border-radius:12px; padding:10px 12px;}
+  .dy-tot small{display:block; font-size:.74rem; color:var(--muted); font-weight:700;}
+  .dy-tot b{font-family:var(--font-num); font-size:1.1rem; font-weight:800;}
+  .dy-tot .r b{color:var(--brand-ink);}
+  .dy-hint{background:color-mix(in srgb,var(--gold) 18%,transparent); color:var(--ink); border-radius:11px; padding:9px 12px; font-size:.83rem; font-weight:700; margin:0 0 14px;}
+  .dy-hint[hidden]{display:none;}
+  /* Список по дням */
+  .dys{display:flex; flex-direction:column; gap:8px;}
+  .dy{display:flex; align-items:center; gap:12px; width:100%; text-align:left; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:11px 13px; font-family:inherit; color:var(--ink); cursor:pointer; box-shadow:var(--shadow);}
+  .dy:active{transform:scale(.99)}
+  .dy-d{flex:none; min-width:50px; text-align:center; line-height:1.15;}
+  .dy-d b{display:block; font-family:var(--font-num); font-size:1.2rem; font-weight:800;}
+  .dy-d b.w{font-size:.84rem;}
+  .dy-d small{font-size:.72rem; color:var(--muted); font-weight:700;}
+  .dy-m{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px;}
+  .dy-m .in{font-family:var(--font-num); font-weight:800; color:var(--brand-ink);}
+  .dy-m .out{font-family:var(--font-num); font-weight:700; color:var(--muted); font-size:.88rem;}
+  .dy-m .lbl{font-size:.8rem; color:var(--muted); font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .dy-c{flex:none; color:var(--muted); font-size:1.4rem; line-height:1;}
+  /* Куда уходят деньги */
+  .cb-h{font-size:.74rem; color:var(--muted); font-weight:800; letter-spacing:.5px; text-transform:uppercase; margin-top:18px;}
+  .cb{margin-top:10px; display:flex; flex-direction:column; gap:12px;}
+  .cb-r{display:grid; grid-template-columns:1fr auto; gap:5px 10px; align-items:center;}
+  .cb-n{font-weight:700; font-size:.93rem;}
+  .cb-p{color:var(--muted); font-weight:600; font-size:.8rem; margin-left:6px;}
+  .cb-v{font-family:var(--font-num); font-weight:800; font-size:.93rem;}
+  .cb-b{grid-column:1/-1; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden;}
+  .cb-b i{display:block; height:100%; background:var(--gold); border-radius:99px;}
+  /* Библиотека советов */
+  .tg-wrap{display:flex; flex-direction:column; gap:10px; margin-top:16px;}
+  .tg{background:var(--surface); border:1px solid var(--line); border-radius:16px; box-shadow:var(--shadow); overflow:hidden;}
+  .tg summary{list-style:none; display:flex; align-items:center; gap:11px; padding:14px 15px; cursor:pointer; font-weight:800; -webkit-tap-highlight-color:transparent;}
+  .tg summary::-webkit-details-marker{display:none;}
+  .tg summary::after{content:''; flex:none; width:8px; height:8px; border-right:2.2px solid var(--muted); border-bottom:2.2px solid var(--muted); transform:rotate(45deg); margin:0 3px 4px 2px; transition:transform .2s;}
+  .tg[open] summary::after{transform:rotate(-135deg); margin-bottom:-2px;}
+  .tg-i{font-size:1.25rem; flex:none;}
+  .tg-t{flex:1; min-width:0; font-size:.95rem;}
+  .tg-n{flex:none; font-size:.75rem; font-weight:800; color:var(--muted); background:var(--surface-2); border-radius:99px; padding:3px 9px;}
+  .tg-list{border-top:1px solid var(--line); padding:2px 15px 6px;}
+  .tg-it{padding:12px 0; border-bottom:1px solid var(--line);}
+  .tg-it:last-child{border-bottom:none;}
+  .tg-it b{display:block; font-size:.93rem; font-weight:800; margin-bottom:4px; line-height:1.35;}
+  .tg-it p{margin:0; font-size:.88rem; color:var(--muted); line-height:1.55; font-weight:500;}
+  /* Профиль */
+  .hleft{display:flex; align-items:center; gap:10px; min-width:0; flex:1 1 auto;}
+  .title span{display:block; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .me-btn{flex:none; padding:0; border:none; background:transparent; cursor:pointer; border-radius:50%; line-height:0;}
+  .me-ava{width:42px; height:42px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; background:var(--brand); color:#fff; font-family:var(--font-num); font-weight:800; font-size:1rem; overflow:hidden; box-shadow:0 0 0 2px var(--surface), 0 0 0 3.5px var(--line); flex:none;}
+  .me-ava img{width:100%; height:100%; object-fit:cover; display:block;}
+  .me-ava.noava{background:var(--surface-2); color:var(--muted);}
+  .pf-top{display:flex; flex-direction:column; align-items:center; gap:12px; margin:6px 0 16px;}
+  .pf-ava{width:92px; height:92px; font-size:1.9rem;}
+  .pf-btns{display:flex; gap:8px; flex-wrap:wrap; justify-content:center;}
+  .pf-btns .btn{padding:9px 14px; font-size:.86rem; width:auto;}
+  @media (max-width:380px){ #addTop{display:none;} .title{font-size:1.12rem;} .hbtns{gap:5px;} .icon-btn{width:37px; height:37px;} .me-ava{width:38px; height:38px;} }
+  /* Вкладки */
+  .tabbar{position:sticky; top:0; z-index:30; display:flex; gap:4px; background:var(--surface-2); border:1px solid var(--line); padding:4px; border-radius:15px; margin:0 0 18px; box-shadow:var(--shadow);}
+  .tabbar button{flex:1; border:none; background:transparent; padding:10px 4px; border-radius:11px; font-weight:800; font-size:.88rem; color:var(--muted); font-family:inherit; white-space:nowrap; cursor:pointer;}
+  .tabbar button.on{background:var(--surface); color:var(--ink); box-shadow:0 1px 3px rgba(0,0,0,.1);}
+  .view[hidden], .be-note[hidden]{display:none !important;}
+  .view-h{font-size:.86rem; color:var(--muted); font-weight:600; margin:-8px 2px 14px; line-height:1.5;}
+  /* Дневник магазина */
+  .sh-card{background:var(--surface); border:1px solid var(--line); border-radius:17px; padding:16px; box-shadow:var(--shadow);}
+  .sh-cap{font-size:.74rem; color:var(--muted); font-weight:800; letter-spacing:.5px; text-transform:uppercase;}
+  .sh-big{font-family:var(--font-num); font-size:1.75rem; font-weight:800; letter-spacing:-.6px; margin-top:3px;}
+  .sh-big.ok{color:var(--brand-ink);}
+  .sh-sub{font-size:.84rem; color:var(--muted); font-weight:600; margin-top:2px;}
+  .sh-bar{height:9px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin:13px 0 4px;}
+  .sh-bar i{display:block; height:100%; background:var(--brand); border-radius:99px; transition:width .5s ease;}
+  .sh-rows{margin-top:12px; border-top:1px solid var(--line); padding-top:8px;}
+  .sh-row{display:flex; justify-content:space-between; align-items:baseline; gap:10px; padding:5px 0; font-size:.92rem;}
+  .sh-row > span{color:var(--muted); font-weight:600;}
+  .sh-row > b{font-family:var(--font-num); font-weight:800;}
+  .sh-row.pos > b{color:var(--brand-ink);} .sh-row.neg > b{color:#C0392B;}
+  .sh-btns{display:flex; gap:9px; margin-top:14px;}
+  .sh-btns button{flex:1; border:1.5px solid var(--line); background:var(--surface-2); border-radius:13px; padding:12px 8px; font-weight:800; font-size:.9rem; color:var(--ink); font-family:inherit;}
+  .sh-btns button.pri{background:var(--brand); color:#fff; border-color:var(--brand);}
+  .sh-btns button:active{transform:scale(.97)}
+  .sh-ask{display:flex; align-items:center; gap:10px; background:var(--brand-weak); border-radius:13px; padding:10px 12px; margin-top:12px; font-size:.85rem; color:var(--brand-ink); font-weight:700;}
+  .sh-ask button{margin-left:auto; flex:none; background:var(--brand); color:#fff; border:none; border-radius:10px; padding:8px 13px; font-weight:800; font-family:inherit; font-size:.82rem;}
+  .sh-list{margin-top:13px; border-top:1px solid var(--line); padding-top:7px;}
+  .sh-it{display:flex; align-items:center; gap:10px; padding:7px 0; font-size:.9rem;}
+  .sh-it .d{color:var(--muted); font-size:.78rem; font-weight:700; min-width:42px; font-family:var(--font-num);}
+  .sh-it .n{flex:1; min-width:0; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .sh-it .v{font-family:var(--font-num); font-weight:800;}
+  .sh-it .v.in{color:var(--brand-ink);}
+  .sh-it .x{border:none; background:transparent; color:var(--muted); font-size:1.15rem; padding:0 1px; line-height:1; flex:none;}
+  .sh-empty{color:var(--muted); font-size:.87rem; font-weight:600; text-align:center; padding:14px 4px; line-height:1.5;}
+  .cat-pick{display:flex; flex-wrap:wrap; gap:7px; margin-bottom:14px;}
+  .cat-pick button{border:1.5px solid var(--line); background:var(--surface-2); border-radius:11px; padding:8px 11px; font-size:.84rem; font-weight:700; color:var(--ink); font-family:inherit;}
+  .cat-pick button.on{border-color:var(--brand); background:var(--brand-weak); color:var(--brand-ink);}
   .calc-out{background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:2px 14px; margin:6px 0 16px;}
   .co-row{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; border-top:1px solid var(--line); font-size:.92rem;}
   .co-row:first-child{border-top:none;} .co-row span{color:var(--muted);}
@@ -246,6 +381,16 @@
   .ta{width:100%; font-family:var(--font-num); font-size:.84rem; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:12px; padding:11px 12px; resize:vertical; min-height:68px; word-break:break-all; line-height:1.4;}
   .ta:focus{outline:none; border-color:var(--brand);}
   .note{font-size:.8rem; color:var(--muted); margin:8px 0 0; line-height:1.45;}
+  .bkn{display:flex; flex-direction:column; gap:11px; background:var(--warn-weak); border:1px solid color-mix(in srgb,var(--warn) 32%,transparent); border-radius:16px; padding:13px 14px; margin-bottom:14px;}
+  .bkn.rs{background:var(--brand-weak); border-color:color-mix(in srgb,var(--brand) 30%,transparent);}
+  .bkn-t{display:flex; gap:10px; align-items:flex-start;} .bkn-t .ic{font-size:1.35rem; line-height:1.1; flex:none}
+  .bkn-t b{display:block; font-family:var(--font-num); font-weight:700; font-size:.95rem; margin-bottom:3px; color:var(--ink)} .bkn-t span.s{display:block; font-size:.82rem; color:var(--muted); line-height:1.4}
+  .bkn-a{display:flex; gap:8px} .bkn-a .btn{padding:10px 14px; font-size:.9rem; border-radius:12px; min-height:44px} .bkn-a .btn-primary{flex:1}
+  .bk-status{display:flex; align-items:center; gap:8px; font-size:.88rem; font-weight:600; padding:11px 13px; border-radius:12px; margin-bottom:12px; color:var(--ink)}
+  .bk-status.ok{background:var(--brand-weak)} .bk-status.warn{background:var(--warn-weak)}
+  .note.ok{color:var(--brand-ink); font-weight:600}
+  .bk-more{margin-top:18px; border-top:1px solid var(--line); padding-top:12px} .bk-more summary{font-size:.86rem; font-weight:600; color:var(--muted); cursor:pointer; padding:6px 0; list-style-position:inside}
+  .bk-more[open] summary{margin-bottom:8px}
   .sec-block{margin-top:20px; padding-top:18px; border-top:1px solid var(--line);} .sec-block > label{font-size:.82rem; font-weight:600; display:block; margin-bottom:8px;}
 
   .lock{position:fixed; inset:0; background:var(--bg); z-index:90; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:14px; padding:24px; padding-top:max(24px, env(safe-area-inset-top,0px));}
@@ -262,7 +407,7 @@
 
 <div class="wrap">
   <header>
-    <div class="title"><span id="appTitle">Мои кредиты</span><small id="appSub">Банки и платежи</small></div>
+    <div class="hleft"><button class="me-btn" id="meBtn" aria-label="Профиль"><span class="me-ava noava" id="meAva"></span></button><div class="title"><span id="appTitle">Мои кредиты</span><small id="appSub">Банки и платежи</small></div></div>
     <div class="hbtns">
       <button class="icon-btn" id="langTop" aria-label="Язык"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></button>
       <button class="icon-btn" id="dataTop" aria-label="Данные"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9.5 12l1.8 1.8 3.2-3.6"/></svg></button>
@@ -271,25 +416,53 @@
     </div>
   </header>
 
-  <section id="hero"></section>
-  <div id="tip"></div>
-  <section id="nextPay"></section>
+  <div class="view" id="view-loans">
+    <div class="bk-slot" data-restore="1"></div>
+    <section id="hero"></section>
+    <div id="tip"></div>
+    <section id="nextPay"></section>
 
-  <div class="section-h"><h2 id="myBanksH2">Мои банки</h2><span class="count" id="bankCount"></span></div>
-  <div id="cards" class="cards"></div>
+    <div class="section-h"><h2 id="myBanksH2">Мои банки</h2><span class="count" id="bankCount"></span></div>
+    <div id="cards" class="cards"></div>
 
-  <section id="strategy" style="margin-top:22px"></section>
-  <section id="goldSection" style="margin-top:22px"></section>
-  <section id="tips" style="margin-top:22px"></section>
-  <section id="dynamics"></section>
-  <section id="closed" style="margin-top:22px"></section>
-  <div id="exampleNote"></div>
+    <section id="strategy" style="margin-top:22px"></section>
+    <section id="goldSection" style="margin-top:22px"></section>
+    <section id="dynamics"></section>
+    <section id="closed" style="margin-top:22px"></section>
+    <div id="exampleNote"></div>
+  </div>
+
+  <div class="view" id="view-shop" hidden>
+    <div class="bk-slot"></div>
+    <section id="shop"></section>
+  </div>
+
+  <div class="view" id="view-exp" hidden>
+    <section id="expView"></section>
+  </div>
+
+  <div class="view" id="view-plan" hidden>
+    <section id="breakeven"></section>
+  </div>
+
+  <div class="view" id="view-tips" hidden>
+    <section id="tips"></section>
+  </div>
+
   <div id="syncLine"></div>
 </div>
 
 <div class="fab"><div class="inner">
   <button class="btn btn-primary btn-full" id="addMain"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> <span id="addMainText">Добавить банк</span></button>
 </div></div>
+
+<nav class="bnav" id="bnav" role="tablist"><div class="bn-in">
+  <button role="tab" data-tab="loans"><span class="bi">💳</span><span class="bl" id="bnLoans">Кредиты</span></button>
+  <button role="tab" data-tab="shop"><span class="bi">🏪</span><span class="bl" id="bnShop">Магазин</span></button>
+  <button role="tab" data-tab="exp"><span class="bi">🧾</span><span class="bl" id="bnExp">Расходы</span></button>
+  <button role="tab" data-tab="plan"><span class="bi">📊</span><span class="bl" id="bnPlan">План</span></button>
+  <button role="tab" data-tab="tips"><span class="bi">💡</span><span class="bl" id="bnTips">Советы</span></button>
+</div></nav>
 
 <div class="overlay" id="overlay"><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -332,7 +505,9 @@ ru:{
   payFirst:'гасить первым', strategyHint:'Добавьте ставку % у кредитов («Изменить»), чтобы «Лавина» считала точнее.',
   goldTitle:'Золото', addGold:'Добавить золото', addGoldSub:'Укажите вес и курс — посчитаем стоимость', edit:'Изменить',
   byRate:'по курсу', pledged:'🔶 Под залогом', free:'✅ Свободно',
-  tipsTitle:'Советы', tipBadge:'Совет', nextTip:'Ещё совет', allTips:'Все советы', tipsLead:'Как быстрее и спокойнее справиться с кредитами',
+  tipGroups:[{"i": "📘", "g": "Как работают кредиты", "items": [{"t": "Переплата — цена денег", "d": "Смотрите не на ставку, а на то, сколько всего отдадите банку. Спрашивайте «полную стоимость кредита» — с комиссиями и страховкой она бывает намного выше рекламной."}, {"t": "В начале платите в основном проценты", "d": "При равных платежах (аннуитет) первые месяцы почти всё уходит в проценты, а не в долг. Поэтому досрочно гасить выгоднее всего в начале срока."}, {"t": "Длинный срок — большая переплата", "d": "Чем дольше срок, тем меньше платёж, но тем больше отдадите. 600 000 под 18% на 2 года — переплата около 120 000, на 10 лет — около 700 000."}, {"t": "Правило 72", "d": "Разделите 72 на ставку — узнаете, за сколько лет сумма удвоится. Долг под 18%, если его не гасить, удваивается за 4 года (72 ÷ 18)."}, {"t": "Страховку часто навязывают", "d": "Банк может включить страховку в кредит. Спросите, можно ли отказаться, — это удешевит кредит."}, {"t": "Залоговый и беззалоговый", "d": "Под залог (квартира, золото, машина) ставка ниже, но при просрочке можно потерять имущество. Без залога дороже, но рискуете только деньгами."}]}, {"i": "✅", "g": "Правила умного заёмщика", "items": [{"t": "Берите в долг только на то, что зарабатывает", "d": "Товар для бизнеса, учёба, жильё — да. Телефон, техника, «хотелки» — нет: они дешевеют, а долг остаётся."}, {"t": "Правило 30–40%", "d": "Все платежи по кредитам за месяц не должны превышать примерно треть дохода. Больше — зона риска."}, {"t": "Читайте договор до подписи", "d": "Комиссии, пени, страховка, условия досрочного погашения — самое дорогое прячут в мелком шрифте."}, {"t": "Берите в той валюте, в которой зарабатываете", "d": "Доход в сомони, а кредит в долларах — опасно: вырос курс, вырос и долг."}, {"t": "Не гасите кредит кредитом", "d": "Новый кредит ради закрытия старого почти всегда увеличивает общий долг. Это замкнутый круг."}, {"t": "Рассрочка «0%» не бывает бесплатной", "d": "Обычно процент уже заложен в цену. Спросите: «А сколько, если заплачу сразу?» Если дешевле — рассрочка не бесплатная."}, {"t": "Осторожно с рассрочками", "d": "Много маленьких рассрочек незаметно съедают бюджет. Считайте их как один большой долг."}, {"t": "Не будьте поручителем «по дружбе»", "d": "Если человек не заплатит — платить будете вы. Ваша подпись — ваш долг. Никому не отдавайте свои документы."}, {"t": "Бегите от микрозаймов", "d": "«Быстрые деньги» под огромный процент — прямая дорога в долговую яму."}]}, {"i": "🎯", "g": "Как выбраться из долгов", "items": [{"t": "Держите все долги на виду", "d": "Выпишите по каждому кредиту остаток, платёж, ставку, срок и залог. Когда видишь полную картину, легче планировать — для этого и приложение."}, {"t": "Сначала самый дорогой (лавина)", "d": "Платите минимум по всем, а все лишние деньги — на кредит с самой высокой ставкой. Так экономите больше всего."}, {"t": "Или сначала самый маленький (снежный ком)", "d": "Закрытие мелкого кредита даёт быструю победу и мотивацию. Выберите, что вам ближе."}, {"t": "⭐ Освободившийся платёж — на следующий долг", "d": "Когда закроется кредит, не тратьте освободившиеся деньги. Направьте всю эту сумму на следующий кредит — долги начнут падать как домино."}, {"t": "Платите чуть больше", "d": "Даже небольшая доплата заметно сокращает срок и переплату. Проверьте в калькуляторе «Досрочно»."}, {"t": "Пока есть долг под 18% — не инвестируйте", "d": "Погасить кредит под 18% — это гарантированные 18% выгоды без риска. Ни один вклад или бизнес столько гарантированно не даст."}, {"t": "Какой долг важнее", "d": "① под залог жилья → ② те, что могут дойти до суда → ③ самые дорогие → ④ родственникам и друзьям. Платите тому, кто опаснее, а не тому, кто громче требует."}, {"t": "Объедините дорогие кредиты", "d": "Спросите о рефинансировании — несколько дорогих кредитов в один подешевле. Только посчитайте комиссии."}, {"t": "Цель важнее суммы", "d": "Назовите дату, когда станете свободны от долгов, и идите к ней. Приложение её показывает."}]}, {"i": "🏦", "g": "Отношения с банком", "items": [{"t": "С банком можно торговаться", "d": "Условия банка — не закон. Можно попросить снизить ставку, дать отсрочку или реструктуризацию. Банку выгоднее договориться, чем потерять деньги."}, {"t": "⭐ Не можете заплатить — идите в банк заранее", "d": "Пока не просрочили, вы клиент с проблемой — банк готов обсуждать. После просрочки вы должник: пени, суд, залог. Звоните ДО даты платежа."}, {"t": "Платите вовремя", "d": "Просрочка добавляет штрафы и пени — они дороже процентов. Поставьте платёж в начало месяца как обязательный расход."}, {"t": "Автоплатёж защищает от штрафов", "d": "Настройте автоматическое списание. Одна забытая дата — пени и плохая кредитная история."}, {"t": "Проверяйте остаток раз в год", "d": "Возьмите в банке выписку. Бывают лишние комиссии, неучтённые платежи, навязанная страховка."}, {"t": "Кредитная история — это деньги", "d": "Платите вовремя — банки дадут больше и дешевле. Одна просрочка может стоить хорошей ставки в будущем."}]}, {"i": "🏠", "g": "Залог квартиры", "items": [{"t": "Чем меньше заняли от стоимости — тем безопаснее", "d": "Если кредит — треть стоимости квартиры, запас прочности большой. Банки обычно дают 50–70% от оценки."}, {"t": "Банк забирает только свой долг", "d": "Если дойдёт до продажи, банк возьмёт остаток долга с расходами, а остальные деньги вернёт вам."}, {"t": "Только настоящий договор залога", "d": "Не подписывайте договор купли-продажи вместо залога — это схема мошенников, так можно сразу лишиться квартиры."}, {"t": "Не закладывайте жильё частникам", "d": "Только проверенный банк. У частных лиц и микрофинансовых контор теряют квартиры из-за небольших долгов."}, {"t": "Не рискуйте единственным жильём", "d": "Не закладывайте его под рискованный бизнес. Спросите себя: потянем ли платёж, если доход упадёт на треть?"}, {"t": "Изъятие — крайняя мера", "d": "Банк не забирает квартиру из-за одного пропуска: сначала уведомления, обычно суд. Но продажа «с молотка» идёт дешевле рынка — лучше до этого не доводить."}, {"t": "Золото — на крайний случай", "d": "Залог под золото рискован: при просрочке можно потерять украшения. Помните об этом."}]}, {"i": "🏪", "g": "Бизнес и магазин", "items": [{"t": "⭐ Отсрочка у поставщика — бесплатный кредит", "d": "Договоритесь брать товар с оплатой через 30–60 дней. Продаёте и платите из выручки — без процентов. Это выгоднее кредита под 18%."}, {"t": "Знайте точку безубыточности", "d": "Сколько нужно продать за месяц, чтобы выйти в ноль. Без этого числа работаете вслепую — смотрите вкладку «Магазин»."}, {"t": "Наценка важнее оборота", "d": "Поднять цену на 10% обычно выгоднее, чем продать на 10% больше. Выручка тешит самолюбие, прибыль кормит семью."}, {"t": "Залежавшийся товар — замороженные деньги", "d": "Сезон прошёл — вещь подешевела навсегда, а проценты капают. Лучше распродать со скидкой и вернуть деньги в оборот."}, {"t": "Не расширяйтесь в долг", "d": "Вторая точка в кредит — частая причина краха. Расширяйтесь на прибыль, а не на заёмные деньги."}, {"t": "Деньги магазина и семьи — раздельно", "d": "Держите отдельно «оборот» и «неприкосновенные» накопления. Иначе непонятно, приносит ли дело прибыль."}, {"t": "Записывайте всё", "d": "Расходы, долги, договорённости с поставщиками — на бумаге или в переписке. «Договорились на словах» — источник потерь."}, {"t": "Не зависьте от одного", "d": "Один поставщик или один крупный покупатель — это хрупко. Всегда имейте запасной вариант."}]}, {"i": "💰", "g": "Привычки с деньгами", "items": [{"t": "Сначала заплатите себе", "d": "Получили доход — сразу отложите 5–10%, а живите на остальное. Даже малая сумма за год превращается в подушку."}, {"t": "Создайте запас", "d": "Отложите хотя бы на один месяц расходов, потом на 3–6. Запас спасает от новых кредитов при неожиданностях."}, {"t": "Правильный порядок", "d": "① минимальные платежи → ② маленький запас → ③ самый дорогой долг → ④ запас на 3–6 месяцев → ⑤ только потом вложения и крупные покупки."}, {"t": "Один «денежный день» в месяц", "d": "Например, 1-е число: смотрите остатки, платежи, что закрыли, сколько отложили. 30 минут — и всё под контролем."}, {"t": "Правило 24 часов", "d": "Хотите купить что-то без плана — подождите сутки. Половина желаний пройдёт сама."}, {"t": "Считайте цену в часах жизни", "d": "Разделите цену на свой доход в час. Вещь за 1 000 при доходе 50 в час — это 20 часов работы. Стоит ли?"}, {"t": "Повышайте уровень жизни медленнее дохода", "d": "Доход вырос — расходы выросли следом — денег опять нет. Разницу откладывайте."}, {"t": "Планируйте известные расходы", "d": "Свадьбы, школа, праздники, Рамазан, ремонт — не внезапны. Откладывайте понемногу заранее, и кредит не понадобится."}, {"t": "Актив или обязательство?", "d": "Актив приносит деньги, обязательство — забирает. Перед крупной покупкой спросите себя, что это будет."}, {"t": "Доход важнее экономии", "d": "Урезать расходы можно только до нуля, а доход можно растить без предела. Учитесь новому — это лучшая инвестиция."}, {"t": "Вся семья должна знать картину", "d": "Самое опасное — когда кредит берут молча. Пусть все, кто принимает решения, видят одну общую картину."}, {"t": "Деньги без дела дешевеют", "d": "Инфляция съедает накопления. Запас держите, но лишнее (после погашения долгов) должно работать."}, {"t": "Здоровье — тоже финансы", "d": "Болезнь — одна из главных причин долгов. Сон, еда и проверки у врача — это защита вашего дохода."}]}],
+  tipOfDay:'Совет дня', profTitle:'Профиль', profSub:'Ваше имя появится в приветствии', profFirst:'Имя', profLast:'Фамилия', profShop:'Название магазина', profPhoto:'Загрузить фото', profPhotoDel:'Убрать фото', profSaved:'Профиль сохранён', profLocal:'Профиль хранится только в этом телефоне — без пароля и интернета.', errFirst:'Укажите имя', greetM:'Доброе утро', greetD:'Добрый день', greetE:'Добрый вечер', greetN:'Доброй ночи',
+  tipsTitle:'Советы', tipBadge:'Совет', nextTip:'Ещё совет', allTips:'Все советы', tipsLead:'Всё о кредитах, банках, бизнесе и деньгах — простыми словами. Нажмите на тему, чтобы раскрыть.',
   debtDynTitle:'Как уменьшается долг', chartWait:'График появится здесь, когда вы внесёте несколько платежей.', chartSub:'Чем ниже линия — тем меньше долг. Так держать!', lastPayments:'Последние платежи',
   historyClosed:'История · закрытые',
   noBanks1:'Пока нет банков.', noBanks2:'Добавьте первый кредит.', addBank:'Добавить банк', noActive:'Активных кредитов нет — всё выплачено!', seeHistory:'Закрытые смотрите в истории ниже.',
@@ -344,11 +519,37 @@ ru:{
   leftWord:'осталось', paymentAmount:'Сумма платежа', record:'Записать', errPaymentAmount:'Введите сумму платежа', loanPaidOff:'Кредит погашен! 🎉', paymentRecorded:'Платёж записан ✓',
   deleteBankQ:'Удалить банк?', deleteBankBody(n){return '«'+n+'» будет удалён. Это нельзя отменить.';}, bankDeleted:'Банк удалён',
   goldSheetTitle:'🔶 Золото', goldSheetSub:'Сколько у вас золота и цена за грамм по курсу', totalGrams:'Всего, граммы', pricePerGram:'Цена за грамм, с.', totalValue:'Стоимость всего', pledgedWithG(g){return '🔶 Под залогом ('+g+' г)';}, freeLabel:'✅ Свободно', errGoldWeight:'Введите вес золота', errGoldPrice:'Введите цену за грамм', goldSaved:'Золото сохранено', removeGold:'Убрать золото', goldRemoved:'Золото убрано',
+  navExp:"Расходы", navPlan:"План", dayBtn:"📝 Записать день", dayTitle:"📝 Записать день", daySub:"Заполните только то, что было. Пустые строки можно не трогать — они пропускаются.", dayRev:"💰 Выручка за день", dayExpH:"Расходы за день", dayNote:"Заметка", daySaveAll:"Сохранить всё", daySaved:"День сохранён ✓", dayHasData:"За этот день уже есть записи — поправьте, если нужно, и сохраните", dayTotRev:"Выручка", dayTotExp:"Расходы", errDay:"Введите хотя бы одну сумму", shopDays:"По дням", shopNoDays:"Пока пусто.\nНажмите «Записать день» и внесите выручку и расходы.", dToday:"Сегодня", dYesterday:"Вчера", dNoRev:"выручка не записана", expTitleV:"🧾 Расходы", expTotal:"Всего расходов", expWhere:"Куда уходят деньги", expAddBtn:"+ Добавить расходы", expNone:"За этот период расходов нет", expList:"Все записи", planExplain:"Это сумма, которую нужно продать за месяц, чтобы покрыть все расходы и платежи по кредитам. Всё, что продано сверху, — ваша прибыль.", planPerDay:"В среднем в день", planSeeShop:"Как идут продажи — смотрите в разделе «🏪 Магазин».", goPlan:"Открыть «План»",
+  navLoans:'Кредиты', navShop:'Магазин', navTips:'Советы',
+  shopTitle:'🏪 Дневник магазина', shopDay:'День', shopWeek:'Неделя', shopMonth:'Месяц',
+  shopLeft:'Осталось продать', shopOfTarget:(v)=>`из ${v}`, shopProfitCap:'Прибыль', shopLossCap:'Убыток',
+  shopSold:'Продано', shopTarget:'Нужно продать', shopExpenses:'Расходы за период', shopFixedShare:'Постоянные (доля)',
+  shopProfitRow:'Прибыль', shopLossRow:'Убыток', shopAddExp:'− Расход', shopAddSale:'+ Выручка',
+  shopNoBe:'Чтобы видеть, сколько ещё нужно продать, один раз заполните «План».',
+  shopAskToday:'Запишите выручку за сегодня', shopAskBtn:'Записать',
+  shopEmpty:'Записей пока нет.\nЗаписывайте расходы в течение дня, а вечером — выручку.',
+  shopEntries:'Записи', shopGoal:'🎉 Вышли в плюс!',
+  expTitle:'Расход', expSub:'Сколько потратили и на что', expSum:'Сумма', expNote:'Заметка', expDate:'Дата',
+  expHint:'Закупку товара писать не нужно — она уже заложена в наценке. Аренду и зарплату записывайте здесь только если не внесли их в постоянные расходы.',
+  saleTitle:'Выручка за день', saleSub:'Сколько продали сегодня — запишите после закрытия',
+  saleSum:'Сумма продаж', saleReplace:'За этот день уже есть запись — она будет заменена',
+  catTax:'🧾 Налог', catPower:'💡 Свет', catUtil:'💧 Коммуналка', catRent:'🏠 Аренда', catSalary:'👷 Зарплата',
+  catTransport:'🚚 Транспорт', catHouse:'🧹 Хозрасходы', catOther:'✏️ Прочее',
+  errSum:'Укажите сумму', expSaved:'Расход записан', saleSaved:'Выручка записана', entryDeleted:'Запись удалена',
+  saleWord:'Выручка',
+  beTitle:'📊 Точка безубыточности', beSetup:'Настроить расчёт', beSetupSub:'Укажите расходы и наценку — посчитаем, сколько нужно продавать', beEdit:'Изменить',
+  beNeed:'Нужно продавать в месяц', beToZero:'чтобы выйти в ноль', beFixed:'Постоянные расходы', beLoanPart:'в т.ч. платежи по кредитам', beMarginRow:'Наценка (маржа)',
+  beLegOther:'На расходы', beLegBank:'На кредиты', beProfit:(v)=>`Каждые 1 000 сверх точки → ${v} прибыли`,
+  beSheetTitle:'Точка безубыточности', beSheetSub:'Сколько нужно продавать в месяц, чтобы покрыть все расходы',
+  beRent:'Аренда', beSalary:'Зарплаты', beOther:'Прочие расходы', beMarginLabel:'Наценка, %', beMarginHint:'Наценка = (цена продажи − закупка) ÷ цена продажи × 100',
+  beUseLoans:'Учитывать платежи по кредитам', beResult:'Нужно продавать в месяц', beRemove:'Удалить расчёт', beSaved:'Расчёт сохранён', beRemoved:'Расчёт удалён',
+  errBeMargin:'Укажите наценку от 1 до 99%', errBeCosts:'Укажите хотя бы один расход',
   calcTitle:'🧮 Калькулятор', tabLoan:'Кредит', tabEarly:'Досрочно', tabGold:'Золото', tabCurrency:'Валюта', close:'Закрыть',
   term:'Срок, месяцев', totalPay:'Всего выплатите', overpay:'Переплата', createFromCalc:'Создать кредит из расчёта', fillAmountTerm:'Заполните сумму и срок',
   goldCalcSub:'Сколько стоит золото по курсу', weightGrams:'Вес, граммы', goldValue:'Стоимость золота',
   convSub:'Перевод валюты в сомони', amountCur(c){return 'Сумма, '+c;}, rateOne(c){return 'Курс: 1 '+c+' = ? с.';}, inSomoni:'В сомони',
   earlySub:'Что даст доплата сверх платежа', remainingDebt:'Остаток долга', extraMonthly:'Доплата в месяц', payoffEarlierBy:'Закроете раньше на', saveOnInterest:'Сэкономите на процентах', tooSmall:'платёж мал',
+  bkShare:"📤 Отправить копию в Телеграм", bkHow:"Нажмите → выберите Телеграм → «Избранное». Копия будет храниться там всегда, даже если очистить или потерять телефон.", bkDownload:"💾 Сохранить файл копии на телефон", bkFromFile:"📂 Восстановить из файла копии", bkTextMode:"Копия текстом (если кнопки выше не работают)", bkLast:"✓ Последняя копия: {d}", bkNever:"⚠️ Копию ещё ни разу не делали", bkOld:"⚠️ Последняя копия: {d} — пора сделать новую", bkToday:"сегодня", bkYesterday:"вчера", bkDaysAgo:"{n} дн. назад", bkShareText:"Копия данных «Мои кредиты». Не удаляйте — по этому файлу всё восстанавливается.", bkSaved:"Копия отправлена ✓", bkDownloaded:"Файл копии сохранён в «Загрузки» ✓", bkFail:"Не получилось — используйте «Копия текстом» ниже", bkPersistOn:"✓ Телефон не удалит данные сам, даже если мало места", bkWarn:"Важно: если очистить данные браузера или удалить его, записи сотрутся. Свежая копия в Телеграме спасёт всё.", bkRemindNever:"Сохраните копию данных", bkRemindOld:"Последняя копия — {d}", bkRemindSub:"Если очистить браузер или сменить телефон — записи пропадут. Копия в Телеграме займёт 10 секунд.", bkNow:"📤 Сделать копию", bkLater:"Позже", bkRestoreTitle:"Данные пропали?", bkRestoreSub:"Если вы уже пользовались приложением, верните всё из файла копии — из Телеграма или «Загрузок».", bkRestorePick:"📂 Выбрать файл копии", bkNewUser:"Я впервые", bkRestoreShort:"Восстановить из копии", bkReplaceQ:"Заменить данные?", bkReplaceSub:"Сейчас в приложении есть ваши записи. Они заменятся данными из копии.", bkFileFrom:"Копия от {d}.", bkReplaceBtn:"Заменить",
   dataTitle:'🛡️ Данные и безопасность', dataLead:'Данные хранятся только в этом телефоне и никуда не отправляются. Сохраняются сами после каждого изменения. Чтобы не потерять их при смене или очистке телефона — делайте резервную копию ниже.', backupLabel:'Резервная копия', copyBackup:'Скопировать копию', backupNote:'Вставьте этот текст себе в Заметки или в Телеграм «Избранное». По нему можно всё восстановить на любом телефоне.', restoreLabel:'Восстановить из копии', restoreBtn:'Восстановить данные', restorePlaceholder:'Вставьте сюда сохранённую копию', errPasteBackup:'Вставьте текст копии', errBadBackup:'Не похоже на резервную копию', backupCopied:'Копия скопирована ✓', selectedCopyManually:'Выделено — скопируйте вручную', dataRestored:'Данные восстановлены ✓',
   pinSection:'Код-пароль на вход', pinOn:'Код-пароль включён.', changePin:'Изменить код', removePin:'Убрать код', pinOffer:'Защитите приложение 4-значным кодом, чтобы никто другой не увидел ваши финансы. Если забудете код, вход вернуть можно будет только сбросом — поэтому держите резервную копию.', setPin:'Установить код-пароль', pinRemoved:'Код-пароль убран', pinTitle:'Код-пароль', pinThink:'Придумайте 4-значный код для входа', pinField:'Код (4 цифры)', back:'Назад', errPin4:'Нужно ровно 4 цифры', pinSetMsg:'Код-пароль установлен ✓', enterCode:'Введите код', wrongCode:'Неверный код',
   installText:'Установить приложение на телефон', install:'Установить', installedMsg:'Приложение установлено ✓',
@@ -386,7 +587,9 @@ tg:{
   payFirst:'аввал пардохт', strategyHint:'Барои дақиқтар ҳисоб кардани «Тарма» фоизи қарзҳоро илова кунед («Тағйир»).',
   goldTitle:'Тилло', addGold:'Илова кардани тилло', addGoldSub:'Вазн ва нархро нависед — арзишро ҳисоб мекунем', edit:'Тағйир',
   byRate:'аз рӯи нарх', pledged:'🔶 Дар гарав', free:'✅ Озод',
-  tipsTitle:'Маслиҳатҳо', tipBadge:'Маслиҳат', nextTip:'Маслиҳати дигар', allTips:'Ҳамаи маслиҳатҳо', tipsLead:'Чӣ тавр қарзҳоро зудтар ва ором пардохт кардан',
+  tipGroups:[{"i": "📘", "g": "Қарзҳо чӣ тавр кор мекунанд", "items": [{"t": "Пардохти зиёдатӣ — нархи пул", "d": "Ба фоиз не, ба он нигаред, ки дар маҷмӯъ ба бонк чӣ қадар медиҳед. «Арзиши пурраи қарз»-ро пурсед — бо комиссия ва суғурта он аз таблиғ хеле зиёд мешавад."}, {"t": "Дар аввал асосан фоиз пардохт мешавад", "d": "Ҳангоми пардохтҳои баробар (аннуитет) моҳҳои аввал қариб ҳамааш ба фоиз меравад, на ба қарз. Бинобар ин пешпардохт дар аввали мӯҳлат фоиданоктар аст."}, {"t": "Мӯҳлати дароз — пардохти зиёдатии бештар", "d": "Мӯҳлат дарозтар — пардохти моҳона камтар, вале дар маҷмӯъ бештар медиҳед. 600 000 бо 18% ба 2 сол — тақрибан 120 000 зиёдатӣ, ба 10 сол — тақрибан 700 000."}, {"t": "Қоидаи 72", "d": "72-ро ба фоиз тақсим кунед — мефаҳмед, ки маблағ дар чанд сол ду баробар мешавад. Қарзи 18%, агар пардохт нашавад, дар 4 сол ду баробар мешавад (72 ÷ 18)."}, {"t": "Суғуртаро аксар вақт маҷбур мекунанд", "d": "Бонк метавонад суғуртаро ба қарз дохил кунад. Пурсед, ки оё рад кардан мумкин аст — қарз арзонтар мешавад."}, {"t": "Бо гарав ва бе гарав", "d": "Бо гарав (хона, тилло, мошин) фоиз камтар, вале ҳангоми таъхир метавонед молу мулкро аз даст диҳед. Бе гарав гаронтар, вале танҳо пулро хатар мекунед."}]}, {"i": "✅", "g": "Қоидаҳои қарзгирандаи оқил", "items": [{"t": "Танҳо барои он чизе қарз гиред, ки пул меорад", "d": "Мол барои тиҷорат, таҳсил, манзил — ҳа. Телефон, техника, хоҳишҳо — не: онҳо арзон мешаванд, қарз бошад мемонад."}, {"t": "Қоидаи 30–40%", "d": "Ҳамаи пардохтҳои қарз дар як моҳ набояд аз тақрибан сеяки даромад зиёд бошад. Зиёдтар — минтақаи хатар."}, {"t": "Шартномаро пеш аз имзо хонед", "d": "Комиссия, ҷарима, суғурта, шартҳои пешпардохт — гаронтаринашро бо ҳарфҳои майда пинҳон мекунанд."}, {"t": "Бо ҳамон асъоре гиред, ки даромад мегиред", "d": "Даромад бо сомонӣ, қарз бо доллар — хатарнок: қурб баланд шуд, қарз ҳам зиёд шуд."}, {"t": "Қарзро бо қарз напардозед", "d": "Қарзи нав барои пӯшидани қарзи кӯҳна қариб ҳамеша қарзи умумиро зиёд мекунад. Ин доираи баста аст."}, {"t": "Насияи «0%» ройгон намешавад", "d": "Одатан фоиз аллакай дар нарх аст. Пурсед: «Агар якбора пардозам, чанд мешавад?» Агар арзонтар бошад — насия ройгон нест."}, {"t": "Бо насияҳо эҳтиёт бошед", "d": "Бисёр насияҳои хурд буҷаро нонамоён мехӯранд. Онҳоро ҳамчун як қарзи калон ҳисоб кунед."}, {"t": "«Аз рӯи дӯстӣ» кафил нашавед", "d": "Агар он шахс напардозад — шумо мепардозед. Имзои шумо — қарзи шумо. Ҳуҷҷатҳоятонро ба касе надиҳед."}, {"t": "Аз микроқарзҳо дур бошед", "d": "«Пули зуд» бо фоизи хеле баланд — роҳи рост ба чоҳи қарз."}]}, {"i": "🎯", "g": "Чӣ тавр аз қарз халос шудан", "items": [{"t": "Ҳамаи қарзҳоро дар назар доред", "d": "Барои ҳар қарз бақия, пардохт, фоиз, мӯҳлат ва гаравро нависед. Вақте манзараи пурраро мебинед, нақша кашидан осон аст — барнома барои ҳамин."}, {"t": "Аввал қарзи гаронтарин (тарма)", "d": "Ба ҳама ҳадди ақалро пардозед, пули зиёдатиро — ба қарзи фоизаш баландтарин. Ҳамин тавр бештар сарфа мекунед."}, {"t": "Ё аввал хурдтарин (гулӯлаи барфӣ)", "d": "Пӯшидани қарзи хурд ғалабаи зуд ва ангеза медиҳад. Он чиро интихоб кунед, ки ба шумо наздик аст."}, {"t": "⭐ Пардохти озодшуда — ба қарзи навбатӣ", "d": "Вақте ки қарз пӯшида шуд, пули озодшударо харҷ накунед. Ҳамаашро ба қарзи навбатӣ равона кунед — қарзҳо мисли домино меафтанд."}, {"t": "Каме зиёдтар пардозед", "d": "Ҳатто иловаи хурд мӯҳлат ва пардохти зиёдатиро хеле кам мекунад. Дар ҳисобкунаки «Пешпардохт» санҷед."}, {"t": "То қарзи 18% ҳаст — сармоягузорӣ накунед", "d": "Пардохти қарзи 18% — ин фоидаи кафолатноки 18% бе хатар аст. Ягон амонат ё тиҷорат инро кафолат намедиҳад."}, {"t": "Кадом қарз муҳимтар аст", "d": "① бо гарави манзил → ② онҳое ки метавонанд ба суд расанд → ③ гаронтаринҳо → ④ ба хешу дӯстон. Ба хатарноктар пардозед, на ба он ки баландтар талаб мекунад."}, {"t": "Қарзҳои гаронро якҷоя кунед", "d": "Дар бораи азнавмаблағгузорӣ пурсед — якчанд қарзи гарон ба як қарзи арзонтар. Танҳо комиссияҳоро ҳисоб кунед."}, {"t": "Ҳадаф аз маблағ муҳимтар аст", "d": "Санаеро номбар кунед, ки аз қарз озод мешавед, ва ба сӯи он равед. Барнома онро нишон медиҳад."}]}, {"i": "🏦", "g": "Муносибат бо бонк", "items": [{"t": "Бо бонк гуфтушунид кардан мумкин аст", "d": "Шартҳои бонк қонун нестанд. Метавонед паст кардани фоиз, мӯҳлат ё азнавсозиро пурсед. Ба бонк созиш кардан аз пулро аз даст додан фоиданоктар аст."}, {"t": "⭐ Пардохта наметавонед — пешакӣ ба бонк равед", "d": "То таъхир накардаед, шумо мизоҷи мушкилдор ҳастед — бонк омодаи гуфтугӯ аст. Баъди таъхир шумо қарздоред: ҷарима, суд, гарав. ПЕШ аз санаи пардохт занг занед."}, {"t": "Сари вақт пардозед", "d": "Таъхир ҷарима илова мекунад — он аз фоиз гаронтар аст. Пардохтро дар аввали моҳ ҳамчун хароҷоти ҳатмӣ гузоред."}, {"t": "Пардохти худкор аз ҷарима ҳифз мекунад", "d": "Пардохти автоматиро танзим кунед. Як санаи фаромӯшшуда — ҷарима ва таърихи бади қарзӣ."}, {"t": "Соле як бор бақияро санҷед", "d": "Аз бонк ҳисобот гиред. Комиссияҳои зиёдатӣ, пардохтҳои ба ҳисоб нагирифта, суғуртаи маҷбурӣ мешаванд."}, {"t": "Таърихи қарзӣ — ин пул аст", "d": "Сари вақт пардозед — бонкҳо бештар ва арзонтар медиҳанд. Як таъхир метавонад дар оянда фоизи хубро аз даст диҳад."}]}, {"i": "🏠", "g": "Гарави хона", "items": [{"t": "Ҳар қадар аз арзиш кам гирифтед — ҳамон қадар бехатар", "d": "Агар қарз сеяки арзиши хона бошад, захираи мустаҳкамӣ калон аст. Бонкҳо одатан 50–70% аз баҳо медиҳанд."}, {"t": "Бонк танҳо қарзи худро мегирад", "d": "Агар кор то фурӯш расад, бонк бақияи қарзро бо хароҷот мегирад, пули боқимондаро ба шумо бармегардонад."}, {"t": "Танҳо шартномаи воқеии гарав", "d": "Ба ҷои гарав шартномаи хариду фурӯш имзо накунед — ин нақшаи қаллобон аст, ҳамин тавр метавон фавран хонаро аз даст дод."}, {"t": "Хонаро ба шахсони хусусӣ гарав надиҳед", "d": "Танҳо бонки боэътимод. Дар назди шахсони хусусӣ ва ташкилотҳои микромолиявӣ барои қарзҳои хурд хонаро аз даст медиҳанд."}, {"t": "Ягона манзилро хатар накунед", "d": "Онро барои тиҷорати хатарнок гарав надиҳед. Аз худ пурсед: агар даромад сеяк кам шавад, пардохтро мекашем?"}, {"t": "Гирифтани хона — чораи охирин", "d": "Бонк барои як таъхир хонаро намегирад: аввал огоҳиномаҳо, одатан суд. Вале фурӯш дар музояда аз бозор арзонтар аст — беҳтар ба он нарасонед."}, {"t": "Тилло — барои ҳолати охирин", "d": "Гарави тилло хатарнок аст: ҳангоми таъхир метавонед ҷавоҳиротро аз даст диҳед. Инро дар хотир доред."}]}, {"i": "🏪", "g": "Тиҷорат ва мағоза", "items": [{"t": "⭐ Мӯҳлат аз молрасон — қарзи ройгон", "d": "Созиш кунед, ки молро бо пардохт пас аз 30–60 рӯз гиред. Мефурӯшед ва аз даромад мепардозед — бе фоиз. Ин аз қарзи 18% фоиданоктар аст."}, {"t": "Нуқтаи бесаробариро донед", "d": "Дар як моҳ чӣ қадар фурӯхтан лозим, то ба сифр бароед. Бе ин рақам кӯр-кӯрона кор мекунед — бахши «Мағоза»-ро бинед."}, {"t": "Фоизи илова аз гардиш муҳимтар", "d": "Нархро 10% боло бардоштан одатан аз 10% бештар фурӯхтан фоиданоктар аст. Даромад худписандиро қонеъ мекунад, фоида оиларо мехӯронад."}, {"t": "Моли мондагӣ — пули яхкарда", "d": "Мавсим гузашт — мол то абад арзон шуд, фоиз бошад меравад. Беҳтар бо тахфиф фурӯшед ва пулро ба гардиш баргардонед."}, {"t": "Бо қарз васеъ нашавед", "d": "Нуқтаи дуввум бо қарз — сабаби маъмули шикаст. Аз ҳисоби фоида васеъ шавед, на бо пули қарзӣ."}, {"t": "Пули мағоза ва оила — алоҳида", "d": "«Гардиш» ва пасандози «дастнорас»-ро алоҳида нигоҳ доред. Вагарна маълум нест, ки кор фоида меорад ё не."}, {"t": "Ҳамаро нависед", "d": "Хароҷот, қарзҳо, созишҳо бо молрасонҳо — дар коғаз ё дар мукотиба. «Даҳонӣ созиш кардем» — манбаи зарар."}, {"t": "Аз як нафар вобаста набошед", "d": "Як молрасон ё як харидори калон — ин нозук аст. Ҳамеша варианти эҳтиётӣ дошта бошед."}]}, {"i": "💰", "g": "Одатҳои пулӣ", "items": [{"t": "Аввал ба худатон пардозед", "d": "Даромад гирифтед — фавран 5–10%-ро ҷудо кунед, бо боқимонда зиндагӣ кунед. Ҳатто маблағи хурд дар як сол ба захира табдил меёбад."}, {"t": "Захира созед", "d": "Ақаллан барои як моҳи хароҷот, баъд барои 3–6 моҳ ҷудо кунед. Захира ҳангоми ногаҳониҳо аз қарзҳои нав наҷот медиҳад."}, {"t": "Тартиби дуруст", "d": "① пардохтҳои ҳадди ақал → ② захираи хурд → ③ қарзи гаронтарин → ④ захира барои 3–6 моҳ → ⑤ танҳо баъд сармоягузорӣ ва харидҳои калон."}, {"t": "Як «рӯзи пулӣ» дар як моҳ", "d": "Масалан, рӯзи 1-ум: бақияҳо, пардохтҳо, чӣ пӯшидед, чӣ қадар ҷудо кардед. 30 дақиқа — ва ҳама зери назорат."}, {"t": "Қоидаи 24 соат", "d": "Мехоҳед чизеро бе нақша харед — як шабонарӯз интизор шавед. Нисфи хоҳишҳо худ ба худ мегузаранд."}, {"t": "Нархро бо соатҳои ҳаёт ҳисоб кунед", "d": "Нархро ба даромади як соатаатон тақсим кунед. Чизи 1 000 бо даромади 50 дар як соат — 20 соат кор. Меарзад?"}, {"t": "Сатҳи зиндагиро сусттар аз даромад баланд кунед", "d": "Даромад зиёд шуд — хароҷот ҳам аз пасаш — боз пул нест. Фарқро ҷудо кунед."}, {"t": "Хароҷоти маълумро нақша кунед", "d": "Тӯйҳо, мактаб, идҳо, Рамазон, таъмир — ногаҳонӣ нестанд. Пешакӣ каме-каме ҷудо кунед — қарз лозим намешавад."}, {"t": "Дороӣ ё ӯҳдадорӣ?", "d": "Дороӣ пул меорад, ӯҳдадорӣ мегирад. Пеш аз хариди калон аз худ пурсед, ки ин кадомаш мешавад."}, {"t": "Даромад аз сарфа муҳимтар аст", "d": "Хароҷотро танҳо то сифр кам кардан мумкин, даромадро бе ҳудуд зиёд кардан мумкин. Чизи нав омӯзед — ин беҳтарин сармоягузорӣ аст."}, {"t": "Тамоми оила бояд манзараро донад", "d": "Хатарноктарин — вақте ки қарзро пинҳонӣ мегиранд. Бигзор ҳамаи қароргирандагон як манзараи умумиро бинанд."}, {"t": "Пули бекор арзон мешавад", "d": "Таваррум пасандозро мехӯрад. Захираро нигоҳ доред, вале пули зиёдатӣ (баъд аз пардохти қарзҳо) бояд кор кунад."}, {"t": "Саломатӣ — ҳам молия", "d": "Беморӣ яке аз сабабҳои асосии қарз аст. Хоб, ғизо ва муоинаи духтур — ҳифзи даромади шумост."}]}],
+  tipOfDay:'Маслиҳати рӯз', profTitle:'Профил', profSub:'Номи шумо дар салом нишон дода мешавад', profFirst:'Ном', profLast:'Насаб', profShop:'Номи мағоза', profPhoto:'Боргузории сурат', profPhotoDel:'Хориҷ кардани сурат', profSaved:'Профил нигоҳ дошта шуд', profLocal:'Профил танҳо дар ҳамин телефон нигоҳ дошта мешавад — бе парол ва интернет.', errFirst:'Номро нависед', greetM:'Субҳ ба хайр', greetD:'Рӯз ба хайр', greetE:'Шом ба хайр', greetN:'Шаб ба хайр',
+  tipsTitle:'Маслиҳатҳо', tipBadge:'Маслиҳат', nextTip:'Маслиҳати дигар', allTips:'Ҳамаи маслиҳатҳо', tipsLead:'Ҳама дар бораи қарзҳо, бонкҳо, тиҷорат ва пул — бо забони содда. Барои кушодан мавзӯъро пахш кунед.',
   debtDynTitle:'Чӣ тавр қарз кам мешавад', chartWait:'Диаграмма пас аз якчанд пардохт пайдо мешавад.', chartSub:'Ҳар қадар хат пасттар — қарз камтар. Офарин!', lastPayments:'Пардохтҳои охирин',
   historyClosed:'Таърих · пӯшидашуда',
   noBanks1:'Ҳоло бонке нест.', noBanks2:'Қарзи аввалро илова кунед.', addBank:'Илова кардани бонк', noActive:'Қарзи фаъол нест — ҳама пардохта шуд!', seeHistory:'Пӯшидашударо дар таърих поён бинед.',
@@ -398,11 +601,37 @@ tg:{
   leftWord:'боқӣ', paymentAmount:'Маблағи пардохт', record:'Сабт кардан', errPaymentAmount:'Маблағи пардохтро нависед', loanPaidOff:'Қарз пардохта шуд! 🎉', paymentRecorded:'Пардохт сабт шуд ✓',
   deleteBankQ:'Бонкро нест кунам?', deleteBankBody(n){return '«'+n+'» нест карда мешавад. Инро баргардонидан мумкин нест.';}, bankDeleted:'Бонк нест шуд',
   goldSheetTitle:'🔶 Тилло', goldSheetSub:'Чанд тилло доред ва нархи як грамм', totalGrams:'Ҳамагӣ, грамм', pricePerGram:'Нархи як грамм, с.', totalValue:'Арзиши умумӣ', pledgedWithG(g){return '🔶 Дар гарав ('+g+' г)';}, freeLabel:'✅ Озод', errGoldWeight:'Вазни тиллоро нависед', errGoldPrice:'Нархи як граммро нависед', goldSaved:'Тилло нигоҳ дошта шуд', removeGold:'Тиллоро нест кардан', goldRemoved:'Тилло нест шуд',
+  navExp:"Хароҷот", navPlan:"Нақша", dayBtn:"📝 Сабти рӯз", dayTitle:"📝 Сабти рӯз", daySub:"Танҳо он чиро пур кунед, ки буд. Сатрҳои холиро нарасонед — онҳо сарфи назар мешаванд.", dayRev:"💰 Даромади рӯз", dayExpH:"Хароҷоти рӯз", dayNote:"Эзоҳ", daySaveAll:"Ҳамаро нигоҳ доштан", daySaved:"Рӯз нигоҳ дошта шуд ✓", dayHasData:"Барои ин рӯз аллакай сабт ҳаст — агар лозим бошад, ислоҳ кунед ва нигоҳ доред", dayTotRev:"Даромад", dayTotExp:"Хароҷот", errDay:"Ақаллан як маблағ ворид кунед", shopDays:"Аз рӯи рӯзҳо", shopNoDays:"Ҳоло холӣ.\n«Сабти рӯз»-ро пахш кунед ва даромаду хароҷотро ворид кунед.", dToday:"Имрӯз", dYesterday:"Дирӯз", dNoRev:"даромад сабт нашудааст", expTitleV:"🧾 Хароҷот", expTotal:"Ҳамаи хароҷот", expWhere:"Пул ба куҷо меравад", expAddBtn:"+ Илова кардани хароҷот", expNone:"Дар ин давра хароҷот нест", expList:"Ҳамаи сабтҳо", planExplain:"Ин маблағест, ки дар як моҳ бояд фурӯхт, то ҳамаи хароҷот ва пардохтҳои қарз пӯшонида шаванд. Ҳар чӣ зиёдтар фурӯхта шавад — фоидаи шумост.", planPerDay:"Ба ҳисоби миёна дар як рӯз", planSeeShop:"Фурӯш чӣ гуна меравад — дар бахши «🏪 Мағоза» бинед.", goPlan:"Кушодани «Нақша»",
+  navLoans:'Қарзҳо', navShop:'Мағоза', navTips:'Маслиҳатҳо',
+  shopTitle:'🏪 Рӯзномаи мағоза', shopDay:'Рӯз', shopWeek:'Ҳафта', shopMonth:'Моҳ',
+  shopLeft:'Боқӣ мондааст фурӯш', shopOfTarget:(v)=>`аз ${v}`, shopProfitCap:'Фоида', shopLossCap:'Зарар',
+  shopSold:'Фурӯхта шуд', shopTarget:'Бояд фурӯхта шавад', shopExpenses:'Хароҷоти давра', shopFixedShare:'Хароҷоти доимӣ (ҳисса)',
+  shopProfitRow:'Фоида', shopLossRow:'Зарар', shopAddExp:'− Хароҷот', shopAddSale:'+ Даромад',
+  shopNoBe:'Барои дидани он ки боз чӣ қадар фурӯш лозим аст, як бор «Нақша»-ро пур кунед.',
+  shopAskToday:'Даромади имрӯзаро нависед', shopAskBtn:'Навиштан',
+  shopEmpty:'Ҳоло сабт нест.\nДар давоми рӯз хароҷот, бегоҳӣ — даромадро нависед.',
+  shopEntries:'Сабтҳо', shopGoal:'🎉 Ба фоида баромадед!',
+  expTitle:'Хароҷот', expSub:'Чӣ қадар ва ба чӣ сарф шуд', expSum:'Маблағ', expNote:'Эзоҳ', expDate:'Сана',
+  expHint:'Хариди молро навиштан лозим нест — он аллакай дар фоизи илова ҳисоб шудааст. Иҷора ва маошро танҳо дар сурате нависед, ки ба хароҷоти доимӣ ворид накардаед.',
+  saleTitle:'Даромади рӯз', saleSub:'Имрӯз чӣ қадар фурӯхтед — баъди пӯшидан нависед',
+  saleSum:'Маблағи фурӯш', saleReplace:'Барои ин рӯз сабт ҳаст — иваз мешавад',
+  catTax:'🧾 Андоз', catPower:'💡 Барқ', catUtil:'💧 Коммуналӣ', catRent:'🏠 Иҷора', catSalary:'👷 Маош',
+  catTransport:'🚚 Нақлиёт', catHouse:'🧹 Хоҷагӣ', catOther:'✏️ Дигар',
+  errSum:'Маблағро нависед', expSaved:'Хароҷот сабт шуд', saleSaved:'Даромад сабт шуд', entryDeleted:'Сабт нест карда шуд',
+  saleWord:'Даромад',
+  beTitle:'📊 Нуқтаи бесаробарӣ', beSetup:'Танзими ҳисоб', beSetupSub:'Хароҷот ва фоизи иловаро нависед — ҳисоб мекунем', beEdit:'Тағйир',
+  beNeed:'Дар як моҳ бояд фурӯшед', beToZero:'то ба сифр бароед', beFixed:'Хароҷоти доимӣ', beLoanPart:'аз он ҷумла пардохти қарзҳо', beMarginRow:'Фоизи илова',
+  beLegOther:'Ба хароҷот', beLegBank:'Ба қарзҳо', beProfit:(v)=>`Ҳар 1 000-и зиёда → ${v} фоида`,
+  beSheetTitle:'Нуқтаи бесаробарӣ', beSheetSub:'Дар як моҳ чӣ қадар фурӯш лозим, то ҳамаи хароҷот пӯшонида шавад',
+  beRent:'Иҷора', beSalary:'Маош', beOther:'Дигар хароҷот', beMarginLabel:'Фоизи илова, %', beMarginHint:'Фоизи илова = (нархи фурӯш − харид) ÷ нархи фурӯш × 100',
+  beUseLoans:'Пардохти қарзҳо ба ҳисоб гирифта шавад', beResult:'Дар як моҳ бояд фурӯшед', beRemove:'Нест кардани ҳисоб', beSaved:'Ҳисоб нигоҳ дошта шуд', beRemoved:'Ҳисоб нест карда шуд',
+  errBeMargin:'Фоизи иловаро аз 1 то 99 нависед', errBeCosts:'Ақаллан як хароҷотро нависед',
   calcTitle:'🧮 Ҳисобкунак', tabLoan:'Қарз', tabEarly:'Пешпардохт', tabGold:'Тилло', tabCurrency:'Асъор', close:'Пӯшидан',
   term:'Мӯҳлат, моҳ', totalPay:'Ҳамагӣ мепардозед', overpay:'Изофапардохт', createFromCalc:'Аз ҳисоб қарз эҷод кардан', fillAmountTerm:'Маблағ ва мӯҳлатро пур кунед',
   goldCalcSub:'Арзиши тилло аз рӯи нарх', weightGrams:'Вазн, грамм', goldValue:'Арзиши тилло',
   convSub:'Табдили асъор ба сомонӣ', amountCur(c){return 'Маблағ, '+c;}, rateOne(c){return 'Нарх: 1 '+c+' = ? с.';}, inSomoni:'Ба сомонӣ',
   earlySub:'Пешпардохти иловагӣ чӣ медиҳад', remainingDebt:'Бақияи қарз', extraMonthly:'Иловапулӣ дар моҳ', payoffEarlierBy:'Зудтар мепӯшед ба', saveOnInterest:'Аз фоиз сарфа мекунед', tooSmall:'пардохт кам',
+  bkShare:"📤 Фиристодани нусха ба Телеграм", bkHow:"Пахш кунед → Телеграмро интихоб кунед → «Захирашуда». Нусха он ҷо ҳамеша мемонад, ҳатто агар телефон тоза ё гум шавад.", bkDownload:"💾 Нигоҳ доштани файли нусха дар телефон", bkFromFile:"📂 Барқарорсозӣ аз файли нусха", bkTextMode:"Нусха бо матн (агар тугмаҳои боло кор накунанд)", bkLast:"✓ Нусхаи охирин: {d}", bkNever:"⚠️ Ҳанӯз ягон бор нусха нагирифтаед", bkOld:"⚠️ Нусхаи охирин: {d} — вақти нусхаи нав расид", bkToday:"имрӯз", bkYesterday:"дирӯз", bkDaysAgo:"{n} рӯз пеш", bkShareText:"Нусхаи маълумоти «Қарзҳои ман». Нест накунед — бо ин файл ҳама барқарор мешавад.", bkSaved:"Нусха фиристода шуд ✓", bkDownloaded:"Файли нусха дар «Боргириҳо» нигоҳ дошта шуд ✓", bkFail:"Нашуд — аз «Нусха бо матн» дар поён истифода баред", bkPersistOn:"✓ Телефон маълумотро худаш нест намекунад, ҳатто агар ҷой кам бошад", bkWarn:"Муҳим: агар маълумоти браузерро тоза кунед ё онро нест кунед, сабтҳо нест мешаванд. Нусхаи нав дар Телеграм ҳамаро наҷот медиҳад.", bkRemindNever:"Нусхаи маълумотро нигоҳ доред", bkRemindOld:"Нусхаи охирин — {d}", bkRemindSub:"Агар браузерро тоза кунед ё телефонро иваз кунед — сабтҳо гум мешаванд. Нусха дар Телеграм 10 сония вақт мегирад.", bkNow:"📤 Нусха гирифтан", bkLater:"Баъдтар", bkRestoreTitle:"Маълумот гум шуд?", bkRestoreSub:"Агар аллакай аз барнома истифода бурда бошед, ҳамаро аз файли нусха — аз Телеграм ё «Боргириҳо» барқарор кунед.", bkRestorePick:"📂 Интихоби файли нусха", bkNewUser:"Бори аввал", bkRestoreShort:"Барқарорсозӣ аз нусха", bkReplaceQ:"Маълумотро иваз кунем?", bkReplaceSub:"Ҳоло дар барнома сабтҳои шумо ҳастанд. Онҳо бо маълумоти нусха иваз мешаванд.", bkFileFrom:"Нусха аз {d}.", bkReplaceBtn:"Иваз кардан",
   dataTitle:'🛡️ Маълумот ва амният', dataLead:'Маълумот танҳо дар ҳамин телефон нигоҳ дошта мешавад ва ба ҷое фиристода намешавад. Пас аз ҳар тағйир худкор нигоҳ дошта мешавад. Барои гум накардан ҳангоми иваз ё тозакунии телефон — нусхаи эҳтиётӣ созед.', backupLabel:'Нусхаи эҳтиётӣ', copyBackup:'Нусхаро нусхабардорӣ', backupNote:'Ин матнро ба «Қайдҳо» ё Телеграм «Захирашуда» гузоред. Бо он ҳамаро дар ҳар телефон барқарор кардан мумкин аст.', restoreLabel:'Барқарорсозӣ аз нусха', restoreBtn:'Барқарор кардани маълумот', restorePlaceholder:'Нусхаи захирашударо инҷо гузоред', errPasteBackup:'Матни нусхаро гузоред', errBadBackup:'Ба нусхаи эҳтиётӣ монанд нест', backupCopied:'Нусха нусхабардорӣ шуд ✓', selectedCopyManually:'Ҷудо шуд — дастӣ нусхабардорӣ кунед', dataRestored:'Маълумот барқарор шуд ✓',
   pinSection:'Рамзи вуруд', pinOn:'Рамз фаъол аст.', changePin:'Тағйири рамз', removePin:'Хомӯш кардани рамз', pinOffer:'Барномаро бо рамзи 4-рақама ҳифз кунед, то касе молияи шуморо набинад. Агар рамзро фаромӯш кунед, вуруд танҳо бо тозакунӣ бармегардад — пас нусхаи эҳтиётӣ нигоҳ доред.', setPin:'Гузоштани рамз', pinRemoved:'Рамз хомӯш шуд', pinTitle:'Рамз', pinThink:'Рамзи 4-рақамаи вурудро нависед', pinField:'Рамз (4 рақам)', back:'Бозгашт', errPin4:'Маҳз 4 рақам лозим', pinSetMsg:'Рамз гузошта шуд ✓', enterCode:'Рамзро ворид кунед', wrongCode:'Рамз нодуруст',
   installText:'Барномаро ба телефон насб кунед', install:'Насб кардан', installedMsg:'Барнома насб шуд ✓',
@@ -440,7 +669,9 @@ en:{
   payFirst:'pay first', strategyHint:'Add each loan’s % rate (via “Edit”) so “Avalanche” is more accurate.',
   goldTitle:'Gold', addGold:'Add gold', addGoldSub:"Enter weight and price — we'll calculate the value", edit:'Edit',
   byRate:'at', pledged:'🔶 Pledged', free:'✅ Free',
-  tipsTitle:'Tips', tipBadge:'Tip', nextTip:'Another tip', allTips:'All tips', tipsLead:'How to handle loans faster and calmer',
+  tipGroups:[{"i": "📘", "g": "How loans work", "items": [{"t": "Overpayment is the price of money", "d": "Look past the rate to how much you'll repay in total. Ask for the \"full cost of credit\" — with fees and insurance it's often far above the advertised rate."}, {"t": "Early on you mostly pay interest", "d": "With equal (annuity) payments, the first months go almost entirely to interest, not the debt. That's why paying early is most valuable at the start."}, {"t": "Long term = bigger overpayment", "d": "The longer the term, the smaller the payment but the more you repay. 600,000 at 18% over 2 years costs about 120,000 extra; over 10 years about 700,000."}, {"t": "The rule of 72", "d": "Divide 72 by the rate to see how many years it takes to double. Unpaid debt at 18% doubles in 4 years (72 ÷ 18)."}, {"t": "Insurance is often pushed on you", "d": "The bank may bundle insurance into the loan. Ask if you can decline it — that makes the loan cheaper."}, {"t": "Secured vs unsecured", "d": "With collateral (home, gold, car) the rate is lower, but a missed payment can cost you the asset. Unsecured is pricier, but you only risk money."}]}, {"i": "✅", "g": "Rules of a smart borrower", "items": [{"t": "Borrow only for what earns money", "d": "Stock for the business, education, housing — yes. Phones, gadgets, wants — no: they lose value while the debt stays."}, {"t": "The 30–40% rule", "d": "Total monthly loan payments should stay under about a third of income. More than that is the danger zone."}, {"t": "Read the contract before signing", "d": "Fees, penalties, insurance, early-repayment terms — the costly parts hide in the small print."}, {"t": "Borrow in the currency you earn", "d": "Income in somoni and a loan in dollars is risky: when the exchange rate rises, so does the debt."}, {"t": "Don't pay a loan with a loan", "d": "A new loan to close an old one almost always grows your total debt. It's a closed loop."}, {"t": "\"0%\" instalments are never free", "d": "The interest is usually built into the price. Ask: \"How much if I pay in full now?\" If it's cheaper, the instalment isn't free."}, {"t": "Be careful with instalments", "d": "Many small instalments quietly eat your budget. Count them as one big debt."}, {"t": "Don't co-sign \"as a favour\"", "d": "If they don't pay, you will. Your signature is your debt. Never hand your documents to anyone."}, {"t": "Run from payday loans", "d": "\"Quick money\" at huge rates is a straight road into a debt pit."}]}, {"i": "🎯", "g": "Getting out of debt", "items": [{"t": "Keep all debts in sight", "d": "For each loan, note the balance, payment, rate, term and collateral. Seeing the full picture makes planning easier — that's what this app is for."}, {"t": "Highest rate first (avalanche)", "d": "Pay the minimum on everything and put all spare money on the highest-rate loan. That saves the most."}, {"t": "Or smallest first (snowball)", "d": "Closing a small loan gives a quick win and motivation. Pick what suits you."}, {"t": "⭐ Roll the freed payment into the next debt", "d": "When a loan closes, don't spend the freed money. Send all of it to the next loan — debts start falling like dominoes."}, {"t": "Pay a little extra", "d": "Even a small extra payment noticeably cuts the term and overpayment. Check the \"Early\" calculator."}, {"t": "Don't invest while carrying 18% debt", "d": "Paying off an 18% loan is a guaranteed, risk-free 18% return. No deposit or business guarantees that."}, {"t": "Which debt matters most", "d": "① secured on your home → ② those that can reach court → ③ the most expensive → ④ family and friends. Pay the most dangerous, not the loudest."}, {"t": "Combine expensive loans", "d": "Ask about refinancing — several costly loans into one cheaper one. Just count the fees."}, {"t": "The goal matters more than the amount", "d": "Name the date you'll be debt-free and work toward it. The app shows it."}]}, {"i": "🏦", "g": "Dealing with the bank", "items": [{"t": "You can negotiate with the bank", "d": "Bank terms aren't law. You can ask for a lower rate, a deferral or restructuring. The bank would rather make a deal than lose money."}, {"t": "⭐ Can't pay? Go to the bank early", "d": "Before you miss a payment you're a client with a problem — the bank will talk. After, you're a debtor: penalties, court, collateral. Call BEFORE the due date."}, {"t": "Pay on time", "d": "Late payments add penalties that cost more than interest. Treat the payment as a must-pay at the start of the month."}, {"t": "Autopay protects you from fines", "d": "Set up automatic payments. One forgotten date means penalties and a bad credit history."}, {"t": "Check your balance once a year", "d": "Get a statement from the bank. Extra fees, missed payments and unwanted insurance do happen."}, {"t": "Credit history is money", "d": "Pay on time and banks lend more, more cheaply. One late payment can cost you a good rate later."}]}, {"i": "🏠", "g": "Pledging your home", "items": [{"t": "The less you borrow against it, the safer", "d": "If the loan is a third of the home's value, your safety margin is big. Banks usually lend 50–70% of the valuation."}, {"t": "The bank only takes what it's owed", "d": "If it comes to a sale, the bank takes the remaining debt plus costs and returns the rest of the money to you."}, {"t": "Only a real pledge agreement", "d": "Never sign a sale contract instead of a pledge — it's a scam that can cost you the home immediately."}, {"t": "Never pledge your home to private lenders", "d": "Only a reputable bank. People lose homes to private lenders and microfinance firms over small debts."}, {"t": "Don't risk your only home", "d": "Don't pledge it for a risky business. Ask yourself: could we still pay if income dropped by a third?"}, {"t": "Repossession is the last resort", "d": "A bank won't take the home over one missed payment — first notices, usually court. But forced sales fetch below market, so don't let it get there."}, {"t": "Gold — only as a last resort", "d": "Pledging gold is risky: a missed payment can cost you the jewellery. Keep that in mind."}]}, {"i": "🏪", "g": "Business & shop", "items": [{"t": "⭐ Supplier credit is free credit", "d": "Arrange to take stock and pay in 30–60 days. You sell and pay from the takings — with no interest. Far better than an 18% loan."}, {"t": "Know your break-even point", "d": "How much you must sell each month to reach zero. Without this number you're working blind — see the \"Shop\" tab."}, {"t": "Margin beats turnover", "d": "Raising prices 10% usually beats selling 10% more. Revenue flatters the ego; profit feeds the family."}, {"t": "Old stock is frozen money", "d": "Once the season passes, an item loses value for good while interest keeps ticking. Better to sell at a discount and put the money back to work."}, {"t": "Don't expand on debt", "d": "A second shop on credit is a common cause of collapse. Grow from profit, not borrowed money."}, {"t": "Keep shop and family money apart", "d": "Hold \"working\" money and \"untouchable\" savings separately. Otherwise you can't tell whether the business makes a profit."}, {"t": "Write everything down", "d": "Expenses, debts, supplier deals — on paper or in messages. \"We agreed verbally\" is a source of losses."}, {"t": "Don't depend on just one", "d": "One supplier or one big customer is fragile. Always have a backup."}]}, {"i": "💰", "g": "Money habits", "items": [{"t": "Pay yourself first", "d": "When income arrives, set aside 5–10% right away and live on the rest. Even a small amount becomes a cushion within a year."}, {"t": "Build a cushion", "d": "Save at least one month of expenses, then 3–6. A cushion keeps surprises from pushing you into new loans."}, {"t": "The right order", "d": "① minimum payments → ② small cushion → ③ most expensive debt → ④ 3–6 month cushion → ⑤ only then investing and big purchases."}, {"t": "One \"money day\" a month", "d": "Say, the 1st: check balances, payments, what you closed, what you saved. 30 minutes and everything's under control."}, {"t": "The 24-hour rule", "d": "Want to buy something unplanned? Wait a day. Half the urges pass on their own."}, {"t": "Count price in hours of your life", "d": "Divide the price by your hourly income. A 1,000 item at 50 an hour is 20 hours of work. Worth it?"}, {"t": "Raise your lifestyle slower than your income", "d": "Income rises, spending follows, and there's no money again. Save the difference."}, {"t": "Plan the expenses you know are coming", "d": "Weddings, school, holidays, Ramadan, repairs aren't surprises. Save a little in advance and you won't need a loan."}, {"t": "Asset or liability?", "d": "An asset brings money in; a liability takes it out. Before a big purchase, ask which it will be."}, {"t": "Income matters more than saving", "d": "You can only cut costs to zero, but income can grow without limit. Learning new skills is the best investment."}, {"t": "The whole family should see the picture", "d": "The most dangerous thing is a loan taken quietly. Everyone who makes decisions should see one shared picture."}, {"t": "Idle money loses value", "d": "Inflation eats savings. Keep a cushion, but extra money (after debts) should work."}, {"t": "Health is finance too", "d": "Illness is a top cause of debt. Sleep, food and check-ups protect your income."}]}],
+  tipOfDay:'Tip of the day', profTitle:'Profile', profSub:'Your name will appear in the greeting', profFirst:'First name', profLast:'Last name', profShop:'Shop name', profPhoto:'Upload photo', profPhotoDel:'Remove photo', profSaved:'Profile saved', profLocal:'The profile is stored only on this phone — no password or internet needed.', errFirst:'Enter a first name', greetM:'Good morning', greetD:'Good afternoon', greetE:'Good evening', greetN:'Good night',
+  tipsTitle:'Tips', tipBadge:'Tip', nextTip:'Another tip', allTips:'All tips', tipsLead:'Everything about loans, banks, business and money — in plain words. Tap a topic to open it.',
   debtDynTitle:'How the debt shrinks', chartWait:"The chart will appear once you've made a few payments.", chartSub:'The lower the line, the smaller the debt. Keep it up!', lastPayments:'Recent payments',
   historyClosed:'History · closed',
   noBanks1:'No banks yet.', noBanks2:'Add your first loan.', addBank:'Add bank', noActive:'No active loans — all paid off!', seeHistory:'See closed ones in the history below.',
@@ -452,11 +683,37 @@ en:{
   leftWord:'left', paymentAmount:'Payment amount', record:'Record', errPaymentAmount:'Enter the payment amount', loanPaidOff:'Loan paid off! 🎉', paymentRecorded:'Payment recorded ✓',
   deleteBankQ:'Delete bank?', deleteBankBody(n){return '"'+n+'" will be deleted. This can’t be undone.';}, bankDeleted:'Bank deleted',
   goldSheetTitle:'🔶 Gold', goldSheetSub:'How much gold you have and the price per gram', totalGrams:'Total, grams', pricePerGram:'Price per gram, TJS', totalValue:'Total value', pledgedWithG(g){return '🔶 Pledged ('+g+' g)';}, freeLabel:'✅ Free', errGoldWeight:'Enter the gold weight', errGoldPrice:'Enter the price per gram', goldSaved:'Gold saved', removeGold:'Remove gold', goldRemoved:'Gold removed',
+  navExp:"Expenses", navPlan:"Plan", dayBtn:"📝 Log the day", dayTitle:"📝 Log the day", daySub:"Fill in only what happened. Leave empty rows alone — they are skipped.", dayRev:"💰 Day's revenue", dayExpH:"Day's expenses", dayNote:"Note", daySaveAll:"Save all", daySaved:"Day saved ✓", dayHasData:"This day already has entries — adjust if needed and save", dayTotRev:"Revenue", dayTotExp:"Expenses", errDay:"Enter at least one amount", shopDays:"By day", shopNoDays:"Nothing yet.\nTap \"Log the day\" and enter revenue and expenses.", dToday:"Today", dYesterday:"Yesterday", dNoRev:"revenue not logged", expTitleV:"🧾 Expenses", expTotal:"Total expenses", expWhere:"Where the money goes", expAddBtn:"+ Add expenses", expNone:"No expenses in this period", expList:"All entries", planExplain:"This is how much you need to sell each month to cover all costs and loan payments. Everything you sell above it is your profit.", planPerDay:"Average per day", planSeeShop:"See how sales are going in the \"🏪 Shop\" section.", goPlan:"Open \"Plan\"",
+  navLoans:'Loans', navShop:'Shop', navTips:'Tips',
+  shopTitle:'🏪 Shop journal', shopDay:'Day', shopWeek:'Week', shopMonth:'Month',
+  shopLeft:'Left to sell', shopOfTarget:(v)=>`of ${v}`, shopProfitCap:'Profit', shopLossCap:'Loss',
+  shopSold:'Sold', shopTarget:'Need to sell', shopExpenses:'Expenses this period', shopFixedShare:'Fixed costs (share)',
+  shopProfitRow:'Profit', shopLossRow:'Loss', shopAddExp:'− Expense', shopAddSale:'+ Revenue',
+  shopNoBe:'Fill in the "Plan" once to see how much more you need to sell.',
+  shopAskToday:"Record today's revenue", shopAskBtn:'Record',
+  shopEmpty:'No entries yet.\nLog expenses during the day, and revenue after closing.',
+  shopEntries:'Entries', shopGoal:'🎉 You are in profit!',
+  expTitle:'Expense', expSub:'How much you spent and on what', expSum:'Amount', expNote:'Note', expDate:'Date',
+  expHint:"Don't log stock purchases — they're already covered by the margin. Log rent and salaries here only if they're not in your fixed costs.",
+  saleTitle:"Day's revenue", saleSub:'How much you sold today — enter after closing',
+  saleSum:'Sales amount', saleReplace:'This day already has an entry — it will be replaced',
+  catTax:'🧾 Tax', catPower:'💡 Electricity', catUtil:'💧 Utilities', catRent:'🏠 Rent', catSalary:'👷 Salary',
+  catTransport:'🚚 Transport', catHouse:'🧹 Supplies', catOther:'✏️ Other',
+  errSum:'Enter an amount', expSaved:'Expense recorded', saleSaved:'Revenue recorded', entryDeleted:'Entry deleted',
+  saleWord:'Revenue',
+  beTitle:'📊 Break-even point', beSetup:'Set up the calculation', beSetupSub:"Enter your costs and margin — we'll work out how much you must sell", beEdit:'Edit',
+  beNeed:'Must sell per month', beToZero:'to break even', beFixed:'Fixed costs', beLoanPart:'incl. loan payments', beMarginRow:'Margin',
+  beLegOther:'Costs', beLegBank:'Loans', beProfit:(v)=>`Every 1,000 above the point → ${v} profit`,
+  beSheetTitle:'Break-even point', beSheetSub:'How much you need to sell each month to cover all costs',
+  beRent:'Rent', beSalary:'Salaries', beOther:'Other costs', beMarginLabel:'Margin, %', beMarginHint:'Margin = (selling price − cost) ÷ selling price × 100',
+  beUseLoans:'Include loan payments', beResult:'Must sell per month', beRemove:'Delete calculation', beSaved:'Calculation saved', beRemoved:'Calculation deleted',
+  errBeMargin:'Enter a margin between 1 and 99%', errBeCosts:'Enter at least one cost',
   calcTitle:'🧮 Calculator', tabLoan:'Loan', tabEarly:'Early', tabGold:'Gold', tabCurrency:'Currency', close:'Close',
   term:'Term, months', totalPay:"Total you'll pay", overpay:'Overpayment', createFromCalc:'Create a loan from this', fillAmountTerm:'Fill in amount and term',
   goldCalcSub:'Gold value at the current price', weightGrams:'Weight, grams', goldValue:'Gold value',
   convSub:'Convert currency to somoni', amountCur(c){return 'Amount, '+c;}, rateOne(c){return 'Rate: 1 '+c+' = ? TJS';}, inSomoni:'In somoni',
   earlySub:'What an extra payment gives you', remainingDebt:'Remaining debt', extraMonthly:'Extra per month', payoffEarlierBy:"You'll finish earlier by", saveOnInterest:"You'll save on interest", tooSmall:'payment too small',
+  bkShare:"📤 Send backup to Telegram", bkHow:"Tap → choose Telegram → \"Saved Messages\". The backup stays there forever, even if the phone is cleared or lost.", bkDownload:"💾 Save backup file to phone", bkFromFile:"📂 Restore from backup file", bkTextMode:"Backup as text (if the buttons above don't work)", bkLast:"✓ Last backup: {d}", bkNever:"⚠️ No backup made yet", bkOld:"⚠️ Last backup: {d} — time for a new one", bkToday:"today", bkYesterday:"yesterday", bkDaysAgo:"{n} days ago", bkShareText:"\"My Loans\" data backup. Don't delete — everything can be restored from this file.", bkSaved:"Backup sent ✓", bkDownloaded:"Backup file saved to Downloads ✓", bkFail:"That didn't work — use \"Backup as text\" below", bkPersistOn:"✓ The phone won't delete the data on its own, even when storage is low", bkWarn:"Important: if you clear the browser's data or uninstall it, your records are erased. A fresh backup in Telegram saves everything.", bkRemindNever:"Save a backup of your data", bkRemindOld:"Last backup — {d}", bkRemindSub:"If the browser is cleared or you change phones, your records are lost. A Telegram backup takes 10 seconds.", bkNow:"📤 Back up now", bkLater:"Later", bkRestoreTitle:"Data gone?", bkRestoreSub:"If you've used the app before, bring everything back from a backup file — from Telegram or Downloads.", bkRestorePick:"📂 Choose backup file", bkNewUser:"I'm new", bkRestoreShort:"Restore from backup", bkReplaceQ:"Replace your data?", bkReplaceSub:"The app already has your records. They will be replaced with the data from the backup.", bkFileFrom:"Backup from {d}.", bkReplaceBtn:"Replace",
   dataTitle:'🛡️ Data & security', dataLead:"Your data is stored only on this phone and is never sent anywhere. It saves automatically after each change. To avoid losing it when you change or clear your phone, make a backup below.", backupLabel:'Backup', copyBackup:'Copy backup', backupNote:'Paste this text into your Notes or Telegram "Saved Messages". You can restore everything on any phone from it.', restoreLabel:'Restore from backup', restoreBtn:'Restore data', restorePlaceholder:'Paste your saved backup here', errPasteBackup:'Paste the backup text', errBadBackup:"This doesn't look like a backup", backupCopied:'Backup copied ✓', selectedCopyManually:'Selected — copy it manually', dataRestored:'Data restored ✓',
   pinSection:'App passcode', pinOn:'Passcode is on.', changePin:'Change code', removePin:'Remove code', pinOffer:'Protect the app with a 4-digit code so no one else sees your finances. If you forget it, access can only be restored by a reset — so keep a backup.', setPin:'Set a passcode', pinRemoved:'Passcode removed', pinTitle:'Passcode', pinThink:'Choose a 4-digit code', pinField:'Code (4 digits)', back:'Back', errPin4:'Exactly 4 digits needed', pinSetMsg:'Passcode set ✓', enterCode:'Enter code', wrongCode:'Wrong code',
   installText:'Install the app on your phone', install:'Install', installedMsg:'App installed ✓',
@@ -507,7 +764,7 @@ function applyStatic(){
 /* ===== Хранение: только телефон (localStorage) ===== */
 const LKEY='app_v2';
 function loadLocal(){ try{const r=localStorage.getItem(LKEY); if(r) return JSON.parse(r);}catch(e){} return null; }
-function persist(){ try{ localStorage.setItem(LKEY, JSON.stringify({loans:state.loans,payments:state.payments,gold:state.gold})); }catch(e){} }
+function persist(){ try{ localStorage.setItem(LKEY, JSON.stringify({loans:state.loans,payments:state.payments,gold:state.gold,shop:state.shop,profile:state.profile})); }catch(e){} }
 
 const CUR={ USD:'10.7', RUB:'0.12', EUR:'11.5' };
 
@@ -527,8 +784,8 @@ function examplePayments(){ return [
 ]; }
 
 const cached=loadLocal();
-const state = cached ? {loans:cached.loans||[], payments:cached.payments||[], gold:cached.gold||null}
-                     : {loans:examples(), payments:examplePayments(), gold:{grams:500, price:700}};
+const state = cached ? {loans:cached.loans||[], payments:cached.payments||[], gold:cached.gold||null, shop:cached.shop||{exp:[],sales:[]}, profile:cached.profile||null}
+                     : {loans:examples(), payments:examplePayments(), gold:{grams:500, price:700}, shop:{exp:[],sales:[]}, profile:null};
 
 /* ---- помощники ---- */
 function money(n){ return nf.format(Math.round(n)) + ' ' + L.cur; }
@@ -595,7 +852,7 @@ function pledgedGrams(){ return state.loans.reduce((s,l)=>s+(+l.gold||0),0); }
 
 function render(){
   const list=state.loans.map(l=>({loan:l,a:analyze(l)}));
-  renderHero(list); renderTip(); renderNextPay(list); renderCards(list); renderStrategy(list); renderGold(list); renderTips(); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync();
+  renderHero(list); renderTip(); renderNextPay(list); renderCards(list); renderStrategy(list); renderGold(list); renderBreakeven(list); renderShop(list); renderExpenses(list); renderTips(); renderTabs(); renderProfile(); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync(); renderBackupNudge();
   const act=list.filter(x=>!x.a.done).length;
   $('#bankCount').textContent = act ? act+' '+L.noun(act,'bank') : '';
   checkMilestone(list); animateRings();
@@ -653,11 +910,15 @@ function renderStrategy(list){
   const items=order.map((x,i)=>`<div class="strat-item ${i===0?'first':''}"><span class="strat-rank">${i+1}</span><span class="strat-nm">${esc(x.loan.name)}</span>${i===0?`<span class="strat-first-tag">${L.payFirst}</span>`:''}<span class="strat-amt">${money(x.a.remaining)}</span></div>`).join('');
   box.innerHTML=`<div class="section-h"><h2>${L.strategyTitle}</h2></div><div class="strat"><div class="seg"><button data-strat="snowball" class="${method==='snowball'?'on':''}">${L.snowball}</button><button data-strat="avalanche" class="${method==='avalanche'?'on':''}">${L.avalanche}</button></div><div class="strat-desc">${desc}</div><div class="strat-list">${items}</div>${noRates?`<div class="strat-hint">${L.strategyHint}</div>`:''}</div>`;
 }
-let tipIdx=Math.floor(Math.random()*12);
+let tipIdx=Math.floor(Date.now()/86400000);
+function allTipsFlat(){ return (L.tipGroups||[]).reduce((a,g)=>a.concat(g.items),[]); }
 function renderTips(){
-  const box=$('#tips'); const tips=L.tips; if(!tips||!tips.length){box.innerHTML='';return;}
-  const t=tips[((tipIdx%tips.length)+tips.length)%tips.length];
-  box.innerHTML=`<div class="section-h"><h2>${L.tipsTitle}</h2></div><div class="tips"><span class="tp-badge">💡 ${L.tipBadge}</span><h3>${esc(t.t)}</h3><p class="tp-text">${esc(t.d)}</p><div class="tp-actions"><button class="btn btn-ghost" id="tipNext">${L.nextTip}</button><button class="btn btn-ghost" id="tipsAll">${L.allTips}</button></div></div>`;
+  const box=$('#tips'); if(!box) return;
+  const groups=L.tipGroups||[], flat=allTipsFlat(); if(!flat.length){ box.innerHTML=''; return; }
+  const t=flat[((tipIdx%flat.length)+flat.length)%flat.length];
+  const day=`<div class="tips"><span class="tp-badge">💡 ${L.tipOfDay}</span><h3>${esc(t.t)}</h3><p class="tp-text">${esc(t.d)}</p><div class="tp-actions"><button class="btn btn-ghost" id="tipNext">${L.nextTip}</button></div></div>`;
+  const acc=groups.map(g=>`<details class="tg"><summary><span class="tg-i">${g.i}</span><span class="tg-t">${esc(g.g)}</span><span class="tg-n">${g.items.length}</span></summary><div class="tg-list">${g.items.map(x=>`<div class="tg-it"><b>${esc(x.t)}</b><p>${esc(x.d)}</p></div>`).join('')}</div></details>`).join('');
+  box.innerHTML=`<div class="section-h"><h2>${L.tipsTitle}</h2><span class="count">${flat.length}</span></div><p class="view-h">${L.tipsLead}</p>${day}<div class="tg-wrap">${acc}</div>`;
 }
 function checkMilestone(list){
   const total=list.reduce((s,x)=>s+x.a.total,0), paid=list.reduce((s,x)=>s+x.a.paid,0);
@@ -673,7 +934,7 @@ function renderClosed(list){
   if(!closed.length){ box.innerHTML=''; return; }
   box.innerHTML=`<div class="section-h"><h2>${L.historyClosed}</h2><span class="count">${closed.length}</span></div><div class="cards">${closed.map(({loan,a})=>`<div class="card closed" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem done">${L.paidOff}</span></div><div class="c-sub"><span>${L.paidLabel} ${money(a.paid)}</span><span class="mo">${L.closed}</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`).join('')}</div>`;
 }
-function renderExampleNote(){ $('#exampleNote').innerHTML=state.loans.some(l=>l.example)?`<div class="example-note"><span>${L.examplesShown}</span><button id="clearEx">${L.clearExamples}</button></div>`:''; }
+function renderExampleNote(){ $('#exampleNote').innerHTML=state.loans.some(l=>l.example)?`<div class="example-note"><span>${L.examplesShown}</span><button id="clearEx">${L.clearExamples}</button><button data-bk="pick">${L.bkRestoreShort}</button></div>`:''; }
 function renderSync(){ $('#syncLine').innerHTML=`<div class="sync"><span class="dot"></span>${L.storedOnPhone}</div>`; }
 
 function buildChart(pts){
@@ -818,6 +1079,256 @@ function goldEditForm(){
   if(state.gold){ $('#g-del').onclick=()=>{ state.gold=null; persist(); closeSheet(); render(); toast(L.goldRemoved); }; }
 }
 
+/* ---- профиль ---- */
+function profInitials(p){ return (((p.first||'').trim().charAt(0))+((p.last||'').trim().charAt(0))).toUpperCase(); }
+function avaInner(p){
+  if(p&&p.photo) return '<img src="'+p.photo+'" alt="">';
+  if(p&&(p.first||p.last)) return esc(profInitials(p));
+  return '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>';
+}
+function greetWord(){ const h=new Date().getHours(); return (h>=5&&h<12)?L.greetM:(h>=12&&h<18)?L.greetD:(h>=18&&h<23)?L.greetE:L.greetN; }
+function renderProfile(){
+  const p=state.profile, a=$('#meAva'); if(!a) return;
+  a.innerHTML=avaInner(p); a.classList.toggle('noava', !(p&&(p.photo||p.first||p.last)));
+  const ti=$('#appTitle'), sub=$('#appSub');
+  if(p&&p.first){ if(ti) ti.textContent=p.first; if(sub) sub.textContent=greetWord()+' 👋'; }
+  else { if(ti) ti.textContent=L.appName; if(sub) sub.textContent=L.appSub; }
+  const mb=$('#meBtn'); if(mb) mb.setAttribute('aria-label', L.profTitle);
+}
+function profileForm(){
+  const p=Object.assign({first:'',last:'',shop:'',photo:''}, state.profile||{});
+  let photo=p.photo||'';
+  openSheet(`<h3>${L.profTitle}</h3><p class="lead">${L.profSub}</p>
+    <div class="pf-top"><span class="me-ava pf-ava" id="pf-ava"></span>
+      <div class="pf-btns"><label class="btn btn-ghost" style="cursor:pointer">📷 ${L.profPhoto}<input id="pf-file" type="file" accept="image/*" hidden></label><button class="btn btn-ghost" id="pf-del" type="button">${L.profPhotoDel}</button></div></div>
+    <div class="two"><div class="field"><label>${L.profFirst}</label><input id="pf-first" type="text" maxlength="30" value="${esc(p.first)}" autocomplete="given-name"></div><div class="field"><label>${L.profLast}</label><input id="pf-last" type="text" maxlength="30" value="${esc(p.last)}" autocomplete="family-name"></div></div>
+    <div class="field"><label>${L.profShop} ${L.optional}</label><input id="pf-shop" type="text" maxlength="40" value="${esc(p.shop)}"></div>
+    <div class="be-note">🔒 ${L.profLocal}</div>
+    <div class="err" id="pf-err"></div>
+    <button class="btn btn-primary btn-full" id="pf-save" style="margin-top:14px">${L.save}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  function prev(){ const cur={first:$('#pf-first').value,last:$('#pf-last').value,photo:photo}, el=$('#pf-ava');
+    el.innerHTML=avaInner(cur); el.classList.toggle('noava',!(cur.photo||cur.first||cur.last)); $('#pf-del').style.display=photo?'':'none'; }
+  ['#pf-first','#pf-last'].forEach(id=>$(id).addEventListener('input',prev)); prev();
+  $('#pf-file').addEventListener('change',async e=>{ const fl=e.target.files&&e.target.files[0]; if(!fl) return; try{ photo=await fileToIconDataURL(fl); prev(); }catch(_){} });
+  $('#pf-del').onclick=()=>{ photo=''; prev(); };
+  $('#pf-save').onclick=()=>{ const first=$('#pf-first').value.trim(); if(!first) return showErr($('#pf-err'),L.errFirst);
+    state.profile={first:first, last:$('#pf-last').value.trim(), shop:$('#pf-shop').value.trim(), photo:photo};
+    persist(); closeSheet(); render(); toast(L.profSaved); };
+}
+
+/* ---- вкладки ---- */
+const TABS=['loans','shop','exp','plan','tips'];
+let curTab='loans'; try{ curTab=localStorage.getItem('tab_v1')||'loans'; }catch(e){}
+function setTab(t){
+  if(!TABS.includes(t)) t='loans'; curTab=t;
+  try{ localStorage.setItem('tab_v1',t); }catch(e){}
+  TABS.forEach(x=>{ const v=$('#view-'+x); if(v) v.hidden=(x!==t);
+    const b=document.querySelector('.bnav [data-tab="'+x+'"]'); if(b){ b.classList.toggle('on',x===t); b.setAttribute('aria-selected', x===t?'true':'false'); } });
+  const fab=document.querySelector('.fab'); if(fab) fab.style.display = (t==='loans')?'':'none';
+  window.scrollTo(0,0);
+}
+function renderTabs(){ const m={bnLoans:L.navLoans,bnShop:L.navShop,bnExp:L.navExp,bnPlan:L.navPlan,bnTips:L.navTips}; for(const id in m){ const el=$('#'+id); if(el) el.textContent=m[id]; } }
+
+/* ---- дневник магазина ---- */
+const CATS=['tax','power','util','transport','house','other','rent','salary'];
+function catName(c){ const k='cat'+c.charAt(0).toUpperCase()+c.slice(1); return L[k]||L.catOther; }
+function dkey(d){ const x=d?new Date(d):new Date(); return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0'); }
+function dShort(k){ const p=String(k).split('-'); return (+p[2])+' '+MONTHS[lang].short[(+p[1])-1]; }
+let shopPer='day'; try{ shopPer=localStorage.getItem('shper_v1')||'day'; }catch(e){}
+function shopRange(){
+  const now=new Date(), t=dkey(now), dim=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
+  if(shopPer==='day') return {from:t,to:t,frac:1/dim};
+  if(shopPer==='week'){ const f=new Date(now); f.setDate(f.getDate()-6); return {from:dkey(f),to:t,frac:7/dim}; }
+  return {from:dkey(new Date(now.getFullYear(),now.getMonth(),1)),to:t,frac:1};
+}
+function ensureShop(){ if(!state.shop||!Array.isArray(state.shop.exp)) state.shop={exp:[],sales:[],notes:{}}; if(!Array.isArray(state.shop.sales)) state.shop.sales=[]; if(!state.shop.notes||typeof state.shop.notes!=='object') state.shop.notes={}; return state.shop; }
+
+function dayLabel(k){ const y=new Date(); y.setDate(y.getDate()-1);
+  if(k===dkey()) return {b:L.dToday,s:'',w:1}; if(k===dkey(y)) return {b:L.dYesterday,s:'',w:1};
+  const p=String(k).split('-'); return {b:String(+p[2]), s:MONTHS[lang].short[(+p[1])-1], w:0}; }
+function shopSeg(){ return '<div class="seg" style="margin-bottom:14px">'+['day','week','month'].map(p=>'<button data-per="'+p+'" class="'+(shopPer===p?'on':'')+'">'+(p==='day'?L.shopDay:p==='week'?L.shopWeek:L.shopMonth)+'</button>').join('')+'</div>'; }
+const sumOf=(arr)=>arr.reduce((a,e)=>a+(+e.sum||0),0);
+
+function renderShop(list){
+  const box=$('#shop'); if(!box) return;
+  const sh=ensureShop(), r=shopRange(), today=dkey();
+  const inR=e=>e.date>=r.from&&e.date<=r.to;
+  const spent=sumOf(sh.exp.filter(inR)), sold=sumOf(sh.sales.filter(inR));
+  const cfg=beLoad();
+  let main='';
+  if(cfg){
+    const loans=cfg.useLoans===false?0:beLoanMonthly(list);
+    const fm=(+cfg.rent||0)+(+cfg.salary||0)+(+cfg.other||0)+loans;
+    const m=Math.min(99,Math.max(1,+cfg.margin||1))/100;
+    const fixed=fm*r.frac, target=(fixed+spent)/m, left=Math.max(0,target-sold), profit=sold*m-fixed-spent;
+    const pct=target>0?Math.min(100,Math.round(sold/target*100)):0, done=target>0&&left<=0;
+    main=`<div class="sh-cap">${done?L.shopGoal:L.shopLeft}</div>
+      <div class="sh-big ${done?'ok':''}">${done?money(profit):money(left)}</div>
+      <div class="sh-sub">${done?L.shopProfitCap:L.shopOfTarget(money(target))}</div>
+      <div class="sh-bar"><i style="width:${pct}%"></i></div>
+      <div class="sh-rows">
+        <div class="sh-row"><span>${L.shopSold}</span><b>${money(sold)}</b></div>
+        <div class="sh-row"><span>${L.shopTarget}</span><b>${money(target)}</b></div>
+        <div class="sh-row"><span>${L.shopExpenses}</span><b>${money(spent)}</b></div>
+        <div class="sh-row"><span>${L.shopFixedShare}</span><b>${money(fixed)}</b></div>
+        <div class="sh-row ${profit>=0?'pos':'neg'}"><span>${profit>=0?L.shopProfitRow:L.shopLossRow}</span><b>${money(Math.abs(profit))}</b></div>
+      </div>`;
+  } else {
+    main=`<div class="sh-rows" style="border-top:none;margin-top:0;padding-top:0">
+        <div class="sh-row"><span>${L.shopSold}</span><b>${money(sold)}</b></div>
+        <div class="sh-row"><span>${L.shopExpenses}</span><b>${money(spent)}</b></div>
+      </div><div class="be-note">${L.shopNoBe} <button class="link-btn" data-tab="plan">${L.goPlan} →</button></div>`;
+  }
+  const hasToday=sh.sales.some(e=>e.date===today);
+  const ask=hasToday?'':`<div class="sh-ask"><span>📝 ${L.shopAskToday}</span><button data-shop="day">${L.shopAskBtn}</button></div>`;
+  const dates=[...new Set(sh.exp.map(e=>e.date).concat(sh.sales.map(e=>e.date)).concat(Object.keys(sh.notes||{}).filter(k=>sh.notes[k])))].sort().reverse().slice(0,21);
+  const days = dates.length
+    ? '<div class="dys">'+dates.map(d=>{ const rev=sumOf(sh.sales.filter(e=>e.date===d)), ex=sumOf(sh.exp.filter(e=>e.date===d)), lb=dayLabel(d), nt=(sh.notes&&sh.notes[d])||'';
+        return `<button class="dy" data-day="${d}"><span class="dy-d"><b class="${lb.w?'w':''}">${esc(lb.b)}</b>${lb.s?`<small>${esc(lb.s)}</small>`:''}</span><span class="dy-m">${rev>0?`<span class="in">💰 +${money(rev)}</span>`:`<span class="lbl">💰 ${L.dNoRev}</span>`}${ex>0?`<span class="out">🧾 −${money(ex)}</span>`:''}${nt?`<span class="lbl">📝 ${esc(nt)}</span>`:''}</span><span class="dy-c">›</span></button>`; }).join('')+'</div>'
+    : `<div class="sh-empty">${esc(L.shopNoDays).replace(/\n/g,'<br>')}</div>`;
+  const title=(state.profile&&state.profile.shop)?'🏪 '+esc(state.profile.shop):L.shopTitle;
+  box.innerHTML=`<div class="section-h"><h2>${title}</h2></div>
+    <div class="sh-card">${shopSeg()}${main}
+      <button class="btn btn-primary btn-full day-btn" data-shop="day">${L.dayBtn}</button>
+      ${ask}
+    </div>
+    <div class="section-h" style="margin-top:24px"><h2>${L.shopDays}</h2></div>${days}`;
+}
+
+function renderExpenses(list){
+  const box=$('#expView'); if(!box) return;
+  const sh=ensureShop(), r=shopRange(), inR=e=>e.date>=r.from&&e.date<=r.to;
+  const exp=sh.exp.filter(inR).sort((a,b)=>(b.date.localeCompare(a.date))||((b.ts||0)-(a.ts||0)));
+  const total=sumOf(exp);
+  const byCat=CATS.map(c=>({c:c, v:sumOf(exp.filter(e=>e.cat===c))})).filter(x=>x.v>0).sort((a,b)=>b.v-a.v);
+  const bars = byCat.length
+    ? `<div class="cb-h">${L.expWhere}</div><div class="cb">`+byCat.map(x=>{ const pc=total>0?Math.round(x.v/total*100):0;
+        return `<div class="cb-r"><span class="cb-n">${esc(catName(x.c))}<span class="cb-p">${pc}%</span></span><span class="cb-v">${money(x.v)}</span><span class="cb-b"><i style="width:${pc}%"></i></span></div>`; }).join('')+'</div>'
+    : `<div class="sh-empty">${L.expNone}</div>`;
+  const listH = exp.length
+    ? `<div class="section-h" style="margin-top:24px"><h2>${L.expList}</h2><span class="count">${exp.length}</span></div><div class="sh-card" style="padding:6px 14px">`+exp.map(e=>`<div class="sh-it"><span class="d">${dShort(e.date)}</span><span class="n">${esc(catName(e.cat))}${e.note?' · '+esc(e.note):''}</span><span class="v">−${money(e.sum)}</span><button class="x" data-del="e:${e.id}" aria-label="${L.delete}">×</button></div>`).join('')+'</div>'
+    : '';
+  box.innerHTML=`<div class="section-h"><h2>${L.expTitleV}</h2></div>
+    <div class="sh-card">${shopSeg()}
+      <div class="sh-cap">${L.expTotal}</div><div class="sh-big">${money(total)}</div>
+      ${bars}
+      <button class="btn btn-primary btn-full day-btn" data-shop="day">${L.expAddBtn}</button>
+    </div>${listH}`;
+}
+
+function dayForm(date){
+  const sh=ensureShop(), d0=date||dkey();
+  openSheet(`<h3>${L.dayTitle}</h3><p class="lead">${L.daySub}</p>
+    <div class="field"><label>${L.expDate}</label><input id="dy-date" type="date" value="${d0}"></div>
+    <div class="dy-hint" id="dy-has" hidden>${L.dayHasData}</div>
+    <div class="dy-sec rev"><label class="dy-row"><span class="dy-n">${L.dayRev}</span><input id="dy-rev" type="number" inputmode="numeric" min="0" placeholder="0"></label></div>
+    <div class="dy-h">${L.dayExpH}</div>
+    <div class="dy-sec">${CATS.map(c=>`<label class="dy-row"><span class="dy-n">${catName(c)}</span><input data-c="${c}" type="number" inputmode="numeric" min="0" placeholder="0"></label>`).join('')}</div>
+    <div class="field" style="margin-top:14px"><label>${L.dayNote} ${L.optional}</label><input id="dy-note" type="text" maxlength="80"></div>
+    <div class="dy-tot"><div class="r"><small>${L.dayTotRev}</small><b id="dy-tr">0</b></div><div><small>${L.dayTotExp}</small><b id="dy-te">0</b></div></div>
+    <div class="be-note">💡 ${L.expHint}</div>
+    <div class="err" id="dy-err"></div>
+    <button class="btn btn-primary btn-full" id="dy-save" style="margin-top:14px">${L.daySaveAll}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  const cats=()=>[...document.querySelectorAll('#sheet [data-c]')];
+  function tot(){ $('#dy-tr').textContent=money(+$('#dy-rev').value||0); $('#dy-te').textContent=money(cats().reduce((a,i)=>a+(+i.value||0),0)); }
+  function fill(){ const dd=$('#dy-date').value||dkey(), ex=sh.exp.filter(e=>e.date===dd), rv=sumOf(sh.sales.filter(e=>e.date===dd));
+    $('#dy-rev').value = rv>0?rv:'';
+    cats().forEach(inp=>{ const v=sumOf(ex.filter(e=>e.cat===inp.dataset.c)); inp.value=v>0?v:''; });
+    const old=[...new Set(ex.map(e=>e.note).filter(Boolean))].join('; ');
+    $('#dy-note').value=(sh.notes&&sh.notes[dd])||old;
+    $('#dy-has').hidden=!(ex.length||rv>0||(sh.notes&&sh.notes[dd])); tot(); }
+  $('#dy-date').addEventListener('change',fill);
+  [$('#dy-rev')].concat(cats()).forEach(i=>i.addEventListener('input',tot));
+  fill(); setTimeout(()=>{ const r=$('#dy-rev'); if(r&&!r.value) r.focus(); },60);
+  $('#dy-save').onclick=()=>{
+    const dd=$('#dy-date').value||dkey(), rev=+$('#dy-rev').value||0, note=$('#dy-note').value.trim();
+    const rows=cats().map(i=>({cat:i.dataset.c, sum:+i.value||0})).filter(x=>x.sum>0);
+    const hadAny=sh.exp.some(e=>e.date===dd)||sh.sales.some(e=>e.date===dd)||!!(sh.notes&&sh.notes[dd]);
+    if(!rev && !rows.length && !note && !hadAny) return showErr($('#dy-err'),L.errDay);
+    sh.exp=sh.exp.filter(e=>e.date!==dd); sh.sales=sh.sales.filter(e=>e.date!==dd);
+    const ts=Date.now();
+    rows.forEach((x,n)=>sh.exp.push({id:'e'+ts+'_'+n, date:dd, cat:x.cat, sum:x.sum, note:'', ts:ts+n}));
+    if(rev>0) sh.sales.push({id:'s'+ts, date:dd, sum:rev, ts:ts});
+    if(note) sh.notes[dd]=note; else delete sh.notes[dd];
+    persist(); closeSheet(); render(); toast(L.daySaved); };
+}
+function confirmDelEntry(key){
+  const p=key.split(':'), k=p[0], id=p.slice(1).join(':');
+  openSheet(`<h3>${L.delete}?</h3><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-danger" id="de-yes">${L.delete}</button></div>`);
+  $('#de-yes').onclick=()=>{ const sh=ensureShop(); if(k==='s') sh.sales=sh.sales.filter(e=>e.id!==id); else sh.exp=sh.exp.filter(e=>e.id!==id); persist(); closeSheet(); render(); toast(L.entryDeleted); };
+}
+
+/* ---- точка безубыточности ---- */
+const BEKEY='be_v1';
+function beLoad(){ try{ const r=localStorage.getItem(BEKEY); if(r) return JSON.parse(r); }catch(e){} return null; }
+function beSaveCfg(v){ try{ localStorage.setItem(BEKEY, JSON.stringify(v)); }catch(e){} }
+function beClear(){ try{ localStorage.removeItem(BEKEY); }catch(e){} }
+function beLoanMonthly(list){ return list.filter(x=>!x.a.done).reduce((s,x)=>s+(+x.a.monthly||0),0); }
+
+function renderBreakeven(list){
+  const box=$('#breakeven'); if(!box) return;
+  const cfg=beLoad();
+  if(!cfg){
+    box.innerHTML=`<div class="section-h"><h2>${L.beTitle}</h2></div><p class="view-h">${L.planExplain}</p><div class="card" role="button" tabindex="0" data-action="beedit" aria-label="${L.beSetup}"><span class="ava gold">📊</span><div class="c-main"><div class="c-name">${L.beSetup}</div><div class="c-sub"><span>${L.beSetupSub}</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`;
+    return;
+  }
+  const loans = cfg.useLoans===false ? 0 : beLoanMonthly(list);
+  const other = (+cfg.rent||0)+(+cfg.salary||0)+(+cfg.other||0);
+  const fixed = other + loans;
+  const m = Math.min(99,Math.max(1,+cfg.margin||1))/100;
+  if(!(fixed>0)){ box.innerHTML=''; return; }
+  const be = fixed/m, beBank = loans/m, beOther = other/m;
+  const pOther = Math.round(other/fixed*100), pBank = 100-pOther;
+  const now=new Date(), dim=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
+  box.innerHTML=`<div class="section-h"><h2>${L.beTitle}</h2><button class="add-link" data-action="beedit">${L.beEdit}</button></div>
+  <p class="view-h">${L.planExplain}</p>
+  <div class="be-card">
+    <div class="be-cap">${L.beNeed}</div>
+    <div class="be-big">${money(be)}</div>
+    <div class="be-sub">${L.beToZero}</div>
+    <div class="be-bar"><i style="width:${pOther}%;background:var(--brand)"></i><i style="width:${pBank}%;background:var(--gold)"></i></div>
+    <div class="be-leg"><span><em style="background:var(--brand)"></em>${L.beLegOther} · ${money(beOther)}</span>${loans>0?`<span><em style="background:var(--gold)"></em>${L.beLegBank} · ${money(beBank)}</span>`:''}</div>
+    <div class="be-rows">
+      <div class="be-row"><span>${L.beFixed}</span><b>${money(fixed)}</b></div>
+      ${loans>0?`<div class="be-row"><span>${L.beLoanPart}</span><b>${money(loans)}</b></div>`:''}
+      <div class="be-row"><span>${L.beMarginRow}</span><b>${rf.format(Math.round(m*100))}%</b></div>
+      <div class="be-row"><span>${L.planPerDay}</span><b>${money(be/dim)}</b></div>
+    </div>
+    <div class="be-note">${L.beProfit(money(Math.round(1000*m)))}</div>
+  </div>
+  <p class="view-h" style="margin-top:14px">${L.planSeeShop} <button class="link-btn" data-tab="shop">→</button></p>`;
+}
+
+function beEditForm(){
+  const cfg=beLoad()||{rent:'',salary:'',other:'',margin:'',useLoans:true};
+  const list=state.loans.map(l=>({loan:l,a:analyze(l)}));
+  const loans=beLoanMonthly(list);
+  const had=!!beLoad();
+  openSheet(`<h3>${L.beSheetTitle}</h3><p class="lead">${L.beSheetSub}</p>
+    <div class="two"><div class="field n"><label>${L.beRent}</label><input id="be-r" type="number" inputmode="numeric" min="0" value="${cfg.rent}" placeholder="8000"></div><div class="field n"><label>${L.beSalary}</label><input id="be-s" type="number" inputmode="numeric" min="0" value="${cfg.salary}" placeholder="5000"></div></div>
+    <div class="two"><div class="field n"><label>${L.beOther}</label><input id="be-o" type="number" inputmode="numeric" min="0" value="${cfg.other}" placeholder="2000"></div><div class="field n"><label>${L.beMarginLabel}</label><input id="be-m" type="number" inputmode="decimal" min="1" max="99" value="${cfg.margin}" placeholder="43"></div></div>
+    <div class="be-note">${L.beMarginHint}</div>
+    ${loans>0?`<div class="field"><label class="check"><input type="checkbox" id="be-u" ${cfg.useLoans===false?'':'checked'}> ${L.beUseLoans} (${money(loans)})</label></div>`:''}
+    <div class="calc-out"><div class="co-row"><span>${L.beFixed}</span><b id="be-f">—</b></div><div class="co-row big"><span>${L.beResult}</span><b id="be-v">—</b></div></div>
+    <div class="err" id="be-err"></div>
+    <button class="btn btn-primary btn-full" id="be-save">${L.save}</button>
+    ${had?`<div class="sheet-row"><button class="btn btn-danger" id="be-del">${L.beRemove}</button></div>`:''}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  const r=$('#be-r'),sa=$('#be-s'),o=$('#be-o'),mm=$('#be-m'),u=$('#be-u');
+  function upd(){ const ln=(u&&u.checked)?loans:0; const fx=(+r.value||0)+(+sa.value||0)+(+o.value||0)+ln; const mg=Math.min(99,Math.max(0,+mm.value||0))/100;
+    $('#be-f').textContent = fx>0?money(fx):'—';
+    $('#be-v').textContent = (fx>0&&mg>0)?money(fx/mg):'—'; }
+  [r,sa,o,mm].forEach(e=>e.addEventListener('input',upd)); if(u) u.addEventListener('change',upd); upd(); r.focus();
+  $('#be-save').onclick=()=>{ const mg=+mm.value, costs=(+r.value||0)+(+sa.value||0)+(+o.value||0), use=u?u.checked:false, ln=use?loans:0;
+    if(!(costs+ln>0)) return showErr($('#be-err'),L.errBeCosts);
+    if(!(mg>=1&&mg<=99)) return showErr($('#be-err'),L.errBeMargin);
+    beSaveCfg({rent:+r.value||0,salary:+sa.value||0,other:+o.value||0,margin:mg,useLoans:use});
+    closeSheet(); render(); toast(L.beSaved); };
+  if(had){ $('#be-del').onclick=()=>{ beClear(); closeSheet(); render(); toast(L.beRemoved); }; }
+}
+
 /* ---- калькулятор ---- */
 function calcSheet(){
   let mode='loan';
@@ -865,8 +1376,66 @@ function earlyCalc(body){
 }
 
 /* ---- данные и безопасность ---- */
-function backupData(){ return JSON.stringify({v:2, loans:state.loans, payments:state.payments, gold:state.gold}); }
-function restoreData(str){ const o=JSON.parse(str); if(!o||!Array.isArray(o.loans)) throw new Error('bad'); state.loans=o.loans; state.payments=Array.isArray(o.payments)?o.payments:[]; state.gold=o.gold||null; persist(); }
+const BKKEY='bk_v1', BKSN='bksn_v1', BKRH='bkrh_v1';
+let storagePersisted=false;
+function lsGet(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+function lsSet(k,v){ try{ localStorage.setItem(k,v); }catch(e){} }
+function lastBackup(){ const v=+lsGet(BKKEY); return v>0?v:0; }
+function markBackup(){ lsSet(BKKEY,String(Date.now())); lsSet(BKSN,'0'); renderBackupNudge(); }
+function hasRealData(){ const sh=state.shop||{}; return state.loans.some(l=>!l.example)||!!(sh.exp&&sh.exp.length)||!!(sh.sales&&sh.sales.length)||!!(state.profile&&(state.profile.first||state.profile.last)); }
+function onlyExamples(){ return state.loans.length>0 && state.loans.every(l=>l.example) && !hasRealData(); }
+function bkDays(ts){ const a=new Date(ts); a.setHours(0,0,0,0); const b=new Date(); b.setHours(0,0,0,0); return Math.round((b-a)/86400000); }
+function bkAgoText(ts){ const n=bkDays(ts); return n<=0?L.bkToday:n===1?L.bkYesterday:L.bkDaysAgo.replace('{n}',n); }
+function bkDue(){ const last=lastBackup(); return hasRealData() && (!last || bkDays(last)>=7) && Date.now()>(+lsGet(BKSN)||0); }
+function bkFileName(){ return 'my-credits-backup-'+dkey()+'.txt'; }
+async function shareBackup(){
+  const data=backupData();
+  try{
+    const f=new File([data],bkFileName(),{type:'text/plain'});
+    if(navigator.canShare && navigator.share && navigator.canShare({files:[f]})){
+      await navigator.share({files:[f], title:L.appName, text:L.bkShareText});
+      markBackup(); toast(L.bkSaved); return;
+    }
+  }catch(e){ if(e && e.name==='AbortError') return; }
+  downloadBackup();
+}
+function downloadBackup(){
+  try{
+    const url=URL.createObjectURL(new Blob([backupData()],{type:'text/plain'}));
+    const a=document.createElement('a'); a.href=url; a.download=bkFileName(); a.style.display='none';
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(url),5000);
+    markBackup(); toast(L.bkDownloaded);
+  }catch(e){ toast(L.bkFail); }
+}
+function doRestore(str){
+  let o; try{ o=JSON.parse(String(str).trim()); if(!o||!Array.isArray(o.loans)) throw 0; }catch(e){ toast(L.errBadBackup); return false; }
+  const go=()=>{ restoreData(JSON.stringify(o)); closeSheet(); render(); toast(L.dataRestored); };
+  if(hasRealData()){
+    openSheet(`<h3>${L.bkReplaceQ}</h3><p class="lead">${L.bkReplaceSub}${o.at>0?' '+L.bkFileFrom.replace('{d}',fmtDate(new Date(o.at))):''}</p><div class="sheet-row" style="margin-top:16px"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="rs-go">${L.bkReplaceBtn}</button></div>`);
+    $('#rs-go').onclick=go;
+  } else go();
+  return true;
+}
+function pickBackupFile(){
+  const inp=document.createElement('input'); inp.type='file'; inp.style.display='none';
+  inp.onchange=()=>{ const f=inp.files&&inp.files[0]; inp.remove(); if(!f) return; const r=new FileReader(); r.onload=()=>doRestore(r.result); r.onerror=()=>toast(L.errBadBackup); r.readAsText(f); };
+  document.body.appendChild(inp); inp.click();
+}
+function renderBackupNudge(){
+  const ex=onlyExamples() && lsGet(BKRH)!=='1', due=!ex && bkDue(), last=lastBackup();
+  document.querySelectorAll('.bk-slot').forEach(box=>{
+    if(ex && box.dataset.restore){
+      box.innerHTML=`<div class="bkn rs"><div class="bkn-t"><span class="ic">🗂️</span><div><b>${L.bkRestoreTitle}</b><span class="s">${L.bkRestoreSub}</span></div></div><div class="bkn-a"><button class="btn btn-primary" data-bk="pick">${L.bkRestorePick}</button><button class="btn btn-ghost" data-bk="new">${L.bkNewUser}</button></div></div>`;
+    } else if(due){
+      box.innerHTML=`<div class="bkn"><div class="bkn-t"><span class="ic">🛡️</span><div><b>${last?L.bkRemindOld.replace('{d}',bkAgoText(last)):L.bkRemindNever}</b><span class="s">${L.bkRemindSub}</span></div></div><div class="bkn-a"><button class="btn btn-primary" data-bk="share">${L.bkNow}</button><button class="btn btn-ghost" data-bk="later">${L.bkLater}</button></div></div>`;
+    } else box.innerHTML='';
+  });
+}
+async function askPersist(){
+  try{ if(navigator.storage && navigator.storage.persist){ storagePersisted=await navigator.storage.persisted(); if(!storagePersisted) storagePersisted=await navigator.storage.persist(); } }catch(e){}
+}
+function backupData(){ return JSON.stringify({v:4, at:Date.now(), loans:state.loans, payments:state.payments, gold:state.gold, shop:state.shop, profile:state.profile, be:beLoad()}); }
+function restoreData(str){ const o=JSON.parse(str); if(!o||!Array.isArray(o.loans)) throw new Error('bad'); state.loans=o.loans; state.payments=Array.isArray(o.payments)?o.payments:[]; state.gold=o.gold||null; state.shop=(o.shop&&Array.isArray(o.shop.exp))?o.shop:{exp:[],sales:[]}; if(o.profile) state.profile=o.profile; if(o.be&&typeof o.be==='object') beSaveCfg(o.be); if(o.at>0) lsSet(BKKEY,String(o.at)); persist(); }
 function hashPin(p){ let h=5381; for(const c of String(p)) h=((h<<5)+h+c.charCodeAt(0))>>>0; return 'h'+h; }
 function getPin(){ try{return localStorage.getItem('pin_v1')||'';}catch(e){return'';} }
 function setPinVal(p){ try{localStorage.setItem('pin_v1',hashPin(p));}catch(e){} }
@@ -874,16 +1443,24 @@ function clearPin(){ try{localStorage.removeItem('pin_v1');}catch(e){} }
 
 function dataSheet(){
   const hasPin=!!getPin();
+  const last=lastBackup(), fresh=last && bkDays(last)<7;
   openSheet(`<h3>${L.dataTitle}</h3>
     <p class="lead">${L.dataLead}</p>
+    <div class="bk-status ${fresh?'ok':'warn'}">${!last?L.bkNever:fresh?L.bkLast.replace('{d}',bkAgoText(last)):L.bkOld.replace('{d}',bkAgoText(last))}</div>
+    <button class="btn btn-primary btn-full" data-bk="share">${L.bkShare}</button>
+    <p class="note">${L.bkHow}</p>
+    <button class="btn btn-ghost btn-full" data-bk="dl" style="margin-top:12px">${L.bkDownload}</button>
+    <button class="btn btn-ghost btn-full" data-bk="pick" style="margin-top:8px">${L.bkFromFile}</button>
+    <p class="note">${L.bkWarn}</p>${storagePersisted?`<p class="note ok">${L.bkPersistOn}</p>`:''}
+    <details class="bk-more"><summary>${L.bkTextMode}</summary>
     <div class="field"><label>${L.backupLabel}</label><textarea id="bk-out" class="ta" readonly>${esc(backupData())}</textarea></div>
     <button class="btn btn-ghost btn-full" id="bk-copy">${L.copyBackup}</button>
     <p class="note">${L.backupNote}</p>
     <div class="field" style="margin-top:18px"><label>${L.restoreLabel}</label><textarea id="bk-in" class="ta" placeholder="${L.restorePlaceholder}"></textarea></div>
-    <button class="btn btn-ghost btn-full" id="bk-restore">${L.restoreBtn}</button><div class="err" id="bk-err"></div>
+    <button class="btn btn-ghost btn-full" id="bk-restore">${L.restoreBtn}</button><div class="err" id="bk-err"></div></details>
     <div class="sec-block"><label>${L.pinSection}</label>${hasPin?`<p class="note" style="margin-top:0">${L.pinOn}</p><div class="sheet-row"><button class="btn btn-ghost" id="pin-change">${L.changePin}</button><button class="btn btn-danger" id="pin-off">${L.removePin}</button></div>`:`<p class="note" style="margin-top:0">${L.pinOffer}</p><button class="btn btn-ghost btn-full" id="pin-on">${L.setPin}</button>`}</div>
     <div class="sheet-row" style="margin-top:16px"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
-  $('#bk-copy').onclick=async()=>{ const ta=$('#bk-out'); try{ await navigator.clipboard.writeText(ta.value); toast(L.backupCopied); }catch(e){ ta.focus(); ta.select(); toast(L.selectedCopyManually); } };
+  $('#bk-copy').onclick=async()=>{ const ta=$('#bk-out'); try{ await navigator.clipboard.writeText(ta.value); markBackup(); toast(L.backupCopied); }catch(e){ ta.focus(); ta.select(); toast(L.selectedCopyManually); } };
   $('#bk-restore').onclick=()=>{ const v=$('#bk-in').value.trim(); if(!v) return showErr($('#bk-err'),L.errPasteBackup); try{ restoreData(v); closeSheet(); render(); toast(L.dataRestored); }catch(e){ showErr($('#bk-err'),L.errBadBackup); } };
   if($('#pin-on')) $('#pin-on').onclick=()=>pinSet();
   if($('#pin-change')) $('#pin-change').onclick=()=>pinSet();
@@ -908,9 +1485,16 @@ document.addEventListener('click', e=>{
   if(e.target.closest('#tipX')){ try{localStorage.setItem('tip_v1','1');}catch(e){} renderTip(); return; }
   const lc=e.target.closest('[data-lang]'); if(lc){ setLang(lc.dataset.lang); closeSheet(); return; }
   const st=e.target.closest('[data-strat]'); if(st){ try{localStorage.setItem('strat_v1',st.dataset.strat);}catch(e){} render(); return; }
+  if(e.target.closest('#meBtn')){ profileForm(); return; }
+  const tb=e.target.closest('[data-tab]'); if(tb){ setTab(tb.dataset.tab); return; }
+  const pr=e.target.closest('[data-per]'); if(pr){ shopPer=pr.dataset.per; try{localStorage.setItem('shper_v1',shopPer);}catch(_){} render(); return; }
+  const sp=e.target.closest('[data-shop]'); if(sp){ dayForm(); return; }
+  const dyb=e.target.closest('[data-day]'); if(dyb){ dayForm(dyb.dataset.day); return; }
+  const dl=e.target.closest('[data-del]'); if(dl){ confirmDelEntry(dl.dataset.del); return; }
   const act=e.target.closest('[data-action]');
   if(act){ const a=act.dataset.action;
     if(a==='goldedit'){ goldEditForm(); return; }
+    if(a==='beedit'){ beEditForm(); return; }
     const loan=byId(act.dataset.id); if(!loan) return;
     if(a==='open') detailSheet(loan); if(a==='pay') payForm(loan); if(a==='edit') loanForm(loan); if(a==='del') confirmDelete(loan); return; }
   if(e.target.closest('#langTop')) langSheet();
@@ -919,6 +1503,7 @@ document.addEventListener('click', e=>{
   if(e.target.closest('#addTop')||e.target.closest('#addMain')||e.target.closest('#addEmpty')) loanForm(null);
   if(e.target.closest('#tipsAll')) tipsSheet();
   if(e.target.closest('#tipNext')){ tipIdx++; renderTips(); return; }
+  const bk=e.target.closest('[data-bk]'); if(bk){ const k=bk.dataset.bk; if(k==='share') shareBackup(); else if(k==='dl') downloadBackup(); else if(k==='pick') pickBackupFile(); else if(k==='later'){ lsSet(BKSN,String(Date.now()+86400000)); renderBackupNudge(); } else if(k==='new'){ lsSet(BKRH,'1'); renderBackupNudge(); } return; }
   if(e.target.closest('#clearEx')){ state.loans=[]; state.payments=[]; state.gold=null; persist(); render(); toast(L.saved); loanForm(null); }
 });
 document.addEventListener('keydown', e=>{ if((e.key==='Enter'||e.key===' ') && e.target.matches('.card[data-action]')){ e.preventDefault(); e.target.click(); } });
@@ -934,15 +1519,16 @@ function renderInstall(){
     : '';
 }
 window.addEventListener('beforeinstallprompt', e=>{ e.preventDefault(); deferredPrompt=e; renderInstall(); });
-window.addEventListener('appinstalled', ()=>{ deferredPrompt=null; renderInstall(); toast(L.installedMsg); });
+window.addEventListener('appinstalled', ()=>{ askPersist(); deferredPrompt=null; renderInstall(); toast(L.installedMsg); });
 document.addEventListener('click', async e=>{
   if(e.target.closest('#installX')){ deferredPrompt=null; renderInstall(); return; }
   if(e.target.closest('#installBtn') && deferredPrompt){ const p=deferredPrompt; deferredPrompt=null; renderInstall(); try{ p.prompt(); await p.userChoice; }catch(_){} }
 });
-function initPWA(){ renderInstall(); if('serviceWorker' in navigator){ navigator.serviceWorker.register('service-worker.js').catch(()=>{}); } }
+function initPWA(){ renderInstall(); askPersist(); if('serviceWorker' in navigator){ navigator.serviceWorker.register('service-worker.js').catch(()=>{}); } }
 
 applyStatic();
 render();
+setTab(curTab);
 maybeLock();
 initPWA();
 </script>
