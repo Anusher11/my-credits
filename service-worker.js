@@ -1,7 +1,7 @@
 /* Service worker: офлайн-кэш приложения «Мои кредиты».
    Стратегия: для самой страницы — «сначала сеть» (чтобы обновления
    появлялись сразу), для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE = 'moi-krediti-v3';
+const CACHE = 'moi-krediti-v4';
 const CORE = [
   './',
   './index.html',
@@ -14,7 +14,7 @@ const CORE = [
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(CORE)).then(() => self.skipWaiting())
+    caches.open(CACHE).then(c => Promise.all(CORE.map(u => c.add(u).catch(() => null)))).then(() => self.skipWaiting())
   );
 });
 
@@ -76,15 +76,18 @@ const MK_T={
   ru:{late:n=>'⏰ Ждёт оплаты: '+n, due:n=>'💳 Сегодня платёж: '+n, soon:(n,d)=>'🔔 '+(d===1?'Завтра':'Через '+d+' дн.')+' платёж: '+n,
       lateW:d=>'срок прошёл '+d+' дн. назад', dueW:'сегодня', soonW:d=>d===1?'завтра':'через '+d+' дн.', ok:'✓ Все платежи отмечены', okB:'Молодец! Ближайших платежей нет.',
       eve:'📝 Запишите выручку за сегодня', eveDone:'✓ День записан', piggy:v=>'Отложите ≈ '+v+' на платежи — и к сроку всё соберётся.', eveB:'Это займёт минуту.', more:n=>'и ещё '+n,
-      test:'🔔 Напоминания работают', testB:'Так придёт напоминание о платеже.', open:'Открыть'},
+      test:'🔔 Напоминания работают', testB:'Так придёт напоминание о платеже.', open:'Открыть',
+      week:'📊 Итоги недели готовы', weekB:(v,c)=>'Выручка за неделю: '+v+(c!=null?' ('+(c>=0?'+':'')+c+'%)':'')+'. Загляните — и запишите сегодняшний день.', weekB0:'Загляните в «Итоги» — и запишите сегодняшний день.', cust:n=>'🧾 Срок долга: '+n, custW:'вам должны'},
   tg:{late:n=>'⏰ Интизори пардохт: '+n, due:n=>'💳 Имрӯз пардохт: '+n, soon:(n,d)=>'🔔 '+(d===1?'Фардо':'Баъди '+d+' рӯз')+' пардохт: '+n,
       lateW:d=>'мӯҳлат '+d+' рӯз пеш гузашт', dueW:'имрӯз', soonW:d=>d===1?'фардо':'баъди '+d+' рӯз', ok:'✓ Ҳамаи пардохтҳо қайд шудаанд', okB:'Офарин! Пардохтҳои наздик нестанд.',
       eve:'📝 Даромади имрӯзро сабт кунед', eveDone:'✓ Рӯз сабт шуд', piggy:v=>'≈ '+v+' барои пардохтҳо гузоред — то мӯҳлат ҳама ҷамъ мешавад.', eveB:'Як дақиқа вақт мегирад.', more:n=>'ва боз '+n,
-      test:'🔔 Ёдраскунӣ кор мекунад', testB:'Ёдраскунии пардохт ҳамин хел меояд.', open:'Кушодан'},
+      test:'🔔 Ёдраскунӣ кор мекунад', testB:'Ёдраскунии пардохт ҳамин хел меояд.', open:'Кушодан',
+      week:'📊 Ҳисоботи ҳафта тайёр', weekB:(v,c)=>'Даромади ҳафта: '+v+(c!=null?' ('+(c>=0?'+':'')+c+'%)':'')+'. Бинед — ва рӯзи имрӯзро сабт кунед.', weekB0:'«Ҳисобот»-ро бинед — ва рӯзи имрӯзро сабт кунед.', cust:n=>'🧾 Мӯҳлати қарз: '+n, custW:'ба шумо қарздор'},
   en:{late:n=>'⏰ Awaiting payment: '+n, due:n=>'💳 Payment due today: '+n, soon:(n,d)=>'🔔 Payment '+(d===1?'tomorrow':'in '+d+' days')+': '+n,
       lateW:d=>'due '+d+' days ago', dueW:'today', soonW:d=>d===1?'tomorrow':'in '+d+' days', ok:'✓ All payments marked', okB:'Well done! No payments coming up.',
       eve:"📝 Log today's revenue", eveDone:'✓ Day logged', piggy:v=>'Put aside ≈ '+v+' for payments and it will be ready on time.', eveB:'It takes a minute.', more:n=>'and '+n+' more',
-      test:'🔔 Reminders work', testB:'This is how a payment reminder will look.', open:'Open'}
+      test:'🔔 Reminders work', testB:'This is how a payment reminder will look.', open:'Open',
+      week:'📊 Your weekly summary is ready', weekB:(v,c)=>'Revenue this week: '+v+(c!=null?' ('+(c>=0?'+':'')+c+'%)':'')+'. Take a look — and log today.', weekB0:'Open “Summary” — and log today.', cust:n=>'🧾 Debt due: '+n, custW:'owed to you'}
 };
 async function mkDigest(){ try{ const c=await caches.open('mk-state'); const r=await c.match('./mk-state.json'); return r?await r.json():{}; }catch(e){ return {}; } }
 function mkToday(){ const d=new Date(); return new Date(d.getFullYear(),d.getMonth(),d.getDate()); }
@@ -96,14 +99,15 @@ self.addEventListener('push', e => {
     const g=await mkDigest(), lang=MK_T[g.lang]?g.lang:'ru', T=MK_T[lang];
     let title=T.ok, body=T.okB, tag='mk';
     if(d.k==='test'){ title=T.test; body=T.testB; tag='mk-test'; }
+    else if(d.k==='week'){ tag='mk-week'; title=T.week; body=g.wk&&g.wk.rev>0?T.weekB(mkMoney(g.wk.rev,g.cur,lang),g.wk.ch):T.weekB0; }
     else if(d.k==='eve'){ tag='mk-eve'; const today=(()=>{const x=mkToday();return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0');})();
       title=g.logged===today?T.eveDone:T.eve; body=g.perDay>0?T.piggy(mkMoney(g.perDay,g.cur,lang)):T.eveB; }
     else {
       tag='mk-pay';
       const items=(g.items||[]).map(it=>Object.assign({},it,{days:mkDays(it.due)})).filter(it=>it.days<=3).sort((a,b)=>a.days-b.days);
       if(items.length){ const f=items[0];
-        title=f.days<0?T.late(f.name):f.days===0?T.due(f.name):T.soon(f.name,f.days);
-        body=items.slice(0,3).map(it=>it.name+' · '+mkMoney(it.amt,g.cur,lang)+' · '+(it.days<0?T.lateW(-it.days):it.days===0?T.dueW:T.soonW(it.days))).join('\n')+(items.length>3?'\n'+T.more(items.length-3):''); }
+        title=f.cust?T.cust(f.name):f.days<0?T.late(f.name):f.days===0?T.due(f.name):T.soon(f.name,f.days);
+        body=items.slice(0,3).map(it=>(it.cust?'🧾 ':'')+it.name+' · '+mkMoney(it.amt,g.cur,lang)+(it.cust?' '+T.custW:'')+' · '+(it.days<0?T.lateW(-it.days):it.days===0?T.dueW:T.soonW(it.days))).join('\n')+(items.length>3?'\n'+T.more(items.length-3):''); }
     }
     await self.registration.showNotification(title,{body, icon:'icon-192.png', badge:'badge-96.png', tag, renotify:true, data:{url:'./'}});
   })());
