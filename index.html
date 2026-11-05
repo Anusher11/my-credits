@@ -121,6 +121,12 @@
   .np-right{display:flex; flex-direction:column; align-items:flex-end; gap:8px; flex:none;}
   .np-amt{font-family:var(--font-num); font-weight:800; font-size:1.15rem; font-variant-numeric:tabular-nums;}
   .np-right .btn{padding:9px 16px; min-height:40px; font-size:.92rem; border-radius:12px;}
+  .np-hint{font-size:.74rem; color:var(--muted); margin-top:4px; line-height:1.35;}
+  .nextpay.chk{align-items:stretch;}
+  .nextpay.chk .np-right{justify-content:center;}
+  .nextpay.chk .np-right .btn{width:100%;}
+  .c-sub .mo.od{color:var(--danger);}
+  .linkbtn{display:block; margin:-4px auto 12px; background:none; border:0; color:var(--muted); font:inherit; font-size:.86rem; text-decoration:underline; text-underline-offset:3px; padding:8px; cursor:pointer;}
   .nextpay.calm{justify-content:center; text-align:center; color:var(--brand-ink); font-weight:600; background:var(--brand-weak); border-color:transparent; font-family:var(--font-num);}
 
   .section-h{display:flex; align-items:baseline; justify-content:space-between; margin:0 2px 12px;}
@@ -492,6 +498,10 @@ ru:{
   words:{ day:['день','дня','дней'], payment:['платёж','платежа','платежей'], bank:['банк','банка','банков'], month:['месяц','месяца','месяцев'] },
   noun(n,k){ return ruPlural(n,this.words[k]); },
   when(d){ if(d===0)return'сегодня'; if(d===1)return'завтра'; if(d<0)return Math.abs(d)+' '+this.noun(Math.abs(d),'day')+' назад'; return 'через '+d+' '+this.noun(d,'day'); },
+  overdue(n){ return 'просрочен на '+n+' '+this.noun(n,'day'); }, overdueCap:'Просроченный платёж', overdueShort:'просрочен',
+  checkCap:'Проверьте платёж', checkQ(d){ return 'Платёж '+d+' уже внесён?'; }, checkHint:'Если кредит взят позже этой даты — нажмите «Да»',
+  checkYes:'Да, внесён', checkNo:'Нет, не платил', markPaid:'Уже оплачен в банке (не менять сумму)', markedPaid:'Отмечено ✓',
+  extraPay:'Досрочное погашение (сверх ежемесячного платежа)', extraWord:'Досрочно',
   freedom(m,y){ return this.MONTHS.short[m]+' '+y+' г.'; },
   remainingToPay:'Осталось выплатить', outOf:'из', paidWord:'выплачено', thisMonth:'в этом месяце', debtFreedom:'свобода от долгов',
   enc:{start:'Добавьте первый банк, чтобы начать', p100:'Все кредиты закрыты! Поздравляю 🎉', p80:'Совсем немного осталось — вы почти у цели!', p50:'Больше половины позади 👏', p20:'Хороший темп, долг уменьшается', p0:'Начало положено — шаг за шагом'},
@@ -574,6 +584,10 @@ tg:{
   words:{ day:'рӯз', payment:'пардохт', bank:'бонк', month:'моҳ' },
   noun(n,k){ return this.words[k]; },
   when(d){ if(d===0)return'имрӯз'; if(d===1)return'фардо'; if(d<0)return Math.abs(d)+' рӯз пеш'; return 'баъди '+d+' рӯз'; },
+  overdue(n){ return 'мӯҳлаташ '+n+' рӯз гузашт'; }, overdueCap:'Пардохти мӯҳлатгузашта', overdueShort:'мӯҳлат гузашт',
+  checkCap:'Пардохтро санҷед', checkQ(d){ return 'Пардохти '+d+' аллакай анҷом шуд?'; }, checkHint:'Агар қарз баъди ин сана гирифта шуда бошад, «Ҳа»-ро пахш кунед',
+  checkYes:'Ҳа, пардохт шуд', checkNo:'Не, ҳанӯз не', markPaid:'Аллакай дар бонк пардохт шуд (маблағ тағйир намеёбад)', markedPaid:'Қайд шуд ✓',
+  extraPay:'Пардохти пеш аз мӯҳлат (иловаи пардохти моҳона)', extraWord:'Пеш аз мӯҳлат',
   freedom(m,y){ return this.MONTHS.short[m]+' '+y; },
   remainingToPay:'Боқимонда барои пардохт', outOf:'аз', paidWord:'пардохта шуд', thisMonth:'дар ин моҳ', debtFreedom:'озодӣ аз қарз',
   enc:{start:'Барои оғоз бонки аввалро илова кунед', p100:'Ҳамаи қарзҳо пӯшида шуданд! Табрик 🎉', p80:'Каме мондааст — шумо қариб ба ҳадаф расидед!', p50:'Зиёда аз нисф гузашт 👏', p20:'Суръати хуб, қарз кам мешавад', p0:'Оғоз шуд — қадам ба қадам'},
@@ -656,6 +670,10 @@ en:{
   words:{ day:['day','days'], payment:['payment','payments'], bank:['bank','banks'], month:['month','months'] },
   noun(n,k){ return n===1?this.words[k][0]:this.words[k][1]; },
   when(d){ if(d===0)return'today'; if(d===1)return'tomorrow'; if(d<0)return Math.abs(d)+' '+this.noun(Math.abs(d),'day')+' ago'; return 'in '+d+' '+this.noun(d,'day'); },
+  overdue(n){ return 'overdue by '+n+' '+this.noun(n,'day'); }, overdueCap:'Overdue payment', overdueShort:'overdue',
+  checkCap:'Check payment', checkQ(d){ return 'Was the '+d+' payment made?'; }, checkHint:'If the loan started after this date, tap “Yes”',
+  checkYes:'Yes, paid', checkNo:'No, not yet', markPaid:'Already paid at the bank (keep the amount)', markedPaid:'Marked ✓',
+  extraPay:'Early repayment (on top of the monthly payment)', extraWord:'Early',
   freedom(m,y){ return this.MONTHS.short[m]+' '+y; },
   remainingToPay:'Left to pay', outOf:'of', paidWord:'paid', thisMonth:'this month', debtFreedom:'debt-free',
   enc:{start:'Add your first bank to start', p100:'All loans paid off! Congratulations 🎉', p80:'Almost there — just a little left!', p50:'More than halfway there 👏', p20:'Good pace, the debt is shrinking', p0:'A good start — step by step'},
@@ -802,6 +820,22 @@ function avaHTML(l,cls){
 function clampDay(y,m,d){ const last=new Date(y,m+1,0).getDate(); return Math.min(d,last); }
 function nextDueDate(dueDay,from){ from=from||new Date(); const t=new Date(from.getFullYear(),from.getMonth(),from.getDate());
   let y=t.getFullYear(),m=t.getMonth(),c=new Date(y,m,clampDay(y,m,dueDay)); if(c<t){ m+=1; if(m>11){m=0;y+=1;} c=new Date(y,m,clampDay(y,m,dueDay)); } return c; }
+/* Периоды платежей. Номер месяца = год*12+месяц; loan.pt — последний оплаченный период.
+   Дата погашения сама не «закрывает» месяц: пока платёж не отмечен, он считается просроченным. */
+function mIdx(d){ return d.getFullYear()*12+d.getMonth(); }
+function dueAt(idx,dueDay){ const y=Math.floor(idx/12), m=idx-y*12; return new Date(y,m,clampDay(y,m,dueDay)); }
+function today0(){ const n=new Date(); return new Date(n.getFullYear(),n.getMonth(),n.getDate()); }
+function ymd(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+function lastDueIdx(dueDay){ const t=today0(); let i=mIdx(t); if(dueAt(i,dueDay)>t) i--; return i; }
+function curPt(loan){
+  if(loan.pt!=null) return loan.pt;
+  const dd=loan.dueDay||1, li=lastDueIdx(dd), from=dueAt(li,dd); from.setDate(from.getDate()-20);
+  if(loan.example || state.payments.some(p=>p.loanId===loan.id && p.date>=ymd(from))) return li;
+  return null;
+}
+function migratePt(){ let ch=false; for(const l of state.loans){ if(l.pt==null){ const v=curPt(l); if(v!=null){ l.pt=v; ch=true; } } } if(ch) persist(); }
+function markPaid(loan){ const c=curPt(loan); loan.pt = c==null ? lastDueIdx(loan.dueDay||1) : c+1; }
+function dueText(a){ if(a.check) return L.checkQ(fmtDate(a.due)); if(a.overdue) return L.overdue(-a.days); return whenText(a.days); }
 function daysUntil(d,from){ from=from||new Date(); const a=new Date(from.getFullYear(),from.getMonth(),from.getDate()); const b=new Date(d.getFullYear(),d.getMonth(),d.getDate()); return Math.round((b-a)/86400000); }
 function fmtDate(d){ return d.getDate()+' '+MONTHS[lang].long[d.getMonth()]; }
 function fmtShort(d){ return d.getDate()+' '+MONTHS[lang].short[d.getMonth()]; }
@@ -822,11 +856,12 @@ const REMIND=7;
 function analyze(loan){
   const total=Math.max(0,+loan.total||0), paid=Math.min(total,Math.max(0,+loan.paid||0)), remaining=Math.max(0,total-paid);
   const pct=total>0?Math.min(100,Math.round(paid/total*100)):0, done=remaining<=0, monthly=Math.max(0,+loan.monthly||0);
-  const due=nextDueDate(loan.dueDay||1), days=daysUntil(due);
+  const dd=loan.dueDay||1, pt=done?null:curPt(loan), check=!done&&pt==null;
+  const due=done?nextDueDate(dd):(check?dueAt(lastDueIdx(dd),dd):dueAt(pt+1,dd)), days=daysUntil(due), overdue=!done&&!check&&days<0;
   let monthsLeft=null, interestLeft=0;
   if(!done && monthly>0){ const sim=payoffSim(remaining,monthly,+loan.rate||0); if(sim){ monthsLeft=sim.months; interestLeft=sim.interest; } }
-  let urg='none'; if(!done){ if(days<=3)urg='urgent'; else if(days<=REMIND)urg='soon'; }
-  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg};
+  let urg='none'; if(!done){ if(check)urg='soon'; else if(days<=3)urg='urgent'; else if(days<=REMIND)urg='soon'; }
+  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg,overdue,check};
 }
 
 const RC=2*Math.PI*20;
@@ -851,6 +886,7 @@ function byId(id){ return state.loans.find(l=>l.id===id); }
 function pledgedGrams(){ return state.loans.reduce((s,l)=>s+(+l.gold||0),0); }
 
 function render(){
+  migratePt();
   const list=state.loans.map(l=>({loan:l,a:analyze(l)}));
   renderHero(list); renderTip(); renderNextPay(list); renderCards(list); renderStrategy(list); renderGold(list); renderBreakeven(list); renderShop(list); renderExpenses(list); renderTips(); renderTabs(); renderProfile(); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync(); renderBackupNudge();
   const act=list.filter(x=>!x.a.done).length;
@@ -870,10 +906,12 @@ function renderTip(){ let seen=false; try{seen=localStorage.getItem('tip_v1')===
   $('#tip').innerHTML=(seen||!state.loans.length)?'':`<div class="tip"><span>💡</span><span>${L.tipText}</span><button class="x" id="tipX" aria-label="×">✕</button></div>`; }
 function renderNextPay(list){
   const box=$('#nextPay'); if(!list.length){box.innerHTML='';return;}
-  const up=list.filter(x=>!x.a.done).sort((a,b)=>a.a.days-b.a.days)[0];
-  if(!up){ box.innerHTML=`<div class="nextpay calm">${L.allPaidCalm}</div>`; return; }
+  const checks=list.filter(x=>!x.a.done&&x.a.check);
+  const chk=checks.map(({loan,a})=>`<div class="nextpay soon chk"><div class="np-main"><div class="np-cap">${L.checkCap}</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when soon">${dueText(a)}</div><div class="np-hint">${L.checkHint}</div></div><div class="np-right"><button class="btn btn-primary" data-action="cyes" data-id="${loan.id}">${L.checkYes}</button><button class="btn btn-ghost" data-action="cno" data-id="${loan.id}">${L.checkNo}</button></div></div>`).join('');
+  const up=list.filter(x=>!x.a.done&&!x.a.check).sort((a,b)=>a.a.days-b.a.days)[0];
+  if(!up){ box.innerHTML=chk||`<div class="nextpay calm">${L.allPaidCalm}</div>`; return; }
   const {loan,a}=up;
-  box.innerHTML=`<div class="nextpay ${a.urg}"><div class="np-main"><div class="np-cap">${L.nearestPayment}</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when ${a.urg}">${fmtDate(a.due)} · ${whenText(a.days)}</div></div><div class="np-right"><div class="np-amt">${money(a.monthly||0)}</div><button class="btn btn-primary" data-action="pay" data-id="${loan.id}">${L.pay}</button></div></div>`;
+  box.innerHTML=chk+`<div class="nextpay ${a.urg}"><div class="np-main"><div class="np-cap">${a.overdue?L.overdueCap:L.nearestPayment}</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when ${a.urg}">${fmtDate(a.due)} · ${dueText(a)}</div></div><div class="np-right"><div class="np-amt">${money(a.monthly||0)}</div><button class="btn btn-primary" data-action="pay" data-id="${loan.id}">${L.pay}</button></div></div>`;
 }
 function renderCards(list){
   if(!list.length){ $('#cards').innerHTML=`<div class="empty"><div class="em">🏦</div><p>${L.noBanks1}<br>${L.noBanks2}</p><button class="btn btn-primary" id="addEmpty">${L.addBank}</button></div>`; return; }
@@ -882,7 +920,7 @@ function renderCards(list){
   $('#cards').innerHTML=active.map(({loan,a})=>{
     const right=`<span class="c-rem">${money(a.remaining)}</span>`;
     const gold=loan.gold?`<span class="gb" title="gold">🔶</span>`:'';
-    const sub=`<span>${a.pct}% ${L.pctPaidWord}</span>${a.monthsLeft?`<span class="mo">≈ ${a.monthsLeft} ${L.noun(a.monthsLeft,'payment')}</span>`:''}`;
+    const sub=`<span>${a.pct}% ${L.pctPaidWord}</span>${a.overdue?`<span class="mo od">${L.overdueShort}</span>`:a.monthsLeft?`<span class="mo">≈ ${a.monthsLeft} ${L.noun(a.monthsLeft,'payment')}</span>`:''}`;
     return `<div class="card" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}${gold}</span>${right}</div><div class="cbar"><i style="width:${a.pct}%"></i></div><div class="c-sub">${sub}</div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`;
   }).join('');
 }
@@ -974,13 +1012,14 @@ function tipsSheet(){
 
 function detailSheet(loan){
   const a=analyze(loan);
-  const nextLine=a.done?`<div class="dnext"><span class="k">${L.fullyPaid}</span></div>`:`<div class="dnext ${a.urg}"><span class="k">${L.nextPaymentShort}</span><span>${fmtDate(a.due)} · ${whenText(a.days)}</span><span class="amt">${money(a.monthly||0)}</span></div>`;
+  const nextLine=a.done?`<div class="dnext"><span class="k">${L.fullyPaid}</span></div>`:`<div class="dnext ${a.urg}"><span class="k">${a.overdue?L.overdueCap+':':L.nextPaymentShort}</span><span>${fmtDate(a.due)} · ${dueText(a)}</span><span class="amt">${money(a.monthly||0)}</span></div>`
+    +(a.check?`<div class="sheet-row" style="margin-top:0"><button class="btn btn-primary" data-action="cyes" data-id="${loan.id}">${L.checkYes}</button><button class="btn btn-ghost" data-action="cno" data-id="${loan.id}">${L.checkNo}</button></div>`:'');
   const goldLine=loan.gold?`<div class="dnext gold"><span class="k">${L.goldPledgeLabel}</span><span class="amt">${rf.format(+loan.gold||0)} ${L.gramsShort}</span></div>`:'';
   const lpays=state.payments.filter(p=>p.loanId===loan.id).sort((x,y)=>y.date.localeCompare(x.date)).slice(0,5);
-  const hist=lpays.length?`<div class="hist"><h4>${L.paymentsThisBank}</h4>${lpays.map(p=>`<div class="hrow"><span class="hn">${L.paymentWord}</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${money(p.amount)}</span></div>`).join('')}</div>`:'';
+  const hist=lpays.length?`<div class="hist"><h4>${L.paymentsThisBank}</h4>${lpays.map(p=>`<div class="hrow"><span class="hn">${p.extra?L.extraWord:L.paymentWord}</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${money(p.amount)}</span></div>`).join('')}</div>`:'';
   openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3><p class="lead">${loan.note?esc(loan.note):L.loanWord}</p><div class="detail-ring">${ringHTML(a.pct,'lg')}</div>
     <div class="detail-grid"><div class="dcell"><div class="k">${L.paidLabel}</div><div class="v">${money(a.paid)}</div></div><div class="dcell"><div class="k">${L.leftLabel}</div><div class="v rem ${a.done?'done':''}">${money(a.remaining)}</div></div></div>
-    ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">${L.makePayment}</button>`}
+    ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">${L.makePayment}</button>`}${a.overdue?`<button class="linkbtn" data-action="mark" data-id="${loan.id}">${L.markPaid}</button>`:''}
     <div class="sheet-row"><button class="btn btn-ghost" data-action="edit" data-id="${loan.id}">${L.edit}</button><button class="btn btn-danger" data-action="del" data-id="${loan.id}">${L.delete}</button></div>${hist}`);
 }
 
@@ -1046,12 +1085,14 @@ function payForm(loan){
   const rem=Math.max(0,(loan.total||0)-(loan.paid||0));
   openSheet(`<h3>${L.makePayment}</h3><p class="lead">${esc(loan.name)} · ${L.leftWord} ${money(rem)}</p>
     <div class="field n"><label>${L.paymentAmount}</label><input id="p-amt" type="number" inputmode="numeric" min="0" value="${loan.monthly||''}" placeholder="2000"></div>
+    <div class="field"><label class="check"><input type="checkbox" id="p-extra"> ${L.extraPay}</label></div>
     <div class="err" id="p-err"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="p-save">${L.record}</button></div>`);
   const inp=$('#p-amt'); inp.focus(); inp.select();
   $('#p-save').onclick=()=>{
     const amt=+inp.value; if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
     const before=+loan.paid||0; loan.paid=Math.min(loan.total, before+amt); const applied=Math.max(0,loan.paid-before)||amt;
-    state.payments.push({id:'p'+Date.now(),loanId:loan.id,amount:applied,date:new Date().toISOString().slice(0,10)});
+    const extra=$('#p-extra').checked; if(!extra) markPaid(loan);
+    state.payments.push({id:'p'+Date.now(),loanId:loan.id,amount:applied,date:ymd(new Date()),...(extra?{extra:true}:{})});
     const payoff=loan.paid>=loan.total; persist(); closeSheet(); render();
     try{ navigator.vibrate && navigator.vibrate(payoff?[18,50,18]:12); }catch(e){}
     if(payoff) celebrate();
@@ -1496,6 +1537,7 @@ document.addEventListener('click', e=>{
     if(a==='goldedit'){ goldEditForm(); return; }
     if(a==='beedit'){ beEditForm(); return; }
     const loan=byId(act.dataset.id); if(!loan) return;
+    if(a==='cyes'||a==='mark'||a==='cno'){ if(a==='cno') loan.pt=lastDueIdx(loan.dueDay||1)-1; else markPaid(loan); persist(); const wasSheet=!!act.closest('#sheet'); render(); if(wasSheet) detailSheet(loan); toast(L.markedPaid); return; }
     if(a==='open') detailSheet(loan); if(a==='pay') payForm(loan); if(a==='edit') loanForm(loan); if(a==='del') confirmDelete(loan); return; }
   if(e.target.closest('#langTop')) langSheet();
   if(e.target.closest('#dataTop')) dataSheet();
