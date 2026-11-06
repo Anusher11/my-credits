@@ -983,6 +983,61 @@
   .wh-more{border:1px solid var(--line); border-radius:14px; padding:2px 13px; margin:8px 0; background:var(--surface-2);}
   .wh-more summary{cursor:pointer; font-weight:800; padding:10px 0; list-style:none;} .wh-more summary::-webkit-details-marker{display:none;}
   .wh-more ul{margin:0 0 10px; padding-left:18px; font-size:.86rem; line-height:1.5;} .wh-more li{margin-bottom:6px;}
+  /* ---- помощники закупки ---- */
+  .btools{margin:-2px 0 12px; border:1px solid var(--line); border-radius:16px; background:var(--surface); box-shadow:var(--shadow);}
+  .btools summary{cursor:pointer; font-weight:800; padding:11px 14px; list-style:none;} .btools summary::-webkit-details-marker{display:none;}
+  .btgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:7px; padding:0 10px 12px;}
+  .btgrid button{display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 4px; border:1px solid var(--line); border-radius:13px; background:var(--surface-2); color:var(--ink); cursor:pointer; min-width:0;}
+  .btgrid button span{font-size:1.35rem;} .btgrid button small{font-size:.72rem; font-weight:800; text-align:center; line-height:1.2;}
+  /* ---- куда вложить ---- */
+  .iv-res{display:grid; gap:9px; margin:6px 0 12px;}
+  .iv-o{border:1px solid var(--line); border-radius:16px; padding:11px 13px; background:var(--surface); box-shadow:var(--shadow);}
+  .iv-o.best{border:2px solid var(--brand); background:color-mix(in srgb,var(--brand) 6%,var(--surface));} .iv-o.neg{opacity:.75;}
+  .iv-oh{display:flex; justify-content:space-between; align-items:center;} .iv-best{background:var(--brand); color:#fff; border-radius:99px; padding:3px 10px; font-size:.75rem; font-weight:800;}
+  .iv-p{font-family:var(--font-num); font-size:1.45rem; font-weight:900; margin:4px 0 2px;} .iv-p small{font-size:.85rem;}
+  .iv-l{font-size:.84rem; line-height:1.45; color:var(--ink); margin-top:2px;} .iv-l small{color:var(--muted);}
+  .iv-tag{display:inline-block; border-radius:99px; padding:3px 9px; font-size:.76rem; font-weight:800; margin-top:4px;}
+  .iv-tag.in{background:color-mix(in srgb,#E0631A 14%,var(--surface)); color:#B4470B;} .iv-tag.ok{background:var(--surface-2);} .iv-tag.off{background:var(--surface-2); color:var(--muted);}
+  .iv-cy{border:1px dashed var(--line); border-radius:16px; padding:10px 13px; margin-bottom:8px;} .iv-cy h4{margin:2px 0 8px; font-size:.95rem;}
+  .iv-cr{display:flex; gap:10px; align-items:center; padding:6px 0; border-bottom:1px solid var(--line);} .iv-cr:last-of-type{border-bottom:0;}
+  .iv-cr > span{width:26px; height:26px; border-radius:50%; background:var(--brand); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:.8rem; flex:none;}
+  .iv-cr b{display:block; font-family:var(--font-num); font-size:.9rem;} .iv-cr small{color:var(--muted); font-size:.76rem;}
+  .iv-mt{width:100%; border-collapse:collapse; font-size:.84rem;} .iv-mt th{font-weight:800; text-align:center; padding:4px;} .iv-mt td{padding:6px 4px; border-top:1px solid var(--line);}
+  .iv-mt td:not(:first-child){text-align:center;} .iv-mt td b{display:block;} .iv-mt td small{color:var(--muted); font-size:.7rem;} .iv-mt td.p b{color:var(--brand);} .iv-mt td.n b{color:var(--danger);}
+  .iv-mt tr{cursor:pointer;} .iv-mt tr.on td{background:color-mix(in srgb,var(--brand) 8%,var(--surface));}
+  /* ---- списки с галочками ---- */
+  .rs-list{margin:6px 0 12px;} .rs-r{display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-bottom:1px solid var(--line); cursor:pointer;}
+  .rs-r input{width:20px; height:20px; margin-top:2px; flex:none;} .rs-r small{color:var(--muted);} .rs-sz{display:flex; flex-wrap:wrap; gap:6px; margin-top:5px;} .rs-sz span{background:var(--surface-2); border-radius:8px; padding:3px 7px; font-size:.8rem;}
+  /* ---- размеры, ярлыки ---- */
+  .sz-t{width:100%; border-collapse:collapse; margin-top:10px; font-size:.86rem; font-family:var(--font-num);} .sz-t th{background:var(--surface-2); padding:7px 4px; font-size:.76rem;} .sz-t td{text-align:center; padding:7px 4px; border-top:1px solid var(--line);} .sz-t tr:nth-child(even) td{background:color-mix(in srgb,var(--surface-2) 50%,transparent);}
+  .lb-r{padding:9px 0; border-bottom:1px solid var(--line);} .lb-w b{font-size:.95rem;} .lb-w small{display:block; color:var(--muted); font-size:.8rem;}
+  .lb-x{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:4px; font-size:.86rem;} .lb-cn i{color:var(--muted); font-style:normal; font-size:.78rem;}
+  /* ---- факты поставщика, наценки, деньги в товаре ---- */
+  .vfacts{border-radius:13px; padding:9px 12px; margin:8px 0; font-size:.84rem;} .vfacts.ok{background:color-mix(in srgb,var(--brand) 8%,var(--surface));} .vfacts.warn{background:color-mix(in srgb,#E0A100 12%,var(--surface));}
+  .vfacts div{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:4px;}
+  .mk-r{display:flex; justify-content:space-between; align-items:center; padding:7px 0; border-bottom:1px solid var(--line);} .pin.sm{display:flex; align-items:center; gap:6px;} .pin.sm input{width:80px; text-align:center;}
+  .sm-card{display:grid; grid-template-columns:repeat(3,1fr); gap:6px; margin:0 0 8px;} .sm-card > div{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:8px 9px;} .sm-card small{display:block; color:var(--muted); font-size:.7rem;} .sm-card b{font-family:var(--font-num); font-size:.92rem;}
+  .iv-acts{display:flex; flex-wrap:wrap; gap:4px 14px; margin:0 0 12px;} .iv-acts .link-btn{font-size:.84rem;}
+  /* ---- бонусы ---- */
+  .loy{border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:10px 0;} .loy p{margin:8px 0 0; font-size:.86rem;} .loy small{color:var(--muted);}
+  .loy-b{display:flex; gap:4px;} .loy-b i{flex:1; height:12px; border-radius:6px; background:var(--track); display:flex; align-items:center; justify-content:center; font-style:normal; font-size:.7rem;} .loy-b i.on{background:var(--brand);} .loy-b i.gift{height:20px; background:color-mix(in srgb,#E0A100 25%,var(--surface));}
+  /* ---- чек ---- */
+  .rc-ph{display:flex; gap:10px; align-items:center; margin:-4px 0 10px; font-size:.84rem;} .rc-ph img{width:54px; height:70px; object-fit:cover; border-radius:8px;}
+  .card.lp-best{border:2px solid var(--brand);}
+  /* ---- каталог для покупателя ---- */
+  html.catv-on body{overflow:hidden;}
+  #catv{position:fixed; inset:0; z-index:200; background:var(--bg); overflow-y:auto; padding:calc(10px + env(safe-area-inset-top,0px)) 14px 30px;}
+  .cv-top{display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:10px; font-size:1.05rem;} .cv-top button{border:0; background:var(--surface-2); color:var(--ink); border-radius:99px; padding:9px 14px; font-weight:800; cursor:pointer;}
+  .cv-f{flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px;} .cv-f .chip{flex:none;}
+  .cv-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;}
+  .cv-it{display:flex; flex-direction:column; gap:3px; border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:8px; text-align:left; color:var(--ink); cursor:pointer;}
+  .cv-it img, .cv-it em{width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:11px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; font-style:normal; font-size:2.4rem;}
+  .cv-it b{font-size:.88rem; line-height:1.25;} .cv-it span{font-family:var(--font-num); font-weight:900; color:var(--brand);}
+  .cv-big img, .cv-big em{width:100%; max-height:62vh; object-fit:contain; border-radius:16px; background:var(--surface-2); display:flex; align-items:center; justify-content:center; font-style:normal; font-size:5rem; min-height:240px;}
+  .cv-info h2{margin:12px 0 2px; font-size:1.3rem;} .cv-p{font-family:var(--font-num); font-size:1.8rem; font-weight:900; color:var(--brand);}
+  .cv-sz{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;} .cv-sz span{border:1.5px solid var(--line); border-radius:10px; padding:6px 12px; font-weight:800;}
+  .cv-nav{display:flex; justify-content:space-between; margin-top:16px;} .cv-nav button{width:64px; height:52px; border-radius:16px; border:1px solid var(--line); background:var(--surface); font-size:1.8rem; color:var(--ink); cursor:pointer;} .cv-nav button:disabled{opacity:.3;}
+  .iv-warn{margin-top:6px; font-size:.8rem; line-height:1.4; color:#9A5B00; background:color-mix(in srgb,#E0A100 12%,var(--surface)); border-radius:10px; padding:6px 9px;}
 </style>
 </head>
 <body>
@@ -1675,7 +1730,7 @@ en:{
 },
 };
 for(const k of ['ru','tg','en']) Object.assign(D[k],X5[k]);
-const V6C=['cust','cdebt','home','bills','goals','promos','shopList','inv','invLog','prices','trips','vendors','tprods','torders','texp','cargo','cargoCo'];
+const V6C=['cust','cdebt','home','bills','goals','promos','shopList','inv','invLog','prices','trips','vendors','tprods','torders','texp','cargo','cargoCo','wallet','cbuy'];
 /* ----- v6: новые строки ----- */
 const X6={
 ru:{
@@ -2574,7 +2629,96 @@ en:{
   whC_all:'All', whC_kids:'Kids', whC_teen:'Teens', whC_women:'Women', whC_men:'Men', whC_bed:'Bedding', whC_shoes:'Shoes', whC_dress:'Dressy', whC_elec:'Electronics', whC_appl:'Appliances', whC_acc:'Jewellery', whC_toys:'Toys', whC_cosm:'Cosmetics', whC_hh:'Kitchenware', fiWhen(n,f,d,l){ return 'For '+n+' '+f+' leave by '+d+(l?' — '+l+' days left':' — today'); },
 },
 };
-for(const k of ['ru','tg','en']){ const t2=X6[k].tipGroups2; delete X6[k].tipGroups2; Object.assign(D[k],X6[k]); if(t2) D[k].tipGroups=D[k].tipGroups.concat(t2); Object.assign(D[k],X7[k]); Object.assign(D[k],X8[k]); }
+const X9={
+ru:{
+  ivTitle:'Куда вложить деньги', ivShort:'Куда вложить', ivLead:'Введите сумму — приложение посчитает, сколько товара выйдет, какая будет выручка и прибыль, за сколько месяцев продадите и как дойти до цели. Все цифры можно поправить внизу.',
+  ivCap:'Сколько денег', ivTarget:'Цель — во сколько раз увеличить', ivWhen:'Когда начинаете', ivNow:'Сейчас', ivWhat:'Во что вложить', ivNeedCap:'Введите сумму', ivBest:'Выгоднее', ivRev:'Выручка',
+  ivBuyN(n,p){ return 'Купите ≈ '+n+' шт по '+p+' $'; }, ivHist:'по вашим закупкам', ivSellAt:'продавать по', ivTime(d,m,t){ return 'Товар в магазине через '+d+' дн., продать за '+m+' мес. — круг ≈ '+t+' мес.'; },
+  ivSeasonIn(n){ return 'успеваете к «'+n+'» — в сезон'; }, ivSeasonOk(n){ return 'следующий пик — «'+n+'»'; }, ivSeasonOff:'не сезон — продаётся медленнее',
+  ivCyT(a,b,f){ return 'Как из '+a+' сделать '+b+' '+f; }, ivCyBy(d){ return 'к '+d; }, ivCyOk(n,m){ return '✓ Цель — за '+n+' круг(а), ≈ '+m+' мес.'; }, ivCyLong:'За 12 кругов цели не достичь — прибыль слишком маленькая.', ivCyNo:'С этими цифрами прибыли нет — поменяйте товар, страну, наценку или месяц.',
+  ivMatrix:'Что выгоднее: все товары, Китай и Турция', ivMxLead:'Прибыль за один круг и сколько месяцев он длится. Нажмите строку, чтобы выбрать.', ivMoW:'мес.', ivSet:'Цифры для расчёта (можно править)', ivPriceOne:'цена закупки 1 шт, $',
+  ivCapM:'Магазин продаёт в месяц, смн', ivCapDef:'примерно, поставьте свою выручку', ivCapLim(c,m){ return 'Магазин продаёт ≈ '+c+' в месяц — на всю партию уйдёт ≈ '+m+' мес. Выгоднее вложить часть суммы или продавать ещё оптом и в Instagram.'; }, ivMkC:'Наценка на себестоимость, % (у китайского обычно больше)', ivMk:'Наценка, %', ivW:'Вес 1 шт, кг', ivMonths:'Продавать месяцев', ivTrip:'Дорога, жильё, еда за поездку, $', ivCgr:'Карго, $ за 1 кг', ivOth:'Прочее (упаковка, таможня), %', ivFull:'Продастся по полной цене, %', ivDisc:'Скидка на остаток, %', ivShare:'Доля расходов магазина, %', ivShop:'Расходы магазина в месяц, смн', ivReset:'Вернуть примерные цифры',
+  ivNote:'Это расчёт по вашим цифрам, а не обещание: продажи зависят от модели, места и цены. Цены «по умолчанию» — примерные, поправьте под свои. Где есть ✓ — цена взята из ваших прошлых закупок.',
+  btTitle:'Помощники', rsShort:'Что докупить', tmShort:'Деньги в дорогу', szShort:'Размеры', lbShort:'Ярлыки',
+  rsTitle:'Что докупить', rsLead:'По продажам за 60 дней: что кончается и сколько взять, чтобы хватило ещё на 2 месяца.', rsSold(n){ return 'продано '+n; }, rsLeft(n){ return 'осталось '+n; }, rsAdd:'Добавить в список закупки', rsNone:'Пока мало продаж в «Остатках». Отмечайте продажи кнопкой «−» — и здесь появится список.',
+  tmTitle:'Деньги на поездку', tmLead:'Сколько можно потратить, чтобы хватило на платежи по кредитам и счета, пока товар едет и продаётся (60 дней).', tmCash:'Сейчас на руках (наличные + карта), смн', tmNet:'Половина ожидаемой прибыли магазина', tmLoans:'Платежи по кредитам', tmBills:'Счета', tmSup:'Долги поставщикам', tmRes:'Запас на всякий случай (10%)', tmSafe:'Можно потратить',
+  tmHow_CN(a,t){ return 'Возьмите ≈ '+a+' ('+t+'): бо́льшую часть — на карту для Alipay или WeChat Pay, немного наличных юаней на мелочи.'; }, tmHow_TR(a,t){ return 'Возьмите ≈ '+a+' ('+t+') наличными долларами — опт в Турции часто считают в долларах.'; }, tmHow_AE(a,t){ return 'Возьмите ≈ '+a+' ('+t+') — доллары легко поменять на дирхамы.'; }, tmHow_XX(a,t){ return 'Возьмите ≈ '+a+' ('+t+').'; },
+  tmBank(b,r){ return 'Доллары сейчас выгоднее купить: '+b+' — '+r; }, tmNoSafe:'Сейчас свободных денег на поездку нет: сначала платежи и счета.', tmNote:'Платежи берутся из ваших кредитов, счетов и долгов поставщикам. Прибыль — по выручке за прошлые месяцы.',
+  wlTitle:'Кошелёк валют', wlAvg:'куплено по', wlNote:'Справа — сколько вы выиграли или потеряли бы, если бы меняли по сегодняшнему курсу.', wlEmpty:'Записывайте, сколько валюты купили и по какому курсу.', wlBuy:'Купила валюту', wlSpend:'Потратила', wlRate(s){ return 'Курс: сколько смн за 1 '+s; },
+  tpfHint:'Добавьте товар из заказа в «Остатки» — тогда здесь появится прибыль поездки.', tpfTitle:'Прибыль поездки', tpfSpent:'Потрачено на поездку', tpfRev(n){ return 'Продано ('+n+' шт)'; }, tpfLeft:'Осталось товара (по цене продажи)', tpfProfit:'Уже заработали', tpfBack:'Ещё вернуть', tpfPot:'Если всё продать', tpfVend:'Лучшие поставщики', tpfMk(n){ return 'наценка '+n+'%'; }, tpfSt(n){ return 'продано '+n+'%'; },
+  tgTitle:'Ценники', tgShort:'Ценники', tgLead:'Выберите товары — получите лист ценников для печати (А4, по 21 на лист).', tgWhite:'Белые', tgBrand:'Цветные', tgPrint:'Печать', tgPdf:'В окне печати можно выбрать «Сохранить как PDF» и распечатать позже.', tgNone:'Нет товаров с ценой в «Остатках».', tgSizes:'Размеры', tgFail:'Не удалось открыть печать',
+  lpTitle:'Какой кредит гасить первым', lpShort:'Что гасить первым', lpLead:'Если появились лишние деньги — где досрочное погашение сэкономит больше всего.', lpExtra:'Сколько лишних денег, смн', lpNoRate:'нет ставки', lpLeft:'осталось', lpSave:'экономия', lpFewer(n){ return 'на '+n+' мес. быстрее'; }, lpNone:'Нет открытых кредитов.', lpNote:'Расчёт примерный. Перед досрочным погашением спросите в банке, нет ли штрафа, и оставьте запас на 1–2 платежа.',
+  szTitle:'Таблица размеров', szLead:'Наши, европейские (Турция), международные и китайские размеры рядом.', szT_women:'Женские', szT_men:'Мужские', szT_kids:'Детские', szT_shoes:'Обувь', szChest:'Грудь, см', szAge:'Возраст', szHeight:'Рост, см', szFoot:'Стопа, см',
+  szTip_women:'Китайские размеры обычно на один меньше — берите на размер больше и просите мерки в сантиметрах. Турция пишет европейские цифры (36, 38, 40…).', szTip_men:'Наш размер — это половина обхвата груди. Китайские модели часто короче в рукаве и брюках.', szTip_kids:'Детское в Китае и у нас подписывают ростом (110, 116…), в Турции — возрастом (5 yaş = 5 лет).', szTip_shoes:'Таблица примерная: меряйте длину стопы. Китайские фабрики иногда пишут длину в мм (235 = 23,5 см).',
+  lbTitle:'Словарь ярлыков', lbLead:'Как на китайских и турецких ярлыках пишут состав ткани — чтобы понять, из чего вещь, ещё до покупки.', lbSearch:'Хлопок, 棉, pamuk…', lbTip:'Хорошее сочетание для одежды: хлопок 95% + эластан 5%. Полиэстер 100% — дешевле, но не дышит.',
+  vfTitle:'По фактам', vfShort(n){ return 'недостача '+n+'%'; }, vfLate(l,n){ return 'опоздали '+l+' из '+n+' партий'; },
+  mkTitle:'Наценки по видам товара', mkShort:'Наценки', mkLead:'Своя наценка для каждого вида — по ней приложение предлагает цену продажи и считает «Куда вложить».', mkNote:'Пусто — берётся обычная наценка из калькулятора цены.',
+  smCost:'В товаре (по закупке)', smPrice:'По ценам продажи', smDays:'Продаётся за', smDaysV(n){ return '≈ '+n+' дн.'; },
+  ctShort:'Каталог', ctTitle:'Каталог', ctAll:'Все', ctAllSizes:'Все размеры', ctNone:'Нет товара в наличии.',
+  loyTitle:'Бонусы постоянным', loyLead:'Каждая N-я покупка — со скидкой. Покупки в долг (насия) тоже считаются.', loyEvery:'Каждая какая покупка', loyPct:'Скидка, %', loyNext(p){ return 'Следующая покупка — со скидкой '+p+'%'; }, loyLeft(k,n,r){ return k+' из '+n+' — ещё '+r+' до подарка'; }, loyTotal(n){ return 'всего покупок: '+n; }, loyAdd:'Покупка', loyUsed:'Скидка использована — круг начался заново',
+  clTitle:'Копия в облаке', clOn:'Копия в облаке включена: данные зашифрованы и хранятся на сервере.', clCode:'Код восстановления', clKeep:'Запишите код в надёжное место — с ним всё восстановится на новом телефоне. Фото в облако не попадают (они в файле копии).', clOffer:'Если телефон потеряется или сломается, данные восстановятся по коду. Всё шифруется на телефоне — сервер не видит ваши цифры.', clOnBtn:'Включить', clRestore:'Восстановить по коду', clFail:'Сервер пока недоступен — копия отправится, когда появится связь.',
+  rcBtn:'Чек', rcWait:'Читаю сумму с чека…', rcFound(v){ return 'Нашла сумму: '+v+' — проверьте'; }, rcNo:'Сумму не нашла — введите сами', rcOff:'Нужен интернет, чтобы прочитать чек. Фото сохранится.',
+},
+tg:{
+  ivTitle:'Пулро ба куҷо гузорем', ivShort:'Ба куҷо гузорем', ivLead:'Маблағро ворид кунед — барнома ҳисоб мекунад: чанд мол мебарояд, даромад ва фоида чӣ қадар, дар чанд моҳ мефурӯшед ва чӣ тавр ба ҳадаф мерасед. Ҳамаи рақамҳоро дар поён ислоҳ кардан мумкин.',
+  ivCap:'Чанд пул', ivTarget:'Ҳадаф — чанд баробар зиёд кардан', ivWhen:'Кай сар мекунед', ivNow:'Ҳозир', ivWhat:'Ба чӣ гузорем', ivNeedCap:'Маблағро ворид кунед', ivBest:'Фоиданоктар', ivRev:'Даромад',
+  ivBuyN(n,p){ return '≈ '+n+' дона бо '+p+' $ мехаред'; }, ivHist:'аз рӯи хариди шумо', ivSellAt:'фурӯш бо', ivTime(d,m,t){ return 'Мол баъди '+d+' рӯз дар мағоза, дар '+m+' моҳ фурӯхта мешавад — давра ≈ '+t+' моҳ'; },
+  ivSeasonIn(n){ return 'ба «'+n+'» мерасед — дар мавсим'; }, ivSeasonOk(n){ return 'авҷи навбатӣ — «'+n+'»'; }, ivSeasonOff:'мавсим нест — сусттар фурӯхта мешавад',
+  ivCyT(a,b,f){ return 'Чӣ тавр аз '+a+' '+b+' сохтан '+f; }, ivCyBy(d){ return 'то '+d; }, ivCyOk(n,m){ return '✓ Ҳадаф — дар '+n+' давра, ≈ '+m+' моҳ'; }, ivCyLong:'Дар 12 давра ба ҳадаф намерасед — фоида хеле кам.', ivCyNo:'Бо ин рақамҳо фоида нест — мол, кишвар, нархафзоӣ ё моҳро иваз кунед.',
+  ivMatrix:'Чӣ фоиданоктар: ҳамаи молҳо, Чин ва Туркия', ivMxLead:'Фоидаи як давра ва он чанд моҳ давом мекунад. Барои интихоб сатрро пахш кунед.', ivMoW:'моҳ', ivSet:'Рақамҳо барои ҳисоб (ислоҳ кардан мумкин)', ivPriceOne:'нархи хариди 1 дона, $',
+  ivCapM:'Мағоза дар як моҳ мефурӯшад, смн', ivCapDef:'тахминӣ, даромади худро гузоред', ivCapLim(c,m){ return 'Мағоза дар як моҳ ≈ '+c+' мефурӯшад — барои тамоми партия ≈ '+m+' моҳ лозим. Қисми маблағро гузоштан ё боз яклухт ва дар Instagram фурӯхтан фоиданоктар.'; }, ivMkC:'Нархафзоӣ ба арзиши аслӣ, % (ба моли чинӣ одатан бештар)', ivMk:'Нархафзоӣ, %', ivW:'Вазни 1 дона, кг', ivMonths:'Чанд моҳ фурӯхтан', ivTrip:'Роҳ, ҷой, хӯрок барои сафар, $', ivCgr:'Карго, $ барои 1 кг', ivOth:'Дигар (бастабандӣ, гумрук), %', ivFull:'Бо нархи пурра фурӯхта мешавад, %', ivDisc:'Тахфиф барои бақия, %', ivShare:'Ҳиссаи хароҷоти мағоза, %', ivShop:'Хароҷоти мағоза дар як моҳ, смн', ivReset:'Рақамҳои тахминиро баргардонед',
+  ivNote:'Ин ҳисоб аз рӯи рақамҳои шумост, на ваъда: фурӯш аз модел, ҷой ва нарх вобаста аст. Нархҳои «пешфарз» тахминӣ мебошанд, онҳоро ислоҳ кунед. Дар ҷое ки ✓ ҳаст — нарх аз хариди пешинаи шумо гирифта шудааст.',
+  btTitle:'Ёрдамчиён', rsShort:'Чӣ бояд харид', tmShort:'Пул барои роҳ', szShort:'Андозаҳо', lbShort:'Тамғаҳо',
+  rsTitle:'Чӣ бояд илова харид', rsLead:'Аз рӯи фурӯши 60 рӯз: чӣ тамом мешавад ва чӣ қадар гирифтан лозим, то боз 2 моҳ кифоя кунад.', rsSold(n){ return 'фурӯхта '+n; }, rsLeft(n){ return 'монд '+n; }, rsAdd:'Ба рӯйхати харид илова кардан', rsNone:'Ҳоло дар «Бақия» фурӯш кам аст. Фурӯшро бо тугмаи «−» қайд кунед — ин ҷо рӯйхат пайдо мешавад.',
+  tmTitle:'Пул барои сафар', tmLead:'Чӣ қадар харҷ кардан мумкин, то барои пардохти қарзҳо ва ҳисобҳо кифоя кунад, вақте мол дар роҳ ва фурӯш аст (60 рӯз).', tmCash:'Ҳозир дар даст (нақд + корт), смн', tmNet:'Нисфи фоидаи интизории мағоза', tmLoans:'Пардохти қарзҳо', tmBills:'Ҳисобҳо', tmSup:'Қарз ба таъминкунандагон', tmRes:'Захира барои ҳар эҳтимол (10%)', tmSafe:'Харҷ кардан мумкин',
+  tmHow_CN(a,t){ return '≈ '+a+' ('+t+') гиред: қисми зиёдро ба корт барои Alipay ё WeChat Pay, каме юани нақд барои чизҳои майда.'; }, tmHow_TR(a,t){ return '≈ '+a+' ('+t+') доллари нақд гиред — яклухт дар Туркия аксар бо доллар ҳисоб мешавад.'; }, tmHow_AE(a,t){ return '≈ '+a+' ('+t+') гиред — долларро ба дирҳам осон иваз мекунанд.'; }, tmHow_XX(a,t){ return '≈ '+a+' ('+t+') гиред.'; },
+  tmBank(b,r){ return 'Долларро ҳозир фоиданоктар харидан: '+b+' — '+r; }, tmNoSafe:'Ҳозир пули озод барои сафар нест: аввал пардохтҳо ва ҳисобҳо.', tmNote:'Пардохтҳо аз қарзҳо, ҳисобҳо ва қарзҳои таъминкунандагон гирифта мешаванд. Фоида — аз рӯи даромади моҳҳои гузашта.',
+  wlTitle:'Ҳамёни асъор', wlAvg:'харида бо', wlNote:'Дар тарафи рост — чӣ қадар бурд ё бохт мекардед, агар бо қурби имрӯза иваз мекардед.', wlEmpty:'Нависед, ки чӣ қадар асъор ва бо кадом қурб харидед.', wlBuy:'Асъор харидам', wlSpend:'Харҷ кардам', wlRate(s){ return 'Қурб: чанд смн барои 1 '+s; },
+  tpfHint:'Молро аз фармоиш ба «Бақия» илова кунед — он гоҳ ин ҷо фоидаи сафар пайдо мешавад.', tpfTitle:'Фоидаи сафар', tpfSpent:'Барои сафар харҷ шуд', tpfRev(n){ return 'Фурӯхта ('+n+' дона)'; }, tpfLeft:'Моли боқимонда (бо нархи фурӯш)', tpfProfit:'Аллакай ба даст омад', tpfBack:'Ҳоло бояд баргардад', tpfPot:'Агар ҳама фурӯхта шавад', tpfVend:'Беҳтарин таъминкунандагон', tpfMk(n){ return 'нархафзоӣ '+n+'%'; }, tpfSt(n){ return 'фурӯхта '+n+'%'; },
+  tgTitle:'Нархномаҳо', tgShort:'Нархнома', tgLead:'Молҳоро интихоб кунед — варақи нархномаҳо барои чоп (А4, 21 дона дар варақ).', tgWhite:'Сафед', tgBrand:'Рангин', tgPrint:'Чоп', tgPdf:'Дар равзанаи чоп «Ҳамчун PDF нигоҳ доштан»-ро интихоб карда, баъдтар чоп кардан мумкин.', tgNone:'Дар «Бақия» моли нархдор нест.', tgSizes:'Андозаҳо', tgFail:'Чопро кушода натавонистам',
+  lpTitle:'Кадом қарзро аввал пардохт кунем', lpShort:'Аввал чиро пардохтан', lpLead:'Агар пули изофа пайдо шуд — пардохти пешакӣ дар куҷо бештар сарфа медиҳад.', lpExtra:'Чӣ қадар пули изофа, смн', lpNoRate:'фоиз нест', lpLeft:'монд', lpSave:'сарфа', lpFewer(n){ return n+' моҳ зудтар'; }, lpNone:'Қарзи кушода нест.', lpNote:'Ҳисоб тахминӣ аст. Пеш аз пардохти пешакӣ аз бонк пурсед, ки ҷарима нест, ва барои 1–2 пардохт захира гузоред.',
+  szTitle:'Ҷадвали андозаҳо', szLead:'Андозаҳои мо, аврупоӣ (Туркия), байналмилалӣ ва чинӣ дар як ҷо.', szT_women:'Занона', szT_men:'Мардона', szT_kids:'Кӯдакона', szT_shoes:'Пойафзол', szChest:'Сина, см', szAge:'Синну сол', szHeight:'Қад, см', szFoot:'Пой, см',
+  szTip_women:'Андозаҳои чинӣ одатан як андоза хурдтаранд — як андоза калонтар гиред ва ченакро бо сантиметр пурсед. Туркия рақамҳои аврупоӣ менависад (36, 38, 40…).', szTip_men:'Андозаи мо — нисфи даври сина. Моделҳои чинӣ аксар дар остин ва шим кӯтоҳтаранд.', szTip_kids:'Либоси кӯдаконаро дар Чин ва дар мо бо қад (110, 116…), дар Туркия бо синну сол (5 yaş = 5 сола) менависанд.', szTip_shoes:'Ҷадвал тахминӣ аст: дарозии пойро чен кунед. Фабрикаҳои чинӣ баъзан дарозиро бо мм менависанд (235 = 23,5 см).',
+  lbTitle:'Луғати тамғаҳо', lbLead:'Таркиби матоъ дар тамғаҳои чинӣ ва туркӣ чӣ тавр навишта мешавад — то пеш аз харид фаҳмед, ки мол аз чӣ аст.', lbSearch:'Пахта, 棉, pamuk…', lbTip:'Таркиби хуб барои либос: пахта 95% + эластан 5%. Полиэстер 100% — арзонтар, вале нафас намекашад.',
+  vfTitle:'Аз рӯи далелҳо', vfShort(n){ return 'камомад '+n+'%'; }, vfLate(l,n){ return l+' аз '+n+' партия дер монд'; },
+  mkTitle:'Нархафзоӣ аз рӯи навъи мол', mkShort:'Нархафзоӣ', mkLead:'Барои ҳар навъ нархафзоии худ — барнома аз рӯи он нархи фурӯшро пешниҳод мекунад ва «Ба куҷо гузорем»-ро ҳисоб мекунад.', mkNote:'Холӣ — нархафзоии оддӣ аз ҳисобкунаки нарх гирифта мешавад.',
+  smCost:'Дар мол (бо нархи харид)', smPrice:'Бо нархи фурӯш', smDays:'Фурӯхта мешавад дар', smDaysV(n){ return '≈ '+n+' рӯз'; },
+  ctShort:'Каталог', ctTitle:'Каталог', ctAll:'Ҳама', ctAllSizes:'Ҳамаи андозаҳо', ctNone:'Моли мавҷуд нест.',
+  loyTitle:'Бонус ба мизоҷони доимӣ', loyLead:'Ҳар хариди N-ум — бо тахфиф. Харидҳо бо насия ҳам ҳисоб мешаванд.', loyEvery:'Ҳар кадом харид', loyPct:'Тахфиф, %', loyNext(p){ return 'Хариди навбатӣ — бо тахфифи '+p+'%'; }, loyLeft(k,n,r){ return k+' аз '+n+' — боз '+r+' то тӯҳфа'; }, loyTotal(n){ return 'ҳамагӣ харид: '+n; }, loyAdd:'Харид', loyUsed:'Тахфиф истифода шуд — давра аз нав сар шуд',
+  clTitle:'Нусха дар абр', clOn:'Нусха дар абр фаъол аст: маълумот рамзгузорӣ шуда, дар сервер нигоҳ дошта мешавад.', clCode:'Рамзи барқарорсозӣ', clKeep:'Рамзро дар ҷои боэътимод нависед — бо он ҳама чиз дар телефони нав барқарор мешавад. Суратҳо ба абр намераванд (онҳо дар файли нусха ҳастанд).', clOffer:'Агар телефон гум ё вайрон шавад, маълумот бо рамз барқарор мешавад. Ҳама чиз дар телефон рамзгузорӣ мешавад — сервер рақамҳои шуморо намебинад.', clOnBtn:'Фаъол кардан', clRestore:'Бо рамз барқарор кардан', clFail:'Сервер ҳоло дастрас нест — нусха вақте пайваст шавад, фиристода мешавад.',
+  rcBtn:'Чек', rcWait:'Маблағро аз чек мехонам…', rcFound(v){ return 'Маблағ ёфт шуд: '+v+' — санҷед'; }, rcNo:'Маблағ ёфт нашуд — худатон ворид кунед', rcOff:'Барои хондани чек интернет лозим. Сурат нигоҳ дошта мешавад.',
+},
+en:{
+  ivTitle:'Where to invest', ivShort:'Where to invest', ivLead:'Enter an amount — the app works out how many goods you get, revenue and profit, how many months to sell, and how to reach your goal. Every number can be adjusted below.',
+  ivCap:'How much money', ivTarget:'Goal — multiply by', ivWhen:'When you start', ivNow:'Now', ivWhat:'What to buy', ivNeedCap:'Enter an amount', ivBest:'Best', ivRev:'Revenue',
+  ivBuyN(n,p){ return 'Buy ≈ '+n+' pcs at '+p+' $'; }, ivHist:'from your purchases', ivSellAt:'sell at', ivTime(d,m,t){ return 'In the shop in '+d+' days, sold in '+m+' months — a cycle ≈ '+t+' months'; },
+  ivSeasonIn(n){ return 'in time for '+n+' — in season'; }, ivSeasonOk(n){ return 'next peak — '+n; }, ivSeasonOff:'off season — sells slower',
+  ivCyT(a,b,f){ return 'How to turn '+a+' into '+b+' '+f; }, ivCyBy(d){ return 'by '+d; }, ivCyOk(n,m){ return '✓ Goal in '+n+' cycle(s), ≈ '+m+' months'; }, ivCyLong:'12 cycles won’t reach the goal — profit is too small.', ivCyNo:'No profit with these numbers — change the goods, country, markup or month.',
+  ivMatrix:'What pays best: all goods, China and Turkey', ivMxLead:'Profit per cycle and how many months it takes. Tap a row to select it.', ivMoW:'mo', ivSet:'Numbers used (editable)', ivPriceOne:'purchase price per piece, $',
+  ivCapM:'Shop sells per month, TJS', ivCapDef:'estimate, enter your own revenue', ivCapLim(c,m){ return 'The shop sells ≈ '+c+' a month — the whole batch takes ≈ '+m+' months. Better to invest part of the money or also sell wholesale and on Instagram.'; }, ivMkC:'Markup on landed cost, % (usually higher for Chinese goods)', ivMk:'Markup, %', ivW:'Weight per piece, kg', ivMonths:'Months to sell', ivTrip:'Travel, hotel, food per trip, $', ivCgr:'Cargo, $ per kg', ivOth:'Other (packing, customs), %', ivFull:'Sold at full price, %', ivDisc:'Discount on leftovers, %', ivShare:'Share of shop costs, %', ivShop:'Shop costs per month, TJS', ivReset:'Restore estimated numbers',
+  ivNote:'This is a calculation from your numbers, not a promise: sales depend on the style, location and price. Default prices are estimates — adjust them. A ✓ means the price comes from your past purchases.',
+  btTitle:'Helpers', rsShort:'What to restock', tmShort:'Trip money', szShort:'Sizes', lbShort:'Labels',
+  rsTitle:'What to restock', rsLead:'Based on 60 days of sales: what is running out and how many to buy for 2 more months.', rsSold(n){ return n+' sold'; }, rsLeft(n){ return n+' left'; }, rsAdd:'Add to shopping list', rsNone:'Not enough sales in “Stock” yet. Mark sales with “−” and a list will appear here.',
+  tmTitle:'Money for the trip', tmLead:'How much you can spend and still cover loan payments and bills while goods travel and sell (60 days).', tmCash:'Cash and card right now, TJS', tmNet:'Half of expected shop profit', tmLoans:'Loan payments', tmBills:'Bills', tmSup:'Supplier debts', tmRes:'Safety reserve (10%)', tmSafe:'You can spend',
+  tmHow_CN(a,t){ return 'Take ≈ '+a+' ('+t+'): most on a card for Alipay or WeChat Pay, a little cash yuan for small things.'; }, tmHow_TR(a,t){ return 'Take ≈ '+a+' ('+t+') in cash dollars — Turkish wholesale is often priced in dollars.'; }, tmHow_AE(a,t){ return 'Take ≈ '+a+' ('+t+') — dollars change easily into dirhams.'; }, tmHow_XX(a,t){ return 'Take ≈ '+a+' ('+t+').'; },
+  tmBank(b,r){ return 'Best place to buy dollars now: '+b+' — '+r; }, tmNoSafe:'No spare money for a trip right now: payments and bills come first.', tmNote:'Payments come from your loans, bills and supplier debts. Profit is based on past months’ revenue.',
+  wlTitle:'Currency wallet', wlAvg:'bought at', wlNote:'On the right — how much you would gain or lose at today’s rate.', wlEmpty:'Record how much currency you bought and at what rate.', wlBuy:'Bought currency', wlSpend:'Spent', wlRate(s){ return 'Rate: TJS per 1 '+s; },
+  tpfHint:'Add goods from the order to “Stock” — then the trip’s profit appears here.', tpfTitle:'Trip profit', tpfSpent:'Spent on the trip', tpfRev(n){ return 'Sold ('+n+' pcs)'; }, tpfLeft:'Goods left (at sale price)', tpfProfit:'Earned so far', tpfBack:'Still to recover', tpfPot:'If everything sells', tpfVend:'Best suppliers', tpfMk(n){ return 'markup '+n+'%'; }, tpfSt(n){ return n+'% sold'; },
+  tgTitle:'Price tags', tgShort:'Price tags', tgLead:'Choose items to get a printable sheet of price tags (A4, 21 per sheet).', tgWhite:'White', tgBrand:'Coloured', tgPrint:'Print', tgPdf:'In the print window you can choose “Save as PDF” and print later.', tgNone:'No priced items in “Stock”.', tgSizes:'Sizes', tgFail:'Could not open printing',
+  lpTitle:'Which loan to pay off first', lpShort:'Pay off first', lpLead:'If you have spare money — where early repayment saves the most.', lpExtra:'Spare money, TJS', lpNoRate:'no rate', lpLeft:'left', lpSave:'saves', lpFewer(n){ return n+' months sooner'; }, lpNone:'No open loans.', lpNote:'An estimate. Before repaying early, ask the bank about penalties and keep a reserve for 1–2 payments.',
+  szTitle:'Size chart', szLead:'Local, European (Turkey), international and Chinese sizes side by side.', szT_women:'Women', szT_men:'Men', szT_kids:'Kids', szT_shoes:'Shoes', szChest:'Chest, cm', szAge:'Age', szHeight:'Height, cm', szFoot:'Foot, cm',
+  szTip_women:'Chinese sizes usually run one size small — go one size up and ask for measurements in cm. Turkey uses European numbers (36, 38, 40…).', szTip_men:'Our size is half the chest girth. Chinese cuts often have shorter sleeves and legs.', szTip_kids:'Kids’ sizes in China and here are by height (110, 116…), in Turkey by age (5 yaş = 5 years).', szTip_shoes:'Approximate: measure foot length. Chinese factories sometimes give length in mm (235 = 23.5 cm).',
+  lbTitle:'Label dictionary', lbLead:'How Chinese and Turkish labels write fabric content — so you know what an item is made of before buying.', lbSearch:'Cotton, 棉, pamuk…', lbTip:'A good mix for clothing: 95% cotton + 5% elastane. 100% polyester is cheaper but doesn’t breathe.',
+  vfTitle:'By the facts', vfShort(n){ return n+'% short'; }, vfLate(l,n){ return l+' of '+n+' shipments late'; },
+  mkTitle:'Markup by goods type', mkShort:'Markups', mkLead:'Its own markup for each type — used to suggest sale prices and in “Where to invest”.', mkNote:'Empty — the usual markup from the price calculator is used.',
+  smCost:'In stock (at cost)', smPrice:'At sale prices', smDays:'Sells in', smDaysV(n){ return '≈ '+n+' days'; },
+  ctShort:'Catalogue', ctTitle:'Catalogue', ctAll:'All', ctAllSizes:'All sizes', ctNone:'Nothing in stock.',
+  loyTitle:'Loyalty bonus', loyLead:'Every N-th purchase gets a discount. Purchases on credit (nasiya) count too.', loyEvery:'Every which purchase', loyPct:'Discount, %', loyNext(p){ return 'Next purchase — '+p+'% off'; }, loyLeft(k,n,r){ return k+' of '+n+' — '+r+' more to the gift'; }, loyTotal(n){ return n+' purchases in total'; }, loyAdd:'Purchase', loyUsed:'Discount used — a new round starts',
+  clTitle:'Cloud copy', clOn:'Cloud copy is on: data is encrypted and kept on the server.', clCode:'Recovery code', clKeep:'Write the code down somewhere safe — it restores everything on a new phone. Photos are not uploaded (they are in the backup file).', clOffer:'If the phone is lost or broken, data comes back with a code. Everything is encrypted on the phone — the server can’t see your numbers.', clOnBtn:'Turn on', clRestore:'Restore with a code', clFail:'Server not reachable yet — the copy will be sent when there is a connection.',
+  rcBtn:'Receipt', rcWait:'Reading the total from the receipt…', rcFound(v){ return 'Found total: '+v+' — please check'; }, rcNo:'Couldn’t find the total — type it in', rcOff:'Internet is needed to read the receipt. The photo is kept.',
+},
+};
+for(const k of ['ru','tg','en']){ const t2=X6[k].tipGroups2; delete X6[k].tipGroups2; Object.assign(D[k],X6[k]); if(t2) D[k].tipGroups=D[k].tipGroups.concat(t2); Object.assign(D[k],X7[k]); Object.assign(D[k],X8[k]); Object.assign(D[k],X9[k]); }
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
 
@@ -3873,7 +4017,7 @@ function renderChRem(){ const box=$('#chRem'); if(!box) return; box.innerHTML=ch
 
 /* ---- инструменты (вкладка «План») ---- */
 function renderTools(){ const box=$('#tools'); if(!box) return;
-  const t=[['fc','🔮',L.toolFc],['trip','🛍️',L.toolTrip],['guide','🗺️',L.gdTitleShort],['when','📅',L.whShort],['card','🖼️',L.cmTitleShort],['mcard','📸',L.toolMcard],['week','📊',L.toolWeek],['price','🏷️',L.toolPrice],['rates','💱',L.qaRates],['hol','🎉',L.toolHol],['cal','📅',L.toolCal],['rep','📄',L.toolRep],['zakat','🕌',L.toolZakat],['calc','🧮',L.toolCalc],['newloan','🤔',L.toolNewLoan],['planb','🛟',L.toolPlanB]];
+  const t=[['fc','🔮',L.toolFc],['trip','🛍️',L.toolTrip],['guide','🗺️',L.gdTitleShort],['when','📅',L.whShort],['invest','💰',L.ivShort],['prio','🎯',L.lpShort],['sizes','📏',L.szShort],['labels','🔤',L.lbShort],['card','🖼️',L.cmTitleShort],['mcard','📸',L.toolMcard],['week','📊',L.toolWeek],['price','🏷️',L.toolPrice],['rates','💱',L.qaRates],['hol','🎉',L.toolHol],['cal','📅',L.toolCal],['rep','📄',L.toolRep],['zakat','🕌',L.toolZakat],['calc','🧮',L.toolCalc],['newloan','🤔',L.toolNewLoan],['planb','🛟',L.toolPlanB]];
   box.innerHTML=`<div class="section-h"><h2>${L.toolsTitle}</h2></div><div class="tools">${t.map(x=>`<button class="tool" data-tool="${x[0]}"><span>${x[1]}</span><b>${x[2]}</b></button>`).join('')}</div>`; }
 
 /* ===================== v5: главный экран — прогресс, чек-лист, копилка, победа ===================== */
@@ -3977,7 +4121,7 @@ function settingsBlocks(){
     :`<p class="note" style="margin-top:0">${L.famOffer}</p><div class="sheet-row"><button class="btn btn-primary" id="fm-new">${L.famCreate}</button><button class="btn btn-ghost" id="fm-join">${L.famHaveCode}</button></div>`}</div>`;
   const safe=`<div class="sec-block"><label>🛡️ ${L.snBlock}</label><p class="note" style="margin-top:0">${L.snBlockLead}</p><button class="btn btn-ghost btn-full" data-snaps="1">🕘 ${L.snTitle}</button></div>`;
   const look=`<div class="sec-block"><label>👁️ ${L.lookTitle}</label><label class="check"><input type="checkbox" id="smp" ${isSimple()?'checked':''}> 👵 ${L.smOn}</label><div class="seg"><button data-fs="1" class="${sc===1?'on':''}">A</button><button data-fs="1.12" class="${sc===1.12?'on':''}" style="font-size:1.08rem">A</button><button data-fs="1.25" class="${sc===1.25?'on':''}" style="font-size:1.2rem">A</button></div><label class="check"><input type="checkbox" id="hc" ${hc?'checked':''}> ${L.lookContrast}</label></div>`;
-  return DEMO?demoBlock()+look:push+fam+look+safe+demoBlock();
+  return DEMO?demoBlock()+look:push+cloudBlock()+fam+look+safe+demoBlock();
 }
 function bindSettings(){
   const re=()=>dataSheet();
@@ -3986,7 +4130,7 @@ function bindSettings(){
   if($('#ps-test')) $('#ps-test').onclick=()=>pushTest();
   if($('#ps-ev')) $('#ps-ev').onchange=e=>{ const ps=pushSt(); ps.ev=e.target.checked; ps.h=''; pushSave(ps); pushRegister(true); };
   if($('#fm-new')) $('#fm-new').onclick=async()=>{ const c=famNewCode(); $('#fm-new').disabled=true; await famJoin(c); re(); };
-  if($('#fm-join')) $('#fm-join').onclick=()=>famJoinSheet();
+  if($('#fm-join')) $('#fm-join').onclick=()=>famJoinSheet(); cloudBind(re);
   if($('#fm-sync')) $('#fm-sync').onclick=async()=>{ await famSync(true); re(); };
   if($('#fm-share')) $('#fm-share').onclick=async()=>{ const f=famSt(); const t=L.famShareText(f.code); try{ if(navigator.share){ await navigator.share({text:t}); return; } }catch(e){ if(e&&e.name==='AbortError') return; } try{ await navigator.clipboard.writeText(t); toast(L.copied); }catch(_){} };
   if($('#fm-leave')) $('#fm-leave').onclick=()=>{ famLeave(); toast(L.famLeft); re(); };
@@ -4038,7 +4182,7 @@ document.addEventListener('click', e=>{
   const sk=t.closest('[data-st]'); if(sk){ e.stopImmediatePropagation(); const x=state.stock.find(y=>y.id===sk.dataset.st); if(x) stockForm(x); return; }
   if(t.closest('[data-stadd]')){ e.stopImmediatePropagation(); stockForm(null); return; }
   const tool=t.closest('[data-tool]'); if(tool){ e.stopImmediatePropagation(); const k=tool.dataset.tool;
-    if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); else if(k==='guide') guideSheet(null); else if(k==='when') whenSheet(null); return; }
+    if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); else if(k==='guide') guideSheet(null); else if(k==='when') whenSheet(null); else if(k==='invest') investSheet(); else if(k==='prio') loanPrioSheet(); else if(k==='sizes') sizesSheet(); else if(k==='labels') labelsSheet(); return; }
   const ch=t.closest('[data-ch]'); if(ch){ e.stopImmediatePropagation(); if(ch.dataset.ch==='done'){ state.misc.ch=dkey(); persist(); toast(L.saved); } else lsSet('chsn_v1',String(Date.now()+30*86400000)); render(); return; }
   const act=t.closest('[data-action="sched"]'); if(act){ e.stopImmediatePropagation(); const l=byId(act.dataset.id); if(!l) return; schedSheet(l); return; }
 }, true);
@@ -4300,20 +4444,23 @@ function expensesHTML(){
     ${listH}<p class="note" style="margin-top:14px">🏠 ${L.expHomeHint} <button class="link-btn" data-tab="money">${L.navMoney} →</button></p>`;
 }
 function quickExpForm(cat){
-  const sh=ensureShop(); let c=CATS.includes(cat)?cat:null;
+  const sh=ensureShop(); let c=CATS.includes(cat)?cat:null, rcPh=null, rcSt='';
   const recent=c=>[...new Set(sh.exp.filter(e=>e.cat===c).slice(-30).map(e=>Math.round(+e.sum)).filter(v=>v>0))].slice(-4).reverse();
   function draw(){
     openSheet(`<h3>🧾 ${L.qExpTitle}</h3><p class="lead">${L.qExpSheetLead}</p>
       <div class="qtiles sm">${CATS.map(k=>`<button class="qt ${k===c?'on':''}" data-qc="${k}"><span>${catIc(k)}</span><b>${esc(catLb(k))}</b></button>`).join('')}</div>
-      <div class="field n big-in"><label>${L.amountW}</label><input id="qe-a" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      <div class="field n big-in"><label>${L.amountW} <button class="link-btn" id="qe-cam" type="button">📷 ${L.rcBtn}</button></label><input id="qe-a" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+      ${rcPh?`<div class="rc-ph"><img src="${rcPh}" alt=""><span id="qe-st">${rcSt||''}</span></div>`:''}
       ${c&&recent(c).length?`<div class="chips">${recent(c).map(v=>`<button class="chip" data-qv="${v}">${money(v)}</button>`).join('')}</div>`:''}
       <div class="two"><div class="field"><label>${L.expDate}</label><input id="qe-d" type="date" value="${dkey()}"></div><div class="field"><label>${L.dayNote} ${L.optional}</label><input id="qe-n" type="text" maxlength="60"></div></div>
       <div class="err" id="qe-err"></div><button class="btn btn-primary btn-full" id="qe-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
     sheet.querySelectorAll('[data-qc]').forEach(b=>b.onclick=()=>{ const v=$('#qe-a').value; c=b.dataset.qc; draw(); $('#qe-a').value=v; $('#qe-a').focus(); });
     sheet.querySelectorAll('[data-qv]').forEach(b=>b.onclick=()=>{ $('#qe-a').value=b.dataset.qv; });
+    $('#qe-cam').onclick=()=>{ const keepA=$('#qe-a').value; camera(async x=>{ rcPh=x; rcSt='⏳ '+L.rcWait; draw(); $('#qe-a').value=keepA;
+      try{ const v=await ocrReceipt(x); rcSt=v?'✓ '+L.rcFound(money(v)):L.rcNo; draw(); $('#qe-a').value=v?Math.round(v):keepA; }catch(e){ rcSt=L.rcOff; draw(); $('#qe-a').value=keepA; } }); };
     setTimeout(()=>{ const i=$('#qe-a'); if(i&&c) i.focus(); },60);
     $('#qe-s').onclick=()=>{ const v=Math.round(+$('#qe-a').value); if(!c) return showErr($('#qe-err'),L.qExpPick); if(!(v>0)) return showErr($('#qe-err'),L.errSum);
-      const d=$('#qe-d').value||dkey(), ts=Date.now(); sh.exp.push({id:'e'+ts+'_q',date:d,cat:c,sum:v,note:$('#qe-n').value.trim(),ts}); persist(); closeSheet(); render(); toast(L.qExpDone(money(v))); };
+      const d=$('#qe-d').value||dkey(), ts=Date.now(), eid='e'+ts+'_q'; sh.exp.push({id:eid,date:d,cat:c,sum:v,note:$('#qe-n').value.trim(),ts,ph:rcPh?1:undefined}); if(rcPh) phPut('ex_'+eid,rcPh); persist(); closeSheet(); render(); toast(L.qExpDone(money(v))); };
   }
   draw();
 }
@@ -4452,11 +4599,11 @@ function custSheet(c){
   openSheet(`<div class="cu-head"><span class="ava lg" style="background:${avaColor(c.name)}">${esc((c.name||'?').trim().charAt(0).toUpperCase())}</span><div><h3 style="margin:0">${c.reg?'⭐ ':''}${esc(c.name)}</h3>${c.phone?`<div class="muted">${esc(c.phone)}</div>`:''}</div></div>
     ${c.note||c.size?`<div class="cu-note">${c.size?`<div>📏 ${L.custSize}: <b>${esc(c.size)}</b></div>`:''}${c.note?`<div>💜 ${esc(c.note)}</div>`:''}</div>`:''}
     <div class="calc-out"><div class="co-row big"><span>${st.bal>0?L.custOwesNow:L.custSettled}</span><b class="${st.overdue?'tx-urgent':''}">${money(Math.max(0,st.bal))}</b></div>${st.due?`<div class="co-row"><span>${L.custDueW}</span><b class="${st.overdue?'tx-urgent':''}">${fmtDate(parseYmd(st.due))}</b></div>`:''}${st.bal<0?`<div class="co-row"><span>${L.custPrepaid}</span><b>${money(-st.bal)}</b></div>`:''}</div>
-    <div class="sheet-row"><button class="btn btn-primary" id="cu-pay">💵 ${L.custTake}</button><button class="btn btn-ghost" id="cu-debt">➕ ${L.custGive}</button></div>
+    ${loyHTML(c)}<div class="sheet-row"><button class="btn btn-primary" id="cu-pay">💵 ${L.custTake}</button><button class="btn btn-ghost" id="cu-debt">➕ ${L.custGive}</button></div>
     ${ph?`<div class="sheet-row"><a class="btn btn-ghost" href="tel:${esc(ph)}">📞 ${L.callW}</a>${st.bal>0?`<a class="btn btn-ghost wa" href="${esc(waLink(c.phone,custMsg(c,st)))}" target="_blank" rel="noopener">💬 ${L.custRemind}</a>`:`<a class="btn btn-ghost wa" href="${esc(waLink(c.phone,''))}" target="_blank" rel="noopener">💬 WhatsApp</a>`}</div>`:(st.bal>0?`<div class="sheet-row"><button class="btn btn-ghost" id="cu-copy">📋 ${L.custCopyMsg}</button></div>`:'')}
     ${hist?`<div class="hist"><h4>${L.custHist}</h4>${hist}<p class="note">${L.custHistDel}</p></div>`:''}
     <div class="sheet-row"><button class="btn btn-ghost" id="cu-edit">✏️ ${L.edit}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
-  $('#cu-pay').onclick=()=>debtForm(c,'pay'); $('#cu-debt').onclick=()=>debtForm(c,'debt'); $('#cu-edit').onclick=()=>custForm(c);
+  loyBind(c,()=>custSheet(c)); $('#cu-pay').onclick=()=>debtForm(c,'pay'); $('#cu-debt').onclick=()=>debtForm(c,'debt'); $('#cu-edit').onclick=()=>custForm(c);
   if($('#cu-copy')) $('#cu-copy').onclick=async()=>{ try{ await navigator.clipboard.writeText(custMsg(c,st)); toast(L.copied); }catch(_){} };
   sheet.querySelectorAll('[data-cdr]').forEach(el=>el.onclick=()=>{ const r=state.cdebt.find(x=>x.id===el.dataset.cdr); if(!r) return;
     openSheet(`<h3>${L.delete}?</h3><p class="lead">${r.t==='pay'?L.custPaidW:L.custTookW} · ${fmtDate(parseYmd(r.d))} · ${money(r.a)}</p><div class="sheet-row"><button class="btn btn-ghost" id="cr-no">${L.cancel}</button><button class="btn btn-danger" id="cr-yes">${L.delete}</button></div>`);
@@ -5286,7 +5433,7 @@ function renderInv(){
   const box=$('#inv'); if(!box) return;
   const items=state.inv.filter(x=>!x.arch), low=invLowAll(), pcs=items.reduce((s,x)=>s+invTotal(x),0), worth=items.reduce((s,x)=>s+invTotal(x)*(+x.cost||0),0);
   box.innerHTML=`<div class="section-h"><h2>📏 ${L.ivTitle}</h2><button class="add-link" data-invadd="1">+ ${L.add}</button></div>
-    ${items.length?`<p class="view-h">${L.ivSum(items.length,pcs,money(worth))}</p>
+    ${items.length?`<p class="view-h">${L.ivSum(items.length,pcs,money(worth))}</p>${stockMoneyHTML()}
       ${low.length?`<div class="pc-warn" style="margin-bottom:10px">⚠️ ${L.ivLowT}: ${low.slice(0,4).map(o=>`<b>${esc(o.x.name)}</b> (${o.l.slice(0,4).map(esc).join(', ')})`).join(' · ')}${low.length>4?' …':''} <button class="link-btn" data-invorder="1">🛒 ${L.ivToList}</button></div>`:''}
       ${items.length>6?`<div class="field" style="margin:0 0 10px"><input id="iv-q" type="search" placeholder="🔎 ${L.ivSearch}"></div>`:''}
       <div class="cards" id="iv-list">${items.slice().sort((a,b)=>(invLow(b).length>0)-(invLow(a).length>0)||String(a.name).localeCompare(String(b.name))).map(x=>invCard(x)).join('')}</div>`
@@ -5323,7 +5470,7 @@ function invForm(x,pre){
     $('#iv-save').onclick=async()=>{ keep(); if(!d.name) return showErr($('#iv-err'),L.errNm);
       const sizes={}; for(const k of order){ if(d.sizes[k]===''||d.sizes[k]==null) continue; sizes[k]=Math.max(0,Math.round(+d.sizes[k]||0)); } if(!Object.keys(sizes).length) return showErr($('#iv-err'),L.ivErrSizes);
       const o={name:d.name,cat:d.cat||'',cost:Math.max(0,Math.round(+d.cost||0)),price:Math.max(0,Math.round(+d.price||0)),sup:d.sup,low:Math.max(0,Math.round(+d.low||0)),sizes};
-      let rec=x; if(isNew){ rec={id:uid('iv'),d:dkey(),ph:false,...o}; if(pre.from) rec.from=pre.from; state.inv.push(rec); for(const k in sizes) if(sizes[k]>0) state.invLog.push({id:uid('il'),i:rec.id,s:k,q:sizes[k],k:'in',d:dkey()}); }
+      let rec=x; if(isNew){ rec={id:uid('iv'),d:dkey(),ph:false,...o}; if(pre.from) rec.from=pre.from; if(pre.trip) rec.trip=pre.trip; if(pre.vendor) rec.vendor=pre.vendor; state.inv.push(rec); for(const k in sizes) if(sizes[k]>0) state.invLog.push({id:uid('il'),i:rec.id,s:k,q:sizes[k],k:'in',d:dkey()}); }
       else { for(const k in sizes){ const dq=sizes[k]-(+x.sizes[k]||0); if(dq) state.invLog.push({id:uid('il'),i:x.id,s:k,q:dq,k:'fix',d:dkey()}); } Object.assign(rec,o); rec.sizes=sizes; }
       if(photo){ await phPut('iv_'+rec.id,photo); rec.ph=true; }
       persist(); render(); invSheet(rec); toast(L.saved); };
@@ -5514,7 +5661,7 @@ function cargoPer(p,trip){ const w=wOf(p);
   if(mode==='sum'){ const st=+trip.csum>0?toTJS(+trip.csum,trip.ccur||'USD',trip):null; if(st==null) return 0; const t=tripTotals(trip), rem=t.W-t.actW, W2=p.dec==='buy'?rem:rem+w; return W2>0?st*w/W2:0; }
   return (toTJS(+p.price||0,p.cur,trip)||0)*(+trip.cargo||0)/100; }
 function landed(p,trip){ const one=toTJS(+p.price||0,p.cur,trip); if(one==null) return null; const t=tripTotals(trip); const per=t.pcs>0?t.ex/t.pcs:0; return one+cargoPer(p,trip)+per; }
-function sellHint(v){ let mk=50, rnd=10; try{ const o=JSON.parse(lsGet('pc_v1')||'{}'); if(+o.m>0) mk=+o.m; if(+o.r>0) rnd=+o.r; }catch(e){} return {mk,price:Math.ceil(v*(1+mk/100)/rnd)*rnd}; }
+function sellHint(v,kind){ let mk=50, rnd=10; try{ const o=JSON.parse(lsGet('pc_v1')||'{}'); if(+o.m>0) mk=+o.m; if(+o.r>0) rnd=+o.r; }catch(e){} const kc=kind&&kindCat(kind), km=kc&&state.misc&&state.misc.mk&&+state.misc.mk[kc]; if(km>0) mk=km; return {mk,price:Math.ceil(v*(1+mk/100)/rnd)*rnd}; }
 function phoneFull(p,country){ let d=String(p||'').replace(/[^\d+]/g,''); if(!d) return ''; if(d.startsWith('+')) return d.slice(1); if(d.startsWith('00')) return d.slice(2); const cc=(TCOUNTRY[country]||{}).code||''; if(cc&&!d.startsWith(cc)) d=cc+d.replace(/^0+/,''); return d; }
 function igHandle(s){ s=String(s||'').trim(); const m=s.match(/instagram\.com\/([A-Za-z0-9_.]+)/); return (m?m[1]:s).replace(/^@/,''); }
 function tgHandle(s){ s=String(s||'').trim(); const m=s.match(/t\.me\/([A-Za-z0-9_]+)/); return (m?m[1]:s).replace(/^@/,''); }
@@ -5563,7 +5710,7 @@ function tripMainHTML(tr){
   const nav=`<div class="seg trseg">${subs.map(s=>`<button data-tsub="${s[0]}" class="${tripSub===s[0]?'on':''}"><span>${s[1]}</span><small>${s[2]}</small></button>`).join('')}</div>`;
   let body='';
   if(tripSub==='shops') body=vendorsListHTML(vs,tr);
-  else if(tripSub==='sum') body=tripSumHTML(tr);
+  else if(tripSub==='sum') body=tripSumHTML(tr)+tripProfitHTML(tr);
   else if(tripSub==='ord') body=tripOrdHTML(tr);
   else if(tripSub==='cargo') body=tripCargoHTML(tr);
   else { const f=tripFilter; const list=ps.filter(p=>f==='all'||(f==='buy'&&p.dec==='buy')||(f==='maybe'&&(!p.dec||p.dec==='maybe'))||(f==='fav'&&p.fav)).sort((a,b)=>(b.ts||0)-(a.ts||0));
@@ -5618,7 +5765,7 @@ function renderBuy(){
   const box=$('#buyView'); if(!box) return; const tr=activeTrip();
   box.innerHTML=`${isSimple()?`<button class="btn btn-ghost btn-full" data-tab="today" style="margin-bottom:12px">← ${L.navToday}</button>`:''}
     <div class="section-h buy-h"><h2>🛍️ ${L.navBuy}</h2></div>
-    <div class="buy-links"><button data-when="">📅 ${L.whShort}</button><button data-guide="${tr?'trip':''}">🗺️ ${L.gdTitleShort}</button><button data-tdir="1">📒 ${L.trDirShort}${state.vendors.length?' · '+state.vendors.length:''}</button><button data-cgco="1">🚚 ${L.cgCosShort}${state.cargoCo.length?' · '+state.cargoCo.length:''}</button></div>
+    ${buyToolsHTML(!!tr)}
     ${tr?'':`<p class="view-h">${L.buyLead}</p>`}${tripHTML()}`;
   fillPhotos(box); updBuyFab();
 }
@@ -5726,7 +5873,7 @@ function vendorSheet(v){
     ${loc?`<div class="cu-note">📍 ${esc(loc)}</div>`:''}
     <div class="cbs">${contactBtns(v)||`<p class="note">${L.vfNoContacts}</p>`}</div>
     ${v.moq||(v.pay&&v.pay.length)||v.note?`<div class="cu-note">${v.moq?`<div>📦 ${L.vfMoq}: <b>${esc(v.moq)}</b></div>`:''}${v.pay&&v.pay.length?`<div>💳 ${v.pay.map(k=>L['pay_'+k]).join(', ')}</div>`:''}${v.note?`<div>📝 ${esc(v.note)}</div>`:''}</div>`:''}
-    <div class="vstars">${stars('rq',L.vsQ)}${stars('rp',L.vsP)}${stars('rf',L.vsF)}</div>
+    ${vendorFactsHTML(v)}<div class="vstars">${stars('rq',L.vsQ)}${stars('rp',L.vsP)}${stars('rf',L.vsF)}</div>
     <div class="sheet-row">${trip?`<button class="btn btn-primary" id="vs-cap">📸 ${L.trCapHere}</button>`:''}<button class="btn btn-ghost" id="vs-ph">💬 ${L.trPhrases}</button></div>
     ${ps.length?`<div class="hist"><h4>${L.vsProds} (${ps.length})</h4><div class="tgrid sm">${ps.slice(0,12).map(p=>tprodTile(p,tripById(p.trip))).join('')}</div></div>`:''}
     ${ords.length?`<div class="hist"><h4>${L.vsOrders}</h4>${ords.map(o=>`<div class="hrow"><span class="hn">${esc((tripById(o.trip)||{}).name||'')} · ${L['ord_'+o.st]}</span><span class="ha">${o.total?fxAmt(+o.total,o.cur)+' '+curSym(o.cur):''}</span></div>`).join('')}</div>`:''}
@@ -5783,7 +5930,7 @@ function tprodForm(p,trip,pre){
   const d=p?{...p}:{vendor:(pre&&pre.vendor)||'',cur:trip.cur,dec:'maybe',qty:''}; const newPhotos=pre&&pre.photo?[pre.photo]:[];
   const vs=tripVendors(trip).concat(state.vendors.filter(v=>!tripVendors(trip).includes(v)&&v.country===trip.country)).slice(0,30);
   if(d.vendor&&!vs.some(v=>v.id===d.vendor)){ const vv=state.vendors.find(x=>x.id===d.vendor); if(vv) vs.unshift(vv); }
-  const draw=()=>{ const tj=toTJS(+d.price||0,d.cur,trip), ld=d.price?landed(d,trip):null, sh=ld?sellHint(ld):null;
+  const draw=()=>{ const tj=toTJS(+d.price||0,d.cur,trip), ld=d.price?landed(d,trip):null, sh=ld?sellHint(ld,d.kind):null;
     openSheet(`<h3>👗 ${isNew||fresh?L.tpNew:esc(d.name||L.trNoName)}</h3>${fresh?`<p class="note" style="margin-top:-4px">✓ ${L.tpDraftSaved}</p>`:''}
       <div class="tp-photos">${(p&&p.ph?Array.from({length:p.ph},(_,i)=>`<img data-ph="tp_${esc(p.id)}_${i}" alt="">`).join(''):'')+newPhotos.map(s=>`<img src="${s}" class="ok" alt="">`).join('')}<button class="tp-add" id="tp-cam">📷<small>${L.tpMore}</small></button></div>
       <div class="br-h">🏪 ${L.tpWhere}</div>
@@ -5806,7 +5953,7 @@ function tprodForm(p,trip,pre){
       <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
     fillPhotos(sheet);
     const keep=()=>{ d.price=$('#tp-p').value; d.cur=$('#tp-c').value; d.name=$('#tp-n').value.trim(); d.sizes=$('#tp-s').value.trim(); d.colors=$('#tp-cl').value.trim(); d.moq=$('#tp-moq').value; d.note=$('#tp-no').value.trim(); d.qty=$('#tp-q').value; d.fav=$('#tp-fav').checked; if($('#tp-ser')) d.ser=$('#tp-ser').value; d.w=$('#tp-w').value; };
-    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), cg=d.price?cargoPer(d,trip):0, l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(cg>0?` · 📦 ${L.tpCargoOne} ≈ ${money(cg)} <small>(${p&&cargoIsAct(p,trip)?'✓ '+L.tcActual:L.cgApprox})</small>`:'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
+    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), cg=d.price?cargoPer(d,trip):0, l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2,d.kind):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(cg>0?` · 📦 ${L.tpCargoOne} ≈ ${money(cg)} <small>(${p&&cargoIsAct(p,trip)?'✓ '+L.tcActual:L.cgApprox})</small>`:'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
     upd(); $('#tp-p').addEventListener('input',upd); $('#tp-w').addEventListener('input',upd);
     sheet.querySelectorAll('[data-wk]').forEach(b=>b.onclick=()=>{ const k=b.dataset.wk, nmIn=$('#tp-n'), old=nmIn.value.trim(), wasAuto=!old||WPRE.some(w=>L['wp_'+w[0]]===old);
       d.kind=d.kind===k?'':k; sheet.querySelectorAll('[data-wk]').forEach(x=>x.classList.toggle('on',x.dataset.wk===d.kind));
@@ -5881,7 +6028,7 @@ function toInventory(trip,ps,recv){
     <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
   fillPhotos(sheet);
   sheet.querySelectorAll('[data-toinv]').forEach(c=>c.onclick=async()=>{ const p=ps.find(x=>x.id===c.dataset.toinv); if(!p) return; const ld=landed(p,trip); const photo=p.ph?await phGet('tp_'+p.id+'_0'):null; const v=state.vendors.find(x=>x.id===p.vendor);
-    invForm(null,{name:p.name||'',cost:ld?Math.round(ld):'',price:ld?sellHint(ld).price:'',sizesText:p.sizes||'',qty:qOf(p)||'',sup:v?v.name:'',from:p.id,photo}); });
+    invForm(null,{name:p.name||'',cost:ld?Math.round(ld):'',price:ld?sellHint(ld,p.kind).price:'',trip:trip.id,vendor:p.vendor,sizesText:p.sizes||'',qty:qOf(p)||'',sup:v?v.name:'',from:p.id,photo}); });
 }
 
 /* ---- поделиться ---- */
@@ -6561,6 +6708,351 @@ const WH_TRAV=[
   ['🇺🇿 Ташкент и 🇰🇬 Бишкек: близко и быстро — выручают, когда до праздника осталось мало времени.','🇺🇿 Тошкент ва 🇰🇬 Бишкек: наздик ва зуд — вақте то ид вақт кам монд, ёрӣ медиҳанд.','🇺🇿 Tashkent and 🇰🇬 Bishkek: close and quick — they help when the holiday is near.']
 ];
 document.addEventListener('click', e=>{ const w=e.target.closest('[data-when]'); if(w){ e.stopImmediatePropagation(); whenSheet(w.dataset.when||null); } }, true);
+
+/* ===================== v8: «Куда вложить деньги» — сколько принесёт капитал по видам товара и странам ===================== */
+/* Всё в долларах: цена закупки → + прочее % → + карго за вес → + дорога. Продажа: себестоимость × наценку,
+   часть по полной цене, остаток со скидкой. Минус расходы магазина за месяцы продажи. Сезон двигает срок и долю. */
+const IV_CATS=['kids','teen','women','men','dress','bed','shoes','acc','toys','cosm','elec','appl','hh'];
+const IV_C=['CN','TR','AE','UZ'];
+/* цена 1 шт в $ (Китай, Турция, Дубай, Ташкент), наценка %, вес 1 шт кг, месяцев продавать — ПРИМЕРНО, всё правится */
+const IV_DEF={
+  kids:{p:[4,7,6,5],mk:60,w:0.25,m:3}, teen:{p:[6,10,9,8],mk:60,w:0.35,m:3}, women:{p:[8,14,12,10],mk:70,w:0.4,m:3},
+  men:{p:[9,15,13,11],mk:60,w:0.5,m:4}, dress:{p:[15,28,25,20],mk:80,w:0.6,m:4}, bed:{p:[12,20,18,14],mk:50,w:2,m:4},
+  shoes:{p:[9,18,15,12],mk:60,w:1,m:4}, acc:{p:[1,3,2,2],mk:120,w:0.05,m:4}, toys:{p:[3,6,5,4],mk:80,w:0.4,m:4},
+  cosm:{p:[2,5,4,3],mk:60,w:0.2,m:4}, elec:{p:[25,40,30,35],mk:25,w:0.5,m:3}, appl:{p:[20,35,28,25],mk:30,w:3,m:4}, hh:{p:[3,6,5,4],mk:60,w:0.8,m:5}};
+const IV_TRIP={CN:1500,TR:1000,AE:1000,UZ:300};
+/* китайский товар дешевле — на него обычно ставят наценку больше, на турецкий меньше (примерно, правится) */
+const IV_MKF={CN:1.2,TR:0.85,AE:1,UZ:0.8};
+const IV_CGR={CN:3.5,TR:4,AE:3.5,UZ:1};
+const IV_KIND={kids:['kids'],women:['dress','tee','pants','sweater','jacket'],bed:['bed'],shoes:['shoes'],acc:['acc','bag']};
+function ivP(){ state.misc=state.misc||{}; const P=state.misc.ip||(state.misc.ip={}); P.c=P.c||{}; P.trip=P.trip||{}; P.cgr=P.cgr||{}; return P; }
+function usdRate(){ return rateOf('USD')||null; }
+function mkOf(cat){ const m=state.misc&&state.misc.mk&&+state.misc.mk[cat]; return m>0?m:(IV_DEF[cat]||{mk:50}).mk; }
+/* средняя цена из ваших прошлых закупок (если есть 3+ товара этого вида из этой страны) */
+function ivHist(cat,c){ const kinds=IV_KIND[cat]; if(!kinds) return null; const u=usdRate(); if(!u) return null; const v=[];
+  for(const p of state.tprods){ if(!kinds.includes(p.kind)||!(+p.price>0)) continue; const tr=tripById(p.trip); if(!tr||tr.country!==c) continue; const t=toTJS(+p.price,p.cur,tr); if(t!=null) v.push(t/u); }
+  return v.length>=3?v.reduce((a,b)=>a+b,0)/v.length:null; }
+function ivDef(cat){ const P=ivP(), d=IV_DEF[cat], o=P.c[cat]||{}; const src=[];
+  const p=IV_C.map((c,i)=>{ if(o.p&&+o.p[i]>0){ src[i]='user'; return +o.p[i]; } const h=ivHist(cat,c); if(h){ src[i]='hist'; return Math.round(h*10)/10; } src[i]='def'; return d.p[i]; });
+  const base=mkOf(cat), mk=IV_C.map((c,i)=>o.mkc&&+o.mkc[i]>0?+o.mkc[i]:Math.round(base*IV_MKF[c]/5)*5);
+  return {p,src,mk,base,w:+o.w>0?+o.w:d.w,m:+o.m>0?+o.m:d.m}; }
+function ivCgRate(c){ const P=ivP(); if(+P.cgr[c]>0) return +P.cgr[c]; const co=state.cargoCo.filter(x=>x.country===c&&x.mode!=='m3'&&+x.rate>0)[0]; const u=usdRate();
+  if(co){ if((co.rcur||'USD')==='USD') return +co.rate; const t=toTJS(+co.rate,co.rcur,null); if(t!=null&&u) return t/u; } return IV_CGR[c]; }
+function ivCapUSD(){ const P=ivP(), cap=+P.cap||0; if((P.cur||'USD')==='USD') return cap; const u=usdRate(); return u?cap/u:0; }
+function ivShopUSD(){ const P=ivP(), u=usdRate(); let tj=P.shop!=null&&P.shop!==''?+P.shop:null; if(tj==null){ const e=expEst(); tj=e?e.v:0; } return u?tj/u:0; }
+/* сколько магазин реально продаёт в месяц — главный тормоз: больше этого товар просто лежит */
+function ivCapMUSD(){ const P=ivP(), u=usdRate(); if(P.capM!=null&&P.capM!==''&&u) return {v:+P.capM/u,src:'user'}; const r=revEst(); if(r&&r.v>0&&u) return {v:r.v/u,src:'fact'}; return {v:3000,src:'def'}; }
+function ivSeason(cat,arrive){ const leads=WH_CAT[cat]||WH_CAT.all; let best=null;
+  for(const e of whBase().ev){ const ld=leads[e.id]; if(ld==null) continue; const s=addDays(e.d,-ld), gap=Math.round((s-arrive)/864e5);
+    if(gap>=-7&&gap<=45){ if(!best||gap<best.gap) best={k:'in',e,gap}; } }
+  if(best) return best;
+  for(const e of whBase().ev){ const ld=leads[e.id]; if(ld==null) continue; const gap=Math.round((addDays(e.d,-ld)-arrive)/864e5); if(gap>45&&gap<=100) return {k:'ok',e,gap}; }
+  return {k:'off'}; }
+function ivCalc(cat,c,startD,capUSD){ const P=ivP(), d=ivDef(cat), i=IV_C.indexOf(c), unit=+d.p[i]||0, mk=d.mk[i], w=d.w;
+  const cgr=ivCgRate(c), trip=+P.trip[c]>0?+P.trip[c]:IV_TRIP[c], oth=(P.oth!=null&&P.oth!==''?+P.oth:3)/100, cap=capUSD!=null?capUSD:ivCapUSD();
+  const perPc=unit*(1+oth)+w*cgr, pcs=perPc>0?Math.max(0,Math.floor((cap-trip)/perPc)):0, landed=pcs?perPc+trip/pcs:perPc, retail=landed*(1+mk/100);
+  const cg=whCargo(c).d, buy=WH_BUY[c]||5, arrive=addDays(startD,buy+cg+2), se=ivSeason(cat,arrive);
+  let months=d.m, full=P.full!=null&&P.full!==''?+P.full:75; const disc=P.disc!=null&&P.disc!==''?+P.disc:30;
+  if(se.k==='in'){ months=Math.max(2,months-1); full=Math.min(95,full+10); } else if(se.k==='off'){ months+=1; full=Math.max(30,full-10); }
+  const revOf=f=>pcs*retail*(f/100+(1-f/100)*(1-disc/100)); let rev=revOf(full);
+  const cm=ivCapMUSD(), boost=se.k==='in'?1.3:se.k==='off'?0.8:1, need=cm.v>0?rev/(cm.v*boost):0; let limited=false;
+  if(need>months){ limited=true; const m2=Math.ceil(need*2)/2; if(m2>months+2){ full=Math.max(30,full-10); rev=revOf(full); } months=m2; }
+  const shopCost=ivShopUSD()*((P.share!=null&&P.share!==''?+P.share:100)/100)*months;
+  const profit=rev-cap-shopCost, totalM=(buy+cg+2)/30+months;
+  return {c,cat,unit,mk,w,cgr,trip,pcs,perPc,landed,retail,rev,shopCost,profit,roi:cap>0?profit/cap:0,months,totalM,arrive,se,full,cap,src:d.src[i],limited,capM:cm}; }
+function ivStart(){ const P=ivP(), o=+P.st||0, t=today0(); return o?new Date(t.getFullYear(),t.getMonth()+o,1):t; }
+function ivCycles(cat,c){ const P=ivP(), cap0=ivCapUSD(), tgt=cap0*(+P.tgt||2), out=[]; let v=cap0, d=ivStart(), m=0;
+  while(v<tgt&&out.length<12){ const r=ivCalc(cat,c,d,v); if(!(r.profit>0)) return {ok:false,out}; const nv=v+r.profit; m+=r.totalM; d=addDays(d,Math.round(r.totalM*30)); out.push({n:out.length+1,from:v,to:nv,m,d,se:r.se}); v=nv; }
+  return {ok:v>=tgt,out,m}; }
+const ivUsd=v=>(Math.round(v)).toLocaleString(lang==='en'?'en-US':'ru-RU').replace(/,/g,' ')+' $';
+const ivUsdTj=v=>{ const u=usdRate(); return u?' · ≈ '+money(v*u):''; };
+function ivSeasonTag(r){ if(r.se.k==='in') return `<span class="iv-tag in">🔥 ${L.ivSeasonIn(esc(L['hol_'+r.se.e.id]||L['whEv_'+r.se.e.id]||''))}</span>`; if(r.se.k==='ok') return `<span class="iv-tag ok">🗓️ ${L.ivSeasonOk(esc(L['hol_'+r.se.e.id]||L['whEv_'+r.se.e.id]||''))}</span>`; return `<span class="iv-tag off">🌙 ${L.ivSeasonOff}</span>`; }
+function investSheet(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } if(!P.cat) P.cat='kids'; if(!P.tgt) P.tgt=2;
+  const draw=()=>{ const t=today0(); const mo=L.monthsNom||[];
+    openSheet(`<h3>💰 ${L.ivTitle}</h3><p class="lead">${L.ivLead}</p>
+      <div class="field n big-in"><label>${L.ivCap}</label><div class="pin"><input id="iv-cap" type="number" inputmode="decimal" min="0" value="${P.cap||''}"><select id="iv-cur"><option value="USD" ${(P.cur||'USD')==='USD'?'selected':''}>$</option><option value="TJS" ${P.cur==='TJS'?'selected':''}>смн</option></select></div></div>
+      <div class="br-h">🎯 ${L.ivTarget}</div><div class="chips">${[1.5,2,3].map(x=>`<button class="chip ${+P.tgt===x?'on':''}" data-ivt="${x}">×${String(x).replace('.',',')}</button>`).join('')}</div>
+      <div class="br-h">📅 ${L.ivWhen}</div><div class="chips gd-k">${[0,1,2,3,4,5].map(o=>`<button class="chip ${(+P.st||0)===o?'on':''}" data-ivs="${o}">${o?esc(mo[(t.getMonth()+o)%12]||''):L.ivNow}</button>`).join('')}</div>
+      <div class="br-h">🛍️ ${L.ivWhat}</div><div class="chips gd-k iv-k">${IV_CATS.map(k=>`<button class="chip ${P.cat===k?'on':''}" data-ivc="${k}">${WH_CIC[k]} ${L['whC_'+k]}</button>`).join('')}</div>
+      <div id="iv-r"></div>
+      <details class="wh-more" id="iv-mx"><summary>📊 ${L.ivMatrix}</summary><div id="iv-m"></div></details>
+      <details class="wh-more" id="iv-set"><summary>⚙️ ${L.ivSet}</summary><div id="iv-f"></div></details>
+      <p class="note">${L.ivNote}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    upd(); form(); $('#iv-mx').addEventListener('toggle',()=>{ if($('#iv-mx').open) mxDraw(); });
+    sheet.querySelectorAll('[data-ivt]').forEach(b=>b.onclick=()=>{ P.tgt=+b.dataset.ivt; persist(); sheet.querySelectorAll('[data-ivt]').forEach(x=>x.classList.toggle('on',x===b)); upd(); });
+    sheet.querySelectorAll('[data-ivs]').forEach(b=>b.onclick=()=>{ P.st=+b.dataset.ivs; persist(); sheet.querySelectorAll('[data-ivs]').forEach(x=>x.classList.toggle('on',x===b)); upd(); });
+    sheet.querySelectorAll('[data-ivc]').forEach(b=>b.onclick=()=>{ P.cat=b.dataset.ivc; persist(); sheet.querySelectorAll('[data-ivc]').forEach(x=>x.classList.toggle('on',x===b)); upd(); form(); });
+    const ci=$('#iv-cap'); ci.addEventListener('input',()=>{ P.cap=+ci.value||0; clearTimeout(ci._t); ci._t=setTimeout(()=>{ persist(); upd(); },300); });
+    $('#iv-cur').onchange=()=>{ P.cur=$('#iv-cur').value; persist(); upd(); };
+    sheet.querySelectorAll('.iv-k .chip.on,.gd-k .chip.on').forEach(on=>{ const row=on.parentElement; row.scrollLeft=Math.max(0,on.offsetLeft-row.offsetLeft-row.clientWidth/2+on.clientWidth/2); });
+  };
+  const upd=()=>{ const cat=P.cat, st=ivStart(), cap=ivCapUSD(); const box=$('#iv-r'); if(!box) return;
+    if(!(cap>0)){ box.innerHTML=`<div class="sh-empty">${usdRate()?L.ivNeedCap:L.trNoRateOne}</div>`; return; }
+    const rs=IV_C.map(c=>ivCalc(cat,c,st)).sort((a,b)=>b.profit-a.profit), best=rs[0];
+    const card=(r,i)=>`<div class="iv-o ${i===0&&r.profit>0?'best':''} ${r.profit<=0?'neg':''}"><div class="iv-oh"><b>${TCOUNTRY[r.c].f} ${L['cn_'+r.c]}</b>${i===0&&r.profit>0?`<span class="iv-best">👍 ${L.ivBest}</span>`:''}</div>
+      <div class="iv-p ${r.profit>0?'tx-ok':'tx-urgent'}">${r.profit>0?'+':''}${ivUsd(r.profit)} <small>(${r.profit>0?'+':''}${Math.round(r.roi*100)}%)</small></div>
+      <div class="iv-l">${L.ivRev}: <b>${ivUsd(r.rev)}</b>${ivUsdTj(r.rev)}</div>
+      <div class="iv-l">${L.ivBuyN(r.pcs.toLocaleString('ru-RU').replace(/,/g,' '),fx(r.unit,r.unit<10?1:0))}${r.src==='hist'?' <small>✓ '+L.ivHist+'</small>':''} · ${L.ivSellAt} <b>${fx(r.retail,1)} $</b>${usdRate()?' ('+money(r.retail*usdRate())+')':''}</div>
+      <div class="iv-l">⏱️ ${L.ivTime(Math.round((r.arrive-st)/864e5),fx(r.months,r.months%1?1:0),fx(r.totalM,1))}</div>
+      <div class="iv-l">${ivSeasonTag(r)}</div>${r.limited?`<div class="iv-warn">⚠️ ${L.ivCapLim(ivUsd(r.capM.v),fx(r.months,1))}</div>`:''}</div>`;
+    const cy=ivCycles(cat,best.c);
+    box.innerHTML=`<div class="iv-res">${rs.map(card).join('')}</div>
+      <div class="iv-cy"><h4>🚀 ${L.ivCyT(ivUsd(cap),ivUsd(cap*(+P.tgt||2)),TCOUNTRY[best.c].f)}</h4>
+      ${cy.out.length?cy.out.map(x=>`<div class="iv-cr"><span>${x.n}</span><div><b>${ivUsd(x.from)} → ${ivUsd(x.to)}</b><small>${L.ivCyBy(fmtDate(x.d)+(/\d{4}/.test(fmtDate(x.d))||x.d.getFullYear()===today0().getFullYear()?'':' '+x.d.getFullYear()))}${x.se&&x.se.k==='in'?' · 🔥':''}</small></div></div>`).join(''):''}
+      <p class="${cy.ok?'tx-ok':'tx-urgent'}" style="font-weight:800;margin:8px 0 0">${cy.ok?L.ivCyOk(cy.out.length,fx(cy.m,0)):cy.out.length?L.ivCyLong:L.ivCyNo}</p></div>`;
+    const mx=$('#iv-m'); if(mx&&$('#iv-mx').open) mxDraw(); };
+  const mxDraw=()=>{ const st=ivStart(); const rows=IV_CATS.map(k=>({k,r:['CN','TR'].map(c=>ivCalc(k,c,st))})).sort((a,b)=>Math.max(b.r[0].roi,b.r[1].roi)-Math.max(a.r[0].roi,a.r[1].roi));
+    $('#iv-m').innerHTML=`<p class="note" style="margin-top:0">${L.ivMxLead}</p><table class="iv-mt"><tr><th></th><th>🇨🇳</th><th>🇹🇷</th></tr>${rows.map(x=>`<tr class="${x.k===P.cat?'on':''}" data-ivc2="${x.k}"><td>${WH_CIC[x.k]} ${L['whC_'+x.k]}</td>${x.r.map(r=>`<td class="${r.roi>0?'p':'n'}"><b>${r.roi>0?'+':''}${Math.round(r.roi*100)}%</b><small>${fx(r.totalM,0)} ${L.ivMoW}</small></td>`).join('')}</tr>`).join('')}</table>`;
+    $('#iv-m').querySelectorAll('[data-ivc2]').forEach(tr=>tr.onclick=()=>{ P.cat=tr.dataset.ivc2; persist(); draw(); }); };
+  const form=()=>{ const cat=P.cat, d=ivDef(cat), o=P.c[cat]||(P.c[cat]={}); const box=$('#iv-f'); if(!box) return; const num=(id,v,ph,lab,st)=>`<div class="field n"><label>${lab}</label><input id="${id}" type="number" inputmode="decimal" step="any" min="0" value="${v!=null&&v!==''?v:''}" placeholder="${ph}"${st?` data-st="${st}"`:''}></div>`;
+    box.innerHTML=`<div class="br-h">${WH_CIC[cat]} ${L['whC_'+cat]} — ${L.ivPriceOne}</div>
+      <div class="two">${IV_C.map((c,i)=>num('ivp-'+c,o.p&&+o.p[i]>0?o.p[i]:'',d.p[i],TCOUNTRY[c].f+' '+L['cn_'+c]+(d.src[i]==='hist'?' ✓':''))).join('')}</div>
+      <div class="br-h">％ ${L.ivMkC}</div><div class="two">${IV_C.map((c,i)=>num('ivk-'+c,o.mkc&&+o.mkc[i]>0?o.mkc[i]:'',d.mk[i],TCOUNTRY[c].f+' '+L['cn_'+c])).join('')}</div>
+      <div class="two">${num('iv-w',o.w||'',d.w,L.ivW)}${num('iv-mo',o.m||'',d.m,L.ivMonths)}</div>
+      <div class="br-h">✈️ ${L.ivTrip}</div><div class="two">${IV_C.map(c=>num('ivt-'+c,P.trip[c]||'',IV_TRIP[c],TCOUNTRY[c].f+' '+L['cn_'+c])).join('')}</div>
+      <div class="br-h">🚚 ${L.ivCgr}</div><div class="two">${IV_C.map(c=>num('ivg-'+c,P.cgr[c]||'',fx(ivCgRate(c),1),TCOUNTRY[c].f+' '+L['cn_'+c])).join('')}</div>
+      <div class="two">${num('iv-oth',P.oth,3,L.ivOth)}${num('iv-full',P.full,75,L.ivFull)}</div>
+      <div class="two">${num('iv-disc',P.disc,30,L.ivDisc)}${num('iv-share',P.share,100,L.ivShare)}</div>
+      ${num('iv-shop',P.shop,Math.round((expEst()||{v:0}).v),L.ivShop)}
+      ${num('iv-capm',P.capM,Math.round(ivCapMUSD().v*(usdRate()||1)),L.ivCapM+(ivCapMUSD().src==='def'?' — '+L.ivCapDef:''))}
+      <button class="btn btn-ghost btn-full" id="iv-reset">↺ ${L.ivReset}</button>`;
+    const save=()=>{ const g=id=>{ const v=$(id).value; return v===''?'':+v; };
+      o.p=IV_C.map(c=>g('#ivp-'+c)); o.mkc=IV_C.map(c=>g('#ivk-'+c)); o.w=g('#iv-w'); o.m=g('#iv-mo');
+      for(const c of IV_C){ P.trip[c]=g('#ivt-'+c); P.cgr[c]=g('#ivg-'+c); } P.oth=g('#iv-oth'); P.full=g('#iv-full'); P.disc=g('#iv-disc'); P.share=g('#iv-share'); P.shop=g('#iv-shop'); P.capM=g('#iv-capm'); persist(); upd(); };
+    box.querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>{ clearTimeout(box._t); box._t=setTimeout(save,350); }));
+    $('#iv-reset').onclick=()=>{ P.c[cat]={}; P.trip={}; P.cgr={}; P.oth=P.full=P.disc=P.share=P.shop=P.capM=''; persist(); form(); upd(); };
+  };
+  draw();
+}
+document.addEventListener('click', e=>{ const w=e.target.closest('[data-invest]'); if(w){ e.stopImmediatePropagation(); investSheet(); } }, true);
+
+/* ===================== v8: помощники закупщика и магазина (идеи из списка) ===================== */
+/* ---- панель помощников во вкладке «Закупка» ---- */
+function buyToolsHTML(hasTrip){ const t=[['data-invest="1"','💰',L.ivShort],['data-when=""','📅',L.whShort],['data-restock="1"','🧠',L.rsShort],['data-guide="'+(hasTrip?'trip':'')+'"','🗺️',L.gdTitleShort],['data-tmoney="1"','💵',L.tmShort],['data-sizes="1"','📏',L.szShort],['data-labels="1"','🔤',L.lbShort],['data-tdir="1"','📒',L.trDirShort+(state.vendors.length?' · '+state.vendors.length:'')],['data-cgco="1"','🚚',L.cgCosShort+(state.cargoCo.length?' · '+state.cargoCo.length:'')]];
+  return `<details class="btools" ${hasTrip?'':'open'}><summary>🧰 ${L.btTitle}</summary><div class="btgrid">${t.map(x=>`<button ${x[0]}><span>${x[1]}</span><small>${esc(x[2])}</small></button>`).join('')}</div></details>`; }
+
+/* ---- 2. что докупить: по продажам за 60 дней ---- */
+function restockData(){ const since=dkey(addDays(today0(),-60)), out=[];
+  for(const x of state.inv){ if(x.arch) continue; const sold={}; for(const l of state.invLog){ if(l.i!==x.id||l.k!=='sale'||l.d<since) continue; sold[l.s]=(sold[l.s]||0)-(+l.q||0); }
+    const tot=Object.values(sold).reduce((a,b)=>a+b,0); if(!(tot>0)) continue; const need=[];
+    for(const s of Object.keys(x.sizes||{})){ const left=+x.sizes[s]||0, sd=sold[s]||0, want=Math.ceil(sd-left); if(sd>0&&(want>0||left===0)) need.push({s,want:Math.max(1,want),left,sold:sd}); }
+    if(need.length) out.push({x,tot,need}); }
+  return out.sort((a,b)=>b.tot-a.tot); }
+function restockSheet(){ const rs=restockData(); const pick=new Set(rs.map(o=>o.x.id));
+  openSheet(`<h3>🧠 ${L.rsTitle}</h3><p class="lead">${L.rsLead}</p>
+    ${rs.length?`<div class="rs-list">${rs.map(o=>`<label class="rs-r"><input type="checkbox" data-rsk="${esc(o.x.id)}" checked><div><b>${esc(o.x.name)}</b> <small>🔥 ${L.rsSold(o.tot)}</small><div class="rs-sz">${o.need.map(n=>`<span>${esc(n.s==='—'?L.ivOne:n.s)}: <b>+${n.want}</b> <small>(${L.rsLeft(n.left)})</small></span>`).join('')}</div></div></label>`).join('')}</div>
+      <button class="btn btn-primary btn-full" id="rs-add">🛒 ${L.rsAdd}</button>`:`<div class="sh-empty">${L.rsNone}</div>`}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-rsk]').forEach(i=>i.onchange=()=>{ if(i.checked) pick.add(i.dataset.rsk); else pick.delete(i.dataset.rsk); });
+  if($('#rs-add')) $('#rs-add').onclick=()=>{ let n=0; for(const o of rs){ if(!pick.has(o.x.id)) continue; const nm=o.x.name+' — '+o.need.map(z=>(z.s==='—'?L.ivOne:z.s)+'×'+z.want).join(', '); if(state.shopList.some(i=>!i.done&&i.n===nm)) continue; state.shopList.push({id:uid('l'),n:nm,q:o.need.reduce((s,z)=>s+z.want,0),p:o.x.cost||0,s:o.x.sup||'',done:false}); n++; } persist(); render(); closeSheet(); toast(n?L.ivAdded(n):L.ivAlready); }; }
+
+/* ---- 4 + 22 + 23. деньги на поездку: безопасный бюджет, сколько и какой валюты, кошелёк валют ---- */
+function safeBudget(cash){ const T=today0(), end=addDays(T,60), ln=[]; let loans=0, bills=0, sup=0;
+  for(const {loan,a} of activeList()){ if(a.done||loan.example) continue; let d=new Date(a.due), k=0, sum=0; while(d<=end&&k<3){ sum+=a.monthly; k++; d=new Date(d.getFullYear(),d.getMonth()+1,d.getDate()); } loans+=Math.min(sum,a.remaining); }
+  for(const b of state.bills){ for(let m=0;m<3;m++){ const d=new Date(T.getFullYear(),T.getMonth()+m,Math.min(28,+b.day||1)); if(d<T||d>end) continue; if(b.paid&&b.paid[monthKey(d)]) continue; bills+=+b.sum||0; } }
+  for(const s of state.sup){ if(s.paid) continue; if(!s.due||parseYmd(s.due)<=end) sup+=+s.sum||0; }
+  const rev=revEst(), ex=expEst(), mg=(marginPct()||30)/100; const homeM=state.home.filter(h=>h.d>=dkey(addDays(T,-60))&&h.cat!=='bills').reduce((s,h)=>s+(+h.sum||0),0)/2;
+  const net=((rev?rev.v:0)*mg-(ex?ex.v:0)-homeM)*2, reserve=Math.round(cash*0.1);
+  const safe=Math.round(cash+Math.max(0,net)*0.5-loans-bills-sup-reserve);
+  return {safe,loans:Math.round(loans),bills:Math.round(bills),sup:Math.round(sup),net:Math.round(net),reserve}; }
+const TM_CUR={CN:'CNY',TR:'USD',AE:'USD',UZ:'USD',KG:'USD',KZ:'USD',RU:'RUB',XX:'USD'};
+function walletBal(){ const b={}; for(const w of state.wallet){ const o=b[w.cur]||(b[w.cur]={a:0,buyA:0,buyT:0}); o.a+=+w.a||0; if(+w.a>0&&+w.r>0){ o.buyA+=+w.a; o.buyT+=(+w.a)*(+w.r); } } return b; }
+function tripMoneySheet(){ const tr=activeTrip(); state.misc.cash=state.misc.cash||''; let cash=+state.misc.cash||0;
+  const draw=()=>{ const sb=safeBudget(cash), C=tr?tr.country:'CN', cur=TM_CUR[C]||'USD', bb=bankBest('USD','sell'), u=usdRate(); const amt=Math.max(0,Math.min(sb.safe,tr&&+tr.budget>0?+tr.budget:sb.safe)), per=cur==='TJS'?1:rateOf(cur,tr);
+    const wb=walletBal();
+    openSheet(`<h3>💵 ${L.tmTitle}</h3><p class="lead">${L.tmLead}</p>
+      <div class="field n big-in"><label>${L.tmCash}</label><input id="tm-c" type="number" inputmode="numeric" min="0" value="${state.misc.cash}" placeholder="0"></div>
+      <div class="calc-out"><div class="co-row"><span>➕ ${L.tmNet}</span><b>${sb.net>=0?'+':''}${money(Math.round(Math.max(0,sb.net)*0.5))}</b></div><div class="co-row"><span>💳 ${L.tmLoans}</span><b>−${money(sb.loans)}</b></div><div class="co-row"><span>🧾 ${L.tmBills}</span><b>−${money(sb.bills)}</b></div>${sb.sup?`<div class="co-row"><span>🏭 ${L.tmSup}</span><b>−${money(sb.sup)}</b></div>`:''}<div class="co-row"><span>🛟 ${L.tmRes}</span><b>−${money(sb.reserve)}</b></div>
+        <div class="co-row big"><span>${L.tmSafe}</span><b class="${sb.safe>0?'tx-ok':'tx-urgent'}">${money(Math.max(0,sb.safe))}${u&&sb.safe>0?' ≈ '+fx(sb.safe/u,0)+' $':''}</b></div></div>
+      ${sb.safe>0&&per?`<div class="pc-ok" style="margin:10px 0">${TCOUNTRY[C].f} ${L['tmHow_'+(['CN','TR','AE'].includes(C)?C:'XX')](fxAmt(amt/per,cur)+' '+curSym(cur),money(amt))}${bb?`<br>🏦 ${L.tmBank(esc(bb.k),fx(bb.v,2))}`:''}</div>`:`<p class="pc-warn">${L.tmNoSafe}</p>`}
+      <div class="section-h" style="margin-top:14px"><h2>👛 ${L.wlTitle}</h2></div>
+      ${Object.keys(wb).length?`<div class="calc-out">${Object.keys(wb).map(c=>{ const o=wb[c], avg=o.buyA?o.buyT/o.buyA:null, now=c==='TJS'?1:rateOf(c), diff=avg&&now?Math.round((now-avg)*o.a):null; return `<div class="co-row"><span>${curSym(c)} ${fxAmt(o.a,c)}${avg?` <small>· ${L.wlAvg} ${fx(avg,avg<1?4:2)}</small>`:''}</span><b class="${diff>0?'tx-ok':diff<0?'tx-urgent':''}">${diff?(diff>0?'+':'')+money(diff):''}</b></div>`; }).join('')}</div><p class="note">${L.wlNote}</p>`:`<p class="note">${L.wlEmpty}</p>`}
+      <div class="sheet-row"><button class="btn btn-ghost" id="wl-buy">➕ ${L.wlBuy}</button><button class="btn btn-ghost" id="wl-spend">➖ ${L.wlSpend}</button></div>
+      <p class="note">${L.tmNote}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    const ci=$('#tm-c'); ci.addEventListener('change',()=>{ state.misc.cash=ci.value; cash=+ci.value||0; persist(); draw(); });
+    $('#wl-buy').onclick=()=>walletForm(1,draw); $('#wl-spend').onclick=()=>walletForm(-1,draw); };
+  draw(); }
+function walletForm(sign,back){ let cur=TM_CUR[(activeTrip()||{}).country]||'USD';
+  const draw=()=>{ const r=cur==='TJS'?1:rateOf(cur), bb=cur==='USD'?bankBest('USD','sell'):null;
+    openSheet(`<h3>${sign>0?'➕ '+L.wlBuy:'➖ '+L.wlSpend}</h3>
+      <div class="chips">${['USD','CNY','EUR','RUB','TRY','AED'].map(c=>`<button class="chip ${cur===c?'on':''}" data-wc="${c}">${curSym(c)} ${c}</button>`).join('')}</div>
+      <div class="field n big-in"><label>${L.amountW}</label><input id="wf-a" type="number" inputmode="decimal" min="0" step="any"></div>
+      ${sign>0?`<div class="field n"><label>${L.wlRate(curSym(cur))}</label><input id="wf-r" type="number" inputmode="decimal" step="any" min="0" value="${bb?bb.v:r?fx(r,4).replace(',','.'):''}"></div>`:''}
+      <div class="field"><label>${L.dayNote} <span class="hint">${L.optional}</span></label><input id="wf-n" maxlength="60"></div>
+      <div class="err" id="wf-err"></div><button class="btn btn-primary btn-full" id="wf-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" id="wf-b">${L.cancel}</button></div>`);
+    sheet.querySelectorAll('[data-wc]').forEach(b=>b.onclick=()=>{ cur=b.dataset.wc; draw(); });
+    $('#wf-b').onclick=back;
+    $('#wf-s').onclick=()=>{ const a=+$('#wf-a').value; if(!(a>0)) return showErr($('#wf-err'),L.errSum); state.wallet.push({id:uid('w'),cur,a:sign*a,r:sign>0?+($('#wf-r').value||0):null,d:dkey(),n:$('#wf-n').value.trim()}); persist(); toast(L.saved); back(); }; };
+  draw(); }
+
+/* ---- 6. прибыль поездки и лучший поставщик ---- */
+function tripProfitHTML(tr){ const items=state.inv.filter(x=>x.trip===tr.id); const tt=tripTotals(tr);
+  if(!items.length) return tt.buy.length?`<p class="note" style="margin-top:14px">📈 ${L.tpfHint}</p>`:'';
+  let sold=0, rev=0, leftV=0; const byV={};
+  for(const x of items){ const s=state.invLog.filter(l=>l.i===x.id&&l.k==='sale').reduce((a,l)=>a-(+l.q||0),0), left=invTotal(x), pr=+x.price||0, co=+x.cost||0;
+    sold+=s; rev+=s*pr; leftV+=left*pr; const v=byV[x.vendor||'?']||(byV[x.vendor||'?']={s:0,l:0,mk:[],rev:0}); v.s+=s; v.l+=left; v.rev+=s*pr; if(co>0&&pr>0) v.mk.push(pr/co-1); }
+  const spent=tt.sum||0, prof=rev-spent, pot=rev+leftV-spent;
+  const vs=Object.keys(byV).map(k=>{ const o=byV[k], ven=state.vendors.find(v=>v.id===k); return {n:ven?ven.name:'—',mk:o.mk.length?o.mk.reduce((a,b)=>a+b,0)/o.mk.length:null,st:o.s+o.l?o.s/(o.s+o.l):0,rev:o.rev}; }).sort((a,b)=>(b.mk||0)*b.st-(a.mk||0)*a.st);
+  return `<div class="section-h" style="margin-top:18px"><h2>📈 ${L.tpfTitle}</h2></div><div class="calc-out">
+    <div class="co-row"><span>${L.tpfSpent}</span><b>${money(spent)}</b></div><div class="co-row"><span>${L.tpfRev(sold)}</span><b>${money(rev)}</b></div><div class="co-row"><span>${L.tpfLeft}</span><b>${money(leftV)}</b></div>
+    <div class="co-row big"><span>${prof>=0?L.tpfProfit:L.tpfBack}</span><b class="${prof>=0?'tx-ok':''}">${money(Math.abs(prof))}</b></div><div class="co-row"><span>${L.tpfPot}</span><b class="${pot>=0?'tx-ok':'tx-urgent'}">${pot>=0?'+':''}${money(pot)}</b></div></div>
+    ${vs.length>1||vs[0]&&vs[0].mk!=null?`<div class="hist"><h4>🏆 ${L.tpfVend}</h4>${vs.map((v,i)=>`<div class="hrow"><span class="hn">${i===0?'🥇 ':''}${esc(v.n)}</span><span class="hd">${v.mk!=null?L.tpfMk(Math.round(v.mk*100)):''}</span><span class="ha">${L.tpfSt(Math.round(v.st*100))}</span></div>`).join('')}</div>`:''}`; }
+
+/* ---- 10. ценники для печати ---- */
+function tagsSheet(){ const items=state.inv.filter(x=>!x.arch&&+x.price>0); const pick=new Set(items.filter(x=>invTotal(x)>0).map(x=>x.id)); let style='w';
+  openSheet(`<h3>🏷️ ${L.tgTitle}</h3><p class="lead">${L.tgLead}</p>
+    <div class="chips">${[['w',L.tgWhite],['b',L.tgBrand]].map(s=>`<button class="chip ${style===s[0]?'on':''}" data-tgs="${s[0]}">${s[1]}</button>`).join('')}</div>
+    ${items.length?`<div class="rs-list">${items.map(x=>`<label class="rs-r"><input type="checkbox" data-tgk="${esc(x.id)}" ${pick.has(x.id)?'checked':''}><div><b>${esc(x.name)}</b> <small>${money(x.price)}</small></div></label>`).join('')}</div><button class="btn btn-primary btn-full" id="tg-p">🖨️ ${L.tgPrint}</button><p class="note">${L.tgPdf}</p>`:`<div class="sh-empty">${L.tgNone}</div>`}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-tgk]').forEach(i=>i.onchange=()=>{ if(i.checked) pick.add(i.dataset.tgk); else pick.delete(i.dataset.tgk); });
+  sheet.querySelectorAll('[data-tgs]').forEach(b=>b.onclick=()=>{ style=b.dataset.tgs; sheet.querySelectorAll('[data-tgs]').forEach(x=>x.classList.toggle('on',x===b)); });
+  if($('#tg-p')) $('#tg-p').onclick=()=>{ const sel=items.filter(x=>pick.has(x.id)); if(!sel.length) return; state.misc.ivSeq=state.misc.ivSeq||0; for(const x of sel) if(!x.code){ state.misc.ivSeq++; x.code=state.misc.ivSeq; } persist(); printTags(sel,style); }; }
+function printTags(sel,style){ const shop=(state.profile&&state.profile.shop)||''; const br=style==='b';
+  const html=`<!doctype html><html><head><meta charset="utf-8"><title>${esc(L.tgTitle)}</title><style>@page{size:A4;margin:8mm}body{margin:0;font-family:Arial,sans-serif}.g{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}.t{border:1.5px dashed #999;border-radius:3mm;padding:4mm;height:38mm;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;break-inside:avoid;${br?'background:#0E7C66;color:#fff;border-style:solid;border-color:#0E7C66;':''}}.n{font-size:12pt;font-weight:700;line-height:1.2;max-height:2.4em;overflow:hidden}.p{font-size:24pt;font-weight:900}.p small{font-size:11pt;font-weight:700}.s{font-size:9pt;opacity:.85}.f{display:flex;justify-content:space-between;font-size:8pt;opacity:.75}</style></head><body><div class="g">${sel.map(x=>{ const sz=Object.keys(x.sizes||{}).filter(k=>(+x.sizes[k]||0)>0&&k!=='—'); return `<div class="t"><div class="n">${esc(x.name)}</div><div class="p">${esc(money(+x.price))}</div><div class="s">${sz.length?esc(L.tgSizes+': '+sz.join(', ')):''}</div><div class="f"><span>№ ${x.code}</span><span>${esc(shop)}</span></div></div>`; }).join('')}</div></body></html>`;
+  let fr=document.getElementById('tgFrame'); if(fr) fr.remove(); fr=document.createElement('iframe'); fr.id='tgFrame'; fr.style.cssText='position:fixed;width:0;height:0;border:0;opacity:0'; document.body.appendChild(fr);
+  const d=fr.contentWindow.document; d.open(); d.write(html); d.close(); setTimeout(()=>{ try{ fr.contentWindow.focus(); fr.contentWindow.print(); }catch(e){ toast(L.tgFail); } },300); }
+
+/* ---- 12. фото чека → сумма (распознавание работает с интернетом) ---- */
+function receiptSum(text){ const lines=String(text||'').split(/\n/); const nums=s=>(String(s).replace(/(\d)\s(?=\d{3}\b)/g,'$1').match(/\d+[.,]\d{1,2}\b|\d+/g)||[]).map(x=>+x.replace(',','.')).filter(x=>x>0&&x<1e6);
+  const key=/итог|всего|сумма|к оплате|ҷамъ|jami|total|umumiy/i;
+  for(let i=lines.length-1;i>=0;i--) if(key.test(lines[i])){ const v=nums(lines[i]); if(v.length) return Math.max(...v); const nx=lines[i+1]?nums(lines[i+1]):[]; if(nx.length) return Math.max(...nx); }
+  const dec=(String(text).match(/\d+[.,]\d{2}\b/g)||[]).map(x=>+x.replace(',','.')).filter(x=>x>0&&x<1e6); return dec.length?Math.max(...dec):null; }
+let tessP=null;
+function loadTess(){ if(window.Tesseract) return Promise.resolve(window.Tesseract); if(tessP) return tessP;
+  tessP=new Promise((res,rej)=>{ const s=document.createElement('script'); s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js'; s.onload=()=>res(window.Tesseract); s.onerror=()=>{ tessP=null; rej(new Error('load')); }; document.head.appendChild(s); }); return tessP; }
+async function ocrReceipt(img){ const T=await loadTess(); const r=await T.recognize(img,'rus+eng'); return receiptSum(r&&r.data&&r.data.text); }
+
+/* ---- 13. какой кредит гасить первым ---- */
+function loanPrioSheet(){ let extra=+state.misc.extra||0;
+  const draw=()=>{ const rows=activeList().filter(x=>!x.a.done&&!x.loan.example).map(({loan,a})=>{ const rate=+loan.rate||0, put=Math.min(extra,a.remaining); let save=null, fewer=null;
+      if(a.monthly>0&&put>0){ const s0=payoffSim(a.remaining,a.monthly,rate), s1=payoffSim(Math.max(0,a.remaining-put),a.monthly,rate); if(s0&&s1){ save=Math.max(0,s0.interest-s1.interest); fewer=Math.max(0,s0.months-s1.months); } }
+      return {loan,a,rate,save,fewer}; }).sort((x,y)=>(y.save||0)-(x.save||0)||y.rate-x.rate);
+    openSheet(`<h3>🎯 ${L.lpTitle}</h3><p class="lead">${L.lpLead}</p>
+      <div class="field n big-in"><label>${L.lpExtra}</label><input id="lp-x" type="number" inputmode="numeric" min="0" value="${extra||''}" placeholder="5000"></div>
+      ${rows.length?`<div class="cards">${rows.map((r,i)=>`<div class="card ${i===0&&r.save?'lp-best':''}"><span class="ava" style="background:${r.loan.color||'#0E7C86'}">${esc(r.loan.short||r.loan.name.charAt(0))}</span><div class="c-main"><div class="c-top"><span class="c-name">${i===0&&r.save?'🥇 ':''}${esc(r.loan.name)}</span><span class="c-rem">${r.rate?r.rate+'%':`<span class="tx-urgent">${L.lpNoRate}</span>`}</span></div>
+        <div class="c-sub"><span>${L.lpLeft} ${money(r.a.remaining)}</span>${r.save!=null?`<span>· ${L.lpSave} <b class="tx-ok">${money(r.save)}</b></span>`:''}${r.fewer?`<span>· ${L.lpFewer(r.fewer)}</span>`:''}</div></div></div>`).join('')}</div>`:`<div class="sh-empty">${L.lpNone}</div>`}
+      <p class="note">${L.lpNote}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    const i=$('#lp-x'); i.addEventListener('change',()=>{ extra=+i.value||0; state.misc.extra=extra; persist(); draw(); }); };
+  draw(); }
+
+/* ---- 20. таблица размеров ---- */
+const SZ_T={
+  women:{h:['RU','EU · TR','INT','CN','obh'],r:[[42,36,'XS','S',84],[44,38,'S','M',88],[46,40,'M','L',92],[48,42,'L','XL',96],[50,44,'XL','2XL',100],[52,46,'2XL','3XL',104],[54,48,'3XL','4XL',108],[56,50,'4XL','5XL',112]]},
+  men:{h:['RU','EU · TR','INT','CN','obh'],r:[[44,44,'XS','S',88],[46,46,'S','M',92],[48,48,'M','L',96],[50,50,'L','XL',100],[52,52,'XL','2XL',104],[54,54,'2XL','3XL',108],[56,56,'3XL','4XL',112],[58,58,'4XL','5XL',116]]},
+  kids:{h:['cm','age','TR'],r:[[80,'1','9–12 ay'],[86,'1,5','12–18 ay'],[92,'2','2 yaş'],[98,'3','3 yaş'],[104,'4','4 yaş'],[110,'5','5 yaş'],[116,'6','6 yaş'],[122,'7','7 yaş'],[128,'8','8 yaş'],[134,'9','9 yaş'],[140,'10','10 yaş'],[146,'11','11 yaş'],[152,'12','12 yaş'],[158,'13','13 yaş'],[164,'14','14 yaş']]},
+  shoes:{h:['RU','EU · TR · CN','cm'],r:[[34,35,'22,5'],[35,36,'23'],[36,37,'23,5–24'],[37,38,'24,5'],[38,39,'25'],[39,40,'25,5–26'],[40,41,'26,5'],[41,42,'27'],[42,43,'27,5–28'],[43,44,'28,5'],[44,45,'29']]}};
+let szTab='women';
+function sizesSheet(){ const t=SZ_T[szTab];
+  openSheet(`<h3>📏 ${L.szTitle}</h3><p class="lead">${L.szLead}</p>
+    <div class="seg">${['women','men','kids','shoes'].map(k=>`<button data-szt="${k}" class="${szTab===k?'on':''}">${L['szT_'+k]}</button>`).join('')}</div>
+    <table class="sz-t"><tr>${t.h.map(h=>`<th>${h==='obh'?L.szChest:h==='age'?L.szAge:h==='cm'?(szTab==='kids'?L.szHeight:L.szFoot):h}</th>`).join('')}</tr>${t.r.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</table>
+    <div class="pc-ok" style="margin-top:10px">💡 ${L['szTip_'+szTab]}</div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-szt]').forEach(b=>b.onclick=()=>{ szTab=b.dataset.szt; sizesSheet(); }); }
+
+/* ---- 21. словарь ярлыков: состав ткани ---- */
+const LB_W=[ // [китайский, пиньинь, турецкий, ru, tg, en, 💡 ru, 💡 tg, 💡 en]
+  ['棉 / 纯棉','mián / chún mián','Pamuk','Хлопок / 100% хлопок','Пахта / 100% пахта','Cotton / 100% cotton','дышит, приятно к телу','нафас мекашад, ба бадан форам','breathes, soft on skin'],
+  ['涤纶 / 聚酯纤维','dílún / jùzhǐ xiānwéi','Polyester','Полиэстер','Полиэстер','Polyester','дешевле, не мнётся, не дышит','арзонтар, чиндор намешавад, нафас намекашад','cheaper, no creases, doesn’t breathe'],
+  ['氨纶','ānlún','Elastan / Likra','Эластан (лайкра)','Эластан (лайкра)','Elastane (lycra)','3–5% — вещь тянется и держит форму','3–5% — мол каш меояд ва шаклро нигоҳ медорад','3–5% makes it stretch and keep shape'],
+  ['粘纤 / 粘胶纤维','niánxiān','Viskon','Вискоза','Вискоза','Viscose','мягкая, но может садиться после стирки','нарм, вале баъди шустан метавонад хурд шавад','soft, may shrink after washing'],
+  ['人造棉','rénzào mián','Viskon (suni pamuk)','Искусственный хлопок (вискоза)','Пахтаи сунъӣ (вискоза)','Rayon','не путайте с настоящим хлопком','бо пахтаи аслӣ омехта накунед','don’t confuse with real cotton'],
+  ['莫代尔','mòdài\'ěr','Modal','Модал','Модал','Modal','очень мягкий, для белья и футболок','хеле нарм, барои либоси таг ва футболка','very soft, for underwear and tees'],
+  ['天丝','tiānsī','Tencel / Lyosel','Тенсел (лиоцелл)','Тенсел (лиосел)','Tencel (lyocell)','дорогая гладкая ткань','матои гарони ҳамвор','premium smooth fabric'],
+  ['锦纶 / 尼龙','jǐnlún / nílóng','Naylon / Poliamid','Нейлон (полиамид)','Нейлон (полиамид)','Nylon (polyamide)','прочный, для колготок и спорта','мустаҳкам, барои колготка ва варзиш','strong, for tights and sportswear'],
+  ['腈纶','jīnglún','Akrilik','Акрил','Акрил','Acrylic','«искусственная шерсть», дешевле, катышки','«пашми сунъӣ», арзонтар, гулӯла мекунад','“fake wool”, cheaper, pills'],
+  ['羊毛','yángmáo','Yün','Шерсть','Пашм','Wool','тёплая, дороже','гарм, гаронтар','warm, pricier'],
+  ['羊绒','yángróng','Kaşmir','Кашемир','Кашмир','Cashmere','очень дорогая и тёплая','хеле гарон ва гарм','very pricey and warm'],
+  ['真丝 / 桑蚕丝','zhēnsī','İpek','Натуральный шёлк','Абрешими табиӣ','Real silk','дорогой, нежный уход','гарон, нигоҳубини нозук','expensive, delicate care'],
+  ['亚麻','yàmá','Keten','Лён','Зағирпоя (катон)','Linen','летний, мнётся','тобистона, чиндор мешавад','for summer, creases'],
+  ['牛仔','niúzǎi','Kot / Denim','Джинса (деним)','Ҷинс (деним)','Denim',' ',' ',' '],
+  ['雪纺','xuěfǎng','Şifon','Шифон','Шифон','Chiffon','лёгкий прозрачный, для блузок и платьев','сабук ва шаффоф, барои блузка ва курта','light and sheer, for blouses and dresses'],
+  ['真皮 / 牛皮','zhēnpí / niúpí','Hakiki deri','Натуральная кожа','Чарми табиӣ','Genuine leather','дороже, пахнет кожей','гаронтар, бӯи чарм дорад','pricier, smells of leather'],
+  ['PU皮 / 人造革','PU pí','Suni deri','Искусственная кожа','Чарми сунъӣ','Faux leather','дешевле, со временем трескается','арзонтар, бо мурури замон мекафад','cheaper, cracks over time'],
+  ['白鸭绒 / 含绒量','bái yāróng / hán róng liàng','Kaz tüyü / Ördek tüyü','Белый утиный пух / доля пуха %','Пари мурғобии сафед / ҳиссаи пар %','White duck down / down content %','для пуховика лучше 80%+ пуха','барои пухак 80%+ пар беҳтар','for down jackets 80%+ down is better'],
+  ['面料 · 成分','miànliào · chéngfèn','Kumaş · İçerik','Ткань · Состав','Матоъ · Таркиб','Fabric · Composition',' ',' ',' '],
+  ['里料','lǐliào','Astar','Подкладка','Астар','Lining',' ',' ',' '],
+  ['填充物','tiánchōng wù','Dolgu','Наполнитель','Пуркунанда','Filling',' ',' ',' '],
+  ['合格证','hégé zhèng','Sertifika','Сертификат (ярлык ОТК)','Сертификат','Quality certificate',' ',' ',' ']];
+function labelsSheet(){ const LI=lang==='tg'?4:lang==='en'?5:3; let q='';
+  const draw=()=>{ const rows=LB_W.filter(w=>!q||w.join(' ').toLowerCase().includes(q));
+    openSheet(`<h3>🔤 ${L.lbTitle}</h3><p class="lead">${L.lbLead}</p><div class="field"><input id="lb-q" type="search" placeholder="🔎 ${L.lbSearch}" value="${esc(q)}"></div>
+      <div class="lb-l">${rows.map(w=>`<div class="lb-r"><div class="lb-w"><b>${esc(w[LI])}</b>${w[LI+3]&&w[LI+3].trim()?`<small>${esc(w[LI+3])}</small>`:''}</div><div class="lb-x"><span class="lb-cn">🇨🇳 ${esc(w[0])} <i>${esc(w[1])}</i></span><span>🇹🇷 ${esc(w[2])}</span></div></div>`).join('')||`<div class="sh-empty">${L.srNone}</div>`}</div>
+      <p class="pc-ok" style="margin-top:10px">💡 ${L.lbTip}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    const i=$('#lb-q'); i.addEventListener('input',()=>{ q=i.value.toLowerCase().trim(); clearTimeout(i._t); i._t=setTimeout(()=>{ const p=i.selectionStart; draw(); const n=$('#lb-q'); n.focus(); try{ n.setSelectionRange(p,p); }catch(e){} },250); }); };
+  draw(); }
+
+/* ---- 25. честный рейтинг поставщика по фактам ---- */
+function vendorFacts(v){ let ord=0,got=0,late=0,ships=0; const ps=state.tprods.filter(p=>p.vendor===v.id&&p.dec==='buy');
+  for(const s of state.cargo){ if(!(s.vendors||[]).includes(v.id)) continue; ships++; const end=s.dt&&(s.dt.tj||s.dt.got); const e=shipEta(s); if(end&&e&&end>e) late++;
+    if(s.recv) for(const p of ps.filter(p=>p.trip===s.trip)){ ord+=pcsOf(p); got+=s.recv[p.id]!=null?+s.recv[p.id]:pcsOf(p); } }
+  const items=state.inv.filter(x=>x.vendor===v.id); let sold=0,left=0; const mk=[];
+  for(const x of items){ sold+=state.invLog.filter(l=>l.i===x.id&&l.k==='sale').reduce((a,l)=>a-(+l.q||0),0); left+=invTotal(x); if(+x.cost>0&&+x.price>0) mk.push(x.price/x.cost-1); }
+  const short=ord?Math.max(0,(ord-got)/ord):null, st=sold+left?sold/(sold+left):null, m=mk.length?mk.reduce((a,b)=>a+b,0)/mk.length:null;
+  return {ships,late,short,st,m,any:ships||items.length}; }
+function vendorFactsHTML(v){ const f=vendorFacts(v); if(!f.any) return ''; const good=(f.short==null||f.short<0.03)&&!f.late;
+  return `<div class="vfacts ${good?'ok':'warn'}"><b>📊 ${L.vfTitle} ${good?'✓':'⚠️'}</b><div>${f.short!=null?`<span>${L.vfShort(Math.round(f.short*100))}</span>`:''}${f.ships?`<span>${L.vfLate(f.late,f.ships)}</span>`:''}${f.m!=null?`<span>${L.tpfMk(Math.round(f.m*100))}</span>`:''}${f.st!=null?`<span>${L.tpfSt(Math.round(f.st*100))}</span>`:''}</div></div>`; }
+
+/* ---- 26. наценки по видам товара ---- */
+function kindCat(k){ return k==='kids'?'kids':k==='bed'?'bed':k==='shoes'?'shoes':(k==='acc'||k==='bag')?'acc':null; }
+function markupSheet(){ state.misc.mk=state.misc.mk||{};
+  openSheet(`<h3>🏷️ ${L.mkTitle}</h3><p class="lead">${L.mkLead}</p>
+    <div class="mk-l">${IV_CATS.map(k=>`<div class="mk-r"><span>${WH_CIC[k]} ${L['whC_'+k]}</span><div class="pin sm"><input data-mkc="${k}" type="number" inputmode="numeric" min="0" value="${state.misc.mk[k]||''}" placeholder="${IV_DEF[k].mk}"><b>%</b></div></div>`).join('')}</div>
+    <p class="note">${L.mkNote}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-mkc]').forEach(i=>i.addEventListener('change',()=>{ const v=+i.value; if(v>0) state.misc.mk[i.dataset.mkc]=v; else delete state.misc.mk[i.dataset.mkc]; persist(); toast(L.saved); })); }
+
+/* ---- 27. деньги в товаре и скорость продажи ---- */
+function stockMoney(){ const items=state.inv.filter(x=>!x.arch); let pcs=0,cost=0,price=0; for(const x of items){ const n=invTotal(x); pcs+=n; cost+=n*(+x.cost||0); price+=n*(+x.price||0); }
+  const since=dkey(addDays(today0(),-30)), sold=state.invLog.filter(l=>l.k==='sale'&&l.d>=since).reduce((a,l)=>a-(+l.q||0),0); const days=sold>0?Math.round(pcs/(sold/30)):null;
+  return {pcs,cost,price,sold,days}; }
+function stockMoneyHTML(){ const s=stockMoney(); if(!s.pcs) return ''; return `<div class="sm-card"><div><small>${L.smCost}</small><b>${money(s.cost)}</b></div><div><small>${L.smPrice}</small><b>${money(s.price)}</b></div><div><small>${L.smDays}</small><b>${s.days!=null?L.smDaysV(s.days):'—'}</b></div></div>
+  <div class="iv-acts"><button class="link-btn" data-catalog="1">🛍️ ${L.ctShort}</button><button class="link-btn" data-tags="1">🏷️ ${L.tgShort}</button><button class="link-btn" data-restock="1">🧠 ${L.rsShort}</button><button class="link-btn" data-markup="1">％ ${L.mkShort}</button></div>`; }
+
+/* ---- 28. бонусы постоянным покупателям ---- */
+function loyCfg(){ const o=state.misc.loy||{}; return {n:+o.n>1?+o.n:10,p:+o.p>0?+o.p:10}; }
+function loyCount(c){ return state.cbuy.filter(b=>b.c===c.id).length+state.cdebt.filter(r=>r.c===c.id&&r.t==='debt').length; }
+function loyHTML(c){ const g=loyCfg(), n=loyCount(c), k=n%g.n, next=g.n-k; return `<div class="loy"><div class="loy-b">${Array.from({length:g.n},(_,i)=>`<i class="${i<k?'on':''} ${i===g.n-1?'gift':''}">${i===g.n-1?'🎁':''}</i>`).join('')}</div><p>${next===1?`<b class="tx-ok">🎁 ${L.loyNext(g.p)}</b>`:L.loyLeft(k,g.n,next-1)} <small>· ${L.loyTotal(n)}</small></p><div class="sheet-row"><button class="btn btn-ghost" id="loy-add">🛍️ ${L.loyAdd}</button><button class="btn btn-ghost" id="loy-set">⚙️</button></div></div>`; }
+function loyBind(c,back){ if($('#loy-add')) $('#loy-add').onclick=()=>{ const before=loyCount(c); state.cbuy.push({id:uid('cb'),c:c.id,d:dkey()}); persist(); const g=loyCfg(); if((before+1)%g.n===g.n-1) toast('🎁 '+L.loyNext(g.p)); else if((before+1)%g.n===0) toast('🎉 '+L.loyUsed); else toast(L.saved); back(); };
+  if($('#loy-set')) $('#loy-set').onclick=()=>{ const g=loyCfg(); openSheet(`<h3>🎁 ${L.loyTitle}</h3><p class="lead">${L.loyLead}</p><div class="two"><div class="field n"><label>${L.loyEvery}</label><input id="ly-n" type="number" min="2" value="${g.n}"></div><div class="field n"><label>${L.loyPct}</label><input id="ly-p" type="number" min="1" value="${g.p}"></div></div><button class="btn btn-primary btn-full" id="ly-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" id="ly-b">${L.cancel}</button></div>`);
+    $('#ly-b').onclick=back; $('#ly-s').onclick=()=>{ state.misc.loy={n:Math.max(2,+$('#ly-n').value||10),p:Math.max(1,+$('#ly-p').value||10)}; persist(); back(); }; }; }
+
+/* ---- 29. каталог для покупателя ---- */
+function catalogOpen(){ let sz='', idx=-1; const all=()=>state.inv.filter(x=>!x.arch&&invTotal(x)>0);
+  const sizes=()=>[...new Set(all().flatMap(x=>Object.keys(x.sizes||{}).filter(k=>(+x.sizes[k]||0)>0&&k!=='—')))].sort((a,b)=>(parseFloat(a)||0)-(parseFloat(b)||0)||String(a).localeCompare(String(b)));
+  let box=document.getElementById('catv'); if(box) box.remove(); box=document.createElement('div'); box.id='catv'; document.body.appendChild(box); document.documentElement.classList.add('catv-on');
+  const close=()=>{ box.remove(); document.documentElement.classList.remove('catv-on'); };
+  const draw=()=>{ const items=all().filter(x=>!sz||(+(x.sizes||{})[sz]||0)>0);
+    if(idx>=0&&items[idx]){ const x=items[idx], ks=Object.keys(x.sizes||{}).filter(k=>(+x.sizes[k]||0)>0);
+      box.innerHTML=`<div class="cv-top"><button data-cv="back">‹ ${L.ctAll}</button><span>${idx+1} / ${items.length}</span><button data-cv="x">✕</button></div>
+        <div class="cv-big">${x.ph?`<img data-ph="iv_${esc(x.id)}" alt="">`:`<em>👗</em>`}</div><div class="cv-info"><h2>${esc(x.name)}</h2><div class="cv-p">${money(x.price||0)}</div><div class="cv-sz">${ks.map(k=>`<span>${esc(k==='—'?L.ivOne:k)}</span>`).join('')}</div></div>
+        <div class="cv-nav"><button data-cv="prev" ${idx>0?'':'disabled'}>‹</button><button data-cv="next" ${idx<items.length-1?'':'disabled'}>›</button></div>`;
+    } else { idx=-1; box.innerHTML=`<div class="cv-top"><b>🛍️ ${L.ctTitle}</b><button data-cv="x">✕</button></div>
+        <div class="chips cv-f"><button class="chip ${!sz?'on':''}" data-cvs="">${L.ctAllSizes}</button>${sizes().map(s=>`<button class="chip ${sz===s?'on':''}" data-cvs="${esc(s)}">${esc(s)}</button>`).join('')}</div>
+        <div class="cv-grid">${items.map((x,i)=>`<button class="cv-it" data-cvi="${i}">${x.ph?`<img data-ph="iv_${esc(x.id)}" alt="">`:`<em>👗</em>`}<b>${esc(x.name)}</b><span>${x.price?money(x.price):''}</span></button>`).join('')||`<div class="sh-empty">${L.ctNone}</div>`}</div>`; }
+    fillPhotos(box); };
+  box.onclick=e=>{ const b=e.target.closest('[data-cv],[data-cvs],[data-cvi]'); if(!b) return; e.stopPropagation(); const items=all().filter(x=>!sz||(+(x.sizes||{})[sz]||0)>0);
+    if(b.dataset.cv==='x') return close(); if(b.dataset.cv==='back') idx=-1; else if(b.dataset.cv==='prev') idx=Math.max(0,idx-1); else if(b.dataset.cv==='next') idx=Math.min(items.length-1,idx+1);
+    else if(b.dataset.cvs!=null){ sz=b.dataset.cvs; idx=-1; } else if(b.dataset.cvi!=null) idx=+b.dataset.cvi; draw(); };
+  let sx=null; box.addEventListener('touchstart',e=>{ sx=e.touches[0].clientX; },{passive:true}); box.addEventListener('touchend',e=>{ if(sx==null||idx<0) return; const dx=e.changedTouches[0].clientX-sx; sx=null; const n=all().filter(x=>!sz||(+(x.sizes||{})[sz]||0)>0).length; if(dx<-50&&idx<n-1){ idx++; draw(); } else if(dx>50&&idx>0){ idx--; draw(); } });
+  draw(); }
+
+/* ---- 30. облачная копия (через зашифрованный семейный код) ---- */
+function cloudBlock(){ const f=famSt(); return `<div class="sec-block"><label>☁️ ${L.clTitle}</label>${f?`<p class="note" style="margin-top:0">${L.clOn}</p><div class="famcode"><span>${L.clCode}</span><b>${esc(f.code)}</b></div><p class="note">${L.clKeep}</p>`
+  :`<p class="note" style="margin-top:0">${L.clOffer}</p><div class="sheet-row"><button class="btn btn-primary" id="cl-on">☁️ ${L.clOnBtn}</button><button class="btn btn-ghost" id="fm-join2">${L.clRestore}</button></div>`}</div>`; }
+function cloudBind(re){ if($('#cl-on')) $('#cl-on').onclick=async()=>{ $('#cl-on').disabled=true; const ok=await famJoin(famNewCode()); if(!ok) toast(L.clFail); re(); };
+  if($('#fm-join2')) $('#fm-join2').onclick=()=>famJoinSheet(); }
+
+/* ---- клики помощников ---- */
+document.addEventListener('click', e=>{ const t=e.target, S=()=>e.stopImmediatePropagation();
+  if(t.closest('[data-restock]')){ S(); restockSheet(); return; }
+  if(t.closest('[data-tmoney]')){ S(); tripMoneySheet(); return; }
+  if(t.closest('[data-sizes]')){ S(); sizesSheet(); return; }
+  if(t.closest('[data-labels]')){ S(); labelsSheet(); return; }
+  if(t.closest('[data-tags]')){ S(); tagsSheet(); return; }
+  if(t.closest('[data-markup]')){ S(); markupSheet(); return; }
+  if(t.closest('[data-catalog]')){ S(); catalogOpen(); return; }
+  if(t.closest('[data-lprio]')){ S(); loanPrioSheet(); return; }
+}, true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
