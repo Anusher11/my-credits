@@ -911,6 +911,62 @@
   .bgt.show{transform:none; opacity:1; visibility:visible; pointer-events:auto;} .bgt > span{font-size:2rem;} .bgt div{display:flex; flex-direction:column;} .bgt small{color:var(--muted); font-size:.84rem;}
 
   .wpre .chip small{color:var(--muted); font-weight:700; margin-left:2px;} .wpre .chip.on small{color:inherit; opacity:.8;}
+
+  /* отдельная вкладка «Закупка»: главные кнопки всегда под большим пальцем */
+  .buyfab{position:fixed; left:0; right:0; bottom:calc(var(--navh) + env(safe-area-inset-bottom,0px)); z-index:24; display:flex; gap:9px; padding:10px 14px 12px; max-width:640px; margin:0 auto; background:linear-gradient(to top, var(--bg) 70%, transparent);}
+  .buyfab[hidden]{display:none;} .buyfab .btn{min-height:54px; font-size:1rem;} .buyfab .btn:first-child{flex:1.5;} .buyfab .btn:last-child{flex:1;}
+  #view-buy{padding-bottom:84px;} [data-simple] .buyfab{bottom:env(safe-area-inset-bottom,0px);}
+  .buy-h h2{font-size:1.3rem;}
+  .bnav .bl{font-size:.66rem;} .bnav button{padding:0 1px;}
+  #simpleHome{display:none;}
+  [data-simple]:not([data-curtab="today"]) #simpleHome{display:block; position:fixed; left:14px; bottom:calc(14px + env(safe-area-inset-bottom,0px)); z-index:26; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:99px; padding:12px 18px; font-family:var(--font-num); font-weight:800; box-shadow:var(--shadow-lg); cursor:pointer;}
+  [data-simple][data-curtab="buy"] #simpleHome{display:none;}
+
+  /* ---- v8: вкладки закупки в две строки ---- */
+  .seg.trseg{display:grid; grid-template-columns:repeat(5,1fr); gap:5px;}
+  .seg.trseg button{display:flex; flex-direction:column; align-items:center; gap:1px; padding:7px 2px; min-width:0;}
+  .seg.trseg button span{font-size:1.15rem; line-height:1.1;} .seg.trseg button small{font-size:.68rem; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:100%;}
+  .buy-links{display:flex; gap:7px; overflow-x:auto; margin:-4px 0 12px; padding-bottom:2px;}
+  .buy-links button{flex:none; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:99px; padding:9px 13px; font-family:var(--font-num); font-weight:700; font-size:.84rem; cursor:pointer; box-shadow:var(--shadow);}
+  .ctips .ct-g{display:block; margin:0 14px 12px; font-weight:800;}
+  /* ---- вид вещи и точный вес ---- */
+  .tp-wx{margin:0 0 12px;} .tp-wx summary{cursor:pointer; font-weight:700; font-size:.88rem; color:var(--muted); padding:6px 0; list-style:none;} .tp-wx summary::-webkit-details-marker{display:none;}
+  .tp-wx[open] summary{color:var(--ink);} .tp-calc small{color:var(--muted); font-weight:600;}
+  /* ---- карго ---- */
+  .cg-lead{display:flex; gap:10px; align-items:flex-start; background:color-mix(in srgb,var(--info) 8%,var(--surface)); border:1px solid color-mix(in srgb,var(--info) 22%,var(--line)); border-radius:14px; padding:11px 13px; margin-bottom:12px;}
+  .cg-lead span{font-size:1.4rem; line-height:1;} .cg-lead p{margin:0; font-size:.86rem; line-height:1.45;}
+  .cg-un{padding:6px 14px 14px;} .cg-ur{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:10px 0; border-bottom:1px solid var(--line);}
+  .cg-ur span{min-width:0;} .cg-ur small{display:block; color:var(--muted); font-size:.8rem; margin-top:2px;} .cg-ur .link-btn{flex:none; font-size:.82rem;}
+  .cg-un .btn{margin-top:12px;}
+  .card.cg .c-sub{flex-wrap:wrap;} .card.cg.late{border-color:color-mix(in srgb,var(--danger) 45%,var(--line));}
+  .card.cg.st-tj{border-color:var(--brand); background:color-mix(in srgb,var(--brand) 6%,var(--surface));}
+  .cg-bar{height:6px; border-radius:99px; background:var(--track); overflow:hidden; margin:7px 0 4px;} .cg-bar i{display:block; height:100%; background:linear-gradient(90deg,var(--info),var(--brand)); border-radius:99px;}
+  .card.cg.st-wh .cg-bar i{width:6%!important;}
+  .ordst.cgst button em{font-style:normal; font-size:.6rem; color:inherit; opacity:.75; font-family:var(--font-num);}
+  .cg-w{border:1px solid var(--line); border-radius:14px; padding:4px 13px; margin:4px 0 14px; background:var(--surface-2);}
+  .cg-w summary{cursor:pointer; font-weight:800; padding:10px 0; list-style:none;} .cg-w summary::-webkit-details-marker{display:none;}
+  .cg-w[open]{padding-bottom:12px;} .cg-w .tp-calc{line-height:1.6; margin:-4px 0 10px;}
+  .cg-addr{background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:10px 13px; margin:8px 0;}
+  .cg-addr small{color:var(--muted); font-size:.78rem; font-weight:700;} .cg-addr p{margin:3px 0 4px; font-size:.92rem; line-height:1.4; word-break:break-word;}
+  .rc-list{margin:0 0 12px;}
+  .rc-r{display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--line);}
+  .rc-r img, .rc-r em{width:44px; height:52px; border-radius:9px; object-fit:cover; flex:none; background:var(--surface-2); display:flex; align-items:center; justify-content:center; font-style:normal; font-size:1.4rem;}
+  .rc-r > span{flex:1; min-width:0;} .rc-r b{display:block; font-size:.9rem;} .rc-r small{color:var(--muted); font-size:.78rem;}
+  .rc-r.short b{color:var(--danger);}
+  .rc-st{display:flex; align-items:center; gap:4px; flex:none;}
+  .rc-st button{width:38px; height:38px; border-radius:11px; border:1px solid var(--line); background:var(--surface); font-size:1.2rem; font-weight:800; color:var(--ink); cursor:pointer;}
+  .rc-st input{width:52px; text-align:center; font-family:var(--font-num); font-weight:800; font-size:1rem; padding:8px 2px; border:1.5px solid var(--line); border-radius:10px; background:var(--surface); color:var(--ink);}
+  /* ---- путеводитель ---- */
+  .gd-c, .gd-k{flex-wrap:nowrap; overflow-x:auto; padding-bottom:4px; margin:0 0 10px;} .gd-c .chip, .gd-k .chip{flex:none;}
+  .gd-city{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:4px 14px 6px; margin-bottom:10px; box-shadow:var(--shadow);}
+  .gd-h{font-family:var(--font-num); font-size:1.02rem; padding:10px 0 6px; border-bottom:1px solid var(--line);}
+  .gd-it{padding:9px 0; border-bottom:1px dashed var(--line);} .gd-it:last-child{border-bottom:0;}
+  .gd-p{display:flex; justify-content:space-between; gap:8px; font-size:.92rem;} .gd-cats{flex:none; letter-spacing:1px;}
+  .gd-it p{margin:3px 0 4px; font-size:.86rem; line-height:1.45; color:var(--ink);} .gd-it .link-btn{font-size:.8rem;}
+  /* ---- демо ---- */
+  #demoBar{position:sticky; top:0; z-index:40; display:flex; align-items:center; justify-content:space-between; gap:10px; padding:calc(8px + env(safe-area-inset-top,0px)) 14px 8px; background:linear-gradient(90deg,#7B5AC9,#2F7FB8); color:#fff; font-size:.86rem;}
+  #demoBar span{min-width:0;} #demoBar button{flex:none; border:0; border-radius:99px; background:#fff; color:#4B3796; font-family:var(--font-num); font-weight:800; font-size:.8rem; padding:7px 12px; cursor:pointer;}
+  .dm-l{margin:0 0 14px; padding-left:20px; font-size:.9rem; line-height:1.5;} .dm-l li{margin-bottom:4px;}
 </style>
 </head>
 <body>
@@ -961,6 +1017,10 @@
     <section id="shop"></section>
   </div>
 
+  <div class="view" id="view-buy" hidden>
+    <section id="buyView"></section>
+  </div>
+
   <div class="view" id="view-money" hidden>
     <section id="moneyTop"></section>
     <section id="goals"></section>
@@ -979,6 +1039,7 @@
   </div>
 
   <div id="syncLine"></div>
+  <button id="simpleHome" data-tab="today">← Сегодня</button>
 </div>
 
 <div class="fab"><div class="inner">
@@ -989,6 +1050,7 @@
   <button role="tab" data-tab="today"><span class="bi">🏠</span><span class="bl" id="bnToday">Сегодня</span></button>
   <button role="tab" data-tab="loans"><span class="bi">💳</span><span class="bl" id="bnLoans">Кредиты</span></button>
   <button role="tab" data-tab="shop"><span class="bi">🏪</span><span class="bl" id="bnShop">Магазин</span></button>
+  <button role="tab" data-tab="buy"><span class="bi">🛍️</span><span class="bl" id="bnBuy">Закупка</span></button>
   <button role="tab" data-tab="money"><span class="bi">💰</span><span class="bl" id="bnMoney">Деньги</span></button>
   <button role="tab" data-tab="stats"><span class="bi">📊</span><span class="bl" id="bnStats">Итоги</span></button>
 </div></nav>
@@ -1338,7 +1400,7 @@ ru:{
   ppDone:'Отложить', ppLater:'Не сегодня', ppFromRev:'Из выручки',
   pbTitle:'План Б на тяжёлый месяц', pbLead:'Ответ на вопрос «что делаем, если выручка упадёт на треть» — записанный заранее, пока спокойно.',
   pbRev:'Выручка при падении на треть', pbShort:'Не хватит', pbEnough:'Останется', pbCush(v){ return 'В подушке уже '+v+' — это первая линия защиты.'; }, pbAddPh:'Свой пункт…',
-  planBItems:['Позвонить в банк до срока и попросить отсрочку (готовое заявление — в «Инструментах»)','Взять из подушки безопасности','Отложить новую закупку товара','Распродать залежавшийся товар со скидкой','Сократить необязательные расходы на этот месяц','Попросить поставщиков об отсрочке','Не брать новый кредит, чтобы закрыть старый'],
+  planBItems:['Позвонить в банк до срока и попросить отсрочку','Взять из подушки безопасности','Отложить новую закупку товара','Распродать залежавшийся товар со скидкой','Сократить необязательные расходы на этот месяц','Попросить поставщиков об отсрочке','Не брать новый кредит, чтобы закрыть старый'],
   nlSub:'Перед новым займом посмотрите, какой станет нагрузка.', nlNowAll:'Сейчас платежи в месяц', nlAfterAll:'Станет с новым кредитом',
   nlLoad(a,b){ return 'Нагрузка на выручку: '+a+'% → '+b+'%'; }, nlV_ok:'Нагрузка останется в безопасной зоне.', nlV_mid:'Осторожно: жёлтая зона. Подумайте, можно ли обойтись без кредита.', nlV_bad:'Опасно: больше 40% выручки уйдёт на кредиты. Лучше не брать.',
   nlNoRev:'Записывайте выручку во вкладке «Магазин» — тогда здесь будет видна нагрузка.',
@@ -1444,7 +1506,7 @@ tg:{
   ppDone:'Гузоштан', ppLater:'Имрӯз не', ppFromRev:'Аз даромад',
   pbTitle:'Нақшаи Б барои моҳи душвор', pbLead:'Ҷавоб ба саволи «агар даромад сеяк кам шавад, чӣ кор мекунем» — пешакӣ, дар вақти ором навишта шуда.',
   pbRev:'Даромад ҳангоми сеяк кам шудан', pbShort:'Намерасад', pbEnough:'Мемонад', pbCush(v){ return 'Дар захираи эҳтиётӣ аллакай '+v+' — ин хати аввали ҳимоя аст.'; }, pbAddPh:'Банди худ…',
-  planBItems:['То мӯҳлат ба бонк занг зада, мӯҳлати иловагӣ пурсидан (аризаи тайёр — дар «Асбобҳо»)','Аз захираи эҳтиётӣ гирифтан','Хариди нави молро ба таъхир гузоштан','Моли кӯҳнаро бо тахфиф фурӯхтан','Хароҷоти ғайриҳатмиро дар ин моҳ кам кардан','Аз таъминкунандагон мӯҳлати иловагӣ пурсидан','Барои пӯшидани қарзи кӯҳна қарзи нав нагирифтан'],
+  planBItems:['То мӯҳлат ба бонк занг зада, мӯҳлати иловагӣ пурсидан','Аз захираи эҳтиётӣ гирифтан','Хариди нави молро ба таъхир гузоштан','Моли кӯҳнаро бо тахфиф фурӯхтан','Хароҷоти ғайриҳатмиро дар ин моҳ кам кардан','Аз таъминкунандагон мӯҳлати иловагӣ пурсидан','Барои пӯшидани қарзи кӯҳна қарзи нав нагирифтан'],
   nlSub:'Пеш аз қарзи нав бинед, ки сарборӣ чӣ гуна мешавад.', nlNowAll:'Ҳозир пардохтҳо дар моҳ', nlAfterAll:'Бо қарзи нав мешавад',
   nlLoad(a,b){ return 'Сарборӣ ба даромад: '+a+'% → '+b+'%'; }, nlV_ok:'Сарборӣ дар минтақаи бехатар мемонад.', nlV_mid:'Эҳтиёт: минтақаи зард. Фикр кунед, оё бе қарз мешавад.', nlV_bad:'Хатарнок: зиёда аз 40% даромад ба қарзҳо меравад. Нагиред беҳтар аст.',
   nlNoRev:'Даромадро дар бахши «Мағоза» сабт кунед — он гоҳ дар ин ҷо сарборӣ намоён мешавад.',
@@ -1550,7 +1612,7 @@ en:{
   ppDone:'Put aside', ppLater:'Not today', ppFromRev:'From revenue',
   pbTitle:'Plan B for a hard month', pbLead:'Your answer to “what do we do if revenue drops by a third” — written in advance, while things are calm.',
   pbRev:'Revenue if it drops by a third', pbShort:'Short by', pbEnough:'Left over', pbCush(v){ return 'The cushion already has '+v+' — your first line of defence.'; }, pbAddPh:'Your own item…',
-  planBItems:['Call the bank before the due date and ask for a deferral (a ready letter is in “Tools”)','Take from the safety cushion','Postpone the next stock purchase','Sell old stock at a discount','Cut optional expenses this month','Ask suppliers for more time','Don’t take a new loan to close an old one'],
+  planBItems:['Call the bank before the due date and ask for a deferral','Take from the safety cushion','Postpone the next stock purchase','Sell old stock at a discount','Cut optional expenses this month','Ask suppliers for more time','Don’t take a new loan to close an old one'],
   nlSub:'Before a new loan, see what the load will become.', nlNowAll:'Payments per month now', nlAfterAll:'With the new loan',
   nlLoad(a,b){ return 'Load on revenue: '+a+'% → '+b+'%'; }, nlV_ok:'The load stays in the safe zone.', nlV_mid:'Careful: yellow zone. Think whether you can manage without it.', nlV_bad:'Risky: over 40% of revenue would go to loans. Better not.',
   nlNoRev:'Log revenue in the “Shop” tab to see the load here.',
@@ -1597,7 +1659,7 @@ en:{
 },
 };
 for(const k of ['ru','tg','en']) Object.assign(D[k],X5[k]);
-const V6C=['cust','cdebt','home','bills','goals','promos','shopList','inv','invLog','prices','trips','vendors','tprods','torders','texp'];
+const V6C=['cust','cdebt','home','bills','goals','promos','shopList','inv','invLog','prices','trips','vendors','tprods','torders','texp','cargo','cargoCo'];
 /* ----- v6: новые строки ----- */
 const X6={
 ru:{
@@ -2125,6 +2187,7 @@ en:{
 };
 const X7={
 ru:{
+  navBuy:'Закупка', buyLead:'Поездки за товаром: магазины, визитки, контакты, фото товаров с ценами, карго и заказы — всё в одном месте.',
   kgW:'кг', tcMode_kg:'За кг', tcMode_sum:'Готовой суммой', tcMode_pct:'Процентом', tcKgPrice:'Цена карго за 1 кг', tcSum:'Карго за весь товар', tcPct:'% от стоимости товара',
   tcHint_kg:'Так считают почти все карго. Вес вещей подставится по подсказкам — у каждого товара его можно поправить.', tcHint_sum:'Если карго уже назвало общую сумму — она разделится на все вещи по весу.', tcHint_pct:'Грубая прикидка, когда про карго ничего не известно.',
   tpW:'Вес 1 шт', tpWHint:'(примерно, кг — нажмите подсказку)', tpCargoOne:'карго', trCargoKgLine(w,p){ return 'Карго · '+w+' кг × '+p; }, trCargoSumLine:'Карго (готовая сумма)', trCargoPctLine(p){ return 'Карго '+p+'%'; }, tcActual:'по факту',
@@ -2132,7 +2195,7 @@ ru:{
   wp_tee:'Футболка', wp_dress:'Платье', wp_pants:'Брюки', wp_sweater:'Свитер', wp_jacket:'Куртка', wp_shoes:'Обувь', wp_kids:'Детское', wp_bag:'Сумка', wp_acc:'Платок',
   wnLead7:'Большое обновление: закупка за границей, курсы всех банков, остатки по размерам — и ничего больше не потеряется.',
   wnV6Short:['🏠','Новый экран «Сегодня»','Что сделать сегодня, быстрые кнопки, магазин с наличными и переводом, долги покупателей, вкладка «Деньги», итоги.'],
-  wnItems7:[['🧳','Закупка за границей','Турция, Китай, Узбекистан: магазины, визитки, WeChat/WhatsApp, фото товаров с ценами и итог поездки. Магазин → «Закупка».'],['🏦','Курсы всех банков','Алиф, Эсхата, Ориёнбонк и другие — где выгоднее продать и купить доллар, рубль, евро.'],['📏','Остатки по размерам','Пришло, продано, осталось — и сигнал «заканчивается 48 размер».'],['🔮','30 дней вперёд','Заранее видно, хватит ли денег на все платежи.'],['👵','Простой режим','Только 4 большие кнопки — включается в самом низу экрана «Сегодня».'],['↩️','Ничего не потеряется','Удалили по ошибке — «Вернуть». Каждый день автокопия. Поиск 🔎 по всему приложению.'],['🏅','Значки','За хорошие привычки: 7 дней записей, месяц без просрочек и другие.']],
+  wnItems7:[['🛍️','Закупка за границей','Турция, Китай, Узбекистан: магазины, визитки, WeChat/WhatsApp, фото товаров с ценами и итог поездки. Отдельная вкладка «Закупка» внизу.'],['🏦','Курсы всех банков','Алиф, Эсхата, Ориёнбонк и другие — где выгоднее продать и купить доллар, рубль, евро.'],['📏','Остатки по размерам','Пришло, продано, осталось — и сигнал «заканчивается 48 размер».'],['🔮','30 дней вперёд','Заранее видно, хватит ли денег на все платежи.'],['👵','Простой режим','Только 4 большие кнопки — включается в самом низу экрана «Сегодня».'],['↩️','Ничего не потеряется','Удалили по ошибке — «Вернуть». Каждый день автокопия. Поиск 🔎 по всему приложению.'],['🏅','Значки','За хорошие привычки: 7 дней записей, месяц без просрочек и другие.']],
   ivErrSizes:'Впишите, сколько штук хотя бы одного размера (пустые размеры не сохраняются)',
   fcNowT(v){ return 'Уже сейчас не хватает ≈ '+v+' на просроченные платежи'; }, fcNowS:'Оплатите их по возможности или позвоните в банк — дальше прогноз пойдёт ровнее.',
   saveFail:'⚠️ Память телефона заполнена — данные могут не сохраниться. Сделайте копию в «Данные».',
@@ -2220,6 +2283,7 @@ ru:{
   ordLead:'Отмечайте, что оплачено и где заказ. Когда «Пришло» — добавьте в остатки.', ordTotal:'Сумма заказа', ordPaid:'Оплачено', ordPaidW:'оплачено', ordCargo:'Карго', ordCargoPh:'название, телефон', ordEta:'ждать к', ordTrack:'Номер / трек', ordToInv:'Добавить в остатки',
 },
 tg:{
+  navBuy:'Харид', buyLead:'Сафарҳо барои мол: мағозаҳо, визиткаҳо, тамос, сурати мол бо нарх, карго ва фармоишҳо — ҳама дар як ҷо.',
   kgW:'кг', tcMode_kg:'Барои кг', tcMode_sum:'Маблағи тайёр', tcMode_pct:'Бо фоиз', tcKgPrice:'Нархи карго барои 1 кг', tcSum:'Карго барои тамоми мол', tcPct:'% аз арзиши мол',
   tcHint_kg:'Қариб ҳамаи каргоҳо ҳамин тавр ҳисоб мекунанд. Вазни чизҳо аз рӯи маслиҳат гузошта мешавад — дар ҳар мол тағйир додан мумкин.', tcHint_sum:'Агар карго маблағи умумиро гуфта бошад — он аз рӯи вазн ба ҳамаи чизҳо тақсим мешавад.', tcHint_pct:'Ҳисоби тахминӣ, вақте дар бораи карго чизе маълум нест.',
   tpW:'Вазни 1 дона', tpWHint:'(тахминан, кг — маслиҳатро пахш кунед)', tpCargoOne:'карго', trCargoKgLine(w,p){ return 'Карго · '+w+' кг × '+p; }, trCargoSumLine:'Карго (маблағи тайёр)', trCargoPctLine(p){ return 'Карго '+p+'%'; }, tcActual:'аз рӯи факт',
@@ -2227,7 +2291,7 @@ tg:{
   wp_tee:'Футболка', wp_dress:'Курта', wp_pants:'Шим', wp_sweater:'Свитер', wp_jacket:'Куртка', wp_shoes:'Пойафзол', wp_kids:'Кӯдакона', wp_bag:'Сумка', wp_acc:'Рӯймол',
   wnLead7:'Навсозии калон: харид дар хориҷа, қурби ҳамаи бонкҳо, боқимонда аз рӯи андоза — ва дигар ҳеҷ чиз гум намешавад.',
   wnV6Short:['🏠','Экрани нави «Имрӯз»','Корҳои имрӯз, тугмаҳои зуд, мағоза бо нақд ва интиқол, қарзи харидорон, бахши «Пул», ҳисобот.'],
-  wnItems7:[['🧳','Харид дар хориҷа','Туркия, Чин, Ӯзбекистон: мағозаҳо, визиткаҳо, WeChat/WhatsApp, сурати мол бо нарх ва натиҷаи сафар. Мағоза → «Харид».'],['🏦','Қурби ҳамаи бонкҳо','Алиф, Эсхата, Ориёнбонк ва дигарон — куҷо доллар, рубл, евроро фурӯхтан ва харидан фоиданок.'],['📏','Боқимонда аз рӯи андоза','Омад, фурӯхта шуд, монд — ва огоҳии «андозаи 48 тамом мешавад».'],['🔮','30 рӯз пеш','Пешакӣ маълум, ки барои ҳамаи пардохтҳо пул мерасад ё не.'],['👵','Ҳолати содда','Танҳо 4 тугмаи калон — дар поёни экрани «Имрӯз» фаъол мешавад.'],['↩️','Ҳеҷ чиз гум намешавад','Хато нест кардед — «Баргардонидан». Ҳар рӯз нусхаи худкор. Ҷустуҷӯ 🔎 дар тамоми барнома.'],['🏅','Нишонҳо','Барои одатҳои хуб: 7 рӯз сабт, як моҳ бе дермонӣ ва ғайра.']],
+  wnItems7:[['🛍️','Харид дар хориҷа','Туркия, Чин, Ӯзбекистон: мағозаҳо, визиткаҳо, WeChat/WhatsApp, сурати мол бо нарх ва натиҷаи сафар. Бахши алоҳидаи «Харид» дар поён.'],['🏦','Қурби ҳамаи бонкҳо','Алиф, Эсхата, Ориёнбонк ва дигарон — куҷо доллар, рубл, евроро фурӯхтан ва харидан фоиданок.'],['📏','Боқимонда аз рӯи андоза','Омад, фурӯхта шуд, монд — ва огоҳии «андозаи 48 тамом мешавад».'],['🔮','30 рӯз пеш','Пешакӣ маълум, ки барои ҳамаи пардохтҳо пул мерасад ё не.'],['👵','Ҳолати содда','Танҳо 4 тугмаи калон — дар поёни экрани «Имрӯз» фаъол мешавад.'],['↩️','Ҳеҷ чиз гум намешавад','Хато нест кардед — «Баргардонидан». Ҳар рӯз нусхаи худкор. Ҷустуҷӯ 🔎 дар тамоми барнома.'],['🏅','Нишонҳо','Барои одатҳои хуб: 7 рӯз сабт, як моҳ бе дермонӣ ва ғайра.']],
   ivErrSizes:'Ақаллан барои як андоза шумораро нависед (андозаҳои холӣ нигоҳ дошта намешаванд)',
   fcNowT(v){ return 'Ҳоло барои пардохтҳои гузашта ≈ '+v+' намерасад'; }, fcNowS:'Онҳоро тибқи имкон пардохт кунед ё ба бонк занг занед — баъд пешгӯӣ ҳамвортар мешавад.',
   saveFail:'⚠️ Хотираи телефон пур аст — маълумот шояд нигоҳ дошта нашавад. Дар «Маълумот» нусха гиред.',
@@ -2315,6 +2379,7 @@ tg:{
   ordLead:'Қайд кунед, ки чӣ пардохт шуд ва фармоиш дар куҷост. Вақте «Омад» — ба боқимонда илова кунед.', ordTotal:'Маблағи фармоиш', ordPaid:'Пардохт шуд', ordPaidW:'пардохт', ordCargo:'Карго', ordCargoPh:'ном, телефон', ordEta:'интизор то', ordTrack:'Рақам / трек', ordToInv:'Ба боқимонда илова кардан',
 },
 en:{
+  navBuy:'Buying', buyLead:'Buying trips: shops, business cards, contacts, item photos with prices, cargo and orders — all in one place.',
   kgW:'kg', tcMode_kg:'Per kg', tcMode_sum:'Fixed sum', tcMode_pct:'Percent', tcKgPrice:'Cargo price per 1 kg', tcSum:'Cargo for all goods', tcPct:'% of goods value',
   tcHint_kg:'Almost all cargo companies charge like this. Item weights come from hints — adjust them for each item.', tcHint_sum:'If the cargo company named a total price — it is split across all items by weight.', tcHint_pct:'A rough guess when nothing is known about cargo.',
   tpW:'Weight per piece', tpWHint:'(approx. kg — tap a hint)', tpCargoOne:'cargo', trCargoKgLine(w,p){ return 'Cargo · '+w+' kg × '+p; }, trCargoSumLine:'Cargo (fixed sum)', trCargoPctLine(p){ return 'Cargo '+p+'%'; }, tcActual:'actual',
@@ -2322,7 +2387,7 @@ en:{
   wp_tee:'T-shirt', wp_dress:'Dress', wp_pants:'Trousers', wp_sweater:'Sweater', wp_jacket:'Jacket', wp_shoes:'Shoes', wp_kids:'Kids', wp_bag:'Bag', wp_acc:'Scarf',
   wnLead7:'A big update: buying abroad, all bank rates, stock by size — and nothing gets lost anymore.',
   wnV6Short:['🏠','New “Today” screen','To-do for today, quick buttons, shop with cash and transfers, customer debts, the “Money” tab, summaries.'],
-  wnItems7:[['🧳','Buying abroad','Turkey, China, Uzbekistan: shops, business cards, WeChat/WhatsApp, item photos with prices and a trip summary. Shop → “Buying”.'],['🏦','All bank rates','Alif, Eskhata, Oriyonbonk and others — where to sell and buy dollars, roubles, euros.'],['📏','Stock by size','Arrived, sold, left — and a “size 48 is running out” alert.'],['🔮','30 days ahead','See in advance whether money is enough for all payments.'],['👵','Simple mode','Just 4 big buttons — turn it on at the very bottom of “Today”.'],['↩️','Nothing gets lost','Deleted by mistake — “Undo”. A daily auto-copy. Search 🔎 across the app.'],['🏅','Badges','For good habits: 7 days logged, a month on time and more.']],
+  wnItems7:[['🛍️','Buying abroad','Turkey, China, Uzbekistan: shops, business cards, WeChat/WhatsApp, item photos with prices and a trip summary. Its own “Buying” tab at the bottom.'],['🏦','All bank rates','Alif, Eskhata, Oriyonbonk and others — where to sell and buy dollars, roubles, euros.'],['📏','Stock by size','Arrived, sold, left — and a “size 48 is running out” alert.'],['🔮','30 days ahead','See in advance whether money is enough for all payments.'],['👵','Simple mode','Just 4 big buttons — turn it on at the very bottom of “Today”.'],['↩️','Nothing gets lost','Deleted by mistake — “Undo”. A daily auto-copy. Search 🔎 across the app.'],['🏅','Badges','For good habits: 7 days logged, a month on time and more.']],
   ivErrSizes:'Enter the quantity for at least one size (empty sizes are not kept)',
   fcNowT(v){ return 'Already ≈ '+v+' short for overdue payments'; }, fcNowS:'Pay them when you can or call the bank — then the forecast evens out.',
   saveFail:'⚠️ Phone storage is full — data may not be saved. Make a backup in “Data”.',
@@ -2410,7 +2475,84 @@ en:{
   ordLead:'Mark what’s paid and where the order is. When it “Arrived” — add to stock.', ordTotal:'Order total', ordPaid:'Paid', ordPaidW:'paid', ordCargo:'Cargo', ordCargoPh:'name, phone', ordEta:'expect by', ordTrack:'Number / tracking', ordToInv:'Add to stock',
 },
 };
-for(const k of ['ru','tg','en']){ const t2=X6[k].tipGroups2; delete X6[k].tipGroups2; Object.assign(D[k],X6[k]); if(t2) D[k].tipGroups=D[k].tipGroups.concat(t2); Object.assign(D[k],X7[k]); }
+const X8={
+ru:{
+  trTabCargo:'Карго', trDirShort:'Поставщики', cgCosShort:'Карго', gdTitleShort:'Где купить',
+  gdTitle:'Где что купить', gdLead:'Рынки, фабрики и улицы по странам и городам: одежда, детское, постель, обувь, ткани, электроника, техника и многое другое. Выберите страну и вид товара.', gdSearch:'Город, рынок или товар…', gdAll:'Все страны', gdAllGoods:'Все товары', gdNote:'Советы — для ориентира: рынки переезжают, цены меняются. Перед поездкой уточняйте у знакомых закупщиков и в карго.', gdOpen(c){ return 'Где что купить'+(c?' — '+c:''); },
+  gc_women:'Женская одежда', gc_men:'Мужская одежда', gc_kids:'Детская одежда', gc_home:'Постель и текстиль', gc_shoes:'Обувь', gc_fabric:'Ткани и фурнитура', gc_knit:'Трикотаж, свитера', gc_jeans:'Джинсы', gc_under:'Бельё, носки', gc_wedding:'Свадебные и вечерние', gc_leather:'Кожа, сумки', gc_acc:'Бижутерия, аксессуары', gc_toys:'Игрушки', gc_cosm:'Косметика', gc_elec:'Электроника, телефоны', gc_appl:'Бытовая техника', gc_furn:'Мебель', gc_hh:'Посуда, хозтовары', gc_gold:'Золото', gc_sport:'Спортивная одежда', gc_tips:'Полезно знать',
+  tpKind:'Что это за вещь?', tpKindHint:'для примерного веса', tpWExact:'Точный вес (если знаете)', tpWHint2:'1 штука, кг', cgApprox:'примерно', cgApproxNote:'Карго посчитано примерно — по виду вещей. Когда карго взвесит, введите настоящий вес во вкладке',
+  wp_under:'Бельё, носки', wp_bed:'Постельное', wp_other:'Другое',
+  cgLead:'При покупке вес никто не знает — приложение считает примерно по виду вещи. Когда карго взвесит партию, введите настоящие кг и сумму: стоимость сама разделится между товарами.',
+  cgFactor(f){ return 'В прошлых партиях вещи весили ×'+f+' от примерного — прикидка уже поправлена.'; },
+  cgUnsent:'Ещё не отправлено в карго', cgAddrS:'адрес склада', cgNoAddr:'Добавьте адрес склада у карго-компании — тогда его можно одним нажатием отправить продавцу.', cgAddCoHint:'Добавьте карго-компанию (кнопка ниже): код клиента, адрес склада, цена за кг.', cgSendBtn:'Отправить в карго', cgNoBuy:'Пока нет товаров с отметкой «Беру».',
+  cgShips:'Партии', cgNone:'Партий пока нет. Когда сдадите товар в карго — нажмите «Отправить в карго».', cgNew:'Новая партия', cgShip:'Партия', cgCos:'Карго-компании', cgNoCo:'Карго', cgPlW:'мест',
+  cg_wh:'На складе', cg_sent:'В пути', cg_border:'Граница', cg_tj:'В Душанбе', cg_got:'Получили',
+  cgLateW:'опаздывает', cgPaidW:'оплачено', cgUnpaid:'не оплачено', cgRecvd:'принято',
+  cgFormLead:'Партия — это то, что карго везёт вместе (может быть от нескольких магазинов).', cgCo:'Карго-компания', cgCoNew:'Новая карго-компания', cgWhat:'Чей товар в партии', cgStatus:'Где сейчас', cgSent:'Отправили', cgDaysW:'дн.', cgPlaces:'Мест (коробок, мешков)',
+  cgWeighT:'Вес и оплата — когда карго взвесит', cgWeighLead(w){ return 'Примерный вес этих вещей ≈ '+w+' кг. Карго напишет настоящий — введите его сюда.'; },
+  cgMode_kg:'За кг', cgMode_m3:'За куб (м³)', cgMode_sum:'Готовой суммой', cgKg:'Вес партии, кг', cgM3:'Объём, м³', cgRateKg:'Цена за 1 кг', cgRateM3:'Цена за 1 м³', cgPack:'Упаковка', cgTotal:'Сумма за карго', cgPaidChk:'Карго оплачено', cgPhoto:'накладная', cgRecv:'Приёмка товара',
+  cgCostW:'Карго', cgPerPc(x){ return 'На одну вещь ≈ '+x; }, cgVsEst(e,r){ return 'Примерно было '+e+' кг, по факту '+r+' кг'; }, cgDens(n){ return 'Плотность '+n+' кг/м³'; }, cgLight:'лёгкий объёмный груз, карго может считать по объёму', cgHeavy:'плотный груз, обычно считают по весу',
+  cgErrV:'Выберите, чей товар в партии', cgRecvLead:'Пересчитайте, что пришло. Если чего-то не хватает — уменьшите число, приложение подготовит сообщение продавцу.', cgPlacesGot(n){ return 'Сколько мест получили (отправили '+n+')'; }, cgOrdered:'заказано', cgDefect:'Брак или замечания', cgDefectPh:'например: 2 платья с пятном',
+  cgMiss(n){ return 'Не хватает: '+n+' шт'; }, cgAllOk:'Всё пришло', cgRecvSave:'Принять товар', cgShortT:'Не хватает товара', cgShortLead:'Напишите продавцу — сообщение уже на его языке.', cgDoneLead:'Отлично! Теперь можно добавить товар в остатки магазина.', cgWriteTo(n){ return 'Написать: '+n; }, cgPlacesMiss(n){ return 'Не пришло мест: '+n+'. Сразу сообщите в карго.'; },
+  cgAddrT:'Адрес склада для продавца', cgAddrLeadV(n){ return 'Готовое сообщение для «'+n+'» — на его языке. Продавец сам отвезёт товар на склад карго.'; }, cgAddrLead:'Готовое сообщение для продавца на его языке.', cgCopy:'Копировать', cgShare:'Отправить', cgWcHint:'скопируйте текст и отправьте в WeChat.', cgCall:'Позвонить', cgEdit:'Изменить',
+  cgCode:'Код клиента / маркировка', cgAddrFrom:'Адрес склада карго (там)', cgAddrTo:'Где забирать в Душанбе', cgAvgDays:'В среднем идёт', cgOnTime:'Пришло вовремя', cgRealKg:'По факту за 1 кг', cgAddrBtn:'Адрес склада для продавца',
+  cgCoLead:'Запишите один раз — потом адрес склада и код можно отправить продавцу одной кнопкой.', cgCoName:'Название', cgCoNamePh:'Например: Карго Хуршед', cgCoFrom:'Откуда везёт', cgCodeHint:'пишут на коробках', cgAddrFromHint:'скопируйте из сообщения карго', cgWhPh:'Телефон склада', cgDays:'Обычно идёт, дней', cgCosLead:'Ваши карго: код, адрес склада, цена, сроки и как они работали на деле.', cgCoNone:'Пока нет ни одной.',
+  cgRecvBtn:'Принять', fiCgTj(n,p){ return 'Партия от «'+n+'» в Душанбе'+(p?' ('+p+' мест)':'')+' — заберите и пересчитайте'; }, fiCgLate(n,d){ return 'Партия от «'+n+'» опаздывает на '+d+' дн. — позвоните в карго'; },
+  dmTitle:'Демо-режим', dmLead:'Посмотрите, как работает приложение, на маленьких примерах.', dmPoints:['Ваши настоящие данные спрячутся и вернутся, когда выйдете из демо','В демо можно нажимать всё подряд — ничего не сломается','Семья, напоминания и автокопии в демо выключены','Всё, что добавите в демо, удалится при выходе'], dmOn:'Включить демо', dmExit:'Выйти из демо', dmExitQ:'Выйти из демо?', dmExitLead:'Примеры удалятся, ваши настоящие данные вернутся.', dmNow:'Сейчас включён демо-режим — показаны примеры.', dmOffer:'Примеры кредитов, магазина и закупки с карго. Ваши данные не пропадут.', dmBar:'Демо', dmBarS:'это примеры', dmTry:'Посмотреть на примере',
+  wnLead8:'Карго стало понятным, и появился путеводитель закупщика.', wnItems8:[['📦','Карго по-настоящему','Вес при покупке не нужен — выберите вид вещи. Когда карго взвесит, введите кг и сумму: стоимость сама разделится по товарам. Партии, сроки, приёмка, недостача.'],['🚚','Карго-компании','Код клиента, адрес склада — и готовое сообщение продавцу на китайском, турецком, узбекском.'],['🗺️','Где что купить','Рынки и фабрики Китая, Турции, Узбекистана, Кыргызстана, Казахстана, Москвы и Дубая: одежда, детское, постель, обувь, ткани, электроника, техника.'],['🎓','Демо-режим','В настройках: посмотреть всё на примерах, ваши данные не пропадут.']],
+},
+tg:{
+  trTabCargo:'Карго', trDirShort:'Таъминкунандагон', cgCosShort:'Карго', gdTitleShort:'Аз куҷо харем',
+  gdTitle:'Чиро аз куҷо харем', gdLead:'Бозорҳо, фабрикаҳо ва кӯчаҳо аз рӯи кишвар ва шаҳр: либос, кӯдакона, ҷойхоб, пойафзол, матоъ, электроника, техника ва ғайра. Кишвар ва навъи молро интихоб кунед.', gdSearch:'Шаҳр, бозор ё мол…', gdAll:'Ҳамаи кишварҳо', gdAllGoods:'Ҳамаи молҳо', gdNote:'Маслиҳатҳо барои самтгирӣ мебошанд: бозорҳо кӯч мекунанд, нархҳо иваз мешаванд. Пеш аз сафар аз харидорони шинос ва аз карго пурсед.', gdOpen(c){ return 'Чиро аз куҷо харем'+(c?' — '+c:''); },
+  gc_women:'Либоси занона', gc_men:'Либоси мардона', gc_kids:'Либоси кӯдакона', gc_home:'Ҷойхоб ва матоъҳои хонагӣ', gc_shoes:'Пойафзол', gc_fabric:'Матоъ ва фурнитура', gc_knit:'Трикотаж, свитер', gc_jeans:'Ҷинс', gc_under:'Либоси таг, ҷӯроб', gc_wedding:'Либосҳои арӯсӣ ва шомгоҳӣ', gc_leather:'Чарм, сумкаҳо', gc_acc:'Ороишот, лавозимот', gc_toys:'Бозичаҳо', gc_cosm:'Косметика', gc_elec:'Электроника, телефон', gc_appl:'Техникаи маишӣ', gc_furn:'Мебел', gc_hh:'Зарф, моли хоҷагӣ', gc_gold:'Тилло', gc_sport:'Либоси варзишӣ', gc_tips:'Донистанаш муфид',
+  tpKind:'Ин чӣ мол аст?', tpKindHint:'барои вазни тахминӣ', tpWExact:'Вазни дақиқ (агар донед)', tpWHint2:'1 дона, кг', cgApprox:'тахминан', cgApproxNote:'Карго тахминан ҳисоб шудааст — аз рӯи навъи мол. Вақте карго бор мекашад, вазни аслиро дар ин бахш ворид кунед:',
+  wp_under:'Либоси таг, ҷӯроб', wp_bed:'Ҷойхоб', wp_other:'Дигар',
+  cgLead:'Ҳангоми харид вазнро касе намедонад — барнома аз рӯи навъи мол тахминан ҳисоб мекунад. Вақте карго партияро бор мекашад, кг ва маблағи аслиро ворид кунед: нарх худаш байни молҳо тақсим мешавад.',
+  cgFactor(f){ return 'Дар партияҳои пешина мол ×'+f+' аз тахминӣ вазн дошт — ҳисоб аллакай ислоҳ шуд.'; },
+  cgUnsent:'Ҳоло ба карго фиристода нашуд', cgAddrS:'суроғаи анбор', cgNoAddr:'Суроғаи анбори каргоро илова кунед — баъд онро бо як пахш ба фурӯшанда фиристодан мумкин.', cgAddCoHint:'Ширкати каргоро илова кунед (тугмаи поён): рамзи мизоҷ, суроғаи анбор, нархи 1 кг.', cgSendBtn:'Ба карго фиристодан', cgNoBuy:'Ҳоло моли «Мегирам» нест.',
+  cgShips:'Партияҳо', cgNone:'Ҳоло партия нест. Вақте молро ба карго супоридед — «Ба карго фиристодан»-ро пахш кунед.', cgNew:'Партияи нав', cgShip:'Партия', cgCos:'Ширкатҳои карго', cgNoCo:'Карго', cgPlW:'ҷой',
+  cg_wh:'Дар анбор', cg_sent:'Дар роҳ', cg_border:'Сарҳад', cg_tj:'Дар Душанбе', cg_got:'Гирифтем',
+  cgLateW:'дер мемонад', cgPaidW:'пардохт шуд', cgUnpaid:'пардохт нашуд', cgRecvd:'қабул шуд',
+  cgFormLead:'Партия — он чизе ки карго якҷоя меорад (метавонад аз чанд мағоза бошад).', cgCo:'Ширкати карго', cgCoNew:'Ширкати нави карго', cgWhat:'Моли кӣ дар партия', cgStatus:'Ҳоло дар куҷо', cgSent:'Фиристодем', cgDaysW:'рӯз', cgPlaces:'Ҷой (қуттӣ, халта)',
+  cgWeighT:'Вазн ва пардохт — вақте карго бор мекашад', cgWeighLead(w){ return 'Вазни тахминии ин молҳо ≈ '+w+' кг. Карго вазни аслиро мегӯяд — ин ҷо ворид кунед.'; },
+  cgMode_kg:'Барои кг', cgMode_m3:'Барои куб (м³)', cgMode_sum:'Маблағи тайёр', cgKg:'Вазни партия, кг', cgM3:'Ҳаҷм, м³', cgRateKg:'Нархи 1 кг', cgRateM3:'Нархи 1 м³', cgPack:'Бастабандӣ', cgTotal:'Маблағи карго', cgPaidChk:'Карго пардохт шуд', cgPhoto:'борхат', cgRecv:'Қабули мол',
+  cgCostW:'Карго', cgPerPc(x){ return 'Ба як дона ≈ '+x; }, cgVsEst(e,r){ return 'Тахминан '+e+' кг буд, аслан '+r+' кг'; }, cgDens(n){ return 'Зичӣ '+n+' кг/м³'; }, cgLight:'бори сабуки калон, карго метавонад аз рӯи ҳаҷм ҳисоб кунад', cgHeavy:'бори зич, одатан аз рӯи вазн ҳисоб мекунанд',
+  cgErrV:'Интихоб кунед, ки моли кӣ дар партия аст', cgRecvLead:'Он чизеро, ки омад, ҳисоб кунед. Агар чизе кам бошад — рақамро кам кунед, барнома барои фурӯшанда паём омода мекунад.', cgPlacesGot(n){ return 'Чанд ҷой гирифтед (фиристода '+n+')'; }, cgOrdered:'фармоиш', cgDefect:'Камбудӣ ё эрод', cgDefectPh:'масалан: 2 курта доғ дорад',
+  cgMiss(n){ return 'Кам аст: '+n+' дона'; }, cgAllOk:'Ҳама омад', cgRecvSave:'Молро қабул кардан', cgShortT:'Мол кам аст', cgShortLead:'Ба фурӯшанда нависед — паём аллакай бо забони ӯ.', cgDoneLead:'Аъло! Акнун молро ба бақияи мағоза илова кардан мумкин.', cgWriteTo(n){ return 'Навиштан: '+n; }, cgPlacesMiss(n){ return 'Ҷойҳо наомаданд: '+n+'. Фавран ба карго хабар диҳед.'; },
+  cgAddrT:'Суроғаи анбор барои фурӯшанда', cgAddrLeadV(n){ return 'Паёми тайёр барои «'+n+'» — бо забони ӯ. Фурӯшанда худаш молро ба анбори карго мебарад.'; }, cgAddrLead:'Паёми тайёр барои фурӯшанда бо забони ӯ.', cgCopy:'Нусха гирифтан', cgShare:'Фиристодан', cgWcHint:'матнро нусха гирифта, дар WeChat фиристед.', cgCall:'Занг задан', cgEdit:'Тағйир додан',
+  cgCode:'Рамзи мизоҷ / тамға', cgAddrFrom:'Суроғаи анбори карго (он ҷо)', cgAddrTo:'Дар Душанбе аз куҷо гирифтан', cgAvgDays:'Ба ҳисоби миёна меояд', cgOnTime:'Сари вақт омад', cgRealKg:'Дар амал барои 1 кг', cgAddrBtn:'Суроғаи анбор барои фурӯшанда',
+  cgCoLead:'Як бор нависед — баъд суроғаи анбор ва рамзро бо як тугма ба фурӯшанда фиристодан мумкин.', cgCoName:'Ном', cgCoNamePh:'Масалан: Карго Хуршед', cgCoFrom:'Аз куҷо меорад', cgCodeHint:'дар қуттиҳо менависанд', cgAddrFromHint:'аз паёми карго нусха гиред', cgWhPh:'Телефони анбор', cgDays:'Одатан чанд рӯз меояд', cgCosLead:'Каргоҳои шумо: рамз, суроғаи анбор, нарх, мӯҳлат ва чӣ тавр дар амал кор карданд.', cgCoNone:'Ҳоло ягонто нест.',
+  cgRecvBtn:'Қабул', fiCgTj(n,p){ return 'Партия аз «'+n+'» дар Душанбе'+(p?' ('+p+' ҷой)':'')+' — гиред ва ҳисоб кунед'; }, fiCgLate(n,d){ return 'Партия аз «'+n+'» '+d+' рӯз дер монд — ба карго занг занед'; },
+  dmTitle:'Реҷаи намоишӣ', dmLead:'Бо мисолҳои хурд бинед, ки барнома чӣ тавр кор мекунад.', dmPoints:['Маълумоти аслии шумо пинҳон мешавад ва ҳангоми баромадан бармегардад','Дар намоиш ҳама чизро пахш кардан мумкин — ҳеҷ чиз вайрон намешавад','Оила, ёдраскуниҳо ва нусхаҳои худкор дар намоиш хомӯшанд','Он чизе ки дар намоиш илова мекунед, ҳангоми баромадан нест мешавад'], dmOn:'Намоишро фаъол кардан', dmExit:'Аз намоиш баромадан', dmExitQ:'Аз намоиш бароем?', dmExitLead:'Мисолҳо нест мешаванд, маълумоти аслии шумо бармегардад.', dmNow:'Ҳоло реҷаи намоишӣ фаъол аст — мисолҳо нишон дода мешаванд.', dmOffer:'Мисолҳои қарз, мағоза ва харид бо карго. Маълумоти шумо гум намешавад.', dmBar:'Намоиш', dmBarS:'инҳо мисоланд', dmTry:'Дар мисол дидан',
+  wnLead8:'Карго фаҳмо шуд ва роҳнамои харидор пайдо шуд.', wnItems8:[['📦','Карго дар амал','Ҳангоми харид вазн лозим нест — навъи молро интихоб кунед. Вақте карго бор мекашад, кг ва маблағро ворид кунед: нарх худаш байни молҳо тақсим мешавад. Партияҳо, мӯҳлатҳо, қабул, камомад.'],['🚚','Ширкатҳои карго','Рамзи мизоҷ, суроғаи анбор — ва паёми тайёр ба фурӯшанда бо забони чинӣ, туркӣ, ӯзбекӣ.'],['🗺️','Чиро аз куҷо харем','Бозорҳо ва фабрикаҳои Чин, Туркия, Ӯзбекистон, Қирғизистон, Қазоқистон, Маскав ва Дубай: либос, кӯдакона, ҷойхоб, пойафзол, матоъ, электроника, техника.'],['🎓','Реҷаи намоишӣ','Дар танзимот: ҳама чизро дар мисолҳо бинед, маълумоти шумо гум намешавад.']],
+},
+en:{
+  trTabCargo:'Cargo', trDirShort:'Suppliers', cgCosShort:'Cargo', gdTitleShort:'Where to buy',
+  gdTitle:'Where to buy what', gdLead:'Markets, factories and streets by country and city: clothing, kids’ wear, bedding, shoes, fabrics, electronics, appliances and more. Pick a country and a type of goods.', gdSearch:'City, market or goods…', gdAll:'All countries', gdAllGoods:'All goods', gdNote:'Tips are a starting point: markets move and prices change. Before a trip, check with buyers you know and with your cargo company.', gdOpen(c){ return 'Where to buy'+(c?' — '+c:''); },
+  gc_women:'Women’s clothing', gc_men:'Men’s clothing', gc_kids:'Kids’ clothing', gc_home:'Bedding & home textiles', gc_shoes:'Shoes', gc_fabric:'Fabrics & trims', gc_knit:'Knitwear', gc_jeans:'Jeans', gc_under:'Underwear, socks', gc_wedding:'Wedding & evening', gc_leather:'Leather & bags', gc_acc:'Jewellery & accessories', gc_toys:'Toys', gc_cosm:'Cosmetics', gc_elec:'Electronics, phones', gc_appl:'Home appliances', gc_furn:'Furniture', gc_hh:'Kitchenware, household', gc_gold:'Gold', gc_sport:'Sportswear', gc_tips:'Good to know',
+  tpKind:'What kind of item?', tpKindHint:'for an estimated weight', tpWExact:'Exact weight (if you know it)', tpWHint2:'1 piece, kg', cgApprox:'estimate', cgApproxNote:'Cargo is an estimate based on item types. When the cargo company weighs it, enter the real weight in',
+  wp_under:'Underwear, socks', wp_bed:'Bedding', wp_other:'Other',
+  cgLead:'Nobody knows the weight when buying — the app estimates it from the item type. When the cargo company weighs the shipment, enter the real kg and cost: it is split across the goods automatically.',
+  cgFactor(f){ return 'In past shipments goods weighed ×'+f+' of the estimate — the estimate is already adjusted.'; },
+  cgUnsent:'Not sent to cargo yet', cgAddrS:'warehouse address', cgNoAddr:'Add the cargo company’s warehouse address — then you can send it to sellers in one tap.', cgAddCoHint:'Add a cargo company (button below): client code, warehouse address, price per kg.', cgSendBtn:'Send to cargo', cgNoBuy:'No items marked “Buy” yet.',
+  cgShips:'Shipments', cgNone:'No shipments yet. When you hand goods to cargo, tap “Send to cargo”.', cgNew:'New shipment', cgShip:'Shipment', cgCos:'Cargo companies', cgNoCo:'Cargo', cgPlW:'pcs',
+  cg_wh:'At warehouse', cg_sent:'On the way', cg_border:'Border', cg_tj:'In Dushanbe', cg_got:'Received',
+  cgLateW:'late', cgPaidW:'paid', cgUnpaid:'not paid', cgRecvd:'checked in',
+  cgFormLead:'A shipment is what the cargo company carries together (can be from several shops).', cgCo:'Cargo company', cgCoNew:'New cargo company', cgWhat:'Whose goods are in it', cgStatus:'Where it is now', cgSent:'Sent on', cgDaysW:'days', cgPlaces:'Packages (boxes, bags)',
+  cgWeighT:'Weight & payment — when cargo weighs it', cgWeighLead(w){ return 'Estimated weight of these goods ≈ '+w+' kg. The cargo company will tell you the real weight — enter it here.'; },
+  cgMode_kg:'Per kg', cgMode_m3:'Per m³', cgMode_sum:'Fixed sum', cgKg:'Shipment weight, kg', cgM3:'Volume, m³', cgRateKg:'Price per 1 kg', cgRateM3:'Price per 1 m³', cgPack:'Packing', cgTotal:'Cargo cost', cgPaidChk:'Cargo paid', cgPhoto:'waybill', cgRecv:'Check in goods',
+  cgCostW:'Cargo', cgPerPc(x){ return 'Per item ≈ '+x; }, cgVsEst(e,r){ return 'Estimated '+e+' kg, actual '+r+' kg'; }, cgDens(n){ return 'Density '+n+' kg/m³'; }, cgLight:'light, bulky cargo — may be charged by volume', cgHeavy:'dense cargo — usually charged by weight',
+  cgErrV:'Choose whose goods are in the shipment', cgRecvLead:'Count what arrived. If something is missing, lower the number — the app will prepare a message for the seller.', cgPlacesGot(n){ return 'Packages received (sent '+n+')'; }, cgOrdered:'ordered', cgDefect:'Defects or notes', cgDefectPh:'e.g. 2 dresses stained',
+  cgMiss(n){ return 'Missing: '+n+' pcs'; }, cgAllOk:'Everything arrived', cgRecvSave:'Check in goods', cgShortT:'Goods missing', cgShortLead:'Message the seller — the text is already in their language.', cgDoneLead:'Great! Now you can add the goods to shop stock.', cgWriteTo(n){ return 'Message: '+n; }, cgPlacesMiss(n){ return 'Packages missing: '+n+'. Tell the cargo company right away.'; },
+  cgAddrT:'Warehouse address for the seller', cgAddrLeadV(n){ return 'A ready message for “'+n+'” in their language. The seller delivers the goods to the cargo warehouse.'; }, cgAddrLead:'A ready message for the seller in their language.', cgCopy:'Copy', cgShare:'Send', cgWcHint:'copy the text and send it in WeChat.', cgCall:'Call', cgEdit:'Edit',
+  cgCode:'Client code / marking', cgAddrFrom:'Cargo warehouse address (abroad)', cgAddrTo:'Pick-up in Dushanbe', cgAvgDays:'Takes on average', cgOnTime:'Arrived on time', cgRealKg:'Actual per 1 kg', cgAddrBtn:'Warehouse address for the seller',
+  cgCoLead:'Save it once — then you can send the warehouse address and code to sellers with one button.', cgCoName:'Name', cgCoNamePh:'e.g. Khurshed Cargo', cgCoFrom:'Ships from', cgCodeHint:'written on the boxes', cgAddrFromHint:'copy it from the cargo company’s message', cgWhPh:'Warehouse phone', cgDays:'Usually takes, days', cgCosLead:'Your cargo companies: code, warehouse address, price, delivery time and how they actually performed.', cgCoNone:'None yet.',
+  cgRecvBtn:'Check in', fiCgTj(n,p){ return 'Shipment from “'+n+'” is in Dushanbe'+(p?' ('+p+' pcs)':'')+' — pick it up and count'; }, fiCgLate(n,d){ return 'Shipment from “'+n+'” is '+d+' days late — call the cargo company'; },
+  dmTitle:'Demo mode', dmLead:'See how the app works with small examples.', dmPoints:['Your real data is hidden and comes back when you leave the demo','Tap anything in the demo — nothing will break','Family sync, reminders and auto-copies are off in the demo','Anything you add in the demo is removed when you leave'], dmOn:'Turn on demo', dmExit:'Leave demo', dmExitQ:'Leave the demo?', dmExitLead:'The examples will be removed and your real data will come back.', dmNow:'Demo mode is on — you are looking at examples.', dmOffer:'Examples of loans, the shop and a buying trip with cargo. Your data stays safe.', dmBar:'Demo', dmBarS:'these are examples', dmTry:'See an example',
+  wnLead8:'Cargo is now clear, and there is a buyer’s guide.', wnItems8:[['📦','Real cargo costs','No weight needed when buying — pick the item type. When cargo weighs it, enter the kg and cost: it is split across the goods. Shipments, delivery dates, check-in, shortages.'],['🚚','Cargo companies','Client code, warehouse address — and a ready message to the seller in Chinese, Turkish or Uzbek.'],['🗺️','Where to buy what','Markets and factories in China, Turkey, Uzbekistan, Kyrgyzstan, Kazakhstan, Moscow and Dubai: clothing, kids’ wear, bedding, shoes, fabrics, electronics, appliances.'],['🎓','Demo mode','In settings: try everything on examples, your data stays safe.']],
+},
+};
+for(const k of ['ru','tg','en']){ const t2=X6[k].tipGroups2; delete X6[k].tipGroups2; Object.assign(D[k],X6[k]); if(t2) D[k].tipGroups=D[k].tipGroups.concat(t2); Object.assign(D[k],X7[k]); Object.assign(D[k],X8[k]); }
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
 
@@ -2439,10 +2581,11 @@ function applyStatic(){
 }
 
 /* ===== Хранение: только телефон (localStorage) ===== */
-const LKEY='app_v2';
+const DEMO=(()=>{ try{ return localStorage.getItem('mk_demo')==='1'&&!!localStorage.getItem('app_demo'); }catch(e){ return false; } })();
+const LKEY=DEMO?'app_demo':'app_v2';
 function loadLocal(){ try{const r=localStorage.getItem(LKEY); if(r) return JSON.parse(r);}catch(e){} return null; }
 let saveWarned=false;
-function persist(){ try{ prevSnap=localStorage.getItem(LKEY); }catch(e){} try{ localStorage.setItem(LKEY, JSON.stringify({loans:state.loans,payments:state.payments,gold:state.gold,shop:state.shop,profile:state.profile,envTx:state.envTx,sup:state.sup,stock:state.stock,planB:state.planB,misc:state.misc,...Object.fromEntries(V6C.map(k=>[k,state[k]])),dayx:state.dayx})); }catch(e){ if(!saveWarned){ saveWarned=true; try{ toast(L.saveFail); }catch(_){} } } try{ afterPersist(); }catch(e){} }
+function persist(){ if(window.__noPersist) return; try{ prevSnap=localStorage.getItem(LKEY); }catch(e){} try{ localStorage.setItem(LKEY, JSON.stringify({loans:state.loans,payments:state.payments,gold:state.gold,shop:state.shop,profile:state.profile,envTx:state.envTx,sup:state.sup,stock:state.stock,planB:state.planB,misc:state.misc,...Object.fromEntries(V6C.map(k=>[k,state[k]])),dayx:state.dayx})); }catch(e){ if(!saveWarned){ saveWarned=true; try{ toast(L.saveFail); }catch(_){} } } try{ afterPersist(); }catch(e){} }
 
 const CUR={ USD:'10.7', RUB:'0.12', EUR:'11.5' };
 
@@ -2554,7 +2697,7 @@ function pledgedGrams(){ return state.loans.reduce((s,l)=>s+(+l.gold||0),0); }
 function render(){
   migratePt();
   const list=state.loans.map(l=>({loan:l,a:analyze(l)}));
-  renderHero(list); renderTip(); renderNextPay(list); renderMonthCheck(list); renderPiggy(list); renderCards(list); renderVictory(list); renderSuppliers(); renderStock(); renderTools(); renderChRem(); renderPlanMore(list); renderFab(list); renderToday(list); renderMoney(list); renderStats(list); renderSimple(list); renderTripCard(); renderFcCard(); checkBadges(); renderStrategy(list); renderGold(list); renderBreakeven(list); renderShop(list); renderTips(); renderTabs(); renderProfile(); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync(); renderBackupNudge();
+  renderHero(list); renderTip(); renderNextPay(list); renderMonthCheck(list); renderPiggy(list); renderCards(list); renderVictory(list); renderSuppliers(); renderStock(); renderTools(); renderChRem(); renderPlanMore(list); renderFab(list); renderToday(list); renderMoney(list); renderStats(list); renderSimple(list); renderTripCard(); renderFcCard(); renderBuy(); checkBadges(); renderDemoBar(); renderStrategy(list); renderGold(list); renderBreakeven(list); renderShop(list); renderTips(); renderTabs(); renderProfile(); renderDynamics(list); renderClosed(list); renderExampleNote(); renderSync(); renderBackupNudge();
   const act=list.filter(x=>!x.a.done).length;
   $('#bankCount').textContent = act ? act+' '+L.noun(act,'bank') : '';
   checkMilestone(list); animateRings();
@@ -2606,7 +2749,7 @@ function renderTips(){
   const acc=groups.map(g=>`<details class="tg"><summary><span class="tg-i">${g.i}</span><span class="tg-t">${esc(g.g)}</span><span class="tg-n">${g.items.length}</span></summary><div class="tg-list">${g.items.map(x=>`<div class="tg-it"><b>${esc(x.t)}</b><p>${esc(x.d)}</p></div>`).join('')}</div></details>`).join('');
   box.innerHTML=`<div class="section-h"><h2>${L.tipsTitle}</h2><span class="count">${flat.length}</span></div><p class="view-h">${L.tipsLead}</p>${day}<div class="tg-wrap">${acc}</div>`;
 }
-function checkMilestone(list){
+function checkMilestone(list){ if(DEMO) return;
   const total=list.reduce((s,x)=>s+x.a.total,0), paid=list.reduce((s,x)=>s+x.a.paid,0);
   if(total<=0) return; const pct=Math.round(paid/total*100);
   let last=null; try{ const v=localStorage.getItem('ms_v1'); last=(v==null)?null:+v; }catch(e){}
@@ -3080,7 +3223,7 @@ function imgToJpeg(file,max,q){ max=max||1400; q=q||0.72; return new Promise((re
 
 /* ---- после каждого сохранения: копия для уведомлений, сервер напоминаний, семья ---- */
 let afterT=null;
-function afterPersist(){ clearTimeout(afterT); afterT=setTimeout(()=>{ mirrorForSW(); pushRegister(false); },1200); famAfterPersist(); }
+function afterPersist(){ wfC=null; clearTimeout(afterT); afterT=setTimeout(()=>{ mirrorForSW(); pushRegister(false); },1200); famAfterPersist(); }
 function digest(){
   const items=[];
   for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check) continue; items.push({name:loan.name, due:ymd(a.due), amt:Math.round(a.amt||a.monthly||0)}); }
@@ -3092,7 +3235,7 @@ function digest(){
   const sh=ensureShop();
   return {lang, cur:L.cur, items, perDay:pd, logged:sh.sales.some(e=>e.date===dkey())?dkey():'', wk};
 }
-function mirrorForSW(){ try{ if(!('caches' in window)) return; caches.open('mk-state').then(c=>c.put('./mk-state.json', new Response(JSON.stringify(digest()),{headers:{'content-type':'application/json'}}))).catch(()=>{}); }catch(e){} }
+function mirrorForSW(){ try{ if(DEMO||!('caches' in window)) return; caches.open('mk-state').then(c=>c.put('./mk-state.json', new Response(JSON.stringify(digest()),{headers:{'content-type':'application/json'}}))).catch(()=>{}); }catch(e){} }
 
 /* ---- напоминания о платежах (push через сервер «Сакины») ---- */
 function pushSt(){ try{ return JSON.parse(lsGet('push_v1')||'{}')||{}; }catch(e){ return {}; } }
@@ -3113,7 +3256,7 @@ async function pushEnable(){
   return await pushRegister(true);
 }
 async function pushRegister(force){
-  const ps=pushSt(); if(!ps.on) return false;
+  if(DEMO) return false; const ps=pushSt(); if(!ps.on) return false;
   try{
     const reg=await swReg(); if(!reg) return false;
     const sub=await reg.pushManager.getSubscription(); if(!sub){ ps.ok=false; pushSave(ps); return false; }
@@ -3135,7 +3278,7 @@ async function pushTest(){
 
 /* ---- общие данные семьи: шифрование на телефоне, на сервере только шифр ---- */
 const FAM_ALPH='23456789ABCDEFGHJKMNPQRSTUVWXYZ';
-function famSt(){ try{ return JSON.parse(lsGet('fam_v1')||'null'); }catch(e){ return null; } }
+function famSt(){ if(DEMO) return null; try{ return JSON.parse(lsGet('fam_v1')||'null'); }catch(e){ return null; } }
 function famSave(o){ if(o) lsSet('fam_v1',JSON.stringify(o)); else { try{ localStorage.removeItem('fam_v1'); }catch(e){} } }
 function famMeta(){ try{ return JSON.parse(lsGet('syncmeta_v1')||'null')||{h:{},del:{}}; }catch(e){ return {h:{},del:{}}; } }
 function famMetaSave(m){ lsSet('syncmeta_v1',JSON.stringify(m)); }
@@ -3274,7 +3417,7 @@ function detailSheet(loan){
   const extra=[];
   if(!a.done && a.interestLeft>0) extra.push(`<div class="mini"><span>${L.interestLeftOne}</span><b>${money(a.interestLeft)}</b></div>`);
   if(+loan.rate>0) extra.push(`<div class="mini"><span>${L.rateYear}</span><b>${rf.format(+loan.rate)}%</b></div>`);
-  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button>${!a.done?`<button class="btn btn-ghost" data-action="letter" data-id="${loan.id}">✉️ ${L.letterShort}</button>`:''}</div>`;
+  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button></div>`;
   openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3><p class="lead">${loan.note?esc(loan.note):L.loanWord}</p><div class="detail-ring">${ringHTML(a.pct,'lg')}</div>${prog}
     ${stats}${extra.length?`<div class="minis">${extra.join('')}</div>`:''}
     ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">${L.makePayment}</button>`}${a.overdue?`<button class="linkbtn" data-action="mark" data-id="${loan.id}">${L.markPaid}</button>`:''}
@@ -3702,60 +3845,13 @@ function printHTML(html){
   window.addEventListener('afterprint',done); setTimeout(()=>{ try{ window.print(); }catch(e){} setTimeout(done,1500); },80);
 }
 
-/* ---- заявление в банк ---- */
-let ltState={type:'delay', lng:'ru'};
-function letterSheet(loanId){
-  const act=activeList().filter(x=>!x.a.done&&!x.loan.example); if(!act.length){ toast(L.noActive); return; }
-  const lid=loanId&&byId(loanId)?loanId:(ltState.lid&&byId(ltState.lid)?ltState.lid:act[0].loan.id); ltState.lid=lid;
-  const p=state.profile||{}, prevName=ltState.fio||((p.first||'')+' '+(p.last||'')).trim();
-  openSheet(`<h3>✉️ ${L.ltTitle}</h3><p class="lead">${L.ltLead}</p>
-    <div class="cur-pick" id="lt-l">${act.map(x=>`<button data-lid="${x.loan.id}" class="${x.loan.id===lid?'on':''}">${esc(x.loan.name)}</button>`).join('')}</div>
-    <div class="seg seg3"><button data-lt="delay" class="${ltState.type==='delay'?'on':''}">${L.ltDelay}</button><button data-lt="restr" class="${ltState.type==='restr'?'on':''}">${L.ltRestr}</button><button data-lt="rate" class="${ltState.type==='rate'?'on':''}">${L.ltRate}</button></div>
-    <div class="seg"><button data-lg="ru" class="${ltState.lng==='ru'?'on':''}">Русский</button><button data-lg="tg" class="${ltState.lng==='tg'?'on':''}">Тоҷикӣ</button></div>
-    <div class="field"><label>${L.ltFio}</label><input id="lt-fio" value="${esc(prevName)}" maxlength="60"></div>
-    <div class="two"><div class="field"><label>${L.ltContract} ${L.optional}</label><input id="lt-no" value="${esc(ltState.no||'')}" maxlength="30"></div><div class="field"><label>${L.phone} ${L.optional}</label><input id="lt-ph" type="tel" value="${esc(ltState.ph||'')}" maxlength="20"></div></div>
-    ${ltState.type==='rate'?'':`<div class="field"><label>${L.ltReason}</label><input id="lt-why" value="${esc(ltState.why||'')}" maxlength="160" placeholder="${L.ltReasonPh}"></div>`}
-    ${ltState.type==='delay'?`<div class="field n"><label>${L.ltMonths}</label><input id="lt-k" type="number" inputmode="numeric" min="1" max="12" value="${ltState.k||3}"></div>`:''}
-    ${ltState.type==='restr'?`<div class="field n"><label>${L.ltWant}</label><input id="lt-w" type="number" inputmode="numeric" min="0" value="${ltState.w||''}"></div>`:''}
-    <div class="field"><label>${L.ltText}</label><textarea id="lt-out" class="ta lt-ta" rows="14"></textarea></div>
-    <div class="sheet-row"><button class="btn btn-ghost" id="lt-copy">📋 ${L.ltCopy}</button><button class="btn btn-ghost" id="lt-share">📤 ${L.ltShare}</button></div>
-    <div class="sheet-row"><button class="btn btn-ghost" id="lt-print">🖨️ ${L.repPdf}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
-  const out=$('#lt-out');
-  function gen(){ ltState.fio=$('#lt-fio').value.trim(); ltState.no=$('#lt-no').value.trim(); ltState.ph=$('#lt-ph').value.trim(); if($('#lt-why')) ltState.why=$('#lt-why').value.trim(); if($('#lt-k')) ltState.k=Math.max(1,Math.round(+$('#lt-k').value||3)); if($('#lt-w')) ltState.w=Math.round(+$('#lt-w').value||0);
-    const l=byId(ltState.lid), a=analyze(l); out.value=letterText(ltState,l,a); }
-  sheet.querySelectorAll('input').forEach(i=>i.addEventListener('input',gen)); gen();
-  sheet.querySelectorAll('#lt-l button').forEach(b=>b.onclick=()=>{ gen(); ltState.lid=b.dataset.lid; letterSheet(ltState.lid); });
-  sheet.querySelectorAll('[data-lt]').forEach(b=>b.onclick=()=>{ gen(); ltState.type=b.dataset.lt; letterSheet(ltState.lid); });
-  sheet.querySelectorAll('[data-lg]').forEach(b=>b.onclick=()=>{ gen(); ltState.lng=b.dataset.lg; letterSheet(ltState.lid); });
-  $('#lt-copy').onclick=async()=>{ try{ await navigator.clipboard.writeText(out.value); toast(L.copied); }catch(e){ out.focus(); out.select(); toast(L.selectedCopyManually); } };
-  $('#lt-share').onclick=async()=>{ try{ if(navigator.share){ await navigator.share({text:out.value}); return; } }catch(e){ if(e&&e.name==='AbortError') return; } try{ await navigator.clipboard.writeText(out.value); toast(L.copied); }catch(_){} };
-  $('#lt-print').onclick=()=>printHTML(`<pre class="lt-print">${esc(out.value)}</pre>`);
-}
-function letterText(s,l,a){
-  const T=LETTERS[s.lng], cur=s.lng==='tg'?'сомонӣ':'сомони';
-  const fmt=v=>new Intl.NumberFormat('ru-RU').format(Math.round(v))+' '+cur;
-  const d=new Date(), date=String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear();
-  const v={bank:l.name, fio:s.fio||'________________', no:s.no||'____', ph:s.ph?'\n'+T.tel+' '+s.ph:'', total:fmt(+l.total||0), monthly:fmt(a.amt||a.monthly||0), paid:fmt(a.paid), why:s.why||T.whyDefault, k:String(s.k||3), want:s.w>0?fmt(s.w):'_______', date};
-  return T[s.type].replace(/\{(\w+)\}/g,(m,k)=>v[k]!=null?v[k]:m);
-}
-const LETTERS={
-  ru:{ tel:'Тел.:', whyDefault:'снизилась выручка магазина',
-    delay:'Руководителю {bank}\nот {fio}{ph}\n\nЗАЯВЛЕНИЕ\nо предоставлении отсрочки по кредиту\n\nЯ, {fio}, являюсь заёмщиком {bank} по кредитному договору № {no} (сумма кредита — {total}, ежемесячный платёж — {monthly}).\n\nВ настоящее время мой доход временно снизился: {why}. Я добросовестно выполняю свои обязательства: по договору уже выплачено {paid}.\n\nЧтобы и дальше платить без просрочек, прошу предоставить отсрочку по уплате основного долга на {k} мес. с сохранением уплаты процентов либо рассмотреть другой удобный для банка вариант.\n\nМогу предоставить документы, подтверждающие изменение дохода.\n\nДата: {date}\nПодпись: ____________',
-    restr:'Руководителю {bank}\nот {fio}{ph}\n\nЗАЯВЛЕНИЕ\nо реструктуризации кредита\n\nЯ, {fio}, являюсь заёмщиком {bank} по кредитному договору № {no} (сумма кредита — {total}, ежемесячный платёж — {monthly}).\n\nВ настоящее время мой доход снизился: {why}. По договору уже выплачено {paid}, и я хочу и дальше выполнять обязательства без просрочек.\n\nПрошу рассмотреть возможность реструктуризации: увеличить срок кредита и уменьшить ежемесячный платёж до посильной суммы — {want}.\n\nМогу предоставить документы, подтверждающие изменение дохода.\n\nДата: {date}\nПодпись: ____________',
-    rate:'Руководителю {bank}\nот {fio}{ph}\n\nЗАЯВЛЕНИЕ\nо снижении процентной ставки\n\nЯ, {fio}, являюсь заёмщиком {bank} по кредитному договору № {no} (сумма кредита — {total}, ежемесячный платёж — {monthly}).\n\nЯ своевременно вношу платежи, по договору уже выплачено {paid}. Учитывая мою добросовестную платёжную историю, прошу рассмотреть возможность снижения процентной ставки по договору.\n\nДата: {date}\nПодпись: ____________' },
-  tg:{ tel:'Тел.:', whyDefault:'даромади мағоза кам шудааст',
-    delay:'Ба Роҳбари {bank}\nаз {fio}{ph}\n\nАРИЗА\nдар бораи додани мӯҳлати иловагӣ барои пардохти қарз\n\nМан, {fio}, тибқи шартномаи қарзии № {no} қарзгирандаи {bank} мебошам (маблағи қарз — {total}, пардохти моҳона — {monthly}).\n\nАйни ҳол даромади ман муваққатан кам шудааст: {why}. Ман ӯҳдадориҳои худро бо виҷдон иҷро мекунам: тибқи шартнома то имрӯз {paid} пардохт шудааст.\n\nБарои он ки минбаъд низ бе таъхир пардохт намоям, хоҳиш менамоям, ки пардохти қарзи асосӣ ба муддати {k} моҳ мавқуф гузошта шуда, пардохти фоизҳо нигоҳ дошта шавад ё варианти дигари барои бонк мувофиқ баррасӣ карда шавад.\n\nҲуҷҷатҳоеро, ки тағйири даромадро тасдиқ мекунанд, пешниҳод карда метавонам.\n\nСана: {date}\nИмзо: ____________',
-    restr:'Ба Роҳбари {bank}\nаз {fio}{ph}\n\nАРИЗА\nдар бораи азнавсозии (реструктуризатсияи) қарз\n\nМан, {fio}, тибқи шартномаи қарзии № {no} қарзгирандаи {bank} мебошам (маблағи қарз — {total}, пардохти моҳона — {monthly}).\n\nАйни ҳол даромади ман кам шудааст: {why}. Тибқи шартнома то имрӯз {paid} пардохт шудааст ва ман мехоҳам минбаъд низ ӯҳдадориҳоро бе таъхир иҷро намоям.\n\nХоҳиш менамоям, ки имконияти азнавсозии қарз баррасӣ карда шавад: мӯҳлати қарз дароз карда шуда, пардохти моҳона то маблағи қобили пардохт — {want} кам карда шавад.\n\nҲуҷҷатҳоеро, ки тағйири даромадро тасдиқ мекунанд, пешниҳод карда метавонам.\n\nСана: {date}\nИмзо: ____________',
-    rate:'Ба Роҳбари {bank}\nаз {fio}{ph}\n\nАРИЗА\nдар бораи паст кардани меъёри фоизи қарз\n\nМан, {fio}, тибқи шартномаи қарзии № {no} қарзгирандаи {bank} мебошам (маблағи қарз — {total}, пардохти моҳона — {monthly}).\n\nМан пардохтҳоро сари вақт анҷом медиҳам, тибқи шартнома то имрӯз {paid} пардохт шудааст. Бо назардошти таърихи хуби пардохтҳои ман, хоҳиш менамоям, ки имконияти паст кардани меъёри фоизи қарз тибқи шартнома баррасӣ карда шавад.\n\nСана: {date}\nИмзо: ____________' }
-};
-
 /* ---- кредитная история раз в год ---- */
 function chDue(){ if(!hasRealData()) return false; const last=state.misc&&state.misc.ch; const snooze=+lsGet('chsn_v1')||0; if(Date.now()<snooze) return false; return !last || (Date.now()-parseYmd(last).getTime())>365*86400000; }
 function renderChRem(){ const box=$('#chRem'); if(!box) return; box.innerHTML=chDue()?`<div class="bkn rs"><div class="bkn-t"><span class="ic">📋</span><div><b>${L.chTitle}</b><span class="s">${L.chText}</span></div></div><div class="bkn-a"><button class="btn btn-primary" data-ch="done">✓ ${L.chDone}</button><button class="btn btn-ghost" data-ch="later">${L.bkLater}</button></div></div>`:''; }
 
 /* ---- инструменты (вкладка «План») ---- */
 function renderTools(){ const box=$('#tools'); if(!box) return;
-  const t=[['fc','🔮',L.toolFc],['trip','🧳',L.toolTrip],['card','🖼️',L.cmTitleShort],['mcard','📸',L.toolMcard],['week','📊',L.toolWeek],['price','🏷️',L.toolPrice],['rates','💱',L.qaRates],['hol','🎉',L.toolHol],['cal','📅',L.toolCal],['rep','📄',L.toolRep],['zakat','🕌',L.toolZakat],['calc','🧮',L.toolCalc],['newloan','🤔',L.toolNewLoan],['letter','✉️',L.toolLetter],['planb','🛟',L.toolPlanB]];
+  const t=[['fc','🔮',L.toolFc],['trip','🛍️',L.toolTrip],['guide','🗺️',L.gdTitleShort],['card','🖼️',L.cmTitleShort],['mcard','📸',L.toolMcard],['week','📊',L.toolWeek],['price','🏷️',L.toolPrice],['rates','💱',L.qaRates],['hol','🎉',L.toolHol],['cal','📅',L.toolCal],['rep','📄',L.toolRep],['zakat','🕌',L.toolZakat],['calc','🧮',L.toolCalc],['newloan','🤔',L.toolNewLoan],['planb','🛟',L.toolPlanB]];
   box.innerHTML=`<div class="section-h"><h2>${L.toolsTitle}</h2></div><div class="tools">${t.map(x=>`<button class="tool" data-tool="${x[0]}"><span>${x[1]}</span><b>${x[2]}</b></button>`).join('')}</div>`; }
 
 /* ===================== v5: главный экран — прогресс, чек-лист, копилка, победа ===================== */
@@ -3828,7 +3924,7 @@ function renderFab(list){
   else { delete btn.dataset.pay; btn.classList.remove('fab-urgent'); txt.textContent=L.addBank; btn.querySelector('svg').style.display=''; }
 }
 /* эффект нового старта: первый вход в новом месяце */
-function maybeFreshStart(){
+function maybeFreshStart(){ if(DEMO) return false;
   if(!hasRealData()) return; const key=monthKey(new Date()), last=lsGet('fs_v1');
   if(!last){ lsSet('fs_v1',key); return; }
   if(last===key) return; lsSet('fs_v1',key);
@@ -3859,7 +3955,7 @@ function settingsBlocks(){
     :`<p class="note" style="margin-top:0">${L.famOffer}</p><div class="sheet-row"><button class="btn btn-primary" id="fm-new">${L.famCreate}</button><button class="btn btn-ghost" id="fm-join">${L.famHaveCode}</button></div>`}</div>`;
   const safe=`<div class="sec-block"><label>🛡️ ${L.snBlock}</label><p class="note" style="margin-top:0">${L.snBlockLead}</p><button class="btn btn-ghost btn-full" data-snaps="1">🕘 ${L.snTitle}</button></div>`;
   const look=`<div class="sec-block"><label>👁️ ${L.lookTitle}</label><label class="check"><input type="checkbox" id="smp" ${isSimple()?'checked':''}> 👵 ${L.smOn}</label><div class="seg"><button data-fs="1" class="${sc===1?'on':''}">A</button><button data-fs="1.12" class="${sc===1.12?'on':''}" style="font-size:1.08rem">A</button><button data-fs="1.25" class="${sc===1.25?'on':''}" style="font-size:1.2rem">A</button></div><label class="check"><input type="checkbox" id="hc" ${hc?'checked':''}> ${L.lookContrast}</label></div>`;
-  return push+fam+look+safe;
+  return DEMO?demoBlock()+look:push+fam+look+safe+demoBlock();
 }
 function bindSettings(){
   const re=()=>dataSheet();
@@ -3920,13 +4016,13 @@ document.addEventListener('click', e=>{
   const sk=t.closest('[data-st]'); if(sk){ e.stopImmediatePropagation(); const x=state.stock.find(y=>y.id===sk.dataset.st); if(x) stockForm(x); return; }
   if(t.closest('[data-stadd]')){ e.stopImmediatePropagation(); stockForm(null); return; }
   const tool=t.closest('[data-tool]'); if(tool){ e.stopImmediatePropagation(); const k=tool.dataset.tool;
-    if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='letter') letterSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); return; }
+    if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); else if(k==='guide') guideSheet(null); return; }
   const ch=t.closest('[data-ch]'); if(ch){ e.stopImmediatePropagation(); if(ch.dataset.ch==='done'){ state.misc.ch=dkey(); persist(); toast(L.saved); } else lsSet('chsn_v1',String(Date.now()+30*86400000)); render(); return; }
-  const act=t.closest('[data-action="sched"],[data-action="letter"]'); if(act){ e.stopImmediatePropagation(); const l=byId(act.dataset.id); if(!l) return; if(act.dataset.action==='sched') schedSheet(l); else letterSheet(l.id); return; }
+  const act=t.closest('[data-action="sched"]'); if(act){ e.stopImmediatePropagation(); const l=byId(act.dataset.id); if(!l) return; schedSheet(l); return; }
 }, true);
 
 /* ===================== v6: вкладки, «Сегодня», курсы, праздники ===================== */
-const TABS=['today','loans','shop','money','stats'];
+const TABS=['today','loans','shop','buy','money','stats'];
 const TAB_MAP={exp:'money',plan:'stats',tips:'stats'};
 let curTab='today'; try{ curTab=TAB_MAP[localStorage.getItem('tab_v1')]||localStorage.getItem('tab_v1')||'today'; }catch(e){}
 function setTab(t){
@@ -3935,9 +4031,10 @@ function setTab(t){
   TABS.forEach(x=>{ const v=$('#view-'+x); if(v) v.hidden=(x!==t);
     const b=document.querySelector('.bnav [data-tab="'+x+'"]'); if(b){ b.classList.toggle('on',x===t); b.setAttribute('aria-selected', x===t?'true':'false'); } });
   const fab=document.querySelector('.fab'); if(fab) fab.style.display=(t==='loans')?'':'none';
+  document.documentElement.dataset.curtab=t; try{ updBuyFab(); }catch(e){}
   window.scrollTo(0,0);
 }
-function renderTabs(){ const m={bnToday:L.navToday,bnLoans:L.navLoans,bnShop:L.navShop,bnMoney:L.navMoney,bnStats:L.navStats}; for(const id in m){ const el=$('#'+id); if(el) el.textContent=m[id]; } }
+function renderTabs(){ const m={bnToday:L.navToday,bnLoans:L.navLoans,bnShop:L.navShop,bnBuy:L.navBuy,bnMoney:L.navMoney,bnStats:L.navStats}; for(const id in m){ const el=$('#'+id); if(el) el.textContent=m[id]; } const sh=$('#simpleHome'); if(sh) sh.textContent='← '+L.navToday; }
 
 function focusLater(id){ setTimeout(()=>{ const e=$(id); if(e) e.focus(); },60); }
 /* ---- «Сегодня»: что сделать, быстрые кнопки ---- */
@@ -3956,8 +4053,11 @@ function todayItems(list){
   try{ const lw=invLowAll(); if(lw.length) out.push({p:5,ic:'📏',t:L.fiLow(lw.length,lw.slice(0,2).map(o=>o.x.name+' ('+o.l.slice(0,3).join(', ')+')').join(', ')),b:L.open,act:'data-ssubgo="goods"'}); }catch(e){}
   try{ const f=fcData(); if(f.firstNeg!=null&&f.firstNeg>0&&f.firstNeg<=10) out.push({p:2,ic:'🔮',t:L.fiFc(fmtDate(f.days[f.firstNeg].d),money(-f.minBal)),b:L.open,act:'data-fc="1"',red:f.firstNeg<=3}); }catch(e){}
   for(const a of raList()) if(a.hit&&-daysUntil(parseYmd(a.hit.d))<=2) out.push({p:1,ic:'💱',t:L.raHit(CURS[a.c].f+' '+(raUnit(a.c)>1?nf.format(raUnit(a.c))+' ':'')+CURS[a.c].s,fx(a.hit.r*raUnit(a.c))),b:L.open,act:'data-rates="1"'});
-  { const tr=activeTrip(); if(tr){ const tt=tripTotals(tr); if(tr.budget&&tt.all>tr.budget) out.push({p:2,ic:'🧳',t:L.fiTripOver(money(tt.all-tr.budget)),b:L.open,act:`data-topen="${esc(tr.id)}"`,red:1}); } }
-  for(const o of state.torders) if(o.eta&&o.st!=='came'&&o.eta<=dkey()){ const v=state.vendors.find(x=>x.id===o.vendor); out.push({p:4,ic:'🚚',t:L.fiCargo(v?v.name:'',fmtDate(parseYmd(o.eta))),b:L.open,act:`data-tord="${esc(o.trip)}|${esc(o.vendor)}"`}); }
+  { const tr=activeTrip(); if(tr){ const tt=tripTotals(tr); if(tr.budget&&tt.all>tr.budget) out.push({p:2,ic:'🛍️',t:L.fiTripOver(money(tt.all-tr.budget)),b:L.open,act:`data-topen="${esc(tr.id)}"`,red:1}); } }
+  for(const o of state.torders) if(o.eta&&o.st!=='came'&&o.eta<=dkey()&&!state.cargo.some(c=>c.trip===o.trip&&(c.vendors||[]).includes(o.vendor))){ const v=state.vendors.find(x=>x.id===o.vendor); out.push({p:4,ic:'🚚',t:L.fiCargo(v?v.name:'',fmtDate(parseYmd(o.eta))),b:L.open,act:`data-tord="${esc(o.trip)}|${esc(o.vendor)}"`}); }
+  for(const s of state.cargo){ if(!tripById(s.trip)) continue; const st=s.st||'wh', co=coById(s.co), nm=co?co.name:L.cgNoCo;
+    if(st==='tj') out.push({p:2,ic:'📦',t:L.fiCgTj(esc(nm),s.places||0),b:L.cgRecvBtn,act:`data-cg="${esc(s.id)}"`});
+    else if(shipLate(s)){ const ld=-daysUntil(parseYmd(shipEta(s))); out.push({p:3,ic:'📦',t:L.fiCgLate(esc(nm),ld),b:L.open,act:`data-cg="${esc(s.id)}"`,red:ld>=7}); } }
   for(const h of holidaysSoon(30)) out.push({p:6,ic:h.ic,t:L.fiHoliday(h.name,h.days),b:L.gotIt,act:`data-hdis="${h.key}"`});
   for(const pr of state.promos){ if(pr.result==null&&pr.to&&pr.to<today) out.push({p:6,ic:'🏷️',t:L.fiPromo(pr.name),b:L.promoResultBtn,act:`data-promo="${esc(pr.id)}"`}); }
   return out.sort((x,y)=>x.p-y.p);
@@ -3989,9 +4089,9 @@ function payPicker(){
   openSheet(`<h3>💳 ${L.qaPay}</h3><p class="lead">${L.payPickLead}</p><div class="cards">${act.map(({loan,a})=>`<div class="card" role="button" tabindex="0" data-action="pay" data-id="${loan.id}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem">${money(a.amt||a.monthly||0)}</span></div><div class="c-sub"><span class="${a.overdue?'tx-urgent':''}">${fmtDate(a.due)} · ${dueText(a)}</span></div></div></div>`).join('')}</div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
 }
 /* что нового — один раз после обновления */
-function maybeWhatsNew(){ if(lsGet('wn_v7')==='1') return false; const saw6=lsGet('wn_v6')==='1'; lsSet('wn_v7','1'); lsSet('wn_v6','1'); if(!hasRealData()) return false;
-  const items=(saw6?[]:[L.wnV6Short]).concat(L.wnItems7);
-  openSheet(`<h3>✨ ${L.wnTitle}</h3><p class="lead">${L.wnLead7}</p><div class="wn">${items.map(x=>`<div class="wn-it"><span>${x[0]}</span><div><b>${x[1]}</b><p>${x[2]}</p></div></div>`).join('')}</div><button class="btn btn-primary btn-full" data-close style="margin-top:10px">${L.wnGo}</button>`); return true; }
+function maybeWhatsNew(){ if(lsGet('wn_v8')==='1'||DEMO) return false; const saw6=lsGet('wn_v6')==='1', saw7=lsGet('wn_v7')==='1'; lsSet('wn_v8','1'); lsSet('wn_v7','1'); lsSet('wn_v6','1'); if(!hasRealData()) return false;
+  const items=L.wnItems8.concat(saw7?[]:L.wnItems7,saw6?[]:[L.wnV6Short]);
+  openSheet(`<h3>✨ ${L.wnTitle}</h3><p class="lead">${saw7?L.wnLead8:L.wnLead7}</p><div class="wn">${items.map(x=>`<div class="wn-it"><span>${x[0]}</span><div><b>${x[1]}</b><p>${x[2]}</p></div></div>`).join('')}</div><button class="btn btn-primary btn-full" data-close style="margin-top:10px">${L.wnGo}</button>`); return true; }
 
 /* ---- праздники и сезон: когда готовить товар ---- */
 function hijri(d){ try{ const p=new Intl.DateTimeFormat('en-u-ca-islamic-umalqura',{day:'numeric',month:'numeric',year:'numeric'}).formatToParts(d); const g=t=>+String((p.find(x=>x.type===t)||{}).value||'').replace(/\D/g,''); return {d:g('day'),m:g('month')}; }catch(e){ return null; } }
@@ -4104,7 +4204,7 @@ function bankRateForm(name){
 function ensureV6(){ for(const k of V6C) if(!Array.isArray(state[k])) state[k]=[]; if(!state.dayx||typeof state.dayx!=='object'||Array.isArray(state.dayx)) state.dayx={}; }
 function catIc(c){ const n=catName(c); const i=n.indexOf(' '); return i>0?n.slice(0,i):'•'; }
 function catLb(c){ const n=catName(c); const i=n.indexOf(' '); return i>0?n.slice(i+1):n; }
-let shopSub='sum'; try{ shopSub=localStorage.getItem('shsub_v1')||'sum'; }catch(e){}
+let shopSub='sum'; try{ shopSub=localStorage.getItem('shsub_v1')||'sum'; if(shopSub==='trip') shopSub='sum'; }catch(e){}
 function setShopSub(s){ shopSub=s; lsSet('shsub_v1',s); renderShop(activeList()); }
 function gcats(){ const g=state.misc&&Array.isArray(state.misc.gcats)&&state.misc.gcats.length?state.misc.gcats:null; return g||L.gcatsDef; }
 function median(a){ const v=a.filter(x=>x>0).sort((x,y)=>x-y); if(!v.length) return 0; const m=Math.floor(v.length/2); return v.length%2?v[m]:(v[m-1]+v[m])/2; }
@@ -4129,15 +4229,14 @@ function renderShop(list){
     <div class="sd-btns"><button class="btn btn-primary sd-main" data-shop="day">${logged?'📝 '+L.sdEdit:L.dayBtn}</button><button class="btn sd-exp" data-qexp="1">🧾 ${L.qExpBtn}</button></div></div>`;
   const debtors=state.cust.filter(c=>custState(c).bal>0), late=debtors.filter(c=>custState(c).overdue).length;
   const old=state.stock.filter(s=>!s.sold&&-daysUntil(parseYmd(s.d))>60).length, supSoon=state.sup.filter(s=>!s.paid&&s.due&&daysUntil(parseYmd(s.due))<=3).length;
-  const lowN=invLowAll().length, tr=activeTrip();
-  const subs=[['sum','📊',L.ssSum,0],['exp','🧾',L.ssExp,0],['debt','🤝',L.ssDebt,late||0],['goods','📦',L.ssGoods,(old+supSoon+lowN)||0],['trip','🧳',L.ssTrip,tr?'•':0]];
+  const lowN=invLowAll().length;
+  const subs=[['sum','📊',L.ssSum,0],['exp','🧾',L.ssExp,0],['debt','🤝',L.ssDebt,late||0],['goods','📦',L.ssGoods,(old+supSoon+lowN)||0]];
   const nav=`<div class="ssub" role="tablist">${subs.map(s=>`<button data-ssub="${s[0]}" class="${shopSub===s[0]?'on':''}" role="tab"><span>${s[1]}</span>${s[2]}${s[3]?`<em>${s[3]}</em>`:''}</button>`).join('')}</div>`;
-  box.innerHTML=(shopSub==='trip'?'':hero)+nav+'<div id="shopSub"></div>';
+  box.innerHTML=hero+nav+'<div id="shopSub"></div>';
   const sb=$('#shopSub');
   if(shopSub==='exp') sb.innerHTML=expensesHTML();
   else if(shopSub==='debt') sb.innerHTML=custHTML();
   else if(shopSub==='goods'){ sb.innerHTML=`<p class="view-h">${L.goodsLead}</p><section id="inv"></section><section id="shopList"></section><section id="suppliers"></section><section id="priceHist"></section><section id="stock"></section><section id="promos"></section><button class="btn btn-ghost btn-full" data-cardmk="1" style="margin-top:18px">🖼️ ${L.cmTitle}</button>`; renderInv(); renderShopList(list); renderSuppliers(); renderPriceHist(); renderStock(); renderPromos(); }
-  else if(shopSub==='trip'){ sb.innerHTML=tripHTML(); fillPhotos(sb); }
   else sb.innerHTML=shopSumHTML(list);
 }
 function shopSumHTML(list){
@@ -4924,7 +5023,7 @@ function renderSimple(list){
       <button class="sb out" data-qexp="1"><span>🧾</span><b>${L.qaExp}</b></button>
       <button class="sb cu" data-qa="cust"><span>🤝</span><b>${L.qaCust}</b></button>
       <button class="sb pay" data-qa="pay"><span>💳</span><b>${L.qaPay}</b></button>
-      ${tr?`<button class="sb trip wide" data-trip="${esc(tr.id)}"><span>🧳</span><b>${esc(tr.name)}</b><small>${L.trSimpleSub}</small></button>`:''}
+      ${tr?`<button class="sb trip wide" data-tab="buy"><span>🛍️</span><b>${esc(tr.name)}</b><small>${L.trSimpleSub}</small></button>`:''}
     </div><button class="simple-link off" data-smp="0">${L.smOff}</button>`;
 }
 
@@ -4988,7 +5087,7 @@ function badgeList(){
   const B=(id,ic,v,need)=>({id,ic,got:v>=need,v:Math.min(v,need),need});
   return [B('log7','📝',ls,7),B('log30','🗓️',ls,30),B('days100','💯',days,100),B('ontime1','✅',st,1),B('ontime3','🔥',st,3),B('ontime6','🏆',st,6),
     B('save1k','🐷',saved,1000),B('save10k','💰',saved,10000),B('goal1','🎯',goalsDone,1),B('loan1','🏁',closed,1),B('extra','🚀',extra?1:0,1),
-    B('cust5','🤝',custClosed,5),B('kassa7','🧮',kassaOk,7),B('promo','🏷️',promo?1:0,1),B('trip','🧳',trip?1:0,1)];
+    B('cust5','🤝',custClosed,5),B('kassa7','🧮',kassaOk,7),B('promo','🏷️',promo?1:0,1),B('trip','🛍️',trip?1:0,1)];
 }
 function badgesHTML(){
   const bs=badgeList(), got=bs.filter(b=>b.got).length;
@@ -4996,7 +5095,7 @@ function badgesHTML(){
     <div class="badges">${bs.map(b=>`<div class="badge ${b.got?'got':''}"><span>${b.ic}</span><b>${esc(L['bg_'+b.id])}</b><small>${b.got?'✓':b.need>1?nf.format(b.v)+' / '+nf.format(b.need):L.bgLocked}</small></div>`).join('')}</div>`;
 }
 let badgeT=null;
-function checkBadges(){ clearTimeout(badgeT); badgeT=setTimeout(()=>{ try{
+function checkBadges(){ if(DEMO) return; clearTimeout(badgeT); badgeT=setTimeout(()=>{ try{
   if(!hasRealData()) return; const got=badgeList().filter(b=>b.got).map(b=>b.id); const raw=lsGet('badges_v1');
   if(raw==null){ lsSet('badges_v1',JSON.stringify(got)); return; }
   let seen=[]; try{ seen=JSON.parse(raw)||[]; }catch(e){}
@@ -5120,7 +5219,7 @@ function bankAutoHTML(){
 }
 
 /* ---- сохранность данных: автокопии за 7 дней ---- */
-async function autoSnap(){ try{ const k='snap_'+dkey(); if(await rcGet(k)) return; const v=lsGet(LKEY); if(!v||!hasRealData()) return; await rcPut(k,JSON.stringify({s:v,be:lsGet('be_v1'),at:Date.now()}));
+async function autoSnap(){ if(DEMO) return; try{ const k='snap_'+dkey(); if(await rcGet(k)) return; const v=lsGet(LKEY); if(!v||!hasRealData()) return; await rcPut(k,JSON.stringify({s:v,be:lsGet('be_v1'),at:Date.now()}));
   const all=await rcAll(); const snaps=Object.keys(all).filter(x=>x.startsWith('snap_')).sort(); for(const x of snaps.slice(0,Math.max(0,snaps.length-7))) rcDel(x); }catch(e){} }
 async function snapsSheet(){ const all=await rcAll(); const snaps=Object.keys(all).filter(x=>x.startsWith('snap_')).sort().reverse();
   openSheet(`<h3>🕘 ${L.snTitle}</h3><p class="lead">${L.snLead}</p>${snaps.length?`<div class="cards">${snaps.map(k=>{ let o={}; try{ o=JSON.parse(all[k]); }catch(e){} let n=0; try{ const s=JSON.parse(o.s); n=(s.loans||[]).length; }catch(e){} return `<div class="card" role="button" tabindex="0" data-snap="${esc(k)}"><span class="ava gold">🕘</span><div class="c-main"><div class="c-top"><span class="c-name">${fmtDate(parseYmd(k.slice(5)))}</span><span class="c-rem">${o.at?new Date(o.at).toTimeString().slice(0,5):''}</span></div><div class="c-sub"><span>${L.snTap}</span></div></div></div>`; }).join('')}</div>`:`<p class="note">${L.snNone}</p>`}
@@ -5359,18 +5458,24 @@ function tripProds(trip){ return state.tprods.filter(p=>p.trip===trip.id); }
 function tripExpTJS(trip){ return state.texp.filter(x=>x.trip===trip.id).reduce((s,x)=>s+(toTJS(x.a,x.cur,trip)||0),0); }
 /* карго считают за килограмм: вес вещи × цена за кг; можно готовой суммой или процентом; факт из заказа важнее прикидки */
 const DEF_W=0.4;
-const WPRE=[['tee','👕',0.2],['dress','👗',0.4],['pants','👖',0.6],['sweater','🧶',0.5],['jacket','🧥',1.2],['shoes','👟',1],['kids','🧒',0.25],['bag','👜',0.6],['acc','🧣',0.1]];
-function wOf(p){ return +p.w>0?+p.w:DEF_W; }
+const WPRE=[['tee','👕',0.2],['dress','👗',0.4],['pants','👖',0.6],['sweater','🧶',0.5],['jacket','🧥',1.2],['shoes','👟',1],['kids','🧒',0.25],['under','🧦',0.1],['bag','👜',0.6],['acc','🧣',0.1],['bed','🛏️',2],['other','📦',0.4]];
+function kindW(k){ const w=WPRE.find(x=>x[0]===k); return w?w[2]:DEF_W; }
+/* точный вес (если ввели) важнее; иначе — по виду вещи с поправкой по прошлым партиям */
+function wBase(p){ return +p.w>0?+p.w:kindW(p.kind); }
+function wOf(p){ return +p.w>0?+p.w:kindW(p.kind)*wFactor(); }
 function fw(v){ return new Intl.NumberFormat(lang==='en'?'en-US':'ru-RU',{maximumFractionDigits:1}).format(v); }
 function cargoMode(trip){ return trip.cmode||(trip.cargo!=null&&trip.ckg==null&&trip.csum==null?'pct':'kg'); }
 function ordOf(trip,vid){ return state.torders.find(o=>o.trip===trip.id&&o.vendor===vid)||null; }
 function ordCargoTJS(trip,o){ return o&&+o.cpaid>0?toTJS(+o.cpaid,o.ccur||trip.ccur||'USD',trip):null; }
-function kgRateTJS(trip){ return +trip.ckg>0?toTJS(+trip.ckg,trip.ccur||'USD',trip):null; }
+function kgRateTJS(trip){ if(+trip.ckg>0) return toTJS(+trip.ckg,trip.ccur||'USD',trip); const co=tripCo(trip); return co&&co.mode!=='m3'&&+co.rate>0?toTJS(+co.rate,co.rcur||'USD',trip):null; }
 function tripTotals(trip){
   const buy=tripProds(trip).filter(p=>p.dec==='buy'); let sum=0, pcs=0, unknown=0, W=0, actW=0, cargo=0, hasAct=false;
   for(const p of buy){ const q=pcsOf(p), v=toTJS((+p.price||0)*q,p.cur,trip); if(v==null) unknown++; else sum+=v; pcs+=q; W+=wOf(p)*q; }
   const mode=cargoMode(trip), kr=kgRateTJS(trip), byV={}; for(const p of buy) (byV[p.vendor]=byV[p.vendor]||[]).push(p);
+  const shDone=new Set();
   for(const vid in byV){ const ps=byV[vid], act=ordCargoTJS(trip,ordOf(trip,vid)), vw=ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0);
+    const sh=shipOf(trip,vid), sc=sh?shipCostTJS(sh,trip):null;
+    if(sc!=null){ actW+=vw; hasAct=true; if(!shDone.has(sh.id)){ shDone.add(sh.id); cargo+=sc; } continue; }
     if(act!=null){ cargo+=act; actW+=vw; hasAct=true; continue; }
     if(mode==='kg'&&kr!=null) cargo+=vw*kr;
     else if(mode==='pct') cargo+=ps.reduce((s,p)=>s+(toTJS((+p.price||0)*pcsOf(p),p.cur,trip)||0),0)*(+trip.cargo||0)/100; }
@@ -5378,6 +5483,7 @@ function tripTotals(trip){
   const ex=tripExpTJS(trip); return {buy,sum,pcs,ex,unknown,W,actW,cargo,hasAct,mode,all:sum+cargo+ex};
 }
 function cargoPer(p,trip){ const w=wOf(p);
+  if(p.dec==='buy'){ const sh=shipOf(trip,p.vendor), sc=sh?shipCostTJS(sh,trip):null; if(sc!=null){ const sw=shipEstW(sh,trip); return sw>0?sc*w/sw:0; } }
   const act=p.dec==='buy'?ordCargoTJS(trip,ordOf(trip,p.vendor)):null;
   if(act!=null){ const vw=tripProds(trip).filter(x=>x.vendor===p.vendor&&x.dec==='buy').reduce((s,x)=>s+wOf(x)*pcsOf(x),0); return vw>0?act*w/vw:0; }
   const mode=cargoMode(trip);
@@ -5413,7 +5519,7 @@ let tripSub='prods'; try{ tripSub=localStorage.getItem('trsub_v1')||'prods'; }ca
 let tripFilter='all';
 function tripHTML(){
   const tr=activeTrip(), past=state.trips.filter(t=>t!==tr).sort((a,b)=>String(b.from||'').localeCompare(String(a.from||'')));
-  if(!tr) return `<div class="trip-empty"><div class="te-ic">🧳</div><b>${L.trEmptyT}</b><p>${L.trEmptyP}</p><button class="btn btn-primary btn-full" data-tnew="1">+ ${L.trNew}</button></div>
+  if(!tr) return `<div class="trip-empty"><div class="te-ic">🛍️</div><b>${L.trEmptyT}</b><p>${L.trEmptyP}</p><button class="btn btn-primary btn-full" data-tnew="1">+ ${L.trNew}</button>${typeof DEMO!=='undefined'&&!DEMO?`<button class="link-btn" data-demo-on="1" style="margin-top:12px">🎓 ${L.dmTry}</button>`:''}</div>
     ${state.vendors.length?`<button class="btn btn-ghost btn-full" data-tdir="1" style="margin-top:10px">📒 ${L.trDir} (${state.vendors.length})</button>`:''}${pastTripsHTML(past)}`;
   return tripMainHTML(tr)+`<button class="btn btn-ghost btn-full" data-tdir="1" style="margin-top:18px">📒 ${L.trDir} (${state.vendors.length})</button><button class="link-btn" data-tnew="1" style="margin-top:12px">+ ${L.trNew}</button>`+pastTripsHTML(past);
 }
@@ -5425,24 +5531,25 @@ function tripMainHTML(tr){
   const head=`<div class="trip-h" data-topen="${esc(tr.id)}"><div class="th-top"><span class="th-f">${C.f}</span><div><b>${esc(tr.name)}</b><small>${tr.from?fmtShort(parseYmd(tr.from)):''}${tr.to?' – '+fmtShort(parseYmd(tr.to)):''} · ${curSym(tr.cur)}${rateOf(tr.cur,tr)?` · 1 ${curSym(tr.cur)} = ${fx(rateOf(tr.cur,tr),rateOf(tr.cur,tr)<1?4:2)} ${L.cur}`:''}</small></div><span class="th-e">✏️</span></div>
     <div class="th-n"><span>🏪 ${vs.length}</span><span>👗 ${ps.length}</span><span>✅ ${tt.buy.length} · ${tt.pcs} ${L.pcsW}</span></div>
     ${bud?`<div class="sd-bar"><i style="width:${pct}%" class="${tt.all>bud?'bad':''}"></i></div><div class="th-b"><span>${L.trSpent(money(tt.all))}</span><b class="${tt.all>bud?'tx-urgent':''}">${tt.all>bud?L.slOver(money(tt.all-bud)):L.slLeft(money(bud-tt.all))}</b></div>`:`<div class="th-b"><span>${L.trSpent(money(tt.all))}</span></div>`}</div>
-    <div class="trip-btns"><button class="btn btn-primary" data-tcap="${esc(tr.id)}">📸 ${L.trCapProd}</button><button class="btn tb-v" data-tvadd="${esc(tr.id)}">🏪 ${L.trAddShop}</button></div>
     ${curV?`<div class="trip-cur">${L.trNowIn} <b>${VKIND[curV.kind]||'🏪'} ${esc(curV.name)}</b> <button class="link-btn" data-vendor="${esc(curV.id)}">${L.open}</button></div>`:''}
     <div class="trip-mini"><button data-texp="${esc(tr.id)}">💸 ${L.trExpBtn}${tt.ex?' · '+money(tt.ex):''}</button><button data-tphr="">💬 ${L.trPhrases}</button></div>`;
   const tips=L['ctips_'+tr.country]||L.ctips_XX;
-  const tipsBox=`<details class="ctips" ${lsGet('ctips_'+tr.id)?'':'open'} data-ctips="${esc(tr.id)}"><summary>🧭 ${L.ctipsTitle(L['cn_'+tr.country]||'')}</summary><ul>${tips.map(x=>`<li>${x}</li>`).join('')}</ul></details>`;
-  const subs=[['prods','👗',L.trTabProds],['shops','🏪',L.trTabShops],['sum','🧾',L.trTabSum],['ord','🚚',L.trTabOrd]];
-  const nav=`<div class="seg trseg">${subs.map(s=>`<button data-tsub="${s[0]}" class="${tripSub===s[0]?'on':''}">${s[1]} ${s[2]}</button>`).join('')}</div>`;
+  const tipsBox=`<details class="ctips" ${lsGet('ctips_'+tr.id)?'':'open'} data-ctips="${esc(tr.id)}"><summary>🧭 ${L.ctipsTitle(L['cn_'+tr.country]||'')}</summary><ul>${tips.map(x=>`<li>${x}</li>`).join('')}</ul><button class="link-btn ct-g" data-guide="trip">🗺️ ${L.gdOpen(L['cn_'+tr.country]||'')}</button></details>`;
+  const nCg=tripShips(tr).filter(s=>s.st!=='got').length;
+  const subs=[['prods','👗',L.trTabProds],['shops','🏪',L.trTabShops],['sum','🧾',L.trTabSum],['ord','💵',L.trTabOrd],['cargo','📦',L.trTabCargo+(nCg?' · '+nCg:'')]];
+  const nav=`<div class="seg trseg">${subs.map(s=>`<button data-tsub="${s[0]}" class="${tripSub===s[0]?'on':''}"><span>${s[1]}</span><small>${s[2]}</small></button>`).join('')}</div>`;
   let body='';
   if(tripSub==='shops') body=vendorsListHTML(vs,tr);
   else if(tripSub==='sum') body=tripSumHTML(tr);
   else if(tripSub==='ord') body=tripOrdHTML(tr);
+  else if(tripSub==='cargo') body=tripCargoHTML(tr);
   else { const f=tripFilter; const list=ps.filter(p=>f==='all'||(f==='buy'&&p.dec==='buy')||(f==='maybe'&&(!p.dec||p.dec==='maybe'))||(f==='fav'&&p.fav)).sort((a,b)=>(b.ts||0)-(a.ts||0));
     body=`<div class="chips trf">${[['all',L.trfAll],['buy','✅ '+L.decBuy],['maybe','🤔 '+L.decMaybe],['fav','⭐']].map(x=>`<button class="chip ${f===x[0]?'on':''}" data-tf="${x[0]}">${x[1]}</button>`).join('')}</div>
       ${list.length?`<div class="tgrid">${list.map(p=>tprodTile(p,tr)).join('')}</div>`:`<div class="sh-empty">${L.trNoProds}</div>`}`; }
   return head+tipsBox+nav+body;
 }
 function tprodTile(p,tr){ const v=state.vendors.find(x=>x.id===p.vendor), tj=toTJS(+p.price||0,p.cur,tr);
-  return `<button class="tp ${p.dec||'maybe'}" data-tprod="${esc(p.id)}"><span class="tp-im">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:'<em>👗</em>'}</span>${p.dec==='buy'?'<i class="tp-d">✅'+(+p.qty?' '+p.qty:'')+'</i>':p.dec==='no'?'<i class="tp-d">❌</i>':''}${p.fav?'<i class="tp-s">⭐</i>':''}
+  return `<button class="tp ${p.dec||'maybe'}" data-tprod="${esc(p.id)}"><span class="tp-im">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:`<em>${kindIc(p.kind)}</em>`}</span>${p.dec==='buy'?'<i class="tp-d">✅'+(+p.qty?' '+p.qty:'')+'</i>':p.dec==='no'?'<i class="tp-d">❌</i>':''}${p.fav?'<i class="tp-s">⭐</i>':''}
     <b>${p.price?fxAmt(+p.price,p.cur)+' '+curSym(p.cur):'—'}</b><small>${tj!=null&&p.cur!=='TJS'&&p.price?'≈ '+money(tj):''}</small><span class="tp-v">${esc(p.name||(v?v.name:''))}</span></button>`; }
 function vendorsListHTML(vs,tr){
   const known=tr?state.vendors.filter(v=>!vs.includes(v)&&v.country===tr.country&&(!tr.city||!v.city||String(v.city).toLowerCase()===String(tr.city).toLowerCase())):[];
@@ -5464,10 +5571,10 @@ function tripSumHTML(tr){
       const tot=ps.reduce((s,p)=>s+(+p.price||0)*pcsOf(p),0), tj=ps.reduce((s,p)=>s+(toTJS((+p.price||0)*pcsOf(p),p.cur,tr)||0),0);
       const vw=ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0);
       return `<div class="sh-card ts-v"><div class="ts-h" data-vendor="${esc(vid)}"><b>${VKIND[v.kind]||'🏪'} ${esc(v.name)}</b><span>${sameCur?fxAmt(tot,cur)+' '+curSym(cur)+' · ':''}≈ ${money(tj)} · ⚖️ ${fw(vw)} ${L.kgW}</span></div>
-        ${ps.map(p=>`<div class="ts-r" data-tprod="${esc(p.id)}">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:'<em>👗</em>'}<span>${esc(p.name||L.trNoName)}${p.sizes?` <small>${esc(p.sizes)}</small>`:''}</span><b>${pcsOf(p)} × ${fxAmt(+p.price||0,p.cur)} ${curSym(p.cur)}</b></div>`).join('')}
+        ${ps.map(p=>`<div class="ts-r" data-tprod="${esc(p.id)}">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:`<em>${kindIc(p.kind)}</em>`}<span>${esc(p.name||L.trNoName)}${p.sizes?` <small>${esc(p.sizes)}</small>`:''}</span><b>${pcsOf(p)} × ${fxAmt(+p.price||0,p.cur)} ${curSym(p.cur)}</b></div>`).join('')}
         <button class="link-btn" data-tsend="${esc(vid)}">📤 ${L.trSendList}</button></div>`; }).join('')
     +`<div class="calc-out"><div class="co-row"><span>${L.trGoods}</span><b>${money(tt.sum)}</b></div>${cargo||needKg?`<div class="co-row"><span>📦 ${cLab}${tt.hasAct?' · ✓ '+L.tcActual:''}</span><b>${needKg?'—':money(cargo)}</b></div>`:''}${tt.ex?`<div class="co-row"><span>💸 ${L.trExpenses}</span><b>${money(tt.ex)}</b></div>`:''}<div class="co-row big"><span>${L.trTotal}</span><b>${money(tt.all)}</b></div>${tr.budget?`<div class="co-row"><span>${L.trBudget}</span><b>${money(tr.budget)}</b></div>`:''}</div>
-    ${needKg?`<div class="pc-warn" data-topen="${esc(tr.id)}" style="cursor:pointer">📦 ${L.trCargoNeedKg}</div>`:''}${tt.unknown?`<p class="note">⚠️ ${L.trNoRate}</p>`:''}<p class="note">${L.trSumNote(tt.pcs, money(tt.pcs?tt.all/tt.pcs:0))}</p>
+    ${needKg?`<div class="pc-warn" data-topen="${esc(tr.id)}" style="cursor:pointer">📦 ${L.trCargoNeedKg}</div>`:''}${cargo&&tt.actW<tt.W-0.01?`<p class="note">⚖️ ${L.cgApproxNote} <button class="link-btn" data-tsub="cargo">${L.trTabCargo} →</button></p>`:''}${tt.unknown?`<p class="note">⚠️ ${L.trNoRate}</p>`:''}<p class="note">${L.trSumNote(tt.pcs, money(tt.pcs?tt.all/tt.pcs:0))}</p>
     <button class="btn btn-ghost btn-full" data-tshare="${esc(tr.id)}">📤 ${L.trShareFam}</button>`;
 }
 function tripOrdHTML(tr){
@@ -5479,16 +5586,29 @@ function tripOrdHTML(tr){
 function renderTripCard(){
   const box=$('#tripCard'); if(!box) return; const tr=activeTrip(); if(!tr){ box.innerHTML=''; return; }
   const tt=tripTotals(tr);
-  box.innerHTML=`<div class="tripc"><div class="tc-h" data-topen="${esc(tr.id)}"><span>🧳</span><div><b>${esc(tr.name)}</b><small>🏪 ${tripVendors(tr).length} · 👗 ${tripProds(tr).length} · ✅ ${tt.buy.length} · ${money(tt.all)}${tr.budget?' / '+money(tr.budget):''}</small></div></div>
+  box.innerHTML=`<div class="tripc"><div class="tc-h" data-tab="buy"><span>🛍️</span><div><b>${esc(tr.name)}</b><small>🏪 ${tripVendors(tr).length} · 👗 ${tripProds(tr).length} · ✅ ${tt.buy.length} · ${money(tt.all)}${tr.budget?' / '+money(tr.budget):''}</small></div></div>
     <div class="trip-btns"><button class="btn btn-primary" data-tcap="${esc(tr.id)}">📸 ${L.trCapProd}</button><button class="btn tb-v" data-tvadd="${esc(tr.id)}">🏪 ${L.trAddShop}</button></div></div>`;
 }
-function openTripView(id){ if(id){ const t=tripById(id); if(t&&t!==activeTrip()) return tripForm(t); } setTab('shop'); setShopSub('trip'); }
+function openTripView(id){ if(id){ const t=tripById(id); if(t&&t!==activeTrip()) return tripForm(t); } setTab('buy'); }
+/* ---- отдельная вкладка «Закупка» ---- */
+function renderBuy(){
+  const box=$('#buyView'); if(!box) return; const tr=activeTrip();
+  box.innerHTML=`${isSimple()?`<button class="btn btn-ghost btn-full" data-tab="today" style="margin-bottom:12px">← ${L.navToday}</button>`:''}
+    <div class="section-h buy-h"><h2>🛍️ ${L.navBuy}</h2></div>
+    <div class="buy-links"><button data-guide="${tr?'trip':''}">🗺️ ${L.gdTitleShort}</button><button data-tdir="1">📒 ${L.trDirShort}${state.vendors.length?' · '+state.vendors.length:''}</button><button data-cgco="1">🚚 ${L.cgCosShort}${state.cargoCo.length?' · '+state.cargoCo.length:''}</button></div>
+    ${tr?'':`<p class="view-h">${L.buyLead}</p>`}${tripHTML()}`;
+  fillPhotos(box); updBuyFab();
+}
+function updBuyFab(){ let f=$('#buyFab'); const tr=activeTrip(), show=curTab==='buy'&&!!tr;
+  if(!f){ f=document.createElement('div'); f.id='buyFab'; f.className='buyfab'; document.body.appendChild(f); }
+  f.hidden=!show; if(!show) return;
+  f.innerHTML=`<button class="btn btn-primary" data-tcap="${esc(tr.id)}">📸 ${L.trCapProd}</button><button class="btn tb-v" data-tvadd="${esc(tr.id)}">🏪 ${L.trAddShop}</button>`; }
 
 /* ---- поездка: создать / изменить ---- */
 function tripForm(t){
   const isNew=!t; t=t||{country:'TR',cmode:'kg',ccur:'USD',from:dkey(),to:dkey(addDays(new Date(),5))}; let country=t.country||'TR', cm=cargoMode(t);
   const draw=()=>{ const C=TCOUNTRY[country];
-    openSheet(`<h3>🧳 ${isNew?L.trNew:esc(t.name)}</h3><p class="lead">${L.trFormLead}</p>
+    openSheet(`<h3>✈️ ${isNew?L.trNew:esc(t.name)}</h3><p class="lead">${L.trFormLead}</p>
       <div class="ctry">${Object.keys(TCOUNTRY).map(k=>`<button data-tc="${k}" class="${k===country?'on':''}">${TCOUNTRY[k].f}<small>${L['cn_'+k]}</small></button>`).join('')}</div>
       <div class="field"><label>${L.trCity}</label><input id="tf-c" value="${esc(t.city||'')}" list="tf-cl" maxlength="40"><datalist id="tf-cl">${(TCITIES[country]||[]).map(c=>`<option value="${esc(c)}">`).join('')}</datalist></div>
       <div class="two"><div class="field"><label>${L.prFrom}</label><input id="tf-f" type="date" value="${t.from||''}"></div><div class="field"><label>${L.prTo}</label><input id="tf-t" type="date" value="${t.to||''}"></div></div>
@@ -5510,9 +5630,9 @@ function tripForm(t){
       const from=$('#tf-f').value, d=from?parseYmd(from):new Date();
       keepT(); const o={country,city,from,to:$('#tf-t').value,budget:Math.max(0,Math.round(+$('#tf-b').value||0)),cmode:cm,cargo:cm==='pct'?Math.max(0,+t.cargo||0):(+t.cargo||null),ckg:+t.ckg>0?+t.ckg:null,csum:+t.csum>0?+t.csum:null,ccur:t.ccur||'USD',cur:$('#tf-cur').value,rate:+$('#tf-r').value>0?+$('#tf-r').value:null,name:city+' · '+L.monthsNom[d.getMonth()].toLowerCase()};
       if(isNew){ t={id:uid('tr'),...o}; state.trips.push(t); } else { if(t.name&&t.city===city) delete o.name; Object.assign(t,o); }
-      persist(); closeSheet(); setTab('shop'); setShopSub('trip'); toast(isNew?L.trStarted:L.saved); };
+      persist(); closeSheet(); setTab('buy'); render(); toast(isNew?L.trStarted:L.saved); };
     if($('#tf-done')) $('#tf-done').onclick=()=>{ if(t.done){ t.done=false; persist(); closeSheet(); render(); return; } tripFinish(t); };
-    if($('#tf-del')) $('#tf-del').onclick=()=>{ if(!confirmTwice($('#tf-del'))) return; state.trips=state.trips.filter(x=>x!==t); state.tprods=state.tprods.filter(p=>p.trip!==t.id); state.texp=state.texp.filter(x=>x.trip!==t.id); state.torders=state.torders.filter(x=>x.trip!==t.id); persist(); closeSheet(); render(); delToast(L.trDeleted); };
+    if($('#tf-del')) $('#tf-del').onclick=()=>{ if(!confirmTwice($('#tf-del'))) return; state.trips=state.trips.filter(x=>x!==t); state.tprods=state.tprods.filter(p=>p.trip!==t.id); state.texp=state.texp.filter(x=>x.trip!==t.id); state.torders=state.torders.filter(x=>x.trip!==t.id); state.cargo=state.cargo.filter(x=>x.trip!==t.id); persist(); closeSheet(); render(); delToast(L.trDeleted); };
   };
   draw();
 }
@@ -5647,8 +5767,9 @@ function tprodForm(p,trip,pre){
       <div class="chips vsel">${vs.map(v=>`<button class="chip ${d.vendor===v.id?'on':''}" data-tv="${esc(v.id)}">${VKIND[v.kind]||'🏪'} ${esc(v.name)}</button>`).join('')}<button class="chip add" id="tp-nv">+ ${L.trAddShop}</button></div>
       <div class="field n big-in"><label>${L.tpPrice}</label><div class="pin"><input id="tp-p" type="number" inputmode="decimal" step="any" min="0" value="${d.price||''}" placeholder="0"><select id="tp-c">${[trip.cur].concat(CC.alt||[],['USD','TJS']).filter((x,i,a)=>a.indexOf(x)===i).map(c=>`<option value="${c}" ${d.cur===c?'selected':''}>${curSym(c)}</option>`).join('')}</select></div></div>
       <div class="tp-calc" id="tp-x"></div>
-      <div class="field n"><label>⚖️ ${L.tpW} <span class="hint">${L.tpWHint}</span></label><input id="tp-w" type="number" inputmode="decimal" step="0.05" min="0" value="${d.w||''}" placeholder="${DEF_W}"></div>
-      <div class="chips wpre">${WPRE.map(w=>`<button class="chip ${+d.w===w[2]?'on':''}" data-wp="${w[2]}">${w[1]} ${esc(L['wp_'+w[0]])} <small>${String(w[2]).replace('.',lang==='en'?'.':',')}</small></button>`).join('')}</div>
+      <div class="br-h">${L.tpKind} <span class="hint">${L.tpKindHint}</span></div>
+      <div class="chips wpre">${WPRE.map(w=>`<button class="chip ${d.kind===w[0]?'on':''}" data-wk="${w[0]}">${w[1]} ${esc(L['wp_'+w[0]])}</button>`).join('')}</div>
+      <details class="tp-wx" ${+d.w>0?'open':''}><summary>⚖️ ${L.tpWExact}</summary><div class="field n"><label>${L.tpW} <span class="hint">${L.tpWHint2}</span></label><input id="tp-w" type="number" inputmode="decimal" step="0.05" min="0" value="${d.w||''}" placeholder="${fw(wOf({kind:d.kind}))}"></div></details>
       <div class="field"><label>${L.tpName} <span class="hint">${L.optional}</span></label><input id="tp-n" value="${esc(d.name||'')}" maxlength="60" placeholder="${L.tpNamePh}"></div>
       <div class="two"><div class="field"><label>${L.tpSizes}</label><input id="tp-s" value="${esc(d.sizes||'')}" maxlength="40" placeholder="S–XL / 42–50"></div><div class="field"><label>${L.tpColors}</label><input id="tp-cl" value="${esc(d.colors||'')}" maxlength="40" placeholder="${L.tpColorsPh}"></div></div>
       ${CC.sizes?`<p class="note" style="margin-top:-6px">📏 ${L.tpSizeWarnCN}</p>`:''}
@@ -5662,16 +5783,18 @@ function tprodForm(p,trip,pre){
       <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
     fillPhotos(sheet);
     const keep=()=>{ d.price=$('#tp-p').value; d.cur=$('#tp-c').value; d.name=$('#tp-n').value.trim(); d.sizes=$('#tp-s').value.trim(); d.colors=$('#tp-cl').value.trim(); d.moq=$('#tp-moq').value; d.note=$('#tp-no').value.trim(); d.qty=$('#tp-q').value; d.fav=$('#tp-fav').checked; if($('#tp-ser')) d.ser=$('#tp-ser').value; d.w=$('#tp-w').value; };
-    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), cg=d.price?cargoPer(d,trip):0, l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(cg>0?` · 📦 ${L.tpCargoOne} ≈ ${money(cg)}`:'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
-    upd(); $('#tp-p').addEventListener('input',upd); $('#tp-w').addEventListener('input',()=>{ upd(); sheet.querySelectorAll('[data-wp]').forEach(x=>x.classList.toggle('on',+x.dataset.wp===+$('#tp-w').value)); });
-    sheet.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{ $('#tp-w').value=b.dataset.wp; sheet.querySelectorAll('[data-wp]').forEach(x=>x.classList.toggle('on',x===b)); upd(); }); $('#tp-c').addEventListener('change',upd); if($('#tp-ser')) $('#tp-ser').addEventListener('input',()=>{ $('#tp-ql').textContent=+$('#tp-ser').value>0?L.tpQtySer:L.tpQty; });
+    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), cg=d.price?cargoPer(d,trip):0, l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(cg>0?` · 📦 ${L.tpCargoOne} ≈ ${money(cg)} <small>(${p&&cargoIsAct(p,trip)?'✓ '+L.tcActual:L.cgApprox})</small>`:'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
+    upd(); $('#tp-p').addEventListener('input',upd); $('#tp-w').addEventListener('input',upd);
+    sheet.querySelectorAll('[data-wk]').forEach(b=>b.onclick=()=>{ const k=b.dataset.wk, nmIn=$('#tp-n'), old=nmIn.value.trim(), wasAuto=!old||WPRE.some(w=>L['wp_'+w[0]]===old);
+      d.kind=d.kind===k?'':k; sheet.querySelectorAll('[data-wk]').forEach(x=>x.classList.toggle('on',x.dataset.wk===d.kind));
+      if(wasAuto) nmIn.value=d.kind&&d.kind!=='other'?L['wp_'+d.kind]:''; $('#tp-w').placeholder=fw(wOf({kind:d.kind})); upd(); }); $('#tp-c').addEventListener('change',upd); if($('#tp-ser')) $('#tp-ser').addEventListener('input',()=>{ $('#tp-ql').textContent=+$('#tp-ser').value>0?L.tpQtySer:L.tpQty; });
     sheet.querySelectorAll('[data-tv]').forEach(b=>b.onclick=()=>{ d.vendor=b.dataset.tv; sheet.querySelectorAll('[data-tv]').forEach(x=>x.classList.toggle('on',x===b)); });
     sheet.querySelectorAll('[data-dec]').forEach(b=>b.onclick=()=>{ d.dec=b.dataset.dec; sheet.querySelectorAll('[data-dec]').forEach(x=>x.classList.toggle('on',x===b)); $('#tp-qw').hidden=d.dec!=='buy'; if(d.dec==='buy') focusLater('#tp-q'); });
     $('#tp-cam').onclick=()=>{ keep(); camera(async s=>{ if(p){ await phPut('tp_'+p.id+'_'+(p.ph||0),s); p.ph=(p.ph||0)+1; persist(); } else newPhotos.push(s); draw(); }); };
     $('#tp-nv').onclick=()=>{ keep(); vendorForm(null,trip,v=>{ d.vendor=v.id; vs.unshift(v); draw(); }); };
     if(!d.price) focusLater('#tp-p');
     $('#tp-save').onclick=async()=>{ keep(); if(!d.vendor) return showErr($('#tp-err'),L.tpErrShop); if(!(+d.price>0)&&!newPhotos.length&&!(p&&p.ph)&&!d.name) return showErr($('#tp-err'),L.tpErrEmpty);
-      const o={vendor:d.vendor,price:+d.price>0?+d.price:null,cur:d.cur,name:d.name,sizes:d.sizes,colors:d.colors,moq:+d.moq>0?Math.round(+d.moq):null,ser:+d.ser>0?Math.round(+d.ser):null,w:+d.w>0?+d.w:null,note:d.note,dec:d.dec||'maybe',qty:d.dec==='buy'&&+d.qty>0?Math.round(+d.qty):null,fav:!!d.fav};
+      const o={vendor:d.vendor,price:+d.price>0?+d.price:null,cur:d.cur,name:d.name,sizes:d.sizes,colors:d.colors,moq:+d.moq>0?Math.round(+d.moq):null,ser:+d.ser>0?Math.round(+d.ser):null,w:+d.w>0?+d.w:null,kind:d.kind||null,note:d.note,dec:d.dec||'maybe',qty:d.dec==='buy'&&+d.qty>0?Math.round(+d.qty):null,fav:!!d.fav};
       let rec=p; if(isNew){ rec={id:uid('tp'),trip:trip.id,ts:Date.now(),d:dkey(),ph:0,...o}; state.tprods.push(rec); } else { Object.assign(rec,o); delete rec.draft; }
       for(const s of newPhotos){ await phPut('tp_'+rec.id+'_'+(rec.ph||0),s); rec.ph=(rec.ph||0)+1; }
       lsSet('curv_'+trip.id,d.vendor); persist(); render();
@@ -5728,19 +5851,19 @@ function orderForm(tripId,vid){
     persist(); render(); if(o.st==='came') orderForm(tripId,vid); else closeSheet(); toast(L.saved); };
   if($('#of-inv')) $('#of-inv').onclick=()=>toInventory(trip,ps);
 }
-function toInventory(trip,ps){
-  if(!ps.length) return;
+function toInventory(trip,ps,recv){
+  if(!ps.length) return; const qOf=p=>recv&&recv[p.id]!=null?recv[p.id]:pcsOf(p);
   openSheet(`<h3>📏 ${L.ordToInv}</h3><p class="lead">${L.toInvLead}</p><div class="cards">${ps.map(p=>{ const ld=landed(p,trip); const done=state.inv.some(x=>x.from===p.id);
-    return `<div class="card ${done?'ok':''}" role="button" tabindex="0" data-toinv="${esc(p.id)}">${p.ph?`<span class="ava ph"><img data-ph="tp_${esc(p.id)}_0" alt=""></span>`:'<span class="ava gold">👗</span>'}<div class="c-main"><div class="c-top"><span class="c-name">${esc(p.name||L.trNoName)}</span><span class="c-rem">${done?'✓':ld?money(ld):''}</span></div><div class="c-sub"><span>${Math.max(1,+p.qty||1)} ${L.pcsW}${p.sizes?' · '+esc(p.sizes):''}</span></div></div></div>`; }).join('')}</div>
+    return `<div class="card ${done?'ok':''}" role="button" tabindex="0" data-toinv="${esc(p.id)}">${p.ph?`<span class="ava ph"><img data-ph="tp_${esc(p.id)}_0" alt=""></span>`:'<span class="ava gold">👗</span>'}<div class="c-main"><div class="c-top"><span class="c-name">${esc(p.name||L.trNoName)}</span><span class="c-rem">${done?'✓':ld?money(ld):''}</span></div><div class="c-sub"><span>${qOf(p)} ${L.pcsW}${p.sizes?' · '+esc(p.sizes):''}</span></div></div></div>`; }).join('')}</div>
     <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
   fillPhotos(sheet);
   sheet.querySelectorAll('[data-toinv]').forEach(c=>c.onclick=async()=>{ const p=ps.find(x=>x.id===c.dataset.toinv); if(!p) return; const ld=landed(p,trip); const photo=p.ph?await phGet('tp_'+p.id+'_0'):null; const v=state.vendors.find(x=>x.id===p.vendor);
-    invForm(null,{name:p.name||'',cost:ld?Math.round(ld):'',price:ld?sellHint(ld).price:'',sizesText:p.sizes||'',qty:+p.qty||'',sup:v?v.name:'',from:p.id,photo}); });
+    invForm(null,{name:p.name||'',cost:ld?Math.round(ld):'',price:ld?sellHint(ld).price:'',sizesText:p.sizes||'',qty:qOf(p)||'',sup:v?v.name:'',from:p.id,photo}); });
 }
 
 /* ---- поделиться ---- */
 function tripShareText(trip){ const tt=tripTotals(trip); const byV={}; for(const p of tt.buy) (byV[p.vendor]=byV[p.vendor]||[]).push(p);
-  let s='🧳 '+trip.name+'\n'; for(const vid in byV){ const v=state.vendors.find(x=>x.id===vid)||{name:'?'}; s+='\n🏪 '+v.name+(v.market?' ('+v.market+(v.no?' №'+v.no:'')+')':'')+'\n'; byV[vid].forEach((p,i)=>{ s+=(i+1)+') '+(p.name||L.trNoName)+' — '+pcsOf(p)+' × '+fxAmt(+p.price||0,p.cur)+' '+curSym(p.cur)+(p.sizes?' · '+p.sizes:'')+'\n'; }); }
+  let s='🛍️ '+trip.name+'\n'; for(const vid in byV){ const v=state.vendors.find(x=>x.id===vid)||{name:'?'}; s+='\n🏪 '+v.name+(v.market?' ('+v.market+(v.no?' №'+v.no:'')+')':'')+'\n'; byV[vid].forEach((p,i)=>{ s+=(i+1)+') '+(p.name||L.trNoName)+' — '+pcsOf(p)+' × '+fxAmt(+p.price||0,p.cur)+' '+curSym(p.cur)+(p.sizes?' · '+p.sizes:'')+'\n'; }); }
   s+='\n'+L.trTotal+': ≈ '+money(tt.all); return s; }
 function vendorOrderText(trip,vid){ const v=state.vendors.find(x=>x.id===vid)||{country:trip.country}; const lg=(TCOUNTRY[v.country]||TCOUNTRY.XX).lang; const ps=tripProds(trip).filter(p=>p.vendor===vid&&p.dec==='buy');
   const head={tr:'Merhaba! Sipariş vermek istiyorum:',zh:'您好！我想下单：',uz:'Assalomu alaykum! Buyurtma bermoqchiman:',en:'Hello! I would like to order:',ru:'Здравствуйте! Хочу заказать:'}[lg]||'Hello!';
@@ -5753,14 +5876,14 @@ async function shareText(t){ try{ if(navigator.share){ await navigator.share({te
 document.addEventListener('click', e=>{
   const t=e.target, S=()=>e.stopImmediatePropagation();
   if(t.closest('[data-tnew]')){ S(); tripForm(null); return; }
-  const to=t.closest('[data-topen]'); if(to){ S(); const tr=tripById(to.dataset.topen); if(tr&&tr===activeTrip()&&!to.closest('#view-shop')){ openTripView(); } else if(tr) tripForm(tr); return; }
+  const to=t.closest('[data-topen]'); if(to){ S(); const tr=tripById(to.dataset.topen); if(tr&&tr===activeTrip()&&!to.closest('#view-buy')){ openTripView(); } else if(tr) tripForm(tr); return; }
   const tc=t.closest('[data-tcap]'); if(tc){ S(); const tr=tripById(tc.dataset.tcap); if(tr) capProduct(tr); return; }
   const tv=t.closest('[data-tvadd]'); if(tv){ S(); vendorForm(null,tripById(tv.dataset.tvadd)); return; }
   const vi=t.closest('[data-tvisit]'); if(vi){ S(); const v=state.vendors.find(x=>x.id===vi.dataset.tvisit), tr=activeTrip(); if(v&&tr){ v.visits=(v.visits||[]).concat(tr.id); lsSet('curv_'+tr.id,v.id); persist(); render(); toast(L.trVisitAdded(v.name)); } return; }
   const vd=t.closest('[data-vendor]'); if(vd&&!t.closest('a')){ S(); const v=state.vendors.find(x=>x.id===vd.dataset.vendor); if(v) vendorSheet(v); return; }
   const tp=t.closest('[data-tprod]'); if(tp){ S(); const p=state.tprods.find(x=>x.id===tp.dataset.tprod); if(p) tprodSheet(p); return; }
-  const ts=t.closest('[data-tsub]'); if(ts){ S(); tripSub=ts.dataset.tsub; lsSet('trsub_v1',tripSub); renderShop(activeList()); return; }
-  const tf=t.closest('[data-tf]'); if(tf){ S(); tripFilter=tf.dataset.tf; renderShop(activeList()); return; }
+  const ts=t.closest('[data-tsub]'); if(ts){ S(); tripSub=ts.dataset.tsub; lsSet('trsub_v1',tripSub); renderBuy(); return; }
+  const tf=t.closest('[data-tf]'); if(tf){ S(); tripFilter=tf.dataset.tf; renderBuy(); return; }
   const te=t.closest('[data-texp]'); if(te){ S(); const tr=tripById(te.dataset.texp); if(tr) texpForm(tr); return; }
   if(t.closest('[data-tphr]')){ S(); phrasesSheet(null); return; }
   if(t.closest('[data-tdir]')){ S(); vendorsDirSheet(); return; }
@@ -5771,6 +5894,440 @@ document.addEventListener('click', e=>{
   const zm=t.closest('[data-zoom]'); if(zm){ S(); (async()=>{ const v=await phGet(zm.dataset.zoom); if(v){ const w=document.createElement('div'); w.className='zoom'; w.innerHTML=`<img src="${v}" alt="">`; w.onclick=()=>w.remove(); document.body.appendChild(w); } })(); return; }
 }, true);
 document.addEventListener('toggle', e=>{ const d=e.target; if(d&&d.matches&&d.matches('details[data-ctips]')) lsSet('ctips_'+d.dataset.ctips, d.open?'':'1'); }, true);
+
+/* ===================== v8: карго — партии, вес по факту, карго-компании, приёмка ===================== */
+/* Вес при покупке никто не знает: считаем примерно по виду вещи. Когда карго взвесит партию —
+   вводим настоящие кг и сумму, и стоимость сама делится между товарами по весу. */
+const CG_ST=['wh','sent','border','tj','got'];
+const CG_IC=['🏭','🚛','🛃','🇹🇯','✅'];
+const CG_ORD={sent:'sent',border:'way',tj:'came',got:'came'};
+function cgById(id){ return state.cargo.find(x=>x.id===id)||null; }
+function coById(id){ return id?state.cargoCo.find(x=>x.id===id)||null:null; }
+function tripShips(trip){ return state.cargo.filter(s=>s.trip===trip.id).sort((a,b)=>String(b.sent||'').localeCompare(String(a.sent||''))||(b.ts||0)-(a.ts||0)); }
+function shipOf(trip,vid){ return state.cargo.find(s=>s.trip===trip.id&&(s.vendors||[]).includes(vid))||null; }
+function shipCostRaw(s){ if(s.mode==='sum') return +s.total>0?+s.total:null;
+  const base=s.mode==='m3'?(+s.m3||0)*(+s.rate||0):(+s.kg||0)*(+s.rate||0); return base>0?base+(+s.pack||0):null; }
+function shipCostTJS(s,trip){ const v=shipCostRaw(s); return v!=null?toTJS(v,s.cur||'USD',trip):null; }
+function shipProds(s,trip){ return tripProds(trip).filter(p=>p.dec==='buy'&&(s.vendors||[]).includes(p.vendor)); }
+function shipEstW(s,trip,base){ return shipProds(s,trip).reduce((a,p)=>a+(base?wBase(p):wOf(p))*pcsOf(p),0); }
+function shipEta(s){ if(s.eta) return s.eta; const co=coById(s.co); return s.sent&&co&&+co.days>0?dkey(addDays(parseYmd(s.sent),+co.days)):''; }
+function shipLate(s){ const e=shipEta(s); return !!e&&CG_ST.indexOf(s.st||'wh')<3&&e<dkey(); }
+function tripCo(trip){ const s=tripShips(trip).find(x=>coById(x.co)); if(s) return coById(s.co);
+  return state.cargoCo.filter(c=>!c.country||c.country===trip.country).sort((a,b)=>(b.ts||0)-(a.ts||0))[0]||null; }
+/* поправка веса: насколько настоящие кг отличались от прикидки в прошлых партиях */
+let wfC=null; /* сбрасывается при каждом сохранении */
+function wFactor(){ if(wfC!=null) return wfC; const r=[];
+  for(const s of state.cargo){ if(!(+s.kg>0)) continue; const tr=tripById(s.trip); if(!tr) continue; const est=shipEstW(s,tr,true); if(est>0) r.push(+s.kg/est); }
+  let f=1; if(r.length){ r.sort((a,b)=>a-b); f=r[Math.floor(r.length/2)]; f=Math.min(2.5,Math.max(0.5,f)); }
+  wfC=f; return f; }
+function kindIc(k){ const w=WPRE.find(x=>x[0]===k); return w?w[1]:'👗'; }
+function cargoIsAct(p,trip){ if(p.dec!=='buy') return false; const sh=shipOf(trip,p.vendor); if(sh&&shipCostTJS(sh,trip)!=null) return true; return ordCargoTJS(trip,ordOf(trip,p.vendor))!=null; }
+
+/* ---- вкладка «Карго» внутри закупки ---- */
+function tripCargoHTML(tr){
+  const ships=tripShips(tr), buyV=[...new Set(tripProds(tr).filter(p=>p.dec==='buy').map(p=>p.vendor))];
+  const unsent=buyV.filter(v=>!shipOf(tr,v)), co=tripCo(tr), f=wFactor();
+  let h=`<div class="cg-lead"><span>⚖️</span><p>${L.cgLead}</p></div>`;
+  if(Math.abs(f-1)>=0.05) h+=`<p class="note">📈 ${L.cgFactor(fx(f,1))}</p>`;
+  if(unsent.length){ h+=`<div class="section-h"><h2>${L.cgUnsent}</h2><span class="count">${unsent.length}</span></div><div class="sh-card cg-un">`+unsent.map(vid=>{ const v=state.vendors.find(x=>x.id===vid)||{name:'?'}; const ps=tripProds(tr).filter(p=>p.dec==='buy'&&p.vendor===vid); const pcs=ps.reduce((s,p)=>s+pcsOf(p),0), w=ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0);
+      return `<div class="cg-ur"><span>${VKIND[v.kind]||'🏪'} <b>${esc(v.name)}</b><small>${pcs} ${L.pcsW} · ≈ ${fw(w)} ${L.kgW}</small></span>${co&&co.addrFrom?`<button class="link-btn" data-cgaddr="${esc(co.id)}|${esc(vid)}">📤 ${L.cgAddrS}</button>`:''}</div>`; }).join('')
+    +`${co&&co.addrFrom?'':`<p class="note">${state.cargoCo.length?L.cgNoAddr:L.cgAddCoHint}</p>`}<button class="btn btn-primary btn-full" data-cgnew="${esc(tr.id)}">📦 ${L.cgSendBtn}</button></div>`; }
+  else if(!buyV.length) h+=`<div class="sh-empty">${L.cgNoBuy}</div>`;
+  h+=`<div class="section-h" style="margin-top:18px"><h2>📦 ${L.cgShips}</h2>${ships.length?`<span class="count">${ships.length}</span>`:''}</div>`;
+  h+=ships.length?`<div class="cards">${ships.map(s=>shipCard(s,tr)).join('')}</div>`:`<div class="sh-empty">${L.cgNone}</div>`;
+  if(!unsent.length&&buyV.length) h+=`<button class="btn btn-ghost btn-full" data-cgnew="${esc(tr.id)}" style="margin-top:10px">+ ${L.cgNew}</button>`;
+  h+=`<button class="btn btn-ghost btn-full" data-cgco="1" style="margin-top:10px">🚚 ${L.cgCos}${state.cargoCo.length?' ('+state.cargoCo.length+')':''}</button>`;
+  return h;
+}
+function shipCard(s,tr){ const st=s.st||'wh', co=coById(s.co), i=CG_ST.indexOf(st), cost=shipCostRaw(s), late=shipLate(s), eta=shipEta(s);
+  const vs=(s.vendors||[]).map(id=>(state.vendors.find(v=>v.id===id)||{}).name).filter(Boolean);
+  return `<div class="card cg st-${st} ${late?'late':''}" role="button" tabindex="0" data-cg="${esc(s.id)}"><span class="ava gold">${CG_IC[i]}</span><div class="c-main">
+    <div class="c-top"><span class="c-name">${esc(co?co.name:L.cgNoCo)}${s.places?' · '+s.places+' '+L.cgPlW:''}</span>${cost!=null?`<span class="c-rem">${fxAmt(cost,s.cur||'USD')} ${curSym(s.cur||'USD')}</span>`:''}</div>
+    <div class="cg-bar"><i style="width:${Math.round(i/4*100)}%"></i></div>
+    <div class="c-sub"><span>${L['cg_'+st]}${i<3&&eta?' · '+L.ordEta+' '+fmtShort(parseYmd(eta)):''}</span><span>· ⚖️ ${+s.kg>0?fw(+s.kg)+' '+L.kgW+' ✓':'≈ '+fw(shipEstW(s,tr))+' '+L.kgW}</span></div>
+    <div class="c-sub"><span>${esc(vs.join(', '))}</span>${late?`<span class="tx-urgent">· ⏰ ${L.cgLateW}</span>`:''}${cost!=null?(s.paid?`<span class="tx-ok">· ✓ ${L.cgPaidW}</span>`:`<span class="tx-urgent">· ${L.cgUnpaid}</span>`):''}${s.recv?`<span>· 📥 ${L.cgRecvd}</span>`:''}</div></div></div>`; }
+
+/* ---- партия: создать / изменить ---- */
+function shipForm(s,trip,preV){
+  const isNew=!s; trip=trip||tripById(s&&s.trip)||activeTrip(); if(!trip){ toast(L.trNeedTrip); return; }
+  const buyV=[...new Set(tripProds(trip).filter(p=>p.dec==='buy').map(p=>p.vendor))]; const co0=tripCo(trip);
+  const d=s?{...s,vendors:[...(s.vendors||[])],dt:{...(s.dt||{})}}
+    :{id:uid('cg'),st:'wh',co:co0?co0.id:'',vendors:preV||buyV.filter(v=>!shipOf(trip,v)),mode:(co0&&co0.mode)||'kg',rate:co0&&+co0.rate>0?co0.rate:(+trip.ckg>0?trip.ckg:''),cur:(co0&&co0.rcur)||trip.ccur||'USD',dt:{wh:dkey()}};
+  const newPhotos=[]; let wOpen=null;
+  const curs=()=>['USD',trip.cur,'TJS','CNY','TRY','RUB'].filter((x,i,a)=>x&&a.indexOf(x)===i).map(c=>`<option value="${c}" ${(d.cur||'USD')===c?'selected':''}>${curSym(c)}</option>`).join('');
+  const draw=()=>{ const co=coById(d.co), allV=[...new Set(buyV.concat(d.vendors))];
+    const estW=tripProds(trip).filter(p=>p.dec==='buy'&&d.vendors.includes(p.vendor)).reduce((a,p)=>a+wOf(p)*pcsOf(p),0);
+    openSheet(`<h3>📦 ${isNew?L.cgNew:L.cgShip}</h3><p class="lead">${L.cgFormLead}</p>
+      <div class="br-h">🚚 ${L.cgCo}</div>
+      <div class="chips vsel">${state.cargoCo.map(c=>`<button class="chip ${d.co===c.id?'on':''}" data-sco="${esc(c.id)}">${esc(c.name)}</button>`).join('')}<button class="chip add" id="sf-nco">+ ${L.cgCoNew}</button></div>
+      <div class="br-h">🏪 ${L.cgWhat}</div>
+      <div class="chips vsel">${allV.map(vid=>{ const v=state.vendors.find(x=>x.id===vid); if(!v) return ''; const other=state.cargo.some(x=>x.id!==d.id&&x.trip===trip.id&&(x.vendors||[]).includes(vid)); return `<button class="chip ${d.vendors.includes(vid)?'on':''}" data-sv="${esc(vid)}">${d.vendors.includes(vid)?'✓ ':''}${esc(v.name)}${other?' 📦':''}</button>`; }).join('')||`<span class="note">${L.cgNoBuy}</span>`}</div>
+      <div class="br-h">${L.cgStatus}</div>
+      <div class="ordst cgst">${CG_ST.map((k,i)=>`<button data-sst="${k}" class="${CG_ST.indexOf(d.st)>=i?'on':''}"><span>${CG_IC[i]}</span><small>${L['cg_'+k]}</small>${d.dt[k]?`<em>${fmtShort(parseYmd(d.dt[k]))}</em>`:''}</button>`).join('')}</div>
+      <div class="two"><div class="field"><label>${L.cgSent}</label><input id="sf-sd" type="date" value="${d.sent||''}"></div><div class="field"><label>${L.ordEta}${co&&+co.days>0?` <span class="hint">~${co.days} ${L.cgDaysW}</span>`:''}</label><input id="sf-eta" type="date" value="${d.eta||''}"></div></div>
+      <div class="two"><div class="field n"><label>${L.cgPlaces}</label><input id="sf-pl" type="number" inputmode="numeric" min="0" value="${d.places||''}" placeholder="3"></div><div class="field"><label>${L.ordTrack}</label><input id="sf-tr" value="${esc(d.track||'')}" maxlength="40"></div></div>
+      <details class="cg-w" ${(wOpen!=null?wOpen:(+d.kg>0||+d.total>0||+d.m3>0||d.st==='tj'||d.st==='got'))?'open':''}><summary>⚖️ ${L.cgWeighT}</summary>
+        <p class="note" style="margin-top:0">${L.cgWeighLead(fw(estW))}</p>
+        <div class="seg">${['kg','m3','sum'].map(k=>`<button data-sm="${k}" class="${d.mode===k?'on':''}">${L['cgMode_'+k]}</button>`).join('')}</div>
+        ${d.mode!=='sum'?`<div class="two"><div class="field n"><label>${L.cgKg}</label><input id="sf-kg" type="number" inputmode="decimal" step="any" min="0" value="${d.kg||''}" placeholder="${fw(estW)}"></div><div class="field n"><label>${L.cgM3} <span class="hint">${L.optional}</span></label><input id="sf-m3" type="number" inputmode="decimal" step="any" min="0" value="${d.m3||''}" placeholder="0.5"></div></div>
+          <div class="two"><div class="field n"><label>${d.mode==='m3'?L.cgRateM3:L.cgRateKg}</label><div class="pin"><input id="sf-rt" type="number" inputmode="decimal" step="any" min="0" value="${d.rate||''}"><select id="sf-cur">${curs()}</select></div></div><div class="field n"><label>${L.cgPack} <span class="hint">${L.optional}</span></label><input id="sf-pk" type="number" inputmode="decimal" step="any" min="0" value="${d.pack||''}" placeholder="0"></div></div>`
+        :`<div class="field n big-in"><label>${L.cgTotal}</label><div class="pin"><input id="sf-tt" type="number" inputmode="decimal" step="any" min="0" value="${d.total||''}" placeholder="0"><select id="sf-cur">${curs()}</select></div></div>
+          <div class="field n"><label>${L.cgKg} <span class="hint">${L.optional}</span></label><input id="sf-kg" type="number" inputmode="decimal" step="any" min="0" value="${d.kg||''}" placeholder="${fw(estW)}"></div>`}
+        <div class="tp-calc" id="sf-x"></div>
+        <label class="check"><input type="checkbox" id="sf-pd" ${d.paid?'checked':''}> ✓ ${L.cgPaidChk}</label>
+      </details>
+      <div class="tp-photos">${(s&&s.ph?Array.from({length:s.ph},(_,i)=>`<img data-ph="cg_${esc(s.id)}_${i}" data-zoom="cg_${esc(s.id)}_${i}" alt="">`).join(''):'')+newPhotos.map(x=>`<img src="${x}" class="ok" alt="">`).join('')}<button class="tp-add" id="sf-cam">📷<small>${L.cgPhoto}</small></button></div>
+      <div class="field"><label>${L.dayNote} <span class="hint">${L.optional}</span></label><input id="sf-no" value="${esc(d.note||'')}" maxlength="100"></div>
+      <div class="err" id="sf-err"></div><button class="btn btn-primary btn-full" id="sf-s">${L.save}</button>
+      ${!isNew&&(d.st==='tj'||d.st==='got')?`<button class="btn btn-ghost btn-full" id="sf-rc" style="margin-top:10px">📥 ${L.cgRecv}</button>`:''}
+      ${!isNew?`<div class="sheet-row">${co?`<button class="btn btn-ghost" id="sf-co">🚚 ${esc(co.name)}</button>`:''}<button class="btn btn-danger" id="sf-del">${L.delete}</button></div>`:''}
+      <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    fillPhotos(sheet); sheet.querySelector('.cg-w').addEventListener('toggle',e=>{ wOpen=e.target.open; });
+    const keep=()=>{ const g=id=>$(id)?$(id).value:undefined; d.sent=g('#sf-sd'); d.eta=g('#sf-eta'); d.places=g('#sf-pl'); d.track=(g('#sf-tr')||'').trim(); d.note=(g('#sf-no')||'').trim(); d.paid=$('#sf-pd').checked;
+      if($('#sf-kg')) d.kg=g('#sf-kg'); if($('#sf-m3')) d.m3=g('#sf-m3'); if($('#sf-rt')) d.rate=g('#sf-rt'); if($('#sf-pk')) d.pack=g('#sf-pk'); if($('#sf-tt')) d.total=g('#sf-tt'); d.cur=g('#sf-cur');
+      fillEta(); };
+    const fillEta=()=>{ const c=coById(d.co); if(!d.eta&&d.sent&&c&&+c.days>0) d.eta=dkey(addDays(parseYmd(d.sent),+c.days)); };
+    $('#sf-sd').addEventListener('change',()=>{ if(!$('#sf-eta').value){ d.sent=$('#sf-sd').value; d.eta=''; fillEta(); $('#sf-eta').value=d.eta||''; } });
+    const upd=()=>{ keep(); const cost=shipCostRaw(d), cur=d.cur||'USD', tj=cost!=null?toTJS(cost,cur,trip):null, kg=+d.kg, m3=+d.m3; const pcs=tripProds(trip).filter(p=>p.dec==='buy'&&d.vendors.includes(p.vendor)).reduce((a,p)=>a+pcsOf(p),0); const out=[];
+      if(cost!=null) out.push(`${L.cgCostW}: <b>${fxAmt(cost,cur)} ${curSym(cur)}</b>${tj!=null&&cur!=='TJS'?' ≈ '+money(tj):''}`);
+      if(tj!=null&&pcs>0) out.push(L.cgPerPc(money(tj/pcs)));
+      if(kg>0&&estW>0&&Math.abs(kg/estW-1)>=0.1) out.push(L.cgVsEst(fw(estW),fw(kg)));
+      if(kg>0&&m3>0){ const dn=kg/m3; out.push(L.cgDens(Math.round(dn))+' — '+(dn<200?L.cgLight:L.cgHeavy)); }
+      $('#sf-x').innerHTML=out.join('<br>'); };
+    upd(); sheet.querySelectorAll('.cg-w input').forEach(i=>i.addEventListener('input',upd)); if($('#sf-cur')) $('#sf-cur').addEventListener('change',upd);
+    sheet.querySelectorAll('[data-sco]').forEach(b=>b.onclick=()=>{ keep(); d.co=b.dataset.sco; const c=coById(d.co); if(c){ if(+c.rate>0){ d.rate=c.rate; if(c.rcur) d.cur=c.rcur; } if(c.mode) d.mode=c.mode; } fillEta(); draw(); });
+    sheet.querySelectorAll('[data-sv]').forEach(b=>b.onclick=()=>{ keep(); const v=b.dataset.sv; d.vendors=d.vendors.includes(v)?d.vendors.filter(x=>x!==v):d.vendors.concat(v); draw(); });
+    sheet.querySelectorAll('[data-sst]').forEach(b=>b.onclick=()=>{ keep(); d.st=b.dataset.sst; if(!d.dt[d.st]) d.dt[d.st]=dkey(); if(d.st!=='wh'&&!d.sent) d.sent=d.dt.sent||dkey(); fillEta(); draw(); });
+    sheet.querySelectorAll('[data-sm]').forEach(b=>b.onclick=()=>{ keep(); d.mode=b.dataset.sm; draw(); });
+    $('#sf-nco').onclick=()=>{ keep(); coForm(null,trip,c=>{ d.co=c.id; if(+c.rate>0){ d.rate=c.rate; d.cur=c.rcur||d.cur; } if(c.mode) d.mode=c.mode; draw(); }); };
+    $('#sf-cam').onclick=()=>{ keep(); camera(async x=>{ if(s){ await phPut('cg_'+s.id+'_'+(s.ph||0),x); s.ph=(s.ph||0)+1; persist(); } else newPhotos.push(x); draw(); }); };
+    if($('#sf-co')) $('#sf-co').onclick=()=>coSheet(coById(d.co));
+    if($('#sf-rc')) $('#sf-rc').onclick=()=>receiveSheet(s);
+    if($('#sf-del')) $('#sf-del').onclick=()=>{ if(!confirmTwice($('#sf-del'))) return; state.cargo=state.cargo.filter(x=>x!==s); persist(); closeSheet(); render(); delToast(L.entryDeleted); };
+    $('#sf-s').onclick=async()=>{ keep(); if(!d.vendors.length) return showErr($('#sf-err'),L.cgErrV);
+      const o={co:d.co||'',vendors:d.vendors,st:d.st||'wh',dt:d.dt,sent:d.sent||'',eta:d.eta||'',places:+d.places>0?Math.round(+d.places):null,track:d.track||'',mode:d.mode||'kg',kg:+d.kg>0?+d.kg:null,m3:+d.m3>0?+d.m3:null,rate:+d.rate>0?+d.rate:null,cur:d.cur||'USD',pack:+d.pack>0?+d.pack:null,total:+d.total>0?+d.total:null,paid:!!d.paid,note:d.note||''};
+      const was=s?s.st:null; let rec=s; if(isNew){ rec={id:d.id,trip:trip.id,ts:Date.now(),ph:0,...o}; state.cargo.push(rec); } else Object.assign(rec,o);
+      for(const x of newPhotos){ await phPut('cg_'+rec.id+'_'+(rec.ph||0),x); rec.ph=(rec.ph||0)+1; }
+      const c=coById(rec.co); if(c&&rec.mode!=='sum'&&+rec.rate>0&&!(+c.rate>0)){ c.rate=rec.rate; c.rcur=rec.cur; c.mode=rec.mode; }
+      shipSyncOrders(rec,trip); persist(); render();
+      if((rec.st==='tj'||rec.st==='got')&&was!=='tj'&&was!=='got'&&!rec.recv){ toast(L.saved); receiveSheet(rec); } else { closeSheet(); toast(L.saved); } };
+  };
+  draw();
+}
+/* статус партии двигает статусы заказов (только вперёд) */
+function shipSyncOrders(s,trip){ const target=CG_ORD[s.st]; if(!target) return; const co=coById(s.co);
+  for(const vid of s.vendors||[]){ let o=ordOf(trip,vid);
+    if(!o){ const ps=tripProds(trip).filter(p=>p.vendor===vid&&p.dec==='buy'); o={id:uid('or'),trip:trip.id,vendor:vid,st:'new',cur:(ps[0]&&ps[0].cur)||trip.cur}; state.torders.push(o); }
+    if(ORD_ST.indexOf(o.st||'new')<ORD_ST.indexOf(target)) o.st=target; if(co&&!o.cargo) o.cargo=co.name; if(s.track&&!o.track) o.track=s.track; } }
+
+/* ---- приёмка: пересчитать, что пришло ---- */
+function receiveSheet(s){ const trip=tripById(s.trip); if(!trip) return; const ps=shipProds(s,trip); const r={...(s.recv||{})};
+  for(const p of ps) if(r[p.id]==null) r[p.id]=pcsOf(p);
+  openSheet(`<h3>📥 ${L.cgRecv}</h3><p class="lead">${L.cgRecvLead}</p>
+    ${s.places?`<div class="field n"><label>${L.cgPlacesGot(s.places)}</label><input id="rc-pl" type="number" inputmode="numeric" min="0" value="${s.rpl!=null?s.rpl:s.places}"></div>`:''}
+    <div class="rc-list">${ps.map(p=>`<div class="rc-r" data-rr="${esc(p.id)}">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:`<em>${kindIc(p.kind)}</em>`}<span><b>${esc(p.name||L.trNoName)}</b><small>${esc((state.vendors.find(v=>v.id===p.vendor)||{}).name||'')} · ${L.cgOrdered} ${pcsOf(p)}</small></span><div class="rc-st"><button data-rm="${esc(p.id)}" aria-label="−">−</button><input data-rq="${esc(p.id)}" type="number" inputmode="numeric" min="0" value="${r[p.id]}"><button data-rp="${esc(p.id)}" aria-label="+">+</button></div></div>`).join('')||`<div class="sh-empty">${L.cgNoBuy}</div>`}</div>
+    <div class="field"><label>${L.cgDefect} <span class="hint">${L.optional}</span></label><input id="rc-n" value="${esc(s.rnote||'')}" maxlength="120" placeholder="${L.cgDefectPh}"></div>
+    <div id="rc-x" class="tp-calc"></div>
+    <button class="btn btn-primary btn-full" id="rc-s">✓ ${L.cgRecvSave}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  fillPhotos(sheet);
+  const upd=()=>{ let miss=0; for(const p of ps){ const q=Math.max(0,Math.round(+r[p.id]||0)); const row=sheet.querySelector(`[data-rr="${p.id}"]`); if(row) row.classList.toggle('short',q<pcsOf(p)); miss+=Math.max(0,pcsOf(p)-q); } $('#rc-x').innerHTML=miss?`<span class="tx-urgent">${L.cgMiss(miss)}</span>`:`<span class="tx-ok">✓ ${L.cgAllOk}</span>`; };
+  sheet.querySelectorAll('[data-rq]').forEach(i=>i.addEventListener('input',()=>{ r[i.dataset.rq]=i.value; upd(); }));
+  const step=(id,dl)=>{ r[id]=Math.max(0,Math.round(+r[id]||0)+dl); const i=sheet.querySelector(`[data-rq="${id}"]`); if(i) i.value=r[id]; upd(); };
+  sheet.querySelectorAll('[data-rm]').forEach(b=>b.onclick=()=>step(b.dataset.rm,-1)); sheet.querySelectorAll('[data-rp]').forEach(b=>b.onclick=()=>step(b.dataset.rp,1)); upd();
+  $('#rc-s').onclick=()=>{ const rec={}; for(const p of ps) rec[p.id]=Math.max(0,Math.round(+r[p.id]||0)); s.recv=rec; s.rnote=$('#rc-n').value.trim(); if($('#rc-pl')) s.rpl=Math.max(0,Math.round(+$('#rc-pl').value||0));
+    s.st='got'; s.dt=s.dt||{}; if(!s.dt.got) s.dt.got=dkey(); if(!s.dt.tj) s.dt.tj=s.dt.got; shipSyncOrders(s,trip); persist(); render(); receiveDone(s,trip); };
+}
+function receiveDone(s,trip){ const ps=shipProds(s,trip), rc=s.recv||{}; const short=ps.filter(p=>(rc[p.id]!=null?rc[p.id]:pcsOf(p))<pcsOf(p));
+  const byV={}; for(const p of short) (byV[p.vendor]=byV[p.vendor]||[]).push(p);
+  openSheet(`<h3>${short.length?'⚠️ '+L.cgShortT:'✅ '+L.cgAllOk}</h3><p class="lead">${short.length?L.cgShortLead:L.cgDoneLead}</p>
+    ${short.length?`<div class="sh-card">${short.map(p=>`<div class="ts-r"><em>${kindIc(p.kind)}</em><span>${esc(p.name||L.trNoName)}</span><b class="tx-urgent">−${pcsOf(p)-(rc[p.id]||0)} ${L.pcsW}</b></div>`).join('')}</div>
+      ${Object.keys(byV).map(vid=>{ const v=state.vendors.find(x=>x.id===vid); return v?`<button class="btn btn-ghost btn-full" data-cgshort="${esc(s.id)}|${esc(vid)}" style="margin-top:8px">💬 ${L.cgWriteTo(esc(v.name))}</button>`:''; }).join('')}`:''}
+    ${s.rpl!=null&&s.places&&s.rpl<s.places?`<div class="pc-warn">📦 ${L.cgPlacesMiss(s.places-s.rpl)}</div>`:''}
+    <button class="btn btn-primary btn-full" id="rd-inv" style="margin-top:12px">📏 ${L.ordToInv}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.doneW}</button></div>`);
+  $('#rd-inv').onclick=()=>toInventory(trip,ps.filter(p=>(rc[p.id]!=null?rc[p.id]:1)>0),rc);
+}
+const SHORT_T={ru:['Здравствуйте! Мы получили товар, но не хватает:','шт','Пожалуйста, проверьте и отправьте недостающее или верните деньги. Спасибо!'],
+  tr:['Merhaba! Malları aldık ama eksik var:','adet','Lütfen kontrol edip eksikleri gönderin ya da parasını iade edin. Teşekkürler!'],
+  zh:['您好！我们收到货了，但是少了：','件','请核对一下，补发缺少的货或者退款。谢谢！'],
+  uz:['Assalomu alaykum! Tovarni oldik, lekin yetishmayapti:','dona','Iltimos, tekshirib, yetishmaganini yuboring yoki pulini qaytaring. Rahmat!'],
+  en:['Hello! We received the goods, but some items are missing:','pcs','Please check and send the missing items or refund. Thank you!']};
+function shortText(s,trip,vid){ const v=state.vendors.find(x=>x.id===vid)||{country:trip.country}; const T=SHORT_T[(TCOUNTRY[v.country]||TCOUNTRY.XX).lang]||SHORT_T.en; const rc=s.recv||{};
+  const ps=shipProds(s,trip).filter(p=>p.vendor===vid&&(rc[p.id]!=null?rc[p.id]:pcsOf(p))<pcsOf(p));
+  return T[0]+'\n'+ps.map((p,i)=>(i+1)+') '+(p.name||'#'+(i+1))+(p.sizes?' ('+p.sizes+')':'')+' — '+(pcsOf(p)-(rc[p.id]||0))+' '+T[1]).join('\n')+(s.rnote?'\n'+s.rnote:'')+'\n'+T[2]; }
+
+/* ---- карго-компании ---- */
+const ADDR_T={ru:['Здравствуйте! Пожалуйста, доставьте товар на склад карго: {v}.','Маркировка: {v}.','Телефон склада: {v}.','Спасибо!'],
+  zh:['您好！请把货送到物流仓库：{v}。','唛头：{v}。','仓库电话：{v}。','谢谢！'],
+  tr:['Merhaba! Lütfen malları kargo deposuna teslim edin: {v}.','İşaret/kod: {v}.','Depo telefonu: {v}.','Teşekkürler!'],
+  uz:['Assalomu alaykum! Iltimos, tovarni kargo omboriga yetkazing: {v}.','Belgi (kod): {v}.','Ombor telefoni: {v}.','Rahmat!'],
+  en:['Hello! Please deliver the goods to the cargo warehouse: {v}.','Marking: {v}.','Warehouse phone: {v}.','Thank you!']};
+function addrText(c,lg){ const t=ADDR_T[lg]||ADDR_T.en, vals=[c.addrFrom||'—',c.code,c.whPh||c.ph]; const out=[]; t.forEach((x,i)=>{ if(i===3) out.push(x); else if(vals[i]) out.push(x.replace('{v}',vals[i])); }); return out.join(lg==='zh'?'':' '); }
+function addrSheet(c,vend){ let lg=vend?(TCOUNTRY[vend.country]||TCOUNTRY.XX).lang:(TCOUNTRY[c.country]||TCOUNTRY.XX).lang||'en';
+  const draw=()=>{ const txt=addrText(c,lg); const wa=vend&&phoneFull(vend.wa,vend.country);
+    openSheet(`<h3>📤 ${L.cgAddrT}</h3><p class="lead">${vend?L.cgAddrLeadV(esc(vend.name)):L.cgAddrLead}</p>
+      <div class="chips">${[['zh','中文'],['tr','Türkçe'],['uz','Oʻzbek'],['ru','Русский'],['en','English']].map(x=>`<button class="chip ${lg===x[0]?'on':''}" data-alg="${x[0]}">${x[1]}</button>`).join('')}</div>
+      <textarea id="ad-t" class="ta" rows="6">${esc(txt)}</textarea>
+      ${!c.addrFrom?`<p class="err show">${L.cgNoAddr}</p>`:''}
+      <div class="sheet-row">${wa?`<a class="btn btn-primary" href="https://wa.me/${wa}?text=${encodeURIComponent(txt)}" target="_blank" rel="noopener">WhatsApp</a>`:''}<button class="btn btn-ghost" id="ad-c">📋 ${L.cgCopy}</button><button class="btn btn-ghost" id="ad-s">📤 ${L.cgShare}</button></div>
+      ${vend&&vend.wc?`<p class="note">WeChat: <b>${esc(vend.wc)}</b> — ${L.cgWcHint}</p>`:''}
+      <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    sheet.querySelectorAll('[data-alg]').forEach(b=>b.onclick=()=>{ lg=b.dataset.alg; draw(); });
+    $('#ad-c').onclick=async()=>{ try{ await navigator.clipboard.writeText($('#ad-t').value); toast(L.copied); }catch(e){ $('#ad-t').select(); } };
+    $('#ad-s').onclick=()=>shareText($('#ad-t').value); };
+  draw(); }
+function coStats(c){ const ss=state.cargo.filter(s=>s.co===c.id); let dn=0,dc=0,kc=0,kk=0,onT=0,onN=0;
+  for(const s of ss){ const end=(s.dt&&(s.dt.tj||s.dt.got))||''; if(s.sent&&end){ const d=Math.round((parseYmd(end)-parseYmd(s.sent))/86400000); if(d>=0){ dn+=d; dc++; } const e=shipEta(s); if(e){ onN++; if(end<=e) onT++; } }
+    const tr=tripById(s.trip), tj=tr?shipCostTJS(s,tr):null; if(tj!=null&&+s.kg>0){ kc+=tj; kk+=+s.kg; } }
+  return {n:ss.length, days:dc?Math.round(dn/dc):null, perKg:kk?kc/kk:null, onTime:onN?Math.round(onT/onN*100):null}; }
+function coSheet(c){ if(!c) return; const st=coStats(c), C=TCOUNTRY[c.country]||TCOUNTRY.XX; const ph=phoneFull(c.ph,'TJ'), wa=phoneFull(c.wa||c.ph,'TJ');
+  openSheet(`<h3>🚚 ${esc(c.name)}</h3><p class="lead">${C.f} ${L['cn_'+(c.country||'XX')]||''}${+c.rate>0?` · ${fx(+c.rate,+c.rate<10?2:0)} ${curSym(c.rcur||'USD')}/${c.mode==='m3'?'м³':L.kgW}`:''}${+c.days>0?` · ~${c.days} ${L.cgDaysW}`:''}</p>
+    <div class="cbs">${ph?`<a class="cb" href="tel:+${ph}">📞 ${L.cgCall}</a>`:''}${wa?`<a class="cb wa" href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a>`:''}${c.wc?`<button class="cb wc" data-copy="${esc(c.wc)}">WeChat · ${esc(c.wc)}</button>`:''}</div>
+    ${c.code?`<div class="famcode"><span>${L.cgCode}</span><b>${esc(c.code)}</b></div>`:''}
+    ${c.addrFrom?`<div class="cg-addr"><small>${L.cgAddrFrom}</small><p>${esc(c.addrFrom)}</p><button class="link-btn" data-cpy="${esc(c.addrFrom)}">📋 ${L.cgCopy}</button></div>`:''}
+    ${c.addrTo?`<div class="cg-addr"><small>${L.cgAddrTo}</small><p>${esc(c.addrTo)}</p></div>`:''}
+    ${st.n?`<div class="calc-out"><div class="co-row"><span>📦 ${L.cgShips}</span><b>${st.n}</b></div>${st.days!=null?`<div class="co-row"><span>⏱️ ${L.cgAvgDays}</span><b>${st.days} ${L.cgDaysW}</b></div>`:''}${st.onTime!=null?`<div class="co-row"><span>🎯 ${L.cgOnTime}</span><b>${st.onTime}%</b></div>`:''}${st.perKg!=null?`<div class="co-row"><span>⚖️ ${L.cgRealKg}</span><b>${money(st.perKg)}</b></div>`:''}</div>`:''}
+    <button class="btn btn-primary btn-full" id="cs-a" style="margin-top:10px">📤 ${L.cgAddrBtn}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" id="cs-e">✏️ ${L.cgEdit}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  $('#cs-a').onclick=()=>addrSheet(c,null); $('#cs-e').onclick=()=>coForm(c,null,null); }
+function coForm(c,trip,after){ const isNew=!c; const d=c?{...c}:{country:trip?trip.country:'CN',rcur:'USD',mode:'kg'};
+  const draw=()=>{ openSheet(`<h3>🚚 ${isNew?L.cgCoNew:esc(d.name||'')}</h3><p class="lead">${L.cgCoLead}</p>
+      <div class="field"><label>${L.cgCoName}</label><input id="cf-n" value="${esc(d.name||'')}" maxlength="40" placeholder="${L.cgCoNamePh}"></div>
+      <div class="br-h">${L.cgCoFrom}</div>
+      <div class="chips">${['CN','TR','UZ','KG','KZ','RU','AE','XX'].map(k=>`<button class="chip ${d.country===k?'on':''}" data-cfc="${k}">${TCOUNTRY[k].f} ${L['cn_'+k]}</button>`).join('')}</div>
+      <div class="two"><div class="field"><label>📞 ${L.phone}</label><input id="cf-p" type="tel" value="${esc(d.ph||'')}" maxlength="24" placeholder="+992"></div><div class="field"><label>WhatsApp</label><input id="cf-w" type="tel" value="${esc(d.wa||'')}" maxlength="24" placeholder="+992"></div></div>
+      <div class="field"><label>WeChat <span class="hint">${L.optional}</span></label><input id="cf-wc" value="${esc(d.wc||'')}" maxlength="40"></div>
+      <div class="field"><label>🏷️ ${L.cgCode} <span class="hint">${L.cgCodeHint}</span></label><input id="cf-k" value="${esc(d.code||'')}" maxlength="40" placeholder="AB-123"></div>
+      <div class="field"><label>🏭 ${L.cgAddrFrom} <span class="hint">${L.cgAddrFromHint}</span></label><textarea id="cf-af" class="ta" rows="3" maxlength="300">${esc(d.addrFrom||'')}</textarea></div>
+      <div class="field"><label>📞 ${L.cgWhPh} <span class="hint">${L.optional}</span></label><input id="cf-wp" type="tel" value="${esc(d.whPh||'')}" maxlength="30"></div>
+      <div class="field"><label>🇹🇯 ${L.cgAddrTo} <span class="hint">${L.optional}</span></label><input id="cf-at" value="${esc(d.addrTo||'')}" maxlength="120"></div>
+      <div class="seg">${['kg','m3'].map(k=>`<button data-cfm="${k}" class="${(d.mode||'kg')===k?'on':''}">${L['cgMode_'+k]}</button>`).join('')}</div>
+      <div class="two"><div class="field n"><label>${d.mode==='m3'?L.cgRateM3:L.cgRateKg}</label><div class="pin"><input id="cf-r" type="number" inputmode="decimal" step="any" min="0" value="${d.rate||''}" placeholder="${d.mode==='m3'?'250':'3'}"><select id="cf-rc">${['USD','TJS','CNY','TRY','RUB'].map(x=>`<option value="${x}" ${(d.rcur||'USD')===x?'selected':''}>${curSym(x)}</option>`).join('')}</select></div></div><div class="field n"><label>⏱️ ${L.cgDays}</label><input id="cf-d" type="number" inputmode="numeric" min="0" value="${d.days||''}" placeholder="18"></div></div>
+      <div class="err" id="cf-err"></div><button class="btn btn-primary btn-full" id="cf-s">${L.save}</button>
+      ${!isNew?`<div class="sheet-row"><button class="btn btn-danger" id="cf-del">${L.delete}</button></div>`:''}
+      <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    const keep=()=>{ d.name=$('#cf-n').value.trim(); d.ph=$('#cf-p').value.trim(); d.wa=$('#cf-w').value.trim(); d.wc=$('#cf-wc').value.trim(); d.code=$('#cf-k').value.trim(); d.addrFrom=$('#cf-af').value.trim(); d.whPh=$('#cf-wp').value.trim(); d.addrTo=$('#cf-at').value.trim(); d.rate=$('#cf-r').value; d.rcur=$('#cf-rc').value; d.days=$('#cf-d').value; };
+    sheet.querySelectorAll('[data-cfc]').forEach(b=>b.onclick=()=>{ keep(); d.country=b.dataset.cfc; draw(); });
+    sheet.querySelectorAll('[data-cfm]').forEach(b=>b.onclick=()=>{ keep(); d.mode=b.dataset.cfm; draw(); });
+    if(isNew&&!d.name) focusLater('#cf-n');
+    if($('#cf-del')) $('#cf-del').onclick=()=>{ if(!confirmTwice($('#cf-del'))) return; state.cargoCo=state.cargoCo.filter(x=>x!==c); persist(); closeSheet(); render(); delToast(L.entryDeleted); };
+    $('#cf-s').onclick=()=>{ keep(); if(!d.name) return showErr($('#cf-err'),L.errNm);
+      const o={name:d.name,country:d.country||'XX',ph:d.ph,wa:d.wa,wc:d.wc,code:d.code,addrFrom:d.addrFrom,whPh:d.whPh,addrTo:d.addrTo,mode:d.mode||'kg',rate:+d.rate>0?+d.rate:null,rcur:d.rcur||'USD',days:+d.days>0?Math.round(+d.days):null};
+      let rec=c; if(isNew){ rec={id:uid('cc'),ts:Date.now(),...o}; state.cargoCo.push(rec); } else Object.assign(rec,o);
+      persist(); render(); toast(L.saved); if(after) after(rec); else coSheet(rec); };
+  };
+  draw(); }
+function coListSheet(){ const cs=state.cargoCo.slice().sort((a,b)=>(b.ts||0)-(a.ts||0));
+  openSheet(`<h3>🚚 ${L.cgCos}</h3><p class="lead">${L.cgCosLead}</p>
+    ${cs.length?`<div class="cards">${cs.map(c=>{ const st=coStats(c); return `<div class="card" role="button" tabindex="0" data-cgc="${esc(c.id)}"><span class="ava gold">${(TCOUNTRY[c.country]||TCOUNTRY.XX).f}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(c.name)}</span>${+c.rate>0?`<span class="c-rem">${fx(+c.rate,+c.rate<10?2:0)} ${curSym(c.rcur||'USD')}/${c.mode==='m3'?'м³':L.kgW}</span>`:''}</div><div class="c-sub"><span>${c.code?'🏷️ '+esc(c.code):''}${st.n?' · 📦 '+st.n:''}${st.days!=null?' · ⏱️ '+st.days+' '+L.cgDaysW:''}</span></div></div></div>`; }).join('')}</div>`:`<div class="sh-empty">${L.cgCoNone}</div>`}
+    <button class="btn btn-primary btn-full" id="cl-n" style="margin-top:12px">+ ${L.cgCoNew}</button>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  $('#cl-n').onclick=()=>coForm(null,activeTrip(),null);
+  sheet.querySelectorAll('[data-cgc]').forEach(b=>b.onclick=()=>coSheet(coById(b.dataset.cgc))); }
+
+/* ---- клики карго ---- */
+document.addEventListener('click', e=>{
+  const t=e.target, S=()=>e.stopImmediatePropagation();
+  const cg=t.closest('[data-cg]'); if(cg){ S(); const s=cgById(cg.dataset.cg); if(s) shipForm(s); return; }
+  const cn=t.closest('[data-cgnew]'); if(cn){ S(); const tr=tripById(cn.dataset.cgnew); if(tr) shipForm(null,tr); return; }
+  if(t.closest('[data-cgco]')){ S(); coListSheet(); return; }
+  const ca=t.closest('[data-cgaddr]'); if(ca){ S(); const [a,b]=ca.dataset.cgaddr.split('|'); const c=coById(a); if(c) addrSheet(c,state.vendors.find(v=>v.id===b)||null); return; }
+  const cy=t.closest('[data-cpy]'); if(cy){ S(); (async()=>{ try{ await navigator.clipboard.writeText(cy.dataset.cpy); toast(L.copied); }catch(_){ toast(cy.dataset.cpy); } })(); return; }
+  const cs=t.closest('[data-cgshort]'); if(cs){ S(); const [a,b]=cs.dataset.cgshort.split('|'); const s=cgById(a), tr=s&&tripById(s.trip); if(!s||!tr) return; const v=state.vendors.find(x=>x.id===b); const txt=shortText(s,tr,b); const wa=v&&phoneFull(v.wa,v.country); if(wa) window.open('https://wa.me/'+wa+'?text='+encodeURIComponent(txt),'_blank'); else shareText(txt); return; }
+}, true);
+
+/* ===================== v8: путеводитель закупщика — где что покупать по странам и городам ===================== */
+const GCAT={women:'👗',men:'👔',kids:'🧒',home:'🛏️',shoes:'👟',fabric:'🧵',knit:'🧶',jeans:'👖',under:'🧦',wedding:'👰',leather:'👜',acc:'💍',toys:'🧸',cosm:'💄',elec:'📱',appl:'🔌',furn:'🛋️',hh:'🍽️',gold:'🥇',sport:'🏃',tips:'💡'};
+const GCITY={
+  gz:{c:'CN',ru:'Гуанчжоу',en:'Guangzhou'}, yw:{c:'CN',ru:'Иу',en:'Yiwu'}, sz:{c:'CN',ru:'Шэньчжэнь',en:'Shenzhen'}, hm:{c:'CN',ru:'Хумэнь (Дунгуань)',en:'Humen (Dongguan)'}, zl:{c:'CN',ru:'Чжили (Хучжоу)',en:'Zhili (Huzhou)'},
+  hz:{c:'CN',ru:'Ханчжоу',en:'Hangzhou'}, cs:{c:'CN',ru:'Чаншу',en:'Changshu'}, nt:{c:'CN',ru:'Наньтун (Дешицяо)',en:'Nantong (Dieshiqiao)'}, jj:{c:'CN',ru:'Цзиньцзян / Путянь',en:'Jinjiang / Putian'}, wz:{c:'CN',ru:'Вэньчжоу',en:'Wenzhou'},
+  xt:{c:'CN',ru:'Синьтан (Гуанчжоу)',en:'Xintang (Guangzhou)'}, dl:{c:'CN',ru:'Далан (Дунгуань)',en:'Dalang (Dongguan)'}, pu:{c:'CN',ru:'Пуюань (Тунсян)',en:'Puyuan (Tongxiang)'}, hn:{c:'CN',ru:'Хайнин',en:'Haining'}, dt:{c:'CN',ru:'Датан (Чжуцзи)',en:'Datang (Zhuji)'},
+  su:{c:'CN',ru:'Сучжоу',en:'Suzhou'}, st:{c:'CN',ru:'Шаньтоу (Чэнхай)',en:'Shantou (Chenghai)'}, cx:{c:'CN',ru:'Цыси / Нинбо',en:'Cixi / Ningbo'}, fs:{c:'CN',ru:'Фошань',en:'Foshan'}, zs:{c:'CN',ru:'Гучжэнь (Чжуншань)',en:'Guzhen (Zhongshan)'}, kq:{c:'CN',ru:'Шаосин (Кэцяо)',en:'Shaoxing (Keqiao)'}, ur:{c:'CN',ru:'Урумчи',en:'Urumqi'},
+  ist:{c:'TR',ru:'Стамбул',en:'Istanbul'}, bur:{c:'TR',ru:'Бурса',en:'Bursa'}, den:{c:'TR',ru:'Денизли',en:'Denizli'}, ine:{c:'TR',ru:'Инегёль / Кайсери',en:'İnegöl / Kayseri'}, usk:{c:'TR',ru:'Ушак',en:'Uşak'},
+  tas:{c:'UZ',ru:'Ташкент',en:'Tashkent'}, mar:{c:'UZ',ru:'Маргилан',en:'Margilan'}, fer:{c:'UZ',ru:'Наманган / Андижан / Фергана',en:'Namangan / Andijan / Fergana'},
+  bis:{c:'KG',ru:'Бишкек',en:'Bishkek'}, osh:{c:'KG',ru:'Кара-Суу (Ош)',en:'Kara-Suu (Osh)'}, ala:{c:'KZ',ru:'Алматы',en:'Almaty'}, msk:{c:'RU',ru:'Москва',en:'Moscow'}, dxb:{c:'AE',ru:'Дубай',en:'Dubai'}
+};
+/* [город, место, категории, ru, tg, en] */
+const GUIDE=[
+ ['gz','Shahe 沙河',['women','men','kids'],'Самый дешёвый опт одежды в Гуанчжоу. Торговля начинается очень рано утром — к обеду многие уже закрываются.','Арзонтарин яклухтфурӯшии либос дар Гуанчжоу. Савдо субҳи барвақт сар мешавад — то нисфирӯзӣ бисёриҳо мепӯшанд.','The cheapest clothing wholesale in Guangzhou. Trading starts very early — many stalls close by noon.'],
+ ['gz','Baima 白马',['women','men'],'Одежда среднего и выше уровня, много брендов-производителей. Дороже Шахэ, но качество ровнее.','Либоси сатҳи миёна ва болотар, бисёр бренд-истеҳсолкунандагон. Аз Шахэ гаронтар, вале сифат устувортар.','Mid-to-upper clothing, many manufacturer brands. Pricier than Shahe but steadier quality.'],
+ ['gz','Shisanhang 十三行',['women'],'Модная женская одежда, быстро обновляют модели. Часто продают от нескольких штук одной модели.','Либоси мӯди занона, моделҳо зуд нав мешаванд. Аксар аз чанд донаи як модел мефурӯшанд.','Trendy women’s fashion, models change fast. Often sold from a few pieces per model.'],
+ ['gz','Liuhua / Zhanxi 流花·站西',['women','men','kids','shoes'],'Рядом с вокзалом, много покупателей из СНГ — встречаются русскоязычные продавцы и переводчики.','Назди вокзал, харидорони бисёр аз ИДМ — фурӯшандагон ва тарҷумонҳои русзабон ҳастанд.','Next to the railway station, many CIS buyers — Russian-speaking sellers and translators are common.'],
+ ['gz','Zhongda 中大布匹市场',['fabric'],'Огромный рынок тканей и фурнитуры (пуговицы, молнии, кружево). Удобно, если шьёте сами.','Бозори бузурги матоъ ва фурнитура (тугма, молния, тӯр). Агар худатон дӯзед, қулай.','A huge fabric and trims market (buttons, zips, lace). Handy if you sew yourself.'],
+ ['gz','Guihua Road 桂花岗',['leather'],'Квартал оптовых сумок и кожгалантереи.','Маҳаллаи яклухтфурӯшии сумка ва молҳои чармӣ.','A wholesale district for bags and leather goods.'],
+ ['gz','Meibo City 美博城',['cosm'],'Оптовый рынок косметики и товаров для салонов красоты. Проверяйте сроки годности и упаковку.','Бозори яклухти косметика ва молҳо барои салонҳои зебоӣ. Мӯҳлати истифода ва бастаро санҷед.','A cosmetics and beauty-salon wholesale market. Check expiry dates and packaging.'],
+ ['gz','💡',['tips'],'Записывайте павильон полностью: рынок, корпус, этаж, номер. Берите WeChat продавца — без него потом не найти.','Павилионро пурра нависед: бозор, бино, қабат, рақам. WeChat-и фурӯшандаро гиред — бе он баъд ёфтан душвор.','Write the stall down fully: market, building, floor, number. Get the seller’s WeChat — otherwise you won’t find them again.'],
+ ['gz','Yide Road 一德路',['toys','acc'],'Опт игрушек, подарков, праздничных украшений и мелочей.','Яклухти бозичаҳо, тӯҳфаҳо, ороишоти идона ва чизҳои майда.','Wholesale toys, gifts, party decorations and small goods.'],
+ ['gz','Baiyun World Leather 白云世界皮具',['leather'],'Большой центр сумок и кожгалантереи рядом с Гуйхуа.','Маркази калони сумка ва молҳои чармӣ назди Гуйхуа.','A large bags and leather goods centre near Guihua.'],
+ ['gz','Dashatou 大沙头',['elec'],'Рынок телефонов и электроники, в том числе б/у. Проверяйте всё на месте.','Бозори телефон ва электроника, аз ҷумла истифодашуда. Ҳама чизро дар ҷояш санҷед.','A phones and electronics market, including used. Test everything on the spot.'],
+ ['gz','💡',['tips'],'Кантонская ярмарка (Pazhou) — два раза в год, весной и осенью: там сразу много фабрик разных товаров.','Ярмаркаи Кантон (Pazhou) — дар як сол ду бор, баҳор ва тирамоҳ: он ҷо фабрикаҳои зиёди молҳои гуногун якҷоянд.','The Canton Fair (Pazhou) runs twice a year, spring and autumn: many factories of different goods in one place.'],
+ ['gz','💡',['tips'],'На китайский Новый год (январь–февраль) рынки и фабрики закрываются на 2–4 недели — закупайтесь заранее.','Дар Соли нави чинӣ (январ–феврал) бозорҳо ва фабрикаҳо 2–4 ҳафта баста мешаванд — пешакӣ харид кунед.','Around Chinese New Year (January–February) markets and factories close for 2–4 weeks — buy in advance.'],
+ ['hm','Humen 虎门',['women'],'Один из главных центров женской одежды в Китае: фабрики и оптовые торговые центры. Цены часто ниже, чем в Гуанчжоу.','Яке аз марказҳои асосии либоси занона дар Чин: фабрикаҳо ва марказҳои савдои яклухт. Нархҳо аксар аз Гуанчжоу пасттар.','One of China’s main women’s clothing hubs: factories and wholesale malls. Often cheaper than Guangzhou.'],
+ ['zl','Zhili 织里',['kids'],'Крупнейший в Китае центр детской одежды — тысячи фабрик. Лучшее место для детского ассортимента.','Бузургтарин маркази либоси кӯдакона дар Чин — ҳазорҳо фабрика. Ҷои беҳтарин барои молҳои кӯдакона.','China’s largest kids’ clothing hub — thousands of factories. The best place for kids’ ranges.'],
+ ['hz','Sijiqing 四季青',['women'],'Известный рынок женской одежды в Ханчжоу, много новинок и фабричных магазинов.','Бозори маъруфи либоси занона дар Ханчжоу, бисёр молҳои нав ва мағозаҳои фабрикӣ.','A well-known women’s clothing market in Hangzhou, lots of new styles and factory outlets.'],
+ ['cs','Changshu 常熟',['women','men','knit'],'Огромный рынок одежды и трикотажа, цены оптовые. Удобен для куртки, пуховики, трикотаж.','Бозори бузурги либос ва трикотаж, нархҳо яклухт. Барои куртка, пухак ва трикотаж қулай.','A huge clothing and knitwear market with wholesale prices. Good for jackets, down coats, knitwear.'],
+ ['nt','Dieshiqiao 叠石桥',['home'],'Главный в Китае центр постельного белья и домашнего текстиля: комплекты, одеяла, подушки, покрывала.','Маркази асосии ҷойхоб ва матоъҳои хонагӣ дар Чин: маҷмӯаҳо, кӯрпа, болишт, рӯйпӯш.','China’s main hub for bedding and home textiles: sets, duvets, pillows, bedspreads.'],
+ ['jj','Jinjiang · Putian 晋江·莆田',['shoes','sport'],'Центр производства обуви и спортивной одежды. Много фабрик кроссовок; осторожно с копиями брендов.','Маркази истеҳсоли пойафзол ва либоси варзишӣ. Фабрикаҳои зиёди кроссовка; аз нусхаи брендҳо эҳтиёт шавед.','A footwear and sportswear production centre. Many sneaker factories; beware of brand copies.'],
+ ['wz','Wenzhou 温州',['shoes','leather'],'Кожаная обувь и изделия из кожи — много фабрик.','Пойафзоли чармӣ ва молҳои чармӣ — фабрикаҳо бисёранд.','Leather shoes and leather goods — many factories.'],
+ ['xt','Xintang 新塘',['jeans'],'«Джинсовая столица» Китая: фабрики джинсов и денима.','«Пойтахти ҷинс»-и Чин: фабрикаҳои ҷинс ва деним.','China’s “jeans capital”: denim and jeans factories.'],
+ ['dl','Dalang 大朗',['knit'],'Центр свитеров и трикотажа: фабрики и оптовый рынок.','Маркази свитер ва трикотаж: фабрикаҳо ва бозори яклухт.','A sweater and knitwear hub: factories and a wholesale market.'],
+ ['pu','Puyuan 濮院',['knit'],'Известен кашемировыми и шерстяными свитерами.','Бо свитерҳои кашмирӣ ва пашмин маъруф аст.','Known for cashmere and wool sweaters.'],
+ ['hn','Haining 海宁',['leather'],'Кожаные куртки, дублёнки, меха — крупный кожевенный центр.','Курткаҳои чармӣ, пӯстин, мӯина — маркази калони чарм.','Leather jackets, sheepskin coats, fur — a large leather hub.'],
+ ['dt','Datang 大唐',['under'],'«Столица носков»: огромное производство носков и колготок.','«Пойтахти ҷӯроб»: истеҳсоли бузурги ҷӯроб ва колготка.','The “sock capital”: huge production of socks and tights.'],
+ ['su','Huqiu 虎丘',['wedding'],'Город свадебных и вечерних платьев — сотни ателье и магазинов.','Шаҳраки либосҳои арӯсӣ ва шомгоҳӣ — садҳо ателье ва мағоза.','A wedding and evening dress town — hundreds of studios and shops.'],
+ ['yw','Futian 福田 (International Trade City)',['acc','toys','hh','cosm'],'Гигантский рынок мелких товаров: бижутерия, игрушки, хозтовары, канцелярия, подарки. У каждого павильона свой минимальный заказ.','Бозори азими молҳои майда: ороишот, бозича, моли хоҷагӣ, лавозимоти хаттӣ, тӯҳфа. Ҳар павилион фармоиши ҳадди ақали худро дорад.','A giant small-goods market: jewellery, toys, household, stationery, gifts. Each stall has its own minimum order.'],
+ ['yw','💡',['tips'],'В Иу удобно работать через агента: он соберёт товар от разных продавцов и сдаст в карго одной партией.','Дар Иу бо агент кор кардан қулай: ӯ молро аз фурӯшандагони гуногун ҷамъ карда, як партия ба карго медиҳад.','In Yiwu an agent is handy: they collect goods from different sellers and hand them to cargo as one shipment.'],
+ ['sz','Huaqiangbei 华强北',['elec'],'Крупнейший рынок электроники: телефоны, аксессуары, комплектующие. Проверяйте оригинал/копию и гарантию.','Бузургтарин бозори электроника: телефон, лавозимот, қисмҳо. Аслӣ ё нусха будан ва кафолатро санҷед.','The largest electronics market: phones, accessories, components. Check original vs copy and warranty.'],
+ ['sz','SEG Plaza 赛格广场',['elec'],'Электронный центр в Хуацянбэй: комплектующие, аксессуары, гаджеты.','Маркази электроника дар Хуасянбей: қисмҳо, лавозимот, гаҷетҳо.','An electronics centre in Huaqiangbei: components, accessories, gadgets.'],
+ ['zs','Guzhen 古镇',['furn','hh'],'«Столица светильников»: люстры, лампы, LED — по фабричным ценам.','«Пойтахти чароғҳо»: қандил, чароғ, LED — бо нархи фабрикӣ.','The “lighting capital”: chandeliers, lamps, LED — at factory prices.'],
+ ['st','Chenghai 澄海',['toys'],'Центр производства игрушек. Спрашивайте сертификаты безопасности для детских товаров.','Маркази истеҳсоли бозичаҳо. Барои молҳои кӯдакона сертификати бехатариро пурсед.','A toy production centre. Ask for safety certificates for children’s goods.'],
+ ['cx','Cixi · Ningbo 慈溪·宁波',['appl'],'Мелкая бытовая техника: чайники, утюги, фены, обогреватели. Проверяйте вилку и напряжение (в Таджикистане 220 В, европейская вилка).','Техникаи маишии хурд: чойҷӯш, дарзмол, фен, гармкунак. Вилка ва шиддатро санҷед (дар Тоҷикистон 220 В, вилкаи аврупоӣ).','Small home appliances: kettles, irons, hairdryers, heaters. Check plug and voltage (Tajikistan: 220 V, European plug).'],
+ ['fs','Lecong 乐从 · Shunde 顺德',['furn','appl'],'Лэцун — огромный рынок мебели; Шуньдэ — бытовая техника. Мебель тяжёлая — заранее считайте карго по объёму.','Лэсун — бозори бузурги мебел; Шундэ — техникаи маишӣ. Мебел вазнин аст — каргоро пешакӣ аз рӯи ҳаҷм ҳисоб кунед.','Lecong — a huge furniture market; Shunde — home appliances. Furniture is bulky — estimate cargo by volume first.'],
+ ['kq','Keqiao 柯桥 (China Textile City)',['fabric'],'Один из крупнейших рынков тканей в мире — рулонами и метражом.','Яке аз бузургтарин бозорҳои матоъ дар ҷаҳон — бо рулон ва метр.','One of the world’s largest fabric markets — by the roll and by the metre.'],
+ ['ur','Bianjiang 边疆宾馆',['women','men','kids','shoes','hh'],'Рынок, ориентированный на покупателей из Средней Азии; много русскоязычных продавцов. Ближе к дому, но выбор меньше, чем в Гуанчжоу.','Бозор барои харидорони Осиёи Марказӣ; фурӯшандагони русзабон бисёр. Ба хона наздиктар, вале интихоб аз Гуанчжоу камтар.','A market aimed at Central Asian buyers; many Russian-speaking sellers. Closer to home but less choice than Guangzhou.'],
+ ['ist','Laleli',['women','men'],'Главный район опта одежды для покупателей из СНГ; много русскоязычных продавцов. Цены часто в долларах, товар сериями.','Маҳаллаи асосии яклухтфурӯшии либос барои харидорони ИДМ; фурӯшандагони русзабон бисёр. Нархҳо аксар бо доллар, мол бо серия.','The main clothing wholesale district for CIS buyers; many Russian-speaking sellers. Prices often in dollars, goods in series.'],
+ ['ist','Merter',['women','men','kids','fabric'],'Огромный текстильный и оптовый район: фабрики и шоурумы одежды, ткани.','Маҳаллаи бузурги нассоҷӣ ва яклухт: фабрикаҳо ва шоурумҳои либос, матоъ.','A huge textile and wholesale district: clothing factories, showrooms and fabrics.'],
+ ['ist','Osmanbey',['women'],'Модная женская одежда, много турецких брендов-производителей.','Либоси мӯди занона, бисёр брендҳои туркӣ-истеҳсолкунанда.','Fashionable women’s clothing, many Turkish manufacturer brands.'],
+ ['ist','Zeytinburnu',['leather','fabric','kids'],'Кожа, дублёнки, текстиль; много швейных цехов.','Чарм, пӯстин, матоъ; сехҳои дӯзандагӣ бисёр.','Leather, sheepskin, textiles; many sewing workshops.'],
+ ['ist','Bayrampaşa (Aymakoop)',['shoes'],'Большой оптовый центр обуви.','Маркази калони яклухтфурӯшии пойафзол.','A large shoe wholesale centre.'],
+ ['ist','Gedikpaşa',['shoes','leather'],'Обувь и сумки, мелкий опт.','Пойафзол ва сумка, яклухти майда.','Shoes and bags, small wholesale.'],
+ ['ist','Mahmutpaşa · Tahtakale',['hh','home','toys'],'Дешёвые хозтовары, посуда, текстиль для дома, игрушки — рядом с Египетским базаром.','Моли хоҷагии арзон, зарф, матоъҳои хонагӣ, бозича — назди Бозори Мисрӣ.','Cheap household goods, kitchenware, home textiles, toys — near the Spice Bazaar.'],
+ ['ist','Kapalıçarşı (Grand Bazaar)',['gold','acc'],'Золото, ювелирные изделия, бижутерия. Сверяйте пробу и вес.','Тилло, заргарӣ, ороишот. Иёр ва вазнро санҷед.','Gold, jewellery, costume jewellery. Check purity and weight.'],
+ ['ist','Perpa',['elec'],'Торговый центр электроники и компьютерной техники.','Маркази савдои электроника ва техникаи компютерӣ.','An electronics and computer trade centre.'],
+ ['ist','💡',['tips'],'В воскресенье многие оптовые магазины Лалели и Мертера могут быть закрыты — планируйте дни заранее.','Рӯзи якшанбе бисёр мағозаҳои яклухти Лалели ва Мертер метавонанд баста бошанд — рӯзҳоро пешакӣ нақша кунед.','On Sundays many wholesale shops in Laleli and Merter may be closed — plan your days ahead.'],
+ ['ist','💡',['tips'],'Подпишитесь на Instagram шоурумов — новинки выкладывают там, можно потом заказывать удалённо.','Ба Instagram-и шоурумҳо обуна шавед — молҳои навро он ҷо мегузоранд, баъд аз дур фармоиш додан мумкин.','Follow showrooms on Instagram — new items appear there, so you can reorder remotely later.'],
+ ['bur','Bursa',['home','kids'],'Известна домашним текстилем: полотенца, халаты, постельное; много производителей детской одежды.','Бо матоъҳои хонагӣ маъруф: дастмол, халат, ҷойхоб; истеҳсолкунандагони бисёри либоси кӯдакона.','Known for home textiles: towels, bathrobes, bedding; many kids’ clothing makers.'],
+ ['den','Denizli',['home'],'Столица турецких полотенец и халатов — фабричные цены.','Пойтахти дастмол ва халатҳои туркӣ — нархҳои фабрикӣ.','The capital of Turkish towels and bathrobes — factory prices.'],
+ ['usk','Uşak',['home'],'Пледы, одеяла, ковры.','Пледҳо, кӯрпаҳо, қолинҳо.','Throws, blankets, carpets.'],
+ ['ine','İnegöl · Kayseri',['furn'],'Главные мебельные центры Турции.','Марказҳои асосии мебели Туркия.','Turkey’s main furniture hubs.'],
+ ['tas','Abu Sahiy',['women','men','kids','shoes','hh'],'Большой оптовый рынок: одежда, обувь, товары из Китая и местного производства.','Бозори калони яклухт: либос, пойафзол, молҳои чинӣ ва маҳаллӣ.','A big wholesale market: clothing, shoes, Chinese and local goods.'],
+ ['tas','Ippodrom',['women','men','kids','home','hh'],'Огромный вещевой рынок: одежда, текстиль, хозтовары.','Бозори азими либос: либос, матоъ, моли хоҷагӣ.','A huge market: clothing, textiles, household goods.'],
+ ['tas','Kadysheva',['women'],'Рынок одежды, много женского ассортимента.','Бозори либос, бисёр молҳои занона.','A clothing market with lots of women’s ranges.'],
+ ['tas','Chorsu',['hh'],'Старый базар: посуда, хозтовары, национальные товары.','Бозори кӯҳна: зарф, моли хоҷагӣ, молҳои миллӣ.','The old bazaar: kitchenware, household and traditional goods.'],
+ ['tas','Malika',['elec'],'Рынок электроники и компьютеров.','Бозори электроника ва компютер.','An electronics and computer market.'],
+ ['mar','Margilan (Yodgorlik)',['fabric'],'Шёлк и национальные ткани — атлас, адрас; фабрика «Ёдгорлик».','Абрешим ва матоъҳои миллӣ — атлас, адрас; фабрикаи «Ёдгорлик».','Silk and national fabrics — atlas, adras; the Yodgorlik factory.'],
+ ['fer','🏭',['knit','kids','home','women'],'Много текстильных и трикотажных фабрик (хлопок): футболки, детское, постельное. Можно заказать свою партию.','Фабрикаҳои зиёди нассоҷӣ ва трикотаж (пахта): футболка, кӯдакона, ҷойхоб. Партияи худро фармоиш додан мумкин.','Many textile and knitwear factories (cotton): T-shirts, kids’ wear, bedding. You can order your own batch.'],
+ ['bis','Dordoi · Дордой',['women','men','kids','shoes','hh'],'Один из крупнейших оптовых рынков региона — тысячи контейнеров. Записывайте номер контейнера и проход.','Яке аз бузургтарин бозорҳои яклухти минтақа — ҳазорҳо контейнер. Рақами контейнер ва гузаргоҳро нависед.','One of the region’s largest wholesale markets — thousands of containers. Note the container number and aisle.'],
+ ['bis','Madina · Мадина',['fabric'],'Ткани и всё для шитья.','Матоъ ва ҳама чиз барои дӯзандагӣ.','Fabrics and sewing supplies.'],
+ ['bis','🏭',['women','men','kids'],'Много швейных цехов, шьют на заказ партии для Казахстана и России — можно заказать свою модель.','Сехҳои дӯзандагии зиёд, барои Қазоқистон ва Русия партия медӯзанд — модели худро фармоиш додан мумкин.','Many sewing workshops making batches for Kazakhstan and Russia — you can order your own model.'],
+ ['osh','Kara-Suu · Кара-Суу',['women','men','kids','hh'],'Большой оптовый рынок китайских товаров рядом с Ошем.','Бозори калони яклухти молҳои чинӣ назди Ош.','A big wholesale market for Chinese goods near Osh.'],
+ ['ala','Барахолка',['women','men','kids','shoes','hh'],'Огромный комплекс оптовых рынков одежды и обуви.','Маҷмааи азими бозорҳои яклухти либос ва пойафзол.','A huge complex of clothing and shoe wholesale markets.'],
+ ['msk','Садовод',['women','men','kids','shoes','hh'],'Крупный оптовый рынок одежды и всего подряд; удобен для небольших партий.','Бозори калони яклухти либос ва ҳама чиз; барои партияҳои хурд қулай.','A large wholesale market for clothing and everything else; good for small batches.'],
+ ['msk','Южные ворота',['women','men','hh'],'Ещё один большой оптовый рынок.','Боз як бозори калони яклухт.','Another large wholesale market.'],
+ ['dxb','Gold Souk',['gold'],'Золотой рынок: сверяйте пробу, вес и цену за грамм.','Бозори тилло: иёр, вазн ва нархи як граммро санҷед.','The gold market: check purity, weight and price per gram.'],
+ ['dxb','Dragon Mart',['hh','furn','elec','toys'],'Огромный центр китайских товаров — для тех, кто не едет в Китай.','Маркази азими молҳои чинӣ — барои онҳое, ки ба Чин намераванд.','A huge Chinese-goods centre — for those not travelling to China.'],
+ ['dxb','Deira · Naif Souk',['women','men','acc'],'Недорогая одежда и аксессуары, торг уместен.','Либос ва лавозимоти арзон, савдо мувофиқ аст.','Inexpensive clothing and accessories; bargaining is fine.'],
+ ['dxb','Textile Souk',['fabric'],'Текстильный рынок в Бур-Дубае: ткани, платки.','Бозори матоъ дар Бур-Дубай: матоъ, рӯймол.','The textile souk in Bur Dubai: fabrics and scarves.'],
+ ['msk','Горбушка',['elec'],'Известный торговый центр электроники и техники.','Маркази маъруфи савдои электроника ва техника.','A well-known electronics and appliances centre.'],
+ ['msk','Савёловский',['elec'],'Компьютеры, комплектующие, телефоны.','Компютер, қисмҳо, телефон.','Computers, components, phones.'],
+ ['dxb','Al Fahidi St.',['elec'],'Магазины электроники и техники в Бур-Дубае.','Мағозаҳои электроника ва техника дар Бур-Дубай.','Electronics and appliance shops in Bur Dubai.'],
+];
+/* общие советы по видам товара */
+const GTIPS={
+  kids:['Для детского берите сертификаты и проверяйте швы и фурнитуру — маленькие детали опасны.','Барои кӯдакона сертификат гиред ва дарзҳо ва фурнитураро санҷед — қисмҳои хурд хатарноканд.','For kids’ goods get certificates and check seams and trims — small parts are dangerous.'],
+  home:['Постельное: уточняйте размеры (1,5-спальное, евро), состав (хлопок, сатин, бязь) и плотность ткани.','Ҷойхоб: андоза (якуним, евро), таркиб (пахта, сатин, бӯз) ва зичии матоъро пурсед.','Bedding: check sizes (single, euro), composition (cotton, sateen, calico) and fabric density.'],
+  elec:['Электроника: проверяйте оригинал/копию, гарантию, вилку и 220 В. Телефоны — версию (глобальная) и язык меню.','Электроника: аслӣ/нусха, кафолат, вилка ва 220 В-ро санҷед. Телефон — версия (глобалӣ) ва забони меню.','Electronics: check original vs copy, warranty, plug and 220 V. Phones — global version and menu language.'],
+  appl:['Техника: просите инструкцию на русском, проверяйте вилку (европейская) и запасные части.','Техника: дастурро бо русӣ пурсед, вилка (аврупоӣ) ва қисмҳои эҳтиётиро санҷед.','Appliances: ask for a Russian manual, check the plug (European) and spare parts.'],
+  shoes:['Обувь: проверяйте размерную сетку (китайская бывает меньше), берите на пробу пару каждого размера.','Пойафзол: андозаҳоро санҷед (чинӣ хурдтар мешавад), аз ҳар андоза як ҷуфт барои озмоиш гиред.','Shoes: check the size chart (Chinese runs small), take a test pair of each size.'],
+  women:['Одежда: берите сначала по 1–2 серии новой модели — проверьте, как продаётся, потом дозаказывайте.','Либос: аввал аз модели нав 1–2 серия гиред — бинед чӣ тавр фурӯхта мешавад, баъд илова фармоиш диҳед.','Clothing: first take 1–2 series of a new model — see how it sells, then reorder.'],
+  furn:['Мебель тяжёлая и объёмная — карго считают по м³; заранее узнайте цену и упаковку (обрешётку).','Мебел вазнин ва калон — каргоро аз рӯи м³ ҳисоб мекунанд; нарх ва бастабандиро пешакӣ пурсед.','Furniture is heavy and bulky — cargo is charged per m³; check price and crating in advance.'],
+  toys:['Игрушки: проверяйте мелкие детали и батарейки, для малышей берите с сертификатом. Объёмные игрушки карго часто считает по кубу.','Бозичаҳо: қисмҳои хурд ва батареяро санҷед, барои кӯдакони хурд бо сертификат гиред. Бозичаҳои калонро карго аксар аз рӯи куб ҳисоб мекунад.','Toys: check small parts and batteries; for toddlers buy certified. Bulky toys are often charged by volume.'],
+  cosm:['Косметика: смотрите срок годности (лучше больше года) и упаковку. Жидкости и аэрозоли карго берёт не всегда — спросите заранее.','Косметика: мӯҳлати истифода (беҳтар зиёда аз як сол) ва бастаро бинед. Моеъҳо ва аэрозолҳоро карго на ҳамеша мегирад — пешакӣ пурсед.','Cosmetics: check expiry (preferably over a year) and packaging. Cargo does not always take liquids and aerosols — ask first.'],
+  fabric:['Ткани: просите образцы, уточняйте ширину рулона и плотность. Цвет в разных партиях может отличаться.','Матоъ: намуна пурсед, бари рулон ва зичиро аниқ кунед. Ранг дар партияҳои гуногун метавонад фарқ кунад.','Fabrics: ask for samples, check roll width and density. Colour may differ between batches.'],
+  hh:['Посуда бьётся: просите крепкую упаковку с пенопластом и снимайте коробки на фото перед отправкой.','Зарф мешиканад: бастабандии мустаҳкам бо пенопласт пурсед ва қуттиҳоро пеш аз фиристодан сурат гиред.','Kitchenware breaks: ask for strong packing with foam and photograph the boxes before shipping.'],
+  leather:['Кожа: проверьте, натуральная или искусственная (запах, срез), молнии и фурнитуру.','Чарм: санҷед, ки табиӣ аст ё сунъӣ (бӯй, бурриш), молния ва фурнитура.','Leather: check if it is real or faux (smell, edge), zips and hardware.'],
+  sport:['Спортивное: осторожно с подделками брендов — их могут изъять на таможне. Надёжнее товар без чужих логотипов.','Варзишӣ: аз нусхаи брендҳо эҳтиёт шавед — дар гумрук гирифта мешаванд. Моли бе логотипи бегона боэътимодтар.','Sportswear: beware of brand fakes — customs may seize them. Goods without others’ logos are safer.'],
+  gold:['Золото: сверяйте пробу (585, 750), вес на весах и цену за грамм в 2–3 местах.','Тилло: иёр (585, 750), вазн дар тарозу ва нархи граммро дар 2–3 ҷо санҷед.','Gold: check purity (585, 750), weight on scales and price per gram in 2–3 places.']
+};
+function gCity(k){ const c=GCITY[k]; return c?(lang==='en'?c.en:c.ru):k; }
+let guideSt={c:null,cat:null,q:''};
+function guideSheet(country){
+  if(country!==undefined) guideSt.c=country; const LI=lang==='tg'?4:lang==='en'?5:3;
+  const draw=()=>{ const q=guideSt.q.toLowerCase().trim();
+    const rows=GUIDE.filter(g=>{ const cc=GCITY[g[0]]||{}; if(guideSt.c&&cc.c!==guideSt.c) return false; if(guideSt.cat&&!g[2].includes(guideSt.cat)) return false; if(q&&!(gCity(g[0])+' '+g[1]+' '+g[LI]+' '+g[2].map(k=>L['gc_'+k]).join(' ')).toLowerCase().includes(q)) return false; return true; });
+    const byCity={}; for(const g of rows) (byCity[g[0]]=byCity[g[0]]||[]).push(g);
+    const tip=guideSt.cat&&GTIPS[guideSt.cat]?`<div class="pc-ok" style="margin:6px 0 10px">💡 ${esc(GTIPS[guideSt.cat][LI-3])}</div>`:'';
+    openSheet(`<h3>🗺️ ${L.gdTitle}</h3><p class="lead">${L.gdLead}</p>
+      <div class="field"><input id="gd-q" type="search" placeholder="🔎 ${L.gdSearch}" value="${esc(guideSt.q)}"></div>
+      <div class="chips gd-c"><button class="chip ${!guideSt.c?'on':''}" data-gdc="">🌍 ${L.gdAll}</button>${['CN','TR','UZ','KG','KZ','RU','AE'].map(k=>`<button class="chip ${guideSt.c===k?'on':''}" data-gdc="${k}">${TCOUNTRY[k].f} ${L['cn_'+k]}</button>`).join('')}</div>
+      <div class="chips gd-k"><button class="chip ${!guideSt.cat?'on':''}" data-gdk="">${L.gdAllGoods}</button>${Object.keys(GCAT).map(k=>`<button class="chip ${guideSt.cat===k?'on':''}" data-gdk="${k}">${GCAT[k]} ${L['gc_'+k]}</button>`).join('')}</div>
+      ${tip}
+      <div class="gd">${Object.keys(byCity).map(ck=>{ const cc=GCITY[ck]; return `<div class="gd-city"><div class="gd-h">${(TCOUNTRY[cc.c]||TCOUNTRY.XX).f} <b>${esc(gCity(ck))}</b></div>${byCity[ck].map(g=>`<div class="gd-it"><div class="gd-p"><span>${g[1]==='💡'||g[1]==='🏭'?g[1]:'📍 <b>'+esc(g[1])+'</b>'}</span><span class="gd-cats">${g[2].map(k=>GCAT[k]).join(' ')}</span></div><p>${esc(g[LI])}</p>${g[1]!=='💡'&&g[1]!=='🏭'?`<a class="link-btn" href="https://maps.google.com/?q=${encodeURIComponent(g[1].replace(/[^\x20-\x7EА-яЁё·]/g,'').trim()+' '+(cc.en||''))}" target="_blank" rel="noopener">${L.vfMap} ↗</a>`:''}</div>`).join('')}</div>`; }).join('')||`<div class="sh-empty">${L.srNone}</div>`}</div>
+      <p class="note">${L.gdNote}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+    const qi=$('#gd-q'); qi.addEventListener('input',()=>{ guideSt.q=qi.value; clearTimeout(qi._t); qi._t=setTimeout(()=>{ const pos=qi.selectionStart; draw(); const n=$('#gd-q'); n.focus(); try{ n.setSelectionRange(pos,pos); }catch(e){} },250); });
+    sheet.querySelectorAll('.gd-c .chip.on,.gd-k .chip.on').forEach(on=>{ const row=on.parentElement; row.scrollLeft=Math.max(0,on.offsetLeft-row.offsetLeft-row.clientWidth/2+on.clientWidth/2); });
+    sheet.querySelectorAll('[data-gdc]').forEach(b=>b.onclick=()=>{ guideSt.c=b.dataset.gdc||null; draw(); });
+    sheet.querySelectorAll('[data-gdk]').forEach(b=>b.onclick=()=>{ guideSt.cat=b.dataset.gdk||null; draw(); });
+  };
+  draw();
+}
+document.addEventListener('click', e=>{ const g=e.target.closest('[data-guide]'); if(g){ e.stopImmediatePropagation(); const tr=activeTrip(); guideSheet(g.dataset.guide==='trip'&&tr?tr.country:null); } }, true);
+
+/* ===================== v8: демо-режим — маленькие примеры, настоящие данные спрятаны и целы ===================== */
+/* В демо всё хранится под отдельным ключом 'app_demo'. Семья, напоминания на телефон,
+   автокопии и награды в демо выключены, чтобы примеры никуда не попали. */
+function demoData(){
+  const D=n=>dkey(addDays(new Date(),n)), now=new Date(), mk=monthKey(now);
+  const day2=Math.min(28,addDays(now,2).getDate());
+  const loans=[
+    {id:'dl1',name:'Алиф Банк',short:'А',color:'#0E7C86',note:'На товар',total:24000,paid:10000,monthly:2000,dueDay:day2,rate:24,term:12},
+    {id:'dl2',name:'Эсхата',short:'Э',color:'#1E8A50',note:'Под залог золота',total:12000,paid:7000,monthly:1000,dueDay:20,rate:20,gold:8},
+    {id:'dl3',name:'Ориёнбонк',short:'О',color:'#2E5BBE',note:'',total:6000,paid:6000,monthly:600,dueDay:5,rate:18}];
+  const payments=[]; let pn=0;
+  for(const l of loans.slice(0,2)) for(let k=2;k>=0;k--){ const dd=addDays(dueAt(lastDueIdx(l.dueDay)-k,l.dueDay),-1); payments.push({id:'dp'+(++pn),loanId:l.id,amount:l.monthly,date:ymd(dd)}); }
+  const sales=[], exp=[]; for(let i=20;i>=1;i--){ const d=D(-i), wd=parseYmd(d).getDay(); const v=wd===5?0:900+((i*37)%7)*110+(wd===6||wd===0?350:0); if(v) sales.push({id:'dsl'+i,date:d,sum:v,ts:i}); }
+  const m1=mk+'-01', m3=mk+'-03';
+  exp.push({id:'de1',date:m1,cat:'rent',sum:2500,note:'',ts:1},{id:'de2',date:m3,cat:'salary',sum:1500,note:'',ts:2},{id:'de3',date:D(-6),cat:'power',sum:180,note:'',ts:3},{id:'de4',date:D(-4),cat:'transport',sum:120,note:'',ts:4});
+  const cust=[{id:'dcu1',name:'Фарида',phone:''},{id:'dcu2',name:'Нигина',phone:''}];
+  const cdebt=[{id:'dd1',c:'dcu1',t:'debt',a:600,d:D(-14),due:D(-2),n:'Платье, 2 шт',ts:1},{id:'dd2',c:'dcu1',t:'pay',a:200,d:D(-5),n:'',ts:2},{id:'dd3',c:'dcu2',t:'debt',a:450,d:D(-3),due:D(10),n:'Костюм детский',ts:3}];
+  const bills=[{id:'db1',name:'Свет',ic:'⚡',sum:180,day:15,own:'home',paid:{},from:mk},{id:'db2',name:'Интернет',ic:'📶',sum:120,day:25,own:'shop',paid:{},from:mk}];
+  const goals=[{id:'dg1',name:'Холодильник',ic:'🧊',target:6000,date:D(150)}];
+  const envTx=[{id:'dt1',e:'g_dg1',a:1500,d:D(-20),n:''},{id:'dt2',e:'loan',a:400,d:D(-1),n:''},{id:'dt3',e:'cush',a:1000,d:D(-15),n:''}];
+  const inv=[{id:'di1',d:D(-40),ph:false,name:'Платье летнее',cat:'',cost:210,price:320,sup:'Merter Moda',low:1,sizes:{'44':3,'46':1,'48':2}},
+    {id:'di2',d:D(-40),ph:false,name:'Брюки женские',cat:'',cost:190,price:290,sup:'Merter Moda',low:1,sizes:{'44':2,'46':0,'48':3}}];
+  const sup=[{id:'ds1',name:'Фирюза (опт)',sum:3000,due:D(4),paid:false,phone:'',note:'Платки'}];
+  const mon=L.monthsNom||MONTHS.ru.full||[];
+  const trips=[
+    {id:'dtr1',country:'CN',city:'Гуанчжоу',from:D(-5),to:D(4),budget:60000,cmode:'kg',cargo:null,ckg:3.5,csum:null,ccur:'USD',cur:'CNY',rate:null,name:'Гуанчжоу · '+String(mon[now.getMonth()]||'').toLowerCase()},
+    {id:'dtr0',country:'TR',city:'Стамбул',from:D(-70),to:D(-63),budget:20000,cmode:'kg',cargo:null,ckg:4,csum:null,ccur:'USD',cur:'USD',rate:null,name:'Стамбул · '+String(mon[addDays(now,-70).getMonth()]||'').toLowerCase(),done:true}];
+  const vendors=[
+    {id:'dv1',trip:'dtr1',kind:'showroom',country:'CN',city:'Гуанчжоу',name:'Lily Fashion',market:'Baima',floor:'3',no:'3125',wc:'lily_demo',pay:['wechatpay','cash'],rq:5,rp:4,rf:5,ts:1},
+    {id:'dv2',trip:'dtr1',kind:'factory',country:'CN',city:'Гуанчжоу',name:'Mei Kids',market:'Shahe',floor:'2',no:'208',wc:'meikids_demo',pay:['alipay'],rq:4,rp:5,ts:2},
+    {id:'dv3',trip:'dtr1',kind:'shop',country:'CN',city:'Гуанчжоу',name:'Shahe 5F-512',market:'Shahe',floor:'5',no:'512',wc:'shahe512_demo',pay:['cash'],ts:3},
+    {id:'dv4',trip:'dtr0',kind:'showroom',country:'TR',city:'Стамбул',name:'Merter Moda',market:'Merter',no:'14',pay:['cash'],rq:4,rp:4,rf:5,ts:0}];
+  const tprods=[
+    {id:'dp1',trip:'dtr1',vendor:'dv1',ts:6,d:D(-4),ph:0,cur:'CNY',price:68,name:'Платье',kind:'dress',sizes:'S–XL',colors:'чёрный, беж',moq:5,dec:'buy',qty:20,fav:true},
+    {id:'dp2',trip:'dtr1',vendor:'dv1',ts:5,d:D(-4),ph:0,cur:'CNY',price:55,name:'Брюки',kind:'pants',sizes:'S–XL',moq:5,dec:'buy',qty:10},
+    {id:'dp3',trip:'dtr1',vendor:'dv2',ts:4,d:D(-3),ph:0,cur:'CNY',price:32,name:'Костюм детский',kind:'kids',sizes:'98–128',moq:10,dec:'buy',qty:30},
+    {id:'dp4',trip:'dtr1',vendor:'dv2',ts:3,d:D(-3),ph:0,cur:'CNY',price:18,name:'Футболка',kind:'tee',sizes:'98–128',dec:'maybe'},
+    {id:'dp5',trip:'dtr1',vendor:'dv3',ts:2,d:D(-2),ph:0,cur:'CNY',price:120,name:'Куртка',kind:'jacket',sizes:'M–3XL',dec:'buy',qty:6},
+    {id:'dp6',trip:'dtr1',vendor:'dv3',ts:1,d:D(-2),ph:0,cur:'CNY',price:45,name:'Свитер',kind:'sweater',dec:'no'},
+    {id:'dp7',trip:'dtr0',vendor:'dv4',ts:1,d:D(-68),ph:0,cur:'USD',price:9,name:'Платье',kind:'dress',sizes:'44–50',dec:'buy',qty:4,ser:5},
+    {id:'dp8',trip:'dtr0',vendor:'dv4',ts:0,d:D(-68),ph:0,cur:'USD',price:8,name:'Брюки',kind:'pants',sizes:'44–50',dec:'buy',qty:3,ser:4}];
+  const torders=[{id:'do1',trip:'dtr1',vendor:'dv1',st:'paid',cur:'CNY',total:1910,paid:1910},{id:'do2',trip:'dtr1',vendor:'dv2',st:'sent',cur:'CNY',total:960,paid:960},{id:'do0',trip:'dtr0',vendor:'dv4',st:'came',cur:'USD',total:276,paid:276}];
+  const texp=[{id:'dx1',trip:'dtr1',cat:'hotel',a:300,cur:'CNY',d:D(-5)},{id:'dx2',trip:'dtr1',cat:'taxi',a:80,cur:'CNY',d:D(-4)},{id:'dx3',trip:'dtr1',cat:'food',a:120,cur:'CNY',d:D(-3)}];
+  const cargoCo=[{id:'dcc1',ts:2,name:'Демо Карго',country:'CN',ph:'',wa:'',wc:'democargo_cn',code:'DM-0471',addrFrom:'广州市白云区 示例路 1号 仓库 (пример)',whPh:'',addrTo:'Душанбе (пример)',mode:'kg',rate:3.5,rcur:'USD',days:18},
+    {id:'dcc2',ts:1,name:'Демо Карго TR',country:'TR',ph:'',wa:'',wc:'',code:'DM-TR-08',addrFrom:'Merter, İstanbul (örnek)',whPh:'',addrTo:'Душанбе (пример)',mode:'kg',rate:4,rcur:'USD',days:16}];
+  const cargo=[{id:'dcg1',trip:'dtr1',ts:2,co:'dcc1',vendors:['dv1','dv2'],st:'sent',dt:{wh:D(-3),sent:D(-2)},sent:D(-2),eta:D(16),places:3,track:'',mode:'kg',kg:null,m3:null,rate:3.5,cur:'USD',pack:null,total:null,paid:false,note:'',ph:0},
+    {id:'dcg0',trip:'dtr0',ts:1,co:'dcc2',vendors:['dv4'],st:'got',dt:{wh:D(-63),sent:D(-62),tj:D(-45),got:D(-44)},sent:D(-62),eta:D(-46),places:1,track:'',mode:'kg',kg:18.5,m3:0.12,rate:4,cur:'USD',pack:3,total:null,paid:true,note:'',ph:0,recv:{dp7:20,dp8:12}}];
+  return {loans,payments,gold:{grams:8,price:900},shop:{exp,sales},profile:null,envTx,sup,stock:[],planB:null,misc:{},
+    cust,cdebt,home:[],bills,goals,promos:[],shopList:[],inv,invLog:[],prices:[],trips,vendors,tprods,torders,texp,cargo,cargoCo,dayx:{}};
+}
+function demoSheet(){
+  openSheet(`<h3>🎓 ${L.dmTitle}</h3><p class="lead">${L.dmLead}</p><ul class="dm-l">${L.dmPoints.map(x=>`<li>${x}</li>`).join('')}</ul>
+    <button class="btn btn-primary btn-full" id="dm-go">🎓 ${L.dmOn}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  $('#dm-go').onclick=()=>demoOn(); }
+function demoOn(){ try{ persist(); localStorage.setItem('app_demo',JSON.stringify(demoData())); localStorage.setItem('mk_demo','1'); localStorage.setItem('tab_v1','today'); }catch(e){ toast(L.saveFail); return; } location.reload(); }
+function demoOff(){ window.__noPersist=true; try{ localStorage.removeItem('mk_demo'); localStorage.removeItem('app_demo'); }catch(e){} location.reload(); }
+function demoOffSheet(){ openSheet(`<h3>${L.dmExitQ}</h3><p class="lead">${L.dmExitLead}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="dm-x">${L.dmExit}</button></div>`); $('#dm-x').onclick=()=>demoOff(); }
+function demoBlock(){ return `<div class="sec-block"><label>🎓 ${L.dmTitle}</label>${DEMO?`<p class="note" style="margin-top:0">${L.dmNow}</p><button class="btn btn-primary btn-full" data-demo-off="1">${L.dmExit}</button>`:`<p class="note" style="margin-top:0">${L.dmOffer}</p><button class="btn btn-ghost btn-full" data-demo-on="1">🎓 ${L.dmOn}</button>`}</div>`; }
+function renderDemoBar(){ let b=document.getElementById('demoBar'); document.documentElement.toggleAttribute('data-demo',DEMO);
+  if(!DEMO){ if(b) b.remove(); return; } if(!b){ b=document.createElement('div'); b.id='demoBar'; document.body.prepend(b); }
+  b.innerHTML=`<span>🎓 <b>${L.dmBar}</b> · ${L.dmBarS}</span><button data-demo-off="1">${L.dmExit}</button>`; }
+document.addEventListener('click', e=>{ const t=e.target;
+  if(t.closest('[data-demo-on]')){ e.stopImmediatePropagation(); demoSheet(); return; }
+  if(t.closest('[data-demo-off]')){ e.stopImmediatePropagation(); demoOffSheet(); return; } }, true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
