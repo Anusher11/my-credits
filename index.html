@@ -909,6 +909,8 @@
 
   .bgt{position:fixed; left:12px; right:12px; top:calc(10px + env(safe-area-inset-top,0px)); z-index:130; display:flex; align-items:center; gap:12px; max-width:520px; margin:0 auto; border:1px solid color-mix(in srgb,var(--gold) 40%,var(--line)); background:color-mix(in srgb,var(--gold) 14%,var(--surface)); color:var(--ink); border-radius:18px; padding:12px 14px; box-shadow:var(--shadow-lg); font-family:inherit; text-align:left; transform:translateY(-160%); opacity:0; visibility:hidden; pointer-events:none; transition:transform .3s, opacity .3s, visibility .3s; cursor:pointer;}
   .bgt.show{transform:none; opacity:1; visibility:visible; pointer-events:auto;} .bgt > span{font-size:2rem;} .bgt div{display:flex; flex-direction:column;} .bgt small{color:var(--muted); font-size:.84rem;}
+
+  .wpre .chip small{color:var(--muted); font-weight:700; margin-left:2px;} .wpre .chip.on small{color:inherit; opacity:.8;}
 </style>
 </head>
 <body>
@@ -2123,6 +2125,11 @@ en:{
 };
 const X7={
 ru:{
+  kgW:'кг', tcMode_kg:'За кг', tcMode_sum:'Готовой суммой', tcMode_pct:'Процентом', tcKgPrice:'Цена карго за 1 кг', tcSum:'Карго за весь товар', tcPct:'% от стоимости товара',
+  tcHint_kg:'Так считают почти все карго. Вес вещей подставится по подсказкам — у каждого товара его можно поправить.', tcHint_sum:'Если карго уже назвало общую сумму — она разделится на все вещи по весу.', tcHint_pct:'Грубая прикидка, когда про карго ничего не известно.',
+  tpW:'Вес 1 шт', tpWHint:'(примерно, кг — нажмите подсказку)', tpCargoOne:'карго', trCargoKgLine(w,p){ return 'Карго · '+w+' кг × '+p; }, trCargoSumLine:'Карго (готовая сумма)', trCargoPctLine(p){ return 'Карго '+p+'%'; }, tcActual:'по факту',
+  trCargoNeedKg:'Впишите цену карго за 1 кг — нажмите здесь (или ✏️ у поездки).', ordCargoFact:'Карго по факту', ordCargoW:'Вес, кг', ordCargoPaid:'Заплатили за карго', ordCargoNote:'Когда впишете, что заплатили, себестоимость каждой вещи пересчитается по факту.', ordPerKg(v){ return 'Вышло ≈ '+v+' за 1 кг. Себестоимость вещей пересчитана.'; },
+  wp_tee:'Футболка', wp_dress:'Платье', wp_pants:'Брюки', wp_sweater:'Свитер', wp_jacket:'Куртка', wp_shoes:'Обувь', wp_kids:'Детское', wp_bag:'Сумка', wp_acc:'Платок',
   wnLead7:'Большое обновление: закупка за границей, курсы всех банков, остатки по размерам — и ничего больше не потеряется.',
   wnV6Short:['🏠','Новый экран «Сегодня»','Что сделать сегодня, быстрые кнопки, магазин с наличными и переводом, долги покупателей, вкладка «Деньги», итоги.'],
   wnItems7:[['🧳','Закупка за границей','Турция, Китай, Узбекистан: магазины, визитки, WeChat/WhatsApp, фото товаров с ценами и итог поездки. Магазин → «Закупка».'],['🏦','Курсы всех банков','Алиф, Эсхата, Ориёнбонк и другие — где выгоднее продать и купить доллар, рубль, евро.'],['📏','Остатки по размерам','Пришло, продано, осталось — и сигнал «заканчивается 48 размер».'],['🔮','30 дней вперёд','Заранее видно, хватит ли денег на все платежи.'],['👵','Простой режим','Только 4 большие кнопки — включается в самом низу экрана «Сегодня».'],['↩️','Ничего не потеряется','Удалили по ошибке — «Вернуть». Каждый день автокопия. Поиск 🔎 по всему приложению.'],['🏅','Значки','За хорошие привычки: 7 дней записей, месяц без просрочек и другие.']],
@@ -2213,6 +2220,11 @@ ru:{
   ordLead:'Отмечайте, что оплачено и где заказ. Когда «Пришло» — добавьте в остатки.', ordTotal:'Сумма заказа', ordPaid:'Оплачено', ordPaidW:'оплачено', ordCargo:'Карго', ordCargoPh:'название, телефон', ordEta:'ждать к', ordTrack:'Номер / трек', ordToInv:'Добавить в остатки',
 },
 tg:{
+  kgW:'кг', tcMode_kg:'Барои кг', tcMode_sum:'Маблағи тайёр', tcMode_pct:'Бо фоиз', tcKgPrice:'Нархи карго барои 1 кг', tcSum:'Карго барои тамоми мол', tcPct:'% аз арзиши мол',
+  tcHint_kg:'Қариб ҳамаи каргоҳо ҳамин тавр ҳисоб мекунанд. Вазни чизҳо аз рӯи маслиҳат гузошта мешавад — дар ҳар мол тағйир додан мумкин.', tcHint_sum:'Агар карго маблағи умумиро гуфта бошад — он аз рӯи вазн ба ҳамаи чизҳо тақсим мешавад.', tcHint_pct:'Ҳисоби тахминӣ, вақте дар бораи карго чизе маълум нест.',
+  tpW:'Вазни 1 дона', tpWHint:'(тахминан, кг — маслиҳатро пахш кунед)', tpCargoOne:'карго', trCargoKgLine(w,p){ return 'Карго · '+w+' кг × '+p; }, trCargoSumLine:'Карго (маблағи тайёр)', trCargoPctLine(p){ return 'Карго '+p+'%'; }, tcActual:'аз рӯи факт',
+  trCargoNeedKg:'Нархи карго барои 1 кг-ро нависед — ин ҷо пахш кунед (ё ✏️ дар сафар).', ordCargoFact:'Карго аз рӯи факт', ordCargoW:'Вазн, кг', ordCargoPaid:'Барои карго пардохт шуд', ordCargoNote:'Вақте навиштед, ки чӣ қадар пардохтед, арзиши аслии ҳар чиз аз рӯи факт ҳисоб мешавад.', ordPerKg(v){ return 'Шуд ≈ '+v+' барои 1 кг. Арзиши аслӣ аз нав ҳисоб шуд.'; },
+  wp_tee:'Футболка', wp_dress:'Курта', wp_pants:'Шим', wp_sweater:'Свитер', wp_jacket:'Куртка', wp_shoes:'Пойафзол', wp_kids:'Кӯдакона', wp_bag:'Сумка', wp_acc:'Рӯймол',
   wnLead7:'Навсозии калон: харид дар хориҷа, қурби ҳамаи бонкҳо, боқимонда аз рӯи андоза — ва дигар ҳеҷ чиз гум намешавад.',
   wnV6Short:['🏠','Экрани нави «Имрӯз»','Корҳои имрӯз, тугмаҳои зуд, мағоза бо нақд ва интиқол, қарзи харидорон, бахши «Пул», ҳисобот.'],
   wnItems7:[['🧳','Харид дар хориҷа','Туркия, Чин, Ӯзбекистон: мағозаҳо, визиткаҳо, WeChat/WhatsApp, сурати мол бо нарх ва натиҷаи сафар. Мағоза → «Харид».'],['🏦','Қурби ҳамаи бонкҳо','Алиф, Эсхата, Ориёнбонк ва дигарон — куҷо доллар, рубл, евроро фурӯхтан ва харидан фоиданок.'],['📏','Боқимонда аз рӯи андоза','Омад, фурӯхта шуд, монд — ва огоҳии «андозаи 48 тамом мешавад».'],['🔮','30 рӯз пеш','Пешакӣ маълум, ки барои ҳамаи пардохтҳо пул мерасад ё не.'],['👵','Ҳолати содда','Танҳо 4 тугмаи калон — дар поёни экрани «Имрӯз» фаъол мешавад.'],['↩️','Ҳеҷ чиз гум намешавад','Хато нест кардед — «Баргардонидан». Ҳар рӯз нусхаи худкор. Ҷустуҷӯ 🔎 дар тамоми барнома.'],['🏅','Нишонҳо','Барои одатҳои хуб: 7 рӯз сабт, як моҳ бе дермонӣ ва ғайра.']],
@@ -2303,6 +2315,11 @@ tg:{
   ordLead:'Қайд кунед, ки чӣ пардохт шуд ва фармоиш дар куҷост. Вақте «Омад» — ба боқимонда илова кунед.', ordTotal:'Маблағи фармоиш', ordPaid:'Пардохт шуд', ordPaidW:'пардохт', ordCargo:'Карго', ordCargoPh:'ном, телефон', ordEta:'интизор то', ordTrack:'Рақам / трек', ordToInv:'Ба боқимонда илова кардан',
 },
 en:{
+  kgW:'kg', tcMode_kg:'Per kg', tcMode_sum:'Fixed sum', tcMode_pct:'Percent', tcKgPrice:'Cargo price per 1 kg', tcSum:'Cargo for all goods', tcPct:'% of goods value',
+  tcHint_kg:'Almost all cargo companies charge like this. Item weights come from hints — adjust them for each item.', tcHint_sum:'If the cargo company named a total price — it is split across all items by weight.', tcHint_pct:'A rough guess when nothing is known about cargo.',
+  tpW:'Weight per piece', tpWHint:'(approx. kg — tap a hint)', tpCargoOne:'cargo', trCargoKgLine(w,p){ return 'Cargo · '+w+' kg × '+p; }, trCargoSumLine:'Cargo (fixed sum)', trCargoPctLine(p){ return 'Cargo '+p+'%'; }, tcActual:'actual',
+  trCargoNeedKg:'Enter the cargo price per 1 kg — tap here (or ✏️ on the trip).', ordCargoFact:'Actual cargo', ordCargoW:'Weight, kg', ordCargoPaid:'Paid for cargo', ordCargoNote:'Once you enter what you paid, each item’s landed cost is recalculated from the actual.', ordPerKg(v){ return 'Came to ≈ '+v+' per 1 kg. Landed costs recalculated.'; },
+  wp_tee:'T-shirt', wp_dress:'Dress', wp_pants:'Trousers', wp_sweater:'Sweater', wp_jacket:'Jacket', wp_shoes:'Shoes', wp_kids:'Kids', wp_bag:'Bag', wp_acc:'Scarf',
   wnLead7:'A big update: buying abroad, all bank rates, stock by size — and nothing gets lost anymore.',
   wnV6Short:['🏠','New “Today” screen','To-do for today, quick buttons, shop with cash and transfers, customer debts, the “Money” tab, summaries.'],
   wnItems7:[['🧳','Buying abroad','Turkey, China, Uzbekistan: shops, business cards, WeChat/WhatsApp, item photos with prices and a trip summary. Shop → “Buying”.'],['🏦','All bank rates','Alif, Eskhata, Oriyonbonk and others — where to sell and buy dollars, roubles, euros.'],['📏','Stock by size','Arrived, sold, left — and a “size 48 is running out” alert.'],['🔮','30 days ahead','See in advance whether money is enough for all payments.'],['👵','Simple mode','Just 4 big buttons — turn it on at the very bottom of “Today”.'],['↩️','Nothing gets lost','Deleted by mistake — “Undo”. A daily auto-copy. Search 🔎 across the app.'],['🏅','Badges','For good habits: 7 days logged, a month on time and more.']],
@@ -5340,12 +5357,34 @@ function toTJS(v,cur,trip){ const r=rateOf(cur,trip); return r?(+v||0)*r:null; }
 function tripVendors(trip){ const ids=new Set(state.tprods.filter(p=>p.trip===trip.id).map(p=>p.vendor)); return state.vendors.filter(v=>v.trip===trip.id||ids.has(v.id)||(v.visits||[]).includes(trip.id)); }
 function tripProds(trip){ return state.tprods.filter(p=>p.trip===trip.id); }
 function tripExpTJS(trip){ return state.texp.filter(x=>x.trip===trip.id).reduce((s,x)=>s+(toTJS(x.a,x.cur,trip)||0),0); }
+/* карго считают за килограмм: вес вещи × цена за кг; можно готовой суммой или процентом; факт из заказа важнее прикидки */
+const DEF_W=0.4;
+const WPRE=[['tee','👕',0.2],['dress','👗',0.4],['pants','👖',0.6],['sweater','🧶',0.5],['jacket','🧥',1.2],['shoes','👟',1],['kids','🧒',0.25],['bag','👜',0.6],['acc','🧣',0.1]];
+function wOf(p){ return +p.w>0?+p.w:DEF_W; }
+function fw(v){ return new Intl.NumberFormat(lang==='en'?'en-US':'ru-RU',{maximumFractionDigits:1}).format(v); }
+function cargoMode(trip){ return trip.cmode||(trip.cargo!=null&&trip.ckg==null&&trip.csum==null?'pct':'kg'); }
+function ordOf(trip,vid){ return state.torders.find(o=>o.trip===trip.id&&o.vendor===vid)||null; }
+function ordCargoTJS(trip,o){ return o&&+o.cpaid>0?toTJS(+o.cpaid,o.ccur||trip.ccur||'USD',trip):null; }
+function kgRateTJS(trip){ return +trip.ckg>0?toTJS(+trip.ckg,trip.ccur||'USD',trip):null; }
 function tripTotals(trip){
-  const buy=tripProds(trip).filter(p=>p.dec==='buy'); let sum=0, pcs=0, unknown=0;
-  for(const p of buy){ const q=pcsOf(p), v=toTJS((+p.price||0)*q,p.cur,trip); if(v==null) unknown++; else sum+=v; pcs+=q; }
-  const ex=tripExpTJS(trip); return {buy,sum,pcs,ex,unknown,all:sum+sum*(+trip.cargo||0)/100+ex};
+  const buy=tripProds(trip).filter(p=>p.dec==='buy'); let sum=0, pcs=0, unknown=0, W=0, actW=0, cargo=0, hasAct=false;
+  for(const p of buy){ const q=pcsOf(p), v=toTJS((+p.price||0)*q,p.cur,trip); if(v==null) unknown++; else sum+=v; pcs+=q; W+=wOf(p)*q; }
+  const mode=cargoMode(trip), kr=kgRateTJS(trip), byV={}; for(const p of buy) (byV[p.vendor]=byV[p.vendor]||[]).push(p);
+  for(const vid in byV){ const ps=byV[vid], act=ordCargoTJS(trip,ordOf(trip,vid)), vw=ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0);
+    if(act!=null){ cargo+=act; actW+=vw; hasAct=true; continue; }
+    if(mode==='kg'&&kr!=null) cargo+=vw*kr;
+    else if(mode==='pct') cargo+=ps.reduce((s,p)=>s+(toTJS((+p.price||0)*pcsOf(p),p.cur,trip)||0),0)*(+trip.cargo||0)/100; }
+  if(mode==='sum'&&+trip.csum>0&&W-actW>0){ const st=toTJS(+trip.csum,trip.ccur||'USD',trip); if(st!=null) cargo+=st; }
+  const ex=tripExpTJS(trip); return {buy,sum,pcs,ex,unknown,W,actW,cargo,hasAct,mode,all:sum+cargo+ex};
 }
-function landed(p,trip){ const one=toTJS(+p.price||0,p.cur,trip); if(one==null) return null; const t=tripTotals(trip); const per=t.pcs>0?t.ex/t.pcs:0; return one*(1+(+trip.cargo||0)/100)+per; }
+function cargoPer(p,trip){ const w=wOf(p);
+  const act=p.dec==='buy'?ordCargoTJS(trip,ordOf(trip,p.vendor)):null;
+  if(act!=null){ const vw=tripProds(trip).filter(x=>x.vendor===p.vendor&&x.dec==='buy').reduce((s,x)=>s+wOf(x)*pcsOf(x),0); return vw>0?act*w/vw:0; }
+  const mode=cargoMode(trip);
+  if(mode==='kg'){ const r=kgRateTJS(trip); return r!=null?w*r:0; }
+  if(mode==='sum'){ const st=+trip.csum>0?toTJS(+trip.csum,trip.ccur||'USD',trip):null; if(st==null) return 0; const t=tripTotals(trip), rem=t.W-t.actW, W2=p.dec==='buy'?rem:rem+w; return W2>0?st*w/W2:0; }
+  return (toTJS(+p.price||0,p.cur,trip)||0)*(+trip.cargo||0)/100; }
+function landed(p,trip){ const one=toTJS(+p.price||0,p.cur,trip); if(one==null) return null; const t=tripTotals(trip); const per=t.pcs>0?t.ex/t.pcs:0; return one+cargoPer(p,trip)+per; }
 function sellHint(v){ let mk=50, rnd=10; try{ const o=JSON.parse(lsGet('pc_v1')||'{}'); if(+o.m>0) mk=+o.m; if(+o.r>0) rnd=+o.r; }catch(e){} return {mk,price:Math.ceil(v*(1+mk/100)/rnd)*rnd}; }
 function phoneFull(p,country){ let d=String(p||'').replace(/[^\d+]/g,''); if(!d) return ''; if(d.startsWith('+')) return d.slice(1); if(d.startsWith('00')) return d.slice(2); const cc=(TCOUNTRY[country]||{}).code||''; if(cc&&!d.startsWith(cc)) d=cc+d.replace(/^0+/,''); return d; }
 function igHandle(s){ s=String(s||'').trim(); const m=s.match(/instagram\.com\/([A-Za-z0-9_.]+)/); return (m?m[1]:s).replace(/^@/,''); }
@@ -5418,14 +5457,17 @@ function vendorCard(v,tr){ const n=state.tprods.filter(p=>p.vendor===v.id&&(!tr|
 function tripSumHTML(tr){
   const tt=tripTotals(tr); if(!tt.buy.length) return `<div class="sh-empty">${L.trSumNone}</div>`;
   const byV={}; for(const p of tt.buy) (byV[p.vendor]=byV[p.vendor]||[]).push(p);
-  const cargo=tt.sum*(+tr.cargo||0)/100;
+  const cargo=tt.cargo, cm=tt.mode;
+  const cLab=cm==='kg'?L.trCargoKgLine(fw(tt.W),+tr.ckg>0?fw(+tr.ckg)+' '+curSym(tr.ccur||'USD')+'/'+L.kgW:'?'):cm==='sum'?L.trCargoSumLine:L.trCargoPctLine(tr.cargo||0);
+  const needKg=cm==='kg'&&!(+tr.ckg>0)&&!tt.hasAct;
   return Object.keys(byV).map(vid=>{ const v=state.vendors.find(x=>x.id===vid)||{name:'?'}, ps=byV[vid]; const cur=ps[0].cur, sameCur=ps.every(p=>p.cur===cur);
       const tot=ps.reduce((s,p)=>s+(+p.price||0)*pcsOf(p),0), tj=ps.reduce((s,p)=>s+(toTJS((+p.price||0)*pcsOf(p),p.cur,tr)||0),0);
-      return `<div class="sh-card ts-v"><div class="ts-h" data-vendor="${esc(vid)}"><b>${VKIND[v.kind]||'🏪'} ${esc(v.name)}</b><span>${sameCur?fxAmt(tot,cur)+' '+curSym(cur)+' · ':''}≈ ${money(tj)}</span></div>
+      const vw=ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0);
+      return `<div class="sh-card ts-v"><div class="ts-h" data-vendor="${esc(vid)}"><b>${VKIND[v.kind]||'🏪'} ${esc(v.name)}</b><span>${sameCur?fxAmt(tot,cur)+' '+curSym(cur)+' · ':''}≈ ${money(tj)} · ⚖️ ${fw(vw)} ${L.kgW}</span></div>
         ${ps.map(p=>`<div class="ts-r" data-tprod="${esc(p.id)}">${p.ph?`<img data-ph="tp_${esc(p.id)}_0" alt="">`:'<em>👗</em>'}<span>${esc(p.name||L.trNoName)}${p.sizes?` <small>${esc(p.sizes)}</small>`:''}</span><b>${pcsOf(p)} × ${fxAmt(+p.price||0,p.cur)} ${curSym(p.cur)}</b></div>`).join('')}
         <button class="link-btn" data-tsend="${esc(vid)}">📤 ${L.trSendList}</button></div>`; }).join('')
-    +`<div class="calc-out"><div class="co-row"><span>${L.trGoods}</span><b>${money(tt.sum)}</b></div>${cargo?`<div class="co-row"><span>📦 ${L.trCargo} ${tr.cargo}%</span><b>${money(cargo)}</b></div>`:''}${tt.ex?`<div class="co-row"><span>💸 ${L.trExpenses}</span><b>${money(tt.ex)}</b></div>`:''}<div class="co-row big"><span>${L.trTotal}</span><b>${money(tt.all)}</b></div>${tr.budget?`<div class="co-row"><span>${L.trBudget}</span><b>${money(tr.budget)}</b></div>`:''}</div>
-    ${tt.unknown?`<p class="note">⚠️ ${L.trNoRate}</p>`:''}<p class="note">${L.trSumNote(tt.pcs, money(tt.pcs?tt.all/tt.pcs:0))}</p>
+    +`<div class="calc-out"><div class="co-row"><span>${L.trGoods}</span><b>${money(tt.sum)}</b></div>${cargo||needKg?`<div class="co-row"><span>📦 ${cLab}${tt.hasAct?' · ✓ '+L.tcActual:''}</span><b>${needKg?'—':money(cargo)}</b></div>`:''}${tt.ex?`<div class="co-row"><span>💸 ${L.trExpenses}</span><b>${money(tt.ex)}</b></div>`:''}<div class="co-row big"><span>${L.trTotal}</span><b>${money(tt.all)}</b></div>${tr.budget?`<div class="co-row"><span>${L.trBudget}</span><b>${money(tr.budget)}</b></div>`:''}</div>
+    ${needKg?`<div class="pc-warn" data-topen="${esc(tr.id)}" style="cursor:pointer">📦 ${L.trCargoNeedKg}</div>`:''}${tt.unknown?`<p class="note">⚠️ ${L.trNoRate}</p>`:''}<p class="note">${L.trSumNote(tt.pcs, money(tt.pcs?tt.all/tt.pcs:0))}</p>
     <button class="btn btn-ghost btn-full" data-tshare="${esc(tr.id)}">📤 ${L.trShareFam}</button>`;
 }
 function tripOrdHTML(tr){
@@ -5444,22 +5486,29 @@ function openTripView(id){ if(id){ const t=tripById(id); if(t&&t!==activeTrip())
 
 /* ---- поездка: создать / изменить ---- */
 function tripForm(t){
-  const isNew=!t; t=t||{country:'TR',cargo:10,from:dkey(),to:dkey(addDays(new Date(),5))}; let country=t.country||'TR';
+  const isNew=!t; t=t||{country:'TR',cmode:'kg',ccur:'USD',from:dkey(),to:dkey(addDays(new Date(),5))}; let country=t.country||'TR', cm=cargoMode(t);
   const draw=()=>{ const C=TCOUNTRY[country];
     openSheet(`<h3>🧳 ${isNew?L.trNew:esc(t.name)}</h3><p class="lead">${L.trFormLead}</p>
       <div class="ctry">${Object.keys(TCOUNTRY).map(k=>`<button data-tc="${k}" class="${k===country?'on':''}">${TCOUNTRY[k].f}<small>${L['cn_'+k]}</small></button>`).join('')}</div>
       <div class="field"><label>${L.trCity}</label><input id="tf-c" value="${esc(t.city||'')}" list="tf-cl" maxlength="40"><datalist id="tf-cl">${(TCITIES[country]||[]).map(c=>`<option value="${esc(c)}">`).join('')}</datalist></div>
       <div class="two"><div class="field"><label>${L.prFrom}</label><input id="tf-f" type="date" value="${t.from||''}"></div><div class="field"><label>${L.prTo}</label><input id="tf-t" type="date" value="${t.to||''}"></div></div>
-      <div class="two"><div class="field n"><label>${L.trBudget} (${L.cur})</label><input id="tf-b" type="number" inputmode="numeric" min="0" value="${t.budget||''}" placeholder="50000"></div><div class="field n"><label>${L.trCargo}, %</label><input id="tf-k" type="number" inputmode="decimal" min="0" value="${t.cargo!=null?t.cargo:10}"></div></div>
+      <div class="field n"><label>${L.trBudget} (${L.cur})</label><input id="tf-b" type="number" inputmode="numeric" min="0" value="${t.budget||''}" placeholder="50000"></div>
+      <div class="br-h">📦 ${L.trCargo}</div>
+      <div class="seg">${['kg','sum','pct'].map(k=>`<button data-cm="${k}" class="${cm===k?'on':''}">${L['tcMode_'+k]}</button>`).join('')}</div>
+      ${cm==='pct'?`<div class="field n"><label>${L.tcPct}</label><input id="tf-k" type="number" inputmode="decimal" min="0" value="${t.cargo!=null?t.cargo:10}"></div>`
+        :`<div class="field n"><label>${cm==='kg'?L.tcKgPrice:L.tcSum}</label><div class="pin"><input id="tf-k" type="number" inputmode="decimal" step="any" min="0" value="${cm==='kg'?(t.ckg||''):(t.csum||'')}" placeholder="${cm==='kg'?'3':'500'}"><select id="tf-kc">${['USD',t.cur||C.cur,'TJS','CNY','TRY','RUB'].filter((x,i,a)=>a.indexOf(x)===i).map(c=>`<option value="${c}" ${(t.ccur||'USD')===c?'selected':''}>${curSym(c)}</option>`).join('')}</select></div></div>`}
+      <p class="note" style="margin-top:-6px">${L['tcHint_'+cm]}</p>
       <div class="two"><div class="field"><label>${L.trCur}</label><select id="tf-cur">${Object.keys(CURS).concat(['TJS']).map(k=>`<option value="${k}" ${(t.cur||C.cur)===k?'selected':''}>${k}</option>`).join('')}</select></div><div class="field n"><label>${L.trRate} <span class="hint">${L.optional}</span></label><input id="tf-r" type="number" inputmode="decimal" step="any" min="0" value="${t.rate||''}" placeholder="${rateOf(t.cur||C.cur,null)?+rateOf(t.cur||C.cur,null).toFixed(4):''}"></div></div>
-      <p class="note">${L.trCargoHint}</p><div class="err" id="tf-err"></div>
+      <div class="err" id="tf-err"></div>
       <button class="btn btn-primary btn-full" id="tf-s">${isNew?L.trStart:L.save}</button>
       ${!isNew?`<div class="sheet-row"><button class="btn btn-ghost" id="tf-done">${t.done?'↩️ '+L.trReopen:'🏁 '+L.trFinish}</button><button class="btn btn-danger" id="tf-del">${L.delete}</button></div>`:''}
       <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
-    sheet.querySelectorAll('[data-tc]').forEach(b=>b.onclick=()=>{ t.city=$('#tf-c').value; t.from=$('#tf-f').value; t.to=$('#tf-t').value; t.budget=$('#tf-b').value; t.cargo=$('#tf-k').value; country=b.dataset.tc; t.cur=TCOUNTRY[country].cur; t.rate=''; draw(); });
+    const keepT=()=>{ t.city=$('#tf-c').value; t.from=$('#tf-f').value; t.to=$('#tf-t').value; t.budget=$('#tf-b').value; const k=$('#tf-k').value; if(cm==='pct') t.cargo=k; else { if(cm==='kg') t.ckg=k; else t.csum=k; t.ccur=$('#tf-kc').value; } };
+    sheet.querySelectorAll('[data-tc]').forEach(b=>b.onclick=()=>{ keepT(); country=b.dataset.tc; t.cur=TCOUNTRY[country].cur; t.rate=''; draw(); });
+    sheet.querySelectorAll('[data-cm]').forEach(b=>b.onclick=()=>{ keepT(); cm=b.dataset.cm; draw(); focusLater('#tf-k'); });
     $('#tf-s').onclick=()=>{ const city=$('#tf-c').value.trim(); if(!city) return showErr($('#tf-err'),L.trErrCity);
       const from=$('#tf-f').value, d=from?parseYmd(from):new Date();
-      const o={country,city,from,to:$('#tf-t').value,budget:Math.max(0,Math.round(+$('#tf-b').value||0)),cargo:Math.max(0,+$('#tf-k').value||0),cur:$('#tf-cur').value,rate:+$('#tf-r').value>0?+$('#tf-r').value:null,name:city+' · '+L.monthsNom[d.getMonth()].toLowerCase()};
+      keepT(); const o={country,city,from,to:$('#tf-t').value,budget:Math.max(0,Math.round(+$('#tf-b').value||0)),cmode:cm,cargo:cm==='pct'?Math.max(0,+t.cargo||0):(+t.cargo||null),ckg:+t.ckg>0?+t.ckg:null,csum:+t.csum>0?+t.csum:null,ccur:t.ccur||'USD',cur:$('#tf-cur').value,rate:+$('#tf-r').value>0?+$('#tf-r').value:null,name:city+' · '+L.monthsNom[d.getMonth()].toLowerCase()};
       if(isNew){ t={id:uid('tr'),...o}; state.trips.push(t); } else { if(t.name&&t.city===city) delete o.name; Object.assign(t,o); }
       persist(); closeSheet(); setTab('shop'); setShopSub('trip'); toast(isNew?L.trStarted:L.saved); };
     if($('#tf-done')) $('#tf-done').onclick=()=>{ if(t.done){ t.done=false; persist(); closeSheet(); render(); return; } tripFinish(t); };
@@ -5597,7 +5646,9 @@ function tprodForm(p,trip,pre){
       <div class="br-h">🏪 ${L.tpWhere}</div>
       <div class="chips vsel">${vs.map(v=>`<button class="chip ${d.vendor===v.id?'on':''}" data-tv="${esc(v.id)}">${VKIND[v.kind]||'🏪'} ${esc(v.name)}</button>`).join('')}<button class="chip add" id="tp-nv">+ ${L.trAddShop}</button></div>
       <div class="field n big-in"><label>${L.tpPrice}</label><div class="pin"><input id="tp-p" type="number" inputmode="decimal" step="any" min="0" value="${d.price||''}" placeholder="0"><select id="tp-c">${[trip.cur].concat(CC.alt||[],['USD','TJS']).filter((x,i,a)=>a.indexOf(x)===i).map(c=>`<option value="${c}" ${d.cur===c?'selected':''}>${curSym(c)}</option>`).join('')}</select></div></div>
-      <div class="tp-calc" id="tp-x">${d.price&&d.cur!=='TJS'?(tj!=null?`≈ <b>${money(tj)}</b>`:L.trNoRateOne):''}${ld?` · ${L.tpLanded} ${money(ld)} · <span class="tx-ok">${L.tpSell(money(sh.price),sh.mk)}</span>`:''}</div>
+      <div class="tp-calc" id="tp-x"></div>
+      <div class="field n"><label>⚖️ ${L.tpW} <span class="hint">${L.tpWHint}</span></label><input id="tp-w" type="number" inputmode="decimal" step="0.05" min="0" value="${d.w||''}" placeholder="${DEF_W}"></div>
+      <div class="chips wpre">${WPRE.map(w=>`<button class="chip ${+d.w===w[2]?'on':''}" data-wp="${w[2]}">${w[1]} ${esc(L['wp_'+w[0]])} <small>${String(w[2]).replace('.',lang==='en'?'.':',')}</small></button>`).join('')}</div>
       <div class="field"><label>${L.tpName} <span class="hint">${L.optional}</span></label><input id="tp-n" value="${esc(d.name||'')}" maxlength="60" placeholder="${L.tpNamePh}"></div>
       <div class="two"><div class="field"><label>${L.tpSizes}</label><input id="tp-s" value="${esc(d.sizes||'')}" maxlength="40" placeholder="S–XL / 42–50"></div><div class="field"><label>${L.tpColors}</label><input id="tp-cl" value="${esc(d.colors||'')}" maxlength="40" placeholder="${L.tpColorsPh}"></div></div>
       ${CC.sizes?`<p class="note" style="margin-top:-6px">📏 ${L.tpSizeWarnCN}</p>`:''}
@@ -5610,16 +5661,17 @@ function tprodForm(p,trip,pre){
       ${!isNew?`<div class="sheet-row"><button class="btn btn-ghost" id="tp-ask">💬 ${L.tpAsk}</button><button class="btn btn-danger" id="tp-del">${L.delete}</button></div>`:''}
       <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
     fillPhotos(sheet);
-    const keep=()=>{ d.price=$('#tp-p').value; d.cur=$('#tp-c').value; d.name=$('#tp-n').value.trim(); d.sizes=$('#tp-s').value.trim(); d.colors=$('#tp-cl').value.trim(); d.moq=$('#tp-moq').value; d.note=$('#tp-no').value.trim(); d.qty=$('#tp-q').value; d.fav=$('#tp-fav').checked; if($('#tp-ser')) d.ser=$('#tp-ser').value; };
-    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
-    $('#tp-p').addEventListener('input',upd); $('#tp-c').addEventListener('change',upd); if($('#tp-ser')) $('#tp-ser').addEventListener('input',()=>{ $('#tp-ql').textContent=+$('#tp-ser').value>0?L.tpQtySer:L.tpQty; });
+    const keep=()=>{ d.price=$('#tp-p').value; d.cur=$('#tp-c').value; d.name=$('#tp-n').value.trim(); d.sizes=$('#tp-s').value.trim(); d.colors=$('#tp-cl').value.trim(); d.moq=$('#tp-moq').value; d.note=$('#tp-no').value.trim(); d.qty=$('#tp-q').value; d.fav=$('#tp-fav').checked; if($('#tp-ser')) d.ser=$('#tp-ser').value; d.w=$('#tp-w').value; };
+    const upd=()=>{ keep(); const t2=toTJS(+d.price||0,d.cur,trip), cg=d.price?cargoPer(d,trip):0, l2=d.price?landed(d,trip):null, s2=l2?sellHint(l2):null; $('#tp-x').innerHTML=(d.price&&d.cur!=='TJS'?(t2!=null?`≈ <b>${money(t2)}</b>`:L.trNoRateOne):'')+(cg>0?` · 📦 ${L.tpCargoOne} ≈ ${money(cg)}`:'')+(l2?` · ${L.tpLanded} ${money(l2)} · <span class="tx-ok">${L.tpSell(money(s2.price),s2.mk)}</span>`:''); };
+    upd(); $('#tp-p').addEventListener('input',upd); $('#tp-w').addEventListener('input',()=>{ upd(); sheet.querySelectorAll('[data-wp]').forEach(x=>x.classList.toggle('on',+x.dataset.wp===+$('#tp-w').value)); });
+    sheet.querySelectorAll('[data-wp]').forEach(b=>b.onclick=()=>{ $('#tp-w').value=b.dataset.wp; sheet.querySelectorAll('[data-wp]').forEach(x=>x.classList.toggle('on',x===b)); upd(); }); $('#tp-c').addEventListener('change',upd); if($('#tp-ser')) $('#tp-ser').addEventListener('input',()=>{ $('#tp-ql').textContent=+$('#tp-ser').value>0?L.tpQtySer:L.tpQty; });
     sheet.querySelectorAll('[data-tv]').forEach(b=>b.onclick=()=>{ d.vendor=b.dataset.tv; sheet.querySelectorAll('[data-tv]').forEach(x=>x.classList.toggle('on',x===b)); });
     sheet.querySelectorAll('[data-dec]').forEach(b=>b.onclick=()=>{ d.dec=b.dataset.dec; sheet.querySelectorAll('[data-dec]').forEach(x=>x.classList.toggle('on',x===b)); $('#tp-qw').hidden=d.dec!=='buy'; if(d.dec==='buy') focusLater('#tp-q'); });
     $('#tp-cam').onclick=()=>{ keep(); camera(async s=>{ if(p){ await phPut('tp_'+p.id+'_'+(p.ph||0),s); p.ph=(p.ph||0)+1; persist(); } else newPhotos.push(s); draw(); }); };
     $('#tp-nv').onclick=()=>{ keep(); vendorForm(null,trip,v=>{ d.vendor=v.id; vs.unshift(v); draw(); }); };
     if(!d.price) focusLater('#tp-p');
     $('#tp-save').onclick=async()=>{ keep(); if(!d.vendor) return showErr($('#tp-err'),L.tpErrShop); if(!(+d.price>0)&&!newPhotos.length&&!(p&&p.ph)&&!d.name) return showErr($('#tp-err'),L.tpErrEmpty);
-      const o={vendor:d.vendor,price:+d.price>0?+d.price:null,cur:d.cur,name:d.name,sizes:d.sizes,colors:d.colors,moq:+d.moq>0?Math.round(+d.moq):null,ser:+d.ser>0?Math.round(+d.ser):null,note:d.note,dec:d.dec||'maybe',qty:d.dec==='buy'&&+d.qty>0?Math.round(+d.qty):null,fav:!!d.fav};
+      const o={vendor:d.vendor,price:+d.price>0?+d.price:null,cur:d.cur,name:d.name,sizes:d.sizes,colors:d.colors,moq:+d.moq>0?Math.round(+d.moq):null,ser:+d.ser>0?Math.round(+d.ser):null,w:+d.w>0?+d.w:null,note:d.note,dec:d.dec||'maybe',qty:d.dec==='buy'&&+d.qty>0?Math.round(+d.qty):null,fav:!!d.fav};
       let rec=p; if(isNew){ rec={id:uid('tp'),trip:trip.id,ts:Date.now(),d:dkey(),ph:0,...o}; state.tprods.push(rec); } else { Object.assign(rec,o); delete rec.draft; }
       for(const s of newPhotos){ await phPut('tp_'+rec.id+'_'+(rec.ph||0),s); rec.ph=(rec.ph||0)+1; }
       lsSet('curv_'+trip.id,d.vendor); persist(); render();
@@ -5662,12 +5714,16 @@ function orderForm(tripId,vid){
     <div class="two"><div class="field n"><label>${L.ordTotal} (${curSym(d.cur)})</label><input id="of-t" type="number" inputmode="decimal" step="any" min="0" value="${d.total||''}"></div><div class="field n"><label>${L.ordPaid} (${curSym(d.cur)})</label><input id="of-p" type="number" inputmode="decimal" step="any" min="0" value="${d.paid||''}"></div></div>
     <div class="two"><div class="field"><label>📦 ${L.ordCargo}</label><input id="of-c" value="${esc(d.cargo||'')}" maxlength="40" placeholder="${L.ordCargoPh}"></div><div class="field"><label>${L.ordEta}</label><input id="of-e" type="date" value="${d.eta||''}"></div></div>
     <div class="field"><label>${L.ordTrack}</label><input id="of-k" value="${esc(d.track||'')}" maxlength="60"></div>
+    <div class="br-h">📦 ${L.ordCargoFact}</div>
+    <div class="two"><div class="field n"><label>${L.ordCargoW}</label><input id="of-cw" type="number" inputmode="decimal" step="any" min="0" value="${d.cw||''}" placeholder="${fw(ps.reduce((s,p)=>s+wOf(p)*pcsOf(p),0))}"></div><div class="field n"><label>${L.ordCargoPaid}</label><div class="pin"><input id="of-cp" type="number" inputmode="decimal" step="any" min="0" value="${d.cpaid||''}"><select id="of-cc">${['USD',trip.cur,'TJS','CNY','TRY','RUB'].filter((x,i,a)=>a.indexOf(x)===i).map(c=>`<option value="${c}" ${(d.ccur||trip.ccur||'USD')===c?'selected':''}>${curSym(c)}</option>`).join('')}</select></div></div></div>
+    <p class="note" id="of-cn">${+d.cpaid>0&&+d.cw>0?L.ordPerKg(fx(+d.cpaid/+d.cw)+' '+curSym(d.ccur||'USD')):L.ordCargoNote}</p>
     <div class="err" id="of-err"></div><button class="btn btn-primary btn-full" id="of-s">${L.save}</button>
     ${d.st==='came'||(o&&o.st==='came')?`<button class="btn btn-ghost btn-full" id="of-inv" style="margin-top:10px">📏 ${L.ordToInv}</button>`:''}
     <div class="sheet-row"><button class="btn btn-ghost" id="of-ph">💬 ${L.trPhrases}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
   sheet.querySelectorAll('[data-os]').forEach(b=>b.onclick=()=>{ d.st=b.dataset.os; const i=ORD_ST.indexOf(d.st); sheet.querySelectorAll('[data-os]').forEach((x,j)=>x.classList.toggle('on',j<=i)); });
   $('#of-ph').onclick=()=>phrasesSheet(v);
-  $('#of-s').onclick=()=>{ const rec={st:d.st,cur:d.cur,total:+$('#of-t').value||null,paid:+$('#of-p').value||null,cargo:$('#of-c').value.trim(),eta:$('#of-e').value,track:$('#of-k').value.trim()};
+  const cnU=()=>{ const cp=+$('#of-cp').value, cw=+$('#of-cw').value; $('#of-cn').textContent=cp>0&&cw>0?L.ordPerKg(fx(cp/cw)+' '+curSym($('#of-cc').value)):L.ordCargoNote; }; ['#of-cp','#of-cw'].forEach(id=>$(id).addEventListener('input',cnU)); $('#of-cc').addEventListener('change',cnU);
+  $('#of-s').onclick=()=>{ const rec={st:d.st,cur:d.cur,total:+$('#of-t').value||null,paid:+$('#of-p').value||null,cargo:$('#of-c').value.trim(),eta:$('#of-e').value,track:$('#of-k').value.trim(),cw:+$('#of-cw').value||null,cpaid:+$('#of-cp').value||null,ccur:$('#of-cc').value};
     if(isNew){ o={id:uid('or'),trip:tripId,vendor:vid,...rec}; state.torders.push(o); } else Object.assign(o,rec);
     persist(); render(); if(o.st==='came') orderForm(tripId,vid); else closeSheet(); toast(L.saved); };
   if($('#of-inv')) $('#of-inv').onclick=()=>toInventory(trip,ps);
