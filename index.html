@@ -4065,8 +4065,8 @@ function pinSet(){
   $('#pn-save').onclick=()=>{ const v=inp.value.trim(); if(!/^\d{4}$/.test(v)) return showErr($('#pn-err'),L.errPin4); setPinVal(v); closeSheet(); toast(L.pinSetMsg); };
 }
 /* ===================== v5: ядро новых возможностей ===================== */
-const API_BASE='https://asalmoh-sakina.pages.dev';
-const VAPID_PUB='BFNUJ3AilTkGK-wMpbeb5DdQkjqLV6UiyfLhRRMm0YgGS5HvfmGjIvLsy6JZ_j1gOeMcP9nR_dtG7FtMPWN3tgs';
+const API_BASE='https://mira-1sq.pages.dev'; // собственный сервер Mira (Cloudflare)
+const OLD_API='https://asalmoh-sakina.pages.dev'; // прежний сервер — только чтобы отписаться от него один раз
 const ENVS=['loan','stock','cush','season'];
 const ENV_IC={loan:'🐷',stock:'📦',cush:'🛟',season:'🌙'};
 
@@ -4148,7 +4148,7 @@ function digest(){
 }
 function mirrorForSW(){ try{ if(DEMO||!('caches' in window)) return; caches.open('mk-state').then(c=>c.put('./mk-state.json', new Response(JSON.stringify(digest()),{headers:{'content-type':'application/json'}}))).catch(()=>{}); }catch(e){} }
 
-/* ---- напоминания о платежах (push через сервер «Сакины») ---- */
+/* ---- напоминания о платежах (push через сервер Mira; ключ VAPID сервер создаёт сам и отдаёт по /api/mk/pushkey) ---- */
 function pushSt(){ try{ return JSON.parse(lsGet('push_v1')||'{}')||{}; }catch(e){ return {}; } }
 function pushSave(o){ lsSet('push_v1',JSON.stringify(o||{})); }
 function mkId(){ let v=lsGet('mkid_v1'); if(!v||!/^[A-Za-z0-9_-]{16,64}$/.test(v)){ const a=new Uint8Array(18); crypto.getRandomValues(a); v=b64url(a); lsSet('mkid_v1',v); } return v; }
@@ -4156,12 +4156,30 @@ function b64url(u8){ let s=''; for(const x of u8) s+=String.fromCharCode(x); ret
 function ub64url(str){ str=String(str).replace(/-/g,'+').replace(/_/g,'/'); while(str.length%4) str+='='; const b=atob(str); return Uint8Array.from(b,c=>c.charCodeAt(0)); }
 async function swReg(){ if(!('serviceWorker' in navigator)) return null; try{ return await Promise.race([navigator.serviceWorker.ready, new Promise(r=>setTimeout(()=>r(null),4000))]); }catch(e){ return null; } }
 function dueItems(){ const out=[]; for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check) continue; out.push(ymd(a.due)); } for(const s of state.sup) if(!s.paid&&s.due) out.push(s.due); try{ for(const b of state.bills||[]){ const d=billDue(b); if(!d.paid) out.push(ymd(d.due)); } for(const c of state.cust||[]){ const st=custState(c); if(st.bal>0&&st.due) out.push(st.due); } }catch(e){} return [...new Set(out)].sort().slice(0,60); }
+async function pushKey(){
+  let c={}; try{ c=JSON.parse(lsGet('pushkey_v1')||'{}')||{}; }catch(e){}
+  if(c.pub&&c.b===API_BASE&&Date.now()-(c.at||0)<12*3600e3) return c.pub;
+  try{ const r=await fetch(API_BASE+'/api/mk/pushkey',{cache:'no-store'}); if(r.ok){ const j=await r.json(); if(j&&typeof j.pub==='string'&&/^[A-Za-z0-9_-]{80,100}$/.test(j.pub)){ lsSet('pushkey_v1',JSON.stringify({pub:j.pub,b:API_BASE,at:Date.now()})); return j.pub; } } }catch(e){}
+  return c.b===API_BASE?(c.pub||''):'';
+}
+function sameKey(buf,pub){ try{ const a=new Uint8Array(buf), b=ub64url(pub); return a.length===b.length&&a.every((x,i)=>x===b[i]); }catch(e){ return false; } }
+/* подписка с ключом нашего сервера; подписку от прежнего сервера заменяем новой */
+async function pushSub(reg){
+  const pub=await pushKey(); if(!pub) throw new Error('nokey');
+  const ps=pushSt(); let sub=await reg.pushManager.getSubscription();
+  if(sub){ const k=sub.options&&sub.options.applicationServerKey; const stale=k?!sameKey(k,pub):ps.k!==pub;
+    if(stale){ try{ await sub.unsubscribe(); }catch(e){} sub=null; pushOldUnreg(); } }
+  if(!sub){ if(!('Notification' in window)||Notification.permission!=='granted') return null; sub=await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:ub64url(pub)}); }
+  if(ps.k!==pub){ const p=pushSt(); p.k=pub; p.h=''; pushSave(p); }
+  return sub;
+}
+function pushOldUnreg(){ if(pushSt().oldOff) return; fetch(OLD_API+'/api/mk/unreg',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId()})}).then(r=>{ if(r.ok){ const p=pushSt(); p.oldOff=1; pushSave(p); } }).catch(()=>{}); }
 async function pushEnable(){
   if(!('Notification' in window)||!('PushManager' in window)||!('serviceWorker' in navigator)){ toast(L.pushNoSupport); return false; }
   let perm=Notification.permission; if(perm!=='granted') perm=await Notification.requestPermission();
   if(perm!=='granted'){ toast(L.pushDenied); return false; }
   const reg=await swReg(); if(!reg){ toast(L.pushNoSW); return false; }
-  try{ let sub=await reg.pushManager.getSubscription(); if(!sub) sub=await reg.pushManager.subscribe({userVisibleOnly:true, applicationServerKey:ub64url(VAPID_PUB)}); }catch(e){ toast(L.pushFail); return false; }
+  try{ const sub=await pushSub(reg); if(!sub) throw new Error('nosub'); }catch(e){ toast(L.pushFail); return false; }
   const ps=pushSt(); ps.on=true; if(ps.ev==null) ps.ev=true; ps.h=''; pushSave(ps);
   mirrorForSW();
   return await pushRegister(true);
@@ -4170,9 +4188,9 @@ async function pushRegister(force){
   if(DEMO) return false; const ps=pushSt(); if(!ps.on) return false;
   try{
     const reg=await swReg(); if(!reg) return false;
-    const sub=await reg.pushManager.getSubscription(); if(!sub){ ps.ok=false; pushSave(ps); return false; }
+    let sub=null; try{ sub=await pushSub(reg); }catch(e){} if(!sub){ const p2=pushSt(); p2.ok=false; pushSave(p2); return false; }
     const body={id:mkId(), sub:sub.toJSON(), items:dueItems(), ev:!!ps.ev, wk:ps.wk!==false, ra:raList().filter(a=>a.on).map(a=>({c:a.c,op:a.op,v:a.v}))};
-    const h=hashPin(JSON.stringify(body)); if(!force && ps.h===h && ps.ok) return true;
+    const h=hashPin(API_BASE+JSON.stringify(body)), p1=pushSt(); if(!force && p1.h===h && p1.ok) return true;
     const r=await fetch(API_BASE+'/api/mk/reg',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});
     const ok=r.ok; const p2=pushSt(); p2.h=ok?h:''; p2.ok=ok; p2.at=Date.now(); pushSave(p2); return ok;
   }catch(e){ const p2=pushSt(); p2.ok=false; pushSave(p2); return false; }
@@ -4263,6 +4281,8 @@ function famApply(doc){
   for(const cc in cols) for(const r of cols[cc]) m.h[cc+':'+r.id]=hashPin(JSON.stringify(strip(r)));
   famMetaSave(m);
 }
+/* переезд: если на сервере Mira семьи ещё нет — берём копию с прежнего сервера (данные зашифрованы тем же ключом) */
+async function famOld(k){ try{ const o=await fetch(OLD_API+'/api/fam/'+k.id,{cache:'no-store'}); if(!o.ok) return null; const j=await o.json(); return j&&j.data?await famDecrypt(k.key,j.data):null; }catch(e){ return null; } }
 let famBusy=false, famTimer=null, famQueued=false;
 function famAfterPersist(){ const f=famSt(); if(!f||famApplying) return; try{ famStamp(); }catch(e){} clearTimeout(famTimer); famTimer=setTimeout(()=>famSync(false),2500); }
 let famApplying=false;
@@ -4275,7 +4295,7 @@ async function famSync(manual){
     for(let attempt=0; attempt<3; attempt++){
       const g=await fetch(API_BASE+'/api/fam/'+k.id,{cache:'no-store'}); if(!g.ok) throw new Error('get '+g.status);
       const rj=await g.json(); let remote={c:{},del:{}};
-      if(rj.data){ remote=await famDecrypt(k.key,rj.data); }
+      if(rj.data){ remote=await famDecrypt(k.key,rj.data); } else { const old=await famOld(k); if(old) remote=old; }
       famStamp();
       const local=famDoc(), merged=famMerge(local,remote);
       const mergedStr=JSON.stringify(merged), localStr=JSON.stringify(local);
