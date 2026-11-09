@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Мои кредиты</title>
-<meta name="description" content="Учёт кредитов, платежей и золота">
-<meta name="theme-color" content="#11805A">
+<title>Mira</title>
+<meta name="description" content="Mira — кредиты, платежи и кто вам должен. Все платежи — спокойно.">
+<meta name="theme-color" content="#F5F7FB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0B1430" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="manifest.json">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/ns-cyrillic-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/ns-cyrillic-400.woff2" as="font" type="font/woff2" crossorigin>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Кредиты">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Golos+Text:wght@400;500;600&display=swap">
+<meta name="apple-mobile-web-app-title" content="Mira">
 <style>
   html,body{margin:0}
   html{-webkit-text-size-adjust:100%}
@@ -1038,6 +1038,261 @@
   .cv-sz{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;} .cv-sz span{border:1.5px solid var(--line); border-radius:10px; padding:6px 12px; font-weight:800;}
   .cv-nav{display:flex; justify-content:space-between; margin-top:16px;} .cv-nav button{width:64px; height:52px; border-radius:16px; border:1px solid var(--line); background:var(--surface); font-size:1.8rem; color:var(--ink); cursor:pointer;} .cv-nav button:disabled{opacity:.3;}
   .iv-warn{margin-top:6px; font-size:.8rem; line-height:1.4; color:#9A5B00; background:color-mix(in srgb,#E0A100 12%,var(--surface)); border-radius:10px; padding:6px 9px;}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:400;src:url(fonts/ns-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:600;src:url(fonts/ns-latin-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:700;src:url(fonts/ns-latin-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:800;src:url(fonts/ns-latin-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:400;src:url(fonts/ns-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:600;src:url(fonts/ns-cyrillic-600.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:700;src:url(fonts/ns-cyrillic-700.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:800;src:url(fonts/ns-cyrillic-800.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:400;src:url(fonts/ns-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:600;src:url(fonts/ns-cyrillic-ext-600.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:700;src:url(fonts/ns-cyrillic-ext-700.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Nunito Sans';font-style:normal;font-display:swap;font-weight:800;src:url(fonts/ns-cyrillic-ext-800.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+
+  /* ===================== v7 Mira: палитра, шрифт, компоненты ===================== */
+  :root{
+    --font-num:'Nunito Sans', system-ui, -apple-system, sans-serif; --font-body:'Nunito Sans', system-ui, -apple-system, sans-serif;
+    --bg:#F5F7FB; --surface:#FFFFFF; --surface-2:#EEF2F8; --ink:#0F1E3D; --muted:#5A6680; --line:#DDE3EF;
+    --brand:#3456D8; --brand-ink:#233A8F; --brand-weak:#EAF0FF;
+    --gold:#F2B53A; --track:#EEF2F8;
+    --warn:#9A4418; --warn-weak:#FBEFE7; --danger:#B4531F; --danger-weak:#FBEFE7;
+    --in:#0E7D5A; --out:#B4531F; --info:#3456D8; --cu:#3456D8; --save:#6A55B5;
+    --m-navy:#0F1E3D; --m-hero:#0F1E3D; --m-navy-2:#24365F; --m-on-navy:#AFC0EA; --m-sun:#F2B53A;
+    --m-leaf:#0E7D5A; --m-leaf-weak:#E3F3EC; --m-clay:#B4531F; --m-clay-ink:#7A3410; --m-clay-weak:#FBEFE7; --m-clay-line:#F0D5C4;
+    --shadow:0 1px 2px rgba(15,30,61,.04), 0 8px 24px rgba(15,30,61,.06);
+    --shadow-lg:0 2px 8px rgba(15,30,61,.06), 0 18px 48px rgba(15,30,61,.12);
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --bg:#0B1430; --surface:#121E3C; --surface-2:#18264A; --ink:#EEF2FB; --muted:#A6B4D6; --line:#24365F;
+    --brand:#7C95FF; --brand-ink:#B9C7FF; --brand-weak:#1B2A55; --gold:#F2B53A; --track:#24365F;
+    --warn:#F3B38A; --warn-weak:#3A2418; --danger:#F3B38A; --danger-weak:#3A2418;
+    --in:#4CC79A; --out:#F3B38A; --info:#7C95FF; --cu:#7C95FF; --save:#A996F0;
+    --m-hero:#1B2B57; --m-navy-2:#2C4176; --m-leaf:#4CC79A; --m-leaf-weak:#143A2E; --m-clay:#F3B38A; --m-clay-ink:#F7D2B8; --m-clay-weak:#3A2418; --m-clay-line:#5A3A26;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.35); --shadow-lg:0 2px 10px rgba(0,0,0,.4), 0 20px 50px rgba(0,0,0,.5); }}
+  :root[data-theme="dark"]{
+    --bg:#0B1430; --surface:#121E3C; --surface-2:#18264A; --ink:#EEF2FB; --muted:#A6B4D6; --line:#24365F;
+    --brand:#7C95FF; --brand-ink:#B9C7FF; --brand-weak:#1B2A55; --gold:#F2B53A; --track:#24365F;
+    --warn:#F3B38A; --warn-weak:#3A2418; --danger:#F3B38A; --danger-weak:#3A2418;
+    --in:#4CC79A; --out:#F3B38A; --info:#7C95FF; --cu:#7C95FF; --save:#A996F0;
+    --m-hero:#1B2B57; --m-navy-2:#2C4176; --m-leaf:#4CC79A; --m-leaf-weak:#143A2E; --m-clay:#F3B38A; --m-clay-ink:#F7D2B8; --m-clay-weak:#3A2418; --m-clay-line:#5A3A26; }
+
+  body{font-family:var(--font-body); letter-spacing:-.005em;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn-primary, :root:not([data-theme="light"]) .m7-rec, :root:not([data-theme="light"]) .m7-hero.late .m7-b1{color:#0B1430;} }
+  :root[data-theme="dark"] .btn-primary, :root[data-theme="dark"] .m7-rec, :root[data-theme="dark"] .m7-hero.late .m7-b1{color:#0B1430;}
+  .mi{flex:none}
+  .mi-e{display:inline-block; width:1.15em; height:1.15em; vertical-align:-.2em; flex:none}
+  .m7-flag{display:inline-block; font:800 .62em/1.6 var(--font-num); padding:0 .4em; border-radius:5px; background:var(--surface-2); color:var(--muted); vertical-align:.12em; letter-spacing:.03em}
+
+  /* кнопки, карточки, окна */
+  .btn{border-radius:16px; font-weight:800; min-height:50px;}
+  .btn-ghost{background:var(--surface); border:1px solid var(--line);}
+  .btn.wa{background:var(--surface); color:var(--ink); border:1px solid var(--line);}
+  .card{border-radius:20px;}
+  .sheet{border-radius:26px 26px 0 0;}
+  .seg button.on{background:var(--surface); color:var(--ink); border-color:var(--ink);}
+  .field input,.field select,.field textarea{border-radius:14px;}
+  .field input:focus,.field select:focus,.field textarea:focus{border-color:var(--brand); outline:none;}
+  :focus-visible{outline:2px solid var(--brand); outline-offset:2px;}
+
+  /* шапка: кольцо и «mira», профиль справа */
+  header .title{display:grid; grid-template-columns:auto 1fr; column-gap:9px; align-items:center;}
+  .m7-logo{grid-row:1 / span 2; display:flex;}
+  #appTitle{font-size:1.5rem; font-weight:800; letter-spacing:-.045em; text-transform:lowercase; line-height:1.05;}
+  .hleft .me-btn{order:2; margin-left:auto;}
+  html:not([data-simple]) .hbtns{display:none;}
+
+  /* нижнее меню: 5 подписанных вкладок */
+  .bnav .bi{filter:none; opacity:1; width:52px; height:30px;}
+  .bnav .bi svg{width:24px; height:24px;}
+  .bnav .bl{font-size:.72rem;}
+  .bnav button.on{color:var(--brand);}
+  .bnav button.on .bi{background:var(--brand-weak);}
+  .bnav .bi.dot::after{background:var(--m-clay);}
+
+  /* «Сегодня» */
+  #todayHead,#view-today #hero{display:none!important;}
+  .m7-hello span{color:var(--muted); font-weight:700; font-size:.92rem;}
+  .m7-hello h1{margin:2px 0 14px; font:800 1.75rem/1.15 var(--font-num); letter-spacing:-.03em;}
+  .m7-hero{background:var(--m-hero); color:#fff; border-radius:26px; padding:18px; display:flex; flex-direction:column; gap:12px; margin-bottom:14px;}
+  .m7-h-top{display:flex; align-items:center; gap:12px;}
+  .m7-h-n{flex:1; min-width:0; display:flex; flex-direction:column;}
+  .m7-h-n span{font-size:.82rem; font-weight:700; color:var(--m-on-navy);}
+  .m7-h-n b{font-size:1.05rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .m7-chip{flex:none; font-size:.8rem; font-weight:800; padding:6px 10px; border-radius:99px; background:var(--m-navy-2); color:#fff; white-space:nowrap;}
+  .m7-h-amt{font:800 2.75rem/1 var(--font-num); letter-spacing:-.04em;}
+  .m7-h-amt small{font-size:1.1rem; font-weight:700; color:var(--m-on-navy); margin-left:8px; letter-spacing:0;}
+  .m7-h-pen{margin:0; font-size:.92rem; line-height:1.45;}
+  .m7-h-btns{display:flex; gap:10px;}
+  .m7-b1,.m7-b2{flex:1; min-height:52px; border-radius:16px; font:800 1rem var(--font-num); padding:0 10px;}
+  .m7-b1{background:var(--m-sun); color:#0F1E3D;}
+  .m7-b2{border:1.5px solid #3A4E80; color:#fff;}
+  .m7-b1:active,.m7-b2:active{transform:scale(.98);}
+  .m7-hero.late{background:var(--m-clay-weak); color:var(--m-clay-ink);}
+  .m7-hero.late .m7-h-n span,.m7-hero.late .m7-h-amt small{color:var(--m-clay);}
+  .m7-hero.late .m7-chip{background:var(--surface); color:var(--m-clay-ink);}
+  .m7-hero.late .m7-b1{background:var(--brand); color:#fff;}
+  .m7-hero.late .m7-b2{border-color:var(--m-clay-line); color:var(--m-clay-ink);}
+  .m7-first{background:var(--surface); border:1px solid var(--line); border-radius:24px; padding:22px 18px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; margin-bottom:14px;}
+  .m7-first b{font-size:1.15rem;} .m7-first p{margin:0 0 8px; color:var(--muted); line-height:1.5;}
+  .m7-calm{display:flex; gap:12px; align-items:center; background:var(--m-leaf-weak); color:var(--m-leaf); border-radius:22px; padding:14px 16px; margin-bottom:14px;}
+  .m7-calm b{display:block; color:var(--ink);} .m7-calm span{color:var(--muted); font-size:.9rem;}
+  .m7-month{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:14px 16px 4px; margin-bottom:14px;}
+  .m7-m-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
+  .m7-m-h b{font-size:1.05rem;}
+  .m7-m-h .link-btn{display:inline-flex; align-items:center; gap:5px; min-height:40px; font-weight:800; color:var(--brand);}
+  .m7-bar{height:8px; border-radius:99px; background:var(--track); overflow:hidden;}
+  .m7-bar i{display:block; height:100%; border-radius:99px; background:var(--m-sun);}
+  .m7-m-s{display:flex; justify-content:space-between; gap:10px; font-size:.84rem; color:var(--muted); margin:6px 0 4px;}
+  .m7-m-s b{color:var(--ink);}
+  .m7-m-pig{font-size:.84rem; color:var(--muted); display:flex; align-items:center; gap:6px; margin:2px 0 4px;}
+  .m7-rows{display:flex; flex-direction:column;}
+  .m7-r{display:flex; align-items:center; gap:12px; padding:8px 0; border-top:1px solid var(--surface-2); text-align:left; color:var(--ink); width:100%; min-height:54px; font-family:inherit;}
+  .m7-d{width:34px; flex:none; display:flex; flex-direction:column; align-items:center; line-height:1.05;}
+  .m7-d b{font-size:1.06rem;} .m7-d small{font-size:.68rem; font-weight:700; color:var(--muted);}
+  .m7-c{width:4px; height:28px; border-radius:4px; flex:none;}
+  .m7-n{flex:1; min-width:0; display:flex; flex-direction:column;}
+  .m7-n b{font-size:.95rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .m7-n small{font-size:.76rem; color:var(--muted);}
+  .m7-n small.ok,.m7-cl b.ok{color:var(--m-leaf); font-weight:700;}
+  .m7-a{display:inline-flex; align-items:center; gap:4px; font-size:.95rem;}
+  .m7-r.ok .m7-a{color:var(--m-leaf);}
+  .m7-owed{display:flex; align-items:center; gap:12px; width:100%; padding:13px 16px; background:var(--brand-weak); border-radius:22px; color:var(--ink); text-align:left; margin-bottom:14px; font-family:inherit; min-height:64px;}
+  .m7-owed>.mi:first-child{color:var(--brand);} .m7-owed>.mi:last-child{color:var(--muted);}
+  .m7-owed span{flex:1; display:flex; flex-direction:column;} .m7-owed small{color:var(--muted); font-size:.84rem;}
+  .m7-chk{background:var(--brand-weak); border-radius:20px; padding:14px 16px; margin-bottom:14px;}
+  .m7-chk p{margin:4px 0 10px; font-size:.88rem; color:var(--muted); line-height:1.45;}
+  .m7-row2{display:flex; gap:8px;} .m7-row2 .btn{flex:1; min-height:46px; font-size:.92rem; padding:10px;}
+  .focus{border-radius:20px;}
+
+  /* кнопки внизу «Сегодня» */
+  .m7-actbar{position:fixed; left:0; right:0; bottom:calc(var(--navh) + env(safe-area-inset-bottom,0px)); z-index:24; display:none; justify-content:center; padding:10px 16px 10px; background:var(--bg); border-top:1px solid var(--line);}
+  .m7-actbar .in{display:flex; gap:10px; width:100%; max-width:540px;}
+  html[data-curtab="today"] .m7-actbar{display:flex;}
+  html[data-simple] .m7-actbar{bottom:env(safe-area-inset-bottom,0px);}
+  html[data-curtab="today"] .wrap{padding-bottom:calc(220px + env(safe-area-inset-bottom,0px));}
+  .m7-rec{flex:1; background:var(--brand); color:#fff; min-height:54px; border-radius:16px;}
+  .m7-voice{background:var(--brand-weak); color:var(--brand-ink); min-height:54px; border-radius:16px; padding:0 16px;}
+
+  /* «Ещё» */
+  .m7-h1{font:800 1.75rem var(--font-num); letter-spacing:-.03em; margin:4px 0 6px;}
+  .m7-group h2{font-size:.9rem; color:var(--muted); font-weight:800; margin:18px 4px 8px;}
+  .m7-list{background:var(--surface); border:1px solid var(--line); border-radius:22px; overflow:hidden;}
+  .m7-li{display:flex; align-items:center; gap:12px; width:100%; padding:10px 16px; min-height:62px; text-align:left; color:var(--ink); border-top:1px solid var(--surface-2); font-family:inherit; background:transparent;}
+  .m7-li:first-child{border-top:0;}
+  .m7-li-i{width:40px; height:40px; border-radius:12px; background:var(--brand-weak); color:var(--brand); display:flex; align-items:center; justify-content:center; flex:none;}
+  .m7-li-t{flex:1; display:flex; flex-direction:column; min-width:0;}
+  .m7-li-t small{color:var(--muted); font-size:.82rem; line-height:1.35;}
+  .m7-li>.mi:last-child{color:var(--muted);}
+  .m7-li-b{background:var(--surface); border:1px solid var(--line); border-radius:18px; margin:4px 0 12px;}
+  .m7-ver{text-align:center; color:var(--muted); font-size:.8rem; margin-top:24px;}
+
+  /* выбор, шаги, подсказки */
+  .m7-chips{display:flex; flex-wrap:wrap; gap:8px;}
+  .m7-chips button{min-height:44px; padding:0 14px; border-radius:99px; border:1px solid var(--line); background:var(--surface); font:700 .9rem var(--font-num); color:var(--ink);}
+  .m7-chips button.on{background:var(--m-navy); border-color:var(--m-navy); color:#fff;}
+  .m7-chips .dash{border-style:dashed; color:var(--brand-ink);}
+  .m7-eq button{flex:1; padding:0 6px;}
+  .m7-step{display:flex; align-items:center; justify-content:space-between; height:54px; border:1.5px solid var(--line); border-radius:14px; background:var(--surface); padding:0 5px;}
+  .m7-step button{width:44px; height:44px; border-radius:12px; background:var(--surface-2); color:var(--ink); display:flex; align-items:center; justify-content:center;}
+  .m7-step b{font:800 1.2rem var(--font-num);}
+  .m7-sum{display:flex; gap:8px; align-items:flex-start; background:var(--m-leaf-weak); color:var(--m-leaf); border-radius:16px; padding:11px 13px; font-size:.88rem; font-weight:700; line-height:1.45; margin:0 0 12px;}
+  .m7-sum span{color:var(--ink);} .m7-sum:empty{display:none;}
+  .m7-hint{margin:6px 2px 0;}
+  .m7-mt8{margin-top:8px;} .m7-mt10{margin-top:10px;} .m7-center{text-align:center;}
+
+  /* опоздание и трудный месяц */
+  .m7-late{background:var(--m-clay-weak); color:var(--m-clay-ink); border-radius:22px; padding:16px; margin:4px 0 12px;}
+  .m7-late-h{display:flex; align-items:center; gap:10px; color:var(--m-clay);}
+  .m7-late-h b{font-size:1.15rem; color:var(--m-clay-ink);}
+  .m7-late p{margin:8px 0 10px; line-height:1.5;}
+  .m7-late-s{display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-top:1px solid var(--m-clay-line); padding-top:10px;}
+  .m7-late-s b{font-size:1.2rem;}
+  .m7-hard{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:16px; margin-top:14px;}
+  .m7-hard-h{display:flex; gap:10px; align-items:center; color:var(--brand);}
+  .m7-hard-h b{color:var(--ink); font-size:1.05rem;}
+  .m7-hard>p{color:var(--muted); font-size:.9rem; line-height:1.5; margin:8px 0 12px;}
+  .m7-script{background:var(--surface-2); border-radius:14px; padding:12px 14px; font-size:.92rem; line-height:1.55; white-space:pre-wrap;}
+  .m7-steps{margin:0 0 14px; padding-left:22px; line-height:1.55;} .m7-steps li{margin-bottom:6px;}
+
+  /* карточка кредита */
+  .m7-withint{margin:-4px 0 12px; font-size:.9rem; color:var(--muted);}
+  .m7-ifm{background:var(--brand-weak); border-radius:20px; padding:14px; margin:12px 0;}
+  .m7-ifm>b{display:block; margin-bottom:10px;}
+  .m7-ifm-r{font-weight:700; margin:10px 0 6px; line-height:1.45; min-height:2.9em;}
+  .m7-ifm small{color:var(--muted); line-height:1.4; display:block;}
+  .m7-seg{margin:16px 0 8px;}
+  .m7-cl{display:flex; align-items:center; gap:12px; padding:10px 12px; border:1px solid var(--line); border-radius:16px; background:var(--surface); margin-bottom:8px;}
+  .m7-cl.nx{border:2px solid var(--brand);}
+  .m7-cl>b{font-size:.95rem;}
+  .m7-bankrow .btn{flex:1;}
+
+  /* счёт, который не сгорает */
+  .m7-prog{background:var(--m-hero); color:#fff; border-radius:20px; padding:14px; margin:12px 0; text-align:left;}
+  .m7-prog>b{display:block; margin-bottom:10px;}
+  .m7-ticks{display:grid; gap:3px;}
+  .m7-ticks i{display:block; height:14px; border-radius:3px; background:var(--m-navy-2);}
+  .m7-ticks i.on{background:var(--m-sun);}
+  .m7-prog small{display:block; margin-top:10px; color:var(--m-on-navy); font-size:.8rem; line-height:1.45;}
+  .m7-prog .m7-bar{background:var(--m-navy-2);}
+  .m7-freed{background:var(--m-leaf-weak); border-radius:18px; padding:12px 14px; margin:12px 0; text-align:left;}
+  .m7-freed p{margin:4px 0 0; font-size:.9rem; line-height:1.45; color:var(--ink);}
+
+  /* напоминание покупателю */
+  .m7-chat{background:var(--surface-2); border-radius:20px; padding:12px; margin:12px 0; display:flex; flex-direction:column; gap:8px;}
+  .m7-chat-t{align-self:center; font-size:.74rem; font-weight:700; color:var(--muted); background:var(--surface); padding:3px 10px; border-radius:99px;}
+  .m7-bub{align-self:flex-end; max-width:92%; background:#DCF4E6; color:#0F1E3D; border-radius:18px 18px 6px 18px; padding:10px 12px; font-size:.92rem; line-height:1.45; word-break:break-word;}
+
+  /* уведомления */
+  .m7-lock{background:var(--m-navy-2); border-radius:22px; padding:12px; margin-bottom:12px;}
+  .m7-lock-t{color:#fff; text-align:center; font:700 1.6rem var(--font-num); margin-bottom:8px;}
+  .m7-lock-n{background:rgba(255,255,255,.93); border-radius:16px; padding:10px 12px; display:flex; gap:10px; align-items:flex-start; color:#0F1E3D;}
+  .m7-lock-n img{border-radius:8px; flex:none;}
+  .m7-lock-n div{display:flex; flex-direction:column; font-size:.88rem; line-height:1.35;}
+  .m7-tgs{background:var(--surface); border:1px solid var(--line); border-radius:20px; overflow:hidden;}
+  .m7-tg{display:flex; align-items:center; gap:12px; padding:12px 14px; border-top:1px solid var(--surface-2); cursor:pointer; position:relative; min-height:60px;}
+  .m7-tg:first-child{border-top:0;}
+  .m7-tg span{flex:1; display:flex; flex-direction:column;} .m7-tg small{color:var(--muted); font-size:.8rem; line-height:1.35;}
+  .m7-tg input{position:absolute; opacity:0; pointer-events:none;}
+  .m7-tg i{width:52px; height:32px; border-radius:99px; background:var(--line); position:relative; flex:none; transition:background .15s;}
+  .m7-tg i::after{content:''; position:absolute; top:4px; left:4px; width:24px; height:24px; border-radius:50%; background:#fff; transition:transform .15s;}
+  .m7-tg input:checked+i{background:var(--m-leaf);} .m7-tg input:checked+i::after{transform:translateX(20px);}
+  .m7-tg input:focus-visible+i{outline:2px solid var(--brand); outline-offset:2px;}
+  .m7-off{background:var(--surface-2); border-radius:20px; padding:14px; display:flex; flex-direction:column; gap:10px;}
+
+  /* календарь */
+  .m7-cal-h{display:flex; justify-content:space-between; align-items:center; gap:10px;}
+  .m7-cal-h h3{margin:0;} .m7-cal-h div{display:flex; gap:8px;} .m7-cal-h .icon-btn{width:44px; height:44px;}
+  .m7-cal{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:12px 8px; margin:12px 0;}
+  .m7-wd,.m7-days{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); text-align:center;}
+  .m7-wd span{font-size:.72rem; font-weight:700; color:var(--muted); padding-bottom:6px;}
+  .m7-days span{height:44px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px;}
+  .m7-days b{width:30px; height:26px; display:flex; align-items:center; justify-content:center; border-radius:9px; font-size:.92rem; font-weight:700;}
+  .m7-days .td b{background:var(--m-hero); color:#fff;}
+  .m7-days .past b{color:var(--muted); font-weight:600;}
+  .m7-days .hol b{box-shadow:inset 0 -2px 0 var(--m-sun);}
+  .m7-days em{display:flex; gap:2px; height:6px;} .m7-days em i{width:6px; height:6px; border-radius:50%;}
+  .m7-cls .m7-cl.ok{opacity:.75;}
+
+  /* голос */
+  .m7-vex{display:flex; flex-direction:column; align-items:center; gap:6px; margin:4px 0 14px;}
+  .m7-vex span{background:var(--surface-2); border-radius:12px; padding:7px 12px; font-weight:700; font-size:.9rem;}
+  .m7-mic{display:flex; margin:6px auto 10px; width:150px; height:150px; border-radius:50%; background:var(--brand-weak); align-items:center; justify-content:center;}
+  .m7-mic span{width:100px; height:100px; border-radius:50%; background:var(--brand); color:#fff; display:flex; align-items:center; justify-content:center;}
+  .m7-mic.rec span{animation:m7pulse 1.2s ease-in-out infinite;}
+  @keyframes m7pulse{50%{transform:scale(1.08)}}
+  @media (prefers-reduced-motion: reduce){ .m7-mic.rec span{animation:none;} }
+  .m7-v-st{display:block; text-align:center; font-size:1.05rem; margin-bottom:6px;}
+  .m7-heard{background:var(--brand-weak); border-radius:16px; padding:12px 14px; margin:6px 0 12px; display:flex; flex-direction:column; gap:2px;}
+  .m7-heard small{color:var(--brand-ink); font-weight:700;}
+  .m7-ok{width:80px; height:80px; border-radius:50%; background:var(--m-leaf-weak); color:var(--m-leaf); display:flex; align-items:center; justify-content:center; margin:6px auto 4px;}
+
+  /* первое знакомство */
+  .m7-wel{display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; padding:10px 4px 4px;}
+  .m7-wel h2{margin:4px 0 0; font:800 1.5rem var(--font-num); letter-spacing:-.02em;}
+  .m7-wel p{margin:0 0 6px; color:var(--muted); line-height:1.55;}
+  .m7-seg3{width:100%; margin-bottom:8px;}
 </style>
 </head>
 <body>
@@ -1056,6 +1311,11 @@
   <div class="view" id="view-today">
     <div class="bk-slot" data-restore="1"></div>
     <section id="todayHead"></section>
+    <section id="miraHello"></section>
+    <section id="miraCheck"></section>
+    <section id="miraNext"></section>
+    <section id="miraMonth"></section>
+    <section id="miraOwed"></section>
     <section id="focus"></section>
     <section id="simpleBox"></section>
     <section id="tripCard"></section>
@@ -1111,19 +1371,23 @@
 
   <div id="syncLine"></div>
   <button id="simpleHome" data-tab="today">← Сегодня</button>
+  <div class="view" id="view-more" hidden>
+    <section id="moreView"></section>
+  </div>
+
 </div>
 
+<div class="m7-actbar"><div class="in"><button class="btn m7-rec" data-m-rec="1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg> <span id="m7RecT">Записать оплату</span></button><button class="btn m7-voice" data-m-voice="1"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg> <span id="m7VoiceT">Голосом</span></button></div></div>
 <div class="fab"><div class="inner">
   <button class="btn btn-primary btn-full" id="addMain"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg> <span id="addMainText">Добавить банк</span></button>
 </div></div>
 
 <nav class="bnav" id="bnav" role="tablist"><div class="bn-in">
-  <button role="tab" data-tab="today"><span class="bi">🏠</span><span class="bl" id="bnToday">Сегодня</span></button>
-  <button role="tab" data-tab="loans"><span class="bi">💳</span><span class="bl" id="bnLoans">Кредиты</span></button>
-  <button role="tab" data-tab="shop"><span class="bi">🏪</span><span class="bl" id="bnShop">Магазин</span></button>
-  <button role="tab" data-tab="buy"><span class="bi">🛍️</span><span class="bl" id="bnBuy">Закупка</span></button>
-  <button role="tab" data-tab="money"><span class="bi">💰</span><span class="bl" id="bnMoney">Деньги</span></button>
-  <button role="tab" data-tab="stats"><span class="bi">📊</span><span class="bl" id="bnStats">Итоги</span></button>
+  <button role="tab" data-tab="today"><span class="bi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/></svg></span><span class="bl" id="bnToday">Сегодня</span></button>
+  <button role="tab" data-tab="loans"><span class="bi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 20h18"/></svg></span><span class="bl" id="bnLoans">Кредиты</span></button>
+  <button role="tab" data-tab="shop"><span class="bi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/></svg></span><span class="bl" id="bnShop">Магазин</span></button>
+  <button role="tab" data-tab="money"><span class="bi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M16 12.5h2"/><path d="M3 10h18"/></svg></span><span class="bl" id="bnMoney">Деньги</span></button>
+  <button role="tab" data-tab="more"><span class="bi"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/></svg></span><span class="bl" id="bnMore">Ещё</span></button>
 </div></nav>
 
 <div class="overlay" id="overlay"><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
@@ -2719,6 +2983,167 @@ en:{
 },
 };
 for(const k of ['ru','tg','en']){ const t2=X6[k].tipGroups2; delete X6[k].tipGroups2; Object.assign(D[k],X6[k]); if(t2) D[k].tipGroups=D[k].tipGroups.concat(t2); Object.assign(D[k],X7[k]); Object.assign(D[k],X8[k]); Object.assign(D[k],X9[k]); }
+/* ----- v7 Mira: строки ----- */
+const M7_PREP={ru:['январе','феврале','марте','апреле','мае','июне','июле','августе','сентябре','октябре','ноябре','декабре']};
+const M7S={
+ru:{
+  appName:'Mira', appSub:'Все платежи — спокойно', navMore:'Ещё', custDebtors:'Кто должен', apTitleOff:'Кредит закрыт', apTitle:'Записано',
+  overdueCap:'Платёж опаздывает',
+  m7Hello:h=>h<5?'Доброй ночи':h<12?'Доброе утро':h<18?'Добрый день':'Добрый вечер',
+  m7Next:'Следующий платёж', m7Paid:'Оплатила', m7More:'Подробнее', m7WhatToDo:'Что делать',
+  m7Late:n=>'Опаздывает на '+n+' '+ruPlural(n,['день','дня','дней']),
+  m7PenNow:(a,b)=>'Пеня сейчас ≈ '+a+' и растёт примерно на '+b+' в день.',
+  m7FirstT:'Добавьте первый кредит', m7FirstD:'Банк, платёж в месяц и день платежа — больше ничего не нужно. Mira напомнит заранее.', m7AddLoan:'Добавить кредит',
+  m7CalmT:'Ближайшие платежи отмечены', m7CalmD:(b,d)=>'Следующий — '+b+', '+d+'.',
+  m7Month:m=>'В '+M7_PREP.ru[m], m7Cal:'Календарь', m7PaidOf:(a,b)=>'Оплачено '+a+' из '+b, m7Left:a=>'ещё '+a, m7Piggy:a=>'В копилке на платежи: '+a,
+  m7Owed:'Мне должны', m7OwedSub:(n,k)=>n+' '+ruPlural(n,['человек','человека','человек'])+(k?', '+k+' обещали вернуть на этой неделе':''),
+  m7Record:'Записать оплату', m7Voice:'Голосом',
+  m7ChkQ:(b,a,d)=>'Деньги в «'+b+'» ('+a+', '+d+') зачислились?', m7ChkHint:'Иногда банк проводит платёж на 1–2 дня позже. Проверьте в приложении банка.',
+  m7ChkYes:'Да, всё в порядке', m7ChkNo:'Нет, не вижу',
+  m7NcT:'Платёж не видно — что сделать', m7NcSteps:['Подождите до вечера: иногда деньги идут 1–2 рабочих дня.','Откройте приложение банка и посмотрите историю.','Позвоните в банк: назовите дату, сумму и как платили.','Сохраните чек — по нему платёж найдут.'],
+  m7BankApp:'Приложение банка', m7Call:'Позвонить в банк', m7CallShort:'Позвонить', m7NoPhone:'Телефона банка нет. Добавьте его в «Изменить».',
+  m7LateFix:'Это поправимо.', m7PayToday:'Если оплатить сегодня', m7AlreadyPaid:'Уже оплатила',
+  m7HardT:'Трудный месяц?', m7HardD:'Лучше сказать банку заранее: можно попросить перенести платёж или составить новый график. Вот готовый текст — отправьте его или прочитайте по телефону.',
+  m7Copy:'Скопировать', m7Share:'Отправить', m7Copied:'Скопировано',
+  m7IfMore:'Если платить больше', m7IfPick:'Выберите сумму — покажу, на сколько раньше закончится кредит.',
+  m7IfRes:(n,s)=>'Закончите на '+n+' мес. раньше и сэкономите ≈ '+s+' на процентах.', m7IfResNoRate:n=>'Закончите на '+n+' мес. раньше. Укажите ставку — посчитаю и экономию.', m7IfSame:'С такой доплатой срок почти не изменится.',
+  m7EarlyNote:'Досрочно платить можно в любое время. Попросите в банке новый график — его дают бесплатно.', m7No:'нет',
+  m7Soon:'Скоро', m7PaidTab:'Оплачено', m7WithInt:a=>'Вместе с процентами осталось ≈ '+a, m7NextTag:'следующий',
+  m7How:'Как платили', m7HowApp:'Приложение банка', m7HowTerm:'Терминал', m7HowBank:'В банке', m7HowFam:'Перевели родные', m7TermNote:'В терминалах бывает комиссия — проверьте чек.',
+  m7Prog:(k,m)=>k+' из '+m+' '+ruPlural(m,['платежа','платежей','платежей'])+' позади', m7ProgNote:'Этот счёт не сгорает: каждый оплаченный платёж остаётся с вами, даже если какой-то опоздает.',
+  m7Freed:a=>'Освободилось '+a+' в месяц', m7FreedTo:(b,n,s)=>'Если добавлять их к «'+b+'», он закончится на '+n+' мес. раньше'+(s?' и сбережёт ≈ '+s:'')+'. Решать вам.', m7FreedSelf:'Можно оставить себе или отложить на цель.', m7Ok:'Понятно',
+  m7NewLoan:'Новый кредит', m7Bank:'Банк', m7Other:'Другой', m7BankName:'Название банка', m7MonthlyHint:'Сумма из графика банка, вместе с процентами',
+  m7Left2:'Осталось платежей', m7Detail:'Подробнее', m7DetailSub:'ставка, пеня, телефон банка, точная сумма долга', m7SaveLoan:'Сохранить кредит',
+  m7Summary:(f,l)=>'Первый платёж — '+f+', последний — '+l+'. Напомню заранее.', m7ErrBank:'Выберите или впишите банк', m7ErrAmt:'Впишите платёж в месяц', m7ErrDay:'День платежа — от 1 до 31',
+  m7Less:'Меньше', m7MoreN:'Больше',
+  m7RemT:n=>'Напомнить: '+n, m7RemSub:(b,d)=>'осталось '+b+(d?', обещали к '+d:''), m7ToneSoft:'Мягко', m7TonePlain:'Нейтрально', m7ToneDate:'О сроке',
+  m7Stmt:'Приложить выписку: сколько взяли и сколько вернули', m7WA:'Отправить в WhatsApp', m7OtherWay:'Другим способом', m7Preview:n=>'так увидит '+n,
+  m7FromYou:'Уйдёт с вашего телефона и от вашего имени. Сама Mira никому не пишет.', m7NoPhoneCu:'Телефона нет — WhatsApp откроется без номера, выберите человека сами.',
+  m7NotifT:'Уведомления', m7NPush:'Напоминания о платежах', m7NPushOn:'включены', m7NPushOff:'выключены', m7NOn:'Включить', m7NTest:'Проверить',
+  m7NHide:'Скрывать суммы', m7NHideD:'на экране блокировки будет только «платёж через 3 дня»',
+  m7NHol:'Перед праздниками раньше', m7NHolD:'Навруз, Иди Рамазон, Иди Қурбон — напомню на 2 дня раньше',
+  m7NWeek:'Итоги недели', m7NWeekD:'раз в неделю: что оплачено и что впереди', m7NEve:'Вечером', m7NEveD:'напомнить записать выручку за день',
+  m7NChk:'«Зачислилось?»', m7NChkD:'на следующий день после оплаты спрошу здесь, в приложении',
+  m7NNote:'Отметили оплату — напоминания про этот платёж сразу прекращаются.',
+  m7MoreT:'Ещё', m7GShop:'Магазин и планы', m7GSet:'Настройки', m7WeekSum:'Итоги недели', m7Cal2:'Календарь платежей', m7Rates:'Курсы валют', m7Search:'Поиск',
+  m7Data:'Данные, копия и семья', m7Lang:'Язык', m7Look:'Вид, крупный шрифт, PIN', m7Simple:'Простой режим', m7Calc:'Калькуляторы', m7Tips:'Советы',
+  m7WelT:'Добро пожаловать в Mira', m7WelD:'Кредиты, платежи и кто вам должен — в одном месте. Mira заранее напомнит о платеже и ничего не потеряет.',
+  m7WelAdd:'Добавить первый кредит', m7WelLater:'Сначала осмотреться',
+  m7VT:'Записать голосом', m7VSay:'Скажите, например:', m7VEx:['«оплатила 1840 Эсхата»','«Мадина вернула 500»','«Шахло взяла в долг 900»','«выручка 3200»'],
+  m7VListen:'Слушаю…', m7VTap:'Нажмите и говорите', m7VHeard:'Вы сказали', m7VWhat:'Что', m7VWho:'Кто', m7VSum:'Сумма', m7VWhen:'Когда', m7VToday:'сегодня',
+  m7VKPay:'Оплата кредита', m7VKRet:'Вернули долг', m7VKDebt:'Взяли в долг', m7VKDay:'Выручка за день',
+  m7VFix:'Исправить', m7VSave:'Сохранить', m7VSaved:'Записано', m7VUndo:'Отменить', m7VDone:'Готово', m7VNew:n=>'новый покупатель: '+n,
+  m7VNo:'Не получилось разобрать. Скажите ещё раз или впишите вручную.', m7VManual:'Вписать вручную', m7VNoSR:'Этот телефон не распознаёт голос. Впишите вручную.', m7VDenied:'Разрешите приложению доступ к микрофону.',
+  m7VFixHint:'Если что-то не так — нажмите «Исправить» и скажите ещё раз.', m7VPayOpen:'Проверьте сумму и нажмите «Записать».',
+  m7CalNone:'В этом месяце платежей нет', m7CalPaid:'оплачено', m7CalProm:(n,a)=>n+' обещает вернуть '+a, m7CalHol:'праздник',
+  m7Prev:'Предыдущий месяц', m7NextM:'Следующий месяц', m7Close:'Закрыть'
+},
+tg:{
+  appName:'Mira', appSub:'Ҳама пардохтҳо — бе ташвиш', navMore:'Дигар', custDebtors:'Кӣ қарздор аст', apTitleOff:'Қарз пӯшида шуд', apTitle:'Сабт шуд',
+  overdueCap:'Пардохт дер мемонад',
+  m7Hello:h=>h<5?'Шаб ба хайр':h<12?'Субҳ ба хайр':h<18?'Рӯз ба хайр':'Шом ба хайр',
+  m7Next:'Пардохти навбатӣ', m7Paid:'Пардохт кардам', m7More:'Муфассал', m7WhatToDo:'Чӣ бояд кард',
+  m7Late:n=>n+' рӯз дер мондааст',
+  m7PenNow:(a,b)=>'Ҷарима ҳозир ≈ '+a+' ва ҳар рӯз тақрибан '+b+' зиёд мешавад.',
+  m7FirstT:'Қарзи аввалро илова кунед', m7FirstD:'Бонк, пардохти моҳона ва рӯзи пардохт — дигар чизе лозим нест. Mira пешакӣ хотиррасон мекунад.', m7AddLoan:'Илова кардани қарз',
+  m7CalmT:'Пардохтҳои наздик қайд шудаанд', m7CalmD:(b,d)=>'Навбатӣ — '+b+', '+d+'.',
+  m7Month:m=>'Дар моҳи '+MONTHS.tg.long[m], m7Cal:'Тақвим', m7PaidOf:(a,b)=>'Пардохт шуд '+a+' аз '+b, m7Left:a=>'боз '+a, m7Piggy:a=>'Барои пардохтҳо ҷамъ шуд: '+a,
+  m7Owed:'Ба ман қарздоранд', m7OwedSub:(n,k)=>n+' нафар'+(k?', '+k+' нафар ин ҳафта ваъда доданд':''),
+  m7Record:'Сабти пардохт', m7Voice:'Бо овоз',
+  m7ChkQ:(b,a,d)=>'Пул ба «'+b+'» ('+a+', '+d+') гузаронида шуд?', m7ChkHint:'Баъзан бонк пардохтро 1–2 рӯз дертар мегузаронад. Дар барномаи бонк санҷед.',
+  m7ChkYes:'Ҳа, ҳамааш хуб', m7ChkNo:'Не, намебинам',
+  m7NcT:'Пардохт намоён нест — чӣ бояд кард', m7NcSteps:['То бегоҳ интизор шавед: баъзан пул 1–2 рӯзи корӣ мегузарад.','Барномаи бонкро кушоед ва таърихро бинед.','Ба бонк занг занед: сана, маблағ ва тарзи пардохтро гӯед.','Чекро нигоҳ доред — бо он пардохтро меёбанд.'],
+  m7BankApp:'Барномаи бонк', m7Call:'Ба бонк занг задан', m7CallShort:'Занг задан', m7NoPhone:'Рақами бонк нест. Онро дар «Тағйир додан» илова кунед.',
+  m7LateFix:'Ин ислоҳшаванда аст.', m7PayToday:'Агар имрӯз пардохт кунед', m7AlreadyPaid:'Аллакай пардохт кардам',
+  m7HardT:'Моҳи душвор?', m7HardD:'Беҳтар аст ба бонк пешакӣ гӯед: метавон хоҳиш кард, ки пардохт ба вақти дигар гузарад ё ҷадвали нав тартиб дода шавад. Ин матни тайёр аст — фиристед ё дар телефон хонед.',
+  m7Copy:'Нусха бардоштан', m7Share:'Фиристодан', m7Copied:'Нусха бардошта шуд',
+  m7IfMore:'Агар бештар пардозед', m7IfPick:'Маблағро интихоб кунед — нишон медиҳам, ки қарз чанд моҳ барвақттар тамом мешавад.',
+  m7IfRes:(n,s)=>n+' моҳ барвақттар тамом мешавад ва ≈ '+s+' аз фоизҳо сарфа мекунед.', m7IfResNoRate:n=>n+' моҳ барвақттар тамом мешавад. Фоизро нависед — сарфаро ҳам ҳисоб мекунам.', m7IfSame:'Бо ин иловапулӣ мӯҳлат қариб тағйир намеёбад.',
+  m7EarlyNote:'Пеш аз мӯҳлат дар вақти дилхоҳ пардохт кардан мумкин аст. Аз бонк ҷадвали нав пурсед — онро ройгон медиҳанд.', m7No:'не',
+  m7Soon:'Ба наздикӣ', m7PaidTab:'Пардохт шуд', m7WithInt:a=>'Бо фоизҳо ≈ '+a+' мондааст', m7NextTag:'навбатӣ',
+  m7How:'Чӣ тавр пардохтед', m7HowApp:'Барномаи бонк', m7HowTerm:'Терминал', m7HowBank:'Дар бонк', m7HowFam:'Хешовандон гузарониданд', m7TermNote:'Дар терминалҳо комиссия мешавад — чекро санҷед.',
+  m7Prog:(k,m)=>k+' аз '+m+' пардохт анҷом ёфт', m7ProgNote:'Ин ҳисоб нест намешавад: ҳар пардохти кардашуда бо шумо мемонад, ҳатто агар яке дер монад.',
+  m7Freed:a=>'Ҳар моҳ '+a+' озод шуд', m7FreedTo:(b,n,s)=>'Агар онро ба «'+b+'» илова кунед, он '+n+' моҳ барвақттар тамом мешавад'+(s?' ва ≈ '+s+' сарфа мешавад':'')+'. Қарор аз шумост.', m7FreedSelf:'Метавонед барои худ гузоред ё барои мақсад ҷамъ кунед.', m7Ok:'Фаҳмо',
+  m7NewLoan:'Қарзи нав', m7Bank:'Бонк', m7Other:'Дигар', m7BankName:'Номи бонк', m7MonthlyHint:'Маблағ аз ҷадвали бонк, бо фоизҳо',
+  m7Left2:'Пардохтҳои боқимонда', m7Detail:'Муфассал', m7DetailSub:'фоиз, ҷарима, телефони бонк, маблағи дақиқи қарз', m7SaveLoan:'Нигоҳ доштани қарз',
+  m7Summary:(f,l)=>'Пардохти аввал — '+f+', охирин — '+l+'. Пешакӣ хотиррасон мекунам.', m7ErrBank:'Бонкро интихоб кунед ё нависед', m7ErrAmt:'Пардохти моҳонаро нависед', m7ErrDay:'Рӯзи пардохт — аз 1 то 31',
+  m7Less:'Камтар', m7MoreN:'Бештар',
+  m7RemT:n=>'Ёдрас кардан: '+n, m7RemSub:(b,d)=>b+' мондааст'+(d?', ваъда то '+d:''), m7ToneSoft:'Нарм', m7TonePlain:'Оддӣ', m7ToneDate:'Дар бораи мӯҳлат',
+  m7Stmt:'Ҳисобро илова кунед: чӣ қадар гирифт ва чӣ қадар баргардонд', m7WA:'Фиристодан ба WhatsApp', m7OtherWay:'Бо роҳи дигар', m7Preview:n=>n+' ҳамин тавр мебинад',
+  m7FromYou:'Аз телефони шумо ва аз номи шумо меравад. Mira худаш ба ҳеҷ кас наменависад.', m7NoPhoneCu:'Рақам нест — WhatsApp бе рақам кушода мешавад, одамро худатон интихоб кунед.',
+  m7NotifT:'Огоҳиномаҳо', m7NPush:'Ёдраскунии пардохтҳо', m7NPushOn:'фаъол', m7NPushOff:'хомӯш', m7NOn:'Фаъол кардан', m7NTest:'Санҷидан',
+  m7NHide:'Маблағҳоро пинҳон кардан', m7NHideD:'дар экрани қулф танҳо «пардохт баъди 3 рӯз» намоён мешавад',
+  m7NHol:'Пеш аз идҳо барвақттар', m7NHolD:'Наврӯз, Иди Рамазон, Иди Қурбон — 2 рӯз барвақттар хотиррасон мекунам',
+  m7NWeek:'Ҳисоботи ҳафта', m7NWeekD:'ҳафтае як бор: чӣ пардохт шуд ва чӣ дар пеш аст', m7NEve:'Бегоҳӣ', m7NEveD:'хотиррасон кардан, ки даромади рӯзро сабт кунед',
+  m7NChk:'«Гузаронида шуд?»', m7NChkD:'як рӯз баъди пардохт дар ҳамин барнома мепурсам',
+  m7NNote:'Пардохтро қайд кардед — ёдраскунӣ дар бораи он фавран қатъ мешавад.',
+  m7MoreT:'Дигар', m7GShop:'Мағоза ва нақшаҳо', m7GSet:'Танзимот', m7WeekSum:'Ҳисоботи ҳафта', m7Cal2:'Тақвими пардохтҳо', m7Rates:'Қурби асъор', m7Search:'Ҷустуҷӯ',
+  m7Data:'Маълумот, нусха ва оила', m7Lang:'Забон', m7Look:'Намуд, ҳарфи калон, PIN', m7Simple:'Ҳолати содда', m7Calc:'Ҳисобкунакҳо', m7Tips:'Маслиҳатҳо',
+  m7WelT:'Хуш омадед ба Mira', m7WelD:'Қарзҳо, пардохтҳо ва кӣ ба шумо қарздор аст — дар як ҷо. Mira пешакӣ дар бораи пардохт хотиррасон мекунад ва ҳеҷ чизро гум намекунад.',
+  m7WelAdd:'Илова кардани қарзи аввал', m7WelLater:'Аввал шинос шавам',
+  m7VT:'Сабт бо овоз', m7VSay:'Масалан, гӯед:', m7VEx:['«1840 Эсхата пардохт кардам»','«Мадина 500 баргардонд»','«Шаҳло 900 насия гирифт»','«даромад 3200»'],
+  m7VListen:'Гӯш мекунам…', m7VTap:'Пахш кунед ва гӯед', m7VHeard:'Шумо гуфтед', m7VWhat:'Чӣ', m7VWho:'Кӣ', m7VSum:'Маблағ', m7VWhen:'Кай', m7VToday:'имрӯз',
+  m7VKPay:'Пардохти қарз', m7VKRet:'Қарзро баргардонданд', m7VKDebt:'Насия гирифтанд', m7VKDay:'Даромади рӯз',
+  m7VFix:'Ислоҳ кардан', m7VSave:'Нигоҳ доштан', m7VSaved:'Сабт шуд', m7VUndo:'Бекор кардан', m7VDone:'Тайёр', m7VNew:n=>'харидори нав: '+n,
+  m7VNo:'Фаҳмида нашуд. Боз як бор гӯед ё дастӣ нависед.', m7VManual:'Дастӣ навиштан', m7VNoSR:'Ин телефон овозро намешиносад. Дастӣ нависед.', m7VDenied:'Ба барнома иҷозати микрофон диҳед.',
+  m7VFixHint:'Агар чизе нодуруст бошад — «Ислоҳ кардан»-ро пахш кунед ва боз гӯед.', m7VPayOpen:'Маблағро санҷед ва «Сабт»-ро пахш кунед.',
+  m7CalNone:'Дар ин моҳ пардохт нест', m7CalPaid:'пардохт шуд', m7CalProm:(n,a)=>n+' ваъда додааст '+a+' баргардонад', m7CalHol:'ид',
+  m7Prev:'Моҳи гузашта', m7NextM:'Моҳи оянда', m7Close:'Пӯшидан'
+},
+en:{
+  appName:'Mira', appSub:'Every payment, calm', navMore:'More', custDebtors:'Who owes you', apTitleOff:'Loan closed', apTitle:'Recorded',
+  overdueCap:'Payment is late',
+  m7Hello:h=>h<5?'Good night':h<12?'Good morning':h<18?'Good afternoon':'Good evening',
+  m7Next:'Next payment', m7Paid:'Paid', m7More:'Details', m7WhatToDo:'What to do',
+  m7Late:n=>n+' day'+(n===1?'':'s')+' late',
+  m7PenNow:(a,b)=>'Penalty now ≈ '+a+', growing by about '+b+' a day.',
+  m7FirstT:'Add your first loan', m7FirstD:'Bank, monthly payment and the payment day — nothing else. Mira will remind you in advance.', m7AddLoan:'Add a loan',
+  m7CalmT:'Upcoming payments are marked', m7CalmD:(b,d)=>'Next: '+b+', '+d+'.',
+  m7Month:m=>'In '+MONTHS.en.long[m], m7Cal:'Calendar', m7PaidOf:(a,b)=>'Paid '+a+' of '+b, m7Left:a=>a+' to go', m7Piggy:a=>'Set aside for payments: '+a,
+  m7Owed:'Owed to me', m7OwedSub:(n,k)=>n+' '+(n===1?'person':'people')+(k?', '+k+' promised this week':''),
+  m7Record:'Record a payment', m7Voice:'By voice',
+  m7ChkQ:(b,a,d)=>'Did your payment to '+b+' ('+a+', '+d+') go through?', m7ChkHint:'Sometimes a bank posts a payment 1–2 days later. Check in the bank app.',
+  m7ChkYes:'Yes, all good', m7ChkNo:"No, I can't see it",
+  m7NcT:"The payment isn't showing — what to do", m7NcSteps:['Wait until evening: transfers can take 1–2 working days.','Open the bank app and check the history.','Call the bank: give the date, amount and how you paid.','Keep the receipt — the bank can find the payment by it.'],
+  m7BankApp:'Bank app', m7Call:'Call the bank', m7CallShort:'Call', m7NoPhone:'No bank phone yet. Add it under “Edit”.',
+  m7LateFix:'This can be fixed.', m7PayToday:'If you pay today', m7AlreadyPaid:'Already paid',
+  m7HardT:'A hard month?', m7HardD:'It is better to tell the bank early: you can ask to move the payment or for a new schedule. Here is a ready text — send it or read it on the phone.',
+  m7Copy:'Copy', m7Share:'Send', m7Copied:'Copied',
+  m7IfMore:'If you pay more', m7IfPick:'Pick an amount — I will show how much sooner the loan ends.',
+  m7IfRes:(n,s)=>'You finish '+n+' months sooner and save ≈ '+s+' in interest.', m7IfResNoRate:n=>'You finish '+n+' months sooner. Add the rate to see the savings too.', m7IfSame:'With this extra the term barely changes.',
+  m7EarlyNote:'You can repay early at any time. Ask the bank for a new schedule — it is free.', m7No:'none',
+  m7Soon:'Upcoming', m7PaidTab:'Paid', m7WithInt:a=>'Left with interest ≈ '+a, m7NextTag:'next',
+  m7How:'How you paid', m7HowApp:'Bank app', m7HowTerm:'Terminal', m7HowBank:'At the bank', m7HowFam:'Family sent it', m7TermNote:'Terminals may charge a fee — check the receipt.',
+  m7Prog:(k,m)=>k+' of '+m+' payments done', m7ProgNote:'This count never resets: every paid instalment stays with you, even if one is late.',
+  m7Freed:a=>a+' a month is free now', m7FreedTo:(b,n,s)=>'Adding it to '+b+' would finish it '+n+' months sooner'+(s?' and save ≈ '+s:'')+'. Your call.', m7FreedSelf:'You can keep it or put it towards a goal.', m7Ok:'Got it',
+  m7NewLoan:'New loan', m7Bank:'Bank', m7Other:'Other', m7BankName:'Bank name', m7MonthlyHint:'The amount from the bank schedule, with interest',
+  m7Left2:'Payments left', m7Detail:'More details', m7DetailSub:'rate, penalty, bank phone, exact balance', m7SaveLoan:'Save loan',
+  m7Summary:(f,l)=>'First payment '+f+', last '+l+'. I will remind you in advance.', m7ErrBank:'Pick or type the bank', m7ErrAmt:'Enter the monthly payment', m7ErrDay:'Payment day is 1 to 31',
+  m7Less:'Fewer', m7MoreN:'More',
+  m7RemT:n=>'Remind '+n, m7RemSub:(b,d)=>b+' left'+(d?', promised by '+d:''), m7ToneSoft:'Gently', m7TonePlain:'Neutral', m7ToneDate:'About the date',
+  m7Stmt:'Attach a statement: what was taken and returned', m7WA:'Send via WhatsApp', m7OtherWay:'Another way', m7Preview:n=>'what '+n+' will see',
+  m7FromYou:'It goes from your phone, in your name. Mira never writes to anyone by itself.', m7NoPhoneCu:'No phone number — WhatsApp opens without one, pick the person yourself.',
+  m7NotifT:'Notifications', m7NPush:'Payment reminders', m7NPushOn:'On', m7NPushOff:'Off', m7NOn:'Turn on', m7NTest:'Test',
+  m7NHide:'Hide amounts', m7NHideD:'the lock screen shows only “payment in 3 days”',
+  m7NHol:'Earlier before holidays', m7NHolD:'Navruz and the two Eids — I remind you 2 days earlier',
+  m7NWeek:'Weekly summary', m7NWeekD:'once a week: what is paid and what is next', m7NEve:'Evening', m7NEveD:"remind me to log the day's revenue",
+  m7NChk:'“Did it go through?”', m7NChkD:'the day after a payment I ask here, in the app',
+  m7NNote:'Once you mark a payment, its reminders stop right away.',
+  m7MoreT:'More', m7GShop:'Shop and plans', m7GSet:'Settings', m7WeekSum:'Weekly summary', m7Cal2:'Payment calendar', m7Rates:'Exchange rates', m7Search:'Search',
+  m7Data:'Data, backup and family', m7Lang:'Language', m7Look:'Look, large text, PIN', m7Simple:'Simple mode', m7Calc:'Calculators', m7Tips:'Tips',
+  m7WelT:'Welcome to Mira', m7WelD:'Loans, payments and who owes you — in one place. Mira reminds you before each payment and never loses a thing.',
+  m7WelAdd:'Add my first loan', m7WelLater:'Look around first',
+  m7VT:'Record by voice', m7VSay:'Say, for example:', m7VEx:['“paid 1840 Eskhata”','“Madina returned 500”','“Shakhlo took 900 on credit”','“revenue 3200”'],
+  m7VListen:'Listening…', m7VTap:'Tap and speak', m7VHeard:'You said', m7VWhat:'What', m7VWho:'Who', m7VSum:'Amount', m7VWhen:'When', m7VToday:'today',
+  m7VKPay:'Loan payment', m7VKRet:'Debt returned', m7VKDebt:'Took on credit', m7VKDay:"Day's revenue",
+  m7VFix:'Fix', m7VSave:'Save', m7VSaved:'Recorded', m7VUndo:'Undo', m7VDone:'Done', m7VNew:n=>'new customer: '+n,
+  m7VNo:"I couldn't catch that. Say it again or type it in.", m7VManual:'Type it in', m7VNoSR:"This phone can't recognise speech. Type it in.", m7VDenied:'Allow microphone access for the app.',
+  m7VFixHint:'If something is wrong, tap “Fix” and say it again.', m7VPayOpen:'Check the amount and tap “Record”.',
+  m7CalNone:'No payments this month', m7CalPaid:'paid', m7CalProm:(n,a)=>n+' promised to return '+a, m7CalHol:'holiday',
+  m7Prev:'Previous month', m7NextM:'Next month', m7Close:'Close'
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M7S[k]);
+
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
 
@@ -3577,7 +4002,7 @@ function detailSheet(loan){
     +(a.check?`<div class="sheet-row" style="margin-top:0;margin-bottom:12px"><button class="btn btn-primary" data-action="cyes" data-id="${loan.id}">${L.checkYes}</button><button class="btn btn-ghost" data-action="cno" data-id="${loan.id}">${L.checkNo}</button></div>`:'');
   const goldLine=loan.gold?`<div class="dnext gold"><span class="k">${L.goldPledgeLabel}</span><span class="amt">${rf.format(+loan.gold||0)} ${L.gramsShort}</span></div>`:'';
   const lpays=state.payments.filter(p=>p.loanId===loan.id).sort((x,y)=>(y.date.localeCompare(x.date))||String(y.id).localeCompare(String(x.id))).slice(0,8);
-  const hist=lpays.length?`<div class="hist"><h4>${L.paymentsThisBank}</h4>${lpays.map(p=>`<button class="hrow hbtn" data-pay="${esc(p.id)}"><span class="hn">${p.extra?L.extraWord:L.paymentWord}${p.rc?' 📎':''}${p.late>0?` <span class="late">· ${L.lateTag}</span>`:''}</span><span class="hd">${fmtShort(parseYmd(p.date))}</span><span class="ha">−${money(p.amount)}</span></button>`).join('')}</div>`:'';
+  const hist=lpays.length?`<div class="hist"><h4>${L.paymentsThisBank}</h4>${lpays.map(p=>`<button class="hrow hbtn" data-pay="${esc(p.id)}"><span class="hn">${p.extra?L.extraWord:L.paymentWord}${p.rc?' 📎':''}${p.how?` <small class="muted">· ${esc(m7HowLabel(p.how))}</small>`:''}${p.late>0?` <span class="late">· ${L.lateTag}</span>`:''}</span><span class="hd">${fmtShort(parseYmd(p.date))}</span><span class="ha">−${money(p.amount)}</span></button>`).join('')}</div>`:'';
   const stats=`<div class="detail-grid"><div class="dcell"><div class="k">${L.paidLabel}</div><div class="v paid">${money(a.paid)}</div></div><div class="dcell"><div class="k">${L.leftLabel}</div><div class="v rem ${a.done?'done':''}">${money(a.remaining)}</div></div></div>`;
   const prog=pc?`<p class="pcount">${L.paymentsBehind(pc.k,pc.m)}</p>`:'';
   const extra=[];
@@ -3601,11 +4026,14 @@ function payForm(loan){
     ${canSplit?`<div class="two"><div class="field n"><label>${L.ofItInterest}</label><input id="p-int" type="number" inputmode="numeric" min="0"></div><div class="field n"><label>${L.ofItPrincipal}</label><input id="p-prin" type="number" readonly tabindex="-1"></div></div><p class="note" style="margin:-6px 0 12px">${L.splitNote}</p>`:`<p class="note" style="margin:-6px 0 12px">${L.splitNoRate}</p>`}
     <div class="field"><label class="check"><input type="checkbox" id="p-extra"> ${L.extraPay}</label></div>
     ${envB>0?`<div class="field"><label class="check"><input type="checkbox" id="p-env" checked> ${L.fromPiggy(money(envB))}</label></div>`:''}
+    <div class="field"><label>${L.m7How}</label><div class="m7-chips" id="p-how">${['app','term','bank','fam'].map(k=>`<button type="button" data-how="${k}">${m7HowLabel(k)}</button>`).join('')}</div><p class="note m7-hint" id="p-how-n" hidden>${L.m7TermNote}</p></div>
     <div class="field"><label class="btn btn-ghost btn-full rc-up">📷 <span id="p-rc-t">${L.rcAdd}</span><input type="file" accept="image/*" id="p-rc" hidden></label></div>
     <div class="err" id="p-err"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="p-save">${L.record}</button></div>`);
   const inp=$('#p-amt'), ii=$('#p-int'), pp=$('#p-prin'), ex=$('#p-extra'); let rcData=null, intTouched=false;
   function upd(){ if(!ii) return; const amt=+inp.value||0; if(!intTouched||ex.checked) ii.value=ex.checked?0:interestFor(loan,amt,per,false); ii.disabled=ex.checked; pp.value=Math.max(0,amt-(+ii.value||0)); }
   inp.addEventListener('input',upd); if(ii) ii.addEventListener('input',()=>{ intTouched=true; upd(); }); ex.addEventListener('change',upd); upd();
+  let how=lsGet('m7how_v1')||''; const howSet=k=>{ how=k; sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.classList.toggle('on',b.dataset.how===k)); const hn=$('#p-how-n'); if(hn) hn.hidden=k!=='term'; };
+  sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.onclick=()=>howSet(how===b.dataset.how?'':b.dataset.how)); howSet(how);
   inp.focus(); inp.select();
   $('#p-rc').addEventListener('change',async e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; try{ rcData=await imgToJpeg(f); $('#p-rc-t').textContent=L.rcAdded; }catch(_){ toast(L.rcFail); } });
   let warned=false; inp.addEventListener('input',()=>{ warned=false; $('#p-save').textContent=L.record; });
@@ -3618,8 +4046,9 @@ function payForm(loan){
     loan.paid=Math.min(+loan.total||0, before+(amt-i));
     const applied=Math.max(0,loan.paid-before);
     const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:applied,interest:i,date:ymd(new Date())};
+    if(how){ rec.how=how; lsSet('m7how_v1',how); }
     if(extra) rec.extra=true;
-    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=Math.max(0,-daysUntil(due)); markPaid(loan); }
+    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=Math.max(0,-daysUntil(due)); rec.chk=ymd(addDays(today0(),1)); markPaid(loan); }
     const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
     if(rcData){ rec.rc=true; await rcPut(rec.id,rcData); }
     state.payments.push(rec);
@@ -3645,11 +4074,11 @@ function afterPaySheet(loan,pctBefore,payoff,rec){
   const a=analyze(loan), st=streakMonths(), pc=loanProgressCounts(loan,a);
   const left=pc?Math.max(0,pc.m-pc.k):(a.monthsLeft||0);
   const msg=payoff?L.apPaidOff:(left>0?L.apCloser(left):L.apCloserNoCount);
-  openSheet(`<div class="ap"><div class="ap-ring">${ringHTML(a.pct,'lg')}</div><h3 style="justify-content:center">${payoff?'🎉 '+L.apTitleOff:'✓ '+L.apTitle}</h3>
+  openSheet(`<div class="ap"><div class="ap-ring">${ringHTML(a.pct,'lg')}</div><h3 style="justify-content:center">${payoff?L.apTitleOff:L.apTitle}</h3>
     <p class="lead" style="text-align:center">${esc(loan.name)} · −${money(rec.amount)}${rec.interest>0?` <span class="muted">(${L.apSplit(money(rec.principal),money(rec.interest))})</span>`:''}</p>
     <div class="ap-msg">${msg}</div>
     ${a.pct>pctBefore?`<p class="ap-sub">${L.apPct(pctBefore,a.pct)}</p>`:''}
-    ${st>=1?`<p class="ap-sub">🔥 ${L.streakText(st)}</p>`:''}
+    ${payoff?m7FreedHTML(loan):''}${m7ProgHTML()}
     ${rec.late>0?`<p class="ap-sub">${L.apLateKind}</p>`:''}
     <button class="btn btn-primary btn-full" data-close style="margin-top:12px">${L.apOk}</button></div>`);
 }
@@ -4045,7 +4474,7 @@ function renderMonthCheck(list){
   const cm=mIdx(today0()), du=dueInMonth(cm,list.filter(x=>!x.loan.example||list.every(y=>y.loan.example)));
   if(!du.rows.length){ box.innerHTML=''; return; }
   const paidN=du.rows.filter(r=>r.paid).length, st=streakMonths();
-  box.innerHTML=`<div class="mcheck"><div class="mc-h"><b>${L.mcTitle(L.monthsNom[new Date().getMonth()],paidN,du.rows.length)}</b>${st>=1?`<span class="streak">🔥 ${L.streakShort(st)}</span>`:''}</div>
+  box.innerHTML=`<div class="mcheck"><div class="mc-h"><b>${L.mcTitle(L.monthsNom[new Date().getMonth()],paidN,du.rows.length)}</b>${m7ProgChip()}</div>
     <div class="mc-bar"><i style="width:${Math.round(paidN/du.rows.length*100)}%"></i></div>
     <div class="mc-list">${du.rows.map(r=>`<button class="mc-r ${r.paid?'ok':''}" ${r.kind==='sup'?`data-sup="${esc(r.id)}"`:`data-action="${r.paid?'open':'pay'}" data-id="${esc(r.id)}"`}><span class="mc-i">${r.paid?'✓':'○'}</span><span class="mc-n">${esc(r.name)}</span><span class="mc-d">${fmtShort(r.d)}</span><b>${money(r.amt)}</b></button>`).join('')}</div></div>`;
 }
@@ -4188,7 +4617,7 @@ document.addEventListener('click', e=>{
 }, true);
 
 /* ===================== v6: вкладки, «Сегодня», курсы, праздники ===================== */
-const TABS=['today','loans','shop','buy','money','stats'];
+const TABS=['today','loans','shop','buy','money','stats','more'];
 const TAB_MAP={exp:'money',plan:'stats',tips:'stats'};
 let curTab='today'; try{ curTab=TAB_MAP[localStorage.getItem('tab_v1')]||localStorage.getItem('tab_v1')||'today'; }catch(e){}
 function setTab(t){
@@ -4196,11 +4625,12 @@ function setTab(t){
   try{ localStorage.setItem('tab_v1',t); }catch(e){}
   TABS.forEach(x=>{ const v=$('#view-'+x); if(v) v.hidden=(x!==t);
     const b=document.querySelector('.bnav [data-tab="'+x+'"]'); if(b){ b.classList.toggle('on',x===t); b.setAttribute('aria-selected', x===t?'true':'false'); } });
+  { const nt=(t==='buy'||t==='stats')?'more':t; document.querySelectorAll('.bnav [data-tab]').forEach(b=>{ const on=b.dataset.tab===nt; b.classList.toggle('on',on); b.setAttribute('aria-selected',on?'true':'false'); }); }
   const fab=document.querySelector('.fab'); if(fab) fab.style.display=(t==='loans')?'':'none';
   document.documentElement.dataset.curtab=t; try{ updBuyFab(); }catch(e){}
   window.scrollTo(0,0);
 }
-function renderTabs(){ const m={bnToday:L.navToday,bnLoans:L.navLoans,bnShop:L.navShop,bnBuy:L.navBuy,bnMoney:L.navMoney,bnStats:L.navStats}; for(const id in m){ const el=$('#'+id); if(el) el.textContent=m[id]; } const sh=$('#simpleHome'); if(sh) sh.textContent='← '+L.navToday; }
+function renderTabs(){ const m={bnToday:L.navToday,bnLoans:L.navLoans,bnShop:L.navShop,bnBuy:L.navBuy,bnMoney:L.navMoney,bnStats:L.navStats,bnMore:L.navMore}; for(const id in m){ const el=$('#'+id); if(el) el.textContent=m[id]; } const sh=$('#simpleHome'); if(sh) sh.textContent='← '+L.navToday; }
 
 function focusLater(id){ setTimeout(()=>{ const e=$(id); if(e) e.focus(); },60); }
 /* ---- «Сегодня»: что сделать, быстрые кнопки ---- */
@@ -4600,7 +5030,7 @@ function custSheet(c){
     ${c.note||c.size?`<div class="cu-note">${c.size?`<div>📏 ${L.custSize}: <b>${esc(c.size)}</b></div>`:''}${c.note?`<div>💜 ${esc(c.note)}</div>`:''}</div>`:''}
     <div class="calc-out"><div class="co-row big"><span>${st.bal>0?L.custOwesNow:L.custSettled}</span><b class="${st.overdue?'tx-urgent':''}">${money(Math.max(0,st.bal))}</b></div>${st.due?`<div class="co-row"><span>${L.custDueW}</span><b class="${st.overdue?'tx-urgent':''}">${fmtDate(parseYmd(st.due))}</b></div>`:''}${st.bal<0?`<div class="co-row"><span>${L.custPrepaid}</span><b>${money(-st.bal)}</b></div>`:''}</div>
     ${loyHTML(c)}<div class="sheet-row"><button class="btn btn-primary" id="cu-pay">💵 ${L.custTake}</button><button class="btn btn-ghost" id="cu-debt">➕ ${L.custGive}</button></div>
-    ${ph?`<div class="sheet-row"><a class="btn btn-ghost" href="tel:${esc(ph)}">📞 ${L.callW}</a>${st.bal>0?`<a class="btn btn-ghost wa" href="${esc(waLink(c.phone,custMsg(c,st)))}" target="_blank" rel="noopener">💬 ${L.custRemind}</a>`:`<a class="btn btn-ghost wa" href="${esc(waLink(c.phone,''))}" target="_blank" rel="noopener">💬 WhatsApp</a>`}</div>`:(st.bal>0?`<div class="sheet-row"><button class="btn btn-ghost" id="cu-copy">📋 ${L.custCopyMsg}</button></div>`:'')}
+    ${ph?`<div class="sheet-row"><a class="btn btn-ghost" href="tel:${esc(ph)}">📞 ${L.callW}</a>${st.bal>0?`<button class="btn btn-ghost wa" data-m-remind="${esc(c.id)}">💬 ${L.custRemind}</button>`:`<a class="btn btn-ghost wa" href="${esc(waLink(c.phone,''))}" target="_blank" rel="noopener">💬 WhatsApp</a>`}</div>`:(st.bal>0?`<div class="sheet-row"><button class="btn btn-ghost" data-m-remind="${esc(c.id)}">💬 ${L.custRemind}</button></div>`:'')}
     ${hist?`<div class="hist"><h4>${L.custHist}</h4>${hist}<p class="note">${L.custHistDel}</p></div>`:''}
     <div class="sheet-row"><button class="btn btn-ghost" id="cu-edit">✏️ ${L.edit}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
   loyBind(c,()=>custSheet(c)); $('#cu-pay').onclick=()=>debtForm(c,'pay'); $('#cu-debt').onclick=()=>debtForm(c,'debt'); $('#cu-edit').onclick=()=>custForm(c);
@@ -4733,7 +5163,7 @@ document.addEventListener('click', e=>{
   const t=e.target, S=e=>e.stopImmediatePropagation();
   const ss=t.closest('[data-ssub]'); if(ss){ S(e); setShopSub(ss.dataset.ssub); return; }
   const qe=t.closest('[data-qexp]'); if(qe){ S(e); quickExpForm(qe.dataset.qexp); return; }
-  const cu=t.closest('[data-cust]'); if(cu){ S(e); const c=state.cust.find(x=>x.id===cu.dataset.cust); if(c){ if(cu.classList.contains('fo-b')){ const st=custState(c); if(c.phone){ window.open(waLink(c.phone,custMsg(c,st)),'_blank'); } else custSheet(c); } else custSheet(c); } return; }
+  const cu=t.closest('[data-cust]'); if(cu){ S(e); const c=state.cust.find(x=>x.id===cu.dataset.cust); if(c){ if(cu.classList.contains('fo-b')) m7RemSheet(c); else custSheet(c); } return; }
   if(t.closest('[data-custadd]')){ S(e); custForm(null); return; }
   const db=t.closest('[data-debt]'); if(db){ S(e); debtForm(null,db.dataset.debt); return; }
   if(t.closest('[data-sladd]')){ S(e); slForm(null); return; }
@@ -7054,6 +7484,535 @@ document.addEventListener('click', e=>{ const t=e.target, S=()=>e.stopImmediateP
   if(t.closest('[data-lprio]')){ S(); loanPrioSheet(); return; }
 }, true);
 
+/* ---- Mira: иконки (линия 2, сетка 24, скруглённые концы) ---- */
+const MI={
+  today:'<circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 2"/>',
+  loans:'<path d="M3 10 12 4l9 6"/><path d="M5 10v8M9.5 10v8M14.5 10v8M19 10v8"/><path d="M3 20h18"/>',
+  shop:'<path d="M4 9h16l-1.2 10.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8z"/><path d="M8.5 9V7a3.5 3.5 0 0 1 7 0v2"/>',
+  money:'<rect x="3" y="6" width="18" height="13" rx="3"/><path d="M16 12.5h2"/><path d="M3 10h18"/>',
+  more:'<rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="2"/>',
+  owed:'<path d="M6 3h10a2 2 0 0 1 2 2v16l-3-2-3 2-3-2-3 2V5a2 2 0 0 1 0 0z"/><path d="M9 8h6M9 12h4"/>',
+  cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  plus:'<path d="M12 5v14M5 12h14"/>',
+  minus:'<path d="M5 12h14"/>',
+  paid:'<circle cx="12" cy="12" r="9"/><path d="m8 12.5 2.8 2.8L16.5 9.5"/>',
+  check:'<path d="M20 6 9 17l-5-5"/>',
+  mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>',
+  bell:'<path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/>',
+  rate:'<path d="M7 7h11l-3-3"/><path d="M17 17H6l3 3"/><path d="M12 9.5v5M10.5 11h2.2a1 1 0 0 1 0 2h-1.4a1 1 0 0 0 0 2h2.2"/>',
+  late:'<path d="M6 3h12M6 21h12"/><path d="M7 3c0 5 5 6 5 9s-5 4-5 9M17 3c0 5-5 6-5 9s5 4 5 9"/>',
+  umbrella:'<path d="M3 12a9 9 0 0 1 18 0z"/><path d="M12 12v6.5a2 2 0 0 0 4 0"/>',
+  camera:'<path d="M14.5 4h-5L7 7H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3z"/><circle cx="12" cy="13" r="3.5"/>',
+  doc:'<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/>',
+  stats:'<path d="M5 20v-6M10 20V9M15 20v-8M20 20V5"/>',
+  eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/>',
+  shield:'<path d="M12 3 4 6v6c0 5 3.4 8.3 8 9 4.6-.7 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/>',
+  phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
+  chat:'<path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"/>',
+  external:'<path d="M14 4h6v6"/><path d="M20 4 11 13"/><path d="M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>',
+  copy:'<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',
+  back:'<path d="m15 18-6-6 6-6"/>',
+  next:'<path d="m9 18 6-6-6-6"/>',
+  down:'<path d="m6 9 6 6 6-6"/>',
+  close:'<path d="M6 6l12 12M18 6 6 18"/>',
+  lock:'<rect x="5" y="11" width="14" height="10" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><path d="M12 15v2"/>',
+  history:'<path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l3 2"/>',
+  people:'<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>',
+  person:'<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  bag:'<path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/>',
+  truck:'<path d="M3 6h11v10H3z"/><path d="M14 10h4l3 3v3h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+  plane:'<path d="M10.5 13.5 3 11l1.5-1.5 7.5 1L16 6.5a2 2 0 0 1 3 3L15 13.5l1 7.5-1.5 1.5-2.5-7.5-3 3V21l-1.5 1-1-3.5-3.5-1 1-1.5H7z"/>',
+  box:'<path d="M3 7.5 12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5 12 12l9-4.5M12 12v9"/>',
+  tag:'<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/>',
+  gold:'<path d="M4 18h16l-2.5-6h-11z"/><path d="M8 12l1.5-4h5L16 12"/>',
+  goal:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
+  piggy:'<path d="M4 11a7 6 0 0 1 12.5-3.6L20 6.5V10l1 1.5V14l-2 .5-1.6 2.5V20h-3v-1.6a8 8 0 0 1-3.8 0V20h-3v-2.6A6 6 0 0 1 4 11z"/><path d="M8.5 9.5h3"/>',
+  home:'<path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  bulb:'<path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/>',
+  calc:'<rect x="5" y="3" width="14" height="18" rx="3"/><path d="M8 7h8M8 12h.01M12 12h.01M16 12h.01M8 16h.01M12 16h.01M16 16h.01"/>',
+  gear:'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9 7 7M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1"/>',
+  cloud:'<path d="M7 18a4.5 4.5 0 0 1-.5-9 6 6 0 0 1 11.3 1.5A3.8 3.8 0 0 1 17.5 18z"/>',
+  star:'<path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  gift:'<rect x="3" y="8" width="18" height="5" rx="1"/><path d="M5 13v8h14v-8M12 8v13"/><path d="M12 8c-1.5-3-5-3.5-5-1.2C7 8 9 8 12 8c3 0 5 0 5-1.2 0-2.3-3.5-1.8-5 1.2"/>',
+  trash:'<path d="M4 7h16M10 11v6M14 11v6"/><path d="M6 7l1 13h10l1-13M9 7V4h6v3"/>',
+  edit:'<path d="M4 20h4L19 9a2.8 2.8 0 0 0-4-4L4 16z"/><path d="m13.5 6.5 4 4"/>',
+  search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+  info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/>',
+  warn:'<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17v.01"/>',
+  moon:'<path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/>',
+  sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',
+  globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>',
+  share:'<circle cx="18" cy="5" r="2.5"/><circle cx="6" cy="12" r="2.5"/><circle cx="18" cy="19" r="2.5"/><path d="m8.2 10.8 7.6-4.4M8.2 13.2l7.6 4.4"/>',
+  download:'<path d="M12 4v11M7 10l5 5 5-5"/><path d="M4 20h16"/>',
+  up:'<path d="M12 20V6M6 11l6-6 6 6"/>',
+  arrowdown:'<path d="M12 4v14M6 13l6 6 6-6"/>',
+  flag:'<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
+  heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  sparkle:'<path d="M12 4v4M12 16v4M4 12h4M16 12h4M6.5 6.5l2.5 2.5M15 15l2.5 2.5M6.5 17.5 9 15M15 9l2.5-2.5"/>',
+  clock:'<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  cash:'<rect x="2.5" y="6" width="19" height="12" rx="2.5"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9.5v5M18 9.5v5"/>',
+  card:'<rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3 10h18M7 15h4"/>',
+  receipt:'<path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6M9 16h3"/>',
+  chart:'<path d="M4 19h16"/><path d="m5 15 4-4 3 3 6-7"/>',
+  repeat:'<path d="M17 2l3 3-3 3"/><path d="M4 11V9a4 4 0 0 1 4-4h12"/><path d="M7 22l-3-3 3-3"/><path d="M20 13v2a4 4 0 0 1-4 4H4"/>',
+  ruler:'<path d="M3 17 17 3l4 4L7 21z"/><path d="M7 13l2 2M10 10l2 2M13 7l2 2"/>',
+  pin:'<path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  key:'<circle cx="8" cy="15" r="4"/><path d="m11 12 9-9M17 6l3 3M15 8l2 2"/>',
+  mosque:'<path d="M4 20V11a8 8 0 0 1 16 0v9z"/><path d="M12 3v2M9 20v-4a3 3 0 0 1 6 0v4"/>'
+};
+function ico(n,s,cls){ const p=MI[n]||MI.info; s=s||20; return `<svg class="mi${cls?' '+cls:''}" width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`; }
+const MIRA_RING=(s,track)=>`<svg width="${s}" height="${s}" viewBox="0 0 120 120" aria-hidden="true">${track?`<circle cx="60" cy="60" r="38" fill="none" stroke="${track}" stroke-width="16"/>`:''}<circle cx="60" cy="60" r="38" fill="none" stroke="#F2B53A" stroke-width="16" stroke-linecap="round" stroke-dasharray="179 60" transform="rotate(-90 60 60)"/></svg>`;
+
+/* ===================== v7: Mira — новый вид, «Сегодня», голос, опоздание, напоминания ===================== */
+
+/* ---------- 1. эмодзи → иконки (правило: в интерфейсе нет эмодзи) ---------- */
+const M7_EMO={'✓':'check','✅':'paid','✔':'check','💡':'bulb','🏪':'shop','🏬':'shop','📦':'box','🏠':'home','🏨':'home','🛏':'home','🛋':'home','🤝':'people','✏':'edit','✍':'edit','📝':'edit','⚠':'warn','🧾':'receipt','🚚':'truck','🚛':'truck',
+ '👗':'dress','👕':'shirt','👖':'shirt','🧥':'shirt','👔':'shirt','👙':'dress','👟':'tag','🧦':'tag','🧣':'tag','🧶':'tag','🧵':'tag','💄':'tag','👰':'heart','📏':'ruler','📐':'ruler','🛍':'bag','👜':'bag','👛':'bag','🧺':'bag','🎒':'bag','🧳':'bag','🛒':'bag',
+ '💰':'money','💵':'cash','💸':'cash','💳':'card','📊':'stats','📈':'chart','🔮':'chart','🎯':'goal','📤':'share','🔁':'repeat','🔄':'repeat','🏷':'tag','⭐':'star','★':'star','🌟':'star','📱':'mobile','📲':'mobile','📺':'mobile',
+ '💱':'rate','🏦':'loans','📞':'phone','💬':'chat','📸':'camera','📷':'camera','🎓':'cap','🧑‍🎓':'cap','🔎':'search','🔍':'search','📍':'pin','⚖':'calc','🧮':'calc','🏭':'box','🛡':'shield','🛃':'shield','🎤':'mic','🎁':'gift','🧸':'gift','🐷':'piggy',
+ '📅':'cal','📆':'cal','🗓':'cal','💧':'drop','🔊':'sound','🗺':'globe','🌐':'globe','🌍':'globe','🧭':'globe','📂':'folder','🗂':'folder','🔔':'bell','⏰':'clock','⌛':'clock','⏳':'clock','🕘':'history','⚡':'zap','🔌':'zap','📶':'zap','🧠':'bulb','🖼':'image',
+ '➕':'plus','➖':'minus','✕':'close','❌':'close','👵':'person','👤':'person','👷':'person','🧒':'person','👨‍👩‍👧':'people','👨‍👩‍👦':'people','🤫':'lock','🔒':'lock','📋':'copy','🏁':'flag','✈':'plane','🏆':'trophy','🏅':'trophy','🥇':'trophy','🧰':'gear','⚙':'gear',
+ '🚕':'car','🚗':'car','🛟':'umbrella','🕌':'mosque','🕋':'mosque','💍':'gold','📒':'doc','📘':'doc','📄':'doc','💾':'download','📥':'download','⬇':'arrowdown','❄':'snow','🧊':'snow','🍞':'food','🍽':'food','💊':'pill','🌙':'moon','🔤':'globe','🤔':'info','❓':'info',
+ '🖨':'printer','💜':'heart','🗑':'trash','🚀':'up','☁':'cloud','🌦':'cloud','☀':'sun','📎':'clip','👁':'eye','✉':'mail','🧩':'box','💯':'check','👍':'check','🟢':'dot','🟦':'dot','🔶':'dot','🧹':'trash',
+ '🎉':'gift','✨':'star','🔥':'','🌿':'leaf','🌱':'leaf','🌷':'heart','🎄':'star','👏':'','💪':'','🙏':'','🙂':'','👋':'','🏃':''};
+const M7_RE=/(?:[\u{1F1E6}-\u{1F1FF}]{2})|(?:[⌀-⏿☀-➿⬀-⯿\u{1F000}-\u{1FAFF}]️?(?:‍[☀-➿\u{1F000}-\u{1FAFF}]️?)*)/gu;
+const M7_TEST=/[⌀-⏿☀-➿⬀-⯿]|[\u{1F000}-\u{1FAFF}]/u;
+Object.assign(MI,{
+  dress:'<path d="M9 3h6l-.5 4 4.5 14H5l4.5-14z"/><path d="M9.5 7h5"/>',
+  shirt:'<path d="M8 3 4 6l2.5 4L8 9v12h8V9l1.5 1L20 6l-4-3a4 4 0 0 1-8 0z"/>',
+  mobile:'<rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18h2"/>',
+  cap:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+  drop:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
+  sound:'<path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12"/>',
+  folder:'<path d="M3 6a1 1 0 0 1 1-1h5l2 2h9a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/>',
+  zap:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>', image:'<rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/>',
+  trophy:'<path d="M8 4h8v5a4 4 0 0 1-8 0z"/><path d="M8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M9.5 17h5"/>',
+  car:'<path d="M4 16v-4l2-5h12l2 5v4z"/><path d="M4 12h16"/><circle cx="7.5" cy="16.5" r="1.5"/><circle cx="16.5" cy="16.5" r="1.5"/>',
+  snow:'<path d="M12 2v20M3.3 7l17.4 10M3.3 17 20.7 7"/>', food:'<path d="M4 3v8a3 3 0 0 0 6 0V3M7 3v18M17 3c-2 0-3 3-3 6s1 4 3 4v8"/>',
+  pill:'<rect x="3" y="8.5" width="18" height="7" rx="3.5" transform="rotate(-45 12 12)"/><path d="m9.5 9.5 5 5"/>',
+  printer:'<path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/>',
+  clip:'<path d="m20 11-8.5 8.5a5 5 0 0 1-7-7L13 4a3.5 3.5 0 0 1 5 5l-8.5 8.5a2 2 0 0 1-3-3L14 7"/>',
+  leaf:'<path d="M5 19c0-8 5-14 15-15-1 10-7 15-15 15z"/><path d="M5 19 13 11"/>',
+  mail:'<rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m3.5 6.5 8.5 7 8.5-7"/>', dot:'<circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/>'
+});
+function m7EmoKey(e){ return e.replace(/️/g,''); }
+function m7Strip(s){ return String(s).replace(M7_RE,'').replace(/\s{2,}/g,' ').trim(); }
+function m7IcoText(n){
+  const s=n.nodeValue; if(!s||!M7_TEST.test(s)) return;
+  const p=n.parentNode; if(!p||p.nodeType!==1) return; const tg=p.nodeName;
+  if(tg==='SCRIPT'||tg==='STYLE'||tg==='TEXTAREA') return;
+  if(tg==='OPTION'||tg==='TITLE'||(p.closest&&p.closest('svg'))){ const v=m7Strip(s); if(v!==s) n.nodeValue=v; return; }
+  const parts=[]; let buf='', last=0, m, rich=false; M7_RE.lastIndex=0;
+  while((m=M7_RE.exec(s))){ buf+=s.slice(last,m.index); last=m.index+m[0].length; const e=m[0];
+    if(/^[\u{1F1E6}-\u{1F1FF}]{2}$/u.test(e)){ const cc=[...e].map(ch=>String.fromCharCode(ch.codePointAt(0)-0x1F1E6+65)).join(''); parts.push(buf); buf=''; parts.push({f:cc}); rich=true; continue; }
+    const nm=M7_EMO[m7EmoKey(e)];
+    if(nm){ parts.push(buf); buf=''; parts.push({i:nm}); rich=true; }
+    else { if(s[last]===' '&&(buf===''||/\s$/.test(buf))) last++; }
+  }
+  buf+=s.slice(last); parts.push(buf);
+  if(!rich){ n.nodeValue=parts.join(''); return; }
+  const fr=document.createDocumentFragment();
+  for(const x of parts){ if(typeof x==='string'){ if(x) fr.appendChild(document.createTextNode(x)); continue; }
+    if(x.f){ const sp=document.createElement('span'); sp.className='m7-flag'; sp.textContent=x.f; fr.appendChild(sp); continue; }
+    const t=document.createElement('template'); t.innerHTML=ico(x.i,null,'mi-e'); fr.appendChild(t.content.firstChild); }
+  p.replaceChild(fr,n);
+}
+function m7Ico(root){
+  if(!root) return; if(root.nodeType===3){ m7IcoText(root); return; } if(root.nodeType!==1) return;
+  const nn=root.nodeName; if(nn==='SCRIPT'||nn==='STYLE'||nn==='svg') return;
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT), arr=[]; let n; while((n=w.nextNode())) if(M7_TEST.test(n.nodeValue)) arr.push(n);
+  arr.forEach(m7IcoText);
+  const els=root.querySelectorAll?root.querySelectorAll('[placeholder],[title],[aria-label]'):[];
+  for(const el of [root,...els]){ if(!el.getAttribute) continue; for(const a of ['placeholder','title','aria-label']){ const v=el.getAttribute(a); if(v&&M7_TEST.test(v)) el.setAttribute(a,m7Strip(v)); } }
+}
+let m7Obs=null;
+function m7IcoStart(){
+  m7Ico(document.body); if(M7_TEST.test(document.title)) document.title=m7Strip(document.title);
+  if(m7Obs||!window.MutationObserver) return;
+  m7Obs=new MutationObserver(ms=>{ for(const m of ms){ if(m.type==='characterData') m7IcoText(m.target); else for(const n of m.addedNodes) m7Ico(n); } });
+  m7Obs.observe(document.body,{childList:true,subtree:true,characterData:true});
+}
+
+/* ---------- 2. общее ---------- */
+function m7Real(list){ return list.filter(x=>!x.loan.example); }
+function m7Next(list){ return m7Real(list).filter(x=>!x.a.done&&!x.a.check).sort((p,q)=>p.a.days-q.a.days)[0]||null; }
+function m7Amt(a){ return Math.round(a.amt||a.monthly||0); }
+function m7Num0(v){ return nf.format(Math.round(v||0)); }
+function m7HowLabel(k){ return ({app:L.m7HowApp,term:L.m7HowTerm,bank:L.m7HowBank,fam:L.m7HowFam})[k]||''; }
+async function m7CopyText(t){ try{ await navigator.clipboard.writeText(t); toast(L.m7Copied); return; }catch(e){} try{ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(L.m7Copied); }catch(e){} }
+async function m7ShareText(t){ try{ if(navigator.share){ await navigator.share({text:t}); return; } }catch(e){ if(e&&e.name==='AbortError') return; } m7CopyText(t); }
+function m7Tel(p){ return String(p||'').replace(/[^\d+]/g,''); }
+function m7BankApp(loan){
+  const nm=String(loan.name||'').trim(), android=/Android/i.test(navigator.userAgent||'');
+  const url=android?'https://play.google.com/store/search?q='+encodeURIComponent(nm)+'&c=apps':'https://www.google.com/search?q='+encodeURIComponent(nm+' приложение');
+  try{ window.open(url,'_blank','noopener'); }catch(e){ location.href=url; }
+}
+/* выходные дни банков: Новый год, 8 марта, Навруз, 1 и 9 мая, 27 июня, 9 сентября, 6 ноября, два Ида */
+function m7IsHoliday(d){
+  const m=d.getMonth()+1, dd=d.getDate();
+  if((m===1&&dd<=2)||(m===3&&(dd===8||(dd>=21&&dd<=24)))||(m===5&&(dd===1||dd===9))||(m===6&&dd===27)||(m===9&&dd===9)||(m===11&&dd===6)) return true;
+  try{ const h=hijri(d); if(h&&((h.m===10&&h.d<=2)||(h.m===12&&(h.d===10||h.d===11)))) return true; }catch(e){}
+  return false;
+}
+function m7HolNear(ds){ const d=parseYmd(ds); for(let i=0;i<=3;i++){ if(m7IsHoliday(addDays(d,-i))) return true; } return false; }
+
+/* сколько платежей позади — счёт, который не сгорает */
+function m7Progress(){ let k=0, m=0; for(const {loan,a} of activeList()){ if(loan.example) continue; const pc=loanProgressCounts(loan,a); if(pc){ k+=pc.k; m+=pc.m; } } return m>0?{k,m}:null; }
+function m7ProgHTML(){ const p=m7Progress(); if(!p) return '';
+  const grid=p.m<=72?`<div class="m7-ticks" style="grid-template-columns:repeat(${Math.min(18,p.m)},minmax(0,1fr))">${Array.from({length:p.m},(_,i)=>`<i class="${i<p.k?'on':''}"></i>`).join('')}</div>`:`<div class="m7-bar"><i style="width:${Math.round(p.k/p.m*100)}%"></i></div>`;
+  return `<div class="m7-prog"><b>${L.m7Prog(p.k,p.m)}</b>${grid}<small>${L.m7ProgNote}</small></div>`; }
+function m7ProgChip(){ const p=m7Progress(); return p?`<span class="streak">${p.k} / ${p.m}</span>`:''; }
+
+/* «если платить больше» */
+function m7Extra(loan,a,extra){ const rem=a.remaining, m=m7Amt(a), r=+loan.rate||0; if(!(rem>0&&m>0)) return null;
+  const b=payoffSim(rem,m,r), c=payoffSim(rem,m+extra,r); if(!b||!c) return null;
+  return {months:Math.max(0,b.months-c.months), saved:Math.max(0,Math.round((b.interest-c.interest)/10)*10)}; }
+function m7FreedHTML(loan){
+  const amt=Math.round(+loan.monthly||0); if(!(amt>0)) return '';
+  const other=activeList().filter(x=>!x.loan.example&&!x.a.done&&x.loan.id!==loan.id).sort((p,q)=>(+q.loan.rate||0)-(+p.loan.rate||0)||(p.a.remaining-q.a.remaining))[0];
+  let txt=L.m7FreedSelf;
+  if(other){ const r=m7Extra(other.loan,other.a,amt); if(r&&r.months>0) txt=L.m7FreedTo(esc(other.loan.name),r.months,r.saved>0?money(r.saved):''); }
+  return `<div class="m7-freed"><b>${L.m7Freed(money(amt))}</b><p>${txt}</p></div>`;
+}
+
+/* ---------- 3. «Сегодня» ---------- */
+function m7HeroHTML(list){
+  const real=m7Real(list), nx=m7Next(list);
+  if(!real.length) return `<div class="m7-first">${MIRA_RING(54,'#DDE3EF')}<b>${L.m7FirstT}</b><p>${L.m7FirstD}</p><button class="btn btn-primary btn-full" data-m-add="1">${ico('plus',20)} ${L.m7AddLoan}</button></div>`;
+  if(!nx){ const any=real.filter(x=>!x.a.done).sort((p,q)=>p.a.days-q.a.days)[0]; if(!any) return '';
+    return `<div class="m7-calm">${ico('paid',26)}<div><b>${L.m7CalmT}</b><span>${L.m7CalmD(esc(any.loan.name),fmtDate(any.a.due))}</span></div></div>`; }
+  const {loan,a}=nx, late=a.overdue, pen=late?penaltyPerDay(loan,a):0, ld=late?-a.days:0;
+  return `<div class="m7-hero ${late?'late':''}">
+    <div class="m7-h-top">${avaHTML(loan,'sm')}<div class="m7-h-n"><span>${late?L.m7Late(ld):L.m7Next}</span><b>${esc(loan.name)} · ${fmtDate(a.due)}</b></div>${late?'':`<span class="m7-chip">${whenText(a.days)}</span>`}</div>
+    <div class="m7-h-amt">${m7Num0(m7Amt(a))}<small>${esc(L.cur)}</small></div>
+    ${late&&pen>0?`<p class="m7-h-pen">${L.m7PenNow(money(pen*ld),money(pen))}</p>`:''}
+    <div class="m7-h-btns"><button class="m7-b1" data-action="pay" data-id="${loan.id}">${L.m7Paid}</button>${late?`<button class="m7-b2" data-m-late="${loan.id}">${L.m7WhatToDo}</button>`:`<button class="m7-b2" data-action="open" data-id="${loan.id}">${L.m7More}</button>`}</div>
+  </div>`;
+}
+function m7MonthHTML(list){
+  const real=m7Real(list); if(!real.length) return '';
+  const now=new Date(), du=dueInMonth(mIdx(today0()),real); if(!du.rows.length) return '';
+  const paidS=du.rows.filter(r=>r.paid).reduce((s,r)=>s+r.amt,0), tot=du.total, pct=tot?Math.round(paidS/tot*100):0, pig=envBal('loan');
+  const prom={}; for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.due&&!st.overdue) (prom[st.due]=prom[st.due]||[]).push({c,st}); }
+  const rows=du.rows.map(r=>{ const l=r.kind==='loan'?byId(r.id):null, col=(l&&l.color)||avaColor(r.name), pk=ymd(r.d), pr=prom[pk]&&prom[pk][0];
+    const act=r.kind==='sup'?`data-sup="${esc(r.id)}"`:`data-action="${r.paid?'open':'pay'}" data-id="${esc(r.id)}"`;
+    return `<button class="m7-r ${r.paid?'ok':''}" ${act}><span class="m7-d"><b>${r.d.getDate()}</b><small>${MONTHS[lang].short[r.d.getMonth()]}</small></span><span class="m7-c" style="background:${col}"></span><span class="m7-n"><b>${esc(r.name)}</b>${r.paid?`<small class="ok">${L.m7CalPaid}</small>`:pr?`<small class="ok">${L.m7CalProm(esc(pr.c.name),money(pr.st.bal))}</small>`:''}</span><b class="m7-a">${r.paid?ico('check',16):''}${m7Num0(r.amt)}</b></button>`; }).join('');
+  return `<div class="m7-month"><div class="m7-m-h"><b>${L.m7Month(now.getMonth())}</b><button class="link-btn" data-m-cal="1">${ico('cal',16)} ${L.m7Cal}</button></div>
+    <div class="m7-bar"><i style="width:${pct}%"></i></div>
+    <div class="m7-m-s"><span>${L.m7PaidOf('<b>'+m7Num0(paidS)+'</b>',money(tot))}</span><span>${L.m7Left(money(Math.max(0,tot-paidS)))}</span></div>
+    ${pig>0?`<div class="m7-m-pig">${ico('piggy',16)} ${L.m7Piggy(money(pig))}</div>`:''}
+    <div class="m7-rows">${rows}</div></div>`;
+}
+function m7OwedHTML(){
+  const all=state.cust.map(c=>({c,st:custState(c)})).filter(x=>x.st.bal>0); if(!all.length) return '';
+  const tot=all.reduce((s,x)=>s+x.st.bal,0), t=dkey(), wk=dkey(addDays(today0(),7)), k=all.filter(x=>x.st.due&&x.st.due>=t&&x.st.due<=wk).length;
+  return `<button class="m7-owed" data-ssubgo="debt">${ico('owed',24)}<span><b>${L.m7Owed} ${money(tot)}</b><small>${L.m7OwedSub(all.length,k)}</small></span>${ico('next',20)}</button>`;
+}
+function m7ChecksHTML(){
+  if(lsGet('m7chk_v1')==='0') return '';
+  const t=dkey(), from=dkey(addDays(today0(),-7));
+  return state.payments.filter(p=>p.chk&&!p.chkd&&p.chk<=t&&String(p.date)>=from).map(p=>({p,l:byId(p.loanId)})).filter(x=>x.l&&!x.l.example).slice(0,2)
+    .map(({p,l})=>`<div class="m7-chk"><b>${L.m7ChkQ(esc(l.name),money(p.amount),fmtDate(parseYmd(p.date)))}</b><p>${L.m7ChkHint}</p><div class="m7-row2"><button class="btn btn-ghost" data-m-chk="${esc(p.id)}" data-v="1">${L.m7ChkYes}</button><button class="btn btn-ghost" data-m-chk="${esc(p.id)}" data-v="2">${L.m7ChkNo}</button></div></div>`).join('');
+}
+function m7Today(list){
+  const d=new Date(), nm=state.profile&&state.profile.first?', '+esc(state.profile.first):'';
+  const set=(id,h)=>{ const el=$('#'+id); if(el) el.innerHTML=h; };
+  set('miraHello',`<div class="m7-hello"><span>${L.weekdays[d.getDay()]}, ${fmtDate(d)}</span><h1>${L.m7Hello(d.getHours())}${nm}</h1></div>`);
+  set('miraCheck',m7ChecksHTML()); set('miraNext',m7HeroHTML(list)); set('miraMonth',m7MonthHTML(list)); set('miraOwed',m7OwedHTML());
+}
+const m7RTo0=renderToday; renderToday=function(list){ m7RTo0(list); try{ m7Today(list); }catch(e){ console.error(e); } };
+const m7TI0=todayItems; todayItems=function(list){ const out=m7TI0(list), nx=m7Next(list); if(!nx) return out; const key='data-action="pay" data-id="'+nx.loan.id+'"'; return out.filter(it=>!(it.act&&String(it.act).includes(key))); };
+
+/* ---------- 4. раздел «Ещё» ---------- */
+function m7MoreHTML(){
+  const it=(attr,i,t,s)=>`<button class="m7-li" ${attr}><span class="m7-li-i">${ico(i,22)}</span><span class="m7-li-t"><b>${t}</b>${s?`<small>${s}</small>`:''}</span>${ico('next',18)}</button>`;
+  return `<h1 class="m7-h1">${L.m7MoreT}</h1>
+    <div class="m7-group"><h2>${L.m7GShop}</h2><div class="m7-list">
+      ${it('data-tab="buy"','bag',L.navBuy,'')}${it('data-tab="stats"','stats',L.navStats,'')}${it('data-week="0"','chart',L.m7WeekSum,'')}${it('data-m-cal="1"','cal',L.m7Cal2,'')}
+      ${it('data-m-calc="1"','calc',L.m7Calc,'')}${it('data-rates="1"','rate',L.m7Rates,'')}${it('data-search="1"','search',L.m7Search,'')}</div></div>
+    <div class="m7-group"><h2>${L.m7GSet}</h2><div class="m7-list">
+      ${it('data-m-notify="1"','bell',L.m7NotifT,'')}${it('data-m-data="1"','shield',L.m7Data,L.m7Look)}${it('data-m-lang="1"','globe',L.m7Lang,({ru:'Русский',tg:'Тоҷикӣ',en:'English'})[lang])}${it('data-m-simple="1"','eye',L.m7Simple,'')}</div></div>
+    <p class="m7-ver">Mira · ${L.appSub}</p>`;
+}
+function m7After(){
+  const set=(id,t)=>{ const el=$('#'+id); if(el) el.textContent=t; };
+  set('bnMore',L.navMore); set('m7RecT',L.m7Record); set('m7VoiceT',L.m7Voice);
+  const mv=$('#moreView'); if(mv) mv.innerHTML=m7MoreHTML();
+  const ti=document.querySelector('header .title'); if(ti&&!ti.querySelector('.m7-logo')) ti.insertAdjacentHTML('afterbegin',`<span class="m7-logo" aria-hidden="true">${MIRA_RING(30,'#DDE3EF')}</span>`);
+}
+const m7R0=render; render=function(){ m7R0(); try{ m7After(); }catch(e){ console.error(e); } };
+
+/* ---------- 5. календарь платежей ---------- */
+function m7CalSheet(off){
+  off=off||0; const t=today0(), first=new Date(t.getFullYear(),t.getMonth()+off,1), y=first.getFullYear(), m=first.getMonth(), idx=y*12+m, dim=new Date(y,m+1,0).getDate(), lead=(first.getDay()+6)%7;
+  const du=dueInMonth(idx,m7Real(activeList())), byDay={};
+  du.rows.forEach(r=>{ (byDay[r.d.getDate()]=byDay[r.d.getDate()]||[]).push({col:(r.kind==='loan'&&(byId(r.id)||{}).color)||avaColor(r.name),paid:r.paid}); });
+  const proms=[]; for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.due){ const d=parseYmd(st.due); if(d.getFullYear()===y&&d.getMonth()===m) proms.push({d,c,st}); } }
+  proms.forEach(p=>{ (byDay[p.d.getDate()]=byDay[p.d.getDate()]||[]).push({col:'#0E7D5A',prom:1}); });
+  let cells=''; for(let i=0;i<lead;i++) cells+='<span></span>';
+  for(let d=1;d<=dim;d++){ const dt=new Date(y,m,d), isT=dt.getTime()===t.getTime(), hol=m7IsHoliday(dt), ds=(byDay[d]||[]).slice(0,3);
+    cells+=`<span class="${isT?'td':''} ${dt<t?'past':''} ${hol?'hol':''}"><b>${d}</b><em>${ds.map(x=>`<i style="${x.paid?'background:transparent;box-shadow:inset 0 0 0 1.5px '+x.col:'background:'+x.col}"></i>`).join('')}</em></span>`; }
+  const items=du.rows.map(r=>({d:r.d,h:`<div class="m7-cl ${r.paid?'ok':''}"><span class="m7-c" style="background:${(r.kind==='loan'&&(byId(r.id)||{}).color)||avaColor(r.name)}"></span><span class="m7-n"><b>${r.d.getDate()} · ${esc(r.name)}</b>${r.paid?`<small class="ok">${L.m7CalPaid}</small>`:''}</span><b>${m7Num0(r.amt)}</b></div>`}))
+    .concat(proms.map(p=>({d:p.d,h:`<div class="m7-cl"><span class="m7-c" style="background:#0E7D5A"></span><span class="m7-n"><b>${p.d.getDate()} · ${esc(p.c.name)}</b><small class="ok">${L.m7CalProm(esc(p.c.name),money(p.st.bal))}</small></span><b class="ok">+${m7Num0(p.st.bal)}</b></div>`}))).sort((a,b)=>a.d-b.d);
+  openSheet(`<div class="m7-cal-h"><h3>${L.monthsNom[m]} ${y}</h3><div><button class="icon-btn" data-m-calo="${off-1}" aria-label="${L.m7Prev}">${ico('back',18)}</button><button class="icon-btn" data-m-calo="${off+1}" aria-label="${L.m7NextM}">${ico('next',18)}</button></div></div>
+    <div class="m7-cal"><div class="m7-wd">${[0,1,2,3,4,5,6].map(i=>`<span>${L.wdShort[(i+1)%7]}</span>`).join('')}</div><div class="m7-days">${cells}</div></div>
+    ${items.length?`<div class="m7-cls">${items.map(x=>x.h).join('')}</div>`:`<p class="note">${L.m7CalNone}</p>`}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+  sheet.querySelectorAll('[data-m-calo]').forEach(b=>b.onclick=()=>m7CalSheet(+b.dataset.mCalo));
+}
+
+/* ---------- 6. опоздание, трудный месяц, «не зачислилось» ---------- */
+function m7HardText(loan,a,ml){ const d=a&&a.due?a.due:today0(), ds=d.getDate()+' '+MONTHS[ml].long[d.getMonth()];
+  return ml==='tg'?`Ассалому алейкум. Ман дар бонки шумо қарз дорам, санаи пардохт — ${ds}. Дар ин моҳ даромадам кам шуд ва пардохтро сари вақт карда наметавонам. Хоҳиш мекунам, ки пардохтро ба вақти дигар гузаронед ё ҷадвали нав тартиб диҳед. Метавонам ба филиал биёям.`
+    :`Здравствуйте. У меня кредит в вашем банке, платёж — ${ds}. В этом месяце доход упал, и я не успеваю оплатить вовремя. Прошу перенести платёж или составить новый график. Могу прийти в отделение.`; }
+function m7LateSheet(loan){
+  let ml=lang==='tg'?'tg':'ru';
+  const draw=()=>{ const a=analyze(loan), ld=a.overdue?-a.days:0, pen=penaltyPerDay(loan,a), amt=m7Amt(a), ph=m7Tel(loan.phone);
+    openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3>
+      ${ld>0?`<div class="m7-late"><div class="m7-late-h">${ico('late',22)}<b>${L.m7Late(ld)}</b></div><p>${L.m7LateFix}${pen>0?' '+L.m7PenNow(money(pen*ld),money(pen)):''}</p><div class="m7-late-s"><span>${L.m7PayToday}</span><b>${money(amt+pen*ld)}</b></div></div>`:''}
+      <button class="btn btn-primary btn-full" data-m-app="${loan.id}">${ico('external',18)} ${L.m7BankApp}</button>
+      <div class="sheet-row">${ph?`<a class="btn btn-ghost" href="tel:${esc(ph)}">${ico('phone',18)} ${L.m7CallShort}</a>`:''}<button class="btn btn-ghost" data-action="pay" data-id="${loan.id}">${L.m7AlreadyPaid}</button></div>
+      ${ph?'':`<p class="note">${L.m7NoPhone}</p>`}
+      <div class="m7-hard"><div class="m7-hard-h">${ico('umbrella',20)}<b>${L.m7HardT}</b></div><p>${L.m7HardD}</p>
+        <div class="seg"><button data-ml="ru" class="${ml==='ru'?'on':''}">Русский</button><button data-ml="tg" class="${ml==='tg'?'on':''}">Тоҷикӣ</button></div>
+        <div class="m7-script">${esc(m7HardText(loan,a,ml))}</div>
+        <div class="sheet-row"><button class="btn btn-ghost" id="m7-cp">${ico('copy',18)} ${L.m7Copy}</button><button class="btn btn-ghost" id="m7-sh">${ico('share',18)} ${L.m7Share}</button></div></div>
+      <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+    sheet.querySelectorAll('[data-ml]').forEach(b=>b.onclick=()=>{ ml=b.dataset.ml; draw(); });
+    $('#m7-cp').onclick=()=>m7CopyText(m7HardText(loan,a,ml)); $('#m7-sh').onclick=()=>m7ShareText(m7HardText(loan,a,ml)); };
+  draw();
+}
+function m7NcSheet(loan,p){
+  const ph=m7Tel(loan.phone);
+  openSheet(`<h3>${L.m7NcT}</h3><p class="lead">${esc(loan.name)} · ${money(p.amount)} · ${fmtDate(parseYmd(p.date))}${p.how?' · '+esc(m7HowLabel(p.how)):''}</p>
+    <ol class="m7-steps">${L.m7NcSteps.map(s=>`<li>${s}</li>`).join('')}</ol>
+    <button class="btn btn-primary btn-full" data-m-app="${loan.id}">${ico('external',18)} ${L.m7BankApp}</button>
+    <div class="sheet-row">${ph?`<a class="btn btn-ghost" href="tel:${esc(ph)}">${ico('phone',18)} ${L.m7Call}</a>`:''}${p.rc?`<button class="btn btn-ghost" data-pay="${esc(p.id)}">${ico('receipt',18)} ${L.open}</button>`:''}</div>
+    ${ph?'':`<p class="note">${L.m7NoPhone}</p>`}
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+}
+
+/* ---------- 7. карточка кредита: «если платить больше», банк, «скоро / оплачено» ---------- */
+function m7SoonRows(loan,a){
+  if(a.done) return []; const out=[], sch=schedOf(loan), pt=curPt(loan);
+  if(sch){ for(const e of sch){ const i=mIdx(parseYmd(e.d)); if(pt!=null?i>pt:i>=a.per){ out.push({d:parseYmd(e.d),a:+e.a||0}); if(out.length>=3) break; } } }
+  else { const n=Math.min(3,a.monthsLeft!=null?a.monthsLeft:3); for(let i=0;i<n;i++) out.push({d:dueAt(a.per+i,loan.dueDay||1),a:+loan.monthly||0}); }
+  return out;
+}
+function m7DetailExtra(loan){
+  const sh=$('#sheet'); if(!sh) return; const a=analyze(loan), ph=m7Tel(loan.phone);
+  const grid=sh.querySelector('.detail-grid'); if(grid&&!a.done&&a.interestLeft>0) grid.insertAdjacentHTML('afterend',`<p class="m7-withint">${L.m7WithInt(money(a.remaining+a.interestLeft))}</p>`);
+  if(a.overdue){ const pb=sh.querySelector('[data-action="pay"].btn-full'); if(pb) pb.insertAdjacentHTML('afterend',`<button class="btn btn-ghost btn-full m7-mt8" data-m-late="${loan.id}">${ico('late',18)} ${L.m7WhatToDo}</button>`); }
+  const tools=sh.querySelector('.dtools');
+  if(tools){ const tl=tools.querySelector('a[href^="tel:"]'); if(tl) tl.remove();
+    tools.insertAdjacentHTML('beforebegin',`<div class="sheet-row m7-bankrow"><button class="btn btn-ghost" data-m-app="${loan.id}">${ico('external',18)} ${L.m7BankApp}</button>${ph?`<a class="btn btn-ghost" href="tel:${esc(ph)}">${ico('phone',18)} ${L.m7CallShort}</a>`:''}</div>`); }
+  const m=m7Amt(a);
+  if(!a.done&&m>0&&a.remaining>0&&tools){
+    const r50=x=>Math.max(50,Math.round(x/50)*50), ex=[0,r50(m*0.15),r50(m*0.3),r50(m*0.5)];
+    tools.insertAdjacentHTML('beforebegin',`<div class="m7-ifm"><b>${L.m7IfMore}</b><div class="m7-chips m7-eq">${ex.map(v=>`<button type="button" data-ex="${v}" class="${v===0?'on':''}">${v?'+'+m7Num0(v):L.m7No}</button>`).join('')}</div><p class="m7-ifm-r" id="m7-ifr">${L.m7IfPick}</p><small>${L.m7EarlyNote}</small></div>`);
+    sh.querySelectorAll('.m7-ifm [data-ex]').forEach(b=>b.onclick=()=>{ sh.querySelectorAll('.m7-ifm [data-ex]').forEach(x=>x.classList.toggle('on',x===b)); const v=+b.dataset.ex, r=v?m7Extra(loan,a,v):null;
+      $('#m7-ifr').textContent=!v?L.m7IfPick:(!r||r.months<1)?L.m7IfSame:(+loan.rate>0&&r.saved>0?L.m7IfRes(r.months,money(r.saved)):L.m7IfResNoRate(r.months)); });
+  }
+  const soon=m7SoonRows(loan,a); if(!soon.length) return;
+  const hist=sh.querySelector('.hist'), np=state.payments.filter(p=>p.loanId===loan.id).length;
+  const soonH=`<div class="m7-soon" id="m7-soon">${soon.map((s,i)=>`<div class="m7-cl ${i===0?'nx':''}"><span class="m7-d"><b>${s.d.getDate()}</b><small>${MONTHS[lang].short[s.d.getMonth()]}</small></span><span class="m7-n"><b>${fmtDate(s.d)}</b>${i===0?`<small>${L.m7NextTag}</small>`:''}</span><b>${m7Num0(s.a)}</b></div>`).join('')}</div>`;
+  if(hist){ hist.insertAdjacentHTML('beforebegin',`<div class="seg m7-seg"><button class="on" data-sg="s">${L.m7Soon}</button><button data-sg="p">${L.m7PaidTab} · ${np}</button></div>${soonH}`); hist.hidden=true;
+    sh.querySelectorAll('.m7-seg [data-sg]').forEach(b=>b.onclick=()=>{ const s=b.dataset.sg==='s'; sh.querySelectorAll('.m7-seg [data-sg]').forEach(x=>x.classList.toggle('on',x===b)); $('#m7-soon').hidden=!s; hist.hidden=s; }); }
+  else { const last=sh.querySelector('.sheet-row:last-of-type'); if(last) last.insertAdjacentHTML('afterend',`<div class="hist"><h4>${L.m7Soon}</h4></div>${soonH}`); }
+}
+const m7DS0=detailSheet; detailSheet=function(loan){ m7DS0(loan); try{ m7DetailExtra(loan); }catch(e){ console.error(e); } };
+
+/* ---------- 8. новый кредит — 4 поля ---------- */
+const M7_BANKS=['Эсхата','Алиф','Амонатбонк','Душанбе Сити','Коммерцбанк','Спитамен','Арванд','Хумо','IMON'];
+function m7AddLoan(pre){
+  pre=pre||{}; let bank=pre.name||'', other=!!bank&&!M7_BANKS.includes(bank), n=pre.n||12;
+  openSheet(`<h3>${L.m7NewLoan}</h3>
+    <div class="field"><label>${L.m7Bank}</label><div class="m7-chips" id="al-b">${M7_BANKS.map(b=>`<button type="button" data-b="${esc(b)}" class="${bank===b?'on':''}">${esc(b)}</button>`).join('')}<button type="button" data-b="" class="dash ${other?'on':''}">${L.m7Other}</button></div>
+      <input id="al-name" ${other?'':'hidden'} value="${esc(other?bank:'')}" maxlength="40" placeholder="${L.m7BankName}" autocomplete="off" style="margin-top:10px"></div>
+    <div class="field n"><label>${L.monthlyPayment}</label><input id="al-m" type="number" inputmode="numeric" min="0" placeholder="1200" value="${pre.monthly||''}"><p class="note m7-hint">${L.m7MonthlyHint}</p></div>
+    <div class="two"><div class="field n"><label>${L.payDay}</label><input id="al-d" type="number" inputmode="numeric" min="1" max="31" value="${pre.dueDay||today0().getDate()}"></div>
+      <div class="field"><label>${L.m7Left2}</label><div class="m7-step"><button type="button" id="al-mi" aria-label="${L.m7Less}">${ico('minus',18)}</button><b id="al-n">${n}</b><button type="button" id="al-pl" aria-label="${L.m7MoreN}">${ico('plus',18)}</button></div></div></div>
+    <div class="m7-sum" id="al-sum"></div>
+    <button type="button" class="m7-li m7-li-b" id="al-more"><span class="m7-li-t"><b>${L.m7Detail}</b><small>${L.m7DetailSub}</small></span>${ico('down',18)}</button>
+    <div class="err" id="al-err"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="al-save">${L.m7SaveLoan}</button></div>`);
+  const nm=$('#al-name'), mi=$('#al-m'), di=$('#al-d');
+  const name=()=>other?nm.value.trim():bank;
+  const sum=()=>{ const dd=+di.value; if(!(dd>=1&&dd<=31)){ $('#al-sum').textContent=''; return; } const i0=lastDueIdx(dd)+1, f=dueAt(i0,dd), l=dueAt(i0+n-1,dd);
+    $('#al-sum').innerHTML=`${ico('paid',18)}<span>${L.m7Summary(fmtDate(f),fmtDate(l)+' '+l.getFullYear())}</span>`; };
+  sheet.querySelectorAll('#al-b [data-b]').forEach(b=>b.onclick=()=>{ bank=b.dataset.b; other=!bank; sheet.querySelectorAll('#al-b [data-b]').forEach(x=>x.classList.toggle('on',x===b)); nm.hidden=!other; if(other) nm.focus(); });
+  $('#al-mi').onclick=()=>{ n=Math.max(1,n-1); $('#al-n').textContent=n; sum(); }; $('#al-pl').onclick=()=>{ n=Math.min(360,n+1); $('#al-n').textContent=n; sum(); };
+  di.addEventListener('input',sum); sum();
+  $('#al-more').onclick=()=>{ const mo=Math.round(+mi.value||0), dd=+di.value||''; m7LF0(null,{name:name(),note:'',total:mo>0?mo*n:'',paid:0,monthly:mo||'',dueDay:dd,gold:'',term:n}); };
+  $('#al-save').onclick=()=>{ const nmv=name(), mo=Math.round(+mi.value||0), dd=Math.round(+di.value), err=$('#al-err');
+    if(!nmv) return showErr(err,L.m7ErrBank); if(!(mo>0)) return showErr(err,L.m7ErrAmt); if(!(dd>=1&&dd<=31)) return showErr(err,L.m7ErrDay);
+    state.loans.push({id:'l'+Date.now(),name:nmv,note:'',total:mo*n,paid:0,monthly:mo,dueDay:dd,rate:0,gold:0,icon:null,term:n,pen:0,phone:'',pt:lastDueIdx(dd)});
+    persist(); closeSheet(); render(); setTab('today'); toast(L.bankAdded); };
+}
+const m7LF0=loanForm; loanForm=function(loan,prefill){ if(!loan&&!prefill) return m7AddLoan(); return m7LF0(loan,prefill); };
+
+/* ---------- 9. напоминание покупателю ---------- */
+function m7RemMsg(c,st,ml,tone){
+  const n=c.name, b=nf.format(Math.max(0,st.bal))+' '+(ml==='tg'?'сомонӣ':'сомони'), d=st.due?parseYmd(st.due):null, ds=d?d.getDate()+' '+MONTHS[ml].long[d.getMonth()]:'', isT=st.due===dkey(), shop=(state.profile&&state.profile.shop)||'', sig=shop?'\n— '+shop:'';
+  if(ml==='tg'){
+    if(tone==='date'&&d) return `${n}, ассалому алейкум. ${isT?'Имрӯз':ds} — рӯзе, ки шумо гуфта будед. ${b}-ро интизорам. Ташаккур!`+sig;
+    if(tone==='plain') return `${n}, рӯз ба хайр. Дар бораи қарз хотиррасон мекунам: ${b}.${d?' Мӯҳлат — '+ds+'.':''}`+sig;
+    return `${n}, ассалому алейкум! Бубахшед, ки хотиррасон мекунам: аз шумо ${b} мондааст.${d?' Шумо гуфта будед, ки то '+ds+' медиҳед — интизор мешавам.':''} Ташаккур!`+sig; }
+  if(tone==='date'&&d) return (isT?`${n}, здравствуйте. Сегодня тот день, который вы назвали.`:`${n}, здравствуйте. ${ds} — день, который вы назвали.`)+` Жду ${b}. Спасибо!`+sig;
+  if(tone==='plain') return `${n}, добрый день. Напоминаю про долг: ${b}.${d?' Срок — '+ds+'.':''}`+sig;
+  return `${n}, здравствуйте! Простите, что напоминаю: за вами ${b}.${d?' Вы говорили, что вернёте к '+ds+' — буду ждать.':''} Спасибо!`+sig;
+}
+function m7StmtUrl(c,st,ml){
+  const o={v:1,l:ml,n:c.name,s:(state.profile&&state.profile.shop)||'',b:Math.round(st.bal),d:st.due||'',r:st.rows.slice(-25).map(r=>[r.d,r.t==='pay'?1:0,Math.round(+r.a||0)])};
+  const base=location.href.split('#')[0].split('?')[0].replace(/[^/]*$/,'');
+  return base+'s.html#'+b64url(new TextEncoder().encode(JSON.stringify(o)));
+}
+function m7RemSheet(c){
+  const st=custState(c); let ml=lang==='tg'?'tg':'ru', tone=st.due===dkey()?'date':'soft', att=false;
+  const draw=()=>{ const due=st.due?parseYmd(st.due):null;
+    const msg=m7RemMsg(c,st,ml,tone)+(att?'\n'+(ml==='tg'?'Ҳисоб: ':'Выписка: ')+m7StmtUrl(c,st,ml):'');
+    const tones=[['soft',L.m7ToneSoft],['plain',L.m7TonePlain]].concat(due?[['date',L.m7ToneDate]]:[]);
+    const wa=c.phone?waLink(c.phone,msg):'https://wa.me/?text='+encodeURIComponent(msg);
+    openSheet(`<h3>${L.m7RemT(esc(c.name))}</h3><p class="lead">${L.m7RemSub(money(Math.max(0,st.bal)),due?fmtDate(due):'')}</p>
+      <div class="seg"><button data-ml="ru" class="${ml==='ru'?'on':''}">Русский</button><button data-ml="tg" class="${ml==='tg'?'on':''}">Тоҷикӣ</button></div>
+      <div class="m7-chips m7-mt10">${tones.map(t=>`<button type="button" data-tone="${t[0]}" class="${tone===t[0]?'on':''}">${t[1]}</button>`).join('')}</div>
+      <div class="m7-chat"><span class="m7-chat-t">${L.m7Preview(esc(c.name))}</span><div class="m7-bub">${esc(msg).replace(/\n/g,'<br>')}</div></div>
+      <label class="check"><input type="checkbox" id="rm-att" ${att?'checked':''}> ${L.m7Stmt}</label>
+      ${c.phone?'':`<p class="note">${L.m7NoPhoneCu}</p>`}
+      <a class="btn btn-primary btn-full" href="${esc(wa)}" target="_blank" rel="noopener">${ico('chat',20)} ${L.m7WA}</a>
+      <div class="sheet-row"><button class="btn btn-ghost" id="rm-sh">${ico('share',18)} ${L.m7OtherWay}</button><button class="btn btn-ghost" id="rm-cp">${ico('copy',18)} ${L.m7Copy}</button></div>
+      <p class="note m7-center">${L.m7FromYou}</p>
+      <div class="sheet-row"><button class="btn btn-ghost" id="rm-back">${L.back}</button></div>`);
+    sheet.querySelectorAll('[data-ml]').forEach(b=>b.onclick=()=>{ ml=b.dataset.ml; draw(); });
+    sheet.querySelectorAll('[data-tone]').forEach(b=>b.onclick=()=>{ tone=b.dataset.tone; draw(); });
+    $('#rm-att').onchange=e=>{ att=e.target.checked; draw(); };
+    $('#rm-sh').onclick=()=>m7ShareText(msg); $('#rm-cp').onclick=()=>m7CopyText(msg); $('#rm-back').onclick=()=>custSheet(c); };
+  draw();
+}
+
+/* ---------- 10. уведомления ---------- */
+function m7NotifySheet(){
+  const ps=pushSt(), list=activeList(), nx=m7Next(list), chk=lsGet('m7chk_v1')!=='0';
+  const prev=nx?`${esc(nx.loan.name)}: ${nx.a.overdue?L.m7Late(-nx.a.days).toLowerCase():L.m7Next.toLowerCase()+' '+whenText(nx.a.days)}${ps.hide?'':' · '+money(m7Amt(nx.a))}`:L.m7CalmT;
+  const tg=(id,on,t,d)=>`<label class="m7-tg"><span><b>${t}</b><small>${d}</small></span><input type="checkbox" id="${id}" ${on?'checked':''}><i></i></label>`;
+  openSheet(`<h3>${L.m7NotifT}</h3>
+    <div class="m7-lock"><div class="m7-lock-t">09:00</div><div class="m7-lock-n"><img src="icon-192.png" alt="" width="30" height="30"><div><b>Mira</b><span>${prev}</span></div></div></div>
+    ${ps.on?`<div class="m7-tgs">${tg('ns-hide',!!ps.hide,L.m7NHide,L.m7NHideD)}${tg('ns-hol',ps.hol!==false,L.m7NHol,L.m7NHolD)}${tg('ns-wk',ps.wk!==false,L.m7NWeek,L.m7NWeekD)}${tg('ns-ev',!!ps.ev,L.m7NEve,L.m7NEveD)}</div>
+      <button class="btn btn-ghost btn-full m7-mt10" id="ns-test">${ico('bell',18)} ${L.m7NTest}</button>`
+    :`<div class="m7-off"><b>${L.m7NPush}: ${L.m7NPushOff}</b><button class="btn btn-primary btn-full" id="ns-on">${ico('bell',18)} ${L.m7NOn}</button></div>`}
+    <div class="m7-tgs m7-mt10">${tg('ns-chk',chk,L.m7NChk,L.m7NChkD)}</div>
+    <p class="note">${L.m7NNote}</p>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+  const sv=(k,v,reg)=>{ const p=pushSt(); p[k]=v; p.h=''; pushSave(p); mirrorForSW(); if(reg) pushRegister(true); };
+  if($('#ns-on')) $('#ns-on').onclick=async()=>{ $('#ns-on').disabled=true; const ok=await pushEnable(); toast(ok?L.pushEnabled:L.pushServerOld); m7NotifySheet(); };
+  if($('#ns-test')) $('#ns-test').onclick=()=>pushTest();
+  if($('#ns-hide')) $('#ns-hide').onchange=e=>{ sv('hide',e.target.checked,false); m7NotifySheet(); };
+  if($('#ns-hol')) $('#ns-hol').onchange=e=>sv('hol',e.target.checked,true);
+  if($('#ns-wk')) $('#ns-wk').onchange=e=>sv('wk',e.target.checked,true);
+  if($('#ns-ev')) $('#ns-ev').onchange=e=>sv('ev',e.target.checked,true);
+  $('#ns-chk').onchange=e=>{ lsSet('m7chk_v1',e.target.checked?'1':'0'); render(); };
+}
+const m7DG0=digest; digest=function(){ const g=m7DG0(), ps=pushSt(); if(ps.hide) g.hide=1; if(ps.hol!==false) for(const it of g.items||[]) if(it.due&&m7HolNear(it.due)) it.pre=2; return g; };
+const m7DI0=dueItems; dueItems=function(){ const out=m7DI0(); if(pushSt().hol===false) return out; const add=out.filter(m7HolNear).map(d=>ymd(addDays(parseYmd(d),-2))); return [...new Set(out.concat(add))].sort().slice(0,60); };
+
+/* ---------- 11. голосовой ввод ---------- */
+const M7W={'ноль':0,'один':1,'одна':1,'одну':1,'два':2,'две':2,'три':3,'четыре':4,'пять':5,'шесть':6,'семь':7,'восемь':8,'девять':9,'десять':10,'одиннадцать':11,'двенадцать':12,'тринадцать':13,'четырнадцать':14,'пятнадцать':15,'шестнадцать':16,'семнадцать':17,'восемнадцать':18,'девятнадцать':19,'двадцать':20,'тридцать':30,'сорок':40,'пятьдесят':50,'шестьдесят':60,'семьдесят':70,'восемьдесят':80,'девяносто':90,'сто':100,'двести':200,'триста':300,'четыреста':400,'пятьсот':500,'шестьсот':600,'семьсот':700,'восемьсот':800,'девятьсот':900};
+function m7Num(s){
+  s=String(s||'').toLowerCase().replace(/(\d)[\s ](?=\d{3}\b)/g,'$1');
+  const m=s.match(/\d+(?:[.,]\d+)?/); if(m){ let v=parseFloat(m[0].replace(',','.')); const tail=s.slice(m.index+m[0].length,m.index+m[0].length+12); if(/^\s*(тыс|ҳазор|hazor|thousand|k\b)/.test(tail)) v*=1000; return Math.round(v); }
+  let tot=0, cur=0, any=false; for(const w of s.split(/[\s,.\-]+/)){ if(M7W[w]!=null){ cur+=M7W[w]; any=true; } else if(/^тысяч/.test(w)){ tot+=(cur||1)*1000; cur=0; any=true; } }
+  return any&&(tot+cur)>0?tot+cur:null;
+}
+function m7Stem(w){ w=String(w||'').toLowerCase().replace(/ё/g,'е'); return w.length<=4?w:w.slice(0,Math.max(4,w.length-2)); }
+function m7NameIn(s,name){ const toks=String(name||'').toLowerCase().replace(/ё/g,'е').split(/[\s«»"'().,-]+/).filter(w=>w.length>=3&&!/^(банк|бонк|bank|ооо|оао|зао|мдо)$/.test(w)); return toks.some(t=>new RegExp('(^|[^а-яёa-zӣӯҳқғҷ])'+m7Stem(t).replace(/[.*+?^${}()|[\]\\]/g,'\\$&')).test(s)); }
+function m7CustIn(s){ let best=null; for(const c of state.cust){ const f=String(c.name||'').trim().split(/\s+/)[0]; if(f.length<2) continue; if(m7NameIn(s,f)&&(!best||f.length>String(best.name).length)) best=c; } return best; }
+function m7GuessName(t){ const stop=/^(оплатил|оплатила|заплатил|заплатила|вернул|вернула|отдал|отдала|взял|взяла|в|на|долг|долга|сомони|сомонӣ|рублей|тысяч|тысячу|тысяча|и|за|насия|қарз|гирифт|баргардонд|дод)$/i;
+  for(const w of String(t||'').split(/\s+/)){ const x=w.replace(/[^А-Яа-яЁёӢӣӮӯҲҳҚқҒғҶҷA-Za-z]/g,''); if(x.length>=2&&!/\d/.test(w)&&!stop.test(x)&&!M7W[x.toLowerCase()]) return x.charAt(0).toUpperCase()+x.slice(1).toLowerCase(); } return null; }
+function m7VParse(t){
+  const s=' '+String(t||'').toLowerCase().replace(/ё/g,'е')+' ', amt=m7Num(s), has=re=>re.test(s); if(!amt) return null;
+  const loans=state.loans.filter(l=>!l.example&&!analyze(l).done), lm=loans.find(l=>m7NameIn(s,l.name)), cm=m7CustIn(s);
+  const isPay=has(/оплат|заплат|платеж|пардохт|paid|pay/), ret=has(/вернул|отдал|принес|баргардон|дод |returned|paid back/), debt=has(/долг|насия|взял|в кредит|қарз|гирифт|took|credit/);
+  if(lm&&(isPay||!cm)) return {k:'pay',loan:lm,amt};
+  if((ret||debt)&&(cm||m7GuessName(t))) return {k:ret?'ret':'debt',c:cm,nn:cm?null:m7GuessName(t),amt};
+  if(has(/выручк|продал|касса|даромад|фуруш|фурӯш|revenue|sold/)) return {k:'day',amt,p:parseVoice(t)};
+  return null;
+}
+function m7VoiceSheet(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition; let res=null, heard='', saved=null;
+  const listenView=msg=>{ openSheet(`<h3>${L.m7VT}</h3><p class="lead">${L.m7VSay}</p><div class="m7-vex">${L.m7VEx.map(x=>`<span>${esc(x)}</span>`).join('')}</div>
+      <button class="m7-mic" id="v-mic" aria-label="${L.m7VTap}"><span>${ico('mic',40)}</span></button><b class="m7-v-st" id="v-st">${msg||L.m7VTap}</b>
+      ${heard&&!res?`<p class="note m7-center">${L.m7VHeard}: «${esc(heard)}»</p>`:''}
+      <div class="sheet-row"><button class="btn btn-ghost" id="v-man">${L.m7VManual}</button><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+    $('#v-mic').onclick=listen; $('#v-man').onclick=()=>{ closeSheet(); payPicker(); }; };
+  const label=()=>({pay:L.m7VKPay,ret:L.m7VKRet,debt:L.m7VKDebt,day:L.m7VKDay})[res.k];
+  const who=()=>res.k==='pay'?esc(res.loan.name):res.k==='day'?'—':res.c?esc(res.c.name):esc(res.nn)+` <small class="muted">(${L.m7VNew(esc(res.nn))})</small>`;
+  const resultView=()=>{ openSheet(`<h3>${L.m7VT}</h3><div class="m7-heard"><small>${L.m7VHeard}</small><span>«${esc(heard)}»</span></div>
+      <div class="calc-out"><div class="co-row"><span>${L.m7VWhat}</span><b>${label()}</b></div><div class="co-row"><span>${L.m7VWho}</span><b>${who()}</b></div><div class="co-row"><span>${L.m7VSum}</span><b>${money(res.amt)}</b></div><div class="co-row"><span>${L.m7VWhen}</span><b>${L.m7VToday}, ${fmtDate(new Date())}</b></div></div>
+      <p class="note">${L.m7VFixHint}</p>
+      <div class="sheet-row"><button class="btn btn-ghost" id="v-fix">${L.m7VFix}</button><button class="btn btn-primary" id="v-save">${L.m7VSave}</button></div>`);
+    $('#v-fix').onclick=()=>{ res=null; heard=''; listenView(); listen(); }; $('#v-save').onclick=save; };
+  const savedView=txt=>{ openSheet(`<div class="ap"><div class="m7-ok">${ico('check',40)}</div><h3 style="justify-content:center">${L.m7VSaved}</h3><p class="lead m7-center">${txt}</p>
+      <div class="sheet-row"><button class="btn btn-ghost" id="v-undo">${L.m7VUndo}</button><button class="btn btn-primary" data-close>${L.m7VDone}</button></div></div>`);
+    $('#v-undo').onclick=()=>{ if(saved){ state.cdebt=state.cdebt.filter(r=>r.id!==saved.rid); if(saved.cid) state.cust=state.cust.filter(c=>c.id!==saved.cid); persist(); render(); } closeSheet(); }; };
+  const save=()=>{
+    if(res.k==='pay'){ const l=res.loan; closeSheet(); payForm(l); const i=$('#p-amt'); if(i){ i.value=res.amt; i.dispatchEvent(new Event('input')); } toast(L.m7VPayOpen); return; }
+    if(res.k==='day'){ closeSheet(); dayForm(); const c=$('#dy-cash'), k=$('#dy-card'); const p=res.p||{}; if(c){ c.value=p.cash!=null?p.cash:res.amt; if(k&&p.card!=null) k.value=p.card; c.dispatchEvent(new Event('input')); } return; }
+    let c=res.c, cid=null; if(!c){ c={id:uid('c'),name:res.nn,phone:'',size:'',note:'',reg:false}; state.cust.push(c); cid=c.id; }
+    const rid=uid('cd'); state.cdebt.push({id:rid,c:c.id,t:res.k==='ret'?'pay':'debt',a:res.amt,d:dkey(),n:'',ts:Date.now()});
+    saved={rid,cid}; persist(); render(); savedView(`${esc(c.name)}: ${res.k==='ret'?'−':'+'}${money(res.amt)}`);
+  };
+  function listen(){
+    const st=$('#v-st'); if(!SR){ if(st) st.textContent=L.m7VNoSR; return; }
+    const r=new SR(); r.lang=lang==='en'?'en-US':(lang==='tg'?'tg-TJ':'ru-RU'); r.interimResults=false; r.maxAlternatives=3; let tried=false;
+    const mic=$('#v-mic'); r.onstart=()=>{ if(mic) mic.classList.add('rec'); if(st) st.textContent=L.m7VListen; };
+    r.onerror=e=>{ if(mic) mic.classList.remove('rec'); if(!tried&&lang==='tg'&&(e.error==='language-not-supported'||e.error==='no-speech')){ tried=true; try{ r.lang='ru-RU'; r.start(); return; }catch(_){} } if(st) st.textContent=e.error==='not-allowed'?L.m7VDenied:L.m7VNo; };
+    r.onend=()=>{ if(mic) mic.classList.remove('rec'); };
+    r.onresult=e=>{ const alts=[...e.results[0]].map(x=>x.transcript); heard=alts[0]||''; res=null; for(const a of alts){ res=m7VParse(a); if(res){ heard=a; break; } } if(res) resultView(); else listenView(L.m7VNo); };
+    try{ r.start(); }catch(e){ if(st) st.textContent=L.m7VNo; }
+  }
+  listenView();
+}
+
+/* ---------- 12. первое знакомство ---------- */
+function m7Welcome(){
+  if(DEMO||hasRealData()||lsGet('m7w_v1')==='1') return false; lsSet('m7w_v1','1');
+  const draw=()=>{ openSheet(`<div class="m7-wel">${MIRA_RING(84,'#DDE3EF')}<h2>${L.m7WelT}</h2><p>${L.m7WelD}</p>
+      <div class="seg m7-seg3"><button data-wl="ru" class="${lang==='ru'?'on':''}">Русский</button><button data-wl="tg" class="${lang==='tg'?'on':''}">Тоҷикӣ</button><button data-wl="en" class="${lang==='en'?'on':''}">English</button></div>
+      <button class="btn btn-primary btn-full" id="wl-add">${ico('plus',20)} ${L.m7WelAdd}</button><button class="btn btn-ghost btn-full m7-mt8" data-close>${L.m7WelLater}</button></div>`);
+    sheet.querySelectorAll('[data-wl]').forEach(b=>b.onclick=()=>{ setLang(b.dataset.wl); draw(); });
+    $('#wl-add').onclick=()=>m7AddLoan(); };
+  draw(); return true;
+}
+
+/* ---------- 13. ярлыки на иконке ---------- */
+const m7HG0=handleGo; handleGo=function(){
+  let go=''; try{ go=new URLSearchParams(location.search).get('go')||''; }catch(e){}
+  if(['owed','voice','loans','add'].includes(go)){ try{ history.replaceState(null,'',location.pathname); }catch(e){}
+    if(go==='owed'){ setTab('shop'); setShopSub('debt'); } else if(go==='voice') m7VoiceSheet(); else if(go==='loans') setTab('loans'); else m7AddLoan(); return true; }
+  return m7HG0();
+};
+
+/* ---------- 14. спокойнее: без конфетти ---------- */
+celebrate=function(){ try{ navigator.vibrate&&navigator.vibrate([18,50,18]); }catch(e){} };
+
+/* ---------- 15. клики Mira ---------- */
+document.addEventListener('click', e=>{
+  const t=e.target; if(!t||!t.closest) return; const S=()=>e.stopImmediatePropagation(); let el;
+  if((el=t.closest('[data-m-add]'))){ S(); m7AddLoan(); return; }
+  if((el=t.closest('[data-m-rec]'))){ S(); payPicker(); return; }
+  if((el=t.closest('[data-m-voice]'))){ S(); m7VoiceSheet(); return; }
+  if((el=t.closest('[data-m-late]'))){ S(); const l=byId(el.dataset.mLate); if(l) m7LateSheet(l); return; }
+  if((el=t.closest('[data-m-app]'))){ S(); const l=byId(el.dataset.mApp); if(l) m7BankApp(l); return; }
+  if((el=t.closest('[data-m-chk]'))){ S(); const p=state.payments.find(x=>x.id===el.dataset.mChk); if(!p) return; p.chkd=+el.dataset.v; persist(); render(); if(p.chkd===2){ const l=byId(p.loanId); if(l) m7NcSheet(l,p); } else toast(L.saved); return; }
+  if((el=t.closest('[data-m-cal]'))){ S(); m7CalSheet(0); return; }
+  if((el=t.closest('[data-m-notify]'))){ S(); m7NotifySheet(); return; }
+  if((el=t.closest('[data-m-data]'))){ S(); dataSheet(); return; }
+  if((el=t.closest('[data-m-lang]'))){ S(); langSheet(); return; }
+  if((el=t.closest('[data-m-simple]'))){ S(); setSimple(true); toast(L.smOnToast); return; }
+  if((el=t.closest('[data-m-calc]'))){ S(); calcSheet(); return; }
+  if((el=t.closest('[data-m-remind]'))){ S(); const c=state.cust.find(x=>x.id===el.dataset.mRemind); if(c) m7RemSheet(c); return; }
+}, true);
+
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
@@ -7109,7 +8068,8 @@ render();
 setTab(curTab);
 maybeLock();
 initPWA();
-setTimeout(()=>{ try{ mirrorForSW(); pushRegister(false); if(famSt()) famSync(false); if(!handleGo()){ if(!maybeWhatsNew()) maybeFreshStart(); } }catch(e){} fetchRates(false).then(()=>renderToday(activeList())).catch(()=>{}); autoSnap(); },400);
+try{ m7IcoStart(); }catch(e){}
+setTimeout(()=>{ try{ mirrorForSW(); pushRegister(false); if(famSt()) famSync(false); if(!handleGo()){ if(!m7Welcome()&&!maybeWhatsNew()) maybeFreshStart(); } }catch(e){} fetchRates(false).then(()=>renderToday(activeList())).catch(()=>{}); autoSnap(); },400);
 </script>
 </body>
 </html>

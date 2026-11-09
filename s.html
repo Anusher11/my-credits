@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Выписка</title>
+<style>
+@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-cyrillic-800.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F}
+@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-cyrillic-ext-800.woff2) format('woff2');unicode-range:U+0460-052F}
+@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-latin-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
+:root{--bg:#F5F7FB;--card:#fff;--ink:#0F1E3D;--muted:#5A6680;--line:#DDE3EF;--leaf:#0E7D5A;--sun:#F2B53A}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1430;--card:#121E3C;--ink:#EEF2FB;--muted:#A6B4D6;--line:#24365F;--leaf:#4CC79A}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;line-height:1.45}
+main{max-width:520px;margin:0 auto;padding:24px 16px 40px}
+.shop{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
+h1{font-size:1.6rem;letter-spacing:-.02em;margin:18px 0 4px}
+.sub{color:var(--muted);margin:0 0 18px}
+.big{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px}
+.big .k{color:var(--muted);font-weight:700;font-size:.9rem}
+.big .v{font-size:2.2rem;font-weight:800;letter-spacing:-.03em}
+.big .d{margin-top:4px;font-weight:700}
+.sum{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0 18px}
+.sum div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:12px 14px}
+.sum span{display:block;color:var(--muted);font-size:.85rem}.sum b{font-size:1.15rem}
+.rows{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.r{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
+.r:first-child{border-top:0}.r span{color:var(--muted)}.r b.p{color:var(--leaf)}
+.err{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px}
+footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:22px}
+</style>
+</head>
+<body>
+<main id="m"></main>
+<script>
+(function(){
+  var T={ru:{t:'Выписка',left:'Осталось',due:'Срок',took:'Взято',ret:'Возвращено',tk:'взято',rt:'вернули',cur:'сомони',bad:'Ссылка повреждена. Попросите прислать её ещё раз.',by:'Составлено в приложении Mira',
+      m:['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря']},
+    tg:{t:'Ҳисоб',left:'Боқимонда',due:'Мӯҳлат',took:'Гирифта',ret:'Баргардонда',tk:'гирифта',rt:'баргардонд',cur:'сомонӣ',bad:'Пайванд вайрон аст. Хоҳиш кунед, ки боз фиристанд.',by:'Дар барномаи Mira тартиб дода шуд',
+      m:['январ','феврал','март','апрел','май','июн','июл','август','сентябр','октябр','ноябр','декабр']}};
+  var el=document.getElementById('m');
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function nf(v){return new Intl.NumberFormat('ru-RU').format(Math.round(v||0));}
+  var o=null;
+  try{ var h=location.hash.slice(1).replace(/-/g,'+').replace(/_/g,'/'); while(h.length%4) h+='='; var b=atob(h), u=new Uint8Array(b.length); for(var i=0;i<b.length;i++) u[i]=b.charCodeAt(i); o=JSON.parse(new TextDecoder().decode(u)); }catch(e){ o=null; }
+  var L=T[(o&&o.l)==='tg'?'tg':'ru'];
+  document.documentElement.lang=(o&&o.l)==='tg'?'tg':'ru';
+  if(!o||!Array.isArray(o.r)){ el.innerHTML='<div class="err">'+T.ru.bad+'<br>'+T.tg.bad+'</div>'; return; }
+  function d(s){ var p=String(s).split('-'); return (+p[2])+' '+L.m[(+p[1]||1)-1]+' '+p[0]; }
+  var took=0, ret=0; o.r.forEach(function(x){ if(x[1]) ret+=x[2]; else took+=x[2]; });
+  document.title=L.t+' — '+(o.n||'');
+  el.innerHTML='<div class="shop"><svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="38" fill="none" stroke="#DDE3EF" stroke-width="16"/><circle cx="60" cy="60" r="38" fill="none" stroke="#F2B53A" stroke-width="16" stroke-linecap="round" stroke-dasharray="179 60" transform="rotate(-90 60 60)"/></svg>'+esc(o.s||'Mira')+'</div>'
+    +'<h1>'+L.t+': '+esc(o.n)+'</h1>'
+    +'<div class="big"><div class="k">'+L.left+'</div><div class="v">'+nf(o.b)+' '+L.cur+'</div>'+(o.d?'<div class="d">'+L.due+': '+d(o.d)+'</div>':'')+'</div>'
+    +'<div class="sum"><div><span>'+L.took+'</span><b>'+nf(took)+'</b></div><div><span>'+L.ret+'</span><b>'+nf(ret)+'</b></div></div>'
+    +'<div class="rows">'+o.r.slice().reverse().map(function(x){ return '<div class="r"><span>'+d(x[0])+' · '+(x[1]?L.rt:L.tk)+'</span><b class="'+(x[1]?'p':'')+'">'+(x[1]?'−':'+')+nf(x[2])+'</b></div>'; }).join('')+'</div>'
+    +'<footer>'+L.by+'</footer>';
+})();
+</script>
+</body>
+</html>

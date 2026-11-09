@@ -1,15 +1,16 @@
 {
-  "name": "Мои кредиты",
-  "short_name": "Кредиты",
-  "description": "Учёт кредитов, платежей и золота",
+  "id": "./",
+  "name": "Mira",
+  "short_name": "Mira",
+  "description": "Кредиты, платежи и кто вам должен. Все платежи — спокойно.",
   "lang": "ru",
   "dir": "ltr",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F5F4F0",
-  "theme_color": "#11805A",
+  "background_color": "#F5F7FB",
+  "theme_color": "#F5F7FB",
   "icons": [
     {
       "src": "icon-192.png",
@@ -32,9 +33,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Записать день",
-      "short_name": "День",
-      "url": "./index.html?go=day",
+      "name": "Записать оплату",
+      "short_name": "Оплата",
+      "url": "./index.html?go=pay",
       "icons": [
         {
           "src": "icon-192.png",
@@ -44,9 +45,33 @@
       ]
     },
     {
-      "name": "Оплатить платёж",
-      "short_name": "Оплатить",
-      "url": "./index.html?go=pay",
+      "name": "Мне должны",
+      "short_name": "Мне должны",
+      "url": "./index.html?go=owed",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Записать голосом",
+      "short_name": "Голосом",
+      "url": "./index.html?go=voice",
+      "icons": [
+        {
+          "src": "icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Записать день",
+      "short_name": "День",
+      "url": "./index.html?go=day",
       "icons": [
         {
           "src": "icon-192.png",
