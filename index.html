@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mira</title>
 <meta name="description" content="Mira — кредиты, платежи и кто вам должен. Все платежи — спокойно.">
-<meta name="theme-color" content="#F5F7FB" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B1430" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F6FD">
+<script>try{var m8t=localStorage.getItem('m8theme');if(m8t!=='auto')document.documentElement.setAttribute('data-theme',m8t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}</script>
 <link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preload" href="fonts/ns-cyrillic-800.woff2" as="font" type="font/woff2" crossorigin>
@@ -1293,9 +1293,172 @@
   .m7-wel h2{margin:4px 0 0; font:800 1.5rem var(--font-num); letter-spacing:-.02em;}
   .m7-wel p{margin:0 0 6px; color:var(--muted); line-height:1.55;}
   .m7-seg3{width:100%; margin-bottom:8px;}
+
+  /* ===================== v8 Mira: светлая и яркая ===================== */
+  /* Светлая по умолчанию. Синий — доверие и спокойствие (банковские приложения США и Европы), жёлтое кольцо — знак Mira и прогресс,
+     мятный — «оплачено», коралловый — «опаздывает» (внимание без паники), сиреневый — «мне должны». */
+  :root{
+    --bg:#F4F6FD; --surface:#FFFFFF; --surface-2:#EEF2FC; --ink:#14213D; --muted:#56627F; --line:#E2E7F4;
+    --brand:#2D5BFF; --brand-ink:#1C3FC4; --brand-weak:#E8EEFF; --info:#2D5BFF; --cu:#7B5CFF;
+    --track:#E9EDF8; --m8-track:#E9EDF8; --gold:#FFB627; --m-sun:#FFB627; --m8-sun-weak:#FFF4D9;
+    --m-leaf:#0B9C6A; --m-leaf-weak:#DFF6EA; --in:#0B9C6A;
+    --m-clay:#E04E37; --m-clay-ink:#8A2716; --m-clay-weak:#FFECE6; --m-clay-line:#FFD0C4; --out:#E04E37; --danger:#D4432C; --danger-weak:#FFECE6; --warn:#B4531F; --warn-weak:#FFF1E6;
+    --m-grape:#7B5CFF; --m-grape-weak:#F0ECFF; --save:#7B5CFF;
+    --m-hero:#2D5BFF; --m-navy:#14213D; --m-navy-2:#5A7DFF; --m-on-navy:#DDE5FF;
+    --shadow:0 1px 2px rgba(20,33,61,.04), 0 6px 18px rgba(45,91,255,.07);
+    --shadow-lg:0 2px 8px rgba(20,33,61,.06), 0 18px 44px rgba(45,91,255,.14);
+    --m8-glass:rgba(255,255,255,.88);
+  }
+  :root[data-theme="dark"]{ --m8-track:#24365F; --m-grape:#A996F0; --m-grape-weak:#241E48; --m-hero:#3657E0; --m8-sun-weak:#3A2F14; --m8-glass:rgba(18,30,60,.9); --m-on-navy:#DDE5FF; --m-navy-2:#5A7DFF; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme]){ --m8-track:#24365F; --m-grape:#A996F0; --m-grape-weak:#241E48; --m-hero:#3657E0; --m8-sun-weak:#3A2F14; --m8-glass:rgba(18,30,60,.9); --m-on-navy:#DDE5FF; --m-navy-2:#5A7DFF; } }
+  :root[data-theme="light"] body{background:linear-gradient(180deg,#E6EDFF 0,#F4F6FD 340px) no-repeat,#F4F6FD;}
+  :root[data-theme="light"]{color-scheme:light;}
+
+  /* вход: кольцо Mira рисуется, потом карточки поднимаются по очереди */
+  #m8splash{position:fixed; inset:0; z-index:9999; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; transition:opacity .35s ease, transform .35s ease;}
+  #m8splash.out{opacity:0; transform:scale(1.05); pointer-events:none;}
+  #m8splash .t{stroke:var(--m8-track);} #m8splash .a{stroke:var(--m-sun); stroke-dasharray:239; stroke-dashoffset:239; animation:m8draw .75s cubic-bezier(.6,.1,.2,1) .05s forwards;}
+  #m8splash b{font:800 2.1rem var(--font-num); letter-spacing:-.05em; color:var(--ink); opacity:0; animation:m8fade .4s ease .35s forwards;}
+  @keyframes m8draw{to{stroke-dashoffset:60}}
+  @keyframes m8fade{from{opacity:0}to{opacity:1}}
+  @keyframes m8up{from{opacity:0; transform:translateY(16px)}to{opacity:1; transform:none}}
+  @keyframes m8ring{from{stroke-dashoffset:var(--c)}}
+  @keyframes m8tab{from{opacity:0; transform:translateY(6px)}to{opacity:1; transform:none}}
+  html.m8-enter #view-today>*{animation:m8up .55s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--m8i,0) * 70ms + 560ms);}
+  html.m8-enter header{animation:m8fade .45s ease both .5s;}
+  html.m8-enter .m8-rf{animation:m8ring 1.2s cubic-bezier(.2,.8,.2,1) both 1s;}
+  .view.m8-fade{animation:m8tab .26s ease both;}
+  @media (prefers-reduced-motion: reduce){ #m8splash{display:none;} html.m8-enter *{animation:none!important;} .view.m8-fade{animation:none;} }
+
+  /* «Сегодня»: порядок — главное сверху */
+  #view-today{display:flex; flex-direction:column;}
+  #view-today>#miraHello{order:1} #view-today>#miraCheck{order:2} #view-today>#miraNext{order:3} #view-today>#m8Prog{order:4} #view-today>#miraMonth{order:5}
+  #view-today>#quick{order:6} #view-today>#focus{order:7} #view-today>#miraOwed{order:8} #view-today>#fcCard{order:9} #view-today>#piggy{order:10}
+  #view-today>#tripCard{order:11} #view-today>#weekCard{order:12} #view-today>.bk-slot{order:13} #view-today>#dayTip{order:14} #view-today>#simpleBox{order:15} #view-today>#simpleLink{order:16}
+  #view-today>#todayHead,#view-today>#hero{order:30}
+  .m7-hello h1{margin:2px 0 8px;}
+  .m8-daily{display:inline-flex; align-items:center; gap:7px; margin:0 0 16px; padding:7px 13px 7px 10px; border-radius:99px; background:var(--m8-sun-weak); font-size:.9rem; font-weight:700; line-height:1.3; max-width:100%;}
+  .m8-daily .mi{color:#C98A00; flex:none;}
+
+  /* главная карточка: ярко-синяя, с кольцом Mira в углу */
+  .m7-hero{position:relative; overflow:hidden; background:var(--m-hero); box-shadow:0 18px 36px -16px rgba(45,91,255,.65); border-radius:28px; padding:20px 18px 18px;}
+  .m7-hero::before{content:''; position:absolute; width:190px; height:190px; right:-74px; top:-86px; border-radius:50%; border:30px solid rgba(255,255,255,.12); pointer-events:none;}
+  .m7-hero>*{position:relative; z-index:1;}
+  .m7-chip{background:rgba(255,255,255,.2); color:#fff;}
+  .m7-h-amt{font-size:3rem;}
+  .m7-b1{background:var(--m-sun); color:#14213D; box-shadow:0 6px 16px -6px rgba(0,0,0,.35);}
+  .m7-b2{border:1.5px solid rgba(255,255,255,.5); color:#fff;}
+  .m7-hero.late{background:#EE5A41; color:#fff; box-shadow:0 18px 36px -16px rgba(224,78,55,.7);}
+  .m7-hero.late .m7-h-n span,.m7-hero.late .m7-h-amt small{color:#FFE3DB;}
+  .m7-hero.late .m7-b1{background:#fff; color:#B23520;}
+  .m7-hero.late .m7-b2{border-color:rgba(255,255,255,.6); color:#fff;}
+  :root[data-theme="dark"] .m7-hero.late .m7-b1{color:#B23520;}
+  .m7-calm{background:var(--m-leaf-weak); border-radius:24px; padding:16px;}
+  .m7-first{border:0; box-shadow:var(--shadow-lg); padding:26px 18px 18px; border-radius:28px;}
+  .m7-first svg{width:76px; height:76px;}
+  .m8-copy{display:inline-flex; align-items:center; gap:6px; margin-top:6px; min-height:44px; font-weight:800; color:var(--brand); background:none; border:0; font-family:inherit; font-size:.92rem;}
+
+  /* путь к свободе: кольцо и цифры */
+  .m8-prog{display:grid; grid-template-columns:112px 1fr; gap:16px; align-items:center; width:100%; text-align:left; color:var(--ink); background:var(--surface); border-radius:26px; padding:16px; margin-bottom:14px; box-shadow:var(--shadow); font-family:inherit; border:0;}
+  .m8-prog-r{position:relative; width:112px; height:112px; display:block;}
+  .m8-prog-r svg{display:block;}
+  .m8-prog-p{position:absolute; inset:0; display:flex; flex-wrap:wrap; align-items:baseline; justify-content:center; align-content:center; line-height:1;}
+  .m8-prog-p b{font:800 1.9rem var(--font-num); letter-spacing:-.04em;} .m8-prog-p i{font-style:normal; font-weight:800; font-size:1rem; margin-left:1px;}
+  .m8-prog-p small{flex-basis:100%; text-align:center; font-size:.7rem; font-weight:700; color:var(--muted); margin-top:3px;}
+  .m8-prog-t{display:flex; flex-direction:column; gap:5px; min-width:0;}
+  .m8-cap{display:block; font-size:.8rem; font-weight:800; color:var(--muted); letter-spacing:.01em;}
+  .m8-kv{display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:.9rem;} .m8-kv em{font-style:normal; color:var(--muted);} .m8-kv b{font-size:1rem; white-space:nowrap;}
+  .m8-free{grid-column:1 / -1; display:flex; align-items:center; gap:8px; padding:9px 12px; border-radius:14px; background:var(--m-leaf-weak); color:var(--m-leaf); font-size:.9rem; font-weight:700;}
+  .m8-free span{color:var(--ink); font-weight:600;} .m8-sum .m8-free{margin-top:14px;}
+  .m8-free b{color:var(--ink); font-weight:800;}
+  .m8-behind{font-size:.8rem; color:var(--muted); font-weight:600;}
+
+  /* месяц и список дел */
+  .m7-month{border:0; box-shadow:var(--shadow); border-radius:24px;}
+  .m7-bar i{background:var(--m-leaf);}
+  .focus{border:0; box-shadow:var(--shadow); border-radius:24px;}
+  .focus:not(.m8-open) .fo-it.m8-x{display:none;}
+  .m8-fold{display:flex; align-items:center; justify-content:center; gap:6px; width:100%; min-height:46px; margin-top:4px; border:0; background:var(--surface-2); border-radius:14px; color:var(--brand-ink); font:800 .92rem var(--font-num);}
+  .focus.m8-open .m8-fold .mi{transform:rotate(180deg);}
+
+  /* быстрые действия: цветные значки */
+  .qa{border:0; background:var(--surface); box-shadow:var(--shadow); min-height:96px; border-radius:20px;}
+  .qa>span{width:46px; height:46px; border-radius:15px; display:flex; align-items:center; justify-content:center; font-size:1.3rem;}
+  .qa>span .mi-e,.qa>span svg{width:24px; height:24px;}
+  .qa.in>span{background:var(--m-leaf-weak); color:var(--m-leaf);} .qa.out>span{background:var(--m-clay-weak); color:var(--m-clay);}
+  .qa.cu>span{background:var(--m-grape-weak); color:var(--m-grape);} .qa.pay>span{background:var(--brand-weak); color:var(--brand);}
+  .qa.home>span{background:var(--m8-sun-weak); color:#C98A00;} .qa.fx>span{background:#E2F5FA; color:#1590B0;}
+  :root[data-theme="dark"] .qa.fx>span{background:#123642; color:#6FD3EC;}
+  .m7-owed{background:var(--m-grape-weak); border-radius:24px;} .m7-owed>.mi:first-child{color:var(--m-grape);}
+
+  /* кнопки внизу — парящая панель, не полоса */
+  .m7-actbar{background:transparent; border-top:0; padding:6px 14px 8px; pointer-events:none;}
+  .m7-actbar .in{pointer-events:auto; background:var(--m8-glass); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border:1px solid var(--line); border-radius:22px; padding:6px; box-shadow:0 12px 30px -12px rgba(20,33,61,.3);}
+  .m7-rec{box-shadow:0 8px 18px -8px rgba(45,91,255,.7);}
+  .bnav{background:var(--m8-glass); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);}
+
+  /* «Кредиты»: итог, доли банков, платёж по месяцам */
+  #view-loans #nextPay{display:none;}
+  .m8-sum{background:var(--surface); border-radius:26px; padding:18px 16px 14px; margin-bottom:16px; box-shadow:var(--shadow);}
+  .m8-sum-top{display:flex; gap:12px; align-items:center; justify-content:space-between;}
+  .m8-sum-l{display:flex; flex-direction:column; gap:4px; min-width:0;}
+  .m8-big{font:800 2.05rem/1.05 var(--font-num); letter-spacing:-.04em;}
+  .m8-sum-d{position:relative; width:108px; height:108px; flex:none;}
+  .m8-sum-d svg{display:block;}
+  .m8-sum-d span{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.05;}
+  .m8-sum-d b{font:800 1.3rem var(--font-num);} .m8-sum-d small{font-size:.66rem; color:var(--muted); font-weight:700;}
+  .m8-leg{display:flex; flex-wrap:wrap; gap:6px 14px; margin:14px 0 4px;}
+  .m8-leg span{display:inline-flex; align-items:center; gap:6px; font-size:.84rem; max-width:100%;}
+  .m8-leg i{width:10px; height:10px; border-radius:3px; flex:none;} .m8-leg em{font-style:normal; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:130px;} .m8-leg b{font-weight:800;}
+  .m8-load{border-top:1px solid var(--surface-2); margin-top:12px; padding-top:12px;}
+  .m8-bars{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:5px; align-items:end; height:92px; margin-top:10px;}
+  .m8-b{display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:4px;}
+  .m8-tr{flex:1; width:100%; display:flex; align-items:flex-end;}
+  .m8-b i{display:block; width:100%; border-radius:6px 6px 3px 3px; background:var(--brand-weak);}
+  .m8-b.now i{background:var(--brand);} .m8-b.low i{background:var(--m-leaf); opacity:.85;}
+  .m8-b small{font-size:.62rem; font-weight:700; color:var(--muted); height:12px; white-space:nowrap;}
+  .m8-drop{display:flex; align-items:center; gap:6px; margin:10px 0 2px; font-size:.9rem; font-weight:700; color:var(--muted);}
+  .m8-drop.good{color:var(--m-leaf);} .m8-drop.good span{color:var(--ink);}
+  .section-h{display:flex; align-items:center; gap:8px;}
+  .m8-addh{margin-left:auto; display:inline-flex; align-items:center; gap:5px; min-height:40px; padding:0 13px; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); font:800 .88rem var(--font-num); border:0;}
+  .m8-addc{display:flex; align-items:center; gap:14px; width:100%; text-align:left; padding:14px 16px; border-radius:20px; border:2px dashed color-mix(in srgb,var(--brand) 35%,transparent); background:transparent; color:var(--ink); font-family:inherit; min-height:74px; margin-top:2px;}
+  .m8-addc-i{width:44px; height:44px; border-radius:14px; background:var(--brand); color:#fff; display:flex; align-items:center; justify-content:center; flex:none;}
+  .m8-addc b{display:block; font-size:1rem;} .m8-addc small{color:var(--muted); font-size:.84rem;}
+  #view-loans .card{border:0; box-shadow:var(--shadow);}
+  #view-loans .cbar i{background:var(--brand);}
+
+  /* новый кредит: «уже внесли?» и кнопки всегда видны над клавиатурой */
+  .m8-pq{background:var(--m8-sun-weak); border-radius:16px; padding:12px; margin:0 0 12px; display:flex; flex-direction:column; gap:10px;}
+  .m8-pq b{font-size:.95rem;}
+  .m8-stick{position:sticky; bottom:-22px; background:var(--surface); padding-top:10px; padding-bottom:22px; margin-bottom:-22px; z-index:2; box-shadow:0 -14px 14px -14px rgba(20,33,61,.25);}
+
+  /* оформление */
+  .m8-ths{display:flex; flex-direction:column; gap:10px; margin:6px 0 14px;}
+  .m8-th{display:flex; align-items:center; gap:14px; width:100%; min-height:64px; padding:10px 14px; border-radius:18px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:700 1rem var(--font-num); text-align:left;}
+  .m8-th b{flex:1;} .m8-th.on{border-color:var(--brand); background:var(--brand-weak);} .m8-th.on .mi{color:var(--brand);}
+  .m8-sw{display:flex; width:54px; height:38px; border-radius:11px; overflow:hidden; flex:none; box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);}
+  .m8-sw i{flex:1;}
+  .m8-sw-light i:nth-child(1){background:#F4F6FD} .m8-sw-light i:nth-child(2){background:#2D5BFF} .m8-sw-light i:nth-child(3){background:#FFB627}
+  .m8-sw-dark i:nth-child(1){background:#0B1430} .m8-sw-dark i:nth-child(2){background:#7C95FF} .m8-sw-dark i:nth-child(3){background:#F2B53A}
+  .m8-sw-auto i:nth-child(1){background:#F4F6FD} .m8-sw-auto i:nth-child(2){background:#0B1430} .m8-sw-auto i:nth-child(3){background:#FFB627}
+
+  /* приветствие */
+  .m8-wel .m8-wel-r{display:flex;} .m8-wel .m8-copy{align-self:center;}
+
+  /* «Кредиты»: порядок — итог и банки сверху, напоминания ниже */
+  #view-loans{display:flex; flex-direction:column;}
+  #view-loans>#m8Sum{order:1} #view-loans>#tip{order:2} #view-loans>.section-h{order:3} #view-loans>#cards{order:4} #view-loans>#monthCheck{order:5; margin-top:16px}
+  #view-loans>#victory{order:6} #view-loans>.bk-slot{order:7; margin-top:16px} #view-loans>#strategy{order:8} #view-loans>#goldSection{order:9} #view-loans>#dynamics{order:10} #view-loans>#closed{order:11} #view-loans>#exampleNote{order:12} #view-loans>#nextPay{order:20}
+  .fab-urgent{background:#EE5A41!important; box-shadow:0 10px 24px -10px rgba(224,78,55,.8)!important;}
+  .m8-reg{display:inline-flex; align-items:center; gap:6px; margin-top:8px; min-height:36px; padding:0 2px; border:0; background:none; color:var(--muted); font:600 .84rem var(--font-body);}
+  .m8-reg u{color:var(--brand); font-weight:800; text-decoration:none;}
+  .m8-cc{width:40px; height:30px; border-radius:9px; background:var(--surface-2); color:var(--muted); display:flex; align-items:center; justify-content:center; font:800 .78rem var(--font-num); letter-spacing:.04em; flex:none;}
+  .m8-th.on .m8-cc{background:var(--brand); color:#fff;}
 </style>
 </head>
 <body>
+<div id="m8splash" aria-hidden="true"><svg width="92" height="92" viewBox="0 0 120 120"><circle class="t" cx="60" cy="60" r="38" fill="none" stroke-width="16"/><circle class="a" cx="60" cy="60" r="38" fill="none" stroke-width="16" stroke-linecap="round" transform="rotate(-90 60 60)"/></svg><b>mira</b></div>
+<script>try{if(sessionStorage.getItem('m8sp')||matchMedia('(prefers-reduced-motion: reduce)').matches){var m8s=document.getElementById('m8splash');if(m8s)m8s.remove();}else sessionStorage.setItem('m8sp','1');}catch(e){}</script>
 
 <div class="wrap">
   <header>
@@ -3144,6 +3307,79 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M7S[k]);
 
+/* ----- v8 Mira: ярче, «Назад», путь к свободе ----- */
+const M8S={
+ru:{
+  m8BackExit:'Нажмите «Назад» ещё раз, чтобы выйти',
+  m8ThemeT:'Оформление', m8ThLight:'Светлая', m8ThDark:'Тёмная', m8ThAuto:'Как в телефоне',
+  m8ThNote:'Светлая — яркая и спокойная, её лучше видно днём. Тёмная включится, только если выбрать её здесь.',
+  m8FreeT:'Путь к свободе от кредитов', m8PctL:'выплачено',
+  m8PaidOf:(p,t)=>`${p} из ${t}`, m8PaidL:'Выплачено', m8LeftL:'Осталось', m8FreeBy:'Без кредитов',
+  m8Behind:k=>`Позади ${k} ${D.ru.noun(k,'payment')}`,
+  m8AddCardD:'банк, рассрочка или долг человеку',
+  m8SumT:'Всего осталось выплатить', m8MonthLoad:'Сколько платить по месяцам',
+  m8Drop:(m,v)=>`С ${m} платить меньше — ${v} в месяц`, m8Flat:'Платёж в месяц пока не меняется',
+  m8Now:'сейчас', m8Other:'другие',
+  m8DNone:d=>`До ${d} платежей нет — можно выдохнуть`,
+  m8DFree:n=>`До жизни без кредитов — ${n} ${D.ru.noun(n,'month')}`,
+  m8DMonth:(k,n)=>`В этом месяце оплачено ${k} из ${n}`,
+  m8DAll:'Все платежи этого месяца оплачены',
+  m8HaveCopy:'У меня есть копия — восстановить',
+  m8PaidQ:d=>`Платёж ${d} уже внесли?`, m8PaidYes:'Да, внесла', m8PaidNo:'Ещё нет',
+  m8Started:'Добавлен — Mira напомнит заранее',
+  m8Lender:'Банк или кто дал в долг', m8LenderPh:'Название банка, магазина или имя', m8Country:'Страна',
+  m8CountryNote:'По стране Mira подсказывает банки в форме кредита и учитывает выходные дни банков.',
+  m8BanksIn:c=>`Подсказки: ${c}`, m8Change:'изменить', m8OtherC:'Другая страна', m8NoCountry:'страна не выбрана',
+  m8DemoBanks:['Городской банк','Народный банк','Кредит Плюс'],
+},
+tg:{
+  m8BackExit:'Барои баромадан боз «Бозгашт»-ро пахш кунед',
+  m8ThemeT:'Намуди зоҳирӣ', m8ThLight:'Равшан', m8ThDark:'Торик', m8ThAuto:'Мисли телефон',
+  m8ThNote:'Равшан — дурахшон ва ором, рӯзона беҳтар намоён аст. Торик танҳо вақте фаъол мешавад, ки онро дар ин ҷо интихоб кунед.',
+  m8FreeT:'Роҳ ба зиндагии бе қарз', m8PctL:'пардохт шуд',
+  m8PaidOf:(p,t)=>`${p} аз ${t}`, m8PaidL:'Пардохт шуд', m8LeftL:'Монд', m8FreeBy:'Бе қарз',
+  m8Behind:k=>`${k} пардохт пушти сар`,
+  m8AddCardD:'бонк, насия ё қарз ба шахс',
+  m8SumT:'Ҳамагӣ пардохт кардан лозим', m8MonthLoad:'Ҳар моҳ чӣ қадар пардохт',
+  m8Drop:(m,v)=>`Аз ${m} камтар — моҳе ${v}`, m8Flat:'Пардохти моҳона ҳоло тағйир намеёбад',
+  m8Now:'ҳозир', m8Other:'дигар',
+  m8DNone:d=>`То ${d} пардохт нест — нафас гиред`,
+  m8DFree:n=>`То зиндагии бе қарз — ${n} моҳ`,
+  m8DMonth:(k,n)=>`Дар ин моҳ ${k} аз ${n} пардохт шуд`,
+  m8DAll:'Ҳамаи пардохтҳои ин моҳ супорида шуданд',
+  m8HaveCopy:'Нусха дорам — барқарор кунам',
+  m8PaidQ:d=>`Пардохти ${d} аллакай супорида шуд?`, m8PaidYes:'Ҳа, супоридам', m8PaidNo:'Ҳоло не',
+  m8Started:'Илова шуд — Mira пешакӣ хотиррасон мекунад',
+  m8Lender:'Бонк ё кӣ қарз дод', m8LenderPh:'Номи бонк, мағоза ё шахс', m8Country:'Кишвар',
+  m8CountryNote:'Аз рӯи кишвар Mira дар шакли қарз бонкҳоро пешниҳод мекунад ва рӯзҳои истироҳати бонкҳоро ба ҳисоб мегирад.',
+  m8BanksIn:c=>`Пешниҳод: ${c}`, m8Change:'иваз кардан', m8OtherC:'Кишвари дигар', m8NoCountry:'кишвар интихоб нашуд',
+  m8DemoBanks:['Бонки шаҳрӣ','Бонки халқӣ','Кредит Плюс'],
+},
+en:{
+  m8BackExit:'Press Back again to exit',
+  m8ThemeT:'Appearance', m8ThLight:'Light', m8ThDark:'Dark', m8ThAuto:'Same as phone',
+  m8ThNote:'Light is bright and calm and easiest to read in daylight. Dark turns on only if you choose it here.',
+  m8FreeT:'Road to debt-free', m8PctL:'repaid',
+  m8PaidOf:(p,t)=>`${p} of ${t}`, m8PaidL:'Repaid', m8LeftL:'Left', m8FreeBy:'Debt-free',
+  m8Behind:k=>`${k} ${k===1?'payment':'payments'} behind you`,
+  m8AddCardD:'bank, instalments or a personal loan',
+  m8SumT:'Left to repay', m8MonthLoad:'Payments by month',
+  m8Drop:(m,v)=>`From ${m} you pay less — ${v} a month`, m8Flat:'Your monthly payment stays the same for now',
+  m8Now:'now', m8Other:'other',
+  m8DNone:d=>`No payments until ${d} — you can relax`,
+  m8DFree:n=>`${n} ${n===1?'month':'months'} to a life without loans`,
+  m8DMonth:(k,n)=>`${k} of ${n} paid this month`,
+  m8DAll:'Every payment this month is done',
+  m8HaveCopy:'I have a backup — restore it',
+  m8PaidQ:d=>`Already paid on ${d}?`, m8PaidYes:'Yes, paid', m8PaidNo:'Not yet',
+  m8Started:'Added — Mira will remind you ahead of time',
+  m8Lender:'Bank or lender', m8LenderPh:'Bank, shop or person', m8Country:'Country',
+  m8CountryNote:'Mira uses your country to suggest banks in the loan form and to account for bank holidays.',
+  m8BanksIn:c=>`Suggestions: ${c}`, m8Change:'change', m8OtherC:'Other country', m8NoCountry:'no country chosen',
+  m8DemoBanks:['City Bank',"People's Bank",'Credit Plus'],
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M8S[k]);
+
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
 
@@ -3197,7 +3433,7 @@ function examplePayments(){ return [
 
 const cached=loadLocal();
 const state = cached ? {loans:cached.loans||[], payments:cached.payments||[], gold:cached.gold||null, shop:cached.shop||{exp:[],sales:[]}, profile:cached.profile||null}
-                     : {loans:examples(), payments:examplePayments(), gold:{grams:500, price:700}, shop:{exp:[],sales:[]}, profile:null};
+                     : {loans:[], payments:[], gold:null, shop:{exp:[],sales:[]}, profile:null};
 if(cached){ state.envTx=cached.envTx||[]; state.sup=cached.sup||[]; state.stock=cached.stock||[]; state.planB=cached.planB||null; state.misc=cached.misc||{}; for(const k of V6C) state[k]=cached[k]||[]; state.dayx=cached.dayx||{}; }
 ensureV5(); ensureV6();
 
@@ -4777,7 +5013,7 @@ function ratesSheet(){
 }
 function bankRateForm(name){
   const br=(state.misc.br=state.misc.br||{}), cur=br[name]||{};
-  const names=[...new Set(state.loans.filter(l=>!l.example).map(l=>l.name).concat(['Эсхата','Амонатбонк','Алиф','Спитамен','Коммерцбанк','Душанбе Сити','Арванд','Матин','Ориёнбонк','IBT']))].slice(0,16);
+  const names=[...new Set(state.loans.filter(l=>!l.example).map(l=>l.name).concat(typeof m8Banks==='function'?m8Banks():[]))].slice(0,16);
   const f=(id,lab,v)=>`<div class="field n"><label>${lab}</label><input id="${id}" type="number" inputmode="decimal" step="any" min="0" value="${v||''}"></div>`;
   openSheet(`<h3>🏦 ${name?esc(name):L.bankRatesAdd}</h3><p class="lead">${L.bankRatesForm}</p>
     <div class="field"><label>${L.repBank}</label><input id="br-n" value="${esc(name)}" list="br-list" maxlength="30"><datalist id="br-list">${names.map(n=>`<option value="${esc(n)}">`).join('')}</datalist></div>
@@ -8011,6 +8247,278 @@ document.addEventListener('click', e=>{
   if((el=t.closest('[data-m-simple]'))){ S(); setSimple(true); toast(L.smOnToast); return; }
   if((el=t.closest('[data-m-calc]'))){ S(); calcSheet(); return; }
   if((el=t.closest('[data-m-remind]'))){ S(); const c=state.cust.find(x=>x.id===el.dataset.mRemind); if(c) m7RemSheet(c); return; }
+}, true);
+
+/* ===================== v8: Mira ярче — светлая тема, «Назад», путь к свободе, графики, вход ===================== */
+/* Что и почему:
+   — светлая тема по умолчанию: тёмная включалась сама вслед за телефоном, и маме было мрачно; теперь только по выбору;
+   — «Назад» на Android закрывает окно, потом возвращает на «Сегодня», и только двойное нажатие выходит;
+   — «Добавить кредит» есть всегда: в «Кредитах» сверху и карточкой в конце списка (раньше нижняя кнопка превращалась в «Оплатить»);
+   — главное на «Сегодня» — ближайший платёж и «Путь к свободе» (кольцо, проценты, месяц без кредитов): эффект близкой цели;
+   — в «Кредитах» — сколько осталось, доли банков и как будет уменьшаться платёж по месяцам;
+   — один короткий вход: кольцо Mira рисуется, карточки поднимаются по очереди; без движения, если в телефоне оно выключено. */
+
+const M8_RED=()=>{ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } };
+Object.assign(M8S.ru,{m8More:n=>`Показать ещё ${n}`,m8Less:'Свернуть'}); Object.assign(M8S.tg,{m8More:n=>`Боз ${n} нишон додан`,m8Less:'Пинҳон кардан'}); Object.assign(M8S.en,{m8More:n=>`Show ${n} more`,m8Less:'Show less'});
+for(const k of ['ru','tg','en']) Object.assign(D[k],M8S[k]);
+
+/* ---------- 1. тема ---------- */
+function m8Theme(){ const t=lsGet('m8theme'); return t==='dark'||t==='auto'?t:'light'; }
+function m8IsDark(){ const t=m8Theme(); return t==='dark'||(t==='auto'&&!!(window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)); }
+function m8ApplyTheme(){
+  const t=m8Theme(), r=document.documentElement; if(t==='auto') r.removeAttribute('data-theme'); else r.setAttribute('data-theme',t);
+  const ms=[...document.querySelectorAll('meta[name="theme-color"]')]; ms.forEach((m,i)=>{ if(i){ m.remove(); return; } m.removeAttribute('media'); m.setAttribute('content',m8IsDark()?'#0E1530':'#F4F6FD'); });
+}
+function m8ThemeSheet(){
+  const cur=m8Theme(), opt=(k,t)=>`<button type="button" class="m8-th ${cur===k?'on':''}" data-th="${k}"><span class="m8-sw m8-sw-${k}"><i></i><i></i><i></i></span><b>${t}</b>${cur===k?ico('check',20):''}</button>`;
+  openSheet(`<h3>${L.m8ThemeT}</h3><p class="lead">${L.m8ThNote}</p><div class="m8-ths">${opt('light',L.m8ThLight)}${opt('dark',L.m8ThDark)}${opt('auto',L.m8ThAuto)}</div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+  sheet.querySelectorAll('[data-th]').forEach(b=>b.onclick=()=>{ lsSet('m8theme',b.dataset.th); m8ApplyTheme(); m8ThemeSheet(); });
+}
+m8ApplyTheme();
+try{ matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{ if(m8Theme()==='auto') m8ApplyTheme(); }); }catch(e){}
+
+/* ---------- 2. «Назад» ---------- */
+const M8N={ign:0, exitAt:0, dirtyAt:0};
+function m8SheetOn(){ return overlay.classList.contains('open'); }
+function m8Push(k){ try{ history.pushState({m8:k},''); }catch(e){} }
+const m8OS0=openSheet; openSheet=function(h){ const was=m8SheetOn(); const r=m8OS0(h); if(!was) m8Push('sheet'); return r; };
+const m8CS0=closeSheet; closeSheet=function(){ const was=m8SheetOn(); m8CS0(); if(was&&history.state&&history.state.m8==='sheet'){ M8N.ign++; try{ history.back(); }catch(e){ M8N.ign--; } } };
+function m8Pop(){
+  if(M8N.ign>0){ M8N.ign--; return; }
+  if(document.querySelector('.lock')){ m8Push('top'); return; }
+  if(m8SheetOn()){
+    if(typeof sheetDirty!=='undefined'&&sheetDirty&&Date.now()-M8N.dirtyAt>3000){ M8N.dirtyAt=Date.now(); m8Push('sheet'); sheet.classList.remove('shake'); void sheet.offsetWidth; sheet.classList.add('shake'); toast(L.unsavedHint); return; }
+    m8CS0(); if(!(history.state&&history.state.m8)) m8Push('top'); return; }
+  if(curTab==='buy'||curTab==='stats'){ setTab('more'); m8Push('top'); return; }
+  if(curTab!=='today'){ setTab('today'); m8Push('top'); return; }
+  if(Date.now()-M8N.exitAt<2500){ try{ history.back(); }catch(e){} return; }
+  M8N.exitAt=Date.now(); toast(L.m8BackExit); m8Push('top');
+}
+try{ history.replaceState({m8:'base'},''); m8Push('top'); addEventListener('popstate',m8Pop); }catch(e){}
+
+/* ---------- 3. общее для расчётов ---------- */
+function m8Real(){ return activeList().filter(x=>!x.loan.example); }
+/* примеры уходят, как только появился свой кредит — из любой формы */
+function m8StripExamples(){
+  if(DEMO) return false; const ex=state.loans.filter(l=>l.example); if(!ex.length||!state.loans.some(l=>!l.example)) return false;
+  const ids=new Set(ex.map(l=>l.id)); state.loans=state.loans.filter(l=>!l.example); state.payments=state.payments.filter(p=>!ids.has(p.loanId));
+  if(state.gold&&+state.gold.grams===500&&+state.gold.price===700) state.gold=null; persist(); return true;
+}
+function m8LastDue(loan,a){
+  if(a.done) return null; const s=schedOf(loan); if(s){ const e=s[s.length-1]; return e&&e.d?parseYmd(e.d):null; }
+  if(a.monthsLeft==null||a.per==null) return null; return dueAt(a.per+Math.max(0,a.monthsLeft-1),loan.dueDay||1);
+}
+function m8Free(list){
+  let last=null; for(const {loan,a} of list){ if(loan.example||a.done) continue; const d=m8LastDue(loan,a); if(!d) return null; if(!last||d>last) last=d; }
+  if(!last) return null; return {d:last, months:Math.max(0,mIdx(last)-mIdx(today0())+1)};
+}
+function m8Totals(list){ let total=0, paid=0; for(const {loan,a} of list){ if(loan.example) continue; total+=+a.total||0; paid+=Math.min(+a.total||0,+a.paid||0); } return {total,paid,left:Math.max(0,total-paid),pct:total>0?Math.round(paid/total*100):0}; }
+function m8Col(loan){ return loan.color||avaColor(loan.name); }
+function m8MonLabel(d){ const m=L.monthsNom?L.monthsNom[d.getMonth()]:MONTHS[lang].long[d.getMonth()]; return (lang==='en'?m:m.toLowerCase())+' '+d.getFullYear(); }
+
+/* ---------- 4. кольцо, бублик, столбики ---------- */
+function m8RingSVG(pct,o){ o=o||{}; const s=o.s||120, w=o.w||14, r=(120-w)/2, c=2*Math.PI*r, off=c*(1-Math.max(0,Math.min(100,pct))/100);
+  return `<svg class="m8-ring" width="${s}" height="${s}" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="${r}" fill="none" stroke="${o.track||'var(--m8-track)'}" stroke-width="${w}"/>${pct>0?`<circle class="m8-rf" cx="60" cy="60" r="${r}" fill="none" stroke="${o.col||'var(--m-sun)'}" stroke-width="${w}" stroke-linecap="round" stroke-dasharray="${c.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}" style="--c:${c.toFixed(1)}" transform="rotate(-90 60 60)"/>`:''}</svg>`; }
+function m8Donut(parts,s){ const r=46, c=2*Math.PI*r, tot=parts.reduce((x,p)=>x+p.v,0)||1, gap=parts.length>1?2.5:0; let acc=0;
+  const segs=parts.map(p=>{ const len=Math.max(.5,p.v/tot*c-gap), el=`<circle cx="60" cy="60" r="${r}" fill="none" stroke="${p.col}" stroke-width="18" stroke-dasharray="${len.toFixed(1)} ${(c-len).toFixed(1)}" stroke-dashoffset="${(-acc).toFixed(1)}" transform="rotate(-90 60 60)"/>`; acc+=p.v/tot*c; return el; }).join('');
+  return `<svg class="m8-donut" width="${s}" height="${s}" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="${r}" fill="none" stroke="var(--m8-track)" stroke-width="18"/>${segs}</svg>`; }
+
+/* ---------- 5. «Сегодня»: путь к свободе и строка дня ---------- */
+function m8ProgHTML(list){
+  const real=list.filter(x=>!x.loan.example); if(!real.length) return ''; const T=m8Totals(real); if(!(T.total>0)) return '';
+  const fr=m8Free(real), pr=m7Progress();
+  return `<button class="m8-prog" data-tab="loans" aria-label="${L.m8FreeT}">
+    <span class="m8-prog-r">${m8RingSVG(T.pct,{s:112,w:15})}<span class="m8-prog-p"><b data-m8n="${T.pct}">${T.pct}</b><i>%</i><small>${L.m8PctL}</small></span></span>
+    <span class="m8-prog-t"><small class="m8-cap">${L.m8FreeT}</small>
+      <span class="m8-kv"><em>${L.m8PaidL}</em><b>${money(T.paid)}</b></span>
+      <span class="m8-kv"><em>${L.m8LeftL}</em><b>${money(T.left)}</b></span>
+      ${pr&&pr.k>0?`<span class="m8-behind">${L.m8Behind(pr.k)}</span>`:''}</span>
+    ${fr?`<span class="m8-free">${ico('flag',16)}<span>${L.m8FreeBy}: <b>${m8MonLabel(fr.d)}</b></span></span>`:''}</button>`;
+}
+function m8Daily(list){
+  const real=list.filter(x=>!x.loan.example&&!x.a.done); if(!real.length) return '';
+  const f=[], du=dueInMonth(mIdx(today0()),real), lr=du.rows.filter(r=>r.kind==='loan'), pn=lr.filter(r=>r.paid).length;
+  if(lr.length&&pn===lr.length) f.push(L.m8DAll); else if(lr.length&&pn>0) f.push(L.m8DMonth(pn,lr.length));
+  const nx=m7Next(list); if(nx&&nx.a.days>3) f.push(L.m8DNone(fmtDate(nx.a.due)));
+  const fr=m8Free(real); if(fr&&fr.months>0) f.push(L.m8DFree(fr.months));
+  if(!f.length) return ''; const t=today0(), doy=Math.floor((t-new Date(t.getFullYear(),0,0))/864e5);
+  return `<p class="m8-daily">${ico('leaf',16)}<span>${f[doy%f.length]}</span></p>`;
+}
+const m8HH0=m7HeroHTML; m7HeroHTML=function(list){ const h=m8HH0(list);
+  if(h.indexOf('m7-first')>=0) return h.replace('</button></div>',`</button><button class="link-btn m8-copy" data-bk="pick">${ico('folder',16)} ${L.m8HaveCopy}</button></div>`);
+  return h; };
+const m8TD0=m7Today; m7Today=function(list){ m8TD0(list);
+  const hello=$('#miraHello'); if(hello){ const dl=m8Daily(list); if(dl) hello.insertAdjacentHTML('beforeend',dl); }
+  let pg=$('#m8Prog'); if(!pg){ const nx=$('#miraNext'); if(nx){ nx.insertAdjacentHTML('afterend','<section id="m8Prog"></section>'); pg=$('#m8Prog'); } }
+  if(pg) pg.innerHTML=m8ProgHTML(list);
+  m8FocusFold();
+};
+function m8FocusFold(){
+  const f=document.querySelector('#focus .focus'); if(!f) return; const its=f.querySelectorAll('.fo-it'); if(its.length<=3) return;
+  its.forEach((x,i)=>{ if(i>=3) x.classList.add('m8-x'); });
+  f.insertAdjacentHTML('beforeend',`<button type="button" class="m8-fold" data-m8fold="1"><span>${L.m8More(its.length-3)}</span>${ico('down',18)}</button>`);
+}
+
+/* ---------- 6. «Кредиты»: сколько осталось, доли, платёж по месяцам, «Добавить» всегда на виду ---------- */
+function m8SumHTML(list){
+  const real=list.filter(x=>!x.loan.example), act=real.filter(x=>!x.a.done); if(!act.length) return '';
+  const T=m8Totals(real), fr=m8Free(real);
+  const parts=act.map(x=>({n:x.loan.name,v:Math.max(0,x.a.remaining),col:m8Col(x.loan)})).filter(p=>p.v>0).sort((p,q)=>q.v-p.v);
+  const top=parts.slice(0,4); if(parts.length>4) top.push({n:L.m8Other,v:parts.slice(4).reduce((s,p)=>s+p.v,0),col:'var(--muted)'});
+  const left=top.reduce((s,p)=>s+p.v,0)||1;
+  const i0=mIdx(today0()), vals=[]; for(let i=0;i<12;i++) vals.push(dueInMonth(i0+i,real).loans);
+  const mx=Math.max(1,...vals); let drop=-1; for(let i=1;i<12;i++){ if(vals[i]<vals[0]-0.5){ drop=i; break; } }
+  const mon=i=>{ const d=new Date(Math.floor((i0+i)/12),(i0+i)%12,1); return d; };
+  const bars=vals.map((v,i)=>{ const d=mon(i); return `<span class="m8-b ${i===0?'now':''} ${drop>0&&i>=drop?'low':''}" title="${MONTHS[lang].short[d.getMonth()]}: ${money(v)}"><span class="m8-tr"><i style="height:${Math.max(v>0?6:2,Math.round(v/mx*100))}%"></i></span><small>${i===0?L.m8Now:(i%3===0?MONTHS[lang].short[d.getMonth()]:'')}</small></span>`; }).join('');
+  const dropTxt=drop>0?L.m8Drop(MONTHS[lang].long[mon(drop).getMonth()],money(vals[drop])):L.m8Flat;
+  return `<div class="m8-sum">
+    <div class="m8-sum-top"><div class="m8-sum-l"><small class="m8-cap">${L.m8SumT}</small><b class="m8-big">${money(T.left)}</b>
+</div>
+      <div class="m8-sum-d">${m8Donut(top,108)}<span><b>${T.pct}%</b><small>${L.m8PctL}</small></span></div></div>
+    ${fr?`<span class="m8-free">${ico('flag',16)}<span>${L.m8FreeBy}: <b>${m8MonLabel(fr.d)}</b></span></span>`:''}
+    <div class="m8-leg">${top.map(p=>`<span><i style="background:${p.col}"></i><em>${esc(p.n)}</em><b>${Math.round(p.v/left*100)}%</b></span>`).join('')}</div>
+    <div class="m8-load"><small class="m8-cap">${L.m8MonthLoad}</small><div class="m8-bars">${bars}</div><p class="m8-drop ${drop>0?'good':''}">${drop>0?ico('down',16):''}<span>${dropTxt}</span></p></div>
+  </div>`;
+}
+function m8Loans(list){
+  const v=$('#view-loans'); if(!v) return;
+  let s=$('#m8Sum'); if(!s){ const np=$('#nextPay'); if(np){ np.insertAdjacentHTML('beforebegin','<section id="m8Sum"></section>'); s=$('#m8Sum'); } }
+  if(s) s.innerHTML=m8SumHTML(list);
+  const h=$('#myBanksH2'); if(h&&h.parentNode&&!h.parentNode.querySelector('.m8-addh')) h.parentNode.insertAdjacentHTML('beforeend',`<button type="button" class="m8-addh" data-m-add="1">${ico('plus',18)} ${L.m7AddLoan}</button>`);
+  const cards=$('#cards'); if(cards&&!cards.querySelector('#addEmpty')&&!cards.querySelector('.m8-addc'))
+    cards.insertAdjacentHTML('beforeend',`<button type="button" class="m8-addc" data-m-add="1"><span class="m8-addc-i">${ico('plus',24)}</span><span><b>${L.m7AddLoan}</b><small>${L.m8AddCardD}</small></span></button>`);
+}
+
+/* ---------- 7. страна: подсказки банков и выходные банков — по стране, а не только Таджикистан ---------- */
+const M8_REG={
+  TJ:{n:{ru:'Таджикистан',tg:'Тоҷикистон',en:'Tajikistan'},b:['Эсхата','Алиф','Амонатбонк','Ориёнбонк','Душанбе Сити','Коммерцбанк','Спитамен','Арванд','Хумо','IMON','МБТ','Матин']},
+  UZ:{n:{ru:'Узбекистан',tg:'Ӯзбекистон',en:'Uzbekistan'},b:['Kapitalbank','Hamkorbank','Ipoteka Bank','TBC Bank','Anorbank','Uzum Bank','Xalq banki','Asaka bank']},
+  KZ:{n:{ru:'Казахстан',tg:'Қазоқистон',en:'Kazakhstan'},b:['Kaspi','Halyk','Freedom','Jusan','ForteBank','Bereke','Home Credit']},
+  KG:{n:{ru:'Кыргызстан',tg:'Қирғизистон',en:'Kyrgyzstan'},b:['Optima','MBank','KICB','Демир','Бакай','Айыл Банк','РСК']},
+  RU:{n:{ru:'Россия',tg:'Русия',en:'Russia'},b:['Сбер','Т-Банк','ВТБ','Альфа-Банк','Газпромбанк','Совкомбанк','Райффайзен','Почта Банк']},
+  TR:{n:{ru:'Турция',tg:'Туркия',en:'Türkiye'},b:['Ziraat','İş Bankası','Garanti BBVA','Akbank','Yapı Kredi','VakıfBank','Halkbank','QNB']},
+  AE:{n:{ru:'ОАЭ',tg:'АМА',en:'UAE'},b:['Emirates NBD','FAB','ADCB','Dubai Islamic','Mashreq']},
+  US:{n:{ru:'США',tg:'ИМА',en:'United States'},b:['Chase','Bank of America','Wells Fargo','Citi','Capital One','Discover','SoFi']},
+  GB:{n:{ru:'Великобритания',tg:'Британияи Кабир',en:'United Kingdom'},b:['Barclays','HSBC','Lloyds','NatWest','Santander','Nationwide','Monzo']},
+  DE:{n:{ru:'Германия',tg:'Олмон',en:'Germany'},b:['Sparkasse','Deutsche Bank','Commerzbank','ING','Postbank','DKB','N26']},
+};
+const M8_TZ={'Asia/Dushanbe':'TJ','Asia/Tashkent':'UZ','Asia/Samarkand':'UZ','Asia/Almaty':'KZ','Asia/Qostanay':'KZ','Asia/Aqtobe':'KZ','Asia/Aqtau':'KZ','Asia/Atyrau':'KZ','Asia/Oral':'KZ','Asia/Qyzylorda':'KZ',
+  'Asia/Bishkek':'KG','Europe/Moscow':'RU','Europe/Kaliningrad':'RU','Europe/Samara':'RU','Europe/Volgograd':'RU','Asia/Yekaterinburg':'RU','Asia/Omsk':'RU','Asia/Novosibirsk':'RU','Asia/Krasnoyarsk':'RU','Asia/Irkutsk':'RU','Asia/Yakutsk':'RU','Asia/Vladivostok':'RU','Asia/Magadan':'RU','Asia/Kamchatka':'RU',
+  'Europe/Istanbul':'TR','Asia/Dubai':'AE','America/New_York':'US','America/Chicago':'US','America/Denver':'US','America/Los_Angeles':'US','America/Phoenix':'US','America/Anchorage':'US','Pacific/Honolulu':'US','America/Detroit':'US','Europe/London':'GB','Europe/Berlin':'DE'};
+function m8Detect(){
+  try{ const z=Intl.DateTimeFormat().resolvedOptions().timeZone; if(M8_TZ[z]) return M8_TZ[z]; }catch(e){}
+  try{ for(const l of (navigator.languages||[navigator.language||''])){ const m=String(l).match(/-([A-Za-z]{2})$/); if(m&&M8_REG[m[1].toUpperCase()]) return m[1].toUpperCase(); } }catch(e){}
+  return 'XX';
+}
+function m8Region(){ let r=lsGet('m8region'); if(!r){ r=m8Detect(); lsSet('m8region',r); } return M8_REG[r]?r:'XX'; }
+function m8RegName(r){ r=r||m8Region(); return r==='XX'?L.m8NoCountry:(M8_REG[r].n[lang]||M8_REG[r].n.en); }
+function m8Banks(){ const r=M8_REG[m8Region()]; return r?r.b.slice():[]; }
+function m8MyLenders(){ return [...new Set(state.loans.filter(l=>!l.example).map(l=>String(l.name||'').trim()).filter(Boolean))]; }
+function m8RegionSheet(after){
+  const cur=m8Region(), row=(k,t)=>`<button type="button" class="m8-th ${cur===k?'on':''}" data-rg="${k}"><span class="m8-cc">${k==='XX'?'—':k}</span><b>${t}</b>${cur===k?ico('check',20):''}</button>`;
+  openSheet(`<h3>${L.m8Country}</h3><p class="lead">${L.m8CountryNote}</p><div class="m8-ths">${Object.keys(M8_REG).map(k=>row(k,M8_REG[k].n[lang]||M8_REG[k].n.en)).join('')}${row('XX',L.m8OtherC)}</div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button></div>`);
+  sheet.querySelectorAll('[data-rg]').forEach(b=>b.onclick=()=>{ lsSet('m8region',b.dataset.rg); render(); if(after) after(); else m8RegionSheet(); });
+}
+/* выходные банков сейчас известны только для Таджикистана — в других странах не предупреждаем зря */
+const m8IH0=m7IsHoliday; m7IsHoliday=function(d){ return m8Region()==='TJ'?m8IH0(d):false; };
+/* пример в демо — банки своей страны или нейтральные названия */
+const m8DD0=demoData; demoData=function(){ const d=m8DD0(), bs=m8Banks(), names=bs.length>=3?bs.slice(0,3):L.m8DemoBanks;
+  (d.loans||[]).forEach((l,i)=>{ if(names[i]){ l.name=names[i]; l.short=String(names[i]).replace(/[^A-Za-zА-Яа-яЁёӢӣӮӯҲҳҚқҒғҶҷİıŞşĞğÜüÖöÇç]/g,'').charAt(0).toUpperCase()||'B'; } }); return d; };
+
+/* ---------- 8. новый кредит: банк или кредитор — своим текстом, подсказки по стране; «уже внесли в этом месяце?» ---------- */
+m7AddLoan=function(pre){
+  pre=pre||{}; let bank=String(pre.name||''), n=pre.n||12, paidNow=true;
+  const mine=m8MyLenders(), reg=m8Banks(), chips=[...new Set(mine.slice(0,4).concat(reg))].slice(0,10), sugg=[...new Set(mine.concat(reg))];
+  openSheet(`<h3>${L.m7NewLoan}</h3>
+    <div class="field"><label for="al-name">${L.m8Lender}</label>${chips.length?`<div class="m7-chips" id="al-b">${chips.map(b=>`<button type="button" data-b="${esc(b)}" class="${bank===b?'on':''}">${esc(b)}</button>`).join('')}</div>`:''}
+      <input id="al-name" list="al-dl" value="${esc(bank)}" maxlength="40" placeholder="${L.m8LenderPh}" autocomplete="off" ${chips.length?'style="margin-top:10px"':''}>
+      <datalist id="al-dl">${sugg.map(b=>`<option value="${esc(b)}"></option>`).join('')}</datalist>
+      <button type="button" class="m8-reg" id="al-reg">${ico('globe',15)}<span>${L.m8BanksIn(m8RegName())}</span><u>${L.m8Change}</u></button></div>
+    <div class="field n"><label>${L.monthlyPayment}</label><input id="al-m" type="number" inputmode="numeric" min="0" placeholder="1200" value="${pre.monthly||''}"><p class="note m7-hint">${L.m7MonthlyHint}</p></div>
+    <div class="two"><div class="field n"><label>${L.payDay}</label><input id="al-d" type="number" inputmode="numeric" min="1" max="31" value="${pre.dueDay||today0().getDate()}"></div>
+      <div class="field"><label>${L.m7Left2}</label><div class="m7-step"><button type="button" id="al-mi" aria-label="${L.m7Less}">${ico('minus',18)}</button><b id="al-n">${n}</b><button type="button" id="al-pl" aria-label="${L.m7MoreN}">${ico('plus',18)}</button></div></div></div>
+    <div class="m8-pq" id="al-pq" hidden><b id="al-pqt"></b><div class="seg"><button type="button" data-pq="1" class="on">${L.m8PaidYes}</button><button type="button" data-pq="0">${L.m8PaidNo}</button></div></div>
+    <div class="m7-sum" id="al-sum"></div>
+    <button type="button" class="m7-li m7-li-b" id="al-more"><span class="m7-li-t"><b>${L.m7Detail}</b><small>${L.m7DetailSub}</small></span>${ico('down',18)}</button>
+    <div class="err" id="al-err"></div>
+    <div class="sheet-row m8-stick"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="al-save">${L.m7SaveLoan}</button></div>`);
+  const nm=$('#al-name'), mi=$('#al-m'), di=$('#al-d');
+  const name=()=>nm.value.trim();
+  const mark=()=>sheet.querySelectorAll('#al-b [data-b]').forEach(x=>x.classList.toggle('on',x.dataset.b===nm.value.trim()));
+  const ptOf=dd=>lastDueIdx(dd)-(paidNow?0:1);
+  const sum=()=>{ const dd=+di.value, pq=$('#al-pq'); if(!(dd>=1&&dd<=31)){ $('#al-sum').textContent=''; pq.hidden=true; return; }
+    const li=lastDueIdx(dd), thisM=li===mIdx(today0()); pq.hidden=!thisM; if(thisM) $('#al-pqt').textContent=L.m8PaidQ(fmtDate(dueAt(li,dd)));
+    const i0=(thisM?ptOf(dd):li)+1, f=dueAt(i0,dd), l=dueAt(i0+n-1,dd);
+    $('#al-sum').innerHTML=`${ico('paid',18)}<span>${L.m7Summary(fmtDate(f),fmtDate(l)+' '+l.getFullYear())}</span>`; };
+  sheet.querySelectorAll('#al-b [data-b]').forEach(b=>b.onclick=()=>{ nm.value=b.dataset.b; mark(); });
+  nm.addEventListener('input',mark);
+  $('#al-reg').onclick=()=>{ const keep={name:nm.value,monthly:mi.value,dueDay:di.value,n}; m8RegionSheet(()=>m7AddLoan(keep)); };
+  sheet.querySelectorAll('[data-pq]').forEach(b=>b.onclick=()=>{ paidNow=b.dataset.pq==='1'; sheet.querySelectorAll('[data-pq]').forEach(x=>x.classList.toggle('on',x===b)); sum(); });
+  $('#al-mi').onclick=()=>{ n=Math.max(1,n-1); $('#al-n').textContent=n; sum(); }; $('#al-pl').onclick=()=>{ n=Math.min(360,n+1); $('#al-n').textContent=n; sum(); };
+  di.addEventListener('input',sum); sum();
+  $('#al-more').onclick=()=>{ const mo=Math.round(+mi.value||0), dd=+di.value||''; m7LF0(null,{name:name(),note:'',total:mo>0?mo*n:'',paid:0,monthly:mo||'',dueDay:dd,gold:'',term:n}); };
+  $('#al-save').onclick=()=>{ const nmv=name(), mo=Math.round(+mi.value||0), dd=Math.round(+di.value), err=$('#al-err');
+    if(!nmv) return showErr(err,L.m7ErrBank); if(!(mo>0)) return showErr(err,L.m7ErrAmt); if(!(dd>=1&&dd<=31)) return showErr(err,L.m7ErrDay);
+    const li=lastDueIdx(dd), pt=li===mIdx(today0())?ptOf(dd):li;
+    state.loans.push({id:'l'+Date.now(),name:nmv,note:'',total:mo*n,paid:0,monthly:mo,dueDay:dd,rate:0,gold:0,icon:null,term:n,pen:0,phone:'',pt});
+    m8StripExamples(); persist(); closeSheet(); render(); if(curTab!=='loans') setTab('today'); toast(L.m8Started); };
+};
+
+/* ---------- 8. первое знакомство: без «Данные пропали?», пример — отдельно ---------- */
+m7Welcome=function(){
+  if(DEMO||hasRealData()||lsGet('m7w_v1')==='1') return false; lsSet('m7w_v1','1');
+  const draw=()=>{ openSheet(`<div class="m7-wel m8-wel"><span class="m8-wel-r">${m8RingSVG(72,{s:96,w:16})}</span><h2>${L.m7WelT}</h2><p>${L.m7WelD}</p>
+      <div class="seg m7-seg3"><button data-wl="ru" class="${lang==='ru'?'on':''}">Русский</button><button data-wl="tg" class="${lang==='tg'?'on':''}">Тоҷикӣ</button><button data-wl="en" class="${lang==='en'?'on':''}">English</button></div>
+      <button class="btn btn-primary btn-full" id="wl-add">${ico('plus',20)} ${L.m7WelAdd}</button>
+      <button class="btn btn-ghost btn-full m7-mt8" id="wl-look">${L.m7WelLater}</button>
+      <button class="link-btn m8-copy" data-bk="pick">${ico('folder',16)} ${L.m8HaveCopy}</button></div>`);
+    sheet.querySelectorAll('[data-wl]').forEach(b=>b.onclick=()=>{ setLang(b.dataset.wl); draw(); });
+    $('#wl-add').onclick=()=>m7AddLoan(); $('#wl-look').onclick=()=>demoSheet(); };
+  draw(); return true;
+};
+const m8BN0=renderBackupNudge; renderBackupNudge=function(){ m8BN0(); document.querySelectorAll('.bk-slot .bkn.rs').forEach(x=>{ const p=x.parentNode; if(p) p.innerHTML=''; }); };
+
+/* ---------- 9. «Ещё»: оформление ---------- */
+const m8MH0=m7MoreHTML; m7MoreHTML=function(){
+  const h=m8MH0(), cur=({light:L.m8ThLight,dark:L.m8ThDark,auto:L.m8ThAuto})[m8Theme()];
+  const item=`<button class="m7-li" data-m8-theme="1"><span class="m7-li-i">${ico('sun',22)}</span><span class="m7-li-t"><b>${L.m8ThemeT}</b><small>${cur}</small></span>${ico('next',18)}</button>`;
+  const ctry=`<button class="m7-li" data-m8-region="1"><span class="m7-li-i">${ico('globe',22)}</span><span class="m7-li-t"><b>${L.m8Country}</b><small>${m8RegName()}</small></span>${ico('next',18)}</button>`;
+  return h.replace('<button class="m7-li" data-m-lang="1">',item+ctry+'<button class="m7-li" data-m-lang="1">');
+};
+
+/* ---------- 10. вход: кольцо рисуется, карточки поднимаются ---------- */
+let m8Entered=false;
+function m8Enter(){
+  const sp=document.getElementById('m8splash'), r=document.documentElement;
+  if(M8_RED()||!sp){ if(sp) sp.remove(); return; }
+  r.classList.add('m8-enter'); m8Stagger();
+  setTimeout(()=>{ sp.classList.add('out'); },650); setTimeout(()=>{ sp.remove(); },1000);
+  setTimeout(()=>{ m8CountUp(); },700);
+  setTimeout(()=>{ r.classList.remove('m8-enter'); },2600);
+}
+function m8Stagger(){
+  const v=$('#view-today'); if(!v) return;
+  const kids=[...v.children].filter(x=>x.offsetParent!==null&&x.innerHTML.trim()).map(x=>({x,o:+getComputedStyle(x).order||0})).sort((a,b)=>a.o-b.o);
+  kids.forEach((k,i)=>k.x.style.setProperty('--m8i',Math.min(i,8)));
+}
+function m8CountUp(){
+  if(M8_RED()) return;
+  document.querySelectorAll('#view-today [data-m8n]').forEach(el=>{ const to=+el.dataset.m8n||0; if(to<=0) return; const t0=performance.now(), dur=900;
+    const step=t=>{ const k=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-k,3); el.textContent=Math.round(to*e); if(k<1) requestAnimationFrame(step); }; el.textContent='0'; requestAnimationFrame(step); });
+}
+
+/* ---------- 11. отрисовка и вкладки ---------- */
+const m8R0=render; render=function(){ m8StripExamples(); m8R0(); try{ m8Loans(activeList()); }catch(e){ console.error(e); } if(!m8Entered){ m8Entered=true; setTimeout(m8Enter,0); } };
+const m8ST0=setTab; setTab=function(t){ const prev=curTab; m8ST0(t); if(prev===curTab||M8_RED()) return; const v=$('#view-'+curTab); if(v){ v.classList.remove('m8-fade'); void v.offsetWidth; v.classList.add('m8-fade'); } };
+
+/* ---------- 12. клики v8 ---------- */
+document.addEventListener('click', e=>{
+  const t=e.target; if(!t||!t.closest) return; let el;
+  if((el=t.closest('[data-m8-theme]'))){ e.stopImmediatePropagation(); m8ThemeSheet(); return; }
+  if((el=t.closest('[data-m8-region]'))){ e.stopImmediatePropagation(); m8RegionSheet(); return; }
+  if((el=t.closest('[data-m8fold]'))){ e.stopImmediatePropagation(); const f=el.closest('.focus'); if(!f) return; const on=f.classList.toggle('m8-open'); const n=f.querySelectorAll('.fo-it.m8-x').length; el.querySelector('span').textContent=on?L.m8Less:L.m8More(n); return; }
 }, true);
 
 /* ===================== Клики ===================== */
