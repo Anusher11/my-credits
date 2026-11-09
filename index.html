@@ -1454,6 +1454,11 @@
   .m8-reg u{color:var(--brand); font-weight:800; text-decoration:none;}
   .m8-cc{width:40px; height:30px; border-radius:9px; background:var(--surface-2); color:var(--muted); display:flex; align-items:center; justify-content:center; font:800 .78rem var(--font-num); letter-spacing:.04em; flex:none;}
   .m8-th.on .m8-cc{background:var(--brand); color:#fff;}
+  /* без подсветки при нажатии: ни синей вспышки, ни выделения текста долгим нажатием, ни рамки после касания (рамка остаётся для клавиатуры) */
+  *{-webkit-tap-highlight-color:transparent;}
+  body{-webkit-user-select:none; user-select:none; -webkit-touch-callout:none;}
+  input,textarea,select,[contenteditable="true"],.m7-script,.m7-bub{-webkit-user-select:text; user-select:text; -webkit-touch-callout:default;}
+  :focus:not(:focus-visible){outline:none;}
 </style>
 </head>
 <body>
