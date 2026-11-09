@@ -1459,6 +1459,36 @@
   body{-webkit-user-select:none; user-select:none; -webkit-touch-callout:none;}
   input,textarea,select,[contenteditable="true"],.m7-script,.m7-bub{-webkit-user-select:text; user-select:text; -webkit-touch-callout:default;}
   :focus:not(:focus-visible){outline:none;}
+  /* ===================== v9 Сифра — ИИ-помощница ===================== */
+  .sf-fab{position:fixed; right:max(14px,env(safe-area-inset-right,0px)); bottom:calc(var(--navh) + env(safe-area-inset-bottom,0px) + 80px); z-index:40; display:flex; align-items:center; gap:8px; padding:6px 16px 6px 6px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--ink); font:800 .95rem var(--font-body); box-shadow:var(--shadow-lg); cursor:pointer;}
+  .sf-fab svg{width:38px; height:38px; flex:none; display:block;}
+  .sf-fab:focus-visible,.sf-mic:focus-visible,.sf-send:focus-visible,.sf-inv:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  .overlay.open ~ .sf-fab{display:none;}
+  .sf-head{display:flex; align-items:center; gap:12px; margin-bottom:10px;} .sf-head h3{margin:0;} .sf-head small{display:block; color:var(--muted); font-weight:600; font-size:.84rem; line-height:1.35;}
+  .sf-ava svg{width:46px; height:46px; display:block;} .sf-clear{margin-left:auto; flex:none;}
+  .sf-log{max-height:52vh; overflow:auto; display:flex; flex-direction:column; gap:10px; padding:2px 2px 8px; overscroll-behavior:contain;}
+  .sf-hello{background:var(--surface-2); border-radius:18px; padding:12px 14px; line-height:1.6; font-size:.95rem;}
+  .sf-m{max-width:88%; padding:10px 14px; border-radius:18px; line-height:1.5; font-size:.95rem; position:relative; overflow-wrap:anywhere;}
+  .sf-m.u{align-self:flex-end; background:var(--brand); color:#fff; border-bottom-right-radius:6px;}
+  .sf-m.a{align-self:flex-start; background:var(--surface-2); color:var(--ink); border-bottom-left-radius:6px; padding-right:38px;}
+  .sf-m p{margin:0 0 6px;} .sf-m p:last-child{margin-bottom:0;} .sf-m ul{margin:4px 0 6px; padding-left:18px;} .sf-m li{margin:3px 0;}
+  .sf-say{position:absolute; top:4px; right:4px; width:32px; height:32px; border:0; background:none; font-size:1rem; cursor:pointer; border-radius:50%;}
+  .sf-src{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;} .sf-src a{font-size:.78rem; font-weight:700; color:var(--brand-ink); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:3px 10px; text-decoration:none; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .sf-act{margin-top:8px; width:100%; justify-content:center;}
+  .sf-qs{margin:8px 0; flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none;} .sf-qs::-webkit-scrollbar{display:none;} .sf-qs .chip{flex:none;}
+  .sf-bar{display:flex; align-items:flex-end; gap:8px; background:var(--surface); border:1.5px solid var(--line); border-radius:24px; padding:6px;}
+  .sf-bar textarea{flex:1; border:0; resize:none; background:transparent; font:inherit; font-size:1rem; padding:10px 4px; color:var(--ink); outline:none; min-height:24px; max-height:120px;}
+  .sf-mic,.sf-send{flex:none; width:46px; height:46px; border-radius:50%; border:0; display:grid; place-items:center; cursor:pointer;}
+  .sf-mic{background:var(--brand-weak); color:var(--brand-ink);} .sf-mic.rec{background:#C8381F; color:#fff; animation:sfPulse 1.2s ease-in-out infinite;}
+  .sf-send{background:var(--brand); color:#fff;} .sf-send:disabled{opacity:.5;}
+  @keyframes sfPulse{50%{box-shadow:0 0 0 9px rgba(200,56,31,.18);}}
+  .sf-wait{display:flex; align-items:center; gap:8px; color:var(--muted); font-weight:700;}
+  .sf-dots{display:inline-flex; gap:4px;} .sf-dots i{width:7px; height:7px; border-radius:50%; background:var(--brand); animation:sfDot 1s infinite;} .sf-dots i:nth-child(2){animation-delay:.15s;} .sf-dots i:nth-child(3){animation-delay:.3s;}
+  @keyframes sfDot{0%,80%,100%{opacity:.3; transform:none;} 40%{opacity:1; transform:translateY(-3px);}}
+  .sf-note{margin:8px 0 0;}
+  .sf-inv{display:flex; align-items:center; gap:12px; width:100%; text-align:left; border:0; border-radius:18px; padding:12px 14px; margin:2px 0 12px; background:var(--brand); color:#fff; cursor:pointer; font:inherit; box-shadow:var(--shadow);}
+  .sf-inv .sf-ava svg{width:42px; height:42px;} .sf-inv b{display:block; font-size:1rem;} .sf-inv small{display:block; font-weight:600; line-height:1.35; margin-top:2px;}
+  @media (prefers-reduced-motion:reduce){.sf-mic.rec,.sf-dots i{animation:none;}}
 </style>
 </head>
 <body>
@@ -3384,6 +3414,55 @@ en:{
   m8DemoBanks:['City Bank',"People's Bank",'Credit Plus'],
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M8S[k]);
+
+/* ----- v9: Сифра — ИИ-помощница ----- */
+const M9S={
+ru:{
+  sfName:'Сифра', sfSub:'Слушает, считает и ищет свежие данные в интернете',
+  sfHello:'<b>Я Сифра.</b> Скажите голосом или напишите, например:<br>«Заплатила 1 500 в Эсхату»<br>«Добавь кредит: Алиф, 20 000, по 2 000 в месяц»<br>«У меня 5 000 $ — какой товар выгоднее закупить?»<br>«Выручка сегодня 3 200 наличными и 800 переводом»',
+  sfQs:['У меня 5 000 $ — что выгоднее закупить?','Погасить кредит раньше или вложить в товар?','Китай или Турция — что выгоднее к празднику?','Держать деньги в долларах, сомони или золоте?','Как у меня дела с кредитами?'],
+  sfPh:'Спросите или скажите…', sfSend:'Отправить', sfMic:'Сказать голосом', sfListen:'Слушаю… говорите', sfNoSpeech:'Не услышала — скажите ещё раз',
+  sfWait:s=>'Думаю и ищу свежие данные… '+s+' сек', sfEmpty:'Скажите или напишите вопрос', sfOffline:'Нужен интернет — Сифра ищет свежие данные онлайн',
+  sfNoKey:'Сифра ещё не подключена: на сервере нет ключа Claude API. Его добавляет тот, кто настраивал приложение.',
+  sfLimit:'На сегодня вопросов много — Сифра продолжит завтра.', sfErr:'Не получилось ответить. Попробуйте ещё раз через минуту.', sfSlow:'Сифра думает слишком долго. Спросите короче.',
+  sfDone:'Готово — открыла форму.', sfCheck:'Сифра заполнила — проверьте и нажмите «Записать»', sfCheckA:a=>'Сифра заполнила'+(a?': '+a:'')+' — проверьте и нажмите «Записать»', sfNoLoan:'Не нашла такой кредит',
+  sfNote:'Сифра подсказывает, а решаете вы. Записи сохраняются только после вашей проверки.', sfClear:'Очистить', sfSay:'Прочитать вслух', sfByVoice:'голосом',
+  sfActInvest:(a,c)=>'Открыть расчёт'+(a?' на '+a:'')+(c?' — '+c:''), sfActPay:(n,a)=>'Записать платёж'+(n?' — '+n:'')+(a?', '+a:''), sfActLoan:n=>'Добавить кредит'+(n?' — '+n:''),
+  sfActDay:'Записать выручку', sfActExp:a=>'Записать расход'+(a?' '+a:''), sfActOpen:'Открыть раздел',
+  sfInvAsk:'Спросить Сифру', sfInvLead:'Сравнит товары и страны по свежим ценам и курсам — и ваши кредиты тоже.',
+  sfInvQ:(a,c)=>(a?'У меня '+a+'. ':'')+'Какой товар и где выгоднее закупить сейчас'+(c?' (сейчас смотрю: '+c+')':'')+'? Сравни и с другими вариантами вложить деньги.',
+},
+tg:{
+  sfName:'Сифра', sfSub:'Гӯш мекунад, ҳисоб мекунад ва маълумоти навро дар интернет меҷӯяд',
+  sfHello:'<b>Ман Сифра.</b> Бо овоз гӯед ё нависед, масалан:<br>«Ба Эсхата 1 500 пардохтам»<br>«Қарз илова кун: Алиф, 20 000, моҳе 2 000»<br>«5 000 $ дорам — кадом молро харам фоиданоктар?»<br>«Даромади имрӯз 3 200 нақд ва 800 интиқол»',
+  sfQs:['5 000 $ дорам — кадом мол фоиданоктар?','Қарзро пеш аз мӯҳлат пардозам ё ба мол гузорам?','Чин ё Туркия — барои ид кадомаш фоиданоктар?','Пулро дар доллар, сомонӣ ё тилло нигоҳ дорам?','Қарзҳои ман чӣ ҳол доранд?'],
+  sfPh:'Пурсед ё гӯед…', sfSend:'Фиристодан', sfMic:'Бо овоз гуфтан', sfListen:'Гӯш мекунам… гӯед', sfNoSpeech:'Нашунидам — боз як бор гӯед',
+  sfWait:s=>'Фикр мекунам ва маълумоти навро меҷӯям… '+s+' сония', sfEmpty:'Саволро гӯед ё нависед', sfOffline:'Интернет лозим аст — Сифра маълумоти навро онлайн меҷӯяд',
+  sfNoKey:'Сифра ҳоло пайваст нест: дар сервер калиди Claude API нест. Онро касе илова мекунад, ки барномаро танзим кардааст.',
+  sfLimit:'Барои имрӯз саволҳо зиёданд — Сифра фардо идома медиҳад.', sfErr:'Ҷавоб дода натавонистам. Пас аз як дақиқа боз кӯшиш кунед.', sfSlow:'Сифра хеле дер фикр мекунад. Кӯтоҳтар пурсед.',
+  sfDone:'Тайёр — шаклро кушодам.', sfCheck:'Сифра пур кард — санҷед ва сабт кунед', sfCheckA:a=>'Сифра пур кард'+(a?': '+a:'')+' — санҷед ва сабт кунед', sfNoLoan:'Чунин қарзро наёфтам',
+  sfNote:'Сифра маслиҳат медиҳад, қарор аз шумост. Сабтҳо танҳо пас аз санҷиши шумо нигоҳ дошта мешаванд.', sfClear:'Тоза кардан', sfSay:'Бо овоз хондан', sfByVoice:'бо овоз',
+  sfActInvest:(a,c)=>'Ҳисобро кушодан'+(a?' барои '+a:'')+(c?' — '+c:''), sfActPay:(n,a)=>'Сабти пардохт'+(n?' — '+n:'')+(a?', '+a:''), sfActLoan:n=>'Илова кардани қарз'+(n?' — '+n:''),
+  sfActDay:'Сабти даромад', sfActExp:a=>'Сабти хароҷот'+(a?' '+a:''), sfActOpen:'Кушодани бахш',
+  sfInvAsk:'Аз Сифра пурсед', sfInvLead:'Молҳо ва кишварҳоро бо нарху қурбҳои нав муқоиса мекунад — қарзҳоятонро ҳам.',
+  sfInvQ:(a,c)=>(a?a+' дорам. ':'')+'Ҳозир кадом молро аз куҷо харам фоиданоктар'+(c?' (ҳоло менигарам: '+c+')':'')+'? Бо дигар роҳҳои гузоштани пул ҳам муқоиса кун.',
+},
+en:{
+  sfName:'Sifra', sfSub:'Listens, calculates and looks up fresh data online',
+  sfHello:'<b>I’m Sifra.</b> Say it or type it, for example:<br>“I paid 1,500 to Eskhata”<br>“Add a loan: Alif, 20,000, 2,000 a month”<br>“I have $5,000 — which goods are best to buy?”<br>“Sales today 3,200 cash and 800 by transfer”',
+  sfQs:['I have $5,000 — what’s best to buy?','Pay off a loan early or invest in stock?','China or Turkey — which pays more for the holidays?','Keep money in dollars, somoni or gold?','How are my loans doing?'],
+  sfPh:'Ask or say…', sfSend:'Send', sfMic:'Speak', sfListen:'Listening… go ahead', sfNoSpeech:'Didn’t catch that — please say it again',
+  sfWait:s=>'Thinking and checking fresh data… '+s+' s', sfEmpty:'Say or type a question', sfOffline:'You need internet — Sifra looks up fresh data online',
+  sfNoKey:'Sifra isn’t connected yet: the server has no Claude API key. Whoever set up the app adds it.',
+  sfLimit:'Lots of questions today — Sifra will continue tomorrow.', sfErr:'Couldn’t answer. Try again in a minute.', sfSlow:'Sifra is taking too long. Try a shorter question.',
+  sfDone:'Done — I opened the form.', sfCheck:'Sifra filled it in — check it and tap “Record”', sfCheckA:a=>'Sifra filled it in'+(a?': '+a:'')+' — check it and tap “Record”', sfNoLoan:'Couldn’t find that loan',
+  sfNote:'Sifra suggests; you decide. Nothing is saved until you check it.', sfClear:'Clear', sfSay:'Read aloud', sfByVoice:'by voice',
+  sfActInvest:(a,c)=>'Open the calculation'+(a?' for '+a:'')+(c?' — '+c:''), sfActPay:(n,a)=>'Record payment'+(n?' — '+n:'')+(a?', '+a:''), sfActLoan:n=>'Add loan'+(n?' — '+n:''),
+  sfActDay:'Record sales', sfActExp:a=>'Record expense'+(a?' '+a:''), sfActOpen:'Open section',
+  sfInvAsk:'Ask Sifra', sfInvLead:'Compares goods and countries using fresh prices and rates — and your loans too.',
+  sfInvQ:(a,c)=>(a?'I have '+a+'. ':'')+'Which goods are best to buy right now, and where'+(c?' (I’m looking at: '+c+')':'')+'? Compare with other ways to invest the money too.',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M9S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -7441,6 +7520,7 @@ function ivSeasonTag(r){ if(r.se.k==='in') return `<span class="iv-tag in">🔥 
 function investSheet(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } if(!P.cat) P.cat='kids'; if(!P.tgt) P.tgt=2;
   const draw=()=>{ const t=today0(); const mo=L.monthsNom||[];
     openSheet(`<h3>💰 ${L.ivTitle}</h3><p class="lead">${L.ivLead}</p>
+      <button class="sf-inv" data-sfinv="1"><span class="sf-ava">${SF_AVA}</span><span><b>✨ ${L.sfInvAsk}</b><small>${L.sfInvLead}</small></span></button>
       <div class="field n big-in"><label>${L.ivCap}</label><div class="pin"><input id="iv-cap" type="number" inputmode="decimal" min="0" value="${P.cap||''}"><select id="iv-cur"><option value="USD" ${(P.cur||'USD')==='USD'?'selected':''}>$</option><option value="TJS" ${P.cur==='TJS'?'selected':''}>смн</option></select></div></div>
       <div class="br-h">🎯 ${L.ivTarget}</div><div class="chips">${[1.5,2,3].map(x=>`<button class="chip ${+P.tgt===x?'on':''}" data-ivt="${x}">×${String(x).replace('.',',')}</button>`).join('')}</div>
       <div class="br-h">📅 ${L.ivWhen}</div><div class="chips gd-k">${[0,1,2,3,4,5].map(o=>`<button class="chip ${(+P.st||0)===o?'on':''}" data-ivs="${o}">${o?esc(mo[(t.getMonth()+o)%12]||''):L.ivNow}</button>`).join('')}</div>
@@ -8526,6 +8606,110 @@ document.addEventListener('click', e=>{
   if((el=t.closest('[data-m8fold]'))){ e.stopImmediatePropagation(); const f=el.closest('.focus'); if(!f) return; const on=f.classList.toggle('m8-open'); const n=f.querySelectorAll('.fo-it.m8-x').length; el.querySelector('span').textContent=on?L.m8Less:L.m8More(n); return; }
 }, true);
 
+/* ===================== v9: Сифра — ИИ-помощница: голос, советы со свежими данными из интернета, заполнение форм =====================
+   Сервер: API_BASE/api/mk/ai (Claude с веб-поиском). Данные приложения уходят коротким JSON только на время вопроса.
+   Всё, что меняет записи, Сифра не сохраняет сама: открывает привычную форму уже заполненной, человек проверяет и жмёт «Записать». */
+const SF_KEEP=24;
+const SF_AVA='<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D5BFF"/><stop offset="1" stop-color="#7B5CFF"/></linearGradient></defs><circle cx="24" cy="24" r="24" fill="url(#sfg)"/><ellipse cx="24" cy="24" rx="9.5" ry="12.5" fill="none" stroke="#fff" stroke-width="4.6"/><circle cx="35" cy="13" r="4.2" fill="#FFB627"/></svg>';
+function sfLog(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.sf)) state.misc.sf=[]; return state.misc.sf; }
+let sfBusy=false, sfRec=null;
+/* что Сифра знает о делах: кредиты, магазин, курсы, расчёт «Куда вложить» по всем видам товара */
+function sfCtx(){ const o={today:ymd(new Date())};
+  try{ const r=rates(); if(r){ o.rates_tjs=r.c; if(r.gold) o.gold_tjs_per_g=Math.round(r.gold); } }catch(e){}
+  try{ o.loans=activeList().filter(x=>!x.loan.example&&!x.a.done).map(({loan,a})=>({id:loan.id,name:loan.name,left:Math.round(a.remaining||0),monthly:Math.round(a.monthly||a.amt||0),due_in_days:a.days!=null?a.days:null,rate_pct:+loan.rate||0,months_left:a.monthsLeft||null,interest_left:Math.round(a.interestLeft||0)})); }catch(e){}
+  try{ const rv=revEst(), ex=expEst(); o.shop_month_tjs={revenue:rv&&rv.v?Math.round(rv.v):null,expenses:ex&&ex.v?Math.round(ex.v):null}; }catch(e){}
+  try{ const P=ivP(), st=ivStart(), cap=ivCapUSD()>0?ivCapUSD():5000;
+    o.invest={capital:+P.cap||0,cur:P.cur||'USD',basis_usd:Math.round(cap),note:'прибыль и % для basis_usd по ценам приложения; months — от закупки до продажи',
+      by_category:IV_CATS.map(k=>{ const a=ivCalc(k,'CN',st,cap), b=ivCalc(k,'TR',st,cap); return {cat:k,name:L['whC_'+k]||k,cn_profit_usd:Math.round(a.profit),cn_pct:Math.round(a.roi*100),tr_profit_usd:Math.round(b.profit),tr_pct:Math.round(b.roi*100),months:Math.round(Math.max(a.totalM,b.totalM)*10)/10,season:a.se.k}; })}; }catch(e){}
+  try{ const t=(state.trips||[]).slice(-3).map(x=>({country:x.country||null,date:x.d||x.date||x.start||null})); if(t.length) o.recent_trips=t; }catch(e){}
+  return o; }
+/* простой markdown: **жирный**, списки, заголовки, абзацы */
+function sfMd(t){ const lines=esc(t).split('\n'); let h='', ul=false;
+  for(let ln of lines){ ln=ln.replace(/\*\*(.+?)\*\*/g,'<b>$1</b>'); const li=ln.match(/^\s*(?:[-•*]|\d+[.)])\s+(.*)$/);
+    if(li){ if(!ul){ h+='<ul>'; ul=true; } h+='<li>'+li[1]+'</li>'; continue; } if(ul){ h+='</ul>'; ul=false; }
+    const hd=ln.match(/^#{1,4}\s+(.*)$/); if(hd){ h+='<p><b>'+hd[1]+'</b></p>'; continue; } if(ln.trim()) h+='<p>'+ln+'</p>'; }
+  if(ul) h+='</ul>'; return h; }
+const sfHost=u=>{ try{ return new URL(u).hostname.replace(/^www\./,''); }catch(e){ return ''; } };
+function sfActLabel(a){ const i=a.input||{};
+  if(a.name==='open_invest') return '📊 '+L.sfActInvest(i.amount?((i.cur==='TJS'?money(+i.amount):ivUsd(+i.amount))):'', i.category&&L['whC_'+i.category]?L['whC_'+i.category]:'');
+  if(a.name==='pay_loan'){ const ln=state.loans.find(l=>l.id===i.loan_id); return '💳 '+L.sfActPay(ln?ln.name:'', i.amount>0?money(+i.amount):''); }
+  if(a.name==='add_loan') return '🏦 '+L.sfActLoan(i.name||'');
+  if(a.name==='record_day') return '💰 '+L.sfActDay;
+  if(a.name==='add_expense') return '🧾 '+L.sfActExp(i.amount>0?money(+i.amount):'');
+  return '➡️ '+L.sfActOpen; }
+function sfMsgHTML(m,i){ if(m.r==='u') return `<div class="sf-m u">${esc(m.t)}${m.v?' <span class="sf-v" aria-label="'+L.sfByVoice+'">🎤</span>':''}</div>`;
+  return `<div class="sf-m a">${m.t?sfMd(m.t):''}${m.act?`<button class="btn btn-ghost sf-act" data-sfact="${i}">${esc(sfActLabel(m.act))}</button>`:''}
+    ${m.src&&m.src.length?`<div class="sf-src">${m.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||sfHost(s.url))}</a>`).join('')}</div>`:''}
+    ${m.t?`<button class="sf-say" data-sfsay="${i}" aria-label="${L.sfSay}">🔊</button>`:''}</div>`; }
+function sifraOpen(q0){ const log=sfLog();
+  openSheet(`<div class="sf-head"><span class="sf-ava">${SF_AVA}</span><div><h3>${L.sfName}</h3><small>${L.sfSub}</small></div>${log.length?`<button class="link-btn sf-clear" id="sf-clear">${L.sfClear}</button>`:''}</div>
+    <div class="sf-log" id="sf-log" aria-live="polite">${log.length?log.map(sfMsgHTML).join(''):`<div class="sf-hello">${L.sfHello}</div>`}</div>
+    <div class="chips sf-qs" id="sf-qs">${L.sfQs.map((q,i)=>`<button class="chip" data-sfq="${i}">${esc(q)}</button>`).join('')}</div>
+    <div class="sf-bar"><button class="sf-mic" id="sf-mic" aria-label="${L.sfMic}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button>
+      <textarea id="sf-in" rows="1" maxlength="700" placeholder="${esc(L.sfPh)}" aria-label="${esc(L.sfPh)}"></textarea>
+      <button class="sf-send" id="sf-send" aria-label="${L.sfSend}"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div>
+    <p class="note sf-note">${L.sfNote}</p>`);
+  const box=$('#sf-log'); box.scrollTop=box.scrollHeight;
+  const inp=$('#sf-in'); inp.addEventListener('input',()=>{ inp.style.height='auto'; inp.style.height=Math.min(120,inp.scrollHeight)+'px'; });
+  inp.addEventListener('keydown',e=>{ if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); sfAsk(inp.value,false); } });
+  $('#sf-send').onclick=()=>sfAsk(inp.value,false); $('#sf-mic').onclick=sfListen;
+  sheet.querySelectorAll('[data-sfq]').forEach(b=>b.onclick=()=>sfAsk(L.sfQs[+b.dataset.sfq],false));
+  if($('#sf-clear')) $('#sf-clear').onclick=()=>{ sfLog().length=0; persist(); sifraOpen(); };
+  sfBind(); if(q0) sfAsk(q0,false); }
+function sfBind(){ sheet.querySelectorAll('[data-sfact]').forEach(b=>b.onclick=()=>{ const m=sfLog()[+b.dataset.sfact]; if(m&&m.act) sfDo(m.act,true); });
+  sheet.querySelectorAll('[data-sfsay]').forEach(b=>b.onclick=()=>{ const m=sfLog()[+b.dataset.sfsay]; if(m) sfSpeak(m.t); }); }
+function sfRedraw(){ const box=$('#sf-log'); if(!box) return; const log=sfLog(); box.innerHTML=log.map(sfMsgHTML).join(''); sfBind(); box.scrollTop=box.scrollHeight; }
+function sfSpeak(t){ const first=String(t||'').replace(/\*\*/g,'').split(/\n\s*\n|\n(?=\s*[-•*\d])/)[0].replace(/^#+\s*/,'').trim(); if(first) speak(first.slice(0,400)); }
+async function sfAsk(q,voice){ q=String(q||'').trim(); if(!q){ toast(L.sfEmpty); return; } if(sfBusy) return;
+  if(!navigator.onLine){ toast(L.sfOffline); return; }
+  const log=sfLog(), hist=log.slice(-8).map(m=>({r:m.r,t:m.r==='a'?(m.t||(m.act?'['+m.act.name+']':'')):m.t}));
+  log.push({r:'u',t:q,v:voice?1:0,ts:Date.now()}); const inp=$('#sf-in'); if(inp){ inp.value=''; inp.style.height=''; }
+  sfRedraw(); const box=$('#sf-log'), t0=Date.now(); sfBusy=true; if($('#sf-send')) $('#sf-send').disabled=true;
+  const wait=document.createElement('div'); wait.className='sf-m a sf-wait'; wait.innerHTML=`<span class="sf-dots"><i></i><i></i><i></i></span> <span id="sf-tm">${L.sfWait(0)}</span>`; if(box){ box.appendChild(wait); box.scrollTop=box.scrollHeight; }
+  const tick=setInterval(()=>{ const e=$('#sf-tm'); if(e) e.textContent=L.sfWait(Math.round((Date.now()-t0)/1000)); },1000);
+  let out=null, err=null;
+  try{ const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),150000);
+    const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q,lang,hist,ctx:sfCtx()}),signal:ctl.signal});
+    clearTimeout(to); const j=await r.json().catch(()=>({}));
+    if(r.ok&&(j.text||j.action)) out=j; else err=j.error==='nokey'?L.sfNoKey:j.error==='limit'?L.sfLimit:L.sfErr;
+  }catch(e){ err=e&&e.name==='AbortError'?L.sfSlow:L.sfErr; }
+  clearInterval(tick); sfBusy=false; if($('#sf-send')) $('#sf-send').disabled=false;
+  if(out){ const m={r:'a',t:String(out.text||'').trim(),src:(out.sources||[]).slice(0,8),ts:Date.now()};
+    if(out.action&&out.action.name) m.act={name:String(out.action.name),input:out.action.input||{}};
+    if(!m.t&&m.act) m.t=L.sfDone; log.push(m); }
+  else log.push({r:'a',t:err,err:1,ts:Date.now()});
+  log.splice(0,Math.max(0,log.length-SF_KEEP)); persist();
+  const last=log[log.length-1];
+  const open=!!$('#sf-log')&&overlay.classList.contains('open'); if(open) sfRedraw();
+  if(voice&&last&&!last.err&&last.t) sfSpeak(last.t);
+  if(open&&last&&last.act&&last.act.name!=='open_invest') setTimeout(()=>{ if($('#sf-log')) sfDo(last.act,false); },voice?1400:700); }
+/* выполнить: открыть нужную форму уже заполненной — сохраняет человек сам */
+function sfDo(a,manual){ const i=a.input||{}; const num=v=>+v>0?Math.round(+v):'';
+  const fill=(sel,v,ev)=>{ const e=$(sel); if(e&&v!==''&&v!=null){ e.value=v; e.dispatchEvent(new Event(ev||'input',{bubbles:true})); } };
+  if(a.name==='pay_loan'){ const ln=state.loans.find(l=>l.id===i.loan_id); if(!ln){ toast(L.sfNoLoan); return; } payForm(ln); fill('#p-amt',num(i.amount)); toast(L.sfCheckA(num(i.amount)?money(num(i.amount)):'')); }
+  else if(a.name==='add_loan'){ loanForm(null,{name:String(i.name||'').slice(0,60),note:'',total:num(i.total),paid:num(i.paid),monthly:num(i.monthly),dueDay:+i.due_day>=1&&+i.due_day<=31?Math.round(+i.due_day):'',gold:'',rate:+i.rate>0?+i.rate:'',term:num(i.term)}); toast(L.sfCheck); }
+  else if(a.name==='record_day'){ dayForm(/^\d{4}-\d{2}-\d{2}$/.test(i.date||'')?i.date:undefined); fill('#dy-card',num(i.card)); fill('#dy-cash',num(i.cash)); toast(L.sfCheckA((+i.cash||0)+(+i.card||0)>0?money((+i.cash||0)+(+i.card||0)):'')); }
+  else if(a.name==='add_expense'){ quickExpForm(CATS.includes(i.category)?i.category:'other'); fill('#qe-a',num(i.amount)); if(i.note) fill('#qe-n',String(i.note).slice(0,80)); toast(L.sfCheckA(num(i.amount)?money(num(i.amount)):'')); }
+  else if(a.name==='open_invest'){ const P=ivP(); if(+i.amount>0){ P.cap=Math.round(+i.amount); P.cur=i.cur==='TJS'?'TJS':'USD'; } if(IV_CATS.includes(i.category)) P.cat=i.category; persist(); investSheet(); }
+  else { const s=i.section; if(s==='invest'){ investSheet(); return; } closeSheet(); if(['today','loans','shop','money','more'].includes(s)) setTab(s); } }
+/* голос: говорите — Сифра слушает; по-таджикски, если телефон не умеет, — по-русски */
+function sfListen(){ const SR=window.SpeechRecognition||window.webkitSpeechRecognition, mic=$('#sf-mic'), inp=$('#sf-in');
+  if(!SR){ toast(L.voiceNo); return; } if(sfRec){ try{ sfRec.stop(); }catch(e){} return; }
+  try{ speechSynthesis.cancel(); }catch(e){}
+  const r=new SR(); sfRec=r; r.lang=lang==='en'?'en-US':(lang==='tg'?'tg-TJ':'ru-RU'); r.interimResults=true; r.maxAlternatives=1;
+  let again=false, tried=false, fin='', err='';
+  r.onstart=()=>{ mic.classList.add('rec'); inp.placeholder=L.sfListen; };
+  r.onresult=e=>{ let t=''; for(let k=0;k<e.results.length;k++){ t+=e.results[k][0].transcript; if(e.results[k].isFinal) fin=t; } inp.value=t; };
+  r.onerror=e=>{ if(!tried&&lang==='tg'&&(e.error==='language-not-supported'||e.error==='no-speech')){ tried=true; again=true; return; } err=e.error||'x'; };
+  r.onend=()=>{ if(again){ again=false; r.lang='ru-RU'; try{ r.start(); return; }catch(_){} }
+    mic.classList.remove('rec'); inp.placeholder=L.sfPh; sfRec=null; const t=(fin||inp.value).trim();
+    if(t){ sfAsk(t,true); return; } if(err) toast(err==='not-allowed'?L.voiceDenied:err==='no-speech'?L.sfNoSpeech:L.voiceFail); };
+  try{ r.start(); }catch(e){ sfRec=null; toast(L.voiceFail); } }
+/* кнопка Сифры на всех экранах */
+function sifraInit(){ if($('#sfFab')) return; const b=document.createElement('button'); b.id='sfFab'; b.className='sf-fab'; b.setAttribute('aria-label',L.sfName); b.innerHTML=SF_AVA+`<span>${L.sfName}</span>`; b.onclick=()=>sifraOpen(); document.body.appendChild(b); }
+document.addEventListener('click', e=>{ const v=e.target.closest('[data-sfinv]'); if(v){ e.stopImmediatePropagation(); const P=ivP(); sifraOpen(L.sfInvQ(+P.cap>0?(P.cur==='TJS'?money(+P.cap):ivUsd(+P.cap)):'', L['whC_'+P.cat]||'')); return; }
+  const w=e.target.closest('[data-sifra]'); if(w){ e.stopImmediatePropagation(); sifraOpen(w.dataset.sifra||''); } }, true);
+
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
@@ -8582,6 +8766,7 @@ setTab(curTab);
 maybeLock();
 initPWA();
 try{ m7IcoStart(); }catch(e){}
+try{ sifraInit(); }catch(e){}
 setTimeout(()=>{ try{ mirrorForSW(); pushRegister(false); if(famSt()) famSync(false); if(!handleGo()){ if(!m7Welcome()&&!maybeWhatsNew()) maybeFreshStart(); } }catch(e){} fetchRates(false).then(()=>renderToday(activeList())).catch(()=>{}); autoSnap(); },400);
 </script>
 </body>
