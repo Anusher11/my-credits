@@ -1539,6 +1539,65 @@
   .sf-pv img{width:48px; height:48px; object-fit:cover; border-radius:12px; flex:none;} .sf-pv span{flex:1; line-height:1.3;}
   .sf-pv button{flex:none; width:36px; height:36px; border:0; border-radius:50%; background:var(--surface); color:var(--ink); font-size:1rem; cursor:pointer;}
   .sf-uimg{display:block; width:140px; max-width:100%; border-radius:12px; margin:0 0 6px auto;}
+  /* ===================== v10: новый вид Mira ===================== */
+  /* липкие кнопки внизу экранов больше не нужны — все записи через «＋» */
+  .m7-actbar,.fab{display:none !important;}
+  html:not([data-simple]) #view-today #quick, html:not([data-simple]) #view-today #piggy, html:not([data-simple]) #view-today #fcCard{display:none;}
+  #view-today.m10-hastip #dayTip{display:none;}
+  /* калькулятор вверху на любом экране */
+  html:not([data-simple]) header .hbtns{display:flex; margin-left:auto; order:1;}
+  html:not([data-simple]) header .hbtns > :not(#calcTop){display:none;}
+  html:not([data-simple]) header #calcTop{display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--line); color:var(--ink);}
+  html:not([data-simple]) header .me-btn{margin-left:8px;}
+  /* «＋» в центре нижнего меню */
+  .m10-plus{display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:0; padding:0; cursor:pointer; font:inherit; color:var(--muted); min-width:64px;}
+  .m10-plus .m10-pi{width:56px; height:56px; margin-top:-24px; border-radius:20px; display:grid; place-items:center; background:var(--ink); color:#fff; box-shadow:0 10px 22px rgba(15,30,61,.28); transition:transform .15s;}
+  .m10-plus .m10-pi svg{width:28px; height:28px;}
+  .m10-plus:active .m10-pi{transform:scale(.94);}
+  .m10-plus .bl{font-size:.72rem; font-weight:700;}
+  .m10-plus:focus-visible .m10-pi{outline:3px solid var(--brand); outline-offset:3px;}
+  :root[data-theme="dark"] .m10-plus .m10-pi{background:var(--brand);}
+  .m10-acts{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:4px;}
+  .m10-act{display:flex; flex-direction:column; align-items:flex-start; gap:2px; text-align:left; border:0; border-radius:20px; padding:14px; min-height:100px; font:inherit; cursor:pointer; color:var(--ink); background:var(--surface-2);}
+  .m10-act .m10-ai{width:36px; height:36px; display:grid; place-items:center; border-radius:12px; margin-bottom:auto; background:rgba(255,255,255,.6);} .m10-act .m10-ai svg{width:22px; height:22px;}
+  .m10-act b{font-size:1rem; line-height:1.25; margin-top:10px;} .m10-act small{font-size:.78rem; font-weight:700; opacity:.75; line-height:1.3;}
+  .m10-act.pay{background:var(--brand); color:#fff;} .m10-act.pay .m10-ai{background:rgba(255,255,255,.18);}
+  .m10-act.day{background:var(--m-leaf-weak,#E3F3EC); color:#0B5E44;} .m10-act.exp{background:var(--m-clay-weak,#FBEFE7); color:#7A3410;}
+  .m10-act.photo{background:#FFF4DC; color:#6A5420;} .m10-act.cust{background:#F1EEFF; color:#4B3C9A;}
+  :root[data-theme="dark"] .m10-act:not(.pay){background:var(--surface-2); color:var(--ink);}
+  .m10-act:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  .m10-more{display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:14px; font-weight:700; color:var(--muted); font-size:.88rem;}
+  /* главная: календарь, «можно потратить», совет Сифры */
+  #view-today>#m10Box{order:4;}
+  .m10-card{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:14px 14px 13px; margin:0 0 12px; box-shadow:none;}
+  .m10-lbl{font-size:.84rem; color:var(--muted); font-weight:800;}
+  .m10-days{display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; margin:10px -2px 0; padding:0 2px 2px;} .m10-days::-webkit-scrollbar{display:none;}
+  .m10-d{flex:none; width:42px; text-align:center; padding:7px 0 8px; border-radius:14px; background:var(--surface-2);}
+  .m10-d span{display:block; font-size:.7rem; color:var(--muted); font-weight:800;} .m10-d b{display:block; font-size:1.02rem; font-weight:800; font-variant-numeric:tabular-nums;}
+  .m10-d i{display:block; width:6px; height:6px; border-radius:50%; margin:4px auto 0;}
+  .m10-d.pay i{background:var(--brand);} .m10-d.late i{background:var(--m-clay,#B4531F);}
+  .m10-d.today{background:var(--ink); color:var(--bg);} .m10-d.today span{color:inherit; opacity:.75;}
+  .m10-cn{display:flex; flex-wrap:wrap; gap:4px 12px; margin-top:10px; font-size:.84rem; color:var(--muted); font-weight:600;} .m10-cn b{color:var(--ink); font-variant-numeric:tabular-nums;} .m10-cn .late{color:var(--m-clay,#B4531F);}
+  .m10-sv{font-size:1.6rem; font-weight:800; color:var(--m-leaf,#0E7D5A); font-variant-numeric:tabular-nums; margin-top:2px;}
+  .m10-safe.save .m10-sv{color:var(--ink);}
+  .m10-meter{height:8px; border-radius:4px; background:var(--m-leaf-weak,#E3F3EC); overflow:hidden; margin-top:8px;} .m10-meter i{display:block; height:100%; border-radius:4px; background:var(--m-leaf,#0E7D5A);}
+  .m10-note{margin:8px 0 0; font-size:.84rem; color:var(--muted); font-weight:600;}
+  .m10-sbtn{margin-top:10px; width:100%; justify-content:center;}
+  .m10-tip,.m10-money{display:flex; align-items:center; gap:12px; width:100%; text-align:left; font:inherit; color:var(--ink); cursor:pointer;}
+  .m10-tip.m10-card{background:#FFF4DC; border-color:transparent;} :root[data-theme="dark"] .m10-tip.m10-card{background:var(--surface-2);}
+  .m10-tip .sf-ava svg{width:36px; height:36px;} .m10-tt{flex:1;} .m10-tt b,.m10-money b{display:block; font-size:.95rem;} .m10-tt small,.m10-money small{display:block; font-size:.84rem; color:var(--muted); font-weight:600; line-height:1.35; margin-top:2px;}
+  .m10-go{font-size:1.5rem; color:var(--muted); line-height:1;}
+  .m10-money.m10-card{margin:4px 0 16px;}
+  .m10-mi{width:40px; height:40px; border-radius:14px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); flex:none;} .m10-mi svg{width:22px; height:22px;} .m10-money > span:nth-child(2){flex:1;}
+  .m10-tip:focus-visible,.m10-money:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  /* обычный калькулятор */
+  .m10-cd{background:var(--surface-2); border-radius:18px; padding:12px 16px; text-align:right; margin:10px 0 10px; min-height:84px; display:flex; flex-direction:column; justify-content:flex-end;}
+  .m10-cd small{display:block; min-height:1.3em; color:var(--muted); font-weight:700; font-size:.95rem; overflow-wrap:anywhere;}
+  .m10-cd b{display:block; font-size:2.1rem; font-weight:800; font-variant-numeric:tabular-nums; overflow-wrap:anywhere; line-height:1.15;}
+  .m10-keys{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;}
+  .m10-keys button{display:grid; place-items:center; height:56px; border-radius:16px; border:0; background:var(--surface-2); color:var(--ink); font:inherit; font-size:1.3rem; font-weight:800; cursor:pointer;}
+  .m10-keys button.op{background:var(--brand-weak); color:var(--brand-ink);} .m10-keys button.fn{color:var(--muted);} .m10-keys button.eq{background:var(--brand); color:#fff;}
+  .m10-keys button:active{transform:scale(.96);} .m10-keys button:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
 </style>
 </head>
 <body>
@@ -3529,6 +3588,49 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M9S[k]);
 
+/* ----- v10: новый вид — «＋», календарь платежей, «можно потратить», обычный калькулятор ----- */
+const M10S={
+ru:{
+  m10Plus:'Записать', m10PlusTitle:'Что записать?',
+  m10Pay:'Оплатила кредит', m10PaySub:'отметить платёж', m10Day:'Выручка за день', m10DaySub:'наличные и перевод',
+  m10Exp:'Расход магазина', m10ExpSub:'аренда, свет, налог', m10Photo:'Фото чека', m10PhotoSub:'Сифра сама заполнит',
+  m10Cust:'Долг покупателя', m10CustSub:'кто и сколько', m10Voice:'Сказать голосом', m10VoiceSub:'«выручка 3 200…»',
+  m10More:'Ещё:', m10NewLoan:'Новый кредит', m10Home:'Домашний расход', m10Rates:'Курсы', m10Calc:'Калькулятор',
+  m10Cal:'Ближайшие 2 недели', m10CalNone:'В ближайшие 2 недели платежей нет', m10Late:'просрочено',
+  m10Safe:'Можно потратить сегодня', m10SafeNote:a=>'Уже за вычетом '+a+' на платежи', m10SafeAll:'Сегодня всё лучше отложить на платежи',
+  m10Save:'Сегодня отложите на платежи', m10SaveNote:'Запишите выручку — посчитаю, сколько можно потратить', m10SaveBtn:'Записать выручку',
+  m10Money:'Деньги', m10MoneySub:'Цели, счета, домашний бюджет, конверты',
+  m10SfTip:'Совет Сифры', m10AllTips:'Все советы',
+  tabBasic:'Обычный', m10Clear:'Сброс',
+},
+tg:{
+  m10Plus:'Сабт', m10PlusTitle:'Чиро сабт кунем?',
+  m10Pay:'Қарзро пардохтам', m10PaySub:'пардохтро қайд кардан', m10Day:'Даромади рӯз', m10DaySub:'нақд ва интиқол',
+  m10Exp:'Хароҷоти мағоза', m10ExpSub:'иҷора, барқ, андоз', m10Photo:'Акси чек', m10PhotoSub:'Сифра худаш пур мекунад',
+  m10Cust:'Қарзи харидор', m10CustSub:'кӣ ва чанд', m10Voice:'Бо овоз гуфтан', m10VoiceSub:'«даромад 3 200…»',
+  m10More:'Боз:', m10NewLoan:'Қарзи нав', m10Home:'Хароҷоти хона', m10Rates:'Қурбҳо', m10Calc:'Ҳисобкунак',
+  m10Cal:'Ду ҳафтаи наздик', m10CalNone:'Дар ду ҳафтаи наздик пардохт нест', m10Late:'гузаштааст',
+  m10Safe:'Имрӯз харҷ кардан мумкин', m10SafeNote:a=>'Аллакай бе '+a+' барои пардохтҳо', m10SafeAll:'Имрӯз ҳамаашро барои пардохтҳо нигоҳ доред',
+  m10Save:'Имрӯз барои пардохтҳо нигоҳ доред', m10SaveNote:'Даромадро сабт кунед — ҳисоб мекунам, чанд харҷ кардан мумкин', m10SaveBtn:'Сабти даромад',
+  m10Money:'Пул', m10MoneySub:'Мақсадҳо, ҳисобҳо, буҷети хона, лифофаҳо',
+  m10SfTip:'Маслиҳати Сифра', m10AllTips:'Ҳамаи маслиҳатҳо',
+  tabBasic:'Оддӣ', m10Clear:'Тоза',
+},
+en:{
+  m10Plus:'Record', m10PlusTitle:'What to record?',
+  m10Pay:'Paid a loan', m10PaySub:'mark a payment', m10Day:'Today’s sales', m10DaySub:'cash and transfer',
+  m10Exp:'Shop expense', m10ExpSub:'rent, power, tax', m10Photo:'Receipt photo', m10PhotoSub:'Sifra fills it in',
+  m10Cust:'Customer debt', m10CustSub:'who and how much', m10Voice:'Say it', m10VoiceSub:'“sales 3,200…”',
+  m10More:'More:', m10NewLoan:'New loan', m10Home:'Home expense', m10Rates:'Rates', m10Calc:'Calculator',
+  m10Cal:'Next 2 weeks', m10CalNone:'No payments in the next 2 weeks', m10Late:'overdue',
+  m10Safe:'Safe to spend today', m10SafeNote:a=>'Already minus '+a+' for payments', m10SafeAll:'Better to save everything for payments today',
+  m10Save:'Set aside for payments today', m10SaveNote:'Record today’s sales and I’ll work out what you can spend', m10SaveBtn:'Record sales',
+  m10Money:'Money', m10MoneySub:'Goals, bills, home budget, envelopes',
+  m10SfTip:'Sifra’s tip', m10AllTips:'All tips',
+  tabBasic:'Basic', m10Clear:'Clear',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M10S[k]);
+
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
 
@@ -3993,12 +4095,12 @@ function beEditForm(){
 
 /* ---- калькулятор ---- */
 function calcSheet(init){
-  let mode=init||'loan';
-  const tabs=[['loan',L.tabLoan],['early',L.tabEarly],['lump',L.tabLump],['newloan',L.tabNewLoan],['refi',L.tabRefi],['price',L.tabPrice],['conv',L.tabCurrency],['gold',L.tabGold]];
+  let mode=init||'basic';
+  const tabs=[['basic',L.tabBasic],['loan',L.tabLoan],['early',L.tabEarly],['lump',L.tabLump],['newloan',L.tabNewLoan],['refi',L.tabRefi],['price',L.tabPrice],['conv',L.tabCurrency],['gold',L.tabGold]];
   function draw(){
     openSheet(`<h3>${L.calcTitle}</h3><div class="seg seg7">${tabs.map(t=>`<button data-m="${t[0]}" class="${mode===t[0]?'on':''}">${t[1]}</button>`).join('')}</div><div id="calc-body"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
     sheet.querySelectorAll('.seg7 button').forEach(b=>b.onclick=()=>{ mode=b.dataset.m; draw(); });
-    const body=$('#calc-body'); ({loan:loanCalc,early:earlyCalc,lump:earlyLumpCalc,newloan:newLoanCalc,refi:refiCalc,gold:goldCalc,conv:convCalc,price:priceCalc}[mode]||loanCalc)(body);
+    const body=$('#calc-body'); ({basic:basicCalc,loan:loanCalc,early:earlyCalc,lump:earlyLumpCalc,newloan:newLoanCalc,refi:refiCalc,gold:goldCalc,conv:convCalc,price:priceCalc}[mode]||loanCalc)(body);
   }
   draw();
 }
@@ -8949,6 +9051,100 @@ function sifraInit(){ if($('#sfFab')) return; const b=document.createElement('bu
   document.body.appendChild(b); sfFabPlace(b); sfFabDrag(b); setTimeout(()=>b.classList.add('mini'),4500); setTimeout(()=>sfTipsFetch(false),6000); }
 document.addEventListener('click', e=>{ const v=e.target.closest('[data-sfinv]'); if(v){ e.stopImmediatePropagation(); const P=ivP(); sifraOpen(L.sfInvQ(+P.cap>0?(P.cur==='TJS'?money(+P.cap):ivUsd(+P.cap)):'', L['whC_'+P.cat]||'')); return; }
   const w=e.target.closest('[data-sifra]'); if(w){ e.stopImmediatePropagation(); sifraOpen(w.dataset.sifra||''); } }, true);
+
+/* ===================== v10: новый вид Mira =====================
+   «＋» в центре нижнего меню — все записи в одном месте (вместо липких кнопок на экранах).
+   На главной: календарь платежей на 2 недели, «можно потратить сегодня», совет Сифры.
+   Калькулятор — значок вверху на любом экране; новая вкладка «Обычный».
+   «Деньги» — в «Ещё»; в карточке кредита «Если платить больше» поднят выше. */
+const M10_I={
+  plus:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>',
+  pay:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l4 4 10-10"/></svg>',
+  day:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 17l5-5 4 4 7-8"/></svg>',
+  exp:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3h10v18l-2.5-1.5L12 21l-2.5-1.5L7 21z"/><path d="M10 8h4M10 12h4"/></svg>',
+  photo:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg>',
+  cust:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c1-3.4 3.4-5 6-5s5 1.6 6 5M17 8v6M14 11h6"/></svg>',
+  voice:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>',
+  wallet:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M16 12.5h2M3 10h18"/></svg>',
+};
+/* нижнее меню: «＋» между «Кредиты» и «Магазин»; «Деньги» переезжают в «Ещё» */
+function m10Nav(){ const nav=document.querySelector('.bnav .bn-in')||document.querySelector('.bnav'); if(!nav) return;
+  let b=$('#m10Plus');
+  if(!b){ b=document.createElement('button'); b.id='m10Plus'; b.type='button'; b.className='m10-plus';
+    b.innerHTML=`<span class="m10-pi">${M10_I.plus}</span><span class="bl"></span>`; b.onclick=m10PlusSheet;
+    const shop=nav.querySelector('[data-tab="shop"]'); nav.insertBefore(b,shop||null); }
+  b.setAttribute('aria-label',L.m10Plus); b.querySelector('.bl').textContent=L.m10Plus;
+  const mon=nav.querySelector('[data-tab="money"]'); if(mon) mon.hidden=true; }
+function m10PlusSheet(){ const nx=activeList().filter(x=>!x.a.done&&!x.loan.example&&!x.a.check).sort((a,b)=>a.a.days-b.a.days)[0];
+  const act=(cls,attr,ic,t,s)=>`<button type="button" class="m10-act ${cls}" ${attr}><span class="m10-ai">${ic}</span><b>${t}</b><small>${s}</small></button>`;
+  openSheet(`<h3>${L.m10PlusTitle}</h3><div class="m10-acts">
+    ${act('pay','data-qa="pay"',M10_I.pay,L.m10Pay,nx?esc(nx.loan.name)+' · '+money(nx.a.amt||nx.a.monthly||0):L.m10PaySub)}
+    ${act('day','data-shop="day"',M10_I.day,L.m10Day,L.m10DaySub)}
+    ${act('exp','data-qexp="other"',M10_I.exp,L.m10Exp,L.m10ExpSub)}
+    ${act('photo','id="m10Photo"',M10_I.photo,L.m10Photo,L.m10PhotoSub)}
+    ${act('cust','data-qa="cust"',M10_I.cust,L.m10Cust,L.m10CustSub)}
+    ${act('voice','data-qa="voice"',M10_I.voice,L.m10Voice,L.m10VoiceSub)}</div>
+    <div class="m10-more"><span>${L.m10More}</span><button type="button" class="chip" id="m10NewLoan">${L.m10NewLoan}</button><button type="button" class="chip" data-qa="home">${L.m10Home}</button><button type="button" class="chip" data-rates="1">${L.m10Rates}</button><button type="button" class="chip" id="m10CalcB">${L.m10Calc}</button></div>`);
+  $('#m10Photo').onclick=()=>{ sifraOpen(); try{ sfPickPhoto(); }catch(e){} };
+  $('#m10NewLoan').onclick=()=>loanForm(null); $('#m10CalcB').onclick=()=>calcSheet('basic'); }
+
+/* главная: календарь платежей на 14 дней */
+function m10Upcoming(){ const out=[], t0=new Date(); t0.setHours(0,0,0,0); const end=t0.getTime()+13*864e5;
+  const add=(due,n,v)=>{ const d=new Date(due); if(isNaN(d)) return; d.setHours(0,0,0,0); if(d.getTime()>end) return; out.push({d:d<t0?t0:d,late:d<t0,n,v:Math.round(+v||0)}); };
+  for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check||!a.due) continue; add(a.due,loan.name,a.amt||a.monthly); }
+  try{ for(const s of state.sup||[]) if(!s.paid&&s.due) add(s.due+'T00:00:00',s.name,s.sum); }catch(e){}
+  return out.sort((a,b)=>a.d-b.d); }
+function m10CalHTML(){ const up=m10Upcoming(), t0=new Date(); t0.setHours(0,0,0,0);
+  const days=[]; for(let i=0;i<14;i++){ const d=new Date(t0.getTime()+i*864e5); const its=up.filter(x=>x.d.getTime()===d.getTime());
+    days.push(`<div class="m10-d${i===0?' today':''}${its.length?' pay':''}${its.some(x=>x.late)?' late':''}" title="${esc(its.map(x=>x.n+' '+money(x.v)).join(', '))}"><span>${(L.wdShort||[])[d.getDay()]||''}</span><b>${d.getDate()}</b><i></i></div>`); }
+  const list=up.slice(0,4).map(x=>`<span class="${x.late?'late':''}">${x.late?L.m10Late:x.d.getDate()+' '+((MONTHS[lang]||MONTHS.ru).short[x.d.getMonth()]||'')} — ${esc(x.n)} <b>${money(x.v)}</b></span>`).join('');
+  return `<div class="m10-cal m10-card"><div class="m10-lbl">${L.m10Cal}</div><div class="m10-days">${days.join('')}</div><div class="m10-cn">${list||L.m10CalNone}</div></div>`; }
+/* «можно потратить сегодня»: выручка дня минус расходы и то, что нужно отложить на ближайшие платежи */
+function m10SafeHTML(list){ let pp; try{ pp=piggyPlan(list.filter(x=>!x.loan.example)); }catch(e){ return ''; } if(!pp||!pp.items||!pp.items.length) return '';
+  const sh=ensureShop(), t=dkey(), rev=sumOf(sh.sales.filter(e=>e.date===t)), ex=sumOf(sh.exp.filter(e=>e.date===t)), put=Math.max(0,Math.round(pp.perDay||0));
+  if(rev>0){ const safe=Math.max(0,Math.round(rev-ex-put)), pct=Math.round(safe/rev*100);
+    return `<div class="m10-safe m10-card"><div class="m10-lbl">${L.m10Safe}</div><div class="m10-sv">${money(safe)}</div><div class="m10-meter"><i style="width:${pct}%"></i></div><p class="m10-note">${safe>0?L.m10SafeNote(money(put)):L.m10SafeAll}</p></div>`; }
+  if(put<=0) return '';
+  return `<div class="m10-safe m10-card save"><div class="m10-lbl">${L.m10Save}</div><div class="m10-sv">${money(put)}</div><p class="m10-note">${L.m10SaveNote}</p><button type="button" class="btn btn-ghost m10-sbtn" data-shop="day">${L.m10SaveBtn}</button></div>`; }
+function m10TipHTML(){ let st=null; try{ st=sfTipsSt(); }catch(e){} const it=st&&st.day===ymd(new Date())&&st.lang===lang&&st.items&&st.items[0]; if(!it) return '';
+  return `<button type="button" class="m10-tip m10-card" id="m10Tip"><span class="sf-ava">${SF_AVA}</span><span class="m10-tt"><b>${L.m10SfTip}</b><small>${esc(it.t)}</small></span><span class="m10-go">›</span></button>`; }
+function m10After(){ m10Nav();
+  const v=$('#view-today');
+  if(v){ let box=$('#m10Box'); if(!box){ box=document.createElement('section'); box.id='m10Box'; const anc=$('#m8Prog')||$('#miraNext')||$('#focus'); if(anc) anc.after(box); else v.appendChild(box); }
+    const list=activeList(), tip=m10TipHTML(); box.innerHTML=m10CalHTML()+m10SafeHTML(list)+tip; v.classList.toggle('m10-hastip',!!tip);
+    const tb=$('#m10Tip'); if(tb) tb.onclick=()=>{ setTab('stats'); setTimeout(()=>{ const x=$('#tips'); if(x) x.scrollIntoView({behavior:'smooth'}); },80); }; }
+  const mv=$('#moreView'), mh=mv&&mv.querySelector('h1,h2,.section-h,.view-h'), tools=mh||mv||$('#tools');
+  if(tools&&!$('#m10MoneyLink')){ tools.insertAdjacentHTML(mh?'afterend':'beforebegin',`<button type="button" class="m10-money m10-card" id="m10MoneyLink"><span class="m10-mi">${M10_I.wallet}</span><span><b></b><small></small></span><span class="m10-go">›</span></button>`); $('#m10MoneyLink').onclick=()=>setTab('money'); }
+  const ml=$('#m10MoneyLink'); if(ml){ ml.querySelector('b').textContent=L.m10Money; ml.querySelector('small').textContent=L.m10MoneySub; } }
+try{ const _r10=render; render=function(){ const x=_r10.apply(this,arguments); try{ m10After(); }catch(e){} return x; }; }catch(e){}
+/* карточка кредита: «Если платить больше» — сразу под цифрами, чтобы было видно */
+try{ const _ds10=detailSheet; detailSheet=function(){ const x=_ds10.apply(this,arguments);
+  try{ const f=sheet.querySelector('.m7-ifm'), g=sheet.querySelector('.m7-withint')||sheet.querySelector('.detail-grid'); if(f&&g) g.after(f); }catch(e){} return x; }; }catch(e){}
+
+/* обычный калькулятор: + − × ÷ и проценты («1 000 + 10%» = 1 100) */
+function m10Eval(ex){ const t=String(ex||'').replace(/[+−×÷]+$/,''); if(!t) return null;
+  const m=t.match(/\d+\.?\d*|\.\d+|[+−×÷]/g); if(!m) return null; const nums=[], ops=[]; let i=0, neg=false; if(m[0]==='−'){ neg=true; i=1; }
+  for(;i<m.length;i++){ const x=m[i]; if('+−×÷'.includes(x)) ops.push(x); else { let v=parseFloat(x); if(neg){ v=-v; neg=false; } nums.push(v); } }
+  if(!nums.length||nums.length!==ops.length+1) return null;
+  const n2=[nums[0]], o2=[]; for(let k=0;k<ops.length;k++){ const o=ops[k], v=nums[k+1]; if(o==='×') n2[n2.length-1]*=v; else if(o==='÷'){ if(v===0) return null; n2[n2.length-1]/=v; } else { o2.push(o); n2.push(v); } }
+  let r=n2[0]; for(let k=0;k<o2.length;k++) r=o2[k]==='+'?r+n2[k+1]:r-n2[k+1]; return Math.round(r*1e8)/1e8; }
+function m10Fmt(v){ return Number(v).toLocaleString(lang==='en'?'en-US':'ru-RU',{maximumFractionDigits:6}); }
+let m10Ex='';
+function basicCalc(body){
+  const BS='<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5h11v14H9l-6-7z"/><path d="M12.5 9.5l5 5M17.5 9.5l-5 5"/></svg>';
+  const keys=['C','⌫','%','÷','7','8','9','×','4','5','6','−','1','2','3','+','00','0',',','='];
+  body.innerHTML=`<div class="m10-cd" aria-live="polite"><small id="m10ce"></small><b id="m10cv">0</b></div><div class="m10-keys">${keys.map(k=>`<button type="button" data-k="${k}" class="${'÷×−+'.includes(k)?'op':k==='='?'eq':['C','⌫','%'].includes(k)?'fn':''}" aria-label="${k==='C'?L.m10Clear:k}">${k==='⌫'?BS:k}</button>`).join('')}</div>`;
+  const dec=s=>lang==='en'?s:s.replace(/\./g,',');
+  const show=()=>{ $('#m10ce').textContent=dec(m10Ex); const v=m10Eval(m10Ex); const last=(m10Ex.match(/[\d.]+$/)||[''])[0]; $('#m10cv').textContent=v==null?(last?dec(last):'0'):m10Fmt(v); };
+  body.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{ const k=b.dataset.k, isOp=c=>'+−×÷'.includes(c), lastC=m10Ex.slice(-1);
+    if(k==='C') m10Ex=''; else if(k==='⌫') m10Ex=m10Ex.slice(0,-1);
+    else if(isOp(k)){ if(!m10Ex){ if(k==='−') m10Ex='−'; } else if(isOp(lastC)) m10Ex=m10Ex.slice(0,-1)+k; else m10Ex+=k; }
+    else if(k===','){ const cur=(m10Ex.match(/[\d.]*$/)||[''])[0]; if(!cur.includes('.')) m10Ex+=(cur?'':'0')+'.'; }
+    else if(k==='%'){ const mm=m10Ex.match(/^(.*?)([+−×÷]?)([\d.]+)$/); if(mm){ const n=parseFloat(mm[3]); let v=n/100; if((mm[2]==='+'||mm[2]==='−')&&mm[1]){ const base=m10Eval(mm[1]); if(base!=null) v=base*n/100; } m10Ex=mm[1]+mm[2]+String(Math.round(v*1e8)/1e8); } }
+    else if(k==='='){ const v=m10Eval(m10Ex); if(v!=null) m10Ex=String(v).replace('-','−'); }
+    else { if(m10Ex.length<40) m10Ex+=k; }
+    show(); });
+  show(); }
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
