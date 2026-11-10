@@ -1614,13 +1614,20 @@
      Только светлая тема. Стекло — у меню; текст всегда на плотных белых карточках. */
   :root[data-theme="light"]{
     --bg:#F3F5FA; --surface-2:#EEF1F8; --ink:#101828; --muted:#475467; --line:#E4E8F1;
-    --brand:#2F5BFF; --brand-ink:#1E3FCC; --brand-weak:#E8EEFF; --info:#2F5BFF; --cu:#2F5BFF;
-    --m-hero:#2F5BFF; --m-navy:#101828; --m-navy-2:rgba(255,255,255,.2); --m-on-navy:#DCE4FF;
+    --brand:#0B7A57; --brand-ink:#075C41; --brand-weak:#DDF7EC; --info:#0B7A57; --cu:#0B7A57;
+    --m-hero:#0B6B4F; --m-hero-2:#10966E; --m-hero-sh:rgba(11,107,79,.30); --m-navy:#101828; --m-navy-2:rgba(255,255,255,.2); --m-on-navy:#D9F7EA;
     --m-sun:#FFC83D; --gold:#FFC83D; --m-leaf:#0B7A57; --m-leaf-weak:#DDF7EC; --in:#0B7A57;
     --m11-go:#12B886; --m11-lav:#ECE7FF; --m11-lav-ink:#4B3CA7;
     --shadow:0 1px 2px rgba(16,24,40,.04), 0 12px 30px rgba(16,24,40,.07);
     --m8-glass:rgba(255,255,255,.72);
   }
+  /* цвет оформления выбирает человек: изумруд (по умолчанию), сирень, морская волна. Синего больше нет. */
+  :root[data-theme="light"][data-acc="v"]{--brand:#6246EA; --brand-ink:#4B32C3; --brand-weak:#ECE7FF; --info:#6246EA; --cu:#6246EA; --m-hero:#5638DA; --m-hero-2:#7C5CF5; --m-hero-sh:rgba(86,56,218,.30); --m-on-navy:#E8E1FF;}
+  :root[data-theme="light"][data-acc="t"]{--brand:#0B7285; --brand-ink:#095565; --brand-weak:#DDF3F7; --info:#0B7285; --cu:#0B7285; --m-hero:#0A6577; --m-hero-2:#1193A8; --m-hero-sh:rgba(10,101,119,.30); --m-on-navy:#D8F4F8;}
+  :root[data-theme="dark"]{--brand:#2DB487; --brand-ink:#A8EFD4; --brand-weak:#12382C;}
+  :root[data-theme="dark"][data-acc="v"]{--brand:#A08BFF; --brand-ink:#D6CCFF; --brand-weak:#2A2357;}
+  :root[data-theme="dark"][data-acc="t"]{--brand:#35B5C9; --brand-ink:#B8ECF4; --brand-weak:#123840;}
+  @media (prefers-color-scheme: dark){ :root:not([data-theme]){--brand:#2DB487; --brand-ink:#A8EFD4; --brand-weak:#12382C;} :root:not([data-theme])[data-acc="v"]{--brand:#A08BFF; --brand-ink:#D6CCFF; --brand-weak:#2A2357;} :root:not([data-theme])[data-acc="t"]{--brand:#35B5C9; --brand-ink:#B8ECF4; --brand-weak:#123840;} }
   :root[data-theme="light"] body{background:transparent;}
   :root[data-theme="light"]{background:var(--bg);}
   #m11Aurora{display:none;}
@@ -1628,7 +1635,7 @@
   #m11Aurora i{position:absolute; border-radius:50%; filter:blur(64px); will-change:transform;}
   #m11Aurora i:nth-child(1){width:300px; height:300px; left:-90px; top:-70px; background:#8FEBCB; opacity:.7; animation:m11A 13s ease-in-out infinite;}
   #m11Aurora i:nth-child(2){width:280px; height:280px; right:-100px; top:60px; background:#C7B5FF; opacity:.66; animation:m11B 16s ease-in-out infinite;}
-  #m11Aurora i:nth-child(3){width:300px; height:300px; left:40px; top:460px; background:#BFD4FF; opacity:.55; animation:m11C 18s ease-in-out infinite;}
+  #m11Aurora i:nth-child(3){width:300px; height:300px; left:40px; top:460px; background:#FFE0B5; opacity:.5; animation:m11C 18s ease-in-out infinite;}
   @keyframes m11A{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(46px,34px) scale(1.18)}}
   @keyframes m11B{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-52px,26px) scale(.92)}}
   @keyframes m11C{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-44px) scale(1.2)}}
@@ -1664,7 +1671,7 @@
   @keyframes m11Up{from{opacity:0; transform:translateY(12px)}to{opacity:1; transform:none}}
   @keyframes m11Now{0%,100%{opacity:1}50%{opacity:.45}}
   /* следующий платёж: синяя карточка, солнечная кнопка — главное действие заметнее всего */
-  :root[data-theme="light"] .m7-hero{background:#2F5BFF; box-shadow:0 16px 34px rgba(47,91,255,.32); border-radius:28px;}
+  :root[data-theme="light"] .m7-hero{background:linear-gradient(135deg,var(--m-hero),var(--m-hero-2)); box-shadow:0 16px 34px var(--m-hero-sh); border-radius:28px;}
   :root[data-theme="light"] .m7-hero .m7-b1{background:#FFC83D; color:#101828;}
   :root[data-theme="light"] .m7-hero .m7-b2{border-color:rgba(255,255,255,.45);}
   /* плитки под платежом */
@@ -1681,6 +1688,98 @@
   :root[data-theme="light"] .m10-tip.m10-card{background:#FFF4D6;}
   :root[data-theme="light"] .m10-plus .m10-pi{background:#101828;}
   @media (prefers-reduced-motion:reduce){#m11Aurora i,.m11-hero,.m11-ring .rg,.m11-path i.n{animation:none !important;}}
+  /* ===================== v12: цвет оформления, «Кредиты», ползунок, «Закупка» ===================== */
+  :root[data-theme="light"]{--shadow-lg:0 2px 8px rgba(16,24,40,.06), 0 18px 44px rgba(16,24,40,.10); --cu:#6246EA;}
+  .m8-sw-light i:nth-child(2){background:#0B7A57;}
+  .sf-orb{background:radial-gradient(circle at 35% 30%,#C4B2FF,#5B3FE0 70%); box-shadow:0 10px 28px rgba(91,63,224,.32);}
+  .sf-orb[data-ph="idle"]{background:radial-gradient(circle at 35% 30%,#D3CCEF,#8A7FC9 70%); box-shadow:none;}
+  .m12-acc-h{font-weight:800; font-size:.9rem; margin:18px 2px 8px;}
+  .m12-acc{display:flex; gap:10px; margin-bottom:6px;}
+  .m12-acc button{flex:1; min-height:76px; border-radius:18px; border:2px solid var(--line); background:var(--surface); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; font:inherit; font-weight:800; font-size:.84rem; color:var(--ink); cursor:pointer;}
+  .m12-acc button.on{border-color:var(--ink);}
+  .m12-acc i{width:30px; height:30px; border-radius:50%;}
+  .m12-sw-g{background:linear-gradient(135deg,#0B6B4F,#12B886);} .m12-sw-v{background:linear-gradient(135deg,#5638DA,#A78BFF);} .m12-sw-t{background:linear-gradient(135deg,#0A6577,#35B5C9);}
+
+  /* --- «Кредиты»: одна полоса и четыре числа --- */
+  .m8-sum.m12 .m8-sum-top,.m8-sum.m12 .m8-free,.m8-sum.m12 .m8-leg{display:none;}
+  .m12-st{display:flex; align-items:flex-start; justify-content:space-between; gap:10px;}
+  .m12-st small{display:block; font-size:.84rem; font-weight:800; color:var(--muted);}
+  .m12-st b{display:block; font-size:2rem; font-weight:800; letter-spacing:-.5px; line-height:1.15; font-variant-numeric:tabular-nums;}
+  .m12-pill{flex:none; background:var(--m-leaf-weak); color:var(--m-leaf); font-weight:800; font-size:.8rem; padding:6px 11px; border-radius:99px; white-space:nowrap;}
+  .m12-stack{display:flex; gap:3px; height:14px; margin-top:14px;} .m12-stack i{display:block; min-width:6px; border-radius:7px;}
+  .m12-leg{display:flex; flex-wrap:wrap; gap:6px 16px; margin-top:9px; font-size:.84rem; font-weight:700;}
+  .m12-leg span{display:inline-flex; align-items:center; gap:6px;} .m12-leg i{width:10px; height:10px; border-radius:3px; flex:none;} .m12-leg em{font-style:normal; color:var(--muted);} .m12-leg b{font-variant-numeric:tabular-nums;}
+  .m12-stats{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:14px 0 16px;}
+  .m12-stats div{background:var(--surface-2); border-radius:16px; padding:10px 12px;}
+  .m12-stats small{display:block; font-size:.74rem; font-weight:800; color:var(--muted); line-height:1.25;}
+  .m12-stats b{display:block; font-size:1.12rem; font-weight:800; margin-top:2px; font-variant-numeric:tabular-nums;}
+  .m12-stats .go{background:var(--m-leaf-weak);} .m12-stats .go b,.m12-stats .go small{color:var(--m-leaf);}
+  .m12-stats.n3 div:last-child,.m12-stats.n1 div{grid-column:1/-1;}
+  .m12-meta{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .m12-meta span{display:inline-flex; align-items:center; gap:4px; font-size:.74rem; font-weight:800; color:var(--muted); background:var(--surface-2); border-radius:99px; padding:4px 9px;}
+  .m12-meta .f{background:#FFF1CC; color:#7A4B00;} :root[data-theme="dark"] .m12-meta .f{background:#3A2F14; color:#FFD98A;}
+
+  /* --- ползунок «если платить больше» --- */
+  .m12-wt{display:flex; align-items:baseline; justify-content:space-between; margin-top:10px;} .m12-wt span{font-size:.86rem; font-weight:700; color:var(--muted);} .m12-wt b{font-size:1.5rem; font-weight:800; font-variant-numeric:tabular-nums;}
+  .m12-range{-webkit-appearance:none; appearance:none; display:block; width:100%; height:44px; margin:0; padding:0; border:0; background:transparent; --p:0%; cursor:pointer;}
+  .m12-range::-webkit-slider-runnable-track{height:10px; border-radius:99px; background:linear-gradient(90deg,var(--m11-go,#12B886) var(--p),rgba(16,24,40,.14) var(--p));}
+  .m12-range::-moz-range-track{height:10px; border-radius:99px; background:linear-gradient(90deg,var(--m11-go,#12B886) var(--p),rgba(16,24,40,.14) var(--p));}
+  .m12-range::-webkit-slider-thumb{-webkit-appearance:none; appearance:none; width:30px; height:30px; margin-top:-10px; border-radius:50%; background:#fff; border:3px solid var(--m11-go,#12B886); box-shadow:0 4px 10px rgba(16,24,40,.2);}
+  .m12-range::-moz-range-thumb{width:24px; height:24px; border-radius:50%; background:#fff; border:3px solid var(--m11-go,#12B886); box-shadow:0 4px 10px rgba(16,24,40,.2);}
+  .m12-range:focus-visible{outline:3px solid var(--brand); outline-offset:2px; border-radius:12px;}
+  .m12-wsc{display:flex; justify-content:space-between; font-size:.72rem; font-weight:800; color:var(--muted); margin-top:-6px; font-variant-numeric:tabular-nums;}
+  .m12-wo{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:8px; margin:12px 0 8px;}
+  .m12-wo div{background:rgba(255,255,255,.78); border-radius:14px; padding:9px 10px; min-width:0;} :root[data-theme="dark"] .m12-wo div{background:var(--surface);}
+  .m12-wo small{display:block; font-size:.72rem; font-weight:800; color:var(--muted);} .m12-wo b{display:block; font-size:.98rem; font-weight:800; margin-top:2px; font-variant-numeric:tabular-nums; overflow-wrap:anywhere;}
+  .m7-ifm.on .m12-wo b{color:var(--m-leaf);}
+
+  /* --- «Закупка» --- */
+  .trip-empty.m12-start{text-align:left; border-radius:24px; padding:18px;}
+  .m12-sic{display:grid; place-items:center; width:52px; height:52px; border-radius:16px; background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7); margin-bottom:10px;}
+  .trip-empty.m12-start>b{font-size:1.3rem; margin:0 0 4px;}
+  .m12-safe{display:flex; align-items:center; justify-content:space-between; gap:10px; width:100%; text-align:left; font:inherit; color:var(--ink); border:0; border-radius:18px; background:var(--m-leaf-weak); padding:12px 14px; margin:0 0 12px; cursor:pointer; min-height:58px;}
+  .m12-safe small{display:block; font-size:.78rem; font-weight:800; color:var(--m-leaf);} .m12-safe b{font-size:1.25rem; font-weight:800; font-variant-numeric:tabular-nums;}
+  .m12-safe em{font-style:normal; display:inline-flex; align-items:center; gap:2px; font-size:.8rem; font-weight:800; color:var(--m-leaf); flex:none;}
+  .m12-safe.ask span{display:inline-flex; align-items:center; gap:10px; color:var(--m-leaf);} .m12-safe.ask b{font-size:.95rem; color:var(--ink);} .m12-safe.ask>svg{color:var(--m-leaf); flex:none;}
+  .m12-start .btn-primary{display:flex; align-items:center; justify-content:center; gap:8px;}
+  .m12-chk{background:var(--surface); border:1px solid var(--line); border-radius:24px; padding:16px; margin-top:12px; box-shadow:var(--shadow);}
+  .m12-chh{display:flex; justify-content:space-between; align-items:baseline;} .m12-chh b{font-size:1.05rem;} .m12-chh span{font-size:.82rem; font-weight:800; color:var(--muted); font-variant-numeric:tabular-nums;}
+  .m12-chb{height:6px; border-radius:99px; background:var(--line); margin:8px 0 4px; overflow:hidden;} .m12-chb i{display:block; height:100%; border-radius:99px; background:var(--m11-go,#12B886); transition:width .3s;}
+  .m12-chr{display:flex; align-items:center; gap:8px; border-top:1px solid var(--line);} .m12-chb+.m12-chr{border-top:0;}
+  .m12-cht{flex:1; display:flex; align-items:center; gap:10px; min-height:54px; padding:8px 0; background:none; border:0; font:inherit; color:var(--ink); text-align:left; cursor:pointer; font-weight:700; font-size:.92rem; line-height:1.3; min-width:0;}
+  .m12-cht i{flex:none; width:26px; height:26px; border-radius:9px; border:2px solid #B8C0D0; display:grid; place-items:center; color:transparent;}
+  .m12-chr.on .m12-cht i{background:var(--m11-go,#12B886); border-color:var(--m11-go,#12B886); color:#fff;} .m12-chr.on .m12-cht span{color:var(--muted);}
+  .m12-chg{flex:none; border:0; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-weight:800; font-size:.8rem; border-radius:99px; padding:8px 12px; min-height:38px; cursor:pointer;}
+  .m12-chw{margin:10px 0 0; font-size:.8rem; color:var(--muted); line-height:1.4;}
+  .m12-tools{margin-top:4px;}
+  .m12-g{margin-top:16px;} .m12-gh{display:flex; align-items:center; gap:8px; font-size:.88rem; font-weight:800; color:var(--muted); margin:0 2px 8px;} .m12-gh svg{width:22px; height:22px; flex:none;}
+  .m12-gg{display:grid; grid-template-columns:repeat(4,1fr); gap:8px;}
+  .m12-gg button,.m12-strip button{display:flex; flex-direction:column; align-items:center; gap:6px; padding:10px 3px; border:1px solid var(--line); border-radius:18px; background:var(--surface); color:var(--ink); cursor:pointer; min-width:0; font:inherit; min-height:86px;}
+  :root[data-theme="light"] .m12-gg button,:root[data-theme="light"] .m12-strip button{background:rgba(255,255,255,.88); border-color:#fff;}
+  .m12-gg button span,.m12-strip button span{display:grid; place-items:center; width:40px; height:40px; border-radius:13px; flex:none;}
+  .m12-gg small,.m12-strip small{font-size:.71rem; font-weight:800; text-align:center; line-height:1.2; overflow-wrap:anywhere;}
+  .m12-g.before button span{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7);} .m12-g.trip button span,.m12-strip button span{background:var(--m-leaf-weak); color:var(--m-leaf);} .m12-g.after button span{background:#FFF1CC; color:#7A4B00;}
+  :root[data-theme="dark"] .m12-g.before button span,:root[data-theme="dark"] .m12-g.after button span{background:var(--surface-2); color:var(--ink);}
+  .m12-strip{display:grid; grid-template-columns:repeat(5,1fr); gap:6px; margin:14px 0 4px;} .m12-strip button{min-height:78px; padding:8px 2px; border-radius:16px;}
+  .m12-strip .sf span{background:none;} .m12-strip .sf span svg{width:40px; height:40px;}
+  .m12-ask{margin-top:18px;} .m12-askc{display:flex; flex-wrap:wrap; gap:8px;}
+  .m12-askc button{border:1px solid #DDD5FF; background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7); font:inherit; font-weight:800; font-size:.86rem; border-radius:99px; padding:10px 14px; min-height:44px; cursor:pointer; text-align:left;}
+  :root[data-theme="dark"] .m12-askc button{background:var(--surface-2); color:var(--ink); border-color:var(--line);}
+  .m12-more{margin-top:18px; border:1px solid var(--line); border-radius:20px; background:var(--surface); padding:0 14px;}
+  .m12-more summary{display:flex; align-items:center; gap:8px; min-height:54px; cursor:pointer; font-weight:800; list-style:none;} .m12-more summary::-webkit-details-marker{display:none;} .m12-more summary span{flex:1;}
+  .m12-more[open]{padding-bottom:16px;} .m12-more[open] summary svg:last-child{transform:rotate(180deg);} .m12-more .m12-g:first-of-type{margin-top:2px;}
+  .trip-h .sd-bar{position:relative;} .m12-mark{position:absolute; top:0; bottom:0; width:3px; margin-left:-1px; background:var(--surface); box-shadow:0 0 0 1px rgba(16,24,40,.25);}
+  .m12-tx{display:flex; flex-direction:column; gap:6px; margin-top:10px; padding-top:10px; border-top:1px solid var(--line);}
+  .m12-res{display:flex; align-items:center; gap:8px; font-size:.84rem; font-weight:700; color:var(--m-leaf);} .m12-res svg{flex:none;} .m12-res.eat{color:var(--warn,#B4531F);} .m12-res.per{color:var(--ink);} .m12-res b{font-variant-numeric:tabular-nums;}
+  .m12-sell{margin-top:8px;} .m12-sb{height:6px; border-radius:99px; background:var(--line); overflow:hidden;} .m12-sb i{display:block; height:100%; border-radius:99px; background:var(--muted);}
+  .m12-sell span{display:block; font-size:.78rem; font-weight:700; color:var(--muted); margin-top:5px; line-height:1.3;} .m12-sell b{color:var(--ink);}
+  .m12-sell.good .m12-sb i{background:var(--m11-go,#12B886);} .m12-sell.good b{color:var(--m-leaf);} .m12-sell.low .m12-sb i{background:#E9A21F;} .m12-sell.low b{color:var(--warn,#B4531F);}
+  .m12-mix{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:14px; margin-bottom:12px;} .m12-mix>b{display:block; font-size:.95rem;}
+  .m12-hint{display:flex; gap:8px; align-items:flex-start; margin:10px 0 0; font-size:.84rem; line-height:1.4; color:var(--ink);} .m12-hint svg{flex:none; margin-top:2px; color:var(--warn,#B4531F);}
+  .m12-hint.box{background:var(--warn-weak,#FFF1E6); border-radius:16px; padding:12px 14px; margin:0 0 12px;}
+  @media (prefers-reduced-motion:reduce){.m12-chb i{transition:none;}}
+  #demoBar{background:linear-gradient(90deg,#5638DA,#8B6CFF);}
+  .m8-sw-dark i:nth-child(2){background:#2DB487;} .m8-sw-auto i:nth-child(3){background:#FFC83D;}
 </style>
 </head>
 <body>
@@ -3737,6 +3836,64 @@ en:{
   tabBasic:'Basic', m10Clear:'Clear',
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M10S[k]);
+
+/* ----- v12: цвет оформления, «Кредиты», ползунок «если платить больше», «Закупка» ----- */
+const M12S={
+ru:{
+  m12Acc:'Цвет', m12AccG:'Изумруд', m12AccV:'Сирень', m12AccT:'Море',
+  m12PaidPct:p=>p+'% выплачено', m12Month:'Платёж в месяц', m12AvgRate:'Средняя ставка', m12Int:'Ещё уйдёт на проценты', m12FreeBy:'Без кредитов',
+  m12Year:'годовых', m12Ends:m=>'закроется: '+m,
+  m12Extra:'Доплата в месяц', m12Close:'Закроете', m12Sooner:'Раньше на', m12Save:'Сэкономите', m12Mo:n=>n+' мес.',
+  m12StartT:'Поездка за товаром', m12StartP:'Магазины, фото товаров с ценами, заказы и карго — в одном месте. Работает без интернета.',
+  m12SafeNow:'Безопасно взять сейчас', m12SafeHow:'Как посчитано', m12SafeAsk:'Посчитать, сколько можно взять', m12Start:'Начать поездку',
+  m12ChkT:'Перед поездкой', m12ChkOf:(k,n)=>k+' из '+n,
+  m12Chk:{money:'Знаю, сколько можно взять без риска для платежей', list:'Список готов: что докупить по продажам', hold:'Оставляю 20–30% бюджета на дозаказ ходового', test:'Новый товар и нового продавца — сначала пробной партией', why:'Про каждую вещь знаю: кому и за сколько продам', when:'Товар успеет к сезону'},
+  m12ChkGo:{money:'Посчитать', list:'Открыть', when:'Когда ехать'},
+  m12ChkWhy:'Так закупают магазины одежды в США и Европе: бюджет считают заранее, часть денег держат на дозаказ, новое пробуют малой партией.',
+  m12PhBefore:'До поездки', m12PhIn:'В поездке', m12PhAfter:'После поездки', m12AllTools:'Все помощники', m12Rates:'Курсы', m12Tags:'Ценники', m12Markup:'Наценки',
+  m12AskT:'Спросить Сифру', m12Ask:[['Что взять в эту поездку?','Посмотри мои продажи и остатки и подскажи, что взять в эту закупку и сколько.'],['По какой цене продавать?','Помоги назначить цену продажи: как посчитать себестоимость с дорогой и какую сделать наценку.'],['Сколько каждого размера?','Сколько штук каждого размера брать, если беру новую модель?']],
+  m12ResOk:v=>'Запас на дозаказ '+v+' — цел', m12ResEat:v=>'Вы тратите запас на дозаказ — осталось '+v, m12Per:'За штуку с дорогой',
+  m12MixT:'Бюджет по видам товара', m12MixWarn:(p,n)=>p+'% бюджета — '+n.toLowerCase()+'. Проверьте, что так и задумано.',
+  m12NewV:v=>'У новых для вас продавцов берёте на '+v+' — надёжнее начать с пробной партии, а дозаказать, когда увидите продажи.',
+  m12St:p=>'продано '+p+'%', m12StGood:'идёт хорошо', m12StMid:'идёт средне', m12StEarly:w=>'рано судить, прошло '+w+' нед.', m12StLow:w=>'мало за '+w+' нед. Решите: скидка, другая выкладка или больше не брать',
+},
+tg:{
+  m12Acc:'Ранг', m12AccG:'Зумуррад', m12AccV:'Бунафш', m12AccT:'Баҳр',
+  m12PaidPct:p=>p+'% пардохт шуд', m12Month:'Пардохт дар як моҳ', m12AvgRate:'Фоизи миёна', m12Int:'Боз барои фоиз меравад', m12FreeBy:'Бе қарз',
+  m12Year:'дар сол', m12Ends:m=>'пӯшида мешавад: '+m,
+  m12Extra:'Иловапулӣ дар як моҳ', m12Close:'Мепӯшед', m12Sooner:'Пештар', m12Save:'Сарфа мекунед', m12Mo:n=>n+' моҳ',
+  m12StartT:'Сафар барои мол', m12StartP:'Мағозаҳо, акси молҳо бо нарх, фармоишҳо ва карго — дар як ҷо. Бе интернет кор мекунад.',
+  m12SafeNow:'Ҳоло бехатар гирифтан мумкин', m12SafeHow:'Чӣ тавр ҳисоб шуд', m12SafeAsk:'Ҳисоб кардан: чанд гирифтан мумкин', m12Start:'Оғози сафар',
+  m12ChkT:'Пеш аз сафар', m12ChkOf:(k,n)=>k+' аз '+n,
+  m12Chk:{money:'Медонам, чанд гирифтан мумкин, то пардохтҳо зарар набинанд', list:'Рӯйхат тайёр: аз рӯи фурӯш чӣ гирифтан лозим', hold:'20–30% буҷетро барои фармоиши такрории моли серхаридор мемонам', test:'Моли нав ва фурӯшандаи нав — аввал партияи санҷишӣ', why:'Дар бораи ҳар мол медонам: ба кӣ ва бо кадом нарх мефурӯшам', when:'Мол то мавсим мерасад'},
+  m12ChkGo:{money:'Ҳисоб кардан', list:'Кушодан', when:'Кай рафтан'},
+  m12ChkWhy:'Мағозаҳои либос дар ИМА ва Аврупо ҳамин тавр мол мегиранд: буҷетро пешакӣ ҳисоб мекунанд, як қисми пулро барои фармоиши такрорӣ мемонанд, моли навро бо партияи хурд месанҷанд.',
+  m12PhBefore:'Пеш аз сафар', m12PhIn:'Дар сафар', m12PhAfter:'Баъд аз сафар', m12AllTools:'Ҳамаи ёрдамчиён', m12Rates:'Қурбҳо', m12Tags:'Нархномаҳо', m12Markup:'Иловаи нарх',
+  m12AskT:'Аз Сифра пурсед', m12Ask:[['Дар ин сафар чӣ гирам?','Фурӯш ва боқимондаи маро бубин ва маслиҳат деҳ, ки дар ин харид чӣ ва чанд гирам.'],['Бо кадом нарх фурӯшам?','Барои таъин кардани нархи фурӯш кӯмак кун: арзиши аслиро бо роҳ чӣ тавр ҳисоб кунам ва чӣ қадар илова кунам.'],['Аз ҳар андоза чанд?','Агар модели нав гирам, аз ҳар андоза чанд дона гирам?']],
+  m12ResOk:v=>'Захира барои фармоиши такрорӣ '+v+' — бутун аст', m12ResEat:v=>'Шумо захираи фармоиши такрориро харҷ мекунед — '+v+' мондааст', m12Per:'Як дона бо роҳ',
+  m12MixT:'Буҷет аз рӯи намуди мол', m12MixWarn:(p,n)=>p+'% буҷет — '+n.toLowerCase()+'. Санҷед, ки ҳамин тавр мехостед.',
+  m12NewV:v=>'Аз фурӯшандагони нав ба маблағи '+v+' мегиред. Беҳтар аст аввал партияи санҷишӣ гиред ва баъди дидани фурӯш фармоиши такрорӣ диҳед.',
+  m12St:p=>p+'% фурӯхта шуд', m12StGood:'хуб меравад', m12StMid:'миёна меравад', m12StEarly:w=>'ҳоло барвақт аст, '+w+' ҳафта гузашт', m12StLow:w=>'дар '+w+' ҳафта кам. Қарор кунед: тахфиф, ҷои дигар ё дигар нагирифтан',
+},
+en:{
+  m12Acc:'Colour', m12AccG:'Emerald', m12AccV:'Lilac', m12AccT:'Sea',
+  m12PaidPct:p=>p+'% paid', m12Month:'Monthly payment', m12AvgRate:'Average rate', m12Int:'Interest still to pay', m12FreeBy:'Debt-free',
+  m12Year:'a year', m12Ends:m=>'ends: '+m,
+  m12Extra:'Extra per month', m12Close:'Paid off', m12Sooner:'Sooner by', m12Save:'You save', m12Mo:n=>n+' mo.',
+  m12StartT:'Buying trip', m12StartP:'Shops, product photos with prices, orders and cargo in one place. Works offline.',
+  m12SafeNow:'Safe to spend now', m12SafeHow:'How it’s worked out', m12SafeAsk:'Work out how much I can spend', m12Start:'Start a trip',
+  m12ChkT:'Before the trip', m12ChkOf:(k,n)=>k+' of '+n,
+  m12Chk:{money:'I know how much I can spend without risking loan payments', list:'My list is ready: what to restock, based on sales', hold:'I’m keeping 20–30% of the budget for reorders of what sells', test:'New products and new sellers: a trial batch first', why:'For every item I know who will buy it and at what price', when:'The goods will arrive in time for the season'},
+  m12ChkGo:{money:'Work it out', list:'Open', when:'When to go'},
+  m12ChkWhy:'This is how clothing shops in the US and Europe buy: they set the budget in advance, hold some money back for reorders and test new items in small batches.',
+  m12PhBefore:'Before the trip', m12PhIn:'On the trip', m12PhAfter:'After the trip', m12AllTools:'All helpers', m12Rates:'Rates', m12Tags:'Price tags', m12Markup:'Markups',
+  m12AskT:'Ask Sifra', m12Ask:[['What should I buy this trip?','Look at my sales and stock and suggest what to buy on this trip and how much.'],['What price should I sell at?','Help me set a selling price: how to work out the cost with shipping and what markup to use.'],['How many of each size?','How many pieces of each size should I take for a new model?']],
+  m12ResOk:v=>'Reorder reserve of '+v+' is untouched', m12ResEat:v=>'You’re spending the reorder reserve: '+v+' left', m12Per:'Per piece with shipping',
+  m12MixT:'Budget by product type', m12MixWarn:(p,n)=>p+'% of the budget is '+n.toLowerCase()+'. Check that this is what you intended.',
+  m12NewV:v=>'You’re buying '+v+' from sellers that are new to you. It’s safer to start with a trial batch and reorder once you see sales.',
+  m12St:p=>p+'% sold', m12StGood:'selling well', m12StMid:'selling steadily', m12StEarly:w=>'too early to tell, '+w+' wk. in', m12StLow:w=>'low after '+w+' wk. Decide: discount, new display or stop buying it',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M12S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -7602,8 +7759,8 @@ function demoData(){
   const bills=[{id:'db1',name:'Свет',ic:'⚡',sum:180,day:15,own:'home',paid:{},from:mk},{id:'db2',name:'Интернет',ic:'📶',sum:120,day:25,own:'shop',paid:{},from:mk}];
   const goals=[{id:'dg1',name:'Холодильник',ic:'🧊',target:6000,date:D(150)}];
   const envTx=[{id:'dt1',e:'g_dg1',a:1500,d:D(-20),n:''},{id:'dt2',e:'loan',a:400,d:D(-1),n:''},{id:'dt3',e:'cush',a:1000,d:D(-15),n:''}];
-  const inv=[{id:'di1',d:D(-40),ph:false,name:'Платье летнее',cat:'',cost:210,price:320,sup:'Merter Moda',low:1,sizes:{'44':3,'46':1,'48':2}},
-    {id:'di2',d:D(-40),ph:false,name:'Брюки женские',cat:'',cost:190,price:290,sup:'Merter Moda',low:1,sizes:{'44':2,'46':0,'48':3}}];
+  const inv=[{id:'di1',d:D(-40),ph:false,name:'Платье летнее',cat:'',cost:210,price:320,sup:'Merter Moda',trip:'dtr0',vendor:'dv4',low:1,sizes:{'44':3,'46':1,'48':2}},
+    {id:'di2',d:D(-40),ph:false,name:'Брюки женские',cat:'',cost:190,price:290,sup:'Merter Moda',trip:'dtr0',vendor:'dv4',low:1,sizes:{'44':2,'46':0,'48':3}}];
   const sup=[{id:'ds1',name:'Фирюза (опт)',sum:3000,due:D(4),paid:false,phone:'',note:'Платки'}];
   const mon=L.monthsNom||MONTHS.ru.full||[];
   const trips=[
@@ -7630,7 +7787,7 @@ function demoData(){
   const cargo=[{id:'dcg1',trip:'dtr1',ts:2,co:'dcc1',vendors:['dv1','dv2'],st:'sent',dt:{wh:D(-3),sent:D(-2)},sent:D(-2),eta:D(16),places:3,track:'',mode:'kg',kg:null,m3:null,rate:3.5,cur:'USD',pack:null,total:null,paid:false,note:'',ph:0},
     {id:'dcg0',trip:'dtr0',ts:1,co:'dcc2',vendors:['dv4'],st:'got',dt:{wh:D(-63),sent:D(-62),tj:D(-45),got:D(-44)},sent:D(-62),eta:D(-46),places:1,track:'',mode:'kg',kg:18.5,m3:0.12,rate:4,cur:'USD',pack:3,total:null,paid:true,note:'',ph:0,recv:{dp7:20,dp8:12}}];
   return {loans,payments,gold:{grams:8,price:900},shop:{exp,sales},profile:null,envTx,sup,stock:[],planB:null,misc:{},
-    cust,cdebt,home:[],bills,goals,promos:[],shopList:[],inv,invLog:[],prices:[],trips,vendors,tprods,torders,texp,cargo,cargoCo,dayx:{}};
+    cust,cdebt,home:[],bills,goals,promos:[],shopList:[],inv,invLog:[{id:'dil1',i:'di1',s:'44',q:-5,k:'sale',d:D(-30)},{id:'dil2',i:'di1',s:'46',q:-6,k:'sale',d:D(-12)},{id:'dil3',i:'di2',s:'46',q:-4,k:'sale',d:D(-25)},{id:'dil4',i:'di2',s:'44',q:-3,k:'sale',d:D(-9)}],prices:[],trips,vendors,tprods,torders,texp,cargo,cargoCo,dayx:{}};
 }
 function demoSheet(){
   openSheet(`<h3>🎓 ${L.dmTitle}</h3><p class="lead">${L.dmLead}</p><ul class="dm-l">${L.dmPoints.map(x=>`<li>${x}</li>`).join('')}</ul>
@@ -8905,7 +9062,7 @@ document.addEventListener('click', e=>{
    Сервер: API_BASE/api/mk/ai (Claude с веб-поиском). Данные приложения уходят коротким JSON только на время вопроса.
    Всё, что меняет записи, Сифра не сохраняет сама: открывает привычную форму уже заполненной, человек проверяет и жмёт «Записать». */
 const SF_KEEP=24;
-const SF_AVA='<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B7CFF"/><stop offset="1" stop-color="#2F5BFF"/></linearGradient></defs><circle cx="24" cy="24" r="24" fill="url(#sfg)"/><path d="M24 8.500C25.300 18.200 29.800 22.700 39.500 24 29.800 25.300 25.300 29.800 24 39.500 22.700 29.800 18.200 25.300 8.500 24 18.200 22.700 22.700 18.200 24 8.500Z" fill="#fff"/></svg>';
+const SF_AVA='<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="url(#sfg)"/><path d="M24 8.500C25.300 18.200 29.800 22.700 39.500 24 29.800 25.300 25.300 29.800 24 39.500 22.700 29.800 18.200 25.300 8.500 24 18.200 22.700 22.700 18.200 24 8.500Z" fill="#fff"/></svg>';
 function sfLog(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.sf)) state.misc.sf=[]; return state.misc.sf; }
 let sfBusy=false, sfRec=null, sfT=null, sfSayId=0;
 const SF_WAVE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg>';
@@ -9331,6 +9488,134 @@ function m11After(){ m11Aurora(); const list=activeList();
     if(safe||second){ const w=document.createElement('div'); w.className='m11-tiles'; box.insertBefore(w,box.firstChild); if(safe) w.appendChild(safe); if(second) w.insertAdjacentHTML('beforeend',second); if(w.children.length<2) w.style.gridTemplateColumns='1fr'; } } }
 try{ const _r11=render; render=function(){ const x=_r11.apply(this,arguments); try{ m11After(); }catch(e){} return x; }; }catch(e){}
 try{ const _t11=m7Today; m7Today=function(){ const x=_t11.apply(this,arguments); try{ m11After(); }catch(e){} return x; }; }catch(e){}
+
+/* ===================== v12 =====================
+   1) Цвет оформления без синего: изумруд (по умолчанию), сирень, море — выбирает человек.
+   2) «Кредиты»: одна полоса «кому сколько осталось» и четыре главных числа; на карточке — ставка, месяц закрытия, «гасить первым».
+   3) Карточка кредита: ползунок «если платить больше» — сразу видно месяц закрытия и экономию.
+   4) «Закупка»: старт и чек-лист «Перед поездкой», помощники по этапам, запас на дозаказ,
+      бюджет по видам товара, подсказка про новых продавцов, «как продалась прошлая закупка». */
+
+/* ---------- 1. цвет ---------- */
+function m12Acc(){ const a=lsGet('m12acc'); return a==='v'||a==='t'?a:'g'; }
+function m12AccApply(){ const a=m12Acc(), r=document.documentElement; if(a==='g') r.removeAttribute('data-acc'); else r.setAttribute('data-acc',a); }
+m12AccApply();
+try{ const _th12=m8ThemeSheet; m8ThemeSheet=function(){ const x=_th12.apply(this,arguments);
+  try{ const ths=sheet.querySelector('.m8-ths'); if(ths&&!sheet.querySelector('.m12-acc')){ const cur=m12Acc();
+    ths.insertAdjacentHTML('afterend',`<div class="m12-acc-h">${L.m12Acc}</div><div class="m12-acc">${[['g',L.m12AccG],['v',L.m12AccV],['t',L.m12AccT]].map(o=>`<button type="button" data-m12acc="${o[0]}" class="${cur===o[0]?'on':''}" aria-pressed="${cur===o[0]}"><i class="m12-sw-${o[0]}"></i>${o[1]}</button>`).join('')}</div>`);
+    sheet.querySelectorAll('[data-m12acc]').forEach(b=>b.onclick=()=>{ lsSet('m12acc',b.dataset.m12acc); m12AccApply(); m8ThemeSheet(); }); } }catch(e){}
+  return x; }; }catch(e){}
+
+/* градиент значка Сифры — один на всю страницу: одинаковые id в скрытых блоках ломали заливку */
+try{ if(!document.getElementById('sfg')) document.body.insertAdjacentHTML('afterbegin','<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#A78BFF"/><stop offset="1" stop-color="#5B3FE0"/></linearGradient></defs></svg>'); }catch(e){}
+
+/* ---------- 2. «Кредиты» ---------- */
+function m12Pct(v){ return String(Math.round(v*10)/10).replace('.',lang==='en'?'.':','); }
+function m12First(list){ const act=list.filter(x=>!x.a.done); if(act.length<2) return null; let method='snowball'; try{ method=localStorage.getItem('strat_v1')||'snowball'; }catch(e){}
+  const o=method==='avalanche'?[...act].sort((a,b)=>((b.loan.rate||-1)-(a.loan.rate||-1))||(a.a.remaining-b.a.remaining)):[...act].sort((a,b)=>a.a.remaining-b.a.remaining);
+  return o[0]?o[0].loan.id:null; }
+function m12SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.filter(x=>!x.a.done); if(!act.length) return '';
+  const T=m8Totals(real), fr=m8Free(real);
+  const parts=act.map(x=>({n:x.loan.name,v:Math.max(0,x.a.remaining),col:m8Col(x.loan)})).filter(p=>p.v>0).sort((p,q)=>q.v-p.v);
+  const top=parts.slice(0,4); if(parts.length>4) top.push({n:L.m8Other,v:parts.slice(4).reduce((s,p)=>s+p.v,0),col:'var(--muted)'});
+  let mon=0, int=0, rw=0, rb=0; for(const {loan,a} of act){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); int+=Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
+  const st=[`<div><small>${L.m12Month}</small><b>${money(mon)}</b></div>`];
+  if(rb>0) st.push(`<div><small>${L.m12AvgRate}</small><b>${m12Pct(rw/rb)}%</b></div>`);
+  if(int>0) st.push(`<div><small>${L.m12Int}</small><b>${money(Math.round(int))}</b></div>`);
+  if(fr) st.push(`<div class="go"><small>${L.m12FreeBy}</small><b>${m8MonLabel(fr.d)}</b></div>`);
+  return `<div class="m12-sum">
+    <div class="m12-st"><div><small>${L.m8SumT}</small><b>${money(T.left)}</b></div><span class="m12-pill">${L.m12PaidPct(T.pct)}</span></div>
+    ${top.length>1?`<div class="m12-stack" aria-hidden="true">${top.map(p=>`<i style="flex:${Math.max(1,Math.round(p.v))};background:${p.col}"></i>`).join('')}</div>`:''}
+    <div class="m12-leg">${top.map(p=>`<span><i style="background:${p.col}"></i><em>${esc(p.n)}</em><b>${money(p.v)}</b></span>`).join('')}</div>
+    <div class="m12-stats n${st.length}">${st.join('')}</div></div>`; }
+function m12LoansAfter(){ const list=activeList();
+  const s=$('#m8Sum .m8-sum'); if(s&&!s.querySelector('.m12-sum')){ const h=m12SumHTML(list); if(h){ s.insertAdjacentHTML('afterbegin',h); s.classList.add('m12'); } }
+  const first=m12First(list);
+  document.querySelectorAll('#cards .card[data-id]').forEach(c=>{ const old=c.querySelector('.m12-meta'); if(old) old.remove();
+    const it=list.find(x=>String(x.loan.id)===c.dataset.id), main=c.querySelector('.c-main'); if(!it||!main) return; const {loan,a}=it, d=m8LastDue(loan,a), bits=[];
+    if(first===loan.id) bits.push(`<span class="f">${ico('flag',14)}${L.payFirst}</span>`);
+    if(+loan.rate>0) bits.push(`<span>${m12Pct(+loan.rate)}% ${L.m12Year}</span>`);
+    if(d) bits.push(`<span>${L.m12Ends(m8MonLabel(d))}</span>`);
+    if(bits.length) main.insertAdjacentHTML('beforeend',`<div class="m12-meta">${bits.join('')}</div>`); }); }
+
+/* ---------- 3. ползунок «если платить больше» ---------- */
+function m12WhatIf(loan){ const box=sheet.querySelector('.m7-ifm'); if(!box||box.querySelector('#m12wr')) return; const a=analyze(loan), m=m7Amt(a); if(a.done||!(m>0)) return;
+  const step=m>=4000?200:m>=1500?100:50, max=Math.max(step*4,Math.ceil(m/step)*step), last=m8LastDue(loan,a);
+  box.innerHTML=`<b>${L.m7IfMore}</b>
+    <div class="m12-wt"><span>${L.m12Extra}</span><b id="m12wv">+${money(0)}</b></div>
+    <input type="range" class="m12-range" id="m12wr" min="0" max="${max}" step="${step}" value="0" data-nodirty aria-label="${esc(L.m12Extra)}">
+    <div class="m12-wsc" aria-hidden="true"><span>0</span><span>+${m7Num0(max/2)}</span><span>+${m7Num0(max)}</span></div>
+    <div class="m12-wo"><div><small>${L.m12Close}</small><b id="m12w1">—</b></div><div><small>${L.m12Sooner}</small><b id="m12w2">—</b></div><div><small>${L.m12Save}</small><b id="m12w3">—</b></div></div>
+    <p class="m7-ifm-r" id="m7-ifr" aria-live="polite">${L.m7IfPick}</p><small>${L.m7EarlyNote}</small>`;
+  const r=$('#m12wr'), upd=()=>{ const v=+r.value, x=v?m7Extra(loan,a,v):null, end=last?(x&&x.months>0?addMonths(last,-x.months):last):null, on=!!(x&&x.months>0);
+    $('#m12wv').textContent='+'+money(v); $('#m12w1').textContent=end?m8MonLabel(end):'—'; $('#m12w2').textContent=on?L.m12Mo(x.months):'—'; $('#m12w3').textContent=x&&x.saved>0?money(x.saved):'—';
+    $('#m7-ifr').textContent=!v?L.m7IfPick:(!on?L.m7IfSame:(+loan.rate>0&&x.saved>0?L.m7IfRes(x.months,money(x.saved)):L.m7IfResNoRate(x.months)));
+    box.classList.toggle('on',on); r.style.setProperty('--p',(v/max*100).toFixed(1)+'%'); };
+  r.addEventListener('input',upd); upd(); }
+try{ const _d12=detailSheet; detailSheet=function(loan){ const x=_d12.apply(this,arguments); try{ m12WhatIf(loan); }catch(e){} return x; }; }catch(e){}
+
+/* ---------- 4. «Закупка» ---------- */
+function m12Tool(x){ return `<button type="button" ${x[0]}><span>${ico(x[1],22)}</span><small>${esc(x[2])}</small></button>`; }
+function m12Groups(hasTrip){ const nV=state.vendors.length, nC=state.cargoCo.length; return {
+  before:[['data-tmoney="1"','cash',L.tmShort],['data-restock="1"','repeat',L.rsShort],['data-when=""','cal',L.whShort],['data-invest="1"','chart',L.ivShort]],
+  trip:[['data-guide="'+(hasTrip?'trip':'')+'"','pin',L.gdTitleShort],['data-sizes="1"','ruler',L.szShort],['data-labels="1"','tag',L.lbShort],['data-rates="1"','rate',L.m12Rates]],
+  after:[['data-cgco="1"','truck',L.cgCosShort+(nC?' · '+nC:'')],['data-tdir="1"','people',L.trDirShort+(nV?' · '+nV:'')],['data-markup="1"','stats',L.m12Markup],['data-tags="1"','receipt',L.m12Tags]] }; }
+function m12GroupHTML(k,title,items){ return `<div class="m12-g ${k}"><div class="m12-gh">${title}</div><div class="m12-gg">${items.map(m12Tool).join('')}</div></div>`; }
+buyToolsHTML=function(hasTrip){ const g=m12Groups(hasTrip);
+  return `<div class="m12-tools">${m12GroupHTML('before',L.m12PhBefore,g.before)}${m12GroupHTML('trip',L.m12PhIn,g.trip)}${m12GroupHTML('after',L.m12PhAfter,g.after)}</div>`; };
+function m12AskHTML(){ return `<div class="m12-ask"><div class="m12-gh">${SF_AVA}<span>${L.m12AskT}</span></div><div class="m12-askc">${L.m12Ask.map(q=>`<button type="button" data-sifra="${esc(q[1])}">${esc(q[0])}</button>`).join('')}</div></div>`; }
+function m12ChkSt(){ const n=state.trips.length; let o=state.misc.buyChk; if(!o||o.n!==n) o={n,k:{}}; return o; }
+function m12ChkHTML(){ const o=m12ChkSt(), keys=['money','list','hold','test','why','when'], go={money:'data-tmoney="1"',list:'data-restock="1"',when:'data-when=""'};
+  const done=k=>!!o.k[k]||(k==='money'&&+state.misc.cash>0), n=keys.filter(done).length;
+  return `<div class="m12-chk"><div class="m12-chh"><b>${L.m12ChkT}</b><span>${L.m12ChkOf(n,keys.length)}</span></div><div class="m12-chb"><i style="width:${Math.round(n/keys.length*100)}%"></i></div>
+    ${keys.map(k=>`<div class="m12-chr ${done(k)?'on':''}"><button type="button" class="m12-cht" role="checkbox" aria-checked="${done(k)}" data-m12chk="${k}"><i>${ico('check',16)}</i><span>${L.m12Chk[k]}</span></button>${go[k]?`<button type="button" class="m12-chg" ${go[k]}>${L.m12ChkGo[k]}</button>`:''}</div>`).join('')}
+    <p class="m12-chw">${L.m12ChkWhy}</p></div>`; }
+function m12StartHTML(){ const cash=+state.misc.cash||0; let safe=null; try{ if(cash>0) safe=safeBudget(cash).safe; }catch(e){}
+  return `<div class="trip-empty m12-start"><span class="m12-sic">${ico('plane',26)}</span><b>${L.m12StartT}</b><p>${L.m12StartP}</p>
+    ${safe!=null?`<button type="button" class="m12-safe" data-tmoney="1"><span><small>${L.m12SafeNow}</small><b>${money(Math.max(0,safe))}</b></span><em>${L.m12SafeHow}${ico('next',16)}</em></button>`:`<button type="button" class="m12-safe ask" data-tmoney="1"><span>${ico('cash',20)}<b>${L.m12SafeAsk}</b></span>${ico('next',16)}</button>`}
+    <button class="btn btn-primary btn-full" data-tnew="1">${ico('plus',20)} ${L.m12Start}</button>${typeof DEMO!=='undefined'&&!DEMO?`<button class="link-btn" data-demo-on="1" style="margin-top:12px">${L.dmTry}</button>`:''}</div>`; }
+/* как продалась закупка: 60–80% за 4–8 недель — хорошо; меньше 40% — пора решать */
+function m12Sell(t){ const items=state.inv.filter(x=>x.trip===t.id); if(!items.length) return null; let sold=0, left=0, first=null;
+  for(const x of items){ sold+=state.invLog.filter(l=>l.i===x.id&&l.k==='sale').reduce((a,l)=>a-(+l.q||0),0); left+=invTotal(x); if(x.d&&(!first||x.d<first)) first=x.d; }
+  if(!(sold+left>0)) return null; const pct=Math.max(0,Math.min(100,Math.round(sold/(sold+left)*100))), w=first?Math.max(0,Math.floor((today0()-parseYmd(first))/6048e5)):null;
+  const kind=pct>=60?'good':(w!=null&&w<4?'early':(pct<40&&w!=null&&w>=8?'low':'mid'));
+  return {pct,w,kind,txt:kind==='good'?L.m12StGood:kind==='early'?L.m12StEarly(w):kind==='low'?L.m12StLow(w):L.m12StMid}; }
+pastTripsHTML=function(past){ if(!past.length) return '';
+  return `<div class="section-h" style="margin-top:22px"><h2>${L.trPast}</h2></div><div class="cards">${past.map(t=>{ const tt=tripTotals(t), s=m12Sell(t);
+    return `<div class="card m12-past" role="button" tabindex="0" data-topen="${esc(t.id)}"><span class="ava gold">${(TCOUNTRY[t.country]||TCOUNTRY.XX).f}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(t.name)}</span><span class="c-rem">${money(tt.all)}</span></div><div class="c-sub"><span>${t.from?fmtShort(parseYmd(t.from)):''}${t.to?' – '+fmtShort(parseYmd(t.to)):''} · ${tripVendors(t).length} ${L.trShopsW} · ${tripProds(t).length} ${L.trProdsW}</span></div>
+      ${s?`<div class="m12-sell ${s.kind}"><div class="m12-sb"><i style="width:${s.pct}%"></i></div><span><b>${L.m12St(s.pct)}</b> · ${s.txt}</span></div>`:''}</div></div>`; }).join('')}</div>`; };
+const M12_MIX=['#12B886','#7C5CF5','#FFC83D','#F28B6B','#35B5C9','#98A2B3'];
+function m12MixHTML(tr){ const tt=tripTotals(tr); if(tt.buy.length<2) return ''; const by={}; let tot=0;
+  for(const p of tt.buy){ const v=toTJS((+p.price||0)*pcsOf(p),p.cur,tr)||0, k=p.kind||'other'; by[k]=(by[k]||0)+v; tot+=v; }
+  if(!(tot>0)) return ''; const arr=Object.keys(by).map(k=>({k,v:by[k]})).filter(o=>o.v>0).sort((a,b)=>b.v-a.v); if(arr.length<2) return '';
+  const top=arr.slice(0,5); if(arr.length>5) top.push({k:'_',v:arr.slice(5).reduce((s,o)=>s+o.v,0)});
+  const nm=k=>k==='_'||!L['wp_'+k]?L.m8Other:L['wp_'+k], sh=o=>Math.round(o.v/tot*100);
+  return `<div class="m12-mix"><b>${L.m12MixT}</b><div class="m12-stack" aria-hidden="true">${top.map((o,i)=>`<i style="flex:${Math.max(1,Math.round(o.v))};background:${M12_MIX[i]}"></i>`).join('')}</div>
+    <div class="m12-leg">${top.map((o,i)=>`<span><i style="background:${M12_MIX[i]}"></i><em>${esc(nm(o.k))}</em><b>${sh(o)}%</b></span>`).join('')}</div>${sh(top[0])>=60?`<p class="m12-hint">${ico('info',16)}<span>${L.m12MixWarn(sh(top[0]),nm(top[0].k))}</span></p>`:''}</div>`; }
+function m12NewVHTML(tr){ const tt=tripTotals(tr); if(!tt.buy.length||!(tt.sum>0)) return ''; let val=0;
+  for(const p of tt.buy){ const vid=p.vendor, known=state.tprods.some(q=>q.vendor===vid&&q.trip!==tr.id&&q.dec==='buy')||state.inv.some(x=>x.vendor===vid&&x.trip!==tr.id); if(!known) val+=toTJS((+p.price||0)*pcsOf(p),p.cur,tr)||0; }
+  if(!(val>0)||val/tt.sum<0.3) return ''; return `<p class="m12-hint box">${ico('info',16)}<span>${L.m12NewV(money(Math.round(val)))}</span></p>`; }
+try{ const _ts12=tripSumHTML; tripSumHTML=function(tr){ let extra=''; try{ extra=m12MixHTML(tr)+m12NewVHTML(tr); }catch(e){} return extra+_ts12.apply(this,arguments); }; }catch(e){}
+function m12TripExtras(box,tr){ const tt=tripTotals(tr), bud=+tr.budget||0, th=box.querySelector('.trip-h'); if(!th) return; const rows=[];
+  if(bud>0&&tt.all<=bud){ const res=Math.round(bud*0.2), left=bud-tt.all, ok=left>=res; const bar=th.querySelector('.sd-bar'); if(bar) bar.insertAdjacentHTML('beforeend','<em class="m12-mark" style="left:80%"></em>');
+    rows.push(`<div class="m12-res ${ok?'':'eat'}">${ico('repeat',16)}<span>${ok?L.m12ResOk(money(res)):L.m12ResEat(money(Math.max(0,Math.round(left))))}</span></div>`); }
+  if(tt.pcs>0&&tt.all>0) rows.push(`<div class="m12-res per">${ico('tag',16)}<span>${L.m12Per}: <b>${money(Math.round(tt.all/tt.pcs))}</b></span></div>`);
+  if(rows.length) th.insertAdjacentHTML('beforeend',`<div class="m12-tx">${rows.join('')}</div>`); }
+renderBuy=function(){ const box=$('#buyView'); if(!box) return; const tr=activeTrip(), g=m12Groups(!!tr);
+  const back=isSimple()?`<button class="btn btn-ghost btn-full" data-tab="today" style="margin-bottom:12px">← ${L.navToday}</button>`:'';
+  const head=`<div class="section-h buy-h"><h2>${ico('bag',22)} ${L.navBuy}</h2></div>`;
+  if(!tr){ const past=state.trips.slice().sort((a,b)=>String(b.from||'').localeCompare(String(a.from||'')));
+    box.innerHTML=back+head+m12StartHTML()+m12ChkHTML()+m12AskHTML()+buyToolsHTML(false)+pastTripsHTML(past); }
+  else { box.innerHTML=back+head+tripHTML();
+    try{ m12TripExtras(box,tr); }catch(e){}
+    const seg=box.querySelector('.trseg'); if(seg) seg.insertAdjacentHTML('beforebegin',`<div class="m12-strip">${g.trip.map(m12Tool).join('')}<button type="button" class="sf" data-sifra="${esc(L.m12Ask[0][1])}"><span>${SF_AVA}</span><small>${esc(L.sfName)}</small></button></div>`);
+    const past=box.querySelector(':scope > button.btn[data-tdir]'), more=`<details class="m12-more"><summary>${ico('gear',18)}<span>${L.m12AllTools}</span>${ico('down',18)}</summary>${m12GroupHTML('before',L.m12PhBefore,g.before)}${m12GroupHTML('after',L.m12PhAfter,g.after)}${m12AskHTML()}</details>`;
+    if(past) past.insertAdjacentHTML('beforebegin',more); else box.insertAdjacentHTML('beforeend',more); }
+  fillPhotos(box); updBuyFab(); };
+document.addEventListener('click',e=>{ const c=e.target.closest('[data-m12chk]'); if(!c) return; e.stopImmediatePropagation(); const o=m12ChkSt(), k=c.dataset.m12chk; if(o.k[k]) delete o.k[k]; else o.k[k]=1; state.misc.buyChk=o; persist(); renderBuy(); },true);
+
+/* ---------- после отрисовки ---------- */
+try{ const _r12=render; render=function(){ const x=_r12.apply(this,arguments); try{ m12LoansAfter(); }catch(e){} return x; }; }catch(e){}
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
