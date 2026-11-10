@@ -1895,6 +1895,67 @@
   .id-yours p{margin:8px 0 0; font-size:.9rem; line-height:1.45; color:var(--muted); white-space:pre-wrap;}
   .id-acts{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:6px 0 4px;} .id-acts .btn{width:100%; margin:0; min-height:52px; justify-content:center; gap:8px; font-size:.88rem; padding:8px 8px;} .id-acts .btn svg{flex:none; width:20px; height:20px;} .id-acts #id-again{grid-column:1/-1;}
   @media (prefers-reduced-motion:reduce){.id-bava svg,.id-mic.rec{animation:none !important;}}
+  /* ===================== v16: путь к цели, раскладка денег, цель в предложениях и идеях ===================== */
+  .gp-sales{margin-top:10px;} .gp-sales small{display:block; margin:6px 2px 0; font-size:.8rem; line-height:1.35; color:var(--muted);} .gp-sales small.warn{color:var(--warn,#B4531F); font-weight:700;}
+  .gp h4{margin-bottom:2px;} .gp-prod{margin:0 0 10px; font-size:.82rem; font-weight:700; color:var(--muted);}
+  .gp-when{margin:0; font-size:.98rem; font-weight:700; line-height:1.35;} .gp-when b{font-size:1.3rem; font-weight:800; color:var(--m-leaf);} .gp-when.bad{color:var(--warn,#B4531F); font-weight:800;}
+  .gp-low{margin:3px 0 0; font-size:.82rem; color:var(--muted);}
+  .gp-lim{display:flex; gap:10px; align-items:flex-start; margin:12px 0 0; padding:12px; border-radius:16px; background:#FFF4D6; color:#3D2A00;} .gp-lim.m{background:var(--m-leaf-weak); color:var(--ink);}
+  :root[data-theme="dark"] .gp-lim{background:var(--m8-sun-weak,#3A2F14); color:#FFE9B0;} :root[data-theme="dark"] .gp-lim.m{background:var(--m-leaf-weak); color:var(--ink);}
+  .gp-lim svg{flex:none; margin-top:1px;} .gp-lim b{display:block; font-size:.94rem; line-height:1.3;} .gp-lim p{margin:3px 0 0; font-size:.84rem; line-height:1.45;}
+  .gp-y1{margin:12px 0 0; font-size:.88rem; font-weight:700;}
+  .gp-ms{display:grid; gap:9px; margin:14px 0 0;} .gp-m{display:grid; grid-template-columns:auto minmax(0,1fr) auto; column-gap:8px; row-gap:4px; align-items:baseline;}
+  .gp-m span{min-width:2.4em; font-size:.82rem; font-weight:800; color:var(--muted);} .gp-m b{font-size:.94rem; font-variant-numeric:tabular-nums;} .gp-m small{font-size:.8rem; font-weight:700; color:var(--muted); text-align:right;}
+  .gp-m i{grid-column:1/-1; display:block; height:6px; border-radius:99px; background:var(--surface-2); overflow:hidden;} .gp-m i em{display:block; height:100%; border-radius:99px; background:color-mix(in srgb,var(--m11-go,#12B886) 45%,var(--surface));}
+  .gp-m.fin span{color:var(--m-leaf);} .gp-m.fin i em{background:var(--m11-go,#12B886);}
+  .gp h5{margin:18px 0 8px; font-size:.92rem; font-weight:800;}
+  .gp-lev{border:1px solid var(--line); border-radius:14px; padding:9px 12px 3px; margin-bottom:8px; background:var(--surface);} .gp-lev>small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);}
+  .gp-lr{display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:8px; align-items:baseline; width:100%; min-height:44px; padding:8px 0; border:0; border-top:1px solid var(--line); background:none; color:var(--ink); font:inherit; text-align:left; cursor:pointer;} .gp-lev>small+.gp-lr{border-top:0;}
+  .gp-lr.on span{color:var(--m-leaf);} .gp-lr.on b{color:var(--m-leaf);}
+  .gp-lr span{font-size:.9rem; font-weight:700; font-variant-numeric:tabular-nums;} .gp-lr span small{margin-left:4px; padding:2px 7px; border-radius:99px; background:var(--m-leaf-weak); color:var(--m-leaf); font-size:.72rem; font-weight:800; white-space:nowrap;}
+  .gp-lr b{font-size:.9rem; font-weight:800; text-align:right;} .gp-lr.no b{color:var(--muted); font-weight:700;}
+  .gp-lr em{grid-column:1/-1; font-style:normal; font-size:.76rem; font-weight:700; color:var(--m-leaf); text-align:right;} .gp-lr em:empty{display:none;}
+  .gp-dl{flex-wrap:wrap;} .gp-dl .chip{min-height:44px;}
+  .gp-need,.gp-rate,.gp-all{display:flex; gap:8px; align-items:flex-start; margin:10px 0 0; font-size:.88rem; line-height:1.45;} .gp-need svg,.gp-rate svg,.gp-all svg{flex:none; margin-top:2px;}
+  .gp-need{font-weight:700;} .gp-need.ok{color:var(--m-leaf);} .gp-need.bad{color:var(--warn,#B4531F);}
+  .gp-rate{font-size:.82rem; color:var(--muted);} .gp-rate.red{padding:10px 12px; border-radius:12px; background:#FFF4D6; color:#7A4B00;} :root[data-theme="dark"] .gp-rate.red{background:var(--m8-sun-weak,#3A2F14); color:#FFD98A;}
+  .gp-ask{width:100%; margin-top:10px; min-height:44px; text-align:center;}
+  .gp-fast{display:flex; align-items:center; gap:8px; width:100%; min-height:48px; margin:12px 0 0; padding:10px 12px; border:1.5px dashed var(--brand); border-radius:14px; background:transparent; color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+  .gp-fast svg{flex:none; color:var(--m-leaf);} .gp-fast span{flex:1; font-size:.84rem; font-weight:700; line-height:1.35;} .gp-fast b{font-size:.82rem; color:var(--brand-ink); white-space:nowrap;}
+  .gp-how{margin-top:12px;} .gp-how p{margin:0 0 8px; font-size:.82rem; line-height:1.5; color:var(--muted);}
+  .gp-all{font-size:.84rem !important; padding-top:10px; border-top:1px solid var(--line); margin-top:4px !important;}
+  .gp-bar{display:flex; gap:3px; height:12px; margin:8px 0 6px;} .gp-bar i{display:block; min-width:8px; border-radius:4px;}
+  .gp-bar .g,.gp-sp.g i{background:var(--m11-go,#12B886);} .gp-bar .r,.gp-sp.r i{background:var(--m-sun,#FFC83D);} .gp-bar .f,.gp-sp.f i{background:color-mix(in srgb,var(--muted) 45%,var(--surface));}
+  .gp-sp{display:grid; grid-template-columns:auto minmax(0,1fr) auto; column-gap:8px; row-gap:2px; align-items:baseline; padding:9px 0; border-top:1px solid var(--line);} .gp-bar+.gp-sp{border-top:0;}
+  .gp-sp i{width:10px; height:10px; border-radius:3px; align-self:center;} .gp-sp span{font-size:.9rem; font-weight:800;} .gp-sp>b{font-size:.98rem; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .gp-sp small{grid-column:2/-1; font-size:.82rem; line-height:1.45; color:var(--muted);} .gp-sp small b{color:var(--ink);}
+  .of-c.tgt{border-color:var(--brand); background:var(--m-leaf-weak);} .of-c.tgt .of-i{background:var(--brand); color:#fff;} .of-c.tgt p{color:var(--ink);}
+  .of-tag{align-self:flex-start; font-style:normal; font-size:.72rem; font-weight:800; color:var(--m-leaf); margin-top:-2px;}
+  .id-goal{border-color:var(--brand);} .id-goal h4 small{color:var(--m-leaf);} .id-goal.no{border-color:#F0C9B4;} .id-goal.no h4 small{color:var(--warn,#B4531F);}
+  /* сценарии: проценты и срок на своих строках, ничего не обрезается */
+  .iv2-sc em{white-space:normal; overflow:visible;}
+  /* страны одной строкой: название слева, прибыль справа, срок под названием */
+  details.iv2-min summary{display:grid; grid-template-columns:minmax(0,1fr) auto auto; column-gap:8px; row-gap:0; align-items:center;}
+  details.iv2-min summary b{white-space:nowrap; overflow:hidden; text-overflow:ellipsis;} details.iv2-min summary em{grid-column:1/3; grid-row:2;} details.iv2-min summary svg:last-child{grid-column:3; grid-row:1/3;}
+  .gp-sim{display:flex; align-items:center; gap:8px; margin:0 0 10px; padding:8px 10px; border-radius:12px; background:var(--surface-2); font-size:.82rem; font-weight:700;} .gp-sim svg{flex:none;} .gp-sim span{flex:1;}
+  .gp-sim button,.gp-set{border:0; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-weight:800; font-size:.8rem; padding:6px 12px; min-height:36px; cursor:pointer; white-space:nowrap;}
+  .gp-set{margin-top:8px; min-height:40px; background:#fff; color:#3D2A00;} :root[data-theme="dark"] .gp-set{background:rgba(255,255,255,.14); color:#FFE9B0;}
+  .gp-tap{margin:0 2px; font-size:.76rem; color:var(--muted);} .gp-need2{margin:6px 0 0 24px; font-size:.84rem; line-height:1.45;}
+  .gp-both,.gp-home{display:flex; gap:8px; align-items:flex-start; margin:10px 2px 0; font-size:.86rem; line-height:1.45;} .gp-both svg,.gp-home svg{flex:none; margin-top:2px;} .gp-both svg{color:var(--m-leaf);} .gp-both{font-weight:700;} .gp-both b{color:var(--m-leaf);}
+  .gp-home{margin-top:14px;}
+  .gp-dlw{margin:0 0 12px;} .gp-dlw>small{display:block; margin-bottom:6px; font-size:.78rem; font-weight:800; color:var(--muted);}
+  .gp-dlr{margin:0 0 12px; padding:12px; border:1.5px solid var(--brand); border-radius:16px; background:var(--surface);} .gp-dlr.bad{border-color:#F0C9B4;} .gp-dlr .gp-need{margin-top:6px;}
+  .gp-dlh{display:block; font-size:.95rem;} .gp-mini{margin:8px 0 0 24px; border:0; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-weight:800; font-size:.8rem; padding:6px 12px; min-height:38px; cursor:pointer;}
+  .gp-lr span small.dl{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7);}
+  .gp-trips{display:flex; gap:8px; align-items:flex-start; margin:10px 2px 0; font-size:.84rem; line-height:1.45; color:var(--muted);} .gp-trips svg{flex:none; margin-top:2px;}
+  .gp-sales .pin{position:relative; display:block;} .gp-sales .pin input{width:100%; padding-right:3.2em;} .gp-sales .pin b{position:absolute; right:16px; top:50%; transform:translateY(-50%); font-weight:800; color:var(--muted); pointer-events:none;}
+  .gp-planw{margin:0 0 12px;} .gp-planw .gp-mini{margin:8px 0 0;}
+  .gp-plan{display:flex; align-items:center; gap:12px; width:100%; min-height:64px; padding:12px 14px; border:0; border-radius:18px; background:var(--brand); color:#fff; font:inherit; text-align:left; cursor:pointer; box-shadow:var(--shadow);}
+  .gp-plan .sf-ava{flex:none; line-height:0;} .gp-plan .sf-ava svg{width:42px; height:42px;} .gp-plan>span:nth-child(2){flex:1; min-width:0;} .gp-plan b{display:block; font-size:1rem;} .gp-plan small{display:block; margin-top:2px; font-weight:600; line-height:1.35;}
+  .gp-plan:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  .id-stg{display:flex; gap:10px; padding:10px 0; border-top:1px solid var(--line);} .id-stages h4+.id-stg{border-top:0; padding-top:2px;}
+  .id-stg>i{flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--brand); color:#fff; font-style:normal; font-weight:800; font-size:.82rem;}
+  .id-stg>div{min-width:0;} .id-stg small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);} .id-stg p{margin:2px 0 0; font-size:.9rem; line-height:1.45;} .id-stg b{display:block; margin-top:4px; font-size:.86rem; color:var(--m-leaf);}
 </style>
 </head>
 <body>
@@ -4186,6 +4247,163 @@ en:{
   ofRes:'A month’s reserve', ofResD:v=>'Keep '+v+' apart — a month of shop costs. Then buying won’t derail payments.', ofResQ:'I want to build a reserve of one month of shop costs. How do I do it faster?',
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M15S[k]);
+
+/* ----- v16: путь к цели партиями, «Как разложить деньги», цель в предложениях и в разборе идей ----- */
+const gpTimes=(k,one,few,dec)=>{ const r=k>=10?Math.round(k):Math.round(k*10)/10, int=Math.abs(r-Math.round(r))<0.05, n=Math.round(r), few24=n%10>=2&&n%10<=4&&!(n%100>=12&&n%100<=14);
+  return String(int?n:r).replace('.',dec)+' '+(int&&!few24?one:few); };
+const gpDot=s=>/[.!?]$/.test(String(s))?s:s+'.';
+const M16S={
+ru:{
+  gpPlan:'План от Сифры', gpPlanSub:'Разберёт рынок, свежие цены, каналы продаж и ваши кредиты — и разложит путь по этапам.', gpPlanOpen:'Открыть план Сифры', gpPlanHave:(d,v)=>'Составлен '+d+(v?' · '+v:''), gpPlanNew:'Составить заново',
+  gpPlanV:{go:'Цель достижима',careful:'Достижима, но трудно',wait:'Сначала нужно выяснить',no:'В этот срок не выйти'}, gpPlanTitle:t=>'План к цели '+t, gpStages:'План по этапам',
+  gpPlanBusy:['Смотрю ваш расчёт и кредиты…','Ищу свежие цены и комиссии…','Считаю, что даст каждый способ…','Раскладываю путь по этапам…','Собираю план…'],
+  gpPlanQ:(cap,tgt,term,s0,def,need,prod,cn)=>'Составь план, как из '+cap+' сделать '+tgt+(term?' за '+term:'')+'. Магазин продаёт около '+s0+' в месяц'+(def?' (цифра примерная)':'')+'.'+(need?' По расчёту приложения для этого нужно продавать около '+need+' в месяц.':'')+' Основной товар — '+prod+', '+cn+'. Проанализируй рынок, свежие цены, каналы продаж и мои кредиты. Дай план по этапам: что делать, сколько вложить, что это даст — и что реально успеть.',
+  gpDlTop:'За сколько времени', gpDlAny:'Как получится', gpDlOwn:'Свой срок', gpDlOwnL:'Срок в месяцах', gpDlH:t=>'Чтобы успеть за '+t, gpByDl:'к сроку', gpReBtn:'Возвращать всю прибыль',
+  gpSimDl:v=>'Ниже — путь при продажах '+v+' в месяц.', gpTrips:(n,b,m)=>'Закупок за это время: '+n+'. Обычная партия ≈ '+b+', продаётся ≈ '+m+' мес.',
+  gpBoth:(s,d,t)=>'Вместе: продавать '+s+' в месяц и возвращать всю прибыль — '+d+' (через '+t+').',
+  gpSim:v=>'Расчёт «если продавать '+v+' в месяц».', gpSimOff:'Как сейчас', gpSet:'Вписать свои продажи', gpTap:'Нажмите строку — пересчитаю путь.', gpHard:'Это заметно выше обычного: так получается редко.', gpNeedAll:s=>'Если возвращать в товар всю прибыль — ≈ '+s+' в месяц.',
+  gpSales:'Сколько магазин продаёт в месяц', gpSalesDef:'Примерная цифра. Впишите свою — от неё зависит весь срок.', gpSalesFact:'По вашим записям выручки.', gpSalesUsd:v=>'≈ '+v+' в месяц',
+  gpScBatch:v=>'Для партии '+v+'.',
+  gpGoalAt:(d,t)=>'Цель — '+d+' · через '+t, gpNever:'Так цель не достать: больше 20 лет. Ниже — что это изменит.', gpNeg:'Этот товар прибыли не даёт — выберите другой.',
+  gpSmall:'Магазин продаёт слишком мало, чтобы окупить дорогу за товаром.', gpCap:'Этой суммы не хватает даже на дорогу за товаром.',
+  gpLow:d=>'В осторожном сценарии — '+d+'.', gpLowNo:'В осторожном сценарии цель не достать.',
+  gpY:n=>n+' '+(n%10===1&&n%100!==11?'год':n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)?'года':'лет'), gpMo:n=>n+' мес.',
+  gpLimS:'Держат продажи, а не деньги',
+  gpLimSD:(s,b,def,sim)=>(sim?'При продажах ≈ '+s+' в месяц':'Магазин продаёт ≈ '+s+' в месяц'+(def?' — это примерная цифра, впишите свою':'')+'.')+(sim?' в товар':' В товар сейчас')+' есть смысл вложить ≈ '+b+': больше магазин не успеет продать за сезон.',
+  gpLimSD2:(s,def,sim)=>(sim?'При продажах ≈ '+s+' в месяц сначала':'Магазин продаёт ≈ '+s+' в месяц'+(def?' — это примерная цифра, впишите свою':'')+'. Сначала')+' денег хватает на весь товар, который магазин успевает продать, а дальше прибыль копится быстрее, чем растут продажи.',
+  gpLimM:'Держат деньги, а не продажи', gpLimMD:'Всё вложенное магазин успевает продать. Чем больше прибыли возвращаете в товар, тем быстрее растёт сумма.',
+  gpY1:(a,h)=>'За первый год: +'+a+' в дело'+(h?' и '+h+' домой':'')+'.',
+  gpMsHalf:'Полпути', gpMsGoal:'Цель',
+  gpLevT:'Что приблизит цель', gpLevS:'Если продавать в месяц', gpNow:'сейчас', gpSooner:t=>'на '+t+' раньше', gpLater:t=>'на '+t+' позже', gpNo20:'больше 20 лет',
+  gpLevR:'Если возвращать в товар', gpReAll:'всю прибыль', gpRe70:'70% прибыли', gpReHalf:'половину',
+  gpDlT:'Хочу успеть за', gpDl:{12:'1 год',24:'2 года',36:'3 года',60:'5 лет'},
+  gpNeed:(s,tj,x)=>'Нужно продавать ≈ '+s+' в месяц'+(tj?' ('+tj+')':'')+' — '+x+' больше, чем сейчас.', gpX:k=>'в '+gpTimes(k,'раз','раза',','),
+  gpEnough:'При нынешних продажах успеваете.', gpImp:t=>'За этот срок не выйти при любых продажах: товар не успевает обернуться.'+(t?' Самое быстрое — '+gpDot(t):''),
+  gpRate:(x,t,p)=>'×'+x+' за '+t+' — это ≈ '+p+'% в месяц без единого сбоя. В исследованиях малого бизнеса деньги в деле приносят около 5% в месяц.',
+  gpRed:'Такой рост обещают там, где обманывают: высокий доход почти без риска — первый признак обмана.',
+  gpAsk:'Как поднять продажи — разобрать с Сифрой',
+  gpAskQ:(s0,s1,cap,tgt,t)=>'Хочу поднять продажи магазина с '+s0+' до '+s1+' в месяц, чтобы за '+t+' из '+cap+' сделать '+tgt+'. Думаю продавать оптом, через Instagram и Telegram, открыть вторую точку. С чего начать и сколько это даст?',
+  gpFast:(n,cn,d)=>'Быстрее всего к цели: '+n+', '+cn+' — '+d+'.', gpFastGo:'Показать',
+  gpHow:'Как посчитано', gpHowD:'Товар берём партиями, которые магазин успевает продать за сезон или чуть дольше: больше — лежит и уходит со скидкой. Следующую закупку делаете, пока распродаётся предыдущая. Цена продажи — как в расчёте выше. Прибыль делится так, как вы выбрали. Это оценка: цены, сроки и спрос меняются.',
+  gpSplitT:v=>'Как разложить '+v, gpSpG:'В товар сейчас', gpSpGD:(m,p)=>'Столько магазин продаст за '+m+' мес. Прибыль с партии ≈ '+p,
+  gpSpR:'Запас на платежи', gpSpRD:(m,v)=>'Банкам и магазину за '+m+' мес. — '+v, gpSpF:'Свободно', gpSpFD:'В товаре эти деньги сейчас не заработают: магазин не успеет продать.',
+  gpSpLoanC:(pay,n,r,s)=>'Если внести '+pay+' в «'+n+'» ('+r+'% годовых), кредит будет закрыт и '+s+' переплаты останутся у вас.',
+  gpSpLoanP:(pay,n,r,s,m)=>'Если внести '+pay+' в «'+n+'» ('+r+'% годовых), вы не переплатите '+s+' и закончите на '+m+' мес. раньше.',
+  gpSpKeep:'Держите их на следующую партию или на новый канал продаж.', gpSpAll:(v,s)=>'Чтобы работали все '+v+', продавать нужно ≈ '+s+' в месяц.',
+  ofGoalS:t=>'Цель '+t+': держат продажи', ofGoalM:t=>'Цель '+t+': держат деньги',
+  ofGoalSD:(s0,d0,s1,d1)=>'При продажах '+s0+' в месяц цель — '+d0+'. Если продавать '+s1+' — '+d1+'. Начните с одного нового канала продаж.',
+  ofGoalSD0:(s0,s1,d1)=>'При продажах '+s0+' в месяц цель не достать. Если продавать '+s1+' — '+d1+'.',
+  ofGoalSD1:s0=>'При продажах '+s0+' в месяц цель не достать. Сначала нужны новые покупатели: опт, соцсети, вторая точка.',
+  ofGoalMD:d=>'По расчёту цель — '+d+'. Быстрее, если возвращать в товар всю прибыль и не держать товар дольше сезона.',
+  ofGoalQ:(s0,s1,cap,tgt)=>'Хочу поднять продажи магазина с '+s0+' до '+s1+' в месяц, чтобы быстрее прийти к цели '+tgt+' (сейчас '+cap+'). Думаю про опт, Instagram и Telegram. С чего начать и сколько это даст?',
+  ofGoalQM:(cap,tgt)=>'Хочу быстрее прийти к цели '+tgt+' (сейчас '+cap+'): возвращать в товар всю прибыль и быстрее оборачивать деньги. Как это сделать и что это даст?',
+  ofBatch:(c,cn,b,p,m)=>c+', '+cn+': партия '+b+' → +'+p+' за '+m+' мес.',
+  ofBatchD:e=>(e?'Товар успеет к празднику «'+e+'». ':'')+'Столько магазин продаст за сезон — больше брать незачем. Проверьте расчёт и риски.',
+  ofGoalTag:'К цели',
+  idGoalNote:(cap,tgt,d,t)=>'Моя цель: из '+cap+' сделать '+tgt+(t?' за '+t:'')+'.'+(d?' По расчёту приложения при нынешних продажах это '+d+'.':'')+' Скажи честно, насколько эта идея приближает цель и за какое время.',
+  idGoalT:'К цели', idFit:{yes:'приближает',part:'приближает немного',no:'не ведёт к цели'},
+},
+tg:{
+  gpPlan:'Нақша аз Сифра', gpPlanSub:'Бозор, нархҳои тоза, роҳҳои фурӯш ва қарзҳои шуморо таҳлил мекунад — ва роҳро ба марҳилаҳо ҷудо мекунад.', gpPlanOpen:'Нақшаи Сифраро кушодан', gpPlanHave:(d,v)=>'Тартиб дода шуд: '+d+(v?' · '+v:''), gpPlanNew:'Аз нав тартиб додан',
+  gpPlanV:{go:'Ба ҳадаф расидан мумкин',careful:'Мумкин, вале душвор',wait:'Аввал бояд фаҳмид',no:'Дар ин мӯҳлат намешавад'}, gpPlanTitle:t=>'Нақша то ҳадафи '+t, gpStages:'Нақша аз рӯи марҳилаҳо',
+  gpPlanBusy:['Ҳисоб ва қарзҳои шуморо мебинам…','Нархҳо ва комиссияҳои тозаро меҷӯям…','Ҳисоб мекунам, ки ҳар роҳ чӣ медиҳад…','Роҳро ба марҳилаҳо ҷудо мекунам…','Нақшаро ҷамъ мекунам…'],
+  gpPlanQ:(cap,tgt,term,s0,def,need,prod,cn)=>'Нақша тартиб деҳ, ки чӣ тавр аз '+cap+' '+tgt+' созам'+(term?' дар '+term:'')+'. Мағоза дар як моҳ тақрибан '+s0+' мефурӯшад'+(def?' (рақам тахминӣ аст)':'')+'.'+(need?' Аз рӯи ҳисоби барнома барои ин дар як моҳ тақрибан '+need+' фурӯхтан лозим.':'')+' Моли асосӣ — '+prod+', '+cn+'. Бозор, нархҳои тоза, роҳҳои фурӯш ва қарзҳои маро таҳлил кун. Нақшаро аз рӯи марҳилаҳо деҳ: чӣ кор кунам, чӣ қадар гузорам, ин чӣ медиҳад — ва ба чӣ воқеан расидан мумкин.',
+  gpDlTop:'Дар чанд вақт', gpDlAny:'Ҳар тавре шавад', gpDlOwn:'Мӯҳлати худ', gpDlOwnL:'Мӯҳлат бо моҳ', gpDlH:t=>'Барои дар '+t+' расидан', gpByDl:'то мӯҳлат', gpReBtn:'Тамоми фоидаро баргардондан',
+  gpSimDl:v=>'Дар поён — роҳ бо фурӯши '+v+' дар як моҳ.', gpTrips:(n,b,m)=>'Харидҳо дар ин муддат: '+n+'. Партияи муқаррарӣ ≈ '+b+', дар ≈ '+m+' моҳ фурӯхта мешавад.',
+  gpBoth:(s,d,t)=>'Якҷоя: дар як моҳ '+s+' фурӯхтан ва тамоми фоидаро баргардондан — '+d+' (баъди '+t+').',
+  gpSim:v=>'Ҳисоб «агар дар як моҳ '+v+' фурӯшед».', gpSimOff:'Мисли ҳозира', gpSet:'Фурӯши худро навиштан', gpTap:'Сатрро пахш кунед — роҳро аз нав ҳисоб мекунам.', gpHard:'Ин аз муқаррарӣ хеле баландтар аст: чунин кам мешавад.', gpNeedAll:s=>'Агар тамоми фоидаро ба мол баргардонед — ≈ '+s+' дар як моҳ.',
+  gpSales:'Мағоза дар як моҳ чанд мефурӯшад', gpSalesDef:'Рақами тахминӣ. Рақами худро нависед — тамоми мӯҳлат аз он вобаста аст.', gpSalesFact:'Аз рӯи сабтҳои даромади шумо.', gpSalesUsd:v=>'≈ '+v+' дар як моҳ',
+  gpScBatch:v=>'Барои партияи '+v+'.',
+  gpGoalAt:(d,t)=>'Ҳадаф — '+d+' · баъди '+t, gpNever:'Ин тавр ба ҳадаф намерасед: зиёда аз 20 сол. Дар поён — чӣ инро тағйир медиҳад.', gpNeg:'Ин мол фоида намедиҳад — дигарашро интихоб кунед.',
+  gpSmall:'Мағоза хеле кам мефурӯшад, ки хароҷоти роҳи молро пӯшонад.', gpCap:'Ин маблағ ҳатто ба роҳи мол намерасад.',
+  gpLow:d=>'Дар сенарияи эҳтиёткорона — '+d+'.', gpLowNo:'Дар сенарияи эҳтиёткорона ба ҳадаф намерасед.',
+  gpY:n=>n+' сол', gpMo:n=>n+' моҳ',
+  gpLimS:'Монеа — фурӯш, на пул',
+  gpLimSD:(s,b,def,sim)=>(sim?'Бо фурӯши ≈ '+s+' дар як моҳ':'Мағоза дар як моҳ ≈ '+s+' мефурӯшад'+(def?' — ин рақами тахминӣ аст, рақами худро нависед':'')+'. Ҳоло')+' ба мол ≈ '+b+' гузоштан маъно дорад: зиёдашро мағоза дар мавсим фурӯхта наметавонад.',
+  gpLimSD2:(s,def,sim)=>(sim?'Бо фурӯши ≈ '+s+' дар як моҳ аввал':'Мағоза дар як моҳ ≈ '+s+' мефурӯшад'+(def?' — ин рақами тахминӣ аст, рақами худро нависед':'')+'. Аввал')+' пул ба ҳамаи моле, ки мағоза фурӯхта метавонад, мерасад, баъд фоида аз афзоиши фурӯш тезтар ҷамъ мешавад.',
+  gpLimM:'Монеа — пул, на фурӯш', gpLimMD:'Ҳар чӣ гузошта шавад, мағоза фурӯхта метавонад. Ҳар қадар бештар фоидаро ба мол баргардонед, маблағ ҳамон қадар тезтар меафзояд.',
+  gpY1:(a,h)=>'Дар соли аввал: +'+a+' ба кор'+(h?' ва '+h+' ба хона':'')+'.',
+  gpMsHalf:'Нисфи роҳ', gpMsGoal:'Ҳадаф',
+  gpLevT:'Чӣ ҳадафро наздик мекунад', gpLevS:'Агар дар як моҳ фурӯшед', gpNow:'ҳозир', gpSooner:t=>t+' пештар', gpLater:t=>t+' дертар', gpNo20:'зиёда аз 20 сол',
+  gpLevR:'Агар ба мол баргардонед', gpReAll:'тамоми фоидаро', gpRe70:'70% фоидаро', gpReHalf:'нисфашро',
+  gpDlT:'Мехоҳам дар ин муддат расам', gpDl:{12:'1 сол',24:'2 сол',36:'3 сол',60:'5 сол'},
+  gpNeed:(s,tj,x)=>'Дар як моҳ ≈ '+s+(tj?' ('+tj+')':'')+' фурӯхтан лозим — '+x+' зиёдтар аз ҳозира.', gpX:k=>gpTimes(k,'маротиба','маротиба',','),
+  gpEnough:'Бо фурӯши ҳозира мерасед.', gpImp:t=>'Дар ин мӯҳлат бо ҳар гуна фурӯш намерасед: мол барои гардиш вақт намеёбад.'+(t?' Тезтарин — '+gpDot(t):''),
+  gpRate:(x,t,p)=>'×'+x+' дар '+t+' — ин ≈ '+p+'% дар як моҳ бе ягон нокомӣ. Дар тадқиқотҳои тиҷорати хурд пул дар кор тақрибан 5% дар як моҳ медиҳад.',
+  gpRed:'Чунин афзоишро он ҷое ваъда медиҳанд, ки фиреб мекунанд: даромади баланд қариб бе хатар — нишонаи аввали фиреб.',
+  gpAsk:'Фурӯшро чӣ тавр зиёд кардан — бо Сифра таҳлил',
+  gpAskQ:(s0,s1,cap,tgt,t)=>'Мехоҳам фурӯши мағозаро аз '+s0+' то '+s1+' дар як моҳ расонам, то дар '+t+' аз '+cap+' '+tgt+' созам. Фикр дорам яклухт, тавассути Instagram ва Telegram фурӯшам, нуқтаи дуюм кушоям. Аз чӣ сар кунам ва ин чӣ қадар медиҳад?',
+  gpFast:(n,cn,d)=>'Тезтарин роҳ ба ҳадаф: '+n+', '+cn+' — '+d+'.', gpFastGo:'Нишон додан',
+  gpHow:'Чӣ тавр ҳисоб шуд', gpHowD:'Молро бо партияҳое мегирем, ки мағоза дар мавсим ё каме дертар фурӯхта метавонад: зиёдаш мехобад ва бо тахфиф меравад. Хариди навбатиро то тамом шудани партияи пешина мекунед. Нархи фурӯш — мисли ҳисоби боло. Фоида ҳамон тавр тақсим мешавад, ки шумо интихоб кардед. Ин баҳодиҳӣ аст: нархҳо, мӯҳлатҳо ва талабот тағйир меёбанд.',
+  gpSplitT:v=>v+'-ро чӣ тавр тақсим кардан', gpSpG:'Ҳоло ба мол', gpSpGD:(m,p)=>'Мағоза ҳамин қадарро дар '+m+' моҳ мефурӯшад. Фоида аз партия ≈ '+p,
+  gpSpR:'Захира барои пардохтҳо', gpSpRD:(m,v)=>'Ба бонкҳо ва мағоза дар '+m+' моҳ — '+v, gpSpF:'Озод', gpSpFD:'Дар мол ин пул ҳоло кор намекунад: мағоза фурӯхта наметавонад.',
+  gpSpLoanC:(pay,n,r,s)=>'Агар '+pay+' ба «'+n+'» ('+r+'% дар сол) супоред, қарз пӯшида мешавад ва '+s+' фоизи зиёдатӣ ба шумо мемонад.',
+  gpSpLoanP:(pay,n,r,s,m)=>'Агар '+pay+' ба «'+n+'» ('+r+'% дар сол) супоред, '+s+' зиёдатӣ намедиҳед ва '+m+' моҳ пештар тамом мекунед.',
+  gpSpKeep:'Онро барои партияи оянда ё роҳи нави фурӯш нигоҳ доред.', gpSpAll:(v,s)=>'Барои он ки тамоми '+v+' кор кунад, дар як моҳ ≈ '+s+' фурӯхтан лозим.',
+  ofGoalS:t=>'Ҳадаф '+t+': монеа — фурӯш', ofGoalM:t=>'Ҳадаф '+t+': монеа — пул',
+  ofGoalSD:(s0,d0,s1,d1)=>'Бо фурӯши '+s0+' дар як моҳ ҳадаф — '+d0+'. Агар '+s1+' фурӯшед — '+d1+'. Аз як роҳи нави фурӯш сар кунед.',
+  ofGoalSD0:(s0,s1,d1)=>'Бо фурӯши '+s0+' дар як моҳ ба ҳадаф намерасед. Агар '+s1+' фурӯшед — '+d1+'.',
+  ofGoalSD1:s0=>'Бо фурӯши '+s0+' дар як моҳ ба ҳадаф намерасед. Аввал харидорони нав лозим: яклухт, шабакаҳои иҷтимоӣ, нуқтаи дуюм.',
+  ofGoalMD:d=>'Аз рӯи ҳисоб ҳадаф — '+d+'. Тезтар мешавад, агар тамоми фоидаро ба мол баргардонед ва молро аз мавсим дарозтар нигоҳ надоред.',
+  ofGoalQ:(s0,s1,cap,tgt)=>'Мехоҳам фурӯши мағозаро аз '+s0+' то '+s1+' дар як моҳ расонам, то ба ҳадафи '+tgt+' тезтар расам (ҳоло '+cap+'). Дар бораи яклухт, Instagram ва Telegram фикр дорам. Аз чӣ сар кунам ва ин чӣ қадар медиҳад?',
+  ofGoalQM:(cap,tgt)=>'Мехоҳам ба ҳадафи '+tgt+' тезтар расам (ҳоло '+cap+'): тамоми фоидаро ба мол баргардонам ва пулро тезтар гардонам. Инро чӣ тавр кунам ва чӣ медиҳад?',
+  ofBatch:(c,cn,b,p,m)=>c+', '+cn+': партия '+b+' → +'+p+' дар '+m+' моҳ',
+  ofBatchD:e=>(e?'Мол то иди «'+e+'» мерасад. ':'')+'Мағоза ҳамин қадарро дар мавсим мефурӯшад — зиёд гирифтан лозим нест. Ҳисоб ва хатарҳоро санҷед.',
+  ofGoalTag:'Ба ҳадаф',
+  idGoalNote:(cap,tgt,d,t)=>'Ҳадафи ман: аз '+cap+' '+tgt+' сохтан'+(t?' дар '+t:'')+'.'+(d?' Аз рӯи ҳисоби барнома бо фурӯши ҳозира ин '+d+' аст.':'')+' Рост бигӯ, ин идея ҳадафро то чӣ андоза ва дар кадом муддат наздик мекунад.',
+  idGoalT:'Ба ҳадаф', idFit:{yes:'наздик мекунад',part:'каме наздик мекунад',no:'ба ҳадаф намебарад'},
+},
+en:{
+  gpPlan:'A plan from Sifra', gpPlanSub:'She’ll look at the market, fresh prices, sales channels and your loans — and lay the path out in stages.', gpPlanOpen:'Open Sifra’s plan', gpPlanHave:(d,v)=>'Made on '+d+(v?' · '+v:''), gpPlanNew:'Make a new one',
+  gpPlanV:{go:'The goal is reachable',careful:'Reachable, but hard',wait:'Some things to find out first',no:'Not in this time'}, gpPlanTitle:t=>'Plan to reach '+t, gpStages:'The plan in stages',
+  gpPlanBusy:['Looking at your estimate and loans…','Searching for fresh prices and fees…','Working out what each option brings…','Laying the path out in stages…','Putting the plan together…'],
+  gpPlanQ:(cap,tgt,term,s0,def,need,prod,cn)=>'Make a plan to turn '+cap+' into '+tgt+(term?' in '+term:'')+'. The shop sells about '+s0+' a month'+(def?' (a rough figure)':'')+'.'+(need?' By the app’s estimate that takes sales of about '+need+' a month.':'')+' The main product is '+prod+', '+cn+'. Analyse the market, fresh prices, sales channels and my loans. Give a plan in stages: what to do, how much to put in, what it brings — and what is realistic.',
+  gpDlTop:'In how much time', gpDlAny:'However long it takes', gpDlOwn:'My own', gpDlOwnL:'Time in months', gpDlH:t=>'To get there in '+t, gpByDl:'for the deadline', gpReBtn:'Put all the profit back',
+  gpSimDl:v=>'Below is the path at sales of '+v+' a month.', gpTrips:(n,b,m)=>'Purchases over this time: '+n+'. A typical batch is ≈ '+b+' and sells in ≈ '+m+' mo.',
+  gpBoth:(s,d,t)=>'Together: sell '+s+' a month and put all the profit back — '+d+' (in '+t+').',
+  gpSim:v=>'Estimate “if you sell '+v+' a month”.', gpSimOff:'As now', gpSet:'Enter my sales', gpTap:'Tap a row and I’ll recalculate the path.', gpHard:'That is well above the usual: it rarely works out.', gpNeedAll:s=>'If all the profit goes back into goods — ≈ '+s+' a month.',
+  gpSales:'How much the shop sells a month', gpSalesDef:'A rough figure. Enter your own — the whole timeline depends on it.', gpSalesFact:'From your revenue records.', gpSalesUsd:v=>'≈ '+v+' a month',
+  gpScBatch:v=>'For a batch of '+v+'.',
+  gpGoalAt:(d,t)=>'Goal — '+d+' · in '+t, gpNever:'The goal is out of reach this way: more than 20 years. Below is what would change that.', gpNeg:'This product makes no profit — pick another.',
+  gpSmall:'The shop sells too little to cover the trip for goods.', gpCap:'This amount doesn’t even cover the trip for goods.',
+  gpLow:d=>'In the cautious scenario — '+d+'.', gpLowNo:'In the cautious scenario the goal is out of reach.',
+  gpY:n=>n+' yr', gpMo:n=>n+' mo',
+  gpLimS:'Sales hold you back, not money',
+  gpLimSD:(s,b,def,sim)=>(sim?'At sales of ≈ '+s+' a month':'The shop sells ≈ '+s+' a month'+(def?' — a rough figure, enter your own':'')+'. Right now')+' it makes sense to put ≈ '+b+' into goods: the shop can’t sell more in a season.',
+  gpLimSD2:(s,def,sim)=>(sim?'At sales of ≈ '+s+' a month, at first':'The shop sells ≈ '+s+' a month'+(def?' — a rough figure, enter your own':'')+'. At first')+' the money covers everything the shop can sell; later profit builds up faster than sales grow.',
+  gpLimM:'Money holds you back, not sales', gpLimMD:'The shop can sell everything you put in. The more profit goes back into goods, the faster the amount grows.',
+  gpY1:(a,h)=>'In the first year: +'+a+' into the business'+(h?' and '+h+' taken home':'')+'.',
+  gpMsHalf:'Halfway', gpMsGoal:'Goal',
+  gpLevT:'What brings the goal closer', gpLevS:'If you sell per month', gpNow:'now', gpSooner:t=>t+' sooner', gpLater:t=>t+' later', gpNo20:'more than 20 years',
+  gpLevR:'If you put back into goods', gpReAll:'all the profit', gpRe70:'70% of the profit', gpReHalf:'half',
+  gpDlT:'I want to get there in', gpDl:{12:'1 year',24:'2 years',36:'3 years',60:'5 years'},
+  gpNeed:(s,tj,x)=>'You need to sell ≈ '+s+' a month'+(tj?' ('+tj+')':'')+' — '+x+' more than now.', gpX:k=>gpTimes(k,'times','times','.'),
+  gpEnough:'At today’s sales you make it.', gpImp:t=>'Not reachable in this time at any level of sales: the goods can’t turn over fast enough.'+(t?' The fastest is '+gpDot(t):''),
+  gpRate:(x,t,p)=>'×'+x+' in '+t+' means ≈ '+p+'% a month without a single setback. In studies of small businesses, money put to work earns about 5% a month.',
+  gpRed:'Growth like this is promised where people get cheated: high returns with almost no risk are the first sign of fraud.',
+  gpAsk:'How to raise sales — analyse with Sifra',
+  gpAskQ:(s0,s1,cap,tgt,t)=>'I want to raise the shop’s sales from '+s0+' to '+s1+' a month, to turn '+cap+' into '+tgt+' in '+t+'. I’m thinking of wholesale, Instagram and Telegram, and a second outlet. Where do I start and how much will it bring?',
+  gpFast:(n,cn,d)=>'Fastest way to the goal: '+n+', '+cn+' — '+d+'.', gpFastGo:'Show',
+  gpHow:'How it’s calculated', gpHowD:'Goods are bought in batches the shop can sell in a season or a little longer: more than that sits and goes at a discount. You make the next purchase while the previous batch sells out. The selling price is the same as in the estimate above. Profit is split the way you chose. This is an estimate: prices, timing and demand change.',
+  gpSplitT:v=>'How to split '+v, gpSpG:'Into goods now', gpSpGD:(m,p)=>'That’s what the shop sells in '+m+' mo. Profit from the batch ≈ '+p,
+  gpSpR:'Reserve for payments', gpSpRD:(m,v)=>'For the banks and the shop over '+m+' mo. — '+v, gpSpF:'Free', gpSpFD:'In goods this money won’t earn right now: the shop can’t sell that much.',
+  gpSpLoanC:(pay,n,r,s)=>'If you pay '+pay+' into “'+n+'” ('+r+'% a year), the loan is closed and you avoid '+s+' in interest.',
+  gpSpLoanP:(pay,n,r,s,m)=>'If you pay '+pay+' into “'+n+'” ('+r+'% a year), you avoid '+s+' in interest and finish '+m+' mo. sooner.',
+  gpSpKeep:'Keep it for the next batch or for a new sales channel.', gpSpAll:(v,s)=>'For all '+v+' to work, you need to sell ≈ '+s+' a month.',
+  ofGoalS:t=>'Goal '+t+': sales hold it back', ofGoalM:t=>'Goal '+t+': money holds it back',
+  ofGoalSD:(s0,d0,s1,d1)=>'At '+s0+' a month the goal is '+d0+'. If you sell '+s1+' — '+d1+'. Start with one new sales channel.',
+  ofGoalSD0:(s0,s1,d1)=>'At '+s0+' a month the goal is out of reach. If you sell '+s1+' — '+d1+'.',
+  ofGoalSD1:s0=>'At '+s0+' a month the goal is out of reach. New customers come first: wholesale, social media, a second outlet.',
+  ofGoalMD:d=>'By the estimate the goal is '+d+'. It’s faster if all the profit goes back into goods and stock isn’t kept beyond the season.',
+  ofGoalQ:(s0,s1,cap,tgt)=>'I want to raise the shop’s sales from '+s0+' to '+s1+' a month to reach my goal of '+tgt+' sooner (I have '+cap+' now). I’m thinking of wholesale, Instagram and Telegram. Where do I start and how much will it bring?',
+  ofGoalQM:(cap,tgt)=>'I want to reach my goal of '+tgt+' sooner (I have '+cap+' now): put all the profit back into goods and turn the money over faster. How do I do it and what will it bring?',
+  ofBatch:(c,cn,b,p,m)=>c+', '+cn+': a '+b+' batch → +'+p+' in '+m+' mo.',
+  ofBatchD:e=>(e?'The goods will arrive in time for “'+e+'”. ':'')+'That’s what the shop sells in a season — no need to buy more. Check the estimate and the risks.',
+  ofGoalTag:'Towards the goal',
+  idGoalNote:(cap,tgt,d,t)=>'My goal: turn '+cap+' into '+tgt+(t?' in '+t:'')+'.'+(d?' By the app’s estimate, at today’s sales that is '+d+'.':'')+' Tell me honestly how much this idea brings the goal closer and over what time.',
+  idGoalT:'Towards the goal', idFit:{yes:'brings it closer',part:'brings it a little closer',no:'doesn’t lead to the goal'},
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M16S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -9369,7 +9587,7 @@ function sfCtx(){ const o={today:ymd(new Date())};
   try{ const P=ivP(), st=ivStart(), cap=ivCapUSD()>0?ivCapUSD():5000;
     o.invest={capital:+P.cap||0,cur:P.cur||'USD',basis_usd:Math.round(cap),note:'прибыль и % для basis_usd по ценам приложения; months — от закупки до продажи',
       by_category:IV_CATS.map(k=>{ const a=ivCalc(k,'CN',st,cap), b=ivCalc(k,'TR',st,cap); return {cat:k,name:L['whC_'+k]||k,cn_profit_usd:Math.round(a.profit),cn_pct:Math.round(a.roi*100),tr_profit_usd:Math.round(b.profit),tr_pct:Math.round(b.roi*100),months:Math.round(Math.max(a.totalM,b.totalM)*10)/10,season:a.se.k}; })}; }catch(e){}
-  try{ if(o.invest){ o.invest.goal_usd=Math.round(ivTargetUSD()); o.invest.reinvest_pct=ivRe(); } }catch(e){}
+  try{ if(o.invest){ o.invest.goal_usd=Math.round(ivTargetUSD()); o.invest.reinvest_pct=ivRe(); const g=ivGoalCtx(); if(g) o.invest.goal=g; } }catch(e){}
   try{ const t=(state.trips||[]).slice(-3).map(x=>({country:x.country||null,date:x.d||x.date||x.start||null})); if(t.length) o.recent_trips=t; }catch(e){}
   return o; }
 /* простой markdown: **жирный**, списки, заголовки, абзацы */
@@ -10068,7 +10286,7 @@ ivCalc=function(cat,c,startD,capUSD,sc){ const P=ivP(), d=ivDef(cat), i=IV_C.ind
   const cgr=ivCgRate(c), trip=+P.trip[c]>0?+P.trip[c]:IV_TRIP[c], othP=P.oth!=null&&P.oth!==''?+P.oth:3, oth=othP/100, cap=capUSD!=null?capUSD:ivCapUSD();
   const perPc=unit*(1+oth)+w*cgr, pcs=perPc>0?Math.max(0,Math.floor((cap-trip)/perPc)):0, landed=pcs?perPc+trip/pcs:perPc;
   /* цену продажи считаем от обычной закупочной цены: в осторожном сценарии товар подорожал, а поднять цену в магазине не получилось */
-  const retail=(pcs?unit0*(1+oth)+w*cgr+trip/pcs:unit0*(1+oth)+w*cgr)*(1+mk/100);
+  const retail=sc&&sc.rp>0?sc.rp:(pcs?unit0*(1+oth)+w*cgr+trip/pcs:unit0*(1+oth)+w*cgr)*(1+mk/100);
   const cg=whCargo(c).d, buy=WH_BUY[c]||5, arrive=addDays(startD,buy+cg+2), se=ivSeason(cat,arrive);
   let months=d.m, full=P.full!=null&&P.full!==''?+P.full:75; const disc=P.disc!=null&&P.disc!==''?+P.disc:30;
   if(se.k==='in'){ months=Math.max(2,months-1); full=Math.min(95,full+10); } else if(se.k==='off'){ months+=1; full=Math.max(30,full-10); }
@@ -10104,24 +10322,31 @@ function ivReserve(months){ let loans=0; const n=Math.max(1,Math.ceil(months)); 
 function ivTop3(st){ const cap=ivCapUSD(); return IV_CATS.map(k=>{ const a=ivCalc(k,'CN',st,cap), b=ivCalc(k,'TR',st,cap), r=a.roi>=b.roi?a:b; return {k,r}; }).filter(x=>x.r.profit>0).sort((a,b)=>b.r.perMo-a.r.perMo).slice(0,3); }
 const ivN=v=>Math.round(v).toLocaleString('ru-RU').replace(/,/g,' ');
 function ivCapFmt(v){ return (ivP().cur||'USD')==='USD'?ivUsd(v):money(v*(usdRate()||0)); }
-function ivShareText(best,low,cy){ const P=ivP(), g=ivGoal(), st=ivStart(); const lines=[L.ivTitle+': '+(L['whC_'+best.cat]||best.cat)+', '+(L['cn_'+best.c]||best.c)];
+function ivShareText(best,low,GD){ const P=ivP(), g=ivGoal(), st=ivStart(); const lines=[L.ivTitle+': '+(L['whC_'+best.cat]||best.cat)+', '+(L['cn_'+best.c]||best.c)];
   lines.push(L.ivCap+': '+ivCapFmt(best.cap));
   lines.push(L.ivSc2+': '+(best.profit>0?'+':'')+ivUsd(best.profit)+' ('+Math.round(best.roi*100)+'%) · '+L.ivSc1+': '+(low.profit>0?'+':'')+ivUsd(low.profit));
   lines.push(L.ivShareTime(Math.round((best.arrive-st)/864e5),fx(best.totalM,1)));
-  if(cy&&cy.ok) lines.push(L.ivCyOk(cy.out.length,fx(cy.m,0)).replace(/^✓\s*/,'')+' ('+ivUsd(cy.tgt)+')');
+  if(GD&&GD.pl.ok) lines.push(L.ivShareGoal+' '+ivUsd(GD.tgt)+': '+ivGoalWhen(GD,GD.pl.m)+' ('+ivDur(GD.pl.m)+')');
   lines.push(L.ivShareNote); return lines.join('\n'); }
 investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } if(!P.cat) P.cat='kids'; if(!P.tgt) P.tgt=2;
-  const hasLoans=ivDebtTJS()>0; let lastShare=null;
+  const hasLoans=ivDebtTJS()>0; let lastShare=null, pickCat=()=>{}, simS=null;
   const goalChips=()=>{ const g=ivGoal(); return IV_X.map(x=>`<button class="chip ${g.k==='x'&&g.v===x?'on':''}" data-ivt="${x}">×${String(x).replace('.',lang==='en'?'.':',')}</button>`).join('')
     +`<button class="chip ${g.k==='sum'?'on':''}" data-ivg="sum">${L.ivGoalOwn}</button>`+(hasLoans?`<button class="chip ${g.k==='loans'?'on':''}" data-ivg="loans">${L.ivGoalLoans}</button>`:''); };
+  /* срок: «как получится», готовые варианты или свой — в месяцах */
+  const dlChips=()=>{ const d=+P.dl||0, own=!!P.dlO; return `<button type="button" class="chip ${!d&&!own?'on':''}" data-ivdl="0">${L.gpDlAny}</button>`+[12,24,36,60].map(t=>`<button type="button" class="chip ${!own&&d===t?'on':''}" data-ivdl="${t}">${L.gpDl[t]}</button>`).join('')+`<button type="button" class="chip ${own?'on':''}" data-ivdl="own">${L.gpDlOwn}</button>`; };
+  const bindDl=()=>sheet.querySelectorAll('[data-ivdl]').forEach(b=>b.onclick=()=>{ if(b.dataset.ivdl==='own'){ P.dlO=1; const v=+($('#iv-dlm').value)||0; P.dl=v>=3?Math.min(240,Math.round(v)):0; } else { P.dlO=0; P.dl=+b.dataset.ivdl; } simS=null; persist(); syncDl(); upd(); if(P.dlO){ const i=$('#iv-dlm'); if(i&&!i.value) i.focus(); } });
+  const syncDl=()=>{ const el=$('#iv-dl'); if(!el) return; el.innerHTML=dlChips(); bindDl(); const w=$('#iv-dlw'); if(w) w.hidden=!P.dlO; };
   const draw=()=>{ const t=today0(), mo=L.monthsNom||[], g=ivGoal(), re=ivRe();
     openSheet(`<h3>${ico('chart',24)} ${L.ivTitle}</h3><p class="lead">${L.ivLead}</p>
       <button class="sf-inv" data-sfinv="1"><span class="sf-ava">${SF_AVA}</span><span><b>${L.sfInvAsk}</b><small>${L.sfInvLead}</small></span></button>
       <div id="iv-idea"></div><div id="iv-offers"></div>
       <div class="field n big-in"><label>${L.ivCap}</label><div class="pin"><input id="iv-cap" type="number" inputmode="decimal" min="0" value="${P.cap||''}"><select id="iv-cur"><option value="USD" ${(P.cur||'USD')==='USD'?'selected':''}>$</option><option value="TJS" ${P.cur==='TJS'?'selected':''}>${L.cur}</option></select></div></div>
+      <div class="field n gp-sales"><label for="iv-sm">${L.gpSales}</label><div class="pin"><input id="iv-sm" type="number" inputmode="decimal" min="0" data-nodirty value="${P.capM!=null&&P.capM!==''?P.capM:''}" placeholder="${Math.round(ivCapMUSD().v*(usdRate()||1))}"><b>${L.cur}</b></div><small id="iv-smh"></small></div>
       <div class="br-h">${ico('goal',18)} ${L.ivTarget}</div><div class="chips iv2-goal" id="iv-goal">${goalChips()}</div>
       <div class="field n iv2-own" id="iv-ownw" ${g.k==='sum'?'':'hidden'}><label>${L.ivGoalWant}</label><input id="iv-own" type="number" inputmode="decimal" min="0" value="${g.k==='sum'&&+g.v>0?g.v:''}" placeholder="${Math.round((+P.cap||0)*2)||''}"></div>
       <p class="iv2-gl" id="iv-gl"></p>
+      <div class="br-h">${ico('clock',18)} ${L.gpDlTop}</div><div class="chips iv2-goal" id="iv-dl">${dlChips()}</div>
+      <div class="field n iv2-own" id="iv-dlw" ${P.dlO?'':'hidden'}><label for="iv-dlm">${L.gpDlOwnL}</label><input id="iv-dlm" type="number" inputmode="numeric" min="3" max="240" data-nodirty value="${P.dlO&&+P.dl>0?P.dl:''}" placeholder="18"></div>
       <div class="br-h">${ico('repeat',18)} ${L.ivRe}</div><div class="seg iv2-re">${[[100,L.ivReAll],[70,L.ivRe70],[50,L.ivReHalf]].map(o=>`<button type="button" data-ivre="${o[0]}" class="${re===o[0]?'on':''}">${o[1]}</button>`).join('')}</div>
       <div class="br-h">${ico('cal',18)} ${L.ivWhen}</div><div class="chips gd-k">${[0,1,2,3,4,5].map(o=>`<button class="chip ${(+P.st||0)===o?'on':''}" data-ivs="${o}">${o?esc(mo[(t.getMonth()+o)%12]||''):L.ivNow}</button>`).join('')}</div>
       <div class="br-h">${ico('bag',18)} ${L.ivWhat}</div><div id="iv-top"></div><div class="chips gd-k iv-k">${IV_CATS.map(k=>`<button class="chip ${P.cat===k?'on':''}" data-ivc="${k}">${WH_CIC[k]} ${L['whC_'+k]}</button>`).join('')}</div>
@@ -10135,20 +10360,24 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
     const setGoal=g2=>{ P.goal=g2; if(g2.k==='x') P.tgt=g2.v; persist(); $('#iv-goal').innerHTML=goalChips(); bindGoal(); $('#iv-ownw').hidden=g2.k!=='sum'; upd(); if(g2.k==='sum'){ const o=$('#iv-own'); if(o&&!o.value) o.focus(); } };
     const bindGoal=()=>{ sheet.querySelectorAll('[data-ivt]').forEach(b=>b.onclick=()=>setGoal({k:'x',v:+b.dataset.ivt}));
       sheet.querySelectorAll('[data-ivg]').forEach(b=>b.onclick=()=>setGoal(b.dataset.ivg==='sum'?{k:'sum',v:+($('#iv-own').value)||0}:{k:'loans'})); };
-    bindGoal();
+    bindGoal(); bindDl();
+    const dm=$('#iv-dlm'); dm.addEventListener('input',()=>{ clearTimeout(dm._t); dm._t=setTimeout(()=>{ const v=+dm.value||0; P.dlO=1; P.dl=v>=3?Math.min(240,Math.round(v)):0; simS=null; persist(); upd(); },350); });
     const own=$('#iv-own'); own.addEventListener('input',()=>{ clearTimeout(own._t); own._t=setTimeout(()=>{ P.goal={k:'sum',v:+own.value||0}; persist(); upd(); },300); });
     sheet.querySelectorAll('[data-ivre]').forEach(b=>b.onclick=()=>{ P.re=+b.dataset.ivre; persist(); sheet.querySelectorAll('[data-ivre]').forEach(x=>x.classList.toggle('on',x===b)); upd(); });
     sheet.querySelectorAll('[data-ivs]').forEach(b=>b.onclick=()=>{ P.st=+b.dataset.ivs; persist(); sheet.querySelectorAll('[data-ivs]').forEach(x=>x.classList.toggle('on',x===b)); upd(); });
-    const pickCat=k=>{ P.cat=k; persist(); sheet.querySelectorAll('[data-ivc]').forEach(x=>x.classList.toggle('on',x.dataset.ivc===k)); upd(); form(); center(); };
+    pickCat=k=>{ P.cat=k; persist(); sheet.querySelectorAll('[data-ivc]').forEach(x=>x.classList.toggle('on',x.dataset.ivc===k)); upd(); form(); center(); };
     sheet.querySelectorAll('[data-ivc]').forEach(b=>b.onclick=()=>pickCat(b.dataset.ivc));
     $('#iv-top').addEventListener('click',e=>{ const b=e.target.closest('[data-ivtop]'); if(b) pickCat(b.dataset.ivtop); });
     const ci=$('#iv-cap'); ci.addEventListener('input',()=>{ P.cap=+ci.value||0; clearTimeout(ci._t); ci._t=setTimeout(()=>{ persist(); upd(); },300); });
     $('#iv-cur').onchange=()=>{ P.cur=$('#iv-cur').value; persist(); upd(); };
+    const sm=$('#iv-sm'); sm.addEventListener('input',()=>{ P.capM=sm.value===''?'':Math.max(0,+sm.value||0); simS=null; clearTimeout(sm._t); sm._t=setTimeout(()=>{ persist(); upd(); const f=$('#iv-capm'); if(f) f.value=P.capM; },350); });
     $('#iv-send').onclick=()=>{ if(lastShare) shareText(lastShare); };
     const center=()=>sheet.querySelectorAll('.iv-k .chip.on,.gd-k .chip.on').forEach(on=>{ const row=on.parentElement; row.scrollLeft=Math.max(0,on.offsetLeft-row.offsetLeft-row.clientWidth/2+on.clientWidth/2); });
     center();
   };
   const sgn=v=>(v>0?'+':v<0?'−':'')+ivUsd(Math.abs(v));
+  /* пересчёт без прыжка экрана: карточка пути остаётся на том же месте */
+  const keepY=fn=>{ const g=$('#gp'), y0=g?g.getBoundingClientRect().top:null; fn(); const g2=$('#gp'); if(g2&&y0!=null) sheet.scrollTop+=g2.getBoundingClientRect().top-y0; };
   const upd=()=>{ const cat=P.cat, st=ivStart(), cap=ivCapUSD(), u=usdRate(); const box=$('#iv-r'); if(!box) return; lastShare=null;
     const gl=$('#iv-gl'), g=ivGoal(), tgt=ivTargetUSD();
     if(gl) gl.textContent=!(cap>0)?'':g.k==='loans'?L.ivGoalLoansIs(money(ivDebtTJS()),ivCapFmt(tgt)):(g.k==='sum'&&!(tgt>cap))?L.ivGoalBad:L.ivGoalIs(ivCapFmt(tgt)), gl.classList.toggle('bad',g.k==='sum'&&cap>0&&!(tgt>cap));
@@ -10175,26 +10404,26 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
       ${isBest?`<div class="iv2-kpi"><span>${L.ivPerMo((r.perMo*100>=10?Math.round(r.perMo*100):fx(r.perMo*100,1)))}</span><span>${L.ivTurn(fx(12/r.totalM,1))}</span></div>
         <div class="iv2-be ${r.be!=null&&r.be<=1?'':'bad'}">${ico('shield',16)}<span>${r.be!=null&&r.be<=1?L.ivBe(Math.ceil(r.be*100)):L.ivBeNo}</span></div>`:''}
       <div class="iv-l">${ivSeasonTag(r)}</div>${r.limited?`<div class="iv-warn">${L.ivCapLim(ivUsd(r.capM.v),fx(r.months,1))}</div>`:''}${isBest?how(r):''}</div>`; };
-    /* три сценария для лучшего варианта */
-    const low=ivCalc(cat,best.c,st,cap,IV_SC.low), high=ivCalc(cat,best.c,st,cap,IV_SC.high);
-    const sc=(r,name,cls,hint)=>`<div class="iv2-sc ${cls}"${hint?` title="${esc(hint)}"`:''}><small>${name}</small><b class="${r.profit>0?'':'neg'}">${sgn(r.profit)}</b><em>${r.profit>0?'+':''}${Math.round(r.roi*100)}% · ${fx(r.totalM,1)} ${L.ivMoW}</em></div>`;
-    const pm=best.perMo*100, real=best.profit>0?`<p class="iv2-real ${pm>=15?'hi':''}">${ico(pm>=15?'warn':'info',16)}<span>${(pm>=15?L.ivRealHi:L.ivReal)(pm>=10?Math.round(pm):fx(pm,1))}</span></p>`:'';
-    const scen=`<div class="iv2-card"><h4>${ico('eye',18)} ${L.ivScT} · ${TCOUNTRY[best.c].f} ${L['cn_'+best.c]}</h4><p class="iv2-lead">${L.ivScLead}</p>
-      <div class="iv2-scs">${sc(low,L.ivSc1,'low',L.ivSc1H)}${sc(best,L.ivSc2,'mid','')}${sc(high,L.ivSc3,'high',L.ivSc3H)}</div><p class="iv2-sch">${L.ivSc1}: ${L.ivSc1H.charAt(0).toLowerCase()+L.ivSc1H.slice(1)}</p>${real}</div>`;
-    /* запас и альтернатива — погасить кредит */
+    /* подсказка под полем продаж */
+    const smh=$('#iv-smh'), cmN=ivCapMUSD(); if(smh) smh.textContent=cmN.src==='def'?L.gpSalesDef:(cmN.src==='fact'?L.gpSalesFact+' ':'')+L.gpSalesUsd(ivUsd(cmN.v)), smh.classList.toggle('warn',cmN.src==='def');
+    /* путь к цели и раскладка денег: партиями по силам магазина */
+    let GD=null; try{ GD=ivGoalData(cat,false,simS); }catch(e){}
+    const b1=GD&&GD.pl0.cyc[0], split=GD?ivSplitHTML(GD):'';
+    /* три сценария: для всей суммы, а если магазин столько не продаст — для партии по силам */
+    const scC=split?GD.c:best.c, scCap=split?b1.b:cap, scRp=split?{rp:b1.r.retail}:null, mid=split?b1.r:best;
+    const low=ivCalc(cat,scC,st,scCap,Object.assign({},scRp,IV_SC.low)), high=ivCalc(cat,scC,st,scCap,Object.assign({},scRp,IV_SC.high));
+    const sc=(r,name,cls,hint)=>`<div class="iv2-sc ${cls}"${hint?` title="${esc(hint)}"`:''}><small>${name}</small><b class="${r.profit>0?'':'neg'}">${sgn(r.profit)}</b><em>${r.profit>0?'+':''}${Math.round(r.roi*100)}%</em><em>${fx(r.totalM,1)} ${L.ivMoW}</em></div>`;
+    const pm=mid.perMo*100, real=mid.profit>0?`<p class="iv2-real ${pm>=15?'hi':''}">${ico(pm>=15?'warn':'info',16)}<span>${(pm>=15?L.ivRealHi:L.ivReal)(pm>=10?Math.round(pm):fx(pm,1))}</span></p>`:'';
+    const scen=`<div class="iv2-card"><h4>${ico('eye',18)} ${L.ivScT} · ${TCOUNTRY[scC].f} ${L['cn_'+scC]}</h4><p class="iv2-lead">${split?L.gpScBatch(ivUsd(scCap))+' ':''}${L.ivScLead}</p>
+      <div class="iv2-scs">${sc(low,L.ivSc1,'low',L.ivSc1H)}${sc(mid,L.ivSc2,'mid','')}${sc(high,L.ivSc3,'high',L.ivSc3H)}</div><p class="iv2-sch">${L.ivSc1}: ${L.ivSc1H.charAt(0).toLowerCase()+L.ivSc1H.slice(1)}</p>${real}</div>`;
+    /* запас и альтернатива — погасить кредит (если есть раскладка, они уже в ней) */
     const rv=ivReserve(best.totalM), resv=(rv.loans>0||rv.shop>0)?`<div class="iv2-card warm"><h4>${ico('umbrella',18)} ${L.ivResT}</h4><p>${rv.loans>0?L.ivResLoans(rv.n,'<b>'+money(rv.loans)+'</b>')+' ':''}${rv.shop>0?L.ivResShop('<b>'+money(rv.shop)+'</b>')+' ':''}${L.ivResEnd}</p></div>`:'';
     const al=ivLoanAlt(cap), lowT=u?low.profit*u:0;
     const alt=al?`<div class="iv2-card"><h4>${ico('loans',18)} ${L.ivAltT}</h4><p>${al.closes?L.ivAltClose('<b>'+money(al.pay)+'</b>',esc(al.loan.name),fx(al.rate,al.rate%1?1:0),'<b>'+money(al.saved)+'</b>'):L.ivAltPart('<b>'+money(al.pay)+'</b>',esc(al.loan.name),fx(al.rate,al.rate%1?1:0),'<b>'+money(al.saved)+'</b>',al.sooner)} ${L.ivAltSafe}</p>
       <p class="iv2-vs">${lowT<al.saved?L.ivAltWin((lowT>0?'+':lowT<0?'−':'')+money(Math.abs(Math.round(lowT)))):L.ivAltLose('+'+money(Math.round(lowT)))}</p></div>`:'';
-    /* путь к цели */
-    const cy=ivCycles(cat,best.c), n=cy.out.length, mx=cy.out.length?Math.max(cy.tgt,cy.out[n-1].to):0;
-    const rows=n<=6?cy.out:cy.out.slice(0,3).concat([{gap:n-5}],cy.out.slice(-2));
-    const path=cy.bad?'':`<div class="iv-cy"><h4>${ico('flag',18)} ${L.ivPathT}: ${ivUsd(cap)} → ${ivUsd(cy.tgt)} ${TCOUNTRY[best.c].f}</h4>
-      ${n>1?`<div class="iv2-bars" aria-hidden="true"><i class="t" style="bottom:${Math.round(cy.tgt/mx*100)}%"></i>${cy.out.map(x=>`<span><b style="height:${Math.max(6,Math.round(x.to/mx*100))}%" class="${x.to>=cy.tgt-0.5?'ok':''}"></b></span>`).join('')}</div>`:''}
-      ${rows.map(x=>x.gap?`<div class="iv-cr more"><div><small>${L.ivCyMore(x.gap)}</small></div></div>`:`<div class="iv-cr"><span>${x.n}</span><div><b>${ivUsd(x.from)} → ${ivUsd(x.to)}</b><small>${L.ivCyBy(fmtDate(x.d)+(/\d{4}/.test(fmtDate(x.d))||x.d.getFullYear()===today0().getFullYear()?'':' '+x.d.getFullYear()))}${x.se&&x.se.k==='in'?' · '+L.ivSeasonIn(esc(L['hol_'+x.se.e.id]||L['whEv_'+x.se.e.id]||'')):''}</small></div></div>`).join('')}
-      <p class="${cy.ok?'tx-ok':'tx-urgent'}" style="font-weight:800;margin:8px 0 0">${cy.ok?L.ivCyOk(n,fx(cy.m,0)):n?L.ivCyLong:L.ivCyNo}</p>${cy.home>=1?`<p class="iv2-home">${ico('home',16)} ${L.ivCyHome('<b>'+ivUsd(cy.home)+'</b>'+ivUsdTj(cy.home))}</p>`:''}</div>`;
-    box.innerHTML=`<div class="iv-res">${rs.map(card).join('')}</div>${best.profit>0||low.profit>0?scen:''}${resv}${alt}${path}`;
-    lastShare=ivShareText(best,low,cy);
+    box.innerHTML=`<div class="iv-res">${rs.map(card).join('')}</div>${split}${mid.profit>0||low.profit>0?scen:''}${split?'':resv+alt}${GD?ivGoalHTML(GD):''}`;
+    if(GD) ivGoalBind(box,GD,{upd,pick:k=>pickCat(k),setS:v=>{ simS=v; keepY(upd); },setDl:t=>{ P.dl=t; P.dlO=0; simS=null; persist(); syncDl(); keepY(upd); },setRe:x=>{ P.re=x; persist(); sheet.querySelectorAll('[data-ivre]').forEach(b=>b.classList.toggle('on',+b.dataset.ivre===x)); keepY(upd); }});
+    lastShare=ivShareText(best,low,GD);
     const mxEl=$('#iv-m'); if(mxEl&&$('#iv-mx').open) mxDraw(); };
   const mxDraw=()=>{ const st=ivStart(); const rows=IV_CATS.map(k=>({k,r:['CN','TR'].map(c=>ivCalc(k,c,st))})).sort((a,b)=>Math.max(b.r[0].roi,b.r[1].roi)-Math.max(a.r[0].roi,a.r[1].roi));
     $('#iv-m').innerHTML=`<p class="note" style="margin-top:0">${L.ivMxLead}</p><table class="iv-mt"><tr><th></th><th>${TCOUNTRY.CN.f}</th><th>${TCOUNTRY.TR.f}</th></tr>${rows.map(x=>`<tr class="${x.k===P.cat?'on':''}" data-ivc2="${x.k}"><td>${WH_CIC[x.k]} ${L['whC_'+x.k]}</td>${x.r.map(r=>`<td class="${r.roi>0?'p':'n'}"><b>${r.roi>0?'+':''}${Math.round(r.roi*100)}%</b><small>${fx(r.totalM,0)} ${L.ivMoW}</small></td>`).join('')}</tr>`).join('')}</table>`;
@@ -10213,9 +10442,9 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
       <button class="btn btn-ghost btn-full" id="iv-reset">↺ ${L.ivReset}</button>`;
     const save=()=>{ const g=id=>{ const v=$(id).value; return v===''?'':+v; };
       o.p=IV_C.map(c=>g('#ivp-'+c)); o.mkc=IV_C.map(c=>g('#ivk-'+c)); o.w=g('#iv-w'); o.m=g('#iv-mo');
-      for(const c of IV_C){ P.trip[c]=g('#ivt-'+c); P.cgr[c]=g('#ivg-'+c); } P.oth=g('#iv-oth'); P.full=g('#iv-full'); P.disc=g('#iv-disc'); P.share=g('#iv-share'); P.shop=g('#iv-shop'); P.capM=g('#iv-capm'); persist(); upd(); };
+      for(const c of IV_C){ P.trip[c]=g('#ivt-'+c); P.cgr[c]=g('#ivg-'+c); } P.oth=g('#iv-oth'); P.full=g('#iv-full'); P.disc=g('#iv-disc'); P.share=g('#iv-share'); P.shop=g('#iv-shop'); P.capM=g('#iv-capm'); const sm=$('#iv-sm'); if(sm) sm.value=P.capM; persist(); upd(); };
     box.querySelectorAll('input').forEach(i=>i.addEventListener('input',()=>{ clearTimeout(box._t); box._t=setTimeout(save,350); }));
-    $('#iv-reset').onclick=()=>{ P.c[cat]={}; P.trip={}; P.cgr={}; P.oth=P.full=P.disc=P.share=P.shop=P.capM=''; persist(); form(); upd(); };
+    $('#iv-reset').onclick=()=>{ P.c[cat]={}; P.trip={}; P.cgr={}; P.oth=P.full=P.disc=P.share=P.shop=P.capM=''; const sm=$('#iv-sm'); if(sm) sm.value=''; persist(); form(); upd(); };
   };
   draw();
 };
@@ -10229,17 +10458,19 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
    - отзывы об IdeaBuddy: хвалят пошаговость и простые цифры, ругают, что результат не видно до оплаты → весь разбор сразу, идеи сохраняются;
    - Erica (Bank of America): помощник сам приносит личные подсказки → «Предложения на сегодня» по её данным, каждый день новые. */
 function ideas(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.ideas)) state.misc.ideas=[]; return state.misc.ideas; }
-const ID_I={go:'check',careful:'shield',wait:'clock',no:'warn'}, OF_I={buy:'bag',loan:'loans',sell:'shop',save:'shield'};
+const ID_I={go:'check',careful:'shield',wait:'clock',no:'warn'}, OF_I={buy:'bag',loan:'loans',sell:'shop',save:'shield',tgt:'flag'};
 let idCtl=null, idMicOn=null;
-function ideaTitle(it){ return (it.rep&&it.rep.title)||String(it.text||'').replace(/\s+/g,' ').slice(0,60)+(String(it.text||'').length>60?'…':''); }
-async function ideaAsk(text,amt,cur){ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+function ideaV(it){ return it&&it.kind==='plan'?L.gpPlanV:L.idV; }
+function ideaTitle(it){ return (it.rep&&it.rep.title)||(it.kind==='plan'&&it.gt?L.gpPlanTitle(it.gt):'')||String(it.text||'').replace(/\s+/g,' ').slice(0,60)+(String(it.text||'').length>60?'…':''); }
+async function ideaAsk(text,amt,cur,kind){ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
   const ctl=idCtl=new AbortController(), to=setTimeout(()=>ctl.abort(),150000), code=j=>j&&j.error==='limit'?'limit':j&&j.error==='nokey'?'key':'x';
+  let gn=''; try{ gn=ivGoalNote(text); }catch(e){}
   const post=(path,body)=>fetch(API_BASE+path,{method:'POST',headers:{'content-type':'application/json'},signal:ctl.signal,body:JSON.stringify(body)});
   try{
-    if(caps&&caps.v>=4){ const r=await post('/api/mk/idea',{id:mkId(),lang,idea:text,amt:amt>0?amt:undefined,cur,ctx:sfCtx()}), j=await r.json().catch(()=>({}));
+    if(caps&&caps.v>=4){ const r=await post('/api/mk/idea',{id:mkId(),lang,kind:kind||undefined,idea:gn?text.slice(0,1490-gn.length)+'\n'+gn:text,amt:amt>0?amt:undefined,cur,ctx:sfCtx()}), j=await r.json().catch(()=>({}));
       if(!r.ok) return {err:code(j)}; return {rep:j.rep&&typeof j.rep==='object'?j.rep:null,text:String(j.text||''),sources:Array.isArray(j.sources)?j.sources:[]}; }
     /* сервер ещё не обновлён: тот же разбор обычным вопросом Сифре — ответ придёт текстом */
-    const q=(L.idAskQ+text+(amt>0?' ('+amt+' '+(cur==='USD'?'$':L.cur)+')':'')).slice(0,700);
+    const q=(L.idAskQ+text+(amt>0?' ('+amt+' '+(cur==='USD'?'$':L.cur)+')':'')).slice(0,gn?690-gn.length:700)+(gn?' '+gn:'');
     const r=await post('/api/mk/ai',{id:mkId(),q,lang,hist:[],ctx:sfCtx()}), j=await r.json().catch(()=>({}));
     if(!r.ok) return {err:code(j)}; const t=String(j.text||'').trim(); return t?{rep:null,text:t,sources:Array.isArray(j.sources)?j.sources:[]}:{err:'x'};
   }catch(e){ return {err:ctl.signal.aborted?'cut':'x'}; } finally{ clearTimeout(to); if(idCtl===ctl) idCtl=null; } }
@@ -10256,7 +10487,7 @@ async function ideaDictate(ta,btn){ if(idMicOn){ ideaMicStop(btn); return; }
   sfHear(t=>{ off(); put(t); }, err=>{ off(); toast(err==='nosr'?L.voiceNo:err==='not-allowed'?L.voiceDenied:err==='no-speech'?L.sfNoSpeech:L.voiceFail); }, (t,start)=>{ if(!start&&t) ta.value=(base+t).slice(0,1500); }); }
 function ideaListHTML(){ const a=ideas(); if(!a.length) return `<p class="id-none">${L.idNone}</p>`;
   return a.map(it=>{ const v=it.rep?it.rep.verdict:'', n=it.rep&&it.rep.steps?it.rep.steps.length:0, k=n?Object.keys(it.done||{}).length:0, d=parseYmd(it.d);
-    return `<button type="button" class="id-it" data-idv="${esc(it.id)}"><span class="id-dot ${v||'txt'}">${ico(ID_I[v]||'bulb',16)}</span><span class="id-im"><b>${esc(ideaTitle(it))}</b><small>${d?fmtDate(d):''}${v?' · '+L.idV[v]:''}${it.st&&it.st!=='think'?' · '+L.idStK[it.st]:''}${n?' · '+L.idStepsOf(k,n):''}</small></span>${ico('next',18)}</button>`; }).join(''); }
+    return `<button type="button" class="id-it" data-idv="${esc(it.id)}"><span class="id-dot ${v||'txt'}">${ico(ID_I[v]||'bulb',16)}</span><span class="id-im"><b>${esc(ideaTitle(it))}</b><small>${d?fmtDate(d):''}${v?' · '+ideaV(it)[v]:''}${it.st&&it.st!=='think'?' · '+L.idStK[it.st]:''}${n?' · '+L.idStepsOf(k,n):''}</small></span>${ico('next',18)}</button>`; }).join(''); }
 function ideaSheet(pre){ pre=pre||{}; let draft={}; try{ draft=JSON.parse(localStorage.getItem('idea_draft')||'{}')||{}; }catch(e){}
   const text=pre.text!=null?pre.text:(draft.t||''), amt=pre.amt!=null?pre.amt:(draft.a||''), cur=pre.cur||draft.c||'TJS';
   openSheet(`<h3>${ico('bulb',24)} ${L.idTitle}</h3><p class="lead">${L.idLead}</p>
@@ -10266,7 +10497,7 @@ function ideaSheet(pre){ pre=pre||{}; let draft={}; try{ draft=JSON.parse(localS
     <div class="err" id="id-e" hidden></div>
     <button class="btn btn-primary btn-full" id="id-go">${SF_AVA}<span>${L.idGo}</span></button>
     <p class="note">${L.idNote}</p>
-    <div class="br-h">${ico('folder',18)} ${L.idMine}</div><div class="id-list" id="id-list">${ideaListHTML()}</div>
+    <div class="br-h">${ico('doc',18)} ${L.idMine}</div><div class="id-list" id="id-list">${ideaListHTML()}</div>
     <div class="sheet-row">${pre.back==='invest'?`<button class="btn btn-ghost" id="id-back">← ${L.ivTitle}</button>`:''}<button class="btn btn-ghost" data-close>${L.close}</button></div>`);
   const ta=$('#id-t'), ai=$('#id-a'), ci=$('#id-c'), save=()=>{ try{ localStorage.setItem('idea_draft',JSON.stringify({t:ta.value,a:ai.value,c:ci.value})); }catch(e){} };
   [ta,ai].forEach(x=>x.addEventListener('input',save)); ci.onchange=save; if(pre.text!=null) save();
@@ -10277,37 +10508,40 @@ function ideaSheet(pre){ pre=pre||{}; let draft={}; try{ draft=JSON.parse(localS
   $('#id-go').onclick=()=>{ const t=ta.value.replace(/\s+/g,' ').trim(), e=$('#id-e'); e.hidden=true;
     if(t.length<12){ e.textContent=L.idShort; e.hidden=false; ta.focus(); return; } if(!navigator.onLine){ e.textContent=L.idOffline; e.hidden=false; return; }
     ideaMicStop($('#id-mic')); ideaRun({text:t,amt:+ai.value||0,cur:ci.value,back:pre.back,edit:pre.edit}); }; }
-async function ideaRun(o){ let i=0;
-  openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b id="id-bs" aria-live="polite">${L.idBusy[0]}</b><small>${L.idBusyNote}</small><p class="id-bq">«${esc(o.text.length>160?o.text.slice(0,160)+'…':o.text)}»</p>
+async function ideaRun(o){ let i=0; const prev=o.edit?ideas().find(x=>x.id===o.edit):null, kind=o.kind||(prev&&prev.kind)||'', BZ=kind==='plan'?L.gpPlanBusy:L.idBusy, back0=()=>{ if(kind==='plan'&&o.back==='invest') investSheet(); else ideaSheet({text:o.text,amt:o.amt,cur:o.cur,back:o.back,edit:o.edit}); };
+  openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b id="id-bs" aria-live="polite">${BZ[0]}</b><small>${L.idBusyNote}</small><p class="id-bq">«${esc(o.text.length>160?o.text.slice(0,160)+'…':o.text)}»</p>
     <button class="btn btn-ghost" id="id-cancel">${L.cancel}</button></div>`);
-  const tick=setInterval(()=>{ const e=$('#id-bs'); if(!e){ clearInterval(tick); return; } i=Math.min(i+1,L.idBusy.length-1); e.textContent=L.idBusy[i]; },4500);
+  const tick=setInterval(()=>{ const e=$('#id-bs'); if(!e){ clearInterval(tick); return; } i=Math.min(i+1,BZ.length-1); e.textContent=BZ[i]; },4500);
   let cut=false; $('#id-cancel').onclick=()=>{ cut=true; try{ if(idCtl) idCtl.abort(); }catch(e){} };
-  const res=await ideaAsk(o.text,o.amt,o.cur); clearInterval(tick);
-  if(cut||res.err==='cut'){ if($('#id-bs')) ideaSheet({text:o.text,amt:o.amt,cur:o.cur,back:o.back,edit:o.edit}); return; }
+  const res=await ideaAsk(o.text,o.amt,o.cur,kind); clearInterval(tick);
+  if(cut||res.err==='cut'){ if($('#id-bs')) back0(); return; }
   if(res.err){ if(!$('#id-bs')) return; const msg=res.err==='limit'?L.idErrLimit:res.err==='key'?L.idErrKey:L.idErr;
     openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b>${msg}</b><div class="sheet-row" style="width:100%"><button class="btn btn-ghost" id="id-e1">${L.back}</button>${res.err==='x'?`<button class="btn btn-primary" id="id-e2">${L.idRetry}</button>`:''}</div></div>`);
-    $('#id-e1').onclick=()=>ideaSheet({text:o.text,amt:o.amt,cur:o.cur,back:o.back,edit:o.edit}); const r2=$('#id-e2'); if(r2) r2.onclick=()=>ideaRun(o); return; }
+    $('#id-e1').onclick=back0; const r2=$('#id-e2'); if(r2) r2.onclick=()=>ideaRun(o); return; }
   const a=ideas(); let it=o.edit?a.find(x=>x.id===o.edit):null;
   if(it){ Object.assign(it,{d:ymd(new Date()),text:o.text,amt:o.amt,cur:o.cur,rep:res.rep,txt:res.text,src:res.sources,done:{}}); a.splice(a.indexOf(it),1); a.unshift(it); }
   else { it={id:uid('id'),d:ymd(new Date()),text:o.text,amt:o.amt,cur:o.cur,rep:res.rep,txt:res.text,src:res.sources,st:'think',done:{}}; a.unshift(it); if(a.length>30) a.length=30; }
+  if(kind){ it.kind=kind; if(o.gk) it.gk=o.gk; if(o.gt) it.gt=o.gt; }
   persist(); try{ localStorage.removeItem('idea_draft'); }catch(e){}
-  if($('#id-bs')) ideaView(it.id,o.back); else toast(L.idV[(it.rep&&it.rep.verdict)||'careful']+': '+ideaTitle(it)); }
+  if($('#id-bs')) ideaView(it.id,o.back); else toast(ideaV(it)[(it.rep&&it.rep.verdict)||'careful']+': '+ideaTitle(it)); }
 function ideaShareText(it){ const r=it.rep, ls=[L.idTitle+': '+ideaTitle(it)];
-  if(r){ ls.push(L.idV[r.verdict]+'. '+r.summary); for(const n of (r.numbers||[])) ls.push('• '+n.l+': '+n.v); if(r.test&&r.test.rule) ls.push(L.idRule+': '+r.test.rule); } else ls.push(sfPlain(it.txt||'').slice(0,700));
+  if(r){ ls.push(ideaV(it)[r.verdict]+'. '+r.summary); for(const s of (r.stages||[])) ls.push('— '+s.when+': '+s.what+(s.target?' → '+s.target:'')); for(const n of (r.numbers||[])) ls.push('• '+n.l+': '+n.v); if(r.goal&&r.goal.text) ls.push(L.idGoalT+': '+r.goal.text); if(r.test&&r.test.rule) ls.push(L.idRule+': '+r.test.rule); } else ls.push(sfPlain(it.txt||'').slice(0,700));
   ls.push(L.ivShareNote); return ls.join('\n'); }
 function ideaView(id,back){ const it=ideas().find(x=>x.id===id); if(!it){ ideaSheet(); return; } const r=it.rep, v=r?r.verdict:'', okU=u=>/^https?:\/\//.test(String(u||''));
   const li=(a,ic,cls)=>a&&a.length?`<ul class="id-ul ${cls}">${a.map(x=>`<li>${ico(ic,16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:'';
   const steps=r&&r.steps&&r.steps.length?`<div class="id-sec"><h4>${ico('flag',18)} ${L.idSteps}<small>${L.idStepsOf(Object.keys(it.done||{}).length,r.steps.length)}</small></h4>
       ${r.steps.map((s,i)=>`<button type="button" class="id-step ${it.done&&it.done[i]?'on':''}" role="checkbox" aria-checked="${!!(it.done&&it.done[i])}" data-idstep="${i}"><i>${ico('check',16)}</i><span>${esc(s)}</span></button>`).join('')}</div>`:'';
   const src=(it.src||[]).filter(s=>s&&okU(s.url)).slice(0,5);
-  openSheet(`<div class="id-v ${v||'txt'}"><span class="id-badge">${ico(ID_I[v]||'bulb',18)} ${v?L.idV[v]:L.idTitle}</span><h3>${esc(ideaTitle(it))}</h3>${r?`<p class="id-sum">${esc(r.summary)}</p>`:`<div class="id-txt">${sfMd(it.txt||'')}</div>`}</div>
+  openSheet(`<div class="id-v ${v||'txt'}"><span class="id-badge">${ico(ID_I[v]||'bulb',18)} ${v?ideaV(it)[v]:it.kind==='plan'?L.gpPlan:L.idTitle}</span><h3>${esc(ideaTitle(it))}</h3>${r?`<p class="id-sum">${esc(r.summary)}</p>`:`<div class="id-txt">${sfMd(it.txt||'')}</div>`}</div>
     ${r&&r.numbers&&r.numbers.length?`<div class="id-sec"><h4>${ico('stats',18)} ${L.idNums}</h4><div class="id-nums">${r.numbers.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div></div>`:''}
+    ${r&&r.goal&&r.goal.text?`<div class="id-sec id-goal ${['yes','part','no'].includes(r.goal.fit)?r.goal.fit:''}"><h4>${ico('flag',18)} ${L.idGoalT}<small>${L.idFit[r.goal.fit]||''}</small></h4><p>${esc(r.goal.text)}</p></div>`:''}
+    ${r&&r.stages&&r.stages.length?`<div class="id-sec id-stages"><h4>${ico('cal',18)} ${L.gpStages}</h4>${r.stages.map((s,i)=>`<div class="id-stg"><i>${i+1}</i><div><small>${esc(s.when)}</small><p>${esc(s.what)}</p>${s.target?`<b>${esc(s.target)}</b>`:''}</div></div>`).join('')}</div>`:''}
     ${r&&r.pros&&r.pros.length?`<div class="id-sec"><h4>${ico('check',18)} ${L.idPros}</h4>${li(r.pros,'check','ok')}</div>`:''}
     ${r&&r.risks&&r.risks.length?`<div class="id-sec"><h4>${ico('warn',18)} ${L.idRisks}</h4>${li(r.risks,'warn','risk')}</div>`:''}
     ${r&&r.test?`<div class="id-sec id-test"><h4>${ico('search',18)} ${L.idTest}</h4><p>${esc(r.test.what)}</p>${r.test.rule?`<p class="id-rule"><b>${L.idRule}.</b> ${esc(r.test.rule)}</p>`:''}</div>`:''}
     ${steps}
     ${r&&r.loans?`<div class="id-sec"><h4>${ico('loans',18)} ${L.idLoans}</h4><p>${esc(r.loans)}</p></div>`:''}
-    ${r&&r.ask&&r.ask.length?`<div class="id-sec"><h4>${ico('help',18)} ${L.idAsk}</h4><div class="id-ask">${r.ask.map((q,i)=>`<button type="button" data-idask="${i}">${esc(q)}</button>`).join('')}</div></div>`:''}
+    ${r&&r.ask&&r.ask.length?`<div class="id-sec"><h4>${ico('chat',18)} ${L.idAsk}</h4><div class="id-ask">${r.ask.map((q,i)=>`<button type="button" data-idask="${i}">${esc(q)}</button>`).join('')}</div></div>`:''}
     ${src.length?`<div class="id-sec id-src"><h4>${ico('globe',18)} ${L.idSrc}</h4>${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url)}</a>`).join('')}</div>`:''}
     <div class="id-sec"><h4>${ico('goal',18)} ${L.idSt}</h4><div class="seg id-st">${['think','doing','done','no'].map(k=>`<button type="button" data-idst="${k}" class="${(it.st||'think')===k?'on':''}">${L.idStK[k]}</button>`).join('')}</div></div>
     <details class="wh-more id-yours"><summary>${ico('edit',18)} ${L.idYours}</summary><p>${esc(it.text)}${it.amt>0?' · '+(it.cur==='USD'?ivN(it.amt)+' $':money(it.amt)):''}</p></details>
@@ -10329,8 +10563,9 @@ function ofSt(){ const m=state.misc=state.misc||{}; if(!m.sfOffers||typeof m.sfO
 /* без сервера: три хода по данным приложения; третий меняется каждый день */
 function ofLocal(){ const out=[], seed=Math.floor(today0().getTime()/864e5);
   try{ const st=ivStart(), cap=ivCapUSD()>0?ivCapUSD():2000, tops=ivTop3(st), top=tops[seed%Math.max(1,Math.min(2,tops.length))]||tops[0];
-    if(top){ const r=ivCalc(top.k,top.r.c,st,cap), ev=r.se&&r.se.k==='in'&&r.se.e?(L['hol_'+r.se.e.id]||L['whEv_'+r.se.e.id]||''):'';
-      out.push({k:'buy',t:L.ofTop(L['whC_'+top.k],L['cn_'+r.c],Math.round(r.roi*100),fx(r.totalM,1)),d:L.ofTopD(ev),q:L.ofTopQ(ivCapFmt(cap),L['whC_'+top.k],L['cn_'+r.c])}); } }catch(e){}
+    if(top){ const pk=ivPick(top.k,top.r.c,st,cap), r=pk.r||ivCalc(top.k,top.r.c,st,cap), ev=r.se&&r.se.k==='in'&&r.se.e?(L['hol_'+r.se.e.id]||L['whEv_'+r.se.e.id]||''):'';
+      if(pk.r&&pk.capd&&r.profit>0) out.push({k:'buy',t:L.ofBatch(L['whC_'+top.k],L['cn_'+r.c],ivUsd(pk.b),ivUsd(r.profit),fx(r.totalM,1)),d:L.ofBatchD(ev),q:L.ofTopQ(ivCapFmt(pk.b),L['whC_'+top.k],L['cn_'+r.c])});
+      else out.push({k:'buy',t:L.ofTop(L['whC_'+top.k],L['cn_'+r.c],Math.round(r.roi*100),fx(r.totalM,1)),d:L.ofTopD(ev),q:L.ofTopQ(ivCapFmt(cap),L['whC_'+top.k],L['cn_'+r.c])}); } }catch(e){}
   try{ const act=activeList().filter(x=>!x.loan.example&&!x.a.done), soon=act.filter(x=>x.a.days!=null&&x.a.days>=0&&x.a.days<=7).sort((a,b)=>a.a.days-b.a.days)[0], exp=act.filter(x=>+x.loan.rate>0).sort((a,b)=>(+b.loan.rate)-(+a.loan.rate))[0];
     let done=false;
     if(exp&&!(soon&&seed%2===0)){ const x=m7Amt(exp.a)>=2000?500:200, r=m7Extra(exp.loan,exp.a,x); if(r&&r.months>0){ out.push({k:'loan',t:L.ofLoan(exp.loan.name,fx(+exp.loan.rate,(+exp.loan.rate)%1?1:0)),d:L.ofLoanD(money(x),money(r.saved),r.months),q:L.ofLoanQ(exp.loan.name,money(x))}); done=true; } }
@@ -10340,7 +10575,9 @@ function ofLocal(){ const out=[], seed=Math.floor(today0().getTime()/864e5);
   try{ const ex=expEst(); if(ex&&ex.v>0) pool.push({k:'save',t:L.ofRes,d:L.ofResD(money(Math.round(ex.v))),q:L.ofResQ}); }catch(e){}
   let i=seed%pool.length; while(out.length<3&&pool.length){ out.push(pool.splice(i%pool.length,1)[0]); i++; }
   return out.slice(0,3); }
-function ofToday(){ const st=ofSt(); return st.day===ymd(new Date())&&st.lang===lang&&st.items.length?{items:st.items,src:'sf'}:{items:ofLocal(),src:'local'}; }
+/* первым идёт предложение про цель — его считает само приложение, чтобы цифры совпадали с «Путём к цели» */
+function ofToday(){ const st=ofSt(), sf=st.day===ymd(new Date())&&st.lang===lang&&st.items.length>0; let g=null; try{ g=ofGoal(); }catch(e){}
+  return {items:(g?[g]:[]).concat(sf?st.items:ofLocal()),src:sf?'sf':'local'}; }
 let ofBusy=false;
 async function ofFetch(force){ if(ofBusy||(!force&&DEMO)||!navigator.onLine) return false; const st=ofSt(), day=ymd(new Date()); if(st.day===day&&st.lang===lang&&st.items.length) return false;
   let last=0; try{ last=+localStorage.getItem('sfof_try')||0; }catch(e){} if(!force&&Date.now()-last<2*3600e3) return false;
@@ -10353,8 +10590,8 @@ async function ofFetch(force){ if(ofBusy||(!force&&DEMO)||!navigator.onLine) ret
       const s2=ofSt(); s2.day=day; s2.lang=lang; s2.items=items; s2.hist=items.map(x=>x.t).concat(s2.hist.filter(t=>!items.some(x=>x.t===t))).slice(0,30); persist(); ok=true; }
   }catch(e){} ofBusy=false; return ok; }
 function ofHTML(){ const o=ofToday(); if(!o.items.length) return '';
-  return `<div class="of"><div class="of-h"><b>${ico('spark',18)} ${L.ofT}</b><small>${fmtDate(today0())} · ${o.src==='sf'?L.ofFromSf:L.ofFrom}</small></div>
-    <div class="of-row">${o.items.map((x,i)=>`<div class="of-c ${x.k}"><span class="of-i">${ico(OF_I[x.k]||'bulb',18)}</span><b>${esc(x.t)}</b><p>${esc(x.d)}</p><button type="button" class="of-b" data-ofq="${i}">${L.ofDo}</button></div>`).join('')}</div></div>`; }
+  return `<div class="of"><div class="of-h"><b>${ico('sparkle',18)} ${L.ofT}</b><small>${fmtDate(today0())} · ${o.src==='sf'?L.ofFromSf:L.ofFrom}</small></div>
+    <div class="of-row">${o.items.map((x,i)=>`<div class="of-c ${x.k}"><span class="of-i">${ico(OF_I[x.k]||'bulb',18)}</span>${x.k==='tgt'?`<em class="of-tag">${L.ofGoalTag}</em>`:''}<b>${esc(x.t)}</b><p>${esc(x.d)}</p><button type="button" class="of-b" data-ofq="${i}">${L.ofDo}</button></div>`).join('')}</div></div>`; }
 /* вставки в «Куда вложить»: вход в «Мою идею» и предложения на сегодня */
 function ivExtras(){ const a=$('#iv-idea'), b=$('#iv-offers'); if(!a||!b) return; const n=ideas().length;
   a.innerHTML=`<button type="button" class="id-entry" id="id-open"><span class="id-ei">${ico('bulb',24)}</span><span><b>${L.idEntryT}</b><small>${L.idEntryP}</small>${n?`<em>${L.idEntryN(n)}</em>`:''}</span>${ico('next',18)}</button>`;
@@ -10366,6 +10603,160 @@ function m15After(){ const ml=$('#m10MoneyLink'); if(!ml) return; let b=$('#m15I
   if(!b){ ml.insertAdjacentHTML('afterend',`<button type="button" class="m10-money m10-card" id="m15IdeaLink"><span class="m10-mi">${ico('bulb',24)}</span><span><b></b><small></small></span><span class="m10-go">›</span></button>`); b=$('#m15IdeaLink'); b.onclick=()=>ideaSheet(); }
   const n=ideas().length; b.querySelector('b').textContent=L.idTitle+(n?' · '+n:''); b.querySelector('small').textContent=L.idMoreSub; }
 try{ const _r15=render; render=function(){ const x=_r15.apply(this,arguments); try{ m15After(); }catch(e){} return x; }; }catch(e){}
+
+/* ===================== v16: путь к цели — партиями по силам магазина, вехи, рычаги, срок =====================
+   Что было не так: путь считался одной партией на все деньги. Магазин продаёт ограниченно, поэтому каждый следующий
+   круг растягивался на годы, а цель ×10 уходила в 2040-й — и было непонятно, что с этим делать.
+   Теперь: партия — столько, сколько магазин продаст за сезон (не дольше +2 мес.); следующую закупку делают, пока
+   распродаётся предыдущая; видно, что держит цель (продажи или деньги) и что её приблизит.
+   Откуда идеи:
+   - Anderson, Chandy, Zia (852 фирмы, ЮАР; Management Science, 2018): обучение продажам поднимает прибыль через рост продаж,
+     обучение финансам — через экономию → главный рычаг большой цели — «продавать больше», а не «вложить больше»;
+   - Small Business Credit Survey ФРС (6 525 фирм, осень 2025): самая частая трудность — найти покупателей и нарастить продажи → «Что держит»;
+   - Huang, Jin, Zhang (OBHDP, 2017): в начале пути помогают промежуточные цели, ближе к концу — общая → вехи ×2, ×3, ×5;
+   - SEC, Investor.gov: обещание высокого дохода почти без риска — классический признак обмана → предупреждение при нереальном сроке;
+   - HBR (46 000 покупателей): кто покупает через несколько каналов, тратит больше и возвращается чаще → «новый канал продаж». */
+let ivSOver=null; const ivMemo=new Map();
+{ const _cm=ivCapMUSD; ivCapMUSD=function(){ return ivSOver!=null?{v:ivSOver,src:'sim'}:_cm(); }; }
+try{ const _p16=persist; persist=function(){ ivMemo.clear(); return _p16.apply(this,arguments); }; }catch(e){}
+const ivNice=v=>{ if(!(v>0)) return 0; const p=Math.pow(10,Math.max(0,Math.floor(Math.log10(v))-1)); return Math.round(v/p)*p; };
+function ivDur(m){ m=Math.max(1,Math.round(m)); const y=Math.floor(m/12), r=m%12; return (y?L.gpY(y):'')+(y&&r?' ':'')+(r||!y?L.gpMo(r):''); }
+function ivGoalWhen(D,m){ return m8MonLabel(addDays(D.start,Math.round(m*30.44))); }
+/* партия по силам: сколько товара магазин продаст за обычный срок или чуть дольше (до +2 мес.) */
+function ivPick(cat,c,d,v,sc){ const full=ivCalc(cat,c,d,v,sc); if(!(full.pcs>0)) return {r:null,b:v,capd:false};
+  if(!(sc&&sc.rp>0)) sc=Object.assign({},sc||{},{rp:full.retail});
+  if(!full.limited) return {r:full,b:v,capd:false};
+  const pr=ivCalc(cat,c,d,Math.min(v,full.trip+full.perPc*30),sc); if(pr.limited||!(pr.pcs>0)) return {r:full,b:v,capd:true};
+  const boost=(pr.se.k==='in'?1.3:pr.se.k==='off'?0.8:1)*(sc.ds||1), f=pr.full/100+(1-pr.full/100)*(1-pr.disc/100), S=full.capM.v; let best=null;
+  for(const k of [pr.months,pr.months+2]){ const b=Math.min(v,(S*boost*k/(pr.retail*f)*pr.perPc+pr.trip)*0.995), r=b>=v-0.5?full:ivCalc(cat,c,d,b,sc);
+    if(!(r.pcs>0)||r.months>pr.months+2.01) continue; const pm=r.profit/r.months; if(!best||pm>best.pm*1.02) best={r,b,pm}; }
+  if(!best) return {r:full,b:v,capd:true};
+  return {r:best.r,b:best.b,capd:best.b<v-0.5,sAll:(v-pr.trip)/pr.perPc*pr.retail*f/(boost*(pr.months+2))}; }
+/* путь к цели по месяцам. o: cap, tgt, re (0..1), start, S — продажи в месяц «если», sc — сценарий, maxM — дальше не считать */
+function ivPlan(cat,c,o){ const maxM=o.maxM||240, key=JSON.stringify([cat,c,o.cap,o.tgt,o.re,o.S==null?null:o.S,o.sc||0,+o.start,maxM,ivP(),usdRate()]);
+  if(ivMemo.has(key)) return ivMemo.get(key); if(ivMemo.size>600) ivMemo.clear();
+  const keepS=ivSOver; if(o.S!=null) ivSOver=o.S; let out;
+  try{ const first=ivCalc(cat,c,o.start,o.cap,o.sc||null), cyc=[]; let cash=o.cap, v=o.cap, ot=0, pend=0, home=0, sm=0, cm=0, why='';
+    if(first.pcs>0){ const sc=Object.assign({},o.sc||{},{rp:first.retail});
+      while(cyc.length<240){ const pk=ivPick(cat,c,addDays(o.start,Math.round(ot*30.44)),cash,sc), r=pk.r;
+        if(!r||!(r.profit>0)){ if(!cyc.length) why=!r?'cap':pk.capd?'small':'neg'; break; }
+        const lead=r.totalM-r.months, A=ot+lead, E=A+r.months, keep=r.profit*o.re, v1=v+keep, N=r.spent+keep, hm=r.profit-keep; home+=hm;
+        cash=cash-r.spent+pend; pend=0;
+        cyc.push({n:cyc.length+1,A,E,v0:v,v1,b:pk.b,capd:pk.capd,months:r.months,se:r.se,profit:r.profit,hm,r,sAll:pk.sAll}); sm+=r.months; if(pk.capd) cm+=r.months;
+        if(v1>=o.tgt-0.5||E>=maxM){ v=v1; break; }
+        /* следующая закупка — так, чтобы товар приехал к концу распродажи; если денег к этому дню мало, ждём конца */
+        const tau=Math.max(0,r.months-lead), c1=cash+N*tau/r.months, cE=cash+N;
+        if(c1>=0.5*Math.min(pk.b,cE)){ ot=A+tau; pend=N*(1-tau/r.months); cash=c1; } else { ot=E; cash=cE; }
+        v=v1; }
+    } else why='cap';
+    const last=cyc[cyc.length-1], hit=!!last&&last.v1>=o.tgt-0.5, fr=hit?(o.tgt-last.v0)/Math.max(1e-9,last.v1-last.v0):1, m=hit?last.A+fr*(last.E-last.A):Infinity;
+    out={ok:hit&&m<=maxM,m,cyc,home:hit?home-last.hm*(1-fr):home,capd:sm>0?cm/sm:0,first,why:why||(hit?'':'long')};
+  } finally { ivSOver=keepS; }
+  ivMemo.set(key,out); return out; }
+/* когда сумма дорастёт до val; сколько будет на m-й месяц */
+function ivPlanAt(pl,val){ for(const x of pl.cyc){ if(x.v1>=val-0.5) return x.v0>=val?x.A:x.A+(val-x.v0)/Math.max(1e-9,x.v1-x.v0)*(x.E-x.A); } return null; }
+function ivPlanVal(pl,m){ let v=pl.cyc.length?pl.cyc[0].v0:0; for(const x of pl.cyc){ if(m<=x.A) break; if(m>=x.E){ v=x.v1; continue; } v=x.v0+(x.v1-x.v0)*(m-x.A)/(x.E-x.A); break; } return v; }
+/* сколько нужно продавать в месяц, чтобы успеть за T месяцев */
+const ivUp=v=>{ if(!(v>0)) return 0; const p=Math.pow(10,Math.max(0,Math.floor(Math.log10(v))-1)); return Math.ceil(v/p-1e-9)*p; };
+function ivNeedS(cat,c,base,T,S0){ const run=(S,mx)=>ivPlan(cat,c,Object.assign({},base,{S,maxM:mx})), at=S=>{ const p=run(S,T+0.5); return p.ok&&p.m<=T; };
+  if(at(S0)) return {enough:true,S:S0,k:1}; const top=5e6; if(!at(top)){ const p=run(top,240); return {imp:true,minM:p.ok?p.m:null}; }
+  let lo=S0, hi=S0*2; while(!at(hi)&&hi<top){ lo=hi; hi*=2; } for(let i=0;i<12;i++){ const mid=Math.sqrt(lo*hi); if(at(mid)) hi=mid; else lo=mid; }
+  const S=ivUp(hi); return {S,k:S/S0}; }
+const ivDlLab=t=>L.gpDl[t]||ivDur(t);
+/* всё для карточки «Путь к цели».
+   lite — без перебора всех товаров (для Сифры и предложений);
+   simS — продажи в месяц «что если»: число — выбрал человек, 0 — как сейчас, null — сам: если выбран срок, показываем путь при продажах, нужных для срока */
+function ivGoalData(cat,lite,simS){ const P=ivP(), cap=ivCapUSD(), tgt=ivTargetUSD(), re=ivRe()/100, start=ivStart(); if(!(cap>0)||!(tgt>cap+0.5)) return null;
+  const S0=ivCapMUSD(), base={cap,tgt,re,start}, dl=+P.dl>=3?Math.min(240,Math.round(+P.dl)):0;
+  const rank=pl=>pl.ok?pl.m:1e6-(pl.cyc.length?(pl.cyc[pl.cyc.length-1].v1-cap)/pl.cyc[pl.cyc.length-1].E:0);
+  /* срок выбран: в какой стране нужных продаж меньше всего */
+  let need=null, cN=null; if(dl){ for(const c of IV_C){ const n=ivNeedS(cat,c,base,dl,S0.v), sc=n.enough?0:n.imp?1e12+(n.minM||1e6):n.S; if(!need||sc<need.sc){ need=Object.assign({sc},n); cN=c; } } }
+  const auto=simS==null&&!!need&&need.S>0&&!need.enough&&!need.imp, sim=auto?need.S:(simS>0&&Math.abs(simS-S0.v)>1?simS:null), bs=sim?Object.assign({},base,{S:sim}):base;
+  let best=null; if(cN) best={c:cN,pl:ivPlan(cat,cN,bs)}; else for(const c of IV_C){ const pl=ivPlan(cat,c,bs); if(!best||rank(pl)<rank(best.pl)) best={c,pl}; }
+  const c=best.c, pl=best.pl, pl0=sim?ivPlan(cat,c,base):pl, low=ivPlan(cat,c,Object.assign({},bs,{sc:IV_SC.low}));
+  const needAll=dl&&re<0.999&&need&&!need.enough?ivNeedS(cat,c,Object.assign({},base,{re:1}),dl,S0.v):null;
+  const sv=[{S:S0.v,cur:true}]; for(const k of [2,3,5]) sv.push({S:ivNice(S0.v*k)});
+  if(need&&need.S>0&&!need.enough&&!need.imp){ const ex=sv.find(x=>!x.cur&&Math.abs(x.S-need.S)<1); if(ex) ex.dl=true; else sv.push({S:need.S,dl:true}); }
+  sv.sort((x,y)=>x.S-y.S); const sRows=sv.map(x=>{ const p=x.cur?pl0:ivPlan(cat,c,Object.assign({},base,{S:x.S})); return Object.assign(x,{m:p.ok?p.m:null,on:sim?!x.cur&&Math.abs(x.S-sim)<1:!!x.cur}); });
+  const reRows=[100,70,50].map(x=>{ const cur=Math.abs(x/100-re)<0.001, p=cur?pl:ivPlan(cat,c,Object.assign({},bs,{re:x/100})); return {re:x,m:p.ok?p.m:null,cur,on:cur}; });
+  const topS=sRows[sRows.length-1].S, both=re<0.999?(()=>{ const p=ivPlan(cat,c,Object.assign({},base,{S:topS,re:1})); return {S:topS,m:p.ok?p.m:null}; })():null;
+  let fast=null; if(!lite&&!dl){ let bm=pl.ok?pl.m*0.9:240; for(const k of IV_CATS){ if(k===cat) continue; for(const c2 of IV_C){ const p=ivPlan(k,c2,Object.assign({},bs,{maxM:Math.ceil(bm)})); if(p.ok&&p.m<bm){ bm=p.m; fast={cat:k,c:c2,m:p.m}; } } } }
+  return {cat,c,cap,tgt,re,start,S0,sim,auto,Ssel:sim||S0.v,pl,pl0,low,sRows,reRows,both,dl,need,needAll,fast,x:tgt/cap}; }
+/* «Как разложить деньги»: товар по силам магазина, запас на платежи, свободный остаток */
+function ivSplitHTML(D){ const b1=D.pl0.cyc[0]; if(!b1||!b1.capd||b1.b>D.cap*0.92) return ''; const u=usdRate(), r=b1.r, rv=ivReserve(r.totalM);
+  const res=u?Math.min(D.cap-b1.b,(rv.loans+rv.shop)/u):0, free=Math.max(0,D.cap-b1.b-res); let al=null; try{ al=free>=50?ivLoanAlt(free):null; }catch(e){}
+  const rt=al?fx(al.rate,al.rate%1?1:0):'', loan=al?(al.closes?L.gpSpLoanC('<b>'+money(al.pay)+'</b>',esc(al.loan.name),rt,'<b>'+money(al.saved)+'</b>'):L.gpSpLoanP('<b>'+money(al.pay)+'</b>',esc(al.loan.name),rt,'<b>'+money(al.saved)+'</b>',al.sooner)):L.gpSpKeep;
+  const row=(k,t,v,d)=>`<div class="gp-sp ${k}"><i></i><span>${t}</span><b>${ivUsd(v)}</b><small>${d}</small></div>`;
+  return `<div class="iv2-card gp-split" id="gp-split"><h4>${ico('cash',18)} ${L.gpSplitT(ivUsd(D.cap))}</h4>
+    <div class="gp-bar" aria-hidden="true"><i class="g" style="flex:${Math.max(1,Math.round(b1.b))}"></i>${res>=1?`<i class="r" style="flex:${Math.round(res)}"></i>`:''}${free>=1?`<i class="f" style="flex:${Math.round(free)}"></i>`:''}</div>
+    ${row('g',L.gpSpG,b1.b,L.gpSpGD(fx(r.months,r.months%1?1:0),'+'+ivUsd(r.profit)))}
+    ${res>=1?row('r',L.gpSpR,res,L.gpSpRD(rv.n,money(rv.loans+rv.shop))):''}
+    ${free>=1?row('f',L.gpSpF,free,L.gpSpFD+' '+loan):''}
+    ${b1.sAll>0?`<p class="gp-all">${ico('info',16)}<span>${L.gpSpAll(ivUsd(D.cap),'<b>'+ivUsd(ivNice(b1.sAll))+'</b>')}</span></p>`:''}</div>`; }
+/* «План от Сифры»: расчёт выше — формулы приложения, а план — онлайн-анализ: рынок, свежие цены, каналы продаж, кредиты.
+   Сохраняется в «Моих идеях» и привязан к цели (сумма, цель, срок): сменили цель — план составляется заново */
+function ivPlanKey(D){ return Math.round(D.cap)+'|'+Math.round(D.tgt)+'|'+(D.dl||0); }
+function ivPlanFind(D){ const k=ivPlanKey(D); return ideas().find(x=>x.kind==='plan'&&x.gk===k)||null; }
+function ivPlanAsk(D,edit){ if(!navigator.onLine){ toast(L.idOffline); return; } const n=D.need||{}, need=n.S>0&&!n.enough&&!n.imp?ivUsd(n.S):'';
+  const text=L.gpPlanQ(ivUsd(D.cap),ivUsd(D.tgt),D.dl?ivDlLab(D.dl):'',ivUsd(D.S0.v),D.S0.src==='def',need,L['whC_'+D.cat]||D.cat,L['cn_'+D.c]||D.c).replace(/[\u00a0\u202f]/g,' ');
+  ideaRun({kind:'plan',gk:ivPlanKey(D),gt:ivUsd(D.tgt),back:'invest',edit:edit||undefined,text,amt:0,cur:'USD'}); }
+/* карточка «Путь к цели» */
+function ivGoalHTML(D){ if(!D) return ''; const u=usdRate(), pl=D.pl, dAt=m=>ivGoalWhen(D,m), b1=pl.cyc[0], salesLim=pl.capd>=0.5||pl.why==='small', def=D.S0.src==='def'&&!D.sim;
+  const head=`<h4>${ico('flag',18)} ${L.ivPathT}: ${ivUsd(D.cap)} → ${ivUsd(D.tgt)}</h4><p class="gp-prod">${L['whC_'+D.cat]} · ${TCOUNTRY[D.c].f} ${L['cn_'+D.c]}</p>`;
+  /* срок: выбрать и сразу увидеть, что для него нужно */
+  const dls=[12,24,36,60].concat(D.dl&&![12,24,36,60].includes(D.dl)?[D.dl]:[]).sort((a,b)=>a-b);
+  const dlC=`<div class="gp-dlw"><small>${L.gpDlT}</small><div class="chips gp-dl">${dls.map(t=>`<button type="button" class="chip ${D.dl===t?'on':''}" data-gpdl="${t}" aria-pressed="${D.dl===t}">${ivDlLab(t)}</button>`).join('')}</div></div>`;
+  let dlR=''; if(D.dl&&D.need){ const n=D.need, pm=(Math.pow(D.x,1/D.dl)-1)*100, xs=fx(D.x,Math.abs(D.x-Math.round(D.x))>0.05?1:0), red=pm>=12&&!n.enough, all=D.needAll&&D.needAll.S>0&&(n.imp||D.needAll.S<n.S*0.95);
+    dlR=`<div class="gp-dlr ${n.enough?'ok':n.imp?'bad':''}" id="gp-dlr"><b class="gp-dlh">${L.gpDlH(ivDlLab(D.dl))}</b>`
+      +(n.enough?`<p class="gp-need ok">${ico('check',16)}<span>${L.gpEnough}</span></p>`:n.imp?`<p class="gp-need bad">${ico('warn',16)}<span>${L.gpImp(n.minM?ivDur(n.minM):'')}</span></p>`
+      :`<p class="gp-need">${ico('shop',16)}<span>${L.gpNeed('<b>'+ivUsd(n.S)+'</b>',u?money(n.S*u):'',L.gpX(n.k))}</span></p>`)
+      +(all?`<p class="gp-need2">${L.gpNeedAll('<b>'+ivUsd(D.needAll.S)+'</b>')}</p><button type="button" class="gp-mini" data-gpre="100">${L.gpReBtn}</button>`:'')
+      +`<p class="gp-rate ${red?'red':''}">${ico(red?'warn':'info',16)}<span>${L.gpRate(xs,ivDlLab(D.dl),pm>=10?Math.round(pm):fx(pm,1))}${red?' '+L.gpRed:pm>=7&&!n.enough?' '+L.gpHard:''}</span></p>`
+      +`</div>`; }
+  const have=ivPlanFind(D), hv=have&&have.rep?have.rep.verdict:'', hd=have?parseYmd(have.d):null;
+  const planB=`<div class="gp-planw"><button type="button" class="gp-plan" id="gp-plan"><span class="sf-ava">${SF_AVA}</span><span><b>${have?L.gpPlanOpen:L.gpPlan}</b><small>${have?L.gpPlanHave(hd?fmtDate(hd):'',hv?L.gpPlanV[hv]:''):L.gpPlanSub}</small></span></button>${have?`<button type="button" class="gp-mini" id="gp-plan2">${L.gpPlanNew}</button>`:''}</div>`;
+  const simB=D.sim?`<p class="gp-sim">${ico('eye',16)}<span>${D.auto?L.gpSimDl(ivUsd(D.sim)):L.gpSim(ivUsd(D.sim))}</span><button type="button" id="gp-unsim">${L.gpSimOff}</button></p>`:'';
+  const when=pl.ok?`<p class="gp-when">${L.gpGoalAt('<b>'+dAt(pl.m)+'</b>',ivDur(pl.m))}</p>`:`<p class="gp-when bad">${pl.why==='neg'?L.gpNeg:pl.why==='small'?L.gpSmall:pl.why==='cap'?L.gpCap:L.gpNever}</p>`;
+  const lowL=pl.ok?`<p class="gp-low">${D.low.ok?L.gpLow(dAt(D.low.m)):L.gpLowNo}</p>`:'';
+  const lim=b1||pl.why==='small'?`<div class="gp-lim ${salesLim?'s':'m'}">${ico(salesLim?'shop':'cash',20)}<div><b>${salesLim?L.gpLimS:L.gpLimM}</b><p>${salesLim?(b1&&b1.capd?L.gpLimSD(ivUsd(D.Ssel),ivUsd(b1.b),def,!!D.sim):L.gpLimSD2(ivUsd(D.Ssel),def,!!D.sim)):L.gpLimMD}</p>${def?`<button type="button" class="gp-set" id="gp-set">${L.gpSet}</button>`:''}</div></div>`:'';
+  const v12=ivPlanVal(pl,12), y1=b1&&(!pl.ok||pl.m>14)&&v12>D.cap+1?`<p class="gp-y1">${L.gpY1(ivUsd(v12-D.cap),D.re<0.999&&D.re>0?ivUsd((v12-D.cap)*(1-D.re)/D.re):'')}</p>`:'';
+  /* закупки: сколько их и какие — вместо длинного списка «кругов» */
+  const nC=pl.cyc.length, mid=nC?pl.cyc[Math.floor((nC-1)/2)]:null, trips=pl.ok&&nC>1?`<p class="gp-trips">${ico('plane',16)}<span>${L.gpTrips(nC,ivUsd(ivNice(mid.b)),fx(mid.months,mid.months%1?1:0))}</span></p>`:'';
+  const ms=[]; if(pl.ok){ if(D.x>=3){ for(const x of [2,3,5]) if(x<D.x-0.01) ms.push({l:'×'+x,v:D.cap*x}); } else ms.push({l:L.gpMsHalf,v:D.cap+(D.tgt-D.cap)/2}); ms.push({l:L.gpMsGoal,v:D.tgt,fin:true}); for(const x of ms) x.m=ivPlanAt(pl,x.v); }
+  const msH=ms.length?`<div class="gp-ms">${ms.map(x=>`<div class="gp-m ${x.fin?'fin':''}"><span>${x.l}</span><b>${ivUsd(x.v)}</b><small>${dAt(x.m)}</small><i><em style="width:${Math.max(3,Math.round(x.m/pl.m*100))}%"></em></i></div>`).join('')}</div>`:'';
+  const cmp=m=>m==null?L.gpNo20:dAt(m), delta=m=>(!pl.ok||m==null||Math.abs(pl.m-m)<1)?'':(m<pl.m?L.gpSooner(ivDur(pl.m-m)):L.gpLater(ivDur(m-pl.m)));
+  const lr=(x,lab,at)=>`<button type="button" class="gp-lr ${x.on?'on':''} ${x.m==null?'no':''}" ${at} aria-pressed="${!!x.on}"><span>${lab}${x.cur?' <small>'+L.gpNow+'</small>':''}${x.dl?' <small class="dl">'+L.gpByDl+'</small>':''}</span><b>${cmp(x.m)}</b><em>${x.on?'':delta(x.m)}</em></button>`;
+  const reL={100:L.gpReAll,70:L.gpRe70,50:L.gpReHalf};
+  const fast=D.fast?`<button type="button" class="gp-fast" data-gpcat="${D.fast.cat}">${ico('sparkle',18)}<span>${L.gpFast(L['whC_'+D.fast.cat],L['cn_'+D.fast.c],dAt(D.fast.m))}</span><b>${L.gpFastGo}</b></button>`:'';
+  return `<div class="iv-cy gp" id="gp">${head}${dlC}${dlR}${planB}${simB}${when}${lowL}${lim}${y1}${trips}${msH}${fast}
+    <h5>${L.gpLevT}</h5><div class="gp-lev"><small>${L.gpLevS}</small>${D.sRows.map(x=>lr(x,ivUsd(x.S),'data-gps="'+(x.cur?0:x.S)+'"')).join('')}</div>
+    <div class="gp-lev"><small>${L.gpLevR}</small>${D.reRows.map(x=>lr(x,reL[x.re],'data-gpre="'+x.re+'"')).join('')}</div>${D.both&&D.both.m!=null?`<p class="gp-both">${ico('sparkle',16)}<span>${L.gpBoth(ivUsd(D.both.S),'<b>'+dAt(D.both.m)+'</b>',ivDur(D.both.m))}</span></p>`:''}<p class="gp-tap">${L.gpTap}</p>
+    ${pl.ok&&pl.home>=1?`<p class="gp-home">${ico('home',16)}<span>${L.ivCyHome('<b>'+ivUsd(pl.home)+'</b>'+ivUsdTj(pl.home))}</span></p>`:''}
+    <details class="iv2-how gp-how"><summary>${ico('info',16)}<span>${L.gpHow}</span>${ico('down',16)}</summary><p>${L.gpHowD}</p></details></div>`; }
+function ivGoalBind(box,D,api){ const P=ivP();
+  box.querySelectorAll('[data-gpdl]').forEach(b=>b.onclick=()=>{ const t=+b.dataset.gpdl; api.setDl(D.dl===t?0:t); });
+  const pb=box.querySelector('#gp-plan'); if(pb) pb.onclick=()=>{ const have=ivPlanFind(D); if(have) ideaView(have.id,'invest'); else ivPlanAsk(D); };
+  const p2=box.querySelector('#gp-plan2'); if(p2) p2.onclick=()=>{ const have=ivPlanFind(D); ivPlanAsk(D,have?have.id:null); };
+  const f=box.querySelector('[data-gpcat]'); if(f) f.onclick=()=>api.pick(f.dataset.gpcat);
+  box.querySelectorAll('[data-gps]').forEach(b=>b.onclick=()=>api.setS(+b.dataset.gps||0));
+  box.querySelectorAll('[data-gpre]').forEach(b=>b.onclick=()=>api.setRe(+b.dataset.gpre));
+  const us=box.querySelector('#gp-unsim'); if(us) us.onclick=()=>api.setS(0);
+  const st=box.querySelector('#gp-set'); if(st) st.onclick=()=>{ const i=$('#iv-sm'); if(i){ i.scrollIntoView({block:'center'}); try{ i.focus({preventScroll:true}); }catch(e){ i.focus(); } } }; }
+/* цель для Сифры: коротко и цифрами, чтобы её советы и разборы считали от того же, что видит человек. Только если цель выбрана самим человеком */
+function ivGoalOn(){ const P=ivP(); return !!(P.goal&&ivCapUSD()>0&&ivTargetUSD()>ivCapUSD()+0.5); }
+function ivGoalLite(){ if(!ivGoalOn()) return null; try{ return ivGoalData(ivP().cat||'kids',true,0); }catch(e){ return null; } }
+function ivGoalCtx(){ const D=ivGoalLite(); if(!D) return null; const pl=D.pl, b1=pl.cyc[0], n=D.need, o={from_usd:Math.round(D.cap),to_usd:Math.round(D.tgt),times:Math.round(D.x*10)/10,reinvest_pct:Math.round(D.re*100),product:L['whC_'+D.cat]||D.cat,country:D.c,
+    shop_sales_month_usd:Math.round(D.S0.v),sales_figure:D.S0.src==='def'?'примерная, человек её не вводил':D.S0.src==='fact'?'из записей выручки':'ввёл человек',
+    months_to_goal:pl.ok?Math.round(pl.m):null,goal_month:pl.ok?ymd(addDays(D.start,Math.round(pl.m*30.44))).slice(0,7):null,limiter:pl.capd>=0.5||pl.why==='small'?'sales':'money',
+    batch_usd:b1?Math.round(b1.b):null,if_sales:D.sRows.filter(x=>!x.cur).map(x=>({sales_month_usd:Math.round(x.S),months_to_goal:x.m!=null?Math.round(x.m):null}))};
+  if(D.dl&&n){ o.deadline_months=D.dl; o.deadline_ok=!!n.enough; o.need_sales_month_usd=n.enough?null:n.imp?null:Math.round(n.S); if(n.imp) o.deadline_impossible_min_months=n.minM?Math.round(n.minM):null; if(D.needAll&&D.needAll.S>0) o.need_sales_if_all_profit_usd=Math.round(D.needAll.S); }
+  o.note='расчёт приложения: товар партиями по силам магазина, по ценам из приложения; это оценка, не обещание'; return o; }
+function ivGoalNote(text){ const D=ivGoalLite(); if(!D||String(text||'').replace(/\s/g,'').indexOf(ivUsd(D.tgt).replace(/\s/g,''))>=0) return ''; return L.idGoalNote(ivUsd(D.cap),ivUsd(D.tgt),D.pl.ok?ivGoalWhen(D,D.pl.m):'',D.dl?ivDlLab(D.dl):''); }
+/* предложение дня про цель: что её держит и что сдвинет срок */
+function ofGoal(){ const D=ivGoalLite(); if(!D) return null; const pl=D.pl, tg=ivUsd(D.tgt), cp=ivUsd(D.cap), s0=ivUsd(D.S0.v);
+  if(pl.capd>=0.5||pl.why==='small'){ const nx=D.sRows.find(x=>!x.cur&&x.m!=null)||D.sRows[1], s1=ivUsd(nx.S);
+    return {k:'tgt',t:L.ofGoalS(tg),d:pl.ok&&nx.m!=null?L.ofGoalSD(s0,ivGoalWhen(D,pl.m),s1,ivGoalWhen(D,nx.m)):nx.m!=null?L.ofGoalSD0(s0,s1,ivGoalWhen(D,nx.m)):L.ofGoalSD1(s0),q:L.ofGoalQ(s0,s1,cp,tg)}; }
+  return {k:'tgt',t:L.ofGoalM(tg),d:pl.ok?L.ofGoalMD(ivGoalWhen(D,pl.m)):L.gpNever,q:L.ofGoalQM(cp,tg)}; }
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
