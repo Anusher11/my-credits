@@ -1780,6 +1780,40 @@
   @media (prefers-reduced-motion:reduce){.m12-chb i{transition:none;}}
   #demoBar{background:linear-gradient(90deg,#5638DA,#8B6CFF);}
   .m8-sw-dark i:nth-child(2){background:#2DB487;} .m8-sw-auto i:nth-child(3){background:#FFC83D;}
+  /* ===================== v13: Сифра — экран разговора =====================
+     Один экран без прокрутки: сверху ответ крупно, в центре круг, внизу три кнопки. Всё лишнее убрано. */
+  .sheet.sf-talking{display:flex; flex-direction:column; height:92vh; height:92dvh; max-height:none; overflow:hidden; padding-top:14px;}
+  .sheet.sf-talking>:not(.sf-tp){display:none !important;}
+  .sf-talking .sf-tp{flex:1; min-height:0; display:flex; flex-direction:column; align-items:stretch; gap:0; padding:0;}
+  .sf-ttop{display:flex; align-items:center; gap:10px; padding-bottom:10px; flex:none;}
+  .sf-ttop .sf-ava svg{width:40px; height:40px;}
+  .sf-tt{flex:1; min-width:0; line-height:1.2;} .sf-tt b{display:block; font-size:1.1rem;} .sf-tt small{display:block; color:var(--muted); font-weight:700; font-size:.8rem;}
+  .sf-tic{flex:none; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+  .sf-tic[aria-expanded="true"]{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7); border-color:transparent;}
+  .sf-tic:focus-visible,.sf-tbot .btn:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  .sf-tsetp{flex:none; background:var(--surface-2); border-radius:18px; padding:12px; display:flex; flex-direction:column; gap:10px; margin-bottom:8px;} .sf-tsetp[hidden]{display:none;}
+  .sf-tsetp .sf-vl{justify-content:space-between; color:var(--ink);} .sf-tsetp .sf-vl select{flex:1; max-width:none; min-height:44px; margin-left:10px;}
+  .sf-rate{display:flex; align-items:center; gap:10px; font-weight:700; font-size:.88rem;} .sf-rate .seg{flex:1; margin:0;} .sf-rate .seg button{min-height:42px; padding:6px 4px; font-size:.84rem;}
+  .sf-tsetp .sf-try{justify-content:center; min-height:44px;} .sf-tsetp .sf-vtip{max-width:none; text-align:left;}
+  .sf-cap{flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; display:flex; flex-direction:column; padding:4px 2px 18px; -webkit-mask-image:linear-gradient(#000 calc(100% - 26px),transparent); mask-image:linear-gradient(#000 calc(100% - 26px),transparent);}
+  .sf-capa{margin:auto 0; font-size:1.2rem; line-height:1.5; font-weight:600; overflow-wrap:anywhere;} .sf-capa p{margin:0 0 10px;} .sf-capa p:last-child{margin-bottom:0;} .sf-capa ul{margin:4px 0 10px; padding-left:22px;} .sf-capa li{margin:4px 0;}
+  .sf-capa.err{color:var(--muted);} .sf-capa .sf-act{margin-top:12px; width:100%; justify-content:center; font-size:1rem;}
+  .sf-cap0{margin:auto; max-width:300px; text-align:center; color:var(--muted); font-size:1.05rem; line-height:1.5; font-weight:600;}
+  .sf-tmid{flex:none; display:flex; flex-direction:column; align-items:center; gap:4px; padding:14px 0 12px;}
+  .sf-tmid .sf-orb{position:relative; width:136px; height:136px; margin-bottom:22px;}
+  .sf-orb-r{position:absolute; inset:-12px; border-radius:50%; border:3px solid rgba(124,92,245,.5); opacity:0; transform:scale(1); pointer-events:none;}
+  .sf-orb[data-ph="listen"] .sf-orb-r{opacity:calc(.22 + var(--lv,0)*.78); transform:scale(calc(1 + var(--lv,0)*.14)); transition:transform .09s linear, opacity .09s linear;}
+  .sf-orb.hear{box-shadow:0 12px 34px rgba(91,63,224,.5);}
+  .sf-tmid .sf-ts{font-size:1.2rem; min-height:1.4em;}
+  .sf-thint{color:var(--muted); font-size:.88rem; font-weight:600; text-align:center; min-height:1.4em;}
+  .sf-tmid .sf-th{color:var(--ink); font-size:1rem; font-weight:600; line-height:1.4; min-height:2.8em; max-height:4.2em; overflow:hidden; padding:0 6px;}
+  .sf-tbot{flex:none; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px;}
+  .sf-tbot .btn{min-height:60px; padding:8px 4px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; font-size:.82rem; line-height:1.15; width:100%; min-width:0; margin:0; border-radius:18px;}
+  .sf-tbot .btn svg{flex:none;} .sf-tbot .btn span{max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  @media (max-height:640px){ .sf-tmid .sf-orb{width:108px; height:108px;} .sf-capa{font-size:1.08rem;} }
+  @media (prefers-reduced-motion:reduce){.sf-orb-r{transition:none !important;}}
+  .sf-head .sf-x{width:42px; height:42px; margin-left:4px;} .sf-head .sf-talkbtn{min-height:42px;}
+  .sf-head>div{min-width:0;}
 </style>
 </head>
 <body>
@@ -3894,6 +3928,43 @@ en:{
   m12St:p=>p+'% sold', m12StGood:'selling well', m12StMid:'selling steadily', m12StEarly:w=>'too early to tell, '+w+' wk. in', m12StLow:w=>'low after '+w+' wk. Decide: discount, new display or stop buying it',
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M12S[k]);
+
+/* ----- v13: Сифра — экран разговора, живой голос, скорость ----- */
+const M13S={
+ru:{
+  sfSub:'Спросите — посчитаю и подскажу',
+  sfTalkListen:'Слушаю вас', sfTalkHearing:'Слышу вас…', sfTalkRecog:'Разбираю слова…', sfTalkThink:'Думаю…', sfTalkSpeak:'Отвечаю', sfTalkIdle:'Пауза',
+  sfTalkHintL:'Говорите спокойно. Замолчите — я отвечу.', sfTalkHintH:'Договорили? Замолчите или нажмите на круг.', sfTalkHintT:'Нажмите на круг, чтобы отменить', sfTalkHintS:'Нажмите на круг, чтобы перебить', sfTalkHintI:'Нажмите на круг, чтобы продолжить',
+  sfTalkStop:'Закончить', sfTalkKb:'Написать', sfTalkPause:'Пауза', sfTalkResume:'Продолжить', sfTalkSetup:'Голос и скорость',
+  sfTalkCap0:'Спросите голосом. Например: «Сколько мне платить на этой неделе?»',
+  sfRate:'Скорость', sfRateS:'Медленно', sfRateN:'Обычно', sfRateF:'Быстро',
+  sfModeLive:'живой голос', sfModePhone:'голос телефона', sfVoiceLive:'Живой голос Сифры',
+  sfVoiceAsk:'(Ответь коротко, в 2–3 предложениях, без списков — ответ прозвучит вслух.)',
+  sfEarFail:'Сервер не разобрал речь — слушаю через телефон',
+},
+tg:{
+  sfSub:'Пурсед — ҳисоб мекунам ва маслиҳат медиҳам',
+  sfTalkListen:'Гӯш мекунам', sfTalkHearing:'Мешунавам…', sfTalkRecog:'Суханро мефаҳмам…', sfTalkThink:'Фикр мекунам…', sfTalkSpeak:'Ҷавоб медиҳам', sfTalkIdle:'Таваққуф',
+  sfTalkHintL:'Оромона гап занед. Хомӯш шавед — ҷавоб медиҳам.', sfTalkHintH:'Гуфта шудед? Хомӯш шавед ё доираро пахш кунед.', sfTalkHintT:'Барои бекор кардан доираро пахш кунед', sfTalkHintS:'Барои буридани сухан доираро пахш кунед', sfTalkHintI:'Барои идома доираро пахш кунед',
+  sfTalkStop:'Анҷом', sfTalkKb:'Навиштан', sfTalkPause:'Таваққуф', sfTalkResume:'Идома', sfTalkSetup:'Овоз ва суръат',
+  sfTalkCap0:'Бо овоз пурсед. Масалан: «Ин ҳафта чанд пардохт кунам?»',
+  sfRate:'Суръат', sfRateS:'Оҳиста', sfRateN:'Муқаррарӣ', sfRateF:'Тез',
+  sfModeLive:'овози зинда', sfModePhone:'овози телефон', sfVoiceLive:'Овози зиндаи Сифра',
+  sfVoiceAsk:'(Кӯтоҳ ҷавоб деҳ, дар 2–3 ҷумла, бе рӯйхат — ҷавоб бо овоз хонда мешавад.)',
+  sfEarFail:'Сервер суханро нафаҳмид — тавассути телефон гӯш мекунам',
+},
+en:{
+  sfSub:'Ask and I’ll work it out',
+  sfTalkListen:'Listening', sfTalkHearing:'I hear you…', sfTalkRecog:'Working out the words…', sfTalkThink:'Thinking…', sfTalkSpeak:'Answering', sfTalkIdle:'Paused',
+  sfTalkHintL:'Speak at your own pace. Stop talking and I’ll answer.', sfTalkHintH:'Finished? Stop talking or tap the circle.', sfTalkHintT:'Tap the circle to cancel', sfTalkHintS:'Tap the circle to interrupt', sfTalkHintI:'Tap the circle to continue',
+  sfTalkStop:'End', sfTalkKb:'Type', sfTalkPause:'Pause', sfTalkResume:'Continue', sfTalkSetup:'Voice and speed',
+  sfTalkCap0:'Ask out loud. For example: “How much do I pay this week?”',
+  sfRate:'Speed', sfRateS:'Slow', sfRateN:'Normal', sfRateF:'Fast',
+  sfModeLive:'live voice', sfModePhone:'phone voice', sfVoiceLive:'Sifra’s live voice',
+  sfVoiceAsk:'(Answer briefly, in 2–3 sentences, no lists — the answer will be read aloud.)',
+  sfEarFail:'The server couldn’t make out the speech — listening through the phone',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M13S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -9099,14 +9170,20 @@ function sfMsgHTML(m,i){ if(m.r==='u') return `<div class="sf-m u">${m.img&&SF_T
     ${m.src&&m.src.length?`<div class="sf-src">${m.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||sfHost(s.url))}</a>`).join('')}</div>`:''}
     ${m.t?`<button class="sf-say" data-sfsay="${i}" aria-label="${L.sfSay}">🔊</button>`:''}</div>`; }
 function sifraOpen(q0){ const log=sfLog();
-  openSheet(`<div class="sf-head"><span class="sf-ava">${SF_AVA}</span><div><h3>${L.sfName}</h3><small>${L.sfSub}</small></div><button class="sf-talkbtn" id="sf-talk" aria-pressed="false">${SF_WAVE}<span>${L.sfTalk}</span></button></div>
+  openSheet(`<div class="sf-head"><span class="sf-ava">${SF_AVA}</span><div><h3>${L.sfName}</h3><small>${L.sfSub}</small></div><button class="sf-talkbtn" id="sf-talk" aria-pressed="false">${SF_WAVE}<span>${L.sfTalk}</span></button><button class="sf-tic sf-x" data-close aria-label="${esc(L.close)}">${ico('close',20)}</button></div>
     <div class="sf-log" id="sf-log" aria-live="polite">${log.length?log.map(sfMsgHTML).join(''):`<div class="sf-hello">${L.sfHello}</div>`}</div>
     <div class="sf-tp" id="sf-tp" hidden>
-      <button class="sf-orb" id="sf-orb" data-ph="idle" aria-label="${esc(L.sfTalk)}">${SF_ORB}</button>
-      <div class="sf-ts" id="sf-ts" aria-live="polite"></div><div class="sf-th" id="sf-th"></div>
-      <div class="sf-trow"><label class="sf-vl">${L.sfVoice} <select id="sf-vsel" data-nodirty></select></label><button class="btn btn-ghost sf-try" id="sf-try">▶ ${L.sfTry}</button></div>
-      <p class="sf-vtip" id="sf-vtip" hidden>${L.sfVoiceTip}</p>
-      <button class="btn btn-ghost sf-tstop" id="sf-tstop">${L.sfTalkStop}</button></div>
+      <div class="sf-ttop"><span class="sf-ava">${SF_AVA}</span><div class="sf-tt"><b>${L.sfName}</b><small id="sf-tmode"></small></div>
+        <button class="sf-tic" id="sf-tset" aria-label="${esc(L.sfTalkSetup)}" aria-expanded="false">${ico('gear',22)}</button><button class="sf-tic" id="sf-tx" aria-label="${esc(L.sfTalkStop)}">${ico('close',22)}</button></div>
+      <div class="sf-tsetp" id="sf-tsetp" hidden>
+        <label class="sf-vl"><span>${L.sfVoice}</span><select id="sf-vsel" data-nodirty></select></label>
+        <div class="sf-rate"><span>${L.sfRate}</span><div class="seg" role="group" aria-label="${esc(L.sfRate)}">${[['s',L.sfRateS],['n',L.sfRateN],['f',L.sfRateF]].map(o=>`<button type="button" data-sfrate="${o[0]}">${o[1]}</button>`).join('')}</div></div>
+        <button class="btn btn-ghost sf-try" id="sf-try">▶ ${L.sfTry}</button>
+        <p class="sf-vtip" id="sf-vtip" hidden>${L.sfVoiceTip}</p></div>
+      <div class="sf-cap" id="sf-cap" aria-live="polite"></div>
+      <div class="sf-tmid"><button class="sf-orb" id="sf-orb" data-ph="idle" aria-label="${esc(L.sfTalk)}"><span class="sf-orb-r" aria-hidden="true"></span>${SF_ORB}</button>
+        <div class="sf-ts" id="sf-ts" aria-live="polite"></div><div class="sf-thint" id="sf-thint"></div><div class="sf-th" id="sf-th"></div></div>
+      <div class="sf-tbot"><button class="btn btn-ghost" id="sf-tkb">${ico('edit',18)}<span>${L.sfTalkKb}</span></button><button class="btn btn-ghost" id="sf-tpause"></button><button class="btn btn-ghost sf-tstop" id="sf-tstop">${ico('close',18)}<span>${L.sfTalkStop}</span></button></div></div>
     <div class="chips sf-qs" id="sf-qs">${L.sfQs.map((q,i)=>`<button class="chip" data-sfq="${i}">${esc(q)}</button>`).join('')}</div>
     <div class="sf-pv" id="sf-pv" hidden><img id="sf-pvi" alt=""><span>${L.sfPhotoAdded}</span><button id="sf-pvx" aria-label="${esc(L.sfPhotoDel)}">✕</button></div>
     <div class="sf-bar"><button class="sf-cam" id="sf-cam" aria-label="${esc(L.sfPhoto)}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.6"/></svg></button><button class="sf-mic" id="sf-mic" aria-label="${L.sfMic}"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></button>
@@ -9119,10 +9196,15 @@ function sifraOpen(q0){ const log=sfLog();
   $('#sf-send').onclick=()=>sfAsk(inp.value,false); $('#sf-mic').onclick=sfListen;
   $('#sf-cam').onclick=sfPickPhoto; $('#sf-pvx').onclick=()=>{ sfImg=null; sfImgShow(); }; sfImgShow();
   $('#sf-talk').onclick=()=>{ if(sfT) sfTalkEnd(); else sfTalkStart(); };
-  $('#sf-tstop').onclick=sfTalkEnd; $('#sf-orb').onclick=sfOrbTap;
-  $('#sf-try').onclick=()=>sfSay(L.sfTrySample);
-  $('#sf-vsel').onchange=e=>{ try{ localStorage.setItem('sf_voice_v1',e.target.value); }catch(_){} sfSay(L.sfTrySample); };
-  sfVoiceFill();
+  $('#sf-tstop').onclick=sfTalkEnd; $('#sf-tx').onclick=sfTalkEnd; $('#sf-orb').onclick=sfOrbTap; $('#sf-tpause').onclick=sfTalkPause;
+  $('#sf-tkb').onclick=()=>{ sfTalkEnd(); const i=$('#sf-in'); if(i) setTimeout(()=>i.focus(),60); };
+  $('#sf-tset').onclick=()=>{ const sp=$('#sf-tsetp'); sp.hidden=!sp.hidden; $('#sf-tset').setAttribute('aria-expanded',sp.hidden?'false':'true'); };
+  /* проба голоса: на время пробы не слушаем, чтобы Сифра не услышала саму себя */
+  const trySay=()=>{ if(sfT){ sfT.tk++; sfRecKill(); sfEarClose(); sfAskCut(); sfTalkSet('speak'); sfSay(L.sfTrySample,()=>{ if(sfT) sfTalkSet('idle'); }); } else sfSay(L.sfTrySample); };
+  $('#sf-try').onclick=trySay;
+  $('#sf-vsel').onchange=e=>{ try{ localStorage.setItem('sf_voice_v1',e.target.value); }catch(_){} sfTtsOff=0; sfVoiceFill(); trySay(); };
+  sheet.querySelectorAll('[data-sfrate]').forEach(b=>b.onclick=()=>{ try{ localStorage.setItem('sf_rate_v1',b.dataset.sfrate); }catch(_){} sfVoiceFill(); trySay(); });
+  sfVoiceFill(); sfCapsLoad().then(()=>sfVoiceFill());
   sheet.querySelectorAll('[data-sfq]').forEach(b=>b.onclick=()=>sfAsk(L.sfQs[+b.dataset.sfq],false));
   if($('#sf-clear')) $('#sf-clear').onclick=()=>{ sfTalkEnd(); sfLog().length=0; persist(); sifraOpen(); };
   sfBind(); sfTalkUI(); if(q0) sfAsk(q0,false); }
@@ -9132,7 +9214,9 @@ function sfBind(){ sheet.querySelectorAll('[data-sfact]').forEach(b=>b.onclick=(
     sheet.querySelectorAll('.sf-say.on').forEach(x=>x.classList.remove('on')); b.classList.add('on'); sfSay(m.t,()=>b.classList.remove('on')); }); }
 function sfRedraw(){ const box=$('#sf-log'); if(!box) return; const log=sfLog(); box.innerHTML=log.map(sfMsgHTML).join(''); sfBind(); box.scrollTop=box.scrollHeight; }
 function sfSpeak(t){ sfSay(t); }
-async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const img=sfImg; if(!q&&img) q=L.sfPhotoQ; if(!q){ toast(L.sfEmpty); return; }
+let sfCtl=null, sfCut=false;
+function sfAskCut(){ if(sfBusy&&sfCtl){ sfCut=true; try{ sfCtl.abort(); }catch(e){} } }
+async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const talk=!!sfT; const img=sfImg; if(!q&&img) q=L.sfPhotoQ; if(!q){ toast(L.sfEmpty); return; }
   if(!navigator.onLine){ toast(L.sfOffline); return; }
   const log=sfLog(), hist=log.slice(-8).map(m=>({r:m.r,t:m.r==='a'?(m.t||(m.act?'['+m.act.name+']':'')):(m.img?'['+L.sfPhoto+'] ':'')+m.t}));
   const um={r:'u',t:q,v:voice?1:0,ts:Date.now()}; if(img) um.img=img.thumb; log.push(um); sfImg=null; sfImgShow();
@@ -9141,12 +9225,16 @@ async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const 
   const wait=document.createElement('div'); wait.className='sf-m a sf-wait'; wait.innerHTML=`<span class="sf-dots"><i></i><i></i><i></i></span> <span id="sf-tm">${L.sfWait(0)}</span>`; if(box){ box.appendChild(wait); box.scrollTop=box.scrollHeight; }
   const tick=setInterval(()=>{ const e=$('#sf-tm'); if(e) e.textContent=L.sfWait(Math.round((Date.now()-t0)/1000)); },1000);
   let out=null, err=null;
-  try{ const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),150000);
-    const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q,lang,hist,ctx:sfCtx(),img:img?{type:img.type,data:img.data}:undefined}),signal:ctl.signal});
+  try{ const ctl=sfCtl=new AbortController(), to=setTimeout(()=>ctl.abort(),150000); sfCut=false;
+    /* в разговоре ответ звучит вслух — просим коротко; старому серверу подсказываем это прямо в вопросе */
+    const qs=talk&&!(sfCaps&&sfCaps.v>=3)?(q+' '+L.sfVoiceAsk).slice(0,700):q;
+    const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q:qs,lang,hist,ctx:sfCtx(),voice:talk?1:undefined,img:img?{type:img.type,data:img.data}:undefined}),signal:ctl.signal});
     clearTimeout(to); const j=await r.json().catch(()=>({}));
     if(r.ok&&(j.text||j.action)) out=j; else err=j.error==='nokey'?L.sfNoKey:j.error==='limit'?L.sfLimit:L.sfErr;
   }catch(e){ err=e&&e.name==='AbortError'?L.sfSlow:L.sfErr; }
-  clearInterval(tick); sfBusy=false; if($('#sf-send')) $('#sf-send').disabled=false;
+  clearInterval(tick); sfBusy=false; sfCtl=null; if($('#sf-send')) $('#sf-send').disabled=false;
+  /* человек перебил, пока Сифра думала: вопрос убираем, ничего не говорим */
+  if(sfCut){ sfCut=false; const k=log.lastIndexOf(um); if(k>=0) log.splice(k,1); persist(); if($('#sf-log')&&overlay.classList.contains('open')) sfRedraw(); return; }
   if(out){ const m={r:'a',t:String(out.text||'').trim(),src:(out.sources||[]).slice(0,8),ts:Date.now()};
     if(out.action&&out.action.name) m.act={name:String(out.action.name),input:out.action.input||{}};
     if(!m.t&&m.act) m.t=L.sfDone; log.push(m); }
@@ -9155,10 +9243,10 @@ async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const 
   const last=log[log.length-1];
   const open=!!$('#sf-log')&&overlay.classList.contains('open'); if(open) sfRedraw();
   const act=open&&last&&last.act&&last.act.name!=='open_invest';
-  if(sfT){ if(act){ sfT.keep=1; sfT.act=1; }
+  if(sfT){ sfT.said=1; sfCapShow(); if(act){ sfT.keep=1; sfT.act=1; }
     if(last&&last.t){ sfTalkSet('speak'); sfSay(last.t,()=>{ if(!sfT) return; if(last.err) sfTalkSet('idle'); else if(sfT.act){ sfT.spoke=1; if(sfT.actDone) sfTalkEnd(); } else if(sfTalkHere()) sfTalkListen(); else sfTalkEnd(); }); }
     else if(!act) sfTalkListen(); else sfT.spoke=1; }
-  else if(voice&&last&&!last.err&&last.t) sfSay(last.t);
+  else if(voice&&!talk&&last&&!last.err&&last.t) sfSay(last.t);
   if(act) setTimeout(()=>{ if($('#sf-log')) sfDo(last.act,false);
     if(sfT&&sfT.act){ if(sfTalkHere()){ sfT.act=0; if(sfT.spoke) sfTalkListen(); } else { sfT.actDone=1; if(sfT.spoke) sfTalkEnd(); } } },voice?1400:700); }
 /* выполнить: открыть нужную форму уже заполненной — сохраняет человек сам */
@@ -9182,10 +9270,22 @@ async function sfPrepImg(f){ const url=URL.createObjectURL(f);
     return {type:'image/jpeg', data:sc(1280,.82).split(',')[1], thumb:sc(160,.6)}; }
   finally{ URL.revokeObjectURL(url); } }
 function sfImgShow(){ const p=$('#sf-pv'); if(!p) return; p.hidden=!sfImg||!!sfT; if(sfImg) $('#sf-pvi').src=sfImg.thumb; }
+/* ---- возможности сервера: живой голос (tts) и распознавание речи (stt) ---- */
+let sfCaps=null, sfCapsP=null;
+function sfCapsLoad(){ if(sfCaps&&Date.now()-sfCaps.at<6e5) return Promise.resolve(sfCaps); if(sfCapsP) return sfCapsP;
+  sfCapsP=fetch(API_BASE+'/api/mk/ping',{cache:'no-store'}).then(r=>r.json()).then(j=>{ sfCaps={v:+j.v||1,tts:!!j.tts,stt:!!j.stt,at:Date.now()}; return sfCaps; })
+    .catch(()=>{ sfCaps=sfCaps||{v:0,tts:false,stt:false,at:0}; return sfCaps; }).finally(()=>{ sfCapsP=null; }); return sfCapsP; }
+function sfPref(k,d){ try{ return localStorage.getItem(k)||d; }catch(e){ return d; } }
+function sfRateK(){ const r=sfPref('sf_rate_v1','n'); return r==='s'||r==='f'?r:'n'; }
+function sfPatience(){ return {s:1800,n:1300,f:950}[sfRateK()]; }
+function sfUseSrv(){ const v=sfPref('sf_voice_v1',''); return !!(sfCaps&&sfCaps.tts)&&(v===''||v==='srv')&&Date.now()>sfTtsOff; }
+
 /* голос: говорите — Сифра слушает; по-таджикски, если телефон не умеет, — по-русски */
+function sfSrLang(){ return lang==='en'?'en-US':(lang==='tg'?'tg-TJ':'ru-RU'); }
+function sfRecKill(){ if(sfRec){ const r=sfRec; r._dead=1; sfRec=null; try{ r.abort(); }catch(e){} } }
 function sfHear(onText,onFail,onInterim){ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
-  if(!SR){ onFail('nosr'); return; } if(sfRec){ sfRec._dead=1; try{ sfRec.abort(); }catch(e){} sfRec=null; }
-  const r=new SR(); sfRec=r; r.lang=lang==='en'?'en-US':(lang==='tg'?'tg-TJ':'ru-RU'); r.interimResults=true; r.maxAlternatives=1;
+  if(!SR){ onFail('nosr'); return; } sfRecKill();
+  const r=new SR(); sfRec=r; r.lang=sfSrLang(); r.interimResults=true; r.maxAlternatives=1;
   let again=false, tried=false, fin='', cur='', err='';
   r.onstart=()=>{ if(!r._dead&&onInterim) onInterim('',true); };
   r.onresult=e=>{ let t=''; for(let k=0;k<e.results.length;k++){ t+=e.results[k][0].transcript; if(e.results[k].isFinal) fin=t; } cur=t; if(!r._dead&&onInterim) onInterim(t,false); };
@@ -9193,16 +9293,77 @@ function sfHear(onText,onFail,onInterim){ const SR=window.SpeechRecognition||win
   r.onend=()=>{ if(r._dead) return; if(again){ again=false; r.lang='ru-RU'; try{ r.start(); return; }catch(_){} }
     if(sfRec===r) sfRec=null; const t=(fin||cur).trim(); if(t) onText(t); else onFail(err||'no-speech'); };
   try{ r.start(); }catch(e){ sfRec=null; onFail('start'); } }
-function sfListen(){ const mic=$('#sf-mic'), inp=$('#sf-in'); if(sfT) return;
+/* для разговора: слушает без обрыва на паузах — фраза кончается, когда человек замолчал; повторы распознавания склеиваются */
+function sfJoin(a,b){ a=String(a||'').trim(); b=String(b||'').trim(); if(!a) return b; if(!b) return a; const al=a.toLowerCase(), bl=b.toLowerCase();
+  if(bl.startsWith(al)) return b; if(al.endsWith(bl)||al.startsWith(bl)) return a; return a+' '+b; }
+function sfHearLive(onText,onFail,onInterim){ const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){ onFail('nosr'); return; } sfRecKill();
+  const r=new SR(); sfRec=r; r.lang=sfSrLang(); r.interimResults=true; r.maxAlternatives=1; try{ r.continuous=true; }catch(e){}
+  let cur='', err='', tried=false, again=false, tm=null, done=false;
+  const finish=()=>{ if(done) return; done=true; clearTimeout(tm); r._dead=1; if(sfRec===r) sfRec=null; try{ r.stop(); }catch(e){} const t=cur.trim(); if(t) onText(t); else onFail(err||'no-speech'); };
+  r._finish=finish;
+  r.onstart=()=>{ if(!r._dead&&onInterim) onInterim('',true); };
+  r.onresult=e=>{ if(r._dead) return; let t=''; for(let k=0;k<e.results.length;k++) t=sfJoin(t,e.results[k][0].transcript); if(!t.trim()) return; cur=t; if(onInterim) onInterim(t,false); clearTimeout(tm); tm=setTimeout(finish,sfPatience()+250); };
+  r.onerror=e=>{ if(!tried&&lang==='tg'&&(e.error==='language-not-supported'||e.error==='no-speech')){ tried=true; again=true; return; } err=e.error||'x'; };
+  r.onend=()=>{ if(r._dead||done) return; if(again&&!cur){ again=false; r.lang='ru-RU'; try{ r.start(); return; }catch(_){} } finish(); };
+  try{ r.start(); }catch(e){ sfRec=null; onFail('start'); } }
+let sfMicSrv=null;
+async function sfListen(){ const mic=$('#sf-mic'), inp=$('#sf-in'); if(sfT) return;
+  const off=()=>{ if(mic) mic.classList.remove('rec'); if(inp) inp.placeholder=L.sfPh; };
   /* второе нажатие — выключить сразу: ничего не отправляем, услышанное остаётся в строке, его можно отправить или поправить */
-  if(sfRec){ const r=sfRec; r._dead=1; sfRec=null; try{ r.abort(); }catch(e){} mic.classList.remove('rec'); inp.placeholder=L.sfPh; return; }
-  sfHush(); sfUnlock();
-  const off=()=>{ mic.classList.remove('rec'); inp.placeholder=L.sfPh; };
-  sfHear(t=>{ off(); sfAsk(t,true); },
-    err=>{ off(); toast(err==='nosr'?L.voiceNo:err==='not-allowed'?L.voiceDenied:err==='no-speech'?L.sfNoSpeech:L.voiceFail); },
+  if(sfMicSrv){ sfMicSrv=null; sfEarClose(); off(); return; }
+  if(sfRec){ sfRecKill(); off(); return; }
+  sfHush(); sfUnlock(); sfAudUnlock();
+  const fail=err=>{ off(); toast(err==='nosr'?L.voiceNo:err==='not-allowed'?L.voiceDenied:err==='no-speech'?L.sfNoSpeech:L.voiceFail); };
+  if(sfCaps&&sfCaps.stt&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder){ const m=sfMicSrv={}; mic.classList.add('rec'); inp.placeholder=L.sfListen;
+    /* закрыли окно Сифры — микрофон выключается */
+    const w=setInterval(()=>{ if(sfMicSrv!==m){ clearInterval(w); return; } if(!$('#sf-mic')||!overlay.classList.contains('open')){ clearInterval(w); sfMicSrv=null; sfEarClose(); } },300);
+    const ok=await sfEarOpen(); if(sfMicSrv!==m) return;
+    if(ok){ sfEar.maxQuiet=1; sfEarArm(async(blob,why)=>{ if(sfMicSrv!==m) return; sfEarClose();
+        if(!blob){ sfMicSrv=null; fail(why==='idle'?'no-speech':'x'); return; }
+        inp.placeholder=L.sfTalkRecog; const {text,bad}=await sfSttPost(blob); if(sfMicSrv!==m) return; sfMicSrv=null; off();
+        if(bad) toast(L.voiceFail); else if(text.replace(/[^\p{L}\p{N}]/gu,'').length<2) toast(L.sfNoSpeech); else sfAsk(text,true); }); return; }
+    sfMicSrv=null; if(/NotAllowed|Security/.test(sfEar.err||'')){ fail('not-allowed'); return; } off(); }
+  sfHear(t=>{ off(); sfAsk(t,true); }, fail,
     (t,start)=>{ if(start){ mic.classList.add('rec'); inp.placeholder=L.sfListen; } else inp.value=t; }); }
 
-/* ---- голос Сифры: женский, самый естественный из тех, что есть в телефоне ---- */
+/* ---- «ухо» для живого разговора: микрофон открыт, конец фразы ловим по тишине, запись уходит на сервер и там превращается в текст.
+   Так нет щелчков при каждом включении, слышно паузы и видно громкость голоса. ---- */
+const sfEar={};
+/* микрофон открывается не мгновенно: если за это время разговор закрыли или поставили на паузу — сразу выключаем, чтобы он не остался включённым */
+let sfEarGen=0, sfEarP=null;
+async function sfEarOpen(){ if(sfEar.stream) return true; if(sfEarP){ try{ await sfEarP; }catch(e){} if(sfEar.stream) return true; }
+  const gen=++sfEarGen; sfEar.err='';
+  sfEarP=(async()=>{ try{ const s=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true,channelCount:1}});
+      if(gen!==sfEarGen){ try{ s.getTracks().forEach(t=>t.stop()); }catch(e){} return false; }
+      const AC=window.AudioContext||window.webkitAudioContext, ctx=new AC(), src=ctx.createMediaStreamSource(s), an=ctx.createAnalyser(); an.fftSize=1024; src.connect(an);
+      try{ if(ctx.state==='suspended') ctx.resume(); }catch(e){}
+      Object.assign(sfEar,{stream:s,ctx,an,buf:new Float32Array(an.fftSize),noise:0.008,lv:0,cur:null,quiet:0}); sfEar.timer=setInterval(sfEarTick,50); return true;
+    }catch(e){ if(gen===sfEarGen) sfEar.err=(e&&e.name)||'x'; return false; } })();
+  const p=sfEarP; try{ return await p; } finally{ if(sfEarP===p) sfEarP=null; } }
+function sfEarClose(){ sfEarGen++; clearInterval(sfEar.timer); sfEarDisarm(); try{ if(sfEar.stream) sfEar.stream.getTracks().forEach(t=>t.stop()); }catch(e){} try{ if(sfEar.ctx) sfEar.ctx.close(); }catch(e){}
+  for(const k of Object.keys(sfEar)) if(k!=='err') delete sfEar[k]; sfEarLevel(0); }
+function sfEarMime(){ return ['audio/webm;codecs=opus','audio/webm','audio/mp4','audio/ogg;codecs=opus'].find(m=>{ try{ return MediaRecorder.isTypeSupported(m); }catch(e){ return false; } })||''; }
+function sfEarArm(cb){ sfEarDisarm(); if(!sfEar.stream){ cb(null,'rec'); return; } const mime=sfEarMime(); let rec;
+  try{ rec=new MediaRecorder(sfEar.stream,mime?{mimeType:mime,audioBitsPerSecond:32000}:undefined); }catch(e){ cb(null,'rec'); return; }
+  const st={rec,cb,t0:Date.now(),sp:0,sil:0,heard:false,done:false,dead:false,chunks:[]};
+  rec.ondataavailable=e=>{ if(e.data&&e.data.size) st.chunks.push(e.data); };
+  rec.onstop=()=>{ if(st.dead) return; st.cb(new Blob(st.chunks,{type:(rec.mimeType||mime||'audio/webm').split(';')[0]}),'ok'); };
+  sfEar.cur=st; try{ rec.start(250); }catch(e){ sfEar.cur=null; cb(null,'rec'); } }
+function sfEarDisarm(){ const st=sfEar.cur; if(!st) return; st.dead=true; sfEar.cur=null; try{ if(st.rec.state!=='inactive') st.rec.stop(); }catch(e){} }
+function sfEarFinish(){ const st=sfEar.cur; if(!st||st.done) return; st.done=true; sfEar.cur=null; try{ st.rec.stop(); }catch(e){ st.cb(null,'rec'); } }
+function sfEarLevel(v){ const o=$('#sf-orb'); if(o) o.style.setProperty('--lv',Math.max(0,Math.min(1,v/0.16)).toFixed(2)); }
+function sfEarTick(){ const E=sfEar; if(!E.an) return; E.an.getFloatTimeDomainData(E.buf); let s=0; for(let i=0;i<E.buf.length;i++) s+=E.buf[i]*E.buf[i];
+  const rms=Math.sqrt(s/E.buf.length), thr=Math.max(0.015,E.noise*3), loud=rms>thr, st=E.cur; E.lv=E.lv*0.55+rms*0.45;
+  if(!loud&&(!st||!st.heard)) E.noise=Math.min(0.06,Math.max(0.004,E.noise*0.97+rms*0.03));
+  sfEarLevel(st?E.lv:0); if(!st) return;
+  if(loud){ st.sp+=50; st.sil=0; if(st.sp>=200&&!st.heard){ st.heard=true; E.quiet=0; sfEarHeard(); } } else { st.sil+=50; if(!st.heard&&st.sil>400) st.sp=0; }
+  const age=Date.now()-st.t0;
+  if(st.heard&&(st.sil>=sfPatience()||age>30000)) sfEarFinish();
+  else if(!st.heard&&age>9000){ const cb=st.cb; sfEarDisarm(); E.quiet=(E.quiet||0)+1; if(E.quiet>=(E.maxQuiet||4)) cb(null,'idle'); else sfEarArm(cb); } }
+function sfEarHeard(){ if(sfT&&sfT.phase==='listen'){ sfT.hearing=true; sfTalkUI(); } }
+
+/* ---- голос Сифры: живой голос с сервера; если его нет — женский голос телефона, самый естественный из тех, что есть ---- */
 const SF_FEM=/svetlana|dariya|darya|milena|katya|katerina|ekaterina|irina|alena|alyona|anna\b|tatyana|polina|elena|olga|marina|natali|google рус|female|женск|samantha|\bava\b|allison|zira|jenny|aria|susan|karen|moira|tessa|serena|victoria|fiona|google us english|google uk english female/i;
 const SF_MALE=/yuri|pavel|dmitr|maxim|artem|ivan|nikolai|\bmale\b|мужск|david|\bmark\b|\bguy\b|daniel|\balex\b|fred|\btom\b|google uk english male/i;
 function sfVoiceLang(){ return lang==='en'?'en':'ru'; }
@@ -9211,55 +9372,109 @@ function sfVoiceScore(v){ const n=String(v.name||''), lg=String(v.lang||'').toLo
   if(SF_FEM.test(n)&&!/\bmale\b/i.test(n.replace(/female/ig,''))) s+=30; else if(SF_MALE.test(n)) s-=40;
   if(/natural|neural|online|enhanced|premium|wavenet|улучш/i.test(n)) s+=15; if(v.default) s+=2; return s; }
 function sfVoices(){ let vs=[]; try{ vs=speechSynthesis.getVoices()||[]; }catch(e){} return vs.map(v=>({v,s:sfVoiceScore(v)})).filter(x=>x.s>=0).sort((a,b)=>b.s-a.s).map(x=>x.v); }
-function sfVoice(){ const vs=sfVoices(); let saved=''; try{ saved=localStorage.getItem('sf_voice_v1')||''; }catch(e){}
+function sfVoice(){ const vs=sfVoices(), saved=sfPref('sf_voice_v1','');
   return vs.find(v=>v.voiceURI===saved||v.name===saved)||vs[0]||null; }
 function sfVoiceName(v){ return String(v.name||'').replace(/^(Microsoft|Google|Apple)\s+/,'').replace(/\s+Online \(Natural\)/,' (Natural)').replace(/\s+-\s+.*$/,'').trim()||v.lang; }
-function sfVoiceFill(){ const sel=$('#sf-vsel'); if(!sel) return; const vs=sfVoices(), cur=sfVoice();
-  sel.innerHTML=vs.map(v=>`<option value="${esc(v.voiceURI||v.name)}"${cur&&v===cur?' selected':''}>${esc(sfVoiceName(v))}</option>`).join('');
-  sel.closest('.sf-vl').hidden=vs.length<2; const tip=$('#sf-vtip'); if(tip) tip.hidden=vs.length>=2; }
+function sfVoiceFill(){ const sel=$('#sf-vsel'); if(!sel) return; const vs=sfVoices(), cur=sfVoice(), live=!!(sfCaps&&sfCaps.tts), srv=sfUseSrv();
+  sel.innerHTML=(live?`<option value="srv"${srv?' selected':''}>${esc(L.sfVoiceLive)}</option>`:'')+vs.map(v=>`<option value="${esc(v.voiceURI||v.name)}"${!srv&&cur&&v===cur?' selected':''}>${esc(sfVoiceName(v))}</option>`).join('');
+  const n=vs.length+(live?1:0); sel.closest('.sf-vl').hidden=n<2; const tip=$('#sf-vtip'); if(tip) tip.hidden=n>=2||live;
+  sheet.querySelectorAll('[data-sfrate]').forEach(b=>{ const on=b.dataset.sfrate===sfRateK(); b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); });
+  const m=$('#sf-tmode'); if(m) m.textContent=srv?L.sfModeLive:L.sfModePhone; }
 try{ if('speechSynthesis' in window) speechSynthesis.addEventListener('voiceschanged',()=>sfVoiceFill()); }catch(e){}
 /* текст ответа для чтения вслух: без разметки, ссылок и значков */
-function sfPlain(t){ return String(t||'').replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'$1').replace(/https?:\/\/\S+/g,'')
+function sfPlain(t){ return String(t||'').replace(/<\/?[a-z][^>]*>/gi,'').replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'$1').replace(/https?:\/\/\S+/g,'')
   .replace(/\*\*|__|`/g,'').replace(/^#+\s*/gm,'').replace(/^\s*[-•*]\s+/gm,'').replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu,'')
   .replace(/\s*\n+\s*/g,'. ').replace(/([.!?:;,…])\s*\.(\s|$)/g,'$1$2').replace(/\s{2,}/g,' ').trim(); }
 function sfChunks(s){ const out=[]; let cur='';
   for(const p of s.split(/(?<=[.!?…;:])\s+/)){ if(cur&&(cur+' '+p).length>220){ out.push(cur); cur=p; } else cur=cur?cur+' '+p:p; }
   if(cur) out.push(cur); return out.flatMap(c=>c.length>300?(c.match(/[\s\S]{1,260}(\s|$)/g)||[c]):[c]).map(c=>c.trim()).filter(Boolean); }
 function sfUnlock(){ try{ if('speechSynthesis' in window&&!speechSynthesis.speaking){ const u=new SpeechSynthesisUtterance(' '); u.volume=0; speechSynthesis.speak(u); } }catch(e){} }
-function sfHush(){ sfSayId++; try{ speechSynthesis.cancel(); }catch(e){} }
-function sfSay(t,done){ const id=++sfSayId; let wd=null; const fin=()=>{ if(id!==sfSayId) return; sfSayId++; clearTimeout(wd); if(done) done(); };
-  if(!('speechSynthesis' in window)){ toast(L.voiceNoTTS); setTimeout(fin,0); return; }
+/* один проигрыватель на всё: его «разрешаем» первым нажатием, потом он может говорить сам */
+let sfAud=null, sfTtsOff=0;
+const SF_SIL='data:audio/wav;base64,UklGRkQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YSAAAACAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgA==';
+function sfAudEl(){ if(!sfAud){ sfAud=new Audio(); sfAud.preload='auto'; } return sfAud; }
+function sfAudUnlock(){ try{ const a=sfAudEl(); if(a._ok||a._try) return; a._try=1; a.muted=true; a.src=SF_SIL; const p=a.play(); const done=ok=>{ a._try=0; a.muted=false; if(ok) a._ok=1; };
+  if(p&&p.then) p.then(()=>{ try{ a.pause(); }catch(e){} done(true); }).catch(()=>done(false)); else done(true); }catch(e){} }
+function sfHush(){ sfSayId++; try{ speechSynthesis.cancel(); }catch(e){} if(sfAud){ sfAud.onended=null; sfAud.onerror=null; try{ sfAud.pause(); }catch(e){} } }
+function sfSayDev(t,id,fin){ if(!('speechSynthesis' in window)){ toast(L.voiceNoTTS); setTimeout(fin,0); return; }
   const ch=sfChunks(sfPlain(t).slice(0,2400)); if(!ch.length){ setTimeout(fin,0); return; }
   try{ speechSynthesis.cancel(); }catch(e){}
-  const v=sfVoice(), lg=v?v.lang:(lang==='en'?'en-US':'ru-RU');
-  wd=setTimeout(fin, ch.join(' ').length*85+5000);
-  try{ ch.forEach((c,k)=>{ const u=new SpeechSynthesisUtterance(c); if(v) u.voice=v; u.lang=lg; u.rate=1; u.pitch=1.05;
+  const v=sfVoice(), lg=v?v.lang:(lang==='en'?'en-US':'ru-RU'), rate={s:.88,n:1,f:1.15}[sfRateK()];
+  try{ ch.forEach((c,k)=>{ const u=new SpeechSynthesisUtterance(c); if(v) u.voice=v; u.lang=lg; u.rate=rate; u.pitch=1.05;
       if(k===ch.length-1){ u.onend=fin; u.onerror=fin; } speechSynthesis.speak(u); }); }catch(e){ toast(L.voiceNoTTS); setTimeout(fin,0); } }
+async function sfSaySrv(t,id,fin,fail){ const ch=sfChunks(sfPlain(t).slice(0,1800)); if(!ch.length){ fin(); return; }
+  const a=sfAudEl(), rate={s:.9,n:1,f:1.1}[sfRateK()];
+  const get=k=>{ const p=fetch(API_BASE+'/api/mk/tts',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),text:ch[k],prev:k?ch[k-1].slice(-240):'',lang,rate})}).then(r=>{ if(!r.ok) throw new Error('tts'); return r.blob(); }); p.catch(()=>{}); return p; };
+  let next=get(0), started=false;
+  for(let k=0;k<ch.length;k++){ let blob=null, url='';
+    try{ blob=await next; }catch(e){ blob=null; }
+    if(id!==sfSayId) return; if(!blob||!blob.size){ if(!started){ fail(); return; } break; }
+    next=k+1<ch.length?get(k+1):null; url=URL.createObjectURL(blob); let ok=true;
+    try{ await new Promise((res,rej)=>{ a.onended=res; a.onerror=()=>rej(new Error('play')); a.muted=false; a.src=url; const p=a.play(); if(p&&p.catch) p.catch(rej); }); started=true; }catch(e){ ok=false; }
+    try{ URL.revokeObjectURL(url); }catch(e){}
+    if(id!==sfSayId) return; if(!ok){ if(!started){ fail(); return; } break; } }
+  fin(); }
+function sfSay(t,done){ const id=++sfSayId; let wd=null; const fin=()=>{ if(id!==sfSayId) return; sfSayId++; clearTimeout(wd); if(done) done(); };
+  const len=sfPlain(t).length; if(!len){ setTimeout(fin,0); return; }
+  if(sfUseSrv()){ wd=setTimeout(fin,len*130+20000); sfSaySrv(t,id,fin,()=>{ if(id!==sfSayId) return; sfTtsOff=Date.now()+3*60e3; sfVoiceFill(); clearTimeout(wd); wd=setTimeout(fin,len*85+5000); sfSayDev(t,id,fin); }); return; }
+  wd=setTimeout(fin,len*85+5000); sfSayDev(t,id,fin); }
 
-/* ---- «Разговор»: слушает → отвечает вслух целиком → снова слушает; нажатие на круг — перебить ---- */
+/* ---- «Разговор»: отдельный экран. Слушает → отвечает вслух → снова слушает; круг — перебить, отправить сразу или продолжить ---- */
+function sfTalkHeard(t){ const h=$('#sf-th'); if(!h) return; t=String(t||''); h.textContent=t.length>150?'…'+t.slice(-150):t; }
+function sfCapShow(){ const c=$('#sf-cap'); if(!c) return; const log=sfLog(); let i=log.length-1; while(i>=0&&log[i].r!=='a') i--; const m=sfT&&sfT.said&&i>=0?log[i]:null;
+  c.innerHTML=m&&m.t?`<div class="sf-capa${m.err?' err':''}">${sfMd(m.t)}${m.act?`<button class="btn btn-ghost sf-act" data-sfact="${i}">${esc(sfActLabel(m.act))}</button>`:''}</div>`:`<p class="sf-cap0">${L.sfTalkCap0}</p>`;
+  c.querySelectorAll('[data-sfact]').forEach(b=>b.onclick=()=>{ const x=sfLog()[+b.dataset.sfact]; if(x&&x.act) sfDo(x.act,true); }); c.scrollTop=0; }
 function sfTalkUI(){ const p=$('#sf-tp'); if(!p) return false; const on=!!sfT, ph=on?sfT.phase:'idle';
   const was=!p.hidden; p.hidden=!on; sheet.classList.toggle('sf-talking',on); ['#sf-qs','.sf-bar','.sf-note'].forEach(q=>{ const e=$(q); if(e) e.hidden=on; }); sfImgShow();
-  if(on&&!was) setTimeout(()=>{ try{ p.scrollIntoView({block:'nearest',behavior:'smooth'}); const lg=$('#sf-log'); if(lg) lg.scrollTop=lg.scrollHeight; }catch(e){} },50);
   const b=$('#sf-talk'); if(b){ b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); }
-  $('#sf-orb').dataset.ph=ph; $('#sf-ts').textContent=on?({listen:L.sfTalkListen,think:L.sfTalkThink,speak:L.sfTalkSpeak,idle:L.sfTalkIdle}[ph]||''):''; return true; }
+  const orb=$('#sf-orb'); orb.dataset.ph=ph; orb.classList.toggle('hear',on&&ph==='listen'&&!!sfT.hearing);
+  const T={listen:on&&sfT.hearing?L.sfTalkHearing:L.sfTalkListen,think:on&&sfT.sub==='stt'?L.sfTalkRecog:L.sfTalkThink,speak:L.sfTalkSpeak,idle:L.sfTalkIdle}, H={listen:on&&sfT.hearing?L.sfTalkHintH:L.sfTalkHintL,think:L.sfTalkHintT,speak:L.sfTalkHintS,idle:L.sfTalkHintI};
+  $('#sf-ts').textContent=on?(T[ph]||''):''; const hi=$('#sf-thint'); if(hi) hi.textContent=on?(H[ph]||''):'';
+  orb.setAttribute('aria-label',on?(T[ph]+'. '+H[ph]):L.sfTalk);
+  const pb=$('#sf-tpause'); if(pb){ const paused=on&&ph==='idle'; pb.innerHTML=paused?ico('mic',18)+'<span>'+L.sfTalkResume+'</span>':'<svg class="mi" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><span>'+L.sfTalkPause+'</span>'; }
+  const m=$('#sf-tmode'); if(m) m.textContent=on?(sfUseSrv()?L.sfModeLive:L.sfModePhone):'';
+  if(on&&!was){ sfCapShow(); try{ sheet.scrollTop=0; }catch(e){} }
+  if(!on){ const lg=$('#sf-log'); if(lg) lg.scrollTop=lg.scrollHeight; }
+  return true; }
 function sfTalkHere(){ return !!$('#sf-tp')&&overlay.classList.contains('open'); }
-function sfTalkSet(ph){ if(!sfT) return; sfT.phase=ph; sfTalkUI(); }
-function sfTalkStart(){ if(!(window.SpeechRecognition||window.webkitSpeechRecognition)){ toast(L.voiceNo); return; }
-  sfUnlock(); sfT={phase:'idle',miss:0,keep:0};
-  try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(w=>{ if(sfT) sfT.wl=w; else w.release(); }).catch(()=>{}); }catch(e){}
-  sfT.watch=setInterval(()=>{ if(sfT&&!sfTalkHere()&&!(sfT.keep&&sfT.phase==='speak')) sfTalkEnd(); },400);
-  sfTalkUI(); sfVoiceFill(); sfTalkListen(); }
-function sfTalkEnd(){ const t=sfT; sfT=null; sheet.classList.remove('sf-talking'); if(!t){ sfTalkUI(); return; } clearInterval(t.watch); sfHush();
-  if(sfRec){ sfRec._dead=1; try{ sfRec.abort(); }catch(e){} sfRec=null; } try{ if(t.wl) t.wl.release(); }catch(e){} sfTalkUI(); }
-function sfTalkListen(){ if(!sfT) return; sfHush(); sfT.keep=0; sfT.act=0; sfT.spoke=0; sfT.actDone=0; sfTalkSet('listen'); const th=$('#sf-th'); if(th) th.textContent='';
-  sfHear(t=>{ if(!sfT) return; sfT.miss=0; const h=$('#sf-th'); if(h) h.textContent='«'+t+'»';
-      if(!navigator.onLine){ sfTalkSet('speak'); sfSay(L.sfOffline,()=>sfTalkSet('idle')); return; }
-      sfTalkSet('think'); sfAsk(t,true); },
-    err=>{ if(!sfT) return; if(err==='not-allowed'||err==='nosr'||err==='start'){ toast(err==='not-allowed'?L.voiceDenied:L.voiceFail); sfTalkEnd(); return; }
-      sfT.miss++; if(sfT.miss>=2) sfTalkSet('idle'); else sfTalkListen(); },
-    (t,start)=>{ if(!start){ const h=$('#sf-th'); if(h) h.textContent=t; } }); }
+function sfTalkSet(ph){ if(!sfT) return; sfT.phase=ph; if(ph!=='listen') sfT.hearing=false; if(ph!=='think') sfT.sub=''; sfTalkUI(); }
+async function sfTalkStart(){ if(sfT) return; const SR=window.SpeechRecognition||window.webkitSpeechRecognition, canRec=!!(navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder);
+  if(!SR&&!canRec){ toast(L.voiceNo); return; }
+  sfUnlock(); sfAudUnlock(); const t=sfT={phase:'idle',miss:0,keep:0,eng:'web',tk:0};
+  try{ if(navigator.wakeLock) navigator.wakeLock.request('screen').then(w=>{ if(sfT===t) t.wl=w; else w.release(); }).catch(()=>{}); }catch(e){}
+  t.watch=setInterval(()=>{ if(sfT===t&&!sfTalkHere()&&!(t.keep&&t.phase==='speak')) sfTalkEnd(); },400);
+  sfTalkSet('listen'); sfVoiceFill(); const tk0=t.tk;
+  const caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{}),1500))]); if(sfT!==t||t.tk!==tk0) return;
+  if(caps&&caps.stt&&canRec) t.eng='srv'; if(t.eng==='web'&&!SR){ toast(L.voiceNo); sfTalkEnd(); return; }
+  sfVoiceFill(); sfTalkListen(); }
+function sfTalkEnd(){ const t=sfT; sfT=null; sheet.classList.remove('sf-talking'); if(!t){ sfTalkUI(); return; } clearInterval(t.watch); sfHush(); sfRecKill(); sfEarClose();
+  try{ if(t.wl) t.wl.release(); }catch(e){} const sp=$('#sf-tsetp'); if(sp) sp.hidden=true; sfTalkUI(); }
+async function sfTalkListen(){ if(!sfT) return; const t=sfT, tk=++t.tk; sfHush(); sfAskCut(); sfRecKill(); sfEarDisarm();
+  t.keep=0; t.act=0; t.spoke=0; t.actDone=0; t.hearing=false; sfTalkSet('listen'); sfTalkHeard('');
+  if(t.eng==='srv'){ const ok=await sfEarOpen(); if(sfT!==t||t.tk!==tk) return;
+    if(!ok){ if(/NotAllowed|Security/.test(sfEar.err||'')){ toast(L.voiceDenied); sfTalkEnd(); return; } t.eng='web'; }
+    else { sfEar.quiet=0; sfEarArm((blob,why)=>{ if(sfT===t&&t.tk===tk) sfTalkGot(blob,why,tk); }); return; } }
+  if(!(window.SpeechRecognition||window.webkitSpeechRecognition)){ toast(L.voiceNo); sfTalkEnd(); return; }
+  sfHearLive(x=>{ if(sfT===t&&t.tk===tk) sfTalkText(x); },
+    err=>{ if(sfT!==t||t.tk!==tk) return; if(err==='not-allowed'||err==='service-not-allowed'||err==='nosr'||err==='start'){ toast(err==='nosr'||err==='start'?L.voiceFail:L.voiceDenied); sfTalkEnd(); return; }
+      t.miss++; if(t.miss>=4) sfTalkSet('idle'); else sfTalkListen(); },
+    (x,start)=>{ if(sfT!==t||t.tk!==tk) return; if(!start){ sfTalkHeard(x); if(x&&!t.hearing){ t.hearing=true; sfTalkUI(); } } }); }
+async function sfSttPost(blob){ try{ const r=await fetch(API_BASE+'/api/mk/stt?id='+encodeURIComponent(mkId())+'&lang='+encodeURIComponent(lang),{method:'POST',headers:{'content-type':blob.type||'audio/webm'},body:blob});
+    const j=await r.json().catch(()=>({})); return r.ok?{text:String(j.text||'').trim(),bad:false}:{text:'',bad:true}; }catch(e){ return {text:'',bad:true}; } }
+async function sfTalkGot(blob,why,tk){ const t=sfT; if(!t) return;
+  if(!blob){ if(why==='idle'){ sfEarClose(); sfTalkSet('idle'); return; } t.eng='web'; sfEarClose(); sfTalkListen(); return; }
+  sfEarClose(); sfTalkSet('think'); t.sub='stt'; sfTalkUI(); const {text,bad}=await sfSttPost(blob);
+  if(sfT!==t||t.tk!==tk) return;
+  if(bad){ t.eng='web'; toast(L.sfEarFail); sfTalkListen(); return; }
+  if(text.replace(/[^\p{L}\p{N}]/gu,'').length<2){ t.miss++; if(t.miss>=4) sfTalkSet('idle'); else sfTalkListen(); return; }
+  sfTalkText(text); }
+function sfTalkText(x){ if(!sfT) return; sfT.miss=0; sfTalkHeard('«'+x+'»');
+  if(!navigator.onLine){ sfTalkSet('speak'); sfSay(L.sfOffline,()=>sfTalkSet('idle')); return; }
+  sfTalkSet('think'); sfAsk(x,true); }
+function sfTalkPause(){ if(!sfT) return; if(sfT.phase==='idle'){ sfT.miss=0; sfTalkListen(); return; } sfT.tk++; sfHush(); sfAskCut(); sfRecKill(); sfEarClose(); sfTalkSet('idle'); }
 function sfOrbTap(){ if(!sfT) return; const ph=sfT.phase;
-  if(ph==='speak'||ph==='idle'){ sfT.miss=0; sfTalkListen(); } else if(ph==='listen'&&sfRec){ try{ sfRec.stop(); }catch(e){} } }
+  if(ph!=='listen'){ sfT.miss=0; sfTalkListen(); return; }
+  if(sfT.eng==='srv'){ if(sfEar.cur&&sfEar.cur.heard) sfEarFinish(); } else if(sfRec&&sfRec._finish) sfRec._finish(); }
 /* ---- советы Сифры: каждый день 3 новых по данным приложения и новостям; прошлые копятся в «Советах» ---- */
 const SF_TIP_I={loan:'🏦',shop:'🛍️',buy:'📦',money:'💱',save:'🐷'};
 function sfTipsSt(){ state.misc=state.misc||{}; const t=state.misc.sfTips; if(!t||typeof t!=='object'||!Array.isArray(t.items)) state.misc.sfTips={day:'',lang:'',items:[],hist:[]}; if(!Array.isArray(state.misc.sfTips.hist)) state.misc.sfTips.hist=[]; return state.misc.sfTips; }
@@ -9289,7 +9504,7 @@ function sfTipsInject(){ const box=$('#tips'); if(!box) return; const st=sfTipsS
   const lead=box.querySelector('.view-h'); if(card&&lead) lead.insertAdjacentHTML('afterend',card);
   const wrap=box.querySelector('.tg-wrap'); if(acc&&wrap) wrap.insertAdjacentHTML('afterbegin',acc); }
 try{ const _rt=renderTips; renderTips=function(){ _rt(); try{ sfTipsInject(); }catch(e){} }; }catch(e){}
-document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') setTimeout(()=>sfTipsFetch(false),1500); });
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') setTimeout(()=>sfTipsFetch(false),1500); else if(sfT&&sfT.phase!=='idle'&&!(sfT.keep&&sfT.phase==='speak')) sfTalkPause(); });
 /* кнопка Сифры на всех экранах */
 /* кнопку можно перетащить в любое место по высоте: отпустили — прилипает к ближнему краю; место запоминается.
    Подпись «Сифра» видна несколько секунд после запуска, потом остаётся круглый значок, чтобы меньше закрывать экран. */
