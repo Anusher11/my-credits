@@ -1610,6 +1610,77 @@
   .m10-rules b{display:block; font-size:1.05rem;} .m10-rules small{display:block; color:var(--muted); font-weight:600; font-size:.84rem; line-height:1.4; margin-top:2px;}
   .m10-rules ul{list-style:none; margin:10px 0 0; padding:0; counter-reset:r;} .m10-rules li{counter-increment:r; display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-top:1px solid var(--line); font-weight:700; line-height:1.4;}
   .m10-rules li::before{content:counter(r); flex:none; width:26px; height:26px; border-radius:50%; background:var(--brand-weak); color:var(--brand-ink); display:grid; place-items:center; font-size:.84rem; font-weight:800;}
+  /* ===================== v11 «Аврора»: живой фон, стеклянное меню, главный блок прогресса =====================
+     Только светлая тема. Стекло — у меню; текст всегда на плотных белых карточках. */
+  :root[data-theme="light"]{
+    --bg:#F3F5FA; --surface-2:#EEF1F8; --ink:#101828; --muted:#475467; --line:#E4E8F1;
+    --brand:#2F5BFF; --brand-ink:#1E3FCC; --brand-weak:#E8EEFF; --info:#2F5BFF; --cu:#2F5BFF;
+    --m-hero:#2F5BFF; --m-navy:#101828; --m-navy-2:rgba(255,255,255,.2); --m-on-navy:#DCE4FF;
+    --m-sun:#FFC83D; --gold:#FFC83D; --m-leaf:#0B7A57; --m-leaf-weak:#DDF7EC; --in:#0B7A57;
+    --m11-go:#12B886; --m11-lav:#ECE7FF; --m11-lav-ink:#4B3CA7;
+    --shadow:0 1px 2px rgba(16,24,40,.04), 0 12px 30px rgba(16,24,40,.07);
+    --m8-glass:rgba(255,255,255,.72);
+  }
+  :root[data-theme="light"] body{background:transparent;}
+  :root[data-theme="light"]{background:var(--bg);}
+  #m11Aurora{display:none;}
+  :root[data-theme="light"] #m11Aurora{display:block; position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--bg);}
+  #m11Aurora i{position:absolute; border-radius:50%; filter:blur(64px); will-change:transform;}
+  #m11Aurora i:nth-child(1){width:300px; height:300px; left:-90px; top:-70px; background:#8FEBCB; opacity:.7; animation:m11A 13s ease-in-out infinite;}
+  #m11Aurora i:nth-child(2){width:280px; height:280px; right:-100px; top:60px; background:#C7B5FF; opacity:.66; animation:m11B 16s ease-in-out infinite;}
+  #m11Aurora i:nth-child(3){width:300px; height:300px; left:40px; top:460px; background:#BFD4FF; opacity:.55; animation:m11C 18s ease-in-out infinite;}
+  @keyframes m11A{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(46px,34px) scale(1.18)}}
+  @keyframes m11B{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-52px,26px) scale(.92)}}
+  @keyframes m11C{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-44px) scale(1.2)}}
+  /* нижнее меню — стеклянная плашка */
+  :root[data-theme="light"] .bnav{left:12px; right:12px; bottom:calc(10px + env(safe-area-inset-bottom,0px)); padding-bottom:0; border-radius:26px; border:1px solid #fff; background:var(--m8-glass); -webkit-backdrop-filter:blur(18px); backdrop-filter:blur(18px); box-shadow:0 14px 34px rgba(16,24,40,.13);}
+  :root[data-theme="light"] header #calcTop, :root[data-theme="light"] header .me-btn .me-ava{background:rgba(255,255,255,.66); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px); border-color:#fff;}
+  /* порядок на главной: прогресс → платёж → плитки → календарь */
+  #view-today>#m8Prog{order:2;} #view-today>#miraNext{order:3;} #view-today>#m10Box{order:4;}
+  /* главный блок: путь к свободе */
+  .m11-hero{display:block; width:100%; text-align:left; font:inherit; color:var(--ink); background:rgba(255,255,255,.88); border:1px solid #fff; border-radius:28px; padding:18px; margin:0 0 14px; box-shadow:0 14px 34px rgba(16,24,40,.08); cursor:pointer; animation:m11Up .5s ease-out both;}
+  :root[data-theme="dark"] .m11-hero{background:var(--surface); border-color:var(--line);}
+  .m11-top{display:flex; align-items:center; gap:16px;}
+  .m11-ring{position:relative; width:108px; height:108px; flex:none;}
+  .m11-ring svg{display:block; width:108px; height:108px;}
+  .m11-ring .rg{stroke:var(--m11-go,#12B886); animation:m11Ring 1.4s cubic-bezier(.2,.8,.2,1) both;}
+  .m11-ring .tr{stroke:var(--line);}
+  .m11-pc{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.05;}
+  .m11-pc b{font-size:1.6rem; font-weight:800; font-variant-numeric:tabular-nums;} .m11-pc b i{font-style:normal; font-size:1rem;} .m11-pc small{font-size:.68rem; font-weight:800; color:var(--muted); margin-top:2px;}
+  .m11-h small{display:block; font-size:.82rem; font-weight:800; color:var(--muted);}
+  .m11-h b{display:block; font-size:1.85rem; font-weight:800; letter-spacing:-.5px; line-height:1.1; margin:2px 0;}
+  .m11-h span{display:block; font-size:.88rem; font-weight:700; color:var(--muted);}
+  .m11-nums{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px;}
+  .m11-nums div{border-radius:18px; padding:10px 12px; background:var(--surface-2);}
+  .m11-nums div.p{background:var(--m-leaf-weak);} .m11-nums div.p b{color:var(--m-leaf);}
+  .m11-nums small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);} .m11-nums b{display:block; font-size:1.22rem; font-weight:800; font-variant-numeric:tabular-nums; margin-top:1px;}
+  .m11-path{display:flex; gap:3px; margin-top:14px;}
+  .m11-path i{flex:1; height:8px; border-radius:4px; background:var(--line);} .m11-path i.p{background:var(--m11-go,#12B886);} .m11-path i.n{background:var(--m-sun); animation:m11Now 1.8s ease-in-out infinite;}
+  .m11-pl{display:flex; justify-content:space-between; font-size:.72rem; font-weight:800; color:var(--muted); margin-top:6px;}
+  .m11-step{display:flex; align-items:center; gap:8px; margin-top:12px; font-size:.88rem; font-weight:700; color:var(--ink);}
+  .m11-step svg{width:18px; height:18px; flex:none; color:var(--m-leaf);} .m11-step b{font-variant-numeric:tabular-nums;}
+  .m11-hero:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  @keyframes m11Ring{from{stroke-dashoffset:264}}
+  @keyframes m11Up{from{opacity:0; transform:translateY(12px)}to{opacity:1; transform:none}}
+  @keyframes m11Now{0%,100%{opacity:1}50%{opacity:.45}}
+  /* следующий платёж: синяя карточка, солнечная кнопка — главное действие заметнее всего */
+  :root[data-theme="light"] .m7-hero{background:#2F5BFF; box-shadow:0 16px 34px rgba(47,91,255,.32); border-radius:28px;}
+  :root[data-theme="light"] .m7-hero .m7-b1{background:#FFC83D; color:#101828;}
+  :root[data-theme="light"] .m7-hero .m7-b2{border-color:rgba(255,255,255,.45);}
+  /* плитки под платежом */
+  .m11-tiles{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:0 0 12px;}
+  .m11-tiles .m10-card{margin:0; border:0; border-radius:24px; padding:14px 16px;}
+  .m11-tiles .m10-safe{background:var(--m-leaf-weak);} .m11-tiles .m10-safe .m10-lbl,.m11-tiles .m10-safe .m10-sv{color:var(--m-leaf);}
+  .m11-tiles .m10-safe.save .m10-sv{color:var(--m-leaf);} .m11-tiles .m10-meter{display:none;} .m11-tiles .m10-note{font-size:.78rem; margin-top:4px;}
+  .m11-tiles .m10-safe.save .m10-note{display:none;}
+  .m11-tiles .m10-sbtn{margin-top:8px; min-height:38px; padding:6px 10px; font-size:.84rem; background:rgba(255,255,255,.72); border:0; border-radius:12px;}
+  .m11-tiles .m10-lbl{display:block; font-size:.8rem; line-height:1.3;}
+  .m11-tile{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7);} .m11-tile .m10-lbl{color:inherit;} .m11-tile .m10-sv{color:inherit; font-size:1.45rem;}
+  :root[data-theme="dark"] .m11-tile{background:var(--surface-2); color:var(--ink);}
+  :root[data-theme="light"] .m10-card{background:rgba(255,255,255,.88); border-color:#fff; border-radius:24px;}
+  :root[data-theme="light"] .m10-tip.m10-card{background:#FFF4D6;}
+  :root[data-theme="light"] .m10-plus .m10-pi{background:#101828;}
+  @media (prefers-reduced-motion:reduce){#m11Aurora i,.m11-hero,.m11-ring .rg,.m11-path i.n{animation:none !important;}}
 </style>
 </head>
 <body>
@@ -3547,7 +3618,7 @@ ru:{
   sfName:'Сифра', sfSub:'Слушает, считает и ищет свежие данные в интернете',
   sfHello:'<b>Я Сифра.</b> Скажите голосом или напишите, например:<br>«Заплатила 1 500 в Эсхату»<br>«Добавь кредит: Алиф, 20 000, по 2 000 в месяц»<br>«У меня 5 000 $ — какой товар выгоднее закупить?»<br>«Выручка сегодня 3 200 наличными и 800 переводом»<br>📷 Пришлите фото товара или чека — подскажу цену или запишу расход',
   sfQs:['У меня 5 000 $ — что выгоднее закупить?','Погасить кредит раньше или вложить в товар?','Китай или Турция — что выгоднее к празднику?','Держать деньги в долларах, сомони или золоте?','Как у меня дела с кредитами?'],
-  sfPh:'Спросите или скажите…', sfSend:'Отправить', sfMic:'Сказать голосом', sfListen:'Слушаю… говорите', sfNoSpeech:'Не услышала — скажите ещё раз',
+  sfPh:'Спросите…', sfSend:'Отправить', sfMic:'Сказать голосом', sfListen:'Слушаю… говорите', sfNoSpeech:'Не услышала — скажите ещё раз',
   sfWait:s=>'Думаю и ищу свежие данные… '+s+' сек', sfEmpty:'Скажите или напишите вопрос', sfOffline:'Нужен интернет — Сифра ищет свежие данные онлайн',
   sfNoKey:'Сифра ещё не подключена: на сервере нет ключа Claude API. Его добавляет тот, кто настраивал приложение.',
   sfLimit:'На сегодня вопросов много — Сифра продолжит завтра.', sfErr:'Не получилось ответить. Попробуйте ещё раз через минуту.', sfSlow:'Сифра думает слишком долго. Спросите короче.',
@@ -3567,7 +3638,7 @@ tg:{
   sfName:'Сифра', sfSub:'Гӯш мекунад, ҳисоб мекунад ва маълумоти навро дар интернет меҷӯяд',
   sfHello:'<b>Ман Сифра.</b> Бо овоз гӯед ё нависед, масалан:<br>«Ба Эсхата 1 500 пардохтам»<br>«Қарз илова кун: Алиф, 20 000, моҳе 2 000»<br>«5 000 $ дорам — кадом молро харам фоиданоктар?»<br>«Даромади имрӯз 3 200 нақд ва 800 интиқол»<br>📷 Акси мол ё чекро фиристед — нархро мегӯям ё хароҷотро сабт мекунам',
   sfQs:['5 000 $ дорам — кадом мол фоиданоктар?','Қарзро пеш аз мӯҳлат пардозам ё ба мол гузорам?','Чин ё Туркия — барои ид кадомаш фоиданоктар?','Пулро дар доллар, сомонӣ ё тилло нигоҳ дорам?','Қарзҳои ман чӣ ҳол доранд?'],
-  sfPh:'Пурсед ё гӯед…', sfSend:'Фиристодан', sfMic:'Бо овоз гуфтан', sfListen:'Гӯш мекунам… гӯед', sfNoSpeech:'Нашунидам — боз як бор гӯед',
+  sfPh:'Пурсед…', sfSend:'Фиристодан', sfMic:'Бо овоз гуфтан', sfListen:'Гӯш мекунам… гӯед', sfNoSpeech:'Нашунидам — боз як бор гӯед',
   sfWait:s=>'Фикр мекунам ва маълумоти навро меҷӯям… '+s+' сония', sfEmpty:'Саволро гӯед ё нависед', sfOffline:'Интернет лозим аст — Сифра маълумоти навро онлайн меҷӯяд',
   sfNoKey:'Сифра ҳоло пайваст нест: дар сервер калиди Claude API нест. Онро касе илова мекунад, ки барномаро танзим кардааст.',
   sfLimit:'Барои имрӯз саволҳо зиёданд — Сифра фардо идома медиҳад.', sfErr:'Ҷавоб дода натавонистам. Пас аз як дақиқа боз кӯшиш кунед.', sfSlow:'Сифра хеле дер фикр мекунад. Кӯтоҳтар пурсед.',
@@ -3587,7 +3658,7 @@ en:{
   sfName:'Sifra', sfSub:'Listens, calculates and looks up fresh data online',
   sfHello:'<b>I’m Sifra.</b> Say it or type it, for example:<br>“I paid 1,500 to Eskhata”<br>“Add a loan: Alif, 20,000, 2,000 a month”<br>“I have $5,000 — which goods are best to buy?”<br>“Sales today 3,200 cash and 800 by transfer”<br>📷 Send a photo of a product or receipt — I’ll suggest a price or record the expense',
   sfQs:['I have $5,000 — what’s best to buy?','Pay off a loan early or invest in stock?','China or Turkey — which pays more for the holidays?','Keep money in dollars, somoni or gold?','How are my loans doing?'],
-  sfPh:'Ask or say…', sfSend:'Send', sfMic:'Speak', sfListen:'Listening… go ahead', sfNoSpeech:'Didn’t catch that — please say it again',
+  sfPh:'Ask…', sfSend:'Send', sfMic:'Speak', sfListen:'Listening… go ahead', sfNoSpeech:'Didn’t catch that — please say it again',
   sfWait:s=>'Thinking and checking fresh data… '+s+' s', sfEmpty:'Say or type a question', sfOffline:'You need internet — Sifra looks up fresh data online',
   sfNoKey:'Sifra isn’t connected yet: the server has no Claude API key. Whoever set up the app adds it.',
   sfLimit:'Lots of questions today — Sifra will continue tomorrow.', sfErr:'Couldn’t answer. Try again in a minute.', sfSlow:'Sifra is taking too long. Try a shorter question.',
@@ -3603,6 +3674,7 @@ for(const k of ['ru','tg','en']) Object.assign(D[k],M9S[k]);
 /* ----- v10: новый вид — «＋», календарь платежей, «можно потратить», обычный калькулятор ----- */
 const M10S={
 ru:{
+  m11Free:'Свобода от кредитов', m11In:n=>'через '+n+' мес.', m11Paid:'Уже выплачено', m11Done:(k,m)=>k+' из '+m+' платежей позади', m11Step:p=>'До '+p+'% осталось', m11NoLate:'Без просрочек', m11Months:n=>n+' мес. подряд', m11Passed:'Пройдено', m11Of:(k,m)=>k+' из '+m,
   m10Split:'Разложите выручку', m10SplitLead:v=>'В кассе сегодня '+v+' — разложите сразу, чтобы деньги не смешались.',
   m10SplitPay:'На платежи банкам', m10SplitPayH:(n,d)=>'ближайший: '+n+', '+d, m10SplitHome:'Домой — зарплата себе', m10SplitHomeH:w=>w>0?'ваша зарплата: '+w+' в неделю':'назначьте себе зарплату — и берите только её',
   m10SplitStock:'На товар', m10SplitStockH:'отложить на закупку', m10SplitLeft:'Останется в кассе', m10SplitDo:'Разложить', m10SplitSkip:'Не сейчас', m10SplitDone:'Разложено ✓', m10SplitOver:'Сумма больше, чем есть в кассе',
@@ -3623,6 +3695,7 @@ ru:{
   tabBasic:'Обычный', m10Clear:'Сброс',
 },
 tg:{
+  m11Free:'Озодӣ аз қарзҳо', m11In:n=>'баъди '+n+' моҳ', m11Paid:'Аллакай пардохт шуд', m11Done:(k,m)=>k+' аз '+m+' пардохт гузашт', m11Step:p=>'То '+p+'% мондааст', m11NoLate:'Бе таъхир', m11Months:n=>n+' моҳ паиҳам', m11Passed:'Гузашт', m11Of:(k,m)=>k+' аз '+m,
   m10Split:'Даромадро тақсим кунед', m10SplitLead:v=>'Имрӯз дар касса '+v+' — дарҳол тақсим кунед, то пулҳо омехта нашаванд.',
   m10SplitPay:'Барои пардохти бонкҳо', m10SplitPayH:(n,d)=>'наздиктарин: '+n+', '+d, m10SplitHome:'Ба хона — маоши худ', m10SplitHomeH:w=>w>0?'маоши шумо: '+w+' дар ҳафта':'ба худ маош таъин кунед — ва танҳо онро гиред',
   m10SplitStock:'Барои мол', m10SplitStockH:'барои харид нигоҳ доштан', m10SplitLeft:'Дар касса мемонад', m10SplitDo:'Тақсим кардан', m10SplitSkip:'Ҳоло не', m10SplitDone:'Тақсим шуд ✓', m10SplitOver:'Маблағ аз пули касса зиёд аст',
@@ -3643,6 +3716,7 @@ tg:{
   tabBasic:'Оддӣ', m10Clear:'Тоза',
 },
 en:{
+  m11Free:'Debt-free', m11In:n=>'in '+n+' mo.', m11Paid:'Already paid', m11Done:(k,m)=>k+' of '+m+' payments done', m11Step:p=>'To '+p+'% you need', m11NoLate:'No late payments', m11Months:n=>n+' mo. in a row', m11Passed:'Done', m11Of:(k,m)=>k+' of '+m,
   m10Split:'Split today’s takings', m10SplitLead:v=>'The till has '+v+' today — split it now so the money doesn’t mix.',
   m10SplitPay:'For loan payments', m10SplitPayH:(n,d)=>'next: '+n+', '+d, m10SplitHome:'Home — your salary', m10SplitHomeH:w=>w>0?'your salary: '+w+' a week':'set yourself a salary and take only that',
   m10SplitStock:'For stock', m10SplitStockH:'set aside for buying', m10SplitLeft:'Stays in the till', m10SplitDo:'Split', m10SplitSkip:'Not now', m10SplitDone:'Split ✓', m10SplitOver:'That’s more than the till has',
@@ -8831,7 +8905,7 @@ document.addEventListener('click', e=>{
    Сервер: API_BASE/api/mk/ai (Claude с веб-поиском). Данные приложения уходят коротким JSON только на время вопроса.
    Всё, что меняет записи, Сифра не сохраняет сама: открывает привычную форму уже заполненной, человек проверяет и жмёт «Записать». */
 const SF_KEEP=24;
-const SF_AVA='<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2D5BFF"/><stop offset="1" stop-color="#7B5CFF"/></linearGradient></defs><circle cx="24" cy="24" r="24" fill="url(#sfg)"/><ellipse cx="24" cy="24" rx="9.5" ry="12.5" fill="none" stroke="#fff" stroke-width="4.6"/><circle cx="35" cy="13" r="4.2" fill="#FFB627"/></svg>';
+const SF_AVA='<svg viewBox="0 0 48 48" aria-hidden="true"><defs><linearGradient id="sfg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5B7CFF"/><stop offset="1" stop-color="#2F5BFF"/></linearGradient></defs><circle cx="24" cy="24" r="24" fill="url(#sfg)"/><path d="M24 8.500C25.300 18.200 29.800 22.700 39.500 24 29.800 25.300 25.300 29.800 24 39.500 22.700 29.800 18.200 25.300 8.500 24 18.200 22.700 22.700 18.200 24 8.500Z" fill="#fff"/></svg>';
 function sfLog(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.sf)) state.misc.sf=[]; return state.misc.sf; }
 let sfBusy=false, sfRec=null, sfT=null, sfSayId=0;
 const SF_WAVE='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg>';
@@ -9007,7 +9081,7 @@ function sfSay(t,done){ const id=++sfSayId; let wd=null; const fin=()=>{ if(id!=
 
 /* ---- «Разговор»: слушает → отвечает вслух целиком → снова слушает; нажатие на круг — перебить ---- */
 function sfTalkUI(){ const p=$('#sf-tp'); if(!p) return false; const on=!!sfT, ph=on?sfT.phase:'idle';
-  const was=!p.hidden; p.hidden=!on; sheet.classList.toggle('sf-talking',on); ['#sf-qs','.sf-bar','.sf-note','#sf-pv'].forEach(q=>{ const e=$(q); if(e) e.hidden=on; });
+  const was=!p.hidden; p.hidden=!on; sheet.classList.toggle('sf-talking',on); ['#sf-qs','.sf-bar','.sf-note'].forEach(q=>{ const e=$(q); if(e) e.hidden=on; }); sfImgShow();
   if(on&&!was) setTimeout(()=>{ try{ p.scrollIntoView({block:'nearest',behavior:'smooth'}); const lg=$('#sf-log'); if(lg) lg.scrollTop=lg.scrollHeight; }catch(e){} },50);
   const b=$('#sf-talk'); if(b){ b.classList.toggle('on',on); b.setAttribute('aria-pressed',on?'true':'false'); }
   $('#sf-orb').dataset.ph=ph; $('#sf-ts').textContent=on?({listen:L.sfTalkListen,think:L.sfTalkThink,speak:L.sfTalkSpeak,idle:L.sfTalkIdle}[ph]||''):''; return true; }
@@ -9233,6 +9307,30 @@ try{ const _pp10=piggyPrompt; piggyPrompt=function(){ try{ if(state.misc&&state.
 function m10RulesInject(){ const box=$('#tips'); if(!box||box.querySelector('.m10-rules')) return; const lead=box.querySelector('.view-h'); if(!lead) return;
   lead.insertAdjacentHTML('afterend',`<div class="m10-rules m10-card"><b>${L.m10Rules}</b><small>${L.m10RulesSub}</small><ul>${L.m10RulesList.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`); }
 try{ const _rt10=renderTips; renderTips=function(){ const x=_rt10.apply(this,arguments); try{ m10RulesInject(); }catch(e){} return x; }; }catch(e){}
+
+/* ===================== v11 «Аврора» =====================
+   Живой фон, стеклянное меню и главный блок «путь к свободе»:
+   - сначала то, что уже сделано («Уже выплачено») — выигрыш мотивирует сильнее, чем остаток;
+   - ближайшая маленькая отметка («до 60% осталось…») — чем ближе цель, тем охотнее идут;
+   - дорожка месяцев: пройдено, сейчас, впереди; дата свободы — крупно. */
+function m11Aurora(){ if($('#m11Aurora')) return; const d=document.createElement('div'); d.id='m11Aurora'; d.setAttribute('aria-hidden','true'); d.innerHTML='<i></i><i></i><i></i>'; document.body.insertBefore(d,document.body.firstChild); }
+function m11HeroHTML(list){ const real=list.filter(x=>!x.loan.example); if(!real.length) return ''; const T=m8Totals(real); if(!(T.total>0)) return '';
+  const fr=m8Free(real), pr=m7Progress(), C=264, pct=Math.max(0,Math.min(100,Math.round(T.pct)));
+  const step=Math.min(100,(Math.floor(pct/10)+1)*10), toStep=Math.max(0,Math.round(T.total*step/100-T.paid));
+  let path=''; if(pr&&pr.m>1&&pr.m<=36){ const seg=[]; for(let i=0;i<pr.m;i++) seg.push(`<i class="${i<pr.k?'p':i===pr.k?'n':''}"></i>`); path=`<div class="m11-path" aria-hidden="true">${seg.join('')}</div><div class="m11-pl"><span>${L.m11Done(pr.k,pr.m)}</span><span>${fr?m8MonLabel(fr.d):''}</span></div>`; }
+  return `<button type="button" class="m11-hero" data-tab="loans" aria-label="${esc(L.m8FreeT)}">
+    <span class="m11-top"><span class="m11-ring"><svg viewBox="0 0 108 108" aria-hidden="true"><circle class="tr" cx="54" cy="54" r="42" fill="none" stroke-width="12"/><circle class="rg" cx="54" cy="54" r="42" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${(C*(1-pct/100)).toFixed(1)}" transform="rotate(-90 54 54)"/></svg><span class="m11-pc"><b><span data-m8n="${pct}">${pct}</span><i>%</i></b><small>${L.m8PctL}</small></span></span>
+      <span class="m11-h"><small>${L.m11Free}</small><b>${fr?m8MonLabel(fr.d):'—'}</b>${fr&&fr.months>0?`<span>${L.m11In(fr.months)}</span>`:''}</span></span>
+    <span class="m11-nums"><div class="p"><small>${L.m11Paid}</small><b>${money(T.paid)}</b></div><div><small>${L.m8LeftL}</small><b>${money(T.left)}</b></div></span>
+    ${path}
+    ${pct<100&&toStep>0?`<span class="m11-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 5h11l-2 4 2 4H5"/></svg><span>${L.m11Step(step)} <b>${money(toStep)}</b></span></span>`:''}</button>`; }
+function m11After(){ m11Aurora(); const list=activeList();
+  const pg=$('#m8Prog'); if(pg){ const h=m11HeroHTML(list); if(h) pg.innerHTML=h; }
+  const box=$('#m10Box'); if(box&&!box.querySelector('.m11-tiles')){ const safe=box.querySelector('.m10-safe'); let sk=0; try{ sk=streakMonths(); }catch(e){} const pr=m7Progress();
+    const second=sk>=2?`<div class="m11-tile m10-card"><div class="m10-lbl">${L.m11NoLate}</div><div class="m10-sv">${L.m11Months(sk)}</div></div>`:(pr&&pr.m>0?`<div class="m11-tile m10-card"><div class="m10-lbl">${L.m11Passed}</div><div class="m10-sv">${L.m11Of(pr.k,pr.m)}</div></div>`:'');
+    if(safe||second){ const w=document.createElement('div'); w.className='m11-tiles'; box.insertBefore(w,box.firstChild); if(safe) w.appendChild(safe); if(second) w.insertAdjacentHTML('beforeend',second); if(w.children.length<2) w.style.gridTemplateColumns='1fr'; } } }
+try{ const _r11=render; render=function(){ const x=_r11.apply(this,arguments); try{ m11After(); }catch(e){} return x; }; }catch(e){}
+try{ const _t11=m7Today; m7Today=function(){ const x=_t11.apply(this,arguments); try{ m11After(); }catch(e){} return x; }; }catch(e){}
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
