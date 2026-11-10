@@ -8827,7 +8827,8 @@ function sfHear(onText,onFail,onInterim){ const SR=window.SpeechRecognition||win
     if(sfRec===r) sfRec=null; const t=(fin||cur).trim(); if(t) onText(t); else onFail(err||'no-speech'); };
   try{ r.start(); }catch(e){ sfRec=null; onFail('start'); } }
 function sfListen(){ const mic=$('#sf-mic'), inp=$('#sf-in'); if(sfT) return;
-  if(sfRec){ try{ sfRec.stop(); }catch(e){} return; }
+  /* второе нажатие — выключить сразу: ничего не отправляем, услышанное остаётся в строке, его можно отправить или поправить */
+  if(sfRec){ const r=sfRec; r._dead=1; sfRec=null; try{ r.abort(); }catch(e){} mic.classList.remove('rec'); inp.placeholder=L.sfPh; return; }
   sfHush(); sfUnlock();
   const off=()=>{ mic.classList.remove('rec'); inp.placeholder=L.sfPh; };
   sfHear(t=>{ off(); sfAsk(t,true); },
