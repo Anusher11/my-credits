@@ -1600,6 +1600,16 @@
   .m10-keys button:active{transform:scale(.96);} .m10-keys button:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
   /* запас под клавиатуру телефона, чтобы окно можно было прокрутить выше неё */
   .overlay.open .sheet::after{content:''; display:block; height:var(--m10kb,0px);}
+  /* раскладка выручки, правила, серия без просрочек */
+  .m10-sp{display:flex; align-items:center; gap:12px; background:var(--surface-2); border-radius:18px; padding:12px 14px; margin-bottom:8px;}
+  .m10-sp label{flex:1; min-width:0;} .m10-sp b{display:block; font-size:.98rem;} .m10-sp small{display:block; font-size:.8rem; color:var(--muted); font-weight:600; line-height:1.35; margin-top:2px;}
+  .m10-sp input{width:112px; flex:none; text-align:right; font:inherit; font-weight:800; font-size:1.15rem; padding:10px 12px; border-radius:14px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font-variant-numeric:tabular-nums;}
+  .m10-sp input:focus{outline:3px solid var(--brand); outline-offset:1px;}
+  .m10-lbl{display:flex; justify-content:space-between; align-items:center; gap:8px;}
+  .m10-streak{font-size:.74rem; font-weight:800; color:var(--m-leaf,#0E7D5A); background:var(--m-leaf-weak,#E3F3EC); padding:3px 9px; border-radius:999px; white-space:nowrap;}
+  .m10-rules b{display:block; font-size:1.05rem;} .m10-rules small{display:block; color:var(--muted); font-weight:600; font-size:.84rem; line-height:1.4; margin-top:2px;}
+  .m10-rules ul{list-style:none; margin:10px 0 0; padding:0; counter-reset:r;} .m10-rules li{counter-increment:r; display:flex; gap:10px; align-items:flex-start; padding:9px 0; border-top:1px solid var(--line); font-weight:700; line-height:1.4;}
+  .m10-rules li::before{content:counter(r); flex:none; width:26px; height:26px; border-radius:50%; background:var(--brand-weak); color:var(--brand-ink); display:grid; place-items:center; font-size:.84rem; font-weight:800;}
 </style>
 </head>
 <body>
@@ -3593,6 +3603,13 @@ for(const k of ['ru','tg','en']) Object.assign(D[k],M9S[k]);
 /* ----- v10: новый вид — «＋», календарь платежей, «можно потратить», обычный калькулятор ----- */
 const M10S={
 ru:{
+  m10Split:'Разложите выручку', m10SplitLead:v=>'В кассе сегодня '+v+' — разложите сразу, чтобы деньги не смешались.',
+  m10SplitPay:'На платежи банкам', m10SplitPayH:(n,d)=>'ближайший: '+n+', '+d, m10SplitHome:'Домой — зарплата себе', m10SplitHomeH:w=>w>0?'ваша зарплата: '+w+' в неделю':'назначьте себе зарплату — и берите только её',
+  m10SplitStock:'На товар', m10SplitStockH:'отложить на закупку', m10SplitLeft:'Останется в кассе', m10SplitDo:'Разложить', m10SplitSkip:'Не сейчас', m10SplitDone:'Разложено ✓', m10SplitOver:'Сумма больше, чем есть в кассе',
+  m10Sal:'Зарплата себе', m10SalLead:'Исследование 1 193 владельцев лавок: кто платит себе фиксированную зарплату и не берёт из кассы сверх неё, лучше переживает плохие недели.', m10SalWeek:'Сколько в неделю', m10SalSet:'изменить', m10SalNote:'Зарплата себе',
+  m10Streak:n=>n+' мес. подряд без просрочек',
+  m10Rules:'5 простых правил', m10RulesSub:'Простые правила работают лучше длинных курсов — это проверили на 1 193 владельцах лавок.',
+  m10RulesList:['Деньги магазина и дома — отдельно.','Платите себе фиксированную зарплату раз в неделю.','Сначала отложите на платёж — потом тратьте.','Каждый вечер записывайте выручку — это минута.','Гасите первым самый маленький долг.'],
   m10Plus:'Записать', m10PlusTitle:'Что записать?',
   m10Pay:'Оплатила кредит', m10PaySub:'отметить платёж', m10Day:'Выручка за день', m10DaySub:'наличные и перевод',
   m10Exp:'Расход магазина', m10ExpSub:'аренда, свет, налог', m10Photo:'Фото чека', m10PhotoSub:'Сифра сама заполнит',
@@ -3606,6 +3623,13 @@ ru:{
   tabBasic:'Обычный', m10Clear:'Сброс',
 },
 tg:{
+  m10Split:'Даромадро тақсим кунед', m10SplitLead:v=>'Имрӯз дар касса '+v+' — дарҳол тақсим кунед, то пулҳо омехта нашаванд.',
+  m10SplitPay:'Барои пардохти бонкҳо', m10SplitPayH:(n,d)=>'наздиктарин: '+n+', '+d, m10SplitHome:'Ба хона — маоши худ', m10SplitHomeH:w=>w>0?'маоши шумо: '+w+' дар ҳафта':'ба худ маош таъин кунед — ва танҳо онро гиред',
+  m10SplitStock:'Барои мол', m10SplitStockH:'барои харид нигоҳ доштан', m10SplitLeft:'Дар касса мемонад', m10SplitDo:'Тақсим кардан', m10SplitSkip:'Ҳоло не', m10SplitDone:'Тақсим шуд ✓', m10SplitOver:'Маблағ аз пули касса зиёд аст',
+  m10Sal:'Маоши худ', m10SalLead:'Тадқиқоти 1 193 соҳиби дӯкон: касе ки ба худ маоши муайян медиҳад ва аз касса зиёда намегирад, ҳафтаҳои бадро беҳтар мегузаронад.', m10SalWeek:'Дар як ҳафта чанд', m10SalSet:'тағйир додан', m10SalNote:'Маоши худ',
+  m10Streak:n=>n+' моҳ паиҳам бе таъхир',
+  m10Rules:'5 қоидаи оддӣ', m10RulesSub:'Қоидаҳои оддӣ аз курсҳои дароз беҳтар кор мекунанд — инро дар 1 193 соҳиби дӯкон санҷидаанд.',
+  m10RulesList:['Пули мағоза ва хона — ҷудо.','Ба худ ҳар ҳафта маоши муайян диҳед.','Аввал барои пардохт ҷудо кунед — баъд харҷ кунед.','Ҳар бегоҳ даромадро сабт кунед — як дақиқа.','Аввал қарзи хурдтаринро пӯшед.'],
   m10Plus:'Сабт', m10PlusTitle:'Чиро сабт кунем?',
   m10Pay:'Қарзро пардохтам', m10PaySub:'пардохтро қайд кардан', m10Day:'Даромади рӯз', m10DaySub:'нақд ва интиқол',
   m10Exp:'Хароҷоти мағоза', m10ExpSub:'иҷора, барқ, андоз', m10Photo:'Акси чек', m10PhotoSub:'Сифра худаш пур мекунад',
@@ -3619,6 +3643,13 @@ tg:{
   tabBasic:'Оддӣ', m10Clear:'Тоза',
 },
 en:{
+  m10Split:'Split today’s takings', m10SplitLead:v=>'The till has '+v+' today — split it now so the money doesn’t mix.',
+  m10SplitPay:'For loan payments', m10SplitPayH:(n,d)=>'next: '+n+', '+d, m10SplitHome:'Home — your salary', m10SplitHomeH:w=>w>0?'your salary: '+w+' a week':'set yourself a salary and take only that',
+  m10SplitStock:'For stock', m10SplitStockH:'set aside for buying', m10SplitLeft:'Stays in the till', m10SplitDo:'Split', m10SplitSkip:'Not now', m10SplitDone:'Split ✓', m10SplitOver:'That’s more than the till has',
+  m10Sal:'Your salary', m10SalLead:'A study of 1,193 shop owners: those who pay themselves a fixed salary and take nothing extra from the till cope better with bad weeks.', m10SalWeek:'How much a week', m10SalSet:'change', m10SalNote:'Own salary',
+  m10Streak:n=>n+' months in a row with no late payments',
+  m10Rules:'5 simple rules', m10RulesSub:'Simple rules work better than long courses — tested on 1,193 shop owners.',
+  m10RulesList:['Keep shop money and home money separate.','Pay yourself a fixed salary once a week.','Set aside for the payment first, then spend.','Record sales every evening — it takes a minute.','Pay off the smallest debt first.'],
   m10Plus:'Record', m10PlusTitle:'What to record?',
   m10Pay:'Paid a loan', m10PaySub:'mark a payment', m10Day:'Today’s sales', m10DaySub:'cash and transfer',
   m10Exp:'Shop expense', m10ExpSub:'rent, power, tax', m10Photo:'Receipt photo', m10PhotoSub:'Sifra fills it in',
@@ -4306,14 +4337,15 @@ let afterT=null;
 function afterPersist(){ wfC=null; clearTimeout(afterT); afterT=setTimeout(()=>{ mirrorForSW(); pushRegister(false); },1200); famAfterPersist(); }
 function digest(){
   const items=[];
-  for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check) continue; items.push({name:loan.name, due:ymd(a.due), amt:Math.round(a.amt||a.monthly||0)}); }
+  for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check) continue; items.push({name:loan.name, due:ymd(a.due), amt:Math.round(a.amt||a.monthly||0), loan:1}); }
   for(const s of state.sup) if(!s.paid&&s.due) items.push({name:s.name, due:s.due, amt:Math.round(+s.sum||0), sup:1});
   try{ for(const b of state.bills||[]){ const d=billDue(b); if(!d.paid) items.push({name:(b.ic?b.ic+' ':'')+b.name, due:ymd(d.due), amt:Math.round(+b.sum||0), bill:1}); } }catch(e){}
   try{ for(const c of state.cust||[]){ const st=custState(c); if(st.bal>0&&st.due) items.push({name:c.name, due:st.due, amt:st.bal, cust:1}); } }catch(e){}
   let wk=null; try{ const w=weekData(new Date().getDay()===1?1:0), p=weekData(new Date().getDay()===1?2:1); wk={rev:Math.round(w.rev),ch:pctCh(w.rev,p.rev)}; }catch(e){}
-  let pd=0; try{ pd=piggyPlan(activeList()).perDay; }catch(e){}
+  let pd=0, pg=null; try{ const pp=piggyPlan(activeList()); pd=pp.perDay; if(pp.total>0) pg={bal:Math.round(pp.bal),total:Math.round(pp.total)}; }catch(e){}
+  let free=''; try{ const act=activeList().filter(x=>!x.loan.example&&!x.a.done), ms=act.map(x=>x.a.monthsLeft); if(act.length&&ms.every(m=>m!=null)){ const d=addMonths(new Date(),Math.max(...ms)); free=L.freedom(d.getMonth(),d.getFullYear()); } }catch(e){}
   const sh=ensureShop();
-  return {lang, cur:L.cur, items, perDay:pd, logged:sh.sales.some(e=>e.date===dkey())?dkey():'', wk};
+  return {lang, cur:L.cur, items, perDay:pd, logged:sh.sales.some(e=>e.date===dkey())?dkey():'', wk, free, pg};
 }
 function mirrorForSW(){ try{ if(DEMO||!('caches' in window)) return; caches.open('mk-state').then(c=>c.put('./mk-state.json', new Response(JSON.stringify(digest()),{headers:{'content-type':'application/json'}}))).catch(()=>{}); }catch(e){} }
 
@@ -9100,7 +9132,8 @@ function m10CalHTML(){ const up=m10Upcoming(), t0=new Date(); t0.setHours(0,0,0,
   const days=[]; for(let i=0;i<14;i++){ const d=new Date(t0.getTime()+i*864e5); const its=up.filter(x=>x.d.getTime()===d.getTime());
     days.push(`<div class="m10-d${i===0?' today':''}${its.length?' pay':''}${its.some(x=>x.late)?' late':''}" title="${esc(its.map(x=>x.n+' '+money(x.v)).join(', '))}"><span>${(L.wdShort||[])[d.getDay()]||''}</span><b>${d.getDate()}</b><i></i></div>`); }
   const list=up.slice(0,4).map(x=>`<span class="${x.late?'late':''}">${x.late?L.m10Late:x.d.getDate()+' '+((MONTHS[lang]||MONTHS.ru).short[x.d.getMonth()]||'')} — ${esc(x.n)} <b>${money(x.v)}</b></span>`).join('');
-  return `<div class="m10-cal m10-card"><div class="m10-lbl">${L.m10Cal}</div><div class="m10-days">${days.join('')}</div><div class="m10-cn">${list||L.m10CalNone}</div></div>`; }
+  let sk=0; try{ sk=streakMonths(); }catch(e){}
+  return `<div class="m10-cal m10-card"><div class="m10-lbl">${L.m10Cal}${sk>=2?`<span class="m10-streak">${L.m10Streak(sk)}</span>`:''}</div><div class="m10-days">${days.join('')}</div><div class="m10-cn">${list||L.m10CalNone}</div></div>`; }
 /* «можно потратить сегодня»: выручка дня минус расходы и то, что нужно отложить на ближайшие платежи */
 function m10SafeHTML(list){ let pp; try{ pp=piggyPlan(list.filter(x=>!x.loan.example)); }catch(e){ return ''; } if(!pp||!pp.items||!pp.items.length) return '';
   const sh=ensureShop(), t=dkey(), rev=sumOf(sh.sales.filter(e=>e.date===t)), ex=sumOf(sh.exp.filter(e=>e.date===t)), put=Math.max(0,Math.round(pp.perDay||0));
@@ -9164,6 +9197,42 @@ document.addEventListener('focusout',()=>setTimeout(m10KbVar,400));
 try{ if(window.visualViewport) visualViewport.addEventListener('resize',()=>{ m10KbVar(); const a=document.activeElement; if(a) m10KbFix(a); }); }catch(e){}
 document.addEventListener('pointerdown',e=>{ const t=e.target; if(t&&t.matches&&t.matches('input:not([autocomplete]),textarea:not([autocomplete])')) t.setAttribute('autocomplete','off'); },true);
 try{ const _os10=openSheet; openSheet=function(){ const x=_os10.apply(this,arguments); try{ sheet.querySelectorAll('input:not([autocomplete]),textarea:not([autocomplete])').forEach(i=>i.setAttribute('autocomplete','off')); }catch(e){} return x; }; }catch(e){}
+
+/* ---- раскладка выручки: записали день — сразу раскладываем на платежи, домой (зарплата себе) и на товар.
+   Основа: «раскладка зарплаты» Monzo и исследование Drexler–Fischer–Schoar о простых правилах для владельцев лавок. ---- */
+function m10SalW(){ return Math.max(0,Math.round(+((state.misc||{}).salW)||0)); }
+function m10SalForm(back){ openSheet(`<h3>${L.m10Sal}</h3><p class="lead">${L.m10SalLead}</p>
+    <div class="field n big-in"><label for="m10-sw">${L.m10SalWeek}, ${L.cur}</label><input id="m10-sw" type="number" inputmode="numeric" min="0" value="${m10SalW()||''}"></div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="m10-sb">${L.back}</button><button type="button" class="btn btn-primary" id="m10-ss">${L.save}</button></div>`);
+  $('#m10-sb').onclick=()=>back(); $('#m10-ss').onclick=()=>{ state.misc.salW=Math.max(0,Math.round(+$('#m10-sw').value||0)); persist(); back(); }; }
+function m10Split(){ const sh=ensureShop(), t=dkey(), rev=sumOf(sh.sales.filter(e=>e.date===t)), ex=sumOf(sh.exp.filter(e=>e.date===t)); const till=Math.max(0,Math.round(rev-ex));
+  if(!(till>0)) return false; let pp={perDay:0,next:null}; try{ pp=piggyPlan(activeList()); }catch(e){}
+  const sal=m10SalW(), salDay=sal>0?round10(sal/7):0; if(!(pp.perDay>0)&&!sal) return false;
+  const paidHome=sumOf(sh.exp.filter(e=>e.date===t&&e.cat==='salary'&&e.m10)); /* уже разложено сегодня — не предлагаем второй раз */
+  if(paidHome>0||(state.misc.splitDay===t)) return false;
+  const d1=Math.min(till,Math.round(pp.perDay||0)), d2=Math.min(Math.max(0,till-d1),salDay);
+  const row=(id,lab,hint,v)=>`<div class="m10-sp"><label for="${id}"><b>${lab}</b><small>${hint}</small></label><input id="${id}" type="number" inputmode="numeric" min="0" value="${v||''}" placeholder="0"></div>`;
+  openSheet(`<h3>${L.m10Split}</h3><p class="lead">${L.m10SplitLead(money(till))}</p>
+    ${row('m10-s1',L.m10SplitPay,pp.next?L.m10SplitPayH(esc(pp.next.name),fmtDate(pp.next.due)):'',d1)}
+    ${row('m10-s2',L.m10SplitHome,L.m10SplitHomeH(sal>0?money(sal):0)+` · <button type="button" class="link-btn" id="m10-sal">${L.m10SalSet}</button>`,d2)}
+    ${row('m10-s3',L.m10SplitStock,L.m10SplitStockH,0)}
+    <div class="calc-out"><div class="co-row"><span>${L.m10SplitLeft}</span><b id="m10-left"></b></div></div><p class="err" id="m10-serr"></p>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.m10SplitSkip}</button><button type="button" class="btn btn-primary" id="m10-sdo">${L.m10SplitDo}</button></div>`);
+  const val=id=>Math.max(0,Math.round(+$(id).value||0)), calc=()=>{ const left=till-val('#m10-s1')-val('#m10-s2')-val('#m10-s3'); $('#m10-left').textContent=money(left); $('#m10-left').style.color=left<0?'var(--m-clay,#B4531F)':''; return left; };
+  ['#m10-s1','#m10-s2','#m10-s3'].forEach(q=>$(q).addEventListener('input',calc)); calc();
+  $('#m10-sal').onclick=()=>m10SalForm(()=>{ if(!m10Split()) closeSheet(); });
+  $('#m10-sdo').onclick=()=>{ if(calc()<0){ showErr($('#m10-serr'),L.m10SplitOver); return; }
+    const a=val('#m10-s1'), b=val('#m10-s2'), c=val('#m10-s3'), ts=Date.now();
+    if(a>0) envAdd('loan',a,L.ppFromRev); if(c>0) envAdd('stock',c,L.ppFromRev);
+    if(b>0) sh.exp.push({id:'e'+ts+'_sal',date:t,cat:'salary',sum:b,note:L.m10SalNote,ts,m10:1});
+    state.misc.splitDay=t; persist(); closeSheet(); render(); toast(L.m10SplitDone); };
+  return true; }
+try{ const _pp10=piggyPrompt; piggyPrompt=function(){ try{ if(state.misc&&state.misc.splitDay===dkey()) return false; if(m10Split()) return true; }catch(e){} return _pp10.apply(this,arguments); }; }catch(e){}
+
+/* ---- 5 простых правил в «Советах» и серия «без просрочек» на главной ---- */
+function m10RulesInject(){ const box=$('#tips'); if(!box||box.querySelector('.m10-rules')) return; const lead=box.querySelector('.view-h'); if(!lead) return;
+  lead.insertAdjacentHTML('afterend',`<div class="m10-rules m10-card"><b>${L.m10Rules}</b><small>${L.m10RulesSub}</small><ul>${L.m10RulesList.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`); }
+try{ const _rt10=renderTips; renderTips=function(){ const x=_rt10.apply(this,arguments); try{ m10RulesInject(); }catch(e){} return x; }; }catch(e){}
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
