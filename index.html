@@ -1850,6 +1850,51 @@
   details.iv2-min summary b{flex:1; min-width:0;} details.iv2-min summary>span{font-weight:800; font-variant-numeric:tabular-nums;} details.iv2-min summary>span small{font-weight:700;} details.iv2-min summary em{font-style:normal; font-size:.78rem; font-weight:700; color:var(--muted);}
   details.iv2-min summary svg:last-child{flex:none; color:var(--muted);} details.iv2-min[open] summary svg:last-child{transform:rotate(180deg);} details.iv2-min[open]{padding-bottom:12px;}
   .iv-o .iv-p small{font-weight:800;}
+  /* ===================== v15: «Моя идея» и «Предложения на сегодня» ===================== */
+  .id-entry{display:flex; align-items:center; gap:12px; width:100%; text-align:left; font:inherit; color:var(--ink); border:1.5px dashed #C9BDF5; border-radius:18px; background:var(--m11-lav,#ECE7FF); padding:12px 14px; margin:0 0 12px; cursor:pointer; min-height:64px;}
+  :root[data-theme="dark"] .id-entry{background:var(--surface-2); border-color:var(--line);}
+  .id-ei{flex:none; display:grid; place-items:center; width:44px; height:44px; border-radius:14px; background:#fff; color:var(--m11-lav-ink,#4B3CA7);} :root[data-theme="dark"] .id-ei{background:var(--surface); color:var(--ink);}
+  .id-entry>span:nth-child(2){flex:1; min-width:0;} .id-entry b{display:block; font-size:1rem;} .id-entry small{display:block; font-weight:600; font-size:.84rem; line-height:1.35; margin-top:2px; color:var(--m11-lav-ink,#4B3CA7);}
+  :root[data-theme="dark"] .id-entry small{color:var(--muted);} .id-entry em{display:inline-block; font-style:normal; font-size:.76rem; font-weight:800; margin-top:6px; background:rgba(255,255,255,.75); border-radius:99px; padding:3px 9px;} .id-entry>svg{flex:none; color:var(--m11-lav-ink,#4B3CA7);}
+  .of{margin:0 0 14px;} .of-h{display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin:0 2px 8px; flex-wrap:wrap;}
+  .of-h b{display:inline-flex; align-items:center; gap:6px; font-size:1rem;} .of-h b svg{color:#B4831F;} .of-h small{font-size:.78rem; font-weight:700; color:var(--muted);}
+  .of-row{display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; padding:2px 2px 8px; margin:0 -2px; scrollbar-width:none;} .of-row::-webkit-scrollbar{display:none;}
+  .of-c{flex:0 0 78%; max-width:300px; scroll-snap-align:start; display:flex; flex-direction:column; gap:6px; border:1px solid var(--line); border-radius:18px; background:var(--surface); padding:12px 13px;}
+  .of-i{display:grid; place-items:center; width:34px; height:34px; border-radius:11px; background:var(--m-leaf-weak); color:var(--m-leaf);} .of-c.loan .of-i{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7);} .of-c.sell .of-i{background:#FFF1CC; color:#7A4B00;} .of-c.save .of-i{background:var(--surface-2); color:var(--ink);}
+  .of-c b{font-size:.95rem; line-height:1.3;} .of-c p{margin:0; font-size:.84rem; line-height:1.4; color:var(--muted); flex:1;}
+  .of-b{align-self:flex-start; border:0; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-weight:800; font-size:.84rem; padding:8px 14px; min-height:40px; cursor:pointer; margin-top:2px;}
+  .id-ta{position:relative;} .id-ta textarea{display:block; width:100%; min-height:132px; resize:vertical; font:inherit; font-size:1.02rem; line-height:1.45; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:18px; padding:14px 56px 14px 14px;}
+  .id-ta textarea:focus{outline:none; border-color:var(--brand); background:var(--surface);}
+  .id-mic{position:absolute; right:8px; bottom:8px; width:44px; height:44px; border-radius:50%; border:0; background:var(--surface); color:var(--ink); display:grid; place-items:center; cursor:pointer; box-shadow:0 2px 8px rgba(16,24,40,.12);} .id-mic.rec{background:var(--urgent,#D92D20); color:#fff; animation:sfPulse 1.1s ease-in-out infinite;}
+  .id-ex{margin:10px 0 12px;} .id-ex small{display:block; font-size:.78rem; font-weight:800; color:var(--muted); margin:0 2px 6px;} .id-ex .chips{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none;} .id-ex .chips::-webkit-scrollbar{display:none;} .id-ex .chip{flex:none; min-height:40px;}
+  #id-go{display:flex; align-items:center; justify-content:center; gap:10px; margin-top:6px;} #id-go svg{width:26px; height:26px; flex:none;}
+  .id-none{margin:0; color:var(--muted); font-size:.9rem;}
+  .id-it{display:flex; align-items:center; gap:10px; width:100%; text-align:left; font:inherit; color:var(--ink); border:1px solid var(--line); border-radius:16px; background:var(--surface); padding:10px 12px; margin-bottom:8px; cursor:pointer; min-height:60px;}
+  .id-im{flex:1; min-width:0;} .id-im b{display:block; font-size:.95rem; line-height:1.3; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;} .id-im small{display:block; font-size:.78rem; font-weight:700; color:var(--muted); margin-top:2px;} .id-it>svg{flex:none; color:var(--muted);}
+  .id-dot{flex:none; display:grid; place-items:center; width:34px; height:34px; border-radius:50%; background:var(--surface-2); color:var(--muted);}
+  .id-dot.go{background:var(--m-leaf-weak); color:var(--m-leaf);} .id-dot.careful{background:#FFF1CC; color:#7A4B00;} .id-dot.wait{background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7);} .id-dot.no{background:#FFE4D6; color:#B4531F;}
+  .id-busy{display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px; padding:26px 6px 10px;} .id-bava svg{width:72px; height:72px; animation:sfBreath 1.6s ease-in-out infinite;}
+  .id-busy b{font-size:1.15rem;} .id-busy small{color:var(--muted); font-weight:600;} .id-bq{margin:6px 0 10px; color:var(--muted); font-size:.92rem; line-height:1.4; max-width:320px;}
+  .id-v{border-radius:22px; padding:16px; margin-bottom:12px; background:var(--surface-2);} .id-v h3{margin:10px 0 6px; font-size:1.25rem; line-height:1.25;}
+  .id-badge{display:inline-flex; align-items:center; gap:6px; font-weight:800; font-size:.88rem; border-radius:99px; padding:6px 12px; background:var(--surface); color:var(--ink);}
+  .id-v.go{background:var(--m-leaf-weak);} .id-v.go .id-badge{background:var(--m-leaf); color:#fff;} .id-v.careful{background:#FFF4D6;} .id-v.careful .id-badge{background:#FFC83D; color:#101828;}
+  .id-v.wait{background:var(--m11-lav,#ECE7FF);} .id-v.wait .id-badge{background:var(--m11-lav-ink,#4B3CA7); color:#fff;} .id-v.no{background:#FFE9DD;} .id-v.no .id-badge{background:#B4531F; color:#fff;}
+  :root[data-theme="dark"] .id-v{background:var(--surface-2) !important;}
+  .id-sum{margin:0; font-size:1.02rem; line-height:1.5; font-weight:600;} .id-txt{font-size:.98rem; line-height:1.5;} .id-txt p{margin:0 0 8px;} .id-txt ul{margin:4px 0 8px; padding-left:20px;}
+  .id-sec{border:1px solid var(--line); border-radius:18px; background:var(--surface); padding:13px 14px; margin-bottom:10px;} .id-sec h4{display:flex; align-items:center; gap:8px; margin:0 0 8px; font-size:.98rem;} .id-sec h4 svg{flex:none;} .id-sec h4 small{margin-left:auto; font-size:.78rem; font-weight:800; color:var(--muted);}
+  .id-sec p{margin:0; font-size:.92rem; line-height:1.45;}
+  .id-nums{display:grid; grid-template-columns:1fr 1fr; gap:8px;} .id-nums div{background:var(--surface-2); border-radius:14px; padding:9px 11px; min-width:0;} .id-nums small{display:block; font-size:.74rem; font-weight:800; color:var(--muted); line-height:1.25;} .id-nums b{display:block; font-size:1rem; margin-top:2px; overflow-wrap:anywhere;}
+  .id-ul{list-style:none; margin:0; padding:0;} .id-ul li{display:flex; gap:8px; align-items:flex-start; font-size:.92rem; line-height:1.4; padding:4px 0;} .id-ul li svg{flex:none; margin-top:3px;} .id-ul.ok li svg{color:var(--m-leaf);} .id-ul.risk li svg{color:#B4531F;}
+  .id-test{background:var(--m-leaf-weak); border-color:transparent;} :root[data-theme="dark"] .id-test{background:var(--surface);} .id-rule{margin-top:8px !important; padding-top:8px; border-top:1px solid rgba(16,24,40,.1);}
+  .id-step{display:flex; align-items:center; gap:10px; width:100%; min-height:50px; padding:7px 0; background:none; border:0; border-top:1px solid var(--line); font:inherit; color:var(--ink); text-align:left; cursor:pointer; font-size:.92rem; line-height:1.35; font-weight:600;} .id-sec h4+.id-step{border-top:0;}
+  .id-step i{flex:none; width:26px; height:26px; border-radius:9px; border:2px solid #B8C0D0; display:grid; place-items:center; color:transparent;} .id-step.on i{background:var(--m11-go,#12B886); border-color:var(--m11-go,#12B886); color:#fff;} .id-step.on span{color:var(--muted); text-decoration:line-through;}
+  .id-ask{display:flex; flex-direction:column; gap:6px;} .id-ask button{text-align:left; border:1px solid #DDD5FF; background:var(--m11-lav,#ECE7FF); color:var(--m11-lav-ink,#4B3CA7); font:inherit; font-weight:700; font-size:.9rem; border-radius:14px; padding:10px 12px; min-height:44px; cursor:pointer;}
+  :root[data-theme="dark"] .id-ask button{background:var(--surface-2); color:var(--ink); border-color:var(--line);}
+  .id-src a{display:block; font-size:.86rem; font-weight:700; color:var(--brand-ink); padding:5px 0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+  .id-st{margin:0;} .id-st button{min-height:44px; padding:6px 2px; font-size:.82rem;}
+  .id-yours p{margin:8px 0 0; font-size:.9rem; line-height:1.45; color:var(--muted); white-space:pre-wrap;}
+  .id-acts{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:6px 0 4px;} .id-acts .btn{width:100%; margin:0; min-height:52px; justify-content:center; gap:8px; font-size:.88rem; padding:8px 8px;} .id-acts .btn svg{flex:none; width:20px; height:20px;} .id-acts #id-again{grid-column:1/-1;}
+  @media (prefers-reduced-motion:reduce){.id-bava svg,.id-mic.rec{animation:none !important;}}
 </style>
 </head>
 <body>
@@ -4062,6 +4107,85 @@ en:{
   ivShare:'Send the estimate to family', ivShareGoal:'Goal', ivShareTime:(d,m)=>'Goods in the shop in '+d+' days, cycle ≈ '+m+' mo.', ivShareNote:'This is an estimate, not a promise.',
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M14S[k]);
+
+/* ----- v15: «Моя идея» — Сифра разбирает идею человека; «Предложения на сегодня» в разделе «Куда вложить» ----- */
+const M15S={
+ru:{
+  idTitle:'Моя идея', idLead:'Напишите своими словами, что хотите сделать и сколько у вас денег. Сифра посчитает, сверит с вашими кредитами и скажет, стоит ли.',
+  idPh:'Например: у меня 20 000 сомони. Хочу снять вторую точку на рынке и продавать детскую одежду. Аренда около 1 500 в месяц.',
+  idEx:'Примеры', idExList:[['Вторая точка','Хочу открыть вторую точку. У меня есть '],['Продавать в Instagram','Хочу продавать свой товар в Instagram и Telegram: выкладывать фото и принимать заказы. '],['Выйти на Wildberries','Хочу продавать свой товар на Wildberries. '],['Товар без поездки','Хочу заказывать товар из Китая через Pinduoduo или Taobao, без поездки. '],['Закрыть кредит раньше','Хочу закрыть кредит досрочно вместо покупки товара. У меня есть ']],
+  idAmt:'Сколько денег на это (необязательно)', idGo:'Разобрать идею', idShort:'Напишите идею подробнее — хотя бы одно предложение', idOffline:'Нет интернета — разбор идёт на сервере',
+  idBusy:['Читаю вашу идею…','Считаю вложения и доход…','Сверяю с вашими кредитами…','Проверяю свежие цены…','Собираю вывод…'], idBusyNote:'Обычно это занимает до минуты.',
+  idErr:'Не получилось разобрать. Попробуйте ещё раз.', idErrLimit:'На сегодня разборы закончились. Завтра будет ещё.', idErrKey:'Сифра ещё не подключена на сервере.', idRetry:'Попробовать ещё раз',
+  idNote:'Идея уходит Сифре на разбор. Это расчёт и совет, а не обещание дохода.', idMine:'Мои идеи', idNone:'Здесь появятся ваши идеи и разборы.',
+  idV:{go:'Стоит делать',careful:'Делать осторожно',wait:'Пока подождать',no:'Не стоит'},
+  idNums:'Главные цифры', idPros:'Что хорошо', idRisks:'Что может пойти не так', idTest:'Проверьте за 1–2 недели', idRule:'Правило решения', idSteps:'Первые шаги', idStepsOf:(k,n)=>k+' из '+n,
+  idLoans:'А кредиты?', idAsk:'Ответьте — посчитаю точнее', idSrc:'Откуда свежие данные', idYours:'Что вы написали',
+  idSt:'Что решили', idStK:{think:'Думаю',doing:'Делаю',done:'Сделала',no:'Не буду'},
+  idAgain:'Изменить и разобрать снова', idChat:'Обсудить с Сифрой', idChatQ:t=>'Давай обсудим мою идею: '+t, idShare:'Отправить семье', idDel:'Удалить', idBack:'Все идеи', idNew:'Новая идея',
+  idAskQ:'Разбери мою идею по шагам: вывод (стоит ли), главные цифры, что хорошо, что может пойти не так, дешёвая проверка на 1–2 недели, первые шаги, как это вяжется с моими кредитами. Идея: ',
+  idEntryT:'Есть своя идея?', idEntryP:'Напишите её — Сифра посчитает, сверит с кредитами и скажет, стоит ли.', idEntryN:n=>'Мои идеи: '+n, idMic:'Сказать голосом', idMoreSub:'Напишите идею — Сифра разберёт',
+  ofT:'Предложения на сегодня', ofFrom:'по вашим данным', ofFromSf:'от Сифры', ofDo:'Разобрать',
+  ofTop:(c,cn,p,m)=>c+', '+cn+': +'+p+'% за '+m+' мес.', ofTopD:(e)=>e?'Товар успеет к празднику «'+e+'». Проверьте расчёт и риски.':'Сейчас это лучший расчёт среди всех видов товара. Проверьте риски.', ofTopQ:(v,c,cn)=>'Хочу вложить '+v+' в товар «'+c+'», страна закупки — '+cn+'. Стоит ли?',
+  ofLoan:(n,r)=>'Самый дорогой кредит — «'+n+'», '+r+'%', ofLoanD:(x,s,m)=>'Если платить на '+x+' больше каждый месяц, не переплатите '+s+' и закончите на '+m+' мес. раньше.', ofLoanQ:(n,x)=>'Хочу платить в «'+n+'» на '+x+' больше каждый месяц. Что это даст?',
+  ofDue:(n,d)=>'До платежа в «'+n+'» — '+d+' дн.', ofDueD:v=>'Сначала отложите '+v+' на платёж, потом решайте про товар.', ofDueQ:(n,v)=>'Мне скоро платить '+v+' в «'+n+'». Как собрать эти деньги и не сорвать закупку?',
+  ofInsta:'Витрина в Instagram и Telegram', ofInstaD:'В Таджикистане многие продают напрямую через соцсети. Выложите 20 фото и принимайте заказы.', ofInstaQ:'Хочу продавать свой товар в Instagram и Telegram: выкладывать фото и принимать заказы.',
+  ofWb:'Wildberries уже в Таджикистане', ofWbD:'С 2025 года есть пункты выдачи в Душанбе и Худжанде. Узнайте, выгодно ли выйти туда с вашим товаром.', ofWbQ:'Хочу продавать свой товар на Wildberries в Таджикистане. Выгодно ли это?',
+  ofSal:'Назначьте себе зарплату', ofSalD:'Берите из кассы одну и ту же сумму раз в неделю — магазин легче переживает плохие недели.', ofSalQ:'Хочу платить себе фиксированную зарплату из магазина. Сколько можно брать?',
+  ofTest:'Новый товар — пробной партией', ofTestD:'Возьмите 10–20 штук нового товара, а дозаказ делайте, когда увидите продажи.', ofTestQ:'Хочу попробовать новый товар малой партией. Какой и сколько взять?',
+  ofRes:'Запас на месяц', ofResD:v=>'Держите отдельно '+v+' — месяц расходов магазина. Так закупка не сорвёт платежи.', ofResQ:'Хочу собрать запас на месяц расходов магазина. Как это сделать быстрее?',
+},
+tg:{
+  idTitle:'Идеяи ман', idLead:'Бо суханони худ нависед, чӣ кор кардан мехоҳед ва чанд пул доред. Сифра ҳисоб мекунад, бо қарзҳои шумо месанҷад ва мегӯяд, ки меарзад ё не.',
+  idPh:'Масалан: 20 000 сомонӣ дорам. Мехоҳам дар бозор нуқтаи дуюм гирам ва либоси кӯдакона фурӯшам. Иҷора тақрибан 1 500 дар як моҳ.',
+  idEx:'Мисолҳо', idExList:[['Нуқтаи дуюм','Мехоҳам нуқтаи дуюм кушоям. Ман дорам '],['Фурӯш дар Instagram','Мехоҳам моламро дар Instagram ва Telegram фурӯшам: акс гузорам ва фармоиш қабул кунам. '],['Ба Wildberries баромадан','Мехоҳам моламро дар Wildberries фурӯшам. '],['Мол бе сафар','Мехоҳам молро аз Чин тавассути Pinduoduo ё Taobao фармоиш диҳам, бе сафар. '],['Қарзро пештар пӯшидан','Мехоҳам ба ҷои хариди мол қарзро пеш аз мӯҳлат пӯшам. Ман дорам ']],
+  idAmt:'Барои ин чанд пул (ихтиёрӣ)', idGo:'Идеяро таҳлил кардан', idShort:'Идеяро муфассалтар нависед — ақаллан як ҷумла', idOffline:'Интернет нест — таҳлил дар сервер мегузарад',
+  idBusy:['Идеяи шуморо мехонам…','Сармоя ва даромадро ҳисоб мекунам…','Бо қарзҳои шумо месанҷам…','Нархҳои тозаро мебинам…','Хулоса ҷамъ мекунам…'], idBusyNote:'Одатан то як дақиқа вақт мегирад.',
+  idErr:'Таҳлил нашуд. Боз кӯшиш кунед.', idErrLimit:'Таҳлилҳои имрӯза тамом шуданд. Пагоҳ боз мешавад.', idErrKey:'Сифра ҳанӯз дар сервер пайваст нашудааст.', idRetry:'Боз кӯшиш кардан',
+  idNote:'Идея барои таҳлил ба Сифра меравад. Ин ҳисоб ва маслиҳат аст, на ваъдаи даромад.', idMine:'Идеяҳои ман', idNone:'Идеяҳо ва таҳлилҳои шумо дар ин ҷо пайдо мешаванд.',
+  idV:{go:'Кардан меарзад',careful:'Бо эҳтиёт кардан',wait:'Ҳоло сабр кардан',no:'Намеарзад'},
+  idNums:'Рақамҳои асосӣ', idPros:'Чӣ хуб аст', idRisks:'Чӣ метавонад нодуруст равад', idTest:'Дар 1–2 ҳафта санҷед', idRule:'Қоидаи қарор', idSteps:'Қадамҳои аввал', idStepsOf:(k,n)=>k+' аз '+n,
+  idLoans:'Қарзҳо чӣ?', idAsk:'Ҷавоб диҳед — дақиқтар ҳисоб мекунам', idSrc:'Маълумоти тоза аз куҷо', idYours:'Он чӣ шумо навиштед',
+  idSt:'Чӣ қарор кардед', idStK:{think:'Фикр мекунам',doing:'Мекунам',done:'Кардам',no:'Намекунам'},
+  idAgain:'Тағйир додан ва боз таҳлил кардан', idChat:'Бо Сифра муҳокима кардан', idChatQ:t=>'Биё идеяи маро муҳокима кунем: '+t, idShare:'Ба оила фиристодан', idDel:'Нест кардан', idBack:'Ҳамаи идеяҳо', idNew:'Идеяи нав',
+  idAskQ:'Идеяи маро қадам ба қадам таҳлил кун: хулоса (меарзад ё не), рақамҳои асосӣ, чӣ хуб аст, чӣ метавонад нодуруст равад, санҷиши арзон дар 1–2 ҳафта, қадамҳои аввал, бо қарзҳои ман чӣ тавр мувофиқ меояд. Идея: ',
+  idEntryT:'Идеяи худро доред?', idEntryP:'Онро нависед — Сифра ҳисоб мекунад, бо қарзҳо месанҷад ва мегӯяд, ки меарзад ё не.', idEntryN:n=>'Идеяҳои ман: '+n, idMic:'Бо овоз гуфтан', idMoreSub:'Идеяро нависед — Сифра таҳлил мекунад',
+  ofT:'Пешниҳодҳои имрӯза', ofFrom:'аз рӯи маълумоти шумо', ofFromSf:'аз Сифра', ofDo:'Таҳлил кардан',
+  ofTop:(c,cn,p,m)=>c+' аз '+cn+': +'+p+'% дар '+m+' моҳ', ofTopD:(e)=>e?'Мол то иди «'+e+'» мерасад. Ҳисоб ва хатарҳоро санҷед.':'Ҳоло ин беҳтарин ҳисоб байни ҳамаи намудҳои мол аст. Хатарҳоро санҷед.', ofTopQ:(v,c,cn)=>'Мехоҳам '+v+' ба моли «'+c+'» аз кишвари '+cn+' гузорам. Меарзад?',
+  ofLoan:(n,r)=>'Қарзи аз ҳама қимат — «'+n+'», '+r+'%', ofLoanD:(x,s,m)=>'Агар ҳар моҳ '+x+' зиёдтар пардозед, '+s+' зиёдатӣ намедиҳед ва '+m+' моҳ пештар тамом мекунед.', ofLoanQ:(n,x)=>'Мехоҳам ба «'+n+'» ҳар моҳ '+x+' зиёдтар пардозам. Ин чӣ медиҳад?',
+  ofDue:(n,d)=>'То пардохти «'+n+'» — '+d+' рӯз', ofDueD:v=>'Аввал '+v+' барои пардохт ҷудо кунед, баъд дар бораи мол қарор кунед.', ofDueQ:(n,v)=>'Ба наздикӣ бояд '+v+' ба «'+n+'» пардозам. Ин пулро чӣ тавр ҷамъ кунам ва харидро вайрон накунам?',
+  ofInsta:'Витрина дар Instagram ва Telegram', ofInstaD:'Дар Тоҷикистон бисёриҳо мустақиман тавассути шабакаҳои иҷтимоӣ мефурӯшанд. 20 акс гузоред ва фармоиш қабул кунед.', ofInstaQ:'Мехоҳам моламро дар Instagram ва Telegram фурӯшам: акс гузорам ва фармоиш қабул кунам.',
+  ofWb:'Wildberries аллакай дар Тоҷикистон', ofWbD:'Аз соли 2025 дар Душанбе ва Хуҷанд нуқтаҳои додани мол ҳаст. Фаҳмед, ки бо моли шумо ба он ҷо баромадан фоида дорад ё не.', ofWbQ:'Мехоҳам моламро дар Wildberries дар Тоҷикистон фурӯшам. Ин фоида дорад?',
+  ofSal:'Ба худ маош таъин кунед', ofSalD:'Аз касса ҳар ҳафта як хел маблағ гиред — мағоза ҳафтаҳои бадро осонтар мегузаронад.', ofSalQ:'Мехоҳам аз мағоза ба худ маоши муайян диҳам. Чанд гирифтан мумкин?',
+  ofTest:'Моли нав — бо партияи санҷишӣ', ofTestD:'Аз моли нав 10–20 дона гиред, фармоиши такрориро баъди дидани фурӯш диҳед.', ofTestQ:'Мехоҳам моли навро бо партияи хурд санҷам. Кадомашро ва чанд дона гирам?',
+  ofRes:'Захира барои як моҳ', ofResD:v=>v+'-ро алоҳида нигоҳ доред — хароҷоти якмоҳаи мағоза. Он гоҳ харид пардохтҳоро вайрон намекунад.', ofResQ:'Мехоҳам барои як моҳи хароҷоти мағоза захира ҷамъ кунам. Чӣ тавр тезтар?',
+},
+en:{
+  idTitle:'My idea', idLead:'Write in your own words what you want to do and how much money you have. Sifra will run the numbers, check them against your loans and say whether it’s worth it.',
+  idPh:'For example: I have 20,000 somoni. I want to rent a second stall at the market and sell children’s clothes. Rent is about 1,500 a month.',
+  idEx:'Examples', idExList:[['A second stall','I want to open a second stall. I have '],['Sell on Instagram','I want to sell my goods on Instagram and Telegram: post photos and take orders. '],['Go on Wildberries','I want to sell my goods on Wildberries. '],['Goods without a trip','I want to order goods from China through Pinduoduo or Taobao, without travelling. '],['Pay a loan off early','I want to pay a loan off early instead of buying goods. I have ']],
+  idAmt:'How much money for this (optional)', idGo:'Analyse the idea', idShort:'Describe the idea in more detail — at least one sentence', idOffline:'No internet — the analysis runs on the server',
+  idBusy:['Reading your idea…','Working out costs and income…','Checking against your loans…','Looking up fresh prices…','Putting the conclusion together…'], idBusyNote:'This usually takes up to a minute.',
+  idErr:'The analysis didn’t work. Try again.', idErrLimit:'No more analyses today. More tomorrow.', idErrKey:'Sifra isn’t connected on the server yet.', idRetry:'Try again',
+  idNote:'The idea is sent to Sifra for analysis. This is an estimate and advice, not a promise of income.', idMine:'My ideas', idNone:'Your ideas and their analyses will appear here.',
+  idV:{go:'Worth doing',careful:'Do it carefully',wait:'Wait for now',no:'Not worth it'},
+  idNums:'Key numbers', idPros:'What’s good', idRisks:'What could go wrong', idTest:'Test it in 1–2 weeks', idRule:'Decision rule', idSteps:'First steps', idStepsOf:(k,n)=>k+' of '+n,
+  idLoans:'What about the loans?', idAsk:'Answer these for a more exact estimate', idSrc:'Where the fresh data comes from', idYours:'What you wrote',
+  idSt:'What you decided', idStK:{think:'Thinking',doing:'Doing it',done:'Done',no:'Won’t do it'},
+  idAgain:'Edit and analyse again', idChat:'Discuss with Sifra', idChatQ:t=>'Let’s discuss my idea: '+t, idShare:'Send to family', idDel:'Delete', idBack:'All ideas', idNew:'New idea',
+  idAskQ:'Analyse my idea step by step: conclusion (is it worth it), key numbers, what’s good, what could go wrong, a cheap 1–2 week test, first steps, how it fits with my loans. Idea: ',
+  idEntryT:'Have an idea of your own?', idEntryP:'Write it down — Sifra will run the numbers, check your loans and say whether it’s worth it.', idEntryN:n=>'My ideas: '+n, idMic:'Say it', idMoreSub:'Write an idea — Sifra will analyse it',
+  ofT:'Suggestions for today', ofFrom:'from your data', ofFromSf:'from Sifra', ofDo:'Analyse',
+  ofTop:(c,cn,p,m)=>c+' from '+cn+': +'+p+'% in '+m+' mo.', ofTopD:(e)=>e?'The goods will arrive in time for “'+e+'”. Check the estimate and the risks.':'Right now this is the best estimate among all product types. Check the risks.', ofTopQ:(v,c,cn)=>'I want to put '+v+' into “'+c+'” from '+cn+'. Is it worth it?',
+  ofLoan:(n,r)=>'Your most expensive loan is “'+n+'”, '+r+'%', ofLoanD:(x,s,m)=>'Paying '+x+' more each month avoids '+s+' in interest and ends it '+m+' mo. sooner.', ofLoanQ:(n,x)=>'I want to pay '+x+' more into “'+n+'” each month. What will that give me?',
+  ofDue:(n,d)=>'“'+n+'” payment in '+d+' days', ofDueD:v=>'Set aside '+v+' for the payment first, then decide about goods.', ofDueQ:(n,v)=>'I soon have to pay '+v+' into “'+n+'”. How do I gather it without derailing my buying?',
+  ofInsta:'A shop window on Instagram and Telegram', ofInstaD:'In Tajikistan many sell directly through social media. Post 20 photos and take orders.', ofInstaQ:'I want to sell my goods on Instagram and Telegram: post photos and take orders.',
+  ofWb:'Wildberries is already in Tajikistan', ofWbD:'Since 2025 there are pickup points in Dushanbe and Khujand. Find out whether it pays to list your goods there.', ofWbQ:'I want to sell my goods on Wildberries in Tajikistan. Does it pay?',
+  ofSal:'Set yourself a salary', ofSalD:'Take the same amount from the till once a week — the shop copes better with bad weeks.', ofSalQ:'I want to pay myself a fixed salary from the shop. How much can I take?',
+  ofTest:'New product — a trial batch first', ofTestD:'Take 10–20 pieces of a new product and reorder once you see sales.', ofTestQ:'I want to try a new product in a small batch. Which one and how many?',
+  ofRes:'A month’s reserve', ofResD:v=>'Keep '+v+' apart — a month of shop costs. Then buying won’t derail payments.', ofResQ:'I want to build a reserve of one month of shop costs. How do I do it faster?',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M15S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -9993,6 +10117,7 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
   const draw=()=>{ const t=today0(), mo=L.monthsNom||[], g=ivGoal(), re=ivRe();
     openSheet(`<h3>${ico('chart',24)} ${L.ivTitle}</h3><p class="lead">${L.ivLead}</p>
       <button class="sf-inv" data-sfinv="1"><span class="sf-ava">${SF_AVA}</span><span><b>${L.sfInvAsk}</b><small>${L.sfInvLead}</small></span></button>
+      <div id="iv-idea"></div><div id="iv-offers"></div>
       <div class="field n big-in"><label>${L.ivCap}</label><div class="pin"><input id="iv-cap" type="number" inputmode="decimal" min="0" value="${P.cap||''}"><select id="iv-cur"><option value="USD" ${(P.cur||'USD')==='USD'?'selected':''}>$</option><option value="TJS" ${P.cur==='TJS'?'selected':''}>${L.cur}</option></select></div></div>
       <div class="br-h">${ico('goal',18)} ${L.ivTarget}</div><div class="chips iv2-goal" id="iv-goal">${goalChips()}</div>
       <div class="field n iv2-own" id="iv-ownw" ${g.k==='sum'?'':'hidden'}><label>${L.ivGoalWant}</label><input id="iv-own" type="number" inputmode="decimal" min="0" value="${g.k==='sum'&&+g.v>0?g.v:''}" placeholder="${Math.round((+P.cap||0)*2)||''}"></div>
@@ -10006,7 +10131,7 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
       <p class="note">${L.ivNote}</p>
       <div class="sheet-row"><button class="btn btn-ghost" id="iv-send">${ico('share',18)} ${L.ivShare}</button></div>
       <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
-    upd(); form(); $('#iv-mx').addEventListener('toggle',()=>{ if($('#iv-mx').open) mxDraw(); });
+    upd(); form(); try{ ivExtras(); }catch(e){} $('#iv-mx').addEventListener('toggle',()=>{ if($('#iv-mx').open) mxDraw(); });
     const setGoal=g2=>{ P.goal=g2; if(g2.k==='x') P.tgt=g2.v; persist(); $('#iv-goal').innerHTML=goalChips(); bindGoal(); $('#iv-ownw').hidden=g2.k!=='sum'; upd(); if(g2.k==='sum'){ const o=$('#iv-own'); if(o&&!o.value) o.focus(); } };
     const bindGoal=()=>{ sheet.querySelectorAll('[data-ivt]').forEach(b=>b.onclick=()=>setGoal({k:'x',v:+b.dataset.ivt}));
       sheet.querySelectorAll('[data-ivg]').forEach(b=>b.onclick=()=>setGoal(b.dataset.ivg==='sum'?{k:'sum',v:+($('#iv-own').value)||0}:{k:'loans'})); };
@@ -10094,6 +10219,153 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
   };
   draw();
 };
+
+/* ===================== v15: «Моя идея» и «Предложения на сегодня» =====================
+   «Моя идея»: человек пишет своими словами, что хочет сделать и сколько у него денег, — Сифра считает, сверяет с кредитами и даёт вывод.
+   Откуда устройство разбора:
+   - Camuffo и др. (116 стартапов, Италия): кто формулирует гипотезу, проверяет её и заранее задаёт правило решения, зарабатывает больше
+     и чаще вовремя меняет курс → в каждом разборе «Проверьте за 1–2 недели» и «Правило решения»;
+   - Gollwitzer и Sheeran (94 проверки): планы «когда — что сделаю» заметно повышают шанс довести дело до конца → «Первые шаги» с отметками;
+   - отзывы об IdeaBuddy: хвалят пошаговость и простые цифры, ругают, что результат не видно до оплаты → весь разбор сразу, идеи сохраняются;
+   - Erica (Bank of America): помощник сам приносит личные подсказки → «Предложения на сегодня» по её данным, каждый день новые. */
+function ideas(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.ideas)) state.misc.ideas=[]; return state.misc.ideas; }
+const ID_I={go:'check',careful:'shield',wait:'clock',no:'warn'}, OF_I={buy:'bag',loan:'loans',sell:'shop',save:'shield'};
+let idCtl=null, idMicOn=null;
+function ideaTitle(it){ return (it.rep&&it.rep.title)||String(it.text||'').replace(/\s+/g,' ').slice(0,60)+(String(it.text||'').length>60?'…':''); }
+async function ideaAsk(text,amt,cur){ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+  const ctl=idCtl=new AbortController(), to=setTimeout(()=>ctl.abort(),150000), code=j=>j&&j.error==='limit'?'limit':j&&j.error==='nokey'?'key':'x';
+  const post=(path,body)=>fetch(API_BASE+path,{method:'POST',headers:{'content-type':'application/json'},signal:ctl.signal,body:JSON.stringify(body)});
+  try{
+    if(caps&&caps.v>=4){ const r=await post('/api/mk/idea',{id:mkId(),lang,idea:text,amt:amt>0?amt:undefined,cur,ctx:sfCtx()}), j=await r.json().catch(()=>({}));
+      if(!r.ok) return {err:code(j)}; return {rep:j.rep&&typeof j.rep==='object'?j.rep:null,text:String(j.text||''),sources:Array.isArray(j.sources)?j.sources:[]}; }
+    /* сервер ещё не обновлён: тот же разбор обычным вопросом Сифре — ответ придёт текстом */
+    const q=(L.idAskQ+text+(amt>0?' ('+amt+' '+(cur==='USD'?'$':L.cur)+')':'')).slice(0,700);
+    const r=await post('/api/mk/ai',{id:mkId(),q,lang,hist:[],ctx:sfCtx()}), j=await r.json().catch(()=>({}));
+    if(!r.ok) return {err:code(j)}; const t=String(j.text||'').trim(); return t?{rep:null,text:t,sources:Array.isArray(j.sources)?j.sources:[]}:{err:'x'};
+  }catch(e){ return {err:ctl.signal.aborted?'cut':'x'}; } finally{ clearTimeout(to); if(idCtl===ctl) idCtl=null; } }
+function ideaMicStop(btn){ idMicOn=null; try{ sfEarClose(); }catch(e){} try{ sfRecKill(); }catch(e){} if(btn) btn.classList.remove('rec'); }
+async function ideaDictate(ta,btn){ if(idMicOn){ ideaMicStop(btn); return; }
+  const base=ta.value?ta.value.replace(/\s*$/,' '):'', m=idMicOn={}; btn.classList.add('rec'); try{ sfHush(); sfAudUnlock(); }catch(e){}
+  const off=()=>{ if(idMicOn===m) idMicOn=null; btn.classList.remove('rec'); }, put=t=>{ ta.value=(base+t).slice(0,1500); ta.dispatchEvent(new Event('input',{bubbles:true})); };
+  const w=setInterval(()=>{ if(idMicOn!==m){ clearInterval(w); return; } if(!ta.isConnected||!overlay.classList.contains('open')){ clearInterval(w); ideaMicStop(null); } },300);
+  try{ await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(r,1500))]); }catch(e){} if(idMicOn!==m) return;
+  if(sfCaps&&sfCaps.stt&&navigator.mediaDevices&&navigator.mediaDevices.getUserMedia&&window.MediaRecorder){ const ok=await sfEarOpen(); if(idMicOn!==m) return;
+    if(ok){ sfEar.maxQuiet=1; sfEarArm(async(blob,why)=>{ if(idMicOn!==m) return; sfEarClose(); if(!blob){ off(); if(why==='idle') toast(L.sfNoSpeech); return; }
+        const {text,bad}=await sfSttPost(blob); if(idMicOn!==m) return; off(); if(bad) toast(L.voiceFail); else if(!text) toast(L.sfNoSpeech); else put(text); }); return; }
+    if(/NotAllowed|Security/.test(sfEar.err||'')){ off(); toast(L.voiceDenied); return; } }
+  sfHear(t=>{ off(); put(t); }, err=>{ off(); toast(err==='nosr'?L.voiceNo:err==='not-allowed'?L.voiceDenied:err==='no-speech'?L.sfNoSpeech:L.voiceFail); }, (t,start)=>{ if(!start&&t) ta.value=(base+t).slice(0,1500); }); }
+function ideaListHTML(){ const a=ideas(); if(!a.length) return `<p class="id-none">${L.idNone}</p>`;
+  return a.map(it=>{ const v=it.rep?it.rep.verdict:'', n=it.rep&&it.rep.steps?it.rep.steps.length:0, k=n?Object.keys(it.done||{}).length:0, d=parseYmd(it.d);
+    return `<button type="button" class="id-it" data-idv="${esc(it.id)}"><span class="id-dot ${v||'txt'}">${ico(ID_I[v]||'bulb',16)}</span><span class="id-im"><b>${esc(ideaTitle(it))}</b><small>${d?fmtDate(d):''}${v?' · '+L.idV[v]:''}${it.st&&it.st!=='think'?' · '+L.idStK[it.st]:''}${n?' · '+L.idStepsOf(k,n):''}</small></span>${ico('next',18)}</button>`; }).join(''); }
+function ideaSheet(pre){ pre=pre||{}; let draft={}; try{ draft=JSON.parse(localStorage.getItem('idea_draft')||'{}')||{}; }catch(e){}
+  const text=pre.text!=null?pre.text:(draft.t||''), amt=pre.amt!=null?pre.amt:(draft.a||''), cur=pre.cur||draft.c||'TJS';
+  openSheet(`<h3>${ico('bulb',24)} ${L.idTitle}</h3><p class="lead">${L.idLead}</p>
+    <div class="id-ta"><textarea id="id-t" rows="5" maxlength="1500" data-nodirty placeholder="${esc(L.idPh)}" aria-label="${esc(L.idTitle)}">${esc(text)}</textarea><button type="button" class="id-mic" id="id-mic" aria-label="${esc(L.idMic)}">${ico('mic',22)}</button></div>
+    <div class="id-ex"><small>${L.idEx}</small><div class="chips">${L.idExList.map((x,i)=>`<button type="button" class="chip" data-idex="${i}">${esc(x[0])}</button>`).join('')}</div></div>
+    <div class="field n"><label>${L.idAmt}</label><div class="pin"><input id="id-a" type="number" inputmode="decimal" min="0" data-nodirty value="${amt||''}"><select id="id-c" data-nodirty><option value="TJS" ${cur==='TJS'?'selected':''}>${L.cur}</option><option value="USD" ${cur==='USD'?'selected':''}>$</option></select></div></div>
+    <div class="err" id="id-e" hidden></div>
+    <button class="btn btn-primary btn-full" id="id-go">${SF_AVA}<span>${L.idGo}</span></button>
+    <p class="note">${L.idNote}</p>
+    <div class="br-h">${ico('folder',18)} ${L.idMine}</div><div class="id-list" id="id-list">${ideaListHTML()}</div>
+    <div class="sheet-row">${pre.back==='invest'?`<button class="btn btn-ghost" id="id-back">← ${L.ivTitle}</button>`:''}<button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  const ta=$('#id-t'), ai=$('#id-a'), ci=$('#id-c'), save=()=>{ try{ localStorage.setItem('idea_draft',JSON.stringify({t:ta.value,a:ai.value,c:ci.value})); }catch(e){} };
+  [ta,ai].forEach(x=>x.addEventListener('input',save)); ci.onchange=save; if(pre.text!=null) save();
+  $('#id-mic').onclick=()=>ideaDictate(ta,$('#id-mic'));
+  sheet.querySelectorAll('[data-idex]').forEach(b=>b.onclick=()=>{ ta.value=L.idExList[+b.dataset.idex][1]; save(); ta.focus(); try{ ta.setSelectionRange(ta.value.length,ta.value.length); }catch(e){} });
+  sheet.querySelectorAll('[data-idv]').forEach(b=>b.onclick=()=>ideaView(b.dataset.idv));
+  const bk=$('#id-back'); if(bk) bk.onclick=()=>investSheet();
+  $('#id-go').onclick=()=>{ const t=ta.value.replace(/\s+/g,' ').trim(), e=$('#id-e'); e.hidden=true;
+    if(t.length<12){ e.textContent=L.idShort; e.hidden=false; ta.focus(); return; } if(!navigator.onLine){ e.textContent=L.idOffline; e.hidden=false; return; }
+    ideaMicStop($('#id-mic')); ideaRun({text:t,amt:+ai.value||0,cur:ci.value,back:pre.back,edit:pre.edit}); }; }
+async function ideaRun(o){ let i=0;
+  openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b id="id-bs" aria-live="polite">${L.idBusy[0]}</b><small>${L.idBusyNote}</small><p class="id-bq">«${esc(o.text.length>160?o.text.slice(0,160)+'…':o.text)}»</p>
+    <button class="btn btn-ghost" id="id-cancel">${L.cancel}</button></div>`);
+  const tick=setInterval(()=>{ const e=$('#id-bs'); if(!e){ clearInterval(tick); return; } i=Math.min(i+1,L.idBusy.length-1); e.textContent=L.idBusy[i]; },4500);
+  let cut=false; $('#id-cancel').onclick=()=>{ cut=true; try{ if(idCtl) idCtl.abort(); }catch(e){} };
+  const res=await ideaAsk(o.text,o.amt,o.cur); clearInterval(tick);
+  if(cut||res.err==='cut'){ if($('#id-bs')) ideaSheet({text:o.text,amt:o.amt,cur:o.cur,back:o.back,edit:o.edit}); return; }
+  if(res.err){ if(!$('#id-bs')) return; const msg=res.err==='limit'?L.idErrLimit:res.err==='key'?L.idErrKey:L.idErr;
+    openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b>${msg}</b><div class="sheet-row" style="width:100%"><button class="btn btn-ghost" id="id-e1">${L.back}</button>${res.err==='x'?`<button class="btn btn-primary" id="id-e2">${L.idRetry}</button>`:''}</div></div>`);
+    $('#id-e1').onclick=()=>ideaSheet({text:o.text,amt:o.amt,cur:o.cur,back:o.back,edit:o.edit}); const r2=$('#id-e2'); if(r2) r2.onclick=()=>ideaRun(o); return; }
+  const a=ideas(); let it=o.edit?a.find(x=>x.id===o.edit):null;
+  if(it){ Object.assign(it,{d:ymd(new Date()),text:o.text,amt:o.amt,cur:o.cur,rep:res.rep,txt:res.text,src:res.sources,done:{}}); a.splice(a.indexOf(it),1); a.unshift(it); }
+  else { it={id:uid('id'),d:ymd(new Date()),text:o.text,amt:o.amt,cur:o.cur,rep:res.rep,txt:res.text,src:res.sources,st:'think',done:{}}; a.unshift(it); if(a.length>30) a.length=30; }
+  persist(); try{ localStorage.removeItem('idea_draft'); }catch(e){}
+  if($('#id-bs')) ideaView(it.id,o.back); else toast(L.idV[(it.rep&&it.rep.verdict)||'careful']+': '+ideaTitle(it)); }
+function ideaShareText(it){ const r=it.rep, ls=[L.idTitle+': '+ideaTitle(it)];
+  if(r){ ls.push(L.idV[r.verdict]+'. '+r.summary); for(const n of (r.numbers||[])) ls.push('• '+n.l+': '+n.v); if(r.test&&r.test.rule) ls.push(L.idRule+': '+r.test.rule); } else ls.push(sfPlain(it.txt||'').slice(0,700));
+  ls.push(L.ivShareNote); return ls.join('\n'); }
+function ideaView(id,back){ const it=ideas().find(x=>x.id===id); if(!it){ ideaSheet(); return; } const r=it.rep, v=r?r.verdict:'', okU=u=>/^https?:\/\//.test(String(u||''));
+  const li=(a,ic,cls)=>a&&a.length?`<ul class="id-ul ${cls}">${a.map(x=>`<li>${ico(ic,16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:'';
+  const steps=r&&r.steps&&r.steps.length?`<div class="id-sec"><h4>${ico('flag',18)} ${L.idSteps}<small>${L.idStepsOf(Object.keys(it.done||{}).length,r.steps.length)}</small></h4>
+      ${r.steps.map((s,i)=>`<button type="button" class="id-step ${it.done&&it.done[i]?'on':''}" role="checkbox" aria-checked="${!!(it.done&&it.done[i])}" data-idstep="${i}"><i>${ico('check',16)}</i><span>${esc(s)}</span></button>`).join('')}</div>`:'';
+  const src=(it.src||[]).filter(s=>s&&okU(s.url)).slice(0,5);
+  openSheet(`<div class="id-v ${v||'txt'}"><span class="id-badge">${ico(ID_I[v]||'bulb',18)} ${v?L.idV[v]:L.idTitle}</span><h3>${esc(ideaTitle(it))}</h3>${r?`<p class="id-sum">${esc(r.summary)}</p>`:`<div class="id-txt">${sfMd(it.txt||'')}</div>`}</div>
+    ${r&&r.numbers&&r.numbers.length?`<div class="id-sec"><h4>${ico('stats',18)} ${L.idNums}</h4><div class="id-nums">${r.numbers.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div></div>`:''}
+    ${r&&r.pros&&r.pros.length?`<div class="id-sec"><h4>${ico('check',18)} ${L.idPros}</h4>${li(r.pros,'check','ok')}</div>`:''}
+    ${r&&r.risks&&r.risks.length?`<div class="id-sec"><h4>${ico('warn',18)} ${L.idRisks}</h4>${li(r.risks,'warn','risk')}</div>`:''}
+    ${r&&r.test?`<div class="id-sec id-test"><h4>${ico('search',18)} ${L.idTest}</h4><p>${esc(r.test.what)}</p>${r.test.rule?`<p class="id-rule"><b>${L.idRule}.</b> ${esc(r.test.rule)}</p>`:''}</div>`:''}
+    ${steps}
+    ${r&&r.loans?`<div class="id-sec"><h4>${ico('loans',18)} ${L.idLoans}</h4><p>${esc(r.loans)}</p></div>`:''}
+    ${r&&r.ask&&r.ask.length?`<div class="id-sec"><h4>${ico('help',18)} ${L.idAsk}</h4><div class="id-ask">${r.ask.map((q,i)=>`<button type="button" data-idask="${i}">${esc(q)}</button>`).join('')}</div></div>`:''}
+    ${src.length?`<div class="id-sec id-src"><h4>${ico('globe',18)} ${L.idSrc}</h4>${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url)}</a>`).join('')}</div>`:''}
+    <div class="id-sec"><h4>${ico('goal',18)} ${L.idSt}</h4><div class="seg id-st">${['think','doing','done','no'].map(k=>`<button type="button" data-idst="${k}" class="${(it.st||'think')===k?'on':''}">${L.idStK[k]}</button>`).join('')}</div></div>
+    <details class="wh-more id-yours"><summary>${ico('edit',18)} ${L.idYours}</summary><p>${esc(it.text)}${it.amt>0?' · '+(it.cur==='USD'?ivN(it.amt)+' $':money(it.amt)):''}</p></details>
+    <p class="note">${L.idNote}</p>
+    <div class="id-acts"><button class="btn btn-primary" id="id-again">${ico('repeat',18)}<span>${L.idAgain}</span></button><button class="btn btn-ghost" id="id-chat">${SF_AVA}<span>${L.idChat}</span></button>
+      <button class="btn btn-ghost" id="id-share">${ico('share',18)}<span>${L.idShare}</span></button><button class="btn btn-ghost" id="id-del">${L.idDel}</button></div>
+    <div class="sheet-row"><button class="btn btn-ghost" id="id-all">← ${L.idBack}</button><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-idstep]').forEach(b=>b.onclick=()=>{ it.done=it.done||{}; const i=b.dataset.idstep; if(it.done[i]) delete it.done[i]; else it.done[i]=1; if(it.st==='think'&&Object.keys(it.done).length) it.st='doing'; persist(); const y=sheet.scrollTop; ideaView(id,back); sheet.scrollTop=y; });
+  sheet.querySelectorAll('[data-idst]').forEach(b=>b.onclick=()=>{ it.st=b.dataset.idst; persist(); sheet.querySelectorAll('[data-idst]').forEach(x=>x.classList.toggle('on',x===b)); });
+  sheet.querySelectorAll('[data-idask]').forEach(b=>b.onclick=()=>ideaSheet({text:it.text+'\n'+r.ask[+b.dataset.idask]+' ',amt:it.amt,cur:it.cur,back,edit:it.id}));
+  $('#id-again').onclick=()=>ideaSheet({text:it.text,amt:it.amt,cur:it.cur,back,edit:it.id});
+  $('#id-chat').onclick=()=>sifraOpen(L.idChatQ(ideaTitle(it)));
+  $('#id-share').onclick=()=>shareText(ideaShareText(it));
+  $('#id-del').onclick=e=>{ if(!confirmTwice(e.currentTarget)) return; const a=ideas(), k=a.indexOf(it); if(k>=0) a.splice(k,1); persist(); ideaSheet({back}); };
+  $('#id-all').onclick=()=>ideaSheet({back}); }
+
+/* ---------- «Предложения на сегодня» ---------- */
+function ofSt(){ const m=state.misc=state.misc||{}; if(!m.sfOffers||typeof m.sfOffers!=='object'||!Array.isArray(m.sfOffers.items)) m.sfOffers={day:'',lang:'',items:[],hist:[]}; if(!Array.isArray(m.sfOffers.hist)) m.sfOffers.hist=[]; return m.sfOffers; }
+/* без сервера: три хода по данным приложения; третий меняется каждый день */
+function ofLocal(){ const out=[], seed=Math.floor(today0().getTime()/864e5);
+  try{ const st=ivStart(), cap=ivCapUSD()>0?ivCapUSD():2000, tops=ivTop3(st), top=tops[seed%Math.max(1,Math.min(2,tops.length))]||tops[0];
+    if(top){ const r=ivCalc(top.k,top.r.c,st,cap), ev=r.se&&r.se.k==='in'&&r.se.e?(L['hol_'+r.se.e.id]||L['whEv_'+r.se.e.id]||''):'';
+      out.push({k:'buy',t:L.ofTop(L['whC_'+top.k],L['cn_'+r.c],Math.round(r.roi*100),fx(r.totalM,1)),d:L.ofTopD(ev),q:L.ofTopQ(ivCapFmt(cap),L['whC_'+top.k],L['cn_'+r.c])}); } }catch(e){}
+  try{ const act=activeList().filter(x=>!x.loan.example&&!x.a.done), soon=act.filter(x=>x.a.days!=null&&x.a.days>=0&&x.a.days<=7).sort((a,b)=>a.a.days-b.a.days)[0], exp=act.filter(x=>+x.loan.rate>0).sort((a,b)=>(+b.loan.rate)-(+a.loan.rate))[0];
+    let done=false;
+    if(exp&&!(soon&&seed%2===0)){ const x=m7Amt(exp.a)>=2000?500:200, r=m7Extra(exp.loan,exp.a,x); if(r&&r.months>0){ out.push({k:'loan',t:L.ofLoan(exp.loan.name,fx(+exp.loan.rate,(+exp.loan.rate)%1?1:0)),d:L.ofLoanD(money(x),money(r.saved),r.months),q:L.ofLoanQ(exp.loan.name,money(x))}); done=true; } }
+    if(!done&&soon) out.push({k:'loan',t:L.ofDue(soon.loan.name,soon.a.days),d:L.ofDueD(money(m7Amt(soon.a))),q:L.ofDueQ(soon.loan.name,money(m7Amt(soon.a)))}); }catch(e){}
+  const pool=[{k:'sell',t:L.ofInsta,d:L.ofInstaD,q:L.ofInstaQ},{k:'sell',t:L.ofWb,d:L.ofWbD,q:L.ofWbQ},{k:'save',t:L.ofTest,d:L.ofTestD,q:L.ofTestQ}];
+  try{ if(!(+state.misc.salW>0)) pool.push({k:'save',t:L.ofSal,d:L.ofSalD,q:L.ofSalQ}); }catch(e){}
+  try{ const ex=expEst(); if(ex&&ex.v>0) pool.push({k:'save',t:L.ofRes,d:L.ofResD(money(Math.round(ex.v))),q:L.ofResQ}); }catch(e){}
+  let i=seed%pool.length; while(out.length<3&&pool.length){ out.push(pool.splice(i%pool.length,1)[0]); i++; }
+  return out.slice(0,3); }
+function ofToday(){ const st=ofSt(); return st.day===ymd(new Date())&&st.lang===lang&&st.items.length?{items:st.items,src:'sf'}:{items:ofLocal(),src:'local'}; }
+let ofBusy=false;
+async function ofFetch(force){ if(ofBusy||(!force&&DEMO)||!navigator.onLine) return false; const st=ofSt(), day=ymd(new Date()); if(st.day===day&&st.lang===lang&&st.items.length) return false;
+  let last=0; try{ last=+localStorage.getItem('sfof_try')||0; }catch(e){} if(!force&&Date.now()-last<2*3600e3) return false;
+  let caps=null; try{ caps=await sfCapsLoad(); }catch(e){} if(!caps||!(caps.v>=4)) return false;
+  try{ localStorage.setItem('sfof_try',String(Date.now())); }catch(e){} ofBusy=true; let ok=false;
+  try{ const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),120000);
+    const r=await fetch(API_BASE+'/api/mk/offers',{method:'POST',headers:{'content-type':'application/json'},signal:ctl.signal,body:JSON.stringify({id:mkId(),lang,ctx:sfCtx(),prev:st.hist.slice(0,30)})});
+    clearTimeout(to); const j=await r.json().catch(()=>({}));
+    if(r.ok&&Array.isArray(j.items)&&j.items.length){ const items=j.items.slice(0,3).map(x=>({t:String(x.t||'').slice(0,90),d:String(x.d||'').slice(0,420),k:OF_I[x.k]?x.k:'save',q:String(x.q||x.t||'').slice(0,240)}));
+      const s2=ofSt(); s2.day=day; s2.lang=lang; s2.items=items; s2.hist=items.map(x=>x.t).concat(s2.hist.filter(t=>!items.some(x=>x.t===t))).slice(0,30); persist(); ok=true; }
+  }catch(e){} ofBusy=false; return ok; }
+function ofHTML(){ const o=ofToday(); if(!o.items.length) return '';
+  return `<div class="of"><div class="of-h"><b>${ico('spark',18)} ${L.ofT}</b><small>${fmtDate(today0())} · ${o.src==='sf'?L.ofFromSf:L.ofFrom}</small></div>
+    <div class="of-row">${o.items.map((x,i)=>`<div class="of-c ${x.k}"><span class="of-i">${ico(OF_I[x.k]||'bulb',18)}</span><b>${esc(x.t)}</b><p>${esc(x.d)}</p><button type="button" class="of-b" data-ofq="${i}">${L.ofDo}</button></div>`).join('')}</div></div>`; }
+/* вставки в «Куда вложить»: вход в «Мою идею» и предложения на сегодня */
+function ivExtras(){ const a=$('#iv-idea'), b=$('#iv-offers'); if(!a||!b) return; const n=ideas().length;
+  a.innerHTML=`<button type="button" class="id-entry" id="id-open"><span class="id-ei">${ico('bulb',24)}</span><span><b>${L.idEntryT}</b><small>${L.idEntryP}</small>${n?`<em>${L.idEntryN(n)}</em>`:''}</span>${ico('next',18)}</button>`;
+  $('#id-open').onclick=()=>ideaSheet({back:'invest'});
+  const draw=()=>{ const el=$('#iv-offers'); if(!el) return; el.innerHTML=ofHTML(); const items=ofToday().items; el.querySelectorAll('[data-ofq]').forEach(x=>x.onclick=()=>{ const it=items[+x.dataset.ofq]; if(it) ideaSheet({text:it.q||it.t,back:'invest'}); }); };
+  draw(); ofFetch().then(ok=>{ if(ok) draw(); }); }
+/* «Мои идеи» в разделе «Ещё» */
+function m15After(){ const ml=$('#m10MoneyLink'); if(!ml) return; let b=$('#m15IdeaLink');
+  if(!b){ ml.insertAdjacentHTML('afterend',`<button type="button" class="m10-money m10-card" id="m15IdeaLink"><span class="m10-mi">${ico('bulb',24)}</span><span><b></b><small></small></span><span class="m10-go">›</span></button>`); b=$('#m15IdeaLink'); b.onclick=()=>ideaSheet(); }
+  const n=ideas().length; b.querySelector('b').textContent=L.idTitle+(n?' · '+n:''); b.querySelector('small').textContent=L.idMoreSub; }
+try{ const _r15=render; render=function(){ const x=_r15.apply(this,arguments); try{ m15After(); }catch(e){} return x; }; }catch(e){}
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
