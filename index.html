@@ -1545,10 +1545,10 @@
   html:not([data-simple]) #view-today #quick, html:not([data-simple]) #view-today #piggy, html:not([data-simple]) #view-today #fcCard{display:none;}
   #view-today.m10-hastip #dayTip{display:none;}
   /* калькулятор вверху на любом экране */
-  html:not([data-simple]) header .hbtns{display:flex; margin-left:auto; order:1;}
+  html:not([data-simple]) header .hbtns{display:flex; margin-left:8px; order:1; flex:none;}
   html:not([data-simple]) header .hbtns > :not(#calcTop){display:none;}
   html:not([data-simple]) header #calcTop{display:grid; place-items:center; width:42px; height:42px; border-radius:50%; background:var(--surface); border:1px solid var(--line); color:var(--ink);}
-  html:not([data-simple]) header .me-btn{margin-left:8px;}
+  html:not([data-simple]) header .hleft{flex:1; min-width:0;} html:not([data-simple]) header .me-btn{margin-left:auto;}
   /* «＋» в центре нижнего меню */
   .m10-plus{display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:0; padding:0; cursor:pointer; font:inherit; color:var(--muted); min-width:64px;}
   .m10-plus .m10-pi{width:56px; height:56px; margin-top:-24px; border-radius:20px; display:grid; place-items:center; background:var(--ink); color:#fff; box-shadow:0 10px 22px rgba(15,30,61,.28); transition:transform .15s;}
@@ -1598,6 +1598,8 @@
   .m10-keys button{display:grid; place-items:center; height:56px; border-radius:16px; border:0; background:var(--surface-2); color:var(--ink); font:inherit; font-size:1.3rem; font-weight:800; cursor:pointer;}
   .m10-keys button.op{background:var(--brand-weak); color:var(--brand-ink);} .m10-keys button.fn{color:var(--muted);} .m10-keys button.eq{background:var(--brand); color:#fff;}
   .m10-keys button:active{transform:scale(.96);} .m10-keys button:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  /* запас под клавиатуру телефона, чтобы окно можно было прокрутить выше неё */
+  .overlay.open .sheet::after{content:''; display:block; height:var(--m10kb,0px);}
 </style>
 </head>
 <body>
@@ -5243,8 +5245,8 @@ function convWidget(body){
     <div class="cur-pick">${Object.keys(CURS).map(k=>`<button data-cvc="${k}" class="${convSt.cur===k?'on':''}">${CURS[k].f} ${k}</button>`).join('')}</div>
     <div class="cv-dir"><button data-cvd="to" class="${convSt.dir==='to'?'on':''}">${C.s} → ${L.somW}</button><button class="cv-sw" data-cvd="sw" aria-label="⇄">⇄</button><button data-cvd="from" class="${convSt.dir==='from'?'on':''}">${L.somW} → ${C.s}</button></div>
     <div class="field n big-in"><label>${convSt.dir==='to'?L.cvHave(convSt.cur):L.cvHaveSom}</label><input id="cv-a" type="number" inputmode="decimal" min="0" value="${convSt.a}" placeholder="${convSt.dir==='to'?C.u:1000}"></div>
-    <div class="chips">${(convSt.dir==='to'?C.ch:[100,500,1000,5000,10000]).map(v=>`<button class="chip" data-cva="${v}">${nf.format(v)} ${convSt.dir==='to'?C.s:L.cur}</button>`).join('')}</div>
     <div class="cv-out" id="cv-out"></div>
+    <div class="chips">${(convSt.dir==='to'?C.ch:[100,500,1000,5000,10000]).map(v=>`<button class="chip" data-cva="${v}">${nf.format(v)} ${convSt.dir==='to'?C.s:L.cur}</button>`).join('')}</div>
     <div class="field n"><label>${L.cvRateL(convSt.cur)} <span class="hint">${man?L.cvManual:off?L.cvAuto:''}</span></label><input id="cv-r" type="number" inputmode="decimal" min="0" step="0.0001" value="${base?+(base*(C.u>=1000?C.u:1)).toFixed(4):''}" placeholder="${C.u>=1000?L.cvPerU(C.u,C.s):'9.2'}"></div>
     <p class="note">${L.cvRateHint(C.u>=1000?nf.format(C.u)+' '+C.s:'1 '+C.s)}</p></div>`;
   const out=$('#cv-out'), ai=$('#cv-a'), ri=$('#cv-r');
@@ -9145,6 +9147,23 @@ function basicCalc(body){
     else { if(m10Ex.length<40) m10Ex+=k; }
     show(); });
   show(); }
+
+/* клавиатура телефона закрывает пол-экрана: поле, в которое пишут, поднимаем к верху видимой части,
+   чтобы результат под ним был виден; у окна снизу появляется запас на высоту клавиатуры.
+   autocomplete="off" убирает лишнюю полосу автозаполнения (ключ, карта) над клавиатурой. */
+function m10KbVar(){ const vv=window.visualViewport; if(!vv) return 0; const kb=Math.max(0,Math.round(innerHeight-vv.height-vv.offsetTop)); document.documentElement.style.setProperty('--m10kb',(kb>80?kb:0)+'px'); return kb>80?kb:0; }
+function m10KbFix(el){ if(!el||!el.matches||!el.matches('input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]),textarea')) return;
+  setTimeout(()=>{ try{ if(document.activeElement!==el) return; m10KbVar(); const vv=window.visualViewport, vh=vv?vv.height:innerHeight, r=el.getBoundingClientRect();
+      const lab=el.closest('.field')||el, top=lab.getBoundingClientRect().top, want=Math.max(64,Math.round(vh*0.12)), delta=top-want;
+      if(r.bottom<vh-140&&top>=want-8) return; /* и так видно, и под полем есть место */
+      let sc=el.parentElement; while(sc&&sc!==document.body&&sc!==document.documentElement){ const cs=getComputedStyle(sc); if(/(auto|scroll)/.test(cs.overflowY)&&sc.scrollHeight>sc.clientHeight+4) break; sc=sc.parentElement; }
+      const smooth=matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
+      if(sc&&sc!==document.body&&sc!==document.documentElement) sc.scrollBy({top:delta,behavior:smooth}); else window.scrollBy({top:delta,behavior:smooth}); }catch(e){} },350); }
+document.addEventListener('focusin',e=>m10KbFix(e.target));
+document.addEventListener('focusout',()=>setTimeout(m10KbVar,400));
+try{ if(window.visualViewport) visualViewport.addEventListener('resize',()=>{ m10KbVar(); const a=document.activeElement; if(a) m10KbFix(a); }); }catch(e){}
+document.addEventListener('pointerdown',e=>{ const t=e.target; if(t&&t.matches&&t.matches('input:not([autocomplete]),textarea:not([autocomplete])')) t.setAttribute('autocomplete','off'); },true);
+try{ const _os10=openSheet; openSheet=function(){ const x=_os10.apply(this,arguments); try{ sheet.querySelectorAll('input:not([autocomplete]),textarea:not([autocomplete])').forEach(i=>i.setAttribute('autocomplete','off')); }catch(e){} return x; }; }catch(e){}
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
