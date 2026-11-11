@@ -2019,6 +2019,63 @@
   .sync{display:block; padding-inline:58px;} .sync .dot{display:inline-block; vertical-align:middle; margin-right:7px;}
   /* свёрнутый значок Сифры: общий класс .mini делал его столбиком — получалась вытянутая капсула вместо круга */
   .sf-fab.mini{flex-direction:row; flex:none;}
+  /* ===================== v19: «Заработок» ===================== */
+  /* на «Сегодня» порядок блоков задаётся через order: строка дела стоит сразу после календаря и «можно потратить» */
+  #view-today>#erBox{order:4;} #erBox{margin:0 0 12px;} #erBox:empty{display:none;} [data-simple] #erBox{display:none;}
+  .er-today,.er-story{display:flex; align-items:center; gap:12px; width:100%; text-align:left; font:inherit; color:var(--ink); cursor:pointer;}
+  .er-today{margin:0;} .er-story{margin-top:10px; padding:12px 14px; min-height:60px; border:1.5px dashed var(--brand); border-radius:20px; background:transparent;}
+  .er-ti{flex:none; width:40px; height:40px; border-radius:12px; display:grid; place-items:center; background:var(--m-leaf-weak); color:var(--m-leaf);}
+  .er-today.ask .er-ti{background:#FFF4D6; color:#7A4B00;} :root[data-theme="dark"] .er-today.ask .er-ti{background:var(--m8-sun-weak,#3A2F14); color:#FFD98A;}
+  .er-today:focus-visible,.er-story:focus-visible,.er-mic:focus-visible,.er-yn .btn:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  /* счётчик: одна крупная цифра, под ней — из чего она сложилась */
+  .er-cnt{margin:0 0 14px; padding:14px 16px; border-radius:20px; background:var(--m-leaf-weak);}
+  .er-cnt>small{display:block; font-size:.82rem; font-weight:700; color:var(--muted);} .er-cnt>b{display:block; font-size:1.9rem; font-weight:800; line-height:1.15; color:var(--m-leaf); font-variant-numeric:tabular-nums;}
+  .er-cnt>span{display:block; margin-top:2px; font-size:.84rem; line-height:1.4; color:var(--muted);} .er-cnt .gp-mini{margin:10px 0 0;}
+  .er-row{display:grid; grid-template-columns:minmax(0,1fr) auto auto; column-gap:8px; align-items:center; padding:8px 0; border-top:1px solid var(--line); font-size:.9rem;}
+  .er-cnt .er-row:first-of-type{margin-top:10px;} .er-row span{min-width:0; font-weight:600; line-height:1.3;} .er-row span small{display:block; font-size:.76rem; font-weight:600; color:var(--muted);}
+  .er-row b{font-variant-numeric:tabular-nums; white-space:nowrap;} .er-row button{width:36px; height:36px; border:0; border-radius:50%; background:transparent; color:var(--muted); display:grid; place-items:center; cursor:pointer;}
+  .er-ask{display:flex; align-items:center; gap:10px; margin:0 0 12px; padding:12px 14px; border-radius:18px; background:#FFF4D6; color:#3D2A00;} :root[data-theme="dark"] .er-ask{background:var(--m8-sun-weak,#3A2F14); color:#FFE9B0;}
+  .er-ask svg{flex:none;} .er-ask span{flex:1; min-width:0;} .er-ask b{display:block; font-size:.94rem;} .er-ask small{display:block; font-size:.84rem; line-height:1.4;} .er-ask .gp-mini{margin:0; background:#fff; color:#3D2A00;}
+  :root[data-theme="dark"] .er-ask .gp-mini{background:rgba(255,255,255,.14); color:#FFE9B0;}
+  .er-deal{margin:0 0 14px; padding:16px; border:1.5px solid var(--brand); border-radius:22px; background:var(--surface);} .er-deal.done{border-color:var(--line);}
+  .er-dh{display:flex; align-items:center; gap:12px; margin-bottom:8px;} .er-di{flex:none; width:44px; height:44px; border-radius:14px; display:grid; place-items:center; background:var(--brand); color:#fff;} .er-di.ok{background:var(--m-leaf-weak); color:var(--m-leaf);}
+  .er-dh small{display:block; font-size:.78rem; font-weight:800; color:var(--muted);} .er-dh b{display:block; font-size:1.06rem; line-height:1.25;}
+  .er-deal p{margin:0 0 10px; font-size:.92rem; line-height:1.5;} .er-deal .er-est{font-weight:700; color:var(--m-leaf);} .er-deal .er-why{font-size:.8rem; color:var(--muted);}
+  .er-deal>.btn+.btn{margin-top:8px;} .er-deal .sheet-row{margin-top:8px;} .er-deal .sheet-row .btn{margin-top:0;}
+  .er-tools{margin:0 0 14px;} .er-tool{cursor:pointer; border-left:0; border-right:0; border-bottom:0;} .er-tools .er-tool:first-child{border-top:0;}
+  .er-asked{margin:0 0 14px;} .er-asked h4,.er-h4{margin:0 0 4px; font-size:.95rem; font-weight:800;} .er-asked p{margin:0 0 4px; font-size:.82rem; color:var(--muted);} .er-asked .er-row{grid-template-columns:minmax(0,1fr) auto;}
+  /* проверка: один вопрос на экран, два больших ответа */
+  .er-prog{height:6px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin:0 0 14px;} .er-prog i{display:block; height:100%; border-radius:99px; background:var(--brand);}
+  .er-qn{margin:0 0 6px; font-size:.8rem; font-weight:800; color:var(--muted);} .er-q{margin:0 0 18px; min-height:5.4em; font-size:1.14rem; font-weight:700; line-height:1.4;}
+  .er-yn{display:grid; grid-template-columns:1fr 1fr; gap:10px;} .er-yn .btn{min-height:64px; border-radius:18px; font-size:1.1rem; font-weight:800;}
+  .er-yes{background:var(--brand); color:#fff;} .er-no{background:var(--surface-2); color:var(--ink);}
+  .er-res{margin:0 0 12px; font-size:1.3rem; font-weight:800; line-height:1.25;}
+  .er-gs{display:grid; gap:10px; margin:0 0 12px;} .er-g{display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:8px; row-gap:4px; align-items:baseline;}
+  .er-g span{font-size:.92rem; font-weight:700;} .er-g span::first-letter{text-transform:uppercase;} .er-g b{font-size:.88rem; font-variant-numeric:tabular-nums; color:var(--muted);}
+  .er-g i{grid-column:1/-1; display:block; height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden;} .er-g i em{display:block; height:100%; border-radius:99px; background:var(--m11-go,#12B886);}
+  .er-g.weak span,.er-g.weak b{color:var(--warn,#B4531F);} .er-g.weak i em{background:var(--warn,#B4531F);}
+  .er-weak{margin:0 0 14px; font-size:.95rem; font-weight:700;}
+  .er-pick{padding:12px 0; border-top:1px solid var(--line);} .er-h4+.er-pick{border-top:0;} .er-pick span{display:block;} .er-pick b{display:block; font-size:.94rem; line-height:1.3;}
+  .er-pick small{display:block; margin-top:2px; font-size:.8rem; line-height:1.4; color:var(--muted);} .er-pick .gp-mini{margin:8px 0 0;} .er-pick em{display:block; margin-top:6px; font-style:normal; font-size:.8rem; font-weight:800; color:var(--m-leaf);}
+  .er-src{margin:12px 0; font-size:.78rem; line-height:1.45; color:var(--muted);}
+  /* цена и скидка */
+  .er-seg{display:grid; grid-template-columns:1fr 1fr; gap:4px; padding:4px; margin:0 0 14px; border-radius:16px; background:var(--surface-2);}
+  .er-seg button{min-height:44px; border:0; border-radius:12px; background:transparent; color:var(--muted); font:inherit; font-weight:800; cursor:pointer;} .er-seg button.on{background:var(--surface); color:var(--ink); box-shadow:0 1px 4px rgba(16,24,40,.1);}
+  .field .chips input.er-own,.er-own{width:5.6em; flex:none; min-height:40px; padding:6px 10px; border:1px solid var(--line); border-radius:99px; background:var(--surface); color:var(--ink); font:inherit; font-weight:700; text-align:center;}
+  .er-out{margin:4px 0 12px;} .er-out p{margin:0 0 8px; font-size:.94rem; line-height:1.45;} .er-out p.big{font-size:1.1rem; font-weight:800; color:var(--m-leaf);} .er-out p.note{font-size:.84rem; color:var(--muted);}
+  .er-out p.warn,.er-hint.warn{padding:10px 12px; border-radius:12px; background:#FFF4D6; color:#7A4B00; font-weight:700;} :root[data-theme="dark"] .er-out p.warn,:root[data-theme="dark"] .er-hint.warn{background:var(--m8-sun-weak,#3A2F14); color:#FFD98A;}
+  .er-hint{margin:0 0 12px; font-size:.88rem; line-height:1.45; color:var(--muted);}
+  /* рассказ о дне */
+  .er-st-in{position:relative;} .er-st-in textarea{width:100%; min-height:132px; padding:12px 60px 12px 14px; border:1.5px solid var(--line); border-radius:18px; background:var(--surface); color:var(--ink); font:inherit; font-size:1rem; line-height:1.45; resize:vertical;}
+  .er-st-in textarea:focus{outline:none; border-color:var(--brand);}
+  .er-mic{position:absolute; right:8px; bottom:12px; width:48px; height:48px; border-radius:50%; border:0; background:var(--brand); color:#fff; display:grid; place-items:center; cursor:pointer;}
+  .er-mic.rec{background:var(--urgent,#D92D20); animation:sfPulse 1.1s ease-in-out infinite;} @media (prefers-reduced-motion:reduce){ .er-mic.rec{animation:none;} }
+  .er-ex{margin:10px 2px 12px; font-size:.84rem; line-height:1.5; color:var(--muted);}
+  .er-st-list{margin:0 0 12px; border:1px solid var(--line); border-radius:18px; background:var(--surface); overflow:hidden;}
+  .er-st-row{display:grid; grid-template-columns:auto minmax(0,1fr) auto; column-gap:10px; align-items:center; min-height:56px; padding:8px 12px; border-top:1px solid var(--line);} .er-st-row:first-child{border-top:0;}
+  .er-st-row input[type=checkbox]{width:24px; height:24px; accent-color:var(--brand);} .er-st-row label{font-size:.92rem; font-weight:600; line-height:1.35; cursor:pointer;}
+  .er-st-a{width:6.2em; min-height:40px; padding:6px 8px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font:inherit; font-weight:800; text-align:right; font-variant-numeric:tabular-nums;}
+  .er-unc{margin:0 0 12px; padding:12px 14px; border-radius:16px; background:var(--surface-2);} .er-unc b{display:block; font-size:.88rem;} .er-unc span{display:block; margin-top:4px; font-size:.9rem; line-height:1.4;} .er-unc small{display:block; margin-top:6px; font-size:.78rem; line-height:1.4; color:var(--muted);}
 </style>
 </head>
 <body>
@@ -4544,6 +4601,196 @@ tg:{ vzPfA:'График: нақша ва он чӣ воқеан шуд', vzToda
 en:{ vzPfA:'Chart: the plan and what really happened', vzToday:'today', vzPlan:'by the plan', vzFact:'in reality',
   vzSbT:'Your sales by month, thousand s.', vzSbA:n=>'Bars: sales over '+n+' months', vzSbAvg:v=>'The estimate uses the average of the last three months — '+v, vzSbEst:'Pale bars are months where not every day was recorded: they are filled in from the recorded days.' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M18S[k]);
+
+/* ----- v19: «Заработок» — проверка магазина, дело недели, счётчик, цена и скидка, рассказ о дне ----- */
+const M19S={
+ru:{
+  erTitle:'Заработок', erLead:'Одно дело в неделю, которое приносит деньги. Сифра помогает сделать, а вы записываете, что вышло.',
+  erMoreSub0:'Дело недели, цена и скидка, проверка магазина', erMoreSum:v=>'В этом месяце: +'+v,
+  erCntT:'Mira принесла в этом месяце', erCntSub0:'Здесь будет сумма, которую вы сами подтвердили после каждого дела.', erCntAll:v=>'Всего с начала: '+v,
+  erAdd:'Добавить сумму', erAddT:'Что принесло деньги', erAddWhat:'Что это было', erAddSum:'Сколько это дало, сомони', erAddNote:'Заметка', erAddSave:'Записать',
+  erAddHint:'Пишите только то, что вышло на самом деле. Счётчик верен, пока его ведёте вы.',
+  erAddK:{debt:'Вернули долг',stale:'Продала залежавшееся',price:'Подняла цену',sup:'Сторговалась с поставщиком',other:'Другое'}, erDel:'Убрать запись',
+  erDealT:'Дело недели', erEstPrice:v=>'Если поднять цены на 2% и продажи не упадут, это около '+v+' в месяц.', erEstDebt:v=>'Вам должны '+v+' дольше месяца.', erEstStale:v=>v+' лежит в товаре, который не продаётся больше двух месяцев.',
+  erWith:'Сделать с Сифрой', erDone:'Сделано', erOther:'Другое дело', erDoneT:'Дело недели сделано', erDoneP:'Новое появится в понедельник.', erMore1:'Взять ещё одно сейчас',
+  erSfQ:(t,d)=>'Помоги мне сделать дело недели для моего магазина: «'+t+'». '+d+' Объясни по шагам и подготовь всё, что можно: слова, цены, список.',
+  erWhyChk:'Почему оно: в проверке магазина вы ответили «нет».', erWhyData:'Почему оно: так видно по вашим записям.', erWhyDef:'Почему оно: с него чаще всего начинают.',
+  erGoPrice:'Открыть расчёт цены', erGoDebt:'Открыть «Мне должны»', erGoStory:'Рассказать о дне',
+  erResT:'Что это дало?', erResP:t=>'Дело: «'+t+'». Впишите, сколько денег оно принесло или сберегло. Если пока неясно, спрошу через неделю.', erResSum:'Сумма, сомони',
+  erResSave:'Записать сумму', erResLater:'Пока не знаю, спросить через неделю', erResNone:'Ничего не дало', erResErr:'Впишите сумму или выберите другой ответ',
+  erSaved:v=>'Записано: +'+v, erLater:'Хорошо, спрошу через неделю', erNoneOk:'Записала. Не каждое дело приносит деньги сразу.',
+  erAskT:'Что вышло?', erAsk:t=>'Неделю назад: «'+t+'». Что это дало?', erAskBtn:'Ответить',
+  erD:{
+    records:{t:'Семь дней подряд записывать день',d:'Вечером расскажите Сифре, как прошёл день. Без записей не видно, что приносит деньги, а что их съедает.'},
+    rivals:{t:'Посмотреть цены у трёх соседей',d:'Зайдите в три магазина рядом и запишите цены на пять ваших ходовых товаров. Там, где вы дешевле без причины, цену можно поднять.'},
+    price:{t:'Поднять цену на три ходовых товара',d:'Выберите три вещи, которые берут не из-за цены, и прибавьте по 5 сомони. Расчёт покажет, сколько это даст.'},
+    askcust:{t:'Спросить пять покупательниц, чего не хватает',d:'Спросите у пяти постоянных, что они хотели бы у вас купить и не находят. Это готовый список для следующей закупки.'},
+    former:{t:'Узнать, почему перестали заходить',d:'Позвоните или напишите одной покупательнице, которая давно не была, и спросите прямо. Одна причина часто касается многих.'},
+    suppask:{t:'Спросить поставщика, что сейчас берут',d:'Спросите у поставщика, какой товар уходит у него лучше всего в этом месяце. Он видит весь рынок, а вы только свой магазин.'},
+    offer:{t:'Сделать одно особое предложение',d:'Одно предложение на неделю: вторая вещь дешевле или подарок к покупке. Расскажите о нём постоянным покупательницам.'},
+    haggle:{t:'Поторговаться с поставщиком',d:'Перед следующим заказом узнайте цену у второго поставщика и попросите скидку за объём или за оплату сразу.'},
+    nostock:{t:'Записывать, чего не было',d:'Неделю отмечайте каждый раз, когда товар спросили, а его нет. Это деньги, которые ушли к соседям.'},
+    cost:{t:'Посчитать, что на самом деле приносит прибыль',d:'Для трёх главных товаров сложите цену закупки и дорогу и сравните с ценой продажи. Самый ходовой товар часто не самый прибыльный.'},
+    budget:{t:'Записать постоянные расходы месяца',d:'Аренда, свет, налог, зарплата продавцу, дорога. Одна сумма покажет, сколько надо продать, чтобы месяц не ушёл в минус.'},
+    target:{t:'Поставить цель по продажам на месяц',d:'Назовите сумму, которую хотите продать за месяц, и раз в неделю сверяйтесь. Кто сверяется с целью, доходит до неё чаще.'},
+    review:{t:'Подвести итоги месяца',d:'Раз в месяц полчаса: сколько продали, сколько ушло, что осталось. Найдите одну вещь, которую стоит изменить.'},
+    debts:{t:'Вернуть деньги, которые вам должны',d:'Напомните тем, кто должен дольше месяца. В разделе «Мне должны» видно, кто и сколько.'},
+    stale:{t:'Продать то, что залежалось',d:'Товар, который лежит больше двух месяцев, держит ваши деньги. Сделайте на него скидку или набор и верните деньги в оборот.'}},
+  erChkT:'Проверка магазина', erChkLead:'26 простых вопросов, около пяти минут. Отвечайте, как есть на самом деле: ответы видите только вы.', erChkGo:'Начать', erChkN:(i,n)=>i+' из '+n,
+  erYes:'Да', erNo:'Нет', erBack:'Назад', erChkRes:(y,n)=>'У вас '+y+' из '+n+' приёмов', erChkWeak:g=>'Слабее всего: '+g, erChkStart:'С чего начать', erChkTake:'Сделать делом недели', erChkAgain:'Пройти заново',
+  erChkSrc:'Вопросы взяты из исследования маленьких фирм в семи странах. Там, где таких приёмов больше, прибыль выше. Это связь, а не обещание.',
+  erChkAllYes:'Все приёмы у вас уже есть. Проверьте себя снова через полгода.', erChkNot:'Не пройдена, около пяти минут', erChkSub:(y,n)=>y+' из '+n+' приёмов', erChkTaken:'Это дело недели',
+  erG:{m:'покупатели и соседи',b:'закупка и запас',r:'учёт и цены',f:'план и итоги'},
+  erQ:{M1:'За последние три месяца вы заходили к соседям-продавцам посмотреть их цены?',M2:'Заходили к соседям посмотреть, какой товар у них есть?',M3:'Спрашивали покупателей, какой ещё товар они хотели бы у вас видеть?',
+    M4:'Говорили хотя бы с одним покупателем, который перестал заходить, чтобы узнать почему?',M5:'Спрашивали поставщика, какой товар сейчас продаётся лучше всего?',M6:'Привлекали покупателей особым предложением: скидкой, подарком, акцией?',
+    M7:'За последние полгода вы рекламировали магазин: в интернете, объявлением, через знакомых?',B1:'Торговались с поставщиком, чтобы купить дешевле?',B2:'Сравнивали цены и качество у разных поставщиков?',
+    B3:'Ходовой товар у вас есть всегда? Ответьте «нет», если он заканчивается раз в месяц или чаще.',R1:'Вы ведёте записи по магазину: в тетради или в телефоне?',R2:'Записываете каждую закупку и каждую продажу?',
+    R3:'Можете по записям в любой день сказать, сколько денег у магазина?',R4:'Смотрите по записям, какой товар стал продаваться лучше, а какой хуже?',R5:'Знаете, во что вам обходится каждый главный товар вместе с дорогой?',
+    R6:'Знаете, какой товар приносит больше всего прибыли с одной штуки?',R7:'Записано ли у вас, сколько уходит в месяц на аренду, свет, дорогу и другие постоянные расходы?',R8:'Можете по записям показать банку, что после расходов денег хватает на платёж по кредиту?',
+    F1:'Хотя бы раз в месяц вы подводите итоги и решаете, что улучшить?',F2:'Есть ли у вас цель по продажам на год?',F3:'Сверяете продажи с целью хотя бы раз в месяц?',F4:'Прикидывали, какие расходы ждут магазин в следующем году?',
+    F5:'Считаете за год прибыль и убыток магазина?',F6:'Считаете за год, сколько денег пришло и сколько ушло?',F7:'Считаете раз в год, что у магазина есть (товар, деньги, долги покупателей) и что он должен сам?',F8:'Ведёте за год общий список доходов и расходов?'},
+  erPrT:'Цена и скидка', erPrSub:'Что даёт прибавка к цене и во что обходится скидка', erPrUp:'Поднять цену', erPrDn:'Сделать скидку', erPrPick:'Взять из товаров', erPrP:'Цена продажи', erPrC:'Себестоимость с дорогой', erPrN:'Продаю в месяц, штук',
+  erPrBy:'Прибавить к цене', erPrOwn:'Своя', erPrD:'Скидка', erPrNeed:'Впишите цену и себестоимость, и я посчитаю.', erPrLoss:'Цена ниже себестоимости: каждая продажа в убыток.',
+  erPrUp1:(v,y)=>'+'+v+' в месяц и +'+y+' за год, если покупать будут так же.', erPrUp1n:v=>'+'+v+' с каждой проданной вещи.',
+  erPrUp2:(x,n)=>'Даже если продадите на '+x+' шт. меньше (из '+n+'), вы заработаете столько же.', erPrUp2p:p=>'Вы заработаете столько же, даже если продадите на '+p+'% меньше.',
+  erPrUp3:'Поднимайте понемногу и начните с товара, который берут не из-за цены.',
+  erPrDn1:v=>'Скидка стоит вам '+v+' с каждой вещи.', erTimes:(k,t)=>'в '+t+(Number.isInteger(k)&&k>=5?' раз':' раза'), erPrDn2:(k,a,b)=>'Чтобы заработать столько же, надо продать '+k+' больше: '+a+' шт. вместо '+b+'.', erPrDn2p:(k,p)=>'Чтобы заработать столько же, надо продать '+k+' больше, то есть на '+p+'% больше штук.',
+  erPrDn0:'При такой скидке вы ничего не зарабатываете: вся наценка уходит в скидку.', erPrDn3:v=>'При такой скидке вы продаёте в убыток: минус '+v+' с каждой вещи.', erPrDn4:'Скидка оправдана, когда товар лежит, а деньги нужны на новый: тогда важнее вернуть деньги, чем заработать.',
+  erPrDid:'Подняла цену, спросить через неделю, что вышло', erPrDidOk:'Записала. Через неделю спрошу, что вышло.', erPrDidT:n=>'Подняла цену'+(n?': '+n:''),
+  erStT:'Рассказ о дне', erStSub:'Голосом или текстом, Сифра разложит сама', erStLead:'Расскажите одним разом, как прошёл день. Я разложу сама: выручка, расходы, кто взял в долг, что спрашивали.',
+  erStEx:'Например: «Продала на две четыреста, тысячу переводом. За свет отдала сто. Зарина взяла платье в долг за триста. Спрашивали детские куртки, не было».',
+  erStPh:'Говорите или пишите…', erStMic:'Говорить', erStGo:'Разложить', erStEmpty:'Сначала расскажите или напишите', erStBusy:'Раскладываю…',
+  erStResT:'Проверьте и сохраните', erStCash:'Выручка наличными', erStCard:'Выручка переводом', erStExp:'Расход', erStTook:'Взяли в долг', erStRet:'Вернули долг', erStAsk:'Спрашивали, не было',
+  erStUnc:'Это я не записала', erStUncP:'Запишите это сами, если нужно. Платёж по кредиту отмечается кнопкой «Записать оплату».', erStHas:v=>'За сегодня уже записана выручка '+v+', новая сумма её заменит.',
+  erStLocal:'Разложено в телефоне, без Сифры. Проверьте внимательнее.', erStNone:'Не нашла в рассказе ни сумм, ни товаров. Попробуйте сказать иначе.', erStSave:n=>'Сохранить: '+n, erStEdit:'Изменить рассказ',
+  erStSaved:n=>'Сохранено записей: '+n, erStUndo:'Отменить', erStUndone:'Отменено', erStNew:'новое имя', erStBtn:'Рассказать о дне', erStBtnSub:'Одним разом: выручка, расходы, долги', erStLimit:'На сегодня Сифра разложила уже много рассказов. Разложила в телефоне.',
+  erAskedT:'Спрашивали, а не было', erAskedP:'Это попадает сюда из рассказа о дне. Пригодится перед закупкой.',
+  erTodayDeal:'Дело недели', erTodayAsk:'Что вышло?', erTodayDone:'Дело недели сделано' },
+tg:{
+  erTitle:'Даромад', erLead:'Дар як ҳафта як кор, ки пул меорад. Сифра дар иҷрояш кӯмак мекунад, шумо менависед, ки чӣ шуд.',
+  erMoreSub0:'Кори ҳафта, нарх ва тахфиф, санҷиши дӯкон', erMoreSum:v=>'Дар ин моҳ: +'+v,
+  erCntT:'Mira дар ин моҳ овард', erCntSub0:'Дар ин ҷо маблағе мешавад, ки худи шумо баъди ҳар кор тасдиқ кардаед.', erCntAll:v=>'Ҳамагӣ аз аввал: '+v,
+  erAdd:'Илова кардани маблағ', erAddT:'Чӣ пул овард', erAddWhat:'Ин чӣ буд', erAddSum:'Чӣ қадар дод, сомонӣ', erAddNote:'Қайд', erAddSave:'Навиштан',
+  erAddHint:'Танҳо он чиро нависед, ки воқеан шуд. Ҳисобкунак то он даме дуруст аст, ки шумо онро мебаред.',
+  erAddK:{debt:'Қарзро баргардонданд',stale:'Моли хобидаро фурӯхтам',price:'Нархро боло кардам',sup:'Бо таъминкунанда савдо кардам',other:'Дигар'}, erDel:'Гирифтани қайд',
+  erDealT:'Кори ҳафта', erEstPrice:v=>'Агар нархҳоро 2% боло кунед ва фурӯш кам нашавад, ин тақрибан '+v+' дар як моҳ аст.', erEstDebt:v=>'Ба шумо '+v+' зиёда аз як моҳ қарздоранд.', erEstStale:v=>v+' дар моле хобидааст, ки зиёда аз ду моҳ фурӯхта намешавад.',
+  erWith:'Бо Сифра иҷро кардан', erDone:'Иҷро шуд', erOther:'Кори дигар', erDoneT:'Кори ҳафта иҷро шуд', erDoneP:'Кори нав рӯзи душанбе пайдо мешавад.', erMore1:'Ҳозир боз якто гирифтан',
+  erSfQ:(t,d)=>'Ба ман кӯмак кун, ки кори ҳафтаро барои дӯконам иҷро кунам: «'+t+'». '+d+' Қадам ба қадам фаҳмон ва ҳар чизи имконпазирро тайёр кун: суханҳо, нархҳо, рӯйхат.',
+  erWhyChk:'Чаро ин: дар санҷиши дӯкон шумо «не» гуфтед.', erWhyData:'Чаро ин: аз қайдҳои шумо чунин намоён аст.', erWhyDef:'Чаро ин: аксар вақт аз ҳамин оғоз мекунанд.',
+  erGoPrice:'Кушодани ҳисоби нарх', erGoDebt:'Кушодани «Аз ман қарздоранд»', erGoStory:'Дар бораи рӯз нақл кардан',
+  erResT:'Ин чӣ дод?', erResP:t=>'Кор: «'+t+'». Нависед, ки он чӣ қадар пул овард ё сарфа кард. Агар ҳоло маълум набошад, баъди як ҳафта мепурсам.', erResSum:'Маблағ, сомонӣ',
+  erResSave:'Навиштани маблағ', erResLater:'Ҳоло намедонам, баъди як ҳафта пурс', erResNone:'Ҳеҷ чиз надод', erResErr:'Маблағро нависед ё ҷавоби дигарро интихоб кунед',
+  erSaved:v=>'Навишта шуд: +'+v, erLater:'Хуб, баъди як ҳафта мепурсам', erNoneOk:'Навиштам. На ҳар кор дарҳол пул меорад.',
+  erAskT:'Чӣ шуд?', erAsk:t=>'Як ҳафта пеш: «'+t+'». Ин чӣ дод?', erAskBtn:'Ҷавоб додан',
+  erD:{
+    records:{t:'Ҳафт рӯз пай дар пай рӯзро навиштан',d:'Бегоҳ ба Сифра нақл кунед, ки рӯз чӣ хел гузашт. Бе қайдҳо намоён нест, ки чӣ пул меорад ва чӣ онро мехӯрад.'},
+    rivals:{t:'Нархҳои се ҳамсояро дидан',d:'Ба се дӯкони наздик дароед ва нархи панҷ моли серхаридори худро нависед. Дар ҷое ки шумо бесабаб арзонтаред, нархро боло кардан мумкин аст.'},
+    price:{t:'Нархи се моли серхаридорро боло кардан',d:'Се чизеро интихоб кунед, ки на барои нархаш мегиранд, ва 5 сомонӣ илова кунед. Ҳисоб нишон медиҳад, ки ин чӣ қадар медиҳад.'},
+    askcust:{t:'Аз панҷ харидор пурсидан, ки чӣ намерасад',d:'Аз панҷ харидори доимӣ пурсед, ки чиро аз шумо харидан мехостанд ва намеёбанд. Ин рӯйхати тайёр барои хариди оянда аст.'},
+    former:{t:'Донистан, ки чаро дигар намеоянд',d:'Ба як харидоре, ки кайҳо боз наомадааст, занг занед ё нависед ва рӯирост пурсед. Як сабаб аксар вақт ба бисёриҳо дахл дорад.'},
+    suppask:{t:'Аз таъминкунанда пурсидан, ки ҳоло чӣ мегиранд',d:'Аз таъминкунанда пурсед, ки дар ин моҳ кадом мол аз ҳама беҳтар меравад. Ӯ тамоми бозорро мебинад, шумо танҳо дӯкони худро.'},
+    offer:{t:'Як пешниҳоди махсус кардан',d:'Як пешниҳод барои як ҳафта: чизи дуюм арзонтар ё тӯҳфа ба харид. Дар бораи он ба харидорони доимӣ гӯед.'},
+    haggle:{t:'Бо таъминкунанда савдо кардан',d:'Пеш аз фармоиши оянда нархро аз таъминкунандаи дуюм пурсед ва барои ҳаҷм ё пардохти фаврӣ тахфиф хоҳед.'},
+    nostock:{t:'Навиштан, ки чӣ набуд',d:'Як ҳафта ҳар боре, ки молро пурсиданд ва он набуд, қайд кунед. Ин пулест, ки ба ҳамсояҳо рафт.'},
+    cost:{t:'Ҳисоб кардан, ки воқеан чӣ фоида меорад',d:'Барои се моли асосӣ нархи харид ва роҳро ҷамъ кунед ва бо нархи фурӯш муқоиса кунед. Моли аз ҳама серхаридор аксар вақт аз ҳама фоидаовар нест.'},
+    budget:{t:'Хароҷоти доимии моҳро навиштан',d:'Иҷора, барқ, андоз, маоши фурӯшанда, роҳ. Як маблағ нишон медиҳад, ки чӣ қадар фурӯхтан лозим, то моҳ ба зарар наравад.'},
+    target:{t:'Барои моҳ мақсади фурӯш гузоштан',d:'Маблағеро гӯед, ки дар як моҳ фурӯхтан мехоҳед, ва ҳафтае як бор муқоиса кунед. Касе ки бо мақсад муқоиса мекунад, зудтар ба он мерасад.'},
+    review:{t:'Моҳро ҷамъбаст кардан',d:'Моҳе як бор ним соат: чӣ қадар фурӯхтед, чӣ қадар рафт, чӣ монд. Як чизеро ёбед, ки тағйир додан меарзад.'},
+    debts:{t:'Пулеро, ки ба шумо қарздоранд, баргардондан',d:'Ба онҳое, ки зиёда аз як моҳ қарздоранд, ёдрас кунед. Дар бахши «Аз ман қарздоранд» намоён аст, ки кӣ ва чӣ қадар.'},
+    stale:{t:'Моли хобидаро фурӯхтан',d:'Моле, ки зиёда аз ду моҳ хобидааст, пули шуморо нигоҳ медорад. Ба он тахфиф ё маҷмӯа кунед ва пулро ба гардиш баргардонед.'}},
+  erChkT:'Санҷиши дӯкон', erChkLead:'26 саволи содда, тақрибан панҷ дақиқа. Чунон ки воқеан ҳаст, ҷавоб диҳед: ҷавобҳоро танҳо шумо мебинед.', erChkGo:'Оғоз', erChkN:(i,n)=>i+' аз '+n,
+  erYes:'Ҳа', erNo:'Не', erBack:'Бозгашт', erChkRes:(y,n)=>'Шумо '+y+' аз '+n+' усул доред', erChkWeak:g=>'Аз ҳама сусттар: '+g, erChkStart:'Аз чӣ оғоз кардан', erChkTake:'Кори ҳафта кардан', erChkAgain:'Аз нав гузаштан',
+  erChkSrc:'Саволҳо аз тадқиқоти ширкатҳои хурд дар ҳафт кишвар гирифта шудаанд. Дар ҷое ки чунин усулҳо бештаранд, фоида баландтар аст. Ин робита аст, на ваъда.',
+  erChkAllYes:'Ҳамаи усулҳо аллакай доред. Баъди ним сол худро аз нав санҷед.', erChkNot:'Гузашта нашудааст, тақрибан панҷ дақиқа', erChkSub:(y,n)=>y+' аз '+n+' усул', erChkTaken:'Ин кори ҳафта аст',
+  erG:{m:'харидорон ва ҳамсояҳо',b:'харид ва захира',r:'ҳисоб ва нархҳо',f:'нақша ва натиҷаҳо'},
+  erQ:{M1:'Дар се моҳи охир шумо ба дӯкони ҳамсояҳо даромада, нархҳои онҳоро дидед?',M2:'Ба назди ҳамсояҳо даромада дидед, ки чӣ гуна мол доранд?',M3:'Аз харидорон пурсидед, ки боз кадом молро дар дӯкони шумо дидан мехоҳанд?',
+    M4:'Ақаллан бо як харидоре, ки дигар намеояд, гап задед, то сабабашро донед?',M5:'Аз таъминкунанда пурсидед, ки ҳоло кадом мол беҳтар фурӯхта мешавад?',M6:'Харидоронро бо пешниҳоди махсус ҷалб кардед: тахфиф, тӯҳфа, аксия?',
+    M7:'Дар шаш моҳи охир дӯконро реклама кардед: дар интернет, бо эълон, тавассути шиносҳо?',B1:'Бо таъминкунанда савдо кардед, то арзонтар харед?',B2:'Нарх ва сифатро дар назди таъминкунандагони гуногун муқоиса кардед?',
+    B3:'Моли серхаридор ҳамеша ҳаст? Агар моҳе як бор ё бештар тамом шавад, «не» гӯед.',R1:'Шумо оид ба дӯкон қайдҳо мебаред: дар дафтар ё дар телефон?',R2:'Ҳар як харид ва ҳар як фурӯшро менависед?',
+    R3:'Аз рӯи қайдҳо дар ҳар рӯз гуфта метавонед, ки дӯкон чӣ қадар пул дорад?',R4:'Аз рӯи қайдҳо мебинед, ки кадом мол беҳтар ва кадомаш бадтар фурӯхта мешавад?',R5:'Медонед, ки ҳар як моли асосӣ бо роҳаш ба шумо чанд пул меафтад?',
+    R6:'Медонед, ки кадом мол аз як дона бештар фоида меорад?',R7:'Навишта шудааст, ки дар як моҳ барои иҷора, барқ, роҳ ва дигар хароҷоти доимӣ чӣ қадар меравад?',R8:'Аз рӯи қайдҳо ба бонк нишон дода метавонед, ки баъди хароҷот пул барои пардохти қарз мерасад?',
+    F1:'Ақаллан моҳе як бор натиҷаҳоро ҷамъбаст мекунед ва қарор медиҳед, ки чиро беҳтар кардан лозим?',F2:'Барои як сол мақсади фурӯш доред?',F3:'Фурӯшро бо мақсад ақаллан моҳе як бор муқоиса мекунед?',F4:'Тахмин кардаед, ки соли оянда дӯконро кадом хароҷот интизор аст?',
+    F5:'Фоида ва зарари дӯконро барои як сол ҳисоб мекунед?',F6:'Барои як сол ҳисоб мекунед, ки чӣ қадар пул омад ва чӣ қадар рафт?',F7:'Соле як бор ҳисоб мекунед, ки дӯкон чӣ дорад (мол, пул, қарзи харидорон) ва худаш чӣ қадар қарздор аст?',F8:'Барои як сол рӯйхати умумии даромад ва хароҷотро мебаред?'},
+  erPrT:'Нарх ва тахфиф', erPrSub:'Иловаи нарх чӣ медиҳад ва тахфиф ба чанд меафтад', erPrUp:'Боло кардани нарх', erPrDn:'Тахфиф кардан', erPrPick:'Аз молҳо гирифтан', erPrP:'Нархи фурӯш', erPrC:'Арзиши аслӣ бо роҳ', erPrN:'Дар як моҳ мефурӯшам, дона',
+  erPrBy:'Ба нарх илова кардан', erPrOwn:'Худам', erPrD:'Тахфиф', erPrNeed:'Нарх ва арзиши аслиро нависед, ман ҳисоб мекунам.', erPrLoss:'Нарх аз арзиши аслӣ паст аст: ҳар фурӯш ба зарар.',
+  erPrUp1:(v,y)=>'+'+v+' дар як моҳ ва +'+y+' дар як сол, агар ҳамон қадар харанд.', erPrUp1n:v=>'+'+v+' аз ҳар чизи фурӯхташуда.',
+  erPrUp2:(x,n)=>'Ҳатто агар '+x+' дона камтар фурӯшед (аз '+n+'), ҳамон қадар даромад мегиред.', erPrUp2p:p=>'Ҳамон қадар даромад мегиред, ҳатто агар '+p+'% камтар фурӯшед.',
+  erPrUp3:'Кам-кам боло кунед ва аз моле оғоз кунед, ки на барои нархаш мегиранд.',
+  erPrDn1:v=>'Тахфиф ба шумо аз ҳар чиз '+v+' меафтад.', erTimes:(k,t)=>t+' маротиба', erPrDn2:(k,a,b)=>'Барои ҳамон қадар даромад гирифтан бояд '+k+' бештар фурӯшед: '+a+' дона ба ҷои '+b+'.', erPrDn2p:(k,p)=>'Барои ҳамон қадар даромад гирифтан бояд '+k+' бештар фурӯшед, яъне '+p+'% дона зиёдтар.',
+  erPrDn0:'Бо чунин тахфиф шумо ҳеҷ фоида намегиред: тамоми иловаи нарх ба тахфиф меравад.', erPrDn3:v=>'Бо чунин тахфиф шумо ба зарар мефурӯшед: минус '+v+' аз ҳар чиз.', erPrDn4:'Тахфиф он вақт дуруст аст, ки мол хобидааст ва пул барои моли нав лозим: он гоҳ баргардондани пул муҳимтар аз фоида аст.',
+  erPrDid:'Нархро боло кардам, баъди як ҳафта пурс, ки чӣ шуд', erPrDidOk:'Навиштам. Баъди як ҳафта мепурсам, ки чӣ шуд.', erPrDidT:n=>'Нархро боло кардам'+(n?': '+n:''),
+  erStT:'Нақли рӯз', erStSub:'Бо овоз ё матн, Сифра худаш ҷудо мекунад', erStLead:'Якбора нақл кунед, ки рӯз чӣ хел гузашт. Ман худам ҷудо мекунам: даромад, хароҷот, кӣ қарз гирифт, чиро пурсиданд.',
+  erStEx:'Масалан: «Ба ду ҳазору чорсад фурӯхтам, ҳазораш интиқол. Барои барқ сад додам. Зарина куртаро ба сесад насия гирифт. Куртаи бачагона пурсиданд, набуд».',
+  erStPh:'Гӯед ё нависед…', erStMic:'Гуфтан', erStGo:'Ҷудо кардан', erStEmpty:'Аввал нақл кунед ё нависед', erStBusy:'Ҷудо мекунам…',
+  erStResT:'Санҷед ва захира кунед', erStCash:'Даромад нақд', erStCard:'Даромад бо интиқол', erStExp:'Хароҷот', erStTook:'Қарз гирифтанд', erStRet:'Қарзро баргардонданд', erStAsk:'Пурсиданд, набуд',
+  erStUnc:'Инро нанавиштам', erStUncP:'Агар лозим бошад, инро худатон нависед. Пардохти қарз бо тугмаи «Навиштани пардохт» қайд мешавад.', erStHas:v=>'Барои имрӯз аллакай даромад '+v+' навишта шудааст, маблағи нав онро иваз мекунад.',
+  erStLocal:'Дар телефон ҷудо шуд, бе Сифра. Бодиққаттар санҷед.', erStNone:'Дар нақл на маблағ ёфтам, на мол. Дигар хел гуфта бинед.', erStSave:n=>'Захира: '+n, erStEdit:'Иваз кардани нақл',
+  erStSaved:n=>'Қайдҳо захира шуданд: '+n, erStUndo:'Бекор кардан', erStUndone:'Бекор шуд', erStNew:'номи нав', erStBtn:'Дар бораи рӯз нақл кардан', erStBtnSub:'Якбора: даромад, хароҷот, қарзҳо', erStLimit:'Имрӯз Сифра аллакай нақлҳои зиёдро ҷудо кард. Дар телефон ҷудо кардам.',
+  erAskedT:'Пурсиданд, вале набуд', erAskedP:'Ин аз нақли рӯз ба ин ҷо меафтад. Пеш аз харид ба кор меояд.',
+  erTodayDeal:'Кори ҳафта', erTodayAsk:'Чӣ шуд?', erTodayDone:'Кори ҳафта иҷро шуд' },
+en:{
+  erTitle:'Earnings', erLead:'One task a week that brings in money. Sifra helps you do it, and you record what came of it.',
+  erMoreSub0:'Task of the week, price and discount, shop check-up', erMoreSum:v=>'This month: +'+v,
+  erCntT:'Mira brought in this month', erCntSub0:'This will show the sum you confirmed yourself after each task.', erCntAll:v=>'Total since the start: '+v,
+  erAdd:'Add a sum', erAddT:'What brought in money', erAddWhat:'What it was', erAddSum:'How much it gave, somoni', erAddNote:'Note', erAddSave:'Record',
+  erAddHint:'Record only what really happened. The counter is right as long as you keep it.',
+  erAddK:{debt:'A debt was repaid',stale:'Sold slow stock',price:'Raised a price',sup:'Bargained with a supplier',other:'Other'}, erDel:'Remove entry',
+  erDealT:'Task of the week', erEstPrice:v=>'If you raise prices by 2% and sales hold, that is about '+v+' a month.', erEstDebt:v=>'You have been owed '+v+' for over a month.', erEstStale:v=>v+' sits in stock that has not sold for over two months.',
+  erWith:'Do it with Sifra', erDone:'Done', erOther:'Another task', erDoneT:'Task of the week is done', erDoneP:'A new one appears on Monday.', erMore1:'Take one more now',
+  erSfQ:(t,d)=>'Help me do the task of the week for my shop: "'+t+'". '+d+' Explain step by step and prepare everything you can: wording, prices, a list.',
+  erWhyChk:'Why this one: you answered "no" in the shop check-up.', erWhyData:'Why this one: your records show it.', erWhyDef:'Why this one: most people start here.',
+  erGoPrice:'Open the price calculator', erGoDebt:'Open "Owed to me"', erGoStory:'Tell about the day',
+  erResT:'What did it give?', erResP:t=>'Task: "'+t+'". Enter how much money it brought in or saved. If it is not clear yet, I will ask in a week.', erResSum:'Sum, somoni',
+  erResSave:'Record the sum', erResLater:'Not sure yet, ask in a week', erResNone:'It gave nothing', erResErr:'Enter a sum or choose another answer',
+  erSaved:v=>'Recorded: +'+v, erLater:'All right, I will ask in a week', erNoneOk:'Recorded. Not every task brings money straight away.',
+  erAskT:'How did it go?', erAsk:t=>'A week ago: "'+t+'". What did it give?', erAskBtn:'Answer',
+  erD:{
+    records:{t:'Record the day seven days in a row',d:'In the evening tell Sifra how the day went. Without records you cannot see what earns money and what eats it.'},
+    rivals:{t:'Check prices at three neighbours',d:'Visit three shops nearby and note the prices of your five best sellers. Where you are cheaper for no reason, the price can go up.'},
+    price:{t:'Raise the price of three best sellers',d:'Pick three items people do not buy for the price and add 5 somoni each. The calculator shows what that gives.'},
+    askcust:{t:'Ask five customers what is missing',d:'Ask five regulars what they would like to buy from you and cannot find. That is a ready list for the next purchase.'},
+    former:{t:'Find out why customers stopped coming',d:'Call or message one customer who has not been in for a long time and ask directly. One reason often applies to many.'},
+    suppask:{t:'Ask the supplier what is selling now',d:'Ask your supplier which goods are moving best this month. They see the whole market, you see only your shop.'},
+    offer:{t:'Make one special offer',d:'One offer for a week: the second item cheaper, or a gift with a purchase. Tell your regulars about it.'},
+    haggle:{t:'Bargain with the supplier',d:'Before the next order get a price from a second supplier and ask for a discount for volume or for paying at once.'},
+    nostock:{t:'Note what you did not have',d:'For a week, note every time someone asked for an item you did not have. That is money that went to the neighbours.'},
+    cost:{t:'Work out what really makes a profit',d:'For your three main goods add the purchase price and transport and compare with the selling price. The best seller is often not the most profitable.'},
+    budget:{t:'Write down the fixed costs of a month',d:'Rent, power, tax, the seller\'s pay, transport. One sum shows how much you must sell for the month not to end in the red.'},
+    target:{t:'Set a sales target for the month',d:'Name the sum you want to sell in a month and check against it once a week. People who track a goal reach it more often.'},
+    review:{t:'Review the month',d:'Half an hour once a month: how much you sold, how much went out, what is left. Find one thing worth changing.'},
+    debts:{t:'Get back the money you are owed',d:'Remind those who have owed you for over a month. The "Owed to me" section shows who and how much.'},
+    stale:{t:'Sell what has been sitting',d:'Stock that has sat for over two months is holding your money. Discount it or bundle it and put the money back to work.'}},
+  erChkT:'Shop check-up', erChkLead:'26 simple questions, about five minutes. Answer as things really are: only you see the answers.', erChkGo:'Start', erChkN:(i,n)=>i+' of '+n,
+  erYes:'Yes', erNo:'No', erBack:'Back', erChkRes:(y,n)=>'You have '+y+' of '+n+' practices', erChkWeak:g=>'Weakest: '+g, erChkStart:'Where to start', erChkTake:'Make it the task of the week', erChkAgain:'Take it again',
+  erChkSrc:'The questions come from a study of small firms in seven countries. Where there are more of these practices, profit is higher. That is a link, not a promise.',
+  erChkAllYes:'You already have every practice. Check yourself again in six months.', erChkNot:'Not taken yet, about five minutes', erChkSub:(y,n)=>y+' of '+n+' practices', erChkTaken:'This is the task of the week',
+  erG:{m:'customers and neighbours',b:'buying and stock',r:'records and prices',f:'plan and results'},
+  erQ:{M1:'In the last three months, did you visit neighbouring sellers to see their prices?',M2:'Did you visit neighbours to see what goods they have?',M3:'Did you ask customers what other goods they would like to see in your shop?',
+    M4:'Did you talk to at least one customer who stopped coming, to find out why?',M5:'Did you ask a supplier which goods are selling best now?',M6:'Did you attract customers with a special offer: a discount, a gift, a promotion?',
+    M7:'In the last six months, did you advertise the shop: online, with a notice, through people you know?',B1:'Did you bargain with a supplier to buy cheaper?',B2:'Did you compare prices and quality across suppliers?',
+    B3:'Are your best sellers always in stock? Answer "no" if they run out once a month or more often.',R1:'Do you keep records for the shop: in a notebook or on the phone?',R2:'Do you record every purchase and every sale?',
+    R3:'Can you tell from the records, on any day, how much money the shop has?',R4:'Do you check the records to see which goods sell better and which worse?',R5:'Do you know what each main item costs you, transport included?',
+    R6:'Do you know which item makes the most profit per piece?',R7:'Is it written down how much goes each month on rent, power, transport and other fixed costs?',R8:'Can you show a bank from your records that after costs there is enough money for a loan payment?',
+    F1:'At least once a month, do you review results and decide what to improve?',F2:'Do you have a sales target for the year?',F3:'Do you compare sales with the target at least once a month?',F4:'Have you estimated the costs the shop will face next year?',
+    F5:'Do you work out the shop\'s profit and loss for the year?',F6:'Do you work out how much money came in and went out over the year?',F7:'Once a year, do you work out what the shop has (stock, money, customer debts) and what it owes?',F8:'Do you keep an overall list of income and spending for the year?'},
+  erPrT:'Price and discount', erPrSub:'What a higher price gives and what a discount costs', erPrUp:'Raise the price', erPrDn:'Give a discount', erPrPick:'Take from goods', erPrP:'Selling price', erPrC:'Cost with transport', erPrN:'Sold per month, pieces',
+  erPrBy:'Add to the price', erPrOwn:'Own', erPrD:'Discount', erPrNeed:'Enter the price and the cost, and I will work it out.', erPrLoss:'The price is below cost: every sale loses money.',
+  erPrUp1:(v,y)=>'+'+v+' a month and +'+y+' a year, if people keep buying the same.', erPrUp1n:v=>'+'+v+' on every item sold.',
+  erPrUp2:(x,n)=>'Even if you sell '+x+' fewer (out of '+n+'), you earn the same.', erPrUp2p:p=>'You earn the same even if you sell '+p+'% fewer.',
+  erPrUp3:'Raise a little at a time and start with goods people do not buy for the price.',
+  erPrDn1:v=>'The discount costs you '+v+' on every item.', erTimes:(k,t)=>t+' times', erPrDn2:(k,a,b)=>'To earn the same you must sell '+k+' as many: '+a+' pieces instead of '+b+'.', erPrDn2p:(k,p)=>'To earn the same you must sell '+k+' as many, that is '+p+'% more pieces.',
+  erPrDn0:'At this discount you earn nothing: the whole margin goes into the discount.', erPrDn3:v=>'At this discount you sell at a loss: minus '+v+' on every item.', erPrDn4:'A discount makes sense when stock is sitting and you need the money for new goods: then getting money back matters more than earning.',
+  erPrDid:'I raised the price, ask in a week how it went', erPrDidOk:'Recorded. I will ask in a week how it went.', erPrDidT:n=>'Raised a price'+(n?': '+n:''),
+  erStT:'Story of the day', erStSub:'By voice or text, Sifra sorts it herself', erStLead:'Tell me in one go how the day went. I will sort it myself: takings, costs, who bought on credit, what people asked for.',
+  erStEx:'For example: "Sold for two thousand four hundred, a thousand by transfer. Paid a hundred for power. Zarina took a dress on credit for three hundred. People asked for kids\' jackets, we had none".',
+  erStPh:'Speak or type…', erStMic:'Speak', erStGo:'Sort it', erStEmpty:'Tell or type something first', erStBusy:'Sorting…',
+  erStResT:'Check and save', erStCash:'Takings in cash', erStCard:'Takings by transfer', erStExp:'Expense', erStTook:'Bought on credit', erStRet:'Repaid a debt', erStAsk:'Asked for, not in stock',
+  erStUnc:'I did not record this', erStUncP:'Record it yourself if needed. A loan payment is marked with the "Record payment" button.', erStHas:v=>'Takings of '+v+' are already recorded for today, the new sum will replace them.',
+  erStLocal:'Sorted on the phone, without Sifra. Check more carefully.', erStNone:'I found no sums or goods in the story. Try saying it another way.', erStSave:n=>'Save: '+n, erStEdit:'Change the story',
+  erStSaved:n=>'Entries saved: '+n, erStUndo:'Undo', erStUndone:'Undone', erStNew:'new name', erStBtn:'Tell about the day', erStBtnSub:'In one go: takings, costs, debts', erStLimit:'Sifra has sorted many stories today. Sorted on the phone.',
+  erAskedT:'Asked for, not in stock', erAskedP:'This comes here from the story of the day. Useful before buying.',
+  erTodayDeal:'Task of the week', erTodayAsk:'How did it go?', erTodayDone:'Task of the week is done' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M19S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -11093,6 +11340,261 @@ let vzWhen='';
 function vzFlash(){ const e=$('#gp .gp-when'); if(!e) return; const t=e.textContent; if(vzWhen&&t!==vzWhen){ e.classList.remove('vz-ch'); void e.offsetWidth; e.classList.add('vz-ch'); } vzWhen=t; }
 { const _gb=ivGoalBind; ivGoalBind=function(box,D,api){ _gb(box,D,api); try{ vzFlash(); ivSalesBarsDraw(); }catch(e){} }; }
 { const _is=investSheet; investSheet=function(){ vzWhen=''; const r=_is.apply(this,arguments); try{ ivSalesBarsDraw(); }catch(e){} return r; }; }
+
+/* ===================== v19: «Заработок» — приложение не только бережёт деньги, но и приносит их =====================
+   Что это: проверка магазина (26 вопросов), дело недели, счётчик «Mira принесла», расчёт цены и скидки, рассказ о дне.
+   Откуда:
+   - Dalton, Rüschenpöhler, Uras, Zia (JEEA, 2021), маленькие магазины Индонезии: одна книжка с советами не изменила ничего;
+     советы плюс помощь внедрить — через полтора года прибыль до +35%, выручка до +16,7% → не список советов, а одно дело
+     в неделю, которое Сифра делает вместе с человеком и потом спрашивает, что вышло;
+   - McKenzie, Woodruff (NBER w21505), семь стран: 26 простых приёмов; у кого их больше на одно стандартное отклонение,
+     у того прибыль выше примерно на 18% (связь, не причина); сильнее всего с прибылью связаны учёт и маркетинг →
+     проверка из тех же 26 вопросов, переложенных на язык магазина, и порядок дел от учёта и покупателей;
+   - Marn, Rosiello (HBR, 1992), 2 463 компании: +1% к цене при тех же продажах даёт +11,1% прибыли, +1% к объёму — +3,3%,
+     и в обратную сторону так же → расчёт «что даёт прибавка» и «сколько надо продать сверху, чтобы скидка окупилась».
+   Счётчик складывает только суммы, которые человек подтвердил сам: никаких оценок «по умолчанию». */
+const ER_Q=['M1','M2','M3','M4','M5','M6','M7','B1','B2','B3','R1','R2','R3','R4','R5','R6','R7','R8','F1','F2','F3','F4','F5','F6','F7','F8'];
+const ER_MAP={M1:'rivals',M2:'rivals',M3:'askcust',M4:'former',M5:'suppask',M6:'offer',M7:'offer',B1:'haggle',B2:'haggle',B3:'nostock',R1:'records',R2:'records',R3:'records',R4:'records',R5:'cost',R6:'cost',R7:'budget',R8:'budget',F1:'review',F2:'target',F3:'target',F4:'budget',F5:'review',F6:'review',F7:'review',F8:'review'};
+const ER_ORDER=['records','rivals','price','askcust','cost','offer','haggle','nostock','suppask','former','budget','target','review'];
+const ER_ICON={records:'edit',rivals:'eye',price:'tag',askcust:'people',former:'phone',suppask:'truck',offer:'gift',haggle:'cash',nostock:'box',cost:'calc',budget:'receipt',target:'goal',review:'stats',debts:'owed',stale:'box'};
+const ER_G=['r','m','b','f'];
+
+function erSt(){ const m=state.misc=state.misc||{}; let e=m.earn; if(!e||typeof e!=='object'||Array.isArray(e)) e=m.earn={};
+  if(!Array.isArray(e.log)) e.log=[]; if(!Array.isArray(e.pend)) e.pend=[]; if(!e.done||typeof e.done!=='object') e.done={}; if(!e.skip||typeof e.skip!=='object') e.skip={}; return e; }
+function erWeek(){ const d=today0(); return ymd(addDays(d,-((d.getDay()+6)%7))); }
+function erTitle(k){ return (L.erD[k]||L.erD.review).t; }
+/* выручка для обещаний в деньгах: только записанная или названная человеком — не оценка по закупкам и платежам */
+function erRev(){ try{ const r=revEst(); if(r&&r.v>0) return r.v; }catch(e){} try{ const c=ivCapMUSD(), u=usdRate(); if(c&&(c.src==='user'||c.src==='fact'||c.src==='sold')&&u&&c.v>0) return c.v*u; }catch(e){} return 0; }
+/* долги покупателей, которые висят дольше месяца или просрочены */
+function erOldDebt(){ let s=0; const lim=dkey(addDays(today0(),-30));
+  try{ for(const c of state.cust||[]){ const st=custState(c); if(!(st.bal>0)) continue; const last=st.rows.length?st.rows[st.rows.length-1].d:''; if(st.overdue||(last&&last<=lim)) s+=st.bal; } }catch(e){} return Math.round(s); }
+/* товар, который завели больше двух месяцев назад и ни разу не отметили продажу за это время */
+function erStale(){ let s=0; const lim=dkey(addDays(today0(),-60));
+  try{ for(const x of state.inv||[]){ if(!(+x.cost>0)||!x.d||x.d>lim) continue; let q=0; for(const k in x.sizes||{}) q+=+x.sizes[k]||0; if(!q) continue;
+      if((state.invLog||[]).some(l=>l.i===x.id&&l.k==='sale'&&l.d>lim)) continue; s+=q*+x.cost; } }catch(e){} return Math.round(s); }
+function erEst(k){ if(k==='price'){ const r=erRev(); return r>0?L.erEstPrice(money(Math.max(10,Math.round(r*0.02/10)*10))):''; }
+  if(k==='debts'){ const v=erOldDebt(); return v>0?L.erEstDebt(money(v)):''; } if(k==='stale'){ const v=erStale(); return v>0?L.erEstStale(money(v)):''; } return ''; }
+function erNoList(){ const c=erSt().chk; if(!c||!c.a) return null; const out=[]; for(const q of ER_Q) if(c.a[q]===0){ const k=ER_MAP[q]; if(!out.includes(k)) out.push(k); } return out; }
+function erDays14(){ const lim=dkey(addDays(today0(),-14)); try{ return new Set(ensureShop().sales.filter(e=>e.date>lim).map(e=>e.date)).size; }catch(e){ return 0; } }
+/* очередь дел: сначала деньги, которые уже лежат (долги, залежавшийся товар), потом «нет» из проверки, потом обычный порядок */
+function erCands(){ const st=erSt(), wk=erWeek(), now=Date.now(), out=[], ok=k=>!(st.done[k]&&now-st.done[k]<56*864e5)&&st.skip[k]!==wk;
+  const push=(k,why)=>{ if(ok(k)&&!out.some(o=>o.k===k)) out.push({k,why}); };
+  if(erOldDebt()>=200) push('debts','data'); if(erStale()>=300) push('stale','data');
+  const no=erNoList(); if(no) for(const k of ER_ORDER) if(no.includes(k)) push(k,'chk');
+  const kept=erDays14()>=10; for(const k of ER_ORDER){ if(k==='records'&&kept) continue; push(k,'def'); }
+  return out; }
+function erCur(){ const st=erSt(), wk=erWeek(); if(st.wk&&st.wk.key===wk&&st.wk.k) return st.wk; const c=erCands()[0]; return c?{key:wk,k:c.k,why:c.why,st:'new',tmp:1}:null; }
+function erHold(){ const st=erSt(), c=erCur(); if(c&&c.tmp){ delete c.tmp; c.at=Date.now(); st.wk=c; persist(); } return c; }
+function erDue(){ const now=Date.now(); return erSt().pend.filter(p=>p.ask<=now); }
+function erMonth(){ const m=monthKey(new Date()); return erSt().log.reduce((s,x)=>s+(String(x.d).slice(0,7)===m?(+x.v||0):0),0); }
+function erFinish(o,mode,v){ const st=erSt(), ts=Date.now(); st.done[o.k]=ts; if(o.pid) st.pend=st.pend.filter(p=>p.id!==o.pid);
+  if(mode==='sum') st.log.push({id:uid('er'),k:o.k,t:String(o.t||erTitle(o.k)).slice(0,90),v:Math.round(v),d:dkey(),ts,src:'deal'});
+  else if(mode==='later'){ const n=(+o.n||0)+1; if(n<=2) st.pend.push({id:uid('ep'),k:o.k,t:String(o.t||erTitle(o.k)).slice(0,90),at:ts,ask:ts+7*864e5,n}); }
+  if(!o.pid&&st.wk&&st.wk.k===o.k&&st.wk.key===erWeek()) st.wk.st='done';
+  persist(); render(); toast(mode==='sum'?L.erSaved(money(Math.round(v))):mode==='later'?L.erLater:L.erNoneOk); }
+
+/* ---------- главный лист ---------- */
+function erDealHTML(c){ if(!c||c.st==='done') return `<div class="er-deal done" id="er-deal"><div class="er-dh"><span class="er-di ok">${ico('check',22)}</span><div><small>${L.erDealT}</small><b>${c?L.erDoneT:L.erDoneP}</b></div></div>${c?`<p>${L.erDoneP}</p>`:''}<button type="button" class="btn btn-ghost btn-full" id="er-more1">${L.erMore1}</button></div>`;
+  const d=L.erD[c.k]||L.erD.review, est=erEst(c.k), tool=c.k==='price'||c.k==='cost'||c.k==='rivals'?['price',L.erGoPrice]:c.k==='debts'?['debt',L.erGoDebt]:c.k==='records'?['story',L.erGoStory]:null;
+  return `<div class="er-deal" id="er-deal" data-k="${c.k}"><div class="er-dh"><span class="er-di">${ico(ER_ICON[c.k]||'star',22)}</span><div><small>${L.erDealT}</small><b>${esc(d.t)}</b></div></div>
+    <p>${esc(d.d)}</p>${est?`<p class="er-est">${esc(est)}</p>`:''}<p class="er-why">${c.why==='chk'?L.erWhyChk:c.why==='data'?L.erWhyData:L.erWhyDef}</p>
+    <button type="button" class="btn btn-primary btn-full" id="er-sf">${L.erWith}</button>
+    ${tool?`<button type="button" class="btn btn-ghost btn-full" id="er-tool" data-t="${tool[0]}">${tool[1]}</button>`:''}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="er-other">${L.erOther}</button><button type="button" class="btn btn-ghost" id="er-done">${L.erDone}</button></div></div>`; }
+function erSheet(){ const st=erSt(), cur=erHold(), due=erDue(), m=erMonth(), all=st.log.reduce((s,x)=>s+(+x.v||0),0), mk=monthKey(new Date());
+  const rows=st.log.filter(x=>String(x.d).slice(0,7)===mk).slice(-6).reverse(), chk=st.chk&&st.chk.a?erChkScore(st.chk.a):null, asked=(state.misc.ask||[]).slice(-6).reverse();
+  const tool=(k,i,t,s)=>`<button type="button" class="m7-li er-tool" data-er="${k}"><span class="m7-li-i">${ico(i,22)}</span><span class="m7-li-t"><b>${t}</b><small>${s}</small></span>${ico('next',18)}</button>`;
+  openSheet(`<h3>${L.erTitle}</h3><p class="lead">${L.erLead}</p>
+    <div class="er-cnt" id="er-cnt"><small>${L.erCntT}</small><b id="er-sum">+${money(m)}</b>${all>m?`<span>${L.erCntAll(money(all))}</span>`:''}${st.log.length?'':`<span>${L.erCntSub0}</span>`}
+      ${rows.map(x=>`<div class="er-row"><span>${esc(x.t)}<small>${fmtDate(parseYmd(x.d))}</small></span><b>+${money(x.v)}</b><button type="button" data-erdel="${esc(x.id)}" aria-label="${esc(L.erDel)}">${ico('close',16)}</button></div>`).join('')}
+      <button type="button" class="gp-mini" id="er-add">${L.erAdd}</button></div>
+    ${due.map(p=>`<div class="er-ask" data-pid="${esc(p.id)}">${ico('clock',20)}<span><b>${L.erAskT}</b><small>${esc(L.erAsk(p.t))}</small></span><button type="button" class="gp-mini" data-erask="${esc(p.id)}">${L.erAskBtn}</button></div>`).join('')}
+    ${erDealHTML(cur)}
+    <div class="m7-list er-tools">${tool('chk','check',L.erChkT,chk?L.erChkSub(chk.y,chk.n):L.erChkNot)}${tool('price','tag',L.erPrT,L.erPrSub)}${tool('story','mic',L.erStT,L.erStSub)}</div>
+    ${asked.length?`<div class="er-asked"><h4>${L.erAskedT}</h4><p>${L.erAskedP}</p>${asked.map(a=>`<div class="er-row"><span>${esc(a.t)}<small>${fmtDate(parseYmd(a.d))}</small></span><button type="button" data-eraq="${esc(a.id)}" aria-label="${esc(L.erDel)}">${ico('close',16)}</button></div>`).join('')}</div>`:''}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  const on=(sel,fn)=>{ const e=$(sel); if(e) e.onclick=fn; };
+  on('#er-add',()=>erAddSheet());
+  on('#er-sf',()=>{ const d=L.erD[cur.k]||L.erD.review; sifraOpen(L.erSfQ(d.t,d.d).slice(0,690)); });
+  on('#er-tool',()=>{ const t=$('#er-tool').dataset.t; if(t==='price') erPriceSheet('up'); else if(t==='story') erStorySheet(); else { closeSheet(); setTab('shop'); try{ setShopSub('debt'); }catch(e){} } });
+  on('#er-done',()=>erResSheet({k:cur.k,t:erTitle(cur.k)}));
+  on('#er-other',()=>{ const wk=erWeek(); for(const k in st.skip) if(st.skip[k]!==wk) delete st.skip[k]; st.skip[cur.k]=wk; st.wk=null; persist(); render(); erSheet(); });
+  on('#er-more1',()=>{ if(!erCands().length) st.skip={}; st.wk=null; persist(); render(); erSheet(); });
+  sheet.querySelectorAll('[data-er]').forEach(b=>b.onclick=()=>{ const k=b.dataset.er; if(k==='chk') erChkSheet(); else if(k==='price') erPriceSheet('up'); else erStorySheet(); });
+  sheet.querySelectorAll('[data-erask]').forEach(b=>b.onclick=()=>{ const p=st.pend.find(x=>x.id===b.dataset.erask); if(p) erResSheet({k:p.k,t:p.t,pid:p.id,n:p.n}); });
+  sheet.querySelectorAll('[data-erdel]').forEach(b=>b.onclick=()=>{ st.log=st.log.filter(x=>x.id!==b.dataset.erdel); persist(); render(); erSheet(); });
+  sheet.querySelectorAll('[data-eraq]').forEach(b=>b.onclick=()=>{ state.misc.ask=(state.misc.ask||[]).filter(x=>x.id!==b.dataset.eraq); persist(); erSheet(); }); }
+function erResSheet(o){ openSheet(`<h3>${L.erResT}</h3><p class="lead">${esc(L.erResP(o.t))}</p>
+    <div class="field n big-in"><label for="er-v">${L.erResSum}</label><input id="er-v" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+    <div class="err" id="er-err"></div><button type="button" class="btn btn-primary btn-full" id="er-save">${L.erResSave}</button>
+    ${(+o.n||0)<2?`<button type="button" class="btn btn-ghost btn-full" id="er-later">${L.erResLater}</button>`:''}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="er-back">${L.erBack}</button><button type="button" class="btn btn-ghost" id="er-none">${L.erResNone}</button></div>`);
+  $('#er-save').onclick=()=>{ const v=Math.round(+$('#er-v').value); if(!(v>0)) return showErr($('#er-err'),L.erResErr); erFinish(o,'sum',v); erSheet(); };
+  if($('#er-later')) $('#er-later').onclick=()=>{ erFinish(o,'later'); erSheet(); };
+  $('#er-none').onclick=()=>{ erFinish(o,'none'); erSheet(); }; $('#er-back').onclick=()=>erSheet(); }
+function erAddSheet(){ let k='debt'; const ks=Object.keys(L.erAddK);
+  openSheet(`<h3>${L.erAddT}</h3><p class="lead">${L.erAddHint}</p><div class="field"><label>${L.erAddWhat}</label><div class="chips" id="ea-k">${ks.map(x=>`<button type="button" class="chip ${x===k?'on':''}" data-eak="${x}" aria-pressed="${x===k}">${L.erAddK[x]}</button>`).join('')}</div></div>
+    <div class="field n big-in"><label for="ea-v">${L.erAddSum}</label><input id="ea-v" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+    <div class="field"><label for="ea-n">${L.erAddNote} <span class="hint">${L.optional}</span></label><input id="ea-n" type="text" maxlength="60"></div>
+    <div class="err" id="ea-err"></div><button type="button" class="btn btn-primary btn-full" id="ea-save">${L.erAddSave}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" id="ea-back">${L.erBack}</button></div>`);
+  sheet.querySelectorAll('[data-eak]').forEach(b=>b.onclick=()=>{ k=b.dataset.eak; sheet.querySelectorAll('[data-eak]').forEach(y=>{ const on=y===b; y.classList.toggle('on',on); y.setAttribute('aria-pressed',on); }); });
+  $('#ea-back').onclick=()=>erSheet();
+  $('#ea-save').onclick=()=>{ const v=Math.round(+$('#ea-v').value); if(!(v>0)) return showErr($('#ea-err'),L.errSum); const n=$('#ea-n').value.trim();
+    erSt().log.push({id:uid('er'),k,t:(L.erAddK[k]+(n?': '+n:'')).slice(0,90),v,d:dkey(),ts:Date.now(),src:'manual'}); persist(); render(); toast(L.erSaved(money(v))); erSheet(); }; }
+
+/* ---------- проверка магазина: 26 вопросов ---------- */
+function erChkScore(a){ const g={}; let y=0, n=0; for(const q of ER_Q){ const k=q[0].toLowerCase(); g[k]=g[k]||{y:0,n:0}; g[k].n++; n++; if(a[q]===1){ g[k].y++; y++; } }
+  let weak=null; for(const k of ER_G){ const r=g[k].y/g[k].n; if(r<1&&(weak==null||r<g[weak].y/g[weak].n)) weak=k; } return {g,y,n,weak}; }
+function erChkSheet(force){ const st=erSt(); if(st.chk&&st.chk.a&&!force){ erChkResult(); return; } const a={}; let i=0;
+  const intro=()=>{ openSheet(`<h3>${L.erChkT}</h3><p class="lead">${L.erChkLead}</p><p class="er-src">${L.erChkSrc}</p>
+      <button type="button" class="btn btn-primary btn-full" id="ck-go">${L.erChkGo}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" id="ck-x">${L.erBack}</button></div>`);
+    $('#ck-go').onclick=ask; $('#ck-x').onclick=()=>erSheet(); };
+  const ask=()=>{ const q=ER_Q[i]; openSheet(`<h3>${L.erChkT}</h3><div class="er-prog" role="progressbar" aria-valuemin="0" aria-valuemax="${ER_Q.length}" aria-valuenow="${i}"><i style="width:${Math.round(i/ER_Q.length*100)}%"></i></div>
+      <p class="er-qn" id="ck-n">${L.erChkN(i+1,ER_Q.length)} · ${L.erG[q[0].toLowerCase()]}</p><p class="er-q" id="ck-q">${esc(L.erQ[q])}</p>
+      <div class="er-yn"><button type="button" class="btn er-no" id="ck-no">${L.erNo}</button><button type="button" class="btn er-yes" id="ck-yes">${L.erYes}</button></div>
+      <div class="sheet-row"><button type="button" class="btn btn-ghost" id="ck-back">${L.erBack}</button></div>`);
+    const go=v=>{ a[q]=v; i++; if(i>=ER_Q.length){ st.chk={at:Date.now(),a}; persist(); render(); erChkResult(); } else ask(); };
+    $('#ck-yes').onclick=()=>go(1); $('#ck-no').onclick=()=>go(0); $('#ck-back').onclick=()=>{ if(i>0){ i--; ask(); } else intro(); }; };
+  intro(); }
+function erChkResult(){ const st=erSt(), sc=erChkScore(st.chk.a), no=(erNoList()||[]), top=ER_ORDER.filter(k=>no.includes(k)).slice(0,3), cur=erCur();
+  openSheet(`<h3>${L.erChkT}</h3><p class="er-res" id="ck-res">${L.erChkRes(sc.y,sc.n)}</p>
+    <div class="er-gs">${ER_G.map(k=>{ const x=sc.g[k]; return `<div class="er-g${k===sc.weak?' weak':''}"><span>${L.erG[k]}</span><b>${x.y} / ${x.n}</b><i><em style="width:${Math.round(x.y/x.n*100)}%"></em></i></div>`; }).join('')}</div>
+    ${sc.weak?`<p class="er-weak" id="ck-weak">${L.erChkWeak(L.erG[sc.weak])}</p>`:`<p class="er-weak" id="ck-weak">${L.erChkAllYes}</p>`}
+    ${top.length?`<h4 class="er-h4">${L.erChkStart}</h4>${top.map(k=>`<div class="er-pick"><span><b>${esc(erTitle(k))}</b><small>${esc(L.erD[k].d)}</small></span>${cur&&cur.k===k&&cur.st!=='done'?`<em>${L.erChkTaken}</em>`:`<button type="button" class="gp-mini" data-ertake="${k}">${L.erChkTake}</button>`}</div>`).join('')}`:''}
+    <p class="er-src">${L.erChkSrc}</p>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="ck-again">${L.erChkAgain}</button><button type="button" class="btn btn-primary" id="ck-ok">${L.erTitle}</button></div>`);
+  $('#ck-again').onclick=()=>erChkSheet(true); $('#ck-ok').onclick=()=>erSheet();
+  sheet.querySelectorAll('[data-ertake]').forEach(b=>b.onclick=()=>{ const k=b.dataset.ertake; delete st.skip[k]; delete st.done[k]; st.wk={key:erWeek(),k,why:'chk',st:'new',at:Date.now()}; persist(); render(); erSheet(); }); }
+
+/* ---------- цена и скидка ---------- */
+function erSold30(id){ const lim=dkey(addDays(today0(),-30)); let n=0; for(const l of state.invLog||[]) if(l.i===id&&l.k==='sale'&&l.d>lim&&+l.q<0) n-=+l.q; return n; }
+function erPriceCalc(mode,p,c,n,by,disc){ const o={lines:[],bad:false};
+  if(!(p>0)||!(c>0)){ o.need=true; return o; } if(c>=p){ o.bad=true; o.lines.push(['warn',L.erPrLoss]); }
+  if(mode==='up'){ if(!(by>0)) return o; if(n>0){ o.lines.push(['big',L.erPrUp1(money(by*n),money(by*n*12))]); o.gain=by*n; } else o.lines.push(['big',L.erPrUp1n(money(by))]);
+    if(p>c){ const x=Math.floor(n*by/(p-c+by)); if(n>0&&x>=1){ o.lose=x; o.lines.push(['',L.erPrUp2(x,n)]); } else { const pc=Math.floor(by/(p-c+by)*100); if(pc>=1) o.lines.push(['',L.erPrUp2p(pc)]); } }
+    o.lines.push(['note',L.erPrUp3]); }
+  else { if(!(disc>0)) return o; const cut=p*disc/100, m1=p-cut-c; o.lines.push(['',L.erPrDn1(money(cut))]);
+    if(!o.bad){ if(m1<=0.5){ o.bad=true; o.lines.push(['warn',m1>-0.5?L.erPrDn0:L.erPrDn3(money(-m1))]); }
+      else { const k=(p-c)/m1, kr=Math.round(k*10)/10, kt=L.erTimes(kr,fx(kr,Number.isInteger(kr)?0:1)); o.k=k;
+        if(n>0){ o.need2=Math.ceil(n*k-1e-9); o.lines.push(['big',L.erPrDn2(kt,o.need2,n)]); } else o.lines.push(['big',L.erPrDn2p(kt,Math.ceil((k-1)*100-1e-9))]); } }
+    o.lines.push(['note',L.erPrDn4]); }
+  return o; }
+function erPriceSheet(mode0){ let mode=mode0==='dn'?'dn':'up', by=5, disc=10, name='';
+  const items=(state.inv||[]).filter(x=>+x.price>0).map(x=>({x,n:erSold30(x.id)})).sort((a,b)=>b.n-a.n).slice(0,6);
+  const chips=(arr,cur,attr,suf)=>arr.map(v=>`<button type="button" class="chip ${v===cur?'on':''}" ${attr}="${v}" aria-pressed="${v===cur}">${suf(v)}</button>`).join('');
+  const draw=(keep)=>{ const kv=keep||{p:'',c:'',n:''};
+    openSheet(`<h3>${L.erPrT}</h3><div class="iv2-seg er-seg" role="tablist"><button type="button" role="tab" data-prm="up" class="${mode==='up'?'on':''}" aria-selected="${mode==='up'}">${L.erPrUp}</button><button type="button" role="tab" data-prm="dn" class="${mode==='dn'?'on':''}" aria-selected="${mode==='dn'}">${L.erPrDn}</button></div>
+      ${items.length?`<div class="field"><label>${L.erPrPick}</label><div class="chips">${items.map((o,i)=>`<button type="button" class="chip" data-pri="${i}">${esc(o.x.name)}</button>`).join('')}</div></div>`:''}
+      <div class="two"><div class="field n"><label for="pr-p">${L.erPrP}</label><input id="pr-p" type="number" inputmode="decimal" min="0" value="${kv.p}"></div><div class="field n"><label for="pr-c">${L.erPrC}</label><input id="pr-c" type="number" inputmode="decimal" min="0" value="${kv.c}"></div></div>
+      <div class="field n"><label for="pr-n">${L.erPrN} <span class="hint">${L.optional}</span></label><input id="pr-n" type="number" inputmode="numeric" min="0" value="${kv.n}"></div>
+      ${mode==='up'?`<div class="field"><label>${L.erPrBy}</label><div class="chips" id="pr-by">${chips([2,5,10,20],by,'data-prby',v=>'+'+v+' '+L.cur)}<input class="er-own" id="pr-own" type="number" inputmode="numeric" min="0" placeholder="${L.erPrOwn}" aria-label="${L.erPrBy}"></div></div>`
+        :`<div class="field"><label>${L.erPrD}</label><div class="chips" id="pr-dc">${chips([5,10,15,20,30],disc,'data-prd',v=>v+'%')}<input class="er-own" id="pr-own" type="number" inputmode="numeric" min="0" max="95" placeholder="${L.erPrOwn}" aria-label="${L.erPrD}"></div></div>`}
+      <div class="er-out" id="pr-out" aria-live="polite"></div>
+      <div class="sheet-row"><button type="button" class="btn btn-ghost" id="pr-back">${L.erBack}</button></div>`);
+    const vals=()=>({p:$('#pr-p').value,c:$('#pr-c').value,n:$('#pr-n').value});
+    const calc=()=>{ const v=vals(), o=erPriceCalc(mode,+v.p||0,+v.c||0,Math.round(+v.n||0),by,disc), out=$('#pr-out');
+      out.innerHTML=o.need?`<p class="er-hint">${L.erPrNeed}</p>`:o.lines.map(l=>`<p class="${l[0]}">${esc(l[1])}</p>`).join('')+(mode==='up'&&!o.bad&&by>0?`<button type="button" class="btn btn-ghost btn-full" id="pr-did">${L.erPrDid}</button>`:'');
+      const d=$('#pr-did'); if(d) d.onclick=()=>{ const ts=Date.now(); erSt().pend.push({id:uid('ep'),k:'price',t:L.erPrDidT(name).slice(0,90),at:ts,ask:ts+7*864e5,n:1}); persist(); toast(L.erPrDidOk); erSheet(); }; };
+    ['#pr-p','#pr-c','#pr-n'].forEach(s=>$(s).addEventListener('input',()=>{ if(s!=='#pr-n') name=''; calc(); }));
+    sheet.querySelectorAll('[data-prm]').forEach(b=>b.onclick=()=>{ mode=b.dataset.prm; draw(vals()); });
+    sheet.querySelectorAll('[data-pri]').forEach(b=>b.onclick=()=>{ const o=items[+b.dataset.pri]; name=o.x.name; $('#pr-p').value=+o.x.price||''; $('#pr-c').value=+o.x.cost||''; $('#pr-n').value=o.n||''; sheet.querySelectorAll('[data-pri]').forEach(y=>y.classList.toggle('on',y===b)); calc(); });
+    const pick=(sel,set)=>sheet.querySelectorAll(sel).forEach(b=>b.onclick=()=>{ set(+b.getAttribute(sel.slice(1,-1))); $('#pr-own').value=''; sheet.querySelectorAll(sel).forEach(y=>{ const on=y===b; y.classList.toggle('on',on); y.setAttribute('aria-pressed',on); }); calc(); });
+    pick('[data-prby]',v=>{ by=v; }); pick('[data-prd]',v=>{ disc=v; });
+    $('#pr-own').addEventListener('input',e=>{ const v=+e.target.value; if(!(v>0)) return; if(mode==='up') by=v; else disc=Math.min(95,v); sheet.querySelectorAll('[data-prby],[data-prd]').forEach(y=>{ y.classList.remove('on'); y.setAttribute('aria-pressed','false'); }); calc(); });
+    $('#pr-back').onclick=()=>erSheet(); calc(); };
+  draw(); }
+
+/* ---------- рассказ о дне: один рассказ — несколько записей ---------- */
+const ER_EXP=[['power',/свет|электр|барк|барқ|power|electric/],['rent',/аренд|иҷор|ичор|rent/],['tax',/налог|патент|андоз|tax/],['salary',/зарплат|продавц|продавщ|маош|salary|wage/],['transport',/такси|дорог|бензин|доставк|карго|роҳ|taxi|fuel|deliver/],['util',/вод[ауые]|газ|мусор|интернет|связ|уборк|об |water|internet/],['house',/ремонт|полк|вешал|лампоч|таъмир|repair|shelf/]];
+function erAskClean(s){ return String(s||'').replace(/^(.*?)(спрашивал[аи]?|спросил[аи]?|искал[аи]?|пурсиданд|пурсид|asked for|asked about)\s*/i,'').replace(/[,;:—-]?\s*(а\s+)?(его|её|их|у меня|у нас)?\s*(не было|нет в наличии|не оказалось|набуд|we had none|didn.t have).*$/i,'').replace(/^(про|о|об)\s+/i,'').replace(/[.,;:!]+$/,'').trim(); }
+function erStoryName(seg){ for(const w of String(seg||'').split(/\s+/)){ const x=w.replace(/[^А-Яа-яЁёӢӣӮӯҲҳҚқҒғҶҷA-Za-z-]/g,'');
+    if(/^[А-ЯЁӢӮҲҚҒҶA-Z][а-яёӣӯҳқғҷa-z-]{2,}$/.test(x)&&!/^(?:(?:продал|отдал|заплат|потрат|оплат|спрашив|спросил|взял|вернул|принес|выручк|налич|перевод|фурухт|фурӯхт|такси)\S*|сегодня|вчера|потом|еще|ещё|за|на|касса|долг|имруз|имрӯз|today|sold|paid|asked)$/i.test(x)) return x; } return null; }
+/* разбор в телефоне — запасной путь, когда Сифра недоступна: понимает простые фразы, остальное честно кладёт в «не записала» */
+function erStoryLocal(text){ const rep={items:[],unclear:[]}; let cash=0, card=0;
+  /* речь приходит без точек: режем ещё и перед словами, с которых начинается новая запись («за свет…», «отдала…», «Зарина взяла…», «спрашивали…») */
+  const segs=String(text||'').replace(/[«»"]/g,'').split(/[.;!?\n]+|,\s+(?=[А-ЯЁA-ZӢӮҲҚҒҶ])|\s+(?:потом|ещё|еще|также|баъд|then|also)\s+|\s+(?=(?:за\s+(?:свет|аренд|такси|дорог|налог|воду|газ|интернет)|отдал[аи]?\s|заплатил[аи]?\s|потратил[аи]?\s|спрашивал[аи]?\s|спросил[аи]?\s|пурсиданд\s))|\s+(?=[А-ЯЁӢӮҲҚҒҶ][а-яёӣӯҳқғҷ]+\s+(?:взял|вернул|отдал|должн|принес|гирифт|баргардон))/).map(s=>s.trim()).filter(s=>s.length>2);
+  /* кусок без суммы («за свет») относится к следующему («отдала сто») */
+  for(let i=0;i<segs.length-1;i++){ const a=' '+segs[i].toLowerCase()+' '; if(m7Num(a)==null&&!/спрашивал|спросил|искал|пурсид|не было|набуд|asked/.test(a)&&m7Num(' '+segs[i+1].toLowerCase()+' ')!=null&&segs[i].split(/\s+/).length<=3){ segs[i+1]=segs[i]+' '+segs[i+1]; segs.splice(i,1); i--; } }
+  for(const seg of segs){ const low=' '+seg.toLowerCase().replace(/ё/g,'е')+' ', amt=m7Num(low);
+    if(/спрашивал|спросил|искал|пурсид|asked for|asked about/.test(low)||(/не было|набуд/.test(low)&&amt==null)){ const t=erAskClean(seg); if(t.length>=2){ rep.items.push({t:'ask',text:(t.charAt(0).toUpperCase()+t.slice(1)).slice(0,60)}); continue; } }
+    if(!amt){ if(seg.split(/\s+/).length>=2) rep.unclear.push(seg.slice(0,120)); continue; }
+    let cm=null; try{ cm=m7CustIn(low); }catch(e){} const nm=cm?cm.name:erStoryName(seg), ex=ER_EXP.find(e=>e[1].test(low));
+    const isDebt=/в долг|должн|насия|қарз|карз|on credit/.test(low), isRet=/вернул|принес|баргардон|paid back|returned/.test(low)||(!!cm&&!ex&&/отдал/.test(low));
+    if((isDebt||isRet)&&nm){ rep.items.push({t:isRet&&!isDebt?'ret':'took',a:amt,name:nm}); continue; }
+    let loan=false; try{ loan=/кредит|банк|бонк|қарзи бонк|loan/.test(low)||state.loans.some(l=>!l.example&&m7NameIn(low,l.name)); }catch(e){}
+    const pay=/отдал|заплатил|потратил|оплатил|расход|харч|додам|paid|spent/.test(low);
+    if(loan&&pay){ rep.unclear.push(seg.slice(0,120)); continue; }
+    if(!pay&&!ex&&/продал|выручк|касс|налич|нақд|накд|перевод|на карту|картой|интиқол|фурухт|фурӯхт|даромад|sold|cash|transfer|takings/.test(low)){ let p={}; try{ p=parseVoice(seg)||{}; }catch(e){} if(p.cash!=null||p.card!=null){ cash+=+p.cash||0; card+=+p.card||0; } else cash+=amt; continue; }
+    if(ex||pay){ rep.items.push({t:'exp',a:amt,cat:ex?ex[0]:'other',note:seg.replace(/\s+/g,' ').slice(0,60)}); continue; }
+    rep.unclear.push(seg.slice(0,120)); }
+  if(card>0) rep.items.unshift({t:'card',a:card}); if(cash>0) rep.items.unshift({t:'cash',a:cash}); return rep; }
+function erStoryNorm(r){ const rep={items:[],unclear:Array.isArray(r.unclear)?r.unclear.map(x=>String(x).slice(0,120)):[]}, n=v=>Math.max(0,Math.round(+v||0));
+  if(n(r.cash)) rep.items.push({t:'cash',a:n(r.cash)}); if(n(r.card)) rep.items.push({t:'card',a:n(r.card)});
+  for(const e of Array.isArray(r.expenses)?r.expenses:[]) if(n(e.amount)) rep.items.push({t:'exp',a:n(e.amount),cat:CATS.includes(e.category)?e.category:'other',note:String(e.note||'').slice(0,60)});
+  for(const d of Array.isArray(r.debts)?r.debts:[]) if(n(d.amount)&&String(d.name||'').trim()) rep.items.push({t:d.kind==='returned'?'ret':'took',a:n(d.amount),name:String(d.name).trim().slice(0,40)});
+  for(const t of Array.isArray(r.asked)?r.asked:[]) if(String(t||'').trim()) rep.items.push({t:'ask',text:String(t).trim().slice(0,60)});
+  return rep; }
+async function erStoryParse(text){ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+  if(navigator.onLine&&caps&&caps.v>=7){ const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),45000);
+    try{ const r=await fetch(API_BASE+'/api/mk/day',{method:'POST',headers:{'content-type':'application/json'},signal:ctl.signal,body:JSON.stringify({id:mkId(),lang,text:text.slice(0,1500),names:(state.cust||[]).map(c=>c.name).filter(Boolean).slice(0,60)})});
+      const j=await r.json().catch(()=>({})); if(r.ok&&j.rep&&typeof j.rep==='object') return {rep:erStoryNorm(j.rep),src:'sf'}; if(j.error==='limit') return {rep:erStoryLocal(text),src:'local',limit:true}; }catch(e){} finally{ clearTimeout(to); } }
+  return {rep:erStoryLocal(text),src:'local'}; }
+function erCustFind(name){ const n=String(name||'').trim().toLowerCase().replace(/ё/g,'е'); if(!n) return null; const cs=state.cust||[];
+  return cs.find(c=>String(c.name||'').trim().toLowerCase().replace(/ё/g,'е')===n)||cs.find(c=>String(c.name||'').trim().toLowerCase().replace(/ё/g,'е').split(/\s+/)[0]===n.split(/\s+/)[0])||null; }
+function erStorySave(items,dd){ const sh=ensureShop(), ts=Date.now(), u={dd,sales:null,dayx:null,hadDayx:false,exp:[],cd:[],cust:[],ask:[]}; let n=0;
+  const cash=items.filter(x=>x.t==='cash').reduce((s,x)=>s+x.a,0), card=items.filter(x=>x.t==='card').reduce((s,x)=>s+x.a,0);
+  if(cash+card>0){ u.sales=sh.sales.filter(e=>e.date===dd); u.hadDayx=dd in state.dayx; u.dayx=u.hadDayx?JSON.parse(JSON.stringify(state.dayx[dd])):null;
+    const dx=Object.assign({},state.dayx[dd]||{}); delete dx.cash; delete dx.card; if(cash) dx.cash=cash; if(card) dx.card=card; state.dayx[dd]=dx;
+    sh.sales=sh.sales.filter(e=>e.date!==dd); u.saleId='s'+ts; sh.sales.push({id:u.saleId,date:dd,sum:Math.max(0,cash+card-(+dx.ret||0)),ts}); n+=(cash?1:0)+(card?1:0); }
+  items.forEach((x,i)=>{
+    if(x.t==='exp'){ const id='e'+ts+'_s'+i; sh.exp.push({id,date:dd,cat:x.cat,sum:x.a,note:x.note||'',ts:ts+i}); u.exp.push(id); n++; }
+    else if(x.t==='took'||x.t==='ret'){ let c=erCustFind(x.name); if(!c){ c={id:uid('c'),name:x.name,phone:'',size:'',note:'',reg:false}; state.cust.push(c); u.cust.push(c.id); }
+      const id=uid('cd'); state.cdebt.push({id,c:c.id,t:x.t==='ret'?'pay':'debt',a:x.a,d:dd,n:'',ts:ts+i}); u.cd.push(id); n++; }
+    else if(x.t==='ask'){ if(!Array.isArray(state.misc.ask)) state.misc.ask=[]; const id=uid('aq'); state.misc.ask.push({id,t:x.text,d:dd,ts:ts+i}); state.misc.ask=state.misc.ask.slice(-200); u.ask.push(id); n++; } });
+  persist(); render(); return {n,u}; }
+function erStoryUndo(u){ const sh=ensureShop(); if(u.saleId){ sh.sales=sh.sales.filter(e=>e.id!==u.saleId).concat(u.sales||[]); if(u.hadDayx) state.dayx[u.dd]=u.dayx; else delete state.dayx[u.dd]; }
+  sh.exp=sh.exp.filter(e=>!u.exp.includes(e.id)); state.cdebt=state.cdebt.filter(r=>!u.cd.includes(r.id)); state.cust=state.cust.filter(c=>!u.cust.includes(c.id));
+  if(Array.isArray(state.misc.ask)) state.misc.ask=state.misc.ask.filter(a=>!u.ask.includes(a.id)); persist(); render(); }
+function erStorySheet(text0){ let text=String(text0||''), busy=false;
+  const input=()=>{ openSheet(`<h3>${L.erStT}</h3><p class="lead">${L.erStLead}</p>
+      <div class="er-st-in"><textarea id="st-t" rows="5" maxlength="1500" placeholder="${esc(L.erStPh)}" aria-label="${esc(L.erStT)}">${esc(text)}</textarea><button type="button" class="er-mic" id="st-mic" aria-label="${esc(L.erStMic)}">${ico('mic',24)}</button></div>
+      <p class="er-ex">${esc(L.erStEx)}</p><div class="err" id="st-err"></div>
+      <button type="button" class="btn btn-primary btn-full" id="st-go">${L.erStGo}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    $('#st-mic').onclick=()=>{ try{ ideaDictate($('#st-t'),$('#st-mic')); }catch(e){ toast(L.voiceNo); } };
+    $('#st-go').onclick=async()=>{ if(busy) return; text=$('#st-t').value.trim(); if(text.length<3) return showErr($('#st-err'),L.erStEmpty);
+      try{ ideaMicStop($('#st-mic')); }catch(e){} busy=true; const b=$('#st-go'); b.disabled=true; b.textContent=L.erStBusy;
+      const res=await erStoryParse(text); busy=false; if(!$('#st-go')||!overlay.classList.contains('open')) return; result(res); }; };
+  const result=res=>{ const its=res.rep.items, dd=dkey(), had=sumOf(ensureShop().sales.filter(e=>e.date===dd)), hasRev=its.some(x=>x.t==='cash'||x.t==='card');
+    const lab=x=>x.t==='cash'?L.erStCash:x.t==='card'?L.erStCard:x.t==='exp'?L.erStExp+': '+esc(catLb(x.cat))+(x.note?' · '+esc(x.note):''):x.t==='ask'?L.erStAsk+': '+esc(x.text):(x.t==='ret'?L.erStRet:L.erStTook)+': '+esc(x.name)+(erCustFind(x.name)?'':` <small class="muted">(${L.erStNew})</small>`);
+    openSheet(`<h3>${L.erStResT}</h3>${res.src==='local'?`<p class="er-hint" id="st-local">${res.limit?L.erStLimit:L.erStLocal}</p>`:''}
+      ${its.length?`<div class="er-st-list" id="st-list">${its.map((x,i)=>`<div class="er-st-row"><input type="checkbox" id="st-c${i}" data-sti="${i}" checked><label for="st-c${i}">${lab(x)}</label>${x.t==='ask'?'':`<input type="number" inputmode="numeric" min="0" class="er-st-a" data-sta="${i}" value="${x.a}" aria-label="${esc(L.erResSum)}">`}</div>`).join('')}</div>`:`<p class="er-hint" id="st-none">${L.erStNone}</p>`}
+      ${hasRev&&had>0?`<p class="er-hint warn" id="st-has">${L.erStHas(money(had))}</p>`:''}
+      ${res.rep.unclear.length?`<div class="er-unc" id="st-unc"><b>${L.erStUnc}</b>${res.rep.unclear.map(t=>`<span>«${esc(t)}»</span>`).join('')}<small>${L.erStUncP}</small></div>`:''}
+      ${its.length?`<button type="button" class="btn btn-primary btn-full" id="st-save">${L.erStSave(its.length)}</button>`:''}
+      <div class="sheet-row"><button type="button" class="btn btn-ghost" id="st-edit">${L.erStEdit}</button><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    const picked=()=>its.map((x,i)=>{ const c=sheet.querySelector('[data-sti="'+i+'"]'); if(!c||!c.checked) return null; if(x.t==='ask') return x; const a=Math.round(+sheet.querySelector('[data-sta="'+i+'"]').value); return a>0?Object.assign({},x,{a}):null; }).filter(Boolean);
+    const upd=()=>{ const b=$('#st-save'); if(b){ const n=picked().length; b.textContent=L.erStSave(n); b.disabled=!n; } };
+    sheet.querySelectorAll('[data-sti],[data-sta]').forEach(e=>e.addEventListener('input',upd));
+    $('#st-edit').onclick=input;
+    if($('#st-save')) $('#st-save').onclick=()=>{ const p=picked(); if(!p.length) return; const out=erStorySave(p,dd);
+      openSheet(`<div class="ap"><div class="m7-ok">${ico('check',40)}</div><h3 style="justify-content:center" id="st-done">${L.erStSaved(out.n)}</h3>
+        <div class="sheet-row"><button type="button" class="btn btn-ghost" id="st-undo">${L.erStUndo}</button><button type="button" class="btn btn-primary" data-close>${L.m7VDone}</button></div></div>`);
+      $('#st-undo').onclick=()=>{ erStoryUndo(out.u); toast(L.erStUndone); closeSheet(); }; }; };
+  input(); }
+
+/* ---------- входы: «Сегодня», «Ещё», кнопка «Записать», подсказка Сифре ---------- */
+function erTodayHTML(){ const due=erDue()[0], c=erCur(); if(due) return `<button type="button" class="er-today m10-card ask" id="erToday" data-earn="1"><span class="er-ti">${ico('clock',22)}</span><span class="m10-tt"><b>${L.erTodayAsk}</b><small>${esc(due.t)}</small></span><span class="m10-go">›</span></button>`;
+  if(!c) return ''; const done=c.st==='done', m=erMonth();
+  return `<button type="button" class="er-today m10-card${done?' done':''}" id="erToday" data-earn="1"><span class="er-ti">${ico(done?'check':(ER_ICON[c.k]||'star'),22)}</span><span class="m10-tt"><b>${done?L.erTodayDone:L.erTodayDeal}</b><small>${done?(m>0?L.erMoreSum(money(m)):L.erDoneP):esc(erTitle(c.k))}</small></span><span class="m10-go">›</span></button>`; }
+function erAfter(){ const v=$('#view-today'); if(!v) return; let box=$('#erBox'); if(!box){ box=document.createElement('section'); box.id='erBox'; const anc=$('#m10Box'); if(anc) anc.after(box); else v.appendChild(box); } box.innerHTML=erTodayHTML(); }
+try{ const _r19=render; render=function(){ const x=_r19.apply(this,arguments); try{ erAfter(); }catch(e){} return x; }; }catch(e){}
+try{ MORE_DEF.unshift('earn'); MORE_DEF.length=4; const _mi19=moreItems; moreItems=function(){ const a=_mi19(); let s=''; try{ const m=erMonth(), c=erCur(); s=m>0?L.erMoreSum(money(m)):(c&&c.st!=='done'?erTitle(c.k):''); }catch(e){}
+    a.splice(1,0,{k:'earn',g:'m',a:'data-earn="1"',i:'cash',t:L.erTitle,s:s||L.erMoreSub0}); return a; }; }catch(e){}
+try{ const _ps19=m10PlusSheet; m10PlusSheet=function(){ const x=_ps19.apply(this,arguments);
+    try{ const acts=sheet.querySelector('.m10-acts'); if(acts&&!$('#erStoryBtn')){ acts.insertAdjacentHTML('afterend',`<button type="button" class="er-story" id="erStoryBtn"><span class="er-ti">${ico('mic',22)}</span><span class="m10-tt"><b>${L.erStBtn}</b><small>${L.erStBtnSub}</small></span><span class="m10-go">›</span></button>`); $('#erStoryBtn').onclick=()=>erStorySheet(); } }catch(e){} return x; }; }catch(e){}
+try{ const _cx19=sfCtx; sfCtx=function(){ const o=_cx19.apply(this,arguments); try{ const st=erSt(), c=erCur(), e={month_confirmed_tjs:erMonth()}; if(c&&c.st!=='done') e.task_of_week=erTitle(c.k);
+      if(st.chk&&st.chk.a){ const sc=erChkScore(st.chk.a); e.checkup={yes:sc.y,of:sc.n,weak:sc.weak?L.erG[sc.weak]:'',missing:(erNoList()||[]).map(erTitle).slice(0,8)}; } o.earn=e; }catch(e){} return o; }; }catch(e){}
+window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-earn]'); if(!t) return; e.preventDefault(); erSheet(); },true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
