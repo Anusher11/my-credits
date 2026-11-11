@@ -2011,6 +2011,14 @@
   .gp-m i em{transform-origin:left; animation:vzFill .35s ease-out;} @keyframes vzFill{from{transform:scaleX(.02);}}
   .mr-tile,.mr-li,.mr-search,.gp-lr,.gp-plan{transition:transform .1s ease-out;} .mr-tile:active,.mr-search:active,.gp-plan:active{transform:scale(.97);} .mr-li:active,.gp-lr:active{transform:scale(.99);}
   @media (prefers-reduced-motion:reduce){ .vz-pf .fc,.vz-pf .fp.last,.vz-b i,.gp-when.vz-ch b,.gp-m i em{animation:none;} .mr-tile,.mr-li,.mr-search,.gp-lr,.gp-plan{transition:none;} .mr-tile:active,.mr-search:active,.gp-plan:active,.mr-li:active,.gp-lr:active{transform:none;} }
+  /* низ страницы: место только под меню и кнопку «Записать». Раньше на «Сегодня» держали 220px под панель кнопок, которой давно нет, — оставалась пустая полоса */
+  .wrap, html[data-curtab="today"] .wrap{padding-bottom:calc(var(--navh) + 52px + env(safe-area-inset-bottom,0px));}
+  html[data-curtab="buy"] .wrap{padding-bottom:calc(160px + env(safe-area-inset-bottom,0px));}
+  html[data-simple] .wrap, html[data-simple][data-curtab="today"] .wrap{padding-bottom:calc(30px + env(safe-area-inset-bottom,0px));}
+  /* последняя строка: точка стоит перед текстом, а не у края экрана; по бокам место, чтобы значок Сифры не закрывал слова */
+  .sync{display:block; padding-inline:58px;} .sync .dot{display:inline-block; vertical-align:middle; margin-right:7px;}
+  /* свёрнутый значок Сифры: общий класс .mini делал его столбиком — получалась вытянутая капсула вместо круга */
+  .sf-fab.mini{flex-direction:row; flex:none;}
 </style>
 </head>
 <body>
