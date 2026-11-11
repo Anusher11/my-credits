@@ -1990,6 +1990,27 @@
   :root[data-theme="dark"] .g-m .m7-li-i,:root[data-theme="dark"] .g-m .mr-ti{background:#12382C; color:#8FE3C0;} :root[data-theme="dark"] .g-s .m7-li-i,:root[data-theme="dark"] .g-s .mr-ti{background:#3A2F14; color:#FFD98A;}
   :root[data-theme="dark"] .g-p .m7-li-i,:root[data-theme="dark"] .g-p .mr-ti{background:#2A2550; color:#C9BEFF;} :root[data-theme="dark"] .g-d .m7-li-i,:root[data-theme="dark"] .g-d .mr-ti{background:#263049; color:#C6CFE4;}
   @media (prefers-reduced-motion:reduce){ .gp-curve .ln,.lv.wait .lv-dot{animation:none;} .lv summary>svg{transition:none;} }
+  /* ===================== v18: графики и короткие анимации ===================== */
+  .vz-pf{display:block; width:100%; height:auto; margin:12px 0 0; overflow:visible;} .vz-pf .ax{stroke:var(--line); stroke-width:1;}
+  .vz-pf .pl{fill:none; stroke:color-mix(in srgb,var(--muted) 55%,var(--surface)); stroke-width:2.5; stroke-dasharray:5 5; stroke-linecap:round;}
+  .vz-pf .fc{fill:none; stroke:var(--vz); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:0; animation:gpDraw .45s ease-out;}
+  .vz-pf .fp{fill:var(--surface); stroke:var(--vz); stroke-width:2.5;} .vz-pf .fp.last{fill:var(--vz); transform-box:fill-box; transform-origin:center; animation:vzPop .3s ease-out;}
+  .vz-pf .td{stroke:var(--line-2,var(--line)); stroke-width:1; stroke-dasharray:2 3;} .vz-pf .xl{font-size:10px; font-weight:700; fill:var(--muted);}
+  .gp-track{--vz:var(--m11-go,#12B886);} .gp-track.behind{--vz:#D9773D;}
+  @keyframes vzPop{from{transform:scale(.2); opacity:.3;}}
+  .vz-leg{display:flex; gap:14px; margin:2px 0 0; font-size:.76rem; font-weight:700; color:var(--muted);} .vz-leg span{display:flex; align-items:center; gap:6px;}
+  .vz-leg i{display:block; width:18px; height:0; border-top:2.5px dashed color-mix(in srgb,var(--muted) 55%,var(--surface));} .vz-leg i.l2{border-top:3px solid var(--vz);}
+  .vz-sb{margin:10px 0 0; padding:12px; border:1px solid var(--line); border-radius:16px; background:var(--surface);} .vz-sb>small{display:block; font-size:.78rem; font-weight:800; color:var(--muted);} .vz-sb p{margin:8px 0 0; font-size:.8rem; line-height:1.4; color:var(--muted);} .vz-sb p:empty{display:none;}
+  .vz-bars{display:flex; align-items:flex-end; gap:8px; height:96px; margin-top:10px;} .vz-b{flex:1; min-width:0; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:4px;}
+  .vz-b b{font-size:.74rem; font-weight:800; font-variant-numeric:tabular-nums;} .vz-b span{font-size:.72rem; font-weight:700; color:var(--muted);}
+  .vz-b i{display:block; width:100%; max-width:38px; border-radius:6px 6px 2px 2px; background:var(--m11-go,#12B886); transform-origin:bottom; animation:vzGrow .35s ease-out;} .vz-b.est i{background:color-mix(in srgb,var(--m11-go,#12B886) 40%,var(--surface));}
+  @keyframes vzGrow{from{transform:scaleY(.05);}}
+  /* дата цели изменилась — короткая подсветка */
+  .gp-when.vz-ch b{animation:vzCh .5s ease-out;} @keyframes vzCh{0%{background:color-mix(in srgb,var(--m-sun,#FFC83D) 60%,transparent); box-shadow:0 0 0 4px color-mix(in srgb,var(--m-sun,#FFC83D) 60%,transparent);} 100%{background:transparent; box-shadow:0 0 0 4px transparent;}} .gp-when b{border-radius:6px;}
+  /* вехи заполняются, плитки отвечают на нажатие */
+  .gp-m i em{transform-origin:left; animation:vzFill .35s ease-out;} @keyframes vzFill{from{transform:scaleX(.02);}}
+  .mr-tile,.mr-li,.mr-search,.gp-lr,.gp-plan{transition:transform .1s ease-out;} .mr-tile:active,.mr-search:active,.gp-plan:active{transform:scale(.97);} .mr-li:active,.gp-lr:active{transform:scale(.99);}
+  @media (prefers-reduced-motion:reduce){ .vz-pf .fc,.vz-pf .fp.last,.vz-b i,.gp-when.vz-ch b,.gp-m i em{animation:none;} .mr-tile,.mr-li,.mr-search,.gp-lr,.gp-plan{transition:none;} .mr-tile:active,.mr-search:active,.gp-plan:active,.mr-li:active,.gp-lr:active{transform:none;} }
 </style>
 </head>
 <body>
@@ -4505,6 +4526,16 @@ en:{
   mrStatsSub:'Revenue, expenses, tips', mrWeekSub:'What happened in 7 days', mrCalNone:'No payments in the next two weeks', mrSimpleSub:'Only the essentials, large',
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M17S[k]);
+
+/* ----- v18: графики «план и факт», «продажи по месяцам» ----- */
+const M18S={
+ru:{ vzPfA:'График: план и то, что было на самом деле', vzToday:'сегодня', vzPlan:'по плану', vzFact:'на самом деле',
+  vzSbT:'Ваши продажи по месяцам, тыс. с.', vzSbA:n=>'Столбики: продажи за '+n+' мес.', vzSbAvg:v=>'В расчёт идёт среднее за три последних месяца — '+v, vzSbEst:'Светлые столбики — месяцы, где записаны не все дни: они достроены по записанным.' },
+tg:{ vzPfA:'График: нақша ва он чӣ воқеан шуд', vzToday:'имрӯз', vzPlan:'аз рӯи нақша', vzFact:'воқеан',
+  vzSbT:'Фурӯши шумо аз рӯи моҳҳо, ҳазор с.', vzSbA:n=>'Сутунҳо: фурӯш дар '+n+' моҳ', vzSbAvg:v=>'Ба ҳисоб миёнаи се моҳи охир меравад — '+v, vzSbEst:'Сутунҳои равшан — моҳҳое, ки на ҳама рӯзҳо навишта шудаанд: онҳо аз рӯи рӯзҳои навишташуда пурра карда шудаанд.' },
+en:{ vzPfA:'Chart: the plan and what really happened', vzToday:'today', vzPlan:'by the plan', vzFact:'in reality',
+  vzSbT:'Your sales by month, thousand s.', vzSbA:n=>'Bars: sales over '+n+' months', vzSbAvg:v=>'The estimate uses the average of the last three months — '+v, vzSbEst:'Pale bars are months where not every day was recorded: they are filled in from the recorded days.' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M18S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -10442,7 +10473,7 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
       <button class="sf-inv" data-sfinv="1"><span class="sf-ava">${SF_AVA}</span><span><b>${L.sfInvAsk}</b><small>${L.sfInvLead}</small></span></button>
       <div id="iv-idea"></div><div id="iv-offers"></div>
       <div class="field n big-in"><label>${L.ivCap}</label><div class="pin"><input id="iv-cap" type="number" inputmode="decimal" min="0" value="${P.cap||''}"><select id="iv-cur"><option value="USD" ${(P.cur||'USD')==='USD'?'selected':''}>$</option><option value="TJS" ${P.cur==='TJS'?'selected':''}>${L.cur}</option></select></div></div>
-      <div class="field n gp-sales"><label for="iv-sm">${L.gpSales}</label><div class="pin"><input id="iv-sm" type="number" inputmode="decimal" min="0" data-nodirty value="${P.capM!=null&&P.capM!==''?P.capM:''}" placeholder="${Math.round(ivCapMUSD().v*(usdRate()||1))}"><b>${L.cur}</b></div><small id="iv-smh"></small></div>
+      <div class="field n gp-sales"><label for="iv-sm">${L.gpSales}</label><div class="pin"><input id="iv-sm" type="number" inputmode="decimal" min="0" data-nodirty value="${P.capM!=null&&P.capM!==''?P.capM:''}" placeholder="${Math.round(ivCapMUSD().v*(usdRate()||1))}"><b>${L.cur}</b></div><small id="iv-smh"></small><div id="iv-sbar"></div></div>
       <div class="br-h">${ico('goal',18)} ${L.ivTarget}</div><div class="chips iv2-goal" id="iv-goal">${goalChips()}</div>
       <div class="field n iv2-own" id="iv-ownw" ${g.k==='sum'?'':'hidden'}><label>${L.ivGoalWant}</label><input id="iv-own" type="number" inputmode="decimal" min="0" value="${g.k==='sum'&&+g.v>0?g.v:''}" placeholder="${Math.round((+P.cap||0)*2)||''}"></div>
       <p class="iv2-gl" id="iv-gl"></p>
@@ -11020,6 +11051,40 @@ function m17After(){ const mv=$('#moreView'); if(mv) mv.innerHTML=m17MoreHTML();
 try{ const _r17=render; render=function(){ const x=_r17.apply(this,arguments); try{ m17After(); }catch(e){} return x; }; }catch(e){}
 /* на window, а не на document: обработчики разделов выше по коду гасят событие раньше, чем оно дойдёт до document */
 window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('#moreView [data-mk]'); if(!t) return; moreUse(t.dataset.mk); if(t.hasAttribute('data-more-idea')) ideaSheet(); },true);
+
+/* ===================== v18: графики со смыслом и короткие анимации =====================
+   Правило отбора (Cokely, Garcia-Retamero, 2017; Nielsen Norman Group): картинка показывает одну мысль и читается за секунду;
+   движение — 0,1–0,5 с и только чтобы показать, что изменилось. Декоративных эффектов нет. При «уменьшить движение» всё неподвижно.
+   1. «План и факт» — одна линия плана и точки того, что было на самом деле (Harkin и др., 2016: записанный прогресс помогает дойти).
+   2. «Продажи по месяцам» — столбики из записей выручки под полем продаж: видно, на чём стоит главная цифра расчёта. */
+function vzMon(d){ const m=(L.monthsNom||[])[d.getMonth()]||''; return m.slice(0,3).toLowerCase(); }
+/* 1. план и факт на одной кривой */
+function ivTrackSVG(t){ if(!t||!t.pl||!t.pl.cyc.length) return ''; const g=t.g, st=parseYmd(g.d), pl=t.pl, fs=(ivP().gf||[]).filter(x=>x&&x.d>=g.d).map(x=>({m:Math.max(0,(parseYmd(x.d)-st)/864e5/30.44),v:+x.v})).filter(x=>x.v>0);
+  if(!fs.length&&t.el<0.5) return '';
+  const lastF=fs.length?fs[fs.length-1].m:0, M=Math.max(6,Math.min(pl.ok?pl.m:240,Math.max(t.el,lastF)*2+3)), end=ivPlanVal(pl,M), vs=[g.cap,end].concat(fs.map(x=>x.v)), lo=Math.min.apply(null,vs), hi=Math.max.apply(null,vs)*1.02;
+  if(!(hi>lo)) return ''; const W=320,H=132,px=10,pt=16,pb=24, X=m=>px+(W-2*px)*Math.min(1,m/M), Y=v=>H-pb-(H-pt-pb)*Math.max(0,Math.min(1,(v-lo)/(hi-lo))), f=n=>n.toFixed(1);
+  const pts=[[0,g.cap]]; for(const c of pl.cyc){ if(c.A>=M) break; pts.push([c.A,c.v0]); if(c.E>=M){ pts.push([M,ivPlanVal(pl,M)]); break; } pts.push([c.E,c.v1]); } if(pts[pts.length-1][0]<M) pts.push([M,ivPlanVal(pl,M)]);
+  const dP=pts.map((p,i)=>(i?'L':'M')+f(X(p[0]))+' '+f(Y(p[1]))).join(' '), fp=[{m:0,v:g.cap}].concat(fs), dF=fp.map((p,i)=>(i?'L':'M')+f(X(p.m))+' '+f(Y(p.v))).join(' '), tx=X(Math.min(t.el,M));
+  return `<svg class="vz-pf" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(L.vzPfA)}"><line class="ax" x1="${px}" y1="${H-pb}" x2="${W-px}" y2="${H-pb}"/>
+    <path class="pl" d="${dP}"/>${t.el>0.2?`<line class="td" x1="${f(tx)}" y1="${pt-6}" x2="${f(tx)}" y2="${H-pb}"/><text class="xl" x="${f(Math.min(W-px-22,Math.max(px+22,tx)))}" y="${pt-8}" text-anchor="middle">${L.vzToday}</text>`:''}
+    ${fs.length?`<path class="fc" d="${dF}" pathLength="1"/>`:''}${fs.map((p,i)=>`<circle class="fp ${i===fs.length-1?'last':''}" cx="${f(X(p.m))}" cy="${f(Y(p.v))}" r="${i===fs.length-1?5:3.5}"/>`).join('')}
+    <text class="xl" x="${px}" y="${H-7}">${esc(vzMon(st)+' '+st.getFullYear())}</text><text class="xl" x="${W-px}" y="${H-7}" text-anchor="end">${esc(m8MonLabel(addDays(st,Math.round(M*30.44))))}</text></svg>
+    <div class="vz-leg"><span><i class="l1"></i>${L.vzPlan}</span><span><i class="l2"></i>${L.vzFact}</span></div>`; }
+{ const _th=ivTrackHTML; ivTrackHTML=function(D){ let h=_th(D); try{ const t=ivTrack(), s=t?ivTrackSVG(t):''; if(s){ const k='<div class="gp-tin">', i=h.indexOf(k); if(i>=0) h=h.slice(0,i)+s+h.slice(i); } }catch(e){} return h; }; }
+/* 2. продажи по месяцам из записей выручки */
+function ivSalesBarsHTML(){ let st; try{ st=monthStats(ensureShop().sales||[]); }catch(e){ return ''; } const now=new Date(), ms=[];
+  /* как и в расчёте: если в месяце записано меньше 20 дней, месяц достраивается по записанным дням (26 рабочих) */
+  for(let i=5;i>=0;i--){ const d=new Date(now.getFullYear(),now.getMonth()-i,1), x=st[monthKey(d)], n=x?x.days.size:0, cur=i===0, ok=n>=(cur?5:1); ms.push({d,v:ok?(n>=20?x.sum:x.sum/n*26):0,est:ok&&n<20,n,cur}); }
+  while(ms.length&&!ms[0].v) ms.shift(); if(ms.filter(x=>x.v>0).length<2) return '';
+  const mx=Math.max.apply(null,ms.map(x=>x.v)), k=v=>v>=1000?fx(v/1000,v>=10000?0:1):String(Math.round(v)), r=revEst(), anyEst=ms.some(x=>x.est);
+  return `<div class="vz-sb" id="vz-sb" role="img" aria-label="${esc(L.vzSbA(ms.length))}"><small>${L.vzSbT}</small><div class="vz-bars">${ms.map(x=>`<div class="vz-b ${x.est?'est':''}"><b>${x.v?(x.est?'≈ ':'')+k(x.v):''}</b><i style="height:${Math.max(x.v?6:2,Math.round(x.v/mx*100))}%"></i><span>${vzMon(x.d)}</span></div>`).join('')}</div>
+    <p>${r&&r.v>0?L.vzSbAvg(money(Math.round(r.v))):''}${anyEst?' '+L.vzSbEst:''}</p></div>`; }
+function ivSalesBarsDraw(){ const el=$('#iv-sbar'); if(el){ const h=ivSalesBarsHTML(); if(el.dataset.h!==h){ el.dataset.h=h; el.innerHTML=h; } } }
+/* 3. что изменилось после пересчёта: дата цели коротко подсвечивается */
+let vzWhen='';
+function vzFlash(){ const e=$('#gp .gp-when'); if(!e) return; const t=e.textContent; if(vzWhen&&t!==vzWhen){ e.classList.remove('vz-ch'); void e.offsetWidth; e.classList.add('vz-ch'); } vzWhen=t; }
+{ const _gb=ivGoalBind; ivGoalBind=function(box,D,api){ _gb(box,D,api); try{ vzFlash(); ivSalesBarsDraw(); }catch(e){} }; }
+{ const _is=investSheet; investSheet=function(){ vzWhen=''; const r=_is.apply(this,arguments); try{ ivSalesBarsDraw(); }catch(e){} return r; }; }
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
