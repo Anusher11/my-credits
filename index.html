@@ -2076,6 +2076,35 @@
   .er-st-row input[type=checkbox]{width:24px; height:24px; accent-color:var(--brand);} .er-st-row label{font-size:.92rem; font-weight:600; line-height:1.35; cursor:pointer;}
   .er-st-a{width:6.2em; min-height:40px; padding:6px 8px; border:1px solid var(--line); border-radius:10px; background:var(--bg); color:var(--ink); font:inherit; font-weight:800; text-align:right; font-variant-numeric:tabular-nums;}
   .er-unc{margin:0 0 12px; padding:12px 14px; border-radius:16px; background:var(--surface-2);} .er-unc b{display:block; font-size:.88rem;} .er-unc span{display:block; margin-top:4px; font-size:.9rem; line-height:1.4;} .er-unc small{display:block; margin-top:6px; font-size:.78rem; line-height:1.4; color:var(--muted);}
+  /* ===================== v20: «Заработок», товар и продажи ===================== */
+  .eg-seg3{grid-template-columns:1fr 1fr 1fr;} .eg-seg3 button{font-size:.88rem; padding:0 4px;}
+  .eg-days{margin:0 0 10px;}
+  .eg-list{margin:0 0 12px; border:1px solid var(--line); border-radius:18px; background:var(--surface); overflow:hidden;}
+  .eg-r{display:grid; grid-template-columns:1.6em minmax(0,1fr) auto; column-gap:8px; row-gap:6px; align-items:center; padding:10px 12px; border-top:1px solid var(--line);} .eg-list>div:first-child{border-top:0;}
+  .eg-n{font-size:.82rem; font-weight:800; color:var(--muted); text-align:right; font-variant-numeric:tabular-nums;}
+  .eg-t{min-width:0;} .eg-t b{display:block; font-size:.94rem; line-height:1.3; overflow-wrap:anywhere;} .eg-t small{display:block; font-size:.78rem; font-weight:600; color:var(--muted); line-height:1.35;}
+  .eg-v{font-size:.94rem; font-variant-numeric:tabular-nums; white-space:nowrap;}
+  .eg-r i{grid-column:2/-1; display:block; height:6px; border-radius:99px; background:var(--surface-2); overflow:hidden;} .eg-r i em{display:block; height:100%; border-radius:99px; background:var(--m11-go,#12B886);}
+  .eg-r.neg .eg-v{color:var(--warn,#B4531F);}
+  .eg-say{margin:0 0 12px; font-size:.95rem; font-weight:700; line-height:1.4;} .eg-sum{margin:0 0 10px; font-size:1.06rem; font-weight:800; line-height:1.35;}
+  .eg-s{display:grid; grid-template-columns:minmax(0,1fr) auto; column-gap:8px; row-gap:8px; align-items:center; padding:12px; border-top:1px solid var(--line);}
+  .eg-acts{grid-column:1/-1; display:flex; flex-wrap:wrap; gap:8px;} .eg-acts .gp-mini{margin:0;}
+  .eg-add{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:8px; margin:0 0 8px;} .eg-add input{min-height:52px; padding:10px 14px; border:1.5px solid var(--line); border-radius:16px; background:var(--surface); color:var(--ink); font:inherit; font-size:1rem;}
+  .eg-add input:focus{outline:none; border-color:var(--brand);} .eg-add .btn{min-height:52px; padding:0 18px;}
+  .eg-q{display:grid; grid-template-columns:minmax(0,1fr) auto auto; column-gap:6px; align-items:center; padding:10px 6px 10px 12px; border-top:1px solid var(--line);} .eg-q .gp-mini{margin:0;}
+  .eg-x{width:40px; height:40px; border:0; border-radius:50%; background:transparent; color:var(--muted); display:grid; place-items:center; cursor:pointer;}
+  .eg-plan{margin:0 0 10px; padding:14px 16px; border-radius:20px; background:var(--m-leaf-weak);} .eg-plan>small{display:block; font-size:.82rem; font-weight:700; color:var(--muted);}
+  .eg-plan>b{display:block; margin:2px 0 8px; font-size:1.3rem; font-weight:800; line-height:1.2; font-variant-numeric:tabular-nums;} .eg-plan.done>b{color:var(--m-leaf);}
+  .eg-plan>i{display:block; height:8px; border-radius:99px; background:var(--surface); overflow:hidden;} .eg-plan>i em{display:block; height:100%; border-radius:99px; background:var(--brand);}
+  .eg-plan>span{display:block; margin-top:6px; font-size:.88rem; font-weight:600;} .eg-plan>span+span{margin-top:2px; color:var(--muted);}
+  .eg-mo{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:4px; align-items:end; height:132px; margin:8px 0 10px;}
+  .eg-mb{display:grid; grid-template-rows:1fr auto; height:100%; min-width:0; align-items:end;} .eg-mb i{display:block; width:100%; border-radius:6px 6px 2px 2px; background:color-mix(in srgb,var(--m11-go,#12B886) 45%,var(--surface));}
+  .eg-mb span{display:block; margin-top:4px; font-size:.62rem; font-weight:700; color:var(--muted); text-align:center; overflow:hidden; white-space:nowrap;}
+  .eg-mb.best i{background:var(--m11-go,#12B886);} .eg-mb.cur i{background:var(--brand);} .eg-mb.cur span{color:var(--ink);} .eg-mb.thin i{opacity:.45;}
+  .eg-pair{margin:12px 0; padding:12px 14px; border-radius:16px; background:var(--m-leaf-weak);} .eg-pair small{display:block; font-size:.78rem; font-weight:800; color:var(--muted);} .eg-pair b{display:block; margin-top:2px; font-size:.98rem;}
+  .eg-pair span{display:block; margin-top:4px; font-size:.8rem; line-height:1.4; color:var(--muted);} .eg-pair .gp-mini{margin:8px 0 0;}
+  .er-today+.er-today{margin-top:10px;} .eg-askbtn{border-style:solid; border-color:var(--line);}
+  #eg-body select{width:100%;}
 </style>
 </head>
 <body>
@@ -4791,6 +4820,79 @@ en:{
   erAskedT:'Asked for, not in stock', erAskedP:'This comes here from the story of the day. Useful before buying.',
   erTodayDeal:'Task of the week', erTodayAsk:'How did it go?', erTodayDone:'Task of the week is done' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M19S[k]);
+
+/* ----- v20: «Заработок», второй заход — прибыль по товарам, товар без движения, набор, «спрашивали», план на день, месяцы ----- */
+const M20S={
+ru:{
+  egRowGoods:'Товар: прибыль и залежи', egRowGoodsS0:'Что кормит магазин и что держит деньги', egRowGoodsS:v=>'Без движения: '+v,
+  egRowAsk:'Спрашивали, а не было', egRowAskS0:'Записать одним нажатием', egRowAskS:(n,t)=>'За 90 дней записей: '+n+'. Чаще всего: '+t,
+  egRowPlan:'План на день и месяцы', egRowPlanS0:'Цель на месяц и сколько нужно сегодня', egPlDay:(a,b)=>'Сегодня '+a+' из '+b,
+  egGoodsT:'Товар', egTabP:'Прибыль', egTabS:'Без движения', egTabB:'Набор',
+  egPfLead:'Что на самом деле кормит магазин: число продаж, умноженное на заработок с одной вещи.', egPf30:'30 дней', egPf90:'90 дней', egPfRow:(n,u)=>n+' шт. × '+u,
+  egPfDiff:(a,b)=>'Чаще всего берут «'+a+'», а больше всего приносит «'+b+'».', egPfSame:a=>'«'+a+'» и берут чаще всего, и приносит больше всего.', egPfLoss:a=>'«'+a+'» продаётся в убыток: цена ниже себестоимости.',
+  egPfNoCost:n=>'Товаров без цены или себестоимости: '+n+'. Впишите их, чтобы они попали в расчёт.', egPfNone:'Пока нечего считать. Отмечайте продажу кнопкой «−» в карточке товара, и здесь появится список.', egPfGo:'Открыть товары',
+  egStLead:'Товар, который лежит больше двух месяцев без единой продажи. Он держит ваши деньги.', egStSum:(v,p)=>v+' без движения, это '+p+'% денег в товаре', egStSum0:n=>'Без движения товаров: '+n,
+  egStRow:(q,d)=>q+' шт., лежит '+d+' дн.', egStDisc:'Скидка', egStSet:'Набор', egStCard:'Карточка', egStNoCost:'себестоимость не указана', egStNone:'Залежавшегося товара нет: всё, что лежит дольше двух месяцев, продаётся.',
+  egBnLead:'Две вещи вместе чуть дешевле, чем по отдельности. Покупатель берёт вторую вещь, которую без набора не взял бы.', egBnA:'Главная вещь', egBnB:'Вторая вещь', egBnD:'Скидка на набор',
+  egBnBig:(s,f)=>'Набор за '+s+' вместо '+f, egBnSave:v=>'Покупатель экономит: '+v, egBnEarnSet:v=>'Заработок с набора: '+v, egBnEarnOne:v=>'С одной главной вещи: '+v,
+  egBnOk:v=>'Набор выгоден, когда без него взяли бы только главную вещь: +'+v, egBnBad:'Набор приносит меньше, чем одна главная вещь. Уменьшите скидку.', egBnNoCost:'Впишите себестоимость обеих вещей, и я покажу заработок.',
+  egBnKeep:'Запомнить пару', egBnKept:'Запомнила: буду подсказывать эту пару', egBnNeed:'Для набора нужны хотя бы две вещи с ценой в «Товарах».',
+  egPairT:'Предложите вместе', egPairAuto:'Подсказка: вещь дешевле главной и с хорошей наценкой. Пару можно выбрать самой.', egPairFixed:'Пара, которую вы выбрали.', egPairSet:'Посчитать набор',
+  egAqLead:'Когда товар спросили, а его нет, запишите одним нажатием. Перед закупкой здесь будет готовый список.', egAqPh:'Что спрашивали', egAqAdd:'Записать', egAqAgain:'Спросили снова',
+  egAqRow:(n,d)=>'Спрашивали: '+n+' · последний раз '+d, egAqNone:'Пока пусто.', egAqNote:'В исследовании продуктовых магазинов почти каждый третий, не найдя товар, купил его в другом месте.',
+  egAqToList:'В список покупок', egAqListed:'Добавила в список покупок', egAqInList:'Уже в списке покупок', egAqAdded:t=>'Записала: '+t, egAqErr:'Напишите, что спрашивали', egAqBtn:'Спросили, а не было', egAqDel:'Убрать',
+  egPlT:'План на день', egPlLeft:v=>'Осталось '+v, egPlDone:'План на день выполнен', egPlMonth:(a,b)=>'За месяц '+a+' из '+b,
+  egPlBe:'Цель месяца — выйти в ноль: покрыть аренду, зарплату, расходы и платежи по кредитам.', egPlOwn:'Это ваша цель на месяц.', egPlNone:'Поставьте цель по продажам на месяц, и я скажу, сколько нужно продавать в день.',
+  egPlGoal:'Своя цель на месяц, сомони', egPlLast:v=>'В прошлом месяце записано '+v, egPlSave:'Поставить цель', egPlClear:'Убрать свою цель', egPlHow:d=>'То, что осталось до цели, делится на оставшиеся дни месяца: '+d+'.', egPlSaved:'Цель поставлена', egPlCleared:'Своя цель убрана',
+  egMoT:'Продажи по месяцам', egMoNeed:n=>'Календарь появится, когда будут записи хотя бы за три месяца. Сейчас месяцев с записями: '+n+'.', egMoBest:(a,b)=>'Лучший месяц — '+a+', самый тихий — '+b+'.',
+  egMoFew:'Выводы о сезоне появятся после полугода записей.', egMoNote:'Считаются месяцы, где записано не меньше 15 дней.', egMoWd:'Лучшие дни недели', egTodayPlan:'План на день' },
+tg:{
+  egRowGoods:'Мол: фоида ва моли хобида', egRowGoodsS0:'Чӣ дӯконро мехӯронад ва чӣ пулро нигоҳ медорад', egRowGoodsS:v=>'Бе ҳаракат: '+v,
+  egRowAsk:'Пурсиданд, вале набуд', egRowAskS0:'Бо як пахш навиштан', egRowAskS:(n,t)=>'Дар 90 рӯз қайдҳо: '+n+'. Аз ҳама бештар: '+t,
+  egRowPlan:'Нақшаи рӯз ва моҳҳо', egRowPlanS0:'Мақсади моҳ ва имрӯз чӣ қадар лозим', egPlDay:(a,b)=>'Имрӯз '+a+' аз '+b,
+  egGoodsT:'Мол', egTabP:'Фоида', egTabS:'Бе ҳаракат', egTabB:'Маҷмӯа',
+  egPfLead:'Чӣ воқеан дӯконро мехӯронад: шумораи фурӯш зарб ба даромад аз як чиз.', egPf30:'30 рӯз', egPf90:'90 рӯз', egPfRow:(n,u)=>n+' дона × '+u,
+  egPfDiff:(a,b)=>'Аз ҳама бештар «'+a+'»-ро мегиранд, вале аз ҳама бештар «'+b+'» меорад.', egPfSame:a=>'«'+a+'»-ро ҳам аз ҳама бештар мегиранд, ҳам аз ҳама бештар меорад.', egPfLoss:a=>'«'+a+'» ба зарар фурӯхта мешавад: нарх аз арзиши аслӣ паст аст.',
+  egPfNoCost:n=>'Молҳои бе нарх ё арзиши аслӣ: '+n+'. Онҳоро нависед, то ба ҳисоб дароянд.', egPfNone:'Ҳоло чизе барои ҳисоб нест. Фурӯшро бо тугмаи «−» дар корти мол қайд кунед, ва рӯйхат дар ин ҷо пайдо мешавад.', egPfGo:'Кушодани молҳо',
+  egStLead:'Моле, ки зиёда аз ду моҳ бе ягон фурӯш хобидааст. Он пули шуморо нигоҳ медорад.', egStSum:(v,p)=>v+' бе ҳаракат, ин '+p+'% пули дар мол аст', egStSum0:n=>'Молҳои бе ҳаракат: '+n,
+  egStRow:(q,d)=>q+' дона, '+d+' рӯз хобидааст', egStDisc:'Тахфиф', egStSet:'Маҷмӯа', egStCard:'Корт', egStNoCost:'арзиши аслӣ нишон дода нашудааст', egStNone:'Моли хобида нест: ҳар чизе, ки зиёда аз ду моҳ истодааст, фурӯхта мешавад.',
+  egBnLead:'Ду чиз якҷоя каме арзонтар аз алоҳида. Харидор чизи дуюмро мегирад, ки бе маҷмӯа намегирифт.', egBnA:'Чизи асосӣ', egBnB:'Чизи дуюм', egBnD:'Тахфиф ба маҷмӯа',
+  egBnBig:(s,f)=>'Маҷмӯа ба '+s+' ба ҷои '+f, egBnSave:v=>'Харидор сарфа мекунад: '+v, egBnEarnSet:v=>'Даромад аз маҷмӯа: '+v, egBnEarnOne:v=>'Аз як чизи асосӣ: '+v,
+  egBnOk:v=>'Маҷмӯа он вақт фоидаовар аст, ки бе он танҳо чизи асосиро мегирифтанд: +'+v, egBnBad:'Маҷмӯа камтар аз як чизи асосӣ меорад. Тахфифро кам кунед.', egBnNoCost:'Арзиши аслии ҳарду чизро нависед, ман даромадро нишон медиҳам.',
+  egBnKeep:'Ҷуфтро дар хотир гирифтан', egBnKept:'Дар хотир гирифтам: ин ҷуфтро пешниҳод мекунам', egBnNeed:'Барои маҷмӯа ақаллан ду чизи нархдор дар «Молҳо» лозим аст.',
+  egPairT:'Якҷоя пешниҳод кунед', egPairAuto:'Маслиҳат: чиз аз асосӣ арзонтар ва бо иловаи нархи хуб. Ҷуфтро худатон интихоб карда метавонед.', egPairFixed:'Ҷуфте, ки шумо интихоб кардед.', egPairSet:'Ҳисоб кардани маҷмӯа',
+  egAqLead:'Вақте молро пурсиданд ва он набуд, бо як пахш нависед. Пеш аз харид дар ин ҷо рӯйхати тайёр мешавад.', egAqPh:'Чиро пурсиданд', egAqAdd:'Навиштан', egAqAgain:'Боз пурсиданд',
+  egAqRow:(n,d)=>'Пурсиданд: '+n+' · бори охир '+d, egAqNone:'Ҳоло холӣ аст.', egAqNote:'Дар тадқиқоти мағозаҳои хӯрокворӣ қариб ҳар сеюм нафар, ки молро наёфт, онро аз ҷои дигар харид.',
+  egAqToList:'Ба рӯйхати харид', egAqListed:'Ба рӯйхати харид илова кардам', egAqInList:'Аллакай дар рӯйхати харид аст', egAqAdded:t=>'Навиштам: '+t, egAqErr:'Нависед, ки чиро пурсиданд', egAqBtn:'Пурсиданд, вале набуд', egAqDel:'Гирифтан',
+  egPlT:'Нақшаи рӯз', egPlLeft:v=>'Боқӣ монд '+v, egPlDone:'Нақшаи рӯз иҷро шуд', egPlMonth:(a,b)=>'Дар моҳ '+a+' аз '+b,
+  egPlBe:'Мақсади моҳ — ба сифр баромадан: пӯшонидани иҷора, маош, хароҷот ва пардохтҳои қарз.', egPlOwn:'Ин мақсади шумо барои моҳ аст.', egPlNone:'Барои моҳ мақсади фурӯш гузоред, ва ман мегӯям, ки дар як рӯз чӣ қадар фурӯхтан лозим.',
+  egPlGoal:'Мақсади худ барои моҳ, сомонӣ', egPlLast:v=>'Дар моҳи гузашта '+v+' навишта шудааст', egPlSave:'Гузоштани мақсад', egPlClear:'Гирифтани мақсади худ', egPlHow:d=>'Он чи то мақсад мондааст, ба рӯзҳои боқимондаи моҳ тақсим мешавад: '+d+'.', egPlSaved:'Мақсад гузошта шуд', egPlCleared:'Мақсади худ гирифта шуд',
+  egMoT:'Фурӯш аз рӯи моҳҳо', egMoNeed:n=>'Тақвим он вақт пайдо мешавад, ки ақаллан барои се моҳ қайдҳо бошанд. Ҳоло моҳҳои қайддор: '+n+'.', egMoBest:(a,b)=>'Моҳи беҳтарин — '+a+', оромтарин — '+b+'.',
+  egMoFew:'Хулосаҳо дар бораи мавсим баъди ним соли қайдҳо пайдо мешаванд.', egMoNote:'Моҳҳое ҳисоб мешаванд, ки дар онҳо на камтар аз 15 рӯз навишта шудааст.', egMoWd:'Беҳтарин рӯзҳои ҳафта', egTodayPlan:'Нақшаи рӯз' },
+en:{
+  egRowGoods:'Goods: profit and slow stock', egRowGoodsS0:'What feeds the shop and what holds the money', egRowGoodsS:v=>'Not moving: '+v,
+  egRowAsk:'Asked for, not in stock', egRowAskS0:'Record with one tap', egRowAskS:(n,t)=>'Entries in 90 days: '+n+'. Most often: '+t,
+  egRowPlan:'Plan for the day and months', egRowPlanS0:'A monthly target and what is needed today', egPlDay:(a,b)=>'Today '+a+' of '+b,
+  egGoodsT:'Goods', egTabP:'Profit', egTabS:'Not moving', egTabB:'Bundle',
+  egPfLead:'What really feeds the shop: number of sales times the earnings on one item.', egPf30:'30 days', egPf90:'90 days', egPfRow:(n,u)=>n+' pcs × '+u,
+  egPfDiff:(a,b)=>'People buy "'+a+'" most often, but "'+b+'" earns the most.', egPfSame:a=>'"'+a+'" is both bought most often and earns the most.', egPfLoss:a=>'"'+a+'" sells at a loss: the price is below cost.',
+  egPfNoCost:n=>'Goods without a price or cost: '+n+'. Enter them so they are counted.', egPfNone:'Nothing to count yet. Mark a sale with the "−" button on the item card and the list will appear here.', egPfGo:'Open goods',
+  egStLead:'Stock that has sat for over two months without a single sale. It is holding your money.', egStSum:(v,p)=>v+' not moving, that is '+p+'% of the money in stock', egStSum0:n=>'Goods not moving: '+n,
+  egStRow:(q,d)=>q+' pcs, sitting '+d+' days', egStDisc:'Discount', egStSet:'Bundle', egStCard:'Card', egStNoCost:'cost not entered', egStNone:'No slow stock: everything older than two months is selling.',
+  egBnLead:'Two items together a little cheaper than separately. The buyer takes a second item they would not take without the bundle.', egBnA:'Main item', egBnB:'Second item', egBnD:'Bundle discount',
+  egBnBig:(s,f)=>'Bundle for '+s+' instead of '+f, egBnSave:v=>'The buyer saves: '+v, egBnEarnSet:v=>'Earnings on the bundle: '+v, egBnEarnOne:v=>'On the main item alone: '+v,
+  egBnOk:v=>'The bundle pays off when without it they would take only the main item: +'+v, egBnBad:'The bundle earns less than the main item alone. Lower the discount.', egBnNoCost:'Enter the cost of both items and I will show the earnings.',
+  egBnKeep:'Remember the pair', egBnKept:'Remembered: I will suggest this pair', egBnNeed:'A bundle needs at least two priced items in "Goods".',
+  egPairT:'Offer together', egPairAuto:'A hint: an item cheaper than the main one, with a good margin. You can choose the pair yourself.', egPairFixed:'The pair you chose.', egPairSet:'Work out a bundle',
+  egAqLead:'When someone asks for an item you do not have, record it with one tap. Before buying you will have a ready list here.', egAqPh:'What was asked for', egAqAdd:'Record', egAqAgain:'Asked again',
+  egAqRow:(n,d)=>'Asked: '+n+' · last time '+d, egAqNone:'Nothing yet.', egAqNote:'In a study of grocery shops, almost one in three people who did not find an item bought it elsewhere.',
+  egAqToList:'To the shopping list', egAqListed:'Added to the shopping list', egAqInList:'Already on the shopping list', egAqAdded:t=>'Recorded: '+t, egAqErr:'Write what was asked for', egAqBtn:'Asked for, not in stock', egAqDel:'Remove',
+  egPlT:'Plan for the day', egPlLeft:v=>v+' to go', egPlDone:'Plan for the day is met', egPlMonth:(a,b)=>'This month '+a+' of '+b,
+  egPlBe:'The monthly target is to break even: cover rent, pay, costs and loan payments.', egPlOwn:'This is your target for the month.', egPlNone:'Set a sales target for the month and I will tell you how much to sell per day.',
+  egPlGoal:'Your target for the month, somoni', egPlLast:v=>'Last month '+v+' was recorded', egPlSave:'Set the target', egPlClear:'Remove my target', egPlHow:d=>'What is left to the target is divided by the days left in the month: '+d+'.', egPlSaved:'Target set', egPlCleared:'Your target is removed',
+  egMoT:'Sales by month', egMoNeed:n=>'The calendar appears once there are records for at least three months. Months with records now: '+n+'.', egMoBest:(a,b)=>'Best month: '+a+', quietest: '+b+'.',
+  egMoFew:'Conclusions about the season appear after half a year of records.', egMoNote:'Months with at least 15 recorded days are counted.', egMoWd:'Best days of the week', egTodayPlan:'Plan for the day' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M20S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -11370,7 +11472,7 @@ function erOldDebt(){ let s=0; const lim=dkey(addDays(today0(),-30));
   try{ for(const c of state.cust||[]){ const st=custState(c); if(!(st.bal>0)) continue; const last=st.rows.length?st.rows[st.rows.length-1].d:''; if(st.overdue||(last&&last<=lim)) s+=st.bal; } }catch(e){} return Math.round(s); }
 /* товар, который завели больше двух месяцев назад и ни разу не отметили продажу за это время */
 function erStale(){ let s=0; const lim=dkey(addDays(today0(),-60));
-  try{ for(const x of state.inv||[]){ if(!(+x.cost>0)||!x.d||x.d>lim) continue; let q=0; for(const k in x.sizes||{}) q+=+x.sizes[k]||0; if(!q) continue;
+  try{ for(const x of state.inv||[]){ if(x.arch||!(+x.cost>0)||!x.d||x.d>lim) continue; let q=0; for(const k in x.sizes||{}) q+=+x.sizes[k]||0; if(!q) continue;
       if((state.invLog||[]).some(l=>l.i===x.id&&l.k==='sale'&&l.d>lim)) continue; s+=q*+x.cost; } }catch(e){} return Math.round(s); }
 function erEst(k){ if(k==='price'){ const r=erRev(); return r>0?L.erEstPrice(money(Math.max(10,Math.round(r*0.02/10)*10))):''; }
   if(k==='debts'){ const v=erOldDebt(); return v>0?L.erEstDebt(money(v)):''; } if(k==='stale'){ const v=erStale(); return v>0?L.erEstStale(money(v)):''; } return ''; }
@@ -11395,14 +11497,14 @@ function erFinish(o,mode,v){ const st=erSt(), ts=Date.now(); st.done[o.k]=ts; if
 
 /* ---------- главный лист ---------- */
 function erDealHTML(c){ if(!c||c.st==='done') return `<div class="er-deal done" id="er-deal"><div class="er-dh"><span class="er-di ok">${ico('check',22)}</span><div><small>${L.erDealT}</small><b>${c?L.erDoneT:L.erDoneP}</b></div></div>${c?`<p>${L.erDoneP}</p>`:''}<button type="button" class="btn btn-ghost btn-full" id="er-more1">${L.erMore1}</button></div>`;
-  const d=L.erD[c.k]||L.erD.review, est=erEst(c.k), tool=c.k==='price'||c.k==='cost'||c.k==='rivals'?['price',L.erGoPrice]:c.k==='debts'?['debt',L.erGoDebt]:c.k==='records'?['story',L.erGoStory]:null;
+  const d=L.erD[c.k]||L.erD.review, est=erEst(c.k), tool=c.k==='price'||c.k==='rivals'?['price',L.erGoPrice]:c.k==='debts'?['debt',L.erGoDebt]:c.k==='records'?['story',L.erGoStory]:c.k==='cost'?['profit',L.egRowGoods]:c.k==='stale'?['stale',L.egRowGoods]:c.k==='nostock'?['asked',L.egRowAsk]:c.k==='target'||c.k==='review'?['plan',L.egRowPlan]:null;
   return `<div class="er-deal" id="er-deal" data-k="${c.k}"><div class="er-dh"><span class="er-di">${ico(ER_ICON[c.k]||'star',22)}</span><div><small>${L.erDealT}</small><b>${esc(d.t)}</b></div></div>
     <p>${esc(d.d)}</p>${est?`<p class="er-est">${esc(est)}</p>`:''}<p class="er-why">${c.why==='chk'?L.erWhyChk:c.why==='data'?L.erWhyData:L.erWhyDef}</p>
     <button type="button" class="btn btn-primary btn-full" id="er-sf">${L.erWith}</button>
     ${tool?`<button type="button" class="btn btn-ghost btn-full" id="er-tool" data-t="${tool[0]}">${tool[1]}</button>`:''}
     <div class="sheet-row"><button type="button" class="btn btn-ghost" id="er-other">${L.erOther}</button><button type="button" class="btn btn-ghost" id="er-done">${L.erDone}</button></div></div>`; }
 function erSheet(){ const st=erSt(), cur=erHold(), due=erDue(), m=erMonth(), all=st.log.reduce((s,x)=>s+(+x.v||0),0), mk=monthKey(new Date());
-  const rows=st.log.filter(x=>String(x.d).slice(0,7)===mk).slice(-6).reverse(), chk=st.chk&&st.chk.a?erChkScore(st.chk.a):null, asked=(state.misc.ask||[]).slice(-6).reverse();
+  const rows=st.log.filter(x=>String(x.d).slice(0,7)===mk).slice(-6).reverse(), chk=st.chk&&st.chk.a?erChkScore(st.chk.a):null;
   const tool=(k,i,t,s)=>`<button type="button" class="m7-li er-tool" data-er="${k}"><span class="m7-li-i">${ico(i,22)}</span><span class="m7-li-t"><b>${t}</b><small>${s}</small></span>${ico('next',18)}</button>`;
   openSheet(`<h3>${L.erTitle}</h3><p class="lead">${L.erLead}</p>
     <div class="er-cnt" id="er-cnt"><small>${L.erCntT}</small><b id="er-sum">+${money(m)}</b>${all>m?`<span>${L.erCntAll(money(all))}</span>`:''}${st.log.length?'':`<span>${L.erCntSub0}</span>`}
@@ -11410,20 +11512,18 @@ function erSheet(){ const st=erSt(), cur=erHold(), due=erDue(), m=erMonth(), all
       <button type="button" class="gp-mini" id="er-add">${L.erAdd}</button></div>
     ${due.map(p=>`<div class="er-ask" data-pid="${esc(p.id)}">${ico('clock',20)}<span><b>${L.erAskT}</b><small>${esc(L.erAsk(p.t))}</small></span><button type="button" class="gp-mini" data-erask="${esc(p.id)}">${L.erAskBtn}</button></div>`).join('')}
     ${erDealHTML(cur)}
-    <div class="m7-list er-tools">${tool('chk','check',L.erChkT,chk?L.erChkSub(chk.y,chk.n):L.erChkNot)}${tool('price','tag',L.erPrT,L.erPrSub)}${tool('story','mic',L.erStT,L.erStSub)}</div>
-    ${asked.length?`<div class="er-asked"><h4>${L.erAskedT}</h4><p>${L.erAskedP}</p>${asked.map(a=>`<div class="er-row"><span>${esc(a.t)}<small>${fmtDate(parseYmd(a.d))}</small></span><button type="button" data-eraq="${esc(a.id)}" aria-label="${esc(L.erDel)}">${ico('close',16)}</button></div>`).join('')}</div>`:''}
+    <div class="m7-list er-tools">${tool('chk','check',L.erChkT,chk?L.erChkSub(chk.y,chk.n):L.erChkNot)}${tool('price','tag',L.erPrT,L.erPrSub)}${tool('story','mic',L.erStT,L.erStSub)}${typeof egRowsHTML==='function'?egRowsHTML(tool):''}</div>
     <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
   const on=(sel,fn)=>{ const e=$(sel); if(e) e.onclick=fn; };
   on('#er-add',()=>erAddSheet());
   on('#er-sf',()=>{ const d=L.erD[cur.k]||L.erD.review; sifraOpen(L.erSfQ(d.t,d.d).slice(0,690)); });
-  on('#er-tool',()=>{ const t=$('#er-tool').dataset.t; if(t==='price') erPriceSheet('up'); else if(t==='story') erStorySheet(); else { closeSheet(); setTab('shop'); try{ setShopSub('debt'); }catch(e){} } });
+  on('#er-tool',()=>{ const t=$('#er-tool').dataset.t; if(t==='price') erPriceSheet('up'); else if(t==='story') erStorySheet(); else if(t==='profit') egGoodsSheet('profit'); else if(t==='stale') egGoodsSheet('stale'); else if(t==='asked') egAskedSheet(); else if(t==='plan') egPlanSheet(); else { closeSheet(); setTab('shop'); try{ setShopSub('debt'); }catch(e){} } });
   on('#er-done',()=>erResSheet({k:cur.k,t:erTitle(cur.k)}));
   on('#er-other',()=>{ const wk=erWeek(); for(const k in st.skip) if(st.skip[k]!==wk) delete st.skip[k]; st.skip[cur.k]=wk; st.wk=null; persist(); render(); erSheet(); });
   on('#er-more1',()=>{ if(!erCands().length) st.skip={}; st.wk=null; persist(); render(); erSheet(); });
-  sheet.querySelectorAll('[data-er]').forEach(b=>b.onclick=()=>{ const k=b.dataset.er; if(k==='chk') erChkSheet(); else if(k==='price') erPriceSheet('up'); else erStorySheet(); });
+  sheet.querySelectorAll('[data-er]').forEach(b=>b.onclick=()=>{ const k=b.dataset.er; if(k==='chk') erChkSheet(); else if(k==='price') erPriceSheet('up'); else if(k==='goods') egGoodsSheet(); else if(k==='asked') egAskedSheet(); else if(k==='plan') egPlanSheet(); else erStorySheet(); });
   sheet.querySelectorAll('[data-erask]').forEach(b=>b.onclick=()=>{ const p=st.pend.find(x=>x.id===b.dataset.erask); if(p) erResSheet({k:p.k,t:p.t,pid:p.id,n:p.n}); });
-  sheet.querySelectorAll('[data-erdel]').forEach(b=>b.onclick=()=>{ st.log=st.log.filter(x=>x.id!==b.dataset.erdel); persist(); render(); erSheet(); });
-  sheet.querySelectorAll('[data-eraq]').forEach(b=>b.onclick=()=>{ state.misc.ask=(state.misc.ask||[]).filter(x=>x.id!==b.dataset.eraq); persist(); erSheet(); }); }
+  sheet.querySelectorAll('[data-erdel]').forEach(b=>b.onclick=()=>{ st.log=st.log.filter(x=>x.id!==b.dataset.erdel); persist(); render(); erSheet(); }); }
 function erResSheet(o){ openSheet(`<h3>${L.erResT}</h3><p class="lead">${esc(L.erResP(o.t))}</p>
     <div class="field n big-in"><label for="er-v">${L.erResSum}</label><input id="er-v" type="number" inputmode="numeric" min="0" placeholder="0"></div>
     <div class="err" id="er-err"></div><button type="button" class="btn btn-primary btn-full" id="er-save">${L.erResSave}</button>
@@ -11479,7 +11579,7 @@ function erPriceCalc(mode,p,c,n,by,disc){ const o={lines:[],bad:false};
         if(n>0){ o.need2=Math.ceil(n*k-1e-9); o.lines.push(['big',L.erPrDn2(kt,o.need2,n)]); } else o.lines.push(['big',L.erPrDn2p(kt,Math.ceil((k-1)*100-1e-9))]); } }
     o.lines.push(['note',L.erPrDn4]); }
   return o; }
-function erPriceSheet(mode0){ let mode=mode0==='dn'?'dn':'up', by=5, disc=10, name='';
+function erPriceSheet(mode0,pre){ let mode=mode0==='dn'?'dn':'up', by=5, disc=10, name=(pre&&pre.name)||'';
   const items=(state.inv||[]).filter(x=>+x.price>0).map(x=>({x,n:erSold30(x.id)})).sort((a,b)=>b.n-a.n).slice(0,6);
   const chips=(arr,cur,attr,suf)=>arr.map(v=>`<button type="button" class="chip ${v===cur?'on':''}" ${attr}="${v}" aria-pressed="${v===cur}">${suf(v)}</button>`).join('');
   const draw=(keep)=>{ const kv=keep||{p:'',c:'',n:''};
@@ -11502,7 +11602,7 @@ function erPriceSheet(mode0){ let mode=mode0==='dn'?'dn':'up', by=5, disc=10, na
     pick('[data-prby]',v=>{ by=v; }); pick('[data-prd]',v=>{ disc=v; });
     $('#pr-own').addEventListener('input',e=>{ const v=+e.target.value; if(!(v>0)) return; if(mode==='up') by=v; else disc=Math.min(95,v); sheet.querySelectorAll('[data-prby],[data-prd]').forEach(y=>{ y.classList.remove('on'); y.setAttribute('aria-pressed','false'); }); calc(); });
     $('#pr-back').onclick=()=>erSheet(); calc(); };
-  draw(); }
+  draw(pre?{p:pre.p||'',c:pre.c||'',n:pre.n||''}:null); }
 
 /* ---------- рассказ о дне: один рассказ — несколько записей ---------- */
 const ER_EXP=[['power',/свет|электр|барк|барқ|power|electric/],['rent',/аренд|иҷор|ичор|rent/],['tax',/налог|патент|андоз|tax/],['salary',/зарплат|продавц|продавщ|маош|salary|wage/],['transport',/такси|дорог|бензин|доставк|карго|роҳ|taxi|fuel|deliver/],['util',/вод[ауые]|газ|мусор|интернет|связ|уборк|об |water|internet/],['house',/ремонт|полк|вешал|лампоч|таъмир|repair|shelf/]];
@@ -11586,7 +11686,7 @@ function erStorySheet(text0){ let text=String(text0||''), busy=false;
 function erTodayHTML(){ const due=erDue()[0], c=erCur(); if(due) return `<button type="button" class="er-today m10-card ask" id="erToday" data-earn="1"><span class="er-ti">${ico('clock',22)}</span><span class="m10-tt"><b>${L.erTodayAsk}</b><small>${esc(due.t)}</small></span><span class="m10-go">›</span></button>`;
   if(!c) return ''; const done=c.st==='done', m=erMonth();
   return `<button type="button" class="er-today m10-card${done?' done':''}" id="erToday" data-earn="1"><span class="er-ti">${ico(done?'check':(ER_ICON[c.k]||'star'),22)}</span><span class="m10-tt"><b>${done?L.erTodayDone:L.erTodayDeal}</b><small>${done?(m>0?L.erMoreSum(money(m)):L.erDoneP):esc(erTitle(c.k))}</small></span><span class="m10-go">›</span></button>`; }
-function erAfter(){ const v=$('#view-today'); if(!v) return; let box=$('#erBox'); if(!box){ box=document.createElement('section'); box.id='erBox'; const anc=$('#m10Box'); if(anc) anc.after(box); else v.appendChild(box); } box.innerHTML=erTodayHTML(); }
+function erAfter(){ const v=$('#view-today'); if(!v) return; let box=$('#erBox'); if(!box){ box=document.createElement('section'); box.id='erBox'; const anc=$('#m10Box'); if(anc) anc.after(box); else v.appendChild(box); } box.innerHTML=erTodayHTML()+(typeof egTodayHTML==='function'?egTodayHTML():''); }
 try{ const _r19=render; render=function(){ const x=_r19.apply(this,arguments); try{ erAfter(); }catch(e){} return x; }; }catch(e){}
 try{ MORE_DEF.unshift('earn'); MORE_DEF.length=4; const _mi19=moreItems; moreItems=function(){ const a=_mi19(); let s=''; try{ const m=erMonth(), c=erCur(); s=m>0?L.erMoreSum(money(m)):(c&&c.st!=='done'?erTitle(c.k):''); }catch(e){}
     a.splice(1,0,{k:'earn',g:'m',a:'data-earn="1"',i:'cash',t:L.erTitle,s:s||L.erMoreSub0}); return a; }; }catch(e){}
@@ -11595,6 +11695,147 @@ try{ const _ps19=m10PlusSheet; m10PlusSheet=function(){ const x=_ps19.apply(this
 try{ const _cx19=sfCtx; sfCtx=function(){ const o=_cx19.apply(this,arguments); try{ const st=erSt(), c=erCur(), e={month_confirmed_tjs:erMonth()}; if(c&&c.st!=='done') e.task_of_week=erTitle(c.k);
       if(st.chk&&st.chk.a){ const sc=erChkScore(st.chk.a); e.checkup={yes:sc.y,of:sc.n,weak:sc.weak?L.erG[sc.weak]:'',missing:(erNoList()||[]).map(erTitle).slice(0,8)}; } o.earn=e; }catch(e){} return o; }; }catch(e){}
 window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-earn]'); if(!t) return; e.preventDefault(); erSheet(); },true);
+
+/* ===================== v20: «Заработок», второй заход — товар и продажи =====================
+   Что добавлено: прибыль по товарам, товар без движения, набор из двух вещей и подсказка «предложите вместе»,
+   «спрашивали, а не было» одним нажатием, план на день, продажи по месяцам.
+   Что уже было в приложении и не повторяется: деньги в товаре и скорость продажи (вкладка «Товары»), лучшие дни недели и
+   год к году (вкладка «Статистика»), точка безубыточности (вкладка «Магазин») — новые экраны опираются на них.
+   Откуда:
+   - McKenzie, Woodruff (NBER w21505): приёмы R5–R6 «знать себестоимость и самый прибыльный товар», B3 «не оставаться без товара»,
+     F2–F3 «цель по продажам и сверка с ней» — это три из 26 приёмов, связанных с прибылью;
+   - FMI/GMA, исследование нехватки товара в продуктовой рознице: 31% покупателей, не найдя товар, покупают его в другом месте;
+   - исследование сети магазинов (Penn State, 146 недель): предложение продавца «возьмите ещё» увеличивает продажи →
+     подсказка, что предложить вместе, и расчёт набора;
+   - Harkin и др. (2016, метаанализ): кто сверяется с целью, достигает её чаще → план на день показывает, сколько осталось. */
+function egItems(){ return (state.inv||[]).filter(x=>!x.arch); }
+function egSold(id,days){ const lim=dkey(addDays(today0(),-days)); let n=0; for(const l of state.invLog||[]) if(l.i===id&&l.k==='sale'&&l.d>lim&&+l.q<0) n-=+l.q; return n; }
+/* прибыль по товарам: продано × (цена − себестоимость) */
+function egProfit(days){ const rows=[], loss=[]; let noCost=0, sales=0;
+  for(const x of state.inv||[]){ const n=egSold(x.id,days); if(!(n>0)) continue; sales+=n; const p=+x.price||0, c=+x.cost||0; if(!(p>0&&c>0)){ noCost++; continue; } const r={x,n,u:p-c,pr:n*(p-c),rev:n*p}; rows.push(r); if(r.u<=0) loss.push(r); }
+  rows.sort((a,b)=>b.pr-a.pr||b.n-a.n); const byN=rows.slice().sort((a,b)=>b.n-a.n||b.pr-a.pr)[0]||null; return {rows,loss,noCost,sales,top:rows[0]||null,byN}; }
+/* без движения: заведено больше 60 дней назад, остаток есть, за 60 дней ни одной отметки о продаже */
+function egStale(){ const lim=dkey(addDays(today0(),-60)), rows=[]; let all=0, t=today0();
+  for(const x of egItems()){ const q=invTotal(x), c=+x.cost||0; all+=q*c; if(!q||!x.d||x.d>lim) continue; if((state.invLog||[]).some(l=>l.i===x.id&&l.k==='sale'&&l.d>lim)) continue;
+    rows.push({x,q,v:q*c,days:Math.round((t-parseYmd(x.d))/864e5)}); }
+  rows.sort((a,b)=>b.v-a.v||b.days-a.days); const v=rows.reduce((s,r)=>s+r.v,0); return {rows,v:Math.round(v),all:Math.round(all),pct:all>0?Math.round(v/all*100):0}; }
+/* что предложить вместе: не дороже половины главной вещи, по возможности другого вида, с лучшим заработком с одной штуки */
+function egPair(x){ if(x.pair){ const y=egItems().find(i=>i.id===x.pair&&i.id!==x.id&&invTotal(i)>0); if(y) return {y,fixed:true}; }
+  const p=+x.price||0; let best=null, bs=-1; for(const y of egItems()){ if(y.id===x.id||invTotal(y)<=0||!(+y.price>0)) continue; if(p>0&&+y.price>p*0.5) continue; if(+y.cost>0&&+y.price<=+y.cost) continue; /* дополнение — не дороже половины главной вещи и не в убыток */
+    /* без себестоимости заработок неизвестен — такая вещь идёт последней, а не первой */
+    const s=(x.cat&&y.cat&&x.cat!==y.cat?1e6:0)+(+y.cost>0?1e5+Math.max(0,+y.price-+y.cost):0); if(s>bs){ bs=s; best=y; } }
+  return best?{y:best,fixed:false}:null; }
+function egBundle(a,b,disc){ const pa=+a.price||0, pb=+b.price||0, ca=+a.cost||0, cb=+b.cost||0, full=pa+pb, set=Math.round(full*(1-disc/100)), prSet=set-ca-cb, prA=pa-ca;
+  return {full,set,save:full-set,prSet,prA,ok:prSet>prA,haveCost:ca>0&&cb>0}; }
+/* спрашивали, а не было */
+function egAskKey(t){ return String(t||'').toLowerCase().replace(/ё/g,'е').replace(/\s+/g,' ').trim(); }
+function egAsked(days){ const lim=dkey(addDays(today0(),-(days||90))), by={}; for(const a of (state.misc&&state.misc.ask)||[]){ if(!a||a.d<=lim) continue; const k=egAskKey(a.t); if(!k) continue; const o=by[k]||(by[k]={k,t:a.t,n:0,last:''}); o.n++; if(a.d>=o.last){ o.last=a.d; o.t=a.t; } }
+  return Object.values(by).sort((a,b)=>b.n-a.n||b.last.localeCompare(a.last)); }
+function egAskAdd(t){ t=String(t||'').replace(/\s+/g,' ').trim().slice(0,60); if(t.length<2) return false; state.misc=state.misc||{}; if(!Array.isArray(state.misc.ask)) state.misc.ask=[];
+  state.misc.ask.push({id:uid('aq'),t,d:dkey(),ts:Date.now()}); state.misc.ask=state.misc.ask.slice(-300); persist(); return true; }
+/* план на день: до цели месяца осталось столько-то, дней осталось столько-то */
+function egPlan(){ const sh=ensureShop(), now=today0(), dim=new Date(now.getFullYear(),now.getMonth()+1,0).getDate(), mk=monthKey(now), td=dkey(), inM=e=>String(e.date).slice(0,7)===mk;
+  const sold=sumOf(sh.sales.filter(inM)), soldT=sumOf(sh.sales.filter(e=>e.date===td)), st=erSt(); let T=0, src='';
+  if(+st.goalM>0){ T=+st.goalM; src='own'; }
+  else { let cfg=null; try{ cfg=beLoad(); }catch(e){} if(cfg){ let loans=0; try{ loans=cfg.useLoans===false?0:beLoanMonthly(activeList().filter(y=>!y.loan.example)); }catch(e){}
+      const fm=(+cfg.rent||0)+(+cfg.salary||0)+(+cfg.other||0)+loans, mg=Math.min(99,Math.max(1,+cfg.margin||1))/100; if(fm>0){ T=(fm+sumOf(sh.exp.filter(inM)))/mg; src='be'; } } }
+  if(!(T>0)) return null; const days=dim-now.getDate()+1, plan=Math.max(0,Math.round((T-(sold-soldT))/days/10)*10);
+  return {T:Math.round(T),src,sold,soldT,plan,left:Math.max(0,plan-soldT),done:sold>=T||(plan>0&&soldT>=plan)||plan===0,days}; }
+function egLastMonth(){ const d=new Date(today0().getFullYear(),today0().getMonth()-1,1), mk=monthKey(d); return sumOf(ensureShop().sales.filter(e=>String(e.date).slice(0,7)===mk)); }
+function egMonths(){ const sh=ensureShop(), now=today0(), by={}, days={}; for(const e of sh.sales){ const mk=String(e.date).slice(0,7); by[mk]=(by[mk]||0)+(+e.sum||0); (days[mk]||(days[mk]=new Set())).add(e.date); }
+  const out=[]; for(let i=11;i>=0;i--){ const d=new Date(now.getFullYear(),now.getMonth()-i,1), mk=monthKey(d), n=days[mk]?days[mk].size:0; out.push({mk,m:d.getMonth(),v:Math.round(by[mk]||0),n,cur:i===0,full:n>=15}); }
+  const full=out.filter(o=>o.full&&!o.cur); let best=null, weak=null; if(full.length>=6){ for(const o of full){ if(!best||o.v>best.v) best=o; if(!weak||o.v<weak.v) weak=o; } }
+  return {rows:out,known:out.filter(o=>o.full).length,best,weak}; }
+
+/* ---------- строки в листе «Заработок» ---------- */
+function egRowsHTML(tool){ let sv=0, aq=[], pl=null; try{ sv=egStale().v; }catch(e){} try{ aq=egAsked(90); }catch(e){} try{ pl=egPlan(); }catch(e){}
+  return tool('goods','box',L.egRowGoods,sv>0?L.egRowGoodsS(money(sv)):L.egRowGoodsS0)+tool('asked','search',L.egRowAsk,aq.length?L.egRowAskS(aq.reduce((s,o)=>s+o.n,0),esc(aq[0].t)):L.egRowAskS0)
+    +tool('plan','goal',L.egRowPlan,pl?L.egPlDay(money(pl.soldT),money(pl.plan)):L.egRowPlanS0); }
+
+/* ---------- товар: прибыль, без движения, набор ---------- */
+function egGoodsSheet(tab0,pre){ let tab=tab0==='stale'||tab0==='bundle'?tab0:'profit', days=90, disc=10, a=pre&&pre.a||null, b=pre&&pre.b||null;
+  const seg=()=>`<div class="er-seg eg-seg3" role="tablist">${[['profit',L.egTabP],['stale',L.egTabS],['bundle',L.egTabB]].map(t=>`<button type="button" role="tab" data-egt="${t[0]}" class="${tab===t[0]?'on':''}" aria-selected="${tab===t[0]}">${t[1]}</button>`).join('')}</div>`;
+  const foot=`<div class="sheet-row"><button type="button" class="btn btn-ghost" id="eg-back">${L.erBack}</button></div>`;
+  const profit=()=>{ const P=egProfit(days), mx=Math.max(1,...P.rows.map(r=>r.pr));
+    if(!P.sales) return `<p class="lead">${L.egPfLead}</p><p class="er-hint" id="eg-none">${L.egPfNone}</p><button type="button" class="btn btn-ghost btn-full" id="eg-goods">${L.egPfGo}</button>`;
+    return `<p class="lead">${L.egPfLead}</p><div class="chips eg-days">${[30,90].map(d=>`<button type="button" class="chip ${d===days?'on':''}" data-egd="${d}" aria-pressed="${d===days}">${d===30?L.egPf30:L.egPf90}</button>`).join('')}</div>
+      ${P.rows.length?`<div class="eg-list" id="eg-pf">${P.rows.slice(0,8).map((r,i)=>`<div class="eg-r${r.u<=0?' neg':''}"><span class="eg-n">${i+1}</span><span class="eg-t"><b>${esc(r.x.name)}</b><small>${L.egPfRow(r.n,money(r.u))}</small></span><b class="eg-v">${r.pr<0?'−':''}${money(Math.abs(r.pr))}</b><i><em style="width:${Math.max(0,Math.round(r.pr/mx*100))}%"></em></i></div>`).join('')}</div>
+        <p class="eg-say" id="eg-say">${P.top&&P.byN?(P.top.x.id===P.byN.x.id?L.egPfSame(esc(P.top.x.name)):L.egPfDiff(esc(P.byN.x.name),esc(P.top.x.name))):''}</p>${P.loss.map(r=>`<p class="er-hint warn">${L.egPfLoss(esc(r.x.name))}</p>`).join('')}`:''}
+      ${P.noCost?`<p class="er-hint" id="eg-nocost">${L.egPfNoCost(P.noCost)}</p>`:''}`; };
+  const stale=()=>{ const S=egStale(); if(!S.rows.length) return `<p class="lead">${L.egStLead}</p><p class="er-hint" id="eg-none">${L.egStNone}</p>`;
+    return `<p class="lead">${L.egStLead}</p><p class="eg-sum" id="eg-sum">${S.v>0?L.egStSum(money(S.v),S.pct):L.egStSum0(S.rows.length)}</p>
+      <div class="eg-list" id="eg-st">${S.rows.slice(0,12).map(r=>`<div class="eg-s"><span class="eg-t"><b>${esc(r.x.name)}</b><small>${L.egStRow(r.q,r.days)}${r.v>0?'':' · '+L.egStNoCost}</small></span>${r.v>0?`<b class="eg-v">${money(r.v)}</b>`:''}
+        <div class="eg-acts"><button type="button" class="gp-mini" data-egdisc="${esc(r.x.id)}">${L.egStDisc}</button><button type="button" class="gp-mini" data-egset="${esc(r.x.id)}">${L.egStSet}</button><button type="button" class="gp-mini" data-egcard="${esc(r.x.id)}">${L.egStCard}</button></div></div>`).join('')}</div>`; };
+  const bundle=()=>{ const its=egItems().filter(x=>+x.price>0); if(its.length<2) return `<p class="lead">${L.egBnLead}</p><p class="er-hint" id="eg-none">${L.egBnNeed}</p>`;
+    if(!a||!its.includes(a)) a=its.slice().sort((x,y)=>egSold(y.id,90)-egSold(x.id,90))[0]; if(!b||!its.includes(b)||b===a){ const p=egPair(a); b=p&&its.includes(p.y)?p.y:its.find(x=>x!==a); }
+    const sel=(id,cur,lab)=>`<div class="field"><label for="${id}">${lab}</label><select id="${id}">${its.map(x=>`<option value="${esc(x.id)}"${x===cur?' selected':''}>${esc(x.name)} · ${money(x.price)}</option>`).join('')}</select></div>`;
+    const o=egBundle(a,b,disc);
+    return `<p class="lead">${L.egBnLead}</p>${sel('eg-a',a,L.egBnA)}${sel('eg-b',b,L.egBnB)}
+      <div class="field"><label>${L.egBnD}</label><div class="chips">${[5,10,15,20].map(v=>`<button type="button" class="chip ${v===disc?'on':''}" data-egbd="${v}" aria-pressed="${v===disc}">${v}%</button>`).join('')}</div></div>
+      <div class="er-out" id="eg-bout"><p class="big">${L.egBnBig(money(o.set),money(o.full))}</p><p>${L.egBnSave(money(o.save))}</p>
+        ${o.haveCost?`<p>${L.egBnEarnSet(money(o.prSet))}</p><p>${L.egBnEarnOne(money(o.prA))}</p><p class="${o.ok?'note':'warn'}">${o.ok?L.egBnOk(money(o.prSet-o.prA)):L.egBnBad}</p>`:`<p class="note">${L.egBnNoCost}</p>`}</div>
+      <button type="button" class="btn btn-ghost btn-full" id="eg-keep">${L.egBnKeep}</button>`; };
+  const draw=()=>{ openSheet(`<h3>${L.egGoodsT}</h3>${seg()}<div id="eg-body">${tab==='profit'?profit():tab==='stale'?stale():bundle()}</div>${foot}`);
+    sheet.querySelectorAll('[data-egt]').forEach(x=>x.onclick=()=>{ tab=x.dataset.egt; draw(); });
+    $('#eg-back').onclick=()=>erSheet(); const byId=id=>(state.inv||[]).find(x=>x.id===id);
+    if($('#eg-goods')) $('#eg-goods').onclick=()=>{ closeSheet(); setTab('shop'); try{ setShopSub('goods'); }catch(e){} };
+    sheet.querySelectorAll('[data-egd]').forEach(x=>x.onclick=()=>{ days=+x.dataset.egd; draw(); });
+    sheet.querySelectorAll('[data-egdisc]').forEach(x=>x.onclick=()=>{ const it=byId(x.dataset.egdisc); if(it) erPriceSheet('dn',{p:+it.price||'',c:+it.cost||'',n:'',name:it.name}); });
+    sheet.querySelectorAll('[data-egset]').forEach(x=>x.onclick=()=>{ const it=byId(x.dataset.egset); if(!it) return; const top=egItems().filter(y=>y!==it&&+y.price>0).sort((p,q)=>egSold(q.id,90)-egSold(p.id,90))[0]; if(top){ a=top; b=it; } else { a=it; b=null; } tab='bundle'; draw(); });
+    sheet.querySelectorAll('[data-egcard]').forEach(x=>x.onclick=async()=>{ const it=byId(x.dataset.egcard); if(!it) return; const keys=Object.keys(it.sizes||{}); let photo=null; try{ photo=it.ph?await phGet('iv_'+it.id):null; }catch(e){}
+      cardMaker({name:it.name,price:it.price,sizes:keys.filter(k=>(+it.sizes[k]||0)>0&&k!=='—').join(' · '),photo}); });
+    if($('#eg-a')) $('#eg-a').onchange=e=>{ a=byId(e.target.value); if(a===b) b=null; draw(); }; if($('#eg-b')) $('#eg-b').onchange=e=>{ const y=byId(e.target.value); if(y&&y!==a) b=y; draw(); };
+    sheet.querySelectorAll('[data-egbd]').forEach(x=>x.onclick=()=>{ disc=+x.dataset.egbd; draw(); });
+    if($('#eg-keep')) $('#eg-keep').onclick=()=>{ if(a&&b){ a.pair=b.id; persist(); toast(L.egBnKept); } }; };
+  draw(); }
+
+/* ---------- спрашивали, а не было ---------- */
+function egAskedSheet(){ const rows=egAsked(90);
+  openSheet(`<h3>${L.egRowAsk}</h3><p class="lead">${L.egAqLead}</p>
+    <div class="eg-add"><input id="aq-t" type="text" maxlength="60" placeholder="${esc(L.egAqPh)}" aria-label="${esc(L.egAqPh)}" enterkeyhint="done"><button type="button" class="btn btn-primary" id="aq-add">${L.egAqAdd}</button></div><div class="err" id="aq-err"></div>
+    ${rows.length?`<div class="field"><label>${L.egAqAgain}</label><div class="chips" id="aq-chips">${rows.slice(0,6).map((r,i)=>`<button type="button" class="chip" data-aqp="${i}">${esc(r.t)}</button>`).join('')}</div></div>
+      <div class="eg-list" id="aq-list">${rows.slice(0,20).map((r,i)=>`<div class="eg-q"><span class="eg-t"><b>${esc(r.t)}</b><small>${L.egAqRow(r.n,fmtDate(parseYmd(r.last)))}</small></span><button type="button" class="gp-mini" data-aql="${i}">${L.egAqToList}</button><button type="button" class="eg-x" data-aqx="${i}" aria-label="${esc(L.egAqDel)}">${ico('close',16)}</button></div>`).join('')}</div>`
+      :`<p class="er-hint" id="aq-none">${L.egAqNone}</p>`}
+    <p class="er-src">${L.egAqNote}</p><div class="sheet-row"><button type="button" class="btn btn-ghost" id="aq-back">${L.erBack}</button></div>`);
+  const add=t=>{ if(!egAskAdd(t)) return showErr($('#aq-err'),L.egAqErr); toast(L.egAqAdded(String(t).trim().slice(0,60))); egAskedSheet(); };
+  $('#aq-add').onclick=()=>add($('#aq-t').value); $('#aq-t').addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); add($('#aq-t').value); } });
+  sheet.querySelectorAll('[data-aqp]').forEach(x=>x.onclick=()=>add(rows[+x.dataset.aqp].t));
+  sheet.querySelectorAll('[data-aqx]').forEach(x=>x.onclick=()=>{ const k=rows[+x.dataset.aqx].k; state.misc.ask=(state.misc.ask||[]).filter(q=>egAskKey(q.t)!==k); persist(); egAskedSheet(); });
+  sheet.querySelectorAll('[data-aql]').forEach(x=>x.onclick=()=>{ const t=rows[+x.dataset.aql].t; if((state.shopList||[]).some(i=>!i.done&&egAskKey(i.n)===egAskKey(t))) return toast(L.egAqInList); state.shopList.push({id:uid('l'),n:t,q:1,p:0,s:'',done:false}); persist(); render(); toast(L.egAqListed); });
+  $('#aq-back').onclick=()=>erSheet(); }
+
+/* ---------- план на день и продажи по месяцам ---------- */
+function egMonthsHTML(){ const M=egMonths(); if(M.known<3) return `<h4 class="er-h4">${L.egMoT}</h4><p class="er-hint" id="eg-mo-need">${L.egMoNeed(M.known)}</p>`;
+  const mx=Math.max(1,...M.rows.map(o=>o.v));
+  return `<h4 class="er-h4">${L.egMoT}</h4><div class="eg-mo" id="eg-mo" role="img" aria-label="${esc(L.egMoT)}">${M.rows.map(o=>`<div class="eg-mb${o.cur?' cur':''}${M.best&&o.mk===M.best.mk?' best':''}${o.full||o.cur?'':' thin'}" title="${esc(L.monthsNom[o.m]+': '+money(o.v))}"><i style="height:${o.v>0?Math.max(4,Math.round(o.v/mx*100)):0}%"></i><span>${esc(L.monthsNom[o.m].slice(0,3))}</span></div>`).join('')}</div>
+    <p class="eg-say" id="eg-mo-say">${M.best&&M.weak&&M.best.mk!==M.weak.mk?L.egMoBest(esc(L.monthsNom[M.best.m].toLowerCase()),esc(L.monthsNom[M.weak.m].toLowerCase())):L.egMoFew}</p><p class="er-src">${L.egMoNote}</p>`; }
+function egPlanSheet(){ const pl=egPlan(), st=erSt(), last=egLastMonth();
+  openSheet(`<h3>${L.egRowPlan}</h3>
+    ${pl?`<div class="eg-plan${pl.done?' done':''}" id="eg-plan"><small>${L.egPlT}</small><b>${L.egPlDay(money(pl.soldT),money(pl.plan))}</b><i><em style="width:${pl.plan>0?Math.min(100,Math.round(pl.soldT/pl.plan*100)):100}%"></em></i>
+        <span id="eg-pl-left">${pl.done?L.egPlDone:L.egPlLeft(money(pl.left))}</span><span>${L.egPlMonth(money(pl.sold),money(pl.T))}</span></div>
+      <p class="er-hint">${pl.src==='own'?L.egPlOwn:L.egPlBe} ${L.egPlHow(pl.days)}</p>`:`<p class="er-hint" id="eg-pl-none">${L.egPlNone}</p>`}
+    <div class="field n"><label for="eg-goal">${L.egPlGoal}</label><input id="eg-goal" type="number" inputmode="numeric" min="0" value="${+st.goalM>0?+st.goalM:''}" placeholder="${last>0?Math.round(last/100)*100:''}">${last>0?`<span class="hint">${L.egPlLast(money(last))}</span>`:''}</div>
+    <div class="err" id="eg-gerr"></div><div class="sheet-row"><button type="button" class="btn btn-primary" id="eg-gsave">${L.egPlSave}</button>${+st.goalM>0?`<button type="button" class="btn btn-ghost" id="eg-gclear">${L.egPlClear}</button>`:''}</div>
+    ${egMonthsHTML()}
+    <button type="button" class="btn btn-ghost btn-full" id="eg-wd">${L.egMoWd}</button>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="eg-pback">${L.erBack}</button></div>`);
+  $('#eg-gsave').onclick=()=>{ const v=Math.round(+$('#eg-goal').value); if(!(v>0)) return showErr($('#eg-gerr'),L.errSum); st.goalM=v; persist(); render(); toast(L.egPlSaved); egPlanSheet(); };
+  if($('#eg-gclear')) $('#eg-gclear').onclick=()=>{ delete st.goalM; persist(); render(); toast(L.egPlCleared); egPlanSheet(); };
+  $('#eg-wd').onclick=()=>{ closeSheet(); setTab('stats'); }; $('#eg-pback').onclick=()=>erSheet(); }
+/* строка на «Сегодня» — только когда есть цель и магазин ведёт записи: иначе это цифра ни о чём */
+function egTodayHTML(){ let pl=null; try{ pl=egPlan(); }catch(e){} if(!pl||erDays14()<3) return '';
+  return `<button type="button" class="er-today m10-card eg-today${pl.done?' done':''}" id="egToday"><span class="er-ti">${ico(pl.done?'check':'goal',22)}</span><span class="m10-tt"><b>${L.egTodayPlan}</b><small>${pl.done?L.egPlDone:L.egPlDay(money(pl.soldT),money(pl.plan))+' · '+L.egPlLeft(money(pl.left))}</small></span><span class="m10-go">›</span></button>`; }
+
+/* ---------- подсказка в карточке товара, быстрая кнопка в «Записать», данные для Сифры ---------- */
+try{ const _is20=invSheet; invSheet=function(x){ const r=_is20.apply(this,arguments);
+    try{ const p=x&&!x.arch?egPair(x):null, anc=sheet.querySelector('.szbig'); if(p&&anc&&!$('#eg-pair')){ anc.insertAdjacentHTML('afterend',`<div class="eg-pair" id="eg-pair"><small>${L.egPairT}</small><b>${esc(p.y.name)} · ${money(p.y.price)}</b><span>${p.fixed?L.egPairFixed:L.egPairAuto}</span><button type="button" class="gp-mini" id="eg-pairset">${L.egPairSet}</button></div>`);
+        $('#eg-pairset').onclick=()=>egGoodsSheet('bundle',{a:x,b:p.y}); } }catch(e){} return r; }; }catch(e){}
+try{ const _ps20=m10PlusSheet; m10PlusSheet=function(){ const x=_ps20.apply(this,arguments);
+    try{ const anc=$('#erStoryBtn')||sheet.querySelector('.m10-acts'); if(anc&&!$('#egAskBtn')){ anc.insertAdjacentHTML('afterend',`<button type="button" class="er-story eg-askbtn" id="egAskBtn"><span class="er-ti">${ico('search',22)}</span><span class="m10-tt"><b>${L.egAqBtn}</b><small>${L.egRowAskS0}</small></span><span class="m10-go">›</span></button>`); $('#egAskBtn').onclick=()=>egAskedSheet(); } }catch(e){} return x; }; }catch(e){}
+try{ const _cx20=sfCtx; sfCtx=function(){ const o=_cx20.apply(this,arguments); try{ const e=o.earn||(o.earn={}), S=egStale(), P=egProfit(90), A=egAsked(90), pl=egPlan();
+      if(S.rows.length) e.stale={money_tjs:S.v,share_pct:S.pct,items:S.rows.slice(0,5).map(r=>r.x.name+' ('+r.q+')')}; if(P.top) e.most_profit=P.top.x.name; if(P.byN&&P.top&&P.byN.x.id!==P.top.x.id) e.most_sold=P.byN.x.name;
+      if(A.length) e.asked_not_in_stock=A.slice(0,6).map(r=>r.t+(r.n>1?' ×'+r.n:'')); if(pl) e.day_plan={target_today:pl.plan,sold_today:pl.soldT,month_target:pl.T,month_sold:pl.sold,basis:pl.src==='own'?'own goal':'break-even'}; }catch(e){} return o; }; }catch(e){}
+window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('#egToday'); if(!t) return; e.preventDefault(); egPlanSheet(); },true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
