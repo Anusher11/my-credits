@@ -1956,6 +1956,40 @@
   .id-stg{display:flex; gap:10px; padding:10px 0; border-top:1px solid var(--line);} .id-stages h4+.id-stg{border-top:0; padding-top:2px;}
   .id-stg>i{flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--brand); color:#fff; font-style:normal; font-weight:800; font-size:.82rem;}
   .id-stg>div{min-width:0;} .id-stg small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);} .id-stg p{margin:2px 0 0; font-size:.9rem; line-height:1.45;} .id-stg b{display:block; margin-top:4px; font-size:.86rem; color:var(--m-leaf);}
+  /* ===================== v17: «Рынок сегодня», сверка с планом, кривая пути, вопрос о продажах, «Ещё» ===================== */
+  .lv{margin:10px 0 12px; border:1px solid var(--line); border-radius:16px; background:var(--surface); overflow:hidden;}
+  .lv summary{display:flex; align-items:flex-start; gap:10px; padding:12px; cursor:pointer; list-style:none; min-height:48px;} .lv summary::-webkit-details-marker{display:none;}
+  .lv summary>span{flex:1; min-width:0;} .lv summary b{display:block; font-size:.9rem;} .lv summary small{display:block; margin-top:2px; font-size:.82rem; line-height:1.4; color:var(--muted);} .lv summary>svg{flex:none; margin-top:3px; transition:transform .2s ease-out;} .lv[open] summary>svg{transform:rotate(180deg);}
+  .lv-dot{flex:none; width:10px; height:10px; margin-top:5px; border-radius:50%; background:var(--m11-go,#12B886); box-shadow:0 0 0 4px color-mix(in srgb,var(--m11-go,#12B886) 22%,transparent);} .lv-dot.old{background:var(--m-sun,#FFC83D); box-shadow:none;}
+  .lv.wait,.lv.off{display:flex; align-items:center; gap:10px; padding:12px; font-size:.84rem; color:var(--muted);} .lv.off span{flex:1;} .lv.wait .lv-dot{margin:0; animation:lvPulse 1.2s ease-in-out infinite;}
+  @keyframes lvPulse{50%{opacity:.35;}}
+  .lv-b{padding:0 12px 12px;} .lv-r{padding:10px 0; border-top:1px solid var(--line);} .lv-r b{font-size:.9rem;} .lv-r p{margin:4px 0 0; font-size:.84rem; line-height:1.45; color:var(--muted);}
+  .lv-tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:5px;} .lv-tags i{font-style:normal; font-size:.74rem; font-weight:800; padding:3px 8px; border-radius:99px; background:var(--surface-2); color:var(--ink);} .lv-tags i.up{background:var(--m-leaf-weak); color:var(--m-leaf);} .lv-tags i.dn{background:#FBE6DC; color:#8A3B12;}
+  :root[data-theme="dark"] .lv-tags i.dn{background:#4A2A1C; color:#FFC9AE;}
+  .lv-none,.lv-note{margin:10px 0 0; font-size:.8rem; line-height:1.45; color:var(--muted);} .lv-b .gp-mini{margin:10px 0 0;} .lv-b .id-src{margin-top:10px;}
+  .lv-ask{text-align:left;} .lv-ask .id-bava{display:block; width:52px; height:52px; margin:4px 0 10px;} .lv-ask .id-bava svg{width:100%; height:100%;} .lv-ask h3{margin:0 0 6px; font-size:1.2rem;} .lv-ask>p{margin:0 0 14px; font-size:.95rem; line-height:1.5; color:var(--muted);}
+  .lv-opts{flex-wrap:wrap; margin-bottom:6px;} .lv-opts .chip{min-height:46px;} .lv-ask .btn{width:100%; margin-top:10px;}
+  .gp-curve{display:block; width:100%; height:auto; margin:14px 0 2px; overflow:visible;} .gp-curve .ax{stroke:var(--line); stroke-width:1;}
+  .gp-curve .ar{fill:color-mix(in srgb,var(--m11-go,#12B886) 14%,transparent); stroke:none;} .gp-curve .ln{fill:none; stroke:var(--m11-go,#12B886); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:1; stroke-dashoffset:0; animation:gpDraw .45s ease-out;}
+  @keyframes gpDraw{from{stroke-dashoffset:1;}}
+  .gp-curve .ms{fill:var(--surface); stroke:var(--m11-go,#12B886); stroke-width:2;} .gp-curve .st{fill:var(--muted);} .gp-curve .en{fill:var(--m11-go,#12B886);}
+  .gp-curve .ml{font-size:10px; font-weight:800; fill:var(--muted);} .gp-curve .xl{font-size:10px; font-weight:700; fill:var(--muted);}
+  .gp-track{margin:16px 0 0; padding:12px; border:1px dashed var(--line-2,var(--line)); border-radius:16px;} .gp-track.on{border-style:solid; background:var(--surface);} .gp-track.behind{border-color:#F0C9B4;}
+  .gp-track>b{display:flex; align-items:center; gap:6px; font-size:.92rem;} .gp-track p{margin:6px 0 0; font-size:.84rem; line-height:1.45; color:var(--muted);} .gp-track .gp-tst{color:var(--ink); font-weight:700;} .gp-track .gp-tdue{color:var(--warn,#B4531F); font-weight:700;}
+  .gp-track .gp-mini{margin:10px 0 0;} .gp-tin{display:flex; gap:8px; align-items:center; margin-top:10px;} .gp-tin .pin{position:relative; flex:1; min-width:0;} .gp-tin .pin input{width:100%; min-height:44px; padding:0 2.2em 0 12px; border:1px solid var(--line); border-radius:12px; background:var(--surface-2); color:var(--ink); font:inherit; font-weight:700;} .gp-tin .pin b{position:absolute; right:14px; top:50%; transform:translateY(-50%); color:var(--muted);} .gp-tin .gp-mini{margin:0; min-height:44px;}
+  .gp-thint{display:block; margin-top:6px; font-size:.76rem; color:var(--muted);} .gp-tre{display:block; margin-top:8px; padding:6px 0; border:0; background:none; color:var(--muted); font:inherit; font-size:.78rem; text-decoration:underline; cursor:pointer; min-height:36px; text-align:left;}
+  .id-pm .id-pml{margin:0 0 4px; font-size:.82rem; color:var(--muted);} .id-pmr{padding:10px 0; border-top:1px solid var(--line);} .id-pml+.id-pmr{border-top:0;} .id-pmr b{font-size:.9rem; line-height:1.4;} .id-pmr p{display:flex; gap:8px; margin:5px 0 0; font-size:.86rem; line-height:1.45;} .id-pmr p svg{flex:none; margin-top:2px; color:var(--m-leaf);}
+  /* «Ещё» */
+  .mr-search{display:flex; align-items:center; gap:10px; width:100%; min-height:52px; margin:0 0 14px; padding:0 16px; border:1px solid var(--line); border-radius:16px; background:var(--surface); color:var(--muted); font:inherit; font-size:.98rem; text-align:left; cursor:pointer;} .mr-search svg{flex:none;}
+  .mr-top h2{margin:0 4px 8px; font-size:.9rem; font-weight:800; color:var(--muted);} .mr-tiles{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:6px;}
+  .mr-tile{display:flex; flex-direction:column; align-items:flex-start; gap:10px; min-height:96px; padding:14px; border:0; border-radius:20px; background:var(--surface); color:var(--ink); font:inherit; text-align:left; cursor:pointer; box-shadow:var(--shadow);}
+  .mr-tile b{font-size:.95rem; line-height:1.25;} .mr-ti{display:grid; place-items:center; width:42px; height:42px; border-radius:14px;}
+  .mr-tile:focus-visible,.mr-search:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+  .mr-li .m7-li-t small:empty{display:none;} .mr-li .m7-li-t small.warn{color:var(--warn,#B4531F); font-weight:700;}
+  .g-m .m7-li-i,.g-m .mr-ti{background:#DDF5EA; color:#0B6B4B;} .g-s .m7-li-i,.g-s .mr-ti{background:#FFF0CC; color:#7A5200;} .g-p .m7-li-i,.g-p .mr-ti{background:#E9E4FF; color:#4B3CA7;} .g-d .m7-li-i,.g-d .mr-ti{background:#E8ECF4; color:#3A4560;}
+  :root[data-theme="dark"] .g-m .m7-li-i,:root[data-theme="dark"] .g-m .mr-ti{background:#12382C; color:#8FE3C0;} :root[data-theme="dark"] .g-s .m7-li-i,:root[data-theme="dark"] .g-s .mr-ti{background:#3A2F14; color:#FFD98A;}
+  :root[data-theme="dark"] .g-p .m7-li-i,:root[data-theme="dark"] .g-p .mr-ti{background:#2A2550; color:#C9BEFF;} :root[data-theme="dark"] .g-d .m7-li-i,:root[data-theme="dark"] .g-d .mr-ti{background:#263049; color:#C6CFE4;}
+  @media (prefers-reduced-motion:reduce){ .gp-curve .ln,.lv.wait .lv-dot{animation:none;} .lv summary>svg{transition:none;} }
 </style>
 </head>
 <body>
@@ -4404,6 +4438,73 @@ en:{
   idGoalT:'Towards the goal', idFit:{yes:'brings it closer',part:'brings it a little closer',no:'doesn’t lead to the goal'},
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M16S[k]);
+
+/* ----- v17: продажи без ввода, «Рынок сегодня», сверка с планом, кривая пути, «если не получится», новый раздел «Ещё» ----- */
+const M17S={
+ru:{
+  lvEstPay:v=>'Оценка по вашим платежам: не меньше ≈ '+v+' в месяц — иначе не хватало бы на кредиты и расходы. Знаете точнее — впишите.',
+  lvEstBuy:v=>'Оценка по вашим закупкам: ≈ '+v+' в месяц. Знаете точнее — впишите.', lvEstSold:v=>'Оценка по отметкам продаж товара: ≈ '+v+' в месяц. Знаете точнее — впишите.',
+  lvAskT:'Один вопрос перед планом', lvAskD:'Сколько примерно магазин продаёт за обычный месяц? Не прибыль, а все продажи. От этого зависит весь срок — остальное я найду сама.',
+  lvA1:'до 10 000 с.', lvA2:'10–30 тыс. с.', lvA3:'30–60 тыс. с.', lvA4:'60–100 тыс. с.', lvA5:'100–200 тыс. с.', lvA6:'больше 200 тыс. с.',
+  lvAskOwn:'Или точная сумма в месяц', lvAskGo:'Составить план', lvAskSkip:'Не знаю — считать примерно', lvAskNeed:'Выберите вариант или впишите сумму',
+  lvOff:'Свежие данные рынка не учитываются.', lvOn:'Учитывать', lvWait:'Сифра смотрит рынок на сегодня…',
+  lvT:d=>'Рынок на '+d, lvHot:'спрос выше обычного', lvCold:'спрос ниже обычного', lvMk:s=>'наценка '+s+' п.п.', lvBuy:s=>'закупка '+s+'%', lvCargo:s=>'доставка '+s+'%', lvDays:n=>'идёт дольше на '+n+' дн.',
+  lvNone:'Сегодня заметных изменений нет — расчёт идёт по обычным ценам.', lvNote:'Это уточнение по открытым данным, а не точная статистика. Свои цены и наценки в «Цифрах для расчёта» важнее — их Сифра не трогает.', lvOffBtn:'Не учитывать',
+  lvTrT:'Сверка с планом', lvTrD:'Зафиксируйте путь сегодня и раз в месяц отмечайте, сколько у вас на самом деле. Сразу видно, идёте по плану или отстаёте.', lvTrFix:'Начать отсчёт сегодня', lvTrFixed:'Отсчёт начат',
+  lvTrSince:(d,a,b)=>'Отсчёт с '+d+': '+a+' → '+b+'.', lvTrExp:v=>'По плану сейчас должно быть ≈ '+v,
+  lvTrOver:(d,v)=>d+' у вас было '+v+' — это уже больше, чем в плане.', lvTrOn:(d,v)=>d+' у вас было '+v+' — идёте по плану.',
+  lvTrAhead:(d,v,t)=>d+' у вас было '+v+' — опережаете план на '+t, lvTrBehind:(d,v,t)=>d+' у вас было '+v+' — отстаёте от плана на '+t,
+  lvTrDue:'Прошёл месяц — отметьте, сколько сейчас.', lvTrPh:'Сколько сейчас', lvTrSave:'Отметить', lvTrHint:'Деньги и товар вместе, товар — по закупочной цене.', lvTrRefix:'Начать отсчёт заново', lvTrSure:'Нажмите ещё раз — прошлые отметки сотрутся', lvTrNeed:'Впишите сумму',
+  lvCurveA:(a,b,w)=>'График пути: от '+a+' до '+b+', цель — '+w,
+  lvPmT:'Если не получится — почему', lvPmD:'Взгляд из будущего: что вероятнее всего помешает и что сделать уже сейчас.',
+  mrSearch:'Найти платёж, кредит, товар', mrTop:'Частое', mrG1:'Деньги и цели', mrG2:'Магазин', mrG3:'Платежи', mrG4:'Данные и вид',
+  mrLate:'Просрочен', mrBkNo:'Копии ещё нет — сделайте', mrBkToday:'Копия сделана сегодня', mrBk:d=>'Копия сделана '+d+' дн. назад', mrGoal:(t,w)=>'Цель '+t+' — '+w,
+  mrNtOn:'Включены', mrNtOff:'Выключены', mrInvSub:'Сколько принесут деньги в товаре', mrCalcSub:'Новый кредит, досрочный платёж, цена товара', mrBuySub:'Поездки, поставщики, товар',
+  mrStatsSub:'Выручка, расходы, советы', mrWeekSub:'Что было за 7 дней', mrCalNone:'В ближайшие две недели платежей нет', mrSimpleSub:'Только главное, крупно',
+},
+tg:{
+  lvEstPay:v=>'Баҳо аз рӯи пардохтҳои шумо: на камтар аз ≈ '+v+' дар як моҳ — вагарна ба қарзҳо ва хароҷот намерасид. Агар дақиқтар донед — нависед.',
+  lvEstBuy:v=>'Баҳо аз рӯи харидҳои шумо: ≈ '+v+' дар як моҳ. Агар дақиқтар донед — нависед.', lvEstSold:v=>'Баҳо аз рӯи қайдҳои фурӯши мол: ≈ '+v+' дар як моҳ. Агар дақиқтар донед — нависед.',
+  lvAskT:'Як савол пеш аз нақша', lvAskD:'Мағоза дар як моҳи оддӣ тақрибан чанд мефурӯшад? На фоида, балки тамоми фурӯш. Тамоми мӯҳлат аз ин вобаста аст — боқимондаро худам меёбам.',
+  lvA1:'то 10 000 с.', lvA2:'10–30 ҳазор с.', lvA3:'30–60 ҳазор с.', lvA4:'60–100 ҳазор с.', lvA5:'100–200 ҳазор с.', lvA6:'зиёда аз 200 ҳазор с.',
+  lvAskOwn:'Ё маблағи дақиқ дар як моҳ', lvAskGo:'Нақша тартиб додан', lvAskSkip:'Намедонам — тахминӣ ҳисоб кун', lvAskNeed:'Вариантро интихоб кунед ё маблағро нависед',
+  lvOff:'Маълумоти тозаи бозор ба ҳисоб гирифта намешавад.', lvOn:'Ба ҳисоб гирифтан', lvWait:'Сифра бозори имрӯзро мебинад…',
+  lvT:d=>'Бозор дар '+d, lvHot:'талабот аз муқаррарӣ баландтар', lvCold:'талабот аз муқаррарӣ пасттар', lvMk:s=>'иловапулӣ '+s+' б.ф.', lvBuy:s=>'харид '+s+'%', lvCargo:s=>'расонидан '+s+'%', lvDays:n=>n+' рӯз дертар мерасад',
+  lvNone:'Имрӯз тағйироти намоён нест — ҳисоб бо нархҳои муқаррарӣ меравад.', lvNote:'Ин дақиқкунӣ аз рӯи маълумоти кушода аст, на омори дақиқ. Нархҳо ва иловапулии худи шумо дар «Рақамҳо барои ҳисоб» муҳимтаранд — Сифра ба онҳо даст намерасонад.', lvOffBtn:'Ба ҳисоб нагирифтан',
+  lvTrT:'Муқоиса бо нақша', lvTrD:'Роҳро имрӯз қайд кунед ва моҳе як бор нависед, ки воқеан чанд доред. Дарҳол маълум мешавад, ки аз рӯи нақша меравед ё қафо мондаед.', lvTrFix:'Ҳисобро аз имрӯз сар кардан', lvTrFixed:'Ҳисоб сар шуд',
+  lvTrSince:(d,a,b)=>'Ҳисоб аз '+d+': '+a+' → '+b+'.', lvTrExp:v=>'Аз рӯи нақша ҳоло бояд ≈ '+v+' бошад',
+  lvTrOver:(d,v)=>d+' шумо '+v+' доштед — ин аллакай аз нақша зиёд аст.', lvTrOn:(d,v)=>d+' шумо '+v+' доштед — аз рӯи нақша меравед.',
+  lvTrAhead:(d,v,t)=>d+' шумо '+v+' доштед — аз нақша '+t+' пеш ҳастед', lvTrBehind:(d,v,t)=>d+' шумо '+v+' доштед — аз нақша '+t+' қафо мондаед',
+  lvTrDue:'Як моҳ гузашт — қайд кунед, ки ҳоло чанд аст.', lvTrPh:'Ҳоло чанд аст', lvTrSave:'Қайд кардан', lvTrHint:'Пул ва мол якҷоя, мол — бо нархи харид.', lvTrRefix:'Ҳисобро аз нав сар кардан', lvTrSure:'Боз як бор пахш кунед — қайдҳои пешина тоза мешаванд', lvTrNeed:'Маблағро нависед',
+  lvCurveA:(a,b,w)=>'Графики роҳ: аз '+a+' то '+b+', ҳадаф — '+w,
+  lvPmT:'Агар нашавад — чаро', lvPmD:'Нигоҳ аз оянда: чӣ эҳтимоли зиёд халал мерасонад ва худи ҳозир чӣ бояд кард.',
+  mrSearch:'Ёфтани пардохт, қарз, мол', mrTop:'Бештар истифода мешавад', mrG1:'Пул ва ҳадафҳо', mrG2:'Мағоза', mrG3:'Пардохтҳо', mrG4:'Маълумот ва намуд',
+  mrLate:'Гузаштааст', mrBkNo:'Нусха ҳанӯз нест — созед', mrBkToday:'Нусха имрӯз сохта шуд', mrBk:d=>'Нусха '+d+' рӯз пеш сохта шуд', mrGoal:(t,w)=>'Ҳадаф '+t+' — '+w,
+  mrNtOn:'Фаъол', mrNtOff:'Хомӯш', mrInvSub:'Пул дар мол чӣ қадар меорад', mrCalcSub:'Қарзи нав, пардохти пешакӣ, нархи мол', mrBuySub:'Сафарҳо, таъминкунандагон, мол',
+  mrStatsSub:'Даромад, хароҷот, маслиҳатҳо', mrWeekSub:'Дар 7 рӯз чӣ шуд', mrCalNone:'Дар ду ҳафтаи наздик пардохт нест', mrSimpleSub:'Танҳо асосӣ, калон',
+},
+en:{
+  lvEstPay:v=>'Estimated from your payments: at least ≈ '+v+' a month — otherwise loans and costs couldn’t be covered. If you know better, enter it.',
+  lvEstBuy:v=>'Estimated from your purchases: ≈ '+v+' a month. If you know better, enter it.', lvEstSold:v=>'Estimated from your recorded item sales: ≈ '+v+' a month. If you know better, enter it.',
+  lvAskT:'One question before the plan', lvAskD:'Roughly how much does the shop sell in a normal month? Not profit — all sales. The whole timeline depends on it; the rest I’ll find myself.',
+  lvA1:'up to 10,000 s.', lvA2:'10–30 thousand s.', lvA3:'30–60 thousand s.', lvA4:'60–100 thousand s.', lvA5:'100–200 thousand s.', lvA6:'over 200 thousand s.',
+  lvAskOwn:'Or the exact amount per month', lvAskGo:'Make the plan', lvAskSkip:'I don’t know — use a rough figure', lvAskNeed:'Pick an option or enter an amount',
+  lvOff:'Fresh market data is not being used.', lvOn:'Use it', lvWait:'Sifra is checking today’s market…',
+  lvT:d=>'Market on '+d, lvHot:'demand above usual', lvCold:'demand below usual', lvMk:s=>'markup '+s+' pts', lvBuy:s=>'purchase '+s+'%', lvCargo:s=>'shipping '+s+'%', lvDays:n=>n+' days slower',
+  lvNone:'No notable changes today — the estimate uses the usual prices.', lvNote:'This is a refinement from public data, not exact statistics. Your own prices and markups in “Figures for the estimate” matter more — Sifra doesn’t touch them.', lvOffBtn:'Don’t use',
+  lvTrT:'Check against the plan', lvTrD:'Fix the path today and once a month note how much you really have. You’ll see at once whether you are on plan or behind.', lvTrFix:'Start counting today', lvTrFixed:'Counting started',
+  lvTrSince:(d,a,b)=>'Counting since '+d+': '+a+' → '+b+'.', lvTrExp:v=>'By the plan you should now have ≈ '+v,
+  lvTrOver:(d,v)=>'On '+d+' you had '+v+' — already more than in the plan.', lvTrOn:(d,v)=>'On '+d+' you had '+v+' — you are on plan.',
+  lvTrAhead:(d,v,t)=>'On '+d+' you had '+v+' — ahead of the plan by '+t, lvTrBehind:(d,v,t)=>'On '+d+' you had '+v+' — behind the plan by '+t,
+  lvTrDue:'A month has passed — note how much you have now.', lvTrPh:'How much now', lvTrSave:'Note it', lvTrHint:'Money and goods together, goods at purchase price.', lvTrRefix:'Start counting again', lvTrSure:'Tap again — earlier notes will be erased', lvTrNeed:'Enter an amount',
+  lvCurveA:(a,b,w)=>'Path chart: from '+a+' to '+b+', goal — '+w,
+  lvPmT:'If it doesn’t work out — why', lvPmD:'A look back from the future: what is most likely to get in the way and what to do now.',
+  mrSearch:'Find a payment, loan or item', mrTop:'Used most', mrG1:'Money and goals', mrG2:'Shop', mrG3:'Payments', mrG4:'Data and look',
+  mrLate:'Overdue', mrBkNo:'No backup yet — make one', mrBkToday:'Backup made today', mrBk:d=>'Backup made '+d+' days ago', mrGoal:(t,w)=>'Goal '+t+' — '+w,
+  mrNtOn:'On', mrNtOff:'Off', mrInvSub:'What your money earns in goods', mrCalcSub:'New loan, early payment, item price', mrBuySub:'Trips, suppliers, goods',
+  mrStatsSub:'Revenue, expenses, tips', mrWeekSub:'What happened in 7 days', mrCalNone:'No payments in the next two weeks', mrSimpleSub:'Only the essentials, large',
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M17S[k]);
 
 // дать каждому языку доступ к своим месяцам
 D.ru.MONTHS=MONTHS.ru; D.tg.MONTHS=MONTHS.tg; D.en.MONTHS=MONTHS.en;
@@ -10349,7 +10450,7 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
       <div class="field n iv2-own" id="iv-dlw" ${P.dlO?'':'hidden'}><label for="iv-dlm">${L.gpDlOwnL}</label><input id="iv-dlm" type="number" inputmode="numeric" min="3" max="240" data-nodirty value="${P.dlO&&+P.dl>0?P.dl:''}" placeholder="18"></div>
       <div class="br-h">${ico('repeat',18)} ${L.ivRe}</div><div class="seg iv2-re">${[[100,L.ivReAll],[70,L.ivRe70],[50,L.ivReHalf]].map(o=>`<button type="button" data-ivre="${o[0]}" class="${re===o[0]?'on':''}">${o[1]}</button>`).join('')}</div>
       <div class="br-h">${ico('cal',18)} ${L.ivWhen}</div><div class="chips gd-k">${[0,1,2,3,4,5].map(o=>`<button class="chip ${(+P.st||0)===o?'on':''}" data-ivs="${o}">${o?esc(mo[(t.getMonth()+o)%12]||''):L.ivNow}</button>`).join('')}</div>
-      <div class="br-h">${ico('bag',18)} ${L.ivWhat}</div><div id="iv-top"></div><div class="chips gd-k iv-k">${IV_CATS.map(k=>`<button class="chip ${P.cat===k?'on':''}" data-ivc="${k}">${WH_CIC[k]} ${L['whC_'+k]}</button>`).join('')}</div>
+      <div class="br-h">${ico('bag',18)} ${L.ivWhat}</div><div id="iv-top"></div><div id="iv-live"></div><div class="chips gd-k iv-k">${IV_CATS.map(k=>`<button class="chip ${P.cat===k?'on':''}" data-ivc="${k}">${WH_CIC[k]} ${L['whC_'+k]}</button>`).join('')}</div>
       <div id="iv-r"></div>
       <details class="wh-more" id="iv-mx"><summary>${ico('stats',18)} ${L.ivMatrix}</summary><div id="iv-m"></div></details>
       <details class="wh-more" id="iv-set"><summary>${ico('gear',18)} ${L.ivSet}</summary><div id="iv-f"></div></details>
@@ -10405,7 +10506,7 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
         <div class="iv2-be ${r.be!=null&&r.be<=1?'':'bad'}">${ico('shield',16)}<span>${r.be!=null&&r.be<=1?L.ivBe(Math.ceil(r.be*100)):L.ivBeNo}</span></div>`:''}
       <div class="iv-l">${ivSeasonTag(r)}</div>${r.limited?`<div class="iv-warn">${L.ivCapLim(ivUsd(r.capM.v),fx(r.months,1))}</div>`:''}${isBest?how(r):''}</div>`; };
     /* подсказка под полем продаж */
-    const smh=$('#iv-smh'), cmN=ivCapMUSD(); if(smh) smh.textContent=cmN.src==='def'?L.gpSalesDef:(cmN.src==='fact'?L.gpSalesFact+' ':'')+L.gpSalesUsd(ivUsd(cmN.v)), smh.classList.toggle('warn',cmN.src==='def');
+    const smh=$('#iv-smh'), cmN=ivCapMUSD(); if(smh) smh.textContent=ivSalesHint(cmN), smh.classList.toggle('warn',cmN.src==='def'); const smI=$('#iv-sm'); if(smI&&cmN.src!=='user') smI.placeholder=Math.round(cmN.v*(u||1));
     /* путь к цели и раскладка денег: партиями по силам магазина */
     let GD=null; try{ GD=ivGoalData(cat,false,simS); }catch(e){}
     const b1=GD&&GD.pl0.cyc[0], split=GD?ivSplitHTML(GD):'';
@@ -10424,7 +10525,9 @@ investSheet=function(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
     box.innerHTML=`<div class="iv-res">${rs.map(card).join('')}</div>${split}${mid.profit>0||low.profit>0?scen:''}${split?'':resv+alt}${GD?ivGoalHTML(GD):''}`;
     if(GD) ivGoalBind(box,GD,{upd,pick:k=>pickCat(k),setS:v=>{ simS=v; keepY(upd); },setDl:t=>{ P.dl=t; P.dlO=0; simS=null; persist(); syncDl(); keepY(upd); },setRe:x=>{ P.re=x; persist(); sheet.querySelectorAll('[data-ivre]').forEach(b=>b.classList.toggle('on',+b.dataset.ivre===x)); keepY(upd); }});
     lastShare=ivShareText(best,low,GD);
-    const mxEl=$('#iv-m'); if(mxEl&&$('#iv-mx').open) mxDraw(); };
+    const mxEl=$('#iv-m'); if(mxEl&&$('#iv-mx').open) mxDraw(); try{ mkLiveDraw(); }catch(e){} };
+  /* пересчитать открытый экран снаружи: пришли свежие данные рынка, отметили факт */
+  window.ivRefresh=()=>{ if($('#iv-r')){ try{ form(); }catch(e){} keepY(upd); } };
   const mxDraw=()=>{ const st=ivStart(); const rows=IV_CATS.map(k=>({k,r:['CN','TR'].map(c=>ivCalc(k,c,st))})).sort((a,b)=>Math.max(b.r[0].roi,b.r[1].roi)-Math.max(a.r[0].roi,a.r[1].roi));
     $('#iv-m').innerHTML=`<p class="note" style="margin-top:0">${L.ivMxLead}</p><table class="iv-mt"><tr><th></th><th>${TCOUNTRY.CN.f}</th><th>${TCOUNTRY.TR.f}</th></tr>${rows.map(x=>`<tr class="${x.k===P.cat?'on':''}" data-ivc2="${x.k}"><td>${WH_CIC[x.k]} ${L['whC_'+x.k]}</td>${x.r.map(r=>`<td class="${r.roi>0?'p':'n'}"><b>${r.roi>0?'+':''}${Math.round(r.roi*100)}%</b><small>${fx(r.totalM,0)} ${L.ivMoW}</small></td>`).join('')}</tr>`).join('')}</table>`;
     $('#iv-m').querySelectorAll('[data-ivc2]').forEach(tr=>tr.onclick=()=>{ P.cat=tr.dataset.ivc2; persist(); draw(); }); };
@@ -10535,6 +10638,7 @@ function ideaView(id,back){ const it=ideas().find(x=>x.id===id); if(!it){ ideaSh
   openSheet(`<div class="id-v ${v||'txt'}"><span class="id-badge">${ico(ID_I[v]||'bulb',18)} ${v?ideaV(it)[v]:it.kind==='plan'?L.gpPlan:L.idTitle}</span><h3>${esc(ideaTitle(it))}</h3>${r?`<p class="id-sum">${esc(r.summary)}</p>`:`<div class="id-txt">${sfMd(it.txt||'')}</div>`}</div>
     ${r&&r.numbers&&r.numbers.length?`<div class="id-sec"><h4>${ico('stats',18)} ${L.idNums}</h4><div class="id-nums">${r.numbers.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div></div>`:''}
     ${r&&r.goal&&r.goal.text?`<div class="id-sec id-goal ${['yes','part','no'].includes(r.goal.fit)?r.goal.fit:''}"><h4>${ico('flag',18)} ${L.idGoalT}<small>${L.idFit[r.goal.fit]||''}</small></h4><p>${esc(r.goal.text)}</p></div>`:''}
+    ${r&&r.premortem&&r.premortem.length?`<div class="id-sec id-pm"><h4>${ico('eye',18)} ${L.lvPmT}</h4><p class="id-pml">${L.lvPmD}</p>${r.premortem.map(x=>`<div class="id-pmr"><b>${esc(x.why)}</b><p>${ico('shield',16)}<span>${esc(x.guard)}</span></p></div>`).join('')}</div>`:''}
     ${r&&r.stages&&r.stages.length?`<div class="id-sec id-stages"><h4>${ico('cal',18)} ${L.gpStages}</h4>${r.stages.map((s,i)=>`<div class="id-stg"><i>${i+1}</i><div><small>${esc(s.when)}</small><p>${esc(s.what)}</p>${s.target?`<b>${esc(s.target)}</b>`:''}</div></div>`).join('')}</div>`:''}
     ${r&&r.pros&&r.pros.length?`<div class="id-sec"><h4>${ico('check',18)} ${L.idPros}</h4>${li(r.pros,'check','ok')}</div>`:''}
     ${r&&r.risks&&r.risks.length?`<div class="id-sec"><h4>${ico('warn',18)} ${L.idRisks}</h4>${li(r.risks,'warn','risk')}</div>`:''}
@@ -10746,7 +10850,7 @@ function ivGoalBind(box,D,api){ const P=ivP();
 function ivGoalOn(){ const P=ivP(); return !!(P.goal&&ivCapUSD()>0&&ivTargetUSD()>ivCapUSD()+0.5); }
 function ivGoalLite(){ if(!ivGoalOn()) return null; try{ return ivGoalData(ivP().cat||'kids',true,0); }catch(e){ return null; } }
 function ivGoalCtx(){ const D=ivGoalLite(); if(!D) return null; const pl=D.pl, b1=pl.cyc[0], n=D.need, o={from_usd:Math.round(D.cap),to_usd:Math.round(D.tgt),times:Math.round(D.x*10)/10,reinvest_pct:Math.round(D.re*100),product:L['whC_'+D.cat]||D.cat,country:D.c,
-    shop_sales_month_usd:Math.round(D.S0.v),sales_figure:D.S0.src==='def'?'примерная, человек её не вводил':D.S0.src==='fact'?'из записей выручки':'ввёл человек',
+    shop_sales_month_usd:Math.round(D.S0.v),sales_figure:D.S0.src==='def'?'примерная, человек её не вводил':D.S0.src==='fact'?'из записей выручки':D.S0.src==='buy'?'оценка приложения по записанным закупкам, не точная':D.S0.src==='sold'?'оценка приложения по отметкам продаж товара':D.S0.src==='pay'?'нижняя оценка приложения: столько нужно, чтобы хватало на платежи по кредитам и расходы магазина; настоящие продажи могут быть больше':'ввёл человек',
     months_to_goal:pl.ok?Math.round(pl.m):null,goal_month:pl.ok?ymd(addDays(D.start,Math.round(pl.m*30.44))).slice(0,7):null,limiter:pl.capd>=0.5||pl.why==='small'?'sales':'money',
     batch_usd:b1?Math.round(b1.b):null,if_sales:D.sRows.filter(x=>!x.cur).map(x=>({sales_month_usd:Math.round(x.S),months_to_goal:x.m!=null?Math.round(x.m):null}))};
   if(D.dl&&n){ o.deadline_months=D.dl; o.deadline_ok=!!n.enough; o.need_sales_month_usd=n.enough?null:n.imp?null:Math.round(n.S); if(n.imp) o.deadline_impossible_min_months=n.minM?Math.round(n.minM):null; if(D.needAll&&D.needAll.S>0) o.need_sales_if_all_profit_usd=Math.round(D.needAll.S); }
@@ -10757,6 +10861,165 @@ function ofGoal(){ const D=ivGoalLite(); if(!D) return null; const pl=D.pl, tg=i
   if(pl.capd>=0.5||pl.why==='small'){ const nx=D.sRows.find(x=>!x.cur&&x.m!=null)||D.sRows[1], s1=ivUsd(nx.S);
     return {k:'tgt',t:L.ofGoalS(tg),d:pl.ok&&nx.m!=null?L.ofGoalSD(s0,ivGoalWhen(D,pl.m),s1,ivGoalWhen(D,nx.m)):nx.m!=null?L.ofGoalSD0(s0,s1,ivGoalWhen(D,nx.m)):L.ofGoalSD1(s0),q:L.ofGoalQ(s0,s1,cp,tg)}; }
   return {k:'tgt',t:L.ofGoalM(tg),d:pl.ok?L.ofGoalMD(ivGoalWhen(D,pl.m)):L.gpNever,q:L.ofGoalQM(cp,tg)}; }
+
+/* ===================== v17: живые данные — продажи без ввода, «Рынок сегодня», сверка с планом, кривая пути =====================
+   Что было не так: (1) продажи магазина, если их не ввели, считались одинаковыми 3 000 $ для всех — и Сифра строила на этом выводы;
+   (2) проценты «Куда вложить» шли от зашитых цен и не менялись изо дня в день.
+   Откуда идеи:
+   - Harkin и др. (Psychological Bulletin, 2016; 138 исследований, 19 951 человек): кто отмечает, как идёт дело, чаще доходит до цели,
+     особенно если записывает результат → «Сверка с планом»;
+   - Cokely, Garcia-Retamero (Human Factors, 2017; 36 работ, 27 885 человек): простая картинка помогает понять цифры лучше текста,
+     сложная — мешает → одна кривая пути без украшений;
+   - Nielsen Norman Group: анимация интерфейса 100–500 мс и только чтобы показать, что изменилось → кривая рисуется за 0,45 с и
+     не двигается у тех, кто просил уменьшить движение;
+   - Shopify Sidekick Pulse (зима 2026): помощник сам изучает магазин и приносит подсказки, не дожидаясь вопроса → «Рынок сегодня». */
+
+/* ---------- 1. Продажи магазина без ввода: по отметкам продаж товара, иначе по закупкам за год ---------- */
+function ivSalesEst(){ const u=usdRate(); if(!u||window.__noEst) return null; const now=today0();
+  try{ const from=addDays(now,-90), by={}; let sum=0, n=0, first=null;
+    for(const l of state.invLog||[]){ if(l.k!=='sale'||!(+l.q<0)) continue; const d=parseYmd(l.d); if(!d||d<from||d>now) continue;
+      const it=l.i in by?by[l.i]:(by[l.i]=(state.inv||[]).find(x=>x.id===l.i)||null); if(!it||!(+it.price>0)) continue; sum+=-l.q*+it.price; n++; if(!first||d<first) first=d; }
+    if(n>=8&&first&&sum>0){ const days=Math.max(14,Math.round((now-first)/864e5)+1); return {v:sum/days*30/u,src:'sold',n}; } }catch(e){}
+  let best=null;
+  try{ const from=addDays(now,-365); let cost=0, n=0, first=null, last=null;
+    for(const t of state.trips||[]){ const d=parseYmd(t.from||t.to||''); if(!d||d<from||d>now) continue; let c=0; try{ c=+tripTotals(t).all||0; }catch(e){} c=Math.max(c,+t.budget||0); if(!(c>0)) continue; cost+=c; n++; if(!first||d<first) first=d; if(!last||d>last) last=d; }
+    /* товар последней поездки продаётся ещё около четырёх месяцев; наценка и скидки — в среднем */
+    if(n>=1&&cost>0){ const end=Math.max(+now,+addDays(last,120)), months=Math.max(4,Math.min(12,(end-first)/864e5/30.44)); best={v:cost*1.6*0.9/months/u,src:'buy',n}; } }catch(e){}
+  /* нижняя граница: магазин платит по кредитам и за аренду — значит, продаёт не меньше, чем нужно, чтобы это покрыть (валовая прибыль ≈ 35% продаж) */
+  try{ const rv=ivReserve(1), need=(+rv.loans||0)+(+rv.shop||0); if(need>0){ const v=need/0.35/u; if(!best||v>best.v) best={v,src:'pay',n:0}; } }catch(e){}
+  return best&&best.v>=300?best:null; }
+{ const _c=ivCapMUSD; ivCapMUSD=function(){ const r=_c(); if(r.src!=='def') return r; const e=ivSalesEst(); return e&&e.v>0?{v:e.v,src:e.src,n:e.n}:r; }; }
+function ivSalesHint(cm){ return cm.src==='def'?L.gpSalesDef:cm.src==='buy'?L.lvEstBuy(ivUsd(cm.v)):cm.src==='sold'?L.lvEstSold(ivUsd(cm.v)):cm.src==='pay'?L.lvEstPay(ivUsd(cm.v)):(cm.src==='fact'?L.gpSalesFact+' ':'')+L.gpSalesUsd(ivUsd(cm.v)); }
+
+/* ---------- 2. Один вопрос перед планом Сифры, если о продажах совсем ничего не известно ---------- */
+function ivAskSales(done){ const opts=[[7000,L.lvA1],[20000,L.lvA2],[45000,L.lvA3],[80000,L.lvA4],[150000,L.lvA5],[300000,L.lvA6]]; let pick=0;
+  openSheet(`<div class="lv-ask"><span class="id-bava">${SF_AVA}</span><h3>${L.lvAskT}</h3><p>${L.lvAskD}</p>
+    <div class="chips lv-opts">${opts.map(o=>`<button type="button" class="chip" data-lvs="${o[0]}" aria-pressed="false">${o[1]}</button>`).join('')}</div>
+    <div class="field n gp-sales"><label for="lv-own">${L.lvAskOwn}</label><div class="pin"><input id="lv-own" type="number" inputmode="decimal" min="0" data-nodirty><b>${L.cur}</b></div></div>
+    <button type="button" class="btn" id="lv-go">${L.lvAskGo}</button><button type="button" class="btn btn-ghost" id="lv-skip">${L.lvAskSkip}</button></div>`);
+  sheet.querySelectorAll('[data-lvs]').forEach(b=>b.onclick=()=>{ pick=+b.dataset.lvs; sheet.querySelectorAll('[data-lvs]').forEach(x=>{ x.classList.toggle('on',x===b); x.setAttribute('aria-pressed',x===b); }); $('#lv-own').value=''; });
+  $('#lv-own').addEventListener('input',()=>{ pick=0; sheet.querySelectorAll('[data-lvs]').forEach(x=>{ x.classList.remove('on'); x.setAttribute('aria-pressed','false'); }); });
+  $('#lv-go').onclick=()=>{ const v=+$('#lv-own').value||pick, P=ivP(); if(!(v>0)){ toast(L.lvAskNeed); return; } P.capM=Math.round(v); P.askS=1; persist(); done(); };
+  $('#lv-skip').onclick=()=>{ ivP().askS=1; persist(); done(); }; }
+{ const _pa=ivPlanAsk; ivPlanAsk=function(D,edit){ const P=ivP(); if(D&&D.S0&&D.S0.src==='def'&&!P.askS&&navigator.onLine){ ivAskSales(()=>{ let D2=null; try{ D2=ivGoalData(D.cat,true,null); }catch(e){} _pa(D2||D,edit); }); return; } return _pa(D,edit); }; }
+
+/* ---------- 3. «Рынок сегодня»: раз в день Сифра ищет свежие данные и уточняет расчёт ---------- */
+let mkBusy=null;
+function mkSt(){ state.misc=state.misc||{}; return state.misc.mkt||(state.misc.mkt={}); }
+function mkLive(){ const m=mkSt(); if(ivP().live===0||!m.day||m.lang!==lang) return null; const d=parseYmd(m.day); if(!d) return null; const age=Math.round((today0()-d)/864e5); return age>=0&&age<=3?m:null; }
+{ const _d=ivDef; ivDef=function(cat){ const d=_d(cat), m=mkLive(), x=m&&(m.cats||[]).find(c=>c.id===cat); if(!x) return d; const o=(ivP().c||{})[cat]||{}, own=state.misc&&state.misc.mk&&+state.misc.mk[cat]>0;
+    return Object.assign({},d,{p:d.p.map((v,i)=>d.src[i]==='def'&&x.buy?Math.round(v*(1+x.buy/100)*100)/100:v), mk:d.mk.map((v,i)=>own||(o.mkc&&+o.mkc[i]>0)?v:Math.max(5,v+(x.mk||0))),
+      m:+o.m>0?d.m:Math.max(2,d.m+(x.demand==='hot'?-1:x.demand==='cold'?1:0)), live:x}); }; }
+{ const _g=ivCgRate; ivCgRate=function(c){ const r=_g(c), m=mkLive(), x=m&&(m.routes||[]).find(y=>y.c===c); return x&&x.cargo&&!(+ivP().cgr[c]>0)?r*(1+x.cargo/100):r; }; }
+function mkFetch(){ const m=mkSt(), day=ymd(new Date()); if(ivP().live===0||!navigator.onLine||(m.day===day&&m.lang===lang)) return Promise.resolve(false); if(mkBusy) return mkBusy;
+  if(Date.now()-(+lsGet('mkt_try')||0)<20*60e3) return Promise.resolve(false);
+  const cl=(v,a)=>Math.max(-a,Math.min(a,Math.round(+v||0))), tx=(v,n)=>String(v||'').replace(/<[^>]*>/g,'').slice(0,n);
+  mkBusy=sfCapsLoad().then(c=>{ if(!c||c.v<6) return false; lsSet('mkt_try',String(Date.now()));
+    return fetch(API_BASE+'/api/mk/market',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang})}).then(r=>r.ok?r.json():null).then(j=>{ if(!j||!j.summary||!Array.isArray(j.cats)) return false;
+      state.misc.mkt={day,sday:/^\d{4}-\d\d-\d\d$/.test(j.day||'')?j.day:day,lang,sum:tx(j.summary,320),
+        cats:j.cats.filter(x=>x&&IV_CATS.includes(x.id)).slice(0,13).map(x=>({id:x.id,demand:['hot','cold'].includes(x.demand)?x.demand:'normal',mk:cl(x.mk,15),buy:cl(x.buy,15),note:tx(x.note,200)})),
+        routes:(Array.isArray(j.routes)?j.routes:[]).filter(x=>x&&IV_C.includes(x.c)).slice(0,4).map(x=>({c:x.c,cargo:cl(x.cargo,30),days:Math.max(0,Math.min(30,Math.round(+x.days||0))),note:tx(x.note,200)})),
+        src:(Array.isArray(j.sources)?j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,6).map(x=>({url:String(x.url).slice(0,300),title:tx(x.title,90)}))};
+      ivMemo.clear(); persist(); return true; }); }).catch(()=>false).finally(()=>{ mkBusy=null; });
+  return mkBusy; }
+function mkLiveHTML(){ const P=ivP(); if(P.live===0) return `<div class="lv off"><span>${L.lvOff}</span><button type="button" class="gp-mini" data-lvon="1">${L.lvOn}</button></div>`;
+  const m=mkLive(); if(!m) return mkBusy?`<div class="lv wait"><i class="lv-dot"></i><span>${L.lvWait}</span></div>`:'';
+  const fresh=m.day===ymd(new Date()), d=parseYmd(m.sday||m.day), sg=v=>(v>0?'+':'−')+Math.abs(v);
+  const tag=x=>[x.demand==='hot'?`<i class="up">${L.lvHot}</i>`:x.demand==='cold'?`<i class="dn">${L.lvCold}</i>`:'',x.mk?`<i>${L.lvMk(sg(x.mk))}</i>`:'',x.buy?`<i>${L.lvBuy(sg(x.buy))}</i>`:''].join('');
+  const cats=(m.cats||[]).map(x=>`<div class="lv-r"><b>${L['whC_'+x.id]||x.id}</b><span class="lv-tags">${tag(x)}</span><p>${esc(x.note)}</p></div>`).join('');
+  const rts=(m.routes||[]).map(x=>`<div class="lv-r"><b>${TCOUNTRY[x.c]?TCOUNTRY[x.c].f+' ':''}${L['cn_'+x.c]||x.c}</b><span class="lv-tags">${x.cargo?`<i>${L.lvCargo(sg(x.cargo))}</i>`:''}${x.days?`<i>${L.lvDays(x.days)}</i>`:''}</span><p>${esc(x.note)}</p></div>`).join('');
+  const src=(m.src||[]).length?`<div class="id-src"><small>${L.idSrc}</small>${m.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.title||s.url)}</a>`).join('')}</div>`:'';
+  return `<details class="lv" id="lv"><summary><i class="lv-dot ${fresh?'':'old'}"></i><span><b>${L.lvT(d?fmtDate(d):'')}</b><small>${esc(m.sum)}</small></span>${ico('down',16)}</summary>
+    <div class="lv-b">${cats||rts?cats+rts:`<p class="lv-none">${L.lvNone}</p>`}${src}<p class="lv-note">${L.lvNote}</p><button type="button" class="gp-mini" data-lvoff="1">${L.lvOffBtn}</button></div></details>`; }
+function mkLiveDraw(){ const el=$('#iv-live'); if(!el) return; const open=!!(el.querySelector('details')||{}).open; el.innerHTML=mkLiveHTML(); const dt=el.querySelector('details'); if(dt&&open) dt.open=true;
+  const set=v=>{ ivP().live=v; ivMemo.clear(); persist(); if(window.ivRefresh) window.ivRefresh(); else mkLiveDraw(); if(v) mkKick(); };
+  const off=el.querySelector('[data-lvoff]'); if(off) off.onclick=()=>set(0); const on=el.querySelector('[data-lvon]'); if(on) on.onclick=()=>set(1); }
+function mkKick(){ const p=mkFetch(); mkLiveDraw(); p.then(ch=>{ if(ch&&window.ivRefresh) window.ivRefresh(); else mkLiveDraw(); }); }
+{ const _is=investSheet; investSheet=function(){ const r=_is.apply(this,arguments); try{ mkKick(); }catch(e){} return r; }; }
+
+/* ---------- 4. Сверка с планом: зафиксировать путь и раз в месяц отмечать, сколько на самом деле ---------- */
+function ivTrack(){ const P=ivP(), g=P.g0; if(!g||!g.d) return null; const st=parseYmd(g.d); if(!st) return null; const el=Math.max(0,(today0()-st)/864e5/30.44);
+  const pl=ivPlan(g.cat,g.c,{cap:g.cap,tgt:g.tgt,re:g.re,start:st,S:g.S}), exp=ivPlanVal(pl,el), fs=(P.gf||[]).filter(x=>x&&x.d>=g.d), last=fs.length?fs[fs.length-1]:null; let diff=null;
+  if(last){ const lm=Math.max(0,(parseYmd(last.d)-st)/864e5/30.44), at=last.v<=g.cap?0:ivPlanAt(pl,last.v); diff=at==null?null:at-lm; }
+  return {g,pl,el,exp,last,diff,n:fs.length}; }
+function ivTrackHTML(D){ const P=ivP(), t=ivTrack(); if(!t) return D.pl.ok?`<div class="gp-track" id="gp-track"><b>${ico('check',18)} ${L.lvTrT}</b><p>${L.lvTrD}</p><button type="button" class="gp-mini" id="gp-fix">${L.lvTrFix}</button></div>`:'';
+  const st=parseYmd(t.g.d), days=Math.round((today0()-st)/864e5), lastD=t.last?parseYmd(t.last.d):null, due=!t.last?days>=25:Math.round((today0()-lastD)/864e5)>=25;
+  const stat=t.last?(t.diff==null?L.lvTrOver(fmtDate(lastD),ivUsd(t.last.v)):Math.abs(t.diff)<0.5?L.lvTrOn(fmtDate(lastD),ivUsd(t.last.v)):t.diff>0?L.lvTrAhead(fmtDate(lastD),ivUsd(t.last.v),ivDur(t.diff)):L.lvTrBehind(fmtDate(lastD),ivUsd(t.last.v),ivDur(-t.diff))):'';
+  return `<div class="gp-track on ${t.last&&t.diff!=null&&t.diff<-0.5?'behind':''}" id="gp-track"><b>${ico('check',18)} ${L.lvTrT}</b><p>${L.lvTrSince(fmtDate(st),ivUsd(t.g.cap),ivUsd(t.g.tgt))} ${L.lvTrExp(ivUsd(t.exp))}</p>${stat?`<p class="gp-tst">${stat}</p>`:''}${due&&days>=25?`<p class="gp-tdue">${L.lvTrDue}</p>`:''}
+    <div class="gp-tin"><div class="pin"><input id="gp-fv" type="number" inputmode="decimal" min="0" data-nodirty placeholder="${L.lvTrPh}" aria-label="${L.lvTrPh}"><b>$</b></div><button type="button" class="gp-mini" id="gp-fsave">${L.lvTrSave}</button></div>
+    <small class="gp-thint">${L.lvTrHint}</small><button type="button" class="gp-tre" id="gp-refix">${L.lvTrRefix}</button></div>`; }
+
+/* ---------- 5. Кривая пути: одна линия от суммы до цели с вехами ---------- */
+function ivCurveSVG(D){ const pl=D.pl; if(!pl.ok||!pl.cyc.length||!(D.tgt>D.cap)) return ''; const W=320,H=132,px=10,pt=14,pb=24, M=pl.m, X=m=>px+(W-2*px)*Math.min(1,m/M), Y=v=>H-pb-(H-pt-pb)*Math.max(0,Math.min(1,(v-D.cap)/(D.tgt-D.cap)));
+  const pts=[[0,D.cap]]; for(const c of pl.cyc){ if(c.A>=M) break; pts.push([c.A,c.v0]); if(c.E>=M){ pts.push([M,D.tgt]); break; } pts.push([c.E,c.v1]); }
+  const d=pts.map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' '), f=n=>n.toFixed(1);
+  const ms=(D.x>=3?[2,3,5].filter(x=>x<D.x-0.01).map(x=>({l:'×'+x,v:D.cap*x})):[{l:'',v:D.cap+(D.tgt-D.cap)/2}]).map(o=>Object.assign(o,{m:ivPlanAt(pl,o.v)})).filter(o=>o.m!=null);
+  return `<svg class="gp-curve" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(L.lvCurveA(ivUsd(D.cap),ivUsd(D.tgt),ivGoalWhen(D,M)))}"><line class="ax" x1="${px}" y1="${H-pb}" x2="${W-px}" y2="${H-pb}"/>
+    <path class="ar" d="${d} L${f(X(M))} ${H-pb} L${px} ${H-pb} Z"/><path class="ln" d="${d}" pathLength="1"/>
+    ${ms.map(o=>`<circle class="ms" cx="${f(X(o.m))}" cy="${f(Y(o.v))}" r="3.5"/>${o.l?`<text class="ml" x="${f(X(o.m))}" y="${f(Y(o.v)-8)}" text-anchor="middle">${o.l}</text>`:''}`).join('')}
+    <circle class="st" cx="${px}" cy="${f(Y(D.cap))}" r="4"/><circle class="en" cx="${f(X(M))}" cy="${f(Y(D.tgt))}" r="5"/>
+    <text class="xl" x="${px}" y="${H-7}">${esc(m8MonLabel(D.start))}</text><text class="xl" x="${W-px}" y="${H-7}" text-anchor="end">${esc(ivGoalWhen(D,M))}</text></svg>`; }
+
+/* встроить кривую и сверку в карточку пути */
+{ const _gh=ivGoalHTML; ivGoalHTML=function(D){ let h=_gh(D); if(!D||!h) return h; let cv='', tr=''; try{ cv=ivCurveSVG(D); }catch(e){} try{ tr=ivTrackHTML(D); }catch(e){}
+    if(cv){ const i=h.indexOf('<div class="gp-ms">'); if(i>=0) h=h.slice(0,i)+cv+h.slice(i); }
+    if(tr){ const k='<h5>'+L.gpLevT+'</h5>', i=h.indexOf(k); if(i>=0) h=h.slice(0,i)+tr+h.slice(i); }
+    return h; }; }
+{ const _gb=ivGoalBind; ivGoalBind=function(box,D,api){ _gb(box,D,api); const P=ivP(), re=()=>{ if(window.ivRefresh) window.ivRefresh(); else api.upd(); };
+    const fix=()=>{ P.g0={d:ymd(new Date()),cap:D.cap,tgt:D.tgt,re:D.re,S:D.S0.v,cat:D.cat,c:D.c}; P.gf=[]; persist(); toast(L.lvTrFixed); re(); };
+    const a=box.querySelector('#gp-fix'); if(a) a.onclick=fix; const b=box.querySelector('#gp-refix'); if(b) b.onclick=()=>{ if(b.dataset.sure==='1'){ fix(); return; } b.dataset.sure='1'; b.textContent=L.lvTrSure; };
+    const s=box.querySelector('#gp-fsave'); if(s) s.onclick=()=>{ const v=+box.querySelector('#gp-fv').value; if(!(v>0)){ toast(L.lvTrNeed); return; } P.gf=(P.gf||[]).filter(x=>x.d!==ymd(new Date())); P.gf.push({d:ymd(new Date()),v:Math.round(v)}); if(P.gf.length>60) P.gf=P.gf.slice(-60); persist(); re(); }; }; }
+
+/* ===================== v17: «Ещё» — найти за секунду =====================
+   Что было не так: 15 одинаковых строк подряд, без подсказок, что внутри; «Куда вложить деньги» в списке не было вовсе;
+   под «Данные, копия и семья» стояла чужая подпись.
+   Откуда идеи:
+   - Nielsen Norman Group (179 человек, 6 сайтов): спрятанные разделы находят хуже — на телефоне ими пользуются в 57% случаев
+     против 86%, когда часть разделов на виду → самое нужное вынесено плитками наверх;
+   - Sears, Shneiderman (ACM TOCHI, 1994): если часто нужные пункты стоят сверху, а остальной список не меняется, выбор быстрее
+     на 17–58% → плитки «Частое» подстраиваются под человека, порядок списка ниже всегда один;
+   - Revolut 10: нужное «в одно касание» с главного экрана и группировка по смыслу → четыре группы с понятными названиями;
+   - подпись под строкой говорит, что внутри сейчас (ближайший платёж, курс, давность копии) — не нужно открывать, чтобы узнать. */
+const MORE_DEF=['invest','idea','cal','money'];
+function moreUse(k){ try{ state.misc=state.misc||{}; const m=state.misc.mu||(state.misc.mu={}); m[k]=(+m[k]||0)+1; persist(); }catch(e){} }
+function moreItems(){ const s=fn=>{ try{ return fn()||''; }catch(e){ return ''; } }, u=s(()=>usdRate());
+  const up=s(()=>{ const a=m10Upcoming().slice().sort((x,y)=>x.d-y.d)[0]; return a?{t:(a.late?L.mrLate:fmtDate(a.d))+' — '+a.n+', '+money(a.v),w:!!a.late}:null; });
+  const bk=s(()=>{ const t=lastBackup(); if(!t) return {t:L.mrBkNo,w:true}; const d=Math.floor((Date.now()-t)/864e5); return {t:d<1?L.mrBkToday:L.mrBk(d),w:d>14}; });
+  const goal=s(()=>{ const D=ivGoalLite(); return D?L.mrGoal(ivUsd(D.tgt),D.pl.ok?ivGoalWhen(D,D.pl.m):L.gpNo20):''; });
+  const trip=s(()=>{ const t=(state.trips||[]).filter(x=>!x.done).slice(-1)[0]; return t?(t.name||t.city||''):''; });
+  const nid=s(()=>ideas().length), ntf=s(()=>typeof Notification!=='undefined'&&Notification.permission==='granted'?L.mrNtOn:L.mrNtOff);
+  const th=s(()=>({light:L.m8ThLight,dark:L.m8ThDark,auto:L.m8ThAuto})[m8Theme()]);
+  return [
+    {k:'money',g:'m',a:'data-tab="money"',id:'m10MoneyLink',i:'money',t:L.m10Money,s:L.m10MoneySub},
+    {k:'invest',g:'m',a:'data-invest="1"',i:'chart',t:L.ivTitle,s:goal||L.mrInvSub},
+    {k:'idea',g:'m',a:'data-more-idea="1"',id:'m15IdeaLink',i:'bulb',t:L.idTitle+(nid?' · '+nid:''),s:L.idMoreSub},
+    {k:'calc',g:'m',a:'data-m-calc="1"',i:'calc',t:L.m7Calc,s:L.mrCalcSub},
+    {k:'rates',g:'m',a:'data-rates="1"',i:'rate',t:L.m7Rates,s:u?'1 $ = '+fx(u,2)+' '+L.cur:''},
+    {k:'buy',g:'s',a:'data-tab="buy"',i:'bag',t:L.navBuy,s:trip||L.mrBuySub},
+    {k:'stats',g:'s',a:'data-tab="stats"',i:'stats',t:L.navStats,s:L.mrStatsSub},
+    {k:'week',g:'s',a:'data-week="0"',i:'history',t:L.m7WeekSum,s:L.mrWeekSub},
+    {k:'cal',g:'p',a:'data-m-cal="1"',i:'cal',t:L.m7Cal2,s:up?up.t:L.mrCalNone,w:up&&up.w},
+    {k:'notify',g:'p',a:'data-m-notify="1"',i:'bell',t:L.m7NotifT,s:ntf},
+    {k:'data',g:'d',a:'data-m-data="1"',i:'shield',t:L.m7Data,s:bk?bk.t:'',w:bk&&bk.w},
+    {k:'theme',g:'d',a:'data-m8-theme="1"',i:'sun',t:L.m8ThemeT,s:th},
+    {k:'lang',g:'d',a:'data-m-lang="1"',i:'globe',t:L.m7Lang,s:({ru:'Русский',tg:'Тоҷикӣ',en:'English'})[lang]},
+    {k:'region',g:'d',a:'data-m8-region="1"',i:'pin',t:L.m8Country,s:s(()=>m8RegName())},
+    {k:'simple',g:'d',a:'data-m-simple="1"',i:'eye',t:L.m7Simple,s:L.mrSimpleSub}]; }
+function m17MoreHTML(){ const its=moreItems(), by=k=>its.find(x=>x.k===k), mu=(state.misc&&state.misc.mu)||{};
+  /* «Частое»: сначала то, чем человек пользуется сам, остальное — добираем из обычного набора */
+  const used=Object.keys(mu).filter(k=>by(k)&&+mu[k]>=2).sort((a,b)=>mu[b]-mu[a]), top=[]; for(const k of used.concat(MORE_DEF)){ if(!top.includes(k)&&by(k)) top.push(k); if(top.length===4) break; }
+  const tile=o=>`<button type="button" class="mr-tile g-${o.g}" ${o.a} data-mk="${o.k}"><span class="mr-ti">${ico(o.i,24)}</span><b>${o.t.replace(/ · \d+$/,'')}</b></button>`;
+  const li=o=>`<button type="button" class="m7-li mr-li g-${o.g}" ${o.a} ${o.id?`id="${o.id}"`:''} data-mk="${o.k}"><span class="m7-li-i">${ico(o.i,22)}</span><span class="m7-li-t"><b>${o.t}</b><small class="${o.w?'warn':''}">${o.s?esc(String(o.s)):''}</small></span>${ico('next',18)}</button>`;
+  const grp=(g,t)=>`<div class="m7-group mr-g"><h2>${t}</h2><div class="m7-list">${its.filter(x=>x.g===g).map(li).join('')}</div></div>`;
+  return `<h1 class="m7-h1">${L.m7MoreT}</h1>
+    <button type="button" class="mr-search" data-search="1" data-mk="search">${ico('search',20)}<span>${L.mrSearch}</span></button>
+    <div class="mr-top" aria-label="${L.mrTop}"><h2>${L.mrTop}</h2><div class="mr-tiles">${top.map(k=>tile(by(k))).join('')}</div></div>
+    ${grp('m',L.mrG1)}${grp('s',L.mrG2)}${grp('p',L.mrG3)}${grp('d',L.mrG4)}
+    <p class="m7-ver">Mira · ${L.appSub}</p>`; }
+function m17After(){ const mv=$('#moreView'); if(mv) mv.innerHTML=m17MoreHTML(); }
+try{ const _r17=render; render=function(){ const x=_r17.apply(this,arguments); try{ m17After(); }catch(e){} return x; }; }catch(e){}
+/* на window, а не на document: обработчики разделов выше по коду гасят событие раньше, чем оно дойдёт до document */
+window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('#moreView [data-mk]'); if(!t) return; moreUse(t.dataset.mk); if(t.hasAttribute('data-more-idea')) ideaSheet(); },true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
