@@ -1148,6 +1148,11 @@
   .m7-calm{display:flex; gap:12px; align-items:center; background:var(--m-leaf-weak); color:var(--m-leaf); border-radius:22px; padding:14px 16px; margin-bottom:14px;}
   .m7-calm b{display:block; color:var(--ink);} .m7-calm span{color:var(--muted); font-size:.9rem;}
   .m7-month{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:14px 16px 4px; margin-bottom:14px;}
+  .ctr-pages{display:grid; grid-template-columns:1fr; gap:12px; margin:0 0 12px;} .ctr-pg{background:var(--surface-2); border-radius:16px; padding:10px; display:flex; gap:12px; align-items:center;}
+  .ctr-pg img{width:76px; height:100px; object-fit:cover; border-radius:10px; flex:none; background:#fff;} .ctr-miss{width:76px; height:100px; display:flex; align-items:center; justify-content:center; font-size:.8rem; color:var(--muted); flex:none;}
+  .ctr-pb{display:flex; gap:8px; flex:1; min-width:0;} .ctr-pb .btn{min-height:48px;} .ctr-pb .btn-primary{flex:1;} .ctr-pb .ctr-del{flex:none; width:48px; padding:0;}
+  .ctr-res{background:var(--brand-weak); border-radius:16px; padding:12px 14px 4px; margin:4px 0 12px;} .ctr-res h4{margin:0 0 6px;} .ctr-row{display:flex; gap:10px; align-items:flex-start; min-height:44px; padding:6px 0; line-height:1.4;} .ctr-row input{flex:none; margin-top:3px;} .ctr-t{margin:6px 0; line-height:1.45;}
+  .err-t{color:var(--danger);} .td-rows{margin:8px 0;}
   .rc-box{background:var(--surface-2); border-radius:16px; padding:12px 14px; margin:0 0 12px;} .rc-box .co-row{display:flex; justify-content:space-between; gap:10px; padding:4px 0;} .rc-box b{font-family:var(--font-num);}
   .nl-chk{margin:4px 0 12px;} .nl-chk h4{margin:10px 0 6px; font-size:1rem;} .nl-chk label.check{display:flex; gap:10px; align-items:flex-start; min-height:44px; padding:6px 0; line-height:1.4;} .nl-chk label.check input{flex:none; margin-top:3px;}
   .m7-m-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
@@ -2182,6 +2187,7 @@
     <section id="moneyTop"></section>
     <section id="goals"></section>
     <section id="bills"></section>
+    <section id="tillB"></section>
     <section id="homeB"></section>
     <section id="envs"></section>
   </div>
@@ -3824,6 +3830,17 @@ ru:{
   nlM1:'на что пойдут деньги', nlM2:'запас на один платёж', nlM3:'валюта кредита', nlM4:'условия договора',
   nlChkN:n=>'Отмечено '+n+' из 4', nlChkAll:'Все четыре пункта на месте. Решение за вами.', nlChkMiss:'Сначала разберитесь:',
   nlStress:p=>'Если выручка упадёт на треть — нагрузка станет '+p+'%.', nlStressOk:'Плохой месяц вы выдержите.', nlStressBad:'В плохой месяц платить будет тяжело.',
+  ctrBtn:'Договор', ctrT:'Договор кредита', ctrEmpty:'Сфотографируйте страницы договора — особенно где ставка, пеня и досрочное погашение. Фото хранятся только в телефоне и попадают в копию.', ctrAdd:'Сфотографировать договор', ctrAddMore:'Добавить страницу', ctrAdded:'Страница добавлена', ctrPage:n=>'Страница '+n, ctrDel:n=>'Удалить страницу '+n, ctrDelQ:'Удалить эту страницу договора?',
+  ctrRead:'Сифра, прочитай', ctrReading:'Сифра читает страницу… Это может занять до минуты.', ctrFound:'Сифра нашла', ctrSame:'уже так', ctrWas:v=>'сейчас '+v, ctrApply:'Вписать отмеченное в кредит', ctrApplied:n=>'Вписано: '+n,
+  ctrFee:'Комиссии', ctrEarly:'Досрочное погашение', ctrIns:'Страховка', ctrOther:'Важно', ctrCheck:'Сверьте с договором: Сифра может ошибиться, особенно на нечётком фото.',
+  ctrNone:'На этой странице Сифра не нашла условий. Попробуйте другую страницу или более чёткое фото.', ctrErr:'Не получилось прочитать. Проверьте интернет и попробуйте ещё раз.',
+  ctrQ:'Это фото страницы кредитного договора. Найди условия и ответь ТОЛЬКО одним JSON без пояснений: {"rate": годовая ставка в процентах или null, "pen": пеня в процентах за день или null, "penBase": "pay" если пеня от суммы просроченного платежа, "rem" если от всего остатка долга, иначе null, "monthly": ежемесячный платёж или null, "total": сумма кредита или null, "term": срок в месяцах или null, "fee": комиссии коротко или "", "early": условия досрочного погашения коротко или "", "ins": страховка коротко или "", "other": самое важное, о чём заёмщику стоит знать, одной фразой или ""}. Пиши по-русски. Если чего-то нет на фото — null или "". Не придумывай.',
+  tdBtn:'Взяла из кассы домой', tdT:'Из кассы — домой', tdLead:'Запишите деньги, которые взяли из кассы магазина на дом. Так видно, не съедает ли дом деньги магазина.', tdWhat:'На что', tdWhatPh:'продукты, детям, долг соседке…', tdNote:'Взяла домой', tdSaved:'Записано: из кассы домой',
+  tdWeekSal:(a,b)=>'На этой неделе домой уже ушло '+a+' из '+b+' зарплаты себе.', tdWeekNo:a=>'На этой неделе домой уже ушло '+a+'.', tdOver:(a,b)=>'Станет '+a+' — это на '+b+' больше зарплаты себе.',
+  tdCard:'Касса и дом: эта неделя', tdSal:'Зарплата себе', tdDraw:'Взяла домой', tdHome:'Домашние расходы из кассы',
+  tdCardOk:(a,b)=>'Зарплата себе — '+a+' в неделю. До неё осталось '+b+'.', tdCardOver:(a,b)=>'Зарплата себе — '+a+' в неделю. Домой ушло на '+b+' больше: это деньги магазина.', tdCardNo:'Назначьте себе зарплату в неделю — Mira покажет, если домой уходит больше.',
+  tdPrev:a=>'Прошлая неделя: '+a, tdWhy:'Исследование 1 193 владельцев небольших дел: кто держит деньги дела и дома раздельно и платит себе постоянную зарплату, лучше переживает плохие недели.',
+  tdSalSet:'Назначить зарплату себе', tdSalEdit:'Изменить зарплату', tdFromTill:'Оплатила из кассы магазина',
   rcnBtn:'Сверить с банком', rcnT:'Сверка с банком', rcnHow:'Посмотрите остаток долга в приложении банка или в выписке и впишите сюда. Mira сравнит со своим расчётом.', rcnBank:'Остаток долга по данным банка', rcnMine:'По расчёту Mira', rcnDiff:'Разница', rcnSame:'совпадает',
   rcnOk:'Цифры совпадают.', rcnMore:'У банка долг больше. Так бывает из-за пени, комиссий или если часть платежей ушла на проценты.', rcnLess:'У банка долг меньше. Возможно, какой-то платёж не записан в Mira.',
   rcnSave:'Поправить по банку', rcnErr:'Впишите остаток долга из банка', rcnDone:v=>'Остаток поправлен: '+v, rcnNever:'С банком ещё не сверяли. Раз в три месяца стоит проверить остаток.', rcnLast:d=>'Сверено с банком: '+d+'.', rcnOld:d=>'Последняя сверка — '+d+'. Пора сверить снова.',
@@ -3887,6 +3904,17 @@ tg:{
   nlM1:'пул ба чӣ меравад', nlM2:'захира барои як пардохт', nlM3:'асъори қарз', nlM4:'шартҳои шартнома',
   nlChkN:n=>'Қайд шуд: '+n+' аз 4', nlChkAll:'Ҳар чор банд дар ҷояш. Қарор аз шумост.', nlChkMiss:'Аввал равшан кунед:',
   nlStress:p=>'Агар даромад сеяк кам шавад — сарборӣ '+p+'% мешавад.', nlStressOk:'Моҳи бадро мебардоред.', nlStressBad:'Дар моҳи бад пардохт душвор мешавад.',
+  ctrBtn:'Шартнома', ctrT:'Шартномаи қарз', ctrEmpty:'Саҳифаҳои шартномаро акс гиред — махсусан ҷое, ки фоиз, ҷарима ва пардохти пеш аз мӯҳлат навишта шудааст. Аксҳо танҳо дар телефон нигоҳ дошта мешаванд ва ба нусха медароянд.', ctrAdd:'Акси шартнома', ctrAddMore:'Илова кардани саҳифа', ctrAdded:'Саҳифа илова шуд', ctrPage:n=>'Саҳифаи '+n, ctrDel:n=>'Нест кардани саҳифаи '+n, ctrDelQ:'Ин саҳифаи шартномаро нест кунем?',
+  ctrRead:'Сифра, бихон', ctrReading:'Сифра саҳифаро мехонад… То як дақиқа вақт мегирад.', ctrFound:'Сифра ёфт', ctrSame:'ҳамин тавр аст', ctrWas:v=>'ҳозир '+v, ctrApply:'Қайдшударо ба қарз нависед', ctrApplied:n=>'Навишта шуд: '+n,
+  ctrFee:'Комиссияҳо', ctrEarly:'Пардохти пеш аз мӯҳлат', ctrIns:'Суғурта', ctrOther:'Муҳим', ctrCheck:'Бо шартнома муқоиса кунед: Сифра метавонад хато кунад, махсусан дар акси норавшан.',
+  ctrNone:'Дар ин саҳифа Сифра шартҳоро наёфт. Саҳифаи дигар ё акси равшантарро санҷед.', ctrErr:'Хондан нашуд. Интернетро санҷед ва боз кӯшиш кунед.',
+  ctrQ:'Ин акси саҳифаи шартномаи қарз аст. Шартҳоро ёб ва ТАНҲО бо як JSON бе шарҳ ҷавоб деҳ: {"rate": фоизи солона ё null, "pen": ҷарима бо фоиз дар як рӯз ё null, "penBase": "pay" агар ҷарима аз маблағи пардохти гузашта бошад, "rem" агар аз тамоми бақияи қарз бошад, вагарна null, "monthly": пардохти моҳона ё null, "total": маблағи қарз ё null, "term": мӯҳлат бо моҳ ё null, "fee": комиссияҳо кӯтоҳ ё "", "early": шартҳои пардохти пеш аз мӯҳлат кӯтоҳ ё "", "ins": суғурта кӯтоҳ ё "", "other": муҳимтарин чиз барои қарзгир бо як ҷумла ё ""}. Бо забони тоҷикӣ навис. Агар чизе дар акс набошад — null ё "". Аз худ насоз.',
+  tdBtn:'Аз хазина ба хона гирифтам', tdT:'Аз хазина — ба хона', tdLead:'Пулеро, ки аз хазинаи мағоза ба хона гирифтед, сабт кунед. Ҳамин тавр дида мешавад, ки хона пули мағозаро намехӯрад.', tdWhat:'Барои чӣ', tdWhatPh:'озуқа, барои кӯдакон, қарзи ҳамсоя…', tdNote:'Ба хона гирифтам', tdSaved:'Сабт шуд: аз хазина ба хона',
+  tdWeekSal:(a,b)=>'Дар ин ҳафта ба хона аллакай '+a+' аз '+b+' маоши худ рафт.', tdWeekNo:a=>'Дар ин ҳафта ба хона аллакай '+a+' рафт.', tdOver:(a,b)=>a+' мешавад — ин аз маоши худ '+b+' зиёд аст.',
+  tdCard:'Хазина ва хона: ин ҳафта', tdSal:'Маоши худ', tdDraw:'Ба хона гирифтам', tdHome:'Хароҷоти хона аз хазина',
+  tdCardOk:(a,b)=>'Маоши худ — '+a+' дар ҳафта. То он '+b+' мондааст.', tdCardOver:(a,b)=>'Маоши худ — '+a+' дар ҳафта. Ба хона '+b+' зиёдтар рафт: ин пули мағоза аст.', tdCardNo:'Ба худ маоши ҳафтаина муайян кунед — Mira нишон медиҳад, агар ба хона зиёдтар равад.',
+  tdPrev:a=>'Ҳафтаи гузашта: '+a, tdWhy:'Тадқиқоти 1 193 соҳиби кори хурд: касе ки пули кор ва хонаро ҷудо нигоҳ медорад ва ба худ маоши доимӣ медиҳад, ҳафтаҳои бадро беҳтар мегузаронад.',
+  tdSalSet:'Маоши худро муайян кардан', tdSalEdit:'Тағйири маош', tdFromTill:'Аз хазинаи мағоза пардохтам',
   rcnBtn:'Муқоиса бо бонк', rcnT:'Муқоиса бо бонк', rcnHow:'Бақияи қарзро дар барномаи бонк ё дар иқтибос бинед ва ин ҷо нависед. Mira бо ҳисоби худ муқоиса мекунад.', rcnBank:'Бақияи қарз аз рӯи маълумоти бонк', rcnMine:'Аз рӯи ҳисоби Mira', rcnDiff:'Фарқ', rcnSame:'мувофиқ аст',
   rcnOk:'Рақамҳо мувофиқанд.', rcnMore:'Дар бонк қарз зиёдтар аст. Ин аз ҷарима, комиссия ё аз он мешавад, ки як қисми пардохтҳо ба фоиз рафтааст.', rcnLess:'Дар бонк қарз камтар аст. Шояд ягон пардохт дар Mira сабт нашудааст.',
   rcnSave:'Аз рӯи бонк ислоҳ кардан', rcnErr:'Бақияи қарзро аз бонк нависед', rcnDone:v=>'Бақия ислоҳ шуд: '+v, rcnNever:'Ҳанӯз бо бонк муқоиса нашудааст. Ҳар се моҳ як бор бақияро санҷидан хуб аст.', rcnLast:d=>'Бо бонк муқоиса шуд: '+d+'.', rcnOld:d=>'Муқоисаи охирин — '+d+'. Вақти муқоисаи нав расид.',
@@ -3950,6 +3978,17 @@ en:{
   nlM1:'what the money is for', nlM2:'a reserve for one payment', nlM3:'the loan currency', nlM4:'the contract terms',
   nlChkN:n=>n+' of 4 ticked', nlChkAll:'All four points are in place. The decision is yours.', nlChkMiss:'Sort these out first:',
   nlStress:p=>'If revenue drops by a third, the load becomes '+p+'%.', nlStressOk:'You can get through a bad month.', nlStressBad:'A bad month would make paying hard.',
+  ctrBtn:'Contract', ctrT:'Loan contract', ctrEmpty:'Take photos of the contract pages — especially where the rate, penalty and early repayment are. Photos stay only on your phone and are included in the backup.', ctrAdd:'Photograph the contract', ctrAddMore:'Add a page', ctrAdded:'Page added', ctrPage:n=>'Page '+n, ctrDel:n=>'Delete page '+n, ctrDelQ:'Delete this contract page?',
+  ctrRead:'Sifra, read it', ctrReading:'Sifra is reading the page… This can take up to a minute.', ctrFound:'Sifra found', ctrSame:'already set', ctrWas:v=>'now '+v, ctrApply:'Add the ticked terms to the loan', ctrApplied:n=>'Added: '+n,
+  ctrFee:'Fees', ctrEarly:'Early repayment', ctrIns:'Insurance', ctrOther:'Important', ctrCheck:'Check against the contract: Sifra can make mistakes, especially with a blurry photo.',
+  ctrNone:'Sifra found no terms on this page. Try another page or a sharper photo.', ctrErr:'Could not read it. Check your connection and try again.',
+  ctrQ:'This is a photo of a loan contract page. Find the terms and reply ONLY with one JSON object, no explanations: {"rate": annual interest rate in percent or null, "pen": daily penalty in percent or null, "penBase": "pay" if the penalty is on the overdue payment, "rem" if on the whole remaining debt, otherwise null, "monthly": monthly payment or null, "total": loan amount or null, "term": term in months or null, "fee": fees briefly or "", "early": early repayment terms briefly or "", "ins": insurance briefly or "", "other": the most important thing the borrower should know, in one sentence, or ""}. Write in English. If something is not in the photo, use null or "". Do not invent anything.',
+  tdBtn:'Took cash home', tdT:'From the till — home', tdLead:'Record money you took from the shop till for home. That way you can see whether home is eating into the shop’s money.', tdWhat:'What for', tdWhatPh:'groceries, children, a debt…', tdNote:'Took home', tdSaved:'Saved: from the till to home',
+  tdWeekSal:(a,b)=>'This week '+a+' of your '+b+' salary has already gone home.', tdWeekNo:a=>'This week '+a+' has already gone home.', tdOver:(a,b)=>'That makes '+a+' — '+b+' more than your salary.',
+  tdCard:'Till and home: this week', tdSal:'Your salary', tdDraw:'Took home', tdHome:'Home expenses paid from the till',
+  tdCardOk:(a,b)=>'Your salary is '+a+' a week. '+b+' left until you reach it.', tdCardOver:(a,b)=>'Your salary is '+a+' a week. '+b+' more went home — that is the shop’s money.', tdCardNo:'Set yourself a weekly salary and Mira will show when more goes home.',
+  tdPrev:a=>'Last week: '+a, tdWhy:'A study of 1,193 small business owners: those who keep business and home money apart and pay themselves a fixed salary get through bad weeks better.',
+  tdSalSet:'Set your salary', tdSalEdit:'Change salary', tdFromTill:'Paid from the shop till',
   rcnBtn:'Check against the bank', rcnT:'Check against the bank', rcnHow:'Look up the remaining debt in your bank app or statement and enter it here. Mira will compare it with its own figure.', rcnBank:'Remaining debt according to the bank', rcnMine:'According to Mira', rcnDiff:'Difference', rcnSame:'matches',
   rcnOk:'The figures match.', rcnMore:'The bank shows more debt. This happens because of penalties, fees, or part of the payments going to interest.', rcnLess:'The bank shows less debt. A payment may be missing in Mira.',
   rcnSave:'Correct to the bank figure', rcnErr:'Enter the remaining debt from the bank', rcnDone:v=>'Balance corrected: '+v, rcnNever:'Not checked against the bank yet. It is worth checking the balance every three months.', rcnLast:d=>'Checked against the bank: '+d+'.', rcnOld:d=>'Last check: '+d+'. Time to check again.',
@@ -5251,7 +5290,7 @@ function fileToIconDataURL(file){
 
 function confirmDelete(loan){
   openSheet(`<h3>${L.deleteBankQ}</h3><p class="lead">${esc(L.deleteBankBody(loan.name))}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-danger" id="d-yes">${L.delete}</button></div>`);
-  $('#d-yes').onclick=()=>{ state.loans=state.loans.filter(l=>l.id!==loan.id); state.payments=state.payments.filter(p=>p.loanId!==loan.id); persist(); closeSheet(); render(); delToast(L.bankDeleted); };
+  $('#d-yes').onclick=()=>{ (loan.docs||[]).forEach(k=>rcDel(k)); state.loans=state.loans.filter(l=>l.id!==loan.id); state.payments=state.payments.filter(p=>p.loanId!==loan.id); persist(); closeSheet(); render(); delToast(L.bankDeleted); };
 }
 
 function goldEditForm(){
@@ -5826,7 +5865,7 @@ function detailSheet(loan){
   const extra=[];
   if(!a.done && a.interestLeft>0) extra.push(`<div class="mini"><span>${L.interestLeftOne}</span><b>${money(a.interestLeft)}</b></div>`);
   if(+loan.rate>0) extra.push(`<div class="mini"><span>${L.rateYear}</span><b>${rf.format(+loan.rate)}%</b></div>`);
-  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button>${a.done?'':`<button class="btn btn-ghost" data-recon="${loan.id}">🏦 ${L.rcnBtn}</button>`}</div>${a.done?'':`<p class="note" style="margin:6px 0 12px">${reconNote(loan)}</p>`}`;
+  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button>${a.done?'':`<button class="btn btn-ghost" data-recon="${loan.id}">🏦 ${L.rcnBtn}</button>`}<button class="btn btn-ghost" data-ctr="${loan.id}">📄 ${L.ctrBtn}${(loan.docs||[]).length?' · '+(loan.docs||[]).length:''}</button></div>${a.done?'':`<p class="note" style="margin:6px 0 12px">${reconNote(loan)}</p>`}`;
   openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3><p class="lead">${loan.note?esc(loan.note):L.loanWord}</p><div class="detail-ring">${ringHTML(a.pct,'lg')}</div>${prog}
     ${stats}${extra.length?`<div class="minis">${extra.join('')}</div>`:''}
     ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">${L.makePayment}</button>`}${a.overdue?`<button class="linkbtn" data-action="mark" data-id="${loan.id}">${L.markPaid}</button>`:''}
@@ -5935,6 +5974,52 @@ function undoPayment(pid){
 }
 
 /* № 83. Сверка с банком: остаток из выписки сравнивается с тем, что считает Mira, и цифра Mira поправляется */
+/* № 86. Договор кредита: фото страниц хранятся в телефоне (как фото чеков, попадают в копию), Сифра читает условия и предлагает вписать их в кредит */
+const CTR_MAX=8;
+function ctrParse(txt){ const m=String(txt||'').match(/\{[\s\S]*\}/); if(!m) return null; let o; try{ o=JSON.parse(m[0]); }catch(e){ return null; } if(!o||typeof o!=='object') return null;
+  const num=v=>{ if(v==null||v==='') return null; const n=+String(v).replace(',','.').replace(/[^0-9.]/g,''); return isFinite(n)&&n>0?n:null; };
+  const r={rate:num(o.rate), pen:num(o.pen), penBase:o.penBase==='rem'||o.penBase==='pay'?o.penBase:null, monthly:num(o.monthly), total:num(o.total), term:num(o.term),
+    fee:o.fee?String(o.fee).slice(0,160):'', early:o.early?String(o.early).slice(0,200):'', ins:o.ins?String(o.ins).slice(0,160):'', other:o.other?String(o.other).slice(0,240):''};
+  if(r.rate!=null&&r.rate>200) r.rate=null; if(r.pen!=null&&r.pen>10) r.pen=null; if(r.term!=null) r.term=Math.round(r.term);
+  return Object.values(r).some(v=>v!=null&&v!=='')?r:null; }
+function ctrAsk(){ return L.ctrQ; }
+async function ctrRead(loan,key){ const d=await rcGet(key); if(!d) throw new Error('nodoc'); const data=String(d).split(',')[1]; if(!data) throw new Error('nodoc');
+  const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q:ctrAsk(),lang,hist:[],img:{type:'image/jpeg',data}})});
+  const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error==='nokey'?'nokey':j.error==='limit'?'limit':'srv');
+  const res=ctrParse(j.text); if(!res) throw new Error('none'); return res; }
+function ctrRows(loan,r){ const rows=[];
+  const add=(k,lab,val,cur,fmt)=>{ if(val==null||val==='') return; rows.push({k,lab,val,cur:(cur!=null&&cur!==''&&fmt)?fmt(cur):cur,txt:fmt?fmt(val):String(val),same:cur!=null&&cur!==''&&String(cur)===String(val)}); };
+  add('rate',L.rateYear,r.rate,loan.rate,v=>rf.format(v)+'%'); add('pen',L.penLabel,r.pen,loan.pen,v=>rf.format(v)+'%');
+  if(r.penBase) add('penBase',L.penBaseL,r.penBase,loan.penBase||'pay',v=>v==='rem'?L.penBaseRem:L.penBasePay);
+  add('monthly',L.monthlyPayment,r.monthly,loan.monthly,v=>money(v)); add('term',L.term,r.term,loan.term,v=>String(v));
+  return rows; }
+async function ctrSheet(loan,res,err){
+  const docs=(loan.docs||[]).slice(), thumbs=await Promise.all(docs.map(k=>rcGet(k)));
+  const rows=res?ctrRows(loan,res):[], txt=res?[['fee',L.ctrFee],['early',L.ctrEarly],['ins',L.ctrIns],['other',L.ctrOther]].filter(([k])=>res[k]):[];
+  openSheet(`<h3>📄 ${L.ctrT}</h3><p class="lead">${esc(loan.name)}</p>
+    ${docs.length?`<div class="ctr-pages">${docs.map((k,i)=>`<div class="ctr-pg">${thumbs[i]?`<img src="${thumbs[i]}" alt="${L.ctrPage(i+1)}">`:`<span class="ctr-miss">${L.ctrPage(i+1)}</span>`}<div class="ctr-pb"><button class="btn btn-primary" data-ctr-read="${i}">✨ ${L.ctrRead}</button><button class="btn btn-ghost ctr-del" data-ctr-del="${i}" aria-label="${L.ctrDel(i+1)}">✕</button></div></div>`).join('')}</div>`
+      :`<p class="note">${L.ctrEmpty}</p>`}
+    ${docs.length<CTR_MAX?`<label class="btn btn-ghost btn-full rc-up">📷 ${docs.length?L.ctrAddMore:L.ctrAdd}<input type="file" accept="image/*" id="ctr-f" hidden></label>`:''}
+    <div id="ctr-st" class="note" aria-live="polite">${err?`<span class="err-t">${err}</span>`:''}</div>
+    ${res?`<div class="ctr-res"><h4>${L.ctrFound}</h4>
+      ${rows.length?rows.map(r=>`<label class="check ctr-row"><input type="checkbox" data-ctr-k="${r.k}" ${r.same?'disabled':'checked'}> <span><b>${esc(r.lab)}:</b> ${esc(r.txt)}${r.same?` <small class="muted">· ${L.ctrSame}</small>`:(r.cur!=null&&r.cur!==''?` <small class="muted">· ${L.ctrWas(esc(String(r.cur)))}</small>`:'')}</span></label>`).join(''):''}
+      ${txt.map(([k,lab])=>`<p class="ctr-t"><b>${lab}:</b> ${esc(res[k])}</p>`).join('')}
+      <p class="note">${L.ctrCheck}</p>
+      ${rows.some(r=>!r.same)?`<button class="btn btn-primary btn-full" id="ctr-apply">${L.ctrApply}</button>`:''}</div>`:''}
+    <div class="sheet-row"><button class="btn btn-ghost" id="ctr-back">${L.back}</button></div>`);
+  $('#ctr-back').onclick=()=>detailSheet(loan);
+  const f=$('#ctr-f'); if(f) f.addEventListener('change',async e=>{ const fl=e.target.files&&e.target.files[0]; if(!fl) return;
+    try{ const d=await imgToJpeg(fl,1600,0.8); const k='doc_'+loan.id+'_'+Date.now().toString(36); await rcPut(k,d); loan.docs=(loan.docs||[]).concat(k); persist(); ctrSheet(loan); toast(L.ctrAdded); }catch(_){ toast(L.rcFail); } });
+  sheet.querySelectorAll('[data-ctr-del]').forEach(b=>b.onclick=async()=>{ const i=+b.dataset.ctrDel, k=(loan.docs||[])[i]; if(!k) return; openSheet(`<h3>${L.ctrDelQ}</h3><div class="sheet-row"><button class="btn btn-ghost" id="ctr-no">${L.cancel}</button><button class="btn btn-danger" id="ctr-yes">${L.delete}</button></div>`);
+    $('#ctr-no').onclick=()=>ctrSheet(loan); $('#ctr-yes').onclick=async()=>{ await rcDel(k); loan.docs=loan.docs.filter(x=>x!==k); persist(); ctrSheet(loan); }; });
+  sheet.querySelectorAll('[data-ctr-read]').forEach(b=>b.onclick=async()=>{ const k=(loan.docs||[])[+b.dataset.ctrRead]; if(!k) return;
+    sheet.querySelectorAll('[data-ctr-read]').forEach(x=>x.disabled=true); $('#ctr-st').textContent=L.ctrReading;
+    try{ const r=await ctrRead(loan,k); ctrSheet(loan,r); }
+    catch(e){ const m=e&&e.message; ctrSheet(loan,null,m==='none'?L.ctrNone:m==='nokey'?L.sfNoKey:m==='limit'?L.sfLimit:L.ctrErr); } });
+  const ap=$('#ctr-apply'); if(ap) ap.onclick=()=>{ const on=[...sheet.querySelectorAll('[data-ctr-k]')].filter(x=>x.checked&&!x.disabled).map(x=>x.dataset.ctrK); if(!on.length) return;
+    for(const k of on){ const v=res[k]; if(k==='penBase') loan.penBase=v; else if(k==='term') loan.term=Math.round(v); else loan[k]=v; }
+    persist(); render(); toast(L.ctrApplied(on.length)); detailSheet(loan); };
+}
 function reconNote(loan){ const r=loan.recon; if(!r||!r.d) return L.rcnNever; const days=-daysUntil(parseYmd(r.d)); return days>90?L.rcnOld(fmtDate(parseYmd(r.d))):L.rcnLast(fmtDate(parseYmd(r.d))); }
 function reconSheet(loan){
   const a=analyze(loan), mine=Math.round(a.remaining);
@@ -6466,6 +6551,7 @@ document.addEventListener('click', e=>{
     if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); else if(k==='guide') guideSheet(null); else if(k==='when') whenSheet(null); else if(k==='invest') investSheet(); else if(k==='prio') loanPrioSheet(); else if(k==='sizes') sizesSheet(); else if(k==='labels') labelsSheet(); return; }
   const ch=t.closest('[data-ch]'); if(ch){ e.stopImmediatePropagation(); if(ch.dataset.ch==='done'){ state.misc.ch=dkey(); persist(); toast(L.saved); } else lsSet('chsn_v1',String(Date.now()+30*86400000)); render(); return; }
   const act=t.closest('[data-action="sched"]'); if(act){ e.stopImmediatePropagation(); const l=byId(act.dataset.id); if(!l) return; schedSheet(l); return; }
+  const ctr=t.closest('[data-ctr]'); if(ctr){ e.stopImmediatePropagation(); const l=byId(ctr.dataset.ctr); if(l) ctrSheet(l); return; }
   const rcn=t.closest('[data-recon]'); if(rcn){ e.stopImmediatePropagation(); const l=byId(rcn.dataset.recon); if(l) reconSheet(l); return; }
 }, true);
 
@@ -7169,6 +7255,7 @@ function billSheet(b){ const d=billDue(b); if(!d.paid) return billPay(b);
 
 /* ---- домашний бюджет: отдельно от магазина ---- */
 function renderHomeB(){
+  { const tb=$('#tillB'); if(tb){ tb.innerHTML=tillCardHTML(); const a=$('#td-add'), b=$('#td-sal'); if(a) a.onclick=()=>tillHomeForm(); if(b) b.onclick=()=>m10SalForm(()=>{ closeSheet(); render(); }); } }
   const box=$('#homeB'); if(!box) return;
   const now=new Date(), mk=monthKey(now), pk=monthKey(new Date(now.getFullYear(),now.getMonth()-1,1)), dd=now.getDate();
   const cur=state.home.filter(h=>String(h.d).slice(0,7)===mk), tot=cur.reduce((s,h)=>s+(+h.sum||0),0);
@@ -7194,12 +7281,14 @@ function homeForm(cat){
       <div class="field n big-in"><label>${L.amountW}</label><input id="hf-a" type="number" inputmode="numeric" min="0" placeholder="0"></div>
       ${c&&recent(c).length?`<div class="chips">${recent(c).map(v=>`<button class="chip" data-hv="${v}">${money(v)}</button>`).join('')}</div>`:''}
       <div class="two"><div class="field"><label>${L.expDate}</label><input id="hf-d" type="date" value="${dkey()}"></div><div class="field"><label>${L.dayNote} ${L.optional}</label><input id="hf-n" maxlength="60"></div></div>
+      <div class="field"><label class="check"><input type="checkbox" id="hf-till" ${lsGet('hf_till_v1')==='1'?'checked':''}> ${L.tdFromTill}</label></div>
       <div class="err" id="hf-err"></div><button class="btn btn-primary btn-full" id="hf-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
     sheet.querySelectorAll('[data-hc]').forEach(b=>b.onclick=()=>{ const v=$('#hf-a').value; c=b.dataset.hc; draw(); $('#hf-a').value=v; $('#hf-a').focus(); });
     sheet.querySelectorAll('[data-hv]').forEach(b=>b.onclick=()=>{ $('#hf-a').value=b.dataset.hv; });
     setTimeout(()=>{ const i=$('#hf-a'); if(c&&i) i.focus(); },60);
     $('#hf-s').onclick=()=>{ const v=Math.round(+$('#hf-a').value); if(!c) return showErr($('#hf-err'),L.qExpPick); if(!(v>0)) return showErr($('#hf-err'),L.errSum);
-      state.home.push({id:uid('h'),d:$('#hf-d').value||dkey(),cat:c,sum:v,note:$('#hf-n').value.trim()}); persist(); closeSheet(); render();
+      const till=!!($('#hf-till')&&$('#hf-till').checked); lsSet('hf_till_v1',till?'1':'0');
+      state.home.push({id:uid('h'),d:$('#hf-d').value||dkey(),cat:c,sum:v,note:$('#hf-n').value.trim(),...(till?{till:1}:{})}); persist(); closeSheet(); render();
       const lim=+state.misc.hlim||0, mk=monthKey(new Date()), tot=state.home.filter(h=>String(h.d).slice(0,7)===mk).reduce((s,h)=>s+(+h.sum||0),0);
       toast(lim&&tot>lim?L.hbOverToast:L.qExpDone(money(v))); };
   }
@@ -10593,8 +10682,9 @@ function m10PlusSheet(){ const nx=activeList().filter(x=>!x.a.done&&!x.loan.exam
     ${act('photo','id="m10Photo"',M10_I.photo,L.m10Photo,L.m10PhotoSub)}
     ${act('cust','data-qa="cust"',M10_I.cust,L.m10Cust,L.m10CustSub)}
     ${act('voice','data-qa="voice"',M10_I.voice,L.m10Voice,L.m10VoiceSub)}</div>
-    <div class="m10-more"><span>${L.m10More}</span><button type="button" class="chip" id="m10NewLoan">${L.m10NewLoan}</button><button type="button" class="chip" data-qa="home">${L.m10Home}</button><button type="button" class="chip" data-rates="1">${L.m10Rates}</button><button type="button" class="chip" id="m10CalcB">${L.m10Calc}</button></div>`);
+    <div class="m10-more"><span>${L.m10More}</span><button type="button" class="chip" id="m10NewLoan">${L.m10NewLoan}</button><button type="button" class="chip" id="m10Till">${L.tdBtn}</button><button type="button" class="chip" data-qa="home">${L.m10Home}</button><button type="button" class="chip" data-rates="1">${L.m10Rates}</button><button type="button" class="chip" id="m10CalcB">${L.m10Calc}</button></div>`);
   $('#m10Photo').onclick=()=>{ sifraOpen(); try{ sfPickPhoto(); }catch(e){} };
+  $('#m10Till').onclick=()=>tillHomeForm();
   $('#m10NewLoan').onclick=()=>loanForm(null); $('#m10CalcB').onclick=()=>calcSheet('basic'); }
 
 /* главная: календарь платежей на 14 дней */
@@ -10675,6 +10765,30 @@ try{ const _os10=openSheet; openSheet=function(){ const x=_os10.apply(this,argum
 
 /* ---- раскладка выручки: записали день — сразу раскладываем на платежи, домой (зарплата себе) и на товар.
    Основа: «раскладка зарплаты» Monzo и исследование Drexler–Fischer–Schoar о простых правилах для владельцев лавок. ---- */
+/* № 89. Касса и дом: всё, что ушло из кассы магазина домой (зарплата себе, «взяла домой», домашние расходы из кассы), против зарплаты себе за неделю */
+function tillWeek(off){ const t=today0(), wd=(t.getDay()+6)%7, st=addDays(t,-wd-7*(off||0)), en=addDays(st,6), a=dkey(st), b=dkey(en), sh=ensureShop();
+  const sal=sh.exp.filter(e=>e.date>=a&&e.date<=b&&e.cat==='salary'&&(e.m10||e.draw)), hm=state.home.filter(h=>h.till&&h.d>=a&&h.d<=b);
+  const salS=sumOf(sal.filter(e=>!e.draw)), drawS=sumOf(sal.filter(e=>e.draw)), homeS=sumOf(hm);
+  return {a,b,salS,drawS,homeS,tot:salS+drawS+homeS,n:sal.length+hm.length}; }
+function tillHomeForm(){ const sw=m10SalW(), w=tillWeek(0);
+  openSheet(`<h3>🏠 ${L.tdT}</h3><p class="lead">${L.tdLead}</p>
+    <div class="field n big-in"><label for="td-a">${L.amountW}</label><input id="td-a" type="number" inputmode="numeric" min="0" placeholder="0"></div>
+    <div class="field"><label for="td-n">${L.tdWhat} ${L.optional}</label><input id="td-n" maxlength="60" placeholder="${esc(L.tdWhatPh)}"></div>
+    <p class="note" id="td-info">${sw>0?L.tdWeekSal(money(w.tot),money(sw)):L.tdWeekNo(money(w.tot))}</p>
+    <div class="err" id="td-e"></div><button class="btn btn-primary btn-full" id="td-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  const i=$('#td-a'); i.focus();
+  i.addEventListener('input',()=>{ const v=Math.max(0,Math.round(+i.value||0)), after=w.tot+v; $('#td-info').textContent=sw>0?(after>sw?L.tdOver(money(after),money(after-sw)):L.tdWeekSal(money(after),money(sw))):L.tdWeekNo(money(after)); });
+  $('#td-s').onclick=()=>{ const v=Math.round(+i.value); if(!(v>0)) return showErr($('#td-e'),L.errSum); const sh=ensureShop(), ts=Date.now();
+    sh.exp.push({id:'e'+ts+'_td',date:dkey(),cat:'salary',sum:v,note:$('#td-n').value.trim()||L.tdNote,ts,draw:1}); persist(); closeSheet(); render(); toast(L.tdSaved); }; }
+function tillCardHTML(){ const sw=m10SalW(), w=tillWeek(0), p=tillWeek(1); if(!(sw>0)&&!w.n&&!p.n) return '';
+  const over=sw>0&&w.tot>sw, cls=!sw?'':over?'z-bad':'z-ok';
+  const rows=[[L.tdSal,w.salS],[L.tdDraw,w.drawS],[L.tdHome,w.homeS]].filter(r=>r[1]>0).map(r=>`<div class="co-row"><span>${r[0]}</span><b>${money(r[1])}</b></div>`).join('');
+  return `<div class="pcard"><div class="pc-h"><span>🏠 ${L.tdCard}</span><b class="${cls}">${money(w.tot)}</b></div>
+    <p class="pc-t">${sw>0?(over?L.tdCardOver(money(sw),money(w.tot-sw)):L.tdCardOk(money(sw),money(sw-w.tot))):L.tdCardNo}</p>
+    ${rows?`<div class="calc-out td-rows">${rows}</div>`:''}
+    ${p.n?`<p class="pc-t muted">${L.tdPrev(money(p.tot))}</p>`:''}
+    <p class="pc-t muted">${L.tdWhy}</p>
+    <div class="sheet-row"><button class="btn btn-ghost" id="td-sal">${sw>0?L.tdSalEdit:L.tdSalSet}</button><button class="btn btn-ghost" id="td-add">${L.tdBtn}</button></div></div>`; }
 function m10SalW(){ return Math.max(0,Math.round(+((state.misc||{}).salW)||0)); }
 function m10SalForm(back){ openSheet(`<h3>${L.m10Sal}</h3><p class="lead">${L.m10SalLead}</p>
     <div class="field n big-in"><label for="m10-sw">${L.m10SalWeek}, ${L.cur}</label><input id="m10-sw" type="number" inputmode="numeric" min="0" value="${m10SalW()||''}"></div>
