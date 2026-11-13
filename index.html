@@ -1129,6 +1129,13 @@
   .m7-b1{background:var(--m-sun); color:#0F1E3D;}
   .m7-b2{border:1.5px solid #3A4E80; color:#fff;}
   .m7-b1:active,.m7-b2:active{transform:scale(.98);}
+  .m7-h-rows{display:flex; flex-direction:column; gap:8px;}
+  .m7-h-row{display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.14); border-radius:16px; padding:12px 12px 12px 14px;}
+  .m7-hero.late .m7-h-row{background:rgba(255,255,255,.5);}
+  .m7-h-rn{flex:1 1 0; min-width:0;} .m7-h-rn>b{display:block; font-weight:800; font-size:1.05rem; line-height:1.25; overflow-wrap:break-word;} .m7-h-rn span{display:block; font-size:.9rem; opacity:.9; line-height:1.4;}
+  .m7-h-ra{font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap; opacity:1;}
+  .m7-hero .m7-h-rb{flex:none; min-height:48px; padding:0 16px; border-radius:14px; font-size:1rem; width:auto;}
+  @media (max-width:339px){ .m7-h-row{flex-wrap:wrap;} .m7-hero .m7-h-rb{flex:1 1 100%;} }
   .m7-hero.late{background:var(--m-clay-weak); color:var(--m-clay-ink);}
   .m7-hero.late .m7-h-n span,.m7-hero.late .m7-h-amt small{color:var(--m-clay);}
   .m7-hero.late .m7-chip{background:var(--surface); color:var(--m-clay-ink);}
@@ -3806,6 +3813,7 @@ ru:{
   overdueCap:'Платёж опаздывает',
   m7Hello:h=>h<5?'Доброй ночи':h<12?'Доброе утро':h<18?'Добрый день':'Добрый вечер',
   m7Next:'Следующий платёж', m7Paid:'Оплатила', m7More:'Подробнее', m7WhatToDo:'Что делать',
+  m7LateN:n=>'Просрочено: '+n+' '+ruPlural(n,['платёж','платежа','платежей']), m7LateSum:'Всего к оплате', m7SameDay:n=>n+' '+ruPlural(n,['платёж','платежа','платежей'])+' в один день',
   m7Late:n=>'Опаздывает на '+n+' '+ruPlural(n,['день','дня','дней']),
   m7PenNow:(a,b)=>'Пеня сейчас ≈ '+a+' и растёт примерно на '+b+' в день.',
   m7FirstT:'Добавьте первый кредит', m7FirstD:'Банк, платёж в месяц и день платежа — больше ничего не нужно. Mira напомнит заранее.', m7AddLoan:'Добавить кредит',
@@ -3858,6 +3866,7 @@ tg:{
   overdueCap:'Пардохт дер мемонад',
   m7Hello:h=>h<5?'Шаб ба хайр':h<12?'Субҳ ба хайр':h<18?'Рӯз ба хайр':'Шом ба хайр',
   m7Next:'Пардохти навбатӣ', m7Paid:'Пардохт кардам', m7More:'Муфассал', m7WhatToDo:'Чӣ бояд кард',
+  m7LateN:n=>'Дер мондааст: '+n+' пардохт', m7LateSum:'Ҳамагӣ барои пардохт', m7SameDay:n=>n+' пардохт дар як рӯз',
   m7Late:n=>n+' рӯз дер мондааст',
   m7PenNow:(a,b)=>'Ҷарима ҳозир ≈ '+a+' ва ҳар рӯз тақрибан '+b+' зиёд мешавад.',
   m7FirstT:'Қарзи аввалро илова кунед', m7FirstD:'Бонк, пардохти моҳона ва рӯзи пардохт — дигар чизе лозим нест. Mira пешакӣ хотиррасон мекунад.', m7AddLoan:'Илова кардани қарз',
@@ -3910,6 +3919,7 @@ en:{
   overdueCap:'Payment is late',
   m7Hello:h=>h<5?'Good night':h<12?'Good morning':h<18?'Good afternoon':'Good evening',
   m7Next:'Next payment', m7Paid:'Paid', m7More:'Details', m7WhatToDo:'What to do',
+  m7LateN:n=>n+' payments overdue', m7LateSum:'Total to pay', m7SameDay:n=>n+' payments on the same day',
   m7Late:n=>n+' day'+(n===1?'':'s')+' late',
   m7PenNow:(a,b)=>'Penalty now ≈ '+a+', growing by about '+b+' a day.',
   m7FirstT:'Add your first loan', m7FirstD:'Bank, monthly payment and the payment day — nothing else. Mira will remind you in advance.', m7AddLoan:'Add a loan',
@@ -9454,6 +9464,18 @@ function m7HeroHTML(list){
   if(!real.length) return `<div class="m7-first">${MIRA_RING(54,'#DDE3EF')}<b>${L.m7FirstT}</b><p>${L.m7FirstD}</p><button class="btn btn-primary btn-full" data-m-add="1">${ico('plus',20)} ${L.m7AddLoan}</button></div>`;
   if(!nx){ const any=real.filter(x=>!x.a.done).sort((p,q)=>p.a.days-q.a.days)[0]; if(!any) return '';
     return `<div class="m7-calm">${ico('paid',26)}<div><b>${L.m7CalmT}</b><span>${L.m7CalmD(esc(any.loan.name),fmtDate(any.a.due))}</span></div></div>`; }
+  /* несколько платежей сразу: все просроченные или все на один и тот же день — показываем вместе, у каждого своя кнопка */
+  const grp=m7Real(list).filter(x=>!x.a.done&&!x.a.check&&(nx.a.overdue?x.a.overdue:x.a.days===nx.a.days)).sort((p,q)=>p.a.days-q.a.days||m7Amt(q.a)-m7Amt(p.a));
+  if(grp.length>1){ const lateG=nx.a.overdue, tot=grp.reduce((t,x)=>t+m7Amt(x.a),0);
+    const penD=lateG?grp.reduce((t,x)=>t+penaltyPerDay(x.loan,x.a),0):0, penN=lateG?grp.reduce((t,x)=>t+penaltyPerDay(x.loan,x.a)*(-x.a.days),0):0;
+    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn"><b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${money(m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${money(m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
+    return `<div class="m7-hero m7-multi ${lateG?'late':''}">
+      <div class="m7-h-top"><div class="m7-h-n"><span>${lateG?L.m7LateN(grp.length):L.m7SameDay(grp.length)}</span><b>${lateG?L.m7LateSum:fmtDate(nx.a.due)+' · '+whenText(nx.a.days)}</b></div></div>
+      <div class="m7-h-amt">${m7Num0(tot)}<small>${esc(L.cur)}</small></div>
+      ${lateG&&penD>0?`<p class="m7-h-pen">${L.m7PenNow(money(penN),money(penD))}</p>`:''}
+      <div class="m7-h-rows">${rows}</div>
+      ${lateG?`<div class="m7-h-btns"><button class="m7-b2" data-m-late="${grp[0].loan.id}">${L.m7WhatToDo}</button></div>`:''}
+    </div>`; }
   const {loan,a}=nx, late=a.overdue, pen=late?penaltyPerDay(loan,a):0, ld=late?-a.days:0;
   return `<div class="m7-hero ${late?'late':''}">
     <div class="m7-h-top">${avaHTML(loan,'sm')}<div class="m7-h-n"><span>${late?L.m7Late(ld):L.m7Next}</span><b>${esc(loan.name)} · ${fmtDate(a.due)}</b></div>${late?'':`<span class="m7-chip">${whenText(a.days)}</span>`}</div>
