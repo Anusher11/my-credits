@@ -1148,6 +1148,8 @@
   .m7-calm{display:flex; gap:12px; align-items:center; background:var(--m-leaf-weak); color:var(--m-leaf); border-radius:22px; padding:14px 16px; margin-bottom:14px;}
   .m7-calm b{display:block; color:var(--ink);} .m7-calm span{color:var(--muted); font-size:.9rem;}
   .m7-month{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:14px 16px 4px; margin-bottom:14px;}
+  .rc-box{background:var(--surface-2); border-radius:16px; padding:12px 14px; margin:0 0 12px;} .rc-box .co-row{display:flex; justify-content:space-between; gap:10px; padding:4px 0;} .rc-box b{font-family:var(--font-num);}
+  .nl-chk{margin:4px 0 12px;} .nl-chk h4{margin:10px 0 6px; font-size:1rem;} .nl-chk label.check{display:flex; gap:10px; align-items:flex-start; min-height:44px; padding:6px 0; line-height:1.4;} .nl-chk label.check input{flex:none; margin-top:3px;}
   .m7-m-h{display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;}
   .m7-m-h b{font-size:1.05rem;}
   .m7-m-h .link-btn{display:inline-flex; align-items:center; gap:5px; min-height:40px; font-weight:800; color:var(--brand);}
@@ -3818,6 +3820,13 @@ ru:{
   m7PartOf:(a,b)=>'Уже внесено '+a+' из '+b, m7FirstPen:'Сначала этот — пеня растёт быстрее', m7FirstRate:'Сначала этот — ставка выше',
   partNote:r=>'Это часть платежа. Останется внести '+r+' — Mira оставит платёж открытым.',
   penBaseL:'От чего считается пеня', penBasePay:'От суммы платежа', penBaseRem:'От всего остатка долга',
+  nlOpen:'Проверить новый кредит', nlChkT:'Проверьте себя перед кредитом', nlQ1:'Кредит на товар или дело, которое вернёт деньги, а не на текущие расходы или другой кредит', nlQ2:'Есть запас хотя бы на один платёж', nlQ3:'Кредит в той же валюте, в которой я зарабатываю', nlQ4:'Я прочитала в договоре пеню, комиссии и условия досрочного погашения',
+  nlM1:'на что пойдут деньги', nlM2:'запас на один платёж', nlM3:'валюта кредита', nlM4:'условия договора',
+  nlChkN:n=>'Отмечено '+n+' из 4', nlChkAll:'Все четыре пункта на месте. Решение за вами.', nlChkMiss:'Сначала разберитесь:',
+  nlStress:p=>'Если выручка упадёт на треть — нагрузка станет '+p+'%.', nlStressOk:'Плохой месяц вы выдержите.', nlStressBad:'В плохой месяц платить будет тяжело.',
+  rcnBtn:'Сверить с банком', rcnT:'Сверка с банком', rcnHow:'Посмотрите остаток долга в приложении банка или в выписке и впишите сюда. Mira сравнит со своим расчётом.', rcnBank:'Остаток долга по данным банка', rcnMine:'По расчёту Mira', rcnDiff:'Разница', rcnSame:'совпадает',
+  rcnOk:'Цифры совпадают.', rcnMore:'У банка долг больше. Так бывает из-за пени, комиссий или если часть платежей ушла на проценты.', rcnLess:'У банка долг меньше. Возможно, какой-то платёж не записан в Mira.',
+  rcnSave:'Поправить по банку', rcnErr:'Впишите остаток долга из банка', rcnDone:v=>'Остаток поправлен: '+v, rcnNever:'С банком ещё не сверяли. Раз в три месяца стоит проверить остаток.', rcnLast:d=>'Сверено с банком: '+d+'.', rcnOld:d=>'Последняя сверка — '+d+'. Пора сверить снова.',
   m7LateN:n=>'Просрочено: '+n+' '+ruPlural(n,['платёж','платежа','платежей']), m7LateSum:'Всего к оплате', m7SameDay:n=>n+' '+ruPlural(n,['платёж','платежа','платежей'])+' в один день',
   m7Late:n=>'Опаздывает на '+n+' '+ruPlural(n,['день','дня','дней']),
   m7PenNow:(a,b)=>'Пеня сейчас ≈ '+a+' и растёт примерно на '+b+' в день.',
@@ -3874,6 +3883,13 @@ tg:{
   m7PartOf:(a,b)=>'Аллакай '+a+' аз '+b+' супорида шуд', m7FirstPen:'Аввал ин — ҷарима тезтар меафзояд', m7FirstRate:'Аввал ин — фоиз баландтар аст',
   partNote:r=>'Ин як қисми пардохт аст. Боз '+r+' мемонад — Mira пардохтро кушода мегузорад.',
   penBaseL:'Ҷарима аз чӣ ҳисоб мешавад', penBasePay:'Аз маблағи пардохт', penBaseRem:'Аз тамоми бақияи қарз',
+  nlOpen:'Санҷиши қарзи нав', nlChkT:'Пеш аз қарз худро санҷед', nlQ1:'Қарз барои мол ё коре, ки пулро бармегардонад, на барои хароҷоти ҷорӣ ё қарзи дигар', nlQ2:'Ақаллан барои як пардохт захира дорам', nlQ3:'Қарз бо ҳамон асъоре, ки ман даромад мегирам', nlQ4:'Ман дар шартнома ҷарима, комиссияҳо ва шартҳои пардохти пеш аз мӯҳлатро хондам',
+  nlM1:'пул ба чӣ меравад', nlM2:'захира барои як пардохт', nlM3:'асъори қарз', nlM4:'шартҳои шартнома',
+  nlChkN:n=>'Қайд шуд: '+n+' аз 4', nlChkAll:'Ҳар чор банд дар ҷояш. Қарор аз шумост.', nlChkMiss:'Аввал равшан кунед:',
+  nlStress:p=>'Агар даромад сеяк кам шавад — сарборӣ '+p+'% мешавад.', nlStressOk:'Моҳи бадро мебардоред.', nlStressBad:'Дар моҳи бад пардохт душвор мешавад.',
+  rcnBtn:'Муқоиса бо бонк', rcnT:'Муқоиса бо бонк', rcnHow:'Бақияи қарзро дар барномаи бонк ё дар иқтибос бинед ва ин ҷо нависед. Mira бо ҳисоби худ муқоиса мекунад.', rcnBank:'Бақияи қарз аз рӯи маълумоти бонк', rcnMine:'Аз рӯи ҳисоби Mira', rcnDiff:'Фарқ', rcnSame:'мувофиқ аст',
+  rcnOk:'Рақамҳо мувофиқанд.', rcnMore:'Дар бонк қарз зиёдтар аст. Ин аз ҷарима, комиссия ё аз он мешавад, ки як қисми пардохтҳо ба фоиз рафтааст.', rcnLess:'Дар бонк қарз камтар аст. Шояд ягон пардохт дар Mira сабт нашудааст.',
+  rcnSave:'Аз рӯи бонк ислоҳ кардан', rcnErr:'Бақияи қарзро аз бонк нависед', rcnDone:v=>'Бақия ислоҳ шуд: '+v, rcnNever:'Ҳанӯз бо бонк муқоиса нашудааст. Ҳар се моҳ як бор бақияро санҷидан хуб аст.', rcnLast:d=>'Бо бонк муқоиса шуд: '+d+'.', rcnOld:d=>'Муқоисаи охирин — '+d+'. Вақти муқоисаи нав расид.',
   m7LateN:n=>'Дер мондааст: '+n+' пардохт', m7LateSum:'Ҳамагӣ барои пардохт', m7SameDay:n=>n+' пардохт дар як рӯз',
   m7Late:n=>n+' рӯз дер мондааст',
   m7PenNow:(a,b)=>'Ҷарима ҳозир ≈ '+a+' ва ҳар рӯз тақрибан '+b+' зиёд мешавад.',
@@ -3930,6 +3946,13 @@ en:{
   m7PartOf:(a,b)=>a+' of '+b+' already paid', m7FirstPen:'Pay this one first — its penalty grows faster', m7FirstRate:'Pay this one first — its rate is higher',
   partNote:r=>'This is part of the payment. '+r+' is still due — Mira will keep the payment open.',
   penBaseL:'What the penalty is charged on', penBasePay:'The payment amount', penBaseRem:'The whole remaining debt',
+  nlOpen:'Check a new loan', nlChkT:'Check yourself before a loan', nlQ1:'The loan is for stock or a venture that pays back, not for running costs or another loan', nlQ2:'I have a reserve for at least one payment', nlQ3:'The loan is in the currency I earn in', nlQ4:'I have read the penalty, fees and early-repayment terms in the contract',
+  nlM1:'what the money is for', nlM2:'a reserve for one payment', nlM3:'the loan currency', nlM4:'the contract terms',
+  nlChkN:n=>n+' of 4 ticked', nlChkAll:'All four points are in place. The decision is yours.', nlChkMiss:'Sort these out first:',
+  nlStress:p=>'If revenue drops by a third, the load becomes '+p+'%.', nlStressOk:'You can get through a bad month.', nlStressBad:'A bad month would make paying hard.',
+  rcnBtn:'Check against the bank', rcnT:'Check against the bank', rcnHow:'Look up the remaining debt in your bank app or statement and enter it here. Mira will compare it with its own figure.', rcnBank:'Remaining debt according to the bank', rcnMine:'According to Mira', rcnDiff:'Difference', rcnSame:'matches',
+  rcnOk:'The figures match.', rcnMore:'The bank shows more debt. This happens because of penalties, fees, or part of the payments going to interest.', rcnLess:'The bank shows less debt. A payment may be missing in Mira.',
+  rcnSave:'Correct to the bank figure', rcnErr:'Enter the remaining debt from the bank', rcnDone:v=>'Balance corrected: '+v, rcnNever:'Not checked against the bank yet. It is worth checking the balance every three months.', rcnLast:d=>'Checked against the bank: '+d+'.', rcnOld:d=>'Last check: '+d+'. Time to check again.',
   m7LateN:n=>n+' payments overdue', m7LateSum:'Total to pay', m7SameDay:n=>n+' payments on the same day',
   m7Late:n=>n+' day'+(n===1?'':'s')+' late',
   m7PenNow:(a,b)=>'Penalty now ≈ '+a+', growing by about '+b+' a day.',
@@ -5803,7 +5826,7 @@ function detailSheet(loan){
   const extra=[];
   if(!a.done && a.interestLeft>0) extra.push(`<div class="mini"><span>${L.interestLeftOne}</span><b>${money(a.interestLeft)}</b></div>`);
   if(+loan.rate>0) extra.push(`<div class="mini"><span>${L.rateYear}</span><b>${rf.format(+loan.rate)}%</b></div>`);
-  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button></div>`;
+  const tools=`<div class="dtools">${loan.phone?`<a class="btn btn-ghost" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}<button class="btn btn-ghost" data-action="sched" data-id="${loan.id}">🗓️ ${schedOf(loan)?L.schedShow:L.schedAdd}</button>${a.done?'':`<button class="btn btn-ghost" data-recon="${loan.id}">🏦 ${L.rcnBtn}</button>`}</div>${a.done?'':`<p class="note" style="margin:6px 0 12px">${reconNote(loan)}</p>`}`;
   openSheet(`<h3>${avaHTML(loan,'sm')} ${esc(loan.name)}</h3><p class="lead">${loan.note?esc(loan.note):L.loanWord}</p><div class="detail-ring">${ringHTML(a.pct,'lg')}</div>${prog}
     ${stats}${extra.length?`<div class="minis">${extra.join('')}</div>`:''}
     ${nextLine}${goldLine}${a.done?'':`<button class="btn btn-primary btn-full" data-action="pay" data-id="${loan.id}">${L.makePayment}</button>`}${a.overdue?`<button class="linkbtn" data-action="mark" data-id="${loan.id}">${L.markPaid}</button>`:''}
@@ -5911,6 +5934,24 @@ function undoPayment(pid){
   state.payments=state.payments.filter(x=>x!==p); if(p.rc) rcDel(pid);
 }
 
+/* № 83. Сверка с банком: остаток из выписки сравнивается с тем, что считает Mira, и цифра Mira поправляется */
+function reconNote(loan){ const r=loan.recon; if(!r||!r.d) return L.rcnNever; const days=-daysUntil(parseYmd(r.d)); return days>90?L.rcnOld(fmtDate(parseYmd(r.d))):L.rcnLast(fmtDate(parseYmd(r.d))); }
+function reconSheet(loan){
+  const a=analyze(loan), mine=Math.round(a.remaining);
+  openSheet(`<h3>🏦 ${L.rcnT}</h3><p class="lead">${esc(loan.name)}</p><p class="note" style="margin-top:-4px">${L.rcnHow}</p>
+    <div class="field n"><label for="rcn-v">${L.rcnBank}</label><input id="rcn-v" type="number" inputmode="numeric" min="0" placeholder="${mine}"></div>
+    <div class="rc-box"><div class="co-row"><span>${L.rcnMine}</span><b>${money(mine)}</b></div><div class="co-row"><span>${L.rcnDiff}</span><b id="rcn-d">—</b></div></div>
+    <p class="note" id="rcn-n"></p><div class="err" id="rcn-e"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="rcn-s">${L.rcnSave}</button></div>`);
+  const inp=$('#rcn-v');
+  const upd=()=>{ const raw=inp.value.trim(), v=Math.round(+raw); if(raw===''||!(v>=0)){ $('#rcn-d').textContent='—'; $('#rcn-n').textContent=''; return; }
+    const d=v-mine; $('#rcn-d').textContent=d===0?L.rcnSame:(d>0?'+':'−')+money(Math.abs(d)); $('#rcn-n').textContent=d===0?L.rcnOk:d>0?L.rcnMore:L.rcnLess; };
+  inp.addEventListener('input',upd); inp.focus();
+  $('#rcn-s').onclick=()=>{ const raw=inp.value.trim(), v=Math.round(+raw); if(raw===''||!(v>=0)) return showErr($('#rcn-e'),L.rcnErr);
+    const d=v-mine, tot=+loan.total||0;
+    if(v<=tot) loan.paid=tot-v; else { loan.total=(+loan.paid||0)+v; }
+    loan.recon={d:ymd(new Date()),diff:d,bank:v}; persist(); closeSheet(); render(); toast(d===0?L.rcnOk:L.rcnDone(money(v))); };
+}
 function schedSheet(loan){
   const s=schedOf(loan), pt=curPt(loan);
   const rows=s?s.map(e=>{ const i=mIdx(parseYmd(e.d)), paid=pt!=null&&i<=pt; return `<div class="sc-row ${paid?'paid':''}"><span class="sc-d">${paid?'✓ ':''}${fmtShort(parseYmd(e.d))} ${parseYmd(e.d).getFullYear()}</span><span class="sc-a">${money(e.a)}</span>${e.i!=null?`<span class="sc-i">${L.schedPI(money(e.p||0),money(e.i||0))}</span>`:''}</div>`; }).join(''):'';
@@ -5988,7 +6029,7 @@ function renderPlanMore(list){
       parts.push(`<div class="pcard"><div class="pc-h"><span>⚖️ ${L.loadTitle}</span><b class="z-${zone}">${Math.round(r)}%</b></div>
         <div class="zbar"><i class="z1"></i><i class="z2"></i><i class="z3"></i><em style="left:${Math.min(100,r/60*100)}%"></em></div>
         <div class="zleg"><span>0</span><span>30%</span><span>40%</span><span>60%+</span></div>
-        <p class="pc-t">${L.loadText(money(loanM),money(rev.v))} ${L['loadZ_'+zone]}</p>${prof!=null?`<p class="pc-t muted">${L.loadProfit(Math.round(prof))}</p>`:''}<p class="pc-src">${L.basedOnDays(rev.n)}</p></div>`);
+        <p class="pc-t">${L.loadText(money(loanM),money(rev.v))} ${L['loadZ_'+zone]}</p>${prof!=null?`<p class="pc-t muted">${L.loadProfit(Math.round(prof))}</p>`:''}<p class="pc-src">${L.basedOnDays(rev.n)}</p><button class="link-btn" style="min-height:44px" data-tool="newloan">${L.nlOpen}</button></div>`);
     } else parts.push(`<div class="pcard"><div class="pc-h"><span>⚖️ ${L.loadTitle}</span></div><p class="pc-t">${L.needRevenue}</p><button class="btn btn-ghost btn-full" data-shop="day">${L.dayBtn}</button></div>`);
   }
   // прогноз на 3 месяца
@@ -6081,12 +6122,19 @@ function loanChips(id){ const act=activeList().filter(x=>!x.a.done&&!x.loan.exam
 function newLoanCalc(body){
   const list=activeList(), cur=list.filter(x=>!x.a.done&&!x.loan.example).reduce((s,x)=>s+(x.a.amt||x.a.monthly||0),0), rev=revEst();
   body.innerHTML=`<p class="lead" style="margin-top:-6px">${L.nlSub}</p><div class="field n"><label>${L.loanAmount}</label><input id="nl-sum" type="number" inputmode="numeric" min="0" placeholder="30000"></div><div class="two"><div class="field n"><label>${L.rateYear}</label><input id="nl-rate" type="number" inputmode="decimal" min="0" placeholder="24"></div><div class="field n"><label>${L.term}</label><input id="nl-term" type="number" inputmode="numeric" min="1" placeholder="12"></div></div>
-    <div class="calc-out"><div class="co-row"><span>${L.monthlyPayment}</span><b id="nl-pay">—</b></div><div class="co-row"><span>${L.overpay}</span><b id="nl-over">—</b></div><div class="co-row"><span>${L.nlNowAll}</span><b>${money(cur)}</b></div><div class="co-row big"><span>${L.nlAfterAll}</span><b id="nl-after">—</b></div></div><div id="nl-v"></div>`;
+    <div class="calc-out"><div class="co-row"><span>${L.monthlyPayment}</span><b id="nl-pay">—</b></div><div class="co-row"><span>${L.overpay}</span><b id="nl-over">—</b></div><div class="co-row"><span>${L.nlNowAll}</span><b>${money(cur)}</b></div><div class="co-row big"><span>${L.nlAfterAll}</span><b id="nl-after">—</b></div></div><div id="nl-v"></div><div id="nl-st"></div>
+    <div class="nl-chk"><h4>${L.nlChkT}</h4>${[1,2,3,4].map(i=>`<label class="check"><input type="checkbox" data-nlq="${i}"> <span>${L['nlQ'+i]}</span></label>`).join('')}<div id="nl-cv"></div></div>`;
   const s=$('#nl-sum'),r=$('#nl-rate'),t=$('#nl-term');
   function calc(){ const P=+s.value,an=+r.value||0,n=Math.round(+t.value); const v=$('#nl-v'); if(!(P>0)||!(n>=1)){ ['nl-pay','nl-over','nl-after'].forEach(i=>$('#'+i).textContent='—'); v.innerHTML=''; return; }
     const pay=annuity(P,an,n), over=pay*n-P, after=cur+pay; $('#nl-pay').textContent=money(pay); $('#nl-over').textContent=money(over); $('#nl-after').textContent=money(after);
     if(rev&&rev.v>0){ const b=cur/rev.v*100, a=after/rev.v*100, z=a<30?'ok':a<=40?'mid':'bad'; v.innerHTML=`<div class="verdict z-${z}"><b>${L.nlLoad(Math.round(b),Math.round(a))}</b><span>${L['nlV_'+z]}</span></div>`; }
-    else v.innerHTML=`<p class="note">${L.nlNoRev}</p>`; }
+    else v.innerHTML=`<p class="note">${L.nlNoRev}</p>`;
+    /* проверка на плохой месяц: выручка упала на треть */
+    const stEl=$('#nl-st'); if(rev&&rev.v>0){ const sa=Math.round(after/(rev.v*2/3)*100); stEl.innerHTML=`<p class="note"><b>${L.nlStress(sa)}</b> ${sa>40?L.nlStressBad:L.nlStressOk}</p>`; } else stEl.innerHTML=''; chk(); }
+  function chk(){ const bx=[...body.querySelectorAll('[data-nlq]')], n=bx.filter(x=>x.checked).length, el=$('#nl-cv'); if(!el) return;
+    const miss=bx.filter(x=>!x.checked).map(x=>L['nlM'+x.dataset.nlq]);
+    el.innerHTML=`<div class="verdict z-${n===4?'ok':n>=2?'mid':'bad'}"><b>${L.nlChkN(n)}</b><span>${n===4?L.nlChkAll:L.nlChkMiss+' '+miss.join('; ')+'.'}</span></div>`; }
+  body.querySelectorAll('[data-nlq]').forEach(x=>x.addEventListener('change',chk)); chk();
   [s,r,t].forEach(e=>e.addEventListener('input',calc)); s.focus();
 }
 function refiCalc(body){
@@ -6418,6 +6466,7 @@ document.addEventListener('click', e=>{
     if(k==='cal') calendarSheet(); else if(k==='rep') reportSheet(); else if(k==='planb') planBSheet(); else if(k==='calc') calcSheet(); else if(k==='newloan') calcSheet('newloan'); else if(k==='price') calcSheet('price'); else if(k==='hol') holidaysSheet(); else if(k==='rates') ratesSheet(); else if(k==='zakat') zakatSheet(); else if(k==='mcard') monthCardSheet(0); else if(k==='speak') speakDay(); else if(k==='week') weeklySheet(0); else if(k==='fc') fcSheet(false); else if(k==='card') cardMaker(null); else if(k==='trip') openTripView(); else if(k==='guide') guideSheet(null); else if(k==='when') whenSheet(null); else if(k==='invest') investSheet(); else if(k==='prio') loanPrioSheet(); else if(k==='sizes') sizesSheet(); else if(k==='labels') labelsSheet(); return; }
   const ch=t.closest('[data-ch]'); if(ch){ e.stopImmediatePropagation(); if(ch.dataset.ch==='done'){ state.misc.ch=dkey(); persist(); toast(L.saved); } else lsSet('chsn_v1',String(Date.now()+30*86400000)); render(); return; }
   const act=t.closest('[data-action="sched"]'); if(act){ e.stopImmediatePropagation(); const l=byId(act.dataset.id); if(!l) return; schedSheet(l); return; }
+  const rcn=t.closest('[data-recon]'); if(rcn){ e.stopImmediatePropagation(); const l=byId(rcn.dataset.recon); if(l) reconSheet(l); return; }
 }, true);
 
 /* ===================== v6: вкладки, «Сегодня», курсы, праздники ===================== */
