@@ -1133,6 +1133,8 @@
   .m7-h-row{display:flex; align-items:center; gap:12px; background:rgba(255,255,255,.14); border-radius:16px; padding:12px 12px 12px 14px;}
   .m7-hero.late .m7-h-row{background:rgba(255,255,255,.5);}
   .m7-h-rn{flex:1 1 0; min-width:0;} .m7-h-rn>b{display:block; font-weight:800; font-size:1.05rem; line-height:1.25; overflow-wrap:break-word;} .m7-h-rn span{display:block; font-size:.9rem; opacity:.9; line-height:1.4;}
+  .m7-h-rn .m7-h-first{display:inline-block; font-weight:800; font-size:.8rem; background:var(--m-sun); color:#0F1E3D; border-radius:999px; padding:3px 10px; margin-bottom:6px; opacity:1;}
+  .m7-part{font-weight:700;}
   .m7-h-ra{font-weight:800; font-variant-numeric:tabular-nums; white-space:nowrap; opacity:1;}
   .m7-hero .m7-h-rb{flex:none; min-height:48px; padding:0 16px; border-radius:14px; font-size:1rem; width:auto;}
   @media (max-width:339px){ .m7-h-row{flex-wrap:wrap;} .m7-hero .m7-h-rb{flex:1 1 100%;} }
@@ -3813,6 +3815,9 @@ ru:{
   overdueCap:'Платёж опаздывает',
   m7Hello:h=>h<5?'Доброй ночи':h<12?'Доброе утро':h<18?'Добрый день':'Добрый вечер',
   m7Next:'Следующий платёж', m7Paid:'Оплатила', m7More:'Подробнее', m7WhatToDo:'Что делать',
+  m7PartOf:(a,b)=>'Уже внесено '+a+' из '+b, m7FirstPen:'Сначала этот — пеня растёт быстрее', m7FirstRate:'Сначала этот — ставка выше',
+  partNote:r=>'Это часть платежа. Останется внести '+r+' — Mira оставит платёж открытым.',
+  penBaseL:'От чего считается пеня', penBasePay:'От суммы платежа', penBaseRem:'От всего остатка долга',
   m7LateN:n=>'Просрочено: '+n+' '+ruPlural(n,['платёж','платежа','платежей']), m7LateSum:'Всего к оплате', m7SameDay:n=>n+' '+ruPlural(n,['платёж','платежа','платежей'])+' в один день',
   m7Late:n=>'Опаздывает на '+n+' '+ruPlural(n,['день','дня','дней']),
   m7PenNow:(a,b)=>'Пеня сейчас ≈ '+a+' и растёт примерно на '+b+' в день.',
@@ -3866,6 +3871,9 @@ tg:{
   overdueCap:'Пардохт дер мемонад',
   m7Hello:h=>h<5?'Шаб ба хайр':h<12?'Субҳ ба хайр':h<18?'Рӯз ба хайр':'Шом ба хайр',
   m7Next:'Пардохти навбатӣ', m7Paid:'Пардохт кардам', m7More:'Муфассал', m7WhatToDo:'Чӣ бояд кард',
+  m7PartOf:(a,b)=>'Аллакай '+a+' аз '+b+' супорида шуд', m7FirstPen:'Аввал ин — ҷарима тезтар меафзояд', m7FirstRate:'Аввал ин — фоиз баландтар аст',
+  partNote:r=>'Ин як қисми пардохт аст. Боз '+r+' мемонад — Mira пардохтро кушода мегузорад.',
+  penBaseL:'Ҷарима аз чӣ ҳисоб мешавад', penBasePay:'Аз маблағи пардохт', penBaseRem:'Аз тамоми бақияи қарз',
   m7LateN:n=>'Дер мондааст: '+n+' пардохт', m7LateSum:'Ҳамагӣ барои пардохт', m7SameDay:n=>n+' пардохт дар як рӯз',
   m7Late:n=>n+' рӯз дер мондааст',
   m7PenNow:(a,b)=>'Ҷарима ҳозир ≈ '+a+' ва ҳар рӯз тақрибан '+b+' зиёд мешавад.',
@@ -3919,6 +3927,9 @@ en:{
   overdueCap:'Payment is late',
   m7Hello:h=>h<5?'Good night':h<12?'Good morning':h<18?'Good afternoon':'Good evening',
   m7Next:'Next payment', m7Paid:'Paid', m7More:'Details', m7WhatToDo:'What to do',
+  m7PartOf:(a,b)=>a+' of '+b+' already paid', m7FirstPen:'Pay this one first — its penalty grows faster', m7FirstRate:'Pay this one first — its rate is higher',
+  partNote:r=>'This is part of the payment. '+r+' is still due — Mira will keep the payment open.',
+  penBaseL:'What the penalty is charged on', penBasePay:'The payment amount', penBaseRem:'The whole remaining debt',
   m7LateN:n=>n+' payments overdue', m7LateSum:'Total to pay', m7SameDay:n=>n+' payments on the same day',
   m7Late:n=>n+' day'+(n===1?'':'s')+' late',
   m7PenNow:(a,b)=>'Penalty now ≈ '+a+', growing by about '+b+' a day.',
@@ -5016,13 +5027,14 @@ function analyze(loan){
   const dd=loan.dueDay||1, pt=done?null:curPt(loan), check=!done&&pt==null;
   const per=done?null:(check?lastDueIdx(dd):pt+1), se=per!=null?schedAt(loan,per):null;
   const due=done?nextDueDate(dd):(se?parseYmd(se.d):dueAt(per,dd)), days=daysUntil(due), overdue=!done&&!check&&days<0;
-  const amt=se?(+se.a||0):monthly;
+  const amtFull=se?(+se.a||0):monthly, part=(!done&&loan.part&&loan.part.per===per)?Math.max(0,Math.min(amtFull,+loan.part.a||0)):0;
+  const amt=Math.max(0,amtFull-part);
   let monthsLeft=null, interestLeft=0;
   const sch=schedOf(loan);
   if(!done && sch){ const rest=sch.filter(e=>mIdx(parseYmd(e.d))>(pt!=null?pt:per-1)); monthsLeft=rest.length||null; interestLeft=Math.round(rest.reduce((s,e)=>s+(+e.i||0),0)); }
   else if(!done && monthly>0){ const sim=payoffSim(remaining,monthly,+loan.rate||0); if(sim){ monthsLeft=sim.months; interestLeft=sim.interest; } }
   let urg='none'; if(!done){ if(check)urg='soon'; else if(days<=3)urg='urgent'; else if(days<=REMIND)urg='soon'; }
-  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg,overdue,check,per,amt};
+  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg,overdue,check,per,amt,amtFull,part};
 }
 
 const RC=2*Math.PI*20;
@@ -5163,6 +5175,7 @@ function loanForm(loan, prefill){
     <div class="two"><div class="field n"><label>${L.monthlyPayment}</label><input id="f-monthly" type="number" inputmode="numeric" min="0" value="${loan.monthly}" placeholder="2000"></div><div class="field n"><label>${L.payDay}</label><input id="f-day" type="number" inputmode="numeric" min="1" max="31" value="${loan.dueDay}" placeholder="10"></div></div>
     <div class="field n"><label>${L.rateYear} <span class="hint">${L.forCalc}</span></label><input id="f-rate" type="number" inputmode="decimal" min="0" value="${loan.rate||''}" placeholder="18"></div>
     <div class="two"><div class="field n"><label>${L.term} <span class="hint">${L.termHint}</span></label><input id="f-term" type="number" inputmode="numeric" min="0" value="${loan.term||''}" placeholder="36"></div><div class="field n"><label>${L.penLabel} <span class="hint">${L.penHint}</span></label><input id="f-pen" type="number" inputmode="decimal" min="0" step="0.01" value="${loan.pen||''}" placeholder="0.1"></div></div>
+    <div class="field"><label for="f-penb">${L.penBaseL} <span class="hint">${L.penHint}</span></label><select id="f-penb"><option value="pay">${L.penBasePay}</option><option value="rem" ${loan.penBase==='rem'?'selected':''}>${L.penBaseRem}</option></select></div>
     <div class="field"><label>${L.loanPhoneL} <span class="hint">${L.optional}</span></label><input id="f-phone" type="tel" value="${esc(loan.phone||'')}" maxlength="20" placeholder="+992"></div>
     <div class="field"><label class="check"><input type="checkbox" id="f-gold" ${loan.gold?'checked':''}> ${L.goldCollateral}</label></div>
     <div class="field n" id="f-gold-wrap" ${loan.gold?'':'hidden'}><label>${L.goldGrams}</label><input id="f-gold-g" type="number" inputmode="decimal" min="0" value="${loan.gold||''}" placeholder="10"></div>
@@ -5190,7 +5203,7 @@ function loanForm(loan, prefill){
     if(!(dueDay>=1&&dueDay<=31)) return showErr(err,L.errDay);
     if(gc.checked && !(gold>0)) return showErr(err,L.errGoldGrams);
     const rate=+($('#f-rate').value||0);
-    const data={name,note:$('#f-note').value.trim(),total,paid,monthly,dueDay,rate,gold,icon:iconUrl||null,term:Math.max(0,Math.round(+($('#f-term').value||0))),pen:Math.max(0,+($('#f-pen').value||0)),phone:$('#f-phone').value.trim()};
+    const data={name,note:$('#f-note').value.trim(),total,paid,monthly,dueDay,rate,gold,icon:iconUrl||null,term:Math.max(0,Math.round(+($('#f-term').value||0))),pen:Math.max(0,+($('#f-pen').value||0)),penBase:($('#f-penb')&&$('#f-penb').value==='rem')?'rem':'pay',phone:$('#f-phone').value.trim()};
     if(loan.color) data.color=loan.color; if(loan.short) data.short=loan.short;
     if(isNew){ state.loans.push({id:'l'+Date.now(),...data}); toast(L.bankAdded); } else { delete loan.example; Object.assign(loan,data); toast(L.saved); }
     persist(); closeSheet(); render();
@@ -5773,7 +5786,7 @@ function loanProgressCounts(loan,a){
   if(+loan.term>0 && a.monthsLeft!=null){ const m=+loan.term; return {k:Math.max(0,Math.min(m,m-a.monthsLeft)), m}; }
   return null;
 }
-function penaltyPerDay(loan,a){ const pen=+loan.pen||0; if(!(pen>0)) return 0; return (a.amt||a.monthly||0)*pen/100; }
+function penaltyPerDay(loan,a){ const pen=+loan.pen||0; if(!(pen>0)) return 0; return (loan.penBase==='rem'?(a.remaining||0):(a.amt||a.monthly||0))*pen/100; }
 
 function detailSheet(loan){
   const a=analyze(loan);
@@ -5805,6 +5818,7 @@ function payForm(loan){
   const canSplit=+loan.rate>0 || !!schedAt(loan,per);
   openSheet(`<h3>${L.makePayment}</h3><p class="lead">${esc(loan.name)} · ${L.leftWord} ${money(rem)}</p>
     <div class="field n"><label>${L.paymentAmount}</label><input id="p-amt" type="number" inputmode="numeric" min="0" value="${amt0}" placeholder="2000"></div>
+    <p class="note m7-part" id="p-part" hidden></p>
     ${canSplit?`<div class="two"><div class="field n"><label>${L.ofItInterest}</label><input id="p-int" type="number" inputmode="numeric" min="0"></div><div class="field n"><label>${L.ofItPrincipal}</label><input id="p-prin" type="number" readonly tabindex="-1"></div></div><p class="note" style="margin:-6px 0 12px">${L.splitNote}</p>`:`<p class="note" style="margin:-6px 0 12px">${L.splitNoRate}</p>`}
     <div class="field"><label class="check"><input type="checkbox" id="p-extra"> ${L.extraPay}</label></div>
     ${envB>0?`<div class="field"><label class="check"><input type="checkbox" id="p-env" checked> ${L.fromPiggy(money(envB))}</label></div>`:''}
@@ -5814,6 +5828,9 @@ function payForm(loan){
   const inp=$('#p-amt'), ii=$('#p-int'), pp=$('#p-prin'), ex=$('#p-extra'); let rcData=null, intTouched=false;
   function upd(){ if(!ii) return; const amt=+inp.value||0; if(!intTouched||ex.checked) ii.value=ex.checked?0:interestFor(loan,amt,per,false); ii.disabled=ex.checked; pp.value=Math.max(0,amt-(+ii.value||0)); }
   inp.addEventListener('input',upd); if(ii) ii.addEventListener('input',()=>{ intTouched=true; upd(); }); ex.addEventListener('change',upd); upd();
+  const dueAmt=Math.round(a.amt||0), isPart=()=>{ const v=Math.round(+inp.value||0); return !ex.checked&&!a.done&&dueAmt>0&&v>0&&v<dueAmt; };
+  const partUpd=()=>{ const el=$('#p-part'); if(!el) return; const on=isPart(); el.hidden=!on; if(on) el.textContent=L.partNote(money(dueAmt-Math.round(+inp.value||0))); };
+  inp.addEventListener('input',partUpd); ex.addEventListener('change',partUpd); partUpd();
   let how=lsGet('m7how_v1')||''; const howSet=k=>{ how=k; sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.classList.toggle('on',b.dataset.how===k)); const hn=$('#p-how-n'); if(hn) hn.hidden=k!=='term'; };
   sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.onclick=()=>howSet(how===b.dataset.how?'':b.dataset.how)); howSet(how);
   inp.focus(); inp.select();
@@ -5822,7 +5839,8 @@ function payForm(loan){
   $('#p-save').onclick=async()=>{
     const amt=Math.round(+inp.value); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
     const extra=ex.checked;
-    if(!warned){ const w=payGuard(loan,a,amt,extra); if(w){ warned=true; $('#p-save').textContent=L.guardYes; return showErr($('#p-err'),w); } }
+    const partial=isPart();
+    if(!warned){ const w=payGuard(loan,a,amt,extra,partial); if(w){ warned=true; $('#p-save').textContent=L.guardYes; return showErr($('#p-err'),w); } }
     let i=extra?0:(ii?Math.max(0,Math.min(amt,Math.round(+ii.value||0))):0);
     const pctBefore=a.pct, before=+loan.paid||0;
     loan.paid=Math.min(+loan.total||0, before+(amt-i));
@@ -5830,7 +5848,9 @@ function payForm(loan){
     const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:applied,interest:i,date:ymd(new Date())};
     if(how){ rec.how=how; lsSet('m7how_v1',how); }
     if(extra) rec.extra=true;
-    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=Math.max(0,-daysUntil(due)); rec.chk=ymd(addDays(today0(),1)); markPaid(loan); }
+    else if(partial){ /* внесли часть: платёж остаётся открытым, к оплате — остаток */
+      const prev=(loan.part&&loan.part.per===a.per)?(+loan.part.a||0):0; loan.part={per:a.per,a:prev+amt}; rec.per=a.per; rec.part=true; rec.due=ymd(a.due); }
+    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=Math.max(0,-daysUntil(due)); rec.chk=ymd(addDays(today0(),1)); if(loan.part&&loan.part.per===per2){ rec.partPrev=+loan.part.a||0; } delete loan.part; markPaid(loan); }
     const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
     if(rcData){ rec.rc=true; await rcPut(rec.id,rcData); }
     state.payments.push(rec);
@@ -5842,12 +5862,12 @@ function payForm(loan){
 }
 
 /* защита от опечаток и двойных платежей: переспросить */
-function payGuard(loan,a,amt,extra){
+function payGuard(loan,a,amt,extra,partial){
   const t=today0();
   const dup=state.payments.find(p=>p.loanId===loan.id&&+p.amount===amt&&Math.abs(daysUntil(parseYmd(p.date),t))<=5);
   if(dup) return L.guardDup(fmtDate(parseYmd(dup.date)));
   const exp=Math.round(a.amt||+loan.monthly||0);
-  if(!extra&&exp>0&&(amt>exp*3||amt<exp*0.3)) return L.guardOdd(money(amt),money(exp));
+  if(!extra&&exp>0&&(amt>exp*3||(!partial&&amt<exp*0.3))) return L.guardOdd(money(amt),money(exp));
   const rem=a.remaining+(a.interestLeft||0)+exp; if(rem>0&&amt>rem*1.1) return L.guardOver(money(a.remaining));
   return '';
 }
@@ -5884,7 +5904,9 @@ function paySheet(pid){
 }
 function undoPayment(pid){
   const p=state.payments.find(x=>x.id===pid); if(!p) return; const loan=byId(p.loanId);
-  if(loan){ loan.paid=Math.max(0,(+loan.paid||0)-payPrincipal(p)); if(p.per!=null && loan.pt===p.per) loan.pt=p.per-1; }
+  if(loan){ loan.paid=Math.max(0,(+loan.paid||0)-payPrincipal(p));
+    if(p.part){ if(loan.part&&loan.part.per===p.per){ loan.part.a=(+loan.part.a||0)-(+p.amount||0); if(!(loan.part.a>0)) delete loan.part; } }
+    else if(p.per!=null && loan.pt===p.per){ loan.pt=p.per-1; if(p.partPrev>0) loan.part={per:p.per,a:p.partPrev}; } }
   if(p.envA>0) envAdd('loan',p.envA,L.undoWord);
   state.payments=state.payments.filter(x=>x!==p); if(p.rc) rcDel(pid);
 }
@@ -9468,7 +9490,12 @@ function m7HeroHTML(list){
   const grp=m7Real(list).filter(x=>!x.a.done&&!x.a.check&&(nx.a.overdue?x.a.overdue:x.a.days===nx.a.days)).sort((p,q)=>p.a.days-q.a.days||m7Amt(q.a)-m7Amt(p.a));
   if(grp.length>1){ const lateG=nx.a.overdue, tot=grp.reduce((t,x)=>t+m7Amt(x.a),0);
     const penD=lateG?grp.reduce((t,x)=>t+penaltyPerDay(x.loan,x.a),0):0, penN=lateG?grp.reduce((t,x)=>t+penaltyPerDay(x.loan,x.a)*(-x.a.days),0):0;
-    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn"><b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${money(m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${money(m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
+    /* какой платить первым, если денег хватает на один: где пеня растёт быстрее; если пеня не указана — где ставка выше */
+    let first=null, firstWhy='';
+    if(lateG){ const pp=grp.map(x=>penaltyPerDay(x.loan,x.a)), mx=Math.max(...pp);
+      if(mx>0&&pp.filter(v=>v===mx).length===1){ first=grp[pp.indexOf(mx)]; firstWhy=L.m7FirstPen; }
+      else if(!(mx>0)){ const rr=grp.map(x=>+x.loan.rate||0), mr=Math.max(...rr); if(mr>0&&rr.filter(v=>v===mr).length===1){ first=grp[rr.indexOf(mr)]; firstWhy=L.m7FirstRate; } } }
+    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn">${x===first?`<span class="m7-h-first">${firstWhy}</span>`:''}<b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${money(m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${x.a.part>0?`<span>${L.m7PartOf(money(x.a.part),money(x.a.amtFull))}</span>`:''}${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${money(m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
     return `<div class="m7-hero m7-multi ${lateG?'late':''}">
       <div class="m7-h-top"><div class="m7-h-n"><span>${lateG?L.m7LateN(grp.length):L.m7SameDay(grp.length)}</span><b>${lateG?L.m7LateSum:fmtDate(nx.a.due)+' · '+whenText(nx.a.days)}</b></div></div>
       <div class="m7-h-amt">${m7Num0(tot)}<small>${esc(L.cur)}</small></div>
@@ -9480,6 +9507,7 @@ function m7HeroHTML(list){
   return `<div class="m7-hero ${late?'late':''}">
     <div class="m7-h-top">${avaHTML(loan,'sm')}<div class="m7-h-n"><span>${late?L.m7Late(ld):L.m7Next}</span><b>${esc(loan.name)} · ${fmtDate(a.due)}</b></div>${late?'':`<span class="m7-chip">${whenText(a.days)}</span>`}</div>
     <div class="m7-h-amt">${m7Num0(m7Amt(a))}<small>${esc(L.cur)}</small></div>
+    ${a.part>0?`<p class="m7-h-pen">${L.m7PartOf(money(a.part),money(a.amtFull))}</p>`:''}
     ${late&&pen>0?`<p class="m7-h-pen">${L.m7PenNow(money(pen*ld),money(pen))}</p>`:''}
     <div class="m7-h-btns"><button class="m7-b1" data-action="pay" data-id="${loan.id}">${L.m7Paid}</button>${late?`<button class="m7-b2" data-m-late="${loan.id}">${L.m7WhatToDo}</button>`:`<button class="m7-b2" data-action="open" data-id="${loan.id}">${L.m7More}</button>`}</div>
   </div>`;
