@@ -2159,6 +2159,7 @@
   .iv-ai-r{padding:12px 14px; border-radius:14px; background:var(--m-grape-weak); display:flex; flex-direction:column; align-items:flex-start; gap:6px;}
   .iv-ai-r p{margin:0; font-weight:700; font-size:.9rem;} .iv-ai-r small{color:var(--muted); font-size:.8rem;}
   .iv-phq{margin:0 0 12px;}
+  .pr-ai{margin-top:8px;} #p-ai-r{margin-top:8px;} .pr-w{color:var(--out)!important; font-weight:700;}
   /* larger touch area for small text buttons (WCAG 2.5.8) */
   :where(.add-link,.link-btn){position:relative;}
   :where(.add-link,.link-btn)::after{content:''; position:absolute; inset:-9px -4px;}
@@ -3872,6 +3873,10 @@ ru:{
   nlChkN:n=>'Отмечено '+n+' из 4', nlChkAll:'Все четыре пункта на месте. Решение за вами.', nlChkMiss:'Сначала разберитесь:',
   nlStress:p=>'Если выручка упадёт на треть — нагрузка станет '+p+'%.', nlStressOk:'Плохой месяц вы выдержите.', nlStressBad:'В плохой месяц платить будет тяжело.',
   nineHint:(n,p)=>'Попробуйте '+n+' вместо '+p+': в опыте с каталогом одежды цена на «9» продавалась лучше соседних.', nineUse:n=>'Поставить '+n,
+  prHint:'Есть снимок экрана из приложения банка? Добавьте его — Сифра прочитает сумму и дату.', prBtn:'Сифра, прочитай чек', prOnly:'Отправится только это фото. Номера карт Сифра не переписывает.', prWait:'Сифра читает чек… до минуты.',
+  prDone:f=>'Сифра прочитала: '+f+'.', prNone:'Сифра не нашла на фото сумму и дату. Впишите сами.', prCheck:'Проверьте сумму перед тем, как записать.', prDate:d=>'Платёж будет записан на '+d+', как в чеке.',
+  prCur:c=>'Чек в '+c+' — впишите сумму в сомони сами.', prFee:f=>'В чеке есть комиссия '+f+' — в платёж по кредиту она не входит.', prFail:'В чеке написано, что платёж не прошёл. Проверьте в банке.',
+  prQ:'Это снимок экрана из приложения банка или фото чека об оплате кредита или переводе. Ответь ТОЛЬКО одним JSON без пояснений: {"amount": сумма платежа числом без комиссии или null, "fee": комиссия числом или null, "date": дата платежа ГГГГ-ММ-ДД или null, "cur": валюта платежа (TJS, USD, RUB…) или null, "ok": true если платёж успешный, false если отклонён или ошибка, null если не видно}. Не переписывай номера карт и счетов, имена и телефоны. Не придумывай: если не видно — null.',
   mzT:'Mira заметила', mzSub:'За последние дни — проверьте, всё ли так', mzMoreN:n=>'и ещё '+n,
   mzDupExp:(c,a,d)=>'Расход «'+c+'» '+a+' за '+d+' записан дважды. Это ошибка?', mzDupHome:(c,a,d)=>'Домашний расход «'+c+'» '+a+' за '+d+' записан дважды. Это ошибка?', mzDupSale:(a,d)=>'Выручка '+a+' за '+d+' записана дважды. Это ошибка?',
   mzDel:'Удалить повтор', mzKeep:'Всё верно', mzOk:'Понятно', mzWhy:'Записать причину', mzDeleted:'Повтор удалён', mzSaved:'Записано',
@@ -3971,6 +3976,10 @@ tg:{
   nlChkN:n=>'Қайд шуд: '+n+' аз 4', nlChkAll:'Ҳар чор банд дар ҷояш. Қарор аз шумост.', nlChkMiss:'Аввал равшан кунед:',
   nlStress:p=>'Агар даромад сеяк кам шавад — сарборӣ '+p+'% мешавад.', nlStressOk:'Моҳи бадро мебардоред.', nlStressBad:'Дар моҳи бад пардохт душвор мешавад.',
   nineHint:(n,p)=>'Ба ҷои '+p+' '+n+'-ро санҷед: дар таҷриба бо каталоги либос нархи ба «9» анҷомёфта беҳтар фурӯхта шуд.', nineUse:n=>n+' гузоштан',
+  prHint:'Акси экран аз барномаи бонк доред? Илова кунед — Сифра маблағ ва санаро мехонад.', prBtn:'Сифра, чекро хон', prOnly:'Танҳо ҳамин акс фиристода мешавад. Сифра рақами кортҳоро наменависад.', prWait:'Сифра чекро мехонад… то як дақиқа.',
+  prDone:f=>'Сифра хонд: '+f+'.', prNone:'Сифра дар акс маблағ ва санаро наёфт. Худатон нависед.', prCheck:'Пеш аз навиштан маблағро санҷед.', prDate:d=>'Пардохт ба санаи '+d+' навишта мешавад, мисли чек.',
+  prCur:c=>'Чек бо '+c+' аст — маблағро бо сомонӣ худатон нависед.', prFee:f=>'Дар чек комиссия '+f+' ҳаст — он ба пардохти қарз дохил намешавад.', prFail:'Дар чек навишта шудааст, ки пардохт нагузашт. Дар бонк санҷед.',
+  prQ:'Ин акси экран аз барномаи бонк ё акси чеки пардохти қарз ё интиқол аст. ТАНҲО бо як JSON бе шарҳ ҷавоб деҳ: {"amount": маблағи пардохт бо рақам бе комиссия ё null, "fee": комиссия бо рақам ё null, "date": санаи пардохт ГГГГ-ММ-РР ё null, "cur": асъори пардохт (TJS, USD, RUB…) ё null, "ok": true агар пардохт гузашт, false агар рад шуд ё хато, null агар намоён нест}. Рақами корт ва ҳисоб, ном ва телефонро нанавис. Худ насоз: агар намоён нест — null.',
   mzT:'Mira пай бурд', mzSub:'Дар рӯзҳои охир — санҷед, ҳама дуруст аст?', mzMoreN:n=>'ва боз '+n,
   mzDupExp:(c,a,d)=>'Хароҷоти «'+c+'» '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?', mzDupHome:(c,a,d)=>'Хароҷоти хонагии «'+c+'» '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?', mzDupSale:(a,d)=>'Даромади '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?',
   mzDel:'Такрорро нест кардан', mzKeep:'Ҳамааш дуруст', mzOk:'Фаҳмо', mzWhy:'Сабабро нависед', mzDeleted:'Такрор нест карда шуд', mzSaved:'Навишта шуд',
@@ -4070,6 +4079,10 @@ en:{
   nlChkN:n=>n+' of 4 ticked', nlChkAll:'All four points are in place. The decision is yours.', nlChkMiss:'Sort these out first:',
   nlStress:p=>'If revenue drops by a third, the load becomes '+p+'%.', nlStressOk:'You can get through a bad month.', nlStressBad:'A bad month would make paying hard.',
   nineHint:(n,p)=>'Try '+n+' instead of '+p+': in a clothing catalog experiment, prices ending in 9 sold better than nearby prices.', nineUse:n=>'Use '+n,
+  prHint:'Have a screenshot from your bank app? Add it — Sifra will read the amount and date.', prBtn:'Sifra, read the receipt', prOnly:'Only this photo is sent. Sifra does not copy card numbers.', prWait:'Sifra is reading the receipt… up to a minute.',
+  prDone:f=>'Sifra read: '+f+'.', prNone:'Sifra found no amount or date in the photo. Enter them yourself.', prCheck:'Check the amount before saving.', prDate:d=>'The payment will be saved on '+d+', as on the receipt.',
+  prCur:c=>'The receipt is in '+c+' — enter the amount in somoni yourself.', prFee:f=>'The receipt shows a fee of '+f+' — it is not part of the loan payment.', prFail:'The receipt says the payment failed. Check with the bank.',
+  prQ:'This is a screenshot from a bank app or a photo of a receipt for a loan payment or transfer. Reply ONLY with one JSON, no explanations: {"amount": payment amount as a number without fees or null, "fee": fee as a number or null, "date": payment date YYYY-MM-DD or null, "cur": payment currency (TJS, USD, RUB…) or null, "ok": true if the payment succeeded, false if declined or failed, null if not visible}. Do not copy card or account numbers, names or phone numbers. Do not invent: if not visible — null.',
   mzT:'Mira noticed', mzSub:'From the last few days — check that all is right', mzMoreN:n=>'and '+n+' more',
   mzDupExp:(c,a,d)=>'Expense “'+c+'” '+a+' on '+d+' is recorded twice. A mistake?', mzDupHome:(c,a,d)=>'Home expense “'+c+'” '+a+' on '+d+' is recorded twice. A mistake?', mzDupSale:(a,d)=>'Sales of '+a+' on '+d+' are recorded twice. A mistake?',
   mzDel:'Delete the copy', mzKeep:'It is correct', mzOk:'Got it', mzWhy:'Note the reason', mzDeleted:'Copy deleted', mzSaved:'Saved',
@@ -6001,7 +6014,10 @@ function payForm(loan){
     <div class="field"><label class="check"><input type="checkbox" id="p-extra"> ${L.extraPay}</label></div>
     ${envB>0?`<div class="field"><label class="check"><input type="checkbox" id="p-env" checked> ${L.fromPiggy(money(envB))}</label></div>`:''}
     <div class="field"><label>${L.m7How}</label><div class="m7-chips" id="p-how">${['app','term','bank','fam'].map(k=>`<button type="button" data-how="${k}">${m7HowLabel(k)}</button>`).join('')}</div><p class="note m7-hint" id="p-how-n" hidden>${L.m7TermNote}</p></div>
-    <div class="field"><label class="btn btn-ghost btn-full rc-up">📷 <span id="p-rc-t">${L.rcAdd}</span><input type="file" accept="image/*" id="p-rc" hidden></label></div>
+    <div class="field"><label class="btn btn-ghost btn-full rc-up">📷 <span id="p-rc-t">${L.rcAdd}</span><input type="file" accept="image/*" id="p-rc" hidden></label>
+      <p class="note" id="p-rc-n" style="margin:6px 0 0">${L.prHint}</p>
+      <div class="pr-ai" id="p-ai" hidden><button type="button" class="btn btn-ghost btn-full iv-ai-b" id="p-ai-b">✨ ${L.prBtn}</button><p class="note" style="margin:6px 0 0">${L.prOnly}</p></div>
+      <div class="iv-ai-r" id="p-ai-r" hidden></div></div>
     <div class="err" id="p-err"></div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="p-save">${L.record}</button></div>`);
   const inp=$('#p-amt'), ii=$('#p-int'), pp=$('#p-prin'), ex=$('#p-extra'); let rcData=null, intTouched=false;
   function upd(){ if(!ii) return; const amt=+inp.value||0; if(!intTouched||ex.checked) ii.value=ex.checked?0:interestFor(loan,amt,per,false); ii.disabled=ex.checked; pp.value=Math.max(0,amt-(+ii.value||0)); }
@@ -6012,7 +6028,23 @@ function payForm(loan){
   let how=lsGet('m7how_v1')||''; const howSet=k=>{ how=k; sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.classList.toggle('on',b.dataset.how===k)); const hn=$('#p-how-n'); if(hn) hn.hidden=k!=='term'; };
   sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.onclick=()=>howSet(how===b.dataset.how?'':b.dataset.how)); howSet(how);
   inp.focus(); inp.select();
-  $('#p-rc').addEventListener('change',async e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; try{ rcData=await imgToJpeg(f); $('#p-rc-t').textContent=L.rcAdded; }catch(_){ toast(L.rcFail); } });
+  let rcFile=null, payDate=null, aiPrev=null;
+  $('#p-rc').addEventListener('change',async e=>{ const f=e.target.files&&e.target.files[0]; if(!f) return; try{ rcData=await imgToJpeg(f); rcFile=f; $('#p-rc-t').textContent=L.rcAdded; $('#p-rc-n').hidden=true; $('#p-ai').hidden=false; $('#p-ai-r').hidden=true; }catch(_){ toast(L.rcFail); } });
+  const aiShow=(html)=>{ const r=$('#p-ai-r'); r.innerHTML=html; r.hidden=false; const u=$('#p-ai-u'); if(u) u.onclick=()=>{ if(aiPrev){ inp.value=aiPrev.v; payDate=aiPrev.d; inp.dispatchEvent(new Event('input')); } aiPrev=null; r.hidden=true; $('#p-ai').hidden=false; }; };
+  $('#p-ai-b').onclick=async()=>{ const b=$('#p-ai-b'); if(!rcData) return; b.disabled=true; b.innerHTML='<span class="sf-dots"><i></i><i></i><i></i></span> '+L.prWait;
+    let r=null, err='';
+    try{ let big=rcData; try{ if(rcFile) big=await imgToJpeg(rcFile,1800,0.82); }catch(_){}
+      r=await prRead(big); }catch(e){ err=e.message==='limit'?L.ivAiLimit:e.message==='none'?L.prNone:L.ivAiErr; }
+    if(!$('#p-ai-b')) return; b.disabled=false; b.innerHTML='✨ '+L.prBtn;
+    if(err){ aiShow(`<p class="err-t" style="margin:0">${err}</p>`); return; }
+    const parts=[], warn=[]; aiPrev={v:inp.value,d:payDate};
+    if(r.cur&&r.cur!=='TJS'){ warn.push(L.prCur(esc(r.cur))); }
+    else if(r.amount){ inp.value=Math.round(r.amount); inp.dispatchEvent(new Event('input')); parts.push(money(r.amount)); }
+    if(r.date){ payDate=r.date===ymd(new Date())?null:r.date; parts.push(fmtDate(parseYmd(r.date))); }
+    const info=r.fee?`<small>${L.prFee(money(r.fee))}</small>`:'';
+    if(r.ok===false) warn.push(L.prFail);
+    $('#p-ai').hidden=true;
+    aiShow(`<p>✨ ${parts.length?L.prDone(parts.join(', ')):L.prNone}</p>${warn.map(w=>`<small class="pr-w">⚠️ ${w}</small>`).join('')}${info}${payDate?`<small>${L.prDate(fmtDate(parseYmd(payDate)))}</small>`:''}<small>${L.prCheck}</small>${parts.length?`<button type="button" class="link-btn" id="p-ai-u">${L.ivAiUndo}</button>`:''}`); };
   let warned=false; inp.addEventListener('input',()=>{ warned=false; $('#p-save').textContent=L.record; });
   $('#p-save').onclick=async()=>{
     const amt=Math.round(+inp.value); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
@@ -6023,12 +6055,13 @@ function payForm(loan){
     const pctBefore=a.pct, before=+loan.paid||0;
     loan.paid=Math.min(+loan.total||0, before+(amt-i));
     const applied=Math.max(0,loan.paid-before);
-    const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:applied,interest:i,date:ymd(new Date())};
+    const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:applied,interest:i,date:payDate||ymd(new Date())};
+    if(payDate) rec.byRc=1;
     if(how){ rec.how=how; lsSet('m7how_v1',how); }
     if(extra) rec.extra=true;
     else if(partial){ /* внесли часть: платёж остаётся открытым, к оплате — остаток */
       const prev=(loan.part&&loan.part.per===a.per)?(+loan.part.a||0):0; loan.part={per:a.per,a:prev+amt}; rec.per=a.per; rec.part=true; rec.due=ymd(a.due); }
-    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=Math.max(0,-daysUntil(due)); rec.chk=ymd(addDays(today0(),1)); if(loan.part&&loan.part.per===per2){ rec.partPrev=+loan.part.a||0; } delete loan.part; markPaid(loan); }
+    else { const c=curPt(loan), per2=c==null?lastDueIdx(loan.dueDay||1):c+1; const se=schedAt(loan,per2); const due=se?parseYmd(se.d):dueAt(per2,loan.dueDay||1); rec.per=per2; rec.due=ymd(due); rec.late=payDate?Math.max(0,Math.round((parseYmd(payDate)-due)/864e5)):Math.max(0,-daysUntil(due)); rec.chk=ymd(addDays(today0(),1)); if(loan.part&&loan.part.per===per2){ rec.partPrev=+loan.part.a||0; } delete loan.part; markPaid(loan); }
     const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
     if(rcData){ rec.rc=true; await rcPut(rec.id,rcData); }
     state.payments.push(rec);
@@ -11247,6 +11280,18 @@ function renderMz(){ const box=$('#mzBox'); if(!box) return; let ns=[]; try{ ns=
     $('#mz-s').onclick=()=>{ const v=$('#mz-r').value.trim(); if(!v) return showErr($('#mz-e'),L.mzWhyPh); const s=ensureShop(); s.notes=s.notes||{}; s.notes[n.day]=v; done(n.id); closeSheet(); render(); toast(L.mzSaved); }; });
 }
 try{ const _r102=render; render=function(){ const x=_r102.apply(this,arguments); try{ renderMz(); }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---------- № 113 Платёж по снимку экрана: Сифра читает сумму и дату ---------- */
+function prParse(txt){ const m=String(txt||'').match(/\{[\s\S]*\}/); if(!m) return null; let o; try{ o=JSON.parse(m[0]); }catch(e){ return null; } if(!o||typeof o!=='object') return null;
+  const num=v=>{ if(v==null||v==='') return 0; const n=+String(v).replace(/[\s\u00a0\u202f]/g,'').replace(',','.'); return isFinite(n)&&n>0&&n<1e7?Math.round(n*100)/100:0; };
+  const amount=num(o.amount), fee=num(o.fee); let date=null;
+  if(/^\d{4}-\d{2}-\d{2}$/.test(String(o.date||''))){ const d=parseYmd(o.date), t=today0(); if(dkey(d)===o.date&&d<=t&&d>=addDays(t,-60)) date=o.date; }
+  let cur=String(o.cur||'').toUpperCase().replace(/[^A-Z]/g,'').slice(0,3); if(/^(SOM|SM|TJ|СОМ)/.test(cur)||cur==='') cur=cur?'TJS':null;
+  const ok=o.ok===false?false:(o.ok===true?true:null);
+  return (amount||date)?{amount,fee:fee&&fee<amount?fee:0,date,cur,ok}:null; }
+async function prRead(dataUrl){ const data=String(dataUrl||'').split(',')[1]; if(!data) throw new Error('nophoto');
+  const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q:L.prQ,lang,hist:[],img:{type:'image/jpeg',data}})});
+  const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error==='limit'?'limit':'srv'); const res=prParse(j.text); if(!res) throw new Error('none'); return res; }
 
 /* ---------- № 104 Товар по фото: Сифра заполняет карточку товара ---------- */
 function ivAiAsk(){ return L.ivAiQ(gcats()); }
