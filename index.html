@@ -2135,6 +2135,30 @@
   [data-theme="dark"] .mini-pay{background:color-mix(in srgb,var(--brand) 70%,#000);}
   [data-theme="dark"] .fo-it.red .fo-b, [data-theme="dark"] .ssub em{color:#2a1208;}
   :root:not([data-theme="dark"]) .sd-exp{color:color-mix(in srgb,var(--out) 75%,#000);}
+  /* ручка у окна: потянуть вниз — закрыть */
+  .sheet::before{content:''; display:block; width:40px; height:5px; border-radius:99px; background:color-mix(in srgb,var(--muted) 38%,transparent); margin:-12px auto 12px;}
+  @media (min-width:540px){ .sheet::before{display:none;} }
+  /* № 102 «Mira заметила» */
+  #mzBox:empty{display:none;}
+  .mz-card{margin:14px 0; padding:16px; border-radius:22px; background:var(--m-grape-weak); border:1px solid color-mix(in srgb,var(--m-grape,#7C5CFF) 22%,var(--line));}
+  .mz-h{display:flex; gap:10px; align-items:center; margin-bottom:6px;}
+  .mz-h b{display:block; font-size:1.02rem;} .mz-h small{display:block; color:var(--muted); font-size:.8rem;}
+  .mz-hi{font-size:1.3rem;}
+  .mz-it{display:flex; gap:10px; padding:12px 0; border-top:1px solid color-mix(in srgb,var(--line) 70%,transparent);}
+  .mz-it:first-of-type{border-top:0;}
+  .mz-i{font-size:1.15rem; line-height:1.3;}
+  .mz-b{flex:1; min-width:0;} .mz-b p{margin:0 0 8px; line-height:1.4; font-size:.92rem;}
+  .mz-act{display:flex; flex-wrap:wrap; gap:8px;}
+  .mz-btn{border:1px solid var(--line); background:var(--surface); color:var(--ink); font-family:var(--font-num); font-weight:800; font-size:.84rem; border-radius:11px; padding:8px 12px; min-height:40px; cursor:pointer;}
+  .mz-btn.pri{background:var(--ink); color:var(--surface); border-color:var(--ink);}
+  .mz-more{margin:4px 0 0; font-size:.82rem; color:var(--muted);} .mz-how{margin:8px 0 0; font-size:.76rem; color:var(--muted);}
+  /* № 104 Товар по фото */
+  .iv-ai{margin:4px 0 12px;}
+  .iv-ai-b{border-color:color-mix(in srgb,var(--m-grape,#7C5CFF) 45%,var(--line)); color:var(--ink);}
+  .iv-ai-w{margin:0; padding:12px 14px; border-radius:14px; background:var(--m-grape-weak); font-size:.9rem; display:flex; gap:8px; align-items:center;}
+  .iv-ai-r{padding:12px 14px; border-radius:14px; background:var(--m-grape-weak); display:flex; flex-direction:column; align-items:flex-start; gap:6px;}
+  .iv-ai-r p{margin:0; font-weight:700; font-size:.9rem;} .iv-ai-r small{color:var(--muted); font-size:.8rem;}
+  .iv-phq{margin:0 0 12px;}
   /* larger touch area for small text buttons (WCAG 2.5.8) */
   :where(.add-link,.link-btn){position:relative;}
   :where(.add-link,.link-btn)::after{content:''; position:absolute; inset:-9px -4px;}
@@ -2164,6 +2188,7 @@
     <section id="miraMonth"></section>
     <section id="miraOwed"></section>
     <section id="focus"></section>
+    <section id="mzBox"></section>
     <section id="simpleBox"></section>
     <section id="tripCard"></section>
     <section id="quick"></section>
@@ -3847,6 +3872,17 @@ ru:{
   nlChkN:n=>'Отмечено '+n+' из 4', nlChkAll:'Все четыре пункта на месте. Решение за вами.', nlChkMiss:'Сначала разберитесь:',
   nlStress:p=>'Если выручка упадёт на треть — нагрузка станет '+p+'%.', nlStressOk:'Плохой месяц вы выдержите.', nlStressBad:'В плохой месяц платить будет тяжело.',
   nineHint:(n,p)=>'Попробуйте '+n+' вместо '+p+': в опыте с каталогом одежды цена на «9» продавалась лучше соседних.', nineUse:n=>'Поставить '+n,
+  mzT:'Mira заметила', mzSub:'За последние дни — проверьте, всё ли так', mzMoreN:n=>'и ещё '+n,
+  mzDupExp:(c,a,d)=>'Расход «'+c+'» '+a+' за '+d+' записан дважды. Это ошибка?', mzDupHome:(c,a,d)=>'Домашний расход «'+c+'» '+a+' за '+d+' записан дважды. Это ошибка?', mzDupSale:(a,d)=>'Выручка '+a+' за '+d+' записана дважды. Это ошибка?',
+  mzDel:'Удалить повтор', mzKeep:'Всё верно', mzOk:'Понятно', mzWhy:'Записать причину', mzDeleted:'Повтор удалён', mzSaved:'Записано',
+  mzBill:(n,a,u,x)=>'«'+n+'» в этом месяце — '+a+', обычно около '+u+' ('+x+').', mzSpike:(c,a,u,x)=>'За 30 дней на «'+c+'» ушло '+a+', обычно около '+u+' в месяц ('+x+').',
+  mzMore:p=>'на '+p+'% больше', mzTimes:t=>'в '+t+' раза больше',
+  mzDrop:(w,d,a,u,p)=>w+', '+d+': выручка '+a+' — обычно в этот день недели около '+u+' (на '+p+'% меньше).', mzUp:(w,d,a,p)=>w+', '+d+': выручка '+a+' — на '+p+'% больше обычного для этого дня недели. Что помогло? Запишите — пригодится.',
+  mzWhyT:'Почему выручка была ниже?', mzWhyUpT:'Что помогло выручке?', mzNote:'Причина', mzWhyPh:'Например: дождь, праздник, закрылась рано', mzHow:'Mira сравнивает с вашими же прошлыми записями. Ничего никуда не отправляется.',
+  ivAiQuick:'Товар по фото', ivAiBtn:'Сифра, заполни по фото', ivAiWait:'Сифра смотрит на фото… до минуты.', ivAiDone:f=>'Сифра вписала: '+f+'.', ivAiNothing:'Всё уже заполнено — Сифра ничего не меняла.',
+  ivAiF_name:'название', ivAiF_cat:'вид', ivAiF_sizes:'размеры', ivAiUseName:n=>'Название от Сифры: «'+n+'»', ivAiUndo:'Отменить', ivAiCheck:'Проверьте. Закупку, цену и количество впишите сами.',
+  ivAiErr:'Не получилось. Проверьте интернет и попробуйте ещё раз.', ivAiLimit:'Сифра на сегодня устала — попробуйте завтра.', ivAiNone:'Сифра не узнала вещь. Сфотографируйте её целиком при хорошем свете.',
+  ivAiQ:c=>'Это фото вещи в магазине одежды. Ответь ТОЛЬКО одним JSON без пояснений: {"name": короткое название вещи по-русски, 2–4 слова, с цветом, например "Платье миди синее", "kind": одно из ['+c.map(x=>'"'+x+'"').join(', ')+'] или "", "set": "cloth" если размеры 42–56, "letters" если S–XL, "shoes" если обувь, "kids" если детская одежда, "one" если без размера (сумка, платок, украшение), иначе "", "sizes": размеры, если видны на бирке, массивом строк, иначе []}. Не придумывай: если не видно — "" или [].',
   ptT:'Проверка цены', ptOffer:(a,b)=>'Две недели продаём за '+a+', две недели — за '+b+'. Mira сравнит, при какой цене вы заработали больше.', ptOfferAny:a=>'Две недели продаём за '+a+', две недели — по новой цене. Mira сравнит, при какой вы заработали больше.', ptNewPh:'Новая цена',
   ptStart:'Начать', ptErr:'Впишите новую цену, отличную от нынешней', ptBelow:c=>'Это ниже закупки ('+c+') — так вы теряете на каждой вещи', ptStarted:'Проверка цены началась. Отмечайте продажи как обычно.',
   ptDay:(d,n)=>'день '+d+' из '+n, ptNow1:(a,d,b)=>'Сейчас цена '+a+'. '+d+' Mira напомнит поменять ценник на '+b+'.', ptNow2:(b,d)=>'Сейчас цена '+b+' — проверьте, что ценник поменян. Итог будет '+d+'.', ptStop:'Остановить проверку',
@@ -3935,6 +3971,17 @@ tg:{
   nlChkN:n=>'Қайд шуд: '+n+' аз 4', nlChkAll:'Ҳар чор банд дар ҷояш. Қарор аз шумост.', nlChkMiss:'Аввал равшан кунед:',
   nlStress:p=>'Агар даромад сеяк кам шавад — сарборӣ '+p+'% мешавад.', nlStressOk:'Моҳи бадро мебардоред.', nlStressBad:'Дар моҳи бад пардохт душвор мешавад.',
   nineHint:(n,p)=>'Ба ҷои '+p+' '+n+'-ро санҷед: дар таҷриба бо каталоги либос нархи ба «9» анҷомёфта беҳтар фурӯхта шуд.', nineUse:n=>n+' гузоштан',
+  mzT:'Mira пай бурд', mzSub:'Дар рӯзҳои охир — санҷед, ҳама дуруст аст?', mzMoreN:n=>'ва боз '+n,
+  mzDupExp:(c,a,d)=>'Хароҷоти «'+c+'» '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?', mzDupHome:(c,a,d)=>'Хароҷоти хонагии «'+c+'» '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?', mzDupSale:(a,d)=>'Даромади '+a+' барои '+d+' ду бор навишта шудааст. Хато нест?',
+  mzDel:'Такрорро нест кардан', mzKeep:'Ҳамааш дуруст', mzOk:'Фаҳмо', mzWhy:'Сабабро нависед', mzDeleted:'Такрор нест карда шуд', mzSaved:'Навишта шуд',
+  mzBill:(n,a,u,x)=>'«'+n+'» дар ин моҳ — '+a+', одатан тақрибан '+u+' ('+x+').', mzSpike:(c,a,u,x)=>'Дар 30 рӯз ба «'+c+'» '+a+' сарф шуд, одатан тақрибан '+u+' дар як моҳ ('+x+').',
+  mzMore:p=>p+'% зиёдтар', mzTimes:t=>t+' баробар зиёдтар',
+  mzDrop:(w,d,a,u,p)=>w+', '+d+': даромад '+a+' — одатан дар ҳамин рӯзи ҳафта тақрибан '+u+' ('+p+'% камтар).', mzUp:(w,d,a,p)=>w+', '+d+': даромад '+a+' — '+p+'% зиёдтар аз одатӣ барои ин рӯзи ҳафта. Чӣ кӯмак кард? Нависед — ба кор меояд.',
+  mzWhyT:'Чаро даромад камтар буд?', mzWhyUpT:'Чӣ ба даромад кӯмак кард?', mzNote:'Сабаб', mzWhyPh:'Масалан: борон, ид, барвақт бастам', mzHow:'Mira бо сабтҳои пешинаи худатон муқоиса мекунад. Ҳеҷ чиз ба ҷое фиристода намешавад.',
+  ivAiQuick:'Мол аз рӯи акс', ivAiBtn:'Сифра, аз рӯи акс пур кун', ivAiWait:'Сифра ба акс нигоҳ мекунад… то як дақиқа.', ivAiDone:f=>'Сифра навишт: '+f+'.', ivAiNothing:'Ҳама аллакай пур аст — Сифра чизеро иваз накард.',
+  ivAiF_name:'ном', ivAiF_cat:'намуд', ivAiF_sizes:'андозаҳо', ivAiUseName:n=>'Ном аз Сифра: «'+n+'»', ivAiUndo:'Бекор кардан', ivAiCheck:'Санҷед. Нархи харид, нарх ва миқдорро худатон нависед.',
+  ivAiErr:'Нашуд. Интернетро санҷед ва боз кӯшиш кунед.', ivAiLimit:'Сифра имрӯз хаста шуд — пагоҳ кӯшиш кунед.', ivAiNone:'Сифра чизро нашинохт. Онро пурра дар равшании хуб акс гиред.',
+  ivAiQ:c=>'Ин акси либос дар мағозаи либос аст. ТАНҲО бо як JSON бе шарҳ ҷавоб деҳ: {"name": номи кӯтоҳи чиз бо забони тоҷикӣ, 2–4 калима, бо ранг, масалан "Куртаи кабуд", "kind": яке аз ['+c.map(x=>'"'+x+'"').join(', ')+'] ё "", "set": "cloth" агар андозаҳо 42–56, "letters" агар S–XL, "shoes" агар пойафзол, "kids" агар либоси кӯдакона, "one" агар бе андоза (сумка, рӯймол, ороишот), вагарна "", "sizes": андозаҳо, агар дар тамға намоён бошанд, ҳамчун массиви сатрҳо, вагарна []}. Худ насоз: агар намоён набошад — "" ё [].',
   ptT:'Санҷиши нарх', ptOffer:(a,b)=>'Ду ҳафта бо '+a+', ду ҳафта бо '+b+' мефурӯшем. Mira муқоиса мекунад, ки бо кадом нарх бештар кор кардед.', ptOfferAny:a=>'Ду ҳафта бо '+a+', ду ҳафта бо нархи нав мефурӯшем. Mira муқоиса мекунад, ки бо кадомаш бештар кор кардед.', ptNewPh:'Нархи нав',
   ptStart:'Оғоз', ptErr:'Нархи навро нависед, ки аз ҳозира фарқ кунад', ptBelow:c=>'Ин аз нархи харид ('+c+') паст аст — аз ҳар чиз зарар мебинед', ptStarted:'Санҷиши нарх оғоз шуд. Фурӯшро мисли ҳамеша қайд кунед.',
   ptDay:(d,n)=>'рӯзи '+d+' аз '+n, ptNow1:(a,d,b)=>'Ҳозир нарх '+a+'. '+d+' Mira хотиррасон мекунад, ки нархномаро ба '+b+' иваз кунед.', ptNow2:(b,d)=>'Ҳозир нарх '+b+' — санҷед, ки нархнома иваз шудааст. Натиҷа '+d+'.', ptStop:'Қатъ кардани санҷиш',
@@ -4023,6 +4070,17 @@ en:{
   nlChkN:n=>n+' of 4 ticked', nlChkAll:'All four points are in place. The decision is yours.', nlChkMiss:'Sort these out first:',
   nlStress:p=>'If revenue drops by a third, the load becomes '+p+'%.', nlStressOk:'You can get through a bad month.', nlStressBad:'A bad month would make paying hard.',
   nineHint:(n,p)=>'Try '+n+' instead of '+p+': in a clothing catalog experiment, prices ending in 9 sold better than nearby prices.', nineUse:n=>'Use '+n,
+  mzT:'Mira noticed', mzSub:'From the last few days — check that all is right', mzMoreN:n=>'and '+n+' more',
+  mzDupExp:(c,a,d)=>'Expense “'+c+'” '+a+' on '+d+' is recorded twice. A mistake?', mzDupHome:(c,a,d)=>'Home expense “'+c+'” '+a+' on '+d+' is recorded twice. A mistake?', mzDupSale:(a,d)=>'Sales of '+a+' on '+d+' are recorded twice. A mistake?',
+  mzDel:'Delete the copy', mzKeep:'It is correct', mzOk:'Got it', mzWhy:'Note the reason', mzDeleted:'Copy deleted', mzSaved:'Saved',
+  mzBill:(n,a,u,x)=>'“'+n+'” this month — '+a+', usually about '+u+' ('+x+').', mzSpike:(c,a,u,x)=>'In 30 days “'+c+'” took '+a+', usually about '+u+' a month ('+x+').',
+  mzMore:p=>p+'% more', mzTimes:t=>t+' times more',
+  mzDrop:(w,d,a,u,p)=>w+', '+d+': sales '+a+' — this weekday usually brings about '+u+' ('+p+'% less).', mzUp:(w,d,a,p)=>w+', '+d+': sales '+a+' — '+p+'% more than usual for this weekday. What helped? Note it down.',
+  mzWhyT:'Why were sales lower?', mzWhyUpT:'What helped sales?', mzNote:'Reason', mzWhyPh:'E.g. rain, a holiday, closed early', mzHow:'Mira compares with your own past records. Nothing is sent anywhere.',
+  ivAiQuick:'Item from a photo', ivAiBtn:'Sifra, fill in from the photo', ivAiWait:'Sifra is looking at the photo… up to a minute.', ivAiDone:f=>'Sifra filled in: '+f+'.', ivAiNothing:'Everything is already filled in — Sifra changed nothing.',
+  ivAiF_name:'name', ivAiF_cat:'type', ivAiF_sizes:'sizes', ivAiUseName:n=>'Sifra’s name: “'+n+'”', ivAiUndo:'Undo', ivAiCheck:'Check it. Enter the cost, price and quantity yourself.',
+  ivAiErr:'That did not work. Check your connection and try again.', ivAiLimit:'Sifra is done for today — try tomorrow.', ivAiNone:'Sifra could not recognise the item. Photograph all of it in good light.',
+  ivAiQ:c=>'This is a photo of an item in a clothing shop. Reply ONLY with one JSON, no explanations: {"name": a short item name in English, 2–4 words, with the colour, e.g. "Blue midi dress", "kind": one of ['+c.map(x=>'"'+x+'"').join(', ')+'] or "", "set": "cloth" if sizes 42–56, "letters" if S–XL, "shoes" if footwear, "kids" if children’s clothing, "one" if no size (bag, scarf, jewellery), otherwise "", "sizes": sizes visible on the label as an array of strings, otherwise []}. Do not invent: if not visible — "" or [].',
   ptT:'Price test', ptOffer:(a,b)=>'Sell for '+a+' for two weeks, then for '+b+' for two weeks. Mira will compare which price earned you more.', ptOfferAny:a=>'Sell for '+a+' for two weeks, then at a new price for two weeks. Mira will compare which earned you more.', ptNewPh:'New price',
   ptStart:'Start', ptErr:'Enter a new price that differs from the current one', ptBelow:c=>'That is below cost ('+c+') — you would lose on every item', ptStarted:'Price test started. Log sales as usual.',
   ptDay:(d,n)=>'day '+d+' of '+n, ptNow1:(a,d,b)=>'Current price '+a+'. On '+d+' Mira will remind you to change the tag to '+b+'.', ptNow2:(b,d)=>'Current price '+b+' — make sure the tag is changed. Result on '+d+'.', ptStop:'Stop the test',
@@ -7864,6 +7922,7 @@ function renderInv(){
   const box=$('#inv'); if(!box) return;
   const items=state.inv.filter(x=>!x.arch), low=invLowAll(), pcs=items.reduce((s,x)=>s+invTotal(x),0), worth=items.reduce((s,x)=>s+invTotal(x)*(+x.cost||0),0);
   box.innerHTML=`<div class="section-h"><h2>📏 ${L.ivTitle}</h2><button class="add-link" data-invadd="1">+ ${L.add}</button></div>
+    <button type="button" class="btn btn-ghost btn-full iv-phq" data-invphoto="1">📷 ${L.ivAiQuick}</button>
     ${items.length?`<p class="view-h">${L.ivSum(items.length,pcs,money(worth))}</p>${stockMoneyHTML()}
       ${low.length?`<div class="pc-warn" style="margin-bottom:10px">⚠️ ${L.ivLowT}: ${low.slice(0,4).map(o=>`<b>${esc(o.x.name)}</b> (${o.l.slice(0,4).map(esc).join(', ')})`).join(' · ')}${low.length>4?' …':''} <button class="link-btn" data-invorder="1">🛒 ${L.ivToList}</button></div>`:''}
       ${items.length>6?`<div class="field" style="margin:0 0 10px"><input id="iv-q" type="search" placeholder="🔎 ${L.ivSearch}"></div>`:''}
@@ -7876,10 +7935,11 @@ function invCard(x){ const low=invLow(x), keys=Object.keys(x.sizes||{});
     <div class="szs">${keys.map(k=>`<i class="${(+x.sizes[k]||0)===0?'z':low.includes(k)?'lo':''}">${esc(k==='—'?L.ivOne:k)}<b>${+x.sizes[k]||0}</b></i>`).join('')}</div></div></div>`; }
 function invForm(x,pre){
   const isNew=!x; pre=pre||{}; const d=x?{...x,sizes:{...(x.sizes||{})}}:{name:pre.name||'',cat:'',cost:pre.cost||'',price:pre.price||'',sup:pre.sup||'',low:1,sizes:{}};
-  let order=x?Object.keys(x.sizes||{}):parseSizes(pre.sizesText); if(isNew&&!order.length) order=[]; if(isNew) for(const k of order) d.sizes[k]=''; let photo=pre.photo||null;
+  let order=x?Object.keys(x.sizes||{}):parseSizes(pre.sizesText); if(isNew&&!order.length) order=[]; if(isNew) for(const k of order) d.sizes[k]=''; let photo=pre.photo||null, ai=null, aiBusy=false, aiErr='', aiUndo=null, aiAuto=!!(pre.ai&&photo);
   const draw=()=>{ const sh=+d.cost>0?sellHint(+d.cost):null;
     openSheet(`<h3>📏 ${isNew?L.ivNew:esc(d.name)}</h3><p class="lead">${L.ivFormLead}</p>
       <div class="iv-ph">${photo?`<img src="${photo}" alt="">`:x&&x.ph?`<img data-ph="iv_${esc(x.id)}" alt="">`:''}<button class="tp-add" id="iv-cam">📷<small>${L.tpMore}</small></button></div>
+      ${(photo||(x&&x.ph))?`<div class="iv-ai">${aiBusy?`<p class="iv-ai-w"><span class="sf-dots"><i></i><i></i><i></i></span> ${L.ivAiWait}</p>`:ai?`<div class="iv-ai-r"><p>✨ ${ai.filled.length?L.ivAiDone(ai.filled.join(', ')):L.ivAiNothing}</p>${ai.alt?`<button type="button" class="chip" id="iv-ai-name">${L.ivAiUseName(esc(ai.alt))}</button>`:''}<small>${L.ivAiCheck}</small>${ai.filled.length?`<button type="button" class="link-btn" id="iv-ai-undo">${L.ivAiUndo}</button>`:''}</div>`:`<button type="button" class="btn btn-ghost btn-full iv-ai-b" id="iv-ai">✨ ${L.ivAiBtn}</button>${aiErr?`<p class="err-t">${aiErr}</p>`:''}`}</div>`:''}
       <div class="field"><label>${L.slWhat}</label><input id="iv-n" value="${esc(d.name)}" maxlength="50" placeholder="${L.ivNamePh}"></div>
       <div class="chips">${gcats().map(g=>`<button class="chip ${d.cat===g?'on':''}" data-ivc="${esc(g)}">${esc(g)}</button>`).join('')}</div>
       <div class="two"><div class="field n"><label>${L.ivCost}</label><input id="iv-c" type="number" inputmode="numeric" min="0" value="${d.cost||''}"></div><div class="field n"><label>${L.ivPrice}</label><input id="iv-p" type="number" inputmode="numeric" min="0" value="${d.price||''}" placeholder="${sh?sh.price:''}"></div></div><div id="iv-nine"></div>
@@ -7900,7 +7960,21 @@ function invForm(x,pre){
       el.innerHTML=`<div class="nine-h"><span>${L.nineHint(money(n),money(pv))}</span><button type="button" class="chip" id="iv-n9">${L.nineUse(money(n))}</button></div>`;
       $('#iv-n9').onclick=()=>{ $('#iv-p').value=n; nineUpd(); }; };
     $('#iv-p').addEventListener('input',nineUpd); nineUpd();
-    $('#iv-cam').onclick=()=>{ keep(); camera(s=>{ photo=s; draw(); }); };
+    $('#iv-cam').onclick=()=>{ keep(); camera(s=>{ photo=s; ai=null; aiErr=''; aiAuto=isNew&&!d.name; draw(); }); };
+    const runAi=async()=>{ keep(); let src=photo; if(!src&&x&&x.ph) src=await phGet('iv_'+x.id); if(!src) return; aiBusy=true; aiErr=''; ai=null; draw();
+      let r=null; try{ r=await ivAiRead(src); }catch(e){ aiErr=e.message==='limit'?L.ivAiLimit:e.message==='none'?L.ivAiNone:L.ivAiErr; }
+      aiBusy=false; if(!$('#iv-n')) return; keep();
+      if(r){ const snap={name:d.name,cat:d.cat,order:order.slice(),sizes:{...d.sizes}}, filled=[]; let alt='';
+        if(r.name){ if(!d.name){ d.name=r.name; filled.push(L.ivAiF_name); } else if(r.name.toLowerCase()!==d.name.toLowerCase()) alt=r.name; }
+        if(r.cat&&!d.cat){ d.cat=r.cat; filled.push(L.ivAiF_cat+' «'+esc(r.cat)+'»'); }
+        if(!order.length){ const list=r.sizes.length?r.sizes:(r.set?SIZE_SETS[r.set]:[]); if(list.length){ for(const k of list) if(!order.includes(k)){ order.push(k); d.sizes[k]=''; }
+          filled.push(list[0]==='—'?L.ivOne.toLowerCase():L.ivAiF_sizes+' '+esc(list.length>2?list[0]+'–'+list[list.length-1]:list.join(', '))); } }
+        ai={filled,alt}; aiUndo=filled.length?snap:null; }
+      draw(); if(ai&&ai.filled.length) focusLater('#iv-c'); };
+    if($('#iv-ai')) $('#iv-ai').onclick=runAi;
+    if($('#iv-ai-name')) $('#iv-ai-name').onclick=()=>{ keep(); d.name=ai.alt; ai.alt=''; draw(); };
+    if($('#iv-ai-undo')) $('#iv-ai-undo').onclick=()=>{ keep(); if(aiUndo){ d.name=aiUndo.name; d.cat=aiUndo.cat; order=aiUndo.order; d.sizes=aiUndo.sizes; } ai=null; aiUndo=null; draw(); };
+    if(aiAuto&&!aiBusy){ aiAuto=false; setTimeout(runAi,0); }
     if($('#iv-b')) $('#iv-b').onclick=()=>invSheet(x);
     $('#iv-save').onclick=async()=>{ keep(); if(!d.name) return showErr($('#iv-err'),L.errNm);
       const sizes={}; for(const k of order){ if(d.sizes[k]===''||d.sizes[k]==null) continue; sizes[k]=Math.max(0,Math.round(+d.sizes[k]||0)); } if(!Object.keys(sizes).length) return showErr($('#iv-err'),L.ivErrSizes);
@@ -8085,6 +8159,7 @@ function cardMaker(pre){
 document.addEventListener('click', e=>{
   const t=e.target, S=()=>e.stopImmediatePropagation();
   if(t.closest('[data-invadd]')){ S(); invForm(null); return; }
+  if(t.closest('[data-invphoto]')){ S(); camera(s=>invForm(null,{photo:s,ai:1})); return; }
   const iv=t.closest('[data-inv]'); if(iv){ S(); const x=state.inv.find(y=>y.id===iv.dataset.inv); if(x) invSheet(x); return; }
   if(t.closest('[data-invorder]')){ S(); invToList(invLowAll()); return; }
   if(t.closest('[data-phadd]')){ S(); priceForm(''); return; }
@@ -10142,6 +10217,28 @@ function m8Pop(){
 }
 try{ history.replaceState({m8:'base'},''); m8Push('top'); addEventListener('popstate',m8Pop); }catch(e){}
 
+/* ---------- смахнуть окно вниз — закрыть ---------- */
+(function(){
+  let y0=null, x0=0, t0=0, dy=0, on=false, dead=false, ly=0, lt=0, vel=0;
+  const back=()=>{ sheet.style.transition='transform .22s cubic-bezier(.2,.75,.2,1)'; sheet.style.transform=''; overlay.style.background=''; setTimeout(()=>{ sheet.style.transition=''; },240); };
+  const innerScrolled=t=>{ for(let e=t; e&&e!==sheet; e=e.parentElement){ if(e.scrollTop>0){ const o=getComputedStyle(e).overflowY; if(o==='auto'||o==='scroll') return true; } } return false; };
+  sheet.addEventListener('touchstart',e=>{ y0=null; if(e.touches.length!==1) return; const t=e.target;
+    if(t&&t.closest&&t.closest('input[type=range],[data-noswipe]')) return;
+    y0=e.touches[0].clientY; x0=e.touches[0].clientX; dy=0; on=false; dead=sheet.scrollTop>0||innerScrolled(t); },{passive:true});
+  sheet.addEventListener('touchmove',e=>{ if(y0==null||dead) return; const y=e.touches[0].clientY, x=e.touches[0].clientX, d=y-y0;
+    if(!on){ if(Math.abs(x-x0)>8&&Math.abs(x-x0)>Math.abs(d)){ dead=true; return; } if(d<-4||sheet.scrollTop>0){ dead=true; return; } if(d<10) return; on=true; t0=Date.now(); ly=y; lt=t0; vel=0; }
+    dy=Math.max(0,y-y0); { const nt=Date.now(), dt=nt-lt; if(dt>0){ vel=0.6*((y-ly)/dt)+0.4*vel; ly=y; lt=nt; } } if(e.cancelable) e.preventDefault();
+    sheet.style.transition='none'; sheet.style.transform='translateY('+dy+'px)';
+    overlay.style.background='rgba(10,14,13,'+(0.5*Math.max(0,1-dy/Math.max(1,sheet.offsetHeight))).toFixed(3)+')'; },{passive:false});
+  sheet.addEventListener('touchend',()=>{ if(y0==null) return; const was=on; y0=null; on=false; if(!was) return;
+    const v=Date.now()-lt>120?0:vel, far=dy>Math.min(130,sheet.offsetHeight*0.28)||(v>0.55&&dy>36);
+    if(!far){ back(); return; }
+    if(typeof sheetDirty!=='undefined'&&sheetDirty&&Date.now()-M8N.dirtyAt>3000){ M8N.dirtyAt=Date.now(); back(); sheet.classList.remove('shake'); void sheet.offsetWidth; sheet.classList.add('shake'); toast(L.unsavedHint); return; }
+    sheet.style.transition='transform .2s ease-in'; sheet.style.transform='translateY(110%)'; overlay.style.transition='background .2s'; overlay.style.background='rgba(10,14,13,0)';
+    setTimeout(()=>{ closeSheet(); sheet.style.transition=''; sheet.style.transform=''; overlay.style.background=''; overlay.style.transition=''; },200); },{passive:true});
+  sheet.addEventListener('touchcancel',()=>{ if(on) back(); y0=null; on=false; },{passive:true});
+})();
+
 /* ---------- 3. общее для расчётов ---------- */
 function m8Real(){ return activeList().filter(x=>!x.loan.example); }
 /* примеры уходят, как только появился свой кредит — из любой формы */
@@ -11094,6 +11191,74 @@ document.addEventListener('click',e=>{ const c=e.target.closest('[data-m12chk]')
 
 /* ---------- после отрисовки ---------- */
 try{ const _r12=render; render=function(){ const x=_r12.apply(this,arguments); try{ m12LoansAfter(); }catch(e){} return x; }; }catch(e){}
+
+/* ---------- № 102 «Mira заметила»: необычное в записях за последние дни ---------- */
+function mzOff(){ state.misc=state.misc||{}; const o=state.misc.mzOff=state.misc.mzOff||{}; const old=dkey(addDays(today0(),-150)); for(const k in o) if(o[k]<old) delete o[k]; return o; }
+function mzD(k){ return new Date(k+'T00:00:00'); }
+function mzX(a,u){ const r=a/Math.max(1,u); return r>=1.95?L.mzTimes(rf.format(Math.round(r*10)/10)):L.mzMore(Math.round((r-1)*100)); }
+function mzMed(a){ const s=a.slice().sort((x,y)=>x-y), m=s.length>>1; return s.length%2?s[m]:(s[m-1]+s[m])/2; }
+function mzNotes(){
+  const out=[], td=today0(), D=n=>dkey(addDays(td,n)), sh=(state.shop&&Array.isArray(state.shop.exp))?state.shop:{exp:[],sales:[]}, home=Array.isArray(state.home)?state.home:[];
+  const f14=D(-14);
+  // 1. одно и то же записано дважды
+  const dup=(arr,src,dk,lab)=>{ const seen={}; for(const e of arr){ const d=e[dk]||''; if(d<f14||!(+e.sum>0)||e.draw) continue; const k=d+'|'+(e.cat||'')+'|'+(+e.sum)+'|'+String(e.note||'').trim().toLowerCase();
+      if(seen[k]) out.push({id:'dup:'+e.id,p:1,ic:'🔁',src,rid:e.id,t:lab(e,fmtDate(mzD(d)))}); else seen[k]=1; } };
+  dup(sh.exp||[],'exp','date',(e,d)=>L.mzDupExp(esc(catLb(e.cat||'other')),money(e.sum),d));
+  dup(home,'home','d',(e,d)=>L.mzDupHome(esc(hcLb(e.cat||'other')),money(e.sum),d));
+  dup(sh.sales||[],'sale','date',(e,d)=>L.mzDupSale(money(e.sum),d));
+  // 2. счёт заметно дороже обычного
+  const cm=monthKey(td);
+  for(const b of (state.bills||[])){ const pd=b.paid||{}, v=+pd[cm]||0; if(!v) continue; const prev=Object.keys(pd).filter(k=>k<cm&&+pd[k]>0).sort().slice(-3).map(k=>+pd[k]); if(prev.length<2) continue;
+    const u=mzMed(prev); if(v>=u*1.5&&v-u>=50) out.push({id:'bill:'+b.id+':'+cm,p:2,ic:'📈',t:L.mzBill(esc(b.name),money(v),money(u),mzX(v,u))}); }
+  // 3. вид расходов за 30 дней заметно больше обычного
+  const spike=(arr,dk,cats,lab,src,minD)=>{ const all=arr.filter(e=>e[dk]&&!e.draw); if(!all.length) return; const first=all.reduce((m,e)=>e[dk]<m?e[dk]:m,'9999');
+    const f30=D(-30), f120=D(-120), st=first>f120?first:f120, span=(mzD(f30)-mzD(st))/864e5; if(span<60) return;
+    for(const c of cats){ const cur=all.filter(e=>(e.cat||'other')===c&&e[dk]>f30).reduce((s,e)=>s+(+e.sum||0),0); if(!cur) continue;
+      const pr=all.filter(e=>(e.cat||'other')===c&&e[dk]>f120&&e[dk]<=f30); if(pr.length<2) continue; const u=pr.reduce((s,e)=>s+(+e.sum||0),0)/(span/30);
+      if(u>0&&cur>=u*1.6&&cur-u>=minD) out.push({id:'sp:'+src+':'+c+':'+cm,p:2,ic:'📈',t:L.mzSpike(esc(lab(c)),money(cur),money(u),mzX(cur,u))}); } };
+  spike(sh.exp||[],'date',['power','util','transport','house','other'],catLb,'exp',300);
+  spike(home,'d',['food','kids','clothes','transport','phone','other'],hcLb,'home',200);
+  // 4. выручка дня недели сильно ниже или выше обычной
+  const rev={}; for(const e of (sh.sales||[])) if(e.date) rev[e.date]=(rev[e.date]||0)+(+e.sum||0);
+  let best=null;
+  for(let i=1;i<=7;i++){ const dk=D(-i); if(rev[dk]==null) continue; const v=rev[dk], vals=[];
+    for(let w=1;w<=8;w++){ const k=dkey(addDays(mzD(dk),-7*w)); if(rev[k]!=null&&rev[k]>0) vals.push(rev[k]); }
+    if(vals.length<3) continue; const u=vals.reduce((s,x)=>s+x,0)/vals.length; if(u<300) continue; const dd=mzD(dk), wd=L.weekdays[dd.getDay()], ds=fmtDate(dd);
+    if(v<=u*0.6) out.push({id:'wd:'+dk,p:3,ic:'📉',day:dk,down:1,t:L.mzDrop(wd,ds,money(v),money(u),Math.round((1-v/u)*100))});
+    else if(v>=u*1.5&&(!best||v/u>best.r)) best={r:v/u,n:{id:'wd:'+dk,p:4,ic:'🌟',day:dk,t:L.mzUp(wd,ds,money(v),Math.round((v/u-1)*100))}}; }
+  if(best) out.push(best.n);
+  const off=mzOff(); return out.filter(n=>!off[n.id]).sort((a,b)=>a.p-b.p); }
+function renderMz(){ const box=$('#mzBox'); if(!box) return; let ns=[]; try{ ns=mzNotes(); }catch(e){ ns=[]; }
+  if(!ns.length){ box.innerHTML=''; return; } const sh=state.shop||{}, show=ns.slice(0,3);
+  box.innerHTML=`<div class="mz-card"><div class="mz-h"><span class="mz-hi">✨</span><div><b>${L.mzT}</b><small>${L.mzSub}</small></div></div>
+    ${show.map(n=>{ const why=n.day&&!(sh.notes&&sh.notes[n.day]);
+      return `<div class="mz-it"><span class="mz-i">${n.ic}</span><div class="mz-b"><p>${n.t}</p><div class="mz-act">${n.src?`<button type="button" class="mz-btn pri" data-mz-del="${esc(n.id)}">${L.mzDel}</button><button type="button" class="mz-btn" data-mz-ok="${esc(n.id)}">${L.mzKeep}</button>`
+        :`${why?`<button type="button" class="mz-btn pri" data-mz-why="${esc(n.id)}">${L.mzWhy}</button>`:''}<button type="button" class="mz-btn" data-mz-ok="${esc(n.id)}">${L.mzOk}</button>`}</div></div></div>`; }).join('')}
+    ${ns.length>3?`<p class="mz-more">${L.mzMoreN(ns.length-3)}</p>`:''}<p class="mz-how">${L.mzHow}</p></div>`;
+  const find=id=>ns.find(n=>n.id===id), done=id=>{ mzOff()[id]=dkey(); persist(); };
+  box.querySelectorAll('[data-mz-ok]').forEach(b=>b.onclick=()=>{ done(b.dataset.mzOk); render(); });
+  box.querySelectorAll('[data-mz-del]').forEach(b=>b.onclick=()=>{ const n=find(b.dataset.mzDel); if(!n) return; const s=ensureShop();
+    if(n.src==='exp') s.exp=s.exp.filter(e=>e.id!==n.rid); else if(n.src==='sale') s.sales=s.sales.filter(e=>e.id!==n.rid); else if(n.src==='home') state.home=state.home.filter(e=>e.id!==n.rid);
+    done(n.id); render(); toast(L.mzDeleted); });
+  box.querySelectorAll('[data-mz-why]').forEach(b=>b.onclick=()=>{ const n=find(b.dataset.mzWhy); if(!n) return;
+    openSheet(`<h3>${n.down?L.mzWhyT:L.mzWhyUpT}</h3><p class="lead">${n.t}</p><div class="field"><label>${L.mzNote}</label><input id="mz-r" maxlength="80" placeholder="${esc(L.mzWhyPh)}"></div><div class="err" id="mz-e"></div>
+      <button class="btn btn-primary btn-full" id="mz-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    focusLater('#mz-r');
+    $('#mz-s').onclick=()=>{ const v=$('#mz-r').value.trim(); if(!v) return showErr($('#mz-e'),L.mzWhyPh); const s=ensureShop(); s.notes=s.notes||{}; s.notes[n.day]=v; done(n.id); closeSheet(); render(); toast(L.mzSaved); }; });
+}
+try{ const _r102=render; render=function(){ const x=_r102.apply(this,arguments); try{ renderMz(); }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---------- № 104 Товар по фото: Сифра заполняет карточку товара ---------- */
+function ivAiAsk(){ return L.ivAiQ(gcats()); }
+function ivAiParse(txt){ const m=String(txt||'').match(/\{[\s\S]*\}/); if(!m) return null; let o; try{ o=JSON.parse(m[0]); }catch(e){ return null; } if(!o||typeof o!=='object') return null;
+  let name=String(o.name||'').replace(/["«»<>]/g,'').replace(/\s+/g,' ').trim().slice(0,50); if(name.length<2||/^(null|none|нет)$/i.test(name)) name='';
+  const kind=String(o.kind||'').trim().toLowerCase(), cat=gcats().find(c=>c.toLowerCase()===kind)||'';
+  const set=Object.prototype.hasOwnProperty.call(SIZE_SETS,o.set)?o.set:'';
+  let sizes=Array.isArray(o.sizes)?o.sizes.map(s=>String(s).trim().toUpperCase()).filter(s=>s&&s.length<=6&&/^[0-9A-Z\/-]+$/.test(s)):[]; sizes=[...new Set(sizes)].slice(0,12);
+  return (name||cat||set||sizes.length)?{name,cat,set,sizes}:null; }
+async function ivAiRead(dataUrl){ const data=String(dataUrl||'').split(',')[1]; if(!data) throw new Error('nophoto');
+  const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q:ivAiAsk(),lang,hist:[],img:{type:'image/jpeg',data}})});
+  const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error==='limit'?'limit':'srv'); const res=ivAiParse(j.text); if(!res) throw new Error('none'); return res; }
 
 /* ===================== v14: «Куда вложить» — больше целей, три сценария, проверка реальностью, запас, кредит или товар =====================
    Откуда идеи:
