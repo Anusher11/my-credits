@@ -484,10 +484,10 @@
   .fc-m{font-weight:600;} .fc-v{font-family:var(--font-num); font-weight:800; color:var(--brand-ink);} .fc-row.neg .fc-v{color:var(--danger);}
   .sbars{position:relative; display:flex; align-items:flex-end; gap:4px; height:92px; margin-top:12px; padding-bottom:18px;}
   .sbars::after{content:''; position:absolute; left:0; right:0; bottom:calc(18px + var(--avg)); border-top:1.5px dashed color-mix(in srgb,var(--muted) 60%,transparent);}
-  .sb{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; position:relative;}
-  .sb i{display:block; width:100%; max-width:22px; background:color-mix(in srgb,var(--brand) 45%,var(--track)); border-radius:5px 5px 2px 2px;}
-  .sb i.st{background:var(--brand);}
-  .sb small{position:absolute; bottom:-17px; font-size:.6rem; color:var(--muted); font-family:var(--font-num);}
+  .sbars .sbr{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; position:relative;}
+  .sbars .sbr i{display:block; width:100%; max-width:22px; background:color-mix(in srgb,var(--brand) 45%,var(--track)); border-radius:5px 5px 2px 2px;}
+  .sbars .sbr i.st{background:var(--brand);}
+  .sbars .sbr small{position:absolute; bottom:-17px; font-size:.6rem; color:var(--muted); font-family:var(--font-num);}
   .envs{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
   .envc{display:flex; flex-direction:column; align-items:flex-start; gap:3px; background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:13px; box-shadow:var(--shadow); text-align:left; color:var(--ink); min-width:0;}
   .env-i{font-size:1.4rem;} .env-n{font-size:.8rem; color:var(--muted); font-weight:600;} .env-b{font-family:var(--font-num); font-weight:800; font-size:1.05rem;}
@@ -2129,6 +2129,15 @@
   .er-today+.er-today{margin-top:10px;} .eg-askbtn{border-style:solid; border-color:var(--line);}
   #eg-body select{width:100%;}
   .sheet-row+.er-h4{margin-top:18px;}
+
+  /* dark theme: 'record revenue' tile button was light-on-light */
+  [data-theme="dark"] .m11-tiles .m10-sbtn{background:color-mix(in srgb,var(--surface) 82%,transparent); color:var(--ink);}
+  [data-theme="dark"] .mini-pay{background:color-mix(in srgb,var(--brand) 70%,#000);}
+  [data-theme="dark"] .fo-it.red .fo-b, [data-theme="dark"] .ssub em{color:#2a1208;}
+  :root:not([data-theme="dark"]) .sd-exp{color:color-mix(in srgb,var(--out) 75%,#000);}
+  /* larger touch area for small text buttons (WCAG 2.5.8) */
+  :where(.add-link,.link-btn){position:relative;}
+  :where(.add-link,.link-btn)::after{content:''; position:absolute; inset:-9px -4px;}
 </style>
 </head>
 <body>
@@ -2208,11 +2217,11 @@
     <section id="tips" style="margin-top:26px"></section>
   </div>
 
-  <div id="syncLine"></div>
-  <button id="simpleHome" data-tab="today">← Сегодня</button>
   <div class="view" id="view-more" hidden>
     <section id="moreView"></section>
   </div>
+  <div id="syncLine"></div>
+  <button id="simpleHome" data-tab="today">← Сегодня</button>
 
 </div>
 
@@ -6191,7 +6200,7 @@ function renderPlanMore(list){
   const vals=keys.map(k=>st[k]?st[k].sum:0), have=vals.filter(v=>v>0);
   if(have.length>=2){
     const avg=have.reduce((s,v)=>s+v,0)/have.length, mx=Math.max(...vals,1);
-    const bars=keys.map((k,i)=>{ const v=vals[i], h=Math.round(v/mx*70), strong=v>avg*1.15, mm=+k.slice(5)-1; return `<div class="sb"><i class="${strong?'st':''}" style="height:${Math.max(2,h)}px"></i><small>${MONTHS[lang].short[mm]}</small></div>`; }).join('');
+    const bars=keys.map((k,i)=>{ const v=vals[i], h=Math.round(v/mx*70), strong=v>avg*1.15, mm=+k.slice(5)-1; return `<div class="sbr"><i class="${strong?'st':''}" style="height:${Math.max(2,h)}px"></i><small>${MONTHS[lang].short[mm]}</small></div>`; }).join('');
     const curV=st[monthKey(new Date())]?st[monthKey(new Date())].sum:0;
     const dim=new Date(new Date().getFullYear(),new Date().getMonth()+1,0).getDate(), proj=curV/Math.max(1,new Date().getDate())*dim;
     const strongNow=have.length>=3&&proj>avg*1.15&&mg;
@@ -6625,27 +6634,27 @@ function focusLater(id){ setTimeout(()=>{ const e=$(id); if(e) e.focus(); },60);
 function todayItems(list){
   const out=[], now=new Date(), today=dkey();
   for(const {loan,a} of list){ if(loan.example||a.done) continue;
-    if(a.check) out.push({p:1,ic:'❓',t:L.fiCheck(loan.name,fmtDate(a.due)),b:L.fiAnswer,act:`data-action="open" data-id="${loan.id}"`});
-    else if(a.overdue) out.push({p:0,ic:'⏰',t:L.fiLate(loan.name,money(a.amt||a.monthly||0),-a.days),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`,red:1});
-    else if(a.days<=1) out.push({p:1,ic:'💳',t:L.fiDue(loan.name,money(a.amt||a.monthly||0),whenText(a.days)),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`}); }
-  for(const s of state.sup){ if(s.paid||!s.due) continue; const d=daysUntil(parseYmd(s.due)); if(d<=2) out.push({p:d<0?0:2,ic:'🤝',t:L.fiSup(s.name,money(s.sum),d<0?L.overdue(-d):whenText(d)),b:L.open,act:`data-sup="${esc(s.id)}"`,red:d<0}); }
-  for(const b of state.bills){ const bd=billDue(b); if(!bd.paid&&bd.days<=2) out.push({p:bd.days<0?0:2,ic:'🔁',t:L.fiBill(b.name,money(b.sum),bd.days<0?L.overdue(-bd.days):whenText(bd.days)),b:L.blPayBtn,act:`data-billpay="${esc(b.id)}"`,red:bd.days<0}); }
-  for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.overdue) out.push({p:3,ic:'🧾',t:L.fiCust(c.name,money(st.bal),fmtDate(parseYmd(st.due))),b:L.custRemind,act:`data-cust="${esc(c.id)}"`}); }
+    if(a.check) out.push({p:1,ic:'❓',t:L.fiCheck(esc(loan.name),fmtDate(a.due)),b:L.fiAnswer,act:`data-action="open" data-id="${loan.id}"`});
+    else if(a.overdue) out.push({p:0,ic:'⏰',t:L.fiLate(esc(loan.name),money(a.amt||a.monthly||0),-a.days),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`,red:1});
+    else if(a.days<=1) out.push({p:1,ic:'💳',t:L.fiDue(esc(loan.name),money(a.amt||a.monthly||0),whenText(a.days)),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`}); }
+  for(const s of state.sup){ if(s.paid||!s.due) continue; const d=daysUntil(parseYmd(s.due)); if(d<=2) out.push({p:d<0?0:2,ic:'🤝',t:L.fiSup(esc(s.name),money(s.sum),d<0?L.overdue(-d):whenText(d)),b:L.open,act:`data-sup="${esc(s.id)}"`,red:d<0}); }
+  for(const b of state.bills){ const bd=billDue(b); if(!bd.paid&&bd.days<=2) out.push({p:bd.days<0?0:2,ic:'🔁',t:L.fiBill(esc(b.name),money(b.sum),bd.days<0?L.overdue(-bd.days):whenText(bd.days)),b:L.blPayBtn,act:`data-billpay="${esc(b.id)}"`,red:bd.days<0}); }
+  for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.overdue) out.push({p:3,ic:'🧾',t:L.fiCust(esc(c.name),money(st.bal),fmtDate(parseYmd(st.due))),b:L.custRemind,act:`data-cust="${esc(c.id)}"`}); }
   const sh=ensureShop(); if(now.getHours()>=14&&!sh.sales.some(e=>e.date===today)&&hasRealData()) out.push({p:4,ic:'📝',t:L.fiLogDay,b:L.fiLogBtn,act:'data-shop="day"'});
-  const pp=piggyPlan(list.filter(x=>!x.loan.example)); if(pp.perDay>0&&!state.envTx.some(t=>t.e==='loan'&&t.d===today&&t.a>0)) out.push({p:5,ic:'🐷',t:L.fiPiggy(money(pp.perDay),pp.next?pp.next.name:''),b:L.ppDone,act:`data-env-add="loan" data-amt="${pp.perDay}" data-n="${esc(L.ppFromRev)}"`});
+  const pp=piggyPlan(list.filter(x=>!x.loan.example)); if(pp.perDay>0&&!state.envTx.some(t=>t.e==='loan'&&t.d===today&&t.a>0)) out.push({p:5,ic:'🐷',t:L.fiPiggy(money(pp.perDay),esc(pp.next?pp.next.name:'')),b:L.ppDone,act:`data-env-add="loan" data-amt="${pp.perDay}" data-n="${esc(L.ppFromRev)}"`});
   { const wd=new Date().getDay(); if((wd===0||wd===1)&&hasRealData()){ const seen=lsGet('wkseen_v1')||''; if(seen<dkey(weekStart(wd===1?1:0))&&(weekData(wd===1?1:0).rev>0)) out.push({p:5,ic:'📊',t:L.fiWeek,b:L.open,act:`data-week="${wd===1?1:0}"`}); } }
-  try{ const lw=invLowAll(); if(lw.length) out.push({p:5,ic:'📏',t:L.fiLow(lw.length,lw.slice(0,2).map(o=>o.x.name+' ('+o.l.slice(0,3).join(', ')+')').join(', ')),b:L.open,act:'data-ssubgo="goods"'}); }catch(e){}
+  try{ const lw=invLowAll(); if(lw.length) out.push({p:5,ic:'📏',t:L.fiLow(lw.length,esc(lw.slice(0,2).map(o=>o.x.name+' ('+o.l.slice(0,3).join(', ')+')').join(', '))),b:L.open,act:'data-ssubgo="goods"'}); }catch(e){}
   try{ const f=fcData(); if(f.firstNeg!=null&&f.firstNeg>0&&f.firstNeg<=10) out.push({p:2,ic:'🔮',t:L.fiFc(fmtDate(f.days[f.firstNeg].d),money(-f.minBal)),b:L.open,act:'data-fc="1"',red:f.firstNeg<=3}); }catch(e){}
   for(const a of raList()) if(a.hit&&-daysUntil(parseYmd(a.hit.d))<=2) out.push({p:1,ic:'💱',t:L.raHit(CURS[a.c].f+' '+(raUnit(a.c)>1?nf.format(raUnit(a.c))+' ':'')+CURS[a.c].s,fx(a.hit.r*raUnit(a.c))),b:L.open,act:'data-rates="1"'});
   { const tr=activeTrip(); if(tr){ const tt=tripTotals(tr); if(tr.budget&&tt.all>tr.budget) out.push({p:2,ic:'🛍️',t:L.fiTripOver(money(tt.all-tr.budget)),b:L.open,act:`data-topen="${esc(tr.id)}"`,red:1}); } }
-  for(const o of state.torders) if(o.eta&&o.st!=='came'&&o.eta<=dkey()&&!state.cargo.some(c=>c.trip===o.trip&&(c.vendors||[]).includes(o.vendor))){ const v=state.vendors.find(x=>x.id===o.vendor); out.push({p:4,ic:'🚚',t:L.fiCargo(v?v.name:'',fmtDate(parseYmd(o.eta))),b:L.open,act:`data-tord="${esc(o.trip)}|${esc(o.vendor)}"`}); }
+  for(const o of state.torders) if(o.eta&&o.st!=='came'&&o.eta<=dkey()&&!state.cargo.some(c=>c.trip===o.trip&&(c.vendors||[]).includes(o.vendor))){ const v=state.vendors.find(x=>x.id===o.vendor); out.push({p:4,ic:'🚚',t:L.fiCargo(esc(v?v.name:''),fmtDate(parseYmd(o.eta))),b:L.open,act:`data-tord="${esc(o.trip)}|${esc(o.vendor)}"`}); }
   for(const s of state.cargo){ if(!tripById(s.trip)) continue; const st=s.st||'wh', co=coById(s.co), nm=co?co.name:L.cgNoCo;
     if(st==='tj') out.push({p:2,ic:'📦',t:L.fiCgTj(esc(nm),s.places||0),b:L.cgRecvBtn,act:`data-cg="${esc(s.id)}"`});
     else if(shipLate(s)){ const ld=-daysUntil(parseYmd(shipEta(s))); out.push({p:3,ic:'📦',t:L.fiCgLate(esc(nm),ld),b:L.open,act:`data-cg="${esc(s.id)}"`,red:ld>=7}); } }
   try{ const wf=whFocus(); if(wf) out.push({p:3,ic:'🧳',t:L.fiWhen(esc(L['hol_'+wf.e.id]||L['whEv_'+wf.e.id]||''),TCOUNTRY[wf.p.c].f,fmtShort(wf.p.dep),wf.p.left),b:L.open,act:'data-when="all"',red:wf.p.left<=3}); }catch(e){}
-  for(const h of holidaysSoon(30)) out.push({p:6,ic:h.ic,t:L.fiHoliday(h.name,h.days),b:L.gotIt,act:`data-hdis="${h.key}"`});
+  for(const h of holidaysSoon(30)) out.push({p:6,ic:h.ic,t:L.fiHoliday(esc(h.name),h.days),b:L.gotIt,act:`data-hdis="${h.key}"`});
   try{ ptTick(); for(const x of state.inv||[]){ const t=ptState(x); if(!t) continue; if(t.ph===2&&t.day<=PT_DAYS+2) out.push({p:2,ic:'🏷️',t:L.fiPtSwitch(esc(x.name),money(t.b)),b:L.open,act:`data-inv="${esc(x.id)}"`}); else if(t.ph===3) out.push({p:3,ic:'📊',t:L.fiPtDone(esc(x.name)),b:L.open,act:`data-inv="${esc(x.id)}"`}); } }catch(e){}
-  for(const pr of state.promos){ if(pr.result==null&&pr.to&&pr.to<today) out.push({p:6,ic:'🏷️',t:L.fiPromo(pr.name),b:L.promoResultBtn,act:`data-promo="${esc(pr.id)}"`}); }
+  for(const pr of state.promos){ if(pr.result==null&&pr.to&&pr.to<today) out.push({p:6,ic:'🏷️',t:L.fiPromo(esc(pr.name)),b:L.promoResultBtn,act:`data-promo="${esc(pr.id)}"`}); }
   return out.sort((x,y)=>x.p-y.p);
 }
 function renderToday(list){
@@ -12013,7 +12022,7 @@ function erTodayHTML(){ const due=erDue()[0], c=erCur(); if(due) return `<button
   return `<button type="button" class="er-today m10-card${done?' done':''}" id="erToday" data-earn="1"><span class="er-ti">${ico(done?'check':(ER_ICON[c.k]||'star'),22)}</span><span class="m10-tt"><b>${done?L.erTodayDone:L.erTodayDeal}</b><small>${done?(m>0?L.erMoreSum(money(m)):L.erDoneP):esc(erTitle(c.k))}</small></span><span class="m10-go">›</span></button>`; }
 function erAfter(){ const v=$('#view-today'); if(!v) return; let box=$('#erBox'); if(!box){ box=document.createElement('section'); box.id='erBox'; const anc=$('#m10Box'); if(anc) anc.after(box); else v.appendChild(box); } box.innerHTML=erTodayHTML()+(typeof egTodayHTML==='function'?egTodayHTML():''); }
 try{ const _r19=render; render=function(){ const x=_r19.apply(this,arguments); try{ erAfter(); }catch(e){} return x; }; }catch(e){}
-try{ MORE_DEF.unshift('earn'); MORE_DEF.length=4; const _mi19=moreItems; moreItems=function(){ const a=_mi19(); let s=''; try{ const m=erMonth(), c=erCur(); s=m>0?L.erMoreSum(money(m)):(c&&c.st!=='done'?erTitle(c.k):''); }catch(e){}
+try{ MORE_DEF.unshift('earn'); MORE_DEF.length=4; const _mi19=moreItems; moreItems=function(){ const a=_mi19(); let s=''; try{ const m=erMonth(), c=erCur(); s=m>0?L.erMoreSum(money(m)):(c&&c.st!=='done'?L.erTodayDeal+': '+erTitle(c.k).replace(/^./,ch=>ch.toLowerCase()):''); }catch(e){}
     a.splice(1,0,{k:'earn',g:'m',a:'data-earn="1"',i:'cash',t:L.erTitle,s:s||L.erMoreSub0}); return a; }; }catch(e){}
 try{ const _ps19=m10PlusSheet; m10PlusSheet=function(){ const x=_ps19.apply(this,arguments);
     try{ const acts=sheet.querySelector('.m10-acts'); if(acts&&!$('#erStoryBtn')){ acts.insertAdjacentHTML('afterend',`<button type="button" class="er-story" id="erStoryBtn"><span class="er-ti">${ico('mic',22)}</span><span class="m10-tt"><b>${L.erStBtn}</b><small>${L.erStBtnSub}</small></span><span class="m10-go">›</span></button>`); $('#erStoryBtn').onclick=()=>erStorySheet(); } }catch(e){} return x; }; }catch(e){}
