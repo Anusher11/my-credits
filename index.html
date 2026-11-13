@@ -1148,6 +1148,13 @@
   .m7-calm{display:flex; gap:12px; align-items:center; background:var(--m-leaf-weak); color:var(--m-leaf); border-radius:22px; padding:14px 16px; margin-bottom:14px;}
   .m7-calm b{display:block; color:var(--ink);} .m7-calm span{color:var(--muted); font-size:.9rem;}
   .m7-month{background:var(--surface); border:1px solid var(--line); border-radius:22px; padding:14px 16px 4px; margin-bottom:14px;}
+  .nine-h{display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; background:var(--brand-weak); border-radius:14px; padding:10px 12px; margin:-4px 0 12px; font-size:.9rem; line-height:1.4;} .nine-h span{flex:1 1 200px;} .nine-h .chip{min-height:44px;}
+  .pt-box{background:var(--surface-2); border-radius:16px; padding:12px 14px; margin:0 0 12px;} .pt-box>b{display:block; margin-bottom:4px;} .pt-box p{margin:4px 0 8px; line-height:1.45;} .pt-box .link-btn{min-height:44px; padding:0;}
+  .pt-row{display:flex; gap:8px;} .pt-row input{flex:1; min-width:0;} .pt-row .btn{flex:none; min-height:48px;}
+  .pt-cmp{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:6px 0;} .pt-c{background:var(--surface); border-radius:12px; padding:10px; display:flex; flex-direction:column; gap:2px; border:2px solid transparent;} .pt-c.win{border-color:var(--brand);} .pt-c small{color:var(--muted); font-weight:700;} .pt-c b{font-family:var(--font-num); font-size:1.3rem;} .pt-c span{font-size:.85rem;}
+  .pt-box .sheet-row .btn{white-space:nowrap; padding-left:8px; padding-right:8px;}
+  .md-r{background:var(--surface-2); border-radius:16px; padding:12px 14px; margin:0 0 10px;} .md-h{display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;} .md-h span{color:var(--muted); font-size:.88rem;} .md-s{margin:4px 0; font-size:.88rem; color:var(--muted);} .md-s.ok{color:var(--brand-ink); font-weight:700;}
+  .md-steps{margin:6px 0 8px; padding-left:1.2em; line-height:1.6;} .md-steps li.below{color:var(--danger);} .md-steps small{display:block; line-height:1.3;} .md-go{width:100%; min-height:48px;}
   .ctr-pages{display:grid; grid-template-columns:1fr; gap:12px; margin:0 0 12px;} .ctr-pg{background:var(--surface-2); border-radius:16px; padding:10px; display:flex; gap:12px; align-items:center;}
   .ctr-pg img{width:76px; height:100px; object-fit:cover; border-radius:10px; flex:none; background:#fff;} .ctr-miss{width:76px; height:100px; display:flex; align-items:center; justify-content:center; font-size:.8rem; color:var(--muted); flex:none;}
   .ctr-pb{display:flex; gap:8px; flex:1; min-width:0;} .ctr-pb .btn{min-height:48px;} .ctr-pb .btn-primary{flex:1;} .ctr-pb .ctr-del{flex:none; width:48px; padding:0;}
@@ -3830,6 +3837,20 @@ ru:{
   nlM1:'на что пойдут деньги', nlM2:'запас на один платёж', nlM3:'валюта кредита', nlM4:'условия договора',
   nlChkN:n=>'Отмечено '+n+' из 4', nlChkAll:'Все четыре пункта на месте. Решение за вами.', nlChkMiss:'Сначала разберитесь:',
   nlStress:p=>'Если выручка упадёт на треть — нагрузка станет '+p+'%.', nlStressOk:'Плохой месяц вы выдержите.', nlStressBad:'В плохой месяц платить будет тяжело.',
+  nineHint:(n,p)=>'Попробуйте '+n+' вместо '+p+': в опыте с каталогом одежды цена на «9» продавалась лучше соседних.', nineUse:n=>'Поставить '+n,
+  ptT:'Проверка цены', ptOffer:(a,b)=>'Две недели продаём за '+a+', две недели — за '+b+'. Mira сравнит, при какой цене вы заработали больше.', ptOfferAny:a=>'Две недели продаём за '+a+', две недели — по новой цене. Mira сравнит, при какой вы заработали больше.', ptNewPh:'Новая цена',
+  ptStart:'Начать', ptErr:'Впишите новую цену, отличную от нынешней', ptBelow:c=>'Это ниже закупки ('+c+') — так вы теряете на каждой вещи', ptStarted:'Проверка цены началась. Отмечайте продажи как обычно.',
+  ptDay:(d,n)=>'день '+d+' из '+n, ptNow1:(a,d,b)=>'Сейчас цена '+a+'. '+d+' Mira напомнит поменять ценник на '+b+'.', ptNow2:(b,d)=>'Сейчас цена '+b+' — проверьте, что ценник поменян. Итог будет '+d+'.', ptStop:'Остановить проверку',
+  ptDone:'Проверка цены: итог', ptPcs:n=>n+' шт', ptRev:v=>'выручка '+v, ptPr:v=>'заработок '+v, ptFew:'Продаж слишком мало, чтобы судить. Можно оставить любую цену или повторить позже.',
+  ptWinB:b=>'По новой цене '+b+' вы заработали больше.', ptWinA:a=>'По прежней цене '+a+' вы заработали больше.', ptTie:'Разницы нет.', ptKeep:p=>'Оставить '+p, ptKept:p=>'Цена: '+p,
+  fiPtSwitch:(n,p)=>'Поменяйте ценник: '+n+' — '+p, fiPtDone:n=>'Готов итог проверки цены: '+n,
+  mdT:'Распродажа по плану', mdLead:'Что не успеет продаться до конца сезона — и когда, на сколько снижать цену. Чтобы не скидывать всё разом и не держать товар до следующего года.',
+  mdEndL:'Конец сезона', mdSum:(n,w)=>'Не успеют продаться: '+n+' '+ruPlural(n,['вещь','вещи','вещей'])+' · до конца сезона '+w+' нед.', mdFrozen:v=>'В них заморожено '+v+' по закупке.',
+  mdLeft:(q,l)=>'есть '+q+', останется ≈ '+l, mdRate:r=>'Продаётся ≈ '+r+' шт в неделю', mdNoSale:'За 4 недели не продано ни одной', mdNowW:'Сейчас', mdBelow:'ниже закупки — только если нужны деньги',
+  mdSet:p=>'Поставить '+p+' сейчас', mdOnSale:(p,o)=>'Со скидкой: '+p+' (было '+o+')', mdBack:o=>'Вернуть '+o, mdDone:(n,p)=>n+': цена '+p,
+  mdAllOk:'Всё успевает продаться', mdAllOkD:w=>'При нынешней скорости продаж до конца сезона ('+w+' нед.) скидки не нужны.',
+  mdHow:'Mira смотрит, сколько каждой вещи продано за последние 4 недели, и прикидывает остаток к концу сезона. Чем больше останется, тем раньше и сильнее скидка. Новый товар (меньше 3 недель) не трогаем.',
+  mdRowS:(n,d)=>'не успеют продаться до '+d+': '+n, mdRowS0:'план скидок к концу сезона',
   ctrBtn:'Договор', ctrT:'Договор кредита', ctrEmpty:'Сфотографируйте страницы договора — особенно где ставка, пеня и досрочное погашение. Фото хранятся только в телефоне и попадают в копию.', ctrAdd:'Сфотографировать договор', ctrAddMore:'Добавить страницу', ctrAdded:'Страница добавлена', ctrPage:n=>'Страница '+n, ctrDel:n=>'Удалить страницу '+n, ctrDelQ:'Удалить эту страницу договора?',
   ctrRead:'Сифра, прочитай', ctrReading:'Сифра читает страницу… Это может занять до минуты.', ctrFound:'Сифра нашла', ctrSame:'уже так', ctrWas:v=>'сейчас '+v, ctrApply:'Вписать отмеченное в кредит', ctrApplied:n=>'Вписано: '+n,
   ctrFee:'Комиссии', ctrEarly:'Досрочное погашение', ctrIns:'Страховка', ctrOther:'Важно', ctrCheck:'Сверьте с договором: Сифра может ошибиться, особенно на нечётком фото.',
@@ -3904,6 +3925,20 @@ tg:{
   nlM1:'пул ба чӣ меравад', nlM2:'захира барои як пардохт', nlM3:'асъори қарз', nlM4:'шартҳои шартнома',
   nlChkN:n=>'Қайд шуд: '+n+' аз 4', nlChkAll:'Ҳар чор банд дар ҷояш. Қарор аз шумост.', nlChkMiss:'Аввал равшан кунед:',
   nlStress:p=>'Агар даромад сеяк кам шавад — сарборӣ '+p+'% мешавад.', nlStressOk:'Моҳи бадро мебардоред.', nlStressBad:'Дар моҳи бад пардохт душвор мешавад.',
+  nineHint:(n,p)=>'Ба ҷои '+p+' '+n+'-ро санҷед: дар таҷриба бо каталоги либос нархи ба «9» анҷомёфта беҳтар фурӯхта шуд.', nineUse:n=>n+' гузоштан',
+  ptT:'Санҷиши нарх', ptOffer:(a,b)=>'Ду ҳафта бо '+a+', ду ҳафта бо '+b+' мефурӯшем. Mira муқоиса мекунад, ки бо кадом нарх бештар кор кардед.', ptOfferAny:a=>'Ду ҳафта бо '+a+', ду ҳафта бо нархи нав мефурӯшем. Mira муқоиса мекунад, ки бо кадомаш бештар кор кардед.', ptNewPh:'Нархи нав',
+  ptStart:'Оғоз', ptErr:'Нархи навро нависед, ки аз ҳозира фарқ кунад', ptBelow:c=>'Ин аз нархи харид ('+c+') паст аст — аз ҳар чиз зарар мебинед', ptStarted:'Санҷиши нарх оғоз шуд. Фурӯшро мисли ҳамеша қайд кунед.',
+  ptDay:(d,n)=>'рӯзи '+d+' аз '+n, ptNow1:(a,d,b)=>'Ҳозир нарх '+a+'. '+d+' Mira хотиррасон мекунад, ки нархномаро ба '+b+' иваз кунед.', ptNow2:(b,d)=>'Ҳозир нарх '+b+' — санҷед, ки нархнома иваз шудааст. Натиҷа '+d+'.', ptStop:'Қатъ кардани санҷиш',
+  ptDone:'Санҷиши нарх: натиҷа', ptPcs:n=>n+' дона', ptRev:v=>'даромад '+v, ptPr:v=>'фоида '+v, ptFew:'Фурӯш хеле кам аст, ки хулоса барорем. Ҳар нархро мондан ё баъдтар такрор кардан мумкин.',
+  ptWinB:b=>'Бо нархи нав '+b+' бештар кор кардед.', ptWinA:a=>'Бо нархи пештара '+a+' бештар кор кардед.', ptTie:'Фарқ нест.', ptKeep:p=>p+' монем', ptKept:p=>'Нарх: '+p,
+  fiPtSwitch:(n,p)=>'Нархномаро иваз кунед: '+n+' — '+p, fiPtDone:n=>'Натиҷаи санҷиши нарх тайёр: '+n,
+  mdT:'Фурӯши арзон бо нақша', mdLead:'Чӣ то охири мавсим фурӯхта намешавад — ва кай, чанд нархро паст кардан. То ҳамаро якбора арзон накунед ва молро то соли оянда нигоҳ надоред.',
+  mdEndL:'Охири мавсим', mdSum:(n,w)=>'Фурӯхта намешаванд: '+n+' чиз · то охири мавсим '+w+' ҳафта.', mdFrozen:v=>'Дар онҳо '+v+' аз рӯи нархи харид баста шудааст.',
+  mdLeft:(q,l)=>'ҳаст '+q+', мемонад ≈ '+l, mdRate:r=>'Дар ҳафта ≈ '+r+' дона фурӯхта мешавад', mdNoSale:'Дар 4 ҳафта ягон дона фурӯхта нашуд', mdNowW:'Ҳозир', mdBelow:'аз нархи харид паст — танҳо агар пул лозим бошад',
+  mdSet:p=>'Ҳозир '+p+' гузоштан', mdOnSale:(p,o)=>'Бо тахфиф: '+p+' (пештар '+o+')', mdBack:o=>o+'-ро баргардондан', mdDone:(n,p)=>n+': нарх '+p,
+  mdAllOk:'Ҳама фурӯхта мешавад', mdAllOkD:w=>'Бо суръати ҳозираи фурӯш то охири мавсим ('+w+' ҳафта) тахфиф лозим нест.',
+  mdHow:'Mira мебинад, ки аз ҳар чиз дар 4 ҳафтаи охир чанд дона фурӯхта шуд, ва бақияро то охири мавсим ҳисоб мекунад. Ҳар қадар бештар монад, ҳамон қадар барвақттар ва қавитар тахфиф. Моли нав (камтар аз 3 ҳафта) дахл намекунем.',
+  mdRowS:(n,d)=>'то '+d+' фурӯхта намешаванд: '+n, mdRowS0:'нақшаи тахфиф то охири мавсим',
   ctrBtn:'Шартнома', ctrT:'Шартномаи қарз', ctrEmpty:'Саҳифаҳои шартномаро акс гиред — махсусан ҷое, ки фоиз, ҷарима ва пардохти пеш аз мӯҳлат навишта шудааст. Аксҳо танҳо дар телефон нигоҳ дошта мешаванд ва ба нусха медароянд.', ctrAdd:'Акси шартнома', ctrAddMore:'Илова кардани саҳифа', ctrAdded:'Саҳифа илова шуд', ctrPage:n=>'Саҳифаи '+n, ctrDel:n=>'Нест кардани саҳифаи '+n, ctrDelQ:'Ин саҳифаи шартномаро нест кунем?',
   ctrRead:'Сифра, бихон', ctrReading:'Сифра саҳифаро мехонад… То як дақиқа вақт мегирад.', ctrFound:'Сифра ёфт', ctrSame:'ҳамин тавр аст', ctrWas:v=>'ҳозир '+v, ctrApply:'Қайдшударо ба қарз нависед', ctrApplied:n=>'Навишта шуд: '+n,
   ctrFee:'Комиссияҳо', ctrEarly:'Пардохти пеш аз мӯҳлат', ctrIns:'Суғурта', ctrOther:'Муҳим', ctrCheck:'Бо шартнома муқоиса кунед: Сифра метавонад хато кунад, махсусан дар акси норавшан.',
@@ -3978,6 +4013,20 @@ en:{
   nlM1:'what the money is for', nlM2:'a reserve for one payment', nlM3:'the loan currency', nlM4:'the contract terms',
   nlChkN:n=>n+' of 4 ticked', nlChkAll:'All four points are in place. The decision is yours.', nlChkMiss:'Sort these out first:',
   nlStress:p=>'If revenue drops by a third, the load becomes '+p+'%.', nlStressOk:'You can get through a bad month.', nlStressBad:'A bad month would make paying hard.',
+  nineHint:(n,p)=>'Try '+n+' instead of '+p+': in a clothing catalog experiment, prices ending in 9 sold better than nearby prices.', nineUse:n=>'Use '+n,
+  ptT:'Price test', ptOffer:(a,b)=>'Sell for '+a+' for two weeks, then for '+b+' for two weeks. Mira will compare which price earned you more.', ptOfferAny:a=>'Sell for '+a+' for two weeks, then at a new price for two weeks. Mira will compare which earned you more.', ptNewPh:'New price',
+  ptStart:'Start', ptErr:'Enter a new price that differs from the current one', ptBelow:c=>'That is below cost ('+c+') — you would lose on every item', ptStarted:'Price test started. Log sales as usual.',
+  ptDay:(d,n)=>'day '+d+' of '+n, ptNow1:(a,d,b)=>'Current price '+a+'. On '+d+' Mira will remind you to change the tag to '+b+'.', ptNow2:(b,d)=>'Current price '+b+' — make sure the tag is changed. Result on '+d+'.', ptStop:'Stop the test',
+  ptDone:'Price test: result', ptPcs:n=>n+' pcs', ptRev:v=>'revenue '+v, ptPr:v=>'profit '+v, ptFew:'Too few sales to judge. Keep either price or repeat later.',
+  ptWinB:b=>'You earned more at the new price of '+b+'.', ptWinA:a=>'You earned more at the old price of '+a+'.', ptTie:'No difference.', ptKeep:p=>'Keep '+p, ptKept:p=>'Price: '+p,
+  fiPtSwitch:(n,p)=>'Change the price tag: '+n+' — '+p, fiPtDone:n=>'Price test result ready: '+n,
+  mdT:'Planned clearance', mdLead:'What will not sell by the end of the season — and when and how much to cut the price. So you don’t mark everything down at once or keep stock until next year.',
+  mdEndL:'End of season', mdSum:(n,w)=>'Won’t sell in time: '+n+' item'+(n===1?'':'s')+' · '+w+' weeks to season end.', mdFrozen:v=>v+' at cost is tied up in them.',
+  mdLeft:(q,l)=>q+' in stock, ≈ '+l+' left over', mdRate:r=>'Sells ≈ '+r+' a week', mdNoSale:'Not one sold in 4 weeks', mdNowW:'Now', mdBelow:'below cost — only if you need the cash',
+  mdSet:p=>'Set '+p+' now', mdOnSale:(p,o)=>'On sale: '+p+' (was '+o+')', mdBack:o=>'Restore '+o, mdDone:(n,p)=>n+': price '+p,
+  mdAllOk:'Everything will sell in time', mdAllOkD:w=>'At the current pace, no discounts are needed before the season ends ('+w+' weeks).',
+  mdHow:'Mira looks at how many of each item sold in the last 4 weeks and estimates what will be left at the end of the season. The more left over, the earlier and deeper the discount. New stock (under 3 weeks) is left alone.',
+  mdRowS:(n,d)=>'won’t sell by '+d+': '+n, mdRowS0:'discount plan for season end',
   ctrBtn:'Contract', ctrT:'Loan contract', ctrEmpty:'Take photos of the contract pages — especially where the rate, penalty and early repayment are. Photos stay only on your phone and are included in the backup.', ctrAdd:'Photograph the contract', ctrAddMore:'Add a page', ctrAdded:'Page added', ctrPage:n=>'Page '+n, ctrDel:n=>'Delete page '+n, ctrDelQ:'Delete this contract page?',
   ctrRead:'Sifra, read it', ctrReading:'Sifra is reading the page… This can take up to a minute.', ctrFound:'Sifra found', ctrSame:'already set', ctrWas:v=>'now '+v, ctrApply:'Add the ticked terms to the loan', ctrApplied:n=>'Added: '+n,
   ctrFee:'Fees', ctrEarly:'Early repayment', ctrIns:'Insurance', ctrOther:'Important', ctrCheck:'Check against the contract: Sifra can make mistakes, especially with a blurry photo.',
@@ -6595,6 +6644,7 @@ function todayItems(list){
     else if(shipLate(s)){ const ld=-daysUntil(parseYmd(shipEta(s))); out.push({p:3,ic:'📦',t:L.fiCgLate(esc(nm),ld),b:L.open,act:`data-cg="${esc(s.id)}"`,red:ld>=7}); } }
   try{ const wf=whFocus(); if(wf) out.push({p:3,ic:'🧳',t:L.fiWhen(esc(L['hol_'+wf.e.id]||L['whEv_'+wf.e.id]||''),TCOUNTRY[wf.p.c].f,fmtShort(wf.p.dep),wf.p.left),b:L.open,act:'data-when="all"',red:wf.p.left<=3}); }catch(e){}
   for(const h of holidaysSoon(30)) out.push({p:6,ic:h.ic,t:L.fiHoliday(h.name,h.days),b:L.gotIt,act:`data-hdis="${h.key}"`});
+  try{ ptTick(); for(const x of state.inv||[]){ const t=ptState(x); if(!t) continue; if(t.ph===2&&t.day<=PT_DAYS+2) out.push({p:2,ic:'🏷️',t:L.fiPtSwitch(esc(x.name),money(t.b)),b:L.open,act:`data-inv="${esc(x.id)}"`}); else if(t.ph===3) out.push({p:3,ic:'📊',t:L.fiPtDone(esc(x.name)),b:L.open,act:`data-inv="${esc(x.id)}"`}); } }catch(e){}
   for(const pr of state.promos){ if(pr.result==null&&pr.to&&pr.to<today) out.push({p:6,ic:'🏷️',t:L.fiPromo(pr.name),b:L.promoResultBtn,act:`data-promo="${esc(pr.id)}"`}); }
   return out.sort((x,y)=>x.p-y.p);
 }
@@ -7823,7 +7873,7 @@ function invForm(x,pre){
       <div class="iv-ph">${photo?`<img src="${photo}" alt="">`:x&&x.ph?`<img data-ph="iv_${esc(x.id)}" alt="">`:''}<button class="tp-add" id="iv-cam">📷<small>${L.tpMore}</small></button></div>
       <div class="field"><label>${L.slWhat}</label><input id="iv-n" value="${esc(d.name)}" maxlength="50" placeholder="${L.ivNamePh}"></div>
       <div class="chips">${gcats().map(g=>`<button class="chip ${d.cat===g?'on':''}" data-ivc="${esc(g)}">${esc(g)}</button>`).join('')}</div>
-      <div class="two"><div class="field n"><label>${L.ivCost}</label><input id="iv-c" type="number" inputmode="numeric" min="0" value="${d.cost||''}"></div><div class="field n"><label>${L.ivPrice}</label><input id="iv-p" type="number" inputmode="numeric" min="0" value="${d.price||''}" placeholder="${sh?sh.price:''}"></div></div>
+      <div class="two"><div class="field n"><label>${L.ivCost}</label><input id="iv-c" type="number" inputmode="numeric" min="0" value="${d.cost||''}"></div><div class="field n"><label>${L.ivPrice}</label><input id="iv-p" type="number" inputmode="numeric" min="0" value="${d.price||''}" placeholder="${sh?sh.price:''}"></div></div><div id="iv-nine"></div>
       <div class="field"><label>${L.slSup} <span class="hint">${L.optional}</span></label><input id="iv-s" value="${esc(d.sup||'')}" maxlength="40" list="iv-sl"><datalist id="iv-sl">${[...new Set(state.vendors.map(v=>v.name).concat(state.sup.map(s=>s.name)))].map(n=>`<option value="${esc(n)}">`).join('')}</datalist></div>
       <div class="br-h">📐 ${L.ivSizes}</div>
       <div class="chips">${Object.keys(SIZE_SETS).map(k=>`<button class="chip" data-ivset="${k}">${L['ivset_'+k]}</button>`).join('')}</div>
@@ -7837,6 +7887,10 @@ function invForm(x,pre){
     sheet.querySelectorAll('[data-ivc]').forEach(b=>b.onclick=()=>{ d.cat=d.cat===b.dataset.ivc?'':b.dataset.ivc; sheet.querySelectorAll('[data-ivc]').forEach(y=>y.classList.toggle('on',y.dataset.ivc===d.cat)); });
     sheet.querySelectorAll('[data-ivset]').forEach(b=>b.onclick=()=>{ keep(); for(const k of SIZE_SETS[b.dataset.ivset]) if(!order.includes(k)){ order.push(k); d.sizes[k]=''; } draw(); });
     $('#iv-add').addEventListener('change',e=>{ keep(); const k=e.target.value.trim().toUpperCase(); if(k&&!order.includes(k)){ order.push(k); d.sizes[k]=''; } draw(); focusLater('[data-sz="'+k+'"]'); });
+    const nineUpd=()=>{ const el=$('#iv-nine'); if(!el) return; const pv=Math.round(+$('#iv-p').value||0), n=nineOf(pv); if(!n){ el.innerHTML=''; return; }
+      el.innerHTML=`<div class="nine-h"><span>${L.nineHint(money(n),money(pv))}</span><button type="button" class="chip" id="iv-n9">${L.nineUse(money(n))}</button></div>`;
+      $('#iv-n9').onclick=()=>{ $('#iv-p').value=n; nineUpd(); }; };
+    $('#iv-p').addEventListener('input',nineUpd); nineUpd();
     $('#iv-cam').onclick=()=>{ keep(); camera(s=>{ photo=s; draw(); }); };
     if($('#iv-b')) $('#iv-b').onclick=()=>invSheet(x);
     $('#iv-save').onclick=async()=>{ keep(); if(!d.name) return showErr($('#iv-err'),L.errNm);
@@ -7854,6 +7908,7 @@ function invSheet(x){
   const sold=state.invLog.filter(l=>l.i===x.id&&l.k==='sale').reduce((s,l)=>s-(+l.q||0),0);
   openSheet(`<div class="cu-head">${x.ph?`<img class="vcard-th" data-ph="iv_${esc(x.id)}" data-zoom="iv_${esc(x.id)}" alt="">`:'<span class="ava lg gold">👗</span>'}<div><h3 style="margin:0">${esc(x.name)}</h3><div class="muted">${x.cat?esc(x.cat)+' · ':''}${x.price?money(x.price):''}${x.cost?' · '+L.ivCostShort+' '+money(x.cost):''}</div></div></div>
     <div class="calc-out"><div class="co-row"><span>${L.ivLeft}</span><b>${tot} ${L.pcsW}</b></div>${x.cost?`<div class="co-row"><span>${L.ivWorth}</span><b>${money(tot*x.cost)}</b></div>`:''}${sold?`<div class="co-row"><span>${L.ivSold}</span><b>${sold} ${L.pcsW}</b></div>`:''}</div>
+    ${ptBlock(x)}
     <p class="note">${L.ivTapHint}</p>
     <div class="szbig">${keys.map(k=>`<div class="szb ${(+x.sizes[k]||0)===0?'z':low.includes(k)?'lo':''}"><span>${esc(k==='—'?L.ivOne:k)}</span><b>${+x.sizes[k]||0}</b><div><button data-ivm="${esc(k)}" aria-label="−">−</button><button data-ivp="${esc(k)}" aria-label="+">+</button></div></div>`).join('')}</div>
     ${low.length?`<button class="btn btn-ghost btn-full" id="is-order">🛒 ${L.ivOrderLow(low.map(k=>k==='—'?L.ivOne:k).join(', '))}</button>`:''}
@@ -7865,8 +7920,64 @@ function invSheet(x){
   sheet.querySelectorAll('[data-ivp]').forEach(b=>b.onclick=()=>ch(b.dataset.ivp,1,'in'));
   if($('#is-order')) $('#is-order').onclick=()=>{ invToList([{x,l:low}]); invSheet(x); };
   $('#is-card').onclick=async()=>cardMaker({name:x.name,price:x.price,sizes:keys.filter(k=>(+x.sizes[k]||0)>0&&k!=='—').join(' · '),photo:x.ph?await phGet('iv_'+x.id):null});
+  ptBind(x);
   $('#is-e').onclick=()=>invForm(x);
   $('#is-del').onclick=()=>{ state.inv=state.inv.filter(y=>y!==x); state.invLog=state.invLog.filter(l=>l.i!==x.id); persist(); closeSheet(); render(); delToast(L.entryDeleted); };
+}
+/* № 96. Цена на «9»: ближайшая цена, которая кончается на 9 (опыт с каталогом одежды: $49 продавалась лучше $44 и $54) */
+function nineOf(p){ p=Math.round(+p||0); if(p<20||p%10===9) return 0; let c;
+  if(p<1000){ const f=Math.floor(p/10)*10; c=[f-1,f+9]; } else { const f=Math.floor(p/100)*100; c=[f-10,f+90]; }
+  c=c.filter(v=>v>0); c.sort((a,b)=>Math.abs(a-p)-Math.abs(b-p)||a-b); const n=c[0]; return Math.abs(n-p)<=Math.max(10,p*0.06)?n:0; }
+const PT_DAYS=14;
+function ptSold(x,a,b){ let n=0; for(const l of state.invLog||[]) if(l.i===x.id&&l.k==='sale'&&l.d>=a&&l.d<b&&+l.q<0) n-=+l.q; return n; }
+function ptState(x){ const t=x.pt; if(!t) return null; const s=parseYmd(t.s), sw=dkey(addDays(s,PT_DAYS)), en=dkey(addDays(s,PT_DAYS*2)), today=dkey();
+  return {...t, sw, en, ph:today<sw?1:today<en?2:3, day:Math.round((today0()-s)/864e5)+1}; }
+/* вызывается при каждом показе: на 15-й день сам меняет цену в Mira и просит поменять ценник */
+function ptTick(){ let ch=false; for(const x of state.inv||[]){ const t=ptState(x); if(!t) continue; if(t.ph>=2&&!x.pt.sw2){ x.pt.sw2=1; x.price=x.pt.b; ch=true; } } if(ch) persist(); }
+function ptResult(x){ const t=ptState(x); if(!t) return null; const c=+x.cost||0;
+  const n1=ptSold(x,t.s,t.sw), n2=ptSold(x,t.sw,t.en); const r=(n,p)=>({n,rev:n*p,pr:c>0?n*(p-c):null});
+  return {A:r(n1,t.a),B:r(n2,t.b),t}; }
+function ptBlock(x){ const t=ptState(x), sale=x.orig&&x.orig!==x.price;
+  let h=sale?`<div class="pt-box"><b>🏷️ ${L.mdOnSale(money(x.price),money(x.orig))}</b><button class="link-btn" id="md-back">${L.mdBack(money(x.orig))}</button></div>`:'';
+  if(!t){ const n=nineOf(x.price); if(+x.price>0&&!sale) h+=`<div class="pt-box"><b>${L.ptT}</b><p>${n?L.ptOffer(money(x.price),money(n)):L.ptOfferAny(money(x.price))}</p>
+      <div class="pt-row"><input id="pt-b" type="number" inputmode="numeric" min="1" value="${n||''}" placeholder="${L.ptNewPh}" aria-label="${L.ptNewPh}"><button class="btn btn-primary" id="pt-go">${L.ptStart}</button></div><div class="err" id="pt-e"></div></div>`; return h; }
+  if(t.ph<3) return h+`<div class="pt-box"><b>${L.ptT} · ${L.ptDay(Math.min(t.day,PT_DAYS*2),PT_DAYS*2)}</b><p>${t.ph===1?L.ptNow1(money(t.a),fmtDate(parseYmd(t.sw)),money(t.b)):L.ptNow2(money(t.b),fmtDate(addDays(parseYmd(t.en),-1)))}</p><button class="link-btn" id="pt-stop">${L.ptStop}</button></div>`;
+  const r=ptResult(x), win=(r.B.pr!=null?r.B.pr>r.A.pr:r.B.rev>r.A.rev)?'b':(r.B.pr!=null?r.B.pr<r.A.pr:r.B.rev<r.A.rev)?'a':'';
+  const col=(k,o,p)=>`<div class="pt-c ${win===k?'win':''}"><small>${money(p)}</small><b>${L.ptPcs(o.n)}</b><span>${L.ptRev(money(o.rev))}</span>${o.pr!=null?`<span>${L.ptPr(money(o.pr))}</span>`:''}</div>`;
+  return h+`<div class="pt-box"><b>${L.ptDone}</b><div class="pt-cmp">${col('a',r.A,t.a)}${col('b',r.B,t.b)}</div>
+    <p>${r.A.n+r.B.n<4?L.ptFew:win==='b'?L.ptWinB(money(t.b)):win==='a'?L.ptWinA(money(t.a)):L.ptTie}</p>
+    <div class="sheet-row"><button class="btn btn-ghost" data-pt-keep="a">${L.ptKeep(money(t.a))}</button><button class="btn btn-ghost" data-pt-keep="b">${L.ptKeep(money(t.b))}</button></div></div>`; }
+function ptBind(x){ const go=$('#pt-go'); if(go) go.onclick=()=>{ const b=Math.round(+$('#pt-b').value||0), a=Math.round(+x.price||0); if(!(b>0)||b===a) return showErr($('#pt-e'),L.ptErr);
+    if(+x.cost>0&&b<=+x.cost) return showErr($('#pt-e'),L.ptBelow(money(x.cost))); x.pt={a,b,s:dkey()}; persist(); render(); invSheet(x); toast(L.ptStarted); };
+  const st=$('#pt-stop'); if(st) st.onclick=()=>{ if(x.pt&&x.pt.sw2) x.price=x.pt.a; delete x.pt; persist(); render(); invSheet(x); };
+  sheet.querySelectorAll('[data-pt-keep]').forEach(b=>b.onclick=()=>{ x.price=b.dataset.ptKeep==='a'?x.pt.a:x.pt.b; delete x.pt; persist(); render(); invSheet(x); toast(L.ptKept(money(x.price))); });
+  const mb=$('#md-back'); if(mb) mb.onclick=()=>{ x.price=x.orig; delete x.orig; delete x.md; persist(); render(); invSheet(x); }; }
+
+/* № 97. Распродажа по плану (как у Zara: решение по каждой вещи — как быстро продаётся и сколько недель осталось) */
+function seasonEnd(){ const t=today0(), y=t.getFullYear(), m=t.getMonth(); const ends=[[1,y],[4,y],[7,y],[10,y]].map(([mm,yy])=>new Date(yy,mm+1,0)); ends.push(new Date(y+1,2,0));
+  return ends.find(d=>d>=addDays(t,14))||ends[ends.length-1]; }
+function mdPlan(endKey){ const end=parseYmd(endKey), t=today0(), wk=Math.max(1,Math.round((end-t)/(7*864e5))), rows=[];
+  for(const x of egItems()){ const q=invTotal(x); if(!(q>0)||!(+x.price>0)) continue; const age=x.d?Math.round((t-parseYmd(x.d))/864e5):99;
+    const sold28=egSold(x.id,28), rate=sold28/4, exp=rate*wk, left=Math.max(0,Math.round(q-exp)); if(!(left>0)) continue;
+    if(age<21&&sold28===0) continue; /* только завезли — рано судить */
+    const share=left/q, p=+x.orig||+x.price, c=+x.cost||0;
+    const s1=share>0.6?30:share>0.25?20:10, steps=[{w:0,pct:s1},{w:Math.max(1,Math.round(wk/2)),pct:Math.min(50,s1+10)},{w:Math.max(1,wk-2),pct:Math.min(60,s1+20)}].filter((s,i,a)=>i===0||s.w>a[i-1].w);
+    const pr=v=>{ const n=Math.round(p*(1-v/100)); const nn=nineOf(n); return nn&&nn<p?nn:n; };
+    for(const st of steps){ st.price=pr(st.pct); st.below=c>0&&st.price<c; st.date=dkey(addDays(t,st.w*7)); }
+    rows.push({x,q,rate,exp:Math.round(exp),left,share,steps,frozen:Math.round(left*c),p}); }
+  rows.sort((a,b)=>b.frozen-a.frozen||b.left-a.left); return {rows,wk,end:endKey,frozen:rows.reduce((s,r)=>s+r.frozen,0)}; }
+function mdSheet(endKey){ endKey=endKey||(state.misc.mdEnd&&state.misc.mdEnd>dkey()?state.misc.mdEnd:dkey(seasonEnd())); const P=mdPlan(endKey);
+  const row=r=>{ const now=r.steps[0], on=r.x.orig&&r.x.price<r.x.orig;
+    return `<div class="md-r"><div class="md-h"><b>${esc(r.x.name)}</b><span>${L.mdLeft(r.q,r.left)}</span></div>
+      <p class="md-s">${r.rate>0?L.mdRate(rf.format(Math.round(r.rate*10)/10)):L.mdNoSale}</p>
+      <ol class="md-steps">${r.steps.map((s,i)=>`<li${s.below?' class="below"':''}><b>${i===0?L.mdNowW:fmtShort(parseYmd(s.date))}</b> −${s.pct}% → ${money(s.price)}${s.below?` <small>${L.mdBelow}</small>`:''}</li>`).join('')}</ol>
+      ${on?`<p class="md-s ok">${L.mdOnSale(money(r.x.price),money(r.x.orig))}</p>`:`<button class="btn btn-ghost md-go" data-md="${esc(r.x.id)}" data-mdp="${now.price}" data-mdpct="${now.pct}">${L.mdSet(money(now.price))}</button>`}</div>`; };
+  openSheet(`<h3>🏷️ ${L.mdT}</h3><p class="lead">${L.mdLead}</p>
+    <div class="field"><label for="md-end">${L.mdEndL}</label><input id="md-end" type="date" value="${endKey}" min="${dkey(addDays(today0(),7))}"></div>
+    ${P.rows.length?`<div class="verdict z-mid"><b>${L.mdSum(P.rows.length,P.wk)}</b>${P.frozen>0?`<span>${L.mdFrozen(money(P.frozen))}</span>`:''}</div>${P.rows.map(row).join('')}`:`<div class="verdict z-ok"><b>${L.mdAllOk}</b><span>${L.mdAllOkD(P.wk)}</span></div>`}
+    <p class="note">${L.mdHow}</p><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  $('#md-end').addEventListener('change',e=>{ const v=e.target.value; if(v&&v>dkey()){ state.misc.mdEnd=v; persist(); mdSheet(v); } });
+  sheet.querySelectorAll('[data-md]').forEach(b=>b.onclick=()=>{ const x=state.inv.find(y=>y.id===b.dataset.md); if(!x) return; if(!x.orig) x.orig=x.price; x.price=+b.dataset.mdp; x.md={pct:+b.dataset.mdpct,d:dkey()}; delete x.pt; persist(); render(); mdSheet(endKey); toast(L.mdDone(esc(x.name),money(x.price))); });
 }
 function invToList(arr){ let n=0; for(const {x,l} of arr){ const nm=x.name+' — '+l.map(k=>k==='—'?L.ivOne:k).join(', '); if(state.shopList.some(i=>!i.done&&i.n===nm)) continue; state.shopList.push({id:uid('l'),n:nm,q:l.length,p:x.cost||0,s:x.sup||'',done:false}); n++; } persist(); render(); toast(n?L.ivAdded(n):L.ivAlready); }
 
@@ -11735,7 +11846,7 @@ function erSheet(){ const st=erSt(), cur=erHold(), due=erDue(), m=erMonth(), all
   on('#er-done',()=>erResSheet({k:cur.k,t:erTitle(cur.k)}));
   on('#er-other',()=>{ const wk=erWeek(); for(const k in st.skip) if(st.skip[k]!==wk) delete st.skip[k]; st.skip[cur.k]=wk; st.wk=null; persist(); render(); erSheet(); });
   on('#er-more1',()=>{ if(!erCands().length) st.skip={}; st.wk=null; persist(); render(); erSheet(); });
-  sheet.querySelectorAll('[data-er]').forEach(b=>b.onclick=()=>{ const k=b.dataset.er; if(k==='chk') erChkSheet(); else if(k==='price') erPriceSheet('up'); else if(k==='goods') egGoodsSheet(); else if(k==='asked') egAskedSheet(); else if(k==='plan') egPlanSheet(); else erStorySheet(); });
+  sheet.querySelectorAll('[data-er]').forEach(b=>b.onclick=()=>{ const k=b.dataset.er; if(k==='chk') erChkSheet(); else if(k==='price') erPriceSheet('up'); else if(k==='goods') egGoodsSheet(); else if(k==='asked') egAskedSheet(); else if(k==='plan') egPlanSheet(); else if(k==='md') mdSheet(); else erStorySheet(); });
   sheet.querySelectorAll('[data-erask]').forEach(b=>b.onclick=()=>{ const p=st.pend.find(x=>x.id===b.dataset.erask); if(p) erResSheet({k:p.k,t:p.t,pid:p.id,n:p.n}); });
   sheet.querySelectorAll('[data-erdel]').forEach(b=>b.onclick=()=>{ st.log=st.log.filter(x=>x.id!==b.dataset.erdel); persist(); render(); erSheet(); }); }
 function erResSheet(o){ openSheet(`<h3>${L.erResT}</h3><p class="lead">${esc(L.erResP(o.t))}</p>
@@ -11964,7 +12075,7 @@ function egMonths(){ const sh=ensureShop(), now=today0(), by={}, days={}; for(co
 /* ---------- строки в листе «Заработок» ---------- */
 function egRowsHTML(tool){ let sv=0, aq=[], pl=null; try{ sv=egStale().v; }catch(e){} try{ aq=egAsked(90); }catch(e){} try{ pl=egPlan(); }catch(e){}
   return tool('goods','box',L.egRowGoods,sv>0?L.egRowGoodsS(money(sv)):L.egRowGoodsS0)+tool('asked','search',L.egRowAsk,aq.length?L.egRowAskS(aq.reduce((s,o)=>s+o.n,0),esc(aq[0].t)):L.egRowAskS0)
-    +tool('plan','goal',L.egRowPlan,pl?L.egPlDay(money(pl.soldT),money(pl.plan)):L.egRowPlanS0); }
+    +tool('plan','goal',L.egRowPlan,pl?L.egPlDay(money(pl.soldT),money(pl.plan)):L.egRowPlanS0)+tool('md','tag',L.mdT,(()=>{ try{ const P=mdPlan(dkey(seasonEnd())); return P.rows.length?L.mdRowS(P.rows.length,fmtDate(parseYmd(P.end))):L.mdRowS0; }catch(e){ return L.mdRowS0; } })()); }
 
 /* ---------- товар: прибыль, без движения, набор ---------- */
 function egGoodsSheet(tab0,pre){ let tab=tab0==='stale'||tab0==='bundle'?tab0:'profit', days=90, disc=10, a=pre&&pre.a||null, b=pre&&pre.b||null;
