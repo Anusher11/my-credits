@@ -2160,6 +2160,17 @@
   .iv-ai-r p{margin:0; font-weight:700; font-size:.9rem;} .iv-ai-r small{color:var(--muted); font-size:.8rem;}
   .iv-phq{margin:0 0 12px;}
   .pr-ai{margin-top:8px;} #p-ai-r{margin-top:8px;} .pr-w{color:var(--out)!important; font-weight:700;}
+  /* № 126: главное действие на экране крупнее и заметнее, второстепенное — тише (по исследованию Google Material 3 Expressive) */
+  .btn-primary{min-height:56px; border-radius:20px; font-size:1.06rem; font-weight:800; box-shadow:0 8px 18px -10px color-mix(in srgb,var(--brand) 75%,transparent);}
+  .btn-primary:active, .m7-b1:active, .sd-main:active{transform:scale(.97);}
+  .sheet-row:has(> .btn-primary) > .btn-ghost{flex:0 0 auto; min-width:104px; background:transparent; border-color:transparent; box-shadow:none; color:var(--ink); opacity:.78;}
+  .sheet-row:has(> .btn-primary) > .btn-primary{flex:1 1 auto;}
+  .m7-h-btns .m7-b1{flex:2 1 0; min-height:58px; font-size:1.08rem; font-weight:800; border-radius:20px; box-shadow:0 8px 18px -10px rgba(0,0,0,.45);}
+  .m7-h-btns .m7-b2{flex:1 1 0; min-width:0;}
+  .sd-btns > .btn.sd-main{flex:2 1 0; min-height:56px; font-size:1.06rem; white-space:nowrap;}
+  .sd-btns > .btn.sd-exp{flex:1 1 0; min-width:0; white-space:nowrap;}
+  @media (prefers-reduced-motion:reduce){ .btn-primary:active, .m7-b1:active, .sd-main:active{transform:none;} }
+  @media (max-width:360px){ .sheet-row .btn{padding-left:10px; padding-right:10px;} .sheet-row:has(> .btn-primary) > .btn-ghost{min-width:84px;} .btn-primary{font-size:1rem;} }
   /* larger touch area for small text buttons (WCAG 2.5.8) */
   :where(.add-link,.link-btn){position:relative;}
   :where(.add-link,.link-btn)::after{content:''; position:absolute; inset:-9px -4px;}
