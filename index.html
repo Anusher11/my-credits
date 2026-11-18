@@ -1654,11 +1654,9 @@
   :root[data-theme="light"] body{background:transparent;}
   :root[data-theme="light"]{background:var(--bg);}
   #m11Aurora{display:none;}
-  :root[data-theme="light"] #m11Aurora{display:block; position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:var(--bg);}
-  #m11Aurora i{position:absolute; border-radius:50%; filter:blur(64px); will-change:transform;}
-  #m11Aurora i:nth-child(1){width:300px; height:300px; left:-90px; top:-70px; background:#8FEBCB; opacity:.7; animation:m11A 13s ease-in-out infinite;}
-  #m11Aurora i:nth-child(2){width:280px; height:280px; right:-100px; top:60px; background:#C7B5FF; opacity:.66; animation:m11B 16s ease-in-out infinite;}
-  #m11Aurora i:nth-child(3){width:300px; height:300px; left:40px; top:460px; background:#FFE0B5; opacity:.5; animation:m11C 18s ease-in-out infinite;}
+  :root[data-theme="light"] #m11Aurora{display:block; position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; background:radial-gradient(circle at 60px 80px,rgba(143,235,203,.62) 0,rgba(143,235,203,.38) 110px,rgba(143,235,203,0) 230px),radial-gradient(circle at calc(100% - 40px) 200px,rgba(199,181,255,.58) 0,rgba(199,181,255,.34) 105px,rgba(199,181,255,0) 220px),radial-gradient(circle at 190px 610px,rgba(255,224,181,.46) 0,rgba(255,224,181,.26) 110px,rgba(255,224,181,0) 230px),var(--bg);}
+  /* Пятна фона — обычный градиент: прежние размытые (blur 64px) движущиеся слои заставляли телефон
+     перерисовывать фон и «стекло» меню каждый кадр — прокрутка падала с 60 до ~40 кадров в секунду. */
   @keyframes m11A{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(46px,34px) scale(1.18)}}
   @keyframes m11B{0%,100%{transform:translate(0,0) scale(1.1)}50%{transform:translate(-52px,26px) scale(.92)}}
   @keyframes m11C{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,-44px) scale(1.2)}}
@@ -11089,7 +11087,7 @@ try{ const _rt10=renderTips; renderTips=function(){ const x=_rt10.apply(this,arg
    - сначала то, что уже сделано («Уже выплачено») — выигрыш мотивирует сильнее, чем остаток;
    - ближайшая маленькая отметка («до 60% осталось…») — чем ближе цель, тем охотнее идут;
    - дорожка месяцев: пройдено, сейчас, впереди; дата свободы — крупно. */
-function m11Aurora(){ if($('#m11Aurora')) return; const d=document.createElement('div'); d.id='m11Aurora'; d.setAttribute('aria-hidden','true'); d.innerHTML='<i></i><i></i><i></i>'; document.body.insertBefore(d,document.body.firstChild); }
+function m11Aurora(){ if($('#m11Aurora')) return; const d=document.createElement('div'); d.id='m11Aurora'; d.setAttribute('aria-hidden','true'); document.body.insertBefore(d,document.body.firstChild); }
 function m11HeroHTML(list){ const real=list.filter(x=>!x.loan.example); if(!real.length) return ''; const T=m8Totals(real); if(!(T.total>0)) return '';
   const fr=m8Free(real), pr=m7Progress(), C=264, pct=Math.max(0,Math.min(100,Math.round(T.pct)));
   const step=Math.min(100,(Math.floor(pct/10)+1)*10), toStep=Math.max(0,Math.round(T.total*step/100-T.paid));
@@ -11195,7 +11193,8 @@ function m12StartHTML(){ const cash=+state.misc.cash||0; let safe=null; try{ if(
     <button class="btn btn-primary btn-full" data-tnew="1">${ico('plus',20)} ${L.m12Start}</button>${typeof DEMO!=='undefined'&&!DEMO?`<button class="link-btn" data-demo-on="1" style="margin-top:12px">${L.dmTry}</button>`:''}</div>`; }
 /* как продалась закупка: 60–80% за 4–8 недель — хорошо; меньше 40% — пора решать */
 function m12Sell(t){ const items=state.inv.filter(x=>x.trip===t.id); if(!items.length) return null; let sold=0, left=0, first=null;
-  for(const x of items){ sold+=state.invLog.filter(l=>l.i===x.id&&l.k==='sale').reduce((a,l)=>a-(+l.q||0),0); left+=invTotal(x); if(x.d&&(!first||x.d<first)) first=x.d; }
+  const ids=new Set(items.map(x=>x.id)); for(const l of state.invLog) if(l.k==='sale'&&ids.has(l.i)) sold-=(+l.q||0);
+  for(const x of items){ left+=invTotal(x); if(x.d&&(!first||x.d<first)) first=x.d; }
   if(!(sold+left>0)) return null; const pct=Math.max(0,Math.min(100,Math.round(sold/(sold+left)*100))), w=first?Math.max(0,Math.floor((today0()-parseYmd(first))/6048e5)):null;
   const kind=pct>=60?'good':(w!=null&&w<4?'early':(pct<40&&w!=null&&w>=8?'low':'mid'));
   return {pct,w,kind,txt:kind==='good'?L.m12StGood:kind==='early'?L.m12StEarly(w):kind==='low'?L.m12StLow(w):L.m12StMid}; }

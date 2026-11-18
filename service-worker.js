@@ -1,7 +1,9 @@
 /* Service worker: офлайн-кэш приложения Mira (бывшее «Мои кредиты»).
-   Стратегия: для самой страницы — «сначала сеть» (чтобы обновления
-   появлялись сразу), для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE = 'mira-v29';
+   Стратегия: для самой страницы — «сначала сеть», но не дольше 2,5 с:
+   если интернет медленный, сразу открывается сохранённая копия, а свежая
+   версия докачивается в фоне и откроется в следующий раз.
+   Для иконок/шрифтов — «сначала кэш» (быстро). */
+const CACHE = 'mira-v30';
 const CORE = [
   './',
   './index.html',
@@ -51,17 +53,23 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
 
-  // Страница приложения — сначала свежая из сети, кэш только запасной (офлайн)
+  // Страница приложения — сначала свежая из сети, но ждём её не дольше 2,5 с;
+  // при медленном интернете показываем сохранённую копию, сеть обновит её в фоне
   if (isPageRequest(req)) {
-    e.respondWith(
-      fetch(req).then(res => {
-        const copy = res.clone();
-        const path = new URL(req.url).pathname;
-        const key = (path.endsWith('/') || path.endsWith('/index.html')) ? './index.html' : req;
-        caches.open(CACHE).then(c => c.put(key, copy));
-        return res;
-      }).catch(() => caches.match(req).then(hit => hit || caches.match('./index.html')))
-    );
+    const path = new URL(req.url).pathname;
+    const key = (path.endsWith('/') || path.endsWith('/index.html')) ? './index.html' : req;
+    const net = fetch(req);
+    // копия в кэш — в фоне, ответ не ждёт записи
+    e.waitUntil(net.then(res => {
+      if (res && res.ok) { const copy = res.clone(); return caches.open(CACHE).then(c => c.put(key, copy)); }
+    }).catch(() => null));
+    e.respondWith((async () => {
+      const cached = (await caches.match(key)) || (await caches.match(req));
+      if (!cached) return net.catch(() => caches.match('./index.html'));
+      const slow = new Promise(r => setTimeout(() => r(null), 2500));
+      const res = await Promise.race([net.catch(() => null), slow]);
+      return (res && res.ok) ? res : cached;
+    })());
     return;
   }
 
