@@ -2505,6 +2505,58 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 :root[data-theme="dark"] .hb-qo.bad{background:#3B2414;}
 :root[data-theme="dark"] .hb-tr.down,:root[data-theme="dark"] .hb-gain.dn{color:#FFA372;}
 @media (prefers-reduced-motion:reduce){.hb-pane,.hb-det{animation:none;} .hb-skel i{animation:none;} .hb-bt i{transition:none;} .hb-save.on{animation:none;}}
+/* v24: «Учёба дня» */
+.hb-ldh{border-radius:22px; padding:14px; margin:0 0 10px; background:linear-gradient(135deg,var(--m-grape-weak,#ECE7FF),var(--surface-2));}
+.hb-ldh .hb-hero-top b{font-size:1.05rem;} .hb-ldh .hb-hero-top small{display:block; font-size:.78rem; font-weight:700; color:var(--muted); margin-top:1px;}
+.hb-ldh .hb-old{background:var(--surface); color:var(--ink);}
+.hb-ldfor{font-size:.78rem; font-weight:800; color:var(--muted); margin:12px 0 8px;}
+.hb-ldh .hb-scroll{margin:0 -14px 2px; padding:0 14px 2px;}
+.hb-ldh .chip{background:var(--surface);} .hb-ldh .chip.on{background:var(--ink); color:var(--surface);}
+.hb-ldn{margin:10px 2px 0; color:var(--ink); font-weight:600;}
+.hb-ldh .hb-skel i{background:linear-gradient(90deg,rgba(120,100,220,.12) 0%,rgba(120,100,220,.26) 50%,rgba(120,100,220,.12) 100%); background-size:200% 100%;}
+.hb-ldh .gp-mini{margin-top:10px;}
+.hb-lds .hb-lesson{background:var(--surface); border:1px solid var(--line);}
+.hb-l0{background:var(--surface-2);}
+.hb-sec{display:flex; gap:10px; align-items:flex-start;}
+.hb-sec>div{flex:1; min-width:0;}
+.hb-n{flex:none; width:26px; height:26px; border-radius:50%; display:grid; place-items:center; font-style:normal; font-size:.78rem; font-weight:900; background:var(--m-grape,#7B5CFF); color:#fff; margin-top:1px;}
+.hb-sec small{display:block; margin-top:5px; font-size:.76rem; color:var(--muted); font-weight:600; line-height:1.4;}
+.hb-m{border-top:1px solid var(--line); padding:10px 0;}
+.hb-m:first-of-type{border-top:0; padding-top:2px;}
+.hb-m summary{list-style:none; cursor:pointer; min-height:44px; display:flex; flex-direction:column; justify-content:center; padding-right:26px; position:relative;}
+.hb-m summary::-webkit-details-marker{display:none;}
+.hb-m summary::after{content:""; position:absolute; right:4px; top:50%; width:8px; height:8px; border-right:2px solid var(--muted); border-bottom:2px solid var(--muted); transform:translateY(-70%) rotate(45deg); transition:transform .2s;}
+.hb-m[open] summary::after{transform:translateY(-30%) rotate(-135deg);}
+.hb-m summary b{font-size:.94rem;} .hb-m summary small{font-size:.82rem; color:var(--muted); line-height:1.4; margin-top:2px;}
+.hb-m p{margin:8px 0 0; font-size:.86rem; line-height:1.45;}
+.hb-m p.m{display:flex; gap:6px; color:var(--muted);} .hb-m p.m svg{flex:none; margin-top:2px;}
+.hb-ex{display:flex; gap:6px; background:var(--surface-2); border-radius:12px; padding:8px 10px; font-size:.85rem; line-height:1.45;}
+.hb-ex svg{flex:none; margin-top:2px; color:var(--brand);}
+.hb-case>b{font-size:.98rem;} .hb-case>small{display:block; font-size:.78rem; font-weight:700; color:var(--muted); margin-top:1px;}
+.hb-case p{margin:7px 0 0; font-size:.86rem; line-height:1.45;}
+.hb-term{padding:8px 0; border-top:1px solid var(--line);} .hb-term:first-of-type{border-top:0; padding-top:0;}
+.hb-term b{font-size:.92rem;} .hb-term p{margin:3px 0 0; font-size:.86rem; line-height:1.45;} .hb-term small{display:block; margin-top:3px; color:var(--muted); font-size:.8rem;}
+.hb-mist{padding:8px 0; border-top:1px solid var(--line);} .hb-mist:first-of-type{border-top:0; padding-top:0;}
+.hb-mist>b{display:flex; align-items:center; gap:6px; font-size:.9rem;} .hb-mist>b svg{flex:none; color:#C2571A;}
+.hb-mist p{margin:4px 0 0; font-size:.85rem; line-height:1.45;}
+.hb-fix{display:flex; gap:6px; color:var(--m-leaf); font-weight:700;} .hb-fix svg{flex:none; margin-top:2px;}
+.hb-task>b{display:block; font-size:.95rem;} .hb-task p{margin:5px 0 10px; font-size:.86rem; line-height:1.45;}
+.hb-task h4 small{margin-left:auto; font-size:.76rem; font-weight:800; color:var(--muted);}
+.hb-task.done{border-color:var(--m-leaf);}
+.hb-done{display:inline-flex; align-items:center; gap:6px; min-height:44px;}
+.hb-task .bp-mu{display:block; margin-top:8px; font-size:.78rem; font-weight:700;}
+.hb-quiz1{padding:6px 0 4px; border-top:1px solid var(--line);} .hb-quiz1:first-of-type{border-top:0; padding-top:0;}
+.hb-quiz1>p{margin:4px 0 8px; font-size:.88rem;}
+.hb-book p{margin:0; font-size:.9rem; line-height:1.5; font-weight:600;} .hb-book small{display:block; margin-top:6px; color:var(--muted); font-size:.8rem; font-weight:700;}
+.hb-lib h4 small{font-size:.78rem; font-weight:800; color:var(--muted); margin-left:4px;}
+.hb-lib .hb-scroll{margin:0 -14px 10px; padding:0 14px 2px;}
+.hb-lib .chip small{font-family:var(--font-num); font-weight:800; opacity:.7; margin-left:2px;}
+.hb-libl>.hb-tip{margin-bottom:8px;}
+.hb-libl>.bp-mine{margin-bottom:8px;}
+.hb-topic[hidden]{display:none;}
+:root[data-theme="dark"] .hb-ldh{background:linear-gradient(135deg,#241E48,var(--surface-2));}
+:root[data-theme="dark"] .hb-mist>b svg{color:#FFA372;}
+
 </style>
 </head>
 <body>
@@ -5711,6 +5763,34 @@ en:{ hbUpdBtn:'Refresh', hbUpdOk:'Market of the day updated', hbRecent:(m,w)=>'U
   hbLearnT:'Learn', hbAskSifra:'Ask Sifra', hbNoLesson:'This lesson is no longer on the phone.', hbYourQ:'Your question', hbLearnWait:'Sifra is preparing the lesson…', hbLearnWait2:'Up to a minute: looking for fresh data and examples.',
   hbLearnErr:'Could not prepare the lesson. Check the internet.', hbRight:'Right!', hbWrong:'Not quite.' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M23S[k]);
+/* ----- v24: «Учёба дня» ----- */
+const M24S={
+ru:{ hbLDT:'Учёба дня', hbLDFor:'Для какого бизнеса', hbTrackN:{general:'Для всех',trade:'Торговля',clothes:'Одежда',food:'Еда',online:'Онлайн',service:'Услуги',production:'Производство',medtech:'Медтех',it:'IT',export:'Экспорт',agro:'Агро'},
+  hbLDLk:['Урок для всех','Для вашего бизнеса','Продвинутый'], hbLDArea:{money:'деньги',strategy:'стратегия',negotiation:'переговоры'},
+  hbLDSecrets:'Секреты дня', hbLDMethods:'Методы анализа', hbLDWhen:'Когда применять', hbLDCase:'Кейс дня', hbLDResult:'Результат', hbLDTerms:'Слова дня', hbLDMist:'Ошибки и как их избежать',
+  hbLDTask:'Задание дня', hbLDMin:n=>'≈ '+n+' мин', hbLDDone:'Сделано', hbLDDoneN:n=>'Выполнено заданий: '+n, hbLDDoneOk:'Отлично! Задание отмечено', hbLDQuiz:'Проверьте себя', hbLDBook:'Мысль из книги',
+  hbLDWait:'Сифра готовит учёбу дня: уроки, секреты, методы анализа, кейс. Это до минуты, один раз в день.', hbLDErr:'Не получилось загрузить учёбу дня.', hbLDOld:'Это прошлая учёба — новая готовится.',
+  hbLib:'Библиотека', hbLibN:n=>n+' материалов', hbLibK:{lessons:'Уроки',secrets:'Секреты',methods:'Методы',cases:'Кейсы',terms:'Слова',mistakes:'Ошибки'}, hbLibEmpty:'Библиотека пополняется каждый день: всё из учёбы дня остаётся здесь.',
+  hbMore:n=>'Показать ещё '+n, hbAllTopics:n=>'Все темы ('+n+')', hbLess:'Свернуть',
+  hbTopicN:{negotiation:'Переговоры',pricing:'Как назначить цену',brand:'Бренд и упаковка',service:'Сервис и постоянные клиенты',stock:'Склад и остатки',cashflow:'Денежный поток',investors:'Где взять деньги',franchise:'Франшиза',ai:'ИИ в бизнесе',leader:'Лидерство',time:'Время и продуктивность',analysis:'Методы анализа',contracts:'Договоры',crisis:'Кризис и падение продаж',family:'Семейный бизнес',agro:'Агробизнес'} },
+tg:{ hbLDT:'Омӯзиши рӯз', hbLDFor:'Барои кадом тиҷорат', hbTrackN:{general:'Барои ҳама',trade:'Савдо',clothes:'Либос',food:'Хӯрок',online:'Онлайн',service:'Хизматрасонӣ',production:'Истеҳсол',medtech:'Тиб',it:'IT',export:'Содирот',agro:'Кишоварзӣ'},
+  hbLDLk:['Дарс барои ҳама','Барои тиҷорати шумо','Пешрафта'], hbLDArea:{money:'пул',strategy:'стратегия',negotiation:'гуфтушунид'},
+  hbLDSecrets:'Сирҳои рӯз', hbLDMethods:'Усулҳои таҳлил', hbLDWhen:'Кай истифода бурдан', hbLDCase:'Мисоли рӯз', hbLDResult:'Натиҷа', hbLDTerms:'Калимаҳои рӯз', hbLDMist:'Хатоҳо ва чӣ тавр аз онҳо дурӣ ҷуст',
+  hbLDTask:'Супориши рӯз', hbLDMin:n=>'≈ '+n+' дақ.', hbLDDone:'Иҷро шуд', hbLDDoneN:n=>'Супоришҳои иҷрошуда: '+n, hbLDDoneOk:'Офарин! Супориш қайд шуд', hbLDQuiz:'Худро санҷед', hbLDBook:'Фикр аз китоб',
+  hbLDWait:'Сифра омӯзиши рӯзро тайёр мекунад: дарсҳо, сирҳо, усулҳои таҳлил, мисол. То як дақиқа, як бор дар рӯз.', hbLDErr:'Омӯзиши рӯз бор нашуд.', hbLDOld:'Ин омӯзиши гузашта аст — навашро тайёр мекунад.',
+  hbLib:'Китобхона', hbLibN:n=>n+' мавод', hbLibK:{lessons:'Дарсҳо',secrets:'Сирҳо',methods:'Усулҳо',cases:'Мисолҳо',terms:'Калимаҳо',mistakes:'Хатоҳо'}, hbLibEmpty:'Китобхона ҳар рӯз пур мешавад: ҳама чиз аз омӯзиши рӯз дар ин ҷо мемонад.',
+  hbMore:n=>'Боз '+n+' нишон додан', hbAllTopics:n=>'Ҳамаи мавзӯъҳо ('+n+')', hbLess:'Пӯшидан',
+  hbTopicN:{negotiation:'Гуфтушунид',pricing:'Нархро чӣ тавр муайян кард',brand:'Бренд ва бастабандӣ',service:'Хизматрасонӣ ва мизоҷони доимӣ',stock:'Анбор ва боқимонда',cashflow:'Гардиши пул',investors:'Пулро аз куҷо гирифт',franchise:'Франшиза',ai:'ЗИ дар тиҷорат',leader:'Роҳбарӣ',time:'Вақт ва самаранокӣ',analysis:'Усулҳои таҳлил',contracts:'Шартномаҳо',crisis:'Бӯҳрон ва паст шудани фурӯш',family:'Тиҷорати оилавӣ',agro:'Агротиҷорат'} },
+en:{ hbLDT:'Lesson of the day', hbLDFor:'For which business', hbTrackN:{general:'For everyone',trade:'Trade',clothes:'Clothing',food:'Food',online:'Online',service:'Services',production:'Production',medtech:'Medtech',it:'IT',export:'Export',agro:'Agro'},
+  hbLDLk:['For everyone','For your business','Advanced'], hbLDArea:{money:'money',strategy:'strategy',negotiation:'negotiation'},
+  hbLDSecrets:'Secrets of the day', hbLDMethods:'Analysis methods', hbLDWhen:'When to use', hbLDCase:'Case of the day', hbLDResult:'Result', hbLDTerms:'Words of the day', hbLDMist:'Mistakes and how to avoid them',
+  hbLDTask:'Task of the day', hbLDMin:n=>'≈ '+n+' min', hbLDDone:'Done', hbLDDoneN:n=>'Tasks done: '+n, hbLDDoneOk:'Great! Task marked done', hbLDQuiz:'Check yourself', hbLDBook:'Idea from a book',
+  hbLDWait:'Sifra is preparing today’s learning: lessons, secrets, analysis methods, a case. Up to a minute, once a day.', hbLDErr:'Could not load today’s learning.', hbLDOld:'This is a past lesson — a new one is being prepared.',
+  hbLib:'Library', hbLibN:n=>n+' items', hbLibK:{lessons:'Lessons',secrets:'Secrets',methods:'Methods',cases:'Cases',terms:'Words',mistakes:'Mistakes'}, hbLibEmpty:'The library grows every day: everything from the daily lesson stays here.',
+  hbMore:n=>'Show '+n+' more', hbAllTopics:n=>'All topics ('+n+')', hbLess:'Collapse',
+  hbTopicN:{negotiation:'Negotiation',pricing:'How to set a price',brand:'Brand and packaging',service:'Service and loyal customers',stock:'Stock and inventory',cashflow:'Cash flow',investors:'Where to get money',franchise:'Franchise',ai:'AI in business',leader:'Leadership',time:'Time and productivity',analysis:'Analysis methods',contracts:'Contracts',crisis:'Crisis and falling sales',family:'Family business',agro:'Agribusiness'} }};
+for(const k of ['ru','tg','en']){ const x=M24S[k], tn=x.hbTopicN; delete x.hbTopicN; Object.assign(D[k],x); D[k].hbTopicN=Object.assign({},D[k].hbTopicN||{},tn); }
+
 
 
 
@@ -13588,6 +13668,105 @@ function hbLearnR(m,foot,a){ BPG.el.querySelector('#bpg-t').textContent=L.hbLear
 bpChartSVG=function(it){ const r=it.road; if(!r) return ''; const M=Math.max(1,it.f.m), ex=[[0,it.cap]].concat(r.months.filter(x=>x.capital_usd>0).map(x=>[Math.min(M,x.m),x.capital_usd])), lo=[[0,it.cap]].concat(r.months.filter(x=>x.capital_low_usd>0).map(x=>[Math.min(M,x.m),x.capital_low_usd]));
   if(ex.length<2) return ''; const d=new Date(it.at||Date.now()); return hbChartHTML('bp-ch-'+it.id,{ex,lo:lo.length>1?lo:null},{H:M,st:new Date(d.getFullYear(),d.getMonth(),1).toISOString(),tg:it.tgt,label:L.bpChartT}); };
 document.addEventListener('click',e=>{ const t=e.target.closest('[data-hbopen-hub]'); if(!t) return; e.stopImmediatePropagation(); hubOpen(t.dataset.hbopenHub||''); });
+
+/* ===================== v24: «Учёба дня» и библиотека во вкладке «Учиться» =====================
+   Каждый день Сифра (Fable 5.2) готовит новое для выбранного вида бизнеса или для всех: 3 урока, секреты, 2 метода анализа,
+   кейс настоящей компании, слова дня, ошибки, задание и вопросы. Всё прошлое копится в «Библиотеке» (на сервере — общая для всех).
+   Учёба и библиотека лежат в отдельных ключах браузера, чтобы не утяжелять сохранение остальных данных. Нужен сервер Mira версии 12. */
+const LD_TRACKS=['general','trade','clothes','food','online','service','production','medtech','it','export','agro'];
+const LD_LIBK=['lessons','secrets','methods','cases','terms','mistakes'];
+HB_TOPICS.push('negotiation','pricing','brand','service','stock','cashflow','investors','franchise','ai','leader','time','analysis','contracts','crisis','family','agro');
+Object.assign(HB_TICO,{negotiation:'chat',pricing:'tag',brand:'sparkle',service:'check',stock:'folder',cashflow:'cash',investors:'piggy',franchise:'shop',ai:'gear',leader:'flag',time:'clock',analysis:'stats',contracts:'doc',crisis:'umbrella',family:'home',agro:'leaf'});
+let ldBusy=null, ldPollT=null, ldState='';
+function ldTrack(){ const t=hbSt().track; return LD_TRACKS.includes(t)?t:'general'; }
+function ldKey(k,tr){ return 'hb_'+k+'_'+lang+'_'+(tr||ldTrack()); }
+function ldGet(tr){ try{ const o=JSON.parse(lsGet(ldKey('ld',tr))||'null'); return o&&o.pack?o:null; }catch(e){ return null; } }
+function ldLib(tr){ try{ const o=JSON.parse(lsGet(ldKey('lib',tr))||'null'); return o&&typeof o==='object'?o:{}; }catch(e){ return {}; } }
+function ldFresh(tr){ const o=ldGet(tr); return !!(o&&o.day===hbDay()); }
+function ldSave(j,tr){ if(j&&j.pack&&typeof j.pack==='object'){ const o={day:j.day,at:j.at,model:hbTx(j.model,40),track:tr,pack:j.pack,methods:Array.isArray(j.methods_of_day)?j.methods_of_day.slice(0,2):[],src:(Array.isArray(j.sources)?j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,10)};
+    const prev=ldGet(tr); if(!prev||Date.parse(o.at||0)>=Date.parse(prev.at||0)) lsSet(ldKey('ld',tr),JSON.stringify(o)); }
+  if(j&&j.lib&&typeof j.lib==='object') lsSet(ldKey('lib',tr),JSON.stringify(j.lib)); }
+function ldFetch(tr){ if(ldBusy) return ldBusy; if(!navigator.onLine) return Promise.resolve({err:'off'});
+  ldBusy=(async()=>{ try{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+      if(!caps||caps.v<12) return {old:true};
+      const r=await fetch(API_BASE+'/api/mk/learnday',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,track:tr})}); const j=await r.json().catch(()=>({}));
+      if(j&&j.pending){ if(j.last) ldSave(Object.assign({},j.last,{lib:j.lib}),tr); else if(j.lib) ldSave({lib:j.lib},tr); return {pending:true}; }
+      if(!r.ok||!j||!j.pack){ if(j&&(j.last||j.lib)) ldSave(Object.assign({},j.last||{},{lib:j.lib}),tr); return {err:j&&j.error||'x'}; }
+      ldSave(j,tr); return {ok:true}; }
+    catch(e){ return {err:'x'}; } finally{ ldBusy=null; } })(); return ldBusy; }
+function ldOn(){ const t=bpTop(); return hbOn()&&t&&t.tab==='learn'; }
+function ldDraw(){ if(!ldOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop; hbPaneDraw('learn'); m.scrollTop=y; }
+function ldKick(){ const tr=ldTrack(); if(ldFresh(tr)||ldBusy) return; clearTimeout(ldPollT); ldState='load'; ldDraw();
+  ldFetch(tr).then(r=>{ if(tr!==ldTrack()) return; ldState=r.ok?'':r.pending?'pend':r.old?'old':'err'; ldDraw();
+    if(r.pending&&ldOn()) ldPollT=setTimeout(()=>{ if(ldOn()) ldKick(); },20000); }); }
+
+/* ---------- вид ---------- */
+function ldQuizHTML(q,id){ return `<div class="hb-quiz1" data-ldqz="${id}"><p><b>${esc(q.q)}</b></p>${q.options.map((o,i)=>`<button type="button" class="hb-qo" data-hbldq="${id}:${i}">${esc(o)}</button>`).join('')}<p class="bp-hint hb-qwhy" hidden></p></div>`; }
+function ldMethodHTML(x){ return `<details class="hb-m"><summary><b>${esc(x.name)}</b><small>${esc(x.what)}</small></summary>${x.when?`<p><b>${L.hbLDWhen}:</b> ${esc(x.when)}</p>`:''}<ol class="hb-steps">${(x.steps||[]).map(s=>`<li><span>${esc(s)}</span></li>`).join('')}</ol>${x.example?`<p class="hb-ex">${ico('bulb',14)} ${esc(x.example)}</p>`:''}${x.mistake?`<p class="m">${ico('warn',14)} ${esc(x.mistake)}</p>`:''}</details>`; }
+function ldCaseHTML(c){ return `<div class="hb-case"><b>${esc(c.company)}</b>${c.country?`<small>${esc(c.country)}</small>`:''}<p>${esc(c.story)}</p>${c.result?`<p><b>${L.hbLDResult}:</b> ${esc(c.result)}</p>`:''}<p class="hb-ex">${ico('sparkle',14)} ${esc(c.lesson)}</p>${c.src?`<a class="hb-src1" href="${esc(c.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}</div>`; }
+function ldSecretHTML(x,i){ return `<div class="hb-tip hb-sec">${i!=null?`<em class="hb-n">${i+1}</em>`:''}<div><b>${esc(x.title)}</b><p>${esc(x.text)}</p>${x.why?`<small>${esc(x.why)}</small>`:''}${x.src?` <a class="hb-src1" href="${esc(x.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}</div></div>`; }
+function ldTermHTML(x){ return `<div class="hb-term"><b>${esc(x.term)}</b><p>${esc(x.meaning)}</p>${x.example?`<small>${esc(x.example)}</small>`:''}</div>`; }
+function ldMistHTML(x){ return `<div class="hb-mist"><b>${ico('warn',16)} ${esc(x.title)}</b>${x.text?`<p>${esc(x.text)}</p>`:''}<p class="hb-fix">${ico('check',14)} ${esc(x.fix)}</p></div>`; }
+function ldPackHTML(o){ const p=o.pack, h=hbSt(), dk=o.day+':'+o.track, done=!!(h.ldDone&&h.ldDone[dk]), nDone=Object.keys(h.ldDone||{}).length;
+  const ls=(p.lessons||[]).map((x,i)=>`<button type="button" class="hb-lesson" data-hbldl="${i}"><span class="hb-li">${ico(['sparkle','chart','flag'][i]||'sparkle',20)}</span><span><small>${esc(L.hbLDLk[i]||'')} · ${esc(L.hbAreaL[x.area]||L.hbLDArea[x.area]||'')}</small><b>${esc(x.title)}</b><em>${esc(x.lead)}</em></span>${ico('next',18)}</button>`).join('');
+  const task=p.task?`<section class="id-sec hb-task ${done?'done':''}"><h4>${ico('edit',18)} ${L.hbLDTask} <small>${esc(L.hbLDMin(Math.round(p.task.minutes||20)))}</small></h4><b>${esc(p.task.title)}</b><p>${esc(p.task.text)}</p>
+      <button type="button" class="btn ${done?'btn-primary':'btn-ghost'} hb-done" data-hbtask="${esc(dk)}" aria-pressed="${done}">${ico('check',16)} ${L.hbLDDone}</button>${nDone?`<small class="bp-mu">${esc(L.hbLDDoneN(nDone))}</small>`:''}</section>`:'';
+  const qz=(p.quiz||[]).length?bpSec('check',L.hbLDQuiz,p.quiz.map((q,i)=>ldQuizHTML(q,'d'+i)).join('')):'';
+  const src=o.src&&o.src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(o.src.length)}</summary><div class="id-src">${o.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:'';
+  return `${ls?`<div class="hb-lds">${ls}</div>`:''}
+    ${bpSec('bulb',L.hbLDSecrets,(p.secrets||[]).map((x,i)=>ldSecretHTML(x,i)).join(''))}
+    ${bpSec('stats',L.hbLDMethods,(p.methods||[]).map(ldMethodHTML).join(''))}
+    ${p.case?bpSec('flag',L.hbLDCase,ldCaseHTML(p.case)):''}
+    ${bpSec('doc',L.hbLDTerms,(p.terms||[]).map(ldTermHTML).join(''))}
+    ${bpSec('warn',L.hbLDMist,(p.mistakes||[]).map(ldMistHTML).join(''))}
+    ${task}${qz}
+    ${p.book?`<section class="id-sec hb-book"><h4>${ico('doc',18)} ${L.hbLDBook}</h4><p>${esc(p.book.idea)}</p><small>${esc(p.book.title)}${p.book.author?' — '+esc(p.book.author):''}</small></section>`:''}${src}`; }
+function ldLibHTML(){ const h=hbSt(), lib=ldLib(), cnt=LD_LIBK.map(k=>(lib[k]||[]).length), all=cnt.reduce((a,b)=>a+b,0), k=LD_LIBK.includes(h.libK)?h.libK:(LD_LIBK.find((x,i)=>cnt[i])||'secrets'), arr=lib[k]||[], P=Math.max(10,+h.libP||10);
+  const item=(x,i)=>k==='secrets'?ldSecretHTML(x):k==='methods'?ldMethodHTML(x):k==='cases'?ldCaseHTML(x):k==='terms'?ldTermHTML(x):k==='mistakes'?ldMistHTML(x)
+    :`<button type="button" class="bp-mine" data-hblibl="${i}">${ico('sparkle',18)}<span><b>${esc(x.title)}</b><small>${esc(x.lead||'')}</small></span>${ico('next',18)}</button>`;
+  return `<section class="id-sec hb-lib"><h4>${ico('folder',18)} ${L.hbLib}${all?` <small>${esc(L.hbLibN(all))}</small>`:''}</h4>
+    ${all?`<div class="chips hb-scroll">${LD_LIBK.map((x,i)=>cnt[i]?`<button type="button" class="chip ${x===k?'on':''}" data-hblib="${x}">${L.hbLibK[x]} <small>${cnt[i]}</small></button>`:'').join('')}</div>
+    <div class="hb-libl">${arr.slice(0,P).map(item).join('')}</div>${arr.length>P?`<button type="button" class="hb-more" data-hblibmore="1">${L.hbMore(Math.min(10,arr.length-P))}</button>`:''}`:`<p class="bp-hint">${L.hbLibEmpty}</p>`}</section>`; }
+function ldHeadHTML(){ const tr=ldTrack(), o=ldGet(tr), fresh=ldFresh(tr), st=ldState;
+  const meta=o?`${esc(fmtDate(parseYmd(o.day)||new Date()))}${o.model?' · '+esc(L.hbModel(o.model)):''}`:'';
+  const note=!o?(st==='old'?L.hbOld10:st==='err'?L.hbLDErr:L.hbLDWait):(!fresh?(st==='err'?L.hbLDErr:L.hbLDOld):'');
+  return `<section class="hb-ldh"><div class="hb-hero-top"><span class="hb-li">${ico('sparkle',20)}</span><div><b>${L.hbLDT}</b>${meta?`<small>${meta}</small>`:''}</div>${o&&!fresh&&(st==='load'||st==='pend')?`<em class="hb-old">${L.hbUpdating}</em>`:''}</div>
+    <div class="hb-ldfor">${L.hbLDFor}</div><div class="chips hb-scroll" role="radiogroup">${LD_TRACKS.map(k=>`<button type="button" class="chip ${k===tr?'on':''}" role="radio" aria-checked="${k===tr}" data-hbtrack="${k}">${L.hbTrackN[k]}</button>`).join('')}</div>
+    ${note?`<p class="bp-hint hb-ldn">${note}</p>`:''}${!o&&(st==='load'||st==='pend'||!st)?'<div class="hb-skel"><i></i><i></i><i></i></div>':''}${!o&&(st==='err')?`<button type="button" class="gp-mini" data-hbldre="1">${ico('repeat',14)} ${L.idRetry}</button>`:''}</section>`; }
+{ const _lh=hbLearnHTML; hbLearnHTML=function(){ const h=hbSt(), o=ldGet(), base=_lh();
+    /* из старой вкладки берём вопрос, инструменты, книги и архив; темы — с кнопкой «Все темы» */
+    const div=document.createElement('div'); div.innerHTML=base; div.querySelectorAll(':scope > .hb-lesson').forEach(e=>e.remove());
+    const secs=[...div.querySelectorAll(':scope > section')], ask=secs.find(s=>s.classList.contains('hb-ask')), topics=secs.find(s=>s.querySelector('.hb-topics')), rest=secs.filter(s=>s!==ask&&s!==topics);
+    if(topics){ const all=!!h.topAll; topics.querySelectorAll('.hb-topic').forEach((b,i)=>{ if(!all&&i>=8) b.hidden=true; }); topics.insertAdjacentHTML('beforeend',`<button type="button" class="hb-more" data-hbtopics="1">${all?L.hbLess:L.hbAllTopics(HB_TOPICS.length)}</button>`); }
+    const t=hbToday(), dl=t&&t.lesson?`<button type="button" class="hb-lesson hb-l0" data-hblesson="${esc(t.day)}"><span class="hb-li">${ico('sun',20)}</span><span><small>${L.hbLessonT} · ${esc(L.hbAreaL[t.lesson.area]||'')}</small><b>${esc(t.lesson.title)}</b><em>${esc(t.lesson.lead)}</em></span>${ico('next',18)}</button>`:'';
+    return `${ldHeadHTML()}${o?ldPackHTML(o):''}${dl}${ask?ask.outerHTML:''}${ldLibHTML()}${topics?topics.outerHTML:''}${rest.map(s=>s.outerHTML).join('')}`; }; }
+{ const _t=hbTab; hbTab=function(k){ _t(k); if(k==='learn') ldKick(); }; }
+{ const _r=hbR; hbR=function(m,foot){ _r(m,foot); if(bpTop().tab==='learn') setTimeout(ldKick,40); }; }
+{ const _b=hbBind; hbBind=function(m){ _b(m); const prev=m.onclick; m.onclick=e=>{ const b=e.target.closest('button'); const d=b&&m.contains(b)?b.dataset:null, h=hbSt();
+    if(d){ if(d.hbtrack){ h.track=d.hbtrack; persist(); ldState=''; ldDraw(); ldKick(); return; }
+      if(d.hbldre){ ldState=''; ldKick(); return; }
+      if(d.hbldl!=null){ bpGo('learn',{ld:+d.hbldl,track:ldTrack()}); return; }
+      if(d.hblibl!=null){ bpGo('learn',{lib:+d.hblibl,track:ldTrack()}); return; }
+      if(d.hblib){ h.libK=d.hblib; h.libP=10; ldDraw(); return; }
+      if(d.hblibmore){ h.libP=(+h.libP||10)+10; ldDraw(); return; }
+      if(d.hbtopics){ h.topAll=!h.topAll; ldDraw(); return; }
+      if(d.hbtask){ h.ldDone=h.ldDone||{}; if(h.ldDone[d.hbtask]) delete h.ldDone[d.hbtask]; else h.ldDone[d.hbtask]=1; const ks=Object.keys(h.ldDone); if(ks.length>400) ks.slice(0,ks.length-400).forEach(k=>delete h.ldDone[k]); persist(); ldDraw(); if(h.ldDone[d.hbtask]) toast(L.hbLDDoneOk); return; }
+      if(d.hbldq){ const [id,oi]=d.hbldq.split(':'), o=ldGet(), q=o&&o.pack.quiz&&o.pack.quiz[+id.slice(1)], box=b.closest('[data-ldqz]'); if(!q||!box) return; const ok=+oi===q.correct;
+        box.querySelectorAll('[data-hbldq]').forEach(x=>{ const k=+x.dataset.hbldq.split(':')[1]; x.classList.toggle('ok',k===q.correct); x.classList.toggle('bad',k===+oi&&!ok); x.disabled=true; });
+        const w=box.querySelector('.hb-qwhy'); w.hidden=false; w.textContent=(ok?L.hbRight:L.hbWrong)+(q.why?' '+q.why:''); return; } }
+    prev&&prev(e); }; }; }
+{ const _lr=hbLearnR; hbLearnR=function(m,foot,a){ if(!a||(a.ld==null&&a.lib==null)){ _lr(m,foot,a); return; }
+    const tr=LD_TRACKS.includes(a.track)?a.track:'general', o=ldGet(tr), x=a.ld!=null?o&&o.pack.lessons[a.ld]:(ldLib(tr).lessons||[])[a.lib];
+    BPG.el.querySelector('#bpg-t').textContent=L.hbLearnT; foot.hidden=false;
+    foot.innerHTML=`<div class="bp-acts two"><button type="button" class="btn btn-ghost" id="hb-lask">${ico('chat',16)} ${L.hbAskSifra}</button><button type="button" class="btn btn-ghost" id="hb-lplan">${ico('doc',16)} ${L.hbToPlan}</button></div>`;
+    foot.querySelector('#hb-lplan').onclick=()=>hbToPlan('new');
+    if(!x){ m.innerHTML=`<p class="bp-hint">${L.hbNoLesson}</p>`; foot.querySelector('#hb-lask').onclick=()=>{ bpClose(); setTimeout(()=>{ try{ sifraOpen(''); }catch(e){} },90); }; return; }
+    foot.querySelector('#hb-lask').onclick=()=>{ bpClose(); setTimeout(()=>{ try{ sifraOpen(x.title); }catch(e){} },90); };
+    const g={title:x.title,lead:x.lead,steps:(x.points||[]).map(p=>({t:'',d:p})),example:x.example,task:x.task,quiz:x.quiz||null};
+    m.innerHTML=hbGuideHTML(g,a.ld!=null?o.src:[],esc((a.ld!=null?L.hbLDT:L.hbLib)+' · '+(L.hbAreaL[x.area]||L.hbLDArea[x.area]||'')));
+    m.onclick=e=>{ const b=e.target.closest('[data-hbq]'); if(!b||!g.quiz) return; const i=+b.dataset.hbq, ok=i===g.quiz.correct;
+      m.querySelectorAll('[data-hbq]').forEach(z=>{ const k=+z.dataset.hbq; z.classList.toggle('ok',k===g.quiz.correct); z.classList.toggle('bad',k===i&&!ok); z.disabled=true; });
+      const w=m.querySelector('.hb-qwhy'); if(w){ w.hidden=false; w.textContent=(ok?L.hbRight:L.hbWrong)+(g.quiz.why?' '+g.quiz.why:''); } }; }; }
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
