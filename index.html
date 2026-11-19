@@ -2333,6 +2333,11 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .hb-fx i{background:rgba(255,255,255,.14); color:#fff; font-family:var(--font-num);}
 .hb-hero .gp-mini{position:relative; z-index:1; margin-top:12px; background:rgba(255,255,255,.16); color:#fff; border-color:transparent;}
 .hb-hero.wait small{opacity:.9;}
+.hb-upd{position:relative; z-index:1; display:inline-flex; align-items:center; gap:7px; margin-top:12px; min-height:44px; padding:0 16px; border:0; border-radius:99px; background:rgba(255,255,255,.18); color:#fff; font:inherit; font-weight:800; font-size:.86rem; cursor:pointer;}
+.hb-upd:focus-visible{outline:3px solid #fff; outline-offset:2px;}
+.hb-upd[disabled]{cursor:default; opacity:.85;}
+.hb-upd.busy svg{animation:bpSpin 1s linear infinite;}
+@media (prefers-reduced-motion:reduce){.hb-upd.busy svg{animation:none;}}
 .hb-skel{position:relative; z-index:1; display:grid; gap:7px; margin-top:14px;}
 .hb-skel i{display:block; height:10px; border-radius:6px; background:linear-gradient(90deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.3) 50%,rgba(255,255,255,.12) 100%); background-size:200% 100%; animation:hbShim 1.4s linear infinite;}
 .hb-skel i:nth-child(2){width:86%;} .hb-skel i:nth-child(3){width:62%;}
@@ -5582,7 +5587,7 @@ for(const k of ['ru','tg','en']) Object.assign(D[k],M21S[k]);
 const HB_MODEL=m=>/fable/.test(m)?'Claude Fable 5.2':/opus/.test(m)?'Claude Opus 5.5':/sonnet/.test(m)?'Claude Sonnet 5.5':'Claude';
 const HB_TABI={today:'sun',calc:'cash',ideas:'bulb',plan:'doc',learn:'sparkle'};
 const M23S={
-ru:{ hbSub:'Рынок дня, идеи, расчёт и обучение', hbT:'Деньги и бизнес', hbDayT:'Рынок дня', hbUpd:t=>'обновлён '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'обновляется…', hbStale:'вчерашние данные',
+ru:{ hbUpdBtn:'Обновить', hbUpdOk:'Рынок дня обновлён', hbRecent:(m,w)=>'Рынок обновлён '+m+' мин назад — обновить снова можно через '+w+' мин.', hbUpdLimit:'На сегодня обновлений достаточно — завтра снова.', hbNext:t=>'следующее в '+t, hbNextT:'следующее — завтра', hbSub:'Рынок дня, идеи, расчёт и обучение', hbT:'Деньги и бизнес', hbDayT:'Рынок дня', hbUpd:t=>'обновлён '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'обновляется…', hbStale:'данные не самые свежие',
   hbLoading:'Сифра собирает рынок дня: наценки, тренды, идеи, советы. Это 1–3 минуты один раз в день — пока можно посчитать по обычным цифрам.', hbOld10:'Сервер Mira ещё старый — залейте новый mira-api.zip в Cloudflare, и здесь появится рынок дня.', hbErr:'Не получилось обновить рынок дня.', hbSom:'с.',
   hbTabN:{today:'Сегодня',calc:'Расчёт',ideas:'Идеи',plan:'План',learn:'Учиться'}, hbTabI:HB_TABI,
   hbSer:{lo:'осторожно',ex:'обычно',hi:'удачно'}, hbGoal:'Цель', hbChartL:'Сколько денег в деле по месяцам', hbChartHint:'Проведите пальцем по графику — увидите любой месяц.', hbInM:n=>'через '+n+' мес.',
@@ -5623,7 +5628,7 @@ ru:{ hbSub:'Рынок дня, идеи, расчёт и обучение', hbT:
   hbQuizT:'Проверьте себя', hbStepsT:'По шагам', hbNumsT:'Ориентиры в цифрах', hbExampleT:'Пример', hbTaskT:'Сделайте сегодня', hbTipsG:'Советы', hbMistT:'Частые ошибки', hbToolsG:'Что поможет', hbReadT:'Что почитать',
   hbLearnT:'Учиться', hbAskSifra:'Спросить Сифру', hbNoLesson:'Этого урока уже нет на телефоне.', hbYourQ:'Ваш вопрос', hbLearnWait:'Сифра готовит урок…', hbLearnWait2:'До минуты: ищет свежие данные и примеры.',
   hbLearnErr:'Не получилось подготовить урок. Проверьте интернет.', hbRight:'Верно!', hbWrong:'Не совсем.' },
-tg:{ hbSub:'Бозори рӯз, ғояҳо, ҳисоб ва омӯзиш', hbT:'Пул ва тиҷорат', hbDayT:'Бозори рӯз', hbUpd:t=>'навсозӣ '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'нав мешавад…', hbStale:'маълумоти дирӯз',
+tg:{ hbUpdBtn:'Нав кардан', hbUpdOk:'Бозори рӯз нав шуд', hbRecent:(m,w)=>'Бозор '+m+' дақиқа пеш нав шуд — боз баъди '+w+' дақиқа нав кардан мумкин.', hbUpdLimit:'Барои имрӯз навсозӣ кифоя аст — пагоҳ боз.', hbNext:t=>'навбатӣ соати '+t, hbNextT:'навбатӣ — пагоҳ', hbSub:'Бозори рӯз, ғояҳо, ҳисоб ва омӯзиш', hbT:'Пул ва тиҷорат', hbDayT:'Бозори рӯз', hbUpd:t=>'навсозӣ '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'нав мешавад…', hbStale:'маълумот навтарин нест',
   hbLoading:'Сифра бозори рӯзро ҷамъ мекунад: фоида, тамоюлҳо, ғояҳо, маслиҳатҳо. Ин 1–3 дақиқа, як бор дар рӯз — ҳоло бо рақамҳои муқаррарӣ ҳисоб кардан мумкин.', hbOld10:'Сервери Mira ҳанӯз кӯҳна аст — mira-api.zip-и навро ба Cloudflare бор кунед, ва бозори рӯз пайдо мешавад.', hbErr:'Бозори рӯз нав нашуд.', hbSom:'с.',
   hbTabN:{today:'Имрӯз',calc:'Ҳисоб',ideas:'Ғояҳо',plan:'Нақша',learn:'Омӯзиш'}, hbTabI:HB_TABI,
   hbSer:{lo:'бо эҳтиёт',ex:'одатан',hi:'бомуваффақият'}, hbGoal:'Ҳадаф', hbChartL:'Пул дар кор моҳ ба моҳ', hbChartHint:'Ангуштро аз рӯи график гузаронед — ҳар моҳро мебинед.', hbInM:n=>'баъди '+n+' моҳ',
@@ -5664,7 +5669,7 @@ tg:{ hbSub:'Бозори рӯз, ғояҳо, ҳисоб ва омӯзиш', hbT:
   hbQuizT:'Худро санҷед', hbStepsT:'Қадам ба қадам', hbNumsT:'Нишондиҳандаҳо', hbExampleT:'Мисол', hbTaskT:'Имрӯз иҷро кунед', hbTipsG:'Маслиҳатҳо', hbMistT:'Хатоҳои маъмул', hbToolsG:'Чӣ кӯмак мекунад', hbReadT:'Чӣ хондан',
   hbLearnT:'Омӯзиш', hbAskSifra:'Аз Сифра пурсидан', hbNoLesson:'Ин дарс дигар дар телефон нест.', hbYourQ:'Саволи шумо', hbLearnWait:'Сифра дарс тайёр мекунад…', hbLearnWait2:'То як дақиқа: маълумот ва мисолҳои нав меҷӯяд.',
   hbLearnErr:'Дарс тайёр нашуд. Интернетро санҷед.', hbRight:'Дуруст!', hbWrong:'На он қадар.' },
-en:{ hbSub:'Market of the day, ideas, calculator, learning', hbT:'Money & business', hbDayT:'Market of the day', hbUpd:t=>'updated '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'updating…', hbStale:'yesterday’s data',
+en:{ hbUpdBtn:'Refresh', hbUpdOk:'Market of the day updated', hbRecent:(m,w)=>'Updated '+m+' min ago — you can refresh again in '+w+' min.', hbUpdLimit:'Enough refreshes for today — try tomorrow.', hbNext:t=>'next at '+t, hbNextT:'next — tomorrow', hbSub:'Market of the day, ideas, calculator, learning', hbT:'Money & business', hbDayT:'Market of the day', hbUpd:t=>'updated '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'updating…', hbStale:'not the latest data',
   hbLoading:'Sifra is gathering today’s market: markups, trends, ideas, tips. It takes 1–3 minutes once a day — meanwhile you can calculate with the usual numbers.', hbOld10:'The Mira server is still the old one — upload the new mira-api.zip to Cloudflare and the market of the day will appear here.', hbErr:'Could not update the market of the day.', hbSom:'TJS',
   hbTabN:{today:'Today',calc:'Calculate',ideas:'Ideas',plan:'Plan',learn:'Learn'}, hbTabI:HB_TABI,
   hbSer:{lo:'cautious',ex:'usual',hi:'lucky'}, hbGoal:'Goal', hbChartL:'Money in the business by month', hbChartHint:'Slide your finger along the chart to see any month.', hbInM:n=>'in '+n+' mo.',
@@ -13306,32 +13311,38 @@ function hbSt(){ state.misc=state.misc||{}; let h=state.misc.hub; if(!h||typeof 
   if(!h.calc||typeof h.calc!=='object') h.calc={}; if(!Array.isArray(h.arch)) h.arch=[]; if(!h.learn||typeof h.learn!=='object') h.learn={}; if(!Array.isArray(h.saved)) h.saved=[]; if(!h.f) h.f={kind:'all',bud:0}; return h; }
 function hbDay(){ return new Date(Date.now()+5*3600e3).toISOString().slice(0,10); }
 function hbToday(){ const t=hbSt().today; return t&&t.lang===lang?t:null; }
-function hbFresh(){ const t=hbToday(); return !!(t&&t.day===hbDay()); }
+function hbFresh(){ const t=hbToday(); if(!t) return false; const nx=Date.parse(t.next||''); return Number.isFinite(nx)?Date.now()<nx:t.day===hbDay(); }
+function hbHM(iso){ const d=new Date(iso); return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); }
 const hbTx=(v,n)=>String(v==null?'':v).replace(/<[^>]*>/g,'').slice(0,n||300);
 const hbF1=v=>fx(v,Math.round(v*10)%10?1:0);
 const hbNum=(v,a,b)=>{ const x=+v; return Number.isFinite(x)?Math.max(a,Math.min(b,x)):null; };
 function hbSave(j){ const h=hbSt(), A=(a,n)=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x==='object').slice(0,n);
   const t={day:/^\d{4}-\d\d-\d\d$/.test(j.day||'')?j.day:hbDay(),at:typeof j.at==='string'?j.at:new Date().toISOString(),lang,model:hbTx(j.model,40),summary:hbTx(j.summary,600),fx:j.fx&&typeof j.fx==='object'?j.fx:null,
     cats:A(j.cats,13).filter(x=>IV_CATS.includes(x.id)),new_cats:A(j.new_cats,8),trends:A(j.trends,8),ideas:A(j.ideas,12),tips:A(j.tips,4),watch:A(j.watch,5),
-    lesson:j.lesson&&typeof j.lesson==='object'?j.lesson:null,country:j.country&&typeof j.country==='object'?j.country:null,
+    next:typeof j.next==='string'?j.next:'',lesson:j.lesson&&typeof j.lesson==='object'?j.lesson:null,country:j.country&&typeof j.country==='object'?j.country:null,
     src:A(j.sources,20).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>({url:String(x.url).slice(0,300),title:hbTx(x.title,90)}))};
   h.today=t;
-  if(t.lesson||t.country) { h.arch=[{day:t.day,lang,lesson:t.lesson,country:t.country,tips:t.tips,ideas:t.ideas.slice(0,6)}].concat(h.arch.filter(a=>!(a.day===t.day&&a.lang===lang))).slice(0,30); }
+  if(t.lesson||t.country) { const o=h.arch.find(a=>a.day===t.day&&a.lang===lang), oi=o&&Array.isArray(o.ideas)?o.ideas.filter(x=>x&&!t.ideas.some(y=>y.title===x.title)):[];
+    h.arch=[{day:t.day,lang,lesson:t.lesson,country:t.country,tips:t.tips,ideas:t.ideas.slice(0,6).concat(oi).slice(0,12)}].concat(h.arch.filter(a=>!(a.day===t.day&&a.lang===lang))).slice(0,30); }
   /* те же данные — в старый подробный расчёт */
   const cl=(v,a)=>Math.max(-a,Math.min(a,Math.round(+v||0))), cp=j.compat||{};
   state.misc.mkt={day:ymd(new Date()),slot:mkSlot(),at:t.at,sday:t.day,lang,sum:hbTx(t.summary,320),
     cats:(Array.isArray(cp.cats)?cp.cats:[]).filter(x=>x&&IV_CATS.includes(x.id)).slice(0,13).map(x=>({id:x.id,demand:['hot','cold'].includes(x.demand)?x.demand:'normal',mk:cl(x.mk,40),buy:cl(x.buy,25),note:hbTx(x.note,200)})),
     routes:(Array.isArray(cp.routes)?cp.routes:[]).filter(x=>x&&IV_C.includes(x.c)).slice(0,4).map(x=>({c:x.c,cargo:cl(x.cargo,30),days:Math.max(0,Math.min(30,Math.round(+x.days||0))),note:hbTx(x.note,200)})),src:t.src.slice(0,6)};
   try{ ivMemo.clear(); }catch(e){} persist(); }
-function hbFetch(){ if(hbBusy) return hbBusy; if(!navigator.onLine) return Promise.resolve({err:'off'});
+function hbFetch(force){ if(hbBusy) return hbBusy; if(!navigator.onLine) return Promise.resolve({err:'off'});
   hbBusy=(async()=>{ try{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
       if(!caps||caps.v<10) return {old:true};
-      const r=await fetch(API_BASE+'/api/mk/today',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang})}); const j=await r.json().catch(()=>({}));
-      if(j&&j.pending) return {pending:true}; if(!r.ok||!j||!j.summary) return {err:j&&j.error||'x'}; hbSave(j); return {ok:true}; }
+      const r=await fetch(API_BASE+'/api/mk/today',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(force?{id:mkId(),lang,force:true}:{id:mkId(),lang})}); const j=await r.json().catch(()=>({}));
+      const keep=x=>{ if(x&&x.summary&&(!hbToday()||Date.parse(x.at||0)>Date.parse(hbToday().at||0))) hbSave(Object.assign({},x,{next:new Date(0).toISOString()})); };
+      if(j&&j.pending){ keep(j.last); return {pending:true}; } if(!r.ok&&j&&j.last) keep(j.last); if(!r.ok||!j||!j.summary) return {err:j&&j.error||'x'}; hbSave(j); return j.recent?{ok:true,recent:true}:{ok:true}; }
     catch(e){ return {err:'x'}; } finally{ hbBusy=null; } })(); return hbBusy; }
-function hbKick(){ if(hbFresh()||hbBusy) return; clearTimeout(hbPollT); hbState='load'; hbHeroDraw();
-  hbFetch().then(r=>{ hbState=r.ok?'':r.pending?'pend':r.old?'old':'err'; if(r.ok){ hbRedraw(); return; } hbHeroDraw();
-    if(r.pending&&hbOn()) hbPollT=setTimeout(()=>{ if(hbOn()) hbKick(); },20000); }); }
+function hbKick(force){ if((!force&&hbFresh())||hbBusy) return; clearTimeout(hbPollT); hbState='load'; hbHeroDraw();
+  hbFetch(force).then(r=>{ const had=!!hbToday(); hbState=r.ok?'':r.pending?'pend':r.old?'old':(force&&had?'':'err'); if(r.ok){ hbRedraw(); if(force) toast(L.hbUpdOk); return; } hbHeroDraw();
+    if(force&&!r.pending) toast(r.err==='limit'?L.hbUpdLimit:r.old?L.hbOld10:L.hbErr);
+    if(r.pending&&hbOn()) hbPollT=setTimeout(()=>{ if(hbOn()) hbKick(force); },20000); }); }
+/* «Обновить» вручную: не чаще раза в 20 минут (сервер считает так же и для всех сразу) */
+function hbManual(){ const t=hbToday(); if(t){ const m=Math.max(0,Math.round((Date.now()-Date.parse(t.at||0))/60e3)); if(m<20){ toast(L.hbRecent(m,Math.max(1,20-m))); return; } } hbKick(true); }
 function hbOn(){ const t=bpTop(); return bpOpenNow()&&t&&t.name==='hub'; }
 function hubOpen(tab){ bpGo('hub'); const t=bpTop(); if(t&&tab) t.tab=tab; if(tab) bpRender(); }
 
@@ -13421,8 +13432,9 @@ function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(
 function hbHeroHTML(){ const t=hbToday(), fresh=hbFresh(), st=hbState;
   if(!t) return `<section class="hb-hero wait"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.hbDayT}</b><small>${st==='old'?L.hbOld10:st==='err'?L.hbErr:L.hbLoading}</small></div></div>${st==='err'?`<button type="button" class="gp-mini" data-hbre1="1">${ico('repeat',14)} ${L.idRetry}</button>`:'<div class="hb-skel"><i></i><i></i><i></i></div>'}</section>`;
   const fx0=t.fx||{}, fxc=[['usd','$'],['cny','¥'],['rub','₽'],['try','₺'],['aed','AED'],['kzt','₸']].filter(([k])=>+fx0[k]>0).map(([k,s])=>`<i>1 ${s} = ${fx(+fx0[k],+fx0[k]<0.1?3:2)} ${L.hbSom}</i>`).join('');
-  return `<section class="hb-hero"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.hbDayT}</b><small>${esc(L.hbUpd(bpTime(t.at)))}${t.model?' · '+esc(L.hbModel(t.model)):''}</small></div>${fresh?'':`<em class="hb-old">${st==='load'||st==='pend'?L.hbUpdating:L.hbStale}</em>`}</div>
-    <p>${esc(t.summary)}</p>${fxc?`<div class="lv-tags hb-fx">${fxc}</div>`:''}</section>`; }
+  return `<section class="hb-hero"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.hbDayT}</b><small>${esc(L.hbUpd(bpTime(t.at)))}${t.model?' · '+esc(L.hbModel(t.model)):''}${fresh&&t.next?' · '+esc(new Date(t.next).toDateString()===new Date().toDateString()?L.hbNext(hbHM(t.next)):L.hbNextT):''}</small></div>${fresh?'':`<em class="hb-old">${st==='load'||st==='pend'?L.hbUpdating:L.hbStale}</em>`}</div>
+    <p>${esc(t.summary)}</p>${fxc?`<div class="lv-tags hb-fx">${fxc}</div>`:''}
+    <button type="button" class="hb-upd ${st==='load'||st==='pend'?'busy':''}" data-hbupd="1" ${st==='load'||st==='pend'?'disabled':''}>${ico('repeat',16)} ${st==='load'||st==='pend'?L.hbUpdating:L.hbUpdBtn}</button></section>`; }
 function hbHeroDraw(){ if(!hbOn()) return; const e=BPG.el.querySelector('.hb-hero'); if(e) e.outerHTML=hbHeroHTML(); }
 function hbTodayHTML(){ const t=hbToday(), h=hbSt(), rows=hbSorted(t), max=Math.max(1,...rows.map(r=>h.sort==='speed'?1/r.m:h.sort==='year'?hbYear(r):r.mk)), sort=h.sort||'mk', open=h.openRow;
   const fm=v=>fx(v,Math.round(v*10)%10?1:0), val=r=>sort==='speed'?L.hbMo(fm(r.m)):sort==='year'?'+'+Math.round(hbYear(r))+'%':'+'+Math.round(r.mk)+'%', w=r=>Math.max(4,Math.round((sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk)/max*100));
@@ -13509,6 +13521,7 @@ function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`)
   m.onclick=e=>{ const b=e.target.closest('button,a'); if(!b||!m.contains(b)||b.tagName==='A') return; const d=b.dataset, h=hbSt();
     if(d.hbtab){ hbTab(d.hbtab); return; }
     if(d.hbre1){ hbState=''; hbKick(); return; }
+    if(d.hbupd){ hbManual(); return; }
     if(d.hbsort){ h.sort=d.hbsort; persist(); hbPaneDraw('today'); return; }
     if(d.hbrow){ h.openRow=h.openRow===d.hbrow?'':d.hbrow; const m2=BPG.el.querySelector('#bpg-m'), y=m2.scrollTop; hbPaneDraw('today'); m2.scrollTop=y; const el=BPG.el.querySelector(`[data-hbrow="${CSS.escape(d.hbrow)}"]`); if(el&&h.openRow) el.focus({preventScroll:true}); return; }
     if(d.hbcalc){ h.calc.cat=d.hbcalc; persist(); hbTab('calc'); return; }
