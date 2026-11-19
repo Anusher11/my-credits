@@ -6077,6 +6077,7 @@ M25S.tg.lxBk={}; M25S.tg.lxUni={};
 for(const k in M25S.en.lxBk){ const e=M25S.en.lxBk[k], r=M25S.ru.lxBk[k]; M25S.tg.lxBk[k]=[e[0],r[1],r[2],r[3]]; }
 for(const k in M25S.en.lxUni){ const r=M25S.ru.lxUni[k]; M25S.tg.lxUni[k]=r.slice(); }
 for(const k of ['ru','tg','en']){ Object.assign(D[k],M25S[k]); D[k].hbLibK=Object.assign({},D[k].hbLibK||{},M25S[k].hbLibK2); }
+Object.assign(D.ru,{sfActPlan:x=>'Открыть бизнес-план'+(x?': '+x:'')}); Object.assign(D.tg,{sfActPlan:x=>'Нақшаи тиҷоратиро кушодан'+(x?': '+x:'')}); Object.assign(D.en,{sfActPlan:x=>'Open a business plan'+(x?': '+x:'')});
 
 
 
@@ -11501,6 +11502,7 @@ function sfMd(t){ const lines=esc(t).split('\n'); let h='', ul=false;
   if(ul) h+='</ul>'; return h; }
 const sfHost=u=>{ try{ return new URL(u).hostname.replace(/^www\./,''); }catch(e){ return ''; } };
 function sfActLabel(a){ const i=a.input||{};
+  if(a.name==='open_bplan') return '📋 '+L.sfActPlan(String(i.idea||'').slice(0,48));
   if(a.name==='open_invest') return '📊 '+L.sfActInvest(i.amount?((i.cur==='TJS'?money(+i.amount):ivUsd(+i.amount))):'', i.category&&L['whC_'+i.category]?L['whC_'+i.category]:'');
   if(a.name==='pay_loan'){ const ln=state.loans.find(l=>l.id===i.loan_id); return '💳 '+L.sfActPay(ln?ln.name:'', i.amount>0?money(+i.amount):''); }
   if(a.name==='add_loan') return '🏦 '+L.sfActLoan(i.name||'');
@@ -11585,7 +11587,7 @@ async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const 
   log.splice(0,Math.max(0,log.length-SF_KEEP)); persist();
   const last=log[log.length-1];
   const open=!!$('#sf-log')&&overlay.classList.contains('open'); if(open) sfRedraw();
-  const act=open&&last&&last.act&&last.act.name!=='open_invest';
+  const act=open&&last&&last.act&&!['open_invest','open_bplan'].includes(last.act.name);
   if(sfT){ sfT.said=1; sfCapShow(); if(act){ sfT.keep=1; sfT.act=1; }
     if(last&&last.t){ sfTalkSet('speak'); sfSay(last.t,()=>{ if(!sfT) return; if(last.err) sfTalkSet('idle'); else if(sfT.act){ sfT.spoke=1; if(sfT.actDone) sfTalkEnd(); } else if(sfTalkHere()) sfTalkListen(); else sfTalkEnd(); }); }
     else if(!act) sfTalkListen(); else sfT.spoke=1; }
@@ -11599,7 +11601,11 @@ function sfDo(a,manual){ const i=a.input||{}; const num=v=>+v>0?Math.round(+v):'
   else if(a.name==='add_loan'){ loanForm(null,{name:String(i.name||'').slice(0,60),note:'',total:num(i.total),paid:num(i.paid),monthly:num(i.monthly),dueDay:+i.due_day>=1&&+i.due_day<=31?Math.round(+i.due_day):'',gold:'',rate:+i.rate>0?+i.rate:'',term:num(i.term)}); toast(L.sfCheck); }
   else if(a.name==='record_day'){ dayForm(/^\d{4}-\d{2}-\d{2}$/.test(i.date||'')?i.date:undefined); fill('#dy-card',num(i.card)); fill('#dy-cash',num(i.cash)); toast(L.sfCheckA((+i.cash||0)+(+i.card||0)>0?money((+i.cash||0)+(+i.card||0)):'')); }
   else if(a.name==='add_expense'){ quickExpForm(CATS.includes(i.category)?i.category:'other'); fill('#qe-a',num(i.amount)); if(i.note) fill('#qe-n',String(i.note).slice(0,80)); toast(L.sfCheckA(num(i.amount)?money(num(i.amount)):'')); }
-  else if(a.name==='open_invest'){ const P=ivP(); if(+i.amount>0){ P.cap=Math.round(+i.amount); P.cur=i.cur==='TJS'?'TJS':'USD'; } if(IV_CATS.includes(i.category)) P.cat=i.category; persist(); investSheet(); }
+  else if(a.name==='open_invest'){ const P=ivP(); if(+i.amount>0){ P.cap=Math.round(+i.amount); P.cur=i.cur==='TJS'?'TJS':'USD'; } if(IV_CATS.includes(i.category)) P.cat=i.category;
+    const C=hbSt().calc; if(+i.amount>0) C.cap=Math.max(1,Math.round(i.cur==='TJS'?+i.amount/(usdRate()||10.9):+i.amount)); if(IV_CATS.includes(i.category)) C.cat=i.category; persist(); closeSheet(); setTimeout(()=>hubOpen('calc'),90); }
+  else if(a.name==='open_bplan'){ closeSheet(); setTimeout(()=>{ const f=bpDefForm(); f.touched={}; f.idea=String(i.idea||'').slice(0,700); if(i.place) f.place=String(i.place).slice(0,90);
+      if(+i.cap_usd>0){ f.cap=Math.round(+i.cap_usd); f.touched.cap=true; } if(+i.x>1){ const x=Math.round(+i.x*10)/10; if(BP_X.includes(x)) f.x=x; else { f.x=0; f.own=Math.round((f.cap||0)*x); } f.touched.x=true; }
+      if(+i.months>=1){ f.m=Math.min(120,Math.round(+i.months)); f.touched.m=true; } bpGo('form',f); },90); }
   else { const s=i.section; if(s==='invest'){ investSheet(); return; } closeSheet(); if(['today','loans','shop','money','more'].includes(s)) setTab(s); } }
 /* фото: товар, бирка, чек — уменьшаем в телефоне (до 1280 px), в историю кладём только маленькую копию */
 let sfImg=null;
