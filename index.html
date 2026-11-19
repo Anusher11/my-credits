@@ -2260,6 +2260,64 @@
 .bp-vt.go{color:var(--m-leaf);} .bp-vt.careful{color:#9A6B00;} .bp-vt.hard{color:#B4531F;} .bp-vt.no{color:#B4531F;}
 :root[data-theme="dark"] .bp-vt.careful{color:#FFD36B;}
 .bp-card:focus-visible,.bp-card-in:focus-visible,.bp-mine:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+/* v22: страница бизнес-плана на весь экран */
+html.bp-lock,html.bp-lock body{overflow:hidden;}
+.bp-page{position:fixed; inset:0; z-index:46; display:none; flex-direction:column; background:var(--bg); color:var(--ink);}
+.bp-page.open{display:flex; animation:bpIn .22s cubic-bezier(.2,.75,.2,1);}
+@keyframes bpIn{from{transform:translateX(24px); opacity:.6} to{transform:none; opacity:1}}
+@media (prefers-reduced-motion:reduce){.bp-page.open{animation:none;}}
+.bp-bar{flex:none; display:grid; grid-template-columns:48px minmax(0,1fr) 48px; align-items:center; gap:4px; padding:max(6px,env(safe-area-inset-top,0px)) 6px 6px; background:var(--surface); border-bottom:1px solid var(--line);}
+.bp-bar b{text-align:center; font-size:1rem; font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.bp-ib{width:48px; height:48px; display:grid; place-items:center; border:0; background:none; color:var(--ink); border-radius:14px; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.bp-ib:active{background:var(--surface-2);} .bp-ib:focus-visible{outline:3px solid var(--brand); outline-offset:-3px;}
+.bp-page .sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+.bp-main{flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; padding:16px 16px 28px; width:100%; max-width:640px; margin:0 auto;}
+.bp-foot{flex:none; padding:10px 16px max(10px,env(safe-area-inset-bottom,0px)); background:var(--surface); border-top:1px solid var(--line); width:100%;}
+.bp-foot>*{max-width:608px; margin-left:auto; margin-right:auto;}
+.bp-foot .bp-go{margin-top:0;}
+.bp-foot small{display:block; text-align:center; color:var(--muted); font-size:.76rem; font-weight:600; margin-top:6px; line-height:1.35;}
+.bp-foot .bp-go+.bp-go{margin-top:8px;}
+.bp-hero{margin-bottom:12px;} .bp-hero h2{margin:2px 0 4px; font-family:var(--font-num); font-size:1.3rem; font-weight:800;}
+.bp-hero p{margin:0; color:var(--muted); font-size:.88rem; line-height:1.45;}
+.bp-lab{display:block; font-weight:800; font-size:.92rem; margin:16px 0 8px;}
+.bp-idea,.bp-in{width:100%; box-sizing:border-box; font:inherit; font-size:1rem; line-height:1.45; color:var(--ink); background:var(--surface-2); border:1.5px solid var(--line); border-radius:16px; padding:12px 14px; resize:vertical;}
+.bp-idea{min-height:112px;} .bp-in{min-height:50px;}
+.bp-idea:focus,.bp-in:focus{outline:none; border-color:var(--brand); background:var(--surface);}
+.bp-idea.bad{border-color:#D9480F;}
+.bp-page .chips.bp-wrap{margin:10px 0 4px;}
+.bp-page .br-h{margin-top:16px;}
+.bp-row3{margin-top:16px;}
+.bp-more{margin:6px 0 0; border:1px solid var(--line); border-radius:16px; padding:0 14px; background:var(--surface);}
+.bp-more>summary{min-height:50px; display:flex; align-items:center; gap:8px; font-weight:800; font-size:.92rem; cursor:pointer; list-style:none;}
+.bp-more>summary::-webkit-details-marker{display:none;}
+.bp-more[open]{padding-bottom:12px;}
+.bp-more .bp-in{margin-top:4px;}
+.bp-old{display:flex; align-items:center; gap:8px; width:100%; min-height:48px; margin-top:12px; border:0; background:none; color:var(--brand-ink); font:inherit; font-weight:700; font-size:.88rem; cursor:pointer; padding:0 4px;}
+.bp-tabs{position:sticky; top:-16px; z-index:2; display:flex; gap:4px; overflow-x:auto; scrollbar-width:none; margin:0 -16px 12px; padding:10px 16px; background:var(--bg);}
+.bp-tabs::-webkit-scrollbar{display:none;}
+.bp-tabs button{flex:none; min-height:44px; padding:0 11px; border-radius:99px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-weight:700; font-size:.84rem; cursor:pointer;}
+.bp-tabs button.on{background:var(--ink); color:var(--surface); border-color:var(--ink);}
+.bp-tabs button:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+.bp-idea-q{margin:6px 0 8px; font-size:.86rem; font-style:italic; color:var(--muted); line-height:1.4;}
+.bp-dl{margin:0; display:grid; gap:10px;}
+.bp-dl dt{font-size:.76rem; font-weight:800; color:var(--muted);} .bp-dl dd{margin:2px 0 0; font-size:.92rem; line-height:1.42;}
+.bp-tb{display:grid; gap:0;}
+.bp-tb>div,.bp-tb1{display:flex; justify-content:space-between; gap:12px; align-items:baseline; padding:9px 0; border-top:1px solid var(--line); font-size:.9rem;}
+.bp-tb>div:first-child{border-top:0;}
+.bp-tb span small{display:block; color:var(--muted); font-size:.78rem; margin-top:2px;}
+.bp-tb b{font-family:var(--font-num); white-space:nowrap; text-align:right;}
+.bp-tb .rs{color:var(--muted);} .bp-tb .tt{font-weight:800; border-top:2px solid var(--ink);}
+.bp-wait{display:flex; align-items:center; gap:10px; padding:14px; margin:0 0 12px; border-radius:16px; background:var(--surface-2); font-weight:700; font-size:.9rem;}
+.bp-wait.err{flex-direction:column; align-items:flex-start;}
+.bp-spin{flex:none; width:20px; height:20px; border-radius:50%; border:2px solid var(--line); border-top-color:var(--brand); animation:bpSpin 1s linear infinite;}
+@media (prefers-reduced-motion:reduce){.bp-spin{animation:none;}}
+.bp-mu{color:var(--muted); font-weight:600;}
+.bp-move{color:var(--m-leaf) !important; font-weight:700; display:flex; gap:6px; align-items:flex-start;} .bp-move svg{flex:none; margin-top:2px;}
+.bp-un p svg,.bp-pl p svg{vertical-align:-2px;}
+.bp-acts{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px;}
+.bp-acts .btn{min-height:48px; padding:0 6px; display:flex; align-items:center; justify-content:center; gap:6px; font-size:.86rem;}
+.bp-card-row{display:flex; flex-wrap:wrap; gap:8px; padding:0 14px 12px;}
+.bp-card.have .bp-card-row .gp-mini{margin:0;}
 </style>
 </head>
 <body>
@@ -5203,80 +5261,140 @@ en:{
   egMoT:'Sales by month', egMoNeed:n=>'The calendar appears once there are records for at least three months. Months with records now: '+n+'.', egMoBest:(a,b)=>'Best month: '+a+', quietest: '+b+'.',
   egMoFew:'Conclusions about the season appear after half a year of records.', egMoNote:'Months with at least 15 recorded days are counted.', egMoWd:'Best days of the week', egTodayPlan:'Plan for the day' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M20S[k]);
-/* ----- v21: «Бизнес-план к цели» ----- */
+/* ----- v21–v22: «Бизнес-план» ----- */
 const M21S={
 ru:{
-  bpT:'Бизнес-план к цели', bpLead:'Сифра изучит рынок сегодня — оптовые цены в разных городах, цены в Таджикистане, наценки, карго и каналы продаж — и разложит путь по месяцам.',
+  bpT:'Бизнес-план', bpLead:'Напишите своими словами, что хотите и где. Сифра изучит рынок этого места — спрос, конкурентов, отзывы покупателей, цены, поставщиков и законы — подумает как предприниматель и распишет план по месяцам.',
   bpOpenMine:'Открыть мой план', bpUpd:d=>'обновлён '+d, bpCap:'Сколько денег, $', bpX:'Во сколько раз увеличить', bpOwn:'Своя сумма', bpOwnPh:'Цель, $',
   bpM:'За какой срок', bpMo:m=>m===12?'1 год':m===18?'1,5 года':m===24?'2 года':m===36?'3 года':m===60?'5 лет':m+' мес.',
   bpNeed:(p,x,m)=>'Для '+x+' за '+m+' деньги должны расти на '+p+'% в месяц без единого сбоя.', bpNeedHi:'Это намного выше обычного — Сифра честно скажет, что реально и что для этого нужно.', bpNeedBad:'Цель должна быть больше суммы.',
-  bpCat:'Какой товар', bpAuto:'Подбери сам', bpCountry:'Откуда закупать', bpCities:l=>'Сравню города: '+l+'.', bpCitiesAuto:'Сравню Китай, Турцию, ОАЭ, Узбекистан и Кыргызстан — разные города и рынки, а не один.',
-  bpCh:'Где продаёте', bpChN:{shop:'Свой магазин',insta:'Instagram',tg:'Telegram',wb:'Wildberries',opt:'Опт магазинам',none:'Пока негде'},
+  bpIdeaQ:'Что хотите сделать?', bpIdeaPh:'Например: у меня 20 000 $, хочу за год сделать ×3. Думаю про магазин сухофруктов или онлайн-магазин одежды.',
+  bpIdeaN:{auto:'Подбери бизнес сам',dried:'Сухофрукты',cloth:'Одежда',food:'Продукты',china:'Товар из Китая',online:'Онлайн-магазин',cafe:'Кафе, еда',service:'Услуги',medtech:'Медтех-стартап',export:'Экспорт'},
+  bpIdeaT:{auto:'Подбери сама, какой бизнес выгоднее всего на эти деньги.',dried:'Хочу бизнес на сухофруктах и орехах.',cloth:'Хочу магазин одежды.',food:'Хочу продуктовый магазин.',china:'Хочу закупать товар в Китае и продавать.',online:'Хочу онлайн-магазин с доставкой.',cafe:'Хочу открыть кафе или точку с едой.',service:'Хочу бизнес на услугах.',medtech:'Хочу IT-стартап в медицине.',export:'Хочу продавать товар за границу.'},
+  bpIdeaNeed:'Напишите хотя бы пару слов, что хотите.', bpPlaceQ:'Где будет бизнес', bpPlacePh:'Страна и город, например: Москва',
+  bpPlaceN:{auto:'Подбери сама',TJ:'Таджикистан',RU:'Россия',KZ:'Казахстан',UZ:'Узбекистан',KG:'Кыргызстан',AE:'ОАЭ',TR:'Турция',US:'США',EU:'Европа'},
+  bpMore:'Уточнить (необязательно)', bpExp:'Опыт в бизнесе', bpExpN:{new:'Начинаю с нуля',some:'Немного есть',biz:'Уже есть бизнес'}, bpFromPh:'Например: Китай, Иран, Индия',
+  bpOldIdeas:n=>'Прежние разборы идей: '+n, bpGoalIdea:(c,k)=>'Хочу вырастить свой магазин'+(c?': '+c:'')+(k?', закупка — '+k:'')+'.',
+  bpCountry:'Откуда закупать товар', bpCh:'Где продаёте или хотите продавать', bpChN:{shop:'Свой магазин',insta:'Instagram',tg:'Telegram',wb:'Маркетплейсы',opt:'Опт другим',site:'Свой сайт',none:'Пока негде'},
   bpTr:'Ездите за товаром сами?', bpYes:'Да', bpNo:'Нет, через посредника',
-  bpGo:'Составить план', bpGoNote:'Займёт 1–3 минуты: Сифра ищет и читает свежие страницы. План сохранится, даже если закроете окно.',
-  bpBusy:['Смотрю оптовые цены и наценки…','Сравниваю города и рынки…','Считаю путь по месяцам…','Проверяю, сходятся ли цифры…'],
-  bpStepsT:['Свежие цены и наценки','Города, рынки, карго, каналы','План по месяцам','Проверка цифр'],
-  bpWaitNote:'Можно закрыть окно — план сохранится, когда будет готов.', bpReady:'Бизнес-план готов — он в «Куда вложить»',
-  bpOld:'Сервер Mira ещё старый — открываю прежний план. Новый появится после обновления сервера.',
+  bpGo:'Составить план', bpGoNote:'2–4 минуты: Сифра ищет и читает свежие страницы. Можно закрыть — план сохранится.',
+  bpBusy:['Изучаю рынок и спрос…','Смотрю конкурентов, отзывы и цены…','Думаю как предприниматель: варианты, деньги, окупаемость…','Проверяю, сходятся ли цифры…'],
+  bpStepsT:['Рынок и спрос','Конкуренты, отзывы, цены, законы','Варианты, деньги, окупаемость','Проверка цифр'],
+  bpWaitNote:'Можно закрыть — план сохранится, когда будет готов.', bpReady:'Бизнес-план готов — он в «Куда вложить»',
+  bpOld:'Сервер Mira ещё старый. Залейте новый mira-api.zip в Cloudflare — и бизнес-план заработает.',
   bpErr:'Не получилось составить план. Проверьте интернет и попробуйте ещё раз.', bpErrLimit:'На сегодня планов достаточно — завтра можно снова.', bpErrKey:'Сифра пока не подключена на сервере.',
   bpV:{go:'Реально',careful:'Можно, но трудно',hard:'Очень трудно',no:'Не за этот срок'}, bpHead:(a,b,m)=>a+' → '+b+' за '+m, bpSrcN:n=>'источников: '+n,
   bpReal:'Реально за этот срок', bpChartT:'Сколько денег в деле по месяцам', bpChartLeg:['Обычно','Осторожно','Цель'],
-  bpNeedT:'Что нужно для цели', bpStratT:'Пути к цели', bpBest:'Лучший для вас', bpRisk:{low:'риск низкий',mid:'риск средний',high:'риск высокий'},
-  bpMonthsT:'План по месяцам', bpDone:(a,b)=>'сделано '+a+' из '+b, bpMoN:m=>m+'-й месяц', bpBuy:'Купить', bpSell:'Продать', bpRev:v=>'выручка ≈ '+v, bpCapEnd:'В деле на конец', bpLow:v=>'осторожно '+v, bpCheck:'Проверка',
-  bpPlacesT:'Где закупать', bpUnitT:'Товары и наценки', bpBuyP:'опт', bpCost:'с доставкой', bpPrice:'продажа', bpMk:'наценка', bpDays:d=>'уходит за '+d+' дн.', bpDem:{hot:'спрос высокий',normal:'спрос обычный',cold:'спрос низкий'},
-  bpChT:'Где продавать', bpChAdd:v=>'+'+v+' в месяц', bpWeekT:'Первая неделя', bpRiskT:'Что может пойти не так', bpStopT:'Когда менять план', bpLoansT:'Кредиты',
-  bpMktT:'Рынок, на котором построен план', bpLogT:'Доставка', bpDush:'Душанбе', bpMode:{auto:'авто',rail:'поезд',air:'самолёт',courier:'курьер',self:'сами'}, bpKg:'кг', bpDaysN:d=>d+' дн.', bpSeasonT:'Сезон', bpMktAt:d=>'Данные собраны '+d+'. «Рынок сегодня» обновляется каждые 6 часов.',
+  bpTabN:{main:'Главное',money:'Деньги',months:'По месяцам',market:'Рынок',risks:'Риски'},
+  bpNeedT:'Что нужно для цели', bpOptT:'Варианты бизнеса', bpBest:'Лучший для вас', bpRisk:{low:'риск низкий',mid:'риск средний',high:'риск высокий'},
+  bpStart:'старт', bpProfitM:(a,b)=>'прибыль '+a+' – '+b+' в мес.', bpPayback:n=>'окупится за '+n+' мес.',
+  bpCvT:'Суть бизнеса', bpCvN:{customer:'Кто покупает',problem:'Какая у него задача',offer:'Что продаём',price:'Цена',edge:'Чем лучше конкурентов',channels:'Где находим клиентов',partners:'Партнёры'},
+  bpValT:'Проверить спрос до больших трат', bpValLead:'Сначала тратьте только то, что не жалко потерять. Спрашивайте людей, как они решают задачу сейчас, а не «купили бы вы».', bpPass:'Прошло, если',
+  bpWeekT:'Первая неделя', bpKpiT:'Что смотреть каждую неделю',
+  bpBudT:'Бюджет запуска', bpReserve:'Резерв на 2–3 месяца', bpTotal:'Всего', bpOver:v=>'Бюджет больше ваших денег на '+v+' — начните с меньшего варианта или проверки спроса.',
+  bpEcT:'Юнит-экономика и выход в ноль', bpEcN:{unit:'Единица продажи',price:'Цена',cost:'Себестоимость',margin:'Маржа',fixed:'Постоянные расходы в мес.',be:'Продаж в мес. для нуля',bem:'Выход в ноль',cac:'Цена одного клиента'},
+  bpTeamT:'Команда', bpPerM:v=>v+' в мес.',
+  bpMonthsT:'План по месяцам', bpDone:(a,b)=>'сделано '+a+' из '+b, bpMoN:m=>m+'-й месяц', bpSpend:'Потратить', bpRevT:'Выручка', bpProfit:'прибыль', bpCapEnd:'В деле на конец', bpLow:v=>'осторожно '+v, bpCheck:'Проверка',
+  bpRoadWait:'Расписываю план по месяцам…', bpRoadErr:'Не получилось расписать по месяцам.', bpRoadStale:'Данные устарели — обновите план.',
+  bpMarketT:'Рынок', bpMkSize:'Объём', bpMkGrow:'Рост', bpCusT:'Кто покупает', bpCompT:'Конкуренты и как их обойти', bpCompAll:'Все конкуренты',
+  bpKind:{shop:'магазин',online:'онлайн',app:'приложение',social:'соцсети',marketplace:'площадка',producer:'производитель',service:'услуга',other:''},
+  bpPainT:'На что жалуются покупатели', bpAnaT:'Удачные примеры в других странах', bpChT:'Как находить клиентов', bpChAdd:v=>'+'+v+' в месяц',
+  bpPlacesT:'Где закупать', bpLogT:'Доставка', bpDush:'Душанбе', bpMode:{auto:'авто',rail:'поезд',air:'самолёт',sea:'море',courier:'курьер',self:'сами'}, bpKg:'кг', bpDaysN:d=>d+' дн.',
+  bpCostT:'Цены и расходы', bpLegalT:'Документы и налоги', bpLegalNote:'Перед стартом сверьте с налоговой или юристом: правила меняются.', bpSeasonT:'Сезон', bpMarginT:'Обычная наценка в этом деле',
+  bpUnitT:'Товары и наценки', bpBuyP:'опт', bpCost:'с доставкой', bpPrice:'продажа', bpMk:'наценка', bpDays:d=>'уходит за '+d+' дн.', bpDem:{hot:'спрос высокий',normal:'спрос обычный',cold:'спрос низкий'},
+  bpRiskT:'Что может пойти не так', bpStopT:'Когда менять план', bpFailT:'Почему такие бизнесы закрываются', bpFailNote:'По разбору 242 закрывшихся стартапов (CB Insights) чаще всего не хватило спроса (42%) и денег (29%) — поэтому сначала проверка спроса и резерв.', bpLoansT:'Кредиты',
+  bpMktAt:d=>'Данные собраны '+d+'.',
   bpNote:'Это расчёт по свежим данным из интернета, а не обещание: цены и спрос меняются. Решение — за вами.',
-  bpRefresh:'Обновить по свежим данным', bpEdit:'Изменить условия', bpShare:'Поделиться',
-  bpCardT:'Бизнес-план к цели', bpCardSub:'Сифра изучит рынок сегодня и разложит путь по месяцам: что купить, где, на сколько и где продать.', bpStale:'Есть свежие данные — обновить план', bpGoalSub:'Свежие цены, города закупки, путь по месяцам' },
+  bpRefreshS:'Обновить', bpEditS:'Изменить', bpShare:'Поделиться', bpNewPlan:'Новый план',
+  bpCardT:'Бизнес-план', bpCardSub:'Любой бизнес, любая страна: Сифра изучит рынок, конкурентов и цены и распишет план по месяцам.', bpStale:'Обновить по свежим данным', bpGoalSub:'Рынок, конкуренты, деньги, план по месяцам' },
 tg:{
-  bpT:'Нақшаи тиҷоратӣ то ҳадаф', bpLead:'Сифра имрӯз бозорро меомӯзад — нархи яклухт дар шаҳрҳои гуногун, нарх дар Тоҷикистон, фоида, карго ва роҳҳои фурӯш — ва роҳро моҳ ба моҳ тартиб медиҳад.',
+  bpT:'Нақшаи тиҷоратӣ', bpLead:'Бо суханони худ нависед, ки чӣ мехоҳед ва дар куҷо. Сифра бозори ҳамон ҷойро меомӯзад — талабот, рақибон, назари харидорон, нарх, таъминкунандагон ва қонунҳо — мисли соҳибкор фикр мекунад ва нақшаро моҳ ба моҳ менависад.',
   bpOpenMine:'Нақшаи ман', bpUpd:d=>'навсозӣ '+d, bpCap:'Чанд пул, $', bpX:'Чанд баробар зиёд кардан', bpOwn:'Маблағи худ', bpOwnPh:'Ҳадаф, $',
   bpM:'Дар чӣ муддат', bpMo:m=>m===12?'1 сол':m===18?'1,5 сол':m===24?'2 сол':m===36?'3 сол':m===60?'5 сол':m+' моҳ',
   bpNeed:(p,x,m)=>'Барои '+x+' дар '+m+' пул бояд ҳар моҳ '+p+'% бе ягон қатъ афзояд.', bpNeedHi:'Ин аз муқаррарӣ хеле баланд аст — Сифра рост мегӯяд, ки чӣ воқеӣ аст ва барои ин чӣ лозим.', bpNeedBad:'Ҳадаф бояд аз маблағ зиёд бошад.',
-  bpCat:'Кадом мол', bpAuto:'Худат интихоб кун', bpCountry:'Аз куҷо харидан', bpCities:l=>'Шаҳрҳоро муқоиса мекунам: '+l+'.', bpCitiesAuto:'Чин, Туркия, АМА, Ӯзбекистон ва Қирғизистонро муқоиса мекунам — шаҳру бозорҳои гуногун, на як ҷо.',
-  bpCh:'Дар куҷо мефурӯшед', bpChN:{shop:'Мағозаи худ',insta:'Instagram',tg:'Telegram',wb:'Wildberries',opt:'Яклухт ба мағозаҳо',none:'Ҳоло ҷой нест'},
+  bpIdeaQ:'Чӣ кор кардан мехоҳед?', bpIdeaPh:'Масалан: 20 000 $ дорам, мехоҳам дар як сол ×3 кунам. Дар бораи мағозаи меваи хушк ё мағозаи онлайни либос фикр мекунам.',
+  bpIdeaN:{auto:'Тиҷоратро худат интихоб кун',dried:'Меваи хушк',cloth:'Либос',food:'Озуқаворӣ',china:'Мол аз Чин',online:'Мағозаи онлайн',cafe:'Қаҳвахона, хӯрок',service:'Хизматрасонӣ',medtech:'Стартапи тиббӣ',export:'Содирот'},
+  bpIdeaT:{auto:'Худат интихоб кун, ки бо ин пул кадом тиҷорат фоиданоктар аст.',dried:'Тиҷорат бо меваи хушк ва чормағз мехоҳам.',cloth:'Мағозаи либос мехоҳам.',food:'Мағозаи озуқаворӣ мехоҳам.',china:'Мехоҳам аз Чин мол харида фурӯшам.',online:'Мағозаи онлайн бо расонидан мехоҳам.',cafe:'Мехоҳам қаҳвахона ё нуқтаи хӯрок кушоям.',service:'Тиҷорат дар хизматрасонӣ мехоҳам.',medtech:'Стартапи IT дар тиб мехоҳам.',export:'Мехоҳам мол ба хориҷа фурӯшам.'},
+  bpIdeaNeed:'Ақаллан чанд калима нависед, ки чӣ мехоҳед.', bpPlaceQ:'Тиҷорат дар куҷо мешавад', bpPlacePh:'Кишвар ва шаҳр, масалан: Душанбе',
+  bpPlaceN:{auto:'Худат интихоб кун',TJ:'Тоҷикистон',RU:'Русия',KZ:'Қазоқистон',UZ:'Ӯзбекистон',KG:'Қирғизистон',AE:'АМА',TR:'Туркия',US:'ИМА',EU:'Аврупо'},
+  bpMore:'Дақиқ кардан (ихтиёрӣ)', bpExp:'Таҷриба дар тиҷорат', bpExpN:{new:'Аз сифр оғоз мекунам',some:'Каме ҳаст',biz:'Аллакай тиҷорат дорам'}, bpFromPh:'Масалан: Чин, Эрон, Ҳиндустон',
+  bpOldIdeas:n=>'Таҳлилҳои пешинаи ғояҳо: '+n, bpGoalIdea:(c,k)=>'Мехоҳам мағозаи худро калон кунам'+(c?': '+c:'')+(k?', харид — '+k:'')+'.',
+  bpCountry:'Молро аз куҷо харидан', bpCh:'Дар куҷо мефурӯшед ё мехоҳед фурӯшед', bpChN:{shop:'Мағозаи худ',insta:'Instagram',tg:'Telegram',wb:'Бозорҳои онлайн',opt:'Яклухт ба дигарон',site:'Сайти худ',none:'Ҳоло ҷой нест'},
   bpTr:'Барои мол худатон меравед?', bpYes:'Ҳа', bpNo:'Не, тавассути миёнарав',
-  bpGo:'Нақша тартиб додан', bpGoNote:'1–3 дақиқа мегирад: Сифра саҳифаҳои навро меҷӯяд ва мехонад. Нақша нигоҳ дошта мешавад, ҳатто агар равзанаро пӯшед.',
-  bpBusy:['Нархи яклухт ва фоидаро мебинам…','Шаҳрҳо ва бозорҳоро муқоиса мекунам…','Роҳро моҳ ба моҳ ҳисоб мекунам…','Рақамҳоро месанҷам…'],
-  bpStepsT:['Нархҳо ва фоидаи нав','Шаҳрҳо, бозорҳо, карго, фурӯш','Нақша моҳ ба моҳ','Санҷиши рақамҳо'],
-  bpWaitNote:'Равзанаро пӯшидан мумкин — нақша ҳангоми тайёр шудан нигоҳ дошта мешавад.', bpReady:'Нақшаи тиҷоратӣ тайёр — дар «Ба куҷо гузоштан»',
-  bpOld:'Сервери Mira ҳанӯз кӯҳна аст — нақшаи пешинаро мекушоям. Нақшаи нав баъди навсозии сервер пайдо мешавад.',
+  bpGo:'Нақша тартиб додан', bpGoNote:'2–4 дақиқа: Сифра саҳифаҳои навро меҷӯяд ва мехонад. Пӯшидан мумкин — нақша нигоҳ дошта мешавад.',
+  bpBusy:['Бозор ва талаботро меомӯзам…','Рақибон, назарҳо ва нархҳоро мебинам…','Мисли соҳибкор фикр мекунам: вариантҳо, пул, баргардонидан…','Рақамҳоро месанҷам…'],
+  bpStepsT:['Бозор ва талабот','Рақибон, назарҳо, нархҳо, қонунҳо','Вариантҳо, пул, баргардонидан','Санҷиши рақамҳо'],
+  bpWaitNote:'Пӯшидан мумкин — нақша ҳангоми тайёр шудан нигоҳ дошта мешавад.', bpReady:'Нақшаи тиҷоратӣ тайёр — дар «Ба куҷо гузоштан»',
+  bpOld:'Сервери Mira ҳанӯз кӯҳна аст. mira-api.zip-и навро ба Cloudflare бор кунед — нақшаи тиҷоратӣ кор мекунад.',
   bpErr:'Нақша тартиб дода нашуд. Интернетро санҷед ва боз кӯшиш кунед.', bpErrLimit:'Барои имрӯз нақша кофист — пагоҳ боз мумкин.', bpErrKey:'Сифра ҳоло дар сервер пайваст нест.',
   bpV:{go:'Воқеӣ',careful:'Мумкин, вале душвор',hard:'Хеле душвор',no:'На дар ин муддат'}, bpHead:(a,b,m)=>a+' → '+b+' дар '+m, bpSrcN:n=>'манбаъ: '+n,
   bpReal:'Дар ин муддат воқеӣ', bpChartT:'Пул дар кор моҳ ба моҳ', bpChartLeg:['Одатан','Бо эҳтиёт','Ҳадаф'],
-  bpNeedT:'Барои ҳадаф чӣ лозим', bpStratT:'Роҳҳо то ҳадаф', bpBest:'Беҳтарин барои шумо', bpRisk:{low:'хавф кам',mid:'хавф миёна',high:'хавф баланд'},
-  bpMonthsT:'Нақша моҳ ба моҳ', bpDone:(a,b)=>a+' аз '+b+' иҷро шуд', bpMoN:m=>'моҳи '+m, bpBuy:'Харидан', bpSell:'Фурӯхтан', bpRev:v=>'даромад ≈ '+v, bpCapEnd:'Дар кор дар охир', bpLow:v=>'бо эҳтиёт '+v, bpCheck:'Санҷиш',
-  bpPlacesT:'Аз куҷо харидан', bpUnitT:'Молҳо ва фоида', bpBuyP:'яклухт', bpCost:'бо расонидан', bpPrice:'фурӯш', bpMk:'фоида', bpDays:d=>'дар '+d+' рӯз мефурӯшад', bpDem:{hot:'талабот баланд',normal:'талабот муқаррарӣ',cold:'талабот кам'},
-  bpChT:'Дар куҷо фурӯхтан', bpChAdd:v=>'+'+v+' дар як моҳ', bpWeekT:'Ҳафтаи аввал', bpRiskT:'Чӣ метавонад халал расонад', bpStopT:'Кай нақшаро иваз кардан', bpLoansT:'Қарзҳо',
-  bpMktT:'Бозоре, ки нақша бар он сохта шуд', bpLogT:'Расонидан', bpDush:'Душанбе', bpMode:{auto:'мошин',rail:'қатора',air:'ҳавопаймо',courier:'курйер',self:'худатон'}, bpKg:'кг', bpDaysN:d=>d+' рӯз', bpSeasonT:'Мавсим', bpMktAt:d=>'Маълумот ҷамъ шуд '+d+'. «Бозори имрӯз» ҳар 6 соат нав мешавад.',
+  bpTabN:{main:'Асосӣ',money:'Пул',months:'Моҳ ба моҳ',market:'Бозор',risks:'Хавфҳо'},
+  bpNeedT:'Барои ҳадаф чӣ лозим', bpOptT:'Вариантҳои тиҷорат', bpBest:'Беҳтарин барои шумо', bpRisk:{low:'хавф кам',mid:'хавф миёна',high:'хавф баланд'},
+  bpStart:'оғоз', bpProfitM:(a,b)=>'фоида '+a+' – '+b+' дар моҳ', bpPayback:n=>'дар '+n+' моҳ бармегардад',
+  bpCvT:'Моҳияти тиҷорат', bpCvN:{customer:'Кӣ мехарад',problem:'Мушкили ӯ',offer:'Чӣ мефурӯшем',price:'Нарх',edge:'Аз рақибон чӣ беҳтар',channels:'Мизоҷонро аз куҷо меёбем',partners:'Шарикон'},
+  bpValT:'Талаботро пеш аз хароҷоти калон санҷед', bpValLead:'Аввал танҳо он қадар сарф кунед, ки гум карданаш дард накунад. Пурсед, ки одамон ҳоло масъаларо чӣ тавр ҳал мекунанд, на «оё мехаридед».', bpPass:'Гузашт, агар',
+  bpWeekT:'Ҳафтаи аввал', bpKpiT:'Ҳар ҳафта чиро дидан',
+  bpBudT:'Буҷети оғоз', bpReserve:'Захира барои 2–3 моҳ', bpTotal:'Ҳамагӣ', bpOver:v=>'Буҷет аз пули шумо '+v+' зиёд аст — аз варианти хурдтар ё санҷиши талабот оғоз кунед.',
+  bpEcT:'Иқтисоди воҳид ва баромад ба сифр', bpEcN:{unit:'Воҳиди фурӯш',price:'Нарх',cost:'Арзиши аслӣ',margin:'Маржа',fixed:'Хароҷоти доимӣ дар моҳ',be:'Фурӯш дар моҳ барои сифр',bem:'Баромад ба сифр',cac:'Нархи як мизоҷ'},
+  bpTeamT:'Даста', bpPerM:v=>v+' дар моҳ',
+  bpMonthsT:'Нақша моҳ ба моҳ', bpDone:(a,b)=>a+' аз '+b+' иҷро шуд', bpMoN:m=>'моҳи '+m, bpSpend:'Сарф кардан', bpRevT:'Даромад', bpProfit:'фоида', bpCapEnd:'Дар кор дар охир', bpLow:v=>'бо эҳтиёт '+v, bpCheck:'Санҷиш',
+  bpRoadWait:'Нақшаро моҳ ба моҳ менависам…', bpRoadErr:'Моҳ ба моҳ навишта нашуд.', bpRoadStale:'Маълумот кӯҳна шуд — нақшаро нав кунед.',
+  bpMarketT:'Бозор', bpMkSize:'Ҳаҷм', bpMkGrow:'Афзоиш', bpCusT:'Кӣ мехарад', bpCompT:'Рақибон ва чӣ тавр аз онҳо пеш гузарем', bpCompAll:'Ҳамаи рақибон',
+  bpKind:{shop:'мағоза',online:'онлайн',app:'барнома',social:'шабакаҳо',marketplace:'бозори онлайн',producer:'истеҳсолкунанда',service:'хизмат',other:''},
+  bpPainT:'Харидорон аз чӣ шикоят мекунанд', bpAnaT:'Намунаҳои муваффақ дар дигар кишварҳо', bpChT:'Мизоҷонро чӣ тавр ёфтан', bpChAdd:v=>'+'+v+' дар як моҳ',
+  bpPlacesT:'Аз куҷо харидан', bpLogT:'Расонидан', bpDush:'Душанбе', bpMode:{auto:'мошин',rail:'қатора',air:'ҳавопаймо',sea:'баҳр',courier:'курйер',self:'худатон'}, bpKg:'кг', bpDaysN:d=>d+' рӯз',
+  bpCostT:'Нархҳо ва хароҷот', bpLegalT:'Ҳуҷҷатҳо ва андоз', bpLegalNote:'Пеш аз оғоз бо андоз ё ҳуқуқшинос санҷед: қоидаҳо тағйир меёбанд.', bpSeasonT:'Мавсим', bpMarginT:'Фоидаи муқаррарӣ дар ин кор',
+  bpUnitT:'Молҳо ва фоида', bpBuyP:'яклухт', bpCost:'бо расонидан', bpPrice:'фурӯш', bpMk:'фоида', bpDays:d=>'дар '+d+' рӯз мефурӯшад', bpDem:{hot:'талабот баланд',normal:'талабот муқаррарӣ',cold:'талабот кам'},
+  bpRiskT:'Чӣ метавонад халал расонад', bpStopT:'Кай нақшаро иваз кардан', bpFailT:'Чаро чунин тиҷоратҳо мепӯшанд', bpFailNote:'Аз рӯи таҳлили 242 стартапи пӯшида (CB Insights) бештар талабот (42%) ва пул (29%) нарасид — бинобар ин аввал санҷиши талабот ва захира.', bpLoansT:'Қарзҳо',
+  bpMktAt:d=>'Маълумот ҷамъ шуд '+d+'.',
   bpNote:'Ин ҳисоб аз рӯи маълумоти нави интернет аст, на ваъда: нарх ва талабот тағйир меёбанд. Қарор — аз они шумо.',
-  bpRefresh:'Бо маълумоти нав навсозӣ кардан', bpEdit:'Шартҳоро иваз кардан', bpShare:'Фиристодан',
-  bpCardT:'Нақшаи тиҷоратӣ то ҳадаф', bpCardSub:'Сифра имрӯз бозорро меомӯзад ва роҳро моҳ ба моҳ тартиб медиҳад: чӣ харидан, аз куҷо, ба чанд ва дар куҷо фурӯхтан.', bpStale:'Маълумоти нав ҳаст — нақшаро нав кунед', bpGoalSub:'Нархҳои нав, шаҳрҳои харид, роҳ моҳ ба моҳ' },
+  bpRefreshS:'Навсозӣ', bpEditS:'Иваз кардан', bpShare:'Фиристодан', bpNewPlan:'Нақшаи нав',
+  bpCardT:'Нақшаи тиҷоратӣ', bpCardSub:'Ҳар тиҷорат, ҳар кишвар: Сифра бозор, рақибон ва нархҳоро меомӯзад ва нақшаро моҳ ба моҳ менависад.', bpStale:'Бо маълумоти нав навсозӣ кардан', bpGoalSub:'Бозор, рақибон, пул, нақша моҳ ба моҳ' },
 en:{
-  bpT:'Business plan to the goal', bpLead:'Sifra studies the market today — wholesale prices in different cities, prices in Tajikistan, markups, cargo and sales channels — and lays out the path month by month.',
+  bpT:'Business plan', bpLead:'Write in your own words what you want and where. Sifra studies that market — demand, competitors, customer reviews, prices, suppliers and rules — thinks like an entrepreneur and lays out a month-by-month plan.',
   bpOpenMine:'Open my plan', bpUpd:d=>'updated '+d, bpCap:'How much money, $', bpX:'Grow it how many times', bpOwn:'Own amount', bpOwnPh:'Goal, $',
   bpM:'In what time', bpMo:m=>m===12?'1 year':m===18?'1.5 years':m===24?'2 years':m===36?'3 years':m===60?'5 years':m+' mo.',
   bpNeed:(p,x,m)=>'For '+x+' in '+m+' the money has to grow '+p+'% a month without a single setback.', bpNeedHi:'That is far above normal — Sifra will say honestly what is realistic and what it would take.', bpNeedBad:'The goal must be larger than the amount.',
-  bpCat:'Which goods', bpAuto:'Choose for me', bpCountry:'Where to buy', bpCities:l=>'I will compare: '+l+'.', bpCitiesAuto:'I will compare China, Turkey, the UAE, Uzbekistan and Kyrgyzstan — different cities and markets, not just one.',
-  bpCh:'Where you sell', bpChN:{shop:'Own shop',insta:'Instagram',tg:'Telegram',wb:'Wildberries',opt:'Wholesale to shops',none:'Nowhere yet'},
+  bpIdeaQ:'What do you want to do?', bpIdeaPh:'For example: I have $20,000 and want ×3 in a year. Thinking about a dried fruit shop or an online clothing store.',
+  bpIdeaN:{auto:'Pick a business for me',dried:'Dried fruit',cloth:'Clothing',food:'Groceries',china:'Goods from China',online:'Online store',cafe:'Café, food',service:'Services',medtech:'Medtech startup',export:'Export'},
+  bpIdeaT:{auto:'Pick the most profitable business for this money.',dried:'I want a dried fruit and nuts business.',cloth:'I want a clothing store.',food:'I want a grocery store.',china:'I want to buy goods in China and resell them.',online:'I want an online store with delivery.',cafe:'I want to open a café or a food spot.',service:'I want a service business.',medtech:'I want a medical IT startup.',export:'I want to sell goods abroad.'},
+  bpIdeaNeed:'Write at least a few words about what you want.', bpPlaceQ:'Where the business will be', bpPlacePh:'Country and city, e.g. Dubai',
+  bpPlaceN:{auto:'Choose for me',TJ:'Tajikistan',RU:'Russia',KZ:'Kazakhstan',UZ:'Uzbekistan',KG:'Kyrgyzstan',AE:'UAE',TR:'Turkey',US:'USA',EU:'Europe'},
+  bpMore:'More details (optional)', bpExp:'Business experience', bpExpN:{new:'Starting from zero',some:'Some',biz:'Already have a business'}, bpFromPh:'E.g. China, Iran, India',
+  bpOldIdeas:n=>'Earlier idea reviews: '+n, bpGoalIdea:(c,k)=>'I want to grow my shop'+(c?': '+c:'')+(k?', buying from '+k:'')+'.',
+  bpCountry:'Where to buy goods', bpCh:'Where you sell or want to sell', bpChN:{shop:'Own shop',insta:'Instagram',tg:'Telegram',wb:'Marketplaces',opt:'Wholesale',site:'Own website',none:'Nowhere yet'},
   bpTr:'Do you travel for goods yourself?', bpYes:'Yes', bpNo:'No, through an agent',
-  bpGo:'Make the plan', bpGoNote:'Takes 1–3 minutes: Sifra searches and reads fresh pages. The plan is saved even if you close this window.',
-  bpBusy:['Checking wholesale prices and markups…','Comparing cities and markets…','Working out the path month by month…','Checking that the numbers add up…'],
-  bpStepsT:['Fresh prices and markups','Cities, markets, cargo, channels','Month-by-month plan','Number check'],
-  bpWaitNote:'You can close the window — the plan is saved when it is ready.', bpReady:'Business plan is ready — it is in “Where to invest”',
-  bpOld:'The Mira server is still the old one — opening the previous plan. The new one appears after the server update.',
+  bpGo:'Make the plan', bpGoNote:'2–4 minutes: Sifra searches and reads fresh pages. You can close — the plan will be saved.',
+  bpBusy:['Studying the market and demand…','Checking competitors, reviews and prices…','Thinking like an entrepreneur: options, money, payback…','Checking that the numbers add up…'],
+  bpStepsT:['Market and demand','Competitors, reviews, prices, rules','Options, money, payback','Number check'],
+  bpWaitNote:'You can close — the plan is saved when it is ready.', bpReady:'Business plan is ready — it is in “Where to invest”',
+  bpOld:'The Mira server is still the old one. Upload the new mira-api.zip to Cloudflare and the business plan will work.',
   bpErr:'Could not make the plan. Check the internet and try again.', bpErrLimit:'Enough plans for today — try again tomorrow.', bpErrKey:'Sifra is not connected on the server yet.',
   bpV:{go:'Realistic',careful:'Possible but hard',hard:'Very hard',no:'Not in this time'}, bpHead:(a,b,m)=>a+' → '+b+' in '+m, bpSrcN:n=>'sources: '+n,
   bpReal:'Realistic in this time', bpChartT:'Money in the business by month', bpChartLeg:['Usual','Cautious','Goal'],
-  bpNeedT:'What the goal takes', bpStratT:'Paths to the goal', bpBest:'Best for you', bpRisk:{low:'low risk',mid:'medium risk',high:'high risk'},
-  bpMonthsT:'Month-by-month plan', bpDone:(a,b)=>a+' of '+b+' done', bpMoN:m=>'Month '+m, bpBuy:'Buy', bpSell:'Sell', bpRev:v=>'revenue ≈ '+v, bpCapEnd:'In the business at the end', bpLow:v=>'cautious '+v, bpCheck:'Check',
-  bpPlacesT:'Where to buy', bpUnitT:'Goods and markups', bpBuyP:'wholesale', bpCost:'landed', bpPrice:'retail', bpMk:'markup', bpDays:d=>'sells in '+d+' days', bpDem:{hot:'high demand',normal:'normal demand',cold:'low demand'},
-  bpChT:'Where to sell', bpChAdd:v=>'+'+v+' a month', bpWeekT:'First week', bpRiskT:'What could go wrong', bpStopT:'When to change the plan', bpLoansT:'Loans',
-  bpMktT:'The market behind this plan', bpLogT:'Delivery', bpDush:'Dushanbe', bpMode:{auto:'truck',rail:'rail',air:'air',courier:'courier',self:'yourself'}, bpKg:'kg', bpDaysN:d=>d+' days', bpSeasonT:'Season', bpMktAt:d=>'Data collected '+d+'. “Market today” refreshes every 6 hours.',
+  bpTabN:{main:'Overview',money:'Money',months:'By month',market:'Market',risks:'Risks'},
+  bpNeedT:'What the goal takes', bpOptT:'Business options', bpBest:'Best for you', bpRisk:{low:'low risk',mid:'medium risk',high:'high risk'},
+  bpStart:'start', bpProfitM:(a,b)=>'profit '+a+' – '+b+' a month', bpPayback:n=>'pays back in '+n+' mo.',
+  bpCvT:'The business in short', bpCvN:{customer:'Who buys',problem:'Their problem',offer:'What we sell',price:'Price',edge:'Why better than competitors',channels:'Where we find customers',partners:'Partners'},
+  bpValT:'Test demand before big spending', bpValLead:'First spend only what you can afford to lose. Ask people how they solve the problem today, not “would you buy”.', bpPass:'Passed if',
+  bpWeekT:'First week', bpKpiT:'What to check every week',
+  bpBudT:'Start-up budget', bpReserve:'Reserve for 2–3 months', bpTotal:'Total', bpOver:v=>'The budget exceeds your money by '+v+' — start with a smaller option or a demand test.',
+  bpEcT:'Unit economics and break-even', bpEcN:{unit:'Unit of sale',price:'Price',cost:'Cost',margin:'Margin',fixed:'Fixed costs a month',be:'Sales a month to break even',bem:'Break-even',cac:'Cost of one customer'},
+  bpTeamT:'Team', bpPerM:v=>v+' a month',
+  bpMonthsT:'Month-by-month plan', bpDone:(a,b)=>a+' of '+b+' done', bpMoN:m=>'Month '+m, bpSpend:'Spend', bpRevT:'Revenue', bpProfit:'profit', bpCapEnd:'In the business at the end', bpLow:v=>'cautious '+v, bpCheck:'Check',
+  bpRoadWait:'Laying out the month-by-month plan…', bpRoadErr:'Could not lay out the months.', bpRoadStale:'The data is outdated — update the plan.',
+  bpMarketT:'Market', bpMkSize:'Size', bpMkGrow:'Growth', bpCusT:'Who buys', bpCompT:'Competitors and how to beat them', bpCompAll:'All competitors',
+  bpKind:{shop:'shop',online:'online',app:'app',social:'social media',marketplace:'marketplace',producer:'producer',service:'service',other:''},
+  bpPainT:'What customers complain about', bpAnaT:'Success stories in other countries', bpChT:'How to find customers', bpChAdd:v=>'+'+v+' a month',
+  bpPlacesT:'Where to buy', bpLogT:'Delivery', bpDush:'Dushanbe', bpMode:{auto:'truck',rail:'rail',air:'air',sea:'sea',courier:'courier',self:'yourself'}, bpKg:'kg', bpDaysN:d=>d+' days',
+  bpCostT:'Prices and costs', bpLegalT:'Paperwork and taxes', bpLegalNote:'Check with the tax office or a lawyer before you start: rules change.', bpSeasonT:'Season', bpMarginT:'Typical markup in this business',
+  bpUnitT:'Goods and markups', bpBuyP:'wholesale', bpCost:'landed', bpPrice:'retail', bpMk:'markup', bpDays:d=>'sells in '+d+' days', bpDem:{hot:'high demand',normal:'normal demand',cold:'low demand'},
+  bpRiskT:'What could go wrong', bpStopT:'When to change the plan', bpFailT:'Why such businesses close', bpFailNote:'In CB Insights’ review of 242 failed startups, the top reasons were no market need (42%) and running out of cash (29%) — so test demand first and keep a reserve.', bpLoansT:'Loans',
+  bpMktAt:d=>'Data collected '+d+'.',
   bpNote:'This is a calculation from fresh internet data, not a promise: prices and demand change. The decision is yours.',
-  bpRefresh:'Update with fresh data', bpEdit:'Change the conditions', bpShare:'Share',
-  bpCardT:'Business plan to the goal', bpCardSub:'Sifra studies the market today and lays out the path month by month: what to buy, where, for how much and where to sell.', bpStale:'Fresh data available — update the plan', bpGoalSub:'Fresh prices, buying cities, month-by-month path' }};
+  bpRefreshS:'Update', bpEditS:'Edit', bpShare:'Share', bpNewPlan:'New plan',
+  bpCardT:'Business plan', bpCardSub:'Any business, any country: Sifra studies the market, competitors and prices and lays out a month-by-month plan.', bpStale:'Update with fresh data', bpGoalSub:'Market, competitors, money, month-by-month plan' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M21S[k]);
 
 
@@ -12556,13 +12674,17 @@ try{ const _cx20=sfCtx; sfCtx=function(){ const o=_cx20.apply(this,arguments); t
       if(A.length) e.asked_not_in_stock=A.slice(0,6).map(r=>r.t+(r.n>1?' ×'+r.n:'')); if(pl) e.day_plan={target_today:pl.plan,sold_today:pl.soldT,month_target:pl.T,month_sold:pl.sold,basis:pl.src==='own'?'own goal':'break-even'}; }catch(e){} return o; }; }catch(e){}
 window.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('#egToday'); if(!t) return; e.preventDefault(); egPlanSheet(); },true);
 
-/* ===================== v21: «Бизнес-план к цели» =====================
-   Сумма, во сколько раз и за какой срок → Сифра изучает рынок сегодня (оптовые цены в разных городах, цены в Таджикистане, наценки,
-   карго, каналы продаж) и раскладывает путь по месяцам: что купить, где, на сколько, где продавать, сколько будет в деле.
-   Шаги отмечаются, план можно обновить по свежим данным. Нужен сервер Mira версии 8; со старым сервером — прежний «План от Сифры». */
-const BP_X=[2,3,5,10], BP_M=[3,6,12,18,24,36], BP_CS=['CN','TR','AE','UZ','KG','KZ','RU'], BP_CHN=['shop','insta','tg','wb','opt','none'];
+/* ===================== v22: «Бизнес-план» на весь экран — любой бизнес, любая страна =====================
+   Человек пишет своими словами, что хочет и где; сумма, цель и срок подставляются из текста. Сифра изучает рынок этого места
+   (спрос, конкуренты, отзывы, цены, поставщики, законы, удачные примеры в других странах), думает как предприниматель
+   (варианты, деньги, окупаемость, проверка спроса, маркетинг, риски) и расписывает план по месяцам.
+   Открывается отдельной страницей поверх «Куда вложить»: своя кнопка «Назад» и системный «Назад» ведут на шаг назад,
+   окно не смахивается и не прыгает, кнопки меняются на месте, без перерисовки. Нужен сервер Mira версии 9. */
+const BP_X=[2,3,5,10], BP_M=[3,6,12,18,24,36], BP_CS=['CN','TR','AE','UZ','KG','KZ','RU'], BP_CHN=['shop','insta','tg','wb','opt','site','none'], BP_EXP=['new','some','biz'];
+const BP_IDEAS=['auto','dried','cloth','food','china','online','cafe','service','medtech','export'], BP_PL=['auto','TJ','RU','KZ','UZ','KG','AE','TR','US','EU'];
 const BP_GC={kids:['kids'],teen:['kids','women','men'],women:['women'],men:['men'],dress:['women','wedding'],bed:['home','fabric'],shoes:['shoes'],acc:['acc','leather'],toys:['toys'],cosm:['cosm'],elec:['elec'],appl:['elec','hh'],hh:['hh','home']};
 let bpCtl=null, bpBusyNow=null;
+const BPG={el:null,stack:[],closing:false};
 function bpSt(){ state.misc=state.misc||{}; let b=state.misc.bp; if(!b||typeof b!=='object') b=state.misc.bp={}; if(!Array.isArray(b.plans)) b.plans=[]; return b; }
 function bpLast(){ return bpSt().plans[0]||null; }
 function bpMoLab(m){ return L.bpMo(m); }
@@ -12570,182 +12692,290 @@ function bpPct(x,m){ return (Math.pow(x,1/m)-1)*100; }
 function bpTime(iso){ const d=new Date(iso); if(isNaN(d)) return ''; return fmtDate(d)+', '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
 function bpX(v){ return '×'+fx(v,Math.abs(v-Math.round(v))>0.05?1:0); }
 function bpCname(c){ return (TCOUNTRY[c]?TCOUNTRY[c].f+' ':'')+(L['cn_'+c]||c); }
-function bpDefForm(D){ const P=ivP(), b=bpSt(); if(b.f&&!D) return Object.assign({},b.f);
-  const cap=Math.round((D&&D.cap)||ivCapUSD()||20000), x0=D&&D.x?D.x:(ivTargetUSD()>cap?ivTargetUSD()/cap:3), x=Math.round(x0*10)/10;
-  return {cap,x:BP_X.includes(x)?x:0,own:BP_X.includes(x)?0:Math.round(cap*x),m:D&&D.dl?Math.min(60,D.dl):12,cats:[],cs:[],ch:['shop'],tr:true}; }
 function bpTarget(f){ return f.x?f.cap*f.x:(+f.own||0); }
-/* места, которые знает приложение: по товару и стране, по очереди из разных городов */
-function bpPlaces(f){ const cats=f.cats.length?f.cats:IV_CATS, cs=f.cs.length?f.cs:BP_CS, want=new Set(cats.flatMap(k=>BP_GC[k]||[k])), byCity=new Map();
+function bpU$(v){ return v==null?'':ivUsd(v); }
+
+/* ---------- сумма, цель и срок из текста ---------- */
+function bpParse(t){ const s=' '+String(t||'').toLowerCase().replace(/[  ]/g,' ')+' ', out={}, E='(?=[^a-zа-яёқғҳҷӣӯ0-9]|$)', CY='[a-zа-яёқғҳҷӣӯ]*';
+  const num=v=>+String(v).replace(/\s/g,'').replace(',','.'), U='(k|к|тыс\\.?|тысяч'+CY+'|thousand|млн|million|mln)?';
+  let m=s.match(new RegExp('(\\d[\\d ]*(?:[.,]\\d+)?)\\s*'+U+'\\s*(?:\\$|usd|долл'+CY+'|dollar'+CY+')'))||s.match(new RegExp('(?:\\$|usd)\\s?(\\d[\\d ]*(?:[.,]\\d+)?)\\s*'+U+E));
+  if(m){ let v=num(m[1]); const u=m[2]||''; if(/^(k|к|тыс|thousand)/.test(u)) v*=1000; else if(/^(млн|million|mln)/.test(u)) v*=1e6; if(v>=1&&v<1e10) out.cap=Math.round(v); }
+  m=s.match(/(?<![\d.,])(\d+(?:[.,]\d)?)\s?[x×х](?![a-zа-яё])/)||s.match(/(?<![\da-zа-яё])[x×х]\s?(\d+(?:[.,]\d)?)(?!\d)/)||s.match(/в\s+(\d+(?:[.,]\d)?)\s+раз/)||s.match(/(\d+(?:[.,]\d)?)\s+баробар/)||s.match(/(\d+(?:[.,]\d)?)\s+times/);
+  if(m){ const v=num(m[1]); if(v>1&&v<=1000) out.x=v; }
+  if(new RegExp('(за|в течение|дар|in|within)\\s+(один\\s+|1\\s+|a\\s+|one\\s+|як\\s+)?(год|сол|year)'+E).test(s)) out.m=12;
+  if(/полгода|half a year|ним сол/.test(s)) out.m=6;
+  m=s.match(new RegExp('(\\d+(?:[.,]\\d)?)\\s*(год|года|лет|сол|years?)'+E)); if(m){ const v=num(m[1]); if(v>0&&v<=5) out.m=Math.round(v*12); }
+  m=s.match(new RegExp('(\\d+)\\s*(мес'+CY+'|моҳ'+CY+'|months?)'+E)); if(m){ const v=+m[1]; if(v>0&&v<=60) out.m=v; }
+  return out; }
+
+/* ---------- места закупки, которые знает приложение ---------- */
+function bpPlaces(f){ const cats=f.cats&&f.cats.length?f.cats:IV_CATS, cs=f.cs&&f.cs.length?f.cs:BP_CS, want=new Set(cats.flatMap(k=>BP_GC[k]||[k])), byCity=new Map();
   for(const g of GUIDE){ const ct=GCITY[g[0]]; if(!ct||!cs.includes(ct.c)||g[1]==='💡'||!g[2].some(k=>want.has(k))) continue; const place=/^[A-Za-zА-Яа-яЁё0-9]/.test(g[1])?g[1]+': ':'';
     const name=lang==='en'?ct.en:ct.ru, txt=String(lang==='en'?g[5]:g[3]||'').replace(/\s+/g,' ');
     if(!byCity.has(g[0])) byCity.set(g[0],[]); byCity.get(g[0]).push({c:ct.c,city:name,what:(place+txt).slice(0,110)}); }
   const out=[], lists=[...byCity.values()]; for(let i=0;out.length<40&&lists.some(l=>l[i]);i++) for(const l of lists){ if(l[i]&&out.length<40) out.push(l[i]); } return out; }
-function bpCityNames(f){ const cs=f.cs.length?f.cs:[], cats=f.cats.length?f.cats:IV_CATS, want=new Set(cats.flatMap(k=>BP_GC[k]||[k])), seen=new Set();
-  if(!cs.length) return ''; for(const g of GUIDE){ const ct=GCITY[g[0]]; if(ct&&cs.includes(ct.c)&&g[2].some(k=>want.has(k))) seen.add(lang==='en'?ct.en:ct.ru); }
-  return [...seen].slice(0,10).join(', '); }
+function bpIsTrade(f){ return !!((f.cs&&f.cs.length)||(f.from||'').trim()||/китай|китая|турци|дубай|оаэ|закуп|опт|товар|china|turkey|dubai|wholesale|чин|туркия|яклухт/i.test(f.idea||'')); }
 
-/* ---------- форма ---------- */
-function bpForm(D){ const f=bpDefForm(D), last=bpLast();
-  const draw=()=>{ const tgt=bpTarget(f), x=f.cap>0?tgt/f.cap:0, pm=x>1&&f.m?bpPct(x,f.m):0, cities=bpCityNames(f);
-    openSheet(`<div class="bp-top"><span class="bp-ava">${SF_AVA}</span><div><h3>${L.bpT}</h3><p class="lead">${L.bpLead}</p></div></div>
-      ${last?`<button type="button" class="bp-mine" id="bp-mine">${ico('doc',18)}<span><b>${L.bpOpenMine}</b><small>${esc(last.plan.title||'')} · ${L.bpUpd(bpTime(last.at))}</small></span>${ico('next',18)}</button>`:''}
-      <div class="field n big-in"><label for="bp-cap">${L.bpCap}</label><input id="bp-cap" type="number" inputmode="decimal" min="1" value="${f.cap||''}"></div>
-      <div class="br-h">${L.bpX}</div><div class="chips bp-wrap">${BP_X.map(v=>`<button type="button" class="chip ${f.x===v?'on':''}" data-bpx="${v}" aria-pressed="${f.x===v}">×${v}</button>`).join('')}<button type="button" class="chip ${!f.x?'on':''}" data-bpx="0" aria-pressed="${!f.x}">${L.bpOwn}</button></div>
-      ${!f.x?`<div class="field n"><label for="bp-own">${L.bpOwnPh}</label><input id="bp-own" type="number" inputmode="decimal" min="1" value="${f.own||''}"></div>`:''}
-      <div class="br-h">${L.bpM}</div><div class="chips bp-wrap">${BP_M.concat(BP_M.includes(f.m)?[]:[f.m]).sort((a,b)=>a-b).map(v=>`<button type="button" class="chip ${f.m===v?'on':''}" data-bpm="${v}" aria-pressed="${f.m===v}">${bpMoLab(v)}</button>`).join('')}</div>
-      <p class="bp-need ${pm>=7?'hi':''}" id="bp-need">${x>1?L.bpNeed(pm>=10?Math.round(pm):fx(pm,1),bpX(x),bpMoLab(f.m))+(pm>=7?' '+L.bpNeedHi:''):L.bpNeedBad}</p>
-      <div class="br-h">${L.bpCat}</div><div class="chips bp-wrap"><button type="button" class="chip ${!f.cats.length?'on':''}" data-bpc="" aria-pressed="${!f.cats.length}">${ico('sparkle',16)} ${L.bpAuto}</button>${IV_CATS.map(k=>`<button type="button" class="chip ${f.cats.includes(k)?'on':''}" data-bpc="${k}" aria-pressed="${f.cats.includes(k)}">${WH_CIC[k]||''} ${L['whC_'+k]}</button>`).join('')}</div>
-      <div class="br-h">${L.bpCountry}</div><div class="chips bp-wrap"><button type="button" class="chip ${!f.cs.length?'on':''}" data-bpk="" aria-pressed="${!f.cs.length}">${ico('globe',16)} ${L.bpAuto}</button>${BP_CS.map(c=>`<button type="button" class="chip ${f.cs.includes(c)?'on':''}" data-bpk="${c}" aria-pressed="${f.cs.includes(c)}">${bpCname(c)}</button>`).join('')}</div>
-      <p class="bp-hint">${f.cs.length?(cities?L.bpCities(esc(cities)):''):L.bpCitiesAuto}</p>
-      <div class="br-h">${L.bpCh}</div><div class="chips bp-wrap">${BP_CHN.map(k=>`<button type="button" class="chip ${f.ch.includes(k)?'on':''}" data-bpch="${k}" aria-pressed="${f.ch.includes(k)}">${L.bpChN[k]}</button>`).join('')}</div>
-      <div class="br-h">${L.bpTr}</div><div class="chips bp-wrap"><button type="button" class="chip ${f.tr?'on':''}" data-bptr="1" aria-pressed="${!!f.tr}">${L.bpYes}</button><button type="button" class="chip ${!f.tr?'on':''}" data-bptr="0" aria-pressed="${!f.tr}">${L.bpNo}</button></div>
-      <button type="button" class="btn btn-primary bp-go" id="bp-go" ${x>1?'':'disabled'}>${ico('sparkle',20)} ${L.bpGo}</button>
-      <p class="note">${L.bpGoNote}</p>
-      <div class="sheet-row"><button class="btn btn-ghost" id="bp-back">${L.back}</button></div>`);
-    const save=()=>{ bpSt().f=Object.assign({},f); persist(); };
-    const ci=$('#bp-cap'); ci.addEventListener('input',()=>{ f.cap=+ci.value||0; clearTimeout(ci._t); ci._t=setTimeout(()=>{ save(); need(); },250); });
-    const oi=$('#bp-own'); if(oi) oi.addEventListener('input',()=>{ f.own=+oi.value||0; clearTimeout(oi._t); oi._t=setTimeout(()=>{ save(); need(); },250); });
-    sheet.querySelectorAll('[data-bpx]').forEach(b=>b.onclick=()=>{ const v=+b.dataset.bpx; if(!v&&f.x) f.own=Math.round(f.cap*f.x); f.x=v; save(); draw(); if(!v) setTimeout(()=>{ const o=$('#bp-own'); if(o) o.focus(); },60); });
-    sheet.querySelectorAll('[data-bpm]').forEach(b=>b.onclick=()=>{ f.m=+b.dataset.bpm; save(); draw(); });
-    sheet.querySelectorAll('[data-bpc]').forEach(b=>b.onclick=()=>{ const k=b.dataset.bpc; if(!k) f.cats=[]; else if(f.cats.includes(k)) f.cats=f.cats.filter(x=>x!==k); else { f.cats=f.cats.concat(k).slice(-3); } save(); draw(); });
-    sheet.querySelectorAll('[data-bpk]').forEach(b=>b.onclick=()=>{ const k=b.dataset.bpk; if(!k) f.cs=[]; else if(f.cs.includes(k)) f.cs=f.cs.filter(x=>x!==k); else { f.cs=f.cs.concat(k).slice(-3); } save(); draw(); });
-    sheet.querySelectorAll('[data-bpch]').forEach(b=>b.onclick=()=>{ const k=b.dataset.bpch; if(k==='none') f.ch=f.ch.includes('none')?[]:['none']; else { f.ch=f.ch.filter(x=>x!=='none'); f.ch=f.ch.includes(k)?f.ch.filter(x=>x!==k):f.ch.concat(k); } save(); draw(); });
-    sheet.querySelectorAll('[data-bptr]').forEach(b=>b.onclick=()=>{ f.tr=b.dataset.bptr==='1'; save(); draw(); });
-    $('#bp-go').onclick=()=>{ save(); bpRun(Object.assign({},f)); };
-    $('#bp-back').onclick=()=>{ investSheet(); sheet.scrollTop=0; };
-    const mi=$('#bp-mine'); if(mi) mi.onclick=()=>bpView(last.id);
-  };
-  const need=()=>{ const e=$('#bp-need'), g=$('#bp-go'); if(!e) return; const tgt=bpTarget(f), x=f.cap>0?tgt/f.cap:0, pm=x>1&&f.m?bpPct(x,f.m):0;
-    e.className='bp-need '+(pm>=7?'hi':''); e.textContent=x>1?L.bpNeed(pm>=10?Math.round(pm):fx(pm,1),bpX(x),bpMoLab(f.m))+(pm>=7?' '+L.bpNeedHi:''):L.bpNeedBad; if(g) g.disabled=!(x>1); };
-  draw(); sheet.scrollTop=0; }
+/* ---------- страница на весь экран: свой «Назад», без смахивания ---------- */
+function bpPage(){ if(BPG.el) return BPG.el; const d=document.createElement('div'); d.id='bpPage'; d.className='bp-page'; d.setAttribute('role','dialog'); d.setAttribute('aria-modal','true'); d.setAttribute('aria-labelledby','bpg-t');
+  d.innerHTML=`<header class="bp-bar"><button type="button" class="bp-ib" id="bpg-back"></button><b id="bpg-t"></b><button type="button" class="bp-ib" id="bpg-x"></button></header><main class="bp-main" id="bpg-m"></main><footer class="bp-foot" id="bpg-f"></footer>`;
+  document.body.appendChild(d); BPG.el=d; d.querySelector('#bpg-back').onclick=()=>bpBack(); d.querySelector('#bpg-x').onclick=()=>bpClose(); return d; }
+function bpOpenNow(){ return !!(BPG.el&&BPG.el.classList.contains('open')); }
+function bpTop(){ return BPG.stack[BPG.stack.length-1]||null; }
+function bpGo(name,arg){ const d=bpPage(), m=d.querySelector('#bpg-m'), first=!bpOpenNow(); if(first) BPG.stack=[]; const t=bpTop(); if(t) t.y=m.scrollTop;
+  BPG.stack.push({name,arg,y:0}); try{ history.pushState({m8:'bp',n:BPG.stack.length},''); }catch(e){}
+  if(first){ d.classList.add('open'); document.documentElement.classList.add('bp-lock'); } bpRender(); }
+function bpReplace(name,arg){ const t=bpTop(); if(!t){ bpGo(name,arg); return; } t.name=name; t.arg=arg; t.y=0; bpRender(); }
+function bpBack(){ if(!bpOpenNow()) return; try{ history.back(); }catch(e){ bpPop(); } }
+function bpPop(){ if(BPG.closing){ BPG.closing=false; bpHide(); return; } BPG.stack.pop(); if(!BPG.stack.length){ bpHide(); return; } bpRender(true); }
+function bpClose(){ const n=BPG.stack.length; if(!n){ bpHide(); return; } BPG.closing=true; try{ history.go(-n); }catch(e){ BPG.closing=false; bpHide(); } }
+function bpHide(){ BPG.stack=[]; if(BPG.el){ BPG.el.classList.remove('open'); BPG.el.querySelector('#bpg-m').innerHTML=''; } document.documentElement.classList.remove('bp-lock'); try{ bpCardDraw(); const gp=document.querySelector('#gp-plan'); if(gp) bpGpLabel(gp); }catch(e){} }
+/* системный «Назад»: пока открыта страница плана — шаг назад по ней, иначе — как раньше во всём приложении */
+try{ removeEventListener('popstate',m8Pop); }catch(e){}
+addEventListener('popstate',e=>{ if(bpOpenNow()){ bpPop(); return; } m8Pop(e); });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'&&bpOpenNow()){ e.preventDefault(); bpBack(); } });
+function bpRender(restore){ const t=bpTop(); if(!t) return; const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+  d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`;
+  d.querySelector('#bpg-back').setAttribute('aria-label',L.back); d.querySelector('#bpg-x').setAttribute('aria-label',L.close);
+  f.innerHTML=''; f.hidden=true;
+  if(t.name==='form') bpFormR(m,f,t.arg); else if(t.name==='busy') bpBusyR(m,f); else if(t.name==='view') bpViewR(m,f,t.arg);
+  m.scrollTop=restore?(t.y||0):0; }
 
-/* ---------- составление: два запроса, на экране — шаги ---------- */
-function bpBusyHTML(i){ return `<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b aria-live="polite">${L.bpBusy[Math.min(i,L.bpBusy.length-1)]}</b>
-  <ol class="bp-steps">${L.bpStepsT.map((t,k)=>`<li class="${k<i?'done':k===i?'now':''}">${k<i?ico('check',16):`<i></i>`}<span>${t}</span></li>`).join('')}</ol>
-  <small>${L.bpWaitNote}</small><button class="btn btn-ghost" id="bp-cancel">${L.cancel}</button></div>`; }
-function bpAskFirst(D){ try{ D=D||ivGoalLite(); return !!(D&&D.S0&&D.S0.src==='def'&&!ivP().askS&&navigator.onLine); }catch(e){ return false; } }
-function bpSales(){ try{ const D=ivGoalLite(); if(D&&D.S0) return {v:Math.round(D.S0.v),src:D.S0.src}; }catch(e){} try{ const c=ivCapMUSD(); return {v:Math.round(c.v),src:c.src}; }catch(e){} return null; }
+/* ---------- форма: одно поле своими словами, остальное — по желанию ---------- */
+function bpDefForm(D){ const b=bpSt(); if(b.f&&!D) return Object.assign({cs:[],ch:[],touched:{}},b.f,{touched:{}});
+  const P=ivP(), cap=Math.round((D&&D.cap)||ivCapUSD()||20000), x0=D&&D.x?D.x:(ivTargetUSD()>cap?ivTargetUSD()/cap:3), x=Math.round(x0*10)/10;
+  const idea=D?L.bpGoalIdea(L['whC_'+(D.cat||P.cat)]||'',D.c?L['cn_'+D.c]||D.c:''):'';
+  return {idea,place:'',cap,x:BP_X.includes(x)?x:0,own:BP_X.includes(x)?0:Math.round(cap*x),m:D&&D.dl?Math.min(60,D.dl):12,ch:['shop'],exp:'',from:'',cs:D&&D.c&&BP_CS.includes(D.c)?[D.c]:[],cats:D&&D.cat?[D.cat]:[],tr:true,touched:{}}; }
+function bpOpen(D){ if(D) bpSt().f=null; bpGo('form',bpDefForm(D)); }
+function bpChips(attr,list,cur,lab,multi){ return list.map(v=>{ const on=multi?cur.includes(v):cur===v; return `<button type="button" class="chip ${on?'on':''}" data-${attr}="${esc(String(v))}" aria-pressed="${on}">${lab(v)}</button>`; }).join(''); }
+function bpFormR(m,foot,f){ const last=bpLast(), b=bpSt();
+  BPG.el.querySelector('#bpg-t').textContent=L.bpT;
+  const ms=BP_M.concat(BP_M.includes(f.m)?[]:[f.m]).sort((a,c)=>a-c);
+  m.innerHTML=`<div class="bp-top bp-hero"><span class="bp-ava">${SF_AVA}</span><div><h2>${L.bpT}</h2><p>${L.bpLead}</p></div></div>
+    ${last?`<button type="button" class="bp-mine" id="bp-mine">${ico('doc',18)}<span><b>${L.bpOpenMine}</b><small>${esc(bpTitleOf(last))} · ${L.bpUpd(bpTime(last.at))}</small></span>${ico('next',18)}</button>`:''}
+    <label class="bp-lab" for="bp-idea">${L.bpIdeaQ}</label>
+    <textarea id="bp-idea" class="bp-idea" rows="4" maxlength="700" placeholder="${esc(L.bpIdeaPh)}">${esc(f.idea||'')}</textarea>
+    <div class="chips bp-wrap" id="bp-ideas">${BP_IDEAS.map(k=>`<button type="button" class="chip" data-bpi="${k}">${L.bpIdeaN[k]}</button>`).join('')}</div>
+    <label class="bp-lab" for="bp-place">${L.bpPlaceQ}</label>
+    <input id="bp-place" class="bp-in" type="text" maxlength="90" autocomplete="off" placeholder="${esc(L.bpPlacePh)}" value="${esc(f.place||'')}">
+    <div class="chips bp-wrap" id="bp-pls">${BP_PL.map(k=>`<button type="button" class="chip ${(f.place||'')===(L.bpPlaceN[k]||'')&&k!=='auto'||(!f.place&&k==='auto')?'on':''}" data-bpp="${k}">${L.bpPlaceN[k]}</button>`).join('')}</div>
+    <div class="bp-row3"><div class="field n"><label for="bp-cap">${L.bpCap}</label><input id="bp-cap" type="number" inputmode="decimal" min="1" value="${f.cap||''}"></div></div>
+    <div class="br-h">${L.bpX}</div><div class="chips bp-wrap" id="bp-xs">${bpChips('bpx',BP_X.concat(0),f.x,v=>v?'×'+v:L.bpOwn)}</div>
+    <div class="field n" id="bp-ownw" ${f.x?'hidden':''}><label for="bp-own">${L.bpOwnPh}</label><input id="bp-own" type="number" inputmode="decimal" min="1" value="${f.own||''}"></div>
+    <div class="br-h">${L.bpM}</div><div class="chips bp-wrap" id="bp-ms">${bpChips('bpm',ms,f.m,v=>bpMoLab(v))}</div>
+    <p class="bp-need" id="bp-need"></p>
+    <details class="bp-more" id="bp-more" ${b.moreOpen?'open':''}><summary>${ico('edit',16)} ${L.bpMore}</summary>
+      <div class="br-h">${L.bpCh}</div><div class="chips bp-wrap">${bpChips('bpch',BP_CHN,f.ch||[],k=>L.bpChN[k],true)}</div>
+      <div class="br-h">${L.bpExp}</div><div class="chips bp-wrap">${bpChips('bpe',BP_EXP,f.exp||'',k=>L.bpExpN[k])}</div>
+      <div class="br-h">${L.bpCountry}</div><input id="bp-from" class="bp-in" type="text" maxlength="120" autocomplete="off" placeholder="${esc(L.bpFromPh)}" value="${esc(f.from||'')}">
+      <div class="chips bp-wrap">${bpChips('bpk',BP_CS,f.cs||[],c=>bpCname(c),true)}</div>
+      <div class="br-h">${L.bpTr}</div><div class="chips bp-wrap">${bpChips('bptr',['1','0'],f.tr?'1':'0',v=>v==='1'?L.bpYes:L.bpNo)}</div>
+    </details>
+    ${(()=>{ let n=0; try{ n=ideas().length; }catch(e){} return n?`<button type="button" class="bp-old" id="bp-oldid">${ico('bulb',16)} ${L.bpOldIdeas(n)}</button>`:''; })()}`;
+  foot.hidden=false; foot.innerHTML=`<button type="button" class="btn btn-primary bp-go" id="bp-go">${ico('sparkle',20)} ${L.bpGo}</button><small>${L.bpGoNote}</small>`;
+  const save=()=>{ const c=Object.assign({},f); delete c.touched; bpSt().f=c; persist(); };
+  const sel=(attr,val,multi)=>m.querySelectorAll(`[data-${attr}]`).forEach(x=>{ const v=x.getAttribute('data-'+attr), on=multi?val.includes(v):String(val)===v; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on); });
+  const need=()=>{ const e=m.querySelector('#bp-need'); if(!e) return; const tgt=bpTarget(f), x=f.cap>0?tgt/f.cap:0, pm=x>1&&f.m?bpPct(x,f.m):0;
+    e.className='bp-need '+(pm>=7?'hi':''); e.textContent=x>1?L.bpNeed(pm>=10?Math.round(pm):fx(pm,1),bpX(x),bpMoLab(f.m))+(pm>=7?' '+L.bpNeedHi:''):L.bpNeedBad; };
+  const setM=v=>{ f.m=v; if(!m.querySelector(`[data-bpm="${v}"]`)){ const box=m.querySelector('#bp-ms'), lst=BP_M.concat(BP_M.includes(v)?[]:[v]).sort((a,c)=>a-c); box.innerHTML=bpChips('bpm',lst,v,z=>bpMoLab(z)); } sel('bpm',v); };
+  const ta=m.querySelector('#bp-idea'), pl=m.querySelector('#bp-place'), ci=m.querySelector('#bp-cap'), oi=m.querySelector('#bp-own'), fr=m.querySelector('#bp-from');
+  const fromText=()=>{ if(!m.contains(ta)) return; const p=bpParse(f.idea); if(p.cap&&!f.touched.cap){ f.cap=p.cap; ci.value=p.cap; } if(p.x&&!f.touched.x){ if(BP_X.includes(p.x)){ f.x=p.x; m.querySelector('#bp-ownw').hidden=true; } else { f.x=0; f.own=Math.round(f.cap*p.x); oi.value=f.own; m.querySelector('#bp-ownw').hidden=false; } sel('bpx',f.x); } if(p.m&&!f.touched.m) setM(p.m); need(); };
+  let tt=null; ta.addEventListener('input',()=>{ f.idea=ta.value; ta.classList.remove('bad'); clearTimeout(tt); tt=setTimeout(()=>{ if(!m.contains(ta)) return; fromText(); save(); },350); });
+  pl.addEventListener('input',()=>{ f.place=pl.value; const k=BP_PL.find(z=>z!=='auto'&&L.bpPlaceN[z]===pl.value.trim()); m.querySelectorAll('[data-bpp]').forEach(x=>x.classList.toggle('on',x.dataset.bpp===(k||(pl.value.trim()?'':'auto')))); clearTimeout(pl._t); pl._t=setTimeout(save,300); });
+  ci.addEventListener('input',()=>{ f.cap=+ci.value||0; f.touched.cap=true; need(); clearTimeout(ci._t); ci._t=setTimeout(save,300); });
+  oi.addEventListener('input',()=>{ f.own=+oi.value||0; f.touched.x=true; need(); clearTimeout(oi._t); oi._t=setTimeout(save,300); });
+  fr.addEventListener('input',()=>{ f.from=fr.value; clearTimeout(fr._t); fr._t=setTimeout(save,300); });
+  m.querySelector('#bp-more').addEventListener('toggle',e=>{ bpSt().moreOpen=e.target.open; });
+  m.onclick=e=>{ const c=e.target.closest('button'); if(!c||!m.contains(c)) return; const ds=c.dataset;
+    if(c.id==='bp-oldid'){ bpClose(); setTimeout(()=>ideaSheet({back:'invest'}),80); return; }
+    if(ds.bpi){ const k=ds.bpi, t=L.bpIdeaT[k]; if(k==='auto'){ f.idea=(f.idea.trim()?f.idea.trim()+' ':'')+t; } else { f.idea=f.idea.trim()?f.idea.trim().replace(/[.!]?$/,'. ')+t:t; } ta.value=f.idea; fromText(); save(); ta.classList.remove('bad'); return; }
+    if(ds.bpp){ const k=ds.bpp; f.place=k==='auto'?'':L.bpPlaceN[k]; pl.value=f.place; m.querySelectorAll('[data-bpp]').forEach(x=>x.classList.toggle('on',x===c)); save(); return; }
+    if(ds.bpx!=null){ const v=+ds.bpx; if(!v&&f.x) f.own=Math.round(f.cap*f.x); f.x=v; f.touched.x=true; oi.value=f.own||''; m.querySelector('#bp-ownw').hidden=!!v; sel('bpx',v); need(); save(); if(!v) oi.focus(); return; }
+    if(ds.bpm){ f.touched.m=true; setM(+ds.bpm); need(); save(); return; }
+    if(ds.bpch){ const k=ds.bpch; if(k==='none') f.ch=f.ch.includes('none')?[]:['none']; else { f.ch=f.ch.filter(x=>x!=='none'); f.ch=f.ch.includes(k)?f.ch.filter(x=>x!==k):f.ch.concat(k); } sel('bpch',f.ch,true); save(); return; }
+    if(ds.bpe){ f.exp=f.exp===ds.bpe?'':ds.bpe; sel('bpe',f.exp); save(); return; }
+    if(ds.bpk){ const k=ds.bpk; f.cs=f.cs.includes(k)?f.cs.filter(x=>x!==k):f.cs.concat(k).slice(-3); sel('bpk',f.cs,true); save(); return; }
+    if(ds.bptr){ f.tr=ds.bptr==='1'; sel('bptr',f.tr?'1':'0'); save(); return; } };
+  foot.querySelector('#bp-go').onclick=()=>{ f.idea=ta.value.trim(); if(f.idea.length<3){ ta.classList.add('bad'); ta.focus(); toast(L.bpIdeaNeed); return; }
+    if(!(bpTarget(f)>f.cap&&f.cap>0)){ toast(L.bpNeedBad); m.querySelector('#bp-need').scrollIntoView({block:'center'}); return; } save(); bpRun(Object.assign({},f)); };
+  const mi=m.querySelector('#bp-mine'); if(mi) mi.onclick=()=>bpGo('view',last.id);
+  need(); }
+
+/* ---------- составление: исследование → анализ → план по месяцам ---------- */
+function bpBusyR(m,foot){ const st=bpBusyNow||{i:0}; BPG.el.querySelector('#bpg-t').textContent=L.bpT; m.onclick=null;
+  m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b aria-live="polite" id="bp-bt">${L.bpBusy[Math.min(st.i,L.bpBusy.length-1)]}</b>
+    <ol class="bp-steps">${L.bpStepsT.map((t,k)=>`<li class="${k<st.i?'done':k===st.i?'now':''}">${k<st.i?ico('check',16):`<i></i>`}<span>${t}</span></li>`).join('')}</ol>
+    <small>${L.bpWaitNote}</small></div>`;
+  foot.hidden=false; foot.innerHTML=`<button type="button" class="btn btn-ghost bp-go" id="bp-cancel">${L.cancel}</button>`;
+  foot.querySelector('#bp-cancel').onclick=()=>{ try{ if(bpCtl) bpCtl.abort(); }catch(e){} bpBusyNow=null; bpBack(); }; }
+function bpBusyTick(){ const t=bpTop(); if(bpOpenNow()&&t&&t.name==='busy') bpRender(); }
+function bpPost(body,signal){ return fetch(API_BASE+'/api/mk/bplan',{method:'POST',headers:{'content-type':'application/json'},signal,body:JSON.stringify(body)}).then(async r=>({ok:r.ok,status:r.status,j:await r.json().catch(()=>({}))})); }
+function bpSalesProf(){ let sl=null; try{ const D=ivGoalLite(); if(D&&D.S0) sl={v:Math.round(D.S0.v),src:D.S0.src}; }catch(e){}
+  return sl?{shop_sales_month_usd:sl.v,sales_figure:({def:'примерная, человек её не вводил',fact:'из записей выручки',user:'ввёл человек',buy:'оценка по закупкам',sold:'оценка по отметкам продаж',pay:'нижняя оценка по платежам'}[sl.src]||sl.src)}:{}; }
+function bpReq(f){ const mo=today0(), month=(L.monthsNom||[])[mo.getMonth()]+' '+mo.getFullYear(), tgt=bpTarget(f);
+  return {lang,idea:f.idea,place:f.place||'',from:f.from||'',cats:f.cats||[],countries:f.cs||[],
+    profile:Object.assign({cap_usd:f.cap,target_usd:Math.round(tgt),months:f.m,channels:(f.ch||[]).map(k=>L.bpChN[k]),travel:!!f.tr,experience:f.exp?L.bpExpN[f.exp]:'',reinvest_pct:ivRe(),start:month},bpSalesProf())}; }
 async function bpRun(f){ if(!navigator.onLine){ toast(L.idOffline); return; }
-  if(bpBusyNow){ bpBusyShow(); return; }
-  if(bpAskFirst()){ ivAskSales(()=>bpRun(f)); return; }
+  if(bpBusyNow){ if(bpOpenNow()) bpGo('busy'); return; }
   let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
-  if(!caps||caps.v<8){ toast(L.bpOld); try{ const D=ivGoalLite(); if(D){ ivPlanAsk(D); return; } }catch(e){} return; }
-  const tgt=bpTarget(f), ctl=bpCtl=new AbortController(), to=setTimeout(()=>ctl.abort(),480000), st={i:0,t0:Date.now()};
-  bpBusyNow=st; bpBusyShow();
-  const tick=setInterval(()=>{ const s=(Date.now()-st.t0)/1000; const ni=st.phase==='build'?(s-st.tb>45?3:2):(s>28?1:0); if(ni!==st.i&&ni>st.i){ st.i=ni; bpBusyShow(true); } },3000);
-  const post=body=>fetch(API_BASE+'/api/mk/bplan',{method:'POST',headers:{'content-type':'application/json'},signal:ctl.signal,body:JSON.stringify(body)}).then(async r=>({ok:r.ok,status:r.status,j:await r.json().catch(()=>({}))}));
-  const fail=(code)=>{ clearInterval(tick); clearTimeout(to); bpBusyNow=null; if(code==='cut') return; const msg=code==='limit'?L.bpErrLimit:code==='key'?L.bpErrKey:L.bpErr;
-    if(!$('.bp-busy')){ toast(msg); return; }
-    openSheet(`<div class="id-busy"><span class="id-bava">${SF_AVA}</span><b>${msg}</b><div class="sheet-row" style="width:100%"><button class="btn btn-ghost" id="bp-e1">${L.back}</button>${code==='x'?`<button class="btn btn-primary" id="bp-e2">${L.idRetry}</button>`:''}</div></div>`);
-    $('#bp-e1').onclick=()=>bpForm(); const e2=$('#bp-e2'); if(e2) e2.onclick=()=>bpRun(f); };
-  const code=r=>r.j&&r.j.error==='limit'?'limit':r.j&&r.j.error==='nokey'?'key':'x';
+  if(!caps||caps.v<9){ toast(L.bpOld); return; }
+  const ctl=bpCtl=new AbortController(), to=setTimeout(()=>ctl.abort(),600000), st={i:0,t0:Date.now()}, base=bpReq(f), tgt=bpTarget(f);
+  bpBusyNow=st; if(bpOpenNow()) bpGo('busy');
+  const step=i=>{ if(i>st.i){ st.i=i; bpBusyTick(); } };
+  const tick=setInterval(()=>{ const s=(Date.now()-st.t0)/1000; if(st.ph==='scan'&&s>40) step(1); if(st.ph==='think'&&s-st.tt>70) step(3); },3000);
+  const code=r=>r&&r.j&&r.j.error==='limit'?'limit':r&&r.j&&r.j.error==='nokey'?'key':'x';
+  const done=()=>{ clearInterval(tick); clearTimeout(to); bpBusyNow=null; };
+  const fail=c=>{ done(); if(c==='cut') return; const msg=c==='limit'?L.bpErrLimit:c==='key'?L.bpErrKey:L.bpErr; const t=bpTop();
+    if(bpOpenNow()&&t&&t.name==='busy'){ const m=BPG.el.querySelector('#bpg-m'), ft=BPG.el.querySelector('#bpg-f');
+      m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b>${msg}</b></div>`; ft.hidden=false;
+      ft.innerHTML=`${c==='x'?`<button type="button" class="btn btn-primary bp-go" id="bp-e2">${ico('repeat',18)} ${L.idRetry}</button>`:''}<button type="button" class="btn btn-ghost bp-go" id="bp-e1">${L.back}</button>`;
+      ft.querySelector('#bp-e1').onclick=()=>bpBack(); const e2=ft.querySelector('#bp-e2'); if(e2) e2.onclick=()=>{ bpBack(); setTimeout(()=>bpRun(f),60); }; }
+    else toast(msg); };
   try{
-    const mo=today0(), month=(L.monthsNom||[])[mo.getMonth()]+' '+mo.getFullYear();
-    const rq={stage:'research',id:mkId(),lang,cats:f.cats,countries:f.cs,places:bpPlaces(f),month};
-    let r1=await post(rq); if(!r1.ok||!r1.j.rid) return fail(code(r1));
-    st.phase='build'; st.tb=(Date.now()-st.t0)/1000; st.i=2; bpBusyShow(true);
-    const sl=bpSales(), prof={cap_usd:f.cap,target_usd:Math.round(tgt),months:f.m,channels:f.ch.map(k=>L.bpChN[k]),travel:!!f.tr,reinvest_pct:ivRe(),start:month,shop_sales_month_usd:sl?sl.v:undefined,sales_figure:sl?({def:'примерная, человек её не вводил',fact:'из записей выручки',user:'ввёл человек',buy:'оценка по закупкам',sold:'оценка по отметкам продаж',pay:'нижняя оценка по платежам'}[sl.src]||sl.src):undefined};
-    const bq=()=>post({stage:'build',id:mkId(),lang,rid:r1.j.rid,cats:f.cats,countries:f.cs,profile:prof,ctx:sfCtx()});
-    let r2=await bq(); if(r2.status===410){ r1=await post(rq); if(!r1.ok||!r1.j.rid) return fail(code(r1)); r2=await bq(); }
-    if(!r2.ok||!r2.j.plan) return fail(code(r2));
-    clearInterval(tick); clearTimeout(to); bpBusyNow=null;
-    const it={id:uid('bp'),at:r2.j.at||new Date().toISOString(),rat:r2.j.research_at||r1.j.at||'',f:Object.assign({},f),cap:f.cap,tgt:Math.round(tgt),plan:r2.j.plan,research:r1.j.research||null,
-      src:(Array.isArray(r2.j.sources)?r2.j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,16),done:{}};
-    const b=bpSt(); b.plans.unshift(it); b.plans=b.plans.slice(0,4); persist();
-    if($('.bp-busy')) bpView(it.id); else { toast(L.bpReady); bpCardDraw(); }
+    st.ph='scan'; const sq=Object.assign({stage:'scan',id:mkId(),places:bpIsTrade(f)?bpPlaces(f):[]},base);
+    let r1=await bpPost(sq,ctl.signal); if(!r1.ok||!r1.j.rid) return fail(code(r1));
+    st.ph='think'; st.tt=(Date.now()-st.t0)/1000; step(2);
+    const tq=()=>bpPost(Object.assign({stage:'think',id:mkId(),rid:r1.j.rid,ctx:sfCtx()},base),ctl.signal);
+    let r2=await tq(); if(r2.status===410){ r1=await bpPost(sq,ctl.signal); if(!r1.ok||!r1.j.rid) return fail(code(r1)); r2=await tq(); }
+    if(!r2.ok||!r2.j.analysis) return fail(code(r2));
+    done();
+    const it={id:uid('bp'),v:9,at:r2.j.at||new Date().toISOString(),rat:r2.j.research_at||r1.j.at||'',f:Object.assign({},f,{touched:undefined}),cap:f.cap,tgt:Math.round(tgt),
+      a:r2.j.analysis,research:r1.j.research||null,src:(Array.isArray(r2.j.sources)?r2.j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,20),road:null,roadSt:'wait',rid:r1.j.rid,aid:r2.j.aid,done:{}};
+    const b=bpSt(); b.plans.unshift(it); b.plans=b.plans.slice(0,5); persist();
+    const t=bpTop(); if(bpOpenNow()&&t&&t.name==='busy') bpReplace('view',it.id); else { toast(L.bpReady); bpCardDraw(); }
+    bpRoad(it);
   }catch(e){ fail(ctl.signal.aborted?'cut':'x'); }
 }
-function bpBusyShow(soft){ const st=bpBusyNow; if(!st) return; if(soft&&!$('.bp-busy')) return;
-  openSheet(bpBusyHTML(st.i)); $('#bp-cancel').onclick=()=>{ try{ if(bpCtl) bpCtl.abort(); }catch(e){} bpBusyNow=null; bpForm(); }; }
+async function bpRoad(it){ it.roadSt='wait'; bpViewTab(it,'months');
+  try{ const r=await bpPost(Object.assign({stage:'road',id:mkId(),rid:it.rid,aid:it.aid},bpReq(it.f)));
+    if(r.ok&&r.j.road){ it.road=r.j.road; it.roadSt='ok'; } else it.roadSt=r.j&&r.j.error==='limit'?'limit':r.status===410?'stale':'err'; }
+  catch(e){ it.roadSt='err'; }
+  persist(); bpViewTab(it,'months'); bpViewTab(it,'money'); bpViewTab(it,'main'); }
 
-/* ---------- готовый план ---------- */
-function bpChartSVG(it){ const p=it.plan, M=Math.max(1,it.f.m), pts=[{m:0,v:it.cap,lo:it.cap}].concat(p.months.filter(x=>x.capital_usd>0).map(x=>({m:Math.min(M,x.m),v:x.capital_usd,lo:x.capital_low_usd>0?x.capital_low_usd:null})));
-  if(pts.length<2) return ''; const W=320,H=150,l=8,r=8,t=14,b=22, mx=Math.max(it.tgt,...pts.map(x=>x.v))*1.06, X=m=>l+(W-l-r)*m/M, Y=v=>t+(H-t-b)*(1-v/mx);
-  const line=k=>pts.filter(x=>x[k]!=null).map((x,i)=>(i?'L':'M')+X(x.m).toFixed(1)+' '+Y(x[k]).toFixed(1)).join(' ');
-  const last=pts[pts.length-1];
-  return `<figure class="bp-ch"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(L.bpChartT)}">
-    <line x1="${l}" x2="${W-r}" y1="${Y(it.tgt).toFixed(1)}" y2="${Y(it.tgt).toFixed(1)}" class="tg"/><text x="${W-r}" y="${(Y(it.tgt)-4).toFixed(1)}" text-anchor="end" class="tl">${esc(L.bpChartLeg[2])} ${esc(ivUsd(it.tgt))}</text>
-    <path d="${line('lo')}" class="lo"/><path d="${line('v')}" class="ex"/>
-    <circle cx="${X(last.m).toFixed(1)}" cy="${Y(last.v).toFixed(1)}" r="4" class="dot"/>
-    <text x="${l}" y="${H-6}" class="ax">${esc(ivUsd(it.cap))}</text><text x="${W-r}" y="${H-6}" text-anchor="end" class="ax">${esc(bpMoLab(M))}</text></svg>
-    <figcaption><span class="k ex"></span>${esc(L.bpChartLeg[0])} ${esc(ivUsd(last.v))}${last.lo!=null?` <span class="k lo"></span>${esc(L.bpChartLeg[1])} ${esc(ivUsd(last.lo))}`:''}</figcaption></figure>`; }
-function bpSteps(it){ let n=0; it.plan.months.forEach(x=>n+=x.actions.length); return n+(it.plan.week1||[]).length; }
+/* ---------- готовый план: вкладки ---------- */
+function bpNorm(it){ if(!it||it.a) return it; const p=it.plan||{}; /* план версии 8 → вид версии 9 */
+  it.a={verdict:p.verdict,title:p.title,summary:p.summary,realistic:p.realistic||{},need:p.need||[],options:(p.strategies||[]).map(s=>({name:s.name,model:s.how,x_low:s.x_low,x_high:s.x_high,risk:s.risk,effort:s.effort,best:s.best})),
+    canvas:{},budget:[],economics:{},items:[],beat:[],validate:[],marketing:(p.channels||[]).map(c=>({channel:c.name,expect:c.monthly_usd>0?L.bpChAdd(ivUsd(c.monthly_usd)):'',first_step:c.first_step})),
+    where_buy:(p.buy_places||[]).map(x=>({place:[x.city,x.market].filter(Boolean).join(' · '),what:x.what,price:x.price,why:x.why,how:x.how})),legal:[],team:[],kpis:[],risks:p.risks||[],stop_rules:p.stop_rules||[],loans:p.loans||''};
+  it.road={months:(p.months||[]).map(x=>({m:x.m,period:x.period,title:x.title,actions:x.actions||[],spend_usd:x.buy&&x.buy.usd,spend_on:x.buy?[x.buy.what,x.buy.where].filter(Boolean).join(' — '):'',revenue_usd:x.sell&&x.sell.revenue_usd,capital_usd:x.capital_usd,capital_low_usd:x.capital_low_usd,check:x.check})),week1:p.week1||[]};
+  it.roadSt='ok'; const R=it.research||{}; if(R&&!R.costs) it.research={summary:R.summary,logistics:(R.logistics||[]).map(x=>({route:x.from+' → '+L.bpDush,mode:x.mode,usd_kg:x.usd_kg,days:x.days,note:x.note})),season:R.season||[]};
+  return it; }
+function bpTitleOf(it){ bpNorm(it); return (it.a&&it.a.title)||L.bpT; }
+function bpSteps(it){ bpNorm(it); let n=0; const r=it.road; if(r){ r.months.forEach(x=>n+=x.actions.length); n+=(r.week1||[]).length; } return n; }
 function bpDoneN(it){ return Object.keys(it.done||{}).filter(k=>it.done[k]).length; }
-function bpView(id){ const b=bpSt(), it=b.plans.find(x=>x.id===id)||bpLast(); if(!it){ bpForm(); return; } const p=it.plan, R=it.research||{}, okU=x=>x&&/^https?:\/\//.test(x.url||'');
-  const V=['go','careful','hard','no'].includes(p.verdict)?p.verdict:'careful';
-  const sec=(ic,t,body,cls)=>body?`<section class="id-sec ${cls||''}"><h4>${ico(ic,18)} ${t}</h4>${body}</section>`:'';
-  const step=(k,txt)=>`<button type="button" class="id-step ${it.done&&it.done[k]?'on':''}" role="checkbox" aria-checked="${!!(it.done&&it.done[k])}" data-bpd="${k}"><i>${ico('check',16)}</i><span>${esc(txt)}</span></button>`;
-  const real=p.realistic&&p.realistic.low_x>0?`<div class="bp-real"><small>${L.bpReal}</small><b>${bpX(p.realistic.low_x)} – ${bpX(Math.max(p.realistic.low_x,p.realistic.high_x||p.realistic.low_x))}</b><span>${esc(ivUsd(it.cap*p.realistic.low_x))} – ${esc(ivUsd(it.cap*Math.max(p.realistic.low_x,p.realistic.high_x||0)))}</span>${p.realistic.note?`<p>${esc(p.realistic.note)}</p>`:''}</div>`:'';
-  const need=p.need&&p.need.length?`<div class="id-nums">${p.need.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div>`:'';
-  const strat=p.strategies&&p.strategies.length?p.strategies.map(s=>`<div class="bp-st ${s.best?'best':''}">${s.best?`<em>${L.bpBest}</em>`:''}<b>${esc(s.name)}</b><p>${esc(s.how)}</p>
-      <div class="lv-tags">${s.x_low>0?`<i>${bpX(s.x_low)}${s.x_high>s.x_low?' – '+bpX(s.x_high):''}</i>`:''}<i class="${s.risk==='high'?'dn':s.risk==='low'?'up':''}">${L.bpRisk[s.risk]||''}</i>${s.effort?`<i>${esc(s.effort)}</i>`:''}</div></div>`).join(''):'';
-  const months=p.months.map((x,mi)=>{ const k0='m'+mi+':', dn=x.actions.filter((a,ai)=>it.done&&it.done[k0+ai]).length; return `<details class="bp-mo" ${mi<3?'open':''}><summary class="bp-mo-h"><span class="bp-mo-n">${esc(x.period||L.bpMoN(x.m))}${dn?` · ${dn}/${x.actions.length} ✓`:''}</span><b>${esc(x.title)}</b>${x.capital_usd>0?`<em>${esc(ivUsd(x.capital_usd))}</em>`:''}${ico('down',16)}</summary>
-      ${x.actions.map((a,ai)=>step(k0+ai,a)).join('')}
-      ${x.buy?`<p class="bp-ln">${ico('bag',16)}<span><b>${L.bpBuy}:</b> ${esc(x.buy.what)}${x.buy.where?' — '+esc(x.buy.where):''}${x.buy.usd>0?' — '+esc(ivUsd(x.buy.usd)):''}</span></p>`:''}
-      ${x.sell?`<p class="bp-ln">${ico('shop',16)}<span><b>${L.bpSell}:</b> ${esc(x.sell.channels||'')}${x.sell.revenue_usd>0?' — '+esc(L.bpRev(ivUsd(x.sell.revenue_usd))):''}</span></p>`:''}
-      ${x.capital_usd>0?`<p class="bp-ln">${ico('piggy',16)}<span><b>${L.bpCapEnd}:</b> ${esc(ivUsd(x.capital_usd))}${x.capital_low_usd>0?` (${esc(L.bpLow(ivUsd(x.capital_low_usd)))})`:''}</span></p>`:''}
-      ${x.check?`<p class="bp-ln chk">${ico('flag',16)}<span><b>${L.bpCheck}:</b> ${esc(x.check)}</span></p>`:''}</details>`; }).join('');
-  const places=(p.buy_places||[]).map(x=>`<div class="bp-pl"><b>${x.country&&TCOUNTRY[x.country]?TCOUNTRY[x.country].f+' ':''}${esc(x.city)}${x.market?` · <span>${esc(x.market)}</span>`:''}</b><p>${esc(x.what)}${x.price?` — <b>${esc(x.price)}</b>`:''}</p>${x.why?`<p class="m">${esc(x.why)}</p>`:''}${x.how?`<p class="m">${ico('truck',14)} ${esc(x.how)}</p>`:''}</div>`).join('');
-  const unit=(p.unit||[]).map(x=>`<div class="bp-un"><b>${esc(x.item)}</b><div class="lv-tags">${x.buy_usd>0?`<i>${L.bpBuyP} ${esc(fx(x.buy_usd,x.buy_usd<10?2:0))} $</i>`:''}${x.cost_tjs>0?`<i>${L.bpCost} ${esc(money(x.cost_tjs))}</i>`:''}${x.price_tjs>0?`<i>${L.bpPrice} ${esc(money(x.price_tjs))}</i>`:''}${x.markup_pct!=null?`<i class="up">${L.bpMk} ${x.markup_pct>0?'+':''}${Math.round(x.markup_pct)}%</i>`:''}${x.sell_days>0?`<i>${L.bpDays(Math.round(x.sell_days))}</i>`:''}<i class="${x.demand==='hot'?'up':x.demand==='cold'?'dn':''}">${L.bpDem[x.demand]||''}</i></div>${x.note?`<p>${esc(x.note)}</p>`:''}</div>`).join('');
-  const chans=(p.channels||[]).map(x=>`<div class="bp-un"><b>${esc(x.name)}${x.monthly_usd>0?` <span class="bp-plus">${esc(L.bpChAdd(ivUsd(x.monthly_usd)))}</span>`:''}</b>${x.cost?`<p>${esc(x.cost)}</p>`:''}${x.first_step?`<p class="m">${ico('next',14)} ${esc(x.first_step)}</p>`:''}</div>`).join('');
-  const week=(p.week1||[]).map((w,i)=>step('w:'+i,w)).join('');
-  const risks=(p.risks||[]).map(x=>`<li>${ico('warn',16)}<span><b>${esc(x.why)}</b> ${esc(x.guard)}</span></li>`).join('');
-  const stops=(p.stop_rules||[]).map(x=>`<li>${ico('flag',16)}<span>${esc(x)}</span></li>`).join('');
-  const lg=(R.logistics||[]).map(x=>`<div class="bp-un"><b>${esc(x.from)} → ${L.bpDush}</b><div class="lv-tags"><i>${L.bpMode[x.mode]||x.mode}</i>${x.usd_kg>0?`<i>${esc(fx(x.usd_kg,x.usd_kg<10?1:0))} $/${L.bpKg}</i>`:''}${x.days>0?`<i>${L.bpDaysN(Math.round(x.days))}</i>`:''}</div>${x.note?`<p>${esc(x.note)}</p>`:''}</div>`).join('');
-  const season=(R.season||[]).map(x=>`<li>${ico('cal',16)}<span><b>${esc(x.when)}:</b> ${esc(x.what)}</span></li>`).join('');
-  const src=(it.src||[]).filter(okU);
-  const mkt=R.summary?`<p>${esc(R.summary)}</p>${lg?`<h5>${L.bpLogT}</h5>${lg}`:''}${season?`<h5>${L.bpSeasonT}</h5><ul class="id-ul">${season}</ul>`:''}<p class="bp-at">${L.bpMktAt(bpTime(it.rat||it.at))}</p>`:'';
-  const total=bpSteps(it), dn=bpDoneN(it);
-  openSheet(`<div class="bp-v ${V}"><span class="id-badge">${ico(V==='go'?'check':V==='no'?'warn':V==='hard'?'umbrella':'shield',18)} ${L.bpV[V]}</span><h3>${esc(p.title||L.bpT)}</h3>
-      <p class="bp-head">${esc(L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)))}</p><p class="id-sum">${esc(p.summary)}</p>${real}<p class="bp-at">${L.bpUpd(bpTime(it.at))} · ${L.bpSrcN(src.length)}</p></div>
-    ${bpChartSVG(it)}
-    ${sec('goal',L.bpNeedT,need)}
-    ${sec('repeat',L.bpStratT,strat)}
-    ${sec('cal',L.bpMonthsT+`<small>${L.bpDone(dn,total)}</small>`,months,'bp-months')}
-    ${sec('plane',L.bpPlacesT,places)}
-    ${sec('tag',L.bpUnitT,unit)}
-    ${sec('shop',L.bpChT,chans)}
-    ${sec('check',L.bpWeekT,week)}
-    ${sec('warn',L.bpRiskT,risks?`<ul class="id-ul risk">${risks}</ul>`:'')}
-    ${sec('flag',L.bpStopT,stops?`<ul class="id-ul">${stops}</ul>`:'')}
-    ${sec('loans',L.bpLoansT,p.loans?`<p>${esc(p.loans)}</p>`:'')}
-    ${sec('globe',L.bpMktT,mkt)}
-    ${src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(src.length)}</summary><div class="id-src">${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:''}
-    <p class="note">${L.bpNote}</p>
-    <button type="button" class="btn btn-primary bp-go" id="bp-re">${ico('repeat',18)} ${L.bpRefresh}</button>
-    <div class="sheet-row"><button class="btn btn-ghost" id="bp-ed">${ico('edit',16)} ${L.bpEdit}</button><button class="btn btn-ghost" id="bp-sh">${ico('share',16)} ${L.bpShare}</button></div>
-    <div class="sheet-row"><button class="btn btn-ghost" id="bp-bk">${L.back}</button></div>`);
-  sheet.scrollTop=0;
-  sheet.querySelectorAll('[data-bpd]').forEach(x=>x.onclick=()=>{ const k=x.dataset.bpd; it.done=it.done||{}; if(it.done[k]) delete it.done[k]; else it.done[k]=1; persist();
-    const on=!!it.done[k]; x.classList.toggle('on',on); x.setAttribute('aria-checked',on); const sm=sheet.querySelector('.bp-months h4 small'); if(sm) sm.textContent=L.bpDone(bpDoneN(it),total); });
-  $('#bp-re').onclick=()=>bpRun(Object.assign({},it.f));
-  $('#bp-ed').onclick=()=>{ bpSt().f=Object.assign({},it.f); persist(); bpForm(); };
-  $('#bp-sh').onclick=()=>shareText(bpShareText(it));
-  $('#bp-bk').onclick=()=>{ investSheet(); sheet.scrollTop=0; };
-}
-function bpShareText(it){ const p=it.plan, out=[L.bpT+': '+L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)),L.bpV[p.verdict]+'. '+p.summary];
-  if(p.realistic&&p.realistic.low_x>0) out.push(L.bpReal+': '+bpX(p.realistic.low_x)+' – '+bpX(Math.max(p.realistic.low_x,p.realistic.high_x||0)));
-  for(const x of p.months.slice(0,12)) out.push('• '+(x.period||L.bpMoN(x.m))+': '+x.title+(x.capital_usd>0?' → '+ivUsd(x.capital_usd):''));
+const BP_TABS=['main','money','months','market','risks'];
+function bpChartSVG(it){ const r=it.road; if(!r) return ''; const M=Math.max(1,it.f.m), pts=[{m:0,v:it.cap,lo:it.cap}].concat(r.months.filter(x=>x.capital_usd>0).map(x=>({m:Math.min(M,x.m),v:x.capital_usd,lo:x.capital_low_usd>0?x.capital_low_usd:null})));
+  if(pts.length<2) return ''; const W=320,H=150,l=8,rr=8,t=14,b=22, mx=Math.max(it.tgt,...pts.map(x=>x.v))*1.06, X=m=>l+(W-l-rr)*m/M, Y=v=>t+(H-t-b)*(1-v/mx);
+  const line=k=>pts.filter(x=>x[k]!=null).map((x,i)=>(i?'L':'M')+X(x.m).toFixed(1)+' '+Y(x[k]).toFixed(1)).join(' '), last=pts[pts.length-1];
+  return `<figure class="bp-ch"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(L.bpChartT)}">
+    <line x1="${l}" x2="${W-rr}" y1="${Y(it.tgt).toFixed(1)}" y2="${Y(it.tgt).toFixed(1)}" class="tg"/><text x="${W-rr}" y="${(Y(it.tgt)-4).toFixed(1)}" text-anchor="end" class="tl">${esc(L.bpChartLeg[2])} ${esc(ivUsd(it.tgt))}</text>
+    <path d="${line('lo')}" class="lo"/><path d="${line('v')}" class="ex"/><circle cx="${X(last.m).toFixed(1)}" cy="${Y(last.v).toFixed(1)}" r="4" class="dot"/>
+    <text x="${l}" y="${H-6}" class="ax">${esc(ivUsd(it.cap))}</text><text x="${W-rr}" y="${H-6}" text-anchor="end" class="ax">${esc(bpMoLab(M))}</text></svg>
+    <figcaption><span class="k ex"></span>${esc(L.bpChartLeg[0])} ${esc(ivUsd(last.v))}${last.lo!=null?` <span class="k lo"></span>${esc(L.bpChartLeg[1])} ${esc(ivUsd(last.lo))}`:''}</figcaption></figure>`; }
+function bpSec(ic,t,body,cls){ return body?`<section class="id-sec ${cls||''}"><h4>${ico(ic,18)} ${t}</h4>${body}</section>`:''; }
+function bpStep(it,k,txt){ const on=!!(it.done&&it.done[k]); return `<button type="button" class="id-step ${on?'on':''}" role="checkbox" aria-checked="${on}" data-bpd="${esc(k)}"><i>${ico('check',16)}</i><span>${esc(txt)}</span></button>`; }
+function bpRoadWait(it){ const s=it.roadSt; if(s==='wait') return `<div class="bp-wait"><i class="bp-spin"></i><span>${L.bpRoadWait}</span></div>`;
+  return `<div class="bp-wait err"><span>${s==='limit'?L.bpErrLimit:s==='stale'?L.bpRoadStale:L.bpRoadErr}</span>${s==='err'?`<button type="button" class="gp-mini" data-bproad="1">${ico('repeat',14)} ${L.idRetry}</button>`:''}</div>`; }
+function bpTabHTML(it,tab){ const a=it.a, R=it.research||{}, r=it.road, cur=R.cur||'', lt=(x,k)=>x&&x[k]?`<i>${esc(x[k])}</i>`:'';
+  const src=(it.src||[]).filter(x=>x&&/^https?:\/\//.test(x.url||''));
+  if(tab==='main'){
+    const need=a.need&&a.need.length?`<div class="id-nums">${a.need.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div>`:'';
+    const opts=(a.options||[]).map(o=>`<div class="bp-st ${o.best?'best':''}">${o.best?`<em>${L.bpBest}</em>`:''}<b>${esc(o.name)}</b><p>${esc(o.model)}</p>${o.why?`<p class="m">${esc(o.why)}</p>`:''}
+      <div class="lv-tags">${o.start_usd>0?`<i>${L.bpStart} ${esc(ivUsd(o.start_usd))}</i>`:''}${o.profit_low_usd!=null&&o.profit_high_usd!=null?`<i class="up">${L.bpProfitM(ivUsd(o.profit_low_usd),ivUsd(o.profit_high_usd))}</i>`:''}${o.payback_months>0?`<i>${L.bpPayback(Math.round(o.payback_months))}</i>`:''}${o.x_low>0?`<i>${bpX(o.x_low)}${o.x_high>o.x_low?' – '+bpX(o.x_high):''}</i>`:''}<i class="${o.risk==='high'?'dn':o.risk==='low'?'up':''}">${L.bpRisk[o.risk]||''}</i>${o.effort?`<i>${esc(o.effort)}</i>`:''}</div></div>`).join('');
+    const cv=a.canvas||{}, cvRows=[['customer',L.bpCvN.customer],['problem',L.bpCvN.problem],['offer',L.bpCvN.offer],['price',L.bpCvN.price],['edge',L.bpCvN.edge],['channels',L.bpCvN.channels],['partners',L.bpCvN.partners]].filter(([k])=>cv[k]);
+    const canvas=cvRows.length?`<dl class="bp-dl">${cvRows.map(([k,t])=>`<dt>${t}</dt><dd>${esc(cv[k])}</dd>`).join('')}</dl>`:'';
+    const val=(a.validate||[]).map(v=>`<div class="bp-un"><b>${esc(v.test)}</b><p>${ico('check',14)} ${L.bpPass}: ${esc(v.success)}</p><div class="lv-tags">${v.usd>0?`<i>${esc(ivUsd(v.usd))}</i>`:''}${v.days>0?`<i>${L.bpDaysN(Math.round(v.days))}</i>`:''}</div></div>`).join('');
+    const week=r?(r.week1||[]).map((w,i)=>bpStep(it,'w:'+i,w)).join(''):bpRoadWait(it);
+    const kp=(a.kpis||[]).length?`<div class="id-nums">${a.kpis.map(k=>`<div><small>${esc(k.name)}</small><b>${esc(k.target)}</b></div>`).join('')}</div>`:'';
+    return bpSec('goal',L.bpNeedT,need)+bpSec('repeat',L.bpOptT,opts)+bpSec('doc',L.bpCvT,canvas)+bpSec('flag',L.bpValT,val?`<p class="bp-hint">${L.bpValLead}</p>`+val:'')+bpSec('check',L.bpWeekT,week)+bpSec('chart',L.bpKpiT,kp); }
+  if(tab==='money'){
+    const bsum=(a.budget||[]).reduce((s,x)=>s+(+x.usd||0),0)+(+a.reserve_usd||0);
+    const bud=(a.budget||[]).length?`<div class="bp-tb">${a.budget.map(x=>`<div><span>${esc(x.item)}${x.note?`<small>${esc(x.note)}</small>`:''}</span><b>${esc(ivUsd(x.usd))}</b></div>`).join('')}${a.reserve_usd>0?`<div class="rs"><span>${L.bpReserve}</span><b>${esc(ivUsd(a.reserve_usd))}</b></div>`:''}<div class="tt"><span>${L.bpTotal}</span><b>${esc(ivUsd(bsum))}</b></div></div>${bsum>it.cap*1.02?`<p class="bp-need hi">${L.bpOver(ivUsd(bsum-it.cap))}</p>`:''}`:'';
+    const e=a.economics||{}, er=[[L.bpEcN.unit,e.unit],[L.bpEcN.price,e.price_usd>0?ivUsd(e.price_usd):''],[L.bpEcN.cost,e.cost_usd>0?ivUsd(e.cost_usd):''],[L.bpEcN.margin,e.margin_pct!=null?Math.round(e.margin_pct)+'%':''],[L.bpEcN.fixed,e.fixed_month_usd>0?ivUsd(e.fixed_month_usd):''],[L.bpEcN.be,e.break_even_units>0?fx(e.break_even_units,0)+(e.unit?' · '+e.unit:''):''],[L.bpEcN.bem,e.break_even_month>0?L.bpMoN(Math.round(e.break_even_month)):''],[L.bpEcN.cac,e.cac_usd>0?ivUsd(e.cac_usd):'']].filter(x=>x[1]);
+    const econ=er.length?`<div class="id-nums">${er.map(([l,v])=>`<div><small>${l}</small><b>${esc(v)}</b></div>`).join('')}</div>${e.note?`<p class="bp-hint">${esc(e.note)}</p>`:''}`:'';
+    const items=(a.items||[]).map(x=>`<div class="bp-un"><b>${esc(x.item)}</b><div class="lv-tags">${x.buy_usd>0?`<i>${L.bpBuyP} ${esc(ivUsd(x.buy_usd))}</i>`:''}${x.cost_usd>0?`<i>${L.bpCost} ${esc(ivUsd(x.cost_usd))}</i>`:''}${x.price_usd>0?`<i>${L.bpPrice} ${esc(ivUsd(x.price_usd))}</i>`:''}${x.markup_pct!=null?`<i class="up">${L.bpMk} ${x.markup_pct>0?'+':''}${Math.round(x.markup_pct)}%</i>`:''}${x.sell_days>0?`<i>${L.bpDays(Math.round(x.sell_days))}</i>`:''}<i class="${x.demand==='hot'?'up':x.demand==='cold'?'dn':''}">${L.bpDem[x.demand]||''}</i></div>${x.note?`<p>${esc(x.note)}</p>`:''}</div>`).join('');
+    const team=(a.team||[]).map(x=>`<div class="bp-un"><b>${esc(x.role)}</b><div class="lv-tags">${lt(x,'when')}${x.usd_month>0?`<i>${esc(L.bpPerM(ivUsd(x.usd_month)))}</i>`:''}</div></div>`).join('');
+    return (r?bpChartSVG(it):bpRoadWait(it))+bpSec('cash',L.bpBudT,bud)+bpSec('chart',L.bpEcT,econ)+bpSec('tag',L.bpUnitT,items)+bpSec('home',L.bpTeamT,team)+bpSec('loans',L.bpLoansT,a.loans?`<p>${esc(a.loans)}</p>`:''); }
+  if(tab==='months'){ if(!r) return bpRoadWait(it); const total=bpSteps(it);
+    return `<section class="id-sec bp-months"><h4>${ico('cal',18)} ${L.bpMonthsT}<small>${L.bpDone(bpDoneN(it),total)}</small></h4>${r.months.map((x,mi)=>{ const k0='m'+mi+':', dn=x.actions.filter((q,ai)=>it.done&&it.done[k0+ai]).length;
+      return `<details class="bp-mo" ${mi<3?'open':''}><summary class="bp-mo-h"><span class="bp-mo-n">${esc(x.period||L.bpMoN(x.m))}${dn?` · ${dn}/${x.actions.length} ✓`:''}</span><b>${esc(x.title)}</b>${x.capital_usd>0?`<em>${esc(ivUsd(x.capital_usd))}</em>`:''}${ico('down',16)}</summary>
+        ${x.actions.map((q,ai)=>bpStep(it,k0+ai,q)).join('')}
+        ${x.spend_usd>0||x.spend_on?`<p class="bp-ln">${ico('bag',16)}<span><b>${L.bpSpend}:</b> ${x.spend_usd>0?esc(ivUsd(x.spend_usd)):''}${x.spend_on?' — '+esc(x.spend_on):''}</span></p>`:''}
+        ${x.revenue_usd>0?`<p class="bp-ln">${ico('shop',16)}<span><b>${L.bpRevT}:</b> ${esc(ivUsd(x.revenue_usd))}${x.profit_usd!=null?` · ${L.bpProfit} ${esc(ivUsd(x.profit_usd))}`:''}</span></p>`:''}
+        ${x.capital_usd>0?`<p class="bp-ln">${ico('piggy',16)}<span><b>${L.bpCapEnd}:</b> ${esc(ivUsd(x.capital_usd))}${x.capital_low_usd>0?` (${esc(L.bpLow(ivUsd(x.capital_low_usd)))})`:''}</span></p>`:''}
+        ${x.check?`<p class="bp-ln chk">${ico('flag',16)}<span><b>${L.bpCheck}:</b> ${esc(x.check)}</span></p>`:''}</details>`; }).join('')}</section>`; }
+  if(tab==='market'){ const mk=R.market||{};
+    const sum=R.summary?`<p>${esc(R.summary)}</p>${R.place?`<p class="bp-hint">${ico('globe',14)} ${esc(R.place)}${cur?' · '+esc(cur):''}</p>`:''}${mk.size||mk.growth?`<div class="id-nums">${mk.size?`<div><small>${L.bpMkSize}</small><b>${esc(mk.size)}</b></div>`:''}${mk.growth?`<div><small>${L.bpMkGrow}</small><b>${esc(mk.growth)}</b></div>`:''}</div>`:''}${(mk.trends||[]).concat(mk.demand||[]).length?`<ul class="id-ul">${(mk.trends||[]).concat(mk.demand||[]).map(x=>`<li>${ico('chart',16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:''}<p class="bp-at">${L.bpMktAt(bpTime(it.rat||it.at))}</p>`:'';
+    const cus=(R.customers||[]).map(x=>`<div class="bp-un"><b>${esc(x.who)}</b><p>${esc(x.need)}</p>${x.pays?`<p class="m">${esc(x.pays)}</p>`:''}</div>`).join('');
+    const beat=new Map((a.beat||[]).map(x=>[String(x.who||'').toLowerCase(),x]));
+    const comp=(R.competitors||[]).map(x=>{ const bt=beat.get(String(x.name).toLowerCase()); return `<div class="bp-un"><b>${esc(x.name)}${x.where?` · <span class="bp-mu">${esc(x.where)}</span>`:''}</b><div class="lv-tags"><i>${L.bpKind[x.kind]||''}</i>${lt(x,'price')}</div>${x.strong?`<p>${ico('check',14)} ${esc(x.strong)}</p>`:''}${x.weak?`<p class="m">${ico('warn',14)} ${esc(x.weak)}</p>`:''}${bt?`<p class="bp-move">${ico('next',14)} ${esc(bt.move)}</p>`:''}</div>`; }).join('')+(a.beat||[]).filter(x=>!(R.competitors||[]).some(c=>String(c.name).toLowerCase()===String(x.who||'').toLowerCase())).map(x=>`<div class="bp-un"><b>${esc(x.who||L.bpCompAll)}</b><p class="m">${ico('warn',14)} ${esc(x.weak)}</p><p class="bp-move">${ico('next',14)} ${esc(x.move)}</p></div>`).join('');
+    const pains=(R.pains||[]).map(x=>`<li>${ico('chat',16)}<span>${esc(x.pain)}${x.where?` <span class="bp-mu">— ${esc(x.where)}</span>`:''}</span></li>`).join('');
+    const ana=(R.analogs||[]).map(x=>`<div class="bp-un"><b>${esc(x.name)}${x.country?` · <span class="bp-mu">${esc(x.country)}</span>`:''}</b>${x.model?`<p>${esc(x.model)}</p>`:''}<p class="bp-move">${ico('bulb',14)} ${esc(x.lesson)}</p></div>`).join('');
+    const mkt=(a.marketing||[]).map(x=>`<div class="bp-un"><b>${esc(x.channel)}${x.usd_month>0?` <span class="bp-plus">${esc(L.bpPerM(ivUsd(x.usd_month)))}</span>`:''}</b>${x.expect?`<p>${esc(x.expect)}</p>`:''}${x.first_step?`<p class="m">${ico('next',14)} ${esc(x.first_step)}</p>`:''}</div>`).join('')
+      +(R.channels||[]).filter(c=>!(a.marketing||[]).some(x=>String(x.channel).toLowerCase()===String(c.name).toLowerCase())).map(x=>`<div class="bp-un"><b>${esc(x.name)}</b><div class="lv-tags">${lt(x,'cost')}</div>${x.fits?`<p>${esc(x.fits)}</p>`:''}${x.note?`<p class="m">${esc(x.note)}</p>`:''}</div>`).join('');
+    const buy=(a.where_buy||[]).map(x=>`<div class="bp-pl"><b>${esc(x.place)}</b><p>${esc(x.what)}${x.price?` — <b>${esc(x.price)}</b>`:''}</p>${x.why?`<p class="m">${esc(x.why)}</p>`:''}${x.how?`<p class="m">${ico('truck',14)} ${esc(x.how)}</p>`:''}</div>`).join('')
+      +((a.where_buy||[]).length?'':(R.suppliers||[]).map(x=>`<div class="bp-pl"><b>${esc([x.city,x.country].filter(Boolean).join(', ')||x.name||'')}${x.name&&(x.city||x.country)?` · <span>${esc(x.name)}</span>`:''}</b><p>${esc(x.what)}${x.price?` — <b>${esc(x.price)}</b>`:''}</p>${x.min_order?`<p class="m">${esc(x.min_order)}</p>`:''}${x.how?`<p class="m">${ico('truck',14)} ${esc(x.how)}</p>`:''}</div>`).join(''));
+    const lg=(R.logistics||[]).map(x=>`<div class="bp-un"><b>${esc(x.route)}</b><div class="lv-tags"><i>${L.bpMode[x.mode]||x.mode}</i>${x.usd_kg>0?`<i>${esc(fx(x.usd_kg,x.usd_kg<10?1:0))} $/${L.bpKg}</i>`:''}${x.days>0?`<i>${L.bpDaysN(Math.round(x.days))}</i>`:''}</div>${x.note?`<p>${esc(x.note)}</p>`:''}</div>`).join('');
+    const costs=(R.costs||[]).map(x=>`<div class="bp-tb1"><span>${esc(x.item)}${x.where?` <small>${esc(x.where)}</small>`:''}</span><b>${esc(x.value)}</b></div>`).join('');
+    const legal=(a.legal||[]).map(x=>`<li>${ico('doc',16)}<span><b>${esc(x.step)}</b>${x.cost||x.time?` <span class="bp-mu">— ${esc([x.cost,x.time].filter(Boolean).join(', '))}</span>`:''}</span></li>`).join('')||(R.legal||[]).map(x=>`<li>${ico('doc',16)}<span><b>${esc(x.what)}</b>${x.cost||x.time?` <span class="bp-mu">— ${esc([x.cost,x.time].filter(Boolean).join(', '))}</span>`:''}</span></li>`).join('');
+    const season=(R.season||[]).map(x=>`<li>${ico('cal',16)}<span><b>${esc(x.when)}:</b> ${esc(x.what)}</span></li>`).join('');
+    return bpSec('globe',L.bpMarketT,sum)+bpSec('home',L.bpCusT,cus)+bpSec('eye',L.bpCompT,comp)+bpSec('chat',L.bpPainT,pains?`<ul class="id-ul">${pains}</ul>`:'')+bpSec('bulb',L.bpAnaT,ana)
+      +bpSec('shop',L.bpChT,mkt)+bpSec('plane',L.bpPlacesT,buy)+bpSec('truck',L.bpLogT,lg)+bpSec('tag',L.bpCostT,costs?`<div class="bp-tb">${costs}</div>`:'')+bpSec('shield',L.bpLegalT,legal?`<ul class="id-ul">${legal}</ul><p class="bp-hint">${L.bpLegalNote}</p>`:'')
+      +bpSec('cal',L.bpSeasonT,season?`<ul class="id-ul">${season}</ul>`:'')+bpSec('stats',L.bpMarginT,R.margins?`<p>${esc(R.margins)}</p>`:'')
+      +(src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(src.length)}</summary><div class="id-src">${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:''); }
+  if(tab==='risks'){ const risks=(a.risks||[]).map(x=>`<li>${ico('warn',16)}<span><b>${esc(x.why)}</b> ${esc(x.guard)}</span></li>`).join('');
+    const stops=(a.stop_rules||[]).map(x=>`<li>${ico('flag',16)}<span>${esc(x)}</span></li>`).join('');
+    const fails=(R.fails||[]).map(x=>`<li>${ico('info',16)}<span>${esc(x)}</span></li>`).join('');
+    return bpSec('warn',L.bpRiskT,risks?`<ul class="id-ul risk">${risks}</ul>`:'')+bpSec('flag',L.bpStopT,stops?`<ul class="id-ul">${stops}</ul>`:'')+bpSec('info',L.bpFailT,`${fails?`<ul class="id-ul">${fails}</ul>`:''}<p class="bp-hint">${L.bpFailNote}</p>`)+`<p class="note">${L.bpNote}</p>`; }
+  return ''; }
+function bpViewTab(it,tab){ const t=bpTop(); if(!bpOpenNow()||!t||t.name!=='view'||t.arg!==it.id) return; const p=BPG.el.querySelector(`[data-bptab="${tab}"]`); if(p) p.innerHTML=bpTabHTML(it,tab); }
+function bpViewR(m,foot,id){ const it=bpNorm(bpSt().plans.find(x=>x.id===id)||bpLast()); if(!it){ bpReplace('form',bpDefForm()); return; }
+  const a=it.a, V=['go','careful','hard','no'].includes(a.verdict)?a.verdict:'careful', t=bpTop(), tab=BP_TABS.includes(t.tab)?t.tab:'main', src=(it.src||[]).length;
+  BPG.el.querySelector('#bpg-t').textContent=L.bpT;
+  const real=a.realistic&&a.realistic.low_x>0?`<div class="bp-real"><small>${L.bpReal}</small><b>${bpX(a.realistic.low_x)} – ${bpX(Math.max(a.realistic.low_x,a.realistic.high_x||a.realistic.low_x))}</b><span>${esc(ivUsd(it.cap*a.realistic.low_x))} – ${esc(ivUsd(it.cap*Math.max(a.realistic.low_x,a.realistic.high_x||0)))}</span>${a.realistic.note?`<p>${esc(a.realistic.note)}</p>`:''}</div>`:'';
+  m.innerHTML=`<div class="bp-v ${V}"><span class="id-badge">${ico(V==='go'?'check':V==='no'?'warn':V==='hard'?'umbrella':'shield',18)} ${L.bpV[V]}</span><h3>${esc(a.title||L.bpT)}</h3>
+      <p class="bp-head">${esc(L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)))}${it.f.place?' · '+esc(it.f.place):''}</p>${it.f.idea?`<p class="bp-idea-q">«${esc(it.f.idea.slice(0,220))}${it.f.idea.length>220?'…':''}»</p>`:''}<p class="id-sum">${esc(a.summary)}</p>${real}<p class="bp-at">${L.bpUpd(bpTime(it.at))}${src?' · '+L.bpSrcN(src):''}</p></div>
+    <nav class="bp-tabs" role="tablist" aria-label="${esc(L.bpT)}">${BP_TABS.map(k=>`<button type="button" role="tab" id="bpt-${k}" aria-controls="bpp-${k}" aria-selected="${k===tab}" class="${k===tab?'on':''}" data-bpt="${k}">${L.bpTabN[k]}</button>`).join('')}</nav>
+    ${BP_TABS.map(k=>`<div class="bp-pane" role="tabpanel" id="bpp-${k}" aria-labelledby="bpt-${k}" data-bptab="${k}" ${k===tab?'':'hidden'}>${bpTabHTML(it,k)}</div>`).join('')}`;
+  foot.hidden=false; foot.innerHTML=`<div class="bp-acts"><button type="button" class="btn btn-ghost" id="bp-re">${ico('repeat',16)} ${L.bpRefreshS}</button><button type="button" class="btn btn-ghost" id="bp-ed">${ico('edit',16)} ${L.bpEditS}</button><button type="button" class="btn btn-ghost" id="bp-sh">${ico('share',16)} ${L.bpShare}</button></div>`;
+  m.onclick=e=>{ const b=e.target.closest('button'); if(!b||!m.contains(b)) return;
+    if(b.dataset.bpt){ const k=b.dataset.bpt; t.tab=k; m.querySelectorAll('[data-bpt]').forEach(x=>{ const on=x.dataset.bpt===k; x.classList.toggle('on',on); x.setAttribute('aria-selected',on); }); m.querySelectorAll('[data-bptab]').forEach(x=>x.hidden=x.dataset.bptab!==k);
+      const nav=m.querySelector('.bp-tabs'), y=nav.offsetTop+16; if(m.scrollTop>y) m.scrollTop=y; return; }
+    if(b.dataset.bpd){ const k=b.dataset.bpd; it.done=it.done||{}; if(it.done[k]) delete it.done[k]; else it.done[k]=1; persist(); const on=!!it.done[k]; b.classList.toggle('on',on); b.setAttribute('aria-checked',on);
+      const sm=m.querySelector('.bp-months h4 small'); if(sm) sm.textContent=L.bpDone(bpDoneN(it),bpSteps(it)); return; }
+    if(b.dataset.bproad){ bpRoad(it); return; } };
+  foot.querySelector('#bp-re').onclick=()=>{ bpSt().f=Object.assign({},it.f); persist(); bpRun(Object.assign({},it.f,{touched:{}})); };
+  foot.querySelector('#bp-ed').onclick=()=>{ bpSt().f=Object.assign({},it.f); persist(); bpGo('form',bpDefForm()); };
+  foot.querySelector('#bp-sh').onclick=()=>shareText(bpShareText(it));
+  if(it.roadSt==='wait'&&!it.road&&!bpRoadBusy(it)) bpRoad(it); }
+const bpRoadNow=new Set(); function bpRoadBusy(it){ return bpRoadNow.has(it.id); }
+{ const _r=bpRoad; bpRoad=async function(it){ if(bpRoadNow.has(it.id)) return; bpRoadNow.add(it.id); try{ await _r(it); } finally{ bpRoadNow.delete(it.id); } }; }
+function bpShareText(it){ const a=bpNorm(it).a, out=[L.bpT+': '+L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m))+(it.f.place?' · '+it.f.place:''),L.bpV[a.verdict]+'. '+a.summary];
+  if(a.realistic&&a.realistic.low_x>0) out.push(L.bpReal+': '+bpX(a.realistic.low_x)+' – '+bpX(Math.max(a.realistic.low_x,a.realistic.high_x||0)));
+  const best=(a.options||[]).find(x=>x.best); if(best) out.push(L.bpBest+': '+best.name+' — '+best.model);
+  if(it.road) for(const x of it.road.months.slice(0,12)) out.push('• '+(x.period||L.bpMoN(x.m))+': '+x.title+(x.capital_usd>0?' → '+ivUsd(x.capital_usd):''));
   out.push(L.bpNote); return out.join('\n'); }
 
-/* ---------- карточка в «Куда вложить» и кнопка в «Путь к цели» ---------- */
+/* ---------- карточка в «Куда вложить» и кнопка в «Пути к цели» ---------- */
 function bpCardHTML(){ const it=bpLast(), busy=!!bpBusyNow;
   if(busy) return `<button type="button" class="bp-card busy" data-bpopen="busy"><span class="bp-ava">${SF_AVA}</span><span><b>${L.bpT}</b><small>${L.bpBusy[Math.min(bpBusyNow.i,L.bpBusy.length-1)]}</small></span><i class="lv-dot"></i></button>`;
   if(!it) return `<button type="button" class="bp-card" data-bpopen="new"><span class="bp-ava">${SF_AVA}</span><span><b>${L.bpCardT}</b><small>${L.bpCardSub}</small></span>${ico('next',18)}</button>`;
-  const p=it.plan, age=(Date.now()-new Date(it.at).getTime())/864e5, total=bpSteps(it), dn=bpDoneN(it), V=['go','careful','hard','no'].includes(p.verdict)?p.verdict:'careful';
-  return `<div class="bp-card have"><button type="button" class="bp-card-in" data-bpopen="${esc(it.id)}"><span class="bp-ava">${SF_AVA}</span><span><b>${esc(p.title||L.bpT)}</b>
-      <small>${esc(L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)))} · <em class="bp-vt ${V}">${L.bpV[V]}</em></small><small>${L.bpDone(dn,total)} · ${L.bpUpd(bpTime(it.at))}</small></span>${ico('next',18)}</button>
-    ${age>=3?`<button type="button" class="gp-mini" data-bpopen="re">${ico('repeat',14)} ${L.bpStale}</button>`:''}</div>`; }
+  bpNorm(it); const a=it.a, age=(Date.now()-new Date(it.at).getTime())/864e5, total=bpSteps(it), dn=bpDoneN(it), V=['go','careful','hard','no'].includes(a.verdict)?a.verdict:'careful';
+  return `<div class="bp-card have"><button type="button" class="bp-card-in" data-bpopen="${esc(it.id)}"><span class="bp-ava">${SF_AVA}</span><span><b>${esc(a.title||L.bpT)}</b>
+      <small>${esc(L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)))} · <em class="bp-vt ${V}">${L.bpV[V]}</em></small><small>${total?L.bpDone(dn,total)+' · ':''}${L.bpUpd(bpTime(it.at))}</small></span>${ico('next',18)}</button>
+    <div class="bp-card-row"><button type="button" class="gp-mini" data-bpopen="new">${ico('plus',14)} ${L.bpNewPlan}</button>${age>=3?`<button type="button" class="gp-mini" data-bpopen="re">${ico('repeat',14)} ${L.bpStale}</button>`:''}</div></div>`; }
 document.addEventListener('click',e=>{ const t=e.target.closest('[data-bpopen]'); if(!t) return; e.stopImmediatePropagation(); const v=t.dataset.bpopen;
-  if(v==='new') bpForm(); else if(v==='busy') bpBusyShow(); else if(v==='re'){ const it=bpLast(); if(it) bpRun(Object.assign({},it.f)); } else bpView(v); });
-function bpCardDraw(){ const box=$('#iv-bp'); if(box) box.innerHTML=bpCardHTML(); }
-{ const _is=investSheet; investSheet=function(){ const r=_is.apply(this,arguments); try{ const a=sheet.querySelector('.sf-inv[data-sfinv]')||$('#iv-idea'); if(a&&!$('#iv-bp')){ const d=document.createElement('div'); d.id='iv-bp'; a.parentNode.insertBefore(d,a); } bpCardDraw(); }catch(e){} return r; }; }
-{ const _gb=ivGoalBind; ivGoalBind=function(box,D,api){ _gb(box,D,api); try{ const pb=box.querySelector('#gp-plan'); if(!pb) return; const it=bpLast();
-    pb.querySelector('b').textContent=it?L.bpOpenMine:L.bpT; pb.querySelector('small').textContent=it?(it.plan.title||'')+' · '+L.bpUpd(bpTime(it.at)):L.bpGoalSub;
-    pb.onclick=()=>{ const cur=bpLast(); if(cur&&Math.round(cur.cap)===Math.round(D.cap)&&Math.round(cur.tgt)===Math.round(D.tgt)){ bpView(cur.id); return; } bpSt().f=null;
-      /* о продажах ничего не известно — сначала один вопрос: от него зависит весь план */
-      if(bpAskFirst(D)) ivAskSales(()=>{ let D2=null; try{ D2=ivGoalData(D.cat,true,null); }catch(e){} bpForm(D2||D); }); else bpForm(D); };
+  if(v==='new'){ bpGo('form',bpDefForm()); } else if(v==='busy'){ bpGo('busy'); } else if(v==='re'){ const it=bpLast(); if(it){ bpGo('view',it.id); bpRun(Object.assign({},it.f,{touched:{}})); } } else bpGo('view',v); });
+function bpCardDraw(){ const box=document.querySelector('#iv-bp'); if(box) box.innerHTML=bpCardHTML(); }
+function bpGpLabel(pb){ const it=bpLast(); const bb=pb.querySelector('b'), sm=pb.querySelector('small'); if(bb) bb.textContent=it?L.bpOpenMine:L.bpT; if(sm) sm.textContent=it?bpTitleOf(it)+' · '+L.bpUpd(bpTime(it.at)):L.bpGoalSub; }
+function bpAskFirst(D){ try{ D=D||ivGoalLite(); return !!(D&&D.S0&&D.S0.src==='def'&&!ivP().askS&&navigator.onLine); }catch(e){ return false; } }
+{ const _is=investSheet; investSheet=function(){ const r=_is.apply(this,arguments); try{ const a=sheet.querySelector('.sf-inv[data-sfinv]')||document.querySelector('#iv-idea'); if(a&&!document.querySelector('#iv-bp')){ const d=document.createElement('div'); d.id='iv-bp'; a.parentNode.insertBefore(d,a); } bpCardDraw(); }catch(e){} return r; }; }
+{ const _gb=ivGoalBind; ivGoalBind=function(box,D,api){ _gb(box,D,api); try{ const pb=box.querySelector('#gp-plan'); if(!pb) return; bpGpLabel(pb);
+    pb.onclick=()=>{ const cur=bpLast(); if(cur&&Math.round(cur.cap)===Math.round(D.cap)&&Math.round(cur.tgt)===Math.round(D.tgt)){ bpGo('view',cur.id); return; }
+      if(bpAskFirst(D)) ivAskSales(()=>{ let D2=null; try{ D2=ivGoalData(D.cat,true,null); }catch(e){} bpOpen(D2||D); }); else bpOpen(D); };
     const p2=box.querySelector('#gp-plan2'); if(p2) p2.remove(); }catch(e){} }; }
+/* «Есть своя идея?» — тот же бизнес-план, сразу со словами человека */
+document.addEventListener('click',e=>{ const t=e.target.closest('#id-open'); if(!t||!document.querySelector('#iv-bp')) return; e.stopImmediatePropagation(); e.preventDefault(); const f=bpDefForm(); bpGo('form',f); setTimeout(()=>{ const ta=document.querySelector('#bp-idea'); if(ta) ta.focus(); },120); },true);
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
