@@ -2318,6 +2318,188 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .bp-acts .btn{min-height:48px; padding:0 6px; display:flex; align-items:center; justify-content:center; gap:6px; font-size:.86rem;}
 .bp-card-row{display:flex; flex-wrap:wrap; gap:8px; padding:0 14px 12px;}
 .bp-card.have .bp-card-row .gp-mini{margin:0;}
+
+/* v23: «Деньги и бизнес» */
+.hb-hero{position:relative; overflow:hidden; border-radius:24px; padding:16px; margin:0 0 4px; background:var(--m-hero); color:#fff;}
+.hb-hero::after{content:""; position:absolute; right:-60px; top:-70px; width:200px; height:200px; border-radius:50%; background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 70%); pointer-events:none;}
+.hb-hero-top{display:flex; align-items:center; gap:10px; position:relative; z-index:1;}
+.hb-hero-top>div{flex:1; min-width:0;}
+.hb-hero-top b{display:block; font-size:1.05rem;}
+.hb-hero-top small{display:block; font-size:.78rem; font-weight:700; opacity:.82; margin-top:1px; line-height:1.35;}
+.hb-hero .bp-ava{width:40px; height:40px; background:rgba(255,255,255,.14); border-radius:50%; padding:3px;}
+.hb-hero p{position:relative; z-index:1; margin:12px 0 0; font-size:.94rem; line-height:1.5; font-weight:600;}
+.hb-old{flex:none; font-style:normal; font-size:.72rem; font-weight:800; padding:4px 9px; border-radius:99px; background:rgba(255,255,255,.18);}
+.hb-fx{position:relative; z-index:1; margin-top:12px;}
+.hb-fx i{background:rgba(255,255,255,.14); color:#fff; font-family:var(--font-num);}
+.hb-hero .gp-mini{position:relative; z-index:1; margin-top:12px; background:rgba(255,255,255,.16); color:#fff; border-color:transparent;}
+.hb-hero.wait small{opacity:.9;}
+.hb-skel{position:relative; z-index:1; display:grid; gap:7px; margin-top:14px;}
+.hb-skel i{display:block; height:10px; border-radius:6px; background:linear-gradient(90deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.3) 50%,rgba(255,255,255,.12) 100%); background-size:200% 100%; animation:hbShim 1.4s linear infinite;}
+.hb-skel i:nth-child(2){width:86%;} .hb-skel i:nth-child(3){width:62%;}
+@keyframes hbShim{from{background-position:200% 0;} to{background-position:-200% 0;}}
+.hb-tabs{margin-top:8px;}
+.hb-tabs{display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:5px; overflow:visible;}
+.hb-tabs button{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:3px; min-height:58px; padding:6px 2px; border-radius:16px; font-size:.74rem; line-height:1.15; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; min-width:0;}
+.hb-tabs button svg{flex:none;}
+.hb-pane{animation:hbIn .22s ease-out;}
+@keyframes hbIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+
+/* урок дня */
+.hb-lesson{display:flex; align-items:center; gap:12px; width:100%; text-align:left; border:0; border-radius:20px; padding:13px 14px; margin:0 0 10px; font:inherit; cursor:pointer; color:var(--ink); background:linear-gradient(120deg,var(--m-grape-weak,#ECE7FF),var(--surface-2));}
+.hb-lesson>span:nth-child(2){flex:1; min-width:0;}
+.hb-lesson small{display:block; font-size:.74rem; font-weight:800; color:var(--m-grape,#6A4FE0);}
+.hb-lesson b{display:block; font-size:.98rem; line-height:1.3; margin-top:2px;}
+.hb-lesson em{display:block; font-style:normal; font-size:.82rem; color:var(--muted); margin-top:3px; line-height:1.4; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+.hb-li{flex:none; width:42px; height:42px; border-radius:14px; display:grid; place-items:center; background:var(--m-grape,#7B5CFF); color:#fff;}
+.hb-lesson:focus-visible,.hb-bar:focus-visible,.hb-topic:focus-visible,.hb-qo:focus-visible,.hb-more:focus-visible,.hb-save:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+
+/* полосы «что выгоднее» */
+.hb-sort{margin-top:-2px;}
+.hb-bars{display:flex; flex-direction:column;}
+.hb-bar{display:grid; grid-template-columns:minmax(0,7fr) minmax(0,6fr) 46px 14px; align-items:center; gap:8px; width:100%; min-height:44px; padding:6px 4px; border:0; border-top:1px solid var(--line); background:none; color:var(--ink); font:inherit; text-align:left; cursor:pointer; border-radius:0;}
+.hb-bar:first-child{border-top:0;}
+.hb-bar.on{background:var(--surface-2); border-radius:12px; border-top-color:transparent;}
+.hb-bar.on+.hb-det{border-top:0;}
+.hb-bn{font-size:.86rem; font-weight:700; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.hb-bt{display:block; height:10px; border-radius:6px; background:var(--surface-2); overflow:hidden;}
+.hb-bar.on .hb-bt{background:var(--surface);}
+.hb-bt i{display:block; height:100%; width:0; border-radius:6px; background:linear-gradient(90deg,var(--brand),var(--m-leaf)); transition:width .7s cubic-bezier(.2,.75,.2,1);}
+.hb-bar.dim .hb-bt i{background:var(--muted); opacity:.45;}
+.hb-bar>b{font-family:var(--font-num); font-size:.88rem; text-align:right; white-space:nowrap;}
+.hb-tr{font-style:normal; font-weight:900; font-size:.9rem; text-align:center; color:var(--muted);}
+.hb-tr.up{color:var(--m-leaf);} .hb-tr.down{color:#C2571A;}
+.hb-new{font-style:normal; font-size:.66rem; font-weight:800; padding:2px 6px; border-radius:99px; background:var(--m-leaf-weak); color:var(--m-leaf); vertical-align:1px;}
+.hb-det{padding:10px 4px 12px; animation:hbIn .2s ease-out;}
+.hb-det p{margin:8px 0 0; font-size:.86rem; line-height:1.45;}
+.hb-det .bp-acts{margin-top:10px;}
+.hb-src1{display:inline-flex; align-items:center; gap:5px; margin-top:6px; font-size:.8rem; font-weight:700; color:var(--brand);}
+
+/* тренды, советы */
+.hb-tc{border-left:4px solid var(--m-leaf); padding:4px 0 4px 11px; margin:0 0 12px;}
+.hb-tc.dn{border-left-color:#E08A2B;}
+.hb-tc:last-child{margin-bottom:2px;}
+.hb-tc b{display:block; font-size:.92rem;}
+.hb-tc p{margin:4px 0 0; font-size:.85rem; line-height:1.45; color:var(--ink);}
+.hb-tip{background:var(--surface-2); border-radius:14px; padding:10px 12px; margin:0 0 8px;}
+.hb-tip:last-child{margin-bottom:0;}
+.hb-tip b{display:flex; align-items:center; gap:6px; font-size:.9rem;}
+.hb-tip b svg{flex:none; color:var(--brand);}
+.hb-tip p{margin:5px 0 0; font-size:.85rem; line-height:1.45;}
+.hb-tip small{display:block; margin-top:5px; font-size:.75rem; font-weight:700; color:var(--muted);}
+.hb-country p{margin:0 0 8px; font-size:.88rem; line-height:1.45;}
+
+/* идеи */
+.hb-idea{border-top:1px solid var(--line); padding:12px 0;}
+.id-sec h4+.hb-idea,.id-sec .bp-hint+.hb-idea,.id-sec .chips+.hb-idea{border-top:0; padding-top:4px;}
+.hb-idea>b{display:block; font-size:.98rem; line-height:1.3; margin-top:6px;}
+.hb-idea>p{margin:5px 0 0; font-size:.86rem; line-height:1.45;}
+.hb-idea>p.m{display:flex; gap:6px; color:var(--muted); font-size:.83rem;}
+.hb-idea>p.m svg{flex:none; margin-top:2px;}
+.hb-ih{display:flex; align-items:center; gap:8px;}
+.hb-ih span{flex:1; min-width:0; font-size:.76rem; font-weight:700; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.hb-kind{flex:none; font-style:normal; font-size:.7rem; font-weight:800; padding:3px 8px; border-radius:99px; background:var(--surface-2); color:var(--ink);}
+.hb-kind.medtech{background:#E3F4EE; color:#0E6B4A;} .hb-kind.it{background:#E6ECFF; color:#2847B8;} .hb-kind.online{background:#F1E9FF; color:#5A33C2;}
+.hb-kind.food{background:#FFF1DE; color:#8A4B00;} .hb-kind.export{background:#E2F3F7; color:#0B6273;} .hb-kind.production{background:#EEF0F3; color:#3A4252;}
+.hb-save{flex:none; width:40px; height:40px; margin:-6px -6px -6px 0; border:0; background:none; font-size:1.25rem; line-height:1; color:var(--muted); cursor:pointer; border-radius:50%;}
+.hb-save.on{color:#E0445C; animation:hbPop .3s ease-out;}
+.hb-heart path{fill:none; stroke:currentColor; stroke-width:2; stroke-linejoin:round;}
+.hb-save .hb-heart{display:block; margin:auto;} .hb-save.on .hb-heart path{fill:currentColor;}
+.id-sec h4 .hb-heart{color:#E0445C; width:18px; height:18px;} .id-sec h4 .hb-heart path{fill:currentColor;}
+@keyframes hbPop{50%{transform:scale(1.3);}}
+.hb-ib{margin-top:10px; min-height:44px; display:inline-flex; align-items:center; gap:6px;}
+.hb-more{display:flex; align-items:center; justify-content:center; gap:6px; width:100%; min-height:44px; margin-top:4px; border:0; border-radius:14px; background:var(--surface-2); color:var(--ink); font:inherit; font-weight:800; font-size:.88rem; cursor:pointer;}
+.hb-arch{padding:8px 0; border-top:1px solid var(--line);}
+.hb-arch small{display:block; font-size:.75rem; font-weight:800; color:var(--muted); margin-bottom:4px;}
+.hb-al{display:block; width:100%; text-align:left; border:0; background:none; color:var(--ink); font:inherit; font-size:.88rem; font-weight:600; padding:8px 0; min-height:40px; cursor:pointer;}
+
+/* расчёт */
+.hb-card{border:1px solid var(--line); border-radius:20px; background:var(--surface); padding:14px; margin-bottom:10px;}
+.hb-in .field{margin-bottom:10px;}
+.hb-in .big-in input{font-family:var(--font-num); font-size:1.5rem; font-weight:800;}
+.hb-in .br-h{font-size:.8rem; font-weight:800; color:var(--muted); margin:2px 0 8px;}
+.hb-scroll{flex-wrap:nowrap; overflow-x:auto; margin:0 -14px 12px; padding:0 14px 2px; scrollbar-width:none;}
+.hb-scroll::-webkit-scrollbar{display:none;}
+.hb-scroll .chip{flex:none; display:inline-flex; align-items:center; gap:5px;}
+.hb-scroll .chip small{font-family:var(--font-num); font-weight:800; opacity:.75;}
+.hb-two{display:grid; grid-template-columns:1fr; gap:0 12px;}
+@media (min-width:430px){.hb-two{grid-template-columns:1fr 1fr;}}
+.hb-res>small{display:block; font-size:.8rem; font-weight:800; color:var(--muted);}
+.hb-big{display:block; font-family:var(--font-num); font-size:2.3rem; line-height:1.1; letter-spacing:-.01em; margin-top:2px; font-variant-numeric:tabular-nums;}
+.hb-gain{margin:4px 0 0; font-size:.9rem; font-weight:800;}
+.hb-gain.up{color:var(--m-leaf);} .hb-gain.dn{color:#C2571A;}
+.hb-sc{display:flex; flex-wrap:wrap; gap:6px 14px; margin:8px 0 10px; font-size:.82rem; font-weight:700; color:var(--muted);}
+.hb-sc b{color:var(--ink); font-family:var(--font-num);}
+.hb-batch{background:var(--surface-2); border-radius:16px; padding:11px 12px; margin:10px 0;}
+.hb-batch h5{display:flex; align-items:center; gap:6px; margin:0 0 4px; font-size:.9rem;}
+.hb-batch p{margin:4px 0 0; font-size:.85rem; line-height:1.45;}
+.hb-batch p.m{display:flex; gap:6px; color:var(--muted); font-size:.82rem;}
+.hb-batch p.m svg{flex:none; margin-top:2px;}
+.hb-batch .bp-need{margin:8px 0 0;}
+.hb-sales{display:flex; align-items:center; gap:10px; margin:6px 0; font-size:.84rem; font-weight:700;}
+.hb-sales span{flex:1; min-width:0;}
+.hb-sales-in{display:flex; align-items:flex-end; gap:8px; margin:6px 0 10px;}
+.hb-sales-in .field{flex:1; margin:0;}
+.hb-sales-in .btn{min-height:48px;}
+.bp-acts.two{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.bp-acts.two .btn{display:flex; align-items:center; justify-content:center; gap:6px; min-height:48px; padding:0 8px; font-size:.86rem;}
+
+/* живой график */
+.hb-ch{position:relative; margin:4px 0 6px; padding:8px 6px 6px; border-radius:18px; background:var(--surface-2); touch-action:pan-y; -webkit-user-select:none; user-select:none;}
+.hb-ch svg{display:block; width:100%; height:auto; cursor:crosshair; touch-action:pan-y;}
+.hb-ch svg:focus-visible{outline:3px solid var(--brand); outline-offset:3px; border-radius:12px;}
+.hb-ch .ar{fill:var(--brand); opacity:.12;}
+.hb-ch .bd{fill:var(--m-leaf); opacity:.12;}
+.hb-ch .ex{fill:none; stroke:var(--brand); stroke-width:3; stroke-linejoin:round; stroke-linecap:round;}
+.hb-ch .lo{fill:none; stroke:#E08A2B; stroke-width:2; stroke-dasharray:5 4; stroke-linejoin:round;}
+.hb-ch .hi{fill:none; stroke:var(--m-leaf); stroke-width:2; stroke-dasharray:5 4; stroke-linejoin:round;}
+.hb-ch .tg{stroke:var(--muted); stroke-width:1.2; stroke-dasharray:3 4;}
+.hb-ch .tl,.hb-ch .ax{fill:var(--muted); font-size:10px; font-weight:700;}
+.hb-ch .cur{stroke:var(--ink); stroke-width:1; opacity:.35;}
+.hb-ch .dt{stroke:var(--surface); stroke-width:2;}
+.hb-ch .dt.ex{fill:var(--brand);} .hb-ch .dt.lo{fill:#E08A2B;} .hb-ch .dt.hi{fill:var(--m-leaf);}
+.hb-ch.on .cur{opacity:.7;}
+.hb-ch-tip{display:flex; flex-direction:column; gap:3px; padding:2px 6px 6px; min-height:40px;}
+.hb-ch-tip b{font-size:.82rem;}
+.hb-ch-tip span{display:flex; flex-wrap:wrap; gap:2px 10px; font-size:.8rem; font-weight:700; color:var(--muted); font-variant-numeric:tabular-nums;}
+.hb-ch-tip em{font-style:normal; white-space:nowrap;} .hb-ch-tip em:first-child{color:var(--ink);}
+.hb-ch .k,.hb-sc .k{display:inline-block; width:12px; height:4px; border-radius:2px; margin-right:4px; vertical-align:middle;}
+.k.ex{background:var(--brand);} .k.lo{background:#E08A2B;} .k.hi{background:var(--m-leaf);}
+.hb-ch figcaption{font-size:.76rem; font-weight:700; color:var(--muted); padding:2px 6px 0;}
+
+/* учиться */
+.hb-askrow{display:flex; gap:8px;}
+.hb-askrow input{flex:1; min-width:0; min-height:48px;}
+.hb-askrow .btn{flex:none; width:52px; min-height:48px; padding:0; display:grid; place-items:center;}
+.hb-topics{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;}
+.hb-topic{display:flex; align-items:center; gap:8px; min-height:52px; padding:8px 10px; border:1px solid var(--line); border-radius:14px; background:var(--surface); color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+.hb-topic span{flex:none; width:32px; height:32px; border-radius:10px; display:grid; place-items:center; background:var(--surface-2); color:var(--brand);}
+.hb-topic{min-width:0;} .hb-topic b{font-size:.82rem; line-height:1.25; min-width:0; overflow-wrap:anywhere; hyphens:auto;}
+.hb-topic:active{transform:scale(.98);}
+.hb-tool{background:var(--surface-2); border-radius:16px; padding:11px 12px 2px; margin:0 0 10px;}
+.hb-tool>b{display:block; font-size:.9rem; margin-bottom:8px;}
+.hb-tool .field{margin-bottom:8px;}
+.hb-tool .hb-two{grid-template-columns:1fr 1fr;}
+.hb-tool .bp-hint{margin:0 0 10px; color:var(--ink); font-weight:600;}
+.hb-gh{margin-bottom:10px;}
+.hb-steps{margin:0; padding:0 0 0 22px;}
+.hb-steps li{padding:5px 0; font-size:.88rem; line-height:1.45;}
+.hb-steps li b{display:block;}
+.hb-steps li::marker{font-weight:800; color:var(--brand);}
+.hb-qo{display:block; width:100%; text-align:left; min-height:46px; margin:0 0 8px; padding:10px 12px; border:1.5px solid var(--line); border-radius:14px; background:var(--surface); color:var(--ink); font:inherit; font-size:.88rem; font-weight:600; cursor:pointer;}
+.hb-qo.ok{border-color:var(--m-leaf); background:var(--m-leaf-weak);}
+.hb-qo.bad{border-color:#E08A2B; background:#FFF1E4;}
+.hb-qo[disabled]{cursor:default; opacity:1; color:var(--ink);}
+.hb-qwhy{margin:4px 2px 0; color:var(--ink); font-weight:600;}
+
+:root[data-theme="dark"] .hb-kind.medtech{background:#103A2C; color:#8FE3C2;}
+:root[data-theme="dark"] .hb-kind.it{background:#1C2856; color:#B7C6FF;}
+:root[data-theme="dark"] .hb-kind.online{background:#2B1E52; color:#D3C2FF;}
+:root[data-theme="dark"] .hb-kind.food{background:#3A2A12; color:#FFD9A3;}
+:root[data-theme="dark"] .hb-kind.export{background:#0F3540; color:#9EE0EE;}
+:root[data-theme="dark"] .hb-kind.production{background:#2A2F38; color:#D3D9E3;}
+:root[data-theme="dark"] .hb-qo.bad{background:#3B2414;}
+:root[data-theme="dark"] .hb-tr.down,:root[data-theme="dark"] .hb-gain.dn{color:#FFA372;}
+@media (prefers-reduced-motion:reduce){.hb-pane,.hb-det{animation:none;} .hb-skel i{animation:none;} .hb-bt i{transition:none;} .hb-save.on{animation:none;}}
 </style>
 </head>
 <body>
@@ -5396,6 +5578,135 @@ en:{
   bpRefreshS:'Update', bpEditS:'Edit', bpShare:'Share', bpNewPlan:'New plan',
   bpCardT:'Business plan', bpCardSub:'Any business, any country: Sifra studies the market, competitors and prices and lays out a month-by-month plan.', bpStale:'Update with fresh data', bpGoalSub:'Market, competitors, money, month-by-month plan' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M21S[k]);
+/* ----- v23: «Деньги и бизнес» ----- */
+const HB_MODEL=m=>/fable/.test(m)?'Claude Fable 5.2':/opus/.test(m)?'Claude Opus 5.5':/sonnet/.test(m)?'Claude Sonnet 5.5':'Claude';
+const HB_TABI={today:'sun',calc:'cash',ideas:'bulb',plan:'doc',learn:'sparkle'};
+const M23S={
+ru:{ hbSub:'Рынок дня, идеи, расчёт и обучение', hbT:'Деньги и бизнес', hbDayT:'Рынок дня', hbUpd:t=>'обновлён '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'обновляется…', hbStale:'вчерашние данные',
+  hbLoading:'Сифра собирает рынок дня: наценки, тренды, идеи, советы. Это 1–3 минуты один раз в день — пока можно посчитать по обычным цифрам.', hbOld10:'Сервер Mira ещё старый — залейте новый mira-api.zip в Cloudflare, и здесь появится рынок дня.', hbErr:'Не получилось обновить рынок дня.', hbSom:'с.',
+  hbTabN:{today:'Сегодня',calc:'Расчёт',ideas:'Идеи',plan:'План',learn:'Учиться'}, hbTabI:HB_TABI,
+  hbSer:{lo:'осторожно',ex:'обычно',hi:'удачно'}, hbGoal:'Цель', hbChartL:'Сколько денег в деле по месяцам', hbChartHint:'Проведите пальцем по графику — увидите любой месяц.', hbInM:n=>'через '+n+' мес.',
+  hbCap:'Сколько денег, $', hbWhat:'Во что вложить', hbFrom:'Откуда везти', hbRe:'Сколько прибыли возвращать', hbReN:{100:'Всю',70:'70%',50:'Половину'}, hbH:'На какой срок',
+  hbIn:m=>'Через '+m+' — обычно', hbPerM:x=>'≈ '+x+'% в месяц', hbBatch:'Одна партия',
+  hbBatchT:(n,l,r,m,p)=>'Купите ≈ '+n+' шт по '+l+' $ с доставкой, продавайте по '+r+' $. Уйдёт за ≈ '+m+' мес., прибыль с партии ≈ '+p+'.',
+  hbLiveMk:(mk,note)=>'По рынку дня наценка сейчас ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'Свежих данных по этому товару сегодня нет — расчёт по обычным цифрам.',
+  hbLimit:(i,s)=>'Магазин продаёт ≈ '+s+' в месяц, поэтому в товар за раз выгодно вложить ≈ '+i+'. Остальное ждёт следующей партии — или добавьте каналы продаж.',
+  hbSales:(v,src)=>'Магазин продаёт ≈ '+v+' в месяц'+(src?' · '+src:''), hbSrc:{def:'примерно, поправьте',fact:'по вашим записям',user:'вы указали',buy:'по закупкам',sold:'по отметкам продаж',pay:'по платежам'}, hbFix:'Поправить', hbSalesQ:'Продажи в месяц, $',
+  hbCalcNote:'Это расчёт, а не обещание: продажи зависят от места, цены и сезона. Цифры товара обновляются каждый день из рынка дня.', hbOld:'Подробный расчёт', hbToPlan:'Бизнес-план', hbMo:n=>n+' мес.',
+  hbNew:'новое', hbMkL:'Наценка', hbSellL:'Продаётся за', hbBuyL:'Закупка', hbBestL:'Выгоднее брать', hbStartL:'Старт',
+  hbCtry:{IR:'Иран',IN:'Индия',VN:'Вьетнам',KR:'Корея',EU:'Европа',US:'США',KG:'Кыргызстан',KZ:'Казахстан',RU:'Россия'}, hbSrc1:'Источник', hbCount:'Посчитать',
+  hbArea:{consumer:'покупатели',online:'онлайн',medtech:'медтех',food:'еда',fashion:'мода',tech:'технологии',finance:'финансы',export:'экспорт',other:'разное'},
+  hbAreaL:{business:'бизнес',startup:'стартапы',medtech:'медтех',marketing:'маркетинг',finance:'финансы',sales:'продажи',markets:'рынки',it:'IT',management:'управление',mindset:'мышление'},
+  hbAllIdeas:n=>'Все идеи дня ('+n+')', hbLessonT:'Урок дня', hbBarsT:'Что выгоднее сейчас', hbBarsLead:'Нажмите строку — откроются подробности. Стрелка — куда идёт спрос.',
+  hbSortN:{mk:'Наценка',speed:'Быстрее продаётся',year:'За год'}, hbBase:'Пока это обычные цифры приложения — свежие появятся с рынком дня.',
+  hbTrendsT:'Тренды', hbIdeasT:'Идеи дня', hbTipsT:'Советы дня', hbWatchT:'Осторожно', hbNote:'Рынок дня собирает Сифра по свежим данным из интернета раз в день. Это подсказки, а не обещания — решение за вами.',
+  hbCountryT:'Страна дня', hbKindN:{all:'Все',trade:'Торговля',online:'Онлайн',service:'Услуги',food:'Еда',production:'Производство',medtech:'Медтех',it:'IT',export:'Экспорт',other:'Другое'},
+  hbSave:'Сохранить идею', hbDiff:{easy:'легко начать',mid:'средне',hard:'сложно'}, hbSavedT:'Сохранённые идеи', hbNewCatsT:'Новые товары в тренде', hbPastIdeas:'Идеи прошлых дней',
+  hbIdeasLead:'Каждый день новые: под разные суммы, страны и виды бизнеса. Понравилась — составьте по ней бизнес-план.', hbUpTo:v=>'до '+v, hbAnyBud:'Любая сумма', hbNoIdeas:'По этому фильтру сегодня идей нет — попробуйте другой.', hbOwnIdea:'Своя идея — бизнес-план',
+  hbPlanT:'Бизнес-планы', hbPlanLead:'Любой бизнес, любая страна: рынок, конкуренты, деньги, окупаемость и план по месяцам.', hbNoPlans:'Планов пока нет.', hbNewPlan:'Новый бизнес-план',
+  hbAskT:'Спросить о чём угодно', hbAskPh:'Например: как открыть аптеку в Душанбе?', hbAskGo:'Спросить', hbTopicsT:'Темы',
+  hbTopicN:{start:'Как начать с нуля',idea:'Как найти идею',validate:'Проверить спрос',unit:'Наценка и окупаемость',money:'Деньги бизнеса',market:'Рынок и конкуренты',sales:'Продажи и маркетинг',online:'Онлайн и маркетплейсы',suppliers:'Поставщики и закупка',legal:'Регистрация и налоги',team:'Команда',growth:'Как расти',medtech:'Медтех',it:'IT-стартап',food:'Бизнес на еде',export:'Экспорт',mistakes:'Частые ошибки',mind:'Мышление предпринимателя'},
+  hbToolsT:'Посчитать за минуту', hbMkMg:'Наценка и маржа', hbMargin:'Маржа', hbMkMgT:(a,g)=>'Наценка '+a+'% — это маржа '+g+'%: из каждой продажи столько остаётся до расходов.',
+  hbBE:'Точка безубыточности', hbFixed:'Расходы в месяц', hbBET:v=>'Чтобы выйти в ноль, нужно продавать на '+v+' в месяц.', hbBEBad:'Впишите расходы и маржу меньше 100%.',
+  hbBooksT:'Книги', hbBooks:[
+    ['The Lean Startup («Бизнес с нуля»)','Эрик Рис','Делайте самую простую версию, проверяйте на людях и меняйте по результатам, а не по догадкам.'],
+    ['The Mom Test («Спроси маму»)','Роб Фицпатрик','Спрашивайте о прошлом опыте и тратах людей, а не «купили бы вы» — так вас не обманут из вежливости.'],
+    ['Zero to One («От нуля к единице»)','Питер Тиль','Ищите то, чего ещё нет: маленький рынок, где вы лучшие, выгоднее толпы конкурентов.'],
+    ['The E-Myth Revisited','Майкл Гербер','Работайте над бизнесом, а не только в нём: опишите процессы так, чтобы дело шло без вас.'],
+    ['Traction','Габриэль Вайнберг, Джастин Маре','Дёшево проверьте несколько каналов привлечения клиентов и вкладывайтесь в тот, что сработал.'],
+    ['$100M Offers','Алекс Хормози','Продаётся не товар, а ценность: результат для клиента, уверенность, скорость и простота.'],
+    ['Effectual Entrepreneurship','Сарас Сарасвати и соавторы','Начинайте с того, что у вас есть, и рискуйте только тем, что не жалко потерять.'],
+    ['Disciplined Entrepreneurship','Билл Олет','Выберите один узкий первый рынок и пройдите шаги от клиента до масштаба.'],
+    ['Blue Ocean Strategy («Стратегия голубого океана»)','Чан Ким, Рене Моборн','Не воюйте ценой: создайте предложение, которого нет у конкурентов.'],
+    ['Biodesign','Пол Йок и соавторы, Стэнфорд','Для медтеха: сначала найдите настоящую нужду врачей и пациентов, потом изобретайте и выводите на рынок.']],
+  hbArchT:'Прошлые уроки', hbAskNeed:'Напишите вопрос хотя бы в пару слов.', hbRowIdea:(n,c)=>'Хочу вложить деньги в товар: '+n+(c?', закупка — '+c:'')+'.', hbSavedOk:'Идея сохранена', hbUnsaved:'Убрано из сохранённых',
+  hbQuizT:'Проверьте себя', hbStepsT:'По шагам', hbNumsT:'Ориентиры в цифрах', hbExampleT:'Пример', hbTaskT:'Сделайте сегодня', hbTipsG:'Советы', hbMistT:'Частые ошибки', hbToolsG:'Что поможет', hbReadT:'Что почитать',
+  hbLearnT:'Учиться', hbAskSifra:'Спросить Сифру', hbNoLesson:'Этого урока уже нет на телефоне.', hbYourQ:'Ваш вопрос', hbLearnWait:'Сифра готовит урок…', hbLearnWait2:'До минуты: ищет свежие данные и примеры.',
+  hbLearnErr:'Не получилось подготовить урок. Проверьте интернет.', hbRight:'Верно!', hbWrong:'Не совсем.' },
+tg:{ hbSub:'Бозори рӯз, ғояҳо, ҳисоб ва омӯзиш', hbT:'Пул ва тиҷорат', hbDayT:'Бозори рӯз', hbUpd:t=>'навсозӣ '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'нав мешавад…', hbStale:'маълумоти дирӯз',
+  hbLoading:'Сифра бозори рӯзро ҷамъ мекунад: фоида, тамоюлҳо, ғояҳо, маслиҳатҳо. Ин 1–3 дақиқа, як бор дар рӯз — ҳоло бо рақамҳои муқаррарӣ ҳисоб кардан мумкин.', hbOld10:'Сервери Mira ҳанӯз кӯҳна аст — mira-api.zip-и навро ба Cloudflare бор кунед, ва бозори рӯз пайдо мешавад.', hbErr:'Бозори рӯз нав нашуд.', hbSom:'с.',
+  hbTabN:{today:'Имрӯз',calc:'Ҳисоб',ideas:'Ғояҳо',plan:'Нақша',learn:'Омӯзиш'}, hbTabI:HB_TABI,
+  hbSer:{lo:'бо эҳтиёт',ex:'одатан',hi:'бомуваффақият'}, hbGoal:'Ҳадаф', hbChartL:'Пул дар кор моҳ ба моҳ', hbChartHint:'Ангуштро аз рӯи график гузаронед — ҳар моҳро мебинед.', hbInM:n=>'баъди '+n+' моҳ',
+  hbCap:'Чанд пул, $', hbWhat:'Ба чӣ гузоштан', hbFrom:'Аз куҷо овардан', hbRe:'Чанд фоидаро баргардонидан', hbReN:{100:'Ҳамаашро',70:'70%',50:'Нисфашро'}, hbH:'Ба кадом муддат',
+  hbIn:m=>'Баъди '+m+' — одатан', hbPerM:x=>'≈ '+x+'% дар як моҳ', hbBatch:'Як партия',
+  hbBatchT:(n,l,r,m,p)=>'≈ '+n+' дона ба '+l+' $ бо расонидан харед, ба '+r+' $ фурӯшед. Дар ≈ '+m+' моҳ фурӯхта мешавад, фоидаи партия ≈ '+p+'.',
+  hbLiveMk:(mk,note)=>'Аз рӯи бозори рӯз фоида ҳоло ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'Имрӯз дар бораи ин мол маълумоти нав нест — ҳисоб бо рақамҳои муқаррарӣ.',
+  hbLimit:(i,s)=>'Мағоза дар як моҳ ≈ '+s+' мефурӯшад, бинобар ин як бор ба мол ≈ '+i+' гузоштан фоиданок аст. Боқимонда партияи навбатиро интизор мешавад — ё роҳҳои фурӯшро зиёд кунед.',
+  hbSales:(v,src)=>'Мағоза дар як моҳ ≈ '+v+' мефурӯшад'+(src?' · '+src:''), hbSrc:{def:'тахминан, ислоҳ кунед',fact:'аз рӯи сабтҳои шумо',user:'шумо нишон додед',buy:'аз рӯи харидҳо',sold:'аз рӯи фурӯшҳо',pay:'аз рӯи пардохтҳо'}, hbFix:'Ислоҳ', hbSalesQ:'Фурӯш дар як моҳ, $',
+  hbCalcNote:'Ин ҳисоб аст, на ваъда: фурӯш аз ҷой, нарх ва мавсим вобаста аст. Рақамҳои мол ҳар рӯз аз бозори рӯз нав мешаванд.', hbOld:'Ҳисоби муфассал', hbToPlan:'Нақшаи тиҷоратӣ', hbMo:n=>n+' моҳ',
+  hbNew:'нав', hbMkL:'Фоида', hbSellL:'Фурӯхта мешавад дар', hbBuyL:'Харид', hbBestL:'Беҳтар аз', hbStartL:'Оғоз',
+  hbCtry:{IR:'Эрон',IN:'Ҳиндустон',VN:'Ветнам',KR:'Корея',EU:'Аврупо',US:'ИМА',KG:'Қирғизистон',KZ:'Қазоқистон',RU:'Русия'}, hbSrc1:'Манбаъ', hbCount:'Ҳисоб кардан',
+  hbArea:{consumer:'харидорон',online:'онлайн',medtech:'тиб',food:'хӯрок',fashion:'мӯд',tech:'технология',finance:'молия',export:'содирот',other:'гуногун'},
+  hbAreaL:{business:'тиҷорат',startup:'стартапҳо',medtech:'тиб',marketing:'маркетинг',finance:'молия',sales:'фурӯш',markets:'бозорҳо',it:'IT',management:'идора',mindset:'тафаккур'},
+  hbAllIdeas:n=>'Ҳамаи ғояҳои рӯз ('+n+')', hbLessonT:'Дарси рӯз', hbBarsT:'Ҳоло чӣ фоиданоктар', hbBarsLead:'Сатрро пахш кунед — тафсилот кушода мешавад. Тир — талабот ба куҷо меравад.',
+  hbSortN:{mk:'Фоида',speed:'Зудтар фурӯхта мешавад',year:'Дар як сол'}, hbBase:'Ҳоло ин рақамҳои муқаррарии барнома — рақамҳои нав бо бозори рӯз меоянд.',
+  hbTrendsT:'Тамоюлҳо', hbIdeasT:'Ғояҳои рӯз', hbTipsT:'Маслиҳатҳои рӯз', hbWatchT:'Эҳтиёт', hbNote:'Бозори рӯзро Сифра ҳар рӯз аз маълумоти нави интернет ҷамъ мекунад. Ин маслиҳат аст, на ваъда — қарор аз они шумо.',
+  hbCountryT:'Кишвари рӯз', hbKindN:{all:'Ҳама',trade:'Савдо',online:'Онлайн',service:'Хизматрасонӣ',food:'Хӯрок',production:'Истеҳсол',medtech:'Тиб',it:'IT',export:'Содирот',other:'Дигар'},
+  hbSave:'Ғояро нигоҳ доштан', hbDiff:{easy:'оғозаш осон',mid:'миёна',hard:'душвор'}, hbSavedT:'Ғояҳои нигоҳдошта', hbNewCatsT:'Молҳои нав дар тамоюл', hbPastIdeas:'Ғояҳои рӯзҳои гузашта',
+  hbIdeasLead:'Ҳар рӯз нав: барои маблағ, кишвар ва навъи тиҷорати гуногун. Писанд омад — нақшаи тиҷоратӣ тартиб диҳед.', hbUpTo:v=>'то '+v, hbAnyBud:'Ҳар маблағ', hbNoIdeas:'Бо ин филтр имрӯз ғоя нест — дигарашро санҷед.', hbOwnIdea:'Ғояи худ — нақшаи тиҷоратӣ',
+  hbPlanT:'Нақшаҳои тиҷоратӣ', hbPlanLead:'Ҳар тиҷорат, ҳар кишвар: бозор, рақибон, пул, баргардонидан ва нақша моҳ ба моҳ.', hbNoPlans:'Ҳоло нақша нест.', hbNewPlan:'Нақшаи нав',
+  hbAskT:'Дар бораи ҳар чиз пурсед', hbAskPh:'Масалан: чӣ тавр дар Душанбе дорухона кушоям?', hbAskGo:'Пурсидан', hbTopicsT:'Мавзӯъҳо',
+  hbTopicN:{start:'Аз сифр чӣ тавр оғоз кард',idea:'Чӣ тавр ғоя ёфт',validate:'Талаботро санҷидан',unit:'Фоида ва баргардонидан',money:'Пули тиҷорат',market:'Бозор ва рақибон',sales:'Фурӯш ва маркетинг',online:'Онлайн ва бозорҳои онлайн',suppliers:'Таъминкунандагон ва харид',legal:'Бақайдгирӣ ва андоз',team:'Даста',growth:'Чӣ тавр калон шуд',medtech:'Тиб ва технология',it:'Стартапи IT',food:'Тиҷорат бо хӯрок',export:'Содирот',mistakes:'Хатоҳои маъмул',mind:'Тафаккури соҳибкор'},
+  hbToolsT:'Дар як дақиқа ҳисоб кунед', hbMkMg:'Фоида ва маржа', hbMargin:'Маржа', hbMkMgT:(a,g)=>'Фоидаи '+a+'% — ин маржаи '+g+'% аст: аз ҳар фурӯш ин қадар то хароҷот мемонад.',
+  hbBE:'Нуқтаи бе зарар', hbFixed:'Хароҷот дар як моҳ', hbBET:v=>'Барои ба сифр баромадан бояд дар як моҳ ба '+v+' фурӯшед.', hbBEBad:'Хароҷот ва маржаи аз 100% камро нависед.',
+  hbBooksT:'Китобҳо', hbBooks:[
+    ['The Lean Startup','Эрик Рис','Версияи соддатаринро созед, бо одамон санҷед ва аз рӯи натиҷа иваз кунед, на аз рӯи тахмин.'],
+    ['The Mom Test','Роб Фитспатрик','Дар бораи таҷриба ва хароҷоти гузаштаи одамон пурсед, на «мехаридед?» — он гоҳ аз рӯи одоб фиреб намедиҳанд.'],
+    ['Zero to One','Питер Тил','Чизеро ҷӯед, ки ҳанӯз нест: бозори хурде, ки дар он беҳтарин бошед, аз издиҳоми рақибон фоиданоктар.'],
+    ['The E-Myth Revisited','Майкл Гербер','Болои тиҷорат кор кунед, на танҳо дар он: равандҳоро тавре нависед, ки кор бе шумо ҳам равад.'],
+    ['Traction','Габриэл Вайнберг, Ҷастин Маре','Якчанд роҳи ҷалби мизоҷонро арзон санҷед ва ба ҳамоне сарф кунед, ки кор кард.'],
+    ['$100M Offers','Алекс Ҳормозӣ','Мол не, арзиш фурӯхта мешавад: натиҷа барои мизоҷ, боварӣ, суръат ва соддагӣ.'],
+    ['Effectual Entrepreneurship','Сарас Сарасватӣ ва ҳаммуаллифон','Аз он чизе оғоз кунед, ки доред, ва танҳо бо он хавф кунед, ки гум карданаш дард намекунад.'],
+    ['Disciplined Entrepreneurship','Билл Олет','Як бозори танги аввалро интихоб кунед ва қадамҳоро аз мизоҷ то миқёс гузаред.'],
+    ['Blue Ocean Strategy','Чан Ким, Рене Моборн','Бо нарх ҷанг накунед: пешниҳоде созед, ки рақибон надоранд.'],
+    ['Biodesign','Пол Йок ва ҳаммуаллифон, Стэнфорд','Барои тиб: аввал ниёзи воқеии духтурон ва беморонро ёбед, баъд ихтироъ кунед ва ба бозор бароред.']],
+  hbArchT:'Дарсҳои гузашта', hbAskNeed:'Саволро ақаллан бо чанд калима нависед.', hbRowIdea:(n,c)=>'Мехоҳам пулро ба мол гузорам: '+n+(c?', харид — '+c:'')+'.', hbSavedOk:'Ғоя нигоҳ дошта шуд', hbUnsaved:'Аз нигоҳдоштаҳо гирифта шуд',
+  hbQuizT:'Худро санҷед', hbStepsT:'Қадам ба қадам', hbNumsT:'Нишондиҳандаҳо', hbExampleT:'Мисол', hbTaskT:'Имрӯз иҷро кунед', hbTipsG:'Маслиҳатҳо', hbMistT:'Хатоҳои маъмул', hbToolsG:'Чӣ кӯмак мекунад', hbReadT:'Чӣ хондан',
+  hbLearnT:'Омӯзиш', hbAskSifra:'Аз Сифра пурсидан', hbNoLesson:'Ин дарс дигар дар телефон нест.', hbYourQ:'Саволи шумо', hbLearnWait:'Сифра дарс тайёр мекунад…', hbLearnWait2:'То як дақиқа: маълумот ва мисолҳои нав меҷӯяд.',
+  hbLearnErr:'Дарс тайёр нашуд. Интернетро санҷед.', hbRight:'Дуруст!', hbWrong:'На он қадар.' },
+en:{ hbSub:'Market of the day, ideas, calculator, learning', hbT:'Money & business', hbDayT:'Market of the day', hbUpd:t=>'updated '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'updating…', hbStale:'yesterday’s data',
+  hbLoading:'Sifra is gathering today’s market: markups, trends, ideas, tips. It takes 1–3 minutes once a day — meanwhile you can calculate with the usual numbers.', hbOld10:'The Mira server is still the old one — upload the new mira-api.zip to Cloudflare and the market of the day will appear here.', hbErr:'Could not update the market of the day.', hbSom:'TJS',
+  hbTabN:{today:'Today',calc:'Calculate',ideas:'Ideas',plan:'Plan',learn:'Learn'}, hbTabI:HB_TABI,
+  hbSer:{lo:'cautious',ex:'usual',hi:'lucky'}, hbGoal:'Goal', hbChartL:'Money in the business by month', hbChartHint:'Slide your finger along the chart to see any month.', hbInM:n=>'in '+n+' mo.',
+  hbCap:'How much money, $', hbWhat:'What to invest in', hbFrom:'Where to buy', hbRe:'How much profit to reinvest', hbReN:{100:'All',70:'70%',50:'Half'}, hbH:'For how long',
+  hbIn:m=>'In '+m+' — usually', hbPerM:x=>'≈ '+x+'% a month', hbBatch:'One batch',
+  hbBatchT:(n,l,r,m,p)=>'Buy ≈ '+n+' pcs at $'+l+' landed, sell at $'+r+'. Sells in ≈ '+m+' mo., profit per batch ≈ '+p+'.',
+  hbLiveMk:(mk,note)=>'Today’s market markup ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'No fresh data for this product today — calculated with the usual numbers.',
+  hbLimit:(i,s)=>'The shop sells ≈ '+s+' a month, so it pays to put ≈ '+i+' into one batch. The rest waits for the next batch — or add sales channels.',
+  hbSales:(v,src)=>'The shop sells ≈ '+v+' a month'+(src?' · '+src:''), hbSrc:{def:'approximate, adjust it',fact:'from your records',user:'you entered it',buy:'from purchases',sold:'from sales marks',pay:'from payments'}, hbFix:'Adjust', hbSalesQ:'Sales a month, $',
+  hbCalcNote:'This is a calculation, not a promise: sales depend on place, price and season. Product numbers update daily from the market of the day.', hbOld:'Detailed calculation', hbToPlan:'Business plan', hbMo:n=>n+' mo.',
+  hbNew:'new', hbMkL:'Markup', hbSellL:'Sells in', hbBuyL:'Purchase', hbBestL:'Best from', hbStartL:'Start',
+  hbCtry:{IR:'Iran',IN:'India',VN:'Vietnam',KR:'Korea',EU:'Europe',US:'USA',KG:'Kyrgyzstan',KZ:'Kazakhstan',RU:'Russia'}, hbSrc1:'Source', hbCount:'Calculate',
+  hbArea:{consumer:'consumers',online:'online',medtech:'medtech',food:'food',fashion:'fashion',tech:'tech',finance:'finance',export:'export',other:'other'},
+  hbAreaL:{business:'business',startup:'startups',medtech:'medtech',marketing:'marketing',finance:'finance',sales:'sales',markets:'markets',it:'IT',management:'management',mindset:'mindset'},
+  hbAllIdeas:n=>'All ideas of the day ('+n+')', hbLessonT:'Lesson of the day', hbBarsT:'What pays best now', hbBarsLead:'Tap a row for details. The arrow shows where demand is going.',
+  hbSortN:{mk:'Markup',speed:'Sells fastest',year:'Per year'}, hbBase:'These are the app’s usual numbers for now — fresh ones arrive with the market of the day.',
+  hbTrendsT:'Trends', hbIdeasT:'Ideas of the day', hbTipsT:'Tips of the day', hbWatchT:'Watch out', hbNote:'Sifra gathers the market of the day from fresh internet data once a day. These are hints, not promises — the decision is yours.',
+  hbCountryT:'Country of the day', hbKindN:{all:'All',trade:'Trade',online:'Online',service:'Services',food:'Food',production:'Production',medtech:'Medtech',it:'IT',export:'Export',other:'Other'},
+  hbSave:'Save idea', hbDiff:{easy:'easy to start',mid:'medium',hard:'hard'}, hbSavedT:'Saved ideas', hbNewCatsT:'New trending products', hbPastIdeas:'Ideas from past days',
+  hbIdeasLead:'New every day: for different budgets, countries and kinds of business. Like one — make a business plan from it.', hbUpTo:v=>'up to '+v, hbAnyBud:'Any budget', hbNoIdeas:'No ideas for this filter today — try another.', hbOwnIdea:'Own idea — business plan',
+  hbPlanT:'Business plans', hbPlanLead:'Any business, any country: market, competitors, money, payback and a month-by-month plan.', hbNoPlans:'No plans yet.', hbNewPlan:'New business plan',
+  hbAskT:'Ask about anything', hbAskPh:'E.g. how to open a pharmacy in Dushanbe?', hbAskGo:'Ask', hbTopicsT:'Topics',
+  hbTopicN:{start:'Starting from zero',idea:'Finding an idea',validate:'Testing demand',unit:'Markup and payback',money:'Business money',market:'Market and competitors',sales:'Sales and marketing',online:'Online and marketplaces',suppliers:'Suppliers and buying',legal:'Registration and taxes',team:'Team',growth:'How to grow',medtech:'Medtech',it:'IT startup',food:'Food business',export:'Export',mistakes:'Common mistakes',mind:'Entrepreneur mindset'},
+  hbToolsT:'Calculate in a minute', hbMkMg:'Markup and margin', hbMargin:'Margin', hbMkMgT:(a,g)=>'A '+a+'% markup is a '+g+'% margin: that much of each sale stays before expenses.',
+  hbBE:'Break-even point', hbFixed:'Costs a month', hbBET:v=>'To break even you need sales of '+v+' a month.', hbBEBad:'Enter costs and a margin below 100%.',
+  hbBooksT:'Books', hbBooks:[
+    ['The Lean Startup','Eric Ries','Build the simplest version, test it with people and change it based on results, not guesses.'],
+    ['The Mom Test','Rob Fitzpatrick','Ask about people’s past behaviour and spending, not “would you buy” — then politeness won’t fool you.'],
+    ['Zero to One','Peter Thiel','Look for what doesn’t exist yet: a small market where you are the best beats a crowd of competitors.'],
+    ['The E-Myth Revisited','Michael Gerber','Work on the business, not only in it: write down processes so it runs without you.'],
+    ['Traction','Gabriel Weinberg, Justin Mares','Test several customer channels cheaply and invest in the one that works.'],
+    ['$100M Offers','Alex Hormozi','You sell value, not a product: the customer’s result, certainty, speed and ease.'],
+    ['Effectual Entrepreneurship','Saras Sarasvathy et al.','Start with what you have and risk only what you can afford to lose.'],
+    ['Disciplined Entrepreneurship','Bill Aulet','Pick one narrow first market and walk the steps from customer to scale.'],
+    ['Blue Ocean Strategy','W. Chan Kim, Renée Mauborgne','Don’t fight on price: create an offer competitors don’t have.'],
+    ['Biodesign','Paul Yock et al., Stanford','For medtech: first find a real need of doctors and patients, then invent and bring it to market.']],
+  hbArchT:'Past lessons', hbAskNeed:'Write the question in at least a few words.', hbRowIdea:(n,c)=>'I want to invest in goods: '+n+(c?', buying from '+c:'')+'.', hbSavedOk:'Idea saved', hbUnsaved:'Removed from saved',
+  hbQuizT:'Check yourself', hbStepsT:'Step by step', hbNumsT:'Benchmarks', hbExampleT:'Example', hbTaskT:'Do it today', hbTipsG:'Tips', hbMistT:'Common mistakes', hbToolsG:'What helps', hbReadT:'What to read',
+  hbLearnT:'Learn', hbAskSifra:'Ask Sifra', hbNoLesson:'This lesson is no longer on the phone.', hbYourQ:'Your question', hbLearnWait:'Sifra is preparing the lesson…', hbLearnWait2:'Up to a minute: looking for fresh data and examples.',
+  hbLearnErr:'Could not prepare the lesson. Check the internet.', hbRight:'Right!', hbWrong:'Not quite.' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M23S[k]);
+
 
 
 // дать каждому языку доступ к своим месяцам
@@ -9716,7 +10027,7 @@ function investSheet(){ const P=ivP(); if(!P.cap){ P.cap=20000; P.cur='USD'; } i
   };
   draw();
 }
-document.addEventListener('click', e=>{ const w=e.target.closest('[data-invest]'); if(w){ e.stopImmediatePropagation(); investSheet(); } }, true);
+document.addEventListener('click', e=>{ const w=e.target.closest('[data-invest]'); if(w){ e.stopImmediatePropagation(); hubOpen(); } }, true);
 
 /* ===================== v8: помощники закупщика и магазина (идеи из списка) ===================== */
 /* ---- панель помощников во вкладке «Закупка» ---- */
@@ -12216,7 +12527,7 @@ function moreItems(){ const s=fn=>{ try{ return fn()||''; }catch(e){ return ''; 
   const th=s(()=>({light:L.m8ThLight,dark:L.m8ThDark,auto:L.m8ThAuto})[m8Theme()]);
   return [
     {k:'money',g:'m',a:'data-tab="money"',id:'m10MoneyLink',i:'money',t:L.m10Money,s:L.m10MoneySub},
-    {k:'invest',g:'m',a:'data-invest="1"',i:'chart',t:L.ivTitle,s:goal||L.mrInvSub},
+    {k:'invest',g:'m',a:'data-invest="1"',i:'chart',t:L.hbT,s:goal||L.hbSub},
     {k:'idea',g:'m',a:'data-more-idea="1"',id:'m15IdeaLink',i:'bulb',t:L.idTitle+(nid?' · '+nid:''),s:L.idMoreSub},
     {k:'calc',g:'m',a:'data-m-calc="1"',i:'calc',t:L.m7Calc,s:L.mrCalcSub},
     {k:'rates',g:'m',a:'data-rates="1"',i:'rate',t:L.m7Rates,s:u?'1 $ = '+fx(u,2)+' '+L.cur:''},
@@ -12976,6 +13287,294 @@ function bpAskFirst(D){ try{ D=D||ivGoalLite(); return !!(D&&D.S0&&D.S0.src==='d
     const p2=box.querySelector('#gp-plan2'); if(p2) p2.remove(); }catch(e){} }; }
 /* «Есть своя идея?» — тот же бизнес-план, сразу со словами человека */
 document.addEventListener('click',e=>{ const t=e.target.closest('#id-open'); if(!t||!document.querySelector('#iv-bp')) return; e.stopImmediatePropagation(); e.preventDefault(); const f=bpDefForm(); bpGo('form',f); setTimeout(()=>{ const ta=document.querySelector('#bp-idea'); if(ta) ta.focus(); },120); },true);
+
+/* ===================== v23: «Деньги и бизнес» — новый раздел «Куда вложить» =====================
+   Страница на весь экран с вкладками: Сегодня (рынок дня от самой сильной модели — наценки и спрос по всем товарам и новым,
+   тренды, идеи, советы, осторожно, урок и страна дня), Посчитать (живой расчёт с графиком, который ведётся пальцем),
+   Идеи (фильтры, сохранение, бизнес-план в одно касание), План (бизнес-планы), Учиться (урок дня с вопросом, 18 тем,
+   свой вопрос, мини-калькуляторы, книги, архив уроков). «Рынок дня» обновляется раз в день и общий для всех;
+   из него же уточняется старый подробный расчёт. Нужен сервер Mira версии 10. */
+const HB_TABS=['today','calc','ideas','plan','learn'];
+const HB_KINDS=['all','trade','online','service','food','production','medtech','it','export'];
+const HB_BUD=[0,5000,20000,50000];
+const HB_TOPICS=['start','idea','validate','unit','money','market','sales','online','suppliers','legal','team','growth','medtech','it','food','export','mistakes','mind'];
+const HB_TICO={start:'flag',idea:'bulb',validate:'check',unit:'cash',money:'piggy',market:'eye',sales:'chat',online:'phone',suppliers:'truck',legal:'shield',team:'home',growth:'chart',medtech:'leaf',it:'gear',food:'shop',export:'plane',mistakes:'warn',mind:'sparkle'};
+const HB_HEART='<svg class="hb-heart" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 20.3l-1.3-1.2C5.6 14.5 2.5 11.6 2.5 8A4.6 4.6 0 0 1 7.1 3.4c1.9 0 3.7.9 4.9 2.4a6.3 6.3 0 0 1 4.9-2.4A4.6 4.6 0 0 1 21.5 8c0 3.6-3.1 6.5-8.2 11.1z"/></svg>';
+const HB_FLAG={CN:'🇨🇳',TR:'🇹🇷',AE:'🇦🇪',UZ:'🇺🇿',KG:'🇰🇬',KZ:'🇰🇿',RU:'🇷🇺',IR:'🇮🇷',IN:'🇮🇳',VN:'🇻🇳',KR:'🇰🇷',EU:'🇪🇺',US:'🇺🇸'};
+let hbBusy=null, hbPollT=null, hbState='';
+function hbSt(){ state.misc=state.misc||{}; let h=state.misc.hub; if(!h||typeof h!=='object') h=state.misc.hub={};
+  if(!h.calc||typeof h.calc!=='object') h.calc={}; if(!Array.isArray(h.arch)) h.arch=[]; if(!h.learn||typeof h.learn!=='object') h.learn={}; if(!Array.isArray(h.saved)) h.saved=[]; if(!h.f) h.f={kind:'all',bud:0}; return h; }
+function hbDay(){ return new Date(Date.now()+5*3600e3).toISOString().slice(0,10); }
+function hbToday(){ const t=hbSt().today; return t&&t.lang===lang?t:null; }
+function hbFresh(){ const t=hbToday(); return !!(t&&t.day===hbDay()); }
+const hbTx=(v,n)=>String(v==null?'':v).replace(/<[^>]*>/g,'').slice(0,n||300);
+const hbF1=v=>fx(v,Math.round(v*10)%10?1:0);
+const hbNum=(v,a,b)=>{ const x=+v; return Number.isFinite(x)?Math.max(a,Math.min(b,x)):null; };
+function hbSave(j){ const h=hbSt(), A=(a,n)=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x==='object').slice(0,n);
+  const t={day:/^\d{4}-\d\d-\d\d$/.test(j.day||'')?j.day:hbDay(),at:typeof j.at==='string'?j.at:new Date().toISOString(),lang,model:hbTx(j.model,40),summary:hbTx(j.summary,600),fx:j.fx&&typeof j.fx==='object'?j.fx:null,
+    cats:A(j.cats,13).filter(x=>IV_CATS.includes(x.id)),new_cats:A(j.new_cats,8),trends:A(j.trends,8),ideas:A(j.ideas,12),tips:A(j.tips,4),watch:A(j.watch,5),
+    lesson:j.lesson&&typeof j.lesson==='object'?j.lesson:null,country:j.country&&typeof j.country==='object'?j.country:null,
+    src:A(j.sources,20).filter(x=>/^https?:\/\//.test(x.url||'')).map(x=>({url:String(x.url).slice(0,300),title:hbTx(x.title,90)}))};
+  h.today=t;
+  if(t.lesson||t.country) { h.arch=[{day:t.day,lang,lesson:t.lesson,country:t.country,tips:t.tips,ideas:t.ideas.slice(0,6)}].concat(h.arch.filter(a=>!(a.day===t.day&&a.lang===lang))).slice(0,30); }
+  /* те же данные — в старый подробный расчёт */
+  const cl=(v,a)=>Math.max(-a,Math.min(a,Math.round(+v||0))), cp=j.compat||{};
+  state.misc.mkt={day:ymd(new Date()),slot:mkSlot(),at:t.at,sday:t.day,lang,sum:hbTx(t.summary,320),
+    cats:(Array.isArray(cp.cats)?cp.cats:[]).filter(x=>x&&IV_CATS.includes(x.id)).slice(0,13).map(x=>({id:x.id,demand:['hot','cold'].includes(x.demand)?x.demand:'normal',mk:cl(x.mk,40),buy:cl(x.buy,25),note:hbTx(x.note,200)})),
+    routes:(Array.isArray(cp.routes)?cp.routes:[]).filter(x=>x&&IV_C.includes(x.c)).slice(0,4).map(x=>({c:x.c,cargo:cl(x.cargo,30),days:Math.max(0,Math.min(30,Math.round(+x.days||0))),note:hbTx(x.note,200)})),src:t.src.slice(0,6)};
+  try{ ivMemo.clear(); }catch(e){} persist(); }
+function hbFetch(){ if(hbBusy) return hbBusy; if(!navigator.onLine) return Promise.resolve({err:'off'});
+  hbBusy=(async()=>{ try{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+      if(!caps||caps.v<10) return {old:true};
+      const r=await fetch(API_BASE+'/api/mk/today',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang})}); const j=await r.json().catch(()=>({}));
+      if(j&&j.pending) return {pending:true}; if(!r.ok||!j||!j.summary) return {err:j&&j.error||'x'}; hbSave(j); return {ok:true}; }
+    catch(e){ return {err:'x'}; } finally{ hbBusy=null; } })(); return hbBusy; }
+function hbKick(){ if(hbFresh()||hbBusy) return; clearTimeout(hbPollT); hbState='load'; hbHeroDraw();
+  hbFetch().then(r=>{ hbState=r.ok?'':r.pending?'pend':r.old?'old':'err'; if(r.ok){ hbRedraw(); return; } hbHeroDraw();
+    if(r.pending&&hbOn()) hbPollT=setTimeout(()=>{ if(hbOn()) hbKick(); },20000); }); }
+function hbOn(){ const t=bpTop(); return bpOpenNow()&&t&&t.name==='hub'; }
+function hubOpen(tab){ bpGo('hub'); const t=bpTop(); if(t&&tab) t.tab=tab; if(tab) bpRender(); }
+
+/* ---------- данные для вкладок ---------- */
+function hbRows(t){ const rows=IV_CATS.map(k=>{ const x=t&&t.cats.find(c=>c.id===k), d=IV_DEF[k];
+    return {id:k,name:L['whC_'+k]||k,ico:WH_CIC[k]||'',mk:x&&+x.markup_pct>0?+x.markup_pct:mkOf(k),m:x&&+x.sell_months>0?+x.sell_months:d.m,live:!!x,demand:x?x.demand:'normal',trend:x?x.trend:'flat',from:x?x.best_from:'',buy:x?+x.buy_change_pct||0:0,note:x?x.note:'',src:x?x.src:''}; });
+  const nw=(t?t.new_cats:[]).filter(x=>+x.markup_pct>0).map((x,i)=>({id:'n'+i,name:hbTx(x.name,60),ico:'✨',mk:+x.markup_pct,m:+x.sell_months>0?+x.sell_months:3,live:true,isNew:true,demand:x.demand||'normal',trend:'up',from:'',buy:0,note:x.why,where:x.where,start:x.start_usd,src:x.src}));
+  return rows.concat(nw); }
+function hbYear(r){ return r.mk*0.6*12/(r.m+1); }
+function hbSorted(t){ const s=hbSt().sort||'mk', rows=hbRows(t); return rows.sort((a,b)=>s==='speed'?a.m-b.m:s==='year'?hbYear(b)-hbYear(a):b.mk-a.mk); }
+
+/* ---------- живой график: ведётся пальцем, рисуется с анимацией ---------- */
+function hbInterp(pts,m){ if(!pts||!pts.length) return null; if(m<=pts[0][0]) return pts[0][1]; for(let i=1;i<pts.length;i++){ const a=pts[i-1], b=pts[i]; if(m<=b[0]) return b[0]===a[0]?b[1]:a[1]+(b[1]-a[1])*(m-a[0])/(b[0]-a[0]); } return pts[pts.length-1][1]; }
+const HB_ORD=['ex','lo','hi'];
+function hbChartHTML(id,ser,o){ const H=Math.max(1,o.H), keys=['hi','ex','lo'].filter(k=>ser[k]&&ser[k].length>1); if(!keys.length) return '';
+  const all=keys.flatMap(k=>ser[k].map(p=>p[1])).concat(o.tg?[o.tg]:[]), W=320, Hh=176, l=10, r=10, t=16, b=26, mx=Math.max(...all)*1.05, mn=Math.min(...all)*0.9;
+  const X=m=>l+(W-l-r)*m/H, Y=v=>t+(Hh-t-b)*(1-(v-mn)/Math.max(1,mx-mn)), path=k=>ser[k].map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ');
+  const band=ser.hi&&ser.lo?`<path class="bd" d="${path('hi')} ${ser.lo.slice().reverse().map(p=>'L'+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ')} Z"/>`:'';
+  const area=ser.ex?`<path class="ar" d="${path('ex')} L${X(ser.ex[ser.ex.length-1][0]).toFixed(1)} ${Hh-b} L${X(ser.ex[0][0]).toFixed(1)} ${Hh-b} Z"/>`:'';
+  const lab=m=>{ const d=new Date(o.st); d.setMonth(d.getMonth()+Math.round(m)); return (L.monthsNom||[])[d.getMonth()]+' '+d.getFullYear(); };
+  const data=esc(JSON.stringify({ser,H,st:o.st,tg:o.tg||0,mn,mx}));
+  return `<figure class="hb-ch" id="${id}" data-ch="${data}"><div class="hb-ch-tip" aria-live="polite"><b>${esc(lab(H))}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(L.hbSer[k])} ${esc(ivUsd(ser[k][ser[k].length-1][1]))}</em>`).join('')}</span></div>
+    <svg viewBox="0 0 ${W} ${Hh}" role="slider" tabindex="0" aria-label="${esc(o.label||L.hbChartL)}" aria-valuemin="0" aria-valuemax="${H}" aria-valuenow="${H}" aria-valuetext="${esc(lab(H))}">
+      ${area}${band}${o.tg?`<line x1="${l}" x2="${W-r}" y1="${Y(o.tg).toFixed(1)}" y2="${Y(o.tg).toFixed(1)}" class="tg"/><text x="${W-r}" y="${(Y(o.tg)-4).toFixed(1)}" text-anchor="end" class="tl">${esc(L.hbGoal)} ${esc(ivUsd(o.tg))}</text>`:''}
+      ${ser.lo?`<path class="lo" d="${path('lo')}"/>`:''}${ser.hi?`<path class="hi" d="${path('hi')}"/>`:''}${ser.ex?`<path class="ex" d="${path('ex')}"/>`:''}
+      <line class="cur" x1="${X(H).toFixed(1)}" x2="${X(H).toFixed(1)}" y1="${t-6}" y2="${Hh-b}"/>${keys.map(k=>`<circle class="dt ${k}" r="4.5" cx="${X(H).toFixed(1)}" cy="${Y(ser[k][ser[k].length-1][1]).toFixed(1)}"/>`).join('')}
+      <text x="${l}" y="${Hh-8}" class="ax">${esc(lab(0))}</text><text x="${W-r}" y="${Hh-8}" text-anchor="end" class="ax">${esc(lab(H))}</text></svg>
+    <figcaption>${esc(L.hbChartHint)}</figcaption></figure>`; }
+function hbChartBind(root){ (root||document).querySelectorAll('.hb-ch[data-ch]:not([data-bound])').forEach(fig=>{ fig.dataset.bound='1'; let D; try{ D=JSON.parse(fig.dataset.ch); }catch(e){ return; }
+  const svg=fig.querySelector('svg'), tip=fig.querySelector('.hb-ch-tip'), W=320, Hh=176, l=10, r=10, t=16, b=26, keys=['hi','ex','lo'].filter(k=>D.ser[k]&&D.ser[k].length>1);
+  const X=m=>l+(W-l-r)*m/D.H, Y=v=>t+(Hh-t-b)*(1-(v-D.mn)/Math.max(1,D.mx-D.mn));
+  const lab=m=>{ const d=new Date(D.st); d.setMonth(d.getMonth()+Math.round(m)); return (L.monthsNom||[])[d.getMonth()]+' '+d.getFullYear(); };
+  let cur=D.H;
+  const show=m=>{ cur=Math.max(0,Math.min(D.H,m)); const x=X(cur); svg.querySelector('.cur').setAttribute('x1',x); svg.querySelector('.cur').setAttribute('x2',x);
+    keys.forEach(k=>{ const c=svg.querySelector('.dt.'+k), v=hbInterp(D.ser[k],cur); c.setAttribute('cx',x); c.setAttribute('cy',Y(v)); });
+    const mm=Math.round(cur); tip.innerHTML=`<b>${esc(lab(cur))}${mm>0?` · ${esc(L.hbInM(mm))}`:''}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(L.hbSer[k])} ${esc(ivUsd(hbInterp(D.ser[k],cur)))}</em>`).join('')}</span>`;
+    svg.setAttribute('aria-valuenow',mm); svg.setAttribute('aria-valuetext',lab(cur)+': '+ivUsd(hbInterp(D.ser[keys.includes('ex')?'ex':keys[0]],cur))); };
+  const at=e=>{ const bx=svg.getBoundingClientRect(); return ((e.clientX-bx.left)/bx.width*W-l)/(W-l-r)*D.H; };
+  let drag=false;
+  svg.addEventListener('pointerdown',e=>{ drag=true; fig.classList.add('on'); show(at(e)); });
+  svg.addEventListener('pointermove',e=>{ if(drag||e.pointerType==='mouse'){ fig.classList.add('on'); show(at(e)); } });
+  const end=()=>{ drag=false; };
+  svg.addEventListener('pointerup',end); svg.addEventListener('pointercancel',end); svg.addEventListener('pointerleave',()=>{ drag=false; });
+  svg.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); fig.classList.add('on'); show(Math.round(cur)+(e.key==='ArrowRight'?1:-1)); } if(e.key==='Home'){ e.preventDefault(); show(0); } if(e.key==='End'){ e.preventDefault(); show(D.H); } });
+  /* линия рисуется слева направо */
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) svg.querySelectorAll('path.ex,path.lo,path.hi').forEach(p=>{ try{ const n=p.getTotalLength(); p.style.strokeDasharray=n; p.style.strokeDashoffset=n; p.getBoundingClientRect(); p.style.transition='stroke-dashoffset .9s cubic-bezier(.2,.75,.2,1)'; requestAnimationFrame(()=>{ p.style.strokeDashoffset='0'; }); setTimeout(()=>{ p.style.strokeDasharray=''; p.style.transition=''; },1000); }catch(e){} }); }); }
+function hbBarsGrow(root){ const els=(root||document).querySelectorAll('.hb-bt i[data-w]'); if(matchMedia('(prefers-reduced-motion: reduce)').matches){ els.forEach(i=>i.style.width=i.dataset.w+'%'); return; }
+  requestAnimationFrame(()=>requestAnimationFrame(()=>els.forEach((i,k)=>{ i.style.transitionDelay=Math.min(k*35,400)+'ms'; i.style.width=i.dataset.w+'%'; }))); }
+function hbCount(root){ (root||document).querySelectorAll('[data-count]').forEach(el=>{ const to=+el.dataset.count, from=+el.dataset.from||0; if(matchMedia('(prefers-reduced-motion: reduce)').matches||!(to>0)){ el.textContent=ivUsd(to); return; }
+  const t0=performance.now(), d=650; const f=n=>{ const k=Math.min(1,(n-t0)/d), e=1-Math.pow(1-k,3); el.textContent=ivUsd(from+(to-from)*e); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); }); }
+
+/* ---------- расчёт ---------- */
+function hbSim(cap,cat,c,re,H){ const d=ivDef(cat), i=Math.max(0,IV_C.indexOf(c)), mk=d.mk[i], S0=ivCapMUSD(), Imax=Math.max(500,S0.v*d.m/(1+mk/100));
+  const run=(pf,tf)=>{ let K=cap, t=0, date=ivStart(), n=0, first=null; const pts=[[0,cap]];
+    while(t<H&&n<80){ const I=Math.min(K,Imax), r=ivCalc(cat,c,date,I); if(!first) first=r; const dur=Math.max(0.5,(r.totalM||1)*tf), prof=r.profit>0?r.profit*pf:r.profit*(2-pf);
+      const K2=K+(prof>0?prof*re:prof), t2=t+dur; if(t2>=H){ pts.push([H,K+(K2-K)*(H-t)/dur]); t=H; K=K2; break; } pts.push([t2,K2]); K=K2; t=t2; date=addDays(date,Math.round(dur*30)); n++; if(K<=0) break; }
+    if(pts[pts.length-1][0]<H) pts.push([H,pts[pts.length-1][1]]);
+    return {pts:pts.map(p=>[Math.round(p[0]*100)/100,Math.round(p[1])]),end:pts[pts.length-1][1],first}; };
+  return {lo:run(0.6,1.25),ex:run(1,1),hi:run(1.12,0.9),Imax,S0,mk,d}; }
+function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=IV_CATS.includes(C.cat)?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, H=[6,12,24,36].includes(+C.h)?+C.h:12;
+  C.cap=cap; C.cat=cat; C.c=c; C.re=re; C.h=H;
+  const S=hbSim(cap,cat,c,re/100,H), f=S.ex.first, lim=cap>S.Imax*1.02, t=hbToday(), row=hbRows(t).find(x=>x.id===cat)||{};
+  const gain=S.ex.end-cap, pct=cap>0?gain/cap*100:0, mo=bpPct(Math.max(1.0001,S.ex.end/cap),H), u=usdRate();
+  const st=ivStart(), stISO=new Date(st.getFullYear(),st.getMonth(),1).toISOString();
+  return `<section class="hb-card hb-in">
+      <div class="field n big-in"><label for="hb-cap">${L.hbCap}</label><input id="hb-cap" type="number" inputmode="decimal" min="100" value="${cap}"></div>
+      <div class="chips bp-wrap">${[5000,10000,20000,50000].map(v=>`<button type="button" class="chip ${cap===v?'on':''}" data-hbcap="${v}">${esc(ivUsd(v))}</button>`).join('')}</div>
+      <div class="br-h">${L.hbWhat}</div><div class="chips hb-scroll">${hbRows(t).filter(x=>!x.isNew).sort((a,b)=>b.mk-a.mk).map(x=>`<button type="button" class="chip ${x.id===cat?'on':''}" data-hbcat="${x.id}">${x.ico} ${esc(x.name)} <small>+${Math.round(x.mk)}%</small></button>`).join('')}</div>
+      <div class="br-h">${L.hbFrom}</div><div class="chips bp-wrap">${IV_C.map(k=>`<button type="button" class="chip ${k===c?'on':''}" data-hbc="${k}">${bpCname(k)}</button>`).join('')}</div>
+      <div class="hb-two"><div><div class="br-h">${L.hbRe}</div><div class="chips bp-wrap">${[100,70,50].map(v=>`<button type="button" class="chip ${v===re?'on':''}" data-hbre="${v}">${L.hbReN[v]}</button>`).join('')}</div></div>
+        <div><div class="br-h">${L.hbH}</div><div class="chips bp-wrap">${[6,12,24,36].map(v=>`<button type="button" class="chip ${v===H?'on':''}" data-hbh="${v}">${bpMoLab(v)}</button>`).join('')}</div></div></div>
+    </section>
+    <section class="hb-card hb-res"><small>${L.hbIn(bpMoLab(H))}</small><b class="hb-big" data-count="${Math.round(S.ex.end)}" data-from="${cap}">${esc(ivUsd(S.ex.end))}</b>
+      <p class="hb-gain ${gain>=0?'up':'dn'}">${gain>=0?'+':'−'}${esc(ivUsd(Math.abs(gain)))} (${gain>=0?'+':''}${fx(pct,0)}%) · ${esc(L.hbPerM(fx(mo,1)))}</p>
+      <div class="hb-sc"><span><i class="k lo"></i>${L.hbSer.lo} <b>${esc(ivUsd(S.lo.end))}</b></span><span><i class="k hi"></i>${L.hbSer.hi} <b>${esc(ivUsd(S.hi.end))}</b></span></div>
+      ${hbChartHTML('hb-cch',{lo:S.lo.pts,ex:S.ex.pts,hi:S.hi.pts},{H,st:stISO,label:L.hbChartL})}
+      ${f?`<div class="hb-batch"><h5>${ico('bag',16)} ${L.hbBatch}</h5><p>${L.hbBatchT(fx(f.pcs,0),fx(f.landed,f.landed<10?1:0),fx(f.retail,f.retail<10?1:0),fx(f.months,1),esc(ivUsd(f.profit)))}</p>
+        ${row.live?`<p class="m">${ico('globe',14)} ${L.hbLiveMk(Math.round(S.mk),esc(row.note||''))}</p>`:`<p class="m">${ico('info',14)} ${L.hbNoLive}</p>`}
+        ${lim?`<p class="bp-need hi">${L.hbLimit(esc(ivUsd(S.Imax)),esc(ivUsd(S.S0.v)))}</p>`:''}</div>`:''}
+      <div class="hb-sales"><span>${L.hbSales(esc(ivUsd(S.S0.v)),L.hbSrc[S.S0.src]||'')}</span><button type="button" class="gp-mini" data-hbsales="1">${ico('edit',14)} ${L.hbFix}</button></div>
+      <div class="hb-sales-in" hidden><div class="field n"><label for="hb-s">${L.hbSalesQ}</label><input id="hb-s" type="number" inputmode="decimal" min="0" value="${Math.round(S.S0.v)}"></div><button type="button" class="btn btn-primary" data-hbsok="1">${L.save}</button></div>
+      <p class="note">${L.hbCalcNote}</p>
+      <div class="bp-acts two"><button type="button" class="btn btn-ghost" data-hbold="1">${ico('stats',16)} ${L.hbOld}</button><button type="button" class="btn btn-ghost" data-hbplan="calc">${ico('doc',16)} ${L.hbToPlan}</button></div>
+    </section>`; }
+
+/* ---------- вкладки ---------- */
+function hbHeroHTML(){ const t=hbToday(), fresh=hbFresh(), st=hbState;
+  if(!t) return `<section class="hb-hero wait"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.hbDayT}</b><small>${st==='old'?L.hbOld10:st==='err'?L.hbErr:L.hbLoading}</small></div></div>${st==='err'?`<button type="button" class="gp-mini" data-hbre1="1">${ico('repeat',14)} ${L.idRetry}</button>`:'<div class="hb-skel"><i></i><i></i><i></i></div>'}</section>`;
+  const fx0=t.fx||{}, fxc=[['usd','$'],['cny','¥'],['rub','₽'],['try','₺'],['aed','AED'],['kzt','₸']].filter(([k])=>+fx0[k]>0).map(([k,s])=>`<i>1 ${s} = ${fx(+fx0[k],+fx0[k]<0.1?3:2)} ${L.hbSom}</i>`).join('');
+  return `<section class="hb-hero"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.hbDayT}</b><small>${esc(L.hbUpd(bpTime(t.at)))}${t.model?' · '+esc(L.hbModel(t.model)):''}</small></div>${fresh?'':`<em class="hb-old">${st==='load'||st==='pend'?L.hbUpdating:L.hbStale}</em>`}</div>
+    <p>${esc(t.summary)}</p>${fxc?`<div class="lv-tags hb-fx">${fxc}</div>`:''}</section>`; }
+function hbHeroDraw(){ if(!hbOn()) return; const e=BPG.el.querySelector('.hb-hero'); if(e) e.outerHTML=hbHeroHTML(); }
+function hbTodayHTML(){ const t=hbToday(), h=hbSt(), rows=hbSorted(t), max=Math.max(1,...rows.map(r=>h.sort==='speed'?1/r.m:h.sort==='year'?hbYear(r):r.mk)), sort=h.sort||'mk', open=h.openRow;
+  const fm=v=>fx(v,Math.round(v*10)%10?1:0), val=r=>sort==='speed'?L.hbMo(fm(r.m)):sort==='year'?'+'+Math.round(hbYear(r))+'%':'+'+Math.round(r.mk)+'%', w=r=>Math.max(4,Math.round((sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk)/max*100));
+  const bars=rows.map(r=>`<button type="button" class="hb-bar ${r.live?'':'dim'} ${open===r.id?'on':''}" data-hbrow="${esc(r.id)}" aria-expanded="${open===r.id}"><span class="hb-bn">${r.ico} ${esc(r.name)}${r.isNew?` <em class="hb-new">${L.hbNew}</em>`:''}</span><span class="hb-bt"><i data-w="${w(r)}"></i></span><b>${esc(val(r))}</b><em class="hb-tr ${r.trend}">${r.trend==='up'?'↑':r.trend==='down'?'↓':'·'}</em></button>
+    ${open===r.id?`<div class="hb-det"><div class="id-nums"><div><small>${L.hbMkL}</small><b>+${Math.round(r.mk)}%</b></div><div><small>${L.hbSellL}</small><b>${esc(L.hbMo(fm(r.m)))}</b></div>${r.buy?`<div><small>${L.hbBuyL}</small><b>${r.buy>0?'+':''}${Math.round(r.buy)}%</b></div>`:''}${r.from?`<div><small>${L.hbBestL}</small><b>${HB_FLAG[r.from]||''} ${esc(L['cn_'+r.from]||L.hbCtry[r.from]||r.from)}</b></div>`:''}${r.start>0?`<div><small>${L.hbStartL}</small><b>${esc(ivUsd(r.start))}</b></div>`:''}</div>
+      <p>${esc(r.note||(r.live?'':L.hbNoLive))}${r.where?' · '+esc(r.where):''}</p>${r.src?`<a class="hb-src1" href="${esc(r.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}
+      <div class="bp-acts two">${r.isNew?'':`<button type="button" class="btn btn-ghost" data-hbcalc="${r.id}">${ico('cash',16)} ${L.hbCount}</button>`}<button type="button" class="btn btn-ghost" data-hbplan="row:${esc(r.id)}">${ico('doc',16)} ${L.hbToPlan}</button></div></div>`:''}`).join('');
+  const trends=t&&t.trends.length?t.trends.map(x=>`<div class="hb-tc ${x.dir==='down'?'dn':'up'}"><b>${x.dir==='down'?'↓':'↑'} ${esc(x.title)}</b><p>${esc(x.why)}</p><div class="lv-tags"><i>${esc(L.hbArea[x.area]||'')}</i>${x.where?`<i>${esc(x.where)}</i>`:''}</div></div>`).join(''):'';
+  const ideas=t&&t.ideas.length?t.ideas.slice(0,3).map(hbIdeaHTML).join('')+`<button type="button" class="hb-more" data-hbtab="ideas">${L.hbAllIdeas(t.ideas.length)} ${ico('next',16)}</button>`:'';
+  const tips=t&&t.tips.length?t.tips.map(x=>`<div class="hb-tip"><b>${ico('bulb',16)} ${esc(x.title)}</b><p>${esc(x.text)}</p>${x.from?`<small>${esc(x.from)}</small>`:''}</div>`).join(''):'';
+  const watch=t&&t.watch.length?`<ul class="id-ul risk">${t.watch.map(x=>`<li>${ico('warn',16)}<span><b>${esc(x.title)}</b> ${esc(x.text)}</span></li>`).join('')}</ul>`:'';
+  const ls=t&&t.lesson?`<button type="button" class="hb-lesson" data-hblesson="${esc(t.day)}"><span class="hb-li">${ico('sparkle',20)}</span><span><small>${L.hbLessonT} · ${esc(L.hbAreaL[t.lesson.area]||'')}</small><b>${esc(t.lesson.title)}</b><em>${esc(t.lesson.lead)}</em></span>${ico('next',18)}</button>`:'';
+  const co=t&&t.country?hbCountryHTML(t.country):'';
+  const src=t&&t.src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(t.src.length)}</summary><div class="id-src">${t.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:'';
+  return `${ls}
+    <section class="id-sec"><h4>${ico('chart',18)} ${L.hbBarsT}</h4><p class="bp-hint">${L.hbBarsLead}</p>
+      <div class="chips bp-wrap hb-sort" role="radiogroup">${['mk','speed','year'].map(k=>`<button type="button" class="chip ${sort===k?'on':''}" role="radio" aria-checked="${sort===k}" data-hbsort="${k}">${L.hbSortN[k]}</button>`).join('')}</div>
+      <div class="hb-bars">${bars}</div>${t?'':`<p class="bp-hint">${L.hbBase}</p>`}</section>
+    ${bpSec('repeat',L.hbTrendsT,trends)}${bpSec('bulb',L.hbIdeasT,ideas)}${bpSec('sparkle',L.hbTipsT,tips)}${bpSec('warn',L.hbWatchT,watch)}${co}${src}<p class="note">${L.hbNote}</p>`; }
+function hbCountryHTML(c){ return `<section class="id-sec hb-country"><h4>${ico('globe',18)} ${L.hbCountryT}: ${esc(c.name)}</h4><p>${esc(c.why)}</p>${(c.chances||[]).length?`<ul class="id-ul">${c.chances.map(x=>`<li>${ico('check',16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:''}${(c.risks||[]).length?`<ul class="id-ul risk">${c.risks.map(x=>`<li>${ico('warn',16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:''}</section>`; }
+function hbIdeaHTML(x){ const saved=hbSt().saved.some(s=>s.title===x.title);
+  return `<div class="hb-idea"><div class="hb-ih"><em class="hb-kind ${esc(x.kind)}">${esc(L.hbKindN[x.kind]||'')}</em>${x.where?`<span>${esc(x.where)}</span>`:''}<button type="button" class="hb-save ${saved?'on':''}" data-hbsave="${esc(x.title)}" aria-pressed="${saved}" aria-label="${esc(L.hbSave)}">${HB_HEART}</button></div>
+    <b>${esc(x.title)}</b><p>${esc(x.why_now)}</p>
+    <div class="lv-tags">${x.start_usd>0?`<i>${L.bpStart} ${esc(ivUsd(x.start_usd))}</i>`:''}${x.profit_low_usd!=null&&x.profit_high_usd!=null?`<i class="up">${L.bpProfitM(ivUsd(x.profit_low_usd),ivUsd(x.profit_high_usd))}</i>`:''}${x.payback_months>0?`<i>${L.bpPayback(Math.round(x.payback_months))}</i>`:''}<i>${esc(L.hbDiff[x.difficulty]||'')}</i></div>
+    <p class="m">${ico('next',14)} ${esc(x.first_step)}</p>${x.risk?`<p class="m">${ico('warn',14)} ${esc(x.risk)}</p>`:''}
+    <button type="button" class="btn btn-ghost hb-ib" data-hbidea="${esc(x.title)}">${ico('doc',16)} ${L.hbToPlan}</button></div>`; }
+function hbIdeasHTML(){ const t=hbToday(), h=hbSt(), f=h.f, all=(t?t.ideas:[]);
+  const list=all.filter(x=>(f.kind==='all'||x.kind===f.kind||(f.kind==='it'&&x.kind==='it'))&&(!f.bud||(+x.start_usd||0)<=f.bud));
+  const saved=h.saved.length?`<section class="id-sec"><h4>${HB_HEART} ${L.hbSavedT}</h4>${h.saved.map(hbIdeaHTML).join('')}</section>`:'';
+  const nw=t&&t.new_cats.length?`<section class="id-sec"><h4>${ico('tag',18)} ${L.hbNewCatsT}</h4>${t.new_cats.map(x=>`<div class="bp-un"><b>✨ ${esc(x.name)}</b><div class="lv-tags">${+x.markup_pct>0?`<i class="up">${L.bpMk} +${Math.round(x.markup_pct)}%</i>`:''}${+x.sell_months>0?`<i>${L.hbMo(fx(x.sell_months,1))}</i>`:''}${+x.start_usd>0?`<i>${L.bpStart} ${esc(ivUsd(x.start_usd))}</i>`:''}</div><p>${esc(x.why)}</p>${x.where?`<p class="m">${ico('truck',14)} ${esc(x.where)}</p>`:''}</div>`).join('')}</section>`:'';
+  const past=h.arch.filter(a=>a.lang===lang&&(!t||a.day!==t.day)&&(a.ideas||[]).length).slice(0,10);
+  const arch=past.length?`<details class="wh-more"><summary>${ico('clock',16)} ${L.hbPastIdeas}</summary>${past.map(a=>`<div class="hb-arch"><small>${esc(fmtDate(parseYmd(a.day)||new Date()))}</small>${a.ideas.map(x=>`<button type="button" class="hb-al" data-hbidea="${esc(x.title)}">${esc(x.title)}</button>`).join('')}</div>`).join('')}</details>`:'';
+  return `<section class="id-sec"><h4>${ico('bulb',18)} ${L.hbIdeasT}</h4><p class="bp-hint">${L.hbIdeasLead}</p>
+      <div class="chips hb-scroll">${HB_KINDS.map(k=>`<button type="button" class="chip ${f.kind===k?'on':''}" data-hbkind="${k}">${L.hbKindN[k]}</button>`).join('')}</div>
+      <div class="chips bp-wrap">${HB_BUD.map(v=>`<button type="button" class="chip ${f.bud===v?'on':''}" data-hbbud="${v}">${v?L.hbUpTo(ivUsd(v)):L.hbAnyBud}</button>`).join('')}</div>
+      ${list.length?list.map(hbIdeaHTML).join(''):`<p class="bp-hint">${t?L.hbNoIdeas:L.hbLoading}</p>`}</section>${saved}${nw}${arch}
+    <button type="button" class="btn btn-primary bp-go" data-hbplan="new">${ico('sparkle',18)} ${L.hbOwnIdea}</button>`; }
+function hbPlanHTML(){ const pl=bpSt().plans;
+  return `<section class="id-sec"><h4>${ico('doc',18)} ${L.hbPlanT}</h4><p class="bp-hint">${L.hbPlanLead}</p>
+      ${pl.length?pl.map(it=>{ bpNorm(it); const a=it.a||{}, V=['go','careful','hard','no'].includes(a.verdict)?a.verdict:'careful';
+        return `<button type="button" class="bp-mine" data-hbopen="${esc(it.id)}">${ico('doc',18)}<span><b>${esc(a.title||L.bpT)}</b><small>${esc(L.bpHead(ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m)))} · <em class="bp-vt ${V}">${L.bpV[V]}</em> · ${esc(bpTime(it.at))}</small></span>${ico('next',18)}</button>`; }).join(''):`<p class="bp-hint">${L.hbNoPlans}</p>`}
+    </section><button type="button" class="btn btn-primary bp-go" data-hbplan="new">${ico('sparkle',18)} ${L.hbNewPlan}</button>`; }
+function hbLearnHTML(){ const t=hbToday(), h=hbSt(), past=h.arch.filter(a=>a.lang===lang&&a.lesson&&(!t||a.day!==t.day)).slice(0,30);
+  const ls=t&&t.lesson?`<button type="button" class="hb-lesson" data-hblesson="${esc(t.day)}"><span class="hb-li">${ico('sparkle',20)}</span><span><small>${L.hbLessonT} · ${esc(L.hbAreaL[t.lesson.area]||'')}</small><b>${esc(t.lesson.title)}</b><em>${esc(t.lesson.lead)}</em></span>${ico('next',18)}</button>`:'';
+  return `${ls}
+    <section class="id-sec hb-ask"><h4>${ico('chat',18)} ${L.hbAskT}</h4><div class="hb-askrow"><input id="hb-q" class="bp-in" type="text" maxlength="300" placeholder="${esc(L.hbAskPh)}"><button type="button" class="btn btn-primary" data-hbask="1" aria-label="${esc(L.hbAskGo)}">${ico('next',20)}</button></div></section>
+    <section class="id-sec"><h4>${ico('folder',18)} ${L.hbTopicsT}</h4><div class="hb-topics">${HB_TOPICS.map(k=>`<button type="button" class="hb-topic" data-hbtopic="${k}"><span>${ico(HB_TICO[k],20)}</span><b>${L.hbTopicN[k]}</b></button>`).join('')}</div></section>
+    <section class="id-sec"><h4>${ico('cash',18)} ${L.hbToolsT}</h4>
+      <div class="hb-tool"><b>${L.hbMkMg}</b><div class="hb-two"><div class="field n"><label for="hb-mk">${L.hbMkL}, %</label><input id="hb-mk" type="number" inputmode="decimal" value="100"></div><div class="field n"><label for="hb-mg">${L.hbMargin}, %</label><input id="hb-mg" type="number" inputmode="decimal" value="50"></div></div><p class="bp-hint" id="hb-mkt">${L.hbMkMgT(100,50)}</p></div>
+      <div class="hb-tool"><b>${L.hbBE}</b><div class="hb-two"><div class="field n"><label for="hb-fc">${L.hbFixed}, $</label><input id="hb-fc" type="number" inputmode="decimal" value="1500"></div><div class="field n"><label for="hb-gm">${L.hbMargin}, %</label><input id="hb-gm" type="number" inputmode="decimal" value="40"></div></div><p class="bp-hint" id="hb-bet">${L.hbBET(ivUsd(3750))}</p></div>
+    </section>
+    <section class="id-sec"><h4>${ico('doc',18)} ${L.hbBooksT}</h4>${L.hbBooks.map(b=>`<div class="bp-un"><b>${esc(b[0])}</b><small class="bp-mu">${esc(b[1])}</small><p>${esc(b[2])}</p></div>`).join('')}</section>
+    ${past.length?`<section class="id-sec"><h4>${ico('clock',18)} ${L.hbArchT}</h4>${past.map(a=>`<button type="button" class="bp-mine" data-hblesson="${esc(a.day)}">${ico('sparkle',18)}<span><b>${esc(a.lesson.title)}</b><small>${esc(fmtDate(parseYmd(a.day)||new Date()))} · ${esc(L.hbAreaL[a.lesson.area]||'')}</small></span>${ico('next',18)}</button>`).join('')}</section>`:''}`; }
+function hbPaneHTML(k){ return k==='today'?hbTodayHTML():k==='calc'?hbCalcHTML():k==='ideas'?hbIdeasHTML():k==='plan'?hbPlanHTML():hbLearnHTML(); }
+function hbR(m,foot){ const t=bpTop(), h=hbSt(), tab=HB_TABS.includes(t.tab)?t.tab:(HB_TABS.includes(h.tab)?h.tab:'today'); t.tab=tab;
+  BPG.el.querySelector('#bpg-t').textContent=L.hbT; foot.hidden=true;
+  m.innerHTML=`${hbHeroHTML()}<nav class="bp-tabs hb-tabs" role="tablist" aria-label="${esc(L.hbT)}">${HB_TABS.map(k=>`<button type="button" role="tab" id="hbt-${k}" aria-controls="hbp-${k}" aria-selected="${k===tab}" class="${k===tab?'on':''}" data-hbtab="${k}">${ico(L.hbTabI[k],20)}<span>${L.hbTabN[k]}</span></button>`).join('')}</nav>
+    ${HB_TABS.map(k=>`<div class="bp-pane hb-pane" role="tabpanel" id="hbp-${k}" aria-labelledby="hbt-${k}" data-hbpane="${k}" ${k===tab?'':'hidden'}>${k===tab?hbPaneHTML(k):''}</div>`).join('')}`;
+  hbAfter(m); hbBind(m); if(!hbFresh()) setTimeout(hbKick,30); }
+function hbAfter(root){ hbBarsGrow(root); hbChartBind(root); hbCount(root); }
+function hbPaneDraw(k){ if(!hbOn()) return; const p=BPG.el.querySelector(`[data-hbpane="${k}"]`); if(!p||p.hidden) return; p.innerHTML=hbPaneHTML(k); hbAfter(p); hbPaneBind(p,k); }
+function hbRedraw(){ if(!hbOn()) return; hbHeroDraw(); const t=bpTop(); hbPaneDraw(t.tab||'today'); }
+function hbTab(k){ const m=BPG.el.querySelector('#bpg-m'), t=bpTop(); t.tab=k; hbSt().tab=k;
+  m.querySelectorAll('[data-hbtab]').forEach(x=>{ if(x.closest('.hb-tabs')){ const on=x.dataset.hbtab===k; x.classList.toggle('on',on); x.setAttribute('aria-selected',on); } });
+  m.querySelectorAll('[data-hbpane]').forEach(p=>{ const on=p.dataset.hbpane===k; p.hidden=!on; if(on){ p.innerHTML=hbPaneHTML(k); hbAfter(p); hbPaneBind(p,k); } else p.innerHTML=''; });
+  const nav=m.querySelector('.hb-tabs'), y=nav.offsetTop+16; if(m.scrollTop>y) m.scrollTop=y; }
+function hbPaneBind(p,k){ if(k==='calc'){ const ci=p.querySelector('#hb-cap'); if(ci) ci.addEventListener('input',()=>{ clearTimeout(ci._t); ci._t=setTimeout(()=>{ const v=+ci.value; if(v>=100){ hbSt().calc.cap=Math.round(v); persist(); hbCalcSoft(); } },450); }); }
+  if(k==='learn'){ const mk=p.querySelector('#hb-mk'), mg=p.querySelector('#hb-mg'), out=p.querySelector('#hb-mkt');
+    if(mk) mk.addEventListener('input',()=>{ const a=+mk.value; if(a>-100){ const g=a/(100+a)*100; mg.value=Math.round(g*10)/10; out.textContent=L.hbMkMgT(hbF1(a),hbF1(g)); } });
+    if(mg) mg.addEventListener('input',()=>{ const g=+mg.value; if(g<100){ const a=g/(100-g)*100; mk.value=Math.round(a*10)/10; out.textContent=L.hbMkMgT(hbF1(a),hbF1(g)); } });
+    const fc=p.querySelector('#hb-fc'), gm=p.querySelector('#hb-gm'), bo=p.querySelector('#hb-bet'), be=()=>{ const f=+fc.value, g=+gm.value; bo.textContent=f>0&&g>0&&g<100?L.hbBET(ivUsd(f/(g/100))):L.hbBEBad; };
+    if(fc){ fc.addEventListener('input',be); gm.addEventListener('input',be); }
+    const q=p.querySelector('#hb-q'); if(q) q.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); hbAsk(q.value); } }); } }
+function hbCalcSoft(){ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop; hbPaneDraw('calc'); m.scrollTop=y; }
+function hbAsk(q){ q=String(q||'').trim(); if(q.length<3){ toast(L.hbAskNeed); return; } bpGo('learn',{q}); }
+function hbIdeaFind(title){ const t=hbToday(), h=hbSt(); return (t?t.ideas:[]).find(x=>x.title===title)||h.saved.find(x=>x.title===title)||h.arch.flatMap(a=>a.ideas||[]).find(x=>x.title===title)||null; }
+function hbToPlan(kind,arg){ const f=bpDefForm(); f.touched={};
+  if(kind==='idea'){ const x=hbIdeaFind(arg); if(x){ f.idea=x.title+'. '+x.why_now; if(x.where) f.place=x.where; if(+x.start_usd>0){ f.cap=Math.round(+x.start_usd); f.touched.cap=true; } } }
+  else if(kind==='row'){ const r=hbRows(hbToday()).find(z=>z.id===arg); if(r) f.idea=L.hbRowIdea(r.name,r.from?(L['cn_'+r.from]||L.hbCtry[r.from]||r.from):''); f.cs=r&&IV_C.includes(r.from)?[r.from]:[]; }
+  else if(kind==='calc'){ const C=hbSt().calc; f.idea=L.hbRowIdea(L['whC_'+C.cat]||'',L['cn_'+C.c]||''); f.cap=C.cap; f.cs=[C.c]; f.cats=[C.cat]; f.m=C.h; f.touched.cap=true; f.touched.m=true; }
+  else if(kind==='new'){ f.idea=''; }
+  bpGo('form',f); }
+function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`),bpTop().tab);
+  m.onclick=e=>{ const b=e.target.closest('button,a'); if(!b||!m.contains(b)||b.tagName==='A') return; const d=b.dataset, h=hbSt();
+    if(d.hbtab){ hbTab(d.hbtab); return; }
+    if(d.hbre1){ hbState=''; hbKick(); return; }
+    if(d.hbsort){ h.sort=d.hbsort; persist(); hbPaneDraw('today'); return; }
+    if(d.hbrow){ h.openRow=h.openRow===d.hbrow?'':d.hbrow; const m2=BPG.el.querySelector('#bpg-m'), y=m2.scrollTop; hbPaneDraw('today'); m2.scrollTop=y; const el=BPG.el.querySelector(`[data-hbrow="${CSS.escape(d.hbrow)}"]`); if(el&&h.openRow) el.focus({preventScroll:true}); return; }
+    if(d.hbcalc){ h.calc.cat=d.hbcalc; persist(); hbTab('calc'); return; }
+    if(d.hbplan){ const [k,a]=d.hbplan.split(':'); hbToPlan(k,a); return; }
+    if(d.hbidea){ hbToPlan('idea',d.hbidea); return; }
+    if(d.hbsave){ const x=hbIdeaFind(d.hbsave); if(!x) return; const i=h.saved.findIndex(s=>s.title===x.title); if(i>=0) h.saved.splice(i,1); else h.saved.unshift(x); h.saved=h.saved.slice(0,30); persist(); const on=i<0; m.querySelectorAll(`[data-hbsave="${CSS.escape(x.title)}"]`).forEach(z=>{ z.classList.toggle('on',on); z.setAttribute('aria-pressed',on); }); toast(on?L.hbSavedOk:L.hbUnsaved); return; }
+    if(d.hbkind){ h.f.kind=d.hbkind; persist(); hbPaneDraw('ideas'); return; }
+    if(d.hbbud!=null){ h.f.bud=+d.hbbud; persist(); hbPaneDraw('ideas'); return; }
+    if(d.hbopen){ bpGo('view',d.hbopen); return; }
+    if(d.hblesson){ bpGo('learn',{lesson:d.hblesson}); return; }
+    if(d.hbtopic){ bpGo('learn',{topic:d.hbtopic}); return; }
+    if(d.hbask){ const q=m.querySelector('#hb-q'); hbAsk(q&&q.value); return; }
+    if(d.hbcap){ h.calc.cap=+d.hbcap; persist(); hbCalcSoft(); return; }
+    if(d.hbcat){ h.calc.cat=d.hbcat; persist(); hbCalcSoft(); return; }
+    if(d.hbc){ h.calc.c=d.hbc; persist(); hbCalcSoft(); return; }
+    if(d.hbre){ h.calc.re=+d.hbre; persist(); hbCalcSoft(); return; }
+    if(d.hbh){ h.calc.h=+d.hbh; persist(); hbCalcSoft(); return; }
+    if(d.hbsales){ const w=m.querySelector('.hb-sales-in'); if(w){ w.hidden=!w.hidden; if(!w.hidden) w.querySelector('input').focus(); } return; }
+    if(d.hbsok){ const v=+m.querySelector('#hb-s').value, u=usdRate(); if(v>=0&&u){ ivP().capM=Math.round(v*u); ivP().askS=1; try{ ivMemo.clear(); }catch(e){} persist(); hbCalcSoft(); toast(L.saved||'✓'); } return; }
+    if(d.hbold){ bpClose(); setTimeout(()=>{ try{ investSheet(); }catch(e){} },90); return; } }; }
+
+/* ---------- урок и гайд ---------- */
+function hbLessonGuide(day){ const t=hbToday(), a=t&&t.day===day&&t.lesson?{lesson:t.lesson,src:t.src}:hbSt().arch.find(x=>x.day===day&&x.lang===lang); const l=a&&a.lesson; if(!l) return null;
+  return {title:l.title,lead:l.lead,steps:(l.points||[]).map((p,i)=>({t:'',d:p})),example:l.example,task:l.task,read:l.read,quiz:l.quiz,area:l.area,lessonDay:day}; }
+function hbGuideHTML(g,src,meta){ const steps=(g.steps||[]).length?`<ol class="hb-steps">${g.steps.map(s=>`<li>${s.t?`<b>${esc(s.t)}</b>`:''}<span>${esc(s.d)}</span></li>`).join('')}</ol>`:'';
+  const nums=(g.numbers||[]).length?`<div class="id-nums">${g.numbers.map(n=>`<div><small>${esc(n.l)}</small><b>${esc(n.v)}</b></div>`).join('')}</div>`:'';
+  const li=(a,ic,cls)=>a&&a.length?`<ul class="id-ul ${cls||''}">${a.map(x=>`<li>${ico(ic,16)}<span>${esc(x)}</span></li>`).join('')}</ul>`:'';
+  const tools=(g.tools||[]).map(x=>`<div class="bp-un"><b>${esc(x.name)}</b><p>${esc(x.what)}</p></div>`).join('');
+  const books=(g.books||[]).map(x=>`<div class="bp-un"><b>${esc(x.title)}</b>${x.author?`<small class="bp-mu">${esc(x.author)}</small>`:''}<p>${esc(x.lesson)}</p></div>`).join('');
+  const qz=g.quiz&&g.quiz.options&&g.quiz.options.length?`<section class="id-sec hb-quiz"><h4>${ico('check',18)} ${L.hbQuizT}</h4><p><b>${esc(g.quiz.q)}</b></p>${g.quiz.options.map((o,i)=>`<button type="button" class="hb-qo" data-hbq="${i}">${esc(o)}</button>`).join('')}<p class="bp-hint hb-qwhy" hidden></p></section>`:'';
+  const sr=(src||[]).filter(x=>x&&/^https?:\/\//.test(x.url||''));
+  return `<div class="bp-v hb-gh">${meta?`<span class="id-badge">${meta}</span>`:''}<h3>${esc(g.title)}</h3><p class="id-sum">${esc(g.lead)}</p></div>
+    ${bpSec('flag',L.hbStepsT,steps)}${bpSec('chart',L.hbNumsT,nums)}${g.example?bpSec('bulb',L.hbExampleT,`<p>${esc(g.example)}</p>`):''}${g.task?bpSec('edit',L.hbTaskT,`<p>${esc(g.task)}</p>`):''}
+    ${bpSec('sparkle',L.hbTipsG,li(g.tips,'check'))}${bpSec('warn',L.hbMistT,li(g.mistakes,'warn','risk'))}${bpSec('gear',L.hbToolsG,tools)}${bpSec('doc',L.hbBooksT,books)}${g.read?bpSec('doc',L.hbReadT,`<p>${esc(g.read)}</p>`):''}${qz}
+    ${sr.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(sr.length)}</summary><div class="id-src">${sr.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:''}`; }
+function hbLearnKey(a){ return a.topic?'t:'+a.topic:'q:'+String(a.q||'').toLowerCase().replace(/\s+/g,' ').trim().slice(0,120); }
+function hbLearnR(m,foot,a){ BPG.el.querySelector('#bpg-t').textContent=L.hbLearnT; foot.hidden=false;
+  foot.innerHTML=`<div class="bp-acts two"><button type="button" class="btn btn-ghost" id="hb-lask">${ico('chat',16)} ${L.hbAskSifra}</button><button type="button" class="btn btn-ghost" id="hb-lplan">${ico('doc',16)} ${L.hbToPlan}</button></div>`;
+  foot.querySelector('#hb-lask').onclick=()=>{ const q=a.q||(a.topic?L.hbTopicN[a.topic]:''); bpClose(); setTimeout(()=>{ try{ sifraOpen(q); }catch(e){} },90); };
+  foot.querySelector('#hb-lplan').onclick=()=>hbToPlan('new');
+  const qzBind=(g)=>{ m.onclick=e=>{ const b=e.target.closest('[data-hbq]'); if(!b||!g.quiz) return; const i=+b.dataset.hbq, ok=i===g.quiz.correct; m.querySelectorAll('[data-hbq]').forEach(x=>{ const k=+x.dataset.hbq; x.classList.toggle('ok',k===g.quiz.correct); x.classList.toggle('bad',k===i&&!ok); x.disabled=true; });
+    const w=m.querySelector('.hb-qwhy'); if(w){ w.hidden=false; w.textContent=(ok?L.hbRight:L.hbWrong)+(g.quiz.why?' '+g.quiz.why:''); } }; };
+  if(a.lesson){ const g=hbLessonGuide(a.lesson); if(!g){ m.innerHTML=`<p class="bp-hint">${L.hbNoLesson}</p>`; return; } m.innerHTML=hbGuideHTML(g,[],esc(L.hbLessonT+' · '+(L.hbAreaL[g.area]||''))); qzBind(g); return; }
+  const h=hbSt(), key=hbLearnKey(a), c=h.learn[lang+':'+key];
+  if(c&&Date.now()-c.t<14*864e5){ m.innerHTML=hbGuideHTML(c.g,c.src,a.topic?esc(L.hbTopicN[a.topic]):esc(L.hbYourQ)); qzBind(c.g); return; }
+  m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b>${L.hbLearnWait}</b><small>${L.hbLearnWait2}</small></div>`;
+  (async()=>{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+    const still=()=>{ const t=bpTop(); return bpOpenNow()&&t&&t.name==='learn'&&t.arg===a; };
+    if(!caps||caps.v<10){ if(still()) m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b>${L.hbOld10}</b></div>`; return; }
+    try{ const r=await fetch(API_BASE+'/api/mk/learn',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,topic:a.topic||'',q:a.q||'',place:bpSt().f&&bpSt().f.place||''})}); const j=await r.json().catch(()=>({}));
+      if(!r.ok||!j.guide){ if(still()){ m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b>${j&&j.error==='limit'?L.bpErrLimit:L.hbLearnErr}</b><button type="button" class="btn btn-primary" id="hb-lre">${ico('repeat',16)} ${L.idRetry}</button></div>`; m.querySelector('#hb-lre').onclick=()=>bpRender(); } return; }
+      const src=(Array.isArray(j.sources)?j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,10);
+      h.learn[lang+':'+key]={t:Date.now(),g:j.guide,src}; const ks=Object.keys(h.learn); if(ks.length>40) ks.sort((x,y)=>h.learn[x].t-h.learn[y].t).slice(0,ks.length-40).forEach(k=>delete h.learn[k]); persist();
+      if(still()){ m.innerHTML=hbGuideHTML(j.guide,src,a.topic?esc(L.hbTopicN[a.topic]):esc(L.hbYourQ)); qzBind(j.guide); } }
+    catch(e){ if(still()) m.innerHTML=`<div class="bp-busy"><span class="id-bava">${SF_AVA}</span><b>${L.hbLearnErr}</b></div>`; } })(); }
+
+/* ---------- встраивание: экраны страницы, график в бизнес-плане, плитка на главной ---------- */
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t){ _br(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    if(t.name==='hub'||t.name==='learn'){ d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; f.innerHTML=''; f.hidden=true;
+      if(t.name==='hub') hbR(m,f); else hbLearnR(m,f,t.arg); m.scrollTop=restore?(t.y||0):0; return; }
+    _br(restore); hbChartBind(m); }; }
+{ const _vt=bpViewTab; bpViewTab=function(it,tab){ _vt(it,tab); if(BPG.el) hbChartBind(BPG.el); }; }
+/* график в бизнес-плане — тот же живой */
+bpChartSVG=function(it){ const r=it.road; if(!r) return ''; const M=Math.max(1,it.f.m), ex=[[0,it.cap]].concat(r.months.filter(x=>x.capital_usd>0).map(x=>[Math.min(M,x.m),x.capital_usd])), lo=[[0,it.cap]].concat(r.months.filter(x=>x.capital_low_usd>0).map(x=>[Math.min(M,x.m),x.capital_low_usd]));
+  if(ex.length<2) return ''; const d=new Date(it.at||Date.now()); return hbChartHTML('bp-ch-'+it.id,{ex,lo:lo.length>1?lo:null},{H:M,st:new Date(d.getFullYear(),d.getMonth(),1).toISOString(),tg:it.tgt,label:L.bpChartT}); };
+document.addEventListener('click',e=>{ const t=e.target.closest('[data-hbopen-hub]'); if(!t) return; e.stopImmediatePropagation(); hubOpen(t.dataset.hbopenHub||''); });
 
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
