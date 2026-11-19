@@ -2442,6 +2442,37 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .hb-gain.up{color:var(--m-leaf);} .hb-gain.dn{color:#C2571A;}
 .hb-sc{display:flex; flex-wrap:wrap; gap:6px 14px; margin:8px 0 10px; font-size:.82rem; font-weight:700; color:var(--muted);}
 .hb-sc b{color:var(--ink); font-family:var(--font-num);}
+.hb-gin{margin-top:2px;}
+.hb-gin .field{margin:4px 0 0;}
+.hb-in .bp-mob{margin:0 0 8px;}
+.hb-gl{border:1.5px solid var(--line); border-radius:16px; padding:11px 12px 12px; margin:4px 0 12px;}
+.hb-gl.ok{border-color:color-mix(in srgb,var(--m-leaf) 55%,var(--line));}
+.hb-gl.far{border-color:color-mix(in srgb,#E08A2B 50%,var(--line));}
+.hb-gl h5{display:flex; align-items:center; gap:6px; margin:0 0 8px; font-size:.95rem; line-height:1.3;}
+.hb-gl h5 svg{flex:none;}
+.hb-glb{height:8px; border-radius:4px; background:var(--surface-2); overflow:hidden;}
+.hb-glb i{display:block; height:100%; min-width:4px; border-radius:4px; background:var(--brand);}
+.hb-gl.ok .hb-glb i{background:var(--m-leaf);}
+.hb-gln{margin:8px 0 0; font-size:.86rem; line-height:1.45;}
+.hb-glok{display:flex; gap:6px; margin:8px 0 0; font-size:.86rem; line-height:1.4; font-weight:800; color:var(--m-leaf);}
+.hb-glok svg{flex:none; margin-top:2px;}
+.hb-glw{list-style:none; margin:8px 0 0; padding:0; display:grid; gap:4px; font-size:.84rem; font-weight:700; color:var(--muted);}
+.hb-glw b{color:var(--ink);}
+.hb-glw li{display:flex; align-items:flex-start; gap:7px;}
+.hb-glw .k{flex:none; display:inline-block; width:12px; height:4px; border-radius:2px; margin-top:.55em;}
+.hb-gl p.m{display:flex; gap:6px; margin:8px 0 0; font-size:.82rem; line-height:1.45; color:var(--muted);}
+.hb-gl p.m svg{flex:none; margin-top:2px;}
+.hb-gl .hb-gla{display:grid; grid-template-columns:1fr; gap:8px; margin-top:12px;}
+.hb-gl .hb-gla .btn{width:100%;}
+.hb-kpi{margin:12px 0 10px;}
+.hb-kpi h5{display:flex; align-items:center; gap:6px; margin:0 0 6px; font-size:.9rem;}
+.hb-kpi dl{display:grid; grid-template-columns:1fr 1fr; gap:8px; margin:0;}
+.hb-kpi dl>div{background:var(--surface-2); border-radius:14px; padding:9px 11px; min-width:0;}
+.hb-kpi dl>div:last-child:nth-child(odd){grid-column:1/-1;}
+.hb-kpi dt{font-size:.76rem; font-weight:800; color:var(--muted);}
+.hb-kpi dd{margin:2px 0 0; font-family:var(--font-num); font-size:1.08rem; font-weight:800; font-variant-numeric:tabular-nums; overflow-wrap:anywhere;}
+.hb-kpi dd small{display:block; font-family:var(--font-body); font-size:.74rem; font-weight:700; color:var(--muted);}
+.hb-kpi p.m{margin:6px 0 0; font-size:.78rem; line-height:1.4; color:var(--muted);}
 .hb-batch{background:var(--surface-2); border-radius:16px; padding:11px 12px; margin:10px 0;}
 .hb-batch h5{display:flex; align-items:center; gap:6px; margin:0 0 4px; font-size:.9rem;}
 .hb-batch p{margin:4px 0 0; font-size:.85rem; line-height:1.45;}
@@ -5708,7 +5739,22 @@ const M23S={
 ru:{ hbUpdBtn:'Обновить', hbUpdOk:'Рынок дня обновлён', hbRecent:(m,w)=>'Рынок обновлён '+m+' мин назад — обновить снова можно через '+w+' мин.', hbUpdLimit:'На сегодня обновлений достаточно — завтра снова.', hbNext:t=>'следующее в '+t, hbNextT:'следующее — завтра', hbSub:'Рынок дня, идеи, расчёт и обучение', hbT:'Деньги и бизнес', hbDayT:'Рынок дня', hbUpd:t=>'обновлён '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'обновляется…', hbStale:'данные не самые свежие',
   hbLoading:'Сифра собирает рынок дня: наценки, тренды, идеи, советы. Это 1–3 минуты один раз в день — пока можно посчитать по обычным цифрам.', hbOld10:'Сервер Mira ещё старый — залейте новый mira-api.zip в Cloudflare, и здесь появится рынок дня.', hbErr:'Не получилось обновить рынок дня.', hbSom:'с.',
   hbTabN:{today:'Сегодня',calc:'Расчёт',ideas:'Идеи',plan:'План',learn:'Учиться'}, hbTabI:HB_TABI,
-  hbSer:{lo:'осторожно',ex:'обычно',hi:'удачно'}, hbGoal:'Цель', hbChartL:'Сколько денег в деле по месяцам', hbChartHint:'Проведите пальцем по графику — увидите любой месяц.', hbInM:n=>'через '+n+' мес.',
+  hbSer:{lo:'осторожно',ex:'обычно',hi:'оптимистично'}, hbGoal:'Цель', hbMoL:m=>{ const y=Math.floor(m/12), r=m%12; return y?y+' '+(y===1?'год':y<5?'года':'лет')+(r?' '+r+' мес.':''):m+' мес.'; },
+  hbGoalQ:'Цель: во сколько раз или своя сумма', hbGoalNo:'Без цели', hbGK:{cap:'Денег в деле',rev:'Выручка за срок',prof:'Прибыль за срок'},
+  hbGoalAmt:{cap:'Сколько денег хочу в деле, $',rev:'Какую выручку хочу за срок, $',prof:'Какую прибыль хочу за срок, $'},
+  hbGlT:{cap:(v,m)=>'Цель: '+v+' в деле за '+m,rev:(v,m)=>'Цель: выручка '+v+' за '+m,prof:(v,m)=>'Цель: прибыль '+v+' за '+m}, hbGlPr:'Сколько цели выходит в обычном сценарии',
+  hbGlNow:(v,p)=>'Обычно выйдет '+v+' — это '+p+'% цели.', hbGlOk:m=>'Цель достижима: в обычном сценарии — примерно через '+m+'.',
+  hbGlNeed:(p,q)=>'Для цели деньги должны расти на '+p+'% в месяц, а этот товар даёт около '+q+'%.', hbGlIn:m=>'цель через '+m, hbGlNever:'за 10 лет этим путём не дойти',
+  hbGlSales:v=>'Главный тормоз — продажи: магазин продаёт около '+v+' в месяц, больше денег в товар не вложить. Расти помогут новые точки и каналы продаж, а не только деньги.',
+  hbGlMk:'Главный тормоз — наценка и скорость продаж этого товара. Сравните другие товары и страны выше.',
+  hbGlPaths:'Как дойти быстрее: другие страны (Узбекистан, Казахстан, ОАЭ, Россия), онлайн и маркетплейсы, опт, несколько точек, партнёры. Сифра разберёт пути и честный шанс каждого.',
+  hbGlPlan:'Пути к цели — бизнес-план', hbGlAsk:'Спросить Сифру',
+  hbGlWhat:{cap:(v,x)=>'довести деньги в деле до '+v+(x>1?' (×'+String(x).replace('.',',')+')':''),rev:v=>'выручку '+v,prof:v=>'прибыль '+v},
+  hbGlAskQ:(c,g,m,w,f,s)=>'Вложу '+c+' в товар: '+w+(f?', закупка — '+f:'')+'; магазин продаёт около '+s+' в месяц. Хочу за '+m+' '+g+'. Какие пути к цели и какой шанс у каждого?',
+  hbGlIdea:{rev:(v,m)=>'Цель: выручка '+v+' за '+m+'.',prof:(v,m)=>'Цель: прибыль '+v+' за '+m+'.'},
+  hbKpiT:m=>'За '+m+' — обычно', hbKpi:{rev:'Выручка (оборот)',prof:'Прибыль',cyc:'Партий товара',out:'Забрали себе'}, hbKpiM:v=>'≈ '+v+' в мес.',
+  hbKpiNote:'Выручка — все деньги от продаж. Прибыль — что осталось после товара, доставки и расходов магазина.',
+  hbChartL:'Сколько денег в деле по месяцам', hbChartHint:'Проведите пальцем по графику — увидите любой месяц.', hbInM:n=>'через '+n+' мес.',
   hbCap:'Сколько денег, $', hbWhat:'Во что вложить', hbFrom:'Откуда везти', hbRe:'Сколько прибыли возвращать', hbReN:{100:'Всю',70:'70%',50:'Половину'}, hbH:'На какой срок',
   hbIn:m=>'Через '+m+' — обычно', hbPerM:x=>'≈ '+x+'% в месяц', hbBatch:'Одна партия',
   hbBatchT:(n,l,r,m,p)=>'Купите ≈ '+n+' шт по '+l+' $ с доставкой, продавайте по '+r+' $. Уйдёт за ≈ '+m+' мес., прибыль с партии ≈ '+p+'.',
@@ -5749,7 +5795,22 @@ ru:{ hbUpdBtn:'Обновить', hbUpdOk:'Рынок дня обновлён', 
 tg:{ hbUpdBtn:'Нав кардан', hbUpdOk:'Бозори рӯз нав шуд', hbRecent:(m,w)=>'Бозор '+m+' дақиқа пеш нав шуд — боз баъди '+w+' дақиқа нав кардан мумкин.', hbUpdLimit:'Барои имрӯз навсозӣ кифоя аст — пагоҳ боз.', hbNext:t=>'навбатӣ соати '+t, hbNextT:'навбатӣ — пагоҳ', hbSub:'Бозори рӯз, ғояҳо, ҳисоб ва омӯзиш', hbT:'Пул ва тиҷорат', hbDayT:'Бозори рӯз', hbUpd:t=>'навсозӣ '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'нав мешавад…', hbStale:'маълумот навтарин нест',
   hbLoading:'Сифра бозори рӯзро ҷамъ мекунад: фоида, тамоюлҳо, ғояҳо, маслиҳатҳо. Ин 1–3 дақиқа, як бор дар рӯз — ҳоло бо рақамҳои муқаррарӣ ҳисоб кардан мумкин.', hbOld10:'Сервери Mira ҳанӯз кӯҳна аст — mira-api.zip-и навро ба Cloudflare бор кунед, ва бозори рӯз пайдо мешавад.', hbErr:'Бозори рӯз нав нашуд.', hbSom:'с.',
   hbTabN:{today:'Имрӯз',calc:'Ҳисоб',ideas:'Ғояҳо',plan:'Нақша',learn:'Омӯзиш'}, hbTabI:HB_TABI,
-  hbSer:{lo:'бо эҳтиёт',ex:'одатан',hi:'бомуваффақият'}, hbGoal:'Ҳадаф', hbChartL:'Пул дар кор моҳ ба моҳ', hbChartHint:'Ангуштро аз рӯи график гузаронед — ҳар моҳро мебинед.', hbInM:n=>'баъди '+n+' моҳ',
+  hbSer:{lo:'бо эҳтиёт',ex:'одатан',hi:'хушбинона'}, hbGoal:'Ҳадаф', hbMoL:m=>{ const y=Math.floor(m/12), r=m%12; return y?y+' сол'+(r?' '+r+' моҳ':''):m+' моҳ'; },
+  hbGoalQ:'Ҳадаф: чанд баробар ё маблағи худ', hbGoalNo:'Бе ҳадаф', hbGK:{cap:'Пул дар кор',rev:'Даромад дар мӯҳлат',prof:'Фоида дар мӯҳлат'},
+  hbGoalAmt:{cap:'Чанд пул дар кор мехоҳам, $',rev:'Чӣ қадар даромад мехоҳам, $',prof:'Чӣ қадар фоида мехоҳам, $'},
+  hbGlT:{cap:(v,m)=>'Ҳадаф: '+v+' дар кор дар '+m,rev:(v,m)=>'Ҳадаф: даромади '+v+' дар '+m,prof:(v,m)=>'Ҳадаф: фоидаи '+v+' дар '+m}, hbGlPr:'Чанд фоизи ҳадаф одатан мешавад',
+  hbGlNow:(v,p)=>'Одатан '+v+' мешавад — '+p+'% ҳадаф.', hbGlOk:m=>'Ҳадаф дастрас аст: одатан тақрибан баъди '+m+'.',
+  hbGlNeed:(p,q)=>'Барои ҳадаф пул бояд ҳар моҳ '+p+'% афзояд, аммо ин мол тақрибан '+q+'% медиҳад.', hbGlIn:m=>'ҳадаф баъди '+m, hbGlNever:'дар 10 сол бо ин роҳ намерасед',
+  hbGlSales:v=>'Монеаи асосӣ — фурӯш: мағоза дар як моҳ тақрибан '+v+' мефурӯшад, зиёдтар пулро ба мол гузоштан намешавад. Нуқтаҳо ва роҳҳои нави фурӯш кӯмак мекунанд, на танҳо пул.',
+  hbGlMk:'Монеаи асосӣ — нархафзоӣ ва суръати фурӯши ин мол. Моли дигар ва кишварҳои дигарро дар боло муқоиса кунед.',
+  hbGlPaths:'Чӣ тавр тезтар расидан: кишварҳои дигар (Ӯзбекистон, Қазоқистон, АМА, Русия), онлайн ва маркетплейсҳо, яклухт, якчанд нуқта, шарикон. Сифра роҳҳо ва имконияти ҳар якро ростқавлона нишон медиҳад.',
+  hbGlPlan:'Роҳҳо ба ҳадаф — нақшаи бизнес', hbGlAsk:'Аз Сифра пурсидан',
+  hbGlWhat:{cap:(v,x)=>'пули дар корро то '+v+(x>1?' (×'+String(x).replace('.',',')+')':'')+' расонам',rev:v=>'даромади '+v+' гирам',prof:v=>'фоидаи '+v+' гирам'},
+  hbGlAskQ:(c,g,m,w,f,s)=>c+' сармоя ба мол мегузорам: '+w+(f?', харид — '+f:'')+'; мағоза дар як моҳ тақрибан '+s+' мефурӯшад. Мехоҳам дар '+m+' '+g+'. Кадом роҳҳо ба ҳадаф ҳастанд ва имконияти ҳар кадом чанд аст?',
+  hbGlIdea:{rev:(v,m)=>'Ҳадаф: даромади '+v+' дар '+m+'.',prof:(v,m)=>'Ҳадаф: фоидаи '+v+' дар '+m+'.'},
+  hbKpiT:m=>'Дар '+m+' — одатан', hbKpi:{rev:'Даромад (гардиш)',prof:'Фоида',cyc:'Партияҳои мол',out:'Ба худ гирифтед'}, hbKpiM:v=>'≈ '+v+' дар моҳ',
+  hbKpiNote:'Даромад — ҳамаи пули фурӯш. Фоида — он чи пас аз мол, расонидан ва хароҷоти мағоза мемонад.',
+  hbChartL:'Пул дар кор моҳ ба моҳ', hbChartHint:'Ангуштро аз рӯи график гузаронед — ҳар моҳро мебинед.', hbInM:n=>'баъди '+n+' моҳ',
   hbCap:'Чанд пул, $', hbWhat:'Ба чӣ гузоштан', hbFrom:'Аз куҷо овардан', hbRe:'Чанд фоидаро баргардонидан', hbReN:{100:'Ҳамаашро',70:'70%',50:'Нисфашро'}, hbH:'Ба кадом муддат',
   hbIn:m=>'Баъди '+m+' — одатан', hbPerM:x=>'≈ '+x+'% дар як моҳ', hbBatch:'Як партия',
   hbBatchT:(n,l,r,m,p)=>'≈ '+n+' дона ба '+l+' $ бо расонидан харед, ба '+r+' $ фурӯшед. Дар ≈ '+m+' моҳ фурӯхта мешавад, фоидаи партия ≈ '+p+'.',
@@ -5790,7 +5851,22 @@ tg:{ hbUpdBtn:'Нав кардан', hbUpdOk:'Бозори рӯз нав шуд'
 en:{ hbUpdBtn:'Refresh', hbUpdOk:'Market of the day updated', hbRecent:(m,w)=>'Updated '+m+' min ago — you can refresh again in '+w+' min.', hbUpdLimit:'Enough refreshes for today — try tomorrow.', hbNext:t=>'next at '+t, hbNextT:'next — tomorrow', hbSub:'Market of the day, ideas, calculator, learning', hbT:'Money & business', hbDayT:'Market of the day', hbUpd:t=>'updated '+t, hbModel:m=>HB_MODEL(m), hbUpdating:'updating…', hbStale:'not the latest data',
   hbLoading:'Sifra is gathering today’s market: markups, trends, ideas, tips. It takes 1–3 minutes once a day — meanwhile you can calculate with the usual numbers.', hbOld10:'The Mira server is still the old one — upload the new mira-api.zip to Cloudflare and the market of the day will appear here.', hbErr:'Could not update the market of the day.', hbSom:'TJS',
   hbTabN:{today:'Today',calc:'Calculate',ideas:'Ideas',plan:'Plan',learn:'Learn'}, hbTabI:HB_TABI,
-  hbSer:{lo:'cautious',ex:'usual',hi:'lucky'}, hbGoal:'Goal', hbChartL:'Money in the business by month', hbChartHint:'Slide your finger along the chart to see any month.', hbInM:n=>'in '+n+' mo.',
+  hbSer:{lo:'cautious',ex:'usual',hi:'optimistic'}, hbGoal:'Goal', hbMoL:m=>{ const y=Math.floor(m/12), r=m%12; return y?y+(y===1?' year':' years')+(r?' '+r+' mo.':''):m+' mo.'; },
+  hbGoalQ:'Goal: how many times or your own amount', hbGoalNo:'No goal', hbGK:{cap:'Money in business',rev:'Revenue for the period',prof:'Profit for the period'},
+  hbGoalAmt:{cap:'How much I want in the business, $',rev:'Revenue I want for the period, $',prof:'Profit I want for the period, $'},
+  hbGlT:{cap:(v,m)=>'Goal: '+v+' in the business in '+m,rev:(v,m)=>'Goal: '+v+' revenue in '+m,prof:(v,m)=>'Goal: '+v+' profit in '+m}, hbGlPr:'How much of the goal the usual case reaches',
+  hbGlNow:(v,p)=>'Usually you get '+v+' — '+p+'% of the goal.', hbGlOk:m=>'The goal is reachable: in the usual case in about '+m+'.',
+  hbGlNeed:(p,q)=>'For the goal the money must grow '+p+'% a month, and these goods give about '+q+'%.', hbGlIn:m=>'goal in '+m, hbGlNever:'not reachable this way in 10 years',
+  hbGlSales:v=>'The main brake is sales: the shop sells about '+v+' a month, so more money cannot go into goods. New shops and sales channels help, not just more money.',
+  hbGlMk:'The main brake is the markup and sales speed of these goods. Compare other goods and countries above.',
+  hbGlPaths:'How to get there faster: other countries (Uzbekistan, Kazakhstan, UAE, Russia), online and marketplaces, wholesale, several shops, partners. Sifra will go through the paths and the honest chance of each.',
+  hbGlPlan:'Paths to the goal — business plan', hbGlAsk:'Ask Sifra',
+  hbGlWhat:{cap:(v,x)=>'grow the money in the business to '+v+(x>1?' (×'+x+')':''),rev:v=>'reach '+v+' in revenue',prof:v=>'make '+v+' in profit'},
+  hbGlAskQ:(c,g,m,w,f,s)=>'I will invest '+c+' in goods: '+w+(f?', buying from '+f:'')+'; the shop sells about '+s+' a month. In '+m+' I want to '+g+'. What paths lead to the goal and what is the chance of each?',
+  hbGlIdea:{rev:(v,m)=>'Goal: '+v+' revenue in '+m+'.',prof:(v,m)=>'Goal: '+v+' profit in '+m+'.'},
+  hbKpiT:m=>'Over '+m+' — usually', hbKpi:{rev:'Revenue (turnover)',prof:'Profit',cyc:'Batches of goods',out:'Taken out'}, hbKpiM:v=>'≈ '+v+' a month',
+  hbKpiNote:'Revenue is all the money from sales. Profit is what is left after goods, shipping and shop costs.',
+  hbChartL:'Money in the business by month', hbChartHint:'Slide your finger along the chart to see any month.', hbInM:n=>'in '+n+' mo.',
   hbCap:'How much money, $', hbWhat:'What to invest in', hbFrom:'Where to buy', hbRe:'How much profit to reinvest', hbReN:{100:'All',70:'70%',50:'Half'}, hbH:'For how long',
   hbIn:m=>'In '+m+' — usually', hbPerM:x=>'≈ '+x+'% a month', hbBatch:'One batch',
   hbBatchT:(n,l,r,m,p)=>'Buy ≈ '+n+' pcs at $'+l+' landed, sell at $'+r+'. Sells in ≈ '+m+' mo., profit per batch ≈ '+p+'.',
@@ -14067,30 +14143,65 @@ function hbCount(root){ (root||document).querySelectorAll('[data-count]').forEac
   const t0=performance.now(), d=650; const f=n=>{ const k=Math.min(1,(n-t0)/d), e=1-Math.pow(1-k,3); el.textContent=ivUsd(from+(to-from)*e); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); }); }
 
 /* ---------- расчёт ---------- */
-function hbSim(cap,cat,c,re,H){ const d=ivDef(cat), i=Math.max(0,IV_C.indexOf(c)), mk=d.mk[i], S0=ivCapMUSD(), Imax=Math.max(500,S0.v*d.m/(1+mk/100));
-  const run=(pf,tf)=>{ let K=cap, t=0, date=ivStart(), n=0, first=null; const pts=[[0,cap]];
-    while(t<H&&n<80){ const I=Math.min(K,Imax), r=ivCalc(cat,c,date,I); if(!first) first=r; const dur=Math.max(0.5,(r.totalM||1)*tf), prof=r.profit>0?r.profit*pf:r.profit*(2-pf);
-      const K2=K+(prof>0?prof*re:prof), t2=t+dur; if(t2>=H){ pts.push([H,K+(K2-K)*(H-t)/dur]); t=H; K=K2; break; } pts.push([t2,K2]); K=K2; t=t2; date=addDays(date,Math.round(dur*30)); n++; if(K<=0) break; }
-    if(pts[pts.length-1][0]<H) pts.push([H,pts[pts.length-1][1]]);
-    return {pts:pts.map(p=>[Math.round(p[0]*100)/100,Math.round(p[1])]),end:pts[pts.length-1][1],first}; };
+const HB_CAPS=[1000,5000,10000,20000,50000,100000], HB_HS=[3,6,12,24,36], HB_GX=[2,5,10,20], HB_GK=['cap','rev','prof'];
+let hbMoOpen=false;
+/* расчёт по партиям: деньги в деле, выручка, прибыль; можно досчитать дальше срока (до 120 мес.), чтобы найти, когда будет цель */
+function hbSim(cap,cat,c,re,H,Hr){ const d=ivDef(cat), i=Math.max(0,IV_C.indexOf(c)), mk=d.mk[i], S0=ivCapMUSD(), Imax=Math.max(500,S0.v*d.m/(1+mk/100)), HR=Math.max(H,Hr||0);
+  const cut=(a,h)=>{ const o=a.filter(p=>p[0]<h), nx=a.find(p=>p[0]>=h), pv=o[o.length-1]; if(nx){ const k=(h-pv[0])/((nx[0]-pv[0])||1); o.push(pv.map((v,j)=>j?v+(nx[j]-v)*k:h)); } else o.push([h].concat(pv.slice(1))); return o; };
+  const run=(pf,tf)=>{ let K=cap, t=0, date=ivStart(), n=0, first=null, rv=0, pr=0, out=0, ns=0, limAt=null; const all=[[0,cap]], cum=[[0,0,0,0]];
+    while(t<HR&&n<400){ const I=Math.min(K,Imax), r=ivCalc(cat,c,date,I); if(!first) first=r; if(limAt==null&&K>Imax*1.02) limAt=t;
+      const dur=Math.max(0.5,(r.totalM||1)*tf), prof=r.profit>0?r.profit*pf:r.profit*(2-pf), K2=K+(prof>0?prof*re:prof), t2=t+dur;
+      if(t<H) ns++; rv+=Math.max(0,r.rev+prof-r.profit); pr+=prof; out+=prof>0?prof*(1-re):0;
+      all.push([t2,K2]); cum.push([t2,rv,pr,out]); K=K2; t=t2; date=addDays(date,Math.round(dur*30)); n++; if(K<=0) break; }
+    const P=cut(all,H).map(p=>[Math.round(p[0]*100)/100,Math.round(p[1])]), e=cut(cum,H).pop();
+    return {pts:P,end:P[P.length-1][1],first,rev:e[1],prof:e[2],out:e[3],ns,limAt,all,cum}; };
   return {lo:run(0.6,1.25),ex:run(1,1),hi:run(1.12,0.9),Imax,S0,mk,d}; }
-function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=IV_CATS.includes(C.cat)?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, H=[6,12,24,36].includes(+C.h)?+C.h:12;
+function hbReach(a,j,v){ if(!a||!a.length) return null; if(a[0][j]>=v) return 0; for(let i=1;i<a.length;i++) if(a[i][j]>=v){ const p=a[i-1], q=a[i], k=(v-p[j])/((q[j]-p[j])||1); return p[0]+(q[0]-p[0])*Math.max(0,Math.min(1,k)); } return null; }
+function hbGoal(C,cap){ const k=HB_GK.includes(C.gk)?C.gk:'cap', v=C.gx==='own'?Math.round(+C.ga||0):HB_GX.includes(+C.gx)?cap*(+C.gx):0; return v>0?{k,v,x:C.gx==='own'?Math.round(v/cap*10)/10:+C.gx}:null; }
+function hbMoL(m){ return L.hbMoL?L.hbMoL(m):bpMoLab(m); }
+function hbGoalHTML(G,S,cap,H){ const j=G.k==='prof'?2:1, A=s=>G.k==='cap'?s.all:s.cum, val=s=>G.k==='cap'?s.end:G.k==='rev'?s.rev:s.prof;
+  const rch=s=>{ const m=hbReach(A(s),j,G.v); return m==null||m>120.001?null:Math.max(1,Math.ceil(m-1e-6)); }, M={lo:rch(S.lo),ex:rch(S.ex),hi:rch(S.hi)};
+  const now=val(S.ex), p=Math.max(0,Math.min(100,now/G.v*100)), ok=M.ex!=null&&M.ex<=H, cls=ok?'ok':M.hi!=null&&M.hi<=H?'mid':'far';
+  const brake=ok?'':S.ex.limAt!=null&&(M.ex==null||S.ex.limAt<M.ex)?L.hbGlSales(ivUsd(S.S0.v)):L.hbGlMk;
+  return `<div class="hb-gl ${cls}"><h5>${ico('goal',16)} ${esc(L.hbGlT[G.k](ivUsd(G.v),bpMoLab(H)))}</h5>
+      <div class="hb-glb" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(p)}" aria-label="${esc(L.hbGlPr)}"><i style="width:${p.toFixed(1)}%"></i></div>
+      <p class="hb-gln">${esc(L.hbGlNow(ivUsd(now),fx(p,p<10?1:0)))}</p>
+      ${ok?`<p class="hb-glok">${ico('check',14)} <span>${esc(L.hbGlOk(hbMoL(M.ex)))}</span></p>`:''}
+      ${!ok&&G.k==='cap'&&G.v>cap?`<p class="hb-gln">${esc(L.hbGlNeed(fx(bpPct(G.v/cap,H),1),fx(bpPct(Math.max(1.0001,S.ex.end/cap),H),1)))}</p>`:''}
+      <ul class="hb-glw">${['lo','ex','hi'].map(k=>`<li><i class="k ${k}"></i><span>${esc(L.hbSer[k])} — <b>${esc(M[k]==null?L.hbGlNever:L.hbGlIn(hbMoL(M[k])))}</b></span></li>`).join('')}</ul>
+      ${brake?`<p class="m">${ico('info',14)} <span>${esc(brake)}</span></p><p class="m">${ico('bulb',14)} <span>${esc(L.hbGlPaths)}</span></p>`:''}
+      <div class="bp-acts hb-gla"><button type="button" class="btn ${ok?'btn-ghost':'btn-primary'}" data-hbplan="calc">${ico('doc',16)} ${L.hbGlPlan}</button><button type="button" class="btn btn-ghost" data-hbgask="1">${ico('chat',16)} ${L.hbGlAsk}</button></div></div>`; }
+function hbGoalAsk(){ const C=hbSt().calc, G=hbGoal(C,C.cap); if(!G) return; const row=hbRows(hbToday()).find(x=>x.id===C.cat)||{};
+  const q=L.hbGlAskQ(ivUsd(C.cap),L.hbGlWhat[G.k](ivUsd(G.v),G.x),bpMoLab(C.h),row.name||L['whC_'+C.cat]||'',L['cn_'+C.c]||'',ivUsd(ivCapMUSD().v));
+  bpClose(); setTimeout(()=>{ try{ sifraOpen(q.slice(0,690)); }catch(e){} },90); }
+function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=IV_CATS.includes(C.cat)?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, h0=Math.round(+C.h), H=h0>=1&&h0<=120?h0:12;
   C.cap=cap; C.cat=cat; C.c=c; C.re=re; C.h=H;
-  const S=hbSim(cap,cat,c,re/100,H), f=S.ex.first, lim=cap>S.Imax*1.02, t=hbToday(), row=hbRows(t).find(x=>x.id===cat)||{};
+  const gon=C.gx==='own'||HB_GX.includes(+C.gx), gk=HB_GK.includes(C.gk)?C.gk:'cap', G=gon?hbGoal(C,cap):null;
+  const S=hbSim(cap,cat,c,re/100,H,G?120:0), f=S.ex.first, lim=cap>S.Imax*1.02, t=hbToday(), row=hbRows(t).find(x=>x.id===cat)||{};
   const gain=S.ex.end-cap, pct=cap>0?gain/cap*100:0, mo=bpPct(Math.max(1.0001,S.ex.end/cap),H), u=usdRate();
-  const st=ivStart(), stISO=new Date(st.getFullYear(),st.getMonth(),1).toISOString();
+  const st=ivStart(), stISO=new Date(st.getFullYear(),st.getMonth(),1).toISOString(), hs=HB_HS.concat(HB_HS.includes(H)?[]:[H]).sort((a,b)=>a-b);
+  const kp=(lab,v,pm)=>`<div><dt>${lab}</dt><dd>${esc(v)}${pm?`<small>${esc(pm)}</small>`:''}</dd></div>`;
   return `<section class="hb-card hb-in">
       <div class="field n big-in"><label for="hb-cap">${L.hbCap}</label><input id="hb-cap" type="number" inputmode="decimal" min="100" value="${cap}"></div>
-      <div class="chips bp-wrap">${[5000,10000,20000,50000].map(v=>`<button type="button" class="chip ${cap===v?'on':''}" data-hbcap="${v}">${esc(ivUsd(v))}</button>`).join('')}</div>
+      <div class="chips bp-wrap">${HB_CAPS.map(v=>`<button type="button" class="chip ${cap===v?'on':''}" data-hbcap="${v}">${esc(ivUsd(v))}</button>`).join('')}</div>
       <div class="br-h">${L.hbWhat}</div><div class="chips hb-scroll">${hbRows(t).filter(x=>!x.isNew).sort((a,b)=>b.mk-a.mk).map(x=>`<button type="button" class="chip ${x.id===cat?'on':''}" data-hbcat="${x.id}">${x.ico} ${esc(x.name)} <small>+${Math.round(x.mk)}%</small></button>`).join('')}</div>
       <div class="br-h">${L.hbFrom}</div><div class="chips bp-wrap">${IV_C.map(k=>`<button type="button" class="chip ${k===c?'on':''}" data-hbc="${k}">${bpCname(k)}</button>`).join('')}</div>
       <div class="hb-two"><div><div class="br-h">${L.hbRe}</div><div class="chips bp-wrap">${[100,70,50].map(v=>`<button type="button" class="chip ${v===re?'on':''}" data-hbre="${v}">${L.hbReN[v]}</button>`).join('')}</div></div>
-        <div><div class="br-h">${L.hbH}</div><div class="chips bp-wrap">${[6,12,24,36].map(v=>`<button type="button" class="chip ${v===H?'on':''}" data-hbh="${v}">${bpMoLab(v)}</button>`).join('')}</div></div></div>
+        <div><div class="br-h">${L.hbH}</div><div class="chips bp-wrap">${hs.map(v=>`<button type="button" class="chip ${v===H?'on':''}" data-hbh="${v}">${bpMoLab(v)}</button>`).join('')}</div>
+          <button type="button" class="gp-mini bp-mob" data-hbmo="1" aria-expanded="${hbMoOpen}">${ico('edit',14)} ${L.bpMOwn}</button><div class="field n" id="hb-mow" ${hbMoOpen?'':'hidden'}><label for="hb-mo">${L.bpMOwnL}</label><input id="hb-mo" type="number" inputmode="numeric" min="1" max="120" step="1" value="${H}"></div></div></div>
+      <div class="hb-gin"><div class="br-h">${L.hbGoalQ}</div>
+        <div class="chips bp-wrap">${[0].concat(HB_GX).map(v=>{ const on=v?String(C.gx)===String(v):!gon; return `<button type="button" class="chip ${on?'on':''}" data-hbgx="${v}" aria-pressed="${on}">${v?'×'+v:L.hbGoalNo}</button>`; }).join('')}<button type="button" class="chip ${C.gx==='own'?'on':''}" data-hbgx="own" aria-pressed="${C.gx==='own'}">${L.bpOwn}</button></div>
+        ${gon?`<div class="chips bp-wrap">${HB_GK.map(k=>`<button type="button" class="chip ${gk===k?'on':''}" data-hbgk="${k}" aria-pressed="${gk===k}">${L.hbGK[k]}</button>`).join('')}</div>
+        <div class="field n"><label for="hb-ga">${L.hbGoalAmt[gk]}</label><input id="hb-ga" type="number" inputmode="decimal" min="1" value="${G?G.v:''}"></div>`:''}</div>
     </section>
     <section class="hb-card hb-res"><small>${L.hbIn(bpMoLab(H))}</small><b class="hb-big" data-count="${Math.round(S.ex.end)}" data-from="${cap}">${esc(ivUsd(S.ex.end))}</b>
       <p class="hb-gain ${gain>=0?'up':'dn'}">${gain>=0?'+':'−'}${esc(ivUsd(Math.abs(gain)))} (${gain>=0?'+':''}${fx(pct,0)}%) · ${esc(L.hbPerM(fx(mo,1)))}</p>
       <div class="hb-sc"><span><i class="k lo"></i>${L.hbSer.lo} <b>${esc(ivUsd(S.lo.end))}</b></span><span><i class="k hi"></i>${L.hbSer.hi} <b>${esc(ivUsd(S.hi.end))}</b></span></div>
-      ${hbChartHTML('hb-cch',{lo:S.lo.pts,ex:S.ex.pts,hi:S.hi.pts},{H,st:stISO,label:L.hbChartL})}
+      ${G?hbGoalHTML(G,S,cap,H):''}
+      ${hbChartHTML('hb-cch',{lo:S.lo.pts,ex:S.ex.pts,hi:S.hi.pts},{H,st:stISO,label:L.hbChartL,tg:G&&G.k==='cap'?G.v:0})}
+      <div class="hb-kpi"><h5>${ico('stats',16)} ${esc(L.hbKpiT(bpMoLab(H)))}</h5><dl>
+        ${kp(L.hbKpi.rev,'≈ '+ivUsd(S.ex.rev),L.hbKpiM(ivUsd(S.ex.rev/H)))}${kp(L.hbKpi.prof,(S.ex.prof<0?'−':'≈ ')+ivUsd(Math.abs(S.ex.prof)),L.hbKpiM(ivUsd(S.ex.prof/H)))}${kp(L.hbKpi.cyc,String(S.ex.ns))}${re<100?kp(L.hbKpi.out,'≈ '+ivUsd(S.ex.out)):''}</dl>
+        <p class="m">${L.hbKpiNote}</p></div>
       ${f?`<div class="hb-batch"><h5>${ico('bag',16)} ${L.hbBatch}</h5><p>${L.hbBatchT(fx(f.pcs,0),fx(f.landed,f.landed<10?1:0),fx(f.retail,f.retail<10?1:0),fx(f.months,1),esc(ivUsd(f.profit)))}</p>
         ${row.live?`<p class="m">${ico('globe',14)} ${L.hbLiveMk(Math.round(S.mk),esc(row.note||''))}</p>`:`<p class="m">${ico('info',14)} ${L.hbNoLive}</p>`}
         ${lim?`<p class="bp-need hi">${L.hbLimit(esc(ivUsd(S.Imax)),esc(ivUsd(S.S0.v)))}</p>`:''}</div>`:''}
@@ -14173,20 +14284,24 @@ function hbTab(k){ const m=BPG.el.querySelector('#bpg-m'), t=bpTop(); t.tab=k; h
   m.querySelectorAll('[data-hbtab]').forEach(x=>{ if(x.closest('.hb-tabs')){ const on=x.dataset.hbtab===k; x.classList.toggle('on',on); x.setAttribute('aria-selected',on); } });
   m.querySelectorAll('[data-hbpane]').forEach(p=>{ const on=p.dataset.hbpane===k; p.hidden=!on; if(on){ p.innerHTML=hbPaneHTML(k); hbAfter(p); hbPaneBind(p,k); } else p.innerHTML=''; });
   const nav=m.querySelector('.hb-tabs'), y=nav.offsetTop+16; if(m.scrollTop>y) m.scrollTop=y; }
-function hbPaneBind(p,k){ if(k==='calc'){ const ci=p.querySelector('#hb-cap'); if(ci) ci.addEventListener('input',()=>{ clearTimeout(ci._t); ci._t=setTimeout(()=>{ const v=+ci.value; if(v>=100){ hbSt().calc.cap=Math.round(v); persist(); hbCalcSoft(); } },450); }); }
+function hbPaneBind(p,k){ if(k==='calc'){ const ci=p.querySelector('#hb-cap'); if(ci) ci.addEventListener('input',()=>{ clearTimeout(ci._t); ci._t=setTimeout(()=>{ const v=+ci.value; if(v>=100){ hbSt().calc.cap=Math.round(v); persist(); hbCalcSoft(); } },450); });
+    const gi=p.querySelector('#hb-ga'); if(gi) gi.addEventListener('input',()=>{ clearTimeout(gi._t); gi._t=setTimeout(()=>{ const v=+gi.value; if(v>0){ const C=hbSt().calc; C.gx='own'; C.ga=Math.round(v); persist(); hbCalcSoft(); } },500); });
+    const mi=p.querySelector('#hb-mo'); if(mi) mi.addEventListener('input',()=>{ clearTimeout(mi._t); mi._t=setTimeout(()=>{ const v=Math.round(+mi.value); if(v>=1&&v<=120){ hbSt().calc.h=v; persist(); hbCalcSoft(); } },500); }); }
   if(k==='learn'){ const mk=p.querySelector('#hb-mk'), mg=p.querySelector('#hb-mg'), out=p.querySelector('#hb-mkt');
     if(mk) mk.addEventListener('input',()=>{ const a=+mk.value; if(a>-100){ const g=a/(100+a)*100; mg.value=Math.round(g*10)/10; out.textContent=L.hbMkMgT(hbF1(a),hbF1(g)); } });
     if(mg) mg.addEventListener('input',()=>{ const g=+mg.value; if(g<100){ const a=g/(100-g)*100; mk.value=Math.round(a*10)/10; out.textContent=L.hbMkMgT(hbF1(a),hbF1(g)); } });
     const fc=p.querySelector('#hb-fc'), gm=p.querySelector('#hb-gm'), bo=p.querySelector('#hb-bet'), be=()=>{ const f=+fc.value, g=+gm.value; bo.textContent=f>0&&g>0&&g<100?L.hbBET(ivUsd(f/(g/100))):L.hbBEBad; };
     if(fc){ fc.addEventListener('input',be); gm.addEventListener('input',be); }
     const q=p.querySelector('#hb-q'); if(q) q.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); hbAsk(q.value); } }); } }
-function hbCalcSoft(){ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop; hbPaneDraw('calc'); m.scrollTop=y; }
+function hbCalcSoft(){ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop, a=document.activeElement, id=a&&a.tagName==='INPUT'&&a.id&&m.contains(a)?a.id:''; hbPaneDraw('calc'); m.scrollTop=y;
+  if(id){ const e=m.querySelector('#'+id); if(e) try{ e.focus({preventScroll:true}); const n=e.value.length; e.type='text'; e.setSelectionRange(n,n); e.type='number'; }catch(x){} } }
 function hbAsk(q){ q=String(q||'').trim(); if(q.length<3){ toast(L.hbAskNeed); return; } bpGo('learn',{q}); }
 function hbIdeaFind(title){ const t=hbToday(), h=hbSt(); return (t?t.ideas:[]).find(x=>x.title===title)||h.saved.find(x=>x.title===title)||h.arch.flatMap(a=>a.ideas||[]).find(x=>x.title===title)||null; }
 function hbToPlan(kind,arg){ const f=bpDefForm(); f.touched={};
   if(kind==='idea'){ const x=hbIdeaFind(arg); if(x){ f.idea=x.title+'. '+x.why_now; if(x.where) f.place=x.where; if(+x.start_usd>0){ f.cap=Math.round(+x.start_usd); f.touched.cap=true; } } }
   else if(kind==='row'){ const r=hbRows(hbToday()).find(z=>z.id===arg); if(r) f.idea=L.hbRowIdea(r.name,r.from?(L['cn_'+r.from]||L.hbCtry[r.from]||r.from):''); f.cs=r&&IV_C.includes(r.from)?[r.from]:[]; }
-  else if(kind==='calc'){ const C=hbSt().calc; f.idea=L.hbRowIdea(L['whC_'+C.cat]||'',L['cn_'+C.c]||''); f.cap=C.cap; f.cs=[C.c]; f.cats=[C.cat]; f.m=C.h; f.touched.cap=true; f.touched.m=true; }
+  else if(kind==='calc'){ const C=hbSt().calc; f.idea=L.hbRowIdea(L['whC_'+C.cat]||'',L['cn_'+C.c]||''); f.cap=C.cap; f.cs=[C.c]; f.cats=[C.cat]; f.m=C.h; f.touched.cap=true; f.touched.m=true;
+    const G=(C.gx==='own'||HB_GX.includes(+C.gx))?hbGoal(C,C.cap):null; if(G){ if(G.k==='cap'){ const x=Math.round(G.v/C.cap*10)/10; if(BP_X.includes(x)){ f.x=x; f.own=0; } else { f.x=0; f.own=G.v; } f.touched.x=true; } else f.idea+=' '+L.hbGlIdea[G.k](ivUsd(G.v),bpMoLab(C.h)); } }
   else if(kind==='new'){ f.idea=''; }
   bpGo('form',f); }
 function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`),bpTop().tab);
@@ -14211,6 +14326,10 @@ function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`)
     if(d.hbc){ h.calc.c=d.hbc; persist(); hbCalcSoft(); return; }
     if(d.hbre){ h.calc.re=+d.hbre; persist(); hbCalcSoft(); return; }
     if(d.hbh){ h.calc.h=+d.hbh; persist(); hbCalcSoft(); return; }
+    if(d.hbmo){ hbMoOpen=!hbMoOpen; b.setAttribute('aria-expanded',hbMoOpen); const w=m.querySelector('#hb-mow'); if(w){ w.hidden=!hbMoOpen; if(hbMoOpen) w.querySelector('input').focus(); } return; }
+    if(d.hbgx!=null){ const C=h.calc; if(d.hbgx==='own'){ if(C.gx!=='own'){ const G=hbGoal(C,C.cap); C.ga=G?G.v:C.cap*3; } C.gx='own'; } else C.gx=+d.hbgx; persist(); hbCalcSoft(); if(d.hbgx==='own'){ const gi=m.querySelector('#hb-ga'); if(gi) gi.focus({preventScroll:true}); } return; }
+    if(d.hbgk){ h.calc.gk=d.hbgk; persist(); hbCalcSoft(); return; }
+    if(d.hbgask){ hbGoalAsk(); return; }
     if(d.hbsales){ const w=m.querySelector('.hb-sales-in'); if(w){ w.hidden=!w.hidden; if(!w.hidden) w.querySelector('input').focus(); } return; }
     if(d.hbsok){ const v=+m.querySelector('#hb-s').value, u=usdRate(); if(v>=0&&u){ ivP().capM=Math.round(v*u); ivP().askS=1; try{ ivMemo.clear(); }catch(e){} persist(); hbCalcSoft(); toast(L.saved||'✓'); } return; }
     if(d.hbold){ bpClose(); setTimeout(()=>{ try{ investSheet(); }catch(e){} },90); return; } }; }
