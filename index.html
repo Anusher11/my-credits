@@ -2652,6 +2652,189 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .lx-gl dt:first-child{margin-top:0;}
 .lx-gl dd{margin:2px 0 0; font-size:.84rem; line-height:1.45; color:var(--ink); opacity:.85;}
 .lx-gl dd:last-child{padding-bottom:8px;}
+/* <<v28 css>> */
+/* v28: «Расчёт» — разделы, каналы, шанс, рычаги, сравнение */
+.hb-ct{display:flex; align-items:center; gap:7px; margin:0 0 10px; font-size:1rem; line-height:1.3;}
+.hb-ct svg{flex:none; color:var(--brand);}
+.hb-card.hb-flash{animation:hbFlash 1.3s ease-out;}
+@keyframes hbFlash{0%{box-shadow:0 0 0 3px var(--brand);}100%{box-shadow:0 0 0 0 transparent;}}
+@media (prefers-reduced-motion: reduce){.hb-card.hb-flash{animation:none; outline:3px solid var(--brand);}}
+.hb-jump{display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; margin:2px -14px 10px; padding:0 14px 2px;}
+.hb-jump::-webkit-scrollbar{display:none;}
+.hb-jump .chip{flex:none; min-height:40px;}
+.hb-chin{margin-top:2px; border-radius:16px;}
+.hb-chin.hb-flash{animation:hbFlash 1.3s ease-out;}
+.hb-chin .chip.fix{cursor:default; opacity:.85;}
+.hb-chin .chip svg{vertical-align:-2px;}
+.hb-chv{background:var(--surface-2); border-radius:14px; padding:10px 11px 4px; margin:6px 0;}
+.hb-chv>b{display:block; font-size:.86rem; margin-bottom:4px;}
+.hb-chf{display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); gap:0 8px;}
+.hb-chf .field{margin:4px 0 6px;}
+.hb-chf label{font-size:.76rem;}
+.hb-chin p.m,.hb-res>p.m{display:flex; gap:6px; margin:6px 0 0; font-size:.8rem; line-height:1.45; color:var(--muted);}
+.hb-chin p.m svg,.hb-res>p.m svg{flex:none; margin-top:2px;}
+.hb-with{display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin:2px 0 8px; font-size:.82rem; font-weight:700; color:var(--ink);}
+.hb-with span{display:inline-flex; align-items:center; gap:5px;}
+.hb-with svg{color:var(--brand);}
+.hb-gch{background:var(--surface-2); border-radius:14px; padding:10px 12px; margin:0 0 10px;}
+.hb-gch>small{display:block; font-size:.78rem; font-weight:800; color:var(--muted);}
+.hb-gch.wait .hb-mcb p{animation:hbPulse 1.2s ease-in-out infinite;}
+@keyframes hbPulse{50%{opacity:.45;}}
+.hb-mcp{display:flex; align-items:baseline; gap:10px; margin-top:2px;}
+.hb-mcp b{font-family:var(--font-num); font-size:1.9rem; line-height:1.1; font-variant-numeric:tabular-nums;}
+.hb-mcp span{font-size:.84rem; font-weight:700; line-height:1.35;}
+.hb-mci{display:grid; grid-template-columns:repeat(20,1fr); gap:3px; margin:8px 0 2px;}
+.hb-mci i{display:block; height:10px; border-radius:3px; background:var(--line);}
+.hb-mci i.on{background:var(--brand);}
+.hb-gl.ok .hb-mci i.on{background:var(--m-leaf);}
+.hb-gch p.m{margin:6px 0 0; font-size:.76rem; line-height:1.4; color:var(--muted);}
+.hb-lev .bp-hint{margin-top:-4px;}
+.hb-lvon{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px;}
+.hb-lvl{list-style:none; margin:0; padding:0; display:grid; gap:8px;}
+.hb-lvl li{display:flex; align-items:center; gap:10px; padding:10px 11px; border-radius:14px; background:var(--surface-2);}
+.hb-lvl li.top{box-shadow:inset 0 0 0 2px color-mix(in srgb,var(--brand) 55%,transparent);}
+.hb-lvl li>span{flex:1; min-width:0; display:grid; gap:2px;}
+.hb-lvl b{font-size:.9rem;}
+.hb-lvl em{font-style:normal; font-size:.84rem; font-weight:800; color:var(--muted);}
+.hb-lvl em.up{color:var(--m-leaf);}
+.hb-lvl small{font-size:.76rem; color:var(--muted); line-height:1.35;}
+.hb-lvl .gp-mini{flex:none;}
+.hb-cmp .bp-hint{margin-top:-4px;}
+.hb-cmpw{margin:10px 0 8px; font-size:.92rem; font-weight:800;}
+.hb-cmpt{overflow-x:auto; margin:0 0 10px;}
+.hb-cmpt table{width:100%; border-collapse:collapse; font-size:.82rem;}
+.hb-cmpt th,.hb-cmpt td{padding:7px 6px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line);}
+.hb-cmpt thead th{font-size:.76rem; color:var(--muted); font-weight:800;}
+.hb-cmpt tbody th{font-weight:700; color:var(--muted); width:34%;}
+.hb-cmpt td{font-family:var(--font-num); font-weight:800; font-variant-numeric:tabular-nums;}
+.hb-cmpt .k{display:inline-block; width:12px; height:4px; border-radius:2px; margin-right:5px; vertical-align:middle;}
+.k.b{background:#7C5CE0;}
+.hb-ch .b{fill:none; stroke:#7C5CE0; stroke-width:3; stroke-linejoin:round; stroke-linecap:round;}
+.hb-ch .dt.b{fill:#7C5CE0;}
+:root[data-theme="dark"] .k.b,:root[data-theme="dark"] .hb-ch .dt.b{background:#A996FF; fill:#A996FF;}
+:root[data-theme="dark"] .hb-ch .b{stroke:#A996FF;}
+.hb-det .hb-batch{margin-top:0;}
+/* v28: «План» — проверки идей, план и факт */
+.pl-nav{margin-top:0;}
+.pl-nav .chip svg{vertical-align:-2px;}
+.pl-dot{display:inline-block; width:8px; height:8px; border-radius:50%; background:#E08A2B; margin-left:4px; vertical-align:middle;}
+.hb-chk.due{box-shadow:inset 0 0 0 2px color-mix(in srgb,#E08A2B 60%,transparent);}
+.hb-chs{font-style:normal; font-weight:800; color:var(--muted);}
+.hb-chs.due{color:#C2571A;} .hb-chs.dec.go{color:var(--m-leaf);} .hb-chs.dec.stop{color:var(--muted);}
+.hb-chs.big{display:inline-block; margin:0 0 10px; padding:6px 12px; border-radius:99px; background:var(--surface-2); font-size:.86rem;}
+:root[data-theme="dark"] .hb-chs.due{color:#FFA372;}
+.chk-steps{list-style:none; margin:0; padding:0; display:grid; gap:4px;}
+.chk-steps li{padding:2px 0 8px;}
+.chk-steps .bp-hint{margin:2px 0 6px;}
+.chk-steps .bp-idea{min-height:0;}
+.chk-sub{display:block; margin:8px 0 4px; font-size:.84rem; font-weight:800;}
+.chk-res{margin-top:14px;}
+.chk-dec{margin-top:8px;}
+.chk-del{margin-top:10px;}
+.hb-ibs{display:flex; flex-wrap:wrap; gap:8px;}
+.hb-ibs .hb-ib{flex:1 1 140px; justify-content:center;}
+.pf-mini{display:grid; gap:6px; margin:4px 0 6px;}
+.pf-mi{display:flex; justify-content:space-between; align-items:center; gap:8px; width:100%; padding:9px 12px; border-radius:12px; border:0; background:var(--surface-2); color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+.pf-mi span{font-weight:700; font-size:.84rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.pf-mi small{flex:none; font-weight:800; font-size:.78rem;}
+.pf-mi.ok small{color:var(--m-leaf);} .pf-mi.mid small{color:#B7791F;} .pf-mi.low small{color:#C2571A;}
+.pf-st{max-width:260px;}
+.pf-sum{background:var(--surface-2); border-radius:14px; padding:11px 12px; margin:6px 0 10px;}
+.pf-sum b{display:block; font-size:.95rem; line-height:1.35;}
+.pf-sum span{display:block; margin-top:3px; font-size:.84rem; font-weight:700; color:var(--muted);}
+.pf-sum .hb-glb{margin-top:8px;}
+.pf-sum.mid .hb-glb i{background:#E0A43B;} .pf-sum.low .hb-glb i{background:#E08A2B;} .pf-sum.ok .hb-glb i{background:var(--m-leaf);}
+.pf-ms{display:grid; gap:8px; margin:0 0 10px;}
+.pf-m{border:1.5px solid var(--line); border-radius:14px; padding:9px 10px;}
+.pf-m.now{border-style:dashed;}
+.pf-mh{display:flex; align-items:baseline; justify-content:space-between; gap:8px; margin-bottom:6px;}
+.pf-mh b{font-size:.9rem;} .pf-mh small{font-size:.76rem; font-weight:700; color:var(--muted);}
+.pf-cs{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px;}
+.pf-c{background:var(--surface-2); border-radius:10px; padding:7px 8px; min-width:0;}
+.pf-c small{display:block; font-size:.72rem; font-weight:800; color:var(--muted);}
+.pf-c b{display:block; font-family:var(--font-num); font-size:.92rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere;}
+.pf-c em{display:block; font-style:normal; font-size:.7rem; font-weight:700; color:var(--muted); line-height:1.3;}
+.pf-c.ok em{color:var(--m-leaf);} .pf-c.mid em{color:#B7791F;} .pf-c.low em{color:#C2571A;}
+:root[data-theme="dark"] .pf-c.low em,:root[data-theme="dark"] .pf-mi.low small{color:#FFA372;}
+:root[data-theme="dark"] .pf-c.mid em,:root[data-theme="dark"] .pf-mi.mid small{color:#F2C46D;}
+.pf p.m{display:flex; gap:6px; margin:6px 0; font-size:.8rem; line-height:1.45; color:var(--muted);}
+.pf p.m svg{flex:none; margin-top:2px;}
+.pf .btn{margin-top:6px;}
+/* v28: «Практика» — курс и тренажёр; кейс с выбором */
+.pi-card .bp-hint,.sim-card .bp-hint{margin-top:-4px;}
+.pi-prog{display:flex; align-items:center; gap:10px; margin:2px 0 12px;}
+.pi-prog .hb-glb{flex:1;}
+.pi-prog small{flex:none; font-size:.8rem; font-weight:800; color:var(--muted);}
+.pi-card>.btn,.sim-card>.btn{width:100%;}
+.pi-all{margin-top:10px;}
+.pi-all summary{cursor:pointer; font-weight:800; font-size:.88rem; padding:8px 0; color:var(--ink);}
+.pi-list{display:grid; gap:6px;}
+.pi-row{display:flex; align-items:center; gap:10px; width:100%; padding:10px 11px; border:0; border-radius:14px; background:var(--surface-2); color:var(--ink); font:inherit; text-align:left; cursor:pointer; min-height:52px;}
+.pi-row>span:nth-child(2){flex:1; min-width:0; display:grid; gap:2px;}
+.pi-row b{font-size:.9rem;} .pi-row small{font-size:.76rem; color:var(--muted); line-height:1.35;}
+.pi-n{flex:none; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:.84rem; background:var(--surface); border:1.5px solid var(--line);}
+.pi-row.done .pi-n{background:var(--m-leaf); border-color:var(--m-leaf); color:#fff;}
+.pi-card p.m,.sim-card p.m{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 0; font-size:.76rem; line-height:1.4; color:var(--muted);}
+.pi-card p.m a{color:var(--brand); font-weight:700;}
+.sim-best{margin:0 0 10px; font-weight:800; font-size:.9rem; color:var(--m-leaf);}
+.pi-of{margin:0; font-size:.8rem; font-weight:800; color:var(--muted);}
+.pi-h{margin:4px 0 6px; font-size:1.35rem; line-height:1.25;}
+.pi-lead{margin:0 0 12px; font-size:.95rem; line-height:1.5;}
+.pi-ex p,.pi-task>p{margin:0 0 8px; line-height:1.5; font-size:.9rem;}
+.pi-task .btn{margin-top:8px; width:100%;}
+.sim-top{display:grid; gap:8px; margin-bottom:10px;}
+.sim-top b{font-size:1.05rem;}
+.sim-bar{display:grid; grid-template-columns:repeat(12,1fr); gap:3px;}
+.sim-bar i{height:6px; border-radius:3px; background:var(--line);}
+.sim-bar i.d{background:var(--m-leaf);} .sim-bar i.c{background:var(--brand);}
+.sim-stat{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; margin-bottom:10px;}
+.sim-stat>div{background:var(--surface-2); border-radius:12px; padding:8px 9px; min-width:0;}
+.sim-stat small{display:block; font-size:.72rem; font-weight:800; color:var(--muted);}
+.sim-stat b{display:block; font-family:var(--font-num); font-size:.98rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere;}
+.sim-stat b.dn{color:#C2571A;}
+.sim-intro{background:var(--surface-2); border-radius:14px; padding:10px 12px; margin-bottom:10px; font-size:.88rem; line-height:1.5;}
+.sim-intro p{margin:0;} .sim-intro p.m{display:flex; gap:6px; margin-top:6px; color:var(--muted); font-size:.82rem;}
+.sim-intro p.m svg{flex:none; margin-top:2px;}
+.sim-last{border:1.5px solid var(--line); border-radius:14px; padding:9px 11px; margin-bottom:10px;}
+.sim-last.short{border-color:color-mix(in srgb,#E08A2B 60%,var(--line));}
+.sim-last small{font-size:.76rem; font-weight:800; color:var(--muted);}
+.sim-last p{margin:3px 0 0; font-size:.88rem; line-height:1.45;}
+.sim-last p.m{display:flex; gap:6px; font-size:.82rem; color:var(--muted);}
+.sim-last p.m svg{flex:none; margin-top:2px;}
+.sim-ev{display:flex; gap:8px; align-items:flex-start; padding:9px 11px; border-radius:12px; margin-bottom:8px; background:color-mix(in srgb,#E0A43B 18%,var(--surface)); font-size:.86rem; font-weight:700; line-height:1.4;}
+.sim-ev svg{flex:none; margin-top:1px;}
+.sim-ev.hol,.sim-ev.soon{background:color-mix(in srgb,var(--m-leaf) 14%,var(--surface));}
+.sim-dem{margin:4px 0 6px; font-weight:800; font-size:.88rem;}
+.sim-dem.hi{color:var(--m-leaf);} .sim-dem.lo{color:#C2571A;}
+:root[data-theme="dark"] .sim-dem.lo,:root[data-theme="dark"] .sim-stat b.dn{color:#FFA372;}
+.sim-c .chip small{display:block; font-size:.7rem; font-weight:700; opacity:.75; line-height:1.1;}
+.sim-c .chip{display:inline-flex; flex-direction:column; align-items:center; justify-content:center; line-height:1.15; padding-top:4px; padding-bottom:4px;}
+.sim-c .chip:disabled{opacity:.4; cursor:not-allowed;}
+.sim-sum{margin:10px 0 4px; padding:10px 12px; border-radius:12px; background:var(--surface-2); font-size:.86rem; font-weight:700;}
+.sim-end{text-align:center; padding:8px 0 12px;}
+.sim-end small{display:block; font-weight:800; color:var(--muted); font-size:.84rem;}
+.sim-end b{display:block; font-family:var(--font-num); font-size:2.4rem; line-height:1.15;}
+.sim-end b.up{color:var(--m-leaf);} .sim-end b.dn{color:#C2571A;}
+.sim-end p{margin:4px 0 0; font-size:.88rem; font-weight:700;}
+.sim-end+.sim-bar{margin-bottom:12px;}
+.sim-lesson p{margin:0; line-height:1.5;}
+.sim-log{display:grid; gap:6px; padding-top:6px;}
+.sim-log div{font-size:.8rem; line-height:1.4;} .sim-log b{display:block;}
+.sim-log span{color:var(--muted);}
+.hb-case.q .case-q{margin:10px 0 8px; font-size:.92rem;}
+.case-os{display:grid; gap:6px;}
+.case-o{display:flex; gap:10px; align-items:flex-start; width:100%; padding:10px 11px; border-radius:12px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:.88rem; line-height:1.4; text-align:left; cursor:pointer; min-height:48px;}
+.case-o:disabled{cursor:default; opacity:1;}
+.case-l{flex:none; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:.8rem; background:var(--surface-2);}
+.case-o em{display:block; margin-top:3px; font-style:normal; font-size:.76rem; font-weight:800;}
+.case-o.real{border-color:var(--m-leaf); background:color-mix(in srgb,var(--m-leaf) 10%,var(--surface));}
+.case-o.real em{color:var(--m-leaf);} .case-o.real .case-l{background:var(--m-leaf); color:#fff;}
+.case-o.mine:not(.real){border-color:#E08A2B;} .case-o.mine:not(.real) em{color:#C2571A;}
+:root[data-theme="dark"] .case-o.mine:not(.real) em{color:#FFA372;}
+.case-v{display:flex; gap:6px; margin:10px 0 6px; font-weight:800; font-size:.88rem;}
+.case-v.ok{color:var(--m-leaf);} .case-v svg{flex:none; margin-top:2px;}
+.case-hint{margin:8px 0 0; font-size:.8rem; color:var(--muted);}
+/* <</v28 css>> */
 
 
 </style>
@@ -6446,6 +6629,329 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v28 str>> */
+/* ----- v28: «Расчёт» — каналы продаж, шанс цели, рычаги, сравнение ----- */
+const M28C={
+ru:{ hbInT:'Ваши данные', hbChQ:'Где продавать', hbChN:{shop:'Магазин',shop2:'Вторая точка',online:'Онлайн (Instagram, Telegram)',opt:'Опт'},
+  hbChS:'Продаст в месяц, $', hbChC:'Расходы в месяц, $', hbChI:'Вложить сразу, $',
+  hbChHint:'Цифры примерные: вторая точка продаёт около 70% первой, онлайн — около 25%, опт — около 50%, но с наценкой вдвое ниже. Поправьте под себя.',
+  hbChSetup:v=>'На открытие ушло '+v+' — расчёт идёт с остатка.', hbChOnL:v=>'Каналы: '+v, hbChIdea:'Хочу открыть вторую точку.',
+  hbJump:{res:'Итог',goal:'Цель',lev:'Что поможет',cmp:'Сравнить',det:'Подробно'}, hbJumpL:'Перейти к части расчёта',
+  hbMcT:m=>'Шанс дойти до цели за '+m, hbMcWait:'Считаю шанс…', hbMcOf:p=>'Из 100 похожих путей до цели доходят '+p+'.',
+  hbMcNote:n=>n+' прогонов с разными продажами, наценкой и сроком продажи партии — как бывает в жизни. Это оценка, а не обещание.',
+  hbGlAddCh:'Добавить канал продаж',
+  hbLvT:'Что сильнее всего поможет', hbLvLead:'Каждый шаг посчитан отдельно. Включите — итог, цель и график пересчитаются.',
+  hbLvN:{price:'Цена на 5% выше',sales:'Продавать на 20% больше',buy:'Закупка на 5% дешевле',cost:'Расходы магазина на 10% меньше',re:'Возвращать в товар всю прибыль'},
+  hbLvH:{price:'Попробуйте сначала на части товара',sales:'Витрина, онлайн, постоянные покупатели',buy:'Торг, другой поставщик, общая закупка с соседями',cost:'Аренда, свет, упаковка',re:'Меньше брать домой, пока дело растёт'},
+  hbLvM:m=>'цель на '+m+' раньше', hbLvReach:m=>'цель станет достижимой — через '+m, hbLvP:(v,m)=>'+'+v+' к итогу за '+m, hbLvNone:'почти не влияет',
+  hbLvOnB:'Включить', hbLvOnL:v=>'Включено: '+v, hbLvReset:'Выключить всё',
+  hbCmpT:'Сравнить с другим вариантом', hbCmpLead:'Другой товар или страна рядом с вашим расчётом — на тех же деньгах, сроке и каналах.', hbCmpGo:'Сравнить',
+  hbCmpOff:'Убрать сравнение', hbCmpSwap:'Сделать Б основным', hbCmpWhat:'Вариант Б: что', hbCmpFrom:'Вариант Б: откуда', hbCmpA:'А', hbCmpB:'Б',
+  hbCmpRow:{end:'Через срок — обычно',prof:'Прибыль за срок',rev:'Выручка за срок',pm:'Рост в месяц',goal:'Цель'},
+  hbCmpBetter:(w,v)=>'Вариант '+w+' выгоднее на '+v+' за срок.', hbCmpSame:'Варианты почти одинаковые.',
+  hbDetT:'Подробно: партия и продажи' },
+tg:{ hbInT:'Маълумоти шумо', hbChQ:'Дар куҷо фурӯхтан', hbChN:{shop:'Мағоза',shop2:'Нуқтаи дуюм',online:'Онлайн (Instagram, Telegram)',opt:'Яклухт'},
+  hbChS:'Дар як моҳ мефурӯшад, $', hbChC:'Хароҷот дар як моҳ, $', hbChI:'Якбора гузоштан, $',
+  hbChHint:'Рақамҳо тахминӣ: нуқтаи дуюм тақрибан 70% нуқтаи аввал мефурӯшад, онлайн — тақрибан 25%, яклухт — тақрибан 50%, вале бо нархафзоии ду баробар камтар. Барои худ ислоҳ кунед.',
+  hbChSetup:v=>'Барои кушодан '+v+' рафт — ҳисоб аз боқимонда меравад.', hbChOnL:v=>'Роҳҳои фурӯш: '+v, hbChIdea:'Мехоҳам нуқтаи дуюм кушоям.',
+  hbJump:{res:'Натиҷа',goal:'Ҳадаф',lev:'Чӣ кӯмак мекунад',cmp:'Муқоиса',det:'Муфассал'}, hbJumpL:'Ба қисми ҳисоб гузаштан',
+  hbMcT:m=>'Имконияти расидан ба ҳадаф дар '+m, hbMcWait:'Имкониятро ҳисоб мекунам…', hbMcOf:p=>'Аз 100 роҳи монанд '+p+' то ба ҳадаф мерасанд.',
+  hbMcNote:n=>n+' бор бо фурӯш, нархафзоӣ ва мӯҳлати фурӯши партияи гуногун ҳисоб шуд — чун дар ҳаёт. Ин баҳо аст, на ваъда.',
+  hbGlAddCh:'Роҳи фурӯши нав илова кардан',
+  hbLvT:'Чӣ бештар кӯмак мекунад', hbLvLead:'Ҳар қадам алоҳида ҳисоб шудааст. Фаъол кунед — натиҷа, ҳадаф ва график аз нав ҳисоб мешаванд.',
+  hbLvN:{price:'Нарх 5% баландтар',sales:'20% бештар фурӯхтан',buy:'Харид 5% арзонтар',cost:'Хароҷоти мағоза 10% камтар',re:'Ҳамаи фоидаро ба мол баргардонидан'},
+  hbLvH:{price:'Аввал дар қисми мол санҷед',sales:'Витрина, онлайн, харидорони доимӣ',buy:'Савдо, таъминкунандаи дигар, хариди умумӣ бо ҳамсояҳо',cost:'Иҷора, барқ, бастабандӣ',re:'То кор калон шавад, ба хона камтар баред'},
+  hbLvM:m=>'ҳадаф '+m+' пештар', hbLvReach:m=>'ҳадаф дастрас мешавад — баъди '+m, hbLvP:(v,m)=>'+'+v+' ба натиҷа дар '+m, hbLvNone:'қариб таъсир надорад',
+  hbLvOnB:'Фаъол кардан', hbLvOnL:v=>'Фаъол: '+v, hbLvReset:'Ҳамаро хомӯш кардан',
+  hbCmpT:'Бо варианти дигар муқоиса кардан', hbCmpLead:'Моли дигар ё кишвари дигар дар паҳлӯи ҳисоби шумо — бо ҳамон пул, мӯҳлат ва роҳҳои фурӯш.', hbCmpGo:'Муқоиса кардан',
+  hbCmpOff:'Муқоисаро бартараф кардан', hbCmpSwap:'Б-ро асосӣ кардан', hbCmpWhat:'Варианти Б: чӣ', hbCmpFrom:'Варианти Б: аз куҷо', hbCmpA:'А', hbCmpB:'Б',
+  hbCmpRow:{end:'Баъди мӯҳлат — одатан',prof:'Фоида дар мӯҳлат',rev:'Даромад дар мӯҳлат',pm:'Афзоиш дар моҳ',goal:'Ҳадаф'},
+  hbCmpBetter:(w,v)=>'Варианти '+w+' дар мӯҳлат '+v+' фоиданоктар аст.', hbCmpSame:'Вариантҳо қариб баробаранд.',
+  hbDetT:'Муфассал: партия ва фурӯш' },
+en:{ hbInT:'Your numbers', hbChQ:'Where to sell', hbChN:{shop:'Shop',shop2:'Second shop',online:'Online (Instagram, Telegram)',opt:'Wholesale'},
+  hbChS:'Sells per month, $', hbChC:'Costs per month, $', hbChI:'Invest up front, $',
+  hbChHint:'Rough numbers: a second shop sells about 70% of the first, online about 25%, wholesale about 50% but at half the markup. Adjust them to your case.',
+  hbChSetup:v=>v+' went into opening — the calculation runs on the rest.', hbChOnL:v=>'Channels: '+v, hbChIdea:'I want to open a second shop.',
+  hbJump:{res:'Result',goal:'Goal',lev:'What helps',cmp:'Compare',det:'Details'}, hbJumpL:'Go to a part of the calculation',
+  hbMcT:m=>'Chance to reach the goal in '+m, hbMcWait:'Working out the chance…', hbMcOf:p=>p+' out of 100 similar paths reach the goal.',
+  hbMcNote:n=>n+' runs with different sales, markup and selling time — the way real life varies. This is an estimate, not a promise.',
+  hbGlAddCh:'Add a sales channel',
+  hbLvT:'What helps the most', hbLvLead:'Each step is counted on its own. Turn it on and the result, goal and chart update.',
+  hbLvN:{price:'Price 5% higher',sales:'Sell 20% more',buy:'Buy 5% cheaper',cost:'Shop costs 10% lower',re:'Put all profit back into goods'},
+  hbLvH:{price:'Try it on part of the goods first',sales:'Window display, online, regular customers',buy:'Bargain, another supplier, buy together with neighbours',cost:'Rent, power, packaging',re:'Take less home while the business grows'},
+  hbLvM:m=>'goal '+m+' sooner', hbLvReach:m=>'goal becomes reachable — in '+m, hbLvP:(v,m)=>'+'+v+' to the result in '+m, hbLvNone:'barely changes anything',
+  hbLvOnB:'Turn on', hbLvOnL:v=>'On: '+v, hbLvReset:'Turn all off',
+  hbCmpT:'Compare with another option', hbCmpLead:'Other goods or another country next to your calculation — same money, time and channels.', hbCmpGo:'Compare',
+  hbCmpOff:'Remove comparison', hbCmpSwap:'Make B the main one', hbCmpWhat:'Option B: what', hbCmpFrom:'Option B: from where', hbCmpA:'A', hbCmpB:'B',
+  hbCmpRow:{end:'After the period — usually',prof:'Profit for the period',rev:'Revenue for the period',pm:'Growth per month',goal:'Goal'},
+  hbCmpBetter:(w,v)=>'Option '+w+' earns '+v+' more over the period.', hbCmpSame:'The options are about the same.',
+  hbDetT:'Details: batch and sales' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M28C[k]);
+/* ----- v28: «План» — проверки идей и план против факта ----- */
+const M28P={
+ru:{ chkT:'Проверки идей', chkLead:'Прежде чем вкладывать много, проверьте идею дёшево: что должно быть правдой, как проверить за 1–2 недели и при каком результате продолжать.',
+  chkNone:'Проверок пока нет. Начните с идеи, в которой вы не уверены.', chkNew:'Новая проверка', chkFromIdea:'Проверить идею', chkNoIdea:'Без названия',
+  chkRun:d=>'Идёт до '+d, chkDue:'Пора подвести итог', chkDecN:{go:'Решено: продолжаю',change:'Решено: меняю идею',stop:'Решено: бросаю'},
+  chkPageLead:'Четыре шага: идея, что должно быть правдой, дешёвая проверка и правило решения. Итог — когда пройдёт срок.',
+  chkQ:{idea:'1. Идея',hyp:'2. Что должно быть правдой',test:'3. Как проверить дёшево за 1–2 недели',rule:'4. Правило решения — заранее'},
+  chkH:{hyp:'Одна фраза с цифрой: кто, что сделает и сколько.',test:'Самый маленький шаг, который покажет правду: выставить немного товара, спросить 20 покупательниц, сделать пост.',rule:'Запишите сейчас, чтобы потом не уговаривать себя.'},
+  chkPh:{idea:'Например: продавать курагу в пакетах по 250 г',hyp:'Например: за 2 недели купят 30 пакетов по 25 сомони',test:'Например: 40 пакетов у кассы, каждую продажу записывать',go:'Например: продано 30 пакетов и больше',stop:'Например: продано меньше 10 пакетов',res:'Например: продано 34 пакета, 6 покупательниц спросили пакет побольше'},
+  chkCost:'Сколько стоит проверка, $', chkUntil:'До какого числа', chkGo:'Продолжаю, если…', chkStop:'Бросаю, если…',
+  chkSf:'Сифра, помоги сформулировать', chkSfQ:(i,h,t)=>'Помоги проверить бизнес-идею дёшево, как учёный: '+i+(h?'. Моё предположение: '+h:'')+(t?'. Как хочу проверить: '+t:'')+'. Предложи: что должно быть правдой (с цифрой), самую дешёвую проверку на 1–2 недели и правило: при каком результате продолжать, а при каком бросить.',
+  chkResT:'Итог проверки', chkResLead:'Что получилось на деле — цифрами. Потом решите по своему правилу.', chkDecB:{go:'Продолжаю',change:'Меняю идею',stop:'Бросаю'},
+  chkDel:'Удалить проверку', chkDelSure:'Точно удалить? Нажмите ещё раз', chkDeleted:'Проверка удалена', chkSave:'Сохранить', chkSaved:'Проверка сохранена — она во вкладке «План»', chkNeedIdea:'Напишите идею',
+  plPlansN:n=>'Бизнес-планы'+(n?' · '+n:''), plChkN:n=>'Проверки идей'+(n?' · '+n:''),
+  pfT:'План и факт', pfLead:'Каждый месяц: что было в плане и что вышло на деле.', pfStartQ:'Когда начали по этому плану',
+  pfNoRate:'Нет курса доллара — обновите курсы, и сравнение появится.', pfBefore:m=>'Начало плана: '+m+'. Сравнение появится после первого месяца.',
+  pfSumR:(n,M,p)=>p!=null?'За '+n+' мес. из '+M+' выручка — '+p+'% плана':'Прошло '+n+' мес. из '+M, pfSumN:(i,M)=>'Идёт '+i+'-й месяц из '+M+' — итог будет в конце месяца', pfSumS:p=>'Закупка — '+p+'% плана',
+  pfNoFact:'В эти месяцы нет записей выручки, расходов и поездок. Записывайте выручку дня — и здесь появится факт.',
+  pfRev:'Выручка', pfBuy:'Закупка', pfExp:'Расходы', pfOf:(v,p)=>'план '+v+(p?' · '+p+'%':''), pfNow:'идёт', pfNext:t=>'Следующий месяц по плану: '+t,
+  pfHow:'Факт берётся из Mira: выручка дня, расходы магазина и поездки за закупкой.', pfAsk:'Сифра, поправь план по факту',
+  pfAskQ:(t,c,g,m,l)=>'Мой бизнес-план «'+t+'»: '+c+' → '+g+' за '+m+'. План и факт по месяцам (факт / план): '+l+'. Что идёт не так, что поменять в плане и что сделать в этом месяце?',
+  pfMini:(n,p)=>'план и факт за '+n+' мес.: выручка '+p+'%', bpTabFact:'План и факт' },
+tg:{ chkT:'Санҷиши ғояҳо', chkLead:'Пеш аз он ки пули зиёд гузоред, ғояро арзон санҷед: чӣ бояд дуруст бошад, чӣ тавр дар 1–2 ҳафта санҷидан ва бо кадом натиҷа идома додан.',
+  chkNone:'Ҳоло санҷиш нест. Аз ғояе сар кунед, ки ба он боварӣ надоред.', chkNew:'Санҷиши нав', chkFromIdea:'Ғояро санҷидан', chkNoIdea:'Бе ном',
+  chkRun:d=>'То '+d+' давом дорад', chkDue:'Вақти хулоса расид', chkDecN:{go:'Қарор: идома медиҳам',change:'Қарор: ғояро иваз мекунам',stop:'Қарор: мепартоям'},
+  chkPageLead:'Чор қадам: ғоя, чӣ бояд дуруст бошад, санҷиши арзон ва қоидаи қарор. Хулоса — вақте ки мӯҳлат гузашт.',
+  chkQ:{idea:'1. Ғоя',hyp:'2. Чӣ бояд дуруст бошад',test:'3. Чӣ тавр дар 1–2 ҳафта арзон санҷидан',rule:'4. Қоидаи қарор — пешакӣ'},
+  chkH:{hyp:'Як ҷумла бо рақам: кӣ, чӣ мекунад ва чӣ қадар.',test:'Хурдтарин қадаме, ки ҳақиқатро нишон медиҳад: каме мол гузоштан, аз 20 харидор пурсидан, пост гузоштан.',rule:'Ҳозир нависед, то баъд худро бовар накунонед.'},
+  chkPh:{idea:'Масалан: зардолуи хушкро дар бастаҳои 250 г фурӯхтан',hyp:'Масалан: дар 2 ҳафта 30 бастаро ба 25 сомонӣ мехаранд',test:'Масалан: 40 баста дар назди касса, ҳар фурӯшро навиштан',go:'Масалан: 30 баста ё бештар фурӯхта шуд',stop:'Масалан: камтар аз 10 баста фурӯхта шуд',res:'Масалан: 34 баста фурӯхта шуд, 6 харидор бастаи калонтар пурсид'},
+  chkCost:'Санҷиш чанд пул аст, $', chkUntil:'То кадом сана', chkGo:'Идома медиҳам, агар…', chkStop:'Мепартоям, агар…',
+  chkSf:'Сифра, барои навиштан кӯмак кун', chkSfQ:(i,h,t)=>'Кӯмак кун, ки ғояи тиҷоратиро арзон, мисли олим санҷам: '+i+(h?'. Тахмини ман: '+h:'')+(t?'. Чӣ тавр санҷидан мехоҳам: '+t:'')+'. Пешниҳод кун: чӣ бояд дуруст бошад (бо рақам), арзонтарин санҷиш барои 1–2 ҳафта ва қоида: бо кадом натиҷа идома додан ва бо кадом партофтан.',
+  chkResT:'Хулосаи санҷиш', chkResLead:'Дар амал чӣ шуд — бо рақам. Баъд аз рӯи қоидаи худ қарор кунед.', chkDecB:{go:'Идома медиҳам',change:'Ғояро иваз мекунам',stop:'Мепартоям'},
+  chkDel:'Санҷишро нест кардан', chkDelSure:'Дар ҳақиқат нест кунем? Боз пахш кунед', chkDeleted:'Санҷиш нест карда шуд', chkSave:'Нигоҳ доштан', chkSaved:'Санҷиш нигоҳ дошта шуд — он дар ҷадвали «Нақша»', chkNeedIdea:'Ғояро нависед',
+  plPlansN:n=>'Нақшаҳои бизнес'+(n?' · '+n:''), plChkN:n=>'Санҷиши ғояҳо'+(n?' · '+n:''),
+  pfT:'Нақша ва воқеият', pfLead:'Ҳар моҳ: дар нақша чӣ буд ва дар амал чӣ шуд.', pfStartQ:'Аз кай аз рӯи ин нақша сар кардед',
+  pfNoRate:'Қурби доллар нест — қурбҳоро навсозӣ кунед, муқоиса пайдо мешавад.', pfBefore:m=>'Оғози нақша: '+m+'. Муқоиса баъди моҳи аввал пайдо мешавад.',
+  pfSumR:(n,M,p)=>p!=null?'Дар '+n+' моҳ аз '+M+' даромад — '+p+'% нақша':n+' моҳ аз '+M+' гузашт', pfSumN:(i,M)=>'Моҳи '+i+' аз '+M+' давом дорад — хулоса дар охири моҳ', pfSumS:p=>'Харид — '+p+'% нақша',
+  pfNoFact:'Дар ин моҳҳо сабти даромад, хароҷот ва сафар нест. Даромади рӯзро нависед — воқеият дар ин ҷо пайдо мешавад.',
+  pfRev:'Даромад', pfBuy:'Харид', pfExp:'Хароҷот', pfOf:(v,p)=>'нақша '+v+(p?' · '+p+'%':''), pfNow:'давом дорад', pfNext:t=>'Моҳи оянда аз рӯи нақша: '+t,
+  pfHow:'Воқеият аз Mira гирифта мешавад: даромади рӯз, хароҷоти мағоза ва сафарҳо барои харид.', pfAsk:'Сифра, нақшаро аз рӯи воқеият ислоҳ кун',
+  pfAskQ:(t,c,g,m,l)=>'Нақшаи бизнеси ман «'+t+'»: '+c+' → '+g+' дар '+m+'. Нақша ва воқеият моҳ ба моҳ (воқеият / нақша): '+l+'. Чӣ нодуруст меравад, дар нақша чиро иваз кардан ва дар ин моҳ чӣ кардан лозим?',
+  pfMini:(n,p)=>'нақша ва воқеият дар '+n+' моҳ: даромад '+p+'%', bpTabFact:'Нақша ва воқеият' },
+en:{ chkT:'Idea checks', chkLead:'Before you put in a lot of money, check the idea cheaply: what must be true, how to test it in 1–2 weeks and what result means go on.',
+  chkNone:'No checks yet. Start with an idea you are not sure about.', chkNew:'New check', chkFromIdea:'Check the idea', chkNoIdea:'Untitled',
+  chkRun:d=>'Running until '+d, chkDue:'Time to sum up', chkDecN:{go:'Decided: going on',change:'Decided: changing the idea',stop:'Decided: dropping it'},
+  chkPageLead:'Four steps: the idea, what must be true, a cheap test and a decision rule. Sum up when the time is over.',
+  chkQ:{idea:'1. Idea',hyp:'2. What must be true',test:'3. How to test it cheaply in 1–2 weeks',rule:'4. Decision rule — set in advance'},
+  chkH:{hyp:'One sentence with a number: who will do what, and how much.',test:'The smallest step that shows the truth: put out a few goods, ask 20 customers, make a post.',rule:'Write it down now so you do not talk yourself into it later.'},
+  chkPh:{idea:'For example: sell dried apricots in 250 g bags',hyp:'For example: 30 bags sell at 25 somoni in 2 weeks',test:'For example: 40 bags by the till, write down every sale',go:'For example: 30 bags or more sold',stop:'For example: fewer than 10 bags sold',res:'For example: 34 bags sold, 6 customers asked for a bigger bag'},
+  chkCost:'What the test costs, $', chkUntil:'Until', chkGo:'I go on if…', chkStop:'I drop it if…',
+  chkSf:'Sifra, help me word it', chkSfQ:(i,h,t)=>'Help me test a business idea cheaply, like a scientist: '+i+(h?'. My guess: '+h:'')+(t?'. How I want to test it: '+t:'')+'. Suggest: what must be true (with a number), the cheapest 1–2 week test and a rule: what result means go on and what means drop it.',
+  chkResT:'Result of the check', chkResLead:'What actually happened — in numbers. Then decide by your rule.', chkDecB:{go:'Go on',change:'Change the idea',stop:'Drop it'},
+  chkDel:'Delete the check', chkDelSure:'Delete it? Tap again', chkDeleted:'Check deleted', chkSave:'Save', chkSaved:'Check saved — it is in the Plan tab', chkNeedIdea:'Write the idea',
+  plPlansN:n=>'Business plans'+(n?' · '+n:''), plChkN:n=>'Idea checks'+(n?' · '+n:''),
+  pfT:'Plan vs actual', pfLead:'Each month: what the plan said and what really happened.', pfStartQ:'When you started this plan',
+  pfNoRate:'No dollar rate — update the rates and the comparison will appear.', pfBefore:m=>'Plan start: '+m+'. The comparison appears after the first month.',
+  pfSumR:(n,M,p)=>p!=null?'In '+n+' of '+M+' months revenue is '+p+'% of plan':n+' of '+M+' months passed', pfSumN:(i,M)=>'Month '+i+' of '+M+' is running — the result comes at month end', pfSumS:p=>'Purchases — '+p+'% of plan',
+  pfNoFact:'There are no revenue, expense or trip records in these months. Record daily revenue and the actuals will show here.',
+  pfRev:'Revenue', pfBuy:'Purchases', pfExp:'Costs', pfOf:(v,p)=>'plan '+v+(p?' · '+p+'%':''), pfNow:'running', pfNext:t=>'Next month in the plan: '+t,
+  pfHow:'Actuals come from Mira: daily revenue, shop costs and buying trips.', pfAsk:'Sifra, fix the plan by the actuals',
+  pfAskQ:(t,c,g,m,l)=>'My business plan "'+t+'": '+c+' → '+g+' in '+m+'. Plan vs actual by month (actual / plan): '+l+'. What is going wrong, what should change in the plan and what should I do this month?',
+  pfMini:(n,p)=>'plan vs actual over '+n+' mo.: revenue '+p+'%', bpTabFact:'Plan vs actual' }};
+for(const k of ['ru','tg','en']){ Object.assign(D[k],M28P[k]); D[k].bpTabN=Object.assign({},D[k].bpTabN||{},{fact:M28P[k].bpTabFact}); }
+/* ----- v28: «Практика» — курс «Личная инициатива», тренажёр «Год магазина»; кейс с выбором ----- */
+const M28L={
+ru:{ lsubPrac:'Практика',
+  piT:'Курс «Личная инициатива»', piLead:'8 коротких занятий и задание в своём деле к каждому. В исследовании в Того (1 500 владельцев малого бизнеса) такой курс поднял прибыль на 30%, а обычный бизнес-тренинг — на 11%.',
+  piProg:(n,N)=>'Пройдено '+n+' из '+N, piStart:'Начать курс', piCont:k=>'Продолжить: занятие '+k, piAgain:'Пройти ещё раз', piAll:'Все занятия',
+  piSrc:'Campos и др., Science 2017; курс — по программе Майкла Фрезе.', piOf:(k,N)=>'Занятие '+k+' из '+N, piHow:'Как делают', piEx:'Пример', piTask:'Задание на неделю',
+  piNoteQ:'Что я сделала', piNotePh:'Коротко: что сделали и что получилось', piToChk:'Описать проект в «Проверке идей»', piToCalc:'Поставить цель в «Расчёте»',
+  piDone:'Отметить: сделано', piDoneY:'Сделано', piNextB:'Дальше', piFin:'Готово', piDoneT:(n,N)=>'Сделано '+n+' из '+N,
+  piL:[
+   {t:'Начинать самой',lead:'Инициатива — делать то, чего от вас никто не требует, и раньше, чем заставят обстоятельства. Это главное отличие тех, у кого дело растёт.',
+    pts:['Не ждите, пока поставщик, покупатель или конкурент сделает первый шаг.','Делайте не как все на рынке, а чуть иначе — и заметнее.','Маленькое дело сегодня лучше большого плана «когда-нибудь».'],
+    ex:'Хозяйка магазина детской одежды сама написала в школы района перед 1 сентября и получила заказы на форму, пока соседи ждали покупателей у прилавка.',
+    task:'Выберите одно дело в магазине, которое давно откладываете, и сделайте его на этой неделе. Запишите, что сделали.'},
+   {t:'Новое в деле',lead:'Новое — это не изобретение. Это новый товар, услуга или способ работы для ваших покупателей.',
+    pts:['Новый товар рядом с тем, что уже берут: к школьной форме — рюкзак.','Новая услуга: доставка, примерка дома, подарочная упаковка.','Новый способ: витрина в Instagram, рассрочка, предзаказ.'],
+    ex:'Магазин сухофруктов начал собирать подарочные наборы к Наврузу: та же курага, но в коробке и на 40% дороже.',
+    task:'Придумайте 5 новинок для своего магазина: товар, услугу или способ продажи. Отметьте одну, которую можно попробовать за 100 $ или дешевле.'},
+   {t:'Видеть возможности',lead:'Возможности приходят из перемен: праздники, новые районы, курс валют, новые правила, жалобы покупателей.',
+    pts:['Слушайте, что спрашивают и чего нет на рынке.','Следите за переменами: стройки, школы, сезоны, курс.','Спросите себя: кому сейчас неудобно и за что он заплатит?'],
+    ex:'Покупательницы часто спрашивали большие размеры, а их не было ни у кого в ряду. Отдельная полка с большими размерами стала самой прибыльной.',
+    task:'Неделю записывайте всё, что спрашивали и чего не было. В конце недели выберите одну возможность.'},
+   {t:'Смелая цель',lead:'Трудная и конкретная цель работает лучше, чем «постараюсь». Её видно, по ней можно сверяться.',
+    pts:['Цель с цифрой и датой: «выручка 40 000 сомони в месяц к марту».','Смелая, но реальная: заметно выше того, что получается сейчас.','Своя цель, а не чужая: вы решаете, зачем она вам.'],
+    ex:'Вместо «продавать больше» — «продавать 15 курток в неделю к декабрю». Сразу ясно, чего не хватает: витрины и нужных размеров.',
+    task:'Запишите одну цель на 3 месяца с цифрой и датой. Поставьте её в «Расчёте» и посмотрите шанс.'},
+   {t:'Гибкий план и план Б',lead:'План — это шаги к цели. Хороший план короткий и заранее знает, что делать, если что-то пойдёт не так.',
+    pts:['Разбейте цель на шаги по неделям.','Для каждого важного шага — запасной ход: «если поставщик задержит — беру у другого».','Сверяйтесь с планом раз в неделю и меняйте его без стыда.'],
+    ex:'Перед поездкой в Урумчи хозяйка заранее договорилась со вторым поставщиком в Душанбе. Когда карго задержали на 3 недели, полки не опустели.',
+    task:'Напишите 4 шага к своей цели, а для самого рискованного шага — план Б.'},
+   {t:'Просить отзыв',lead:'Люди с инициативой сами ищут обратную связь — у покупателей, поставщиков, соседей — и быстро исправляют ошибки.',
+    pts:['Спрашивайте покупателей: что понравилось и чего не хватило.','Смотрите на цифры: что продаётся, а что лежит.','Не спорьте с отзывом — ищите, что в нём полезного.'],
+    ex:'Хозяйка спросила 10 постоянных покупательниц, почему они иногда берут у соседей. Ответ: «у вас нет примерочной». Занавеска и зеркало стоили 30 $.',
+    task:'Задайте 10 покупателям один вопрос: «Что мне сделать, чтобы вы приходили чаще?» Запишите ответы.'},
+   {t:'Не сдаваться после неудачи',lead:'Ошибки и препятствия будут. Разница в том, что человек с инициативой ищет обход, а не причину остановиться.',
+    pts:['Ошибка — это информация: что именно не сработало?','Препятствие — это задача: какие есть три способа его обойти?','Нет денег — ищите другие пути: предзаказ, товар на реализацию, общая закупка, отсрочка у поставщика.'],
+    ex:'Банк отказал в кредите на закупку. Хозяйка договорилась с поставщиком платить половину после продажи и собрала предзаказы у постоянных покупательниц.',
+    task:'Вспомните последнее препятствие в деле. Напишите три способа его обойти и попробуйте один.'},
+   {t:'Свой проект',lead:'Итог курса — одно новое дело в вашем магазине: новый товар, услуга или способ работы. Небольшое, но настоящее.',
+    pts:['Возьмите лучшую идею из занятий 2 и 3.','Поставьте цель (занятие 4), план и план Б (занятие 5).','Через месяц спросите покупателей (занятие 6) и решите: продолжать, менять или бросить.'],
+    ex:'Проект на месяц: подарочные наборы к празднику. Цель — 30 наборов, проверка на 10 штуках, отзывы покупателей, решение.',
+    task:'Опишите свой проект в «Проверке идей» и сделайте первый шаг на этой неделе.'}],
+  simT:'Тренажёр «Год магазина»', simLead:'12 месяцев детского магазина за 10 минут: сколько закупить, какая наценка, нужна ли реклама. Будут праздники и неожиданности. В конце — разбор ошибок.',
+  simBest:v=>'Лучший результат: '+v, simCont:k=>'Продолжить: месяц '+k, simPlay:'Играть',
+  simMon:(m,n)=>'Месяц '+m+' из 12 · '+n, simCash:'Деньги', simStock:'Товар', simProfit:'Итог года сейчас', simPcs:n=>n+' шт.',
+  simIntro:'У вас 3 000 $ и пустой склад. Одна вещь стоит 8 $. Аренда и продавец — 450 $ в месяц. Обычно в месяц покупают около 110 вещей при наценке 100%.',
+  simCal:'Сезоны: в марте Навруз, в августе — подготовка к школе, в декабре — Новый год. Летом и в январе спрос ниже.',
+  simLastT:m=>'Итог за '+m.toLowerCase(), simLast:(s,d,r,p)=>'Продано '+s+' из '+d+' желающих. Выручка '+r+', прибыль месяца '+p+'.',
+  simShort:n=>'Товар кончился — не хватило '+n+' шт. Часть покупателей ушла к соседям.', simPend:n=>n+' шт. в пути — придут в этом месяце.',
+  simEv:{fx:'Юань подорожал: закупка в этом месяце на 12% дороже.',comp:'Рядом открылся конкурент: спрос ниже в этом и следующем месяце.',delay:'Карго задерживается: закупка этого месяца придёт только в следующем.',blog:'Блогер рассказал о вашем магазине: в этом месяце спрос выше.',disc:'Поставщик даёт скидку 10% при закупке от 200 шт.'},
+  simHol:{nav:'Навруз: покупают больше обычного.',school:'Скоро школа: самый сильный месяц года.',ny:'Новый год: покупают больше обычного.'},
+  simSoon:{nav:'В следующем месяце Навруз — спрос будет выше.',school:'В следующем месяце подготовка к школе — спрос будет самым высоким.',ny:'В следующем месяце Новый год — спрос будет выше.'},
+  simDem:{hi:'Спрос в этом месяце: высокий',mid:'Спрос в этом месяце: обычный',lo:'Спрос в этом месяце: низкий'},
+  simQ:'Сколько закупить', simMk:'Наценка', simPrice:p=>'цена '+p+' $', simAd:'Реклама', simNoAd:'Нет',
+  simSum:(b,c,s)=>'Закупка '+b+' · останется '+c+' · на складе будет '+s+' шт.', simGo:'Месяц вперёд', simGoEnd:'Закончить год',
+  simEndT:'Итог года', simVsRef:(v,w)=>(w?'Лучше, чем спокойная стратегия (':'Спокойная стратегия на тех же событиях дала бы ')+v+(w?').':'.'),
+  simBadT:'Что пошло не так', simGoodT:'Что получилось', simLessonT:'Главный урок', simLogT:'Все месяцы',
+  simLogL:(q,mk,s,d,r,c)=>'закупка '+q+' шт., наценка '+mk+'%, продано '+s+' из '+d+', выручка '+r+', деньги '+c,
+  simAgain:'Сыграть ещё раз', simOut:'В «Практику»',
+  simMShort:(m,n,v,h)=>m+': не хватило '+n+' шт. — упущено около '+v+' прибыли.'+(h?' Перед праздником закупайте заранее.':''),
+  simMOver:(n,v)=>'К концу года на складе '+n+' шт. — это '+v+' замороженных денег.',
+  simMHigh:'Высокая наценка: каждая вещь давала больше, но покупателей было заметно меньше.', simMLow:'Низкая наценка: продаж много, а прибыли мало.',
+  simMIdle:m=>m+': деньги были, а товара не хватило — закупку можно было сделать больше.', simMDebt:'В какой-то месяц денег не хватило даже на аренду.',
+  simMAd:'Реклама в месяц, когда товара не хватало, не окупилась.',
+  simGHol:m=>'Товара хватило в сильные месяцы: '+m+'.', simGCash:'Ни разу не остались без денег на аренду.',
+  simLShort:'Главное в торговле — нужный товар в нужный месяц. Перед сильным месяцем закупайте с запасом.', simLOver:'Деньги в лишнем товаре не работают. Закупайте под спрос ближайших месяцев.',
+  simLHigh:'Цена отпугивает покупателей быстрее, чем кажется. Ищите наценку, при которой прибыль месяца самая большая, а не цену с одной вещи.',
+  simLLow:'Дешевле — не значит выгоднее. Небольшое повышение цены часто даёт больше прибыли, чем лишние продажи.', simLGood:'Хороший год: товар был, цена разумная. Попробуйте сыграть смелее — с рекламой в сильные месяцы.',
+  caseQ:'Как бы вы поступили?', caseReal:'так сделали', caseMine:'ваш выбор', caseSame:'Вы выбрали то же, что и компания.', caseDiff:'Компания выбрала другое — посмотрите почему.', caseWhy:'Почему', caseHint:'Выберите вариант — потом увидите, что сделали на самом деле.' },
+tg:{ lsubPrac:'Амалия',
+  piT:'Курси «Ташаббуси шахсӣ»', piLead:'8 дарси кӯтоҳ ва ба ҳар кадом супориш дар кори худ. Дар таҳқиқот дар Того (1 500 соҳиби тиҷорати хурд) чунин курс фоидаро 30% зиёд кард, тренинги оддии тиҷоратӣ — 11%.',
+  piProg:(n,N)=>n+' аз '+N+' гузашт', piStart:'Курсро оғоз кардан', piCont:k=>'Идома: дарси '+k, piAgain:'Боз гузаштан', piAll:'Ҳамаи дарсҳо',
+  piSrc:'Campos ва дигарон, Science 2017; курс аз рӯи барномаи Майкл Фрезе.', piOf:(k,N)=>'Дарси '+k+' аз '+N, piHow:'Чӣ тавр мекунанд', piEx:'Мисол', piTask:'Супориш барои ҳафта',
+  piNoteQ:'Ман чӣ кардам', piNotePh:'Кӯтоҳ: чӣ кардед ва чӣ шуд', piToChk:'Лоиҳаро дар «Санҷиши ғояҳо» навиштан', piToCalc:'Ҳадафро дар «Ҳисоб» гузоштан',
+  piDone:'Қайд: иҷро шуд', piDoneY:'Иҷро шуд', piNextB:'Минбаъд', piFin:'Тайёр', piDoneT:(n,N)=>n+' аз '+N+' иҷро шуд',
+  piL:[
+   {t:'Худ оғоз кардан',lead:'Ташаббус — коре кардан, ки касе аз шумо талаб намекунад, ва пеш аз он ки вазъият маҷбур кунад. Ин фарқи асосии онҳоест, ки корашон калон мешавад.',
+    pts:['Интизор нашавед, ки таъминкунанда, харидор ё рақиб қадами аввалро гузорад.','На мисли ҳама дар бозор, балки каме дигар ва намоёнтар кунед.','Кори хурди имрӯз аз нақшаи калони «рӯзе» беҳтар аст.'],
+    ex:'Соҳиби мағозаи либоси кӯдакона пеш аз 1 сентябр худаш ба мактабҳои ноҳия навишт ва фармоиши либоси мактабӣ гирифт, вақте ки ҳамсояҳо харидорро дар назди пештахта интизор буданд.',
+    task:'Як кори мағозаро, ки кайҳо ба таъхир мегузоред, интихоб кунед ва дар ҳамин ҳафта иҷро кунед. Нависед, ки чӣ кардед.'},
+   {t:'Чизи нав дар кор',lead:'Чизи нав ихтироъ нест. Ин моли нав, хизмати нав ё усули нави кор барои харидорони шумост.',
+    pts:['Моли нав дар паҳлӯи он чи аллакай мехаранд: ба либоси мактабӣ — ҷузвдон.','Хизмати нав: расонидан, пӯшида дидан дар хона, бастабандии тӯҳфагӣ.','Усули нав: витрина дар Instagram, насия, фармоиши пешакӣ.'],
+    ex:'Мағозаи меваи хушк ба Наврӯз маҷмӯаҳои тӯҳфагӣ ҷамъ кард: ҳамон зардолу, вале дар қуттӣ ва 40% қиматтар.',
+    task:'Барои мағозаи худ 5 навигӣ фикр кунед: мол, хизмат ё усули фурӯш. Якеро қайд кунед, ки бо 100 $ ё арзонтар санҷидан мумкин аст.'},
+   {t:'Имкониятро дидан',lead:'Имкониятҳо аз тағйирот меоянд: идҳо, ноҳияҳои нав, қурби асъор, қоидаҳои нав, шикояти харидорон.',
+    pts:['Гӯш кунед, ки чӣ мепурсанд ва дар бозор чӣ нест.','Тағйиротро пайгирӣ кунед: сохтмон, мактабҳо, мавсим, қурб.','Аз худ пурсед: ҳоло ба кӣ нороҳат аст ва ӯ барои чӣ пул медиҳад?'],
+    ex:'Харидорон бисёр андозаҳои калон мепурсиданд, вале дар қатор ҳеҷ кас надошт. Рафи алоҳида бо андозаҳои калон аз ҳама фоиданок шуд.',
+    task:'Як ҳафта ҳар чизеро, ки пурсиданд ва набуд, нависед. Дар охири ҳафта як имкониятро интихоб кунед.'},
+   {t:'Ҳадафи ҷасур',lead:'Ҳадафи душвор ва аниқ аз «кӯшиш мекунам» беҳтар кор мекунад. Он намоён аст ва аз рӯи он санҷидан мумкин.',
+    pts:['Ҳадаф бо рақам ва сана: «даромад 40 000 сомонӣ дар моҳ то март».','Ҷасур, вале воқеӣ: аз он чи ҳоло мешавад, хеле баландтар.','Ҳадафи худ, на аз они дигарон: шумо ҳал мекунед, ки он ба шумо барои чӣ лозим.'],
+    ex:'Ба ҷои «бештар фурӯхтан» — «то декабр дар як ҳафта 15 куртка фурӯхтан». Дарҳол маълум, ки чӣ намерасад: витрина ва андозаҳои лозимӣ.',
+    task:'Як ҳадафро барои 3 моҳ бо рақам ва сана нависед. Онро дар «Ҳисоб» гузоред ва имкониятро бинед.'},
+   {t:'Нақшаи чандир ва нақшаи Б',lead:'Нақша — қадамҳо ба сӯи ҳадаф. Нақшаи хуб кӯтоҳ аст ва пешакӣ медонад, ки агар чизе нодуруст равад, чӣ кардан лозим.',
+    pts:['Ҳадафро ба қадамҳои ҳафтаина тақсим кунед.','Барои ҳар қадами муҳим — роҳи эҳтиётӣ: «агар таъминкунанда дер кунад — аз дигаре мегирам».','Ҳафтае як бор бо нақша муқоиса кунед ва онро бе шарм иваз кунед.'],
+    ex:'Пеш аз сафар ба Урумчи соҳибмағоза бо таъминкунандаи дуюм дар Душанбе пешакӣ гап зад. Вақте ки карго 3 ҳафта дер монд, рафҳо холӣ нашуданд.',
+    task:'4 қадамро ба сӯи ҳадафи худ нависед, барои қадами аз ҳама хатарнок — нақшаи Б.'},
+   {t:'Фикр пурсидан',lead:'Одамони ташаббускор худашон фикри дигаронро меҷӯянд — аз харидорон, таъминкунандагон, ҳамсояҳо — ва хатоҳоро зуд ислоҳ мекунанд.',
+    pts:['Аз харидорон пурсед: чӣ маъқул шуд ва чӣ намерасид.','Ба рақамҳо нигоҳ кунед: чӣ фурӯхта мешавад ва чӣ мемонад.','Бо фикр баҳс накунед — ҷӯед, ки дар он чӣ фоиданок аст.'],
+    ex:'Соҳибмағоза аз 10 харидори доимӣ пурсид, ки чаро баъзан аз ҳамсояҳо мехаранд. Ҷавоб: «шумо ҷои пӯшида дидан надоред». Парда ва оина 30 $ арзиш дошт.',
+    task:'Аз 10 харидор як савол пурсед: «Чӣ кунам, ки шумо бештар оед?» Ҷавобҳоро нависед.'},
+   {t:'Баъди нокомӣ таслим нашудан',lead:'Хатоҳо ва монеаҳо мешаванд. Фарқ дар он аст, ки одами ташаббускор роҳи гузариш меҷӯяд, на сабаби истодан.',
+    pts:['Хато — маълумот аст: маҳз чӣ кор накард?','Монеа — масъала аст: се роҳи гузаштан аз он кадом аст?','Пул нест — роҳҳои дигарро ҷӯед: фармоиши пешакӣ, мол ба фурӯш, хариди умумӣ, мӯҳлат аз таъминкунанда.'],
+    ex:'Бонк барои харид қарз надод. Соҳибмағоза бо таъминкунанда гап зад, ки нисфашро баъди фурӯш медиҳад, ва аз харидорони доимӣ фармоиши пешакӣ ҷамъ кард.',
+    task:'Монеаи охиринро дар кор ба ёд оред. Се роҳи гузаштан аз онро нависед ва якеро санҷед.'},
+   {t:'Лоиҳаи худ',lead:'Натиҷаи курс — як кори нав дар мағозаи шумо: моли нав, хизмати нав ё усули нави кор. Хурд, вале воқеӣ.',
+    pts:['Беҳтарин ғояро аз дарсҳои 2 ва 3 гиред.','Ҳадаф (дарси 4), нақша ва нақшаи Б (дарси 5) гузоред.','Баъди як моҳ аз харидорон пурсед (дарси 6) ва қарор кунед: идома додан, иваз кардан ё партофтан.'],
+    ex:'Лоиҳа барои як моҳ: маҷмӯаҳои тӯҳфагӣ ба ид. Ҳадаф — 30 маҷмӯа, санҷиш дар 10 адад, фикри харидорон, қарор.',
+    task:'Лоиҳаи худро дар «Санҷиши ғояҳо» нависед ва дар ҳамин ҳафта қадами аввалро гузоред.'}],
+  simT:'Машқ «Соли мағоза»', simLead:'12 моҳи мағозаи кӯдакона дар 10 дақиқа: чӣ қадар харидан, кадом нархафзоӣ, реклама лозим аст ё не. Идҳо ва ногаҳониҳо мешаванд. Дар охир — таҳлили хатоҳо.',
+  simBest:v=>'Беҳтарин натиҷа: '+v, simCont:k=>'Идома: моҳи '+k, simPlay:'Бозӣ кардан',
+  simMon:(m,n)=>'Моҳи '+m+' аз 12 · '+n, simCash:'Пул', simStock:'Мол', simProfit:'Натиҷаи сол ҳоло', simPcs:n=>n+' адад',
+  simIntro:'Шумо 3 000 $ ва анбори холӣ доред. Як чиз 8 $ аст. Иҷора ва фурӯшанда — 450 $ дар моҳ. Одатан дар як моҳ бо нархафзоии 100% тақрибан 110 чиз мехаранд.',
+  simCal:'Мавсимҳо: дар март Наврӯз, дар август — омодагӣ ба мактаб, дар декабр — Соли нав. Тобистон ва дар январ талабот камтар аст.',
+  simLastT:m=>'Натиҷаи '+m.toLowerCase(), simLast:(s,d,r,p)=>s+' аз '+d+' нафари хоҳишманд фурӯхта шуд. Даромад '+r+', фоидаи моҳ '+p+'.',
+  simShort:n=>'Мол тамом шуд — '+n+' адад нарасид. Қисми харидорон ба ҳамсояҳо рафтанд.', simPend:n=>n+' адад дар роҳ аст — дар ҳамин моҳ мерасад.',
+  simEv:{fx:'Юан қимат шуд: харид дар ин моҳ 12% қиматтар.',comp:'Дар наздикӣ рақиб кушода шуд: дар ин ва моҳи оянда талабот камтар.',delay:'Карго дер мемонад: хариди ин моҳ танҳо дар моҳи оянда мерасад.',blog:'Блогер дар бораи мағозаи шумо гуфт: дар ин моҳ талабот баландтар.',disc:'Таъминкунанда барои хариди аз 200 адад 10% тахфиф медиҳад.'},
+  simHol:{nav:'Наврӯз: аз маъмулӣ бештар мехаранд.',school:'Мактаб наздик: моҳи аз ҳама қавии сол.',ny:'Соли нав: аз маъмулӣ бештар мехаранд.'},
+  simSoon:{nav:'Моҳи оянда Наврӯз — талабот баландтар мешавад.',school:'Моҳи оянда омодагӣ ба мактаб — талабот аз ҳама баланд мешавад.',ny:'Моҳи оянда Соли нав — талабот баландтар мешавад.'},
+  simDem:{hi:'Талабот дар ин моҳ: баланд',mid:'Талабот дар ин моҳ: маъмулӣ',lo:'Талабот дар ин моҳ: паст'},
+  simQ:'Чӣ қадар харидан', simMk:'Нархафзоӣ', simPrice:p=>'нарх '+p+' $', simAd:'Реклама', simNoAd:'Не',
+  simSum:(b,c,s)=>'Харид '+b+' · мемонад '+c+' · дар анбор '+s+' адад мешавад', simGo:'Моҳи оянда', simGoEnd:'Солро тамом кардан',
+  simEndT:'Натиҷаи сол', simVsRef:(v,w)=>(w?'Беҳтар аз стратегияи ором (':'Стратегияи ором бо ҳамин воқеаҳо медод: ')+v+(w?').':'.'),
+  simBadT:'Чӣ нодуруст рафт', simGoodT:'Чӣ шуд', simLessonT:'Дарси асосӣ', simLogT:'Ҳамаи моҳҳо',
+  simLogL:(q,mk,s,d,r,c)=>'харид '+q+' адад, нархафзоӣ '+mk+'%, фурӯхта '+s+' аз '+d+', даромад '+r+', пул '+c,
+  simAgain:'Боз бозӣ кардан', simOut:'Ба «Амалия»',
+  simMShort:(m,n,v,h)=>m+': '+n+' адад нарасид — тақрибан '+v+' фоида аз даст рафт.'+(h?' Пеш аз ид пешакӣ харед.':''),
+  simMOver:(n,v)=>'Дар охири сол дар анбор '+n+' адад — ин '+v+' пули яхкарда аст.',
+  simMHigh:'Нархафзоии баланд: ҳар чиз бештар медод, вале харидорон хеле камтар буданд.', simMLow:'Нархафзоии паст: фурӯш бисёр, фоида кам.',
+  simMIdle:m=>m+': пул буд, вале мол нарасид — харидро калонтар кардан мумкин буд.', simMDebt:'Дар ягон моҳ пул ҳатто ба иҷора нарасид.',
+  simMAd:'Реклама дар моҳе, ки мол намерасид, худро напӯшонд.',
+  simGHol:m=>'Дар моҳҳои қавӣ мол расид: '+m+'.', simGCash:'Ягон бор бе пули иҷора намондед.',
+  simLShort:'Дар савдо асосӣ — моли лозимӣ дар моҳи лозимӣ. Пеш аз моҳи қавӣ бо захира харед.', simLOver:'Пул дар моли зиёдатӣ кор намекунад. Барои талаботи моҳҳои наздик харед.',
+  simLHigh:'Нарх харидоронро тезтар аз он ки менамояд метарсонад. Нархафзоиеро ҷӯед, ки фоидаи моҳ аз ҳама зиёд бошад, на нархи як чиз.',
+  simLLow:'Арзонтар маънои фоиданоктарро надорад. Каме баланд кардани нарх аксар вақт аз фурӯши иловагӣ фоидаи бештар медиҳад.', simLGood:'Соли хуб: мол буд, нарх оқилона. Ҷасуртар бозӣ кунед — бо реклама дар моҳҳои қавӣ.',
+  caseQ:'Шумо чӣ кор мекардед?', caseReal:'ҳамин тавр карданд', caseMine:'интихоби шумо', caseSame:'Шумо ҳамон чизеро интихоб кардед, ки ширкат кард.', caseDiff:'Ширкат дигарашро интихоб кард — бинед чаро.', caseWhy:'Чаро', caseHint:'Вариантро интихоб кунед — баъд мебинед, ки дар асл чӣ карданд.' },
+en:{ lsubPrac:'Practice',
+  piT:'Personal initiative course', piLead:'8 short lessons, each with a task in your own business. In a study in Togo (1,500 small business owners) this course raised profits by 30%, while a standard business training raised them by 11%.',
+  piProg:(n,N)=>n+' of '+N+' done', piStart:'Start the course', piCont:k=>'Continue: lesson '+k, piAgain:'Go through again', piAll:'All lessons',
+  piSrc:'Campos et al., Science 2017; the course follows Michael Frese\'s programme.', piOf:(k,N)=>'Lesson '+k+' of '+N, piHow:'How it is done', piEx:'Example', piTask:'Task for the week',
+  piNoteQ:'What I did', piNotePh:'Briefly: what you did and what happened', piToChk:'Describe the project in Idea checks', piToCalc:'Set the goal in the Calculator',
+  piDone:'Mark as done', piDoneY:'Done', piNextB:'Next', piFin:'Finish', piDoneT:(n,N)=>n+' of '+N+' done',
+  piL:[
+   {t:'Start on your own',lead:'Initiative means doing what nobody asks of you, and before circumstances force you. It is the main thing that sets growing businesses apart.',
+    pts:['Do not wait for a supplier, customer or competitor to make the first move.','Do things a little differently from the rest of the market — and more visibly.','A small step today beats a big plan for "someday".'],
+    ex:'A kids\' clothing shop owner wrote to the schools in her area before 1 September and got uniform orders while her neighbours waited at the counter.',
+    task:'Pick one thing in your shop you keep putting off and do it this week. Write down what you did.'},
+   {t:'Something new',lead:'New does not mean an invention. It is a new product, service or way of working for your customers.',
+    pts:['A new product next to what already sells: a backpack next to school uniforms.','A new service: delivery, trying on at home, gift wrapping.','A new way: an Instagram shop window, instalments, pre-orders.'],
+    ex:'A dried fruit shop started making Navruz gift sets: the same apricots, but in a box and 40% dearer.',
+    task:'Think of 5 new things for your shop: a product, a service or a way of selling. Mark one you can try for 100 $ or less.'},
+   {t:'Spot opportunities',lead:'Opportunities come from change: holidays, new neighbourhoods, exchange rates, new rules, customer complaints.',
+    pts:['Listen to what people ask for that the market does not have.','Watch for change: building sites, schools, seasons, the exchange rate.','Ask yourself: who is struggling now, and what would they pay for?'],
+    ex:'Customers kept asking for large sizes and nobody in the row had them. A separate shelf of large sizes became the most profitable one.',
+    task:'For a week, write down everything people asked for that you did not have. At the end of the week pick one opportunity.'},
+   {t:'A bold goal',lead:'A hard, specific goal works better than "I will try". You can see it and check yourself against it.',
+    pts:['A goal with a number and a date: "40,000 somoni revenue a month by March".','Bold but real: clearly above what you get now.','Your own goal, not someone else\'s: you decide why you want it.'],
+    ex:'Instead of "sell more" — "sell 15 jackets a week by December". It shows at once what is missing: a display and the right sizes.',
+    task:'Write down one 3-month goal with a number and a date. Put it into the Calculator and look at the chance.'},
+   {t:'A flexible plan and a plan B',lead:'A plan is the steps to the goal. A good plan is short and knows in advance what to do if something goes wrong.',
+    pts:['Split the goal into weekly steps.','For every important step, a fallback: "if the supplier is late, I buy from another".','Check against the plan once a week and change it without shame.'],
+    ex:'Before a trip to Urumqi the owner lined up a second supplier in Dushanbe. When the cargo was 3 weeks late, the shelves did not go empty.',
+    task:'Write 4 steps to your goal, and a plan B for the riskiest one.'},
+   {t:'Ask for feedback',lead:'People with initiative look for feedback themselves — from customers, suppliers, neighbours — and fix mistakes fast.',
+    pts:['Ask customers what they liked and what was missing.','Look at the numbers: what sells and what sits.','Do not argue with feedback — look for what is useful in it.'],
+    ex:'The owner asked 10 regular customers why they sometimes bought from the neighbours. The answer: "you have no fitting room". A curtain and a mirror cost 30 $.',
+    task:'Ask 10 customers one question: "What should I do so you come more often?" Write down the answers.'},
+   {t:'Keep going after a setback',lead:'Mistakes and obstacles will come. The difference is that a person with initiative looks for a way around, not a reason to stop.',
+    pts:['A mistake is information: what exactly did not work?','An obstacle is a task: what are three ways around it?','No money? Look for other ways: pre-orders, goods on consignment, buying together, supplier credit.'],
+    ex:'The bank refused a loan for stock. The owner agreed with the supplier to pay half after selling, and collected pre-orders from regular customers.',
+    task:'Recall the last obstacle in your business. Write three ways around it and try one.'},
+   {t:'Your own project',lead:'The course ends with one new thing in your shop: a new product, service or way of working. Small, but real.',
+    pts:['Take the best idea from lessons 2 and 3.','Set a goal (lesson 4), a plan and a plan B (lesson 5).','After a month ask customers (lesson 6) and decide: go on, change or drop it.'],
+    ex:'A one-month project: holiday gift sets. Goal — 30 sets, a test on 10, customer feedback, a decision.',
+    task:'Describe your project in Idea checks and take the first step this week.'}],
+  simT:'Shop year trainer', simLead:'12 months of a kids\' shop in 10 minutes: how much to buy, what markup, whether to advertise. There will be holidays and surprises. At the end — a review of mistakes.',
+  simBest:v=>'Best result: '+v, simCont:k=>'Continue: month '+k, simPlay:'Play',
+  simMon:(m,n)=>'Month '+m+' of 12 · '+n, simCash:'Money', simStock:'Stock', simProfit:'Year result so far', simPcs:n=>n+' pcs',
+  simIntro:'You have 3,000 $ and an empty stockroom. One item costs 8 $. Rent and a seller cost 450 $ a month. At a 100% markup about 110 items sell in a usual month.',
+  simCal:'Seasons: Navruz in March, back to school in August, New Year in December. Demand is lower in summer and January.',
+  simLastT:m=>'Result for '+m, simLast:(s,d,r,p)=>'Sold '+s+' of '+d+' wanted. Revenue '+r+', profit for the month '+p+'.',
+  simShort:n=>'Stock ran out — '+n+' pcs short. Some customers went to the neighbours.', simPend:n=>n+' pcs on the way — they arrive this month.',
+  simEv:{fx:'The yuan went up: buying costs 12% more this month.',comp:'A competitor opened nearby: lower demand this month and next.',delay:'Cargo is late: this month\'s purchase arrives only next month.',blog:'A blogger mentioned your shop: higher demand this month.',disc:'The supplier gives 10% off on 200 pcs or more.'},
+  simHol:{nav:'Navruz: people buy more than usual.',school:'School is coming: the strongest month of the year.',ny:'New Year: people buy more than usual.'},
+  simSoon:{nav:'Navruz is next month — demand will be higher.',school:'Back to school next month — demand will be the highest.',ny:'New Year is next month — demand will be higher.'},
+  simDem:{hi:'Demand this month: high',mid:'Demand this month: usual',lo:'Demand this month: low'},
+  simQ:'How much to buy', simMk:'Markup', simPrice:p=>'price '+p+' $', simAd:'Advertising', simNoAd:'None',
+  simSum:(b,c,s)=>'Buying '+b+' · '+c+' left · '+s+' pcs in stock', simGo:'Next month', simGoEnd:'Finish the year',
+  simEndT:'Year result', simVsRef:(v,w)=>(w?'Better than the calm strategy (':'The calm strategy with the same events would make ')+v+(w?').':'.'),
+  simBadT:'What went wrong', simGoodT:'What worked', simLessonT:'Main lesson', simLogT:'All months',
+  simLogL:(q,mk,s,d,r,c)=>'bought '+q+' pcs, markup '+mk+'%, sold '+s+' of '+d+', revenue '+r+', money '+c,
+  simAgain:'Play again', simOut:'Back to Practice',
+  simMShort:(m,n,v,h)=>m+': '+n+' pcs short — about '+v+' of profit lost.'+(h?' Buy ahead before a holiday.':''),
+  simMOver:(n,v)=>'At year end '+n+' pcs are left — that is '+v+' of frozen money.',
+  simMHigh:'High markup: each item earned more, but there were clearly fewer customers.', simMLow:'Low markup: plenty of sales, little profit.',
+  simMIdle:m=>m+': there was money but not enough stock — you could have bought more.', simMDebt:'In some month there was not even enough for rent.',
+  simMAd:'Advertising in a month without enough stock did not pay off.',
+  simGHol:m=>'Stock lasted in the strong months: '+m+'.', simGCash:'You never ran short of rent money.',
+  simLShort:'The key in retail is the right goods in the right month. Before a strong month, buy with a margin.', simLOver:'Money in extra stock does not work. Buy for the demand of the next months.',
+  simLHigh:'Price scares customers away faster than it seems. Look for the markup with the biggest monthly profit, not the biggest profit per item.',
+  simLLow:'Cheaper is not more profitable. A small price rise often brings more profit than extra sales.', simLGood:'A good year: you had stock and a sensible price. Try playing bolder — with ads in the strong months.',
+  caseQ:'What would you do?', caseReal:'what they did', caseMine:'your choice', caseSame:'You chose what the company did.', caseDiff:'The company chose differently — see why.', caseWhy:'Why', caseHint:'Pick an option — then you will see what really happened.' }};
+for(const k of ['ru','tg','en']){ Object.assign(D[k],M28L[k]); D[k].hbLsub=Object.assign({},D[k].hbLsub||{},{prac:M28L[k].lsubPrac}); D[k].caseLet=k==='en'?['A','B','C']:['А','Б','В']; }
+/* <</v28 str>> */
 
 
 
@@ -14104,29 +14610,29 @@ function hbSorted(t){ const s=hbSt().sort||'mk', rows=hbRows(t); return rows.sor
 
 /* ---------- живой график: ведётся пальцем, рисуется с анимацией ---------- */
 function hbInterp(pts,m){ if(!pts||!pts.length) return null; if(m<=pts[0][0]) return pts[0][1]; for(let i=1;i<pts.length;i++){ const a=pts[i-1], b=pts[i]; if(m<=b[0]) return b[0]===a[0]?b[1]:a[1]+(b[1]-a[1])*(m-a[0])/(b[0]-a[0]); } return pts[pts.length-1][1]; }
-const HB_ORD=['ex','lo','hi'];
-function hbChartHTML(id,ser,o){ const H=Math.max(1,o.H), keys=['hi','ex','lo'].filter(k=>ser[k]&&ser[k].length>1); if(!keys.length) return '';
+const HB_ORD=['ex','b','lo','hi'], HB_KEYS=['hi','ex','lo','b'];
+function hbChartHTML(id,ser,o){ const H=Math.max(1,o.H), keys=HB_KEYS.filter(k=>ser[k]&&ser[k].length>1), nm=o.nm||{}; if(!keys.length) return '';
   const all=keys.flatMap(k=>ser[k].map(p=>p[1])).concat(o.tg?[o.tg]:[]), W=320, Hh=176, l=10, r=10, t=16, b=26, mx=Math.max(...all)*1.05, mn=Math.min(...all)*0.9;
   const X=m=>l+(W-l-r)*m/H, Y=v=>t+(Hh-t-b)*(1-(v-mn)/Math.max(1,mx-mn)), path=k=>ser[k].map((p,i)=>(i?'L':'M')+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ');
   const band=ser.hi&&ser.lo?`<path class="bd" d="${path('hi')} ${ser.lo.slice().reverse().map(p=>'L'+X(p[0]).toFixed(1)+' '+Y(p[1]).toFixed(1)).join(' ')} Z"/>`:'';
   const area=ser.ex?`<path class="ar" d="${path('ex')} L${X(ser.ex[ser.ex.length-1][0]).toFixed(1)} ${Hh-b} L${X(ser.ex[0][0]).toFixed(1)} ${Hh-b} Z"/>`:'';
   const lab=m=>{ const d=new Date(o.st); d.setMonth(d.getMonth()+Math.round(m)); return (L.monthsNom||[])[d.getMonth()]+' '+d.getFullYear(); };
-  const data=esc(JSON.stringify({ser,H,st:o.st,tg:o.tg||0,mn,mx}));
-  return `<figure class="hb-ch" id="${id}" data-ch="${data}"><div class="hb-ch-tip" aria-live="polite"><b>${esc(lab(H))}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(L.hbSer[k])} ${esc(ivUsd(ser[k][ser[k].length-1][1]))}</em>`).join('')}</span></div>
+  const data=esc(JSON.stringify({ser,H,st:o.st,tg:o.tg||0,mn,mx,nm}));
+  return `<figure class="hb-ch" id="${id}" data-ch="${data}"><div class="hb-ch-tip" aria-live="polite"><b>${esc(lab(H))}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(nm[k]||L.hbSer[k])} ${esc(ivUsd(ser[k][ser[k].length-1][1]))}</em>`).join('')}</span></div>
     <svg viewBox="0 0 ${W} ${Hh}" role="slider" tabindex="0" aria-label="${esc(o.label||L.hbChartL)}" aria-valuemin="0" aria-valuemax="${H}" aria-valuenow="${H}" aria-valuetext="${esc(lab(H))}">
       ${area}${band}${o.tg?`<line x1="${l}" x2="${W-r}" y1="${Y(o.tg).toFixed(1)}" y2="${Y(o.tg).toFixed(1)}" class="tg"/><text x="${W-r}" y="${(Y(o.tg)-4).toFixed(1)}" text-anchor="end" class="tl">${esc(L.hbGoal)} ${esc(ivUsd(o.tg))}</text>`:''}
-      ${ser.lo?`<path class="lo" d="${path('lo')}"/>`:''}${ser.hi?`<path class="hi" d="${path('hi')}"/>`:''}${ser.ex?`<path class="ex" d="${path('ex')}"/>`:''}
+      ${ser.lo?`<path class="lo" d="${path('lo')}"/>`:''}${ser.hi?`<path class="hi" d="${path('hi')}"/>`:''}${ser.ex?`<path class="ex" d="${path('ex')}"/>`:''}${ser.b?`<path class="b" d="${path('b')}"/>`:''}
       <line class="cur" x1="${X(H).toFixed(1)}" x2="${X(H).toFixed(1)}" y1="${t-6}" y2="${Hh-b}"/>${keys.map(k=>`<circle class="dt ${k}" r="4.5" cx="${X(H).toFixed(1)}" cy="${Y(ser[k][ser[k].length-1][1]).toFixed(1)}"/>`).join('')}
       <text x="${l}" y="${Hh-8}" class="ax">${esc(lab(0))}</text><text x="${W-r}" y="${Hh-8}" text-anchor="end" class="ax">${esc(lab(H))}</text></svg>
     <figcaption>${esc(L.hbChartHint)}</figcaption></figure>`; }
 function hbChartBind(root){ (root||document).querySelectorAll('.hb-ch[data-ch]:not([data-bound])').forEach(fig=>{ fig.dataset.bound='1'; let D; try{ D=JSON.parse(fig.dataset.ch); }catch(e){ return; }
-  const svg=fig.querySelector('svg'), tip=fig.querySelector('.hb-ch-tip'), W=320, Hh=176, l=10, r=10, t=16, b=26, keys=['hi','ex','lo'].filter(k=>D.ser[k]&&D.ser[k].length>1);
+  const svg=fig.querySelector('svg'), tip=fig.querySelector('.hb-ch-tip'), W=320, Hh=176, l=10, r=10, t=16, b=26, keys=HB_KEYS.filter(k=>D.ser[k]&&D.ser[k].length>1), nm=D.nm||{};
   const X=m=>l+(W-l-r)*m/D.H, Y=v=>t+(Hh-t-b)*(1-(v-D.mn)/Math.max(1,D.mx-D.mn));
   const lab=m=>{ const d=new Date(D.st); d.setMonth(d.getMonth()+Math.round(m)); return (L.monthsNom||[])[d.getMonth()]+' '+d.getFullYear(); };
   let cur=D.H;
   const show=m=>{ cur=Math.max(0,Math.min(D.H,m)); const x=X(cur); svg.querySelector('.cur').setAttribute('x1',x); svg.querySelector('.cur').setAttribute('x2',x);
     keys.forEach(k=>{ const c=svg.querySelector('.dt.'+k), v=hbInterp(D.ser[k],cur); c.setAttribute('cx',x); c.setAttribute('cy',Y(v)); });
-    const mm=Math.round(cur); tip.innerHTML=`<b>${esc(lab(cur))}${mm>0?` · ${esc(L.hbInM(mm))}`:''}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(L.hbSer[k])} ${esc(ivUsd(hbInterp(D.ser[k],cur)))}</em>`).join('')}</span>`;
+    const mm=Math.round(cur); tip.innerHTML=`<b>${esc(lab(cur))}${mm>0?` · ${esc(L.hbInM(mm))}`:''}</b><span>${HB_ORD.filter(k=>keys.includes(k)).map(k=>`<em><i class="k ${k}"></i>${esc(nm[k]||L.hbSer[k])} ${esc(ivUsd(hbInterp(D.ser[k],cur)))}</em>`).join('')}</span>`;
     svg.setAttribute('aria-valuenow',mm); svg.setAttribute('aria-valuetext',lab(cur)+': '+ivUsd(hbInterp(D.ser[keys.includes('ex')?'ex':keys[0]],cur))); };
   const at=e=>{ const bx=svg.getBoundingClientRect(); return ((e.clientX-bx.left)/bx.width*W-l)/(W-l-r)*D.H; };
   let drag=false;
@@ -14136,7 +14642,7 @@ function hbChartBind(root){ (root||document).querySelectorAll('.hb-ch[data-ch]:n
   svg.addEventListener('pointerup',end); svg.addEventListener('pointercancel',end); svg.addEventListener('pointerleave',()=>{ drag=false; });
   svg.addEventListener('keydown',e=>{ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); fig.classList.add('on'); show(Math.round(cur)+(e.key==='ArrowRight'?1:-1)); } if(e.key==='Home'){ e.preventDefault(); show(0); } if(e.key==='End'){ e.preventDefault(); show(D.H); } });
   /* линия рисуется слева направо */
-  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) svg.querySelectorAll('path.ex,path.lo,path.hi').forEach(p=>{ try{ const n=p.getTotalLength(); p.style.strokeDasharray=n; p.style.strokeDashoffset=n; p.getBoundingClientRect(); p.style.transition='stroke-dashoffset .9s cubic-bezier(.2,.75,.2,1)'; requestAnimationFrame(()=>{ p.style.strokeDashoffset='0'; }); setTimeout(()=>{ p.style.strokeDasharray=''; p.style.transition=''; },1000); }catch(e){} }); }); }
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches) svg.querySelectorAll('path.ex,path.lo,path.hi,path.b').forEach(p=>{ try{ const n=p.getTotalLength(); p.style.strokeDasharray=n; p.style.strokeDashoffset=n; p.getBoundingClientRect(); p.style.transition='stroke-dashoffset .9s cubic-bezier(.2,.75,.2,1)'; requestAnimationFrame(()=>{ p.style.strokeDashoffset='0'; }); setTimeout(()=>{ p.style.strokeDasharray=''; p.style.transition=''; },1000); }catch(e){} }); }); }
 function hbBarsGrow(root){ const els=(root||document).querySelectorAll('.hb-bt i[data-w]'); if(matchMedia('(prefers-reduced-motion: reduce)').matches){ els.forEach(i=>i.style.width=i.dataset.w+'%'); return; }
   requestAnimationFrame(()=>requestAnimationFrame(()=>els.forEach((i,k)=>{ i.style.transitionDelay=Math.min(k*35,400)+'ms'; i.style.width=i.dataset.w+'%'; }))); }
 function hbCount(root){ (root||document).querySelectorAll('[data-count]').forEach(el=>{ const to=+el.dataset.count, from=+el.dataset.from||0; if(matchMedia('(prefers-reduced-motion: reduce)').matches||!(to>0)){ el.textContent=ivUsd(to); return; }
@@ -14144,48 +14650,121 @@ function hbCount(root){ (root||document).querySelectorAll('[data-count]').forEac
 
 /* ---------- расчёт ---------- */
 const HB_CAPS=[1000,5000,10000,20000,50000,100000], HB_HS=[3,6,12,24,36], HB_GX=[2,5,10,20], HB_GK=['cap','rev','prof'];
-let hbMoOpen=false;
-/* расчёт по партиям: деньги в деле, выручка, прибыль; можно досчитать дальше срока (до 120 мес.), чтобы найти, когда будет цель */
-function hbSim(cap,cat,c,re,H,Hr){ const d=ivDef(cat), i=Math.max(0,IV_C.indexOf(c)), mk=d.mk[i], S0=ivCapMUSD(), Imax=Math.max(500,S0.v*d.m/(1+mk/100)), HR=Math.max(H,Hr||0);
-  const cut=(a,h)=>{ const o=a.filter(p=>p[0]<h), nx=a.find(p=>p[0]>=h), pv=o[o.length-1]; if(nx){ const k=(h-pv[0])/((nx[0]-pv[0])||1); o.push(pv.map((v,j)=>j?v+(nx[j]-v)*k:h)); } else o.push([h].concat(pv.slice(1))); return o; };
+const HB_CH=['shop2','online','opt'], HB_LV=['price','sales','buy','cost','re'], HB_MCN=1000;
+let hbMoOpen=false, hbMkF=1, hbCostF=1, hbCostAdd=0, hbDM=null, hbSM=null;
+/* наценка ×, расходы магазина × и +: только на время расчёта (hbWith); внутри расчёта — без лишних пересчётов истории */
+{ const _d=ivDef; ivDef=function(cat){ let d; if(hbDM){ d=hbDM.get(cat); if(!d){ d=_d(cat); hbDM.set(cat,d); } } else d=_d(cat);
+    return hbMkF===1?d:Object.assign({},d,{mk:d.mk.map(x=>((1+x/100)*hbMkF-1)*100)}); }; }
+{ const _s=ivShopUSD; ivShopUSD=function(){ let v; if(hbSM&&hbSM.v!=null) v=hbSM.v; else { v=_s(); if(hbSM) hbSM.v=v; }
+    if(hbCostF===1&&!hbCostAdd) return v; const P=ivP(), sh=(P.share!=null&&P.share!==''?+P.share:100)/100; return v*hbCostF+(sh>0?hbCostAdd/sh:hbCostAdd); }; }
+function hbWith(o,fn){ const k=[ivSOver,hbMkF,hbCostF,hbCostAdd,hbDM,hbSM]; o=o||{};
+  try{ if(!hbDM) hbDM=new Map(); if(!hbSM) hbSM={}; if(o.S!=null) ivSOver=o.S; if(o.mkF) hbMkF=o.mkF; if(o.costF) hbCostF=o.costF; if(o.costAdd) hbCostAdd=o.costAdd; return fn(); }
+  finally{ [ivSOver,hbMkF,hbCostF,hbCostAdd,hbDM,hbSM]=k; } }
+/* расчёт по партиям: деньги в деле, выручка, прибыль; можно досчитать дальше срока (до 120 мес.), чтобы найти, когда будет цель.
+   o: S — продажи в месяц, mkF, costF, costAdd, sc — поправки ivCalc, only:'ex' — только обычный сценарий */
+function hbSim(cap,cat,c,re,H,Hr,o){ o=o||{}; return hbWith(o,()=>{ const d=ivDef(cat), i=Math.max(0,IV_C.indexOf(c)), mk=d.mk[i], S0=ivCapMUSD(), Imax=Math.max(500,S0.v*d.m/(1+mk/100)), HR=Math.max(H,Hr||0);
+  const cut=(a,h)=>{ const q=a.filter(p=>p[0]<h), nx=a.find(p=>p[0]>=h), pv=q[q.length-1]; if(nx){ const k=(h-pv[0])/((nx[0]-pv[0])||1); q.push(pv.map((v,j)=>j?v+(nx[j]-v)*k:h)); } else q.push([h].concat(pv.slice(1))); return q; };
   const run=(pf,tf)=>{ let K=cap, t=0, date=ivStart(), n=0, first=null, rv=0, pr=0, out=0, ns=0, limAt=null; const all=[[0,cap]], cum=[[0,0,0,0]];
-    while(t<HR&&n<400){ const I=Math.min(K,Imax), r=ivCalc(cat,c,date,I); if(!first) first=r; if(limAt==null&&K>Imax*1.02) limAt=t;
+    while(t<HR&&n<400){ const I=Math.min(K,Imax), r=ivCalc(cat,c,date,I,o.sc||undefined); if(!first) first=r; if(limAt==null&&K>Imax*1.02) limAt=t;
       const dur=Math.max(0.5,(r.totalM||1)*tf), prof=r.profit>0?r.profit*pf:r.profit*(2-pf), K2=K+(prof>0?prof*re:prof), t2=t+dur;
       if(t<H) ns++; rv+=Math.max(0,r.rev+prof-r.profit); pr+=prof; out+=prof>0?prof*(1-re):0;
       all.push([t2,K2]); cum.push([t2,rv,pr,out]); K=K2; t=t2; date=addDays(date,Math.round(dur*30)); n++; if(K<=0) break; }
     const P=cut(all,H).map(p=>[Math.round(p[0]*100)/100,Math.round(p[1])]), e=cut(cum,H).pop();
     return {pts:P,end:P[P.length-1][1],first,rev:e[1],prof:e[2],out:e[3],ns,limAt,all,cum}; };
-  return {lo:run(0.6,1.25),ex:run(1,1),hi:run(1.12,0.9),Imax,S0,mk,d}; }
+  const ex=run(1,1); return o.only==='ex'?{lo:ex,ex,hi:ex,Imax,S0,mk,d}:{lo:run(0.6,1.25),ex,hi:run(1.12,0.9),Imax,S0,mk,d}; }); }
 function hbReach(a,j,v){ if(!a||!a.length) return null; if(a[0][j]>=v) return 0; for(let i=1;i<a.length;i++) if(a[i][j]>=v){ const p=a[i-1], q=a[i], k=(v-p[j])/((q[j]-p[j])||1); return p[0]+(q[0]-p[0])*Math.max(0,Math.min(1,k)); } return null; }
 function hbGoal(C,cap){ const k=HB_GK.includes(C.gk)?C.gk:'cap', v=C.gx==='own'?Math.round(+C.ga||0):HB_GX.includes(+C.gx)?cap*(+C.gx):0; return v>0?{k,v,x:C.gx==='own'?Math.round(v/cap*10)/10:+C.gx}:null; }
 function hbMoL(m){ return L.hbMoL?L.hbMoL(m):bpMoLab(m); }
-function hbGoalHTML(G,S,cap,H){ const j=G.k==='prof'?2:1, A=s=>G.k==='cap'?s.all:s.cum, val=s=>G.k==='cap'?s.end:G.k==='rev'?s.rev:s.prof;
-  const rch=s=>{ const m=hbReach(A(s),j,G.v); return m==null||m>120.001?null:Math.max(1,Math.ceil(m-1e-6)); }, M={lo:rch(S.lo),ex:rch(S.ex),hi:rch(S.hi)};
-  const now=val(S.ex), p=Math.max(0,Math.min(100,now/G.v*100)), ok=M.ex!=null&&M.ex<=H, cls=ok?'ok':M.hi!=null&&M.hi<=H?'mid':'far';
-  const brake=ok?'':S.ex.limAt!=null&&(M.ex==null||S.ex.limAt<M.ex)?L.hbGlSales(ivUsd(S.S0.v)):L.hbGlMk;
-  return `<div class="hb-gl ${cls}"><h5>${ico('goal',16)} ${esc(L.hbGlT[G.k](ivUsd(G.v),bpMoLab(H)))}</h5>
+function hbGoalM(G,s){ const m=hbReach(G.k==='cap'?s.all:s.cum,G.k==='prof'?2:1,G.v); return m==null||m>120.001?null:Math.max(1,Math.ceil(m-1e-6)); }
+/* каналы продаж и рычаги → поправки расчёта */
+function hbChDef(k,S0){ const r=v=>Math.max(50,Math.round(v/50)*50); return k==='shop2'?{s:r(S0*0.7),c:400,i:1500}:k==='online'?{s:r(S0*0.25),c:120,i:0}:{s:r(S0*0.5),c:60,i:0}; }
+function hbChVals(C,S0){ const v=C.chv||{}; return HB_CH.filter(k=>C.ch&&C.ch[k]).map(k=>{ const d=hbChDef(k,S0), x=Object.assign({},d,v[k]||{}); return {k,s:Math.max(0,+x.s||0),c:Math.max(0,+x.c||0),i:k==='shop2'?Math.max(0,+x.i||0):0}; }); }
+function hbOpts(C,S0,mk,extra){ const ch=hbChVals(C,S0), add=ch.reduce((s,x)=>s+x.s,0), opt=ch.find(x=>x.k==='opt'), sT=S0+add, lv=new Set((C.lv||[]).filter(k=>HB_LV.includes(k)).concat(extra?[extra]:[]));
+  let mkF=1; if(opt&&sT>0){ const r=1+mk/100, ro=1+mk/200; mkF=((sT-opt.s)*r+opt.s*ro)/sT/r; }
+  return {S:sT*(lv.has('sales')?1.2:1),mkF:mkF*(lv.has('price')?1.05:1),costAdd:ch.reduce((s,x)=>s+x.c,0),costF:lv.has('cost')?0.9:1,sc:lv.has('buy')?{dp:0.95}:null,setup:ch.reduce((s,x)=>s+x.i,0),re:lv.has('re')?1:null,ch,lv}; }
+/* шанс дойти до цели: сотни прогонов со случайными продажами, наценкой и сроком продажи партии */
+const hbMcCache=new Map();
+function hbRand(seed){ let a=seed>>>0; return ()=>{ a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+function hbGauss(r){ let u=0, v=0; while(!u) u=r(); while(!v) v=r(); return Math.sqrt(-2*Math.log(u))*Math.cos(2*Math.PI*v); }
+function hbMcKey(a){ return JSON.stringify([a.cap,a.cat,a.c,a.re,a.H,a.G,a.O.S,a.O.mkF,a.O.costAdd,a.O.costF,a.O.sc,ivP(),usdRate()]); }
+function hbMC(a){ const key=hbMcKey(a); if(hbMcCache.has(key)) return hbMcCache.get(key); if(hbMcCache.size>60) hbMcCache.clear();
+  let h=2166136261; for(let i=0;i<key.length;i++){ h^=key.charCodeAt(i); h=Math.imul(h,16777619); }
+  const rnd=hbRand(h), N=HB_MCN, G=a.G; let ok=0;
+  hbWith(a.O,()=>{ const d=ivDef(a.cat), i=Math.max(0,IV_C.indexOf(a.c)), mk0=d.mk[i], S=a.O.S, mkF=hbMkF;
+    for(let n=0;n<N;n++){ const sF=Math.exp(0.25*hbGauss(rnd)-0.03), mF=Math.exp(0.07*hbGauss(rnd)); ivSOver=S*sF; hbMkF=mkF*mF;
+      const Imax=Math.max(500,ivSOver*d.m/(1+((1+mk0/100)*mF-1))); let K=a.cap, t=0, date=ivStart(), rv=0, pr=0, c2=0, hit=false;
+      while(t<a.H&&c2<200){ const r=ivCalc(a.cat,a.c,date,Math.min(K,Imax),a.O.sc||undefined), dur=Math.max(0.5,(r.totalM||1)*Math.exp(0.12*hbGauss(rnd))), e=Math.exp(0.18*hbGauss(rnd));
+        const prof=r.profit>0?r.profit*e:r.profit*(2-Math.min(1.5,e)), K2=K+(prof>0?prof*a.re:prof), rv2=rv+Math.max(0,r.rev+prof-r.profit), pr2=pr+prof, t2=t+dur;
+        const v0=G.k==='cap'?K:G.k==='rev'?rv:pr, v1=G.k==='cap'?K2:G.k==='rev'?rv2:pr2;
+        if(t2>a.H){ if(v0+(v1-v0)*(a.H-t)/dur>=G.v) hit=true; break; } if(v1>=G.v){ hit=true; break; }
+        K=K2; rv=rv2; pr=pr2; t=t2; date=addDays(date,Math.round(dur*30)); c2++; if(K<=0) break; }
+      if(hit) ok++; } });
+  const res={p:Math.round(ok/N*100),N}; hbMcCache.set(key,res); return res; }
+function hbMcHTML(p,N){ const n=Math.round(p/5); return `<div class="hb-mcp"><b>${p}%</b><span>${esc(L.hbMcOf(p))}</span></div>
+    <div class="hb-mci" role="img" aria-label="${esc(L.hbMcOf(p))}">${Array.from({length:20},(_,i)=>`<i class="${i<n?'on':''}"></i>`).join('')}</div><p class="m">${esc(L.hbMcNote(fx(N,0)))}</p>`; }
+function hbMcFill(root){ const el=(root||document).querySelector('#hb-gch[data-mc]'); if(!el||el.dataset.done) return; let a; try{ a=JSON.parse(el.dataset.mc); }catch(e){ return; }
+  const go=()=>{ if(!el.isConnected) return; let r; try{ r=hbMC(a); }catch(e){ el.innerHTML=''; return; } el.dataset.done='1'; el.querySelector('.hb-mcb').innerHTML=hbMcHTML(r.p,r.N); el.classList.remove('wait'); };
+  if(hbMcCache.has(hbMcKey(a))) go(); else setTimeout(go,40); }
+/* блок цели */
+function hbGoalHTML(G,S,cap,H,mc,S0v){ const val=s=>G.k==='cap'?s.end:G.k==='rev'?s.rev:s.prof, M={lo:hbGoalM(G,S.lo),ex:hbGoalM(G,S.ex),hi:hbGoalM(G,S.hi)};
+  const now=val(S.ex), p=Math.max(0,Math.min(100,now/G.v*100)), ok=M.ex!=null&&M.ex<=H, cls=ok?'ok':M.hi!=null&&M.hi<=H?'mid':'far', sales=!ok&&S.ex.limAt!=null&&(M.ex==null||S.ex.limAt<M.ex);
+  const brake=ok?'':sales?L.hbGlSales(ivUsd(S0v)):L.hbGlMk;
+  return `<section class="hb-card hb-gl ${cls}" id="hb-s-goal"><h3 class="hb-ct">${ico('goal',18)} ${esc(L.hbGlT[G.k](ivUsd(G.v),bpMoLab(H)))}</h3>
+      <div class="hb-gch wait" id="hb-gch" data-mc="${esc(JSON.stringify(mc))}"><small>${esc(L.hbMcT(bpMoLab(H)))}</small><div class="hb-mcb"><p class="m">${esc(L.hbMcWait)}</p></div></div>
       <div class="hb-glb" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(p)}" aria-label="${esc(L.hbGlPr)}"><i style="width:${p.toFixed(1)}%"></i></div>
       <p class="hb-gln">${esc(L.hbGlNow(ivUsd(now),fx(p,p<10?1:0)))}</p>
       ${ok?`<p class="hb-glok">${ico('check',14)} <span>${esc(L.hbGlOk(hbMoL(M.ex)))}</span></p>`:''}
       ${!ok&&G.k==='cap'&&G.v>cap?`<p class="hb-gln">${esc(L.hbGlNeed(fx(bpPct(G.v/cap,H),1),fx(bpPct(Math.max(1.0001,S.ex.end/cap),H),1)))}</p>`:''}
       <ul class="hb-glw">${['lo','ex','hi'].map(k=>`<li><i class="k ${k}"></i><span>${esc(L.hbSer[k])} — <b>${esc(M[k]==null?L.hbGlNever:L.hbGlIn(hbMoL(M[k])))}</b></span></li>`).join('')}</ul>
       ${brake?`<p class="m">${ico('info',14)} <span>${esc(brake)}</span></p><p class="m">${ico('bulb',14)} <span>${esc(L.hbGlPaths)}</span></p>`:''}
-      <div class="bp-acts hb-gla"><button type="button" class="btn ${ok?'btn-ghost':'btn-primary'}" data-hbplan="calc">${ico('doc',16)} ${L.hbGlPlan}</button><button type="button" class="btn btn-ghost" data-hbgask="1">${ico('chat',16)} ${L.hbGlAsk}</button></div></div>`; }
+      <div class="bp-acts hb-gla">${sales?`<button type="button" class="btn btn-primary" data-hbjump="ch">${ico('shop',16)} ${L.hbGlAddCh}</button>`:''}<button type="button" class="btn ${ok||sales?'btn-ghost':'btn-primary'}" data-hbplan="calc">${ico('doc',16)} ${L.hbGlPlan}</button><button type="button" class="btn btn-ghost" data-hbgask="1">${ico('chat',16)} ${L.hbGlAsk}</button></div></section>`; }
 function hbGoalAsk(){ const C=hbSt().calc, G=hbGoal(C,C.cap); if(!G) return; const row=hbRows(hbToday()).find(x=>x.id===C.cat)||{};
   const q=L.hbGlAskQ(ivUsd(C.cap),L.hbGlWhat[G.k](ivUsd(G.v),G.x),bpMoLab(C.h),row.name||L['whC_'+C.cat]||'',L['cn_'+C.c]||'',ivUsd(ivCapMUSD().v));
   bpClose(); setTimeout(()=>{ try{ sifraOpen(q.slice(0,690)); }catch(e){} },90); }
+/* рычаги: каждый посчитан отдельно, поверх уже включённых */
+function hbLevHTML(a){ const {C,cap,capE,cat,c,re,H,G,S,S0v,mk}=a, on=new Set(C.lv||[]);
+  const base=G?hbGoalM(G,S.ex):null, rows=HB_LV.filter(k=>!on.has(k)&&!(k==='re'&&re>=100)).map(k=>{ const O=hbOpts(C,S0v,mk,k), r=hbSim(capE,cat,c,O.re!=null?1:re/100,H,G?120:0,Object.assign({},O,{only:'ex'}));
+      let txt, w=0; if(G){ const m=hbGoalM(G,r.ex); if(base==null&&m!=null){ txt=L.hbLvReach(hbMoL(m)); w=1e6-m; } else if(base!=null&&m!=null&&m<base){ txt=L.hbLvM(hbMoL(base-m)); w=(base-m)*1000; } }
+      if(!txt){ const dv=r.ex.end-S.ex.end; if(dv>=Math.max(20,cap*0.002)){ txt=L.hbLvP(ivUsd(dv),bpMoLab(H)); w=dv/1e4; } else txt=L.hbLvNone; }
+      return {k,txt,w}; }).sort((x,y)=>y.w-x.w);
+  return `<section class="hb-card hb-lev" id="hb-s-lev"><h3 class="hb-ct">${ico('stats',18)} ${L.hbLvT}</h3><p class="bp-hint">${L.hbLvLead}</p>
+      ${on.size?`<div class="hb-lvon">${[...on].filter(k=>HB_LV.includes(k)).map(k=>`<button type="button" class="chip on" data-hblv="${k}" aria-pressed="true">${ico('check',14)} ${esc(L.hbLvN[k])}</button>`).join('')}</div>`:''}
+      ${rows.length?`<ol class="hb-lvl">${rows.map((x,i)=>`<li class="${i===0&&x.w>0?'top':''}"><span><b>${esc(L.hbLvN[x.k])}</b><em class="${x.w>0?'up':''}">${esc(x.txt)}</em><small>${esc(L.hbLvH[x.k])}</small></span><button type="button" class="gp-mini" data-hblv="${x.k}" aria-pressed="false">${ico('plus',14)} ${L.hbLvOnB}</button></li>`).join('')}</ol>`:''}</section>`; }
+/* сравнение с другим вариантом */
+function hbCmpHTML(a){ const {C,cap,capE,re,H,G,S,S0v,stISO,t,cat,c}=a, P=C.cmp||{};
+  if(!P.on) return `<section class="hb-card hb-cmp" id="hb-s-cmp"><h3 class="hb-ct">${ico('chart',18)} ${L.hbCmpT}</h3><p class="bp-hint">${L.hbCmpLead}</p><button type="button" class="btn btn-ghost" data-hbcmp="on">${ico('plus',16)} ${L.hbCmpGo}</button></section>`;
+  const rows=hbRows(t).filter(x=>!x.isNew), cb=IV_CATS.includes(P.cat)?P.cat:((rows.filter(x=>x.id!==cat).sort((x,y)=>y.mk-x.mk)[0]||{}).id||'women'), ccb=IV_C.includes(P.c)?P.c:c; P.cat=cb; P.c=ccb;
+  const mkB=ivDef(cb).mk[Math.max(0,IV_C.indexOf(ccb))], OB=hbOpts(C,S0v,mkB), B=hbSim(Math.max(100,cap-OB.setup),cb,ccb,OB.re!=null?1:re/100,H,G?120:0,Object.assign({},OB,{only:'ex'}));
+  const nA=(rows.find(x=>x.id===cat)||{}).name||'', nB=(rows.find(x=>x.id===cb)||{}).name||'', lA=L.hbCmpA+': '+nA+' · '+(L['cn_'+c]||c), lB=L.hbCmpB+': '+nB+' · '+(L['cn_'+ccb]||ccb);
+  const pm=s=>fx(bpPct(Math.max(1.0001,s.end/cap),H),1)+'%', gm=s=>{ const m=G?hbGoalM(G,s):null; return m==null?L.hbGlNever:L.hbGlIn(hbMoL(m)); };
+  const tr=(k,va,vb)=>`<tr><th scope="row">${L.hbCmpRow[k]}</th><td>${esc(va)}</td><td>${esc(vb)}</td></tr>`, dv=B.ex.end-S.ex.end;
+  const win=Math.abs(dv)<Math.max(50,cap*0.01)?L.hbCmpSame:L.hbCmpBetter(dv>0?L.hbCmpB:L.hbCmpA,ivUsd(Math.abs(dv)));
+  return `<section class="hb-card hb-cmp on" id="hb-s-cmp"><h3 class="hb-ct">${ico('chart',18)} ${L.hbCmpT}</h3>
+      <div class="br-h">${L.hbCmpWhat}</div><div class="chips hb-scroll">${rows.sort((x,y)=>y.mk-x.mk).map(x=>`<button type="button" class="chip ${x.id===cb?'on':''}" data-hbcmpcat="${x.id}">${x.ico} ${esc(x.name)}</button>`).join('')}</div>
+      <div class="br-h">${L.hbCmpFrom}</div><div class="chips bp-wrap">${IV_C.map(k=>`<button type="button" class="chip ${k===ccb?'on':''}" data-hbcmpc="${k}">${bpCname(k)}</button>`).join('')}</div>
+      <p class="hb-cmpw ${dv>0?'b':'a'}">${esc(win)}</p>
+      <div class="hb-cmpt"><table><thead><tr><th></th><th scope="col"><i class="k ex"></i>${esc(lA)}</th><th scope="col"><i class="k b"></i>${esc(lB)}</th></tr></thead><tbody>
+        ${tr('end',ivUsd(S.ex.end),ivUsd(B.ex.end))}${tr('prof',ivUsd(S.ex.prof),ivUsd(B.ex.prof))}${tr('rev',ivUsd(S.ex.rev),ivUsd(B.ex.rev))}${tr('pm',pm(S.ex),pm(B.ex))}${G?tr('goal',gm(S.ex),gm(B.ex)):''}</tbody></table></div>
+      ${hbChartHTML('hb-cmpch',{ex:S.ex.pts,b:B.ex.pts},{H,st:stISO,label:L.hbCmpT,nm:{ex:L.hbCmpA,b:L.hbCmpB}})}
+      <div class="bp-acts two"><button type="button" class="btn btn-ghost" data-hbcmp="swap">${ico('repeat',16)} ${L.hbCmpSwap}</button><button type="button" class="btn btn-ghost" data-hbcmp="off">${ico('close',16)} ${L.hbCmpOff}</button></div></section>`; }
 function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=IV_CATS.includes(C.cat)?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, h0=Math.round(+C.h), H=h0>=1&&h0<=120?h0:12;
-  C.cap=cap; C.cat=cat; C.c=c; C.re=re; C.h=H;
+  C.cap=cap; C.cat=cat; C.c=c; C.re=re; C.h=H; C.lv=(C.lv||[]).filter(k=>HB_LV.includes(k)&&!(k==='re'&&re>=100)); C.ch=C.ch||{};
   const gon=C.gx==='own'||HB_GX.includes(+C.gx), gk=HB_GK.includes(C.gk)?C.gk:'cap', G=gon?hbGoal(C,cap):null;
-  const S=hbSim(cap,cat,c,re/100,H,G?120:0), f=S.ex.first, lim=cap>S.Imax*1.02, t=hbToday(), row=hbRows(t).find(x=>x.id===cat)||{};
-  const gain=S.ex.end-cap, pct=cap>0?gain/cap*100:0, mo=bpPct(Math.max(1.0001,S.ex.end/cap),H), u=usdRate();
+  const S0b=ivCapMUSD(), mk0=ivDef(cat).mk[Math.max(0,IV_C.indexOf(c))], O=hbOpts(C,S0b.v,mk0), reE=O.re!=null?1:re/100, capE=Math.max(100,cap-O.setup);
+  const S=hbSim(capE,cat,c,reE,H,G?120:0,O), f=S.ex.first, lim=capE>S.Imax*1.02, t=hbToday(), row=hbRows(t).find(x=>x.id===cat)||{};
+  const gain=S.ex.end-cap, pct=cap>0?gain/cap*100:0, mo=bpPct(Math.max(1.0001,S.ex.end/cap),H);
   const st=ivStart(), stISO=new Date(st.getFullYear(),st.getMonth(),1).toISOString(), hs=HB_HS.concat(HB_HS.includes(H)?[]:[H]).sort((a,b)=>a-b);
-  const kp=(lab,v,pm)=>`<div><dt>${lab}</dt><dd>${esc(v)}${pm?`<small>${esc(pm)}</small>`:''}</dd></div>`;
-  return `<section class="hb-card hb-in">
+  const kp=(lab,v,pm)=>`<div><dt>${lab}</dt><dd>${esc(v)}${pm?`<small>${esc(pm)}</small>`:''}</dd></div>`, chv=hbChVals(C,S0b.v);
+  const chIn=k=>{ const x=chv.find(z=>z.k===k); if(!x) return ''; const fld=(f,lab)=>`<div class="field n"><label for="hb-ch-${k}-${f}">${lab}</label><input id="hb-ch-${k}-${f}" type="number" inputmode="decimal" min="0" value="${Math.round(x[f])}" data-hbchv="${k}:${f}"></div>`;
+    return `<div class="hb-chv"><b>${esc(L.hbChN[k])}</b><div class="hb-chf">${fld('s',L.hbChS)}${fld('c',L.hbChC)}${k==='shop2'?fld('i',L.hbChI):''}</div></div>`; };
+  const jumps=['res'].concat(G?['goal']:[],['lev','cmp','det']);
+  return `<section class="hb-card hb-in"><h3 class="hb-ct">${ico('edit',18)} ${L.hbInT}</h3>
       <div class="field n big-in"><label for="hb-cap">${L.hbCap}</label><input id="hb-cap" type="number" inputmode="decimal" min="100" value="${cap}"></div>
       <div class="chips bp-wrap">${HB_CAPS.map(v=>`<button type="button" class="chip ${cap===v?'on':''}" data-hbcap="${v}">${esc(ivUsd(v))}</button>`).join('')}</div>
       <div class="br-h">${L.hbWhat}</div><div class="chips hb-scroll">${hbRows(t).filter(x=>!x.isNew).sort((a,b)=>b.mk-a.mk).map(x=>`<button type="button" class="chip ${x.id===cat?'on':''}" data-hbcat="${x.id}">${x.ico} ${esc(x.name)} <small>+${Math.round(x.mk)}%</small></button>`).join('')}</div>
       <div class="br-h">${L.hbFrom}</div><div class="chips bp-wrap">${IV_C.map(k=>`<button type="button" class="chip ${k===c?'on':''}" data-hbc="${k}">${bpCname(k)}</button>`).join('')}</div>
+      <div class="hb-chin" id="hb-s-ch"><div class="br-h">${L.hbChQ}</div><div class="chips bp-wrap"><span class="chip on fix" aria-disabled="true">${ico('check',14)} ${L.hbChN.shop}</span>${HB_CH.map(k=>{ const on=!!C.ch[k]; return `<button type="button" class="chip ${on?'on':''}" data-hbch="${k}" aria-pressed="${on}">${on?ico('check',14):ico('plus',14)} ${L.hbChN[k]}</button>`; }).join('')}</div>
+        ${chv.length?chv.map(x=>chIn(x.k)).join('')+`<p class="m">${ico('info',14)} <span>${L.hbChHint}</span></p>`:''}</div>
       <div class="hb-two"><div><div class="br-h">${L.hbRe}</div><div class="chips bp-wrap">${[100,70,50].map(v=>`<button type="button" class="chip ${v===re?'on':''}" data-hbre="${v}">${L.hbReN[v]}</button>`).join('')}</div></div>
         <div><div class="br-h">${L.hbH}</div><div class="chips bp-wrap">${hs.map(v=>`<button type="button" class="chip ${v===H?'on':''}" data-hbh="${v}">${bpMoLab(v)}</button>`).join('')}</div>
           <button type="button" class="gp-mini bp-mob" data-hbmo="1" aria-expanded="${hbMoOpen}">${ico('edit',14)} ${L.bpMOwn}</button><div class="field n" id="hb-mow" ${hbMoOpen?'':'hidden'}><label for="hb-mo">${L.bpMOwnL}</label><input id="hb-mo" type="number" inputmode="numeric" min="1" max="120" step="1" value="${H}"></div></div></div>
@@ -14194,19 +14773,26 @@ function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(
         ${gon?`<div class="chips bp-wrap">${HB_GK.map(k=>`<button type="button" class="chip ${gk===k?'on':''}" data-hbgk="${k}" aria-pressed="${gk===k}">${L.hbGK[k]}</button>`).join('')}</div>
         <div class="field n"><label for="hb-ga">${L.hbGoalAmt[gk]}</label><input id="hb-ga" type="number" inputmode="decimal" min="1" value="${G?G.v:''}"></div>`:''}</div>
     </section>
-    <section class="hb-card hb-res"><small>${L.hbIn(bpMoLab(H))}</small><b class="hb-big" data-count="${Math.round(S.ex.end)}" data-from="${cap}">${esc(ivUsd(S.ex.end))}</b>
+    <nav class="hb-jump" aria-label="${esc(L.hbJumpL)}">${jumps.map(k=>`<button type="button" class="chip" data-hbjump="${k}">${L.hbJump[k]}</button>`).join('')}</nav>
+    <section class="hb-card hb-res" id="hb-s-res"><small>${L.hbIn(bpMoLab(H))}</small><b class="hb-big" data-count="${Math.round(S.ex.end)}" data-from="${cap}">${esc(ivUsd(S.ex.end))}</b>
       <p class="hb-gain ${gain>=0?'up':'dn'}">${gain>=0?'+':'−'}${esc(ivUsd(Math.abs(gain)))} (${gain>=0?'+':''}${fx(pct,0)}%) · ${esc(L.hbPerM(fx(mo,1)))}</p>
       <div class="hb-sc"><span><i class="k lo"></i>${L.hbSer.lo} <b>${esc(ivUsd(S.lo.end))}</b></span><span><i class="k hi"></i>${L.hbSer.hi} <b>${esc(ivUsd(S.hi.end))}</b></span></div>
-      ${G?hbGoalHTML(G,S,cap,H):''}
+      ${O.ch.length||O.lv.size?`<div class="hb-with">${O.ch.length?`<span>${ico('shop',14)} ${esc(L.hbChOnL(O.ch.map(x=>L.hbChN[x.k]).join(', ')))}</span>`:''}${O.lv.size?`<span>${ico('stats',14)} ${esc(L.hbLvOnL([...O.lv].map(k=>L.hbLvN[k]).join(', ')))}</span><button type="button" class="gp-mini" data-hblvoff="1">${ico('close',14)} ${L.hbLvReset}</button>`:''}</div>`:''}
+      ${O.setup>0?`<p class="m">${ico('info',14)} <span>${esc(L.hbChSetup(ivUsd(O.setup)))}</span></p>`:''}
       ${hbChartHTML('hb-cch',{lo:S.lo.pts,ex:S.ex.pts,hi:S.hi.pts},{H,st:stISO,label:L.hbChartL,tg:G&&G.k==='cap'?G.v:0})}
       <div class="hb-kpi"><h5>${ico('stats',16)} ${esc(L.hbKpiT(bpMoLab(H)))}</h5><dl>
-        ${kp(L.hbKpi.rev,'≈ '+ivUsd(S.ex.rev),L.hbKpiM(ivUsd(S.ex.rev/H)))}${kp(L.hbKpi.prof,(S.ex.prof<0?'−':'≈ ')+ivUsd(Math.abs(S.ex.prof)),L.hbKpiM(ivUsd(S.ex.prof/H)))}${kp(L.hbKpi.cyc,String(S.ex.ns))}${re<100?kp(L.hbKpi.out,'≈ '+ivUsd(S.ex.out)):''}</dl>
+        ${kp(L.hbKpi.rev,'≈ '+ivUsd(S.ex.rev),L.hbKpiM(ivUsd(S.ex.rev/H)))}${kp(L.hbKpi.prof,(S.ex.prof<0?'−':'≈ ')+ivUsd(Math.abs(S.ex.prof)),L.hbKpiM(ivUsd(S.ex.prof/H)))}${kp(L.hbKpi.cyc,String(S.ex.ns))}${reE<1?kp(L.hbKpi.out,'≈ '+ivUsd(S.ex.out)):''}</dl>
         <p class="m">${L.hbKpiNote}</p></div>
+    </section>
+    ${G?hbGoalHTML(G,S,cap,H,{cap:capE,cat,c,re:reE,H,G,O:{S:O.S,mkF:O.mkF,costAdd:O.costAdd,costF:O.costF,sc:O.sc}},S0b.v):''}
+    ${hbLevHTML({C,cap,capE,cat,c,re,H,G,S,S0v:S0b.v,mk:mk0})}
+    ${hbCmpHTML({C,cap,capE,re,H,G,S,S0v:S0b.v,stISO,t,cat,c})}
+    <section class="hb-card hb-det" id="hb-s-det"><h3 class="hb-ct">${ico('bag',18)} ${L.hbDetT}</h3>
       ${f?`<div class="hb-batch"><h5>${ico('bag',16)} ${L.hbBatch}</h5><p>${L.hbBatchT(fx(f.pcs,0),fx(f.landed,f.landed<10?1:0),fx(f.retail,f.retail<10?1:0),fx(f.months,1),esc(ivUsd(f.profit)))}</p>
-        ${row.live?`<p class="m">${ico('globe',14)} ${L.hbLiveMk(Math.round(S.mk),esc(row.note||''))}</p>`:`<p class="m">${ico('info',14)} ${L.hbNoLive}</p>`}
-        ${lim?`<p class="bp-need hi">${L.hbLimit(esc(ivUsd(S.Imax)),esc(ivUsd(S.S0.v)))}</p>`:''}</div>`:''}
-      <div class="hb-sales"><span>${L.hbSales(esc(ivUsd(S.S0.v)),L.hbSrc[S.S0.src]||'')}</span><button type="button" class="gp-mini" data-hbsales="1">${ico('edit',14)} ${L.hbFix}</button></div>
-      <div class="hb-sales-in" hidden><div class="field n"><label for="hb-s">${L.hbSalesQ}</label><input id="hb-s" type="number" inputmode="decimal" min="0" value="${Math.round(S.S0.v)}"></div><button type="button" class="btn btn-primary" data-hbsok="1">${L.save}</button></div>
+        ${row.live?`<p class="m">${ico('globe',14)} ${L.hbLiveMk(Math.round(mk0),esc(row.note||''))}</p>`:`<p class="m">${ico('info',14)} ${L.hbNoLive}</p>`}
+        ${lim?`<p class="bp-need hi">${L.hbLimit(esc(ivUsd(S.Imax)),esc(ivUsd(S0b.v)))}</p>`:''}</div>`:''}
+      <div class="hb-sales"><span>${L.hbSales(esc(ivUsd(S0b.v)),L.hbSrc[S0b.src]||'')}</span><button type="button" class="gp-mini" data-hbsales="1">${ico('edit',14)} ${L.hbFix}</button></div>
+      <div class="hb-sales-in" hidden><div class="field n"><label for="hb-s">${L.hbSalesQ}</label><input id="hb-s" type="number" inputmode="decimal" min="0" value="${Math.round(S0b.v)}"></div><button type="button" class="btn btn-primary" data-hbsok="1">${L.save}</button></div>
       <p class="note">${L.hbCalcNote}</p>
       <div class="bp-acts two"><button type="button" class="btn btn-ghost" data-hbold="1">${ico('stats',16)} ${L.hbOld}</button><button type="button" class="btn btn-ghost" data-hbplan="calc">${ico('doc',16)} ${L.hbToPlan}</button></div>
     </section>`; }
@@ -14277,7 +14863,7 @@ function hbR(m,foot){ const t=bpTop(), h=hbSt(), tab=HB_TABS.includes(t.tab)?t.t
   m.innerHTML=`${hbHeroHTML()}<nav class="bp-tabs hb-tabs" role="tablist" aria-label="${esc(L.hbT)}">${HB_TABS.map(k=>`<button type="button" role="tab" id="hbt-${k}" aria-controls="hbp-${k}" aria-selected="${k===tab}" class="${k===tab?'on':''}" data-hbtab="${k}">${ico(L.hbTabI[k],20)}<span>${L.hbTabN[k]}</span></button>`).join('')}</nav>
     ${HB_TABS.map(k=>`<div class="bp-pane hb-pane" role="tabpanel" id="hbp-${k}" aria-labelledby="hbt-${k}" data-hbpane="${k}" ${k===tab?'':'hidden'}>${k===tab?hbPaneHTML(k):''}</div>`).join('')}`;
   hbAfter(m); hbBind(m); if(!hbFresh()) setTimeout(hbKick,30); }
-function hbAfter(root){ hbBarsGrow(root); hbChartBind(root); hbCount(root); }
+function hbAfter(root){ hbBarsGrow(root); hbChartBind(root); hbCount(root); hbMcFill(root); }
 function hbPaneDraw(k){ if(!hbOn()) return; const p=BPG.el.querySelector(`[data-hbpane="${k}"]`); if(!p||p.hidden) return; p.innerHTML=hbPaneHTML(k); hbAfter(p); hbPaneBind(p,k); }
 function hbRedraw(){ if(!hbOn()) return; hbHeroDraw(); const t=bpTop(); hbPaneDraw(t.tab||'today'); }
 function hbTab(k){ const m=BPG.el.querySelector('#bpg-m'), t=bpTop(); t.tab=k; hbSt().tab=k;
@@ -14286,6 +14872,7 @@ function hbTab(k){ const m=BPG.el.querySelector('#bpg-m'), t=bpTop(); t.tab=k; h
   const nav=m.querySelector('.hb-tabs'), y=nav.offsetTop+16; if(m.scrollTop>y) m.scrollTop=y; }
 function hbPaneBind(p,k){ if(k==='calc'){ const ci=p.querySelector('#hb-cap'); if(ci) ci.addEventListener('input',()=>{ clearTimeout(ci._t); ci._t=setTimeout(()=>{ const v=+ci.value; if(v>=100){ hbSt().calc.cap=Math.round(v); persist(); hbCalcSoft(); } },450); });
     const gi=p.querySelector('#hb-ga'); if(gi) gi.addEventListener('input',()=>{ clearTimeout(gi._t); gi._t=setTimeout(()=>{ const v=+gi.value; if(v>0){ const C=hbSt().calc; C.gx='own'; C.ga=Math.round(v); persist(); hbCalcSoft(); } },500); });
+    p.querySelectorAll('[data-hbchv]').forEach(ci2=>ci2.addEventListener('input',()=>{ clearTimeout(ci2._t); ci2._t=setTimeout(()=>{ const [k,f]=ci2.dataset.hbchv.split(':'), v=+ci2.value; if(v>=0){ const C=hbSt().calc; C.chv=C.chv||{}; C.chv[k]=Object.assign({},C.chv[k]||{},{[f]:Math.round(v)}); persist(); hbCalcSoft(); } },500); }));
     const mi=p.querySelector('#hb-mo'); if(mi) mi.addEventListener('input',()=>{ clearTimeout(mi._t); mi._t=setTimeout(()=>{ const v=Math.round(+mi.value); if(v>=1&&v<=120){ hbSt().calc.h=v; persist(); hbCalcSoft(); } },500); }); }
   if(k==='learn'){ const mk=p.querySelector('#hb-mk'), mg=p.querySelector('#hb-mg'), out=p.querySelector('#hb-mkt');
     if(mk) mk.addEventListener('input',()=>{ const a=+mk.value; if(a>-100){ const g=a/(100+a)*100; mg.value=Math.round(g*10)/10; out.textContent=L.hbMkMgT(hbF1(a),hbF1(g)); } });
@@ -14293,6 +14880,9 @@ function hbPaneBind(p,k){ if(k==='calc'){ const ci=p.querySelector('#hb-cap'); i
     const fc=p.querySelector('#hb-fc'), gm=p.querySelector('#hb-gm'), bo=p.querySelector('#hb-bet'), be=()=>{ const f=+fc.value, g=+gm.value; bo.textContent=f>0&&g>0&&g<100?L.hbBET(ivUsd(f/(g/100))):L.hbBEBad; };
     if(fc){ fc.addEventListener('input',be); gm.addEventListener('input',be); }
     const q=p.querySelector('#hb-q'); if(q) q.addEventListener('keydown',e=>{ if(e.key==='Enter'){ e.preventDefault(); hbAsk(q.value); } }); } }
+function hbJump(k){ const mm=BPG.el&&BPG.el.querySelector('#bpg-m'), el=mm&&mm.querySelector('#hb-s-'+k); if(!el) return; const nav=mm.querySelector('.hb-tabs'), off=(nav?nav.offsetHeight:56)+18;
+  const y=el.getBoundingClientRect().top-mm.getBoundingClientRect().top+mm.scrollTop-off; mm.scrollTo({top:Math.max(0,y),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  el.classList.remove('hb-flash'); void el.offsetWidth; el.classList.add('hb-flash'); setTimeout(()=>el.classList.remove('hb-flash'),1400); }
 function hbCalcSoft(){ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop, a=document.activeElement, id=a&&a.tagName==='INPUT'&&a.id&&m.contains(a)?a.id:''; hbPaneDraw('calc'); m.scrollTop=y;
   if(id){ const e=m.querySelector('#'+id); if(e) try{ e.focus({preventScroll:true}); const n=e.value.length; e.type='text'; e.setSelectionRange(n,n); e.type='number'; }catch(x){} } }
 function hbAsk(q){ q=String(q||'').trim(); if(q.length<3){ toast(L.hbAskNeed); return; } bpGo('learn',{q}); }
@@ -14301,7 +14891,8 @@ function hbToPlan(kind,arg){ const f=bpDefForm(); f.touched={};
   if(kind==='idea'){ const x=hbIdeaFind(arg); if(x){ f.idea=x.title+'. '+x.why_now; if(x.where) f.place=x.where; if(+x.start_usd>0){ f.cap=Math.round(+x.start_usd); f.touched.cap=true; } } }
   else if(kind==='row'){ const r=hbRows(hbToday()).find(z=>z.id===arg); if(r) f.idea=L.hbRowIdea(r.name,r.from?(L['cn_'+r.from]||L.hbCtry[r.from]||r.from):''); f.cs=r&&IV_C.includes(r.from)?[r.from]:[]; }
   else if(kind==='calc'){ const C=hbSt().calc; f.idea=L.hbRowIdea(L['whC_'+C.cat]||'',L['cn_'+C.c]||''); f.cap=C.cap; f.cs=[C.c]; f.cats=[C.cat]; f.m=C.h; f.touched.cap=true; f.touched.m=true;
-    const G=(C.gx==='own'||HB_GX.includes(+C.gx))?hbGoal(C,C.cap):null; if(G){ if(G.k==='cap'){ const x=Math.round(G.v/C.cap*10)/10; if(BP_X.includes(x)){ f.x=x; f.own=0; } else { f.x=0; f.own=G.v; } f.touched.x=true; } else f.idea+=' '+L.hbGlIdea[G.k](ivUsd(G.v),bpMoLab(C.h)); } }
+    const G=(C.gx==='own'||HB_GX.includes(+C.gx))?hbGoal(C,C.cap):null; if(G){ if(G.k==='cap'){ const x=Math.round(G.v/C.cap*10)/10; if(BP_X.includes(x)){ f.x=x; f.own=0; } else { f.x=0; f.own=G.v; } f.touched.x=true; } else f.idea+=' '+L.hbGlIdea[G.k](ivUsd(G.v),bpMoLab(C.h)); }
+    const ch=C.ch||{}; if(ch.shop2||ch.online||ch.opt){ f.ch=['shop'].concat(ch.online?['insta','tg']:[],ch.opt?['opt']:[]); if(ch.shop2) f.idea+=' '+L.hbChIdea; } }
   else if(kind==='new'){ f.idea=''; }
   bpGo('form',f); }
 function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`),bpTop().tab);
@@ -14330,6 +14921,13 @@ function hbBind(m){ hbPaneBind(m.querySelector(`[data-hbpane="${bpTop().tab}"]`)
     if(d.hbgx!=null){ const C=h.calc; if(d.hbgx==='own'){ if(C.gx!=='own'){ const G=hbGoal(C,C.cap); C.ga=G?G.v:C.cap*3; } C.gx='own'; } else C.gx=+d.hbgx; persist(); hbCalcSoft(); if(d.hbgx==='own'){ const gi=m.querySelector('#hb-ga'); if(gi) gi.focus({preventScroll:true}); } return; }
     if(d.hbgk){ h.calc.gk=d.hbgk; persist(); hbCalcSoft(); return; }
     if(d.hbgask){ hbGoalAsk(); return; }
+    if(d.hbjump){ hbJump(d.hbjump); return; }
+    if(d.hbch){ const C=h.calc; C.ch=C.ch||{}; C.ch[d.hbch]=!C.ch[d.hbch]; persist(); hbCalcSoft(); return; }
+    if(d.hblv){ const C=h.calc, s=new Set(C.lv||[]); if(s.has(d.hblv)) s.delete(d.hblv); else s.add(d.hblv); C.lv=[...s]; persist(); hbCalcSoft(); return; }
+    if(d.hblvoff){ h.calc.lv=[]; persist(); hbCalcSoft(); return; }
+    if(d.hbcmp){ const C=h.calc; C.cmp=C.cmp||{}; if(d.hbcmp==='on') C.cmp.on=true; else if(d.hbcmp==='off') C.cmp.on=false; else if(d.hbcmp==='swap'&&C.cmp.cat){ const a=[C.cat,C.c]; C.cat=C.cmp.cat; C.c=C.cmp.c; C.cmp.cat=a[0]; C.cmp.c=a[1]; } persist(); hbCalcSoft(); if(d.hbcmp==='on') hbJump('cmp'); return; }
+    if(d.hbcmpcat){ const C=h.calc; C.cmp=Object.assign(C.cmp||{},{on:true,cat:d.hbcmpcat}); persist(); hbCalcSoft(); return; }
+    if(d.hbcmpc){ const C=h.calc; C.cmp=Object.assign(C.cmp||{},{on:true,c:d.hbcmpc}); persist(); hbCalcSoft(); return; }
     if(d.hbsales){ const w=m.querySelector('.hb-sales-in'); if(w){ w.hidden=!w.hidden; if(!w.hidden) w.querySelector('input').focus(); } return; }
     if(d.hbsok){ const v=+m.querySelector('#hb-s').value, u=usdRate(); if(v>=0&&u){ ivP().capM=Math.round(v*u); ivP().askS=1; try{ ivMemo.clear(); }catch(e){} persist(); hbCalcSoft(); toast(L.saved||'✓'); } return; }
     if(d.hbold){ bpClose(); setTimeout(()=>{ try{ investSheet(); }catch(e){} },90); return; } }; }
@@ -14600,6 +15198,208 @@ function lxGlossHTML(f){ const G=L.lxG||{}, seen=[]; let outKeys=[]; try{ const 
   return seen.length?`<div class="lx-gl"><h5>${ico('info',14)} ${L.lxGlT}</h5><dl>${seen.map(g=>`<dt>${esc(G[g][0])}</dt><dd>${esc(G[g][1])}</dd>`).join('')}</dl></div>`:''; }
 { const _c=lxCardHTML; lxCardHTML=function(f){ const h=_c(f); if(!h) return h; const i=h.lastIndexOf('</details>'); return i<0?h:h.slice(0,i)+lxGlossHTML(f)+h.slice(i); }; }
 
+/* <<v28 js>> */
+/* ===================== v28: «План» — проверки идей (393) и план против факта (394) ===================== */
+function chkList(){ const h=hbSt(); if(!Array.isArray(h.chk)) h.chk=[]; return h.chk; }
+function chkSt(x){ if(x.dec) return 'dec'; return x.until&&x.until<dkey()?'due':'run'; }
+function chkStL(x){ const s=chkSt(x); return s==='dec'?L.chkDecN[x.dec]:s==='due'?L.chkDue:L.chkRun(x.until?fmtDate(parseYmd(x.until)):''); }
+function chkCardHTML(x){ const s=chkSt(x); return `<button type="button" class="bp-mine hb-chk ${s}" data-hbchk="${esc(x.id)}">${ico(s==='dec'?(x.dec==='stop'?'close':'check'):s==='due'?'bell':'search',18)}<span><b>${esc(x.idea||L.chkNoIdea)}</b><small><em class="hb-chs ${s} ${esc(x.dec||'')}">${esc(chkStL(x))}</em>${x.hyp?' · '+esc(x.hyp.slice(0,90)):''}</small></span>${ico('next',18)}</button>`; }
+/* план и факт: факт — из записей выручки, расходов и поездок за закупкой */
+function pfStart(it){ const s=String(it.pfStart||'').slice(0,7); if(/^\d{4}-\d\d$/.test(s)) return s; const d=new Date(it.at||Date.now()); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'); }
+function pfData(it){ const r=it.road; if(!r||!r.months.length) return null; const u=usdRate(); if(!u) return null; const st=pfStart(it), [y,m]=st.split('-').map(Number), now=new Date(), M=Math.max(1,it.f.m||r.months.length);
+  const cur=(now.getFullYear()-y)*12+(now.getMonth()+1-m)+1, n=Math.max(0,Math.min(M,cur)), sh=ensureShop(), ss=monthStats(sh.sales), es=monthStats(sh.exp), tr={};
+  for(const t of (state.trips||[])){ const k=String(t.from||'').slice(0,7); if(!k) continue; let v=0; try{ v=tripTotals(t).all||0; }catch(e){} tr[k]=(tr[k]||0)+v; }
+  const rows=[]; for(let i=1;i<=n;i++){ const d=new Date(y,m-1+i-1,1), k=monthKey(d), pl=r.months.find(x=>x.m===i)||{};
+    rows.push({i,k,d,now:i===cur,pr:+pl.revenue_usd>0?+pl.revenue_usd:null,ps:+pl.spend_usd>0?+pl.spend_usd:null,fr:ss[k]?ss[k].sum/u:0,fs:tr[k]?tr[k]/u:0,fe:es[k]?es[k].sum/u:0,title:pl.title||''}); }
+  const done=rows.filter(x=>!x.now), sum=(a,f)=>a.reduce((s,x)=>s+(f(x)||0),0);
+  const pr=sum(done.filter(x=>x.pr),x=>x.pr), fr=sum(done.filter(x=>x.pr),x=>x.fr), ps=sum(done.filter(x=>x.ps),x=>x.ps), fs=sum(done.filter(x=>x.ps),x=>x.fs);
+  return {st,cur,M,rows,doneN:done.length,pctR:pr>0?fr/pr*100:null,pctS:ps>0?fs/ps*100:null,anyFact:rows.some(x=>x.fr>0||x.fs>0||x.fe>0),next:cur<M?r.months.find(x=>x.m===cur+1)||null:null,before:cur<1}; }
+function pfCls(p){ return p==null?'':p>=90?'ok':p>=60?'mid':'low'; }
+function pfHTML(it){ const r=it.road; if(!r) return bpRoadWait(it); const D=pfData(it);
+  const stIn=`<div class="field n pf-st"><label for="pf-st">${L.pfStartQ}</label><input id="pf-st" type="month" value="${esc(pfStart(it))}" data-pfst="${esc(it.id)}"></div>`;
+  if(!D) return `<section class="id-sec pf"><h4>${ico('chart',18)} ${L.pfT}</h4><p class="bp-hint">${L.pfNoRate}</p></section>`;
+  if(D.before) return `<section class="id-sec pf"><h4>${ico('chart',18)} ${L.pfT}</h4><p class="bp-hint">${L.pfLead}</p>${stIn}<p class="bp-hint">${esc(L.pfBefore(m8MonLabel(parseYmd(D.st+'-01'))))}</p></section>`;
+  const cell=(lab,plan,fact,now)=>{ const p=plan!=null?fact/plan*100:null; return `<div class="pf-c ${now?'':pfCls(p)}"><small>${lab}</small><b>${esc(ivUsd(fact))}</b>${plan!=null?`<em>${esc(L.pfOf(ivUsd(plan),now?'':fx(p,0)))}</em>`:''}</div>`; };
+  const sum=D.doneN?L.pfSumR(D.doneN,D.M,D.pctR!=null?fx(D.pctR,0):null):L.pfSumN(Math.min(D.cur,D.M),D.M);
+  return `<section class="id-sec pf"><h4>${ico('chart',18)} ${L.pfT}</h4><p class="bp-hint">${L.pfLead}</p>${stIn}
+      <div class="pf-sum ${pfCls(D.pctR)}"><b>${esc(sum)}</b>${D.pctS!=null?`<span>${esc(L.pfSumS(fx(D.pctS,0)))}</span>`:''}${D.pctR!=null?`<div class="hb-glb"><i style="width:${Math.min(100,D.pctR).toFixed(1)}%"></i></div>`:''}</div>
+      ${D.anyFact?'':`<p class="bp-need">${L.pfNoFact}</p>`}
+      <div class="pf-ms">${D.rows.slice().reverse().map(x=>`<div class="pf-m ${x.now?'now':''}"><div class="pf-mh"><b>${esc(L.bpMoN(x.i))}</b><small>${esc(m8MonLabel(x.d))}${x.now?' · '+L.pfNow:''}</small></div>
+        <div class="pf-cs">${cell(L.pfRev,x.pr,x.fr,x.now)}${cell(L.pfBuy,x.ps,x.fs,x.now)}${cell(L.pfExp,null,x.fe,x.now)}</div></div>`).join('')}</div>
+      ${D.next?`<p class="m">${ico('next',14)} <span>${esc(L.pfNext(D.next.title||''))}</span></p>`:''}
+      <p class="m">${ico('info',14)} <span>${L.pfHow}</span></p>
+      <button type="button" class="btn btn-primary" data-pfask="${esc(it.id)}">${ico('chat',16)} ${L.pfAsk}</button></section>`; }
+function pfAsk(it){ const D=pfData(it); if(!D) return; const a=it.a||{};
+  const lines=D.rows.map(x=>(L.bpMoN?L.bpMoN(x.i):x.i)+': '+L.pfRev+' '+ivUsd(x.fr)+(x.pr!=null?' / '+ivUsd(x.pr):'')+', '+L.pfBuy+' '+ivUsd(x.fs)+(x.ps!=null?' / '+ivUsd(x.ps):'')+', '+L.pfExp+' '+ivUsd(x.fe)).join('; ');
+  const q=L.pfAskQ(a.title||L.bpT,ivUsd(it.cap),ivUsd(it.tgt),bpMoLab(it.f.m),lines); bpClose(); setTimeout(()=>{ try{ sifraOpen(q.slice(0,690)); }catch(e){} },90); }
+/* вкладка «План и факт» в бизнес-плане */
+if(!BP_TABS.includes('fact')) BP_TABS.splice(BP_TABS.indexOf('months')+1,0,'fact');
+{ const _t=bpTabHTML; bpTabHTML=function(it,tab){ return tab==='fact'?pfHTML(it):_t(it,tab); }; }
+{ const _v=bpViewR; bpViewR=function(m,foot,id){ _v(m,foot,id); const prev=m.onclick, it=()=>bpSt().plans.find(x=>x.id===id)||bpLast();
+    m.onclick=e=>{ const b=e.target.closest('button'); if(b&&m.contains(b)&&b.dataset.pfask){ const x=it(); if(x) pfAsk(x); return; } prev&&prev(e); };
+    m.onchange=e=>{ const i=e.target.closest('[data-pfst]'); if(!i) return; const x=bpSt().plans.find(z=>z.id===i.dataset.pfst); if(!x||!/^\d{4}-\d\d$/.test(i.value)) return; x.pfStart=i.value; persist();
+      const p=m.querySelector('[data-bptab="fact"]'); if(p){ p.innerHTML=pfHTML(x); } }; }; }
+/* вкладка «План»: бизнес-планы + проверки идей */
+{ const _p=hbPlanHTML; hbPlanHTML=function(){ const h=_p(), cs=chkList(), due=cs.filter(x=>chkSt(x)==='due').length;
+    const pf=bpSt().plans.map(it=>{ bpNorm(it); const D=it.road?pfData(it):null; return D&&!D.before&&D.pctR!=null?{id:it.id,t:(it.a&&it.a.title)||L.bpT,p:D.pctR,n:D.doneN}:null; }).filter(Boolean);
+    const pfLine=pf.length?`<div class="pf-mini">${pf.slice(0,3).map(x=>`<button type="button" class="pf-mi ${pfCls(x.p)}" data-hbopenfact="${esc(x.id)}"><span>${esc(x.t)}</span><small>${esc(L.pfMini(x.n,fx(x.p,0)))}</small></button>`).join('')}</div>`:'';
+    const nav=`<nav class="hb-jump pl-nav" aria-label="${esc(L.hbPlanT)}"><button type="button" class="chip" data-pljump="plans">${ico('doc',14)} ${L.plPlansN(bpSt().plans.length)}</button><button type="button" class="chip" data-pljump="chk">${ico('search',14)} ${L.plChkN(cs.length)}${due?` <i class="pl-dot" aria-label="${esc(L.chkDue)}"></i>`:''}</button></nav>`;
+    const chk=`<section class="id-sec hb-chks" id="pl-s-chk"><h4>${ico('search',18)} ${L.chkT}</h4><p class="bp-hint">${L.chkLead}</p>
+      ${cs.length?cs.slice().sort((a,b)=>(chkSt(a)==='due'?0:chkSt(a)==='run'?1:2)-(chkSt(b)==='due'?0:chkSt(b)==='run'?1:2)||String(b.at).localeCompare(String(a.at))).map(chkCardHTML).join(''):`<p class="bp-hint">${L.chkNone}</p>`}
+      <button type="button" class="btn btn-ghost" data-hbchknew="1">${ico('plus',16)} ${L.chkNew}</button></section>`;
+    return nav+`<div id="pl-s-plans">`+h.replace('</section>',pfLine+'</section>')+`</div>`+chk; }; }
+/* «Проверить идею» у каждой идеи */
+{ const _i=hbIdeaHTML; hbIdeaHTML=function(x){ const h=_i(x), k='<button type="button" class="btn btn-ghost hb-ib" data-hbidea="', a=h.lastIndexOf(k); if(a<0) return h;
+    return h.slice(0,a)+`<div class="hb-ibs"><button type="button" class="btn btn-ghost hb-ib" data-hbchkidea="${esc(x.title)}">${ico('search',16)} ${L.chkFromIdea}</button>`+h.slice(a,h.length-6)+'</div></div>'; }; }
+{ const _b=hbBind; hbBind=function(m){ _b(m); const prev=m.onclick; m.onclick=e=>{ const b=e.target.closest('button'); const d=b&&m.contains(b)?b.dataset:null;
+    if(d){ if(d.hbchknew){ bpGo('chk','new'); return; } if(d.hbchk){ bpGo('chk',d.hbchk); return; } if(d.hbchkidea){ bpGo('chk',{idea:d.hbchkidea}); return; }
+      if(d.hbopenfact){ bpGo('view',d.hbopenfact); const t=bpTop(); if(t){ t.tab='fact'; bpRender(); } return; }
+      if(d.pljump){ const mm=BPG.el.querySelector('#bpg-m'), el=mm.querySelector(d.pljump==='chk'?'#pl-s-chk':'#pl-s-plans'); if(el){ const nav=mm.querySelector('.hb-tabs'), y=el.getBoundingClientRect().top-mm.getBoundingClientRect().top+mm.scrollTop-(nav?nav.offsetHeight:56)-14; mm.scrollTo({top:Math.max(0,y),behavior:'smooth'}); } return; } }
+    prev&&prev(e); }; }; }
+/* страница проверки */
+function chkR(m,foot,arg){ BPG.el.querySelector('#bpg-t').textContent=L.chkT; const list=chkList(); let x=typeof arg==='string'&&arg!=='new'?list.find(z=>z.id===arg):null, isNew=!x;
+  if(!x){ const d=new Date(); d.setDate(d.getDate()+14); x={id:'chk'+Date.now().toString(36),idea:arg&&arg.idea?String(arg.idea):'',hyp:'',test:'',cost:'',until:dkey(d),go:'',stop:'',res:'',dec:'',at:new Date().toISOString()}; }
+  const F=Object.assign({},x), ta=(k,ph,rows)=>`<textarea id="chk-${k}" class="bp-idea" rows="${rows||2}" maxlength="600" placeholder="${esc(ph)}" data-chk="${k}">${esc(F[k]||'')}</textarea>`;
+  m.innerHTML=`<div class="bp-top bp-hero"><span class="bp-ava">${SF_AVA}</span><div><h2>${isNew?L.chkNew:L.chkT}</h2><p>${L.chkPageLead}</p></div></div>
+    ${isNew?'':`<p class="hb-chs big ${chkSt(x)} ${esc(x.dec||'')}">${esc(chkStL(x))}</p>`}
+    <ol class="chk-steps">
+      <li><label class="bp-lab" for="chk-idea">${L.chkQ.idea}</label>${ta('idea',L.chkPh.idea)}</li>
+      <li><label class="bp-lab" for="chk-hyp">${L.chkQ.hyp}</label><p class="bp-hint">${L.chkH.hyp}</p>${ta('hyp',L.chkPh.hyp)}</li>
+      <li><label class="bp-lab" for="chk-test">${L.chkQ.test}</label><p class="bp-hint">${L.chkH.test}</p>${ta('test',L.chkPh.test)}
+        <div class="hb-chf"><div class="field n"><label for="chk-cost">${L.chkCost}</label><input id="chk-cost" type="number" inputmode="decimal" min="0" value="${esc(F.cost)}" data-chk="cost"></div><div class="field n"><label for="chk-until">${L.chkUntil}</label><input id="chk-until" type="date" value="${esc(F.until)}" data-chk="until"></div></div></li>
+      <li><span class="bp-lab">${L.chkQ.rule}</span><p class="bp-hint">${L.chkH.rule}</p><label class="chk-sub" for="chk-go">${L.chkGo}</label>${ta('go',L.chkPh.go,1)}<label class="chk-sub" for="chk-stop">${L.chkStop}</label>${ta('stop',L.chkPh.stop,1)}</li>
+    </ol>
+    <button type="button" class="gp-mini" id="chk-sf">${ico('chat',14)} ${L.chkSf}</button>
+    ${isNew?'':`<section class="id-sec chk-res"><h4>${ico('flag',18)} ${L.chkResT}</h4><p class="bp-hint">${L.chkResLead}</p>${ta('res',L.chkPh.res,3)}
+      <div class="chips bp-wrap chk-dec">${['go','change','stop'].map(k=>`<button type="button" class="chip ${F.dec===k?'on':''}" data-chkdec="${k}" aria-pressed="${F.dec===k}">${L.chkDecB[k]}</button>`).join('')}</div>
+      <button type="button" class="gp-mini chk-del" id="chk-del">${ico('close',14)} ${L.chkDel}</button></section>`}`;
+  foot.hidden=false; foot.innerHTML=`<button type="button" class="btn btn-primary bp-go" id="chk-save">${ico('check',20)} ${L.chkSave}</button>`;
+  m.oninput=e=>{ const i=e.target.closest('[data-chk]'); if(i) F[i.dataset.chk]=i.value; };
+  m.onclick=e=>{ const b=e.target.closest('button'); if(!b||!m.contains(b)) return;
+    if(b.dataset.chkdec){ F.dec=F.dec===b.dataset.chkdec?'':b.dataset.chkdec; m.querySelectorAll('[data-chkdec]').forEach(z=>{ const on=z.dataset.chkdec===F.dec; z.classList.toggle('on',on); z.setAttribute('aria-pressed',on); }); return; }
+    if(b.id==='chk-sf'){ const q=L.chkSfQ(F.idea||'',F.hyp||'',F.test||''); bpClose(); setTimeout(()=>{ try{ sifraOpen(q.slice(0,690)); }catch(e){} },90); return; }
+    if(b.id==='chk-del'){ if(!b.dataset.sure){ b.dataset.sure='1'; b.innerHTML=ico('warn',14)+' '+L.chkDelSure; return; } const i=list.findIndex(z=>z.id===x.id); if(i>=0) list.splice(i,1); persist(); toast(L.chkDeleted); history.back(); } };
+  foot.querySelector('#chk-save').onclick=()=>{ if(!String(F.idea||'').trim()){ const t=m.querySelector('#chk-idea'); t.classList.add('bad'); t.focus(); toast(L.chkNeedIdea); return; }
+    F.cost=F.cost===''?'':Math.max(0,+F.cost||0); F.upd=new Date().toISOString(); if(isNew) list.unshift(Object.assign(x,F)); else Object.assign(x,F); persist(); toast(L.chkSaved); history.back(); }; }
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||t.name!=='chk'){ _br(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; m.oninput=null; f.innerHTML=''; f.hidden=true;
+    chkR(m,f,t.arg); m.scrollTop=restore?(t.y||0):0; }; }
+/* ===================== v28: «Учиться» → «Практика»: курс «Личная инициатива» (392), тренажёр магазина (395); кейс с выбором (404) ===================== */
+if(!LX_SUBS.includes('prac')) LX_SUBS.splice(1,0,'prac'); LX_SICO.prac='goal';
+const PI_N=8;
+function piSt(){ const h=hbSt(); if(!h.pi||typeof h.pi!=='object') h.pi={}; h.pi.done=h.pi.done||{}; h.pi.note=h.pi.note||{}; return h.pi; }
+function piDoneN(){ const s=piSt(); let n=0; for(let i=1;i<=PI_N;i++) if(s.done[i]) n++; return n; }
+function piNext(){ const s=piSt(); for(let i=1;i<=PI_N;i++) if(!s.done[i]) return i; return 0; }
+/* ---------- тренажёр «Год магазина» ---------- */
+const SIM={cost:8,D0:110,fix:450,start:3000,mks:[50,80,100,130,160],qty:[0,50,100,150,200,250,300],ads:[0,30,80],season:[0.7,0.8,1.3,1,0.9,0.9,0.8,1.5,1.1,0.9,1,1.4],hol:{3:'nav',8:'school',12:'ny'}};
+function simNew(seed){ const r=hbRand(seed), ms=[2,4,5,6,7,9,10,11], ev={}, kinds=['fx','comp','delay','blog','disc'];
+  for(let i=ms.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [ms[i],ms[j]]=[ms[j],ms[i]]; } for(let i=kinds.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [kinds[i],kinds[j]]=[kinds[j],kinds[i]]; }
+  ms.slice(0,4).forEach((m,i)=>ev[m]=kinds[i]); const noise=Array.from({length:12},()=>Math.exp(0.08*hbGauss(r)));
+  return {seed,m:1,cash:SIM.start,stock:0,pend:0,log:[],ev,noise,dec:{q:150,mk:100,ad:0},done:false}; }
+function simDemand(g,m,mk,ad,last){ const pr=Math.pow((1+mk/100)/2,-1.6), af=ad>=80?1.22:ad>=30?1.12:1; let e=1;
+  if(g.ev[m]==='comp'||g.ev[m-1]==='comp') e*=0.8; if(g.ev[m]==='blog') e*=1.3; const loy=last&&last.short>0?0.92:1;
+  return Math.max(0,Math.round(SIM.D0*SIM.season[m-1]*pr*af*e*loy*g.noise[m-1])); }
+function simUnit(g,m,q){ return SIM.cost*(g.ev[m]==='fx'?1.12:1)*(g.ev[m]==='disc'&&q>=200?0.9:1); }
+function simStep(g,dec){ const m=g.m, last=g.log[g.log.length-1], unit=simUnit(g,m,dec.q), buy=Math.round(dec.q*unit);
+  g.stock+=g.pend; g.pend=0; g.cash-=buy; if(g.ev[m]==='delay') g.pend=dec.q; else g.stock+=dec.q;
+  const D=simDemand(g,m,dec.mk,dec.ad,last), sales=Math.min(g.stock,D), price=SIM.cost*(1+dec.mk/100), rev=Math.round(sales*price);
+  g.stock-=sales; g.cash+=rev-SIM.fix-dec.ad; g.log.push({m,q:dec.q,unit,mk:dec.mk,ad:dec.ad,D,sales,short:D-sales,rev,buy,cash:Math.round(g.cash),stock:g.stock,price});
+  g.m++; if(g.m>12){ g.done=true; g.stock+=g.pend; g.pend=0; } }
+function simResult(g){ return Math.round(g.cash+g.stock*SIM.cost*0.7-SIM.start); }
+function simRef(g){ const h=simNew(g.seed); for(let m=1;m<=12;m++){ const exp=Math.round(SIM.D0*SIM.season[m-1]*Math.pow(1,-1.6)*1.12*(h.ev[m]==='comp'||h.ev[m-1]==='comp'?0.8:1)*(h.ev[m]==='blog'?1.3:1));
+    let need=Math.max(0,exp*1.05-h.stock-h.pend); if(h.ev[m+1]==='delay') need+=SIM.D0*SIM.season[m]*1.05; let q=SIM.qty.reduce((b,x)=>Math.abs(x-need)<Math.abs(b-need)?x:b,0);
+    while(q>0&&q*simUnit(h,m,q)>h.cash) q=SIM.qty[SIM.qty.indexOf(q)-1]; simStep(h,{q,mk:100,ad:30}); } return simResult(h); }
+function simAnalyse(g){ const L0=g.log, bad=[], good=[], mon=m=>(L.monthsNom||[])[m-1]||String(m);
+  const sh=L0.filter(x=>x.short>0).sort((a,b)=>b.short*(b.price-SIM.cost)-a.short*(a.price-SIM.cost));
+  if(sh.length){ const x=sh[0]; bad.push(L.simMShort(mon(x.m),x.short,ivUsd(Math.round(x.short*(x.price-SIM.cost))),!!SIM.hol[x.m])); }
+  if(g.stock>50) bad.push(L.simMOver(g.stock,ivUsd(Math.round(g.stock*SIM.cost))));
+  const avgMk=L0.reduce((s,x)=>s+x.mk,0)/L0.length; if(avgMk>=130) bad.push(L.simMHigh); else if(avgMk<=65) bad.push(L.simMLow);
+  const idle=L0.find(x=>x.short>20&&x.cash+x.buy>x.short*SIM.cost*2&&!(sh[0]&&sh[0].m===x.m)); if(idle&&bad.length<4) bad.push(L.simMIdle(mon(idle.m)));
+  if(L0.some(x=>x.cash<0)&&bad.length<4) bad.push(L.simMDebt);
+  const adWaste=L0.filter(x=>x.ad>0&&x.short>0).length; if(adWaste&&bad.length<4) bad.push(L.simMAd);
+  const holOk=[3,8,12].filter(m=>{ const x=L0.find(z=>z.m===m); return x&&x.short<=10; }); if(holOk.length>=2) good.push(L.simGHol(holOk.map(m=>lang==='en'?mon(m):mon(m).toLowerCase()).join(', ')));
+  if(L0.every(x=>x.cash>=0)) good.push(L.simGCash);
+  const lesson=sh.length?L.simLShort:g.stock>50?L.simLOver:avgMk>=130?L.simLHigh:avgMk<=65?L.simLLow:L.simLGood;
+  return {bad:bad.slice(0,4),good:good.slice(0,2),lesson}; }
+/* ---------- «Практика» ---------- */
+function pracHTML(){ const s=piSt(), dn=piDoneN(), nx=piNext(), g=hbSt().sim, best=hbSt().simBest;
+  const lessons=Array.from({length:PI_N},(_,i)=>{ const k=i+1, t=(L.piL||[])[i]||{}; return `<button type="button" class="pi-row ${s.done[k]?'done':''}" data-pil="${k}"><span class="pi-n" aria-hidden="true">${s.done[k]?ico('check',14):k}</span><span><b>${esc(t.t||'')}</b><small>${esc(t.lead?t.lead.split('. ')[0]+'.':'')}</small></span>${ico('next',16)}</button>`; }).join('');
+  return `<section class="hb-card pi-card"><h3 class="hb-ct">${ico('goal',18)} ${L.piT}</h3><p class="bp-hint">${L.piLead}</p>
+      <div class="pi-prog"><div class="hb-glb" role="progressbar" aria-valuemin="0" aria-valuemax="${PI_N}" aria-valuenow="${dn}" aria-label="${esc(L.piProg(dn,PI_N))}"><i style="width:${dn/PI_N*100}%"></i></div><small>${esc(L.piProg(dn,PI_N))}</small></div>
+      <button type="button" class="btn btn-primary" data-pil="${nx||1}">${ico('next',16)} ${nx?(dn?L.piCont(nx):L.piStart):L.piAgain}</button>
+      <details class="pi-all" ${dn?'':'open'}><summary>${L.piAll}</summary><div class="pi-list">${lessons}</div></details>
+      <p class="m">${ico('info',14)} <span>${L.piSrc}</span> <a href="https://www.worldbank.org/en/news/press-release/2017/09/22/world-bank-study-entrepreneur-training-focused-on-mindset-proves-more-effective-than-traditional-business-skills-in-west-africa" target="_blank" rel="noopener noreferrer">${ico('external',12)} ${L.hbSrc1}</a></p></section>
+    <section class="hb-card sim-card"><h3 class="hb-ct">${ico('shop',18)} ${L.simT}</h3><p class="bp-hint">${L.simLead}</p>
+      ${best!=null?`<p class="sim-best">${esc(L.simBest(ivUsd(best)))}</p>`:''}
+      <button type="button" class="btn ${g&&!g.done?'btn-primary':'btn-ghost'}" data-pisim="${g&&!g.done?'go':'new'}">${ico('next',16)} ${g&&!g.done?L.simCont(Math.min(12,g.m)):L.simPlay}</button></section>`; }
+{ const _lh=hbLearnHTML; hbLearnHTML=function(){ const h=hbSt(); if(h.lsub!=='prac') return _lh();
+    const nav=`<div class="chips hb-scroll lx-nav" role="tablist" aria-label="${esc(L.hbLearnT)}">${LX_SUBS.map(k=>`<button type="button" class="chip ${k==='prac'?'on':''}" role="tab" aria-selected="${k==='prac'}" data-lxsub="${k}">${ico(LX_SICO[k],14)} ${L.hbLsub[k]}</button>`).join('')}</div>`;
+    return nav+pracHTML(); }; }
+/* ---------- кейс дня: «Как бы вы поступили?» ---------- */
+function caseKey(c){ let h=0; const s=String(c.company||'')+'|'+String(c.question||c.story||''); for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))|0; return 'c'+(h>>>0).toString(36); }
+{ const _c=ldCaseHTML; ldCaseHTML=function(c){ const ops=Array.isArray(c&&c.options)?c.options.filter(x=>typeof x==='string'&&x.trim()):[];
+    if(!c||ops.length!==3||!c.question||!(c.chosen>=0&&c.chosen<=2)) return _c(c);
+    const h=hbSt(), A=h.caseAns||{}, k=caseKey(c), mine=A[k], ans=mine!=null;
+    return `<div class="hb-case q ${ans?'ans':''}"><b>${esc(c.company)}</b>${c.country?`<small>${esc(c.country)}</small>`:''}<p>${esc(c.story)}</p>
+      <p class="case-q"><b>${L.caseQ}</b> ${esc(c.question)}</p>
+      <div class="case-os" role="group" aria-label="${esc(L.caseQ)}">${ops.map((o,i)=>{ const cls=ans?(i===c.chosen?'real':'')+(i===mine?' mine':''):''; return `<button type="button" class="case-o ${cls}" data-caseo="${i}" data-casek="${k}" ${ans?'disabled':''}><span class="case-l">${(L.caseLet||['А','Б','В'])[i]}</span><span>${esc(o)}${ans&&i===c.chosen?`<em>${L.caseReal}</em>`:''}${ans&&i===mine&&i!==c.chosen?`<em>${L.caseMine}</em>`:''}</span></button>`; }).join('')}</div>
+      ${ans?`<p class="case-v ${mine===c.chosen?'ok':''}">${ico(mine===c.chosen?'check':'info',14)} ${mine===c.chosen?L.caseSame:L.caseDiff}</p>
+        ${c.result?`<p><b>${L.hbLDResult}:</b> ${esc(c.result)}</p>`:''}${c.why?`<p><b>${L.caseWhy}:</b> ${esc(c.why)}</p>`:''}<p class="hb-ex">${ico('sparkle',14)} ${esc(c.lesson)}</p>
+        ${c.src?`<a class="hb-src1" href="${esc(c.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}`:`<p class="case-hint">${L.caseHint}</p>`}</div>`; }; }
+/* ---------- клики в «Учиться» ---------- */
+{ const _b=hbBind; hbBind=function(m){ _b(m); const prev=m.onclick; m.onclick=e=>{ const b=e.target.closest('button'); const d=b&&m.contains(b)?b.dataset:null;
+    if(d){ if(d.pil){ bpGo('pi',+d.pil); return; } if(d.pisim){ const h=hbSt(); if(d.pisim==='new'||!h.sim||h.sim.done) h.sim=simNew(Date.now()%2147483647); persist(); bpGo('sim'); return; }
+      if(d.caseo!=null&&d.casek){ const h=hbSt(); h.caseAns=h.caseAns||{}; h.caseAns[d.casek]=+d.caseo; const ks=Object.keys(h.caseAns); if(ks.length>200) delete h.caseAns[ks[0]]; persist();
+        const box=b.closest('.hb-case'), y=BPG.el.querySelector('#bpg-m').scrollTop; ldDraw(); BPG.el.querySelector('#bpg-m').scrollTop=y; const nb=BPG.el.querySelector(`.case-o.mine,.case-o.real`); if(nb) nb.focus({preventScroll:true}); return; } }
+    prev&&prev(e); }; }; }
+/* ---------- страница занятия ---------- */
+function piR(m,foot,k){ k=Math.max(1,Math.min(PI_N,+k||1)); const t=(L.piL||[])[k-1]||{}, s=piSt(); BPG.el.querySelector('#bpg-t').textContent=L.piT;
+  m.innerHTML=`<p class="pi-of">${esc(L.piOf(k,PI_N))}</p><h2 class="pi-h">${esc(t.t||'')}</h2><p class="pi-lead">${esc(t.lead||'')}</p>
+    <section class="id-sec"><h4>${ico('check',18)} ${L.piHow}</h4><ul class="id-ul">${(t.pts||[]).map(x=>`<li>${ico('next',16)}<span>${esc(x)}</span></li>`).join('')}</ul></section>
+    <section class="id-sec pi-ex"><h4>${ico('shop',18)} ${L.piEx}</h4><p>${esc(t.ex||'')}</p></section>
+    <section class="id-sec pi-task"><h4>${ico('flag',18)} ${L.piTask}</h4><p>${esc(t.task||'')}</p>
+      <label class="bp-lab" for="pi-note">${L.piNoteQ}</label><textarea id="pi-note" class="bp-idea" rows="3" maxlength="600" placeholder="${esc(L.piNotePh)}">${esc(s.note[k]||'')}</textarea>
+      ${k===PI_N?`<button type="button" class="btn btn-ghost" id="pi-chk">${ico('search',16)} ${L.piToChk}</button>`:''}${k===4?`<button type="button" class="btn btn-ghost" id="pi-calc">${ico('goal',16)} ${L.piToCalc}</button>`:''}</section>`;
+  foot.hidden=false; foot.innerHTML=`<div class="bp-acts two"><button type="button" class="btn ${s.done[k]?'btn-ghost':'btn-primary'}" id="pi-done" aria-pressed="${!!s.done[k]}">${ico('check',18)} ${s.done[k]?L.piDoneY:L.piDone}</button>${k<PI_N?`<button type="button" class="btn btn-ghost" id="pi-next">${L.piNextB} ${ico('next',18)}</button>`:`<button type="button" class="btn btn-ghost" id="pi-fin">${ico('check',18)} ${L.piFin}</button>`}</div>`;
+  const ta=m.querySelector('#pi-note'); ta.addEventListener('input',()=>{ s.note[k]=ta.value; clearTimeout(ta._t); ta._t=setTimeout(persist,400); });
+  const dn=foot.querySelector('#pi-done'); dn.onclick=()=>{ if(s.done[k]) delete s.done[k]; else s.done[k]=dkey(); persist(); const on=!!s.done[k]; dn.classList.toggle('btn-primary',!on); dn.classList.toggle('btn-ghost',on); dn.setAttribute('aria-pressed',on); dn.innerHTML=ico('check',18)+' '+(on?L.piDoneY:L.piDone); if(on) toast(L.piDoneT(piDoneN(),PI_N)); };
+  const nx=foot.querySelector('#pi-next'); if(nx) nx.onclick=()=>bpReplace('pi',k+1);
+  const fi=foot.querySelector('#pi-fin'); if(fi) fi.onclick=()=>history.back();
+  const ck=m.querySelector('#pi-chk'); if(ck) ck.onclick=()=>bpGo('chk','new');
+  const cc=m.querySelector('#pi-calc'); if(cc) cc.onclick=()=>{ bpClose(); setTimeout(()=>{ try{ hubOpen('calc'); }catch(e){} },120); }; }
+/* ---------- страница тренажёра ---------- */
+function simR(m,foot){ const h=hbSt(); let g=h.sim; if(!g) g=h.sim=simNew(Date.now()%2147483647); BPG.el.querySelector('#bpg-t').textContent=L.simT; const mon=x=>(L.monthsNom||[])[x-1]||String(x);
+  const bar=`<div class="sim-bar" aria-hidden="true">${Array.from({length:12},(_,i)=>`<i class="${i+1<g.m?'d':i+1===g.m&&!g.done?'c':''}"></i>`).join('')}</div>`;
+  if(g.done){ const res=simResult(g), ref=simRef(g), A=simAnalyse(g); if(h.simBest==null||res>h.simBest){ h.simBest=res; persist(); }
+    m.innerHTML=`<div class="sim-end"><small>${L.simEndT}</small><b class="${res>=0?'up':'dn'}">${res>=0?'+':'−'}${esc(ivUsd(Math.abs(res)))}</b><p>${esc(L.simVsRef(ivUsd(ref),res>=ref))}</p></div>${bar}
+      ${A.bad.length?`<section class="id-sec"><h4>${ico('warn',18)} ${L.simBadT}</h4><ul class="id-ul risk">${A.bad.map(x=>`<li>${ico('warn',16)}<span>${esc(x)}</span></li>`).join('')}</ul></section>`:''}
+      ${A.good.length?`<section class="id-sec"><h4>${ico('check',18)} ${L.simGoodT}</h4><ul class="id-ul">${A.good.map(x=>`<li>${ico('check',16)}<span>${esc(x)}</span></li>`).join('')}</ul></section>`:''}
+      <section class="id-sec sim-lesson"><h4>${ico('bulb',18)} ${L.simLessonT}</h4><p>${esc(A.lesson)}</p></section>
+      <details class="wh-more"><summary>${ico('stats',16)} ${L.simLogT}</summary><div class="sim-log">${g.log.map(x=>`<div><b>${esc(mon(x.m))}</b><span>${esc(L.simLogL(x.q,x.mk,x.sales,x.D,ivUsd(x.rev),ivUsd(x.cash)))}</span></div>`).join('')}</div></details>`;
+    foot.hidden=false; foot.innerHTML=`<div class="bp-acts two"><button type="button" class="btn btn-primary" id="sim-new">${ico('repeat',18)} ${L.simAgain}</button><button type="button" class="btn btn-ghost" id="sim-out">${L.simOut}</button></div>`;
+    foot.querySelector('#sim-new').onclick=()=>{ h.sim=simNew(Date.now()%2147483647); persist(); bpRender(); }; foot.querySelector('#sim-out').onclick=()=>history.back(); return; }
+  const last=g.log[g.log.length-1], dec=g.dec, ev=g.ev[g.m], nextHol=SIM.hol[g.m+1], hol=SIM.hol[g.m], unit=q=>simUnit(g,g.m,q);
+  const se=SIM.season[g.m-1]*(g.ev[g.m]==='comp'||g.ev[g.m-1]==='comp'?0.8:1)*(ev==='blog'?1.3:1), lvl=se>=1.2?'hi':se<=0.85?'lo':'mid';
+  const stockNext=g.stock+g.pend+(ev==='delay'?0:dec.q), cashAfter=Math.round(g.cash-dec.q*unit(dec.q)-dec.ad);
+  const chips=(attr,list,cur,lab,dis)=>list.map(v=>`<button type="button" class="chip ${v===cur?'on':''}" data-${attr}="${v}" aria-pressed="${v===cur}" ${dis&&dis(v)?'disabled':''}>${lab(v)}</button>`).join('');
+  m.innerHTML=`<div class="sim-top"><b>${esc(L.simMon(g.m,mon(g.m)))}</b>${bar}</div>
+    <div class="sim-stat"><div><small>${L.simCash}</small><b class="${g.cash<0?'dn':''}">${esc(ivUsd(Math.round(g.cash)))}</b></div><div><small>${L.simStock}</small><b>${esc(L.simPcs(g.stock+g.pend))}</b></div><div><small>${L.simProfit}</small><b>${esc(ivUsd(simResult(g)))}</b></div></div>
+    ${g.m===1?`<div class="sim-intro"><p>${L.simIntro}</p><p class="m">${ico('cal',14)} <span>${L.simCal}</span></p></div>`:''}
+    ${last?`<div class="sim-last ${last.short>0?'short':''}"><small>${esc(L.simLastT(mon(last.m)))}</small><p>${esc(L.simLast(last.sales,last.D,ivUsd(last.rev),ivUsd(last.rev-last.buy-SIM.fix-last.ad)))}</p>${last.short>0?`<p class="m">${ico('warn',14)} <span>${esc(L.simShort(last.short))}</span></p>`:''}${g.pend&&g.ev[last.m]==='delay'?`<p class="m">${ico('truck',14)} <span>${esc(L.simPend(g.pend))}</span></p>`:''}</div>`:''}
+    ${ev?`<div class="sim-ev">${ico('bell',16)} <span>${esc(L.simEv[ev])}</span></div>`:''}${hol?`<div class="sim-ev hol">${ico('sun',16)} <span>${esc(L.simHol[hol])}</span></div>`:''}${nextHol?`<div class="sim-ev soon">${ico('cal',16)} <span>${esc(L.simSoon[nextHol])}</span></div>`:''}
+    <p class="sim-dem ${lvl}">${esc(L.simDem[lvl])}</p>
+    <div class="br-h">${L.simQ}</div><div class="chips bp-wrap sim-c sim-q">${chips('simq',SIM.qty,dec.q,v=>`${L.simPcs(v)}<small>${esc(ivUsd(Math.round(v*unit(v))))}</small>`,v=>v*unit(v)>Math.max(0,g.cash))}</div>
+    <div class="br-h">${L.simMk}</div><div class="chips bp-wrap sim-c">${chips('simmk',SIM.mks,dec.mk,v=>`${v}%<small>${esc(L.simPrice(fx(SIM.cost*(1+v/100),0)))}</small>`)}</div>
+    <div class="br-h">${L.simAd}</div><div class="chips bp-wrap sim-c">${chips('simad',SIM.ads,dec.ad,v=>v?esc(ivUsd(v)):L.simNoAd)}</div>
+    <p class="sim-sum">${esc(L.simSum(ivUsd(Math.round(dec.q*unit(dec.q))),ivUsd(cashAfter),stockNext))}</p>`;
+  foot.hidden=false; foot.innerHTML=`<button type="button" class="btn btn-primary bp-go" id="sim-go">${ico('next',20)} ${g.m<12?L.simGo:L.simGoEnd}</button>`;
+  m.onclick=e=>{ const b=e.target.closest('button'); if(!b||!m.contains(b)||b.disabled) return; const d=b.dataset;
+    if(d.simq!=null) dec.q=+d.simq; else if(d.simmk!=null) dec.mk=+d.simmk; else if(d.simad!=null) dec.ad=+d.simad; else return; persist(); const y=m.scrollTop; simR(m,foot); m.scrollTop=y; };
+  foot.querySelector('#sim-go').onclick=()=>{ if(dec.q*unit(dec.q)>Math.max(0,g.cash)) dec.q=0; simStep(g,{q:dec.q,mk:dec.mk,ad:dec.ad}); if(!g.done&&dec.q*simUnit(g,g.m,dec.q)>Math.max(0,g.cash)) dec.q=SIM.qty.filter(v=>v*simUnit(g,g.m,v)<=Math.max(0,g.cash)).pop()||0; persist(); simR(m,foot); m.scrollTop=0; }; }
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||(t.name!=='pi'&&t.name!=='sim')){ _br(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; f.innerHTML=''; f.hidden=true;
+    if(t.name==='pi') piR(m,f,t.arg); else simR(m,f); m.scrollTop=restore?(t.y||0):0; }; }
+/* <</v28 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
