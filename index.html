@@ -2835,6 +2835,144 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .case-v.ok{color:var(--m-leaf);} .case-v svg{flex:none; margin-top:2px;}
 .case-hint{margin:8px 0 0; font-size:.8rem; color:var(--muted);}
 /* <</v28 css>> */
+/* <<v29 css>> */
+/* v29: договор по фото, тетрадь по фото, «Как посчитано?» */
+.p29-tips{display:flex; flex-wrap:wrap; gap:6px; margin:2px 0 12px;}
+.p29-tips span{display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:99px; background:var(--surface-2); font-size:.8rem; font-weight:700; color:var(--ink);}
+.p29-tips svg{color:var(--brand); flex:none;}
+.p29-pages{display:grid; grid-template-columns:repeat(auto-fill,minmax(92px,1fr)); gap:8px; margin:0 0 10px;}
+.p29-pg{position:relative; border-radius:12px; overflow:hidden; background:var(--surface-2); aspect-ratio:3/4;}
+.p29-pg img{width:100%; height:100%; object-fit:cover; display:block;}
+.p29-pn{position:absolute; left:6px; top:6px; min-width:22px; height:22px; padding:0 6px; border-radius:99px; background:rgba(0,0,0,.62); color:#fff; font-size:.74rem; font-weight:800; display:flex; align-items:center; justify-content:center;}
+.p29-warn{position:absolute; left:6px; bottom:40px; padding:2px 7px; border-radius:99px; background:#E08A2B; color:#fff; font-size:.68rem; font-weight:800;}
+.p29-pb{position:absolute; left:0; right:0; bottom:0; display:flex; justify-content:space-between; padding:4px; background:linear-gradient(transparent,rgba(0,0,0,.55));}
+.p29-pb button{width:34px; height:34px; border-radius:10px; border:0; background:rgba(255,255,255,.92); color:#1d2433; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+.p29-add{display:flex; gap:8px;} .p29-add .btn{flex:1 1 0; justify-content:center;}
+.p29-priv{display:flex; gap:6px; align-items:flex-start; margin:10px 0 4px; font-size:.78rem; line-height:1.45; color:var(--muted);}
+.p29-priv svg{flex:none; margin-top:2px;}
+.p29-year{max-width:180px; margin-top:10px;}
+.p29-busy{display:flex; flex-direction:column; align-items:center; gap:6px; text-align:center; padding:18px 6px 6px;}
+.p29-busy b{font-size:1rem;} .p29-busy small{color:var(--muted); font-size:.82rem;} .p29-busy .btn{margin-top:8px;}
+.p29-spin{width:34px; height:34px; border-radius:50%; border:4px solid var(--surface-2); border-top-color:var(--brand); animation:p29spin 1s linear infinite;}
+@keyframes p29spin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){ .p29-spin{animation-duration:3s;} }
+/* договор */
+.c29-entry{display:flex; align-items:center; gap:14px; width:100%; text-align:left; padding:14px 16px; border-radius:20px; border:2px dashed color-mix(in srgb,#5B6CF0 40%,transparent); background:transparent; color:var(--ink); font-family:inherit; min-height:74px; margin-top:10px; cursor:pointer;}
+.c29-entry b{display:block; font-size:1rem;} .c29-entry small{color:var(--muted); font-size:.84rem; line-height:1.35;}
+.c29-ei{width:44px; height:44px; border-radius:14px; background:#5B6CF0; color:#fff; display:flex; align-items:center; justify-content:center; flex:none;}
+.c29-fl{display:flex; align-items:center; gap:8px; width:100%; margin:-4px 0 12px; padding:11px 14px; border-radius:14px; border:1.5px dashed color-mix(in srgb,var(--brand) 40%,transparent); background:transparent; color:var(--brand); font:inherit; font-weight:800; cursor:pointer; min-height:46px;}
+.c29-full{display:grid; gap:6px; margin:0 0 14px; padding:12px; border-radius:16px; background:color-mix(in srgb,var(--brand) 8%,var(--surface-2));}
+.c29-full small{color:var(--muted); font-size:.8rem; line-height:1.4;} .c29-old{justify-self:start; min-height:40px;}
+.c29-recent{display:grid; gap:6px; margin-top:16px;} .c29-recent>b{font-size:.86rem;}
+.c29-rc{display:flex; justify-content:space-between; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:0; background:var(--surface-2); color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+.c29-rc span{font-weight:800;} .c29-rc small{color:var(--muted); font-weight:700; font-size:.78rem;}
+.c29-verdict{border-radius:16px; padding:12px 14px; margin:0 0 12px; background:var(--surface-2); border-left:5px solid #B7791F;}
+.c29-verdict b{display:block; font-size:1rem; margin-bottom:4px;} .c29-verdict p{margin:0; font-size:.9rem; line-height:1.45;}
+.c29-verdict.ok{border-left-color:var(--m-leaf);} .c29-verdict.bad{border-left-color:#D64545;}
+.c29-cur{display:flex; gap:6px; align-items:flex-start; margin:0 0 12px; font-size:.84rem; font-weight:700; color:#B7791F;}
+.c29-kv{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0 0 14px;}
+.c29-kv div{background:var(--surface-2); border-radius:12px; padding:9px 11px; min-width:0;}
+.c29-kv small{display:block; font-size:.74rem; font-weight:800; color:var(--muted);}
+.c29-kv b{display:block; font-family:var(--font-num); font-size:1rem; font-variant-numeric:tabular-nums; overflow-wrap:anywhere;}
+.c29-rate{border:1.5px solid var(--line); border-radius:16px; padding:10px 12px 12px; margin:0 0 14px;}
+.c29-rate h4,.c29-h,.c29-ask h4,.c29-apply h4{margin:0 0 8px; font-size:.95rem;}
+.c29-rr{display:flex; justify-content:space-between; gap:8px; padding:5px 0; font-size:.88rem; border-bottom:1px solid var(--line);}
+.c29-rr b{font-family:var(--font-num);}
+.c29-real{margin-top:10px; padding:10px 12px; border-radius:12px; background:color-mix(in srgb,var(--m-leaf) 10%,var(--surface-2));}
+.c29-real.warn{background:color-mix(in srgb,#E08A2B 14%,var(--surface-2));}
+.c29-real small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);}
+.c29-real>b{display:block; font-family:var(--font-num); font-size:1.5rem; line-height:1.2;}
+.c29-real>p{margin:4px 0 0; font-size:.84rem; line-height:1.45; font-weight:700;}
+.c29-how{margin-top:8px;} .c29-how summary{display:inline-flex; align-items:center; gap:5px; cursor:pointer; font-size:.84rem; font-weight:800; color:var(--brand); min-height:36px;}
+.c29-how ol{margin:6px 0 0; padding-left:20px; font-size:.84rem; line-height:1.5;} .c29-how li{margin:2px 0;}
+.c29-flags{display:grid; gap:8px; margin:0 0 14px;}
+.c29-flag{border-radius:14px; padding:10px 12px; background:var(--surface-2); border-left:4px solid #B7791F;}
+.c29-flag.bad{border-left-color:#D64545;} .c29-flag.good{border-left-color:var(--m-leaf);}
+.c29-fh{display:flex; align-items:center; gap:8px; flex-wrap:wrap;} .c29-fh b{font-size:.92rem;}
+.c29-flag p{margin:4px 0 0; font-size:.86rem; line-height:1.45;}
+.c29-flag blockquote{margin:6px 0 0; padding:6px 10px; border-radius:10px; background:var(--surface); font-size:.8rem; font-style:italic; line-height:1.45; color:var(--muted);}
+.c29-flag cite{font-style:normal; font-weight:800; white-space:nowrap;}
+.c29-lv{display:inline-block; padding:2px 8px; border-radius:99px; font-size:.7rem; font-weight:800; color:#fff; background:#B7791F;}
+.c29-lv.bad{background:#D64545;} .c29-lv.good{background:var(--m-leaf);}
+.c29-det{border:1.5px solid var(--line); border-radius:14px; padding:0 12px; margin:0 0 8px;}
+.c29-det summary{padding:11px 0; font-weight:800; cursor:pointer; min-height:44px; box-sizing:border-box;}
+.c29-det p{margin:0 0 10px; font-size:.86rem; line-height:1.5;} .c29-det small{display:block; color:var(--muted); font-size:.8rem; margin-top:3px;}
+.c29-fees{list-style:none; margin:0 0 10px; padding:0;}
+.c29-fees li{display:flex; justify-content:space-between; gap:10px; padding:6px 0; border-top:1px solid var(--line); font-size:.86rem;}
+.c29-fees li:first-child{border-top:0;} .c29-fees b{text-align:right; font-family:var(--font-num); white-space:nowrap;} .c29-fees b small{font-family:inherit; font-weight:700;}
+.c29-mk{margin:6px 0 14px; padding:10px 12px; border-radius:14px; background:var(--surface-2);}
+.c29-mk small{display:block; font-size:.76rem; font-weight:800; color:var(--muted);} .c29-mk p{margin:3px 0 4px; font-size:.86rem; line-height:1.45;}
+.c29-mk a{display:inline-flex; align-items:center; gap:4px; font-size:.8rem; font-weight:700; color:var(--brand); margin-right:10px; min-height:32px;}
+.c29-ask{margin:0 0 14px;} .c29-ask ol{margin:0 0 8px; padding-left:20px; font-size:.88rem; line-height:1.5;}
+.c29-unr{display:flex; gap:8px; margin:0 0 14px; padding:10px 12px; border-radius:14px; background:color-mix(in srgb,#E08A2B 12%,var(--surface-2)); color:var(--ink);}
+.c29-unr svg{flex:none; color:#C2571A; margin-top:2px;} .c29-unr ul{margin:4px 0; padding-left:18px; font-size:.84rem;} .c29-unr small{font-size:.8rem; color:var(--muted);}
+.c29-apply{margin:0 0 12px; padding:10px 12px; border-radius:14px; border:1.5px solid var(--line);}
+:root[data-theme="dark"] .c29-cur{color:#F2C46D;}
+/* тетрадь */
+.n29-link{display:flex; align-items:center; justify-content:center; gap:6px; width:100%; margin-top:8px; padding:10px 12px; border:0; border-radius:12px; background:transparent; color:var(--brand); font:inherit; font-weight:800; font-size:.88rem; cursor:pointer; min-height:44px;}
+.n29-mem{margin:10px 0 0; font-size:.82rem; line-height:1.5;} .n29-mem small{color:var(--muted);}
+.n29-hist{display:grid; gap:4px; margin-top:16px;} .n29-hist>b{font-size:.86rem;}
+.n29-hr{display:flex; justify-content:space-between; align-items:center; gap:8px; font-size:.82rem; padding:4px 0; border-top:1px solid var(--line);}
+.n29-prog{display:grid; gap:6px; margin:4px 0 6px;}
+.n29-pr{display:flex; align-items:center; gap:10px; padding:6px 8px; border-radius:12px; background:var(--surface-2); font-size:.86rem;}
+.n29-pr img{width:34px; height:44px; object-fit:cover; border-radius:6px;} .n29-pr span{flex:1; font-weight:700;} .n29-pr b{font-size:.8rem; color:var(--muted);}
+.n29-pr.ok b{color:var(--m-leaf);} .n29-pr.err b{color:#C2571A;} .n29-pr.read b{color:var(--brand);}
+.n29-sum{display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px;}
+.n29-sum span{padding:6px 10px; border-radius:99px; background:var(--surface-2); font-size:.82rem; font-weight:800;}
+.n29-sum .in{color:var(--m-leaf);} .n29-sum .out{color:#C2571A;}
+.n29-page{border:1.5px solid var(--line); border-radius:16px; padding:10px; margin:0 0 12px;}
+.n29-page.err{display:flex; align-items:center; gap:10px; flex-wrap:wrap;} .n29-page.err span{flex:1; color:#C2571A; font-weight:700;}
+.n29-ph{display:flex; gap:10px; align-items:center; margin-bottom:8px;}
+.n29-ph b{display:block; font-size:.92rem;} .n29-ph small{display:block; font-size:.76rem; color:var(--muted);}
+.n29-ph .n29-ck{color:var(--m-leaf); font-weight:800; display:flex; align-items:center; gap:4px;}
+.n29-thumb{flex:none; width:56px; height:72px; padding:0; border:0; border-radius:10px; overflow:hidden; background:var(--surface-2); cursor:zoom-in;}
+.n29-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+.n29-tot{display:flex; gap:6px; align-items:flex-start; padding:7px 10px; border-radius:10px; margin:0 0 6px; font-size:.82rem; font-weight:700; line-height:1.4;}
+.n29-tot svg{flex:none; margin-top:1px;} .n29-tot.ok{background:color-mix(in srgb,var(--m-leaf) 12%,var(--surface-2)); color:var(--m-leaf);} .n29-tot.bad{background:color-mix(in srgb,#E08A2B 16%,var(--surface-2)); color:#B05A12;}
+.n29-prob{display:flex; gap:6px; align-items:flex-start; font-size:.8rem; color:var(--muted); margin:0 0 6px; line-height:1.4;} .n29-prob svg{flex:none; margin-top:1px;}
+.n29-day{margin-top:8px;}
+.n29-dh{display:flex; align-items:baseline; gap:8px; padding:4px 2px; border-bottom:1px solid var(--line); margin-bottom:4px;}
+.n29-dh b{font-size:.88rem;} .n29-dh small{font-size:.76rem; color:var(--muted); font-weight:700;} .n29-dh input{margin-left:auto; max-width:160px; padding:6px 8px; border-radius:10px; border:1.5px solid #E08A2B; font:inherit; background:var(--surface); color:var(--ink);}
+.n29-nod{color:#C2571A;}
+.n29-has{margin:2px 0 4px; font-size:.78rem; color:var(--muted); line-height:1.4;}
+.n29-row{display:flex; gap:8px; align-items:flex-start; padding:7px 6px; border-radius:12px;}
+.n29-row.doubt{background:color-mix(in srgb,#F2C46D 26%,transparent); box-shadow:inset 3px 0 0 #E0A43B;}
+.n29-row.off{opacity:.55;}
+.n29-on{flex:none; display:flex; align-items:center; justify-content:center; width:32px; min-height:40px;} .n29-on input{width:22px; height:22px; accent-color:var(--brand);}
+.n29-main{flex:1; min-width:0;}
+.n29-l1{display:flex; gap:6px; flex-wrap:wrap; align-items:center;}
+.n29-k,.n29-c{padding:8px 6px; border-radius:10px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:.82rem; font-weight:700; min-height:40px; max-width:46%;}
+.n29-a{width:110px; padding:8px 10px; border-radius:10px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font-family:var(--font-num); font-size:1rem; font-weight:800; min-height:40px;}
+.n29-row.doubt .n29-a{border-color:#E0A43B;}
+.n29-l2{margin-top:3px; font-size:.76rem; color:var(--muted); line-height:1.4; overflow-wrap:anywhere;}
+.n29-alt{margin-top:5px; padding:5px 10px; border-radius:99px; border:1.5px solid #E0A43B; background:var(--surface); color:#9A5B0B; font:inherit; font-size:.8rem; font-weight:800; cursor:pointer; min-height:34px;}
+.n29-why{display:block; margin-top:3px; font-size:.76rem; font-weight:700; color:#9A5B0B;}
+.n29-leg{display:grid; gap:6px; margin:4px 0 12px; padding:10px 12px; border-radius:14px; background:var(--surface-2);}
+.n29-leg>small{color:var(--muted); font-size:.78rem;}
+.n29-lg{display:flex; align-items:center; gap:8px;} .n29-lg span{flex:none; min-width:54px; font-weight:800; font-size:.86rem;}
+.n29-lg input[type=text]{flex:1; min-width:0; padding:7px 9px; border-radius:10px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:.86rem;}
+.n29-lg input[type=checkbox]{width:20px; height:20px; accent-color:var(--brand);}
+.n29-foot{position:sticky; bottom:-1px; background:var(--surface); padding:10px 0 2px; margin-top:6px; box-shadow:0 -10px 14px -12px rgba(0,0,0,.25);}
+.n29-bk{margin:-6px 0 10px; min-height:40px;}
+.n29-done{text-align:center; padding:6px 0 10px;} .n29-done>svg{color:var(--m-leaf);} .n29-done .n29-sum{justify-content:center;}
+.n29-zoom{position:fixed; inset:0; z-index:200; background:rgba(10,14,22,.92); display:flex; flex-direction:column;}
+.n29-zi{flex:1; overflow:auto; -webkit-overflow-scrolling:touch; display:flex; align-items:flex-start; justify-content:center; padding:12px;}
+.n29-zi img{max-width:100%; height:auto; display:block; cursor:zoom-in; border-radius:6px;} .n29-zi img.big{max-width:none; width:220%; cursor:zoom-out;}
+.n29-zx{position:absolute; top:max(10px,env(safe-area-inset-top)); right:10px; width:46px; height:46px; border-radius:50%; border:0; background:rgba(255,255,255,.95); color:#1d2433; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+:root[data-theme="dark"] .n29-tot.bad,:root[data-theme="dark"] .n29-why{color:#F2C46D;} :root[data-theme="dark"] .n29-alt{color:#F2C46D;}
+:root[data-theme="dark"] .n29-row.doubt{background:color-mix(in srgb,#E0A43B 18%,transparent);}
+/* как посчитано */
+.w29-row{display:flex; justify-content:center; margin-top:6px;}
+.w29{display:inline-flex; align-items:center; gap:5px; padding:6px 10px; border:0; border-radius:99px; background:transparent; color:var(--muted); font:inherit; font-size:.8rem; font-weight:700; cursor:pointer; min-height:36px;}
+.w29:hover,.w29:focus-visible{color:var(--brand);}
+.w29-body{display:grid; gap:10px;}
+.w29-s{border-radius:14px; background:var(--surface-2); padding:10px 12px;}
+.w29-s h4{margin:0 0 4px; font-size:.94rem;} .w29-s p{margin:0 0 4px; font-size:.86rem; line-height:1.45;}
+.w29-l{list-style:none; margin:4px 0 0; padding:0;}
+.w29-l li{display:flex; justify-content:space-between; gap:10px; padding:5px 0; border-top:1px solid var(--line); font-size:.86rem;}
+.w29-l li b{font-family:var(--font-num); text-align:right; white-space:nowrap;} .w29-l li small{font-family:inherit; font-weight:600; color:var(--muted);}
+.w29-f{margin:2px 0 0; font-size:.8rem; line-height:1.45; color:var(--muted);}
+/* <</v29 css>> */
 
 
 </style>
@@ -6629,6 +6767,170 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v29 str>> */
+/* ----- v29: договор по фото, тетрадь по фото, «Как посчитано?» ----- */
+const M29S={
+ru:{ p29Off:'Нет интернета — подключитесь и попробуйте снова.', p29Err:'Не получилось. Проверьте интернет и попробуйте ещё раз.', p29Limit:'На сегодня лимит исчерпан — попробуйте завтра.',
+  p29Old:'Сервер Mira ещё не обновлён: загрузите новую версию сервера (mira-api.zip) в Cloudflare.', p29Cam:'Снять страницу', p29Gal:'Из галереи', p29Rot:'Повернуть', p29Del:'Убрать', p29Page:n=>'Стр. '+n,
+  p29Dark:'Темновато', p29Small:'Мелкое фото', p29Priv:'Фото уходят на сервер Mira только для чтения и нигде не сохраняются.', p29Wait:s=>'Прошло '+s+' с', p29Cancel:'Остановить',
+  c29Tool:'Проверить договор', c29EntryT:'Проверить договор по фото', c29EntryD:'Скрытые комиссии, штрафы и настоящая ставка — до подписания или сейчас', c29FormLink:'Заполнить по фото договора',
+  c29T:'Проверка договора', c29Lead:'Сфотографируйте все страницы, включая график платежей. Сифра прочтёт их вместе и найдёт то, что пишут мелким шрифтом.',
+  c29Tips:['Вся страница в кадре','Светло, без бликов','Мелкий шрифт — снимите ближе'], c29More:'Ещё страница', c29NoteL:'Что вас волнует? (необязательно)', c29NoteP:'Например: можно ли гасить раньше',
+  c29Priv:'Паспортные данные Сифра не выписывает.', c29Go:n=>'Разобрать договор · '+n+' стр.', c29Need:'Добавьте хотя бы одну страницу',
+  c29Steps:['Читаю страницы…','Ищу комиссии и страховку…','Смотрю штрафы и досрочное погашение…','Считаю настоящую ставку…','Сравниваю со ставками банков…'], c29Busy:'Обычно это занимает 1–2 минуты.',
+  c29Full:'Разобрать весь договор', c29FullD:n=>'Сифра прочтёт все страницы ('+n+') вместе: комиссии, штрафы, настоящая ставка.', c29FullNew:'Сфотографировать и разобрать договор', c29FullDNew:'Комиссии, штрафы, страховка и настоящая ставка — простыми словами.',
+  c29Last:d=>'Открыть разбор от '+d, c29RT:'Разбор договора', c29V:{ok:'Условия обычные',careful:'Есть что уточнить',bad:'Есть опасные условия'},
+  c29K:{amount:'Сумма',term:'Срок',monthly:'Платёж в месяц',total:'Вернуть всего',over:'Переплата'}, c29Mon:n=>n+' мес.',
+  c29RateT:'Ставка', c29RateDoc:'В договоре', c29RateEff:'Эффективная по договору', c29RateReal:'Настоящая ставка по расчёту Mira — со всеми платежами', c29RealHow:'Как посчитано',
+  c29RealNet:(a,once)=>'На руки: '+a+(once?' (удержат '+once+')':''), c29RealPay:(p,n)=>'Платите '+p+' в месяц, '+n+' мес.', c29RealPayIn:(p,m)=>'платёж '+p+' + обязательные '+m,
+  c29RealGive:(g,o)=>'Всего отдадите '+g+' — на '+o+' больше, чем получили.', c29RealEq:e=>'Это как ставка '+e+' в год: так считают эффективную ставку — все платежи против денег, которые вы реально получили.',
+  c29RealDiff:(doc,real)=>'В договоре '+doc+', а с комиссиями и страховкой выходит ≈ '+real+'. Спросите банк, откуда разница.', c29RealApprox:'Платежи уменьшаются — расчёт примерный.',
+  c29Flags:'Главное в договоре', c29Lv:{bad:'Опасно',watch:'Уточнить',good:'Хорошо'}, c29Fees:'Комиссии и платежи', c29When:{once:'один раз',monthly:'каждый месяц',yearly:'каждый год',event:'за каждый случай'},
+  c29Ins:'Страховка', c29InsReq:{yes:'обязательная',no:'не обязательная',unknown:'не ясно, обязательна ли'}, c29InsRef:{yes:'отказаться можно',no:'отказаться нельзя',unknown:'не сказано, можно ли отказаться'},
+  c29Pen:'Пеня и штрафы', c29PenTxt:(p,b)=>p+'% в день'+(b==='rem'?' от всего остатка':b==='pay'?' от просроченного платежа':''), c29PenFix:v=>'штраф '+v+' за просрочку',
+  c29PenEx:(d,v)=>'Просрочка на '+d+' дней ≈ '+v, c29PenEx2:v=>'если бы считали от платежа — ≈ '+v,
+  c29Early:'Досрочное погашение', c29EarlyOk:{yes:'можно',no:'нельзя',unknown:'не сказано'}, c29EarlyFee:v=>'плата '+v, c29EarlyFree:'без платы', c29Notice:n=>'предупредить за '+n+' дн.',
+  c29Recalc:{yes:'проценты пересчитают',no:'проценты не пересчитают',unknown:''}, c29Col:'Залог и поручители', c29Market:'Рядом с рынком', c29Src:'Источник',
+  c29Ask:'Что спросить в банке', c29Copy:'Скопировать вопросы', c29Copied:'Вопросы скопированы', c29Unread:'Не всё удалось прочитать', c29Retake:'Переснимите эти страницы ближе и разберите ещё раз.',
+  c29AddLoan:'Добавить этот кредит в Миру', c29Apply:'Вписать в кредит', c29Check:'Сифра может ошибиться — сверьте главное с договором. Решение за вами.', c29Again:'Разобрать заново', c29Done:'Готово',
+  c29Cur:c=>'Кредит в валюте ('+c+'): платёж в сомони будет меняться вместе с курсом.', c29Recent:'Последние проверки',
+  n29Link:'Перенести записи из бумажной тетради', n29T:'Тетрадь → Мира', n29Lead:'Сфотографируйте страницы тетради — Сифра прочтёт почерк и разложит выручку и расходы по дням. Перед сохранением вы всё проверите.',
+  n29Tips:['Страница целиком, сверху','Светло, без тени','Мелко написано — снимите полстраницы'], n29More:'Ещё страница', n29Year:'Год записей', n29Go:n=>'Прочитать · '+n+' стр.',
+  n29Reading:(i,n)=>'Читаю страницу '+i+' из '+n+'…', n29St:{wait:'ждёт',read:'читаю…',ok:n=>'✓ строк: '+n,err:'не вышло'}, n29Retry:'Повторить', n29Busy0:'Читаю тетрадь…',
+  n29Busy:'Каждая страница — около минуты. Неясные места Сифра перечитывает второй раз.', n29RT:'Проверьте записи', n29RLead:n=>'Сифра прочла строк: '+n+'. Жёлтым — где почерк неясный: сравните с фото.',
+  n29SRev:'Выручка', n29SExp:'Расходы', n29SDays:n=>'дней: '+n, n29PageH:(i,n)=>'Страница '+i+' · строк: '+n, n29Checked:'Неясное прочитано дважды', n29Zoom:'Нажмите на фото, чтобы сравнить',
+  n29TotOk:(raw,v)=>'Итог «'+raw+'» сходится: '+v, n29TotBad:(raw,v,s)=>'В тетради «'+raw+'» = '+v+', а строки дают '+s+' — проверьте жёлтые строки.',
+  n29K:{sale:'Выручка',cash:'Наличные',card:'Перевод',expense:'Расход',skip:'Не брать'}, n29KindL:'Что это', n29CatL:'Вид расхода', n29Or:v=>'или '+v+'?', n29Raw:'в тетради',
+  n29NoDate:'Без даты', n29NoDateH:'Дата для строк без даты', n29Has:v=>'В Mira за этот день уже есть +'+v+' — строки не отмечены, чтобы не записать дважды.', n29Big:'Необычно большая сумма — проверьте.',
+  n29Miss:'Нашлась при втором прочтении.', n29DateAlt:d=>'Второе прочтение: дата '+d+'?', n29Leg:'Сокращения в тетради', n29LegD:'Сифра запомнит их и в следующий раз прочтёт точнее.',
+  n29Save:n=>'Перенести · записей: '+n, n29SaveNone:'Отметьте хотя бы одну запись', n29NeedDate:n=>'Строк без даты: '+n+' — укажите дату или снимите отметку.',
+  n29DoneT:'Перенесено', n29DoneLead:(n,d)=>'Записей: '+n+', дней: '+d+'. Всё уже в Мире.', n29Undo:'Отменить перенос', n29Undone:'Перенос отменён', n29Hist:'Прошлые переносы',
+  n29HistRow:(d,n,r)=>d+' · записей: '+n+' · +'+r, n29Mem:n=>'Сифра помнит ваши сокращения ('+n+'):', n29Forget:'Забыть', n29Empty:'Сифра не нашла на странице сумм. Попробуйте фото ровнее и светлее.',
+  n29Include:'Перенести эту строку', n29Back:'Назад', n29Open:'Открыть магазин',
+  w29Btn:'Как посчитано?', w29T:'Как посчитано', w29Lead:'Mira считает только по тому, что вы записали.',
+  w29FreeH:m=>'Свобода от кредитов — '+m, w29FreeTx:(b,n)=>'Это месяц последнего платежа по кредиту, который закончится позже всех: '+b+' (ещё '+n+' мес.). Когда закроется каждый:',
+  w29PaidH:v=>'Уже выплачено — '+v, w29PaidTx:'Всё, что вы внесли в счёт долга, по банкам:', w29LeftH:v=>'Осталось — '+v, w29LeftTx:'По каждому кредиту: сумма кредита минус уже выплаченное.',
+  w29IntTx:v=>'Проценты сюда не входят: по ставкам и платежам впереди ещё ≈ '+v, w29PctH:p=>p+'% выплачено', w29PctTx:(p,t)=>'Выплачено '+p+' из '+t+' — общей суммы кредитов.',
+  w29StepsH:(k,m)=>k+' из '+m+' платежей позади', w29StepsTx:'Платежи по графикам всех кредитов: сколько уже прошло и сколько всего.',
+  w29StepH:(p,v)=>'До '+p+'% — '+v, w29StepTx:(p,t,paid)=>p+'% от '+t+' минус уже выплаченные '+paid+'. Ближайшая отметка — чтобы видеть, как близко следующий шаг.',
+  w29Change:'Цифры меняются, когда вы отмечаете платёж. Если в банке остаток другой — откройте кредит и нажмите «Сверка с банком».',
+  w29MonTx:(p,t)=>'Оплачено '+p+' из '+t+'. Это все платежи этого месяца по графикам кредитов и долгам поставщикам:', w29PigTx:v=>'В копилке '+v+' — это отложенные деньги. Платёж считается оплаченным, только когда вы его отметите.',
+  w29LoanMonH:v=>'Платёж в месяц — '+v, w29LoanMonTx:'Ближайший платёж по каждому кредиту (не больше остатка):', w29RateH:v=>'Средняя ставка — '+v+'%', w29RateTx:'Ставки кредитов с учётом остатка: большой долг весит больше маленького.',
+  w29IntH:v=>'Ещё уйдёт на проценты — '+v, w29IntLTx:'По графику банка, а если графика нет — по ставке и платежу: сколько процентов набежит до конца.', w29NoRate:n=>'Без ставки проценты не посчитать: '+n+'. Впишите ставку в «Изменить».',
+  w29ShNoBe:'Чистыми = продано − расходы. Чтобы видеть настоящую прибыль, в «Итогах» укажите наценку и постоянные расходы.', w29ShSold:'Продано', w29ShGross:m=>'Заработано на товаре (наценка '+m+'%)',
+  w29ShExp:'Расходы за период', w29ShFix:pc=>'Постоянные расходы ('+pc+'% месяца)', w29ShFm:(v,l)=>'Постоянные в месяц: '+v+(l?' ('+l+')':''), w29Rent:'аренда', w29Sal:'зарплата', w29Oth:'прочее', w29Lns:'кредиты',
+  w29ShTgtH:v=>'Выйти в ноль — продать '+v, w29ShTgt:(f,e,m)=>'(постоянные '+f+' + расходы '+e+') ÷ наценку '+m+'%.', w29ShHint:'Наценку берут из «Итогов» — если она у вас другая, поправьте там.',
+  w29LRem:(r,t,p)=>r+' = сумма кредита '+t+' − уже внесено '+p, w29LIntS:'Так выходит по графику платежей, который вы внесли.', w29LIntSim:(m,r,n)=>'Если платить '+m+' в месяц при ставке '+r+'%, кредит закроется за '+n+' мес. — столько процентов набежит.',
+  w29LNoRate:'Ставка не указана — проценты не посчитать. Впишите её в «Изменить».', w29LEndH:m=>'Закроется — '+m, w29LEndS:n=>'Осталось платежей по графику: '+n+'.', w29LEndSim:(r,m,n)=>'Остаток '+r+' при платеже '+m+' — ещё '+n+' мес. с учётом процентов.',
+  w29LPen:(p,b,v)=>p+'% в день от '+(b==='rem'?'всего остатка':'просроченного платежа')+': один день просрочки ≈ '+v, w29LChange:'Если цифры не совпадают с банком — нажмите «Сверка с банком».' },
+tg:{ p29Off:'Интернет нест — пайваст шавед ва боз кӯшиш кунед.', p29Err:'Нашуд. Интернетро санҷед ва боз кӯшиш кунед.', p29Limit:'Барои имрӯз ҳад тамом шуд — фардо кӯшиш кунед.',
+  p29Old:'Сервери Mira ҳанӯз нав нашудааст: версияи нави сервер (mira-api.zip)-ро ба Cloudflare бор кунед.', p29Cam:'Акси саҳифа', p29Gal:'Аз галерея', p29Rot:'Гардондан', p29Del:'Хориҷ кардан', p29Page:n=>'Саҳ. '+n,
+  p29Dark:'Торик', p29Small:'Акси хурд', p29Priv:'Аксҳо танҳо барои хондан ба сервери Mira мераванд ва ҳеҷ ҷо нигоҳ дошта намешаванд.', p29Wait:s=>s+' сония гузашт', p29Cancel:'Қатъ кардан',
+  c29Tool:'Санҷиши шартнома', c29EntryT:'Санҷиши шартнома аз рӯи акс', c29EntryD:'Комиссияҳои пинҳон, ҷаримаҳо ва фоизи аслӣ — пеш аз имзо ё ҳозир', c29FormLink:'Аз рӯи акси шартнома пур кардан',
+  c29T:'Санҷиши шартнома', c29Lead:'Ҳамаи саҳифаҳоро, бо ҷадвали пардохт, акс гиред. Сифра онҳоро якҷоя мехонад ва чизҳои бо ҳарфи майда навиштаро меёбад.',
+  c29Tips:['Тамоми саҳифа дар кадр','Равшан, бе дурахш','Ҳарфи майда — наздиктар акс гиред'], c29More:'Боз як саҳифа', c29NoteL:'Шуморо чӣ ташвиш медиҳад? (ихтиёрӣ)', c29NoteP:'Масалан: пеш аз мӯҳлат пардохтан мумкин аст?',
+  c29Priv:'Маълумоти шиносномаро Сифра намебардорад.', c29Go:n=>'Таҳлили шартнома · '+n+' саҳ.', c29Need:'Ақаллан як саҳифа илова кунед',
+  c29Steps:['Саҳифаҳоро мехонам…','Комиссия ва суғуртаро меҷӯям…','Ҷаримаҳо ва пардохти пеш аз мӯҳлатро мебинам…','Фоизи аслиро ҳисоб мекунам…','Бо фоизҳои бонкҳо муқоиса мекунам…'], c29Busy:'Одатан 1–2 дақиқа вақт мегирад.',
+  c29Full:'Таҳлили пурраи шартнома', c29FullD:n=>'Сифра ҳамаи саҳифаҳоро ('+n+') якҷоя мехонад: комиссия, ҷарима, фоизи аслӣ.', c29FullNew:'Акс гирифтан ва таҳлил кардан', c29FullDNew:'Комиссия, ҷарима, суғурта ва фоизи аслӣ — бо забони содда.',
+  c29Last:d=>'Таҳлили '+d+'-ро кушодан', c29RT:'Таҳлили шартнома', c29V:{ok:'Шартҳо муқаррарӣ',careful:'Чизе барои пурсидан ҳаст',bad:'Шартҳои хатарнок ҳаст'},
+  c29K:{amount:'Маблағ',term:'Мӯҳлат',monthly:'Пардохти моҳона',total:'Ҳамагӣ баргардонидан',over:'Пардохти зиёдатӣ'}, c29Mon:n=>n+' моҳ',
+  c29RateT:'Фоиз', c29RateDoc:'Дар шартнома', c29RateEff:'Самаранок аз рӯи шартнома', c29RateReal:'Фоизи аслӣ аз рӯи ҳисоби Mira — бо ҳамаи пардохтҳо', c29RealHow:'Чӣ тавр ҳисоб шуд',
+  c29RealNet:(a,once)=>'Ба даст: '+a+(once?' ('+once+' нигоҳ медоранд)':''), c29RealPay:(p,n)=>'Ҳар моҳ '+p+', '+n+' моҳ.', c29RealPayIn:(p,m)=>'пардохт '+p+' + ҳатмӣ '+m,
+  c29RealGive:(g,o)=>'Ҳамагӣ '+g+' медиҳед — '+o+' зиёдтар аз гирифтаатон.', c29RealEq:e=>'Ин монанди фоизи '+e+' дар сол аст: фоизи самаранокро ҳамин тавр ҳисоб мекунанд — ҳамаи пардохтҳо нисбат ба пули воқеан гирифта.',
+  c29RealDiff:(doc,real)=>'Дар шартнома '+doc+', вале бо комиссия ва суғурта ≈ '+real+' мешавад. Аз бонк пурсед, фарқ аз куҷост.', c29RealApprox:'Пардохтҳо кам мешаванд — ҳисоб тахминӣ аст.',
+  c29Flags:'Муҳимтарин дар шартнома', c29Lv:{bad:'Хатарнок',watch:'Пурсед',good:'Хуб'}, c29Fees:'Комиссия ва пардохтҳо', c29When:{once:'як бор',monthly:'ҳар моҳ',yearly:'ҳар сол',event:'барои ҳар ҳолат'},
+  c29Ins:'Суғурта', c29InsReq:{yes:'ҳатмӣ',no:'ҳатмӣ нест',unknown:'маълум нест, ки ҳатмӣ аст'}, c29InsRef:{yes:'даст кашидан мумкин',no:'даст кашидан мумкин нест',unknown:'гуфта нашудааст, ки даст кашидан мумкин аст'},
+  c29Pen:'Ҷарима ва пеня', c29PenTxt:(p,b)=>p+'% дар як рӯз'+(b==='rem'?' аз тамоми боқимонда':b==='pay'?' аз пардохти гузашта':''), c29PenFix:v=>'ҷарима '+v+' барои дер кардан',
+  c29PenEx:(d,v)=>d+' рӯз дер кардан ≈ '+v, c29PenEx2:v=>'агар аз пардохт ҳисоб мекарданд — ≈ '+v,
+  c29Early:'Пардохти пеш аз мӯҳлат', c29EarlyOk:{yes:'мумкин',no:'мумкин нест',unknown:'гуфта нашудааст'}, c29EarlyFee:v=>'ҳаққи '+v, c29EarlyFree:'ройгон', c29Notice:n=>n+' рӯз пеш огоҳ кардан',
+  c29Recalc:{yes:'фоизҳоро аз нав ҳисоб мекунанд',no:'фоизҳоро аз нав ҳисоб намекунанд',unknown:''}, c29Col:'Гарав ва кафил', c29Market:'Дар муқоиса бо бозор', c29Src:'Манбаъ',
+  c29Ask:'Аз бонк чӣ пурсед', c29Copy:'Нусха бардоштани саволҳо', c29Copied:'Саволҳо нусха шуданд', c29Unread:'На ҳама хонда шуд', c29Retake:'Ин саҳифаҳоро наздиктар акс гиред ва боз таҳлил кунед.',
+  c29AddLoan:'Ин қарзро ба Mira илова кардан', c29Apply:'Ба қарз навиштан', c29Check:'Сифра метавонад хато кунад — муҳимро бо шартнома муқоиса кунед. Қарор аз они шумост.', c29Again:'Аз нав таҳлил кардан', c29Done:'Тайёр',
+  c29Cur:c=>'Қарз бо асъор ('+c+'): пардохт бо сомонӣ бо қурб тағйир меёбад.', c29Recent:'Санҷишҳои охирин',
+  n29Link:'Сабтҳоро аз дафтари коғазӣ гузаронидан', n29T:'Дафтар → Mira', n29Lead:'Саҳифаҳои дафтарро акс гиред — Сифра дастхатро мехонад ва даромаду хароҷотро аз рӯи рӯзҳо ҷо мекунад. Пеш аз нигоҳ доштан ҳамаро месанҷед.',
+  n29Tips:['Тамоми саҳифа, аз боло','Равшан, бе соя','Майда навишта — нисфи саҳифаро акс гиред'], n29More:'Боз як саҳифа', n29Year:'Соли сабтҳо', n29Go:n=>'Хондан · '+n+' саҳ.',
+  n29Reading:(i,n)=>'Саҳифаи '+i+' аз '+n+'-ро мехонам…', n29St:{wait:'интизор',read:'мехонам…',ok:n=>'✓ сатр: '+n,err:'нашуд'}, n29Retry:'Такрор', n29Busy0:'Дафтарро мехонам…',
+  n29Busy:'Ҳар саҳифа — тақрибан як дақиқа. Ҷойҳои норавшанро Сифра бори дуюм мехонад.', n29RT:'Сабтҳоро санҷед', n29RLead:n=>'Сифра '+n+' сатр хонд. Зард — ҷое, ки дастхат норавшан аст: бо акс муқоиса кунед.',
+  n29SRev:'Даромад', n29SExp:'Хароҷот', n29SDays:n=>'рӯз: '+n, n29PageH:(i,n)=>'Саҳифаи '+i+' · сатр: '+n, n29Checked:'Норавшан ду бор хонда шуд', n29Zoom:'Барои муқоиса ба акс пахш кунед',
+  n29TotOk:(raw,v)=>'Ҷамъи «'+raw+'» дуруст аст: '+v, n29TotBad:(raw,v,s)=>'Дар дафтар «'+raw+'» = '+v+', вале сатрҳо '+s+' медиҳанд — сатрҳои зардро санҷед.',
+  n29K:{sale:'Даромад',cash:'Нақд',card:'Интиқол',expense:'Хароҷот',skip:'Нагирифтан'}, n29KindL:'Ин чист', n29CatL:'Навъи хароҷот', n29Or:v=>'ё '+v+'?', n29Raw:'дар дафтар',
+  n29NoDate:'Бе сана', n29NoDateH:'Сана барои сатрҳои бе сана', n29Has:v=>'Дар Mira барои ин рӯз аллакай +'+v+' ҳаст — сатрҳо қайд нашудаанд, то ду бор сабт нашавад.', n29Big:'Маблағи ғайриодӣ калон — санҷед.',
+  n29Miss:'Ҳангоми хондани дуюм ёфт шуд.', n29DateAlt:d=>'Хондани дуюм: сана '+d+'?', n29Leg:'Ихтисораҳо дар дафтар', n29LegD:'Сифра онҳоро дар хотир нигоҳ медорад ва дафъаи дигар дақиқтар мехонад.',
+  n29Save:n=>'Гузаронидан · сабт: '+n, n29SaveNone:'Ақаллан як сабтро қайд кунед', n29NeedDate:n=>'Сатрҳои бе сана: '+n+' — сана нависед ё қайдро бардоред.',
+  n29DoneT:'Гузаронида шуд', n29DoneLead:(n,d)=>'Сабт: '+n+', рӯз: '+d+'. Ҳама аллакай дар Mira.', n29Undo:'Бекор кардани гузариш', n29Undone:'Гузариш бекор шуд', n29Hist:'Гузаришҳои пешина',
+  n29HistRow:(d,n,r)=>d+' · сабт: '+n+' · +'+r, n29Mem:n=>'Сифра ихтисораҳои шуморо дар хотир дорад ('+n+'):', n29Forget:'Фаромӯш кардан', n29Empty:'Сифра дар саҳифа маблағ наёфт. Аксро ростар ва равшантар гиред.',
+  n29Include:'Ин сатрро гузаронидан', n29Back:'Бозгашт', n29Open:'Мағозаро кушодан',
+  w29Btn:'Чӣ тавр ҳисоб шуд?', w29T:'Чӣ тавр ҳисоб шуд', w29Lead:'Mira танҳо аз рӯи он чизе ҳисоб мекунад, ки шумо навиштаед.',
+  w29FreeH:m=>'Озодӣ аз қарз — '+m, w29FreeTx:(b,n)=>'Ин моҳи пардохти охирин аз рӯи қарзест, ки аз ҳама дертар тамом мешавад: '+b+' (боз '+n+' моҳ). Ҳар кадом кай баста мешавад:',
+  w29PaidH:v=>'Аллакай пардохт шуд — '+v, w29PaidTx:'Ҳар чизе ки ба ҳисоби қарз додаед, аз рӯи бонкҳо:', w29LeftH:v=>'Монд — '+v, w29LeftTx:'Аз рӯи ҳар қарз: маблағи қарз минуси пардохтшуда.',
+  w29IntTx:v=>'Фоизҳо ба ин дохил нестанд: аз рӯи фоиз ва пардохтҳо боз ≈ '+v+' ҳаст', w29PctH:p=>p+'% пардохт шуд', w29PctTx:(p,t)=>p+' аз '+t+' — маблағи умумии қарзҳо пардохт шуд.',
+  w29StepsH:(k,m)=>k+' аз '+m+' пардохт гузашт', w29StepsTx:'Пардохтҳо аз рӯи ҷадвали ҳамаи қарзҳо: чандто гузашт ва чандто ҳаст.',
+  w29StepH:(p,v)=>'То '+p+'% — '+v, w29StepTx:(p,t,paid)=>p+'% аз '+t+' минуси пардохтшудаи '+paid+'. Нишонаи наздиктарин — то бинед қадами оянда чӣ қадар наздик аст.',
+  w29Change:'Рақамҳо ҳангоми қайди пардохт тағйир меёбанд. Агар дар бонк боқимонда дигар бошад — қарзро кушоед ва «Муқоиса бо бонк»-ро пахш кунед.',
+  w29MonTx:(p,t)=>p+' аз '+t+' пардохт шуд. Ин ҳамаи пардохтҳои ин моҳ аз рӯи ҷадвали қарзҳо ва қарзҳо ба таъминкунандагон:', w29PigTx:v=>'Дар хазина '+v+' — ин пули ҷудокардашуда. Пардохт танҳо вақте пардохтшуда ҳисоб мешавад, ки онро қайд кунед.',
+  w29LoanMonH:v=>'Пардохти моҳона — '+v, w29LoanMonTx:'Пардохти наздиктарин аз рӯи ҳар қарз (на зиёд аз боқимонда):', w29RateH:v=>'Фоизи миёна — '+v+'%', w29RateTx:'Фоизи қарзҳо бо назардошти боқимонда: қарзи калон аз хурд вазнинтар аст.',
+  w29IntH:v=>'Боз ба фоиз меравад — '+v, w29IntLTx:'Аз рӯи ҷадвали бонк, агар ҷадвал набошад — аз рӯи фоиз ва пардохт: то охир чӣ қадар фоиз ҷамъ мешавад.', w29NoRate:n=>'Бе фоиз фоизҳоро ҳисоб кардан мумкин нест: '+n+'. Фоизро дар «Тағйир додан» нависед.',
+  w29ShNoBe:'Холис = фурӯхта − хароҷот. Барои дидани фоидаи аслӣ дар «Натиҷаҳо» нархафзоӣ ва хароҷоти доимиро нависед.', w29ShSold:'Фурӯхта шуд', w29ShGross:m=>'Аз мол кор карда шуд (нархафзоӣ '+m+'%)',
+  w29ShExp:'Хароҷот дар давра', w29ShFix:pc=>'Хароҷоти доимӣ ('+pc+'% моҳ)', w29ShFm:(v,l)=>'Доимӣ дар як моҳ: '+v+(l?' ('+l+')':''), w29Rent:'иҷора', w29Sal:'музд', w29Oth:'дигар', w29Lns:'қарзҳо',
+  w29ShTgtH:v=>'Ба сифр баромадан — '+v+' фурӯхтан', w29ShTgt:(f,e,m)=>'(доимӣ '+f+' + хароҷот '+e+') ÷ нархафзоии '+m+'%.', w29ShHint:'Нархафзоӣ аз «Натиҷаҳо» гирифта мешавад — агар дигар бошад, онҷо ислоҳ кунед.',
+  w29LRem:(r,t,p)=>r+' = маблағи қарз '+t+' − пардохтшуда '+p, w29LIntS:'Ҳамин тавр аз рӯи ҷадвали пардохт мебарояд, ки шумо навиштаед.', w29LIntSim:(m,r,n)=>'Агар ҳар моҳ '+m+' бо фоизи '+r+'% пардозед, қарз дар '+n+' моҳ баста мешавад — ҳамин қадар фоиз ҷамъ мешавад.',
+  w29LNoRate:'Фоиз нишон дода нашудааст — фоизҳоро ҳисоб кардан мумкин нест. Онро дар «Тағйир додан» нависед.', w29LEndH:m=>'Баста мешавад — '+m, w29LEndS:n=>'Пардохтҳои боқимонда аз рӯи ҷадвал: '+n+'.', w29LEndSim:(r,m,n)=>'Боқимонда '+r+' бо пардохти '+m+' — боз '+n+' моҳ бо фоизҳо.',
+  w29LPen:(p,b,v)=>p+'% дар як рӯз аз '+(b==='rem'?'тамоми боқимонда':'пардохти гузашта')+': як рӯзи дер ≈ '+v, w29LChange:'Агар рақамҳо бо бонк мувофиқ набошанд — «Муқоиса бо бонк»-ро пахш кунед.' },
+en:{ p29Off:'No internet — connect and try again.', p29Err:'That didn’t work. Check the internet and try again.', p29Limit:'Today’s limit is used up — try tomorrow.',
+  p29Old:'The Mira server isn’t updated yet: upload the new server version (mira-api.zip) to Cloudflare.', p29Cam:'Take a photo', p29Gal:'From gallery', p29Rot:'Rotate', p29Del:'Remove', p29Page:n=>'P. '+n,
+  p29Dark:'Too dark', p29Small:'Small photo', p29Priv:'Photos go to the Mira server only to be read and are not stored anywhere.', p29Wait:s=>s+' s passed', p29Cancel:'Stop',
+  c29Tool:'Check a contract', c29EntryT:'Check a loan contract by photo', c29EntryD:'Hidden fees, penalties and the real rate — before signing or now', c29FormLink:'Fill in from a contract photo',
+  c29T:'Contract check', c29Lead:'Photograph every page, including the payment schedule. Sifra reads them together and finds what’s in the small print.',
+  c29Tips:['Whole page in frame','Good light, no glare','Small print — shoot closer'], c29More:'Another page', c29NoteL:'What worries you? (optional)', c29NoteP:'For example: can I repay early',
+  c29Priv:'Sifra never copies passport details.', c29Go:n=>'Analyse contract · '+n+' p.', c29Need:'Add at least one page',
+  c29Steps:['Reading the pages…','Looking for fees and insurance…','Checking penalties and early repayment…','Working out the real rate…','Comparing with bank rates…'], c29Busy:'This usually takes 1–2 minutes.',
+  c29Full:'Analyse the whole contract', c29FullD:n=>'Sifra reads all pages ('+n+') together: fees, penalties, the real rate.', c29FullNew:'Photograph and analyse the contract', c29FullDNew:'Fees, penalties, insurance and the real rate — in plain words.',
+  c29Last:d=>'Open the analysis from '+d, c29RT:'Contract analysis', c29V:{ok:'Normal terms',careful:'Some things to clarify',bad:'Risky terms found'},
+  c29K:{amount:'Amount',term:'Term',monthly:'Monthly payment',total:'Repay in total',over:'Overpayment'}, c29Mon:n=>n+' mo.',
+  c29RateT:'Rate', c29RateDoc:'In the contract', c29RateEff:'Effective, per contract', c29RateReal:'Real rate by Mira’s calculation — with all payments', c29RealHow:'How it’s calculated',
+  c29RealNet:(a,once)=>'You receive: '+a+(once?' ('+once+' withheld)':''), c29RealPay:(p,n)=>'You pay '+p+' a month for '+n+' months.', c29RealPayIn:(p,m)=>'payment '+p+' + mandatory '+m,
+  c29RealGive:(g,o)=>'In total you give '+g+' — '+o+' more than you received.', c29RealEq:e=>'That equals a rate of '+e+' a year: this is how the effective rate is calculated — all payments against the money you actually received.',
+  c29RealDiff:(doc,real)=>'The contract says '+doc+', but with fees and insurance it comes to ≈ '+real+'. Ask the bank where the difference comes from.', c29RealApprox:'Payments decrease — the estimate is approximate.',
+  c29Flags:'Key points', c29Lv:{bad:'Risky',watch:'Clarify',good:'Good'}, c29Fees:'Fees and payments', c29When:{once:'once',monthly:'monthly',yearly:'yearly',event:'per case'},
+  c29Ins:'Insurance', c29InsReq:{yes:'mandatory',no:'not mandatory',unknown:'unclear if mandatory'}, c29InsRef:{yes:'can be refused',no:'cannot be refused',unknown:'not said if it can be refused'},
+  c29Pen:'Penalties', c29PenTxt:(p,b)=>p+'% a day'+(b==='rem'?' on the whole balance':b==='pay'?' on the overdue payment':''), c29PenFix:v=>'fine '+v+' per late payment',
+  c29PenEx:(d,v)=>d+' days late ≈ '+v, c29PenEx2:v=>'if it were on the payment — ≈ '+v,
+  c29Early:'Early repayment', c29EarlyOk:{yes:'allowed',no:'not allowed',unknown:'not stated'}, c29EarlyFee:v=>'fee '+v, c29EarlyFree:'no fee', c29Notice:n=>'notify '+n+' days ahead',
+  c29Recalc:{yes:'interest is recalculated',no:'interest is not recalculated',unknown:''}, c29Col:'Collateral and guarantors', c29Market:'Against the market', c29Src:'Source',
+  c29Ask:'What to ask the bank', c29Copy:'Copy questions', c29Copied:'Questions copied', c29Unread:'Not everything could be read', c29Retake:'Retake these pages closer and analyse again.',
+  c29AddLoan:'Add this loan to Mira', c29Apply:'Write into the loan', c29Check:'Sifra can make mistakes — check the key points against the contract. The decision is yours.', c29Again:'Analyse again', c29Done:'Done',
+  c29Cur:c=>'Foreign-currency loan ('+c+'): your payment in somoni will change with the exchange rate.', c29Recent:'Recent checks',
+  n29Link:'Move records from a paper notebook', n29T:'Notebook → Mira', n29Lead:'Photograph the notebook pages — Sifra reads the handwriting and sorts sales and expenses by day. You check everything before saving.',
+  n29Tips:['Whole page, from above','Good light, no shadow','Small writing — shoot half a page'], n29More:'Another page', n29Year:'Year of records', n29Go:n=>'Read · '+n+' p.',
+  n29Reading:(i,n)=>'Reading page '+i+' of '+n+'…', n29St:{wait:'waiting',read:'reading…',ok:n=>'✓ lines: '+n,err:'failed'}, n29Retry:'Retry', n29Busy0:'Reading the notebook…',
+  n29Busy:'About a minute per page. Sifra re-reads unclear spots a second time.', n29RT:'Check the records', n29RLead:n=>'Sifra read '+n+' lines. Yellow means unclear handwriting: compare with the photo.',
+  n29SRev:'Sales', n29SExp:'Expenses', n29SDays:n=>'days: '+n, n29PageH:(i,n)=>'Page '+i+' · lines: '+n, n29Checked:'Unclear parts read twice', n29Zoom:'Tap the photo to compare',
+  n29TotOk:(raw,v)=>'Total “'+raw+'” matches: '+v, n29TotBad:(raw,v,s)=>'The notebook says “'+raw+'” = '+v+', but the lines add up to '+s+' — check the yellow lines.',
+  n29K:{sale:'Sales',cash:'Cash',card:'Transfer',expense:'Expense',skip:'Skip'}, n29KindL:'What it is', n29CatL:'Expense type', n29Or:v=>'or '+v+'?', n29Raw:'in notebook',
+  n29NoDate:'No date', n29NoDateH:'Date for lines without a date', n29Has:v=>'Mira already has +'+v+' for this day — these lines are unticked so nothing is recorded twice.', n29Big:'Unusually large amount — please check.',
+  n29Miss:'Found on the second reading.', n29DateAlt:d=>'Second reading: date '+d+'?', n29Leg:'Abbreviations in the notebook', n29LegD:'Sifra will remember them and read more accurately next time.',
+  n29Save:n=>'Move · records: '+n, n29SaveNone:'Tick at least one record', n29NeedDate:n=>'Lines without a date: '+n+' — set a date or untick them.',
+  n29DoneT:'Moved', n29DoneLead:(n,d)=>'Records: '+n+', days: '+d+'. Everything is in Mira now.', n29Undo:'Undo the move', n29Undone:'Move undone', n29Hist:'Previous moves',
+  n29HistRow:(d,n,r)=>d+' · records: '+n+' · +'+r, n29Mem:n=>'Sifra remembers your abbreviations ('+n+'):', n29Forget:'Forget', n29Empty:'Sifra found no amounts on this page. Try a straighter, brighter photo.',
+  n29Include:'Move this line', n29Back:'Back', n29Open:'Open the shop',
+  w29Btn:'How is this calculated?', w29T:'How it’s calculated', w29Lead:'Mira only counts what you have recorded.',
+  w29FreeH:m=>'Debt-free — '+m, w29FreeTx:(b,n)=>'This is the month of the last payment on the loan that ends latest: '+b+' ('+n+' more months). When each one closes:',
+  w29PaidH:v=>'Already repaid — '+v, w29PaidTx:'Everything you have paid towards the debt, by bank:', w29LeftH:v=>'Left — '+v, w29LeftTx:'For each loan: the loan amount minus what is already repaid.',
+  w29IntTx:v=>'Interest is not included: at your rates and payments another ≈ '+v+' lies ahead', w29PctH:p=>p+'% repaid', w29PctTx:(p,t)=>p+' of '+t+' — the total of your loans — is repaid.',
+  w29StepsH:(k,m)=>k+' of '+m+' payments done', w29StepsTx:'Payments across all loan schedules: how many are done and how many in total.',
+  w29StepH:(p,v)=>'To '+p+'% — '+v, w29StepTx:(p,t,paid)=>p+'% of '+t+' minus the '+paid+' already repaid. The nearest milestone shows how close the next step is.',
+  w29Change:'The numbers change when you mark a payment. If the bank shows a different balance, open the loan and tap “Check with the bank”.',
+  w29MonTx:(p,t)=>p+' of '+t+' is paid. These are all of this month’s payments from loan schedules and supplier debts:', w29PigTx:v=>'The piggy bank holds '+v+' — money set aside. A payment counts as paid only once you mark it.',
+  w29LoanMonH:v=>'Monthly payment — '+v, w29LoanMonTx:'The next payment on each loan (no more than the balance):', w29RateH:v=>'Average rate — '+v+'%', w29RateTx:'Loan rates weighted by balance: a big debt counts more than a small one.',
+  w29IntH:v=>'Still going to interest — '+v, w29IntLTx:'From the bank schedule or, without one, from the rate and payment: how much interest accrues until the end.', w29NoRate:n=>'Interest can’t be counted without a rate: '+n+'. Add the rate under “Edit”.',
+  w29ShNoBe:'Net = sold − expenses. To see real profit, set your markup and fixed costs in “Summary”.', w29ShSold:'Sold', w29ShGross:m=>'Earned on goods (markup '+m+'%)',
+  w29ShExp:'Expenses for the period', w29ShFix:pc=>'Fixed costs ('+pc+'% of a month)', w29ShFm:(v,l)=>'Fixed costs per month: '+v+(l?' ('+l+')':''), w29Rent:'rent', w29Sal:'salary', w29Oth:'other', w29Lns:'loans',
+  w29ShTgtH:v=>'Break even — sell '+v, w29ShTgt:(f,e,m)=>'(fixed '+f+' + expenses '+e+') ÷ markup '+m+'%.', w29ShHint:'The markup comes from “Summary” — if yours is different, fix it there.',
+  w29LRem:(r,t,p)=>r+' = loan amount '+t+' − paid so far '+p, w29LIntS:'That’s what the payment schedule you entered gives.', w29LIntSim:(m,r,n)=>'Paying '+m+' a month at '+r+'%, the loan closes in '+n+' months — this much interest accrues.',
+  w29LNoRate:'No rate given — interest can’t be counted. Add it under “Edit”.', w29LEndH:m=>'Closes — '+m, w29LEndS:n=>'Payments left on the schedule: '+n+'.', w29LEndSim:(r,m,n)=>'Balance '+r+' at '+m+' a month — '+n+' more months including interest.',
+  w29LPen:(p,b,v)=>p+'% a day on '+(b==='rem'?'the whole balance':'the overdue payment')+': one day late ≈ '+v, w29LChange:'If the numbers differ from the bank’s, tap “Check with the bank”.' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M29S[k]);
+/* <</v29 str>> */
 /* <<v28 str>> */
 /* ----- v28: «Расчёт» — каналы продаж, шанс цели, рычаги, сравнение ----- */
 const M28C={
@@ -15400,6 +15702,350 @@ function simR(m,foot){ const h=hbSt(); let g=h.sim; if(!g) g=h.sim=simNew(Date.n
     d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; f.innerHTML=''; f.hidden=true;
     if(t.name==='pi') piR(m,f,t.arg); else simR(m,f); m.scrollTop=restore?(t.y||0):0; }; }
 /* <</v28 js>> */
+/* <<v29 js>> */
+/* ===================== v29: разбор договора по фото (409), тетрадь фотографией (410), «Как посчитано?» (412) ===================== */
+/* ---------- общее: фото, подготовка, запрос ---------- */
+const P29_MAX=1568;
+function p29Load(src){ return new Promise((res,rej)=>{ const im=new Image(); im.onload=()=>res(im); im.onerror=()=>rej(new Error('img')); im.src=src; }); }
+async function p29Ingest(file){ const url=URL.createObjectURL(file);
+  try{ const im=await p29Load(url), w=im.naturalWidth, h=im.naturalHeight; if(!w||!h) throw new Error('img');
+    const k=Math.min(1,2600/Math.max(w,h)), c=document.createElement('canvas'); c.width=Math.round(w*k); c.height=Math.round(h*k);
+    const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(im,0,0,c.width,c.height);
+    let lum=255; try{ const s=document.createElement('canvas'); s.width=48; s.height=48; const sg=s.getContext('2d'); sg.drawImage(c,0,0,48,48); const d=sg.getImageData(0,0,48,48).data; let t=0; for(let i=0;i<d.length;i+=4) t+=(d[i]*299+d[i+1]*587+d[i+2]*114)/1000; lum=t/(d.length/4); }catch(e){}
+    return {src:c.toDataURL('image/jpeg',0.9),w:c.width,h:c.height,rot:0,dark:lum<80,small:Math.max(w,h)<1000}; }
+  finally{ URL.revokeObjectURL(url); } }
+/* выравнивание яркости: бледный карандаш, тень и тёмное фото читаются лучше; цвет сохраняется */
+function p29Levels(g,w,h){ try{ const d=g.getImageData(0,0,w,h), a=d.data, hist=new Uint32Array(256); let n=0;
+    for(let i=0;i<a.length;i+=16){ hist[((a[i]*299+a[i+1]*587+a[i+2]*114)/1000)|0]++; n++; }
+    let lo=0, hi=255, acc=0; while(lo<255&&(acc+=hist[lo])<n*0.01) lo++; acc=0; while(hi>0&&(acc+=hist[hi])<n*0.01) hi--;
+    if(hi-lo<40||hi-lo>230) return; const k=255/(hi-lo);
+    for(let i=0;i<a.length;i+=4){ a[i]=(a[i]-lo)*k; a[i+1]=(a[i+1]-lo)*k; a[i+2]=(a[i+2]-lo)*k; } g.putImageData(d,0,0); }catch(e){} }
+async function p29Out(pg,o){ o=o||{}; const im=await p29Load(pg.src), r=(((pg.rot||0)%360)+360)%360, sw=im.naturalWidth, sh=im.naturalHeight, W=r%180?sh:sw, H=r%180?sw:sh;
+  const base=document.createElement('canvas'); base.width=W; base.height=H; const g=base.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,W,H);
+  g.translate(W/2,H/2); g.rotate(r*Math.PI/180); g.drawImage(im,-sw/2,-sh/2); g.setTransform(1,0,0,1,0,0);
+  if(o.levels) p29Levels(g,W,H);
+  const cut=(x,y,w,h,max,q)=>{ const k=Math.min(1,max/Math.max(w,h)), c=document.createElement('canvas'); c.width=Math.max(1,Math.round(w*k)); c.height=Math.max(1,Math.round(h*k)); const cg=c.getContext('2d'); cg.fillStyle='#fff'; cg.fillRect(0,0,c.width,c.height); cg.drawImage(base,x,y,w,h,0,0,c.width,c.height); return c.toDataURL('image/jpeg',q); };
+  const part=u=>({type:'image/jpeg',data:u.split(',')[1]});
+  const out={full:part(cut(0,0,W,H,o.max||P29_MAX,o.q||0.85)),tiles:[],view:o.view?cut(0,0,W,H,1400,0.8):''};
+  if(o.tiles&&Math.max(W,H)>1700){ if(H>=W){ const th=Math.round(H*0.56); out.tiles=[part(cut(0,0,W,th,P29_MAX,0.85)),part(cut(0,H-th,W,th,P29_MAX,0.85))]; } else { const tw=Math.round(W*0.56); out.tiles=[part(cut(0,0,tw,H,P29_MAX,0.85)),part(cut(W-tw,0,tw,H,P29_MAX,0.85))]; } }
+  return out; }
+async function p29Thumb(pg){ const im=await p29Load(pg.src), r=(((pg.rot||0)%360)+360)%360, k=Math.min(1,240/Math.max(im.naturalWidth,im.naturalHeight)), sw=Math.round(im.naturalWidth*k), sh=Math.round(im.naturalHeight*k), W=r%180?sh:sw, H=r%180?sw:sh;
+  const c=document.createElement('canvas'); c.width=W; c.height=H; const g=c.getContext('2d'); g.translate(W/2,H/2); g.rotate(r*Math.PI/180); g.drawImage(im,-sw/2,-sh/2,sw,sh); return c.toDataURL('image/jpeg',0.7); }
+function p29Pick(gallery,cb){ const i=document.createElement('input'); i.type='file'; i.accept='image/*'; if(gallery) i.multiple=true; else i.setAttribute('capture','environment'); i.hidden=true; document.body.appendChild(i);
+  i.addEventListener('change',async()=>{ const fs=[...(i.files||[])]; i.remove(); const out=[]; for(const f of fs.slice(0,12)){ try{ out.push(await p29Ingest(f)); }catch(e){} } if(fs.length&&!out.length) toast(L.rcFail); if(out.length) cb(out); }); i.click(); }
+function p29ErrText(m){ return m==='nokey'?L.sfNoKey:m==='limit'?L.p29Limit:m==='old'?L.p29Old:m==='off'?L.p29Off:L.p29Err; }
+async function p29Post(path,body,signal){
+  if(navigator.onLine===false) throw new Error('off');
+  try{ const c=await sfCapsLoad(); if(c&&c.v>0&&c.v<16) throw new Error('old'); }catch(e){ if(e&&e.message==='old') throw e; }
+  let r; try{ r=await fetch(API_BASE+'/api/mk/'+path,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(Object.assign({id:mkId(),lang},body)),signal}); }catch(e){ if(e&&e.name==='AbortError') throw e; throw new Error('srv'); }
+  const j=await r.json().catch(()=>({})); if(!r.ok){ throw new Error(j.error==='nokey'?'nokey':j.error==='limit'?'limit':j.error==='notfound'?'old':'srv'); } return j; }
+function p29St(){ if(!state.misc||typeof state.misc!=='object') state.misc={}; const s=state.misc.p29&&typeof state.misc.p29==='object'?state.misc.p29:(state.misc.p29={});
+  if(!Array.isArray(s.abbr)) s.abbr=[]; if(!Array.isArray(s.fix)) s.fix=[]; if(!Array.isArray(s.imp)) s.imp=[]; if(!Array.isArray(s.ct)) s.ct=[]; return s; }
+function p29Pages(pages,attr){ return `<div class="p29-pages">${pages.map((p,i)=>`<div class="p29-pg"><img src="${p.th||p.src}" alt="${esc(L.p29Page(i+1))}"><span class="p29-pn">${i+1}</span>${p.dark?`<span class="p29-warn">${L.p29Dark}</span>`:p.small?`<span class="p29-warn">${L.p29Small}</span>`:''}<div class="p29-pb"><button type="button" data-${attr}-rot="${i}" aria-label="${esc(L.p29Rot)} ${i+1}">${ico('repeat',16)}</button><button type="button" data-${attr}-del="${i}" aria-label="${esc(L.p29Del)} ${i+1}">${ico('close',16)}</button></div></div>`).join('')}</div>`; }
+function p29Tips(list){ const ic=['doc','sun','search']; return `<div class="p29-tips">${list.map((t,i)=>`<span>${ico(ic[i]||'check',16)}${esc(t)}</span>`).join('')}</div>`; }
+function p29Busy(steps,sub){ return `<div class="p29-busy" aria-live="polite"><span class="p29-spin" aria-hidden="true"></span><b id="p29-step">${esc(steps[0])}</b><small>${esc(sub)}</small><small id="p29-sec"></small><button type="button" class="btn btn-ghost" id="p29-stop">${L.p29Cancel}</button></div>`; }
+function p29Ticker(steps){ const t0=Date.now(); let i=0; const iv=setInterval(()=>{ const s=$('#p29-step'), c=$('#p29-sec'); if(!s){ clearInterval(iv); return; } const sec=Math.round((Date.now()-t0)/1000); if(c) c.textContent=L.p29Wait(sec); if(sec&&sec%9===0&&i<steps.length-1){ i++; s.textContent=steps[i]; } },1000); return ()=>clearInterval(iv); }
+
+/* ===================== 409: разбор кредитного договора ===================== */
+let ct29={pages:[],loan:null,note:'',busy:false,ab:null,form:false};
+function ct29Real(rep){ if(!rep) return null; const A=+rep.amount, n=Math.round(+rep.term||0); if(!(A>0&&n>0)||rep.schedule==='bullet') return null;
+  let once=0, mon=0; for(const f of rep.fees||[]){ const v=f.amount!=null?+f.amount:(f.pct!=null?A*f.pct/100:0); if(!(v>0)) continue; if(f.when==='once') once+=v; else if(f.when==='monthly') mon+=v; else if(f.when==='yearly') mon+=v/12; }
+  const ins=rep.ins||{}; if(ins.req==='yes'&&+ins.cost>0){ const p=String(ins.period||''); if(/мес|моҳ|month/i.test(p)) mon+=+ins.cost; else if(/год|сол|year|annual/i.test(p)) mon+=ins.cost/12; else once+=+ins.cost; }
+  let pay=+rep.monthly||0; const diff=rep.schedule==='diff'; if((diff||!(pay>0))&&+rep.total>0) pay=rep.total/n; if(!(pay>0)&&+rep.rate>0) pay=annuity(A,+rep.rate,n); if(!(pay>0)) return null;
+  const net=A-once, P=pay+mon; if(!(net>0)||P*n<=net*1.0005) return null;
+  const f=r=>{ let s=0, d=1; for(let k=1;k<=n;k++){ d/=1+r; s+=P*d; } return s-net; }; let lo=0, hi=0.5; for(let i=0;i<70;i++){ const m=(lo+hi)/2; if(f(m)>0) lo=m; else hi=m; }
+  const r=(lo+hi)/2; return {eff:Math.round((Math.pow(1+r,12)-1)*1000)/10,once:Math.round(once),mon:Math.round(mon),pay:Math.round(pay),P:Math.round(P),net:Math.round(net),give:Math.round(P*n),over:Math.round(P*n-net),n,approx:diff}; }
+function ct29Fmt(v,cur){ if(v==null) return '—'; return (!cur||cur==='TJS')?money(v):nf.format(Math.round(v))+' '+(cur==='USD'?'$':cur); }
+function ct29Pct(v){ return v==null?'—':rf.format(Math.round(v*10)/10)+'%'; }
+function ct29Open(loan,opts){ opts=opts||{}; ct29={pages:[],loan:loan||null,note:'',busy:false,ab:null,form:!!opts.form};
+  if(loan&&(loan.docs||[]).length){ Promise.all(loan.docs.map(k=>rcGet(k))).then(async ds=>{ for(const d of ds) if(d) ct29.pages.push({src:d,rot:0}); for(const p of ct29.pages) p.th=await p29Thumb(p).catch(()=>p.src); ct29Sheet(); }); }
+  ct29Sheet(); }
+function ct29Sheet(err){ const P=ct29.pages, loan=ct29.loan, st=p29St(), recent=loan?[]:st.ct.slice(-3).reverse();
+  openSheet(`<h3>${ico('doc',22)} ${L.c29T}</h3><p class="lead">${loan?esc(loan.name)+' · ':''}${L.c29Lead}</p>
+    ${p29Tips(L.c29Tips)}
+    ${P.length?p29Pages(P,'c29'):''}
+    <div class="p29-add"><button type="button" class="btn btn-primary" data-c29-cam="1">${ico('camera',18)} ${P.length?L.c29More:L.p29Cam}</button><button type="button" class="btn btn-ghost" data-c29-gal="1">${L.p29Gal}</button></div>
+    <div class="field" style="margin-top:12px"><label for="c29-note">${L.c29NoteL}</label><input id="c29-note" type="text" maxlength="200" placeholder="${esc(L.c29NoteP)}" value="${esc(ct29.note)}"></div>
+    <p class="p29-priv">${ico('lock',14)} ${L.p29Priv} ${L.c29Priv}</p>
+    <div class="err ${err?'show':''}" id="c29-err">${err?esc(err):''}</div>
+    <button type="button" class="btn btn-primary btn-full" id="c29-go" ${P.length?'':'disabled'}>${ico('sparkle',18)} ${P.length?L.c29Go(P.length):L.c29Need}</button>
+    ${recent.length?`<div class="c29-recent"><b>${L.c29Recent}</b>${recent.map((r,i)=>`<button type="button" class="c29-rc" data-c29-old="${st.ct.length-1-i}"><span>${esc(r.rep.bank||L.c29RT)}</span><small>${esc(dShort(r.at))} · ${esc(L.c29V[r.rep.verdict]||'')}</small></button>`).join('')}</div>`:''}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="c29-back">${loan?L.back:L.close}</button></div>`);
+  const add=list=>{ (async()=>{ for(const p of list){ if(ct29.pages.length>=8) break; p.th=await p29Thumb(p).catch(()=>p.src); ct29.pages.push(p); } ct29Sheet(); })(); };
+  const keep=()=>{ const n=$('#c29-note'); if(n) ct29.note=n.value.trim(); };
+  sheet.querySelectorAll('[data-c29-cam]').forEach(b=>b.onclick=()=>{ keep(); p29Pick(false,add); });
+  sheet.querySelectorAll('[data-c29-gal]').forEach(b=>b.onclick=()=>{ keep(); p29Pick(true,add); });
+  sheet.querySelectorAll('[data-c29-rot]').forEach(b=>b.onclick=async()=>{ keep(); const p=ct29.pages[+b.dataset.c29Rot]; if(!p) return; p.rot=((p.rot||0)+90)%360; p.th=await p29Thumb(p).catch(()=>p.th); ct29Sheet(); });
+  sheet.querySelectorAll('[data-c29-del]').forEach(b=>b.onclick=()=>{ keep(); ct29.pages.splice(+b.dataset.c29Del,1); ct29Sheet(); });
+  sheet.querySelectorAll('[data-c29-old]').forEach(b=>b.onclick=()=>{ const r=st.ct[+b.dataset.c29Old]; if(r) ct29Report(r.rep,{sources:r.src||[],at:r.at}); });
+  $('#c29-back').onclick=()=>{ if(loan&&typeof ctrSheet==='function') ctrSheet(loan); else closeSheet(); };
+  $('#c29-go').onclick=()=>{ keep(); if(ct29.pages.length) ct29Run(); }; }
+async function ct29Run(){ if(ct29.busy) return; ct29.busy=true; const steps=L.c29Steps;
+  openSheet(`<h3>${ico('doc',22)} ${L.c29T}</h3>${p29Pages(ct29.pages,'c29x')}${p29Busy(steps,L.c29Busy)}`); sheet.querySelectorAll('.p29-pb').forEach(x=>x.remove());
+  const stop=p29Ticker(steps); const ab=new AbortController(); ct29.ab=ab; $('#p29-stop').onclick=()=>ab.abort();
+  try{ const imgs=[]; for(const p of ct29.pages){ const o=await p29Out(p,{levels:true}); imgs.push(o.full); }
+    const j=await p29Post('contract',{imgs,note:ct29.note},ab.signal); stop(); ct29.busy=false;
+    const st=p29St(), at=dkey(); st.ct.push({at,rep:j.rep,src:(j.sources||[]).slice(0,3)}); st.ct=st.ct.slice(-5);
+    if(ct29.loan){ ct29.loan.ct29={at,rep:j.rep,src:(j.sources||[]).slice(0,3)}; }
+    persist(); ct29Report(j.rep,{sources:j.sources||[],at,fresh:true}); }
+  catch(e){ stop(); ct29.busy=false; if(e&&e.name==='AbortError'){ ct29Sheet(); return; } ct29Sheet(p29ErrText(e&&e.message)); } }
+function ct29Rows(loan,rep){ const r={rate:rep.rate,pen:rep.pen&&rep.pen.pct,penBase:rep.pen&&(rep.pen.base==='rem'||rep.pen.base==='pay')?rep.pen.base:null,monthly:(!rep.currency||rep.currency==='TJS')?rep.monthly:null,term:rep.term?Math.round(rep.term):null};
+  return typeof ctrRows==='function'?ctrRows(loan,r).map(x=>Object.assign(x,{v:r[x.k]})):[]; }
+function ct29Report(rep,o){ o=o||{}; const loan=ct29.loan, cur=rep.currency||'TJS', R=ct29Real(rep), F=v=>ct29Fmt(v,cur);
+  const over=R?R.over:(rep.total&&rep.amount?Math.max(0,rep.total-rep.amount):null);
+  const kv=[[L.c29K.amount,F(rep.amount)],[L.c29K.term,rep.term?L.c29Mon(Math.round(rep.term)):'—'],[L.c29K.monthly,F(rep.monthly)],[L.c29K.total,F(R?R.give:rep.total)],[L.c29K.over,over!=null?F(over):'—']].filter(x=>x[1]!=='—');
+  const lv=x=>`<span class="c29-lv ${x}">${L.c29Lv[x]}</span>`;
+  const flags=(rep.flags||[]).map(f=>`<div class="c29-flag ${f.level}"><div class="c29-fh">${lv(f.level)}<b>${esc(f.title)}</b></div><p>${esc(f.text)}</p>${f.quote?`<blockquote>«${esc(f.quote)}»${f.where?` <cite>${esc(f.where)}</cite>`:''}</blockquote>`:''}</div>`).join('');
+  const rateRows=[[L.c29RateDoc,ct29Pct(rep.rate)],[L.c29RateEff,ct29Pct(rep.eff)]].filter(x=>x[1]!=='—');
+  const gap=R&&rep.eff?R.eff-rep.eff:(R&&rep.rate?R.eff-rep.rate:0);
+  const realBox=R?`<div class="c29-real ${gap>=3?'warn':''}"><small>${L.c29RateReal}</small><b>≈ ${ct29Pct(R.eff)}</b>${gap>=3?`<p>${L.c29RealDiff(ct29Pct(rep.eff||rep.rate),ct29Pct(R.eff))}</p>`:''}
+      <details class="c29-how"><summary>${ico('info',15)} ${L.c29RealHow}</summary><ol>
+        <li>${L.c29RealNet(F(R.net),R.once?F(R.once):'')}</li><li>${L.c29RealPay(F(R.P),R.n)}${R.mon?` <small>(${L.c29RealPayIn(F(R.pay),F(R.mon))})</small>`:''}</li>
+        <li>${L.c29RealGive(F(R.give),F(R.over))}</li><li>${L.c29RealEq(ct29Pct(R.eff))}</li></ol>${R.approx?`<p class="note">${L.c29RealApprox}</p>`:''}</details></div>`:'';
+  const fee=(rep.fees||[]).map(f=>`<li><span>${esc(f.name)}${f.note?`<small>${esc(f.note)}</small>`:''}</span><b>${f.amount!=null?F(f.amount):f.pct!=null?ct29Pct(f.pct):'—'}<small>${esc(L.c29When[f.when]||'')}</small></b></li>`).join('');
+  const ins=rep.ins||{}, pen=rep.pen||{}, ea=rep.early||{};
+  const insTx=ins.req!=='unknown'||ins.cost||ins.note?[L.c29InsReq[ins.req],ins.cost?F(ins.cost)+(ins.period?' / '+esc(ins.period):''):'',L.c29InsRef[ins.refuse]].filter(Boolean).join(' · ')+(ins.note?`<small>${esc(ins.note)}</small>`:''):'';
+  let penTx=''; if(pen.pct||pen.fixed||pen.note){ penTx=[pen.pct?L.c29PenTxt(rf.format(pen.pct),pen.base):'',pen.fixed?L.c29PenFix(F(pen.fixed)):''].filter(Boolean).join(' · ');
+    if(pen.pct){ const base=loan?analyze(loan).remaining:(+rep.amount||0), pm=loan?(analyze(loan).monthly||+rep.monthly||0):(+rep.monthly||0);
+      if(pen.base==='rem'&&base>0){ penTx+=`<small>${L.c29PenEx(10,F(base*pen.pct/100*10))}${pm>0?' · '+L.c29PenEx2(F(pm*pen.pct/100*10)):''}</small>`; }
+      else if(pm>0) penTx+=`<small>${L.c29PenEx(10,F(pm*pen.pct/100*10))}</small>`; }
+    if(pen.note) penTx+=`<small>${esc(pen.note)}</small>`; }
+  const eaTx=ea.ok!=='unknown'||ea.note?[L.c29EarlyOk[ea.ok],ea.ok==='yes'?(ea.feePct||ea.fee?L.c29EarlyFee(ea.fee?F(ea.fee):ct29Pct(ea.feePct)):L.c29EarlyFree):'',ea.notice?L.c29Notice(Math.round(ea.notice)):'',L.c29Recalc[ea.recalc]||''].filter(Boolean).join(' · ')+(ea.note?`<small>${esc(ea.note)}</small>`:''):'';
+  const det=[[L.c29Pen,penTx?`<p>${penTx}</p>`:''],[L.c29Early,eaTx?`<p>${eaTx}</p>`:''],[L.c29Fees,fee?`<ul class="c29-fees">${fee}</ul>`:''],[L.c29Ins,insTx?`<p>${insTx}</p>`:''],[L.c29Col,rep.collateral?`<p>${esc(rep.collateral)}</p>`:'']].filter(x=>x[1]);
+  const srcs=(o.sources||[]).filter(s=>/^https?:\/\//.test(s.url)).slice(0,2);
+  const rows=loan?ct29Rows(loan,rep):[];
+  openSheet(`<h3>${ico('doc',22)} ${L.c29RT}</h3><p class="lead">${esc([rep.bank,o.at?fmtDate(parseYmd(o.at)):''].filter(Boolean).join(' · '))}</p>
+    <div class="c29-verdict ${rep.verdict}"><b>${L.c29V[rep.verdict]}</b><p>${esc(rep.summary)}</p></div>
+    ${cur!=='TJS'?`<p class="c29-cur">${ico('warn',16)} ${L.c29Cur(esc(cur))}</p>`:''}
+    ${kv.length?`<div class="c29-kv">${kv.map(x=>`<div><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}</div>`:''}
+    ${rateRows.length||realBox?`<div class="c29-rate"><h4>${L.c29RateT}</h4>${rateRows.map(x=>`<div class="c29-rr"><span>${x[0]}</span><b>${x[1]}</b></div>`).join('')}${realBox}</div>`:''}
+    ${flags?`<h4 class="c29-h">${L.c29Flags}</h4><div class="c29-flags">${flags}</div>`:''}
+    ${det.map(([h,b],i)=>`<details class="c29-det" ${i<3?'open':''}><summary>${h}</summary>${b}</details>`).join('')}
+    ${rep.market?`<div class="c29-mk"><small>${L.c29Market}</small><p>${esc(rep.market)}</p>${srcs.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener">${ico('external',14)} ${esc(s.title||L.c29Src)}</a>`).join('')}</div>`:''}
+    ${(rep.ask||[]).length?`<div class="c29-ask"><h4>${L.c29Ask}</h4><ol>${rep.ask.map(q=>`<li>${esc(q)}</li>`).join('')}</ol><button type="button" class="btn btn-ghost" id="c29-copy">${ico('copy',16)} ${L.c29Copy}</button></div>`:''}
+    ${(rep.unreadable||[]).length?`<div class="c29-unr">${ico('warn',16)}<div><b>${L.c29Unread}</b><ul>${rep.unreadable.map(u=>`<li>${esc(u)}</li>`).join('')}</ul><small>${L.c29Retake}</small></div></div>`:''}
+    ${rows.length?`<div class="c29-apply"><h4>${L.c29Apply}</h4>${rows.map(r=>`<label class="check ctr-row"><input type="checkbox" data-c29-k="${r.k}" ${r.same?'disabled':'checked'}> <span><b>${esc(r.lab)}:</b> ${esc(r.txt)}${r.same?` <small class="muted">· ${L.ctrSame}</small>`:(r.cur!=null&&r.cur!==''?` <small class="muted">· ${L.ctrWas(esc(String(r.cur)))}</small>`:'')}</span></label>`).join('')}${rows.some(r=>!r.same)?`<button type="button" class="btn btn-primary btn-full" id="c29-ap">${L.ctrApply}</button>`:''}</div>`:''}
+    <p class="note">${L.c29Check}</p>
+    ${!loan?`<button type="button" class="btn btn-primary btn-full" id="c29-add">${ico('plus',18)} ${L.c29AddLoan}</button>`:''}
+    <div class="sheet-row">${ct29.pages.length?`<button type="button" class="btn btn-ghost" id="c29-again">${L.c29Again}</button>`:''}<button type="button" class="btn btn-ghost" id="c29-done">${loan?L.back:L.c29Done}</button></div>`);
+  const cp=$('#c29-copy'); if(cp) cp.onclick=async()=>{ const t=(rep.bank?rep.bank+'\n':'')+rep.ask.map((q,i)=>(i+1)+'. '+q).join('\n'); try{ await navigator.clipboard.writeText(t); toast(L.c29Copied); }catch(e){ toast(L.c29Copied); } };
+  const ag=$('#c29-again'); if(ag) ag.onclick=()=>ct29Sheet();
+  $('#c29-done').onclick=()=>{ if(loan) detailSheet(loan); else closeSheet(); };
+  const ap=$('#c29-ap'); if(ap) ap.onclick=()=>{ const on=[...sheet.querySelectorAll('[data-c29-k]')].filter(x=>x.checked&&!x.disabled).map(x=>x.dataset.c29K); if(!on.length) return;
+    for(const k of on){ const r=rows.find(x=>x.k===k); if(!r) continue; if(k==='term') loan.term=Math.round(r.v); else loan[k]=r.v; } persist(); render(); toast(L.ctrApplied(on.length)); detailSheet(loan); };
+  const ad=$('#c29-add'); if(ad) ad.onclick=()=>{ const tj=!rep.currency||rep.currency==='TJS';
+    const pre={name:String(rep.bank||'').slice(0,60),note:'',total:tj&&rep.amount?Math.round(rep.amount):'',paid:'',monthly:tj&&rep.monthly?Math.round(rep.monthly):'',dueDay:rep.dueDay||'',gold:'',rate:rep.rate||'',term:rep.term?Math.round(rep.term):'',pen:rep.pen&&rep.pen.pct||'',penBase:rep.pen&&rep.pen.base==='rem'?'rem':'pay'};
+    const pages=ct29.pages.slice(), saved={at:o.at||dkey(),rep,src:(o.sources||[]).slice(0,3)};
+    loanForm(null,pre); const f=$('#f-save'); if(!f) return; const orig=f.onclick;
+    f.onclick=function(){ const before=new Set(state.loans.map(l=>l.id)); orig.apply(this,arguments); const nl=state.loans.find(l=>!before.has(l.id)); if(!nl) return;
+      nl.ct29=saved; persist(); (async()=>{ const keys=[]; for(const p of pages.slice(0,typeof CTR_MAX!=='undefined'?CTR_MAX:8)){ try{ const o2=await p29Out(p,{max:1600,q:0.8}); const k='doc_'+nl.id+'_'+Date.now().toString(36)+keys.length; await rcPut(k,'data:image/jpeg;base64,'+o2.full.data); keys.push(k); }catch(e){} } if(keys.length){ nl.docs=(nl.docs||[]).concat(keys); persist(); } })(); }; }; }
+/* места входа: под списком банков, в «Инструментах», в форме нового кредита и в «Договоре» кредита */
+function ct29Inject(){ const cards=$('#cards'); if(!cards) return; let e=$('#c29Entry'); if(!e){ cards.insertAdjacentHTML('afterend','<section id="c29Entry"></section>'); e=$('#c29Entry'); }
+  if(e&&!e.firstChild) e.innerHTML=`<button type="button" class="c29-entry" data-ct29="new"><span class="c29-ei">${ico('doc',24)}</span><span><b>${L.c29EntryT}</b><small>${L.c29EntryD}</small></span></button>`; }
+try{ const _rT29=renderTools; renderTools=function(){ const x=_rT29.apply(this,arguments); try{ const t=$('#tools .tools'); if(t&&!t.querySelector('[data-ct29]')) t.insertAdjacentHTML('afterbegin',`<button class="tool" data-ct29="new"><span>📄</span><b>${L.c29Tool}</b></button>`); }catch(e){} return x; }; }catch(e){}
+try{ const _lF29=loanForm; loanForm=function(loan,prefill){ const x=_lF29.apply(this,arguments); try{ if(!loan&&!(prefill&&prefill.name)){ const lead=sheet.querySelector('.lead')||sheet.querySelector('h3'); if(lead&&!sheet.querySelector('.c29-fl')) lead.insertAdjacentHTML('afterend',`<button type="button" class="c29-fl" data-ct29="form">${ico('camera',18)} ${L.c29FormLink}</button>`); } }catch(e){} return x; }; }catch(e){}
+try{ const _cS29=ctrSheet; ctrSheet=async function(loan,res,err){ const x=await _cS29.apply(this,arguments); try{ const n=(loan.docs||[]).length, h=sheet.querySelector('h3');
+    if(h&&!sheet.querySelector('.c29-full')){ const old=loan.ct29&&loan.ct29.rep?`<button type="button" class="link-btn c29-old" data-ct29-last="${esc(loan.id)}">${ico('history',16)} ${L.c29Last(fmtDate(parseYmd(loan.ct29.at)))}</button>`:'';
+      sheet.querySelector('.lead').insertAdjacentHTML('afterend',`<div class="c29-full"><button type="button" class="btn btn-primary btn-full" data-ct29-loan="${esc(loan.id)}">${ico('search',18)} ${n?L.c29Full:L.c29FullNew}</button><small>${n?L.c29FullD(n):L.c29FullDNew}</small>${old}</div>`); } }catch(e){} return x; }; }catch(e){}
+
+/* ===================== 410: тетрадь фотографией ===================== */
+let nb29={pages:[],res:[],busy:false,ab:null,year:String(new Date().getFullYear()),pageD:{}};
+function nb29Open(){ nb29={pages:[],res:[],busy:false,ab:null,year:String(new Date().getFullYear()),pageD:{}}; nb29Sheet(); }
+function nb29Sheet(err){ const P=nb29.pages, st=p29St(), hist=st.imp.slice(-3).reverse();
+  openSheet(`<h3>📒 ${L.n29T}</h3><p class="lead">${L.n29Lead}</p>
+    ${p29Tips(L.n29Tips)}
+    ${P.length?p29Pages(P,'n29'):''}
+    <div class="p29-add"><button type="button" class="btn btn-primary" data-n29-cam="1">${ico('camera',18)} ${P.length?L.n29More:L.p29Cam}</button><button type="button" class="btn btn-ghost" data-n29-gal="1">${L.p29Gal}</button></div>
+    <div class="field n p29-year"><label for="n29-y">${L.n29Year}</label><input id="n29-y" type="number" inputmode="numeric" min="2015" max="2035" value="${esc(nb29.year)}"></div>
+    ${st.abbr.length?`<p class="n29-mem">${ico('sparkle',14)} ${L.n29Mem(st.abbr.length)} <small>${esc(st.abbr.slice(0,4).map(a=>a.a+' — '+a.m).join(', '))}</small> <button type="button" class="link-btn" id="n29-forget">${L.n29Forget}</button></p>`:''}
+    <p class="p29-priv">${ico('lock',14)} ${L.p29Priv}</p>
+    <div class="err ${err?'show':''}">${err?esc(err):''}</div>
+    <button type="button" class="btn btn-primary btn-full" id="n29-go" ${P.length?'':'disabled'}>${ico('sparkle',18)} ${P.length?L.n29Go(P.length):L.c29Need}</button>
+    ${hist.length?`<div class="n29-hist"><b>${L.n29Hist}</b>${hist.map(h=>`<div class="n29-hr"><span>${esc(L.n29HistRow(dShort(h.at),h.n,money(h.rev)))}</span><button type="button" class="link-btn" data-n29-undo="${esc(h.id)}">${L.n29Undo}</button></div>`).join('')}</div>`:''}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  const add=list=>{ (async()=>{ for(const p of list){ if(nb29.pages.length>=12) break; p.th=await p29Thumb(p).catch(()=>p.src); nb29.pages.push(p); } nb29Sheet(); })(); };
+  const keep=()=>{ const y=$('#n29-y'); if(y&&/^\d{4}$/.test(y.value)) nb29.year=y.value; };
+  sheet.querySelectorAll('[data-n29-cam]').forEach(b=>b.onclick=()=>{ keep(); p29Pick(false,add); });
+  sheet.querySelectorAll('[data-n29-gal]').forEach(b=>b.onclick=()=>{ keep(); p29Pick(true,add); });
+  sheet.querySelectorAll('[data-n29-rot]').forEach(b=>b.onclick=async()=>{ keep(); const p=nb29.pages[+b.dataset.n29Rot]; if(!p) return; p.rot=((p.rot||0)+90)%360; p.th=await p29Thumb(p).catch(()=>p.th); nb29Sheet(); });
+  sheet.querySelectorAll('[data-n29-del]').forEach(b=>b.onclick=()=>{ keep(); nb29.pages.splice(+b.dataset.n29Del,1); nb29Sheet(); });
+  sheet.querySelectorAll('[data-n29-undo]').forEach(b=>b.onclick=()=>{ nb29Undo(b.dataset.n29Undo); toast(L.n29Undone); nb29Sheet(); });
+  const fg=$('#n29-forget'); if(fg) fg.onclick=()=>{ st.abbr=[]; st.fix=[]; persist(); nb29Sheet(); };
+  $('#n29-go').onclick=()=>{ keep(); if(nb29.pages.length){ nb29.res=nb29.pages.map(()=>({st:'wait'})); nb29Read(); } }; }
+function nb29Hints(prevLast){ const st=p29St(); let cats=[]; try{ cats=gcats().slice(0,12); }catch(e){} return {abbr:st.abbr.slice(0,25),fix:st.fix.slice(-15),cats,last:prevLast||'',year:nb29.year}; }
+function nb29Prog(){ const box=$('#n29-prog'); if(!box) return; box.innerHTML=nb29.pages.map((p,i)=>{ const r=nb29.res[i]||{st:'wait'}; return `<div class="n29-pr ${r.st}"><img src="${p.th||p.src}" alt=""><span>${L.p29Page(i+1)}</span><b>${r.st==='ok'?L.n29St.ok(r.rows.length):r.st==='read'?L.n29St.read:r.st==='err'?L.n29St.err:L.n29St.wait}</b></div>`; }).join(''); }
+async function nb29Read(){ if(nb29.busy) return; nb29.busy=true; const steps=[L.n29Busy0];
+  openSheet(`<h3>📒 ${L.n29T}</h3><div id="n29-prog" class="n29-prog"></div>${p29Busy(steps,L.n29Busy)}`); nb29Prog();
+  const stop=p29Ticker(steps), ab=new AbortController(); nb29.ab=ab; $('#p29-stop').onclick=()=>ab.abort();
+  let last='', aborted=false, err='';
+  for(let i=0;i<nb29.pages.length;i++){ const r=nb29.res[i]; if(r&&r.st==='ok'){ last=nb29LastDate(r.rows)||last; continue; }
+    nb29.res[i]={st:'read'}; nb29Prog(); const s=$('#p29-step'); if(s) s.textContent=L.n29Reading(i+1,nb29.pages.length);
+    try{ const o=await p29Out(nb29.pages[i],{levels:true,tiles:true,view:true});
+      const j=await p29Post('notebook',{imgs:[o.full,...o.tiles],hints:nb29Hints(last)},ab.signal);
+      const rows=(j.rows||[]).map((x,k)=>Object.assign({},x,{id:i+'_'+k,a0:x.a,on:x.k!=='skip'&&x.a>0}));
+      nb29.res[i]={st:'ok',rows,totals:j.totals||[],legend:j.legend||[],problems:j.problems||[],checked:!!j.checked,view:o.view};
+      last=nb29LastDate(rows)||last; }
+    catch(e){ if(e&&e.name==='AbortError'){ aborted=true; nb29.res[i]={st:'wait'}; break; } nb29.res[i]={st:'err',m:e&&e.message}; err=p29ErrText(e&&e.message); if(['nokey','limit','old','off'].includes(e&&e.message)) break; }
+    nb29Prog(); }
+  stop(); nb29.busy=false;
+  const okN=nb29.res.filter(r=>r.st==='ok').length;
+  if(!okN){ nb29Sheet(aborted?'':err||L.p29Err); return; }
+  nb29Prep(); nb29Review(err&&!aborted?err:''); }
+function nb29LastDate(rows){ const d=(rows||[]).map(r=>r.d).filter(Boolean).sort(); return d.length?d[d.length-1]:''; }
+/* подготовка к проверке: строки за дни, где в Mira уже есть записи, не отмечены; необычно большие суммы — под сомнением */
+function nb29Prep(){ const sh=ensureShop(); let typ=0; try{ typ=typicalRev(''); }catch(e){}
+  for(const r of nb29.res){ if(r.st!=='ok') continue; for(const x of r.rows){ if(x.prep) continue; x.prep=1;
+    if(x.d&&(sh.sales.some(e=>e.date===x.d)||sh.exp.some(e=>e.date===x.d))) { x.has=1; x.on=false; }
+    if(typ>0&&['sale','cash','card'].includes(x.k)&&x.a>typ*5&&x.a-typ>2000){ x.big=1; if(x.f==='high') x.f='mid'; } } } }
+function nb29Kind(x){ return `<select class="n29-k" data-n29-kind="${x.id}" aria-label="${esc(L.n29KindL)}">${['sale','cash','card','expense','skip'].map(k=>`<option value="${k}" ${x.k===k?'selected':''}>${L.n29K[k]}</option>`).join('')}</select>`; }
+function nb29Cat(x){ return `<select class="n29-c" data-n29-cat="${x.id}" ${x.k==='expense'?'':'hidden'} aria-label="${esc(L.n29CatL)}">${CATS.map(c=>`<option value="${c}" ${x.c===c?'selected':''}>${esc(catLb(c))}</option>`).join('')}</select>`; }
+function nb29RowHTML(x){ const doubt=x.f!=='high'||x.big;
+  return `<div class="n29-row ${doubt?'doubt':''} ${x.on?'':'off'}" data-n29-row="${x.id}">
+    <label class="n29-on"><input type="checkbox" data-n29-on="${x.id}" ${x.on?'checked':''} aria-label="${esc(L.n29Include)}"></label>
+    <div class="n29-main"><div class="n29-l1">${nb29Kind(x)}<input class="n29-a" type="number" inputmode="decimal" min="0" step="any" data-n29-a="${x.id}" value="${x.a!=null?x.a:''}" aria-label="${esc(L.amountW)}">${nb29Cat(x)}</div>
+      <div class="n29-l2"><span class="n29-raw">${L.n29Raw}: «${esc(x.raw||'')}»</span>${x.n?` · ${esc(x.n)}`:''}</div>
+      ${x.alt?`<button type="button" class="n29-alt" data-n29-alt="${x.id}">${L.n29Or(nf.format(x.alt))}</button>`:''}
+      ${x.big?`<small class="n29-why">${L.n29Big}</small>`:''}${x.miss?`<small class="n29-why">${L.n29Miss}</small>`:''}${x.cn?`<small class="n29-why">${esc(x.cn)}</small>`:''}${x.dAlt?`<small class="n29-why">${L.n29DateAlt(dShort(x.dAlt))}</small>`:''}</div></div>`; }
+function nb29Find(id){ for(const r of nb29.res){ if(r.st!=='ok') continue; const x=r.rows.find(y=>y.id===id); if(x) return {r,x}; } return null; }
+function nb29TotHTML(r){ return (r.totals||[]).map(t=>{ let s=0; for(const x of r.rows){ if(!x.on||x.k==='skip'||!(x.a>0)) continue; if(t.of==='sale'&&!['sale','cash','card'].includes(x.k)) continue; if(t.of==='expense'&&x.k!=='expense') continue; if(t.d&&x.d!==t.d) continue; s+=+x.a; }
+    s=Math.round(s*100)/100; const ok=Math.abs(s-t.a)<=Math.max(1,t.a*0.005); return `<div class="n29-tot ${ok?'ok':'bad'}">${ico(ok?'check':'warn',16)}<span>${ok?L.n29TotOk(esc(t.raw||nf.format(t.a)),money(t.a)):L.n29TotBad(esc(t.raw||nf.format(t.a)),money(t.a),money(s))}</span></div>`; }).join(''); }
+function nb29Groups(r,pi){ const g=[], by={}; for(const x of r.rows){ const k=x.d||''; if(!(k in by)){ by[k]=g.length; g.push({d:k,rows:[]}); } g[by[k]].rows.push(x); } return g; }
+function nb29Count(){ let n=0, rev=0, exp=0, noD=0; const days=new Set(); for(const r of nb29.res){ if(r.st!=='ok') continue; for(const x of r.rows){ if(!x.on||x.k==='skip'||!(x.a>0)) continue; if(!x.d){ noD++; continue; } n++; days.add(x.d); if(x.k==='expense') exp+=+x.a; else rev+=+x.a; } } return {n,rev,exp,days:days.size,noD}; }
+function nb29Review(err){ const C=nb29Count(), total=nb29.res.reduce((s,r)=>s+(r.st==='ok'?r.rows.length:0),0), sh=ensureShop(), legend=[];
+  const seen=new Set(p29St().abbr.map(a=>a.a)); for(const r of nb29.res) if(r.st==='ok') for(const l of r.legend||[]) if(!seen.has(l.a)){ seen.add(l.a); legend.push(l); }
+  nb29.legend=legend;
+  const pages=nb29.res.map((r,i)=>{ if(r.st!=='ok') return r.st==='err'?`<div class="n29-page err"><b>${L.p29Page(i+1)}</b><span>${L.n29St.err}</span><button type="button" class="btn btn-ghost" data-n29-retry="${i}">${L.n29Retry}</button></div>`:'';
+    const groups=nb29Groups(r,i);
+    return `<div class="n29-page" id="n29-p${i}"><div class="n29-ph"><button type="button" class="n29-thumb" data-n29-zoom="${i}" aria-label="${esc(L.n29Zoom)}"><img src="${nb29.pages[i].th||nb29.pages[i].src}" alt=""></button><div><b>${L.n29PageH(i+1,r.rows.length)}</b>${r.checked?`<small class="n29-ck">${ico('check',14)} ${L.n29Checked}</small>`:''}<small>${L.n29Zoom}</small></div></div>
+      <div class="n29-tots" id="n29-t${i}">${nb29TotHTML(r)}</div>
+      ${(r.problems||[]).length?`<div class="n29-prob">${ico('info',16)}<span>${r.problems.map(esc).join(' ')}</span></div>`:''}
+      ${!r.rows.length?`<p class="note">${L.n29Empty}</p>`:''}
+      ${groups.map(G=>{ const has=G.d?sumOf(sh.sales.filter(e=>e.date===G.d)):0;
+        const lb=G.d?dayLabel(G.d):null; return `<div class="n29-day"><div class="n29-dh">${G.d?`<b>${esc(lb.b)}</b>${lb.s?`<small>${esc(lb.s)}</small>`:''}`:`<b class="n29-nod">${L.n29NoDate}</b><input type="date" data-n29-pd="${i}" value="${esc(nb29.pageD[i]||'')}" aria-label="${esc(L.n29NoDateH)}">`}</div>
+          ${G.d&&G.rows.some(x=>x.has)?`<p class="n29-has">${L.n29Has(money(has))}</p>`:''}
+          ${G.rows.map(nb29RowHTML).join('')}</div>`; }).join('')}</div>`; }).join('');
+  openSheet(`<h3>${L.n29RT}</h3><p class="lead">${L.n29RLead(total)}</p><button type="button" class="link-btn n29-bk" id="n29-back">← ${L.n29Back}</button>
+    ${err?`<div class="err show">${esc(err)}</div>`:''}
+    <div class="n29-sum" id="n29-sum"></div>
+    ${pages}
+    ${legend.length?`<div class="n29-leg"><b>${L.n29Leg}</b><small>${L.n29LegD}</small>${legend.map((l,k)=>`<label class="n29-lg"><input type="checkbox" data-n29-lgon="${k}" checked><span>«${esc(l.a)}»</span><input type="text" maxlength="60" data-n29-lg="${k}" value="${esc(l.m)}" aria-label="${esc(l.a)}"></label>`).join('')}</div>`:''}
+    <div class="n29-foot"><div class="err" id="n29-err"></div><button type="button" class="btn btn-primary btn-full" id="n29-save"></button></div>`);
+  nb29Upd();
+  const on=(sel,ev,fn)=>sheet.querySelectorAll(sel).forEach(el=>el.addEventListener(ev,fn));
+  on('[data-n29-on]','change',e=>{ const f=nb29Find(e.target.dataset.n29On); if(!f) return; f.x.on=e.target.checked; e.target.closest('.n29-row').classList.toggle('off',!f.x.on); nb29Upd(f.r); });
+  on('[data-n29-a]','input',e=>{ const f=nb29Find(e.target.dataset.n29A); if(!f) return; const v=parseFloat(String(e.target.value).replace(',','.')); f.x.a=v>0?v:null; nb29Upd(f.r); });
+  on('[data-n29-kind]','change',e=>{ const f=nb29Find(e.target.dataset.n29Kind); if(!f) return; f.x.k=e.target.value; if(f.x.k==='expense'&&!f.x.c) f.x.c='other'; const c=sheet.querySelector(`[data-n29-cat="${f.x.id}"]`); if(c){ c.hidden=f.x.k!=='expense'; c.value=f.x.c||'other'; } if(f.x.k==='skip'){ f.x.on=false; const cb=sheet.querySelector(`[data-n29-on="${f.x.id}"]`); if(cb) cb.checked=false; e.target.closest('.n29-row').classList.add('off'); } nb29Upd(f.r); });
+  on('[data-n29-cat]','change',e=>{ const f=nb29Find(e.target.dataset.n29Cat); if(f) f.x.c=e.target.value; });
+  on('[data-n29-alt]','click',e=>{ const b=e.currentTarget, f=nb29Find(b.dataset.n29Alt); if(!f) return; const a=f.x.a; f.x.a=f.x.alt; f.x.alt=a; const inp=sheet.querySelector(`[data-n29-a="${f.x.id}"]`); if(inp) inp.value=f.x.a; b.textContent=L.n29Or(nf.format(f.x.alt)); nb29Upd(f.r); });
+  on('[data-n29-pd]','change',e=>{ const i=+e.target.dataset.n29Pd; nb29.pageD[i]=e.target.value; nb29Upd(); });
+  on('[data-n29-zoom]','click',e=>nb29Zoom(+e.currentTarget.dataset.n29Zoom));
+  on('[data-n29-retry]','click',e=>{ const i=+e.currentTarget.dataset.n29Retry; nb29.res[i]={st:'wait'}; nb29Read(); });
+  $('#n29-back').onclick=()=>nb29Sheet();
+  $('#n29-save').onclick=()=>nb29Save(); }
+function nb29Upd(r){ const C=nb29Count(); const s=$('#n29-sum'); if(s) s.innerHTML=`<span class="in">${L.n29SRev} +${money(C.rev)}</span><span class="out">${L.n29SExp} −${money(C.exp)}</span><span>${L.n29SDays(C.days)}</span>`;
+  nb29.res.forEach((x,i)=>{ if(x.st==='ok'&&(!r||x===r)){ const t=$('#n29-t'+i); if(t) t.innerHTML=nb29TotHTML(x); } });
+  const b=$('#n29-save'); if(b){ b.textContent=L.n29Save(C.n); b.disabled=!C.n; }
+  const er=$('#n29-err'); if(er){ const nd=nb29NoDate(); if(nd){ er.textContent=L.n29NeedDate(nd); er.classList.add('show'); } else { er.textContent=''; er.classList.remove('show'); } } }
+function nb29NoDate(){ let n=0; nb29.res.forEach((r,i)=>{ if(r.st!=='ok') return; for(const x of r.rows) if(x.on&&x.k!=='skip'&&x.a>0&&!x.d&&!nb29.pageD[i]) n++; }); return n; }
+function nb29Zoom(i){ const r=nb29.res[i], p=nb29.pages[i]; if(!p) return; const src=(r&&r.view)||p.th||p.src;
+  const z=document.createElement('div'); z.className='n29-zoom'; z.setAttribute('role','dialog'); z.innerHTML=`<div class="n29-zi"><img src="${src}" alt="${esc(L.p29Page(i+1))}"></div><button type="button" class="n29-zx" aria-label="${esc(L.close)}">${ico('close',22)}</button>`;
+  document.body.appendChild(z); const img=z.querySelector('img'); img.onclick=()=>img.classList.toggle('big'); z.querySelector('.n29-zx').onclick=()=>z.remove(); }
+function nb29Save(){ const C=nb29Count(); if(!C.n){ toast(L.n29SaveNone); return; } if(nb29NoDate()){ const e=$('#n29-err'); if(e){ e.textContent=L.n29NeedDate(nb29NoDate()); e.classList.add('show'); } return; }
+  const sh=ensureShop(), st=p29St(), ts=Date.now(), id='nb'+ts.toString(36), rec={id,at:dkey(),n:0,rev:0,exp:0,pages:nb29.res.filter(r=>r.st==='ok').length,dx:[]}, byD={}; let k=0;
+  nb29.res.forEach((r,i)=>{ if(r.st!=='ok') return; for(const x of r.rows){ if(!x.on||x.k==='skip'||!(x.a>0)) continue; const d=x.d||nb29.pageD[i]; if(!d) continue; const a=Math.round(+x.a*100)/100;
+      if(x.k==='expense'){ sh.exp.push({id:'e'+ts+'_n'+(k++),date:d,cat:CATS.includes(x.c)?x.c:'other',sum:a,note:String(x.n||x.raw||'').slice(0,60),ts:ts+k,nb:id}); rec.exp+=a; }
+      else { const o=byD[d]||(byD[d]={cash:0,card:0}); if(x.k==='card') o.card+=a; else o.cash+=a; }
+      rec.n++;
+      if(x.a0>0&&Math.abs(x.a0-a)>0.001&&!x.miss) st.fix.push({r:x.a0,v:a,raw:String(x.raw||'').slice(0,40)}); } });
+  for(const d of Object.keys(byD).sort()){ const o=byD[d], sum=Math.round((o.cash+o.card)*100)/100; if(!(sum>0)) continue;
+    const prev=state.dayx[d]?JSON.parse(JSON.stringify(state.dayx[d])):null, rv=sumOf(sh.sales.filter(e=>e.date===d));
+    sh.sales.push({id:'s'+ts+'_n'+(k++),date:d,sum,ts:ts+k,nb:id}); rec.rev+=sum;
+    const x=state.dayx[d]?state.dayx[d]:{}; if(x.cash==null&&x.card==null&&rv>0) x.cash=rv; if(o.cash) x.cash=(+x.cash||0)+o.cash; if(o.card) x.card=(+x.card||0)+o.card; state.dayx[d]=x; rec.dx.push({d,prev}); }
+  (nb29.legend||[]).forEach((l,i)=>{ const on=sheet.querySelector(`[data-n29-lgon="${i}"]`), m=sheet.querySelector(`[data-n29-lg="${i}"]`); if(on&&!on.checked) return; const mm=m?m.value.trim():l.m; if(!mm) return; st.abbr=st.abbr.filter(a=>a.a!==l.a); st.abbr.unshift({a:l.a,m:mm.slice(0,60)}); });
+  st.abbr=st.abbr.slice(0,25); st.fix=st.fix.slice(-30);
+  rec.rev=Math.round(rec.rev); rec.exp=Math.round(rec.exp); st.imp.push(rec); st.imp=st.imp.slice(-10);
+  persist(); render();
+  const days=new Set(sh.sales.filter(e=>e.nb===id).map(e=>e.date).concat(sh.exp.filter(e=>e.nb===id).map(e=>e.date))).size;
+  openSheet(`<div class="n29-done">${ico('check',32)}<h3>${L.n29DoneT}</h3><p class="lead">${L.n29DoneLead(rec.n,days)}</p>
+    <div class="n29-sum"><span class="in">${L.n29SRev} +${money(rec.rev)}</span><span class="out">${L.n29SExp} −${money(rec.exp)}</span></div></div>
+    <button type="button" class="btn btn-primary btn-full" id="n29-shop">${L.n29Open}</button>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="n29-undo">${L.n29Undo}</button><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  $('#n29-shop').onclick=()=>{ closeSheet(); try{ shopSub='sum'; }catch(e){} setTab('shop'); render(); };
+  $('#n29-undo').onclick=()=>{ nb29Undo(id); toast(L.n29Undone); closeSheet(); }; }
+function nb29Undo(id){ const st=p29St(), rec=st.imp.find(r=>r.id===id); const sh=ensureShop();
+  const left=new Set(sh.sales.filter(e=>e.nb===id).map(e=>e.date));
+  sh.sales=sh.sales.filter(e=>e.nb!==id); sh.exp=sh.exp.filter(e=>e.nb!==id);
+  if(rec) for(const x of rec.dx||[]){ if(!left.has(x.d)) continue; if(x.prev) state.dayx[x.d]=x.prev; else delete state.dayx[x.d]; }
+  st.imp=st.imp.filter(r=>r.id!==id); persist(); render(); }
+function nb29Inject(){ const b=document.querySelector('#shop .sd-btns'); if(b&&!document.querySelector('#shop .n29-link')) b.insertAdjacentHTML('afterend',`<button type="button" class="n29-link" data-nb29="1">📒 ${L.n29Link}</button>`);
+  const em=document.querySelector('#shopSub .sh-empty'); if(em&&!em.querySelector('[data-nb29]')) em.insertAdjacentHTML('beforeend',`<br><button type="button" class="link-btn" data-nb29="1">📒 ${L.n29Link}</button>`); }
+
+/* ===================== 412: «Как посчитано?» ===================== */
+function w29Btn(k){ return `<button type="button" class="w29" data-why29="${esc(k)}">${ico('info',15)} ${L.w29Btn}</button>`; }
+function w29Sec(h,tx,list,foot){ return `<div class="w29-s"><h4>${h}</h4>${tx?`<p>${tx}</p>`:''}${list&&list.length?`<ul class="w29-l">${list.map(x=>`<li><span>${x[0]}</span><b>${x[1]}</b></li>`).join('')}</ul>`:''}${foot?`<p class="w29-f">${foot}</p>`:''}</div>`; }
+function w29Real(){ const l=activeList(); return l.filter(x=>!x.loan.example).length?l.filter(x=>!x.loan.example):l; }
+function w29Hero(){ const list=w29Real(), T=m8Totals(list), fr=m8Free(list), act=list.filter(x=>!x.a.done), out=[];
+  if(fr){ let lastL=null, lastD=null; for(const {loan,a} of act){ const d=m8LastDue(loan,a); if(d&&(!lastD||d>lastD)){ lastD=d; lastL=loan; } }
+    out.push(w29Sec(L.w29FreeH(m8MonLabel(fr.d)),lastL?L.w29FreeTx(esc(lastL.name),fr.months):'',act.map(({loan,a})=>{ const d=m8LastDue(loan,a); return [esc(loan.name),d?m8MonLabel(d):'—']; }))); }
+  out.push(w29Sec(L.w29PaidH(money(T.paid)),L.w29PaidTx,list.filter(x=>x.a.paid>0).map(({loan,a})=>[esc(loan.name),money(Math.min(a.total,a.paid))])));
+  const int=act.reduce((s,x)=>s+Math.max(0,+x.a.interestLeft||0),0);
+  out.push(w29Sec(L.w29LeftH(money(T.left)),L.w29LeftTx,act.map(({loan,a})=>[esc(loan.name),`${money(a.remaining)} <small>= ${money(a.total)} − ${money(a.paid)}</small>`]),int>0?L.w29IntTx(money(Math.round(int))):''));
+  out.push(w29Sec(L.w29PctH(T.pct),L.w29PctTx(money(T.paid),money(T.total))));
+  let pr=null; try{ pr=m7Progress(); }catch(e){} if(pr) out.push(w29Sec(L.w29StepsH(pr.k,pr.m),L.w29StepsTx));
+  const pct=Math.max(0,Math.min(100,Math.round(T.pct))), step=Math.min(100,(Math.floor(pct/10)+1)*10), toStep=Math.max(0,Math.round(T.total*step/100-T.paid));
+  if(pct<100&&toStep>0) out.push(w29Sec(L.w29StepH(step,money(toStep)),L.w29StepTx(step,money(T.total),money(T.paid))));
+  return out.join('')+`<p class="w29-f">${L.w29Change}</p>`; }
+function w29Month(){ const list=w29Real(), du=dueInMonth(mIdx(today0()),list), paid=du.rows.filter(r=>r.paid).reduce((s,r)=>s+r.amt,0), pig=envBal('loan');
+  return w29Sec(L.m7Month(new Date().getMonth()),L.w29MonTx(money(paid),money(du.total)),du.rows.map(r=>[`${r.paid?'✓ ':''}${esc(r.name)} <small>${esc(fmtShort(r.d))}</small>`,money(r.amt)]))+(pig>0?`<p class="w29-f">${L.w29PigTx(money(pig))}</p>`:''); }
+function w29Loans(){ const list=w29Real(), act=list.filter(x=>!x.a.done), out=[];
+  let mon=0, int=0, rw=0, rb=0; const ml=[], rl=[], il=[];
+  for(const {loan,a} of act){ const m=Math.min(m7Amt(a),Math.max(0,a.remaining)); mon+=m; ml.push([esc(loan.name),money(m)]); int+=Math.max(0,+a.interestLeft||0); if(a.interestLeft>0) il.push([esc(loan.name),money(Math.round(a.interestLeft))]);
+    if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; rl.push([esc(loan.name),`${m12Pct(+loan.rate)}% <small>· ${money(a.remaining)}</small>`]); } }
+  const T=m8Totals(list); out.push(w29Sec(L.w29LeftH(money(T.left)),L.w29LeftTx,act.map(({loan,a})=>[esc(loan.name),`${money(a.remaining)} <small>= ${money(a.total)} − ${money(a.paid)}</small>`])));
+  out.push(w29Sec(L.w29LoanMonH(money(mon)),L.w29LoanMonTx,ml));
+  if(rb>0) out.push(w29Sec(L.w29RateH(m12Pct(rw/rb)),L.w29RateTx,rl));
+  if(int>0) out.push(w29Sec(L.w29IntH(money(Math.round(int))),L.w29IntLTx,il));
+  const noRate=act.filter(x=>!(+x.loan.rate>0)); if(noRate.length) out.push(`<p class="w29-f">${L.w29NoRate(esc(noRate.map(x=>x.loan.name).join(', ')))}</p>`);
+  return out.join('')+`<p class="w29-f">${L.w29Change}</p>`; }
+function w29Shop(){ const sh=ensureShop(), r=shopRange(), inR=e=>e.date>=r.from&&e.date<=r.to, spent=sumOf(sh.exp.filter(inR)), sold=sumOf(sh.sales.filter(inR)), cfg=beLoad();
+  if(!cfg) return w29Sec(L.sdNet+': '+money(sold-spent),L.w29ShNoBe,[[L.shopSold,money(sold)],[L.shopExpenses,'−'+money(spent)]]);
+  const list=activeList(), loans=cfg.useLoans===false?0:beLoanMonthly(list.filter(y=>!y.loan.example)), fm=(+cfg.rent||0)+(+cfg.salary||0)+(+cfg.other||0)+loans, mp=Math.min(99,Math.max(1,+cfg.margin||1)), m=mp/100;
+  const fixed=fm*r.frac, gross=sold*m, profit=gross-fixed-spent, target=(fixed+spent)/m;
+  return w29Sec(profit>=0?L.shopProfitRow+': '+money(profit):L.shopLossRow+': '+money(-profit),'',[[L.w29ShSold,money(sold)],[L.w29ShGross(rf.format(mp)),money(gross)],[L.w29ShExp,'−'+money(spent)],[L.w29ShFix(Math.round(r.frac*100)),'−'+money(fixed)],[`<b>${profit>=0?L.shopProfitRow:L.shopLossRow}</b>`,money(Math.abs(profit))]],L.w29ShFm(money(fm),[cfg.rent?L.w29Rent+' '+money(+cfg.rent):'',cfg.salary?L.w29Sal+' '+money(+cfg.salary):'',cfg.other?L.w29Oth+' '+money(+cfg.other):'',loans?L.w29Lns+' '+money(loans):''].filter(Boolean).join(', ')))
+    +w29Sec(L.w29ShTgtH(money(target)),L.w29ShTgt(money(fixed),money(spent),rf.format(mp)))+`<p class="w29-f">${L.w29ShHint}</p>`; }
+function w29Loan(loan){ const a=analyze(loan), out=[]; const s=schedOf(loan);
+  out.push(w29Sec(L.leftLabel+': '+money(a.remaining),L.w29LRem(money(a.remaining),money(a.total),money(a.paid))));
+  if(!a.done){ if(s&&a.interestLeft>0) out.push(w29Sec(L.interestLeftOne+': '+money(a.interestLeft),L.w29LIntS));
+    else if(a.interestLeft>0&&a.monthsLeft) out.push(w29Sec(L.interestLeftOne+': '+money(a.interestLeft),L.w29LIntSim(money(a.monthly),m12Pct(+loan.rate||0),a.monthsLeft)));
+    else if(!(+loan.rate>0)) out.push(`<p class="w29-f">${L.w29LNoRate}</p>`);
+    if(a.monthsLeft){ const d=m8LastDue(loan,a); out.push(w29Sec(L.w29LEndH(d?m8MonLabel(d):'—'),s?L.w29LEndS(a.monthsLeft):L.w29LEndSim(money(a.remaining),money(a.monthly),a.monthsLeft))); } }
+  if(+loan.pen>0) out.push(w29Sec(L.penLabel,L.w29LPen(rf.format(+loan.pen),loan.penBase,money(penaltyPerDay(loan,Object.assign({},a,{amt:a.amtFull}))))));
+  return out.join('')+`<p class="w29-f">${L.w29LChange}</p>`; }
+function w29Sheet(k){ let body='', back=null;
+  try{ if(k==='hero') body=w29Hero(); else if(k==='month') body=w29Month(); else if(k==='loans') body=w29Loans(); else if(k==='shop') body=w29Shop(); else if(k.startsWith('loan:')){ const l=byId(k.slice(5)); if(l){ body=w29Loan(l); back=l; } } }catch(e){ body=''; }
+  if(!body) return;
+  openSheet(`<h3>${ico('info',22)} ${L.w29T}</h3><p class="lead">${L.w29Lead}</p><div class="w29-body">${body}</div><div class="sheet-row"><button type="button" class="btn btn-ghost" id="w29-x">${back?L.back:L.close}</button></div>`);
+  $('#w29-x').onclick=()=>{ if(back) detailSheet(back); else closeSheet(); }; }
+function w29Inject(){
+  const pg=$('#m8Prog'); if(pg&&pg.querySelector('.m11-hero')&&!pg.querySelector('.w29')) pg.insertAdjacentHTML('beforeend',`<div class="w29-row">${w29Btn('hero')}</div>`);
+  document.querySelectorAll('.m7-month').forEach(m=>{ if(!m.querySelector('.w29')) m.insertAdjacentHTML('beforeend',`<div class="w29-row">${w29Btn('month')}</div>`); });
+  const s=$('#m8Sum .m8-sum'); if(s&&!s.querySelector('.w29')) s.insertAdjacentHTML('beforeend',`<div class="w29-row">${w29Btn('loans')}</div>`);
+  const sc=document.querySelector('#shopSub .sh-card'); if(sc&&!sc.querySelector('.w29')&&sc.querySelector('.sh-rows')) sc.insertAdjacentHTML('beforeend',`<div class="w29-row">${w29Btn('shop')}</div>`); }
+try{ const _dS29=detailSheet; detailSheet=function(loan){ const x=_dS29.apply(this,arguments); try{ const g=sheet.querySelector('.detail-grid'); if(g&&!sheet.querySelector('.w29')){ const ms=sheet.querySelector('.minis'); (ms||g).insertAdjacentHTML('afterend',`<div class="w29-row">${w29Btn('loan:'+loan.id)}</div>`); } }catch(e){} return x; }; }catch(e){}
+
+/* ---------- после отрисовки и клики ---------- */
+function p29After(){ try{ ct29Inject(); }catch(e){} try{ nb29Inject(); }catch(e){} try{ w29Inject(); }catch(e){} }
+try{ const _r29=render; render=function(){ const x=_r29.apply(this,arguments); p29After(); return x; }; }catch(e){}
+try{ const _t29=m7Today; m7Today=function(){ const x=_t29.apply(this,arguments); try{ w29Inject(); }catch(e){} return x; }; }catch(e){}
+try{ const _s29=renderShop; renderShop=function(){ const x=_s29.apply(this,arguments); try{ nb29Inject(); w29Inject(); }catch(e){} return x; }; }catch(e){}
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('[data-why29],[data-ct29],[data-ct29-loan],[data-ct29-last],[data-nb29]'); if(!t) return;
+  e.preventDefault(); e.stopPropagation(); e.stopImmediatePropagation();
+  if(t.dataset.why29) w29Sheet(t.dataset.why29);
+  else if(t.dataset.ct29) ct29Open(null,{form:t.dataset.ct29==='form'});
+  else if(t.dataset.ct29Loan){ const l=byId(t.dataset.ct29Loan); if(l) ct29Open(l); }
+  else if(t.dataset.ct29Last){ const l=byId(t.dataset.ct29Last); if(l&&l.ct29){ ct29={pages:[],loan:l,note:'',busy:false,ab:null}; ct29Report(l.ct29.rep,{sources:l.ct29.src||[],at:l.ct29.at}); } }
+  else if(t.dataset.nb29) nb29Open(); },true);
+/* <</v29 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
