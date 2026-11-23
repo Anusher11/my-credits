@@ -3160,6 +3160,79 @@ html.m33-on .overlay{z-index:48;}
 .m33-ava{background:var(--surface-2); color:var(--ink);}
 .m33-seg button{font-size:.84rem; padding-left:4px; padding-right:4px; white-space:nowrap; min-width:0;}
 /* <</v33 css>> */
+/* <<v34 css>> */
+/* v34: выпуск дня и Сифра-эксперт */
+html.f34-top .overlay{z-index:48;}
+.f34h .hb-fx i em{font-style:normal; font-weight:800; margin-left:2px;}
+.f34h .hb-fx i.f34-up em{color:#FFD58A;} .f34h .hb-fx i.f34-dn em{color:#9FF0C9;}
+.f34-hact{position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:8px; margin-top:12px;}
+.f34-hact .hb-upd{margin-top:0;}
+.f34-hact .hb-upd.on{background:#fff; color:var(--m-hero,#1B2B57);}
+.f34-hf{position:relative; z-index:1; display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:12px; font-size:.8rem; font-weight:700; opacity:.92;}
+.f34-hf>span{display:inline-flex; align-items:center; gap:5px;}
+.f34-bell{display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 12px; border:1px solid rgba(255,255,255,.35); border-radius:99px; background:transparent; color:#fff; font:inherit; font-weight:800; font-size:.78rem; cursor:pointer;}
+.f34-bell.on{background:rgba(255,255,255,.22); border-color:transparent;}
+.f34-bell:focus-visible,.f34-hact .hb-upd:focus-visible{outline:3px solid #fff; outline-offset:2px;}
+.f34-nav{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:2px 0 10px; padding-bottom:2px;} .f34-nav::-webkit-scrollbar{display:none;} .f34-nav .chip{flex:none; min-height:38px;}
+.f34-s .f34-sh{display:flex; align-items:center; gap:8px; margin:0 0 2px;}
+.f34-s .f34-sh h4{flex:1; min-width:0; margin:0;}
+.f34-ref{flex:none; display:inline-flex; align-items:center; gap:5px; min-height:36px; padding:0 11px; border:1px solid var(--line); border-radius:99px; background:var(--surface-2); color:var(--ink); font:inherit; font-size:.78rem; font-weight:800; cursor:pointer;}
+.f34-ref.busy svg{animation:bpSpin 1s linear infinite;} .f34-ref[disabled]{opacity:.8; cursor:default;}
+@media (prefers-reduced-motion:reduce){.f34-ref.busy svg{animation:none;}}
+.f34-at{display:block; color:var(--muted); font-size:.74rem; font-weight:700; margin:0 0 8px;}
+.f34-s>.f34-sh+*:not(.f34-at){margin-top:8px;}
+.f34-bi{position:relative; border:1px solid var(--line); border-left:4px solid var(--muted); border-radius:14px; padding:11px 12px 10px; margin:0 0 10px; background:var(--surface);}
+.f34-bi.good{border-left-color:var(--in,#0E7D5A);} .f34-bi.bad{border-left-color:var(--danger,#C2362F);}
+.f34-bt{display:flex; align-items:flex-start; gap:9px;}
+.f34-bt h5{margin:0; font-size:.98rem; line-height:1.3; flex:1; min-width:0;}
+.f34-num{flex:none; font-family:var(--font-num); font-weight:800; font-size:.86rem; padding:3px 8px; border-radius:99px; background:var(--surface-2); color:var(--ink); white-space:nowrap;}
+.f34-num.up{background:var(--warn-weak,#FFF1DC); color:var(--warn);} .f34-num.down{background:var(--brand-weak); color:var(--brand);}
+.f34-bi .lv-tags{margin:7px 0 0;} .f34-t.good{color:var(--in,#0E7D5A);} .f34-t.bad{color:var(--danger,#C2362F);}
+.f34-bi p{margin:7px 0 0; font-size:.9rem; line-height:1.45;}
+.f34-why{color:var(--ink);} .f34-why b,.f34-act b{font-weight:800;}
+.f34-act{display:flex; gap:6px; align-items:flex-start; background:var(--brand-weak); border-radius:10px; padding:7px 9px; margin-top:8px!important;}
+.f34-act svg{flex:none; margin-top:2px; color:var(--brand);}
+.f34-ft{display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; margin-top:8px;}
+.f34-ft .hb-src1{margin:0;}
+.f34-res{display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 12px; border:1px solid var(--line); border-radius:99px; background:var(--surface); color:var(--brand); font:inherit; font-weight:800; font-size:.8rem; cursor:pointer;}
+.f34-res:focus-visible,.f34-ref:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+.hb-idea .f34-res{margin-top:8px;} .hb-tc .f34-ft,.f32-nw .f34-ft{margin-top:6px;}
+.f34-you{list-style:none; margin:4px 0 0; padding:0; display:grid; gap:8px;}
+.f34-you li{display:flex; align-items:flex-start; gap:9px; font-size:.9rem; line-height:1.42; padding:9px 10px; border-radius:12px; background:var(--surface-2);}
+.f34-you li svg{flex:none; margin-top:1px; color:var(--brand);} .f34-you li span{flex:1; min-width:0;} .f34-you .link-btn{flex:none; font-size:.8rem;}
+.f34-duo{display:grid; grid-template-columns:1fr; gap:10px; margin:0 0 10px;}
+@media (min-width:560px){.f34-duo{grid-template-columns:1fr 1fr;}}
+.f34-todo,.f34-fig{border:1px solid var(--line); border-radius:18px; padding:12px 13px; background:var(--surface);}
+.f34-todo small,.f34-fig small{display:flex; align-items:center; gap:5px; font-size:.76rem; font-weight:800; color:var(--muted);}
+.f34-todo>b{display:block; margin:5px 0 0; font-size:1rem; line-height:1.3;}
+.f34-todo p,.f34-fig p{margin:6px 0 0; font-size:.88rem; line-height:1.42; color:var(--muted);}
+.f34-todo ol{margin:8px 0 0; padding-left:20px; font-size:.9rem; line-height:1.45;} .f34-todo ol li{margin:2px 0;}
+.f34-todo .btn{margin-top:10px; min-height:44px;}
+.f34-todo.done>b{text-decoration:line-through; text-decoration-thickness:2px; color:var(--muted);}
+.f34-fig>b{display:block; margin:4px 0 0; font-family:var(--font-num); font-size:1.9rem; line-height:1.1; letter-spacing:-.01em;}
+.f34-fig>span{display:block; margin-top:3px; font-weight:700; font-size:.9rem; line-height:1.35;}
+.f34-w li>span{display:block;} .f34-w em{display:flex; gap:5px; align-items:flex-start; font-style:normal; font-weight:700; margin-top:5px; color:var(--ink);} .f34-w em svg{flex:none; margin-top:2px;}
+.hb-bar.f34-mine .hb-bn{font-weight:900;} .hb-bar.f34-mine .hb-bn::after{content:"•"; color:var(--brand); margin-left:5px;}
+.f34-how{display:flex; gap:6px; align-items:flex-start; line-height:1.45;} .f34-how svg{flex:none; margin-top:2px;}
+/* Сифра-эксперт */
+.f34x-hero{display:flex; gap:12px; align-items:flex-start; border-radius:22px; padding:15px; margin:0 0 10px; background:var(--m-hero,#1B2B57); color:#fff;}
+.f34x-ava{flex:none; width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.14); padding:3px;} .f34x-ava svg{width:100%; height:100%;}
+.f34x-hero b{display:block; font-size:1.08rem;} .f34x-hero p{margin:5px 0 0; font-size:.9rem; line-height:1.45; opacity:.92;}
+.f34x-cur{display:flex; flex-wrap:wrap; align-items:center; gap:6px 12px; padding:10px 12px; border-radius:14px; background:var(--brand-weak); margin:0 0 10px; font-weight:700;}
+.f34x-cur>span{flex:1 1 160px;}
+.f34x-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;}
+@media (min-width:520px){.f34x-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+.f34x-n{display:flex; align-items:center; gap:9px; min-height:52px; padding:8px 10px; text-align:left; border:1px solid var(--line); border-radius:14px; background:var(--surface-2); color:var(--ink); font:inherit; font-size:.86rem; line-height:1.25; cursor:pointer;}
+.f34x-n span{flex:none; display:grid; place-items:center; width:32px; height:32px; border-radius:10px; background:var(--surface); color:var(--brand);}
+.f34x-n b{min-width:0; overflow-wrap:break-word; hyphens:auto;}
+.f34x-n:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+.f34x-bar{display:flex; align-items:center; gap:7px; margin:6px 0 0; padding:7px 8px 7px 11px; border-radius:12px; background:var(--brand-weak); color:var(--ink); font-size:.84rem; font-weight:800;}
+.f34x-bar svg{flex:none; color:var(--brand);} .f34x-bar span{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.f34x-bar button{flex:none; display:grid; place-items:center; width:36px; height:36px; border:0; border-radius:10px; background:transparent; color:var(--ink); cursor:pointer;}
+.f34x-card .hb-li{background:var(--gold,#C8921E);}
+
+.f34-past .f34-pd{border-top:1px solid var(--line); padding:10px 2px 4px;} .f34-past .f34-pd small{font-weight:800; color:var(--muted); font-size:.78rem;} .f34-past .f34-pd p{margin:4px 0; font-size:.9rem; line-height:1.45;} .f34-past ul{margin:4px 0 0; padding-left:18px; font-size:.86rem; line-height:1.45;} .f34-past li{margin:3px 0;}
+/* <</v34 css>> */
 
 
 </style>
@@ -7207,6 +7280,164 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M33S[k]);
 /* <</v33 str>> */
+/* <<v34 str>> */
+const M34S={
+ru:{
+  f34Ed:{am:'Утренний выпуск',pm:'Вечерний выпуск',mid:'Дневной выпуск'},
+  f34Meta:(d,t,m)=>d+' · в '+t+' · ≈ '+m+' мин чтения',
+  f34Next:(e,d,t)=>({am:'Утренний',pm:'Вечерний',mid:'Дневной'}[e])+' выпуск — '+(d?'сегодня':'завтра')+' в '+t,
+  f34Prog:(d,n)=>'обновляется… '+d+' из '+n,
+  f34Listen:'Слушать', f34Stop:'Остановить', f34Ask:'Спросить Сифру',
+  f34AskQ:'Что в сегодняшнем выпуске самое важное для моего дела и что мне сделать сегодня? Коротко, с цифрами.',
+  f34Upd:'Обновить', f34UpdA:t=>'Обновить: '+t, f34UpdAt:t=>'обновлено в '+t,
+  f34Nav:{brief:'Главное',you:'Для вас',news:'Новости',trends:'Тренды',world:'Мир',goods:'Товары',ideas:'Идеи',tips:'Советы',watch:'Осторожно'},
+  f34NavA:'Разделы выпуска',
+  f34BriefT:'Главное', f34Why:'Почему важно', f34Act:'Что сделать', f34ActTom:'Что сделать завтра', f34Res:'Исследовать', f34Src:'Источник',
+  f34BArea:{fx:'Курсы',prices:'Цены',banks:'Банки',law:'Законы',border:'Границы',trade:'Торговля',world:'Мир',tech:'Технологии',markets:'Рынки',business:'Бизнес'},
+  f34Tone:{good:'хорошо для дела',bad:'плохо для дела',neutral:''},
+  f34YouT:'Для вашего дела', f34YouLead:'Посчитано по вашим записям в Mira — в интернет они не уходят.',
+  f34YouOwe:(a,tj,ch,d,up)=>'Не оплачено поставщикам: '+a+' ≈ '+tj+'.'+(ch?' Курс за день '+(up?'вырос':'упал')+' на '+ch+' — это '+(up?'+':'−')+d+' к сумме.':''),
+  f34YouBank:(b,t)=>'Про ваш банк «'+b+'»: '+t,
+  f34YouCat:(n,dem,tr,mk,my)=>n+': спрос '+dem+(tr==='up'?' и растёт':tr==='down'?' и падает':'')+', обычная наценка '+mk+'%'+(my!=null?' — у вас '+my+'%':''),
+  f34Dem:{hot:'высокий',normal:'обычный',cold:'низкий'},
+  f34YouRoute:(c,n)=>'Ваша поездка — '+c+': '+n,
+  f34YouCargo:(n,w)=>'Карго в пути: '+n+'. Осторожно: '+w,
+  f34YouGo:'Открыть',
+  f34TodoT:{am:'Дело дня',pm:'Дело на завтра',mid:'Дело дня'}, f34DoIt:'Готово', f34Done:'Сделано', f34Undo:'Вернуть',
+  f34FigT:'Цифра дня', f34Past:n=>'Прошлые выпуски ('+n+')',
+  f34TrAct:'Что делать', f34WAct:'Как защититься',
+  f34MoreIdeas:'Ещё идеи', f34NewTips:'Новые советы', f34Apply:'Как применить у меня', f34AllIdeas:n=>'Все идеи ('+n+')',
+  f34PartOk:{news:'Главное и новости обновлены',goods:'Цены и спрос обновлены',ideas:'Новые идеи добавлены сверху',world:'«Мир» обновлён',learn:'Новые советы готовы'},
+  f34Recent:m=>'Этот раздел только что обновляли — снова можно через '+m+' мин.',
+  f34Old:'Нужен новый сервер Mira (mira-api.zip, версия 20): тогда каждый раздел обновляется отдельно.',
+  f34How:'Как собирается выпуск: Сифра (Claude) ищет свежее в интернете — новости, банки, рынки, исследования университетов, отчёты компаний, новые приложения — и пишет коротко: что случилось, почему это важно вам, что сделать. Выпуски — утром в 6:00 и вечером в 18:30 по Душанбе: утром к 7:00 — до открытия базаров (в Китае рынки открываются в 9:00 по Пекину — это 6:00 у нас); вечером к 19:00 — итоги дня, когда работают Европа и США. Важное проверяйте по источникам.',
+  f34Bell:'Сообщать, когда выпуск готов', f34BellOn:'Сообщу утром и вечером, когда выпуск будет готов', f34BellOff:'Больше не буду сообщать о выпуске', f34BellNo:'Уведомления на этом телефоне не работают',
+  f34Q:{
+    b:x=>'Исследуй подробнее: «'+x.title+'». '+(x.what||'')+' Что это значит для меня и моего дела, какие цифры, что сделать — с источниками.',
+    n:x=>'Исследуй подробнее новость: «'+x.title+'». '+(x.text||'')+' Что это значит для меня и моего дела и что сделать — с источниками.',
+    t:x=>'Разбери тренд «'+x.title+'»: '+(x.why||'')+' Насколько он большой и надолго ли, кто на нём уже зарабатывает, как мне построить на нём бизнес отсюда или онлайн, с чего начать и какие риски.',
+    w:x=>'Разбери подробнее: «'+x.title+'»'+(x.where?' ('+x.where+')':'')+'. '+(x.text||'')+' Как применить это в моём бизнесе здесь — пример, цифры, первые шаги.',
+    i:x=>'Разбери идею бизнеса «'+x.title+'» глубже: '+(x.why_now||'')+' Спрос и конкуренты, сколько денег на старт и когда первые деньги, кто уже зарабатывает, риски, план на первые 30 дней.',
+    p:x=>'Как применить совет «'+x.title+'» в моём деле? '+(x.text||'')+' Покажи на примере моего магазина — с цифрами и шагами на эту неделю.',
+    x:x=>'Насколько это опасно для меня: «'+x.title+'»? '+(x.text||'')+' Что сделать, чтобы защититься?',
+    f:x=>'Объясни цифру дня: '+x.value+' — '+x.label+'. Почему это важно и что это значит для моего дела?'},
+  f34Say:(ed,sum,items,todo)=>ed+'. '+sum+' '+items.map((x,i)=>(i+1)+'. '+x.title+'. '+(x.why||'')+' '+(x.act?'Что сделать: '+x.act:'')).join(' ')+(todo?' Дело дня: '+todo:''),
+  /* эксперт */
+  f34xT:'Сифра-эксперт', f34xSub:'Ответы как у лучшего профи в любой нише',
+  f34xLead:'Выберите нишу — Сифра будет отвечать как эксперт высшего уровня в ней: где брать дешевле и как проверить качество, цены и наценки, приёмы, о которых знают только профи, психология покупателя, ошибки новичков. Свежие цены и правила она ищет в интернете.',
+  f34xHonest:'Это ИИ: знания — из исследований, отчётов и опыта реальных компаний, а не из личной биографии. Важные решения проверяйте.',
+  f34xOwn:'Своя ниша', f34xOwnPh:'Например: сухофрукты, кафе, детская обувь', f34xGo:'Позвать эксперта', f34xNeed:'Впишите нишу — хотя бы две буквы',
+  f34xPop:'Популярные ниши', f34xRecent:'Недавние', f34xVoice:'Можно и голосом или в чате: «Сифра, ты эксперт по сухофруктам».',
+  f34xBar:n=>'Эксперт: '+n, f34xOff:'Выйти из режима эксперта', f34xOffOk:'Сифра снова в обычном режиме', f34xOnOk:n=>'Сифра — эксперт: '+n,
+  f34xHello:n=>'Я на связи как эксперт по нише «'+n+'». Спросите что угодно — от закупки до продаж, или нажмите подсказку ниже.',
+  f34xQs:['С чего начать с нуля?','Секреты профи в этой нише','Где брать дешевле и как проверить качество?','Психология покупателя: как продавать больше','Сколько можно заработать — честные цифры','Главные ошибки новичков'],
+  f34xCard:'Спросить эксперта по нише', f34xCardSub:'Одежда, сухофрукты, кафе, маркетплейсы — что угодно',
+  f34xN:{clothes:'Одежда',kids:'Детская одежда',shoes:'Обувь',dried:'Сухофрукты и орехи',food:'Продукты и бакалея',cosm:'Косметика',elec:'Телефоны и электроника',textile:'Ткани и текстиль',cafe:'Кафе и общепит',bakery:'Пекарня и кондитерская',build:'Стройматериалы и ремонт',furn:'Мебель',flowers:'Цветы и подарки',pharma:'Аптека и медтех',it:'IT и приложения',mkt:'Маркетплейсы и онлайн',china:'Закупка в Китае',export:'Экспорт',opt:'Оптовая торговля',sales:'Продажи и переговоры',smm:'Маркетинг и соцсети',fin:'Финансы и учёт',biz:'Предпринимательство'}
+},
+tg:{
+  f34Ed:{am:'Нашри саҳарӣ',pm:'Нашри шомгоҳӣ',mid:'Нашри рӯзона'},
+  f34Meta:(d,t,m)=>d+' · соати '+t+' · ≈ '+m+' дақ. хондан',
+  f34Next:(e,d,t)=>'Нашри '+({am:'саҳарӣ',pm:'шомгоҳӣ',mid:'рӯзона'}[e])+' — '+(d?'имрӯз':'фардо')+' соати '+t,
+  f34Prog:(d,n)=>'нав мешавад… '+d+' аз '+n,
+  f34Listen:'Гӯш кардан', f34Stop:'Бас кардан', f34Ask:'Аз Сифра пурсед',
+  f34AskQ:'Дар нашри имрӯза барои кори ман чӣ аз ҳама муҳим аст ва имрӯз чӣ кор кунам? Кӯтоҳ, бо рақамҳо.',
+  f34Upd:'Нав кардан', f34UpdA:t=>'Нав кардан: '+t, f34UpdAt:t=>'соати '+t+' нав шуд',
+  f34Nav:{brief:'Асосӣ',you:'Барои шумо',news:'Хабарҳо',trends:'Тамоюлҳо',world:'Ҷаҳон',goods:'Мол',ideas:'Ғояҳо',tips:'Маслиҳатҳо',watch:'Эҳтиёт'},
+  f34NavA:'Бахшҳои нашр',
+  f34BriefT:'Асосӣ', f34Why:'Чаро муҳим аст', f34Act:'Чӣ кор кардан', f34ActTom:'Фардо чӣ кор кардан', f34Res:'Омӯхтан', f34Src:'Манбаъ',
+  f34BArea:{fx:'Қурбҳо',prices:'Нархҳо',banks:'Бонкҳо',law:'Қонунҳо',border:'Сарҳад',trade:'Савдо',world:'Ҷаҳон',tech:'Технология',markets:'Бозорҳо',business:'Тиҷорат'},
+  f34Tone:{good:'барои кор хуб',bad:'барои кор бад',neutral:''},
+  f34YouT:'Барои кори шумо', f34YouLead:'Аз рӯи сабтҳои шумо дар Mira ҳисоб шуд — онҳо ба интернет намераванд.',
+  f34YouOwe:(a,tj,ch,d,up)=>'Ба таъминкунандагон пардохт нашудааст: '+a+' ≈ '+tj+'.'+(ch?' Қурб дар як рӯз '+ch+' '+(up?'боло рафт':'паст шуд')+' — ин ба маблағ '+(up?'+':'−')+d+' аст.':''),
+  f34YouBank:(b,t)=>'Дар бораи бонки шумо «'+b+'»: '+t,
+  f34YouCat:(n,dem,tr,mk,my)=>n+': талабот '+dem+(tr==='up'?' ва меафзояд':tr==='down'?' ва кам мешавад':'')+', нацаккаи маъмулӣ '+mk+'%'+(my!=null?' — дар шумо '+my+'%':''),
+  f34Dem:{hot:'баланд',normal:'миёна',cold:'паст'},
+  f34YouRoute:(c,n)=>'Сафари шумо — '+c+': '+n,
+  f34YouCargo:(n,w)=>'Карго дар роҳ: '+n+'. Эҳтиёт: '+w,
+  f34YouGo:'Кушодан',
+  f34TodoT:{am:'Кори рӯз',pm:'Кори фардо',mid:'Кори рӯз'}, f34DoIt:'Тайёр', f34Done:'Иҷро шуд', f34Undo:'Баргардондан',
+  f34FigT:'Рақами рӯз', f34Past:n=>'Нашрҳои гузашта ('+n+')',
+  f34TrAct:'Чӣ кор кардан', f34WAct:'Чӣ тавр худро ҳифз кардан',
+  f34MoreIdeas:'Боз ғояҳо', f34NewTips:'Маслиҳатҳои нав', f34Apply:'Чӣ тавр дар кори худ истифода барам', f34AllIdeas:n=>'Ҳамаи ғояҳо ('+n+')',
+  f34PartOk:{news:'Асосӣ ва хабарҳо нав шуданд',goods:'Нарх ва талабот нав шуданд',ideas:'Ғояҳои нав дар боло илова шуданд',world:'«Ҷаҳон» нав шуд',learn:'Маслиҳатҳои нав тайёранд'},
+  f34Recent:m=>'Ин бахш ҳозир нав шуд — боз баъди '+m+' дақиқа мумкин аст.',
+  f34Old:'Сервери нави Mira лозим аст (mira-api.zip, версияи 20): он гоҳ ҳар бахш алоҳида нав мешавад.',
+  f34How:'Нашр чӣ тавр ҷамъ мешавад: Сифра (Claude) дар интернет навиҳоро меёбад — хабарҳо, бонкҳо, бозорҳо, тадқиқоти донишгоҳҳо, ҳисоботи ширкатҳо, барномаҳои нав — ва кӯтоҳ менависад: чӣ шуд, чаро барои шумо муҳим аст, чӣ кор кардан лозим. Нашрҳо — саҳар соати 6:00 ва бегоҳ соати 18:30 бо вақти Душанбе: саҳар то соати 7:00 — пеш аз кушода шудани бозорҳо (бозорҳои Чин соати 9:00 бо вақти Пекин кушода мешаванд — ин соати 6:00-и мост); бегоҳ то соати 19:00 — ҷамъбасти рӯз, вақте Аврупо ва ИМА кор мекунанд. Чизи муҳимро аз рӯи манбаъҳо санҷед.',
+  f34Bell:'Вақте нашр тайёр шуд, хабар деҳ', f34BellOn:'Саҳар ва бегоҳ, вақте нашр тайёр шавад, хабар медиҳам', f34BellOff:'Дигар дар бораи нашр хабар намедиҳам', f34BellNo:'Дар ин телефон огоҳиномаҳо кор намекунанд',
+  f34Q:{
+    b:x=>'Муфассалтар омӯз: «'+x.title+'». '+(x.what||'')+' Ин барои ман ва кори ман чӣ маъно дорад, кадом рақамҳо, чӣ кор кунам — бо манбаъҳо.',
+    n:x=>'Ин хабарро муфассалтар омӯз: «'+x.title+'». '+(x.text||'')+' Ин барои ман ва кори ман чӣ маъно дорад ва чӣ кор кунам — бо манбаъҳо.',
+    t:x=>'Тамоюли «'+x.title+'»-ро таҳлил кун: '+(x.why||'')+' Чӣ қадар калон ва дарозмуддат аст, кӣ аллакай аз он пул кор мекунад, чӣ тавр аз ин ҷо ё онлайн дар асоси он тиҷорат созам, аз куҷо сар кунам ва хатарҳо кадоманд.',
+    w:x=>'Муфассалтар таҳлил кун: «'+x.title+'»'+(x.where?' ('+x.where+')':'')+'. '+(x.text||'')+' Чӣ тавр инро дар тиҷорати худ дар ин ҷо истифода барам — мисол, рақамҳо, қадамҳои аввал.',
+    i:x=>'Ғояи тиҷорати «'+x.title+'»-ро чуқуртар таҳлил кун: '+(x.why_now||'')+' Талабот ва рақибон, барои оғоз чӣ қадар пул лозим ва пули аввал кай меояд, кӣ аллакай пул кор мекунад, хатарҳо, нақша барои 30 рӯзи аввал.',
+    p:x=>'Маслиҳати «'+x.title+'»-ро дар кори худ чӣ тавр истифода барам? '+(x.text||'')+' Дар мисоли мағозаи ман нишон деҳ — бо рақамҳо ва қадамҳо барои ҳамин ҳафта.',
+    x:x=>'Ин барои ман чӣ қадар хатарнок аст: «'+x.title+'»? '+(x.text||'')+' Барои ҳифз чӣ кор кунам?',
+    f:x=>'Рақами рӯзро фаҳмон: '+x.value+' — '+x.label+'. Чаро муҳим аст ва барои кори ман чӣ маъно дорад?'},
+  f34Say:(ed,sum,items,todo)=>ed+'. '+sum+' '+items.map((x,i)=>(i+1)+'. '+x.title+'. '+(x.why||'')+' '+(x.act?'Чӣ кор кардан: '+x.act:'')).join(' ')+(todo?' Кори рӯз: '+todo:''),
+  f34xT:'Сифра-коршинос', f34xSub:'Ҷавобҳо мисли беҳтарин касбӣ дар ҳар соҳа',
+  f34xLead:'Соҳаро интихоб кунед — Сифра мисли коршиноси сатҳи олӣ ҷавоб медиҳад: аз куҷо арзонтар гирифтан ва сифатро чӣ тавр санҷидан, нарх ва нацакка, усулҳое, ки танҳо касбҳо медонанд, равоншиносии харидор, хатогиҳои навкорон. Нарх ва қоидаҳои навро дар интернет меҷӯяд.',
+  f34xHonest:'Ин зеҳни сунъӣ аст: дониш — аз тадқиқот, ҳисобот ва таҷрибаи ширкатҳои воқеӣ, на аз зиндагиномаи шахсӣ. Қарорҳои муҳимро санҷед.',
+  f34xOwn:'Соҳаи худ', f34xOwnPh:'Масалан: меваҳои хушк, қаҳвахона, пойафзоли кӯдакона', f34xGo:'Коршиносро даъват кардан', f34xNeed:'Соҳаро нависед — ақаллан ду ҳарф',
+  f34xPop:'Соҳаҳои маъмул', f34xRecent:'Охирин', f34xVoice:'Бо овоз ё дар чат ҳам мумкин: «Сифра, ту коршинос оид ба меваҳои хушк ҳастӣ».',
+  f34xBar:n=>'Коршинос: '+n, f34xOff:'Аз реҷаи коршинос баромадан', f34xOffOk:'Сифра боз дар реҷаи оддӣ', f34xOnOk:n=>'Сифра — коршинос: '+n,
+  f34xHello:n=>'Ман ҳамчун коршиноси соҳаи «'+n+'» дар хизмат. Ҳар чизе пурсед — аз харид то фурӯш, ё маслиҳати поёнро пахш кунед.',
+  f34xQs:['Аз сифр аз куҷо сар кунам?','Сирри касбҳо дар ин соҳа','Аз куҷо арзонтар гирам ва сифатро чӣ тавр санҷам?','Равоншиносии харидор: чӣ тавр бештар фурӯшам','Чӣ қадар пул кор кардан мумкин — рақамҳои ростқавлона','Хатогиҳои асосии навкорон'],
+  f34xCard:'Аз коршиноси соҳа пурсед', f34xCardSub:'Либос, меваҳои хушк, қаҳвахона, маркетплейсҳо — ҳар чиз',
+  f34xN:{clothes:'Либос',kids:'Либоси кӯдакона',shoes:'Пойафзол',dried:'Меваҳои хушк ва чормағз',food:'Хӯрокворӣ',cosm:'Косметика',elec:'Телефон ва электроника',textile:'Матоъ ва нассоҷӣ',cafe:'Қаҳвахона ва ошхона',bakery:'Нонвойхона ва қаннодӣ',build:'Масолеҳи сохтмон ва таъмир',furn:'Мебел',flowers:'Гул ва тӯҳфа',pharma:'Дорухона ва медтех',it:'IT ва барномаҳо',mkt:'Маркетплейс ва онлайн',china:'Харид аз Чин',export:'Содирот',opt:'Савдои яклухт',sales:'Фурӯш ва гуфтушунид',smm:'Маркетинг ва шабакаҳои иҷтимоӣ',fin:'Молия ва баҳисобгирӣ',biz:'Соҳибкорӣ'}
+},
+en:{
+  f34Ed:{am:'Morning edition',pm:'Evening edition',mid:'Midday edition'},
+  f34Meta:(d,t,m)=>d+' · at '+t+' · ≈ '+m+' min read',
+  f34Next:(e,d,t)=>({am:'Morning',pm:'Evening',mid:'Midday'}[e])+' edition — '+(d?'today':'tomorrow')+' at '+t,
+  f34Prog:(d,n)=>'updating… '+d+' of '+n,
+  f34Listen:'Listen', f34Stop:'Stop', f34Ask:'Ask Sifra',
+  f34AskQ:'What in today’s edition matters most for my business, and what should I do today? Short, with numbers.',
+  f34Upd:'Refresh', f34UpdA:t=>'Refresh: '+t, f34UpdAt:t=>'updated at '+t,
+  f34Nav:{brief:'Top',you:'For you',news:'News',trends:'Trends',world:'World',goods:'Goods',ideas:'Ideas',tips:'Tips',watch:'Watch out'},
+  f34NavA:'Edition sections',
+  f34BriefT:'The big picture', f34Why:'Why it matters', f34Act:'What to do', f34ActTom:'What to do tomorrow', f34Res:'Dig deeper', f34Src:'Source',
+  f34BArea:{fx:'Rates',prices:'Prices',banks:'Banks',law:'Laws',border:'Borders',trade:'Trade',world:'World',tech:'Tech',markets:'Markets',business:'Business'},
+  f34Tone:{good:'good for business',bad:'bad for business',neutral:''},
+  f34YouT:'For your business', f34YouLead:'Calculated from your records in Mira — they never leave your phone.',
+  f34YouOwe:(a,tj,ch,d,up)=>'Unpaid to suppliers: '+a+' ≈ '+tj+'.'+(ch?' The rate '+(up?'rose':'fell')+' '+ch+' today — that is '+(up?'+':'−')+d+' on the total.':''),
+  f34YouBank:(b,t)=>'About your bank “'+b+'”: '+t,
+  f34YouCat:(n,dem,tr,mk,my)=>n+': demand '+dem+(tr==='up'?' and rising':tr==='down'?' and falling':'')+', usual markup '+mk+'%'+(my!=null?' — yours is '+my+'%':''),
+  f34Dem:{hot:'high',normal:'normal',cold:'low'},
+  f34YouRoute:(c,n)=>'Your trip — '+c+': '+n,
+  f34YouCargo:(n,w)=>'Cargo on the way: '+n+'. Watch out: '+w,
+  f34YouGo:'Open',
+  f34TodoT:{am:'Task of the day',pm:'Task for tomorrow',mid:'Task of the day'}, f34DoIt:'Done', f34Done:'Done', f34Undo:'Undo',
+  f34FigT:'Number of the day', f34Past:n=>'Past editions ('+n+')',
+  f34TrAct:'What to do', f34WAct:'How to protect yourself',
+  f34MoreIdeas:'More ideas', f34NewTips:'New tips', f34Apply:'How to apply it', f34AllIdeas:n=>'All ideas ('+n+')',
+  f34PartOk:{news:'Top stories and news updated',goods:'Prices and demand updated',ideas:'New ideas added on top',world:'“World” updated',learn:'New tips ready'},
+  f34Recent:m=>'This section was just updated — try again in '+m+' min.',
+  f34Old:'A new Mira server is needed (mira-api.zip, version 20) to refresh sections one by one.',
+  f34How:'How the edition is made: Sifra (Claude) searches the web for what is new — news, banks, markets, university research, company reports, new apps — and writes it briefly: what happened, why it matters to you, what to do. Editions come at 6:00 and 18:30 Dushanbe time: the morning one is ready by 7:00, before bazaars open (Chinese markets open at 9:00 Beijing time — 6:00 here); the evening one by 19:00 with the day’s results, while Europe and the US are working. Check important things against the sources.',
+  f34Bell:'Tell me when the edition is ready', f34BellOn:'I’ll let you know morning and evening when the edition is ready', f34BellOff:'I won’t notify you about editions any more', f34BellNo:'Notifications don’t work on this phone',
+  f34Q:{
+    b:x=>'Dig deeper: “'+x.title+'”. '+(x.what||'')+' What does it mean for me and my business, what are the numbers, what should I do — with sources.',
+    n:x=>'Dig deeper into this news: “'+x.title+'”. '+(x.text||'')+' What does it mean for me and my business and what should I do — with sources.',
+    t:x=>'Break down the trend “'+x.title+'”: '+(x.why||'')+' How big and lasting is it, who already makes money on it, how could I build a business on it from here or online, where to start and what the risks are.',
+    w:x=>'Break this down: “'+x.title+'”'+(x.where?' ('+x.where+')':'')+'. '+(x.text||'')+' How can I apply it in my business here — an example, numbers, first steps.',
+    i:x=>'Analyse the business idea “'+x.title+'” in depth: '+(x.why_now||'')+' Demand and competitors, startup money and time to first revenue, who already makes money, risks, a plan for the first 30 days.',
+    p:x=>'How do I apply the tip “'+x.title+'” in my business? '+(x.text||'')+' Show it on my shop’s example — with numbers and steps for this week.',
+    x:x=>'How dangerous is this for me: “'+x.title+'”? '+(x.text||'')+' What should I do to protect myself?',
+    f:x=>'Explain the number of the day: '+x.value+' — '+x.label+'. Why does it matter and what does it mean for my business?'},
+  f34Say:(ed,sum,items,todo)=>ed+'. '+sum+' '+items.map((x,i)=>(i+1)+'. '+x.title+'. '+(x.why||'')+' '+(x.act?'What to do: '+x.act:'')).join(' ')+(todo?' Task of the day: '+todo:''),
+  f34xT:'Sifra the expert', f34xSub:'Answers like the best pro in any niche',
+  f34xLead:'Pick a niche and Sifra will answer as a top-level expert in it: where to buy cheaper and how to check quality, prices and markups, tricks only insiders know, buyer psychology, beginner mistakes. She searches the web for fresh prices and rules.',
+  f34xHonest:'This is AI: the knowledge comes from research, reports and real companies’ experience, not a personal biography. Double-check important decisions.',
+  f34xOwn:'Your niche', f34xOwnPh:'For example: dried fruit, café, kids’ shoes', f34xGo:'Call the expert', f34xNeed:'Type a niche — at least two letters',
+  f34xPop:'Popular niches', f34xRecent:'Recent', f34xVoice:'You can also say it or type it in the chat: “Sifra, you are an expert in dried fruit”.',
+  f34xBar:n=>'Expert: '+n, f34xOff:'Leave expert mode', f34xOffOk:'Sifra is back in normal mode', f34xOnOk:n=>'Sifra the expert: '+n,
+  f34xHello:n=>'I’m here as your expert in “'+n+'”. Ask anything — from sourcing to sales — or tap a suggestion below.',
+  f34xQs:['Where do I start from zero?','Insider secrets of this niche','Where to buy cheaper and how to check quality?','Buyer psychology: how to sell more','How much can I earn — honest numbers','Top beginner mistakes'],
+  f34xCard:'Ask a niche expert', f34xCardSub:'Clothing, dried fruit, cafés, marketplaces — anything',
+  f34xN:{clothes:'Clothing',kids:'Kids’ clothing',shoes:'Shoes',dried:'Dried fruit & nuts',food:'Grocery',cosm:'Cosmetics',elec:'Phones & electronics',textile:'Fabrics & textiles',cafe:'Cafés & food service',bakery:'Bakery & pastry',build:'Building materials',furn:'Furniture',flowers:'Flowers & gifts',pharma:'Pharmacy & medtech',it:'IT & apps',mkt:'Marketplaces & online',china:'Sourcing from China',export:'Export',opt:'Wholesale',sales:'Sales & negotiation',smm:'Marketing & social media',fin:'Finance & accounting',biz:'Entrepreneurship'}
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M34S[k]);
+/* <</v34 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -17735,6 +17966,221 @@ function m33DSubTxt(){ const ds=m33Docs(); if(!ds.length) return L.m33DSub(0); c
     const b=V('dv2'); if(b) b.prom=[{id:'dvp1',t:'Скидка 5% на следующую партию',due:D(40),done:false,d:D(-3)},{id:'dvp2',t:'Прислать замену 3 бракованных костюмов',due:D(-1),done:false,d:D(-3)}];
     const c=V('dv4'); if(c) c.def=[{id:'dvq1',d:D(-44),bad:2,of:32,what:'Брюки — разошёлся шов',act:'disc',loss:180,ph:false}]; }catch(e){} return o; }; }
 /* <</v33 js>> */
+/* <<v34 js>> */
+/* ===================== v34: «Деньги и бизнес» → «Сегодня»: утренний и вечерний выпуск; Сифра-эксперт =====================
+   Откуда решения (исследование 24 ноября 2026):
+   - Finimize («Why should I care?»), Axios Smart Brevity («Why it matters», 1 300 выпусков), Economist Espresso (5 коротких историй, цифра дня,
+     выпуск три раза в день; в отзывах просят архив и надёжное обновление) → «Главное»: что случилось · почему важно вам · что сделать; цифра дня.
+   - Shopify Analytics (апрель 2026): находки по важности для дела, «See why» открывает помощника с находкой → кнопка «Исследовать» у каждого пункта.
+   - Meituan 经营数据: свои цифры рядом с рынком → «Для вашего дела» по записям в Mira (неоплаченные заказы × курс, ваш банк в новостях,
+     ваша наценка против рыночной, поездка и карго).
+   - Reuters Digital News Report 2025: 40% избегают новостей (настроение 39%, перегруз 31%, бессилие 20%); 43% отключали уведомления из-за перегруза
+     → у каждой тревожной новости — «что сделать», немного пунктов, уведомление о выпуске только по желанию.
+   - CleverTap: финансы лучше читают 7–12, новости — 9–14 и 18–19 → выпуски к 7:00 и к 19:00 (сервер v20).
+   - Gollwitzer и Sheeran 2006 (94 исследования, d≈0,65): конкретный план «что и когда» помогает сделать → «Дело дня» с шагами и отметкой.
+   - Wharton GAIL 2025: роль «эксперта» сама по себе не повышает точность → Сифра-эксперт опирается на свежий поиск и цифры (сервер v20). */
+const F34_PARTS=['news','goods','ideas','world','learn'];
+let f34Busy={}, f34PollN={}, f34Saying=false;
+const f34Up=()=>!!(sfCaps&&+sfCaps.v>=20);
+{ const _s=hbSave; hbSave=function(j){ _s.apply(this,arguments); const t=hbSt().today; if(!t||!j) return; const O=o=>o&&typeof o==='object'&&!Array.isArray(o)?o:null;
+    t.brief=(Array.isArray(j.brief)?j.brief:[]).filter(x=>x&&typeof x==='object'&&x.title&&x.what).slice(0,6); t.figure=O(j.figure)&&j.figure.value?j.figure:null; t.todo=O(j.todo)&&j.todo.title?j.todo:null;
+    t.fxp=O(j.fx_prev); t.ed=['am','pm','mid'].includes(j.ed)?j.ed:''; t.pat=O(j.pat)||{}; t.routes=(Array.isArray(j.routes)?j.routes:[]).filter(x=>x&&x.c&&x.note).slice(0,4);
+    /* архив выпусков (в отзывах об Economist Espresso просят вернуться к прошлому дню): сводка и «Главное» за 14 дней */
+    try{ const h=hbSt(); let ar=h.arch.find(a=>a.day===t.day&&a.lang===lang); if(!ar){ ar={day:t.day,lang,ideas:[]}; h.arch.unshift(ar); h.arch=h.arch.slice(0,30); }
+      if(t.brief.length){ ar.sum=hbTx(t.summary,400); ar.ed=t.ed||''; ar.brief=t.brief.slice(0,6).map(x=>({title:hbTx(x.title,110),what:hbTx(x.what,300),act:hbTx(x.act,220)})); }
+      h.arch.filter(a=>a.brief).slice(14).forEach(a=>{ delete a.brief; delete a.sum; }); }catch(e){}
+    persist(); }; }
+/* окно поверх страницы «Деньги и бизнес» (Сифра, «Исследовать»): видно поверх, «Назад» закрывает окно, а не страницу */
+{ const _os=openSheet; openSheet=function(){ try{ if(typeof bpOpenNow==='function'&&bpOpenNow()&&!m8SheetOn()) document.documentElement.classList.add('f34-top'); }catch(e){} return _os.apply(this,arguments); }; }
+{ const _bh=bpHide; bpHide=function(){ document.documentElement.classList.remove('f34-top'); return _bh.apply(this,arguments); }; }
+{ const _bp=bpPop; bpPop=function(){ const H=document.documentElement; if(H.classList.contains('f34-top')&&!H.classList.contains('m33-on')){ if(M8N.ign>0){ M8N.ign--; if(!m8SheetOn()) H.classList.remove('f34-top'); return; } if(m8SheetOn()){ m8CS0(); H.classList.remove('f34-top'); return; } H.classList.remove('f34-top'); } return _bp.apply(this,arguments); }; }
+function f34Ed(t){ return t.ed||(new Date(t.at).getHours()<14?'am':'pm'); }
+function f34Min(t){ const w=[t.summary,...(t.brief||[]).map(x=>[x.title,x.what,x.why,x.act].join(' '))].join(' ').split(/\s+/).length; return Math.max(1,Math.round(w/170)); }
+const F34_FX=[['usd','$'],['cny','¥'],['rub','₽'],['try','₺'],['aed','AED'],['kzt','₸']];
+function f34Chg(t,k){ const v=+(t.fx||{})[k], p=+(t.fxp||{})[k]; if(!(v>0&&p>0)) return null; const c=(v-p)/p*100; return Math.abs(c)>=0.005?c:0; }
+const f34Pct=c=>(c>0?'+':c<0?'−':'')+fx(Math.abs(c),Math.abs(c)<1?2:1)+'%';
+
+/* ---------- шапка выпуска ---------- */
+{ const _hh=hbHeroHTML; hbHeroHTML=function(){ const t=hbToday(); if(!t) return _hh.apply(this,arguments); try{ return f34HeroHTML(t); }catch(e){ return _hh.apply(this,arguments); } }; }
+function f34HeroHTML(t){ const fresh=hbFresh(), st=hbState, busy=st==='load'||st==='pend', ed=f34Ed(t);
+  const fxc=F34_FX.filter(([k])=>+(t.fx||{})[k]>0).map(([k,s])=>{ const v=+t.fx[k], c=f34Chg(t,k); return `<i${c?` class="${c>0?'f34-up':'f34-dn'}"`:''}>1 ${s} = ${fx(v,v<0.1?3:2)} ${L.hbSom}${c?` <em>${c>0?'▲':'▼'} ${f34Pct(c)}</em>`:''}</i>`; }).join('');
+  let nx=''; if(fresh&&t.next){ const n=new Date(t.next), today=n.toDateString()===new Date().toDateString(); const h=n.getHours(); nx=L.f34Next(h<11?'am':h<17?'mid':'pm',today,hbHM(t.next)); }
+  const prog=busy&&hbProg?L.f34Prog(hbProg.d,hbProg.t):L.hbUpdating, bell=f34BellOk()?`<button type="button" class="f34-bell ${f34BellOn()?'on':''}" data-f34bell="1" aria-pressed="${f34BellOn()}">${ico('bell',15)}<span>${L.f34Bell}</span></button>`:'';
+  return `<section class="hb-hero f34h"><div class="hb-hero-top"><span class="bp-ava">${SF_AVA}</span><div><b>${L.f34Ed[ed]}</b><small>${esc(L.f34Meta(fmtDate(parseYmd(t.day)||new Date()),hbHM(t.at),f34Min(t)))}${t.model?' · '+esc(L.hbModel(t.model)):''}</small></div>${fresh&&!busy?'':`<em class="hb-old">${busy?esc(prog):L.hbStale}</em>`}</div>
+    <p>${esc(t.summary)}</p>${fxc?`<div class="lv-tags hb-fx">${t.fxs?`<i class="f32-fxs">${esc(L.f32FxSrc(t.fxs))}</i>`:''}${fxc}</div>`:''}
+    <div class="f34-hact"><button type="button" class="hb-upd ${busy?'busy':''}" data-hbupd="1" ${busy?'disabled':''}>${ico('repeat',16)} ${busy?esc(prog):L.hbUpdBtn}</button><button type="button" class="hb-upd ${f34Saying?'on':''}" data-f34say="1" aria-pressed="${f34Saying}">${ico(f34Saying?'close':'sound',16)} ${f34Saying?L.f34Stop:L.f34Listen}</button><button type="button" class="hb-upd" data-sifra="${esc(L.f34AskQ)}">${ico('chat',16)} ${L.f34Ask}</button></div>
+    ${nx||bell?`<div class="f34-hf">${nx?`<span>${ico('clock',14)} ${esc(nx)}</span>`:''}${bell}</div>`:''}</section>`; }
+
+/* ---------- вкладка «Сегодня» ---------- */
+function f34Head(id,ic,title,part,lab){ const t=hbToday(), P=t&&t.pat||{}, at=part==='ideas'?(P.ideas||P.ideas2):part==='news'&&id!=='brief'&&id!=='news'?'':P[part]; const busy=part&&f34Busy[part];
+  return `<div class="f34-sh"><h4>${ico(ic,18)} ${esc(title)}</h4>${part?`<button type="button" class="f34-ref ${busy?'busy':''}" data-f34part="${part}" ${busy?'disabled':''} aria-label="${esc(L.f34UpdA(title))}">${ico('repeat',15)}<span>${busy?L.hbUpdating:(lab||L.f34Upd)}</span></button>`:''}</div>${at?`<small class="f34-at">${esc(L.f34UpdAt(hbHM(at)))}</small>`:''}`; }
+const f34Sec=(id,head,body,cls)=>body?`<section class="id-sec f34-s ${cls||''}" id="hb-s-${id}">${head}${body}</section>`:'';
+const f34ResB=(k,lab)=>`<button type="button" class="f34-res" data-f34res="${k}">${ico('search',15)} ${lab||L.f34Res}</button>`;
+function f34Ft(k,src,lab){ return `<div class="f34-ft">${f34ResB(k,lab)}${f32Src(src)}</div>`; }
+function f34BriefHTML(t){ const a=t.brief||[], ed=f34Ed(t); if(!a.length) return '';
+  return a.map((x,i)=>`<article class="f34-bi ${esc(x.tone||'neutral')}"><div class="f34-bt">${x.num?`<span class="f34-num ${esc(x.dir||'flat')}">${esc(hbTx(x.num,16))}</span>`:''}<h5>${esc(hbTx(x.title,110))}</h5></div>
+    <div class="lv-tags"><i>${esc(L.f34BArea[x.area]||L.f34BArea.business)}</i>${x.where?`<i>${esc(hbTx(x.where,60))}</i>`:''}${x.tone&&L.f34Tone[x.tone]?`<i class="f34-t ${esc(x.tone)}">${esc(L.f34Tone[x.tone])}</i>`:''}</div>
+    <p>${esc(hbTx(x.what,320))}</p>${x.why?`<p class="f34-why"><b>${L.f34Why}:</b> ${esc(hbTx(x.why,240))}</p>`:''}${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${ed==='pm'?L.f34ActTom:L.f34Act}:</b> ${esc(hbTx(x.act,240))}</span></p>`:''}${f34Ft('b:'+i,x.src)}</article>`).join(''); }
+/* «Для вашего дела»: только по записям в телефоне */
+const F34_CUR={USD:['usd','$'],CNY:['cny','¥'],TRY:['try','₺'],AED:['aed','AED'],RUB:['rub','₽'],KZT:['kzt','₸']};
+function f34You(t){ const out=[], fxn=t.fx||{};
+  try{ const owe={}; for(const o of state.torders||[]){ const left=(+o.total||0)-(+o.paid||0); if(left>0&&F34_CUR[o.cur]) owe[o.cur]=(owe[o.cur]||0)+left; }
+    for(const [cur,a] of Object.entries(owe)){ const [k,sy]=F34_CUR[cur], r=+fxn[k]; if(!(r>0)) continue; const c=f34Chg(t,k), p=+(t.fxp||{})[k];
+      out.push({ic:'cash',t:L.f34YouOwe(fx(a,0)+' '+sy,money(a*r),c?f34Pct(c):'',c&&p>0?money(Math.abs(a*(r-p))):'',c>0)}); } }catch(e){}
+  try{ const items=[...(t.brief||[]).map(x=>({ti:x.title,tx:x.what})),...(t.news||[]).map(x=>({ti:x.title,tx:x.text})),...(t.watch||[]).map(x=>({ti:x.title,tx:x.text}))];
+    const banks=[...new Set((state.loans||[]).filter(l=>!l.example&&!l.closed).map(l=>String(l.name||'').trim()).filter(n=>n.length>=4))];
+    for(const b of banks){ const stem=b.toLowerCase().slice(0,Math.max(4,b.length-2)), hit=items.find(x=>(String(x.ti)+' '+String(x.tx||'')).toLowerCase().includes(stem)); if(hit) out.push({ic:'loans',t:L.f34YouBank(b,hit.ti),go:'news'}); } }catch(e){}
+  try{ const kinds=new Set(); for(const p of state.tprods||[]) if(p.dec==='buy'&&p.kind) kinds.add(p.kind); for(const i of state.inv||[]) if(i.cat) kinds.add(i.cat);
+    for(const id of kinds){ const r=(t.cats||[]).find(c=>c.id===id); if(!r||!(+r.markup_pct>0)) continue;
+      const mine=(state.inv||[]).filter(i=>i.cat===id&&+i.cost>0&&+i.price>0), my=mine.length?Math.round(mine.reduce((a,i)=>a+(i.price-i.cost)/i.cost*100,0)/mine.length):null;
+      out.push({ic:'tag',t:L.f34YouCat(L['whC_'+id]||id,L.f34Dem[r.demand]||L.f34Dem.normal,r.trend,Math.round(r.markup_pct),my),go:'goods'}); if(out.length>=6) break; } }catch(e){}
+  try{ const d=dkey(), tr=(state.trips||[]).filter(x=>x.to&&x.to>=d).sort((a,b)=>String(a.from).localeCompare(String(b.from)))[0], ro=tr&&(t.routes||[]).find(r=>r.c===tr.country);
+    if(ro&&ro.note) out.push({ic:'truck',t:L.f34YouRoute(tr.city||L['cn_'+tr.country]||tr.country,ro.note)});
+    const go=(state.cargo||[]).filter(c=>c.st==='sent'), w=(t.watch||[]).find(x=>/границ|таможн|border|customs|сарҳад|гумрук|карго|cargo/i.test(x.title+' '+x.text));
+    if(go.length&&w) out.push({ic:'truck',t:L.f34YouCargo(go.length,w.title),go:'watch'}); }catch(e){}
+  return out.slice(0,6); }
+function f34YouHTML(t){ const a=f34You(t); if(!a.length) return '';
+  return `<p class="bp-hint">${ico('shield',14)} ${L.f34YouLead}</p><ul class="f34-you">${a.map(x=>`<li>${ico(x.ic,18)}<span>${esc(x.t)}</span>${x.go?`<button type="button" class="link-btn" data-hbjump="${x.go}">${L.f34YouGo}</button>`:''}</li>`).join('')}</ul>`; }
+function f34DuoHTML(t){ const ed=f34Ed(t), td=t.todo, fg=t.figure, k=t.day+':'+ed, done=!!(state.misc&&state.misc.f34done&&state.misc.f34done[k]);
+  const a=td?`<div class="f34-todo ${done?'done':''}"><small>${ico('goal',14)} ${L.f34TodoT[ed]}</small><b>${esc(hbTx(td.title,140))}</b>${td.why?`<p>${esc(hbTx(td.why,220))}</p>`:''}${(td.steps||[]).length?`<ol>${td.steps.slice(0,3).map(s=>`<li>${esc(hbTx(s,160))}</li>`).join('')}</ol>`:''}<button type="button" class="btn ${done?'btn-ghost':'btn-primary'}" data-f34done="${esc(k)}" aria-pressed="${done}">${ico('check',16)} ${done?L.f34Done:L.f34DoIt}</button></div>`:'';
+  const b=fg?`<div class="f34-fig"><small>${ico('chart',14)} ${L.f34FigT}</small><b>${esc(hbTx(fg.value,24))}</b><span>${esc(hbTx(fg.label,120))}</span>${fg.why?`<p>${esc(hbTx(fg.why,220))}</p>`:''}${f34Ft('f:0',fg.src)}</div>`:'';
+  return a||b?`<div class="f34-duo">${a}${b}</div>`:''; }
+function f34NewsHTML(t){ const a=(t.news||[]).filter(x=>x&&x.title&&x.text); if(!a.length) return '';
+  return f32List(a,(x,i)=>`<div class="f32-nw"><div class="lv-tags"><i class="f32-na ${esc(x.area||'')}">${esc(L.f32NArea[x.area]||L.f32NArea.business)}</i>${x.where?`<i>${esc(hbTx(x.where,60))}</i>`:''}${f32Dt(x.date)?`<i>${esc(f32Dt(x.date))}</i>`:''}</div><b>${esc(hbTx(x.title,120))}</b><p>${esc(hbTx(x.text,300))}</p>${f34Ft('n:'+a.indexOf(x),x.src)}</div>`); }
+function f34TrendsHTML(t){ const a=t.trends||[]; if(!a.length) return '';
+  return a.map((x,i)=>`<div class="hb-tc ${x.dir==='down'?'dn':'up'}"><b>${x.dir==='down'?'↓':'↑'} ${esc(x.title)}</b><p>${esc(x.why)}</p>${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${L.f34TrAct}:</b> ${esc(hbTx(x.act,200))}</span></p>`:''}<div class="lv-tags"><i>${esc(L.hbArea[x.area]||'')}</i>${x.where?`<i>${esc(x.where)}</i>`:''}</div>${f34Ft('t:'+i,x.src)}</div>`).join(''); }
+function f34WorldHTML(t){ const a=(t.world||[]).filter(x=>x&&x.title&&x.text); if(!a.length) return '';
+  return f32List(a,x=>`<div class="f32-nw"><div class="lv-tags"><i class="f32-wa ${esc(x.area||'')}">${esc(L.f32WArea[x.area]||L.f32WArea.market)}</i>${x.where?`<i>${esc(hbTx(x.where,70))}</i>`:''}${f32Dt(x.date)?`<i>${esc(f32Dt(x.date))}</i>`:''}</div><b>${esc(hbTx(x.title,120))}</b><p>${esc(hbTx(x.text,300))}</p>${x.take?`<p class="m">${ico('next',14)} ${L.f32Take} ${esc(hbTx(x.take,200))}</p>`:''}${f34Ft('w:'+a.indexOf(x),x.src)}</div>`); }
+function f34GoodsHTML(t){ const h=hbSt(), rows=hbSorted(t), sort=h.sort||'mk', open=h.openRow, max=Math.max(1,...rows.map(r=>sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk));
+  const mine=new Set(); try{ for(const p of state.tprods||[]) if(p.dec==='buy'&&p.kind) mine.add(p.kind); for(const i of state.inv||[]) if(i.cat) mine.add(i.cat); }catch(e){}
+  const fm=v=>fx(v,Math.round(v*10)%10?1:0), val=r=>sort==='speed'?L.hbMo(fm(r.m)):sort==='year'?'+'+Math.round(hbYear(r))+'%':'+'+Math.round(r.mk)+'%', w=r=>Math.max(4,Math.round((sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk)/max*100));
+  const bars=rows.map(r=>`<button type="button" class="hb-bar ${r.live?'':'dim'} ${open===r.id?'on':''} ${mine.has(r.id)?'f34-mine':''}" data-hbrow="${esc(r.id)}" aria-expanded="${open===r.id}"><span class="hb-bn">${r.ico} ${esc(r.name)}${r.isNew?` <em class="hb-new">${L.hbNew}</em>`:''}</span><span class="hb-bt"><i data-w="${w(r)}"></i></span><b>${esc(val(r))}</b><em class="hb-tr ${r.trend}">${r.trend==='up'?'↑':r.trend==='down'?'↓':'·'}</em></button>
+    ${open===r.id?`<div class="hb-det"><div class="id-nums"><div><small>${L.hbMkL}</small><b>+${Math.round(r.mk)}%</b></div><div><small>${L.hbSellL}</small><b>${esc(L.hbMo(fm(r.m)))}</b></div>${r.buy?`<div><small>${L.hbBuyL}</small><b>${r.buy>0?'+':''}${Math.round(r.buy)}%</b></div>`:''}${r.from?`<div><small>${L.hbBestL}</small><b>${HB_FLAG[r.from]||''} ${esc(L['cn_'+r.from]||L.hbCtry[r.from]||r.from)}</b></div>`:''}${r.start>0?`<div><small>${L.hbStartL}</small><b>${esc(ivUsd(r.start))}</b></div>`:''}</div>
+      <p>${esc(r.note||(r.live?'':L.hbNoLive))}${r.where?' · '+esc(r.where):''}</p>${r.src?`<a class="hb-src1" href="${esc(r.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}
+      <div class="bp-acts two">${r.isNew?'':`<button type="button" class="btn btn-ghost" data-hbcalc="${r.id}">${ico('cash',16)} ${L.hbCount}</button>`}<button type="button" class="btn btn-ghost" data-hbplan="row:${esc(r.id)}">${ico('doc',16)} ${L.hbToPlan}</button></div></div>`:''}`).join('');
+  return `<p class="bp-hint">${L.hbBarsLead}</p><div class="chips bp-wrap hb-sort" role="radiogroup">${['mk','speed','year'].map(k=>`<button type="button" class="chip ${sort===k?'on':''}" role="radio" aria-checked="${sort===k}" data-hbsort="${k}">${L.hbSortN[k]}</button>`).join('')}</div><div class="hb-bars">${bars}</div>`; }
+{ const _hi=hbIdeaHTML; hbIdeaHTML=function(x){ const h=_hi.apply(this,arguments); return h.replace(/<\/div>\s*$/,`${f34ResB('i:'+encodeURIComponent(x.title))}</div>`); }; }
+function f34TipsHTML(t){ const a=t.tips||[]; return a.map((x,i)=>`<div class="hb-tip"><b>${ico('bulb',16)} ${esc(x.title)}</b><p>${esc(x.text)}</p>${x.from?`<small>${esc(x.from)}</small>`:''}<div class="f34-ft">${f34ResB('p:'+i,L.f34Apply)}</div></div>`).join(''); }
+function f34WatchHTML(t){ const a=t.watch||[]; return a.length?`<ul class="id-ul risk f34-w">${a.map((x,i)=>`<li>${ico('warn',16)}<span><b>${esc(x.title)}</b> ${esc(x.text)}${x.act?`<em>${ico('shield',13)}<span>${L.f34WAct}: ${esc(hbTx(x.act,200))}</span></em>`:''}${f34Ft('x:'+i,x.src)}</span></li>`).join('')}</ul>`:''; }
+{ const _t=hbTodayHTML; hbTodayHTML=function(){ const t=hbToday(); if(!t) return _t.apply(this,arguments); try{ return f34TodayHTML(t); }catch(e){ return _t.apply(this,arguments); } }; }
+function f34TodayHTML(t){ const N=L.f34Nav, secs=[];
+  const add=(id,head,body,cls)=>{ const h=f34Sec(id,head,body,cls); if(h) secs.push({id,h}); return h; };
+  const brief=add('brief',f34Head('brief','zap',L.f34BriefT,'news'),f34BriefHTML(t),'f34-brief');
+  const you=add('you',f34Head('you','goal',L.f34YouT),f34YouHTML(t),'f34-yous');
+  const duo=f34DuoHTML(t);
+  const ls=t.lesson?`<button type="button" class="hb-lesson" data-hblesson="${esc(t.day)}"><span class="hb-li">${ico('sparkle',20)}</span><span><small>${L.hbLessonT} · ${esc(L.hbAreaL[t.lesson.area]||'')}</small><b>${esc(t.lesson.title)}</b><em>${esc(t.lesson.lead)}</em></span>${ico('next',18)}</button>`:'';
+  const where=typeof L.m33WHub==='string'?`<button type="button" class="m33-hbw" data-m33go="where"><span>${ico('globe',20)}</span><b>${L.m33WHub}</b>${ico('next',18)}</button>`:'';
+  /* по просьбе Анушера мир (США, Европа, Азия) — раньше новостей региона */
+  const world=add('world',f34Head('world','sparkle',L.f32WorldT,'world'),f34WorldHTML(t));
+  const news=add('news',f34Head('news','globe',L.f32NewsT,'news'),f34NewsHTML(t));
+  const trends=add('trends',f34Head('trends','stats',L.hbTrendsT,'news'),f34TrendsHTML(t));
+  const goods=add('goods',f34Head('goods','chart',L.hbBarsT,'goods'),f34GoodsHTML(t));
+  const ideas=add('ideas',f34Head('ideas','bulb',L.hbIdeasT,'ideas',L.f34MoreIdeas),t.ideas.length?t.ideas.slice(0,3).map(hbIdeaHTML).join('')+`<button type="button" class="hb-more" data-hbtab="ideas">${L.hbAllIdeas(t.ideas.length)} ${ico('next',16)}</button>`:'');
+  const tips=add('tips',f34Head('tips','sparkle',L.hbTipsT,'learn',L.f34NewTips),f34TipsHTML(t));
+  const watch=add('watch',f34Head('watch','warn',L.hbWatchT),f34WatchHTML(t));
+  const co=t.country?hbCountryHTML(t.country):'';
+  const src=t.src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(t.src.length)}</summary><div class="id-src">${t.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:'';
+  const nav=secs.length>2?`<nav class="chips f34-nav" aria-label="${esc(L.f34NavA)}">${secs.map(s=>`<button type="button" class="chip" data-hbjump="${s.id}">${esc(N[s.id]||s.id)}</button>`).join('')}</nav>`:'';
+  const past=hbSt().arch.filter(a=>a.lang===lang&&a.brief&&a.brief.length&&a.day!==t.day).slice(0,14);
+  const arch=past.length?`<details class="wh-more f34-past"><summary>${ico('clock',16)} ${L.f34Past(past.length)}</summary>${past.map(a=>`<div class="f34-pd"><small>${esc(fmtDate(parseYmd(a.day)||new Date()))}${a.ed&&L.f34Ed[a.ed]?' · '+esc(L.f34Ed[a.ed]):''}</small>${a.sum?`<p>${esc(a.sum)}</p>`:''}<ul>${a.brief.map(x=>`<li><b>${esc(x.title)}</b>${x.act?` — ${esc(x.act)}`:''}</li>`).join('')}</ul></div>`).join('')}</details>`:'';
+  return `${nav}${brief}${you}${duo}${ls}${where}${world}${news}${trends}${goods}${ideas}${tips}${watch}${co}${f32MissHTML(t)}${src}${arch}<p class="note f34-how">${ico('info',14)} ${L.f34How}</p><p class="note">${L.hbNote}</p>`; }
+
+/* ---------- обновить один раздел ---------- */
+function f34SecBusy(part){ document.querySelectorAll(`[data-f34part="${part}"]`).forEach(b=>{ const on=!!f34Busy[part]; b.classList.toggle('busy',on); b.disabled=on; const s=b.querySelector('span'); if(s&&on) s.textContent=L.hbUpdating; }); }
+async function f34Part(part){ if(!F34_PARTS.includes(part)) return; if(f34Busy[part]&&!f34PollN[part]) return; if(!navigator.onLine){ toast(L.idOffline); return; }
+  if(!f34Up()){ try{ await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(r,2500))]); }catch(e){} } if(!f34Up()){ toast(L.f34Old); return; }
+  f34Busy[part]=1; f34SecBusy(part);
+  let j=null, ok=false; try{ const r=await fetch(API_BASE+'/api/mk/today',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,part})}); ok=r.ok; j=await r.json().catch(()=>null); }catch(e){}
+  if(j&&j.pending){ f34PollN[part]=(f34PollN[part]||0)+1; if(f34PollN[part]<=40&&hbOn()){ setTimeout(()=>{ if(hbOn()) f34Part(part); else { f34Busy[part]=0; f34PollN[part]=0; } },15000); return; } }
+  f34Busy[part]=0; f34PollN[part]=0;
+  if(ok&&j&&j.summary){ hbSave(j); if(hbOn()){ const m=BPG.el.querySelector('#bpg-m'), y=m?m.scrollTop:0; hbRedraw(); if(m) m.scrollTop=y; } toast(j.recent?L.f34Recent(j.wait_min||1):L.f34PartOk[part]); return; }
+  f34SecBusy(part); if(hbOn()) hbRedraw(); toast(j&&j.error==='limit'?L.hbUpdLimit:L.hbErr); }
+
+/* ---------- «Исследовать» → Сифра с готовым вопросом ---------- */
+function f34ResQ(k){ const t=hbToday(); if(!t) return ''; const [a,b]=String(k).split(/:(.*)/s), Q=L.f34Q;
+  if(a==='i'){ const x=hbIdeaFind(decodeURIComponent(b||'')); return x?Q.i(x):''; }
+  const i=+b, pick={b:t.brief,n:(t.news||[]).filter(x=>x&&x.title&&x.text),t:t.trends,w:(t.world||[]).filter(x=>x&&x.title&&x.text),p:t.tips,x:t.watch}[a];
+  if(a==='f') return t.figure?Q.f(t.figure):''; const x=pick&&pick[i]; return x&&Q[a]?Q[a](x):''; }
+
+/* ---------- слушать выпуск ---------- */
+function f34Listen(){ const t=hbToday(); if(!t) return; if(f34Saying){ f34Saying=false; try{ sfHush(); }catch(e){} hbHeroDraw(); return; }
+  const ed=L.f34Ed[f34Ed(t)], txt=L.f34Say(ed,t.summary,(t.brief||[]).slice(0,5),t.todo&&t.todo.title);
+  f34Saying=true; hbHeroDraw(); sfSay(txt,()=>{ f34Saying=false; hbHeroDraw(); }); }
+
+/* ---------- «Сообщать, когда выпуск готов» ---------- */
+function f34BellOk(){ return !DEMO&&'Notification' in window&&'PushManager' in window&&'serviceWorker' in navigator; }
+function f34BellOn(){ try{ const p=pushSt(); return !!(p.on&&p.br); }catch(e){ return false; } }
+async function f34Bell(){ if(!f34BellOk()){ toast(L.f34BellNo); return; }
+  const p=pushSt(); if(p.on&&p.br){ p.br=false; pushSave(p); await pushRegister(true); toast(L.f34BellOff); hbHeroDraw(); return; }
+  const p1=pushSt(); p1.br=true; pushSave(p1); const ok=p1.on?await pushRegister(true):await pushEnable(); if(!ok){ const p2=pushSt(); p2.br=false; pushSave(p2); } else toast(L.f34BellOn); hbHeroDraw(); }
+/* регистрация push: те же поля + «выпуск готов» и язык */
+pushRegister=async function(force){ if(DEMO) return false; const ps=pushSt(); if(!ps.on) return false;
+  try{ const reg=await swReg(); if(!reg) return false;
+    let sub=null; try{ sub=await pushSub(reg); }catch(e){} if(!sub){ const p2=pushSt(); p2.ok=false; pushSave(p2); return false; }
+    const body={id:mkId(), sub:sub.toJSON(), items:dueItems(), ev:!!ps.ev, wk:ps.wk!==false, ra:raList().filter(a=>a.on).map(a=>({c:a.c,op:a.op,v:a.v})), br:!!ps.br, bl:lang};
+    const h=hashPin(API_BASE+JSON.stringify(body)), p1=pushSt(); if(!force&&p1.h===h&&p1.ok) return true;
+    const r=await fetch(API_BASE+'/api/mk/reg',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)});
+    const ok=r.ok; const p2=pushSt(); p2.h=ok?h:''; p2.ok=ok; p2.at=Date.now(); pushSave(p2); return ok; }
+  catch(e){ const p2=pushSt(); p2.ok=false; pushSave(p2); return false; } };
+/* уведомление «выпуск готов» открывает выпуск; фон телефона заранее собирает выпуск (Android, если разрешено) */
+function f34GoHub(){ try{ if(typeof bpOpenNow==='function'&&bpOpenNow()&&bpTop().name==='hub') return; if(m8SheetOn()) closeSheet(); setTimeout(()=>hubOpen('today'),120); }catch(e){} }
+try{ if(new URLSearchParams(location.search).get('go')==='hub'){ history.replaceState(history.state,'',location.pathname+location.hash); setTimeout(f34GoHub,900); } }catch(e){}
+try{ navigator.serviceWorker&&navigator.serviceWorker.addEventListener('message',e=>{ if(e.data&&e.data.mk==='go'&&e.data.to==='hub') f34GoHub(); }); }catch(e){}
+setTimeout(async()=>{ try{ if(DEMO||!hbSt().seen) return; const reg=await swReg(); if(!reg||!('periodicSync' in reg)) return; const p=await navigator.permissions.query({name:'periodic-background-sync'}); if(p.state!=='granted') return; await reg.periodicSync.register('mira-brief',{minInterval:6*3600e3}); }catch(e){} },8000);
+
+/* ---------- клики ---------- */
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-f34part],[data-f34res],[data-f34say],[data-f34bell],[data-f34done],[data-f34go],[data-f34x],[data-f34xq],[data-f34xoff]'); if(!b) return;
+  const d=b.dataset; e.preventDefault(); e.stopImmediatePropagation();
+  if(d.f34part){ f34Part(d.f34part); return; }
+  if(d.f34res){ const q=f34ResQ(d.f34res); if(q) sifraOpen(q); return; }
+  if(d.f34say){ f34Listen(); return; }
+  if(d.f34bell){ f34Bell(); return; }
+  if(d.f34done){ state.misc=state.misc||{}; const o=state.misc.f34done=state.misc.f34done||{}; if(o[d.f34done]) delete o[d.f34done]; else o[d.f34done]=1; const ks=Object.keys(o); if(ks.length>30) for(const k of ks.slice(0,ks.length-30)) delete o[k]; persist(); if(hbOn()){ const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop; hbPaneDraw('today'); m.scrollTop=y; } return; }
+  if(d.f34go==='expert'){ f34xOpen(); return; }
+  if(d.f34x!=null){ f34xStart(d.f34x); return; }
+  if(d.f34xq!=null){ const n=f34xNiche(); if(n) sfAsk(L.f34xQs[+d.f34xq],false); return; }
+  if(d.f34xoff){ f34xSet(''); toast(L.f34xOffOk); sfX(); return; } },true);
+
+/* ======================= Сифра-эксперт ======================= */
+const F34X=['clothes','kids','shoes','dried','food','cosm','elec','textile','cafe','bakery','build','furn','flowers','pharma','it','mkt','china','export','opt','sales','smm','fin','biz'];
+const F34XI={clothes:'tag',kids:'people',shoes:'tag',dried:'star',food:'cash',cosm:'sparkle',elec:'zap',textile:'tag',cafe:'chat',bakery:'star',build:'shield',furn:'folder',flowers:'sparkle',pharma:'heart',it:'zap',mkt:'globe',china:'truck',export:'flag',opt:'chart',sales:'chat',smm:'phone',fin:'loans',biz:'stats'};
+function f34xNiche(){ const x=state.misc&&state.misc.sfx; return x&&typeof x.n==='string'?x.n:''; }
+function f34xSet(n){ state.misc=state.misc||{}; n=String(n||'').replace(/[<>{}\[\]`]/g,'').replace(/\s+/g,' ').trim().slice(0,60);
+  if(!n){ delete state.misc.sfx; persist(); return; } state.misc.sfx={n,at:Date.now()}; const r=(state.misc.sfxR||[]).filter(x=>x.toLowerCase()!==n.toLowerCase()); r.unshift(n); state.misc.sfxR=r.slice(0,8); persist(); }
+function f34xStart(k){ let n=k; if(F34X.includes(k)) n=L.f34xN[k]; else if(k===''){ const i=document.querySelector('#f34x-in'); n=i?i.value:''; }
+  n=String(n||'').trim(); if(n.length<2){ toast(L.f34xNeed); const i=document.querySelector('#f34x-in'); if(i) i.focus(); return; }
+  f34xSet(n); const log=sfLog(); log.push({r:'a',t:L.f34xHello(f34xNiche()),ts:Date.now(),loc:1}); persist();
+  const go=()=>sifraOpen(); if(typeof bpOpenNow==='function'&&bpOpenNow()) bpClose(); setTimeout(go,140); }
+function f34xOpen(){ if(m8SheetOn()) closeSheet(); setTimeout(()=>bpGo('xp'),120); }
+if(typeof M33P!=='undefined'&&!M33P.includes('xp')) M33P.push('xp');
+{ const _d=m33Draw; m33Draw=function(t,m){ if(t.name!=='xp') return _d.apply(this,arguments); BPG.el.querySelector('#bpg-t').textContent=L.f34xT; m.innerHTML=f34xPageHTML(); }; }
+function f34xPageHTML(){ const cur=f34xNiche(), rec=(state.misc&&state.misc.sfxR||[]).slice(0,6);
+  return `<div class="f34x-hero"><span class="f34x-ava">${SF_AVA}</span><div><b>${L.f34xT}</b><p>${L.f34xLead}</p></div></div>
+    ${cur?`<div class="f34x-cur">${ico('star',16)}<span>${esc(L.f34xOnOk(cur))}</span><button type="button" class="link-btn" data-f34x="${esc(cur)}">${L.f34Ask}</button><button type="button" class="link-btn" data-f34xoff="1">${L.f34xOff}</button></div>`:''}
+    <section class="id-sec"><h4>${ico('edit',18)} ${L.f34xOwn}</h4><div class="hb-askrow"><input id="f34x-in" class="bp-in" type="text" maxlength="60" placeholder="${esc(L.f34xOwnPh)}" aria-label="${esc(L.f34xOwn)}"><button type="button" class="btn btn-primary" data-f34x="" aria-label="${esc(L.f34xGo)}">${ico('next',20)}</button></div></section>
+    ${rec.length?`<section class="id-sec"><h4>${ico('clock',18)} ${L.f34xRecent}</h4><div class="chips bp-wrap">${rec.map(n=>`<button type="button" class="chip" data-f34x="${esc(n)}">${esc(n)}</button>`).join('')}</div></section>`:''}
+    <section class="id-sec"><h4>${ico('star',18)} ${L.f34xPop}</h4><div class="f34x-grid">${F34X.map(k=>`<button type="button" class="f34x-n" data-f34x="${k}"><span>${ico(F34XI[k]||'star',20)}</span><b>${esc(L.f34xN[k])}</b></button>`).join('')}</div></section>
+    <p class="note">${ico('mic',14)} ${L.f34xVoice}</p><p class="note">${ico('info',14)} ${L.f34xHonest}</p>`; }
+document.addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target&&e.target.id==='f34x-in'){ e.preventDefault(); f34xStart(''); } });
+/* чат: строка режима, подсказки эксперта, ниша в запросе */
+{ const _cx=sfCtx; sfCtx=function(){ const o=_cx.apply(this,arguments); try{ const n=f34xNiche(); if(n&&o.mode!=='loan'&&f34Up()){ o.mode='expert'; o.expert={niche:n}; } }catch(e){} return o; }; }
+function sfX(){ const sh=document.querySelector('#sheet'); if(!sh||!sh.querySelector('.sf-head')) return; sh.querySelectorAll('.f34x-bar').forEach(x=>x.remove()); const n=f34xNiche(), qs=sh.querySelector('#sf-qs');
+  if(qs&&!qs.dataset.f34o) qs.dataset.f34o=qs.innerHTML;
+  if(n){ sh.querySelector('.sf-head').insertAdjacentHTML('afterend',`<div class="f34x-bar">${ico('star',15)}<span>${esc(L.f34xBar(n))}</span><button type="button" data-f34xoff="1" aria-label="${esc(L.f34xOff)}">${ico('close',16)}</button></div>`);
+    if(qs) qs.innerHTML=L.f34xQs.map((q,i)=>`<button class="chip" data-f34xq="${i}">${esc(q)}</button>`).join(''); }
+  else if(qs&&qs.dataset.f34o){ qs.innerHTML=qs.dataset.f34o; qs.querySelectorAll('[data-sfq]').forEach(b=>b.onclick=()=>sfAsk(L.sfQs[+b.dataset.sfq],false)); } }
+{ const _so=sifraOpen; sifraOpen=function(){ const r=_so.apply(this,arguments); try{ sfX(); }catch(e){} return r; }; }
+/* ответ сервера: «ты эксперт по …» включает режим, «выйди из режима эксперта» — выключает */
+{ const _f=window.fetch; window.fetch=function(u,o){ const p=_f.apply(this,arguments); try{ if(typeof u==='string'&&/\/api\/mk\/ai$/.test(u)&&o&&typeof o.body==='string'&&!/"img_only"/.test(o.body)){
+      p.then(r=>r.clone().json().then(j=>{ if(!j||!j.expert) return; const was=f34xNiche();
+        if(j.expert.off){ if(was){ f34xSet(''); toast(L.f34xOffOk); } }
+        else if(j.expert.niche&&j.expert.niche!==was){ f34xSet(j.expert.niche); toast(L.f34xOnOk(f34xNiche())); }
+        setTimeout(sfX,30); }).catch(()=>{})).catch(()=>{}); } }catch(e){} return p; }; }
+/* входы: «Ещё», «Учиться», приветствие Сифры */
+{ const _mi=moreItems; moreItems=function(){ const a=_mi.apply(this,arguments); try{ const i=a.findIndex(x=>x.k==='idea'); const g=i>=0?a[i].g:'m';
+    a.splice(i>=0?i+1:a.length,0,{k:'expert',g,a:'data-f34go="expert"',i:'star',t:L.f34xT,s:f34xNiche()?L.f34xBar(f34xNiche()):L.f34xSub}); }catch(e){} return a; }; }
+{ const _l=hbLearnHTML; hbLearnHTML=function(){ const h=_l.apply(this,arguments); return `<button type="button" class="hb-lesson f34x-card" data-f34go="expert"><span class="hb-li">${ico('star',20)}</span><span><small>${L.f34xT}</small><b>${L.f34xCard}</b><em>${L.f34xCardSub}</em></span>${ico('next',18)}</button>`+h; }; }
+/* <</v34 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
