@@ -3006,6 +3006,7 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .f30-np{display:flex; align-items:center; gap:12px; width:100%; margin:0 0 10px; padding:12px 14px; border-radius:18px; border:1.5px solid color-mix(in srgb,#E08A2B 45%,transparent); background:color-mix(in srgb,#E08A2B 12%,var(--surface)); color:var(--ink); text-align:left; font:inherit; cursor:pointer;}
 .f30-np .f30-npi{font-size:1.3rem; flex:none;} .f30-np span{display:flex; flex-direction:column; gap:2px;} .f30-np small{font-size:.84rem; line-height:1.35; color:var(--ink); opacity:.85;}
 .f30-d2{display:block; font-size:.72rem; color:var(--muted); font-weight:600;}
+.f30-auto{margin:8px 0 4px; padding:8px 12px; border-radius:12px; font-size:.84rem; line-height:1.4; font-weight:600;} .f30-auto.on{background:color-mix(in srgb,var(--brand) 10%,transparent); color:var(--ink);} .f30-auto.off{background:color-mix(in srgb,#E08A2B 12%,transparent);}
 /* <</v30 css>> */
 
 
@@ -6834,7 +6835,7 @@ ru:{ f30How:'Откройте график платежей или прилож�
   f30PhBadSum:(v,t)=>'Основной долг по строкам '+v+', а сумма кредита '+t+'. Проверьте, все ли строки попали на фото.',
   f30PhBad:l=>'Проверьте строки '+l+': цифры не сходятся или читаются неуверенно.', f30PhAllOk:'все строки сходятся: долг + проценты = платёж',
   f30PhCheck:'Проверьте цифры в поле ниже и нажмите «Сохранить график».', f30Mark:'Отметить последний внесённый платёж',
-  f30Act:n=>'Сверить с банком'+(n?': '+n:''), f30SfCheck:'Сифра вписала цифры банка. Посмотрите, что изменится, и сохраните.', f30AlNeed:'Ответьте: этот платёж уже внесли или ещё нет?', f30D2:d=>'два платежа: и '+d },
+  f30Act:n=>'Сверить с банком'+(n?': '+n:''), f30SfCheck:'Сифра вписала цифры банка. Посмотрите, что изменится, и сохраните.', f30AlNeed:'Ответьте: этот платёж уже внесли или ещё нет?', f30D2:d=>'два платежа: и '+d, f30Auto:'✓ Остаток сверяется с графиком банка автоматически — после каждого платежа.', f30AutoOff:'После досрочного платежа банк пересчитывает график — загрузите новый, и Mira снова будет сверять остаток сама.', f30Synced:(a,b)=>'Остаток поправлен по графику банка: '+a+' → '+b, f30SyncSame:'Остаток совпадает с графиком банка ✓' },
 tg:{ f30How:'Ҷадвали пардохт ё барномаи бонкро кушоед. Бақияи қарз ва санаи пардохти навбатиро нависед — аввалин пардохте, ки ҳанӯз насупоридаед.',
   f30HowS:'Дар ҷадвал охирин пардохтеро интихоб кунед, ки аллакай ба бонк супоридаед — Mira бақия ва санаи пардохти навбатиро аз ҷадвал мегирад.',
   f30Row:'Охирин пардохти супоридашуда', f30RowNone:'Ҳанӯз ягонтааш не', f30RowOpt:(n,d,b)=>'№'+n+' · '+d+' · бақия '+b,
@@ -6865,7 +6866,7 @@ tg:{ f30How:'Ҷадвали пардохт ё барномаи бонкро ку
   f30PhBadSum:(v,t)=>'Қарзи асосӣ аз рӯи сатрҳо '+v+', вале маблағи қарз '+t+'. Санҷед, ки ҳамаи сатрҳо дар акс ҳастанд.',
   f30PhBad:l=>'Сатрҳои '+l+'-ро санҷед: рақамҳо мувофиқ нестанд ё норавшан хонда шуданд.', f30PhAllOk:'ҳамаи сатрҳо мувофиқанд: қарз + фоиз = пардохт',
   f30PhCheck:'Рақамҳоро дар майдони поён санҷед ва «Нигоҳ доштани ҷадвал»-ро пахш кунед.', f30Mark:'Охирин пардохти супоридашударо қайд кардан',
-  f30Act:n=>'Муқоиса бо бонк'+(n?': '+n:''), f30SfCheck:'Сифра рақамҳои бонкро навишт. Бинед, ки чӣ тағйир меёбад, ва нигоҳ доред.', f30AlNeed:'Ҷавоб диҳед: ин пардохт аллакай супорида шудааст ё ҳоло не?', f30D2:d=>'ду пардохт: ва '+d },
+  f30Act:n=>'Муқоиса бо бонк'+(n?': '+n:''), f30SfCheck:'Сифра рақамҳои бонкро навишт. Бинед, ки чӣ тағйир меёбад, ва нигоҳ доред.', f30AlNeed:'Ҷавоб диҳед: ин пардохт аллакай супорида шудааст ё ҳоло не?', f30D2:d=>'ду пардохт: ва '+d, f30Auto:'✓ Бақия бо ҷадвали бонк худкор муқоиса мешавад — баъди ҳар пардохт.', f30AutoOff:'Баъди пардохти пеш аз мӯҳлат бонк ҷадвалро аз нав ҳисоб мекунад — ҷадвали навро гузоред, ва Mira боз худаш бақияро муқоиса мекунад.', f30Synced:(a,b)=>'Бақия аз рӯи ҷадвали бонк ислоҳ шуд: '+a+' → '+b, f30SyncSame:'Бақия бо ҷадвали бонк мувофиқ аст ✓' },
 en:{ f30How:'Open your payment schedule or the bank app. Enter the balance owed and the date of the next payment — the first one you have not paid yet.',
   f30HowS:'Pick the last payment you have already made to the bank on the schedule — Mira will take the balance and the next payment date from it.',
   f30Row:'Last payment made', f30RowNone:'None yet', f30RowOpt:(n,d,b)=>'#'+n+' · '+d+' · balance '+b,
@@ -6896,7 +6897,7 @@ en:{ f30How:'Open your payment schedule or the bank app. Enter the balance owed 
   f30PhBadSum:(v,t)=>'Principal across rows is '+v+', but the loan amount is '+t+'. Check that every row is in the photo.',
   f30PhBad:l=>'Check rows '+l+': the numbers do not add up or were hard to read.', f30PhAllOk:'all rows add up: principal + interest = payment',
   f30PhCheck:'Check the numbers in the box below and tap “Save schedule”.', f30Mark:'Mark the last payment made',
-  f30Act:n=>'Check with the bank'+(n?': '+n:''), f30SfCheck:'Sifra filled in the bank’s numbers. See what will change, then save.', f30AlNeed:'Tell Mira: has this payment been made, or not yet?', f30D2:d=>'two payments: also '+d }};
+  f30Act:n=>'Check with the bank'+(n?': '+n:''), f30SfCheck:'Sifra filled in the bank’s numbers. See what will change, then save.', f30AlNeed:'Tell Mira: has this payment been made, or not yet?', f30D2:d=>'two payments: also '+d, f30Auto:'✓ The balance is checked against the bank’s schedule automatically — after every payment.', f30AutoOff:'After an early repayment the bank recalculates the schedule — add the new one and Mira will check the balance on its own again.', f30Synced:(a,b)=>'Balance fixed to the bank’s schedule: '+a+' → '+b, f30SyncSame:'The balance matches the bank’s schedule ✓' }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M30S[k]);
 /* <</v30 str>> */
 /* <<v29 str>> */
@@ -16286,7 +16287,7 @@ function f30NeedAsk(loan){ if(!loan||loan.example) return null; const a=analyze(
   return {a,prev,pd}; }
 /* «Да, внесли» и «Отметить внесённым» — человек сам подтвердил платёж */
 const f30Mark0=markPaid;
-markPaid=function(loan){ const x=f30Mark0.apply(this,arguments); try{ if(loan&&loan.pt!=null) loan.ptOk=loan.pt; }catch(e){} return x; };
+markPaid=function(loan){ const x=f30Mark0.apply(this,arguments); try{ if(loan&&loan.pt!=null){ loan.ptOk=loan.pt; const d=f30Sync(loan); if(d) loan._f30adj={per:loan.pt,d,t:Date.now()}; } }catch(e){} return x; };
 function f30Guard(loan){ const g=f30NeedAsk(loan); if(!g) return; const save=$('#p-save'); if(!save||$('#f30-q')) return; const row=$('#p-part')||save.closest('.sheet-row'); if(!row) return;
   row.insertAdjacentHTML(row.id==='p-part'?'afterend':'beforebegin',`<div class="f30-q" id="f30-q" role="radiogroup" aria-labelledby="f30-qh"><b id="f30-qh">${L.f30Q}</b>
     <label class="f30-o"><input type="radio" name="f30w" value="prev"><span><b>${L.f30Prev(fmtDate(g.pd))}</b><small>${L.f30PrevD}</small></span></label>
@@ -16304,15 +16305,34 @@ async function f30SavePrev(loan,g){ const inp=$('#p-amt'), amt=Math.round(+(inp&
   const hb=sheet.querySelector('#p-how [data-how].on'); if(hb){ rec.how=hb.dataset.how; lsSet('m7how_v1',rec.how); }
   const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
   const rf0=$('#p-rc'), f=rf0&&rf0.files&&rf0.files[0]; if(f){ try{ const d=await imgToJpeg(f); await rcPut(rec.id,d); rec.rc=true; }catch(e){} }
-  state.payments.push(rec); persist(); closeSheet(); render(); toast(L.f30PrevDone(fmtDate(g.pd))); }
+  state.payments.push(rec); try{ f30Sync(loan); }catch(e){} persist(); closeSheet(); render(); toast(L.f30PrevDone(fmtDate(g.pd))); }
 const f30Pay0=payForm;
 payForm=function(loan){ const x=f30Pay0.apply(this,arguments); try{ f30Guard(loan); }catch(e){ console.error(e); } return x; };
-/* проценты одного срока считаются один раз: часть, внесённая раньше (или переплата), уже покрыла их долю */
+/* проценты как в банке: по дням между сроками (ставка / 365 × дни) или из графика; часть, внесённая раньше (или переплата), уже покрыла свою долю */
+function f30IntFull(loan,per){ const se=schedAt(loan,per); if(se&&se.i!=null) return +se.i||0; if(!(+loan.rate>0)||per==null) return null;
+  const d1=f30DueOf(loan,per), d0=f30DueOf(loan,per-1), days=Math.max(1,Math.min(62,Math.round((d1-d0)/864e5)));
+  return analyze(loan).remaining*(+loan.rate)/100*days/365; }
 const f30Int0=interestFor;
-interestFor=function(loan,amount,per,extra){ const v=f30Int0.apply(this,arguments); if(extra||per==null||!loan) return v;
+interestFor=function(loan,amount,per,extra){ if(extra||per==null||!loan) return f30Int0.apply(this,arguments);
+  const full=f30IntFull(loan,per); if(full==null) return f30Int0.apply(this,arguments);
   const used=state.payments.filter(p=>p.loanId===loan.id&&p.per===per&&p.part).reduce((s,p)=>s+(+p.interest||0),0)+(loan.part&&loan.part.per===per?+loan.part.cri||0:0);
-  if(!(used>0)) return v; const se=schedAt(loan,per); const full=se&&se.i!=null?(+se.i||0):(+loan.rate>0?analyze(loan).remaining*(+loan.rate)/1200:0);
-  return Math.max(0,Math.min(+amount||0,Math.round(full-used))); };
+  return Math.max(0,Math.min(+amount||0,Math.round(full-Math.max(0,used)))); };
+
+/* автоматическая правка: если есть график банка с остатками, после каждого платежа остаток берётся из графика (до копейки).
+   Не сверяет после досрочного платежа — банк тогда пересчитывает график. */
+function f30SyncTarget(loan){ const s=schedOf(loan); if(!s||!loan||loan.pt==null||loan.example) return null;
+  const since=loan.schedAt||''; if(state.payments.some(p=>p.loanId===loan.id&&p.extra&&String(p.date)>=since)) return null;
+  const pt=loan.pt; let k=-1; s.forEach((e,j)=>{ if(mIdx(parseYmd(e.d))<=pt) k=j; }); const b=f30RemAfter(loan,k); if(b==null) return null;
+  let pp=0; if(loan.part&&loan.part.per===pt+1){ pp=state.payments.filter(p=>p.loanId===loan.id&&p.part&&p.per===pt+1).reduce((x,p)=>x+payPrincipal(p),0)+(loan.part.cr?Math.max(0,(+loan.part.cr||0)-(+loan.part.cri||0)):0); }
+  return {rem:f30R2(Math.max(0,b-pp)),k}; }
+function f30Sync(loan){ const t=f30SyncTarget(loan); if(!t) return 0; const cur=f30R2(Math.max(0,(+loan.total||0)-(+loan.paid||0))), d=f30R2(cur-t.rem); if(Math.abs(d)<0.01) return 0;
+  const tot=+loan.total||0; if(t.rem<=tot) loan.paid=f30R2(tot-t.rem); else loan.total=f30R2((+loan.paid||0)+t.rem); return d; }
+function f30AutoOn(loan){ return !!f30SyncTarget(loan); }
+/* запись платежа получает основной долг и проценты из графика (поправка переносится в запись при сохранении) */
+const f30Persist0=persist;
+persist=function(){ try{ const now=Date.now(); for(const l of state.loans){ const j=l._f30adj; if(!j) continue; const last=state.payments[state.payments.length-1];
+      if(last&&last.loanId===l.id&&last.per===j.per&&!last.part&&last.f30adj==null){ last.principal=f30R2(Math.max(0,payPrincipal(last)+j.d)); last.interest=f30R2(Math.max(0,(+last.interest||0)-j.d)); last.f30adj=j.d; delete l._f30adj; }
+      else if(now-j.t>5000) delete l._f30adj; } }catch(e){} return f30Persist0.apply(this,arguments); };
 
 /* быстрое добавление кредита: «Платёж … уже внесли?» — без ответа по умолчанию (раньше молча стояло «Да», и пропущенный платёж считался внесённым) */
 function f30AlUI(){ const pq=$('#al-pq'); if(!pq||pq.dataset.f30) return; pq.dataset.f30='1'; pq.dataset.v='';
@@ -16401,8 +16421,16 @@ function f30SchedUI(loan){ const ta=$('#sc-in'); if(!ta||$('#f30-ph')) return; c
   if(sc){ const rws=sheet.querySelectorAll('.sc-list .sc-row'); sc.forEach((e,k)=>{ if(e.d2&&rws[k]&&f30Ymd(e.d2)){ const d=rws[k].querySelector('.sc-d'); if(d) d.insertAdjacentHTML('beforeend',`<small class="f30-d2">${esc(L.f30D2(fmtShort(parseYmd(e.d2))))}</small>`); } }); }
   if(sc&&!a.done){ const list=sheet.querySelector('.sc-list'); if(list) list.insertAdjacentHTML('afterend',`<button type="button" class="btn btn-ghost btn-full f30-mark" data-recon="${loan.id}">🏦 ${L.f30Mark}</button>`); }
   $('#f30-cam').onclick=()=>p29Pick(false,pg=>f30ReadSched(loan,pg)); $('#f30-gal').onclick=()=>p29Pick(true,pg=>f30ReadSched(loan,pg));
+  if(sc&&!a.done){ const on=f30AutoOn(loan), ex=!on&&state.payments.some(p=>p.loanId===loan.id&&p.extra&&String(p.date)>=(loan.schedAt||''));
+    const list=sheet.querySelector('.sc-list'); if(list&&(on||ex)) list.insertAdjacentHTML('afterend',`<p class="f30-auto ${on?'on':'off'}">${on?L.f30Auto:L.f30AutoOff}</p>`); }
   const sv=$('#sc-save'); if(sv){ const o=sv.onclick; sv.onclick=function(ev){ const n0=JSON.stringify(loan.sched||null); const x=o&&o.call(this,ev);
-      if(JSON.stringify(loan.sched||null)!==n0&&schedOf(loan)&&!analyze(loan).done){ const g=f30Ahead(loan); setTimeout(()=>reconSheet(loan,Object.assign({after:1},g?f30FixPre(loan,g):{})),60); } return x; }; } }
+      if(JSON.stringify(loan.sched||null)!==n0&&schedOf(loan)){ loan.schedAt=ymd(new Date()); persist();
+        if(!analyze(loan).done){ const g=f30Ahead(loan);
+          if(g||loan.pt==null) setTimeout(()=>reconSheet(loan,Object.assign({after:1},g?f30FixPre(loan,g):{})),60);
+          else { const before=analyze(loan).remaining, d=f30Sync(loan);
+            if(d){ persist(); const snap=prevSnap; render(); schedSheet(loan); f30Bar(L.f30Synced(money(before),money(analyze(loan).remaining)),snap); const tt=$('#toast'); if(tt) tt.classList.remove('show'); }
+            else { schedSheet(loan); if(f30AutoOn(loan)) toast(L.f30SyncSame); } } } }
+      return x; }; } }
 const f30Sched0=schedSheet;
 schedSheet=function(loan){ const x=f30Sched0.apply(this,arguments); try{ f30SchedUI(loan); }catch(e){ console.error(e); } return x; };
 
