@@ -16540,6 +16540,7 @@ function f31Order(){ let ids=[]; try{ ids=[...document.querySelectorAll('#cards 
   const act=state.loans.filter(l=>!l.example&&!analyze(l).done).map(l=>l.id); return ids.filter(id=>act.includes(id)).concat(act.filter(id=>!ids.includes(id))); }
 /* вопрос про кредит: слова про кредит, или название банка из её кредитов, или «оплатил/внёс … банк» */
 function f31LoanQ(q){ q=String(q||''); if(F31_RE.test(q)) return true; const lq=q.toLowerCase();
+  if(/провер|сравн|сверь|тафтиш|санҷ|муқоиса|\bcheck|compare/i.test(q)&&/вс[её]|ҳама|\ball\b|долг|банк|бонк|bank|платеж|платёж|пардохт|цифр/i.test(q)) return true;
   if(state.loans.some(l=>!l.example&&String(l.name||'').toLowerCase().split(/[^a-zа-яёӣӯқғҳҷ0-9]+/i).some(w=>w.length>=4&&lq.includes(w)))) return true;
   return /(о|за)плат|внес|внёс|пардохт|супорид|\bpaid\b/i.test(q)&&/банк|бонк|bank|первы|втор|трет|аввал|дуюм/i.test(q); }
 function f31Full(){ const ord=f31Order(); return state.loans.filter(l=>!l.example).map(l=>{ const a=analyze(l), pt=curPt(l), s=schedOf(l);
