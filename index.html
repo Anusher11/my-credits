@@ -6862,7 +6862,7 @@ for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
 const M32S={
 ru:{ hbNote:'Рынок дня собирает Сифра по свежим данным три раза в день — утром, днём и вечером, общий для всех. Это подсказки, а не обещания — решение за вами.',
   hbLoading:'Сифра собирает рынок дня: новости, рынки и приложения мира, товары, 30 идей, советы. Части приходят по очереди за 1–3 минуты — пока можно посчитать по обычным цифрам.',
-  f32Upd:(d,t)=>'обновляется… готово '+d+' из '+t, f32NewsT:'Новости дня', f32WorldT:'Мир: исследования, приложения, площадки',
+  f32Upd:(d,t)=>'обновляется… готово '+d+' из '+t, f32NewsT:'Новости: Таджикистан и регион', f32WorldT:'Мир: США, Европа, Азия',
   f32NArea:{banks:'Банки',finance:'Финансы',markets:'Рынки',trade:'Торговля',business:'Бизнес',startups:'Стартапы',apps:'Приложения',tech:'Технологии',law:'Законы'},
   f32WArea:{research:'Исследование',university:'Университет',market:'Рынок',app:'Приложение',platform:'Площадка',review:'Отзывы',startup:'Стартап',retail:'Розница'},
   f32Take:'Что взять себе:', f32More:n=>'Ещё '+n, f32FxSrc:s=>'курс '+s,
@@ -6888,7 +6888,7 @@ ru:{ hbNote:'Рынок дня собирает Сифра по свежим д�
   f32BioSet:'Вход по отпечатку включён', f32BioErr:'Не получилось включить — попробуйте ещё раз.', f32BioOffd:'Вход по отпечатку выключен' },
 tg:{ hbNote:'Бозори рӯзро Сифра аз маълумоти тоза се бор дар рӯз ҷамъ мекунад — субҳ, рӯз ва бегоҳ, барои ҳама якхела. Ин маслиҳат аст, на ваъда — қарор аз шумост.',
   hbLoading:'Сифра бозори рӯзро ҷамъ мекунад: хабарҳо, бозорҳо ва барномаҳои ҷаҳон, мол, 30 ғоя, маслиҳатҳо. Қисмҳо дар 1–3 дақиқа пай дар пай меоянд — ҳоло бо рақамҳои муқаррарӣ ҳисоб кардан мумкин.',
-  f32Upd:(d,t)=>'нав мешавад… '+d+' аз '+t+' тайёр', f32NewsT:'Хабарҳои рӯз', f32WorldT:'Ҷаҳон: тадқиқот, барномаҳо, майдончаҳо',
+  f32Upd:(d,t)=>'нав мешавад… '+d+' аз '+t+' тайёр', f32NewsT:'Хабарҳо: Тоҷикистон ва минтақа', f32WorldT:'Ҷаҳон: ИМА, Аврупо, Осиё',
   f32NArea:{banks:'Бонкҳо',finance:'Молия',markets:'Бозорҳо',trade:'Савдо',business:'Тиҷорат',startups:'Стартапҳо',apps:'Барномаҳо',tech:'Технология',law:'Қонунҳо'},
   f32WArea:{research:'Тадқиқот',university:'Донишгоҳ',market:'Бозор',app:'Барнома',platform:'Майдонча',review:'Шарҳҳо',startup:'Стартап',retail:'Чакана'},
   f32Take:'Чӣ гирифтан мумкин:', f32More:n=>'Боз '+n, f32FxSrc:s=>'қурби '+s,
@@ -6914,7 +6914,7 @@ tg:{ hbNote:'Бозори рӯзро Сифра аз маълумоти тоза
   f32BioSet:'Даромадан бо нақши ангушт фаъол шуд', f32BioErr:'Фаъол нашуд — боз кӯшиш кунед.', f32BioOffd:'Даромадан бо нақши ангушт хомӯш шуд' },
 en:{ hbNote:'Sifra builds the market of the day from fresh data three times a day — morning, afternoon and evening, the same for everyone. These are hints, not promises — the decision is yours.',
   hbLoading:'Sifra is gathering the market of the day: news, world markets and apps, goods, 30 ideas, tips. Parts arrive one by one over 1–3 minutes — meanwhile you can calculate with the usual numbers.',
-  f32Upd:(d,t)=>'updating… '+d+' of '+t+' ready', f32NewsT:'News of the day', f32WorldT:'World: research, apps, platforms',
+  f32Upd:(d,t)=>'updating… '+d+' of '+t+' ready', f32NewsT:'News: Tajikistan and the region', f32WorldT:'World: US, Europe, Asia',
   f32NArea:{banks:'Banks',finance:'Finance',markets:'Markets',trade:'Trade',business:'Business',startups:'Startups',apps:'Apps',tech:'Tech',law:'Law'},
   f32WArea:{research:'Research',university:'University',market:'Market',app:'App',platform:'Platform',review:'Reviews',startup:'Startup',retail:'Retail'},
   f32Take:'What to take:', f32More:n=>n+' more', f32FxSrc:s=>s+' rate',
@@ -16846,7 +16846,7 @@ function f32WorldHTML(t){ const a=(t.world||[]).filter(x=>x&&x.title&&x.text); i
   const one=x=>`<div class="f32-nw"><div class="lv-tags"><i class="f32-wa ${esc(x.area||'')}">${esc(L.f32WArea[x.area]||L.f32WArea.market)}</i>${x.where?`<i>${esc(hbTx(x.where,70))}</i>`:''}${f32Dt(x.date)?`<i>${esc(f32Dt(x.date))}</i>`:''}</div><b>${esc(hbTx(x.title,120))}</b><p>${esc(hbTx(x.text,300))}</p>${x.take?`<p class="m">${ico('next',14)} ${L.f32Take} ${esc(hbTx(x.take,200))}</p>`:''}${f32Src(x.src)}</div>`;
   return `<section class="id-sec f32-world" id="hb-s-world"><h4>${ico('sparkle',18)} ${L.f32WorldT}</h4>${f32List(a,one)}</section>`; }
 function f32MissHTML(t){ const m=[...new Set((t.miss||[]).map(p=>L.f32PartN[p]).filter(Boolean))]; return m.length?`<p class="bp-hint">${ico('info',14)} ${esc(L.f32Miss(m.join(', ')))}</p>`:''; }
-{ const _t=hbTodayHTML; hbTodayHTML=function(){ const h=_t.apply(this,arguments), t=hbToday(); if(!t) return h; const add=f32MissHTML(t)+f32NewsHTML(t)+f32WorldHTML(t); if(!add) return h;
+{ const _t=hbTodayHTML; hbTodayHTML=function(){ const h=_t.apply(this,arguments), t=hbToday(); if(!t) return h; const add=f32MissHTML(t)+f32WorldHTML(t)+f32NewsHTML(t); if(!add) return h;
     const i=h.indexOf('<section class="id-sec">'); return i<0?add+h:h.slice(0,i)+add+h.slice(i); }; }
 
 /* ---- страница плана и «Деньги и бизнес»: ничего не уезжает вбок (длинные цены и ссылки переносятся, см. m32.css) ---- */
