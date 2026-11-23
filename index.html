@@ -16535,8 +16535,15 @@ function f31Rows(arr){ if(!Array.isArray(arr)||arr.length<2) return null; const 
     lines.push(p!=null&&i!=null?[dd,a,p,i].concat(b!=null?[b]:[]).join('; '):dd+'; '+a); }
   const rows=parseSchedule(lines.join('\n')); return rows.length>=2?rows:null; }
 /* полные данные о кредитах для Сифры (только в режиме кредитов) */
-function f31Full(){ return state.loans.filter(l=>!l.example).map(l=>{ const a=analyze(l), pt=curPt(l), s=schedOf(l);
-  const o={id:l.id,name:l.name,principal:f30R2(+l.total||0),paid:f30R2(+l.paid||0),left:f30R2(a.remaining),rate:+l.rate||0,term:+l.term||null,monthly:+l.monthly||null,due_day:l.dueDay||null,pen_pct_day:+l.pen||0,pen_base:l.penBase||null};
+/* какой кредит «первый», «второй» — как карточки на экране «Кредиты» */
+function f31Order(){ let ids=[]; try{ ids=[...document.querySelectorAll('#cards .card[data-id]')].map(c=>c.dataset.id); }catch(e){}
+  const act=state.loans.filter(l=>!l.example&&!analyze(l).done).map(l=>l.id); return ids.filter(id=>act.includes(id)).concat(act.filter(id=>!ids.includes(id))); }
+/* вопрос про кредит: слова про кредит, или название банка из её кредитов, или «оплатил/внёс … банк» */
+function f31LoanQ(q){ q=String(q||''); if(F31_RE.test(q)) return true; const lq=q.toLowerCase();
+  if(state.loans.some(l=>!l.example&&String(l.name||'').toLowerCase().split(/[^a-zа-яёӣӯқғҳҷ0-9]+/i).some(w=>w.length>=4&&lq.includes(w)))) return true;
+  return /(о|за)плат|внес|внёс|пардохт|супорид|\bpaid\b/i.test(q)&&/банк|бонк|bank|первы|втор|трет|аввал|дуюм/i.test(q); }
+function f31Full(){ const ord=f31Order(); return state.loans.filter(l=>!l.example).map(l=>{ const a=analyze(l), pt=curPt(l), s=schedOf(l);
+  const o={id:l.id,n:ord.indexOf(l.id)>=0?ord.indexOf(l.id)+1:undefined,name:l.name,principal:f30R2(+l.total||0),paid:f30R2(+l.paid||0),left:f30R2(a.remaining),rate:+l.rate||0,term:+l.term||null,monthly:+l.monthly||null,due_day:l.dueDay||null,pen_pct_day:+l.pen||0,pen_base:l.penBase||null};
   if(l.note) o.note=String(l.note).slice(0,80); if(a.done) o.done=true; if(pt!=null) o.paid_through=f31Ym(pt);
   if(!a.done){ if(a.check) o.check_needed=ymd(a.due); else { o.next_due=ymd(a.due); o.next_amount=f30R2(a.amt||a.amtFull||0); if(a.overdue) o.overdue_days=-a.days; } }
   if(l.part) o.credit={for:ymd(f30DueOf(l,l.part.per)),amount:f30R2(+l.part.a||0)};
@@ -16545,7 +16552,7 @@ function f31Full(){ return state.loans.filter(l=>!l.example).map(l=>{ const a=an
   return o; }); }
 const f31Ask0=sfAsk;
 sfAsk=function(q,voice){ const img=sfImg, more=img&&Array.isArray(img.more)?img.more.slice(0,3):[];
-  f31Cur={loan:!sfT&&!voice&&(F31_RE.test(String(q||''))||more.length>0),more};
+  f31Cur={loan:!sfT&&!voice&&(f31LoanQ(q)||more.length>0),more};
   try{ return f31Ask0.apply(this,arguments); } finally{ f31Cur=null; } };
 const f31Ctx0=sfCtx;
 sfCtx=function(){ const o=f31Ctx0.apply(this,arguments); try{ const v=sfCaps&&+sfCaps.v||0;
