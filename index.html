@@ -3063,6 +3063,103 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .lock .lk-bio{min-height:52px; padding:0 22px; font-size:1rem; margin-bottom:6px;}
 .f32-bio{margin-top:10px;}
 /* <</v32 css>> */
+/* <<v33 css>> */
+/* v33: «Поставщики», «Документы», «Где закупать» — страницы на весь экран */
+html.m33-on .overlay{z-index:48;}
+#bpg-m .m33-lead{margin:0 0 14px; color:var(--muted);}
+#bpg-m :is(.m33-vc,.m33-dc){font:inherit; color:inherit; cursor:pointer;}
+#bpg-m .m33-vc .c-main,#bpg-m .m33-dc .c-main,#bpg-m .m33-wc .c-main{min-width:0;}
+#bpg-m .m33-vc .c-name,#bpg-m .m33-wc .c-name,#bpg-m .m33-dc .c-name{overflow-wrap:anywhere;}
+.m33-q{margin:0 0 10px;}
+.m33-ch{margin:0 0 12px;}
+.m33-scroll{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; padding-bottom:2px;} .m33-scroll::-webkit-scrollbar{display:none;} .m33-scroll .chip{flex:none;}
+.m33-seg{margin:0 0 14px;} .m33-seg button{flex:1;}
+.m33-bs{display:flex; flex-wrap:wrap; gap:5px; margin-top:7px;}
+.m33-bs i,.m33-cats i{font-style:normal; font-size:.74rem; font-weight:800; line-height:1.2; padding:4px 8px; border-radius:999px; background:var(--surface-2); color:var(--ink); display:inline-flex; align-items:center; gap:4px;}
+.m33-bs i.ok{background:var(--brand-weak); color:var(--brand-ink);}
+.m33-bs i.warn{background:var(--warn-weak); color:var(--ink);}
+.m33-bs i.bad{background:var(--danger-weak); color:var(--danger);}
+.m33-al{display:flex; align-items:center; gap:10px; width:100%; text-align:left; font:inherit; font-weight:700; font-size:.9rem; color:var(--ink); background:var(--surface-2); border:1px solid var(--line); border-radius:14px; padding:11px 13px; margin:0 0 10px; cursor:pointer;}
+.m33-al.warn{background:var(--warn-weak); border-color:transparent;} .m33-al.bad{background:var(--danger-weak); border-color:transparent; color:var(--danger);}
+.m33-al span{flex:1; min-width:0;} .m33-al svg{flex:none;}
+.m33-mini{border:none; background:none; color:var(--brand-ink); font:inherit; font-weight:800; font-size:.84rem; text-decoration:underline; cursor:pointer; padding:4px; flex:none;}
+.m33-add{margin:14px 0 4px;}
+.m33-sec{margin:22px 0 0;}
+.m33-sec>h3{display:flex; align-items:center; gap:8px; font-size:1.02rem; margin:0 0 10px;}
+.m33-h4{font-size:.86rem; font-weight:800; color:var(--muted); margin:14px 2px 8px;}
+.m33-h4 small{font-weight:700;}
+.m33-tip{color:var(--muted); font-size:.9rem; margin:0 0 10px; line-height:1.45;}
+.m33-src{display:flex; gap:6px; align-items:flex-start; color:var(--muted); font-size:.8rem; line-height:1.4; margin:20px 2px 0;} .m33-src svg{flex:none; margin-top:2px;}
+.m33-src.priv{color:var(--ink); background:var(--warn-weak); border-radius:12px; padding:10px 12px;}
+.m33-row{display:flex; flex-direction:column; gap:2px; width:100%; text-align:left; font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:11px 13px; margin:0 0 8px; cursor:pointer;}
+.m33-row small{color:var(--muted); font-size:.82rem; overflow-wrap:anywhere;} .m33-row em{font-style:normal; font-weight:800;} .m33-row em.up{color:var(--danger);} .m33-row em.dn{color:var(--brand-ink);}
+.m33-acts{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 4px;} .m33-acts .btn{flex:1 1 auto; min-width:0;}
+.m33-acts.col{flex-direction:column;} .m33-acts.col .btn{width:100%;}
+.m33-vh,.m33-wh{display:flex; align-items:center; gap:13px; margin:0 0 12px;} .m33-vh h2,.m33-wh h2{margin:0; font-size:1.3rem; overflow-wrap:anywhere;}
+.m33-vimg{flex:none; width:64px; height:64px; border-radius:16px; overflow:hidden; border:1px solid var(--line); padding:0; background:var(--surface-2); cursor:zoom-in;} .m33-vimg img{width:100%; height:100%; object-fit:cover; display:block;}
+.m33-facts{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0 0 12px;}
+.m33-facts div{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:10px 12px; min-width:0;}
+.m33-facts small{display:block; color:var(--muted); font-size:.76rem; font-weight:700;} .m33-facts b{font-size:1.08rem; overflow-wrap:anywhere;}
+.m33-facts div.warn{background:var(--warn-weak); border-color:transparent;}
+.m33-li{display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:10px 10px 10px 12px; margin:0 0 8px;}
+.m33-li>span{flex:1; min-width:0; display:flex; flex-direction:column; gap:2px;} .m33-li b{overflow-wrap:anywhere;} .m33-li small{color:var(--muted); font-size:.82rem;}
+.m33-li.late{border-color:var(--danger);} .m33-li.late small{color:var(--danger); font-weight:700;}
+.m33-li.done b{text-decoration:line-through; color:var(--muted);}
+.m33-tick{flex:none; width:30px; height:30px; border-radius:9px; border:2px solid var(--line); background:none; display:grid; place-items:center; color:transparent; cursor:pointer; padding:0;}
+.m33-li.done .m33-tick{background:var(--brand); border-color:var(--brand); color:#fff;}
+.m33-x{flex:none; border:none; background:none; color:var(--muted); width:34px; height:34px; display:grid; place-items:center; cursor:pointer; border-radius:10px;}
+.m33-ic{flex:none; width:40px; height:40px; border-radius:11px; display:grid; place-items:center; background:var(--warn-weak); color:var(--ink);}
+.m33-th{flex:none; width:40px; height:40px; border-radius:11px; overflow:hidden; padding:0; border:1px solid var(--line); background:var(--surface-2); cursor:zoom-in;} .m33-th img{width:100%; height:100%; object-fit:cover; display:block;}
+.m33-rm{font-size:.86rem; font-weight:700; border-radius:12px; padding:9px 12px; margin:-4px 0 10px; overflow-wrap:anywhere;}
+.m33-rm.ok{background:var(--brand-weak); color:var(--brand-ink);} .m33-rm.warn{background:var(--warn-weak); color:var(--ink);} .m33-rm.bad{background:var(--danger-weak); color:var(--danger);}
+.m33-ai{display:flex; align-items:center; justify-content:center; gap:8px; margin:8px 0 4px;} .m33-ai .m33-sfa{width:24px; height:24px;}
+.m33-aiw{background:var(--surface-2); border-radius:14px; padding:10px 12px; margin:10px 0; display:flex; flex-direction:column; gap:7px;}
+.m33-aiw small{display:block; color:var(--muted); font-size:.74rem; font-weight:700;} .m33-aiw span{overflow-wrap:anywhere;}
+.m33-aiw ul{margin:4px 0 0; padding:0; list-style:none; display:flex; flex-direction:column; gap:4px;} .m33-aiw li{display:flex; gap:6px; align-items:flex-start; font-size:.86rem; font-weight:700;}
+.m33-chk{display:flex; flex-direction:column; gap:6px;}
+.m33-chk button{display:flex; align-items:flex-start; gap:10px; text-align:left; font:inherit; font-size:.88rem; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:13px; padding:10px 12px; cursor:pointer;}
+.m33-chk button i{flex:none; width:22px; height:22px; border-radius:7px; border:2px solid var(--line); display:grid; place-items:center; color:transparent; margin-top:1px;}
+.m33-chk button.on i{background:var(--brand); border-color:var(--brand); color:#fff;}
+.m33-chk button span{min-width:0; overflow-wrap:anywhere; line-height:1.4;}
+.m33-rst button{flex:1; font-size:.84rem;} .m33-rst button.on.ok{background:var(--brand); color:#fff;} .m33-rst button.on.q{background:var(--warn); color:#1a1300;} .m33-rst button.on.stop{background:var(--danger); color:#fff;}
+.m33-del{margin:26px auto 0;}
+.m33-busy{height:6px; border-radius:6px; background:linear-gradient(90deg,var(--track),var(--brand),var(--track)); background-size:200% 100%; animation:m33b 1.2s linear infinite; margin:6px 0 14px;}
+@keyframes m33b{to{background-position:-200% 0}}
+@media (prefers-reduced-motion:reduce){ .m33-busy{animation:none;} }
+.m33-selbar{position:sticky; top:0; z-index:2; display:flex; gap:8px; background:var(--bg); padding:6px 0 10px; margin:0 0 6px;} .m33-selbar .btn{flex:1;}
+.m33-dc{position:relative;} .m33-dc.sel{border-color:var(--brand); box-shadow:0 0 0 2px var(--brand) inset;}
+.m33-dcb{flex:none; width:24px; height:24px; border-radius:7px; border:2px solid var(--line); display:grid; place-items:center; color:#fff;} .m33-dc.sel .m33-dcb{background:var(--brand); border-color:var(--brand);}
+.m33-kinds{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 0 12px;} .m33-kinds::-webkit-scrollbar{display:none;} .m33-kinds .chip{flex:none; display:inline-flex; align-items:center; gap:5px;}
+.m33-pages{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 6px;} .m33-pages:empty{display:none;}
+.m33-pg{position:relative; width:72px; height:92px; border-radius:10px; overflow:hidden; border:1px solid var(--line); background:var(--surface-2);} .m33-pg img{width:100%; height:100%; object-fit:cover; display:block;}
+.m33-pg button{position:absolute; top:3px; right:3px; width:26px; height:26px; border-radius:50%; border:none; background:rgba(0,0,0,.6); color:#fff; display:grid; place-items:center; padding:0; cursor:pointer;}
+.m33-gal{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:6px 0 12px;}
+.m33-gal button{display:flex; flex-direction:column; gap:4px; padding:0; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:var(--surface-2); cursor:zoom-in; font:inherit; color:var(--ink);}
+.m33-gal img{width:100%; aspect-ratio:3/4; object-fit:cover; display:block;} .m33-gal small{font-size:.76rem; padding:0 8px 7px; text-align:left;}
+.m33-wc{align-items:flex-start; position:relative;} .m33-fl{background:var(--surface-2); font-size:1.5rem;}
+.m33-mine{flex:none; font-size:.72rem; font-weight:800; padding:3px 8px; border-radius:999px; background:var(--brand-weak); color:var(--brand-ink);}
+.m33-cats{display:flex; flex-wrap:wrap; gap:5px; margin-top:7px;} .m33-cats i.on{background:var(--brand-weak); color:var(--brand-ink);}
+.m33-cmpb{align-self:center; flex:none; font:inherit; font-size:.78rem; font-weight:800; color:var(--brand-ink); background:none; border:1.5px solid var(--line); border-radius:999px; padding:7px 10px; cursor:pointer; display:inline-flex; align-items:center; gap:4px; min-height:34px;}
+.m33-cmpb.on{background:var(--brand); border-color:var(--brand); color:#fff;}
+.m33-cmpt table{width:100%; border-collapse:separate; border-spacing:0; background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden; font-size:.88rem; table-layout:fixed;}
+.m33-cmpt th,.m33-cmpt td{padding:9px 10px; text-align:left; border-bottom:1px solid var(--line); overflow-wrap:anywhere; vertical-align:top;}
+.m33-cmpt tbody tr:last-child th,.m33-cmpt tbody tr:last-child td{border-bottom:none;}
+.m33-cmpt tbody th{color:var(--muted); font-weight:700; font-size:.8rem; width:34%;} .m33-cmpt td{font-weight:800;}
+.m33-wfl{font-size:2.4rem; line-height:1; flex:none;}
+.m33-wn{margin:0 0 10px; line-height:1.5;}
+.m33-pl{display:flex; flex-direction:column; gap:3px; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:10px 12px; margin:0 0 8px;}
+.m33-pl span{font-size:.88rem; line-height:1.45; overflow-wrap:anywhere;} .m33-pl small{color:var(--muted);}
+.m33-hbw{display:flex; align-items:center; gap:10px; width:100%; text-align:left; font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px 14px; margin:12px 0 4px; cursor:pointer; box-shadow:var(--shadow);}
+.m33-hbw>span{flex:none; width:36px; height:36px; border-radius:11px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);} .m33-hbw b{flex:1; min-width:0; font-size:.95rem;}
+.m33-wl{display:inline-flex; align-items:center; gap:6px; margin-top:14px;}
+.m33-sfa{display:inline-grid; width:24px; height:24px; flex:none; vertical-align:middle;} .m33-sfa svg{width:100%!important; height:100%!important; display:block;}
+.btn .m33-sfa{margin-right:6px;} h3 .m33-sfa{width:26px; height:26px;}
+.m33-st{color:var(--gold); font-weight:800; flex:none; display:inline-flex; align-items:center; gap:2px;}
+.m33-st .mi{width:14px; height:14px; fill:currentColor;}
+.m33-vc .c-sub{gap:8px;}
+.m33-ava{background:var(--surface-2); color:var(--ink);}
+.m33-seg button{font-size:.84rem; padding-left:4px; padding-right:4px; white-space:nowrap; min-width:0;}
+/* <</v33 css>> */
 
 
 </style>
@@ -6857,6 +6954,259 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v33 str>> */
+const M33S={
+ru:{
+  m33VT:'Поставщики', m33VSub:(n,x)=>n?n+' '+(x?'· '+x:''):'Цены, брак, обещания, проверка компании',
+  m33DT:'Документы', m33DSub:(n,x)=>n?n+(x?' · '+x:''):'Договоры, чеки, аренда, гарантии',
+  m33WT:'Где закупать', m33WSub:'Рынки мира и ваши поездки', m33WShort:'Где закупать', m33WHub:'Где закупать: рынки мира и ваши поездки',
+  m33VLead:'Все, у кого вы берёте товар: цены, брак, обещания, долги и проверка компании.',
+  m33VSearch:'Найти: имя, рынок, павильон, WeChat', m33VAll:'Все',
+  m33VSort:{best:'Лучшие',last:'Недавние',debt:'Долг',az:'А–Я'},
+  m33VAdd:'Добавить поставщика',
+  m33VEmpty:'Пока нет поставщиков. Добавьте того, у кого берёте товар, — или они появятся сами во время поездки.',
+  m33VLast:d=>'брали '+d, m33VNever:'ещё не брали', m33VBought:s=>'всего '+s,
+  m33BReg:'проверен', m33BRegQ:'есть вопросы', m33BRegStop:'стоп', m33BDef:p=>'брак '+p+'%', m33BProm:n=>'обещаний: '+n, m33BPromLate:'обещание просрочено', m33BDebt:s=>'долг '+s,
+  m33APromLate:n=>'Просрочено обещаний: '+n, m33ADebt:(n,s)=>'Долги поставщикам: '+n+' на '+s, m33ANoReg:n=>'Китайских поставщиков без проверки: '+n,
+  m33CmpT:'Одно и то же — у разных поставщиков', m33CmpRow:(c,p,o,d)=>'дешевле у '+c+': '+p+' · у '+o+' на '+d+'% дороже',
+  m33VAllInfo:'Всё о поставщике',
+  m33Facts:'По фактам', m33FBuys:'Закупок', m33FSum:'Куплено на', m33FDef:'Брак', m33FShort:'Недовоз', m33FLate:'Опоздания', m33FMk:'Наценка', m33FSold:'Продано', m33FNone:'Фактов пока нет — они появятся после закупок и приёмки.',
+  m33Prices:'Цены у этого поставщика', m33PricesNone:'Цен пока нет — они появятся из поездок и товара.',
+  m33Def:'Брак', m33DefNone:'Брака не отмечали.', m33DefAdd:'Отметить брак', m33DefLead:'Сколько пришло с браком и чем кончилось. Мира посчитает долю брака у этого поставщика.',
+  m33DefBad:'С браком, шт', m33DefOf:'Всего в партии, шт', m33DefWhat:'Что не так', m33DefWhatPh:'например: разошёлся шов, не тот цвет',
+  m33DefAct:'Чем кончилось', m33DefActs:{ret:'вернул деньги',swap:'заменил',disc:'скидка на следующую партию',none:'ничего'},
+  m33DefLoss:'Потеря, сомони', m33DefPh:'Фото брака', m33DefPhOk:'Фото есть', m33DefRow:(b,o,p)=>b+' из '+o+' шт · '+p+'%',
+  m33DefErr:'Впишите, сколько штук с браком', m33DefErrOf:'С браком не может быть больше, чем в партии',
+  m33Prom:'Обещания и сроки', m33PromNone:'Записывайте, что поставщик обещал: скидку, срок отправки, замену брака — Мира напомнит.',
+  m33PromAdd:'Записать обещание', m33PromT:'Что обещал', m33PromPh:'например: скидка 5% на следующую партию', m33PromDue:'К какому дню',
+  m33PromIn:n=>'через '+n+' дн.', m33PromNoDate:'без срока', m33PromDone:'Выполнил', m33PromUndo:'Вернуть',
+  m33PromLate:d=>'просрочено с '+d, m33PromTill:d=>'до '+d, m33PromDoneAt:d=>'выполнил '+d, m33PromErr:'Впишите, что обещал',
+  m33Debt:'Долг поставщику', m33DebtNone:'Долгов нет.', m33DebtAdd:'Записать долг',
+  m33Reg:'Проверка компании',
+  m33RegLead:'Китайский госреестр компаний бесплатный. Впишите код из лицензии (18 знаков) — Мира проверит, что код настоящий и где компания зарегистрирована.',
+  m33RegName:'Название по-китайски', m33RegCode:'Код компании (统一社会信用代码)',
+  m33RegCodeOk:p=>'Код правильный · зарегистрирована: '+p, m33RegCodeBad:'В коде ошибка — проверьте знаки или попросите фото лицензии',
+  m33RegCodeFmt:'Код — 18 знаков: цифры и латинские буквы', m33RegIP:'Это ИП (个体户), а не фирма или фабрика',
+  m33RegCityMis:(p,c)=>'Компания зарегистрирована: '+p+', а вы записали «'+c+'» — уточните, это та же фирма?',
+  m33RegOpen:'Открыть реестр', m33RegCopy:'Скопировать код', m33RegChk:'Что посмотреть в реестре',
+  m33RegItems:{alive:'Статус: 存续 / 在业 / 开业 — работает. 吊销 / 注销 — закрыта: не платить.',scope:'Сфера (经营范围): есть 生产 / 制造 / 加工 — производство. Только 销售 / 贸易 — перекупщик.',abn:'Нет в списке нарушителей (经营异常名录)',black:'Нет в чёрном списке (严重违法失信)',age:'Работает больше года (成立日期)'},
+  m33RegRes:'Итог проверки', m33RegSt:{ok:'всё в порядке',q:'есть вопросы',stop:'стоп — не платить'}, m33RegNone:'ещё не проверяли', m33RegAt:d=>'проверено '+d,
+  m33RegAi:'Сифра, прочитай лицензию или страницу реестра',
+  m33RegAiLead:'Сфотографируйте лицензию (营业执照) или экран реестра — Сифра выпишет название, код, дату, статус и сферу. Имена людей она не выписывает.',
+  m33RegAiBusy:'Сифра читает…', m33RegAiGot:'Сифра нашла', m33RegAiApply:'Вписать', m33RegAiErr:'Не получилось прочитать. Попробуйте фото ровнее и ближе.',
+  m33RaDate:'Дата регистрации', m33RaCap:'Капитал', m33RaSt:'Статус', m33RaKind:'Чем занимается', m33RaFlags:'Внимание',
+  m33RaKinds:{factory:'производство',trade:'торговля',mixed:'производство и торговля',unknown:'неясно'},
+  m33RaClosed:'Компания закрыта или лишена лицензии — не платить', m33RaAbn:'Компания в списке нарушителей', m33RaYoung:'Компании меньше года',
+  m33RegAiQ:'Это фото китайской лицензии компании (营业执照) или страницы реестра gsxt.gov.cn. Ответь ТОЛЬКО JSON без пояснений: {"name_cn":"название компании по-китайски","code":"18-значный код 统一社会信用代码","date":"дата регистрации YYYY-MM-DD","capital":"уставный капитал как написано","status":"статус как написано","kind":"factory | trade | mixed | unknown — по сфере 经营范围: есть 生产/制造/加工 — factory; только 销售/批发/贸易 — trade","scope":"сфера деятельности коротко по-русски, до 120 знаков","abnormal":true или false или null,"flags":["что настораживает — коротко по-русски"]}. Не выписывай имена людей (法定代表人 и других). Чего не видно — null.',
+  m33RegOtherTR:'Попросите фото налоговой таблички (vergi levhası): название и налоговый номер должны совпадать с получателем платежа.',
+  m33RegOther:'Попросите фото регистрационного документа компании и сверьте название с тем, кому платите. Деньги — только на счёт с тем же названием.',
+  m33DLead:'Все бумаги в одном месте: договоры, чеки, аренда, гарантии. Хранятся только в этом телефоне.',
+  m33DKinds:{loan:'Договор кредита',sched:'График платежей',rcpt:'Чек или квитанция',iou:'Расписка',rent:'Аренда',lic:'Свидетельство или патент',sup:'Договор с поставщиком',war:'Гарантия',id:'Паспорт, удостоверение',other:'Другое'},
+  m33DAdd:'Добавить документ', m33DSearch:'Найти документ', m33DSoon:'Скоро заканчиваются', m33DMine:'Мои документы', m33DFromLoans:'Из кредитов',
+  m33DLoanDoc:n=>'договор · '+n+' стр.', m33DLoanRc:n=>'чеки оплат · '+n, m33DRcT:'Чеки оплат',
+  m33DNone:'Пока пусто. Снимите договор аренды, свидетельство, гарантию — и всё будет под рукой.',
+  m33DTill:d=>'до '+d, m33DLeft:n=>'осталось '+n+' дн.', m33DEnded:d=>'закончился '+d, m33DPages:n=>n+' стр.', m33DNoPh:'без фото',
+  m33DFormT:'Документ', m33DTitle:'Название', m33DTitlePh:'например: Аренда места на Корвоне', m33DDate:'Дата документа',
+  m33DExp:'Действует до', m33DRem:'Напомнить за', m33DRemD:n=>n+' дн.', m33DNote:'Заметка', m33DLoan:'К какому кредиту', m33DLoanNone:'ни к какому',
+  m33DCam:'Снять страницу', m33DGal:'Из галереи', m33DPgDel:'Убрать страницу',
+  m33DPrivate:'Паспорт и удостоверения хранятся только здесь: в копию данных не попадают и Сифре не отправляются.',
+  m33DLocal:'Фото хранятся только в этом телефоне и попадают в вашу копию данных. Семье и Сифре не отправляются.',
+  m33DErrT:'Впишите название',
+  m33DShare:'Отправить', m33DShareSel:n=>'Отправить выбранные ('+n+')', m33DSel:'Выбрать несколько', m33DSelDone:'Готово',
+  m33DSaved:'Сохранено в телефон', m33DNoFiles:'В выбранных документах нет фото', m33DDelQ:'Удалить документ? Фото тоже удалятся.',
+  m33FiDoc:(t,d)=>'«'+t+'» заканчивается '+d, m33FiDocEnded:(t,d)=>'«'+t+'» закончился '+d,
+  m33FiProm:(v,t,d)=>'Обещание '+v+': '+t+' — срок '+d,
+  m33WLead:'Куда ехать за товаром: что где выгоднее, ваши прошлые поездки и свежие условия — Сифра проверит перед поездкой.',
+  m33WMine:'Где вы уже были', m33WAllT:'Все рынки', m33WCat:'Что ищете', m33WCatAll:'Всё',
+  m33WGuideN:n=>'в гиде мест: '+n, m33WTrips:n=>'поездок: '+n, m33WLastTrip:d=>'последняя: '+d,
+  m33WPc:'Штука с дорогой', m33WSold:'Продано', m33WCargo:'Карго, дней', m33WSpent:'Потрачено', m33WVend:'Поставщиков', m33WPay:'Оплата', m33WMsg:'Связь', m33WGuideL:'Мест в гиде',
+  m33WCmp:'Сравнить', m33WCmpOn:'В сравнении', m33WCmpT:'Сравнение', m33WCmpPick:'Выберите ещё один рынок для сравнения', m33WCmpAsk:'Сифра, сравни сейчас', m33WNoData:'—', m33WCmpClear:'Сбросить',
+  m33WAsk:'Сифра: проверить сейчас', m33WStart:'Начать поездку сюда', m33WGuide:'Места в гиде', m33WMk:'Рынки', m33WYourV:'Ваши поставщики здесь', m33WYours:'Ваши поездки сюда', m33WNoTrips:'Вы сюда ещё не ездили — сравните с теми, где были, и спросите Сифру о свежих условиях.',
+  m33WMyGoodsDef:'одежда',
+  m33WAskQ:(c,g)=>'Собираюсь за товаром в '+c+' из Таджикистана. Мой товар: '+g+'. Коротко, по пунктам и с источниками: нужна ли сейчас виза гражданину Таджикистана; как добраться из Душанбе и сколько примерно стоит дорога; сколько стоит карго до Душанбе за кг и сколько дней идёт; какие ярмарки и праздники ближайшие и когда рынки закрыты; на что обратить внимание в этом месяце.',
+  m33WCmpQ:(a,b,g)=>'Сравни, куда сейчас выгоднее ехать за товаром из Таджикистана: '+a+' или '+b+'. Мой товар: '+g+'. Коротко и с источниками: дорога и виза, цены и минимальные партии, карго до Душанбе (цена за кг и дни), качество и выбор, что сейчас происходит на этих рынках. В конце — что выбрать и почему.',
+  m33WSrc:'Цифры по Дордою и Кара-Суу — Всемирный банк, 2008. Остальное — ваши записи. Визы, рейсы и цены карго меняются — проверяйте с Сифрой перед поездкой.',
+  m33WN:{gz:'Главный оптовый город одежды Китая. Шахэ — дешёвый опт рано утром, Баима — качество выше, Шисаньхан — женская мода. Кантонская ярмарка — в апреле и октябре.',
+    yw:'Мелочь, аксессуары, бижутерия, игрушки, хозтовары — тысячи павильонов в одном Международном торговом городе (Футянь). Можно брать малыми партиями.',
+    ur:'Ближе всего к Таджикистану: дорога и доставка короче, но выбор меньше, а цены обычно выше, чем на востоке Китая.',
+    ist:'Лалели — опт для покупателей из СНГ, много русскоговорящих продавцов. Мертер — производители и ткани, качество выше. Османбей — женская одежда.',
+    bur:'Ткани и домашний текстиль от фабрик.',
+    tas:'Абу Сахий — большой оптовый рынок одежды и обуви (в основном из Китая и Турции). Близко, без перелёта.',
+    fer:'Местные фабрики трикотажа и одежды Ферганской долины — можно небольшими партиями.',
+    bis:'Дордой — один из крупнейших рынков Центральной Азии: товары из Китая для соседних стран. В 2008 году — 40 300 торговых мест, около 75% продаж — приезжим, в том числе из Таджикистана.',
+    osh:'Кара-Суу — рынок у границы с Узбекистаном. В 2008 году 10–15% его продаж шло таджикским торговцам.',
+    ala:'Барахолка — большой оптовый рынок Алматы, товары из Китая через Хоргос.',
+    dxb:'Дейра и Драгон-март — товары из Китая, Индии и Турции. Удобно, если летите через Дубай.',
+    msk:'Садовод и Южные ворота — большие рынки; товар часто тот же китайский и турецкий, но дороже из-за пути.'}
+},
+tg:{
+  m33VT:'Таъминкунандагон', m33VSub:(n,x)=>n?n+' '+(x?'· '+x:''):'Нарх, брак, ваъдаҳо, санҷиши ширкат',
+  m33DT:'Ҳуҷҷатҳо', m33DSub:(n,x)=>n?n+(x?' · '+x:''):'Шартномаҳо, чекҳо, иҷора, кафолатҳо',
+  m33WT:'Аз куҷо харидан', m33WSub:'Бозорҳои ҷаҳон ва сафарҳои шумо', m33WShort:'Аз куҷо харидан', m33WHub:'Аз куҷо харидан: бозорҳои ҷаҳон ва сафарҳои шумо',
+  m33VLead:'Ҳамаи онҳое, ки аз онҳо мол мегиред: нарх, брак, ваъдаҳо, қарзҳо ва санҷиши ширкат.',
+  m33VSearch:'Ҷустуҷӯ: ном, бозор, павилён, WeChat', m33VAll:'Ҳама',
+  m33VSort:{best:'Беҳтаринҳо',last:'Охиринҳо',debt:'Қарз',az:'А–Я'},
+  m33VAdd:'Илова кардани таъминкунанда',
+  m33VEmpty:'Ҳоло таъминкунанда нест. Касеро, ки аз ӯ мол мегиред, илова кунед — ё онҳо худашон дар сафар пайдо мешаванд.',
+  m33VLast:d=>'гирифтед '+d, m33VNever:'ҳанӯз нагирифтед', m33VBought:s=>'ҳамагӣ '+s,
+  m33BReg:'санҷида шуд', m33BRegQ:'савол ҳаст', m33BRegStop:'ист', m33BDef:p=>'брак '+p+'%', m33BProm:n=>'ваъдаҳо: '+n, m33BPromLate:'ваъда гузашт', m33BDebt:s=>'қарз '+s,
+  m33APromLate:n=>'Ваъдаҳои гузашта: '+n, m33ADebt:(n,s)=>'Қарз ба таъминкунандагон: '+n+' ба '+s, m33ANoReg:n=>'Таъминкунандагони чинии бесанҷиш: '+n,
+  m33CmpT:'Як мол — аз таъминкунандагони гуногун', m33CmpRow:(c,p,o,d)=>'арзонтар аз '+c+': '+p+' · аз '+o+' '+d+'% қиматтар',
+  m33VAllInfo:'Ҳама дар бораи таъминкунанда',
+  m33Facts:'Аз рӯи далелҳо', m33FBuys:'Харидҳо', m33FSum:'Харида шуд ба', m33FDef:'Брак', m33FShort:'Камомад', m33FLate:'Дерӣ', m33FMk:'Фоида', m33FSold:'Фурӯхта шуд', m33FNone:'Ҳоло далел нест — пас аз харид ва қабул пайдо мешаванд.',
+  m33Prices:'Нархҳо дар ин таъминкунанда', m33PricesNone:'Ҳоло нарх нест — аз сафарҳо ва мол пайдо мешаванд.',
+  m33Def:'Брак', m33DefNone:'Брак қайд нашудааст.', m33DefAdd:'Қайди брак', m33DefLead:'Чанд дона бо брак омад ва бо чӣ анҷом ёфт. Мира ҳиссаи бракро дар ин таъминкунанда ҳисоб мекунад.',
+  m33DefBad:'Бо брак, дона', m33DefOf:'Ҳамагӣ дар партия, дона', m33DefWhat:'Чӣ нодуруст аст', m33DefWhatPh:'масалан: дарз кушода шуд, ранг дигар',
+  m33DefAct:'Бо чӣ анҷом ёфт', m33DefActs:{ret:'пулро баргардонд',swap:'иваз кард',disc:'тахфиф ба партияи оянда',none:'ҳеҷ'},
+  m33DefLoss:'Зиён, сомонӣ', m33DefPh:'Сурати брак', m33DefPhOk:'Сурат ҳаст', m33DefRow:(b,o,p)=>b+' аз '+o+' дона · '+p+'%',
+  m33DefErr:'Нависед, чанд дона бо брак', m33DefErrOf:'Брак аз партия зиёд буда наметавонад',
+  m33Prom:'Ваъдаҳо ва мӯҳлатҳо', m33PromNone:'Ваъдаҳои таъминкунандаро нависед: тахфиф, мӯҳлати фиристодан, ивази брак — Мира ёдрас мекунад.',
+  m33PromAdd:'Навиштани ваъда', m33PromT:'Чӣ ваъда дод', m33PromPh:'масалан: тахфифи 5% ба партияи оянда', m33PromDue:'То кадом рӯз',
+  m33PromIn:n=>'баъди '+n+' рӯз', m33PromNoDate:'бе мӯҳлат', m33PromDone:'Иҷро кард', m33PromUndo:'Баргардондан',
+  m33PromLate:d=>'аз '+d+' гузашт', m33PromTill:d=>'то '+d, m33PromDoneAt:d=>'иҷро кард '+d, m33PromErr:'Нависед, чӣ ваъда дод',
+  m33Debt:'Қарз ба таъминкунанда', m33DebtNone:'Қарз нест.', m33DebtAdd:'Навиштани қарз',
+  m33Reg:'Санҷиши ширкат',
+  m33RegLead:'Феҳристи давлатии ширкатҳои Чин ройгон аст. Рамзи литсензияро (18 аломат) нависед — Мира месанҷад, ки рамз дуруст аст ва ширкат дар куҷо сабт шудааст.',
+  m33RegName:'Ном бо хитоӣ', m33RegCode:'Рамзи ширкат (统一社会信用代码)',
+  m33RegCodeOk:p=>'Рамз дуруст · сабт шудааст: '+p, m33RegCodeBad:'Дар рамз хато ҳаст — аломатҳоро санҷед ё сурати литсензияро пурсед',
+  m33RegCodeFmt:'Рамз — 18 аломат: рақам ва ҳарфҳои лотинӣ', m33RegIP:'Ин соҳибкори инфиродӣ (个体户) аст, на ширкат ё фабрика',
+  m33RegCityMis:(p,c)=>'Ширкат сабт шудааст: '+p+', вале шумо «'+c+'» навиштед — аниқ кунед, ҳамон ширкат аст?',
+  m33RegOpen:'Кушодани феҳрист', m33RegCopy:'Нусхаи рамз', m33RegChk:'Дар феҳрист чиро бинед',
+  m33RegItems:{alive:'Ҳолат: 存续 / 在业 / 开业 — кор мекунад. 吊销 / 注销 — баста: пул надиҳед.',scope:'Соҳа (经营范围): 生产 / 制造 / 加工 бошад — истеҳсолот. Танҳо 销售 / 贸易 — миёнарав.',abn:'Дар рӯйхати вайронкорон нест (经营异常名录)',black:'Дар рӯйхати сиёҳ нест (严重违法失信)',age:'Зиёда аз як сол кор мекунад (成立日期)'},
+  m33RegRes:'Натиҷаи санҷиш', m33RegSt:{ok:'ҳама хуб',q:'савол ҳаст',stop:'ист — пул надиҳед'}, m33RegNone:'ҳанӯз насанҷидаед', m33RegAt:d=>'санҷида шуд '+d,
+  m33RegAi:'Сифра, литсензия ё саҳифаи феҳристро хон',
+  m33RegAiLead:'Литсензия (营业执照) ё экрани феҳристро сурат гиред — Сифра ном, рамз, сана, ҳолат ва соҳаро менависад. Номи одамонро наменависад.',
+  m33RegAiBusy:'Сифра мехонад…', m33RegAiGot:'Сифра ёфт', m33RegAiApply:'Навиштан', m33RegAiErr:'Хонда нашуд. Суратро ростар ва наздиктар гиред.',
+  m33RaDate:'Санаи сабт', m33RaCap:'Сармоя', m33RaSt:'Ҳолат', m33RaKind:'Бо чӣ машғул аст', m33RaFlags:'Диққат',
+  m33RaKinds:{factory:'истеҳсолот',trade:'савдо',mixed:'истеҳсолот ва савдо',unknown:'номаълум'},
+  m33RaClosed:'Ширкат баста ё бе литсензия — пул надиҳед', m33RaAbn:'Ширкат дар рӯйхати вайронкорон', m33RaYoung:'Ширкат камтар аз як сол дорад',
+  m33RegAiQ:'Ин сурати литсензияи ширкати чинӣ (营业执照) ё саҳифаи феҳристи gsxt.gov.cn аст. ФАҚАТ JSON бе шарҳ ҷавоб деҳ: {"name_cn":"номи ширкат бо хитоӣ","code":"рамзи 18-аломатаи 统一社会信用代码","date":"санаи сабт YYYY-MM-DD","capital":"сармояи оинномавӣ чунон ки навишта","status":"ҳолат чунон ки навишта","kind":"factory | trade | mixed | unknown — аз рӯи 经营范围: 生产/制造/加工 бошад — factory; танҳо 销售/批发/贸易 — trade","scope":"соҳаи фаъолият кӯтоҳ бо тоҷикӣ, то 120 аломат","abnormal":true ё false ё null,"flags":["чӣ шубҳанок аст — кӯтоҳ бо тоҷикӣ"]}. Номи одамонро (法定代表人 ва дигарон) нанавис. Он чи намоён нест — null.',
+  m33RegOtherTR:'Сурати лавҳаи андозро (vergi levhası) пурсед: ном ва рақами андоз бояд бо гирандаи пардохт мувофиқ бошад.',
+  m33RegOther:'Сурати ҳуҷҷати сабти ширкатро пурсед ва номро бо касе, ки ба ӯ пул медиҳед, муқоиса кунед. Пул — танҳо ба ҳисоби ҳамон ном.',
+  m33DLead:'Ҳамаи коғазҳо дар як ҷо: шартномаҳо, чекҳо, иҷора, кафолатҳо. Танҳо дар ҳамин телефон нигоҳ дошта мешаванд.',
+  m33DKinds:{loan:'Шартномаи қарз',sched:'Ҷадвали пардохт',rcpt:'Чек ё квитансия',iou:'Тилхат',rent:'Иҷора',lic:'Шаҳодатнома ё патент',sup:'Шартнома бо таъминкунанда',war:'Кафолат',id:'Шиноснома, шаҳодатнома',other:'Дигар'},
+  m33DAdd:'Илова кардани ҳуҷҷат', m33DSearch:'Ҷустуҷӯи ҳуҷҷат', m33DSoon:'Ба наздикӣ тамом мешаванд', m33DMine:'Ҳуҷҷатҳои ман', m33DFromLoans:'Аз қарзҳо',
+  m33DLoanDoc:n=>'шартнома · '+n+' саҳ.', m33DLoanRc:n=>'чекҳои пардохт · '+n, m33DRcT:'Чекҳои пардохт',
+  m33DNone:'Ҳоло холӣ. Шартномаи иҷора, шаҳодатнома, кафолатро сурат гиред — ҳама дар даст мешавад.',
+  m33DTill:d=>'то '+d, m33DLeft:n=>n+' рӯз монд', m33DEnded:d=>'тамом шуд '+d, m33DPages:n=>n+' саҳ.', m33DNoPh:'бе сурат',
+  m33DFormT:'Ҳуҷҷат', m33DTitle:'Ном', m33DTitlePh:'масалан: Иҷораи ҷой дар Корвон', m33DDate:'Санаи ҳуҷҷат',
+  m33DExp:'Эътибор то', m33DRem:'Ёдрас пеш аз', m33DRemD:n=>n+' рӯз', m33DNote:'Қайд', m33DLoan:'Ба кадом қарз', m33DLoanNone:'ба ҳеҷ кадом',
+  m33DCam:'Сурати саҳифа', m33DGal:'Аз галерея', m33DPgDel:'Гирифтани саҳифа',
+  m33DPrivate:'Шиноснома ва шаҳодатномаҳо танҳо дар ин ҷо нигоҳ дошта мешаванд: ба нусхаи маълумот намедароянд ва ба Сифра фиристода намешаванд.',
+  m33DLocal:'Суратҳо танҳо дар ин телефон нигоҳ дошта мешаванд ва ба нусхаи маълумоти шумо медароянд. Ба оила ва Сифра фиристода намешаванд.',
+  m33DErrT:'Номро нависед',
+  m33DShare:'Фиристодан', m33DShareSel:n=>'Фиристодани интихобшудаҳо ('+n+')', m33DSel:'Якчандторо интихоб кардан', m33DSelDone:'Тайёр',
+  m33DSaved:'Дар телефон нигоҳ дошта шуд', m33DNoFiles:'Дар ҳуҷҷатҳои интихобшуда сурат нест', m33DDelQ:'Ҳуҷҷатро нест кунем? Суратҳо ҳам нест мешаванд.',
+  m33FiDoc:(t,d)=>'«'+t+'» '+d+' тамом мешавад', m33FiDocEnded:(t,d)=>'«'+t+'» '+d+' тамом шуд',
+  m33FiProm:(v,t,d)=>'Ваъдаи '+v+': '+t+' — мӯҳлат '+d,
+  m33WLead:'Барои мол ба куҷо рафтан: дар куҷо чӣ фоиданок аст, сафарҳои гузаштаи шумо ва шароити тоза — Сифра пеш аз сафар месанҷад.',
+  m33WMine:'Ҷойҳое, ки шумо будед', m33WAllT:'Ҳамаи бозорҳо', m33WCat:'Чӣ меҷӯед', m33WCatAll:'Ҳама',
+  m33WGuideN:n=>'ҷой дар роҳнамо: '+n, m33WTrips:n=>'сафарҳо: '+n, m33WLastTrip:d=>'охирин: '+d,
+  m33WPc:'Як дона бо роҳ', m33WSold:'Фурӯхта шуд', m33WCargo:'Карго, рӯз', m33WSpent:'Сарф шуд', m33WVend:'Таъминкунандагон', m33WPay:'Пардохт', m33WMsg:'Алоқа', m33WGuideL:'Ҷой дар роҳнамо',
+  m33WCmp:'Муқоиса', m33WCmpOn:'Дар муқоиса', m33WCmpT:'Муқоиса', m33WCmpPick:'Боз як бозорро барои муқоиса интихоб кунед', m33WCmpAsk:'Сифра, ҳозир муқоиса кун', m33WNoData:'—', m33WCmpClear:'Тоза кардан',
+  m33WAsk:'Сифра: ҳозир санҷ', m33WStart:'Сафарро ба ин ҷо оғоз кардан', m33WGuide:'Ҷойҳо дар роҳнамо', m33WMk:'Бозорҳо', m33WYourV:'Таъминкунандагони шумо дар ин ҷо', m33WYours:'Сафарҳои шумо ба ин ҷо', m33WNoTrips:'Шумо ба ин ҷо ҳанӯз нарафтаед — бо ҷойҳое, ки будед, муқоиса кунед ва аз Сифра дар бораи шароити тоза пурсед.',
+  m33WMyGoodsDef:'либос',
+  m33WAskQ:(c,g)=>'Аз Тоҷикистон барои мол ба '+c+' рафтанӣ ҳастам. Моли ман: '+g+'. Кӯтоҳ, банд ба банд ва бо манбаъ: оё ҳоло ба шаҳрванди Тоҷикистон раводид лозим аст; аз Душанбе чӣ тавр рафтан ва роҳ тахминан чанд пул; карго то Душанбе барои як кг чанд пул ва чанд рӯз; ярмаркаҳо ва идҳои наздиктарин ва бозорҳо кай баста; дар ин моҳ ба чӣ диққат додан.',
+  m33WCmpQ:(a,b,g)=>'Муқоиса кун, аз Тоҷикистон ҳоло барои мол ба куҷо рафтан фоиданоктар аст: '+a+' ё '+b+'. Моли ман: '+g+'. Кӯтоҳ ва бо манбаъ: роҳ ва раводид, нарх ва партияи ҳадди ақал, карго то Душанбе (нарх барои кг ва рӯз), сифат ва интихоб, дар ин бозорҳо ҳоло чӣ мегузарад. Дар охир — чӣ интихоб кардан ва чаро.',
+  m33WSrc:'Рақамҳо дар бораи Дордой ва Қарасу — Бонки ҷаҳонӣ, 2008. Боқимонда — сабтҳои шумо. Раводид, парвоз ва нархи карго тағйир меёбанд — пеш аз сафар бо Сифра санҷед.',
+  m33WN:{gz:'Шаҳри асосии яклухти либоси Чин. Шахэ — яклухти арзон субҳи барвақт, Баима — сифати баландтар, Шисаньхан — либоси занона. Ярмаркаи Кантон — дар апрел ва октябр.',
+    yw:'Майдачуйда, аксессуарҳо, ҷавоҳироти сохта, бозичаҳо, молҳои рӯзгор — ҳазорон павилён дар як Шаҳри байналмилалии савдо (Футян). Бо партияҳои хурд гирифтан мумкин.',
+    ur:'Ба Тоҷикистон аз ҳама наздиктар: роҳ ва расондан кӯтоҳтар, вале интихоб камтар ва нарх одатан баландтар аз шарқи Чин.',
+    ist:'Лалели — яклухт барои харидорони ИДМ, фурӯшандагони русзабон бисёр. Мертер — истеҳсолкунандагон ва матоъ, сифати баландтар. Османбей — либоси занона.',
+    bur:'Матоъ ва бофтаҳои хонагӣ аз фабрикаҳо.',
+    tas:'Абу Саҳий — бозори калони яклухти либос ва пойафзол (асосан аз Чин ва Туркия). Наздик, бе парвоз.',
+    fer:'Фабрикаҳои маҳаллии трикотаж ва либоси водии Фарғона — бо партияҳои хурд мумкин.',
+    bis:'Дордой — яке аз бузургтарин бозорҳои Осиёи Марказӣ: моли Чин барои кишварҳои ҳамсоя. Соли 2008 — 40 300 ҷои савдо, тақрибан 75% фурӯш — ба сайёҳон, аз ҷумла аз Тоҷикистон.',
+    osh:'Қарасу — бозор дар сарҳад бо Ӯзбекистон. Соли 2008 10–15% фурӯши он ба тоҷирони тоҷик буд.',
+    ala:'Барахолка — бозори калони яклухти Алмаато, моли Чин тавассути Хоргос.',
+    dxb:'Дейра ва Драгон-март — моли Чин, Ҳиндустон ва Туркия. Агар тавассути Дубай парвоз кунед, қулай аст.',
+    msk:'Садовод ва Южные ворота — бозорҳои калон; мол аксар ҳамон чинӣ ва туркӣ, вале аз сабаби роҳ қиматтар.'}
+},
+en:{
+  m33VT:'Suppliers', m33VSub:(n,x)=>n?n+' '+(x?'· '+x:''):'Prices, defects, promises, company check',
+  m33DT:'Documents', m33DSub:(n,x)=>n?n+(x?' · '+x:''):'Contracts, receipts, lease, warranties',
+  m33WT:'Where to buy', m33WSub:'World markets and your trips', m33WShort:'Where to buy', m33WHub:'Where to buy: world markets and your trips',
+  m33VLead:'Everyone you buy from: prices, defects, promises, debts and a company check.',
+  m33VSearch:'Find: name, market, stall, WeChat', m33VAll:'All',
+  m33VSort:{best:'Best',last:'Recent',debt:'Debt',az:'A–Z'},
+  m33VAdd:'Add a supplier',
+  m33VEmpty:'No suppliers yet. Add one you buy from — or they will appear on their own during a trip.',
+  m33VLast:d=>'bought '+d, m33VNever:'not bought yet', m33VBought:s=>'total '+s,
+  m33BReg:'checked', m33BRegQ:'questions', m33BRegStop:'stop', m33BDef:p=>'defects '+p+'%', m33BProm:n=>'promises: '+n, m33BPromLate:'promise overdue', m33BDebt:s=>'debt '+s,
+  m33APromLate:n=>'Overdue promises: '+n, m33ADebt:(n,s)=>'Debts to suppliers: '+n+' for '+s, m33ANoReg:n=>'Chinese suppliers not checked: '+n,
+  m33CmpT:'Same item — different suppliers', m33CmpRow:(c,p,o,d)=>'cheaper at '+c+': '+p+' · '+o+' is '+d+'% dearer',
+  m33VAllInfo:'All about this supplier',
+  m33Facts:'By the facts', m33FBuys:'Purchases', m33FSum:'Bought for', m33FDef:'Defects', m33FShort:'Short delivery', m33FLate:'Late', m33FMk:'Markup', m33FSold:'Sold', m33FNone:'No facts yet — they appear after purchases and receiving.',
+  m33Prices:'Prices at this supplier', m33PricesNone:'No prices yet — they come from trips and goods.',
+  m33Def:'Defects', m33DefNone:'No defects recorded.', m33DefAdd:'Record defects', m33DefLead:'How many arrived defective and how it ended. Mira works out this supplier’s defect rate.',
+  m33DefBad:'Defective, pcs', m33DefOf:'Total in the batch, pcs', m33DefWhat:'What was wrong', m33DefWhatPh:'e.g. seam split, wrong colour',
+  m33DefAct:'How it ended', m33DefActs:{ret:'refunded',swap:'replaced',disc:'discount on next batch',none:'nothing'},
+  m33DefLoss:'Loss, somoni', m33DefPh:'Photo of the defect', m33DefPhOk:'Photo added', m33DefRow:(b,o,p)=>b+' of '+o+' pcs · '+p+'%',
+  m33DefErr:'Enter how many pieces were defective', m33DefErrOf:'Defective can’t be more than the batch',
+  m33Prom:'Promises and deadlines', m33PromNone:'Write down what the supplier promised: a discount, a shipping date, replacing defects — Mira will remind you.',
+  m33PromAdd:'Record a promise', m33PromT:'What was promised', m33PromPh:'e.g. 5% off the next batch', m33PromDue:'By which day',
+  m33PromIn:n=>'in '+n+' days', m33PromNoDate:'no deadline', m33PromDone:'Kept', m33PromUndo:'Undo',
+  m33PromLate:d=>'overdue since '+d, m33PromTill:d=>'by '+d, m33PromDoneAt:d=>'kept '+d, m33PromErr:'Enter what was promised',
+  m33Debt:'Debt to supplier', m33DebtNone:'No debts.', m33DebtAdd:'Record a debt',
+  m33Reg:'Company check',
+  m33RegLead:'China’s company register is free. Enter the code from the licence (18 characters) — Mira checks the code is real and where the company is registered.',
+  m33RegName:'Name in Chinese', m33RegCode:'Company code (统一社会信用代码)',
+  m33RegCodeOk:p=>'Valid code · registered in: '+p, m33RegCodeBad:'The code has an error — check the characters or ask for a photo of the licence',
+  m33RegCodeFmt:'The code is 18 characters: digits and Latin letters', m33RegIP:'This is a sole trader (个体户), not a company or factory',
+  m33RegCityMis:(p,c)=>'The company is registered in '+p+', but you wrote “'+c+'” — check it is the same company.',
+  m33RegOpen:'Open the register', m33RegCopy:'Copy the code', m33RegChk:'What to look at in the register',
+  m33RegItems:{alive:'Status: 存续 / 在业 / 开业 — operating. 吊销 / 注销 — closed: don’t pay.',scope:'Scope (经营范围): 生产 / 制造 / 加工 — manufacturing. Only 销售 / 贸易 — a reseller.',abn:'Not on the abnormal list (经营异常名录)',black:'Not on the blacklist (严重违法失信)',age:'Operating for over a year (成立日期)'},
+  m33RegRes:'Check result', m33RegSt:{ok:'all fine',q:'questions',stop:'stop — don’t pay'}, m33RegNone:'not checked yet', m33RegAt:d=>'checked '+d,
+  m33RegAi:'Sifra, read the licence or register page',
+  m33RegAiLead:'Photograph the licence (营业执照) or the register screen — Sifra copies the name, code, date, status and scope. She never copies people’s names.',
+  m33RegAiBusy:'Sifra is reading…', m33RegAiGot:'Sifra found', m33RegAiApply:'Fill in', m33RegAiErr:'Couldn’t read it. Try a straighter, closer photo.',
+  m33RaDate:'Registered on', m33RaCap:'Capital', m33RaSt:'Status', m33RaKind:'What it does', m33RaFlags:'Watch out',
+  m33RaKinds:{factory:'manufacturing',trade:'trading',mixed:'manufacturing and trading',unknown:'unclear'},
+  m33RaClosed:'The company is closed or its licence revoked — don’t pay', m33RaAbn:'The company is on the abnormal list', m33RaYoung:'The company is less than a year old',
+  m33RegAiQ:'This is a photo of a Chinese business licence (营业执照) or a gsxt.gov.cn register page. Reply ONLY with JSON, no explanations: {"name_cn":"company name in Chinese","code":"18-character 统一社会信用代码","date":"registration date YYYY-MM-DD","capital":"registered capital as written","status":"status as written","kind":"factory | trade | mixed | unknown — by 经营范围: has 生产/制造/加工 — factory; only 销售/批发/贸易 — trade","scope":"business scope, short, in English, up to 120 characters","abnormal":true or false or null,"flags":["anything worrying — short, in English"]}. Do not copy people’s names (法定代表人 or others). If not visible — null.',
+  m33RegOtherTR:'Ask for a photo of the tax plate (vergi levhası): the name and tax number must match the payee.',
+  m33RegOther:'Ask for a photo of the company registration document and compare the name with whoever you pay. Pay only to an account in that same name.',
+  m33DLead:'All your papers in one place: contracts, receipts, lease, warranties. Stored only on this phone.',
+  m33DKinds:{loan:'Loan contract',sched:'Payment schedule',rcpt:'Receipt',iou:'IOU',rent:'Lease',lic:'Certificate or patent',sup:'Supplier contract',war:'Warranty',id:'Passport, ID',other:'Other'},
+  m33DAdd:'Add a document', m33DSearch:'Find a document', m33DSoon:'Ending soon', m33DMine:'My documents', m33DFromLoans:'From loans',
+  m33DLoanDoc:n=>'contract · '+n+' pp.', m33DLoanRc:n=>'payment receipts · '+n, m33DRcT:'Payment receipts',
+  m33DNone:'Empty for now. Photograph the lease, certificate, warranty — and everything is at hand.',
+  m33DTill:d=>'until '+d, m33DLeft:n=>n+' days left', m33DEnded:d=>'ended '+d, m33DPages:n=>n+' pp.', m33DNoPh:'no photo',
+  m33DFormT:'Document', m33DTitle:'Title', m33DTitlePh:'e.g. Stall lease at Korvon', m33DDate:'Document date',
+  m33DExp:'Valid until', m33DRem:'Remind me', m33DRemD:n=>n+' days before', m33DNote:'Note', m33DLoan:'Which loan', m33DLoanNone:'none',
+  m33DCam:'Photograph a page', m33DGal:'From gallery', m33DPgDel:'Remove page',
+  m33DPrivate:'Passports and IDs are kept only here: they are not in your data backup and are never sent to Sifra.',
+  m33DLocal:'Photos stay only on this phone and go into your data backup. They are not sent to the family or to Sifra.',
+  m33DErrT:'Enter a title',
+  m33DShare:'Send', m33DShareSel:n=>'Send selected ('+n+')', m33DSel:'Select several', m33DSelDone:'Done',
+  m33DSaved:'Saved to the phone', m33DNoFiles:'The selected documents have no photos', m33DDelQ:'Delete the document? Its photos will be deleted too.',
+  m33FiDoc:(t,d)=>'“'+t+'” ends '+d, m33FiDocEnded:(t,d)=>'“'+t+'” ended '+d,
+  m33FiProm:(v,t,d)=>'Promise from '+v+': '+t+' — due '+d,
+  m33WLead:'Where to go for goods: what is better where, your past trips, and fresh conditions — Sifra checks before you go.',
+  m33WMine:'Where you have been', m33WAllT:'All markets', m33WCat:'What you need', m33WCatAll:'All',
+  m33WGuideN:n=>'places in guide: '+n, m33WTrips:n=>'trips: '+n, m33WLastTrip:d=>'last: '+d,
+  m33WPc:'Per piece, landed', m33WSold:'Sold', m33WCargo:'Cargo, days', m33WSpent:'Spent', m33WVend:'Suppliers', m33WPay:'Payment', m33WMsg:'Contact', m33WGuideL:'Places in guide',
+  m33WCmp:'Compare', m33WCmpOn:'Comparing', m33WCmpT:'Comparison', m33WCmpPick:'Pick one more market to compare', m33WCmpAsk:'Sifra, compare now', m33WNoData:'—', m33WCmpClear:'Clear',
+  m33WAsk:'Sifra: check now', m33WStart:'Start a trip here', m33WGuide:'Places in the guide', m33WMk:'Markets', m33WYourV:'Your suppliers here', m33WYours:'Your trips here', m33WNoTrips:'You haven’t been here yet — compare with places you know and ask Sifra about current conditions.',
+  m33WMyGoodsDef:'clothing',
+  m33WAskQ:(c,g)=>'I’m going to '+c+' from Tajikistan to buy goods. My goods: '+g+'. Briefly, point by point, with sources: does a Tajik citizen need a visa now; how to get there from Dushanbe and roughly what it costs; cargo to Dushanbe per kg and how many days; upcoming fairs and holidays and when markets close; what to watch out for this month.',
+  m33WCmpQ:(a,b,g)=>'Compare where it is better to go for goods from Tajikistan right now: '+a+' or '+b+'. My goods: '+g+'. Briefly, with sources: travel and visa, prices and minimum orders, cargo to Dushanbe (price per kg and days), quality and choice, what is happening in these markets now. End with which to choose and why.',
+  m33WSrc:'Dordoi and Kara-Suu figures — World Bank, 2008. Everything else — your records. Visas, flights and cargo prices change — check with Sifra before a trip.',
+  m33WN:{gz:'China’s main wholesale clothing city. Shahe — cheap wholesale early in the morning, Baima — higher quality, Shisanhang — women’s fashion. Canton Fair — April and October.',
+    yw:'Small goods, accessories, costume jewellery, toys, household items — thousands of stalls in one International Trade City (Futian). Small orders possible.',
+    ur:'Closest to Tajikistan: shorter travel and delivery, but less choice and usually higher prices than in eastern China.',
+    ist:'Laleli — wholesale for CIS buyers, many Russian-speaking sellers. Merter — manufacturers and fabrics, higher quality. Osmanbey — women’s clothing.',
+    bur:'Fabrics and home textiles from factories.',
+    tas:'Abu Sahiy — a big wholesale market for clothes and shoes (mostly from China and Turkey). Close, no flight needed.',
+    fer:'Local knitwear and clothing factories of the Fergana Valley — small orders possible.',
+    bis:'Dordoi — one of Central Asia’s largest markets: goods from China for neighbouring countries. In 2008 — 40,300 trading places, about 75% of sales to visitors, including from Tajikistan.',
+    osh:'Kara-Suu — a market on the border with Uzbekistan. In 2008, 10–15% of its sales went to Tajik traders.',
+    ala:'Barakholka — Almaty’s big wholesale market, goods from China via Khorgos.',
+    dxb:'Deira and Dragon Mart — goods from China, India and Turkey. Handy if you fly via Dubai.',
+    msk:'Sadovod and Yuzhnye Vorota — big markets; the goods are often the same Chinese and Turkish, but dearer because of the route.'}
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M33S[k]);
+/* <</v33 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -16975,6 +17325,416 @@ async function f32BioUI(){ const sh=document.querySelector('.sheet'); const anch
   if(bOff) bOff.onclick=()=>{ try{ localStorage.removeItem(F32B); }catch(e){} toast(L.f32BioOffd); dataSheet(); }; }
 { const _dsh=dataSheet; dataSheet=function(){ _dsh.apply(this,arguments); try{ f32ChkUI(); }catch(e){} f32BioUI(); }; }
 /* <</v32 js>> */
+/* <<v33 js>> */
+/* ===================== v33: разделы «Поставщики» (518), «Документы» (521), «Где закупать» (525) =====================
+   Зачем отдельные разделы: идеи про поставщиков (30, 109, 341, 486, 495), документы (260, 267, 409, 419, 472) и рынки (23, 446, 448, 497)
+   были разбросаны по окнам и карточкам «Сегодня». Теперь у каждой темы своя страница на весь экран со своим «Назад».
+   Откуда идеи:
+   - Startz (торговцы Нигерии в Китае): главные потери — поиск поставщика и недоверие к нему → поставщик с историей цен, браком, обещаниями;
+   - Alibaba 2011: 2 326 «золотых поставщиков» два года обманывали покупателей → проверка кода компании по китайскому реестру;
+     контрольный знак кода (GB 32100-2015) проверяется прямо в телефоне, регион — по цифрам кода;
+   - DigiLocker (Индия, 724 млн пользователей): документы под рукой и отправка пакетом;
+   - Всемирный банк и CAREC (базары Центральной Азии, данные 2008): Дордой и Кара-Суу продают товар в том числе таджикским торговцам → «Где закупать»
+     сравнивает рынки по своим поездкам: штука с дорогой, сколько продалось, сколько дней шло карго. */
+const M33P=['vnd','vone','docs','where','wone'];
+let m33=null;
+function m33S(){ if(!m33) m33={vq:'',vc:'',vs:'best',dq:'',dk:'',sel:null,wc:'',cmp:[]}; return m33; }
+function m33Top(){ const t=bpOpenNow()&&bpTop(); return t&&M33P.includes(t.name)?t:null; }
+function m33Open(name,arg){ const go=()=>bpGo(name,arg); if(m8SheetOn()){ closeSheet(); setTimeout(go,120); } else go(); }
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(), mine=!!(t&&M33P.includes(t.name)); document.documentElement.classList.toggle('m33-on',mine);
+    if(!mine){ _br(restore); return; }
+    const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`;
+    d.querySelector('#bpg-back').setAttribute('aria-label',L.back); d.querySelector('#bpg-x').setAttribute('aria-label',L.close);
+    m.onclick=null; f.innerHTML=''; f.hidden=true; m33Draw(t,m); m.scrollTop=restore?(t.y||0):0; }; }
+{ const _bh=bpHide; bpHide=function(){ document.documentElement.classList.remove('m33-on'); return _bh.apply(this,arguments); }; }
+/* окно поверх страницы: «Назад» закрывает окно, а не страницу; закрытие окна не уводит со страницы */
+{ const _bp=bpPop; bpPop=function(){ /* окно открыто поверх нашего раздела — «Назад» закрывает окно; у других страниц окно лежит под страницей, и «Назад» закрывает страницу, как раньше */ if(document.documentElement.classList.contains('m33-on')){ if(M8N.ign>0){ M8N.ign--; return; } if(m8SheetOn()){ m8CS0(); return; } } return _bp.apply(this,arguments); }; }
+function m33Draw(t,m){ const T=BPG.el.querySelector('#bpg-t');
+  if(t.name==='vnd'){ T.textContent=L.m33VT; m.innerHTML=m33VndHTML(); }
+  else if(t.name==='vone'){ const v=state.vendors.find(x=>x.id===t.arg); T.textContent=v?v.name:L.m33VT; m.innerHTML=v?m33VoneHTML(v):`<div class="sh-empty">${L.m33VEmpty}</div>`; if(v) m33RegLive(m,v); }
+  else if(t.name==='docs'){ T.textContent=L.m33DT; m.innerHTML=m33DocsHTML(); }
+  else if(t.name==='where'){ T.textContent=L.m33WT; m.innerHTML=m33WhereHTML(); }
+  else if(t.name==='wone'){ const w=M33W.find(x=>x.k===t.arg); T.textContent=w?gCity(w.k):L.m33WT; m.innerHTML=w?m33WoneHTML(w):''; }
+  fillPhotos(m); }
+function m33Redraw(force){ const t=m33Top(); if(!t) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop, a=document.activeElement;
+  if(!force&&a&&m.contains(a)&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) return; m33Draw(t,m); m.scrollTop=y; }
+/* поиск на странице: перерисовать и вернуть курсор в поле */
+function m33Refocus(key){ const t=m33Top(); if(!t) return; const m=BPG.el.querySelector('#bpg-m'), y=m.scrollTop, a=m.querySelector(`[data-m33in="${key}"]`), pos=a?a.selectionStart:null;
+  m33Draw(t,m); m.scrollTop=y; const n=m.querySelector(`[data-m33in="${key}"]`); if(n){ n.focus({preventScroll:true}); try{ if(pos!=null) n.setSelectionRange(pos,pos); }catch(e){} } }
+{ const _r=render; render=function(){ const x=_r.apply(this,arguments); try{ m33Redraw(); }catch(e){} return x; }; }
+function m33Zoom(src){ if(!src) return; const w=document.createElement('div'); w.className='zoom'; w.innerHTML=`<img src="${src}" alt="">`; w.onclick=()=>w.remove(); document.body.appendChild(w); }
+function m33Flag(c){ return (TCOUNTRY[c]||TCOUNTRY.XX).f; }
+function m33D(d){ if(!d) return ''; const x=parseYmd(String(d).slice(0,10)); return fmtShort(x)+(x.getFullYear()!==new Date().getFullYear()?' '+x.getFullYear():''); }
+function m33Sf(){ return `<span class="m33-sfa">${SF_AVA}</span>`; }
+function m33Cap(t){ t=String(t).replace(/[:：]\s*$/,''); return t.charAt(0).toUpperCase()+t.slice(1); }
+
+/* ======================= 518. Поставщики ======================= */
+function m33VDebts(v){ const n=String(v.name||'').toLowerCase().trim(); return n?state.sup.filter(s=>!s.paid&&String(s.name||'').toLowerCase().trim()===n):[]; }
+function m33VF(v){ const buys=state.tprods.filter(p=>p.vendor===v.id&&p.dec==='buy'); let sum=0,pcs=0,last='';
+  for(const p of buys){ const tr=tripById(p.trip), n=pcsOf(p), tj=toTJS((+p.price||0)*n,p.cur,tr); if(tj) sum+=tj; pcs+=n; const d=p.d||(tr&&tr.from)||''; if(d>last) last=d; }
+  const def=v.def||[], dBad=def.reduce((a,x)=>a+(+x.bad||0),0), dOf=def.reduce((a,x)=>a+(+x.of||0),0), defP=dOf?dBad/dOf:null;
+  const open=(v.prom||[]).filter(x=>!x.done), late=open.filter(x=>x.due&&x.due<dkey()).length, debt=m33VDebts(v).reduce((a,s)=>a+(+s.sum||0),0);
+  const f=vendorFacts(v), st=[v.rq,v.rp,v.rf].filter(x=>+x>0), stars=st.length?st.reduce((a,b)=>a+ +b,0)/st.length:0;
+  const score=(stars||3)+(f.st!=null?f.st*2:0)-(defP!=null&&defP>0.05?1:0)-(f.short!=null&&f.short>0.03?1:0)-(f.late?0.5:0)-(v.reg&&v.reg.st==='stop'?3:0);
+  return {buys:buys.length,sum,pcs,last,dBad,dOf,defP,prom:open.length,late,debt,f,stars,score}; }
+function m33VBadges(v,F){ const b=[], r=v.reg&&v.reg.st;
+  if(r==='ok') b.push(`<i class="ok">✓ ${L.m33BReg}</i>`); else if(r==='q') b.push(`<i class="warn">? ${L.m33BRegQ}</i>`); else if(r==='stop') b.push(`<i class="bad">✕ ${L.m33BRegStop}</i>`);
+  if(F.defP!=null&&F.dBad>0) b.push(`<i class="${F.defP>0.03?'warn':''}">${L.m33BDef(Math.round(F.defP*100))}</i>`);
+  if(F.late) b.push(`<i class="bad">⏰ ${L.m33BPromLate}</i>`); else if(F.prom) b.push(`<i>🤝 ${L.m33BProm(F.prom)}</i>`);
+  if(F.debt>0) b.push(`<i class="warn">${L.m33BDebt(money(F.debt))}</i>`);
+  return b.length?`<div class="m33-bs">${b.join('')}</div>`:''; }
+function m33PriceCmp(){ const by={}; for(const r of priceRecs()){ if(!r.key||!r.sup||!r.tj) continue; const g=by[r.key]=by[r.key]||{}; const o=g[r.sup]; if(!o||String(r.d)>=String(o.d)) g[r.sup]=r; }
+  const out=[]; for(const k in by){ const rs=Object.values(by[k]); if(rs.length<2) continue; rs.sort((a,b)=>a.tj-b.tj); const lo=rs[0], hi=rs[rs.length-1], diff=Math.round((hi.tj-lo.tj)/lo.tj*100); if(diff>=3) out.push({k,item:lo.item,lo,hi,diff}); }
+  return out.sort((a,b)=>b.diff-a.diff).slice(0,5); }
+function m33VndHTML(){ const S=m33S(), q=S.vq.toLowerCase().trim(), all=state.vendors.filter(v=>!v.draft), cs=[...new Set(all.map(v=>v.country||'XX'))];
+  const FS=new Map(all.map(v=>[v.id,m33VF(v)]));
+  let list=all.filter(v=>(!S.vc||(v.country||'XX')===S.vc)&&(!q||JSON.stringify([v.name,v.market,v.no,v.addr,v.wc,v.wa,v.ig,v.tg,v.ph,v.note,v.city,v.reg&&v.reg.nm]).toLowerCase().includes(q)));
+  const F=v=>FS.get(v.id); list.sort(S.vs==='last'?(a,b)=>String(F(b).last).localeCompare(String(F(a).last))||(b.ts||0)-(a.ts||0):S.vs==='debt'?(a,b)=>F(b).debt-F(a).debt||F(b).score-F(a).score:S.vs==='az'?(a,b)=>String(a.name).localeCompare(String(b.name)):(a,b)=>F(b).score-F(a).score);
+  const lateN=all.reduce((a,v)=>a+F(v).late,0), debts=state.sup.filter(s=>!s.paid), debtSum=debts.reduce((a,s)=>a+(+s.sum||0),0), noReg=all.filter(v=>v.country==='CN'&&!(v.reg&&v.reg.st)).length;
+  const al=[]; if(lateN) al.push(`<div class="m33-al bad">${ico('clock',18)}<span>${L.m33APromLate(lateN)}</span></div>`);
+  if(debts.length) al.push(`<button type="button" class="m33-al warn" data-m33a="vsort:debt">${ico('cash',18)}<span>${L.m33ADebt(debts.length,money(debtSum))}</span></button>`);
+  if(noReg) al.push(`<button type="button" class="m33-al" data-m33a="vfil:CN">${ico('shield',18)}<span>${L.m33ANoReg(noReg)}</span></button>`);
+  const cmp=m33PriceCmp();
+  return `<p class="lead m33-lead">${L.m33VLead}</p>${al.join('')}
+    <div class="field m33-q"><input type="search" data-m33in="vq" value="${esc(S.vq)}" placeholder="🔎 ${esc(L.m33VSearch)}" aria-label="${esc(L.m33VSearch)}"></div>
+    ${cs.length>1?`<div class="chips m33-ch"><button type="button" class="chip ${!S.vc?'on':''}" data-m33a="vfil:">${L.m33VAll}</button>${cs.map(c=>`<button type="button" class="chip ${S.vc===c?'on':''}" data-m33a="vfil:${c}">${m33Flag(c)} ${esc(L['cn_'+c]||c)}</button>`).join('')}</div>`:''}
+    <div class="seg m33-seg" role="group">${Object.keys(L.m33VSort).map(k=>`<button type="button" class="${S.vs===k?'on':''}" aria-pressed="${S.vs===k}" data-m33a="vsort:${k}">${L.m33VSort[k]}</button>`).join('')}</div>
+    <div class="cards m33-vl">${list.map(v=>{ const f=F(v), loc=[v.city,v.market,v.no?'№ '+v.no:''].filter(Boolean).join(' · ');
+      return `<button type="button" class="card m33-vc" data-m33v="${esc(v.id)}"><span class="ava ${v.card?'ph':'gold'}">${v.card?`<img data-ph="vc_${esc(v.id)}" alt="">`:(VKIND[v.kind]||'🏪')}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(v.name)}</span>${f.sum>0?`<span class="c-rem">${money(f.sum)}</span>`:''}</div>
+        <div class="c-sub"><span>${m33Flag(v.country)} ${esc(loc)}</span></div><div class="c-sub"><span>${f.last?L.m33VLast(m33D(f.last)):L.m33VNever}</span>${f.stars?`<span class="m33-st">★ ${fx(f.stars,1)}</span>`:''}<span></span></div>${m33VBadges(v,f)}</div></button>`; }).join('')||`<div class="sh-empty">${all.length?L.srNone:L.m33VEmpty}</div>`}</div>
+    <button type="button" class="btn btn-primary btn-full m33-add" data-m33a="vnew">${ico('plus',20)} ${L.m33VAdd}</button>
+    ${cmp.length?`<div class="m33-sec"><h3>${ico('chart',18)} ${L.m33CmpT}</h3>${cmp.map(c=>`<button type="button" class="m33-row" data-m33a="ph:${esc(c.k)}"><b>${esc(c.item)}</b><small>${esc(L.m33CmpRow(c.lo.sup,money(c.lo.tj),c.hi.sup,c.diff))}</small></button>`).join('')}</div>`:''}`; }
+
+/* проверка кода компании по китайскому стандарту GB 32100-2015: 18 знаков, последний — контрольный */
+const M33CH='0123456789ABCDEFGHJKLMNPQRTUWXY', M33WT=[1,3,9,27,19,26,16,17,20,29,25,13,8,24,10,30,28];
+const M33PROV={11:['Пекин','Beijing'],12:['Тяньцзинь','Tianjin'],13:['Хэбэй','Hebei'],14:['Шаньси','Shanxi'],15:['Внутренняя Монголия','Inner Mongolia'],21:['Ляонин','Liaoning'],22:['Цзилинь','Jilin'],23:['Хэйлунцзян','Heilongjiang'],31:['Шанхай','Shanghai'],32:['Цзянсу','Jiangsu'],33:['Чжэцзян','Zhejiang'],34:['Аньхой','Anhui'],35:['Фуцзянь','Fujian'],36:['Цзянси','Jiangxi'],37:['Шаньдун','Shandong'],41:['Хэнань','Henan'],42:['Хубэй','Hubei'],43:['Хунань','Hunan'],44:['Гуандун','Guangdong'],45:['Гуанси','Guangxi'],46:['Хайнань','Hainan'],50:['Чунцин','Chongqing'],51:['Сычуань','Sichuan'],52:['Гуйчжоу','Guizhou'],53:['Юньнань','Yunnan'],54:['Тибет','Tibet'],61:['Шэньси','Shaanxi'],62:['Ганьсу','Gansu'],63:['Цинхай','Qinghai'],64:['Нинся','Ningxia'],65:['Синьцзян','Xinjiang']};
+const M33CITY={4401:['Гуанчжоу','Guangzhou'],4403:['Шэньчжэнь','Shenzhen'],4406:['Фошань','Foshan'],4419:['Дунгуань','Dongguan'],4420:['Чжуншань','Zhongshan'],3301:['Ханчжоу','Hangzhou'],3302:['Нинбо','Ningbo'],3303:['Вэньчжоу','Wenzhou'],3305:['Хучжоу','Huzhou'],3306:['Шаосин','Shaoxing'],3307:['Цзиньхуа','Jinhua'],330782:['Иу','Yiwu'],3502:['Сямэнь','Xiamen'],3505:['Цюаньчжоу','Quanzhou'],3205:['Сучжоу','Suzhou'],3206:['Наньтун','Nantong'],6501:['Урумчи','Urumqi']};
+const M33C2P={'гуанчжоу':44,'guangzhou':44,'шэньчжэнь':44,'shenzhen':44,'дунгуань':44,'dongguan':44,'хумэнь':44,'humen':44,'фошань':44,'foshan':44,'иу':33,'yiwu':33,'ханчжоу':33,'hangzhou':33,'шаосин':33,'shaoxing':33,'нинбо':33,'ningbo':33,'урумчи':65,'urumqi':65,'пекин':11,'beijing':11,'шанхай':31,'shanghai':31,'сямэнь':35,'xiamen':35,'цзиньцзян':35,'jinjiang':35};
+function m33Uscc(code){ const c=String(code||'').toUpperCase().replace(/\s+/g,''); if(!c) return {st:'empty'}; if(!/^[0-9A-HJ-NPQRTUWXY]{18}$/.test(c)) return {st:'fmt',c};
+  let s=0; for(let i=0;i<17;i++) s+=M33CH.indexOf(c[i])*M33WT[i]; const r=31-s%31; if(M33CH[r===31?0:r]!==c[17]) return {st:'bad',c};
+  const li=lang==='en'?1:0, a=c.slice(2,8), p=M33PROV[+a.slice(0,2)], ct=M33CITY[+a]||M33CITY[+a.slice(0,4)];
+  return {st:'ok',c,prov:+a.slice(0,2),place:p?(ct&&ct[li]!==p[li]?p[li]+', '+ct[li]:p[li]):a,ip:c[0]==='9'&&c[1]==='2'}; }
+function m33RegMsg(v,code){ const u=m33Uscc(code); if(u.st==='empty') return '';
+  if(u.st==='fmt') return `<div class="m33-rm warn">${L.m33RegCodeFmt}</div>`; if(u.st==='bad') return `<div class="m33-rm bad">✕ ${L.m33RegCodeBad}</div>`;
+  const out=[`<div class="m33-rm ok">✓ ${esc(L.m33RegCodeOk(u.place))}</div>`]; if(u.ip) out.push(`<div class="m33-rm warn">${L.m33RegIP}</div>`);
+  const vp=M33C2P[String(v.city||'').toLowerCase().trim()]; if(vp&&vp!==u.prov) out.push(`<div class="m33-rm warn">${esc(L.m33RegCityMis(u.place,v.city))}</div>`);
+  return out.join(''); }
+function m33RegHTML(v){ const r=v.reg||{}, chk=r.chk||{}, ai=r.ai;
+  if(v.country!=='CN') return `<div class="m33-sec" id="m33-reg"><h3>${ico('shield',18)} ${L.m33Reg}</h3><p class="m33-tip">${v.country==='TR'?L.m33RegOtherTR:L.m33RegOther}</p></div>`;
+  return `<div class="m33-sec" id="m33-reg"><h3>${ico('shield',18)} ${L.m33Reg}</h3><p class="m33-tip">${L.m33RegLead}</p>
+    <div class="field"><label for="m33-rn">${L.m33RegName}</label><input id="m33-rn" data-m33reg="nm" value="${esc(r.nm||'')}" maxlength="60" lang="zh"></div>
+    <div class="field"><label for="m33-rc">${L.m33RegCode}</label><input id="m33-rc" data-m33reg="code" value="${esc(r.code||'')}" maxlength="22" autocapitalize="characters" spellcheck="false" inputmode="text"></div>
+    <div id="m33-rmsg" aria-live="polite">${m33RegMsg(v,r.code)}</div>
+    <div class="m33-acts"><button type="button" class="btn btn-ghost" data-m33a="ropen">${ico('external',16)} ${L.m33RegOpen}</button>${r.code?`<button type="button" class="btn btn-ghost" data-m33a="rcopy">${ico('copy',16)} ${L.m33RegCopy}</button>`:''}</div>
+    <button type="button" class="btn btn-ghost btn-full m33-ai" data-m33a="rai">${m33Sf()}<span>${L.m33RegAi}</span></button>
+    ${ai?`<div class="m33-aiw">${[[L.m33RaDate,ai.date?m33D(ai.date):''],[L.m33RaCap,ai.cap],[L.m33RaSt,ai.status],[L.m33RaKind,ai.kind?L.m33RaKinds[ai.kind]:''],['',ai.scope]].filter(x=>x[1]).map(x=>`<div>${x[0]?`<small>${x[0]}</small>`:''}<span>${esc(x[1])}</span></div>`).join('')}${(ai.flags||[]).length?`<ul>${ai.flags.map(f=>`<li>${ico('warn',14)} ${esc(f)}</li>`).join('')}</ul>`:''}</div>`:''}
+    <div class="m33-h4">${L.m33RegChk}</div>
+    <div class="m33-chk">${Object.keys(L.m33RegItems).map(k=>`<button type="button" class="${chk[k]?'on':''}" role="checkbox" aria-checked="${!!chk[k]}" data-m33a="rchk:${k}"><i>${ico('check',14)}</i><span>${L.m33RegItems[k]}</span></button>`).join('')}</div>
+    <div class="m33-h4">${L.m33RegRes}${r.d?` · <small>${L.m33RegAt(m33D(r.d))}</small>`:''}</div>
+    <div class="seg m33-rst" role="group">${['ok','q','stop'].map(k=>`<button type="button" class="${r.st===k?'on '+k:''}" aria-pressed="${r.st===k}" data-m33a="rst:${k}">${L.m33RegSt[k]}</button>`).join('')}</div></div>`; }
+function m33RegLive(m,v){ m.querySelectorAll('[data-m33reg]').forEach(i=>{ const k=i.dataset.m33reg;
+    i.addEventListener('input',()=>{ if(k==='code'){ const box=m.querySelector('#m33-rmsg'); if(box) box.innerHTML=m33RegMsg(v,i.value); } });
+    i.addEventListener('change',()=>{ v.reg=v.reg||{}; let val=i.value.trim(); if(k==='code'){ val=val.toUpperCase().replace(/\s+/g,''); i.value=val; } v.reg[k]=val; persist(); }); }); }
+function m33VoneHTML(v){ const F=m33VF(v), f=F.f, tr=activeTrip(), loc=[v.market,v.floor?L.floorW+' '+v.floor:'',v.no?'№ '+v.no:'',v.addr].filter(Boolean).join(', '), today=dkey();
+  const stars=(k,lab)=>`<div class="vstar"><span>${lab}</span>${[1,2,3,4,5].map(n=>`<button type="button" data-m33a="star:${k}:${n}" class="${(+v[k]||0)>=n?'on':''}" aria-label="${esc(lab)} ${n}">★</button>`).join('')}</div>`;
+  const fx=[]; if(F.buys) fx.push([L.m33FBuys,String(F.buys)]); if(F.sum>0) fx.push([L.m33FSum,money(F.sum)]); if(F.defP!=null) fx.push([L.m33FDef,Math.round(F.defP*100)+'%',F.defP>0.03?'warn':'']);
+  if(f.short!=null) fx.push([L.m33FShort,Math.round(f.short*100)+'%',f.short>0.03?'warn':'']); if(f.ships) fx.push([L.m33FLate,f.late+' / '+f.ships,f.late?'warn':'']);
+  if(f.m!=null) fx.push([L.m33FMk,'+'+Math.round(f.m*100)+'%']); if(f.st!=null) fx.push([L.m33FSold,Math.round(f.st*100)+'%']);
+  const proms=(v.prom||[]).slice().sort((a,b)=>(a.done?1:0)-(b.done?1:0)||String(a.due||'9').localeCompare(String(b.due||'9')));
+  const prows=proms.map(p=>{ const late=!p.done&&p.due&&p.due<today; return `<div class="m33-li ${p.done?'done':''} ${late?'late':''}"><button type="button" class="m33-tick" role="checkbox" aria-checked="${!!p.done}" aria-label="${esc(p.done?L.m33PromUndo:L.m33PromDone)}" data-m33a="pdone:${esc(p.id)}"><i>${ico('check',14)}</i></button><span><b>${esc(p.t)}</b><small>${p.done?L.m33PromDoneAt(m33D(p.dd||p.d)):p.due?(late?L.m33PromLate(m33D(p.due)):L.m33PromTill(m33D(p.due))):L.m33PromNoDate}</small></span><button type="button" class="m33-x" aria-label="${esc(L.delete)}" data-m33a="pdel:${esc(p.id)}">${ico('close',16)}</button></div>`; }).join('');
+  const drows=(v.def||[]).slice().sort((a,b)=>String(b.d).localeCompare(String(a.d))).map(d=>`<div class="m33-li">${d.ph?`<button type="button" class="m33-th" data-m33a="zoom:vq_${esc(d.id)}" aria-label="${esc(L.m33DefPh)}"><img data-ph="vq_${esc(d.id)}" alt=""></button>`:`<span class="m33-ic">${ico('warn',18)}</span>`}<span><b>${esc(L.m33DefRow(d.bad,d.of,d.of?Math.round(d.bad/d.of*100):0))}</b><small>${m33D(d.d)}${d.what?' · '+esc(d.what):''}${d.act&&L.m33DefActs[d.act]?' · '+L.m33DefActs[d.act]:''}${+d.loss>0?' · −'+money(+d.loss):''}</small></span><button type="button" class="m33-x" aria-label="${esc(L.delete)}" data-m33a="ddel:${esc(d.id)}">${ico('close',16)}</button></div>`).join('');
+  const pr={}; for(const p of state.tprods.filter(p=>p.vendor===v.id&&p.name&&+p.price>0)){ const k=String(p.name).toLowerCase().replace(/\s+/g,' ').trim(); (pr[k]=pr[k]||[]).push({item:p.name,p:+p.price,cur:p.cur||'TJS',d:p.d||((tripById(p.trip)||{}).from)||''}); }
+  for(const x of state.inv.filter(x=>x.vendor===v.id&&+x.cost>0)){ const k=String(x.name).toLowerCase().replace(/\s+/g,' ').trim(); (pr[k]=pr[k]||[]).push({item:x.name,p:+x.cost,cur:'TJS',d:x.d||''}); }
+  const prRows=Object.keys(pr).map(k=>{ const rs=pr[k].sort((a,b)=>String(a.d).localeCompare(String(b.d))), last=rs[rs.length-1], same=rs.filter(r=>r.cur===last.cur), first=same[0], ch=same.length>1&&first.p?Math.round((last.p-first.p)/first.p*100):null;
+    return `<button type="button" class="m33-row" data-m33a="ph:${esc(k)}"><b>${esc(last.item)}</b><small>${last.cur==='TJS'?money(last.p):fxAmt(last.p,last.cur)+' '+curSym(last.cur)}${last.d?' · '+m33D(last.d):''}${ch?` · <em class="${ch>0?'up':'dn'}">${ch>0?'↑':'↓'}${Math.abs(ch)}%</em>`:''}</small></button>`; }).join('');
+  const debts=m33VDebts(v).map(s=>`<button type="button" class="m33-row" data-m33a="sup:${esc(s.id)}"><b>${money(+s.sum||0)}</b><small>${s.due?L.m33PromTill(m33D(s.due)):''}${s.note?' · '+esc(s.note):''}</small></button>`).join('');
+  const sec=(id,ic,t,body,add)=>`<div class="m33-sec" id="${id}"><h3>${ico(ic,18)} ${t}</h3>${body}${add||''}</div>`;
+  return `<div class="m33-vh">${v.card?`<button type="button" class="m33-vimg" data-m33a="zoom:vc_${esc(v.id)}"><img data-ph="vc_${esc(v.id)}" alt=""></button>`:`<span class="ava lg gold">${VKIND[v.kind]||'🏪'}</span>`}<div><h2>${esc(v.name)}</h2><div class="muted">${VKIND[v.kind]||''} ${L['vk_'+v.kind]||''} · ${m33Flag(v.country)} ${esc(v.city||'')}</div></div></div>
+    ${v.country==='CN'&&!(v.reg&&v.reg.st)?`<button type="button" class="m33-al" data-m33a="jump:m33-reg">${ico('shield',18)}<span>${L.m33Reg}: ${L.m33RegNone}</span></button>`:''}
+    ${loc?`<div class="cu-note">📍 ${esc(loc)}</div>`:''}<div class="cbs">${contactBtns(v)||`<p class="note">${L.vfNoContacts}</p>`}</div>
+    <div class="m33-acts"><button type="button" class="btn btn-ghost" data-m33a="ved">${ico('edit',16)} ${L.edit}</button><button type="button" class="btn btn-ghost" data-m33a="vph">${ico('chat',16)} ${L.trPhrases}</button>${tr?`<button type="button" class="btn btn-ghost" data-m33a="vcap">${ico('camera',16)} ${L.trCapHere}</button>`:''}</div>
+    ${sec('m33-facts','stats',L.m33Facts,(fx.length?`<div class="m33-facts">${fx.map(x=>`<div class="${x[2]||''}"><small>${x[0]}</small><b>${x[1]}</b></div>`).join('')}</div>`:`<p class="m33-tip">${L.m33FNone}</p>`)+`<div class="vstars">${stars('rq',L.vsQ)}${stars('rp',L.vsP)}${stars('rf',L.vsF)}</div>`)}
+    ${sec('m33-prom','clock',L.m33Prom,prows||`<p class="m33-tip">${L.m33PromNone}</p>`,`<button type="button" class="btn btn-ghost btn-full" data-m33a="pnew">${ico('plus',16)} ${L.m33PromAdd}</button>`)}
+    ${sec('m33-def','warn',L.m33Def,drows||`<p class="m33-tip">${L.m33DefNone}</p>`,`<button type="button" class="btn btn-ghost btn-full" data-m33a="dnew2">${ico('plus',16)} ${L.m33DefAdd}</button>`)}
+    ${sec('m33-pr','tag',L.m33Prices,prRows||`<p class="m33-tip">${L.m33PricesNone}</p>`)}
+    ${sec('m33-debt','cash',L.m33Debt,debts||`<p class="m33-tip">${L.m33DebtNone}</p>`,`<button type="button" class="btn btn-ghost btn-full" data-m33a="supnew">${ico('plus',16)} ${L.m33DebtAdd}</button>`)}
+    ${m33RegHTML(v)}
+    <button type="button" class="linkbtn m33-del" data-m33a="vdel">${L.delete}</button>`; }
+function m33LastBatch(v){ const ps=state.tprods.filter(p=>p.vendor===v.id&&p.dec==='buy'); if(!ps.length) return '';
+  const last=ps.map(p=>p.trip).sort((a,b)=>String((tripById(b)||{}).from||'').localeCompare(String((tripById(a)||{}).from||'')))[0];
+  for(const s of state.cargo) if(s.trip===last&&s.recv&&(s.vendors||[]).includes(v.id)){ let n=0; for(const p of ps.filter(p=>p.trip===last)) n+=s.recv[p.id]!=null?+s.recv[p.id]:pcsOf(p); if(n) return n; }
+  return ps.filter(p=>p.trip===last).reduce((a,p)=>a+pcsOf(p),0)||''; }
+function m33PromForm(v){ let due=dkey(addDays(today0(),7));
+  const draw=()=>{ openSheet(`<h3>${ico('clock',22)} ${L.m33PromAdd}</h3><p class="lead">${esc(v.name)}</p>
+    <div class="field"><label for="m33-pt">${L.m33PromT}</label><input id="m33-pt" maxlength="120" placeholder="${esc(L.m33PromPh)}" value="${esc(($('#m33-pt')||{}).value||'')}"></div>
+    <div class="field"><label for="m33-pd">${L.m33PromDue}</label><input id="m33-pd" type="date" value="${esc(due)}"></div>
+    <div class="chips">${[3,7,14,30].map(n=>`<button type="button" class="chip ${due===dkey(addDays(today0(),n))?'on':''}" data-pd="${n}">${L.m33PromIn(n)}</button>`).join('')}<button type="button" class="chip ${!due?'on':''}" data-pd="0">${L.m33PromNoDate}</button></div>
+    <div class="err" id="m33-pe"></div><button type="button" class="btn btn-primary btn-full" id="m33-ps">${L.save}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    sheet.querySelectorAll('[data-pd]').forEach(b=>b.onclick=()=>{ const t=$('#m33-pt').value; due=+b.dataset.pd?dkey(addDays(today0(),+b.dataset.pd)):''; draw(); $('#m33-pt').value=t; });
+    $('#m33-pd').onchange=e=>{ due=e.target.value; };
+    $('#m33-ps').onclick=()=>{ const t=$('#m33-pt').value.trim(); if(!t) return showErr($('#m33-pe'),L.m33PromErr); due=$('#m33-pd').value||due;
+      v.prom=(v.prom||[]).concat({id:uid('vp'),t,due:due||'',done:false,d:dkey()}); persist(); closeSheet(); render(); toast(L.saved); }; };
+  draw(); focusLater('#m33-pt'); }
+function m33DefForm(v){ const d={bad:'',of:m33LastBatch(v),what:'',act:'',loss:'',ph:null};
+  const draw=()=>{ openSheet(`<h3>${ico('warn',22)} ${L.m33DefAdd}</h3><p class="lead">${esc(v.name)} · ${L.m33DefLead}</p>
+    <div class="two"><div class="field n"><label for="m33-db">${L.m33DefBad}</label><input id="m33-db" type="number" inputmode="numeric" min="1" value="${esc(String(d.bad))}"></div><div class="field n"><label for="m33-do">${L.m33DefOf}</label><input id="m33-do" type="number" inputmode="numeric" min="1" value="${esc(String(d.of))}"></div></div>
+    <div class="field"><label for="m33-dw">${L.m33DefWhat}</label><input id="m33-dw" maxlength="100" placeholder="${esc(L.m33DefWhatPh)}" value="${esc(d.what)}"></div>
+    <div class="m33-h4">${L.m33DefAct}</div><div class="chips">${Object.keys(L.m33DefActs).map(k=>`<button type="button" class="chip ${d.act===k?'on':''}" data-da="${k}">${L.m33DefActs[k]}</button>`).join('')}</div>
+    <div class="field n"><label for="m33-dl">${L.m33DefLoss} <span class="hint">${L.optional}</span></label><input id="m33-dl" type="number" inputmode="numeric" min="0" value="${esc(String(d.loss))}"></div>
+    <button type="button" class="btn btn-ghost btn-full" id="m33-dp">${d.ph?'✓ '+L.m33DefPhOk:'📷 '+L.m33DefPh}</button>
+    <div class="err" id="m33-de"></div><button type="button" class="btn btn-primary btn-full" id="m33-ds" style="margin-top:12px">${L.save}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+    const keep=()=>{ d.bad=$('#m33-db').value; d.of=$('#m33-do').value; d.what=$('#m33-dw').value; d.loss=$('#m33-dl').value; };
+    sheet.querySelectorAll('[data-da]').forEach(b=>b.onclick=()=>{ keep(); d.act=d.act===b.dataset.da?'':b.dataset.da; draw(); });
+    $('#m33-dp').onclick=()=>{ keep(); camera(data=>{ d.ph=data; draw(); }); };
+    $('#m33-ds').onclick=async()=>{ keep(); const bad=Math.round(+d.bad), of=Math.round(+d.of); if(!(bad>0)) return showErr($('#m33-de'),L.m33DefErr); if(!(of>0)||bad>of) return showErr($('#m33-de'),L.m33DefErrOf);
+      const rec={id:uid('vq'),d:dkey(),bad,of,what:d.what.trim(),act:d.act,loss:Math.max(0,Math.round(+d.loss||0)),ph:!!d.ph}; if(d.ph) await phPut('vq_'+rec.id,d.ph);
+      v.def=(v.def||[]).concat(rec); persist(); closeSheet(); render(); toast(L.saved); }; };
+  draw(); focusLater('#m33-db'); }
+/* Сифра читает лицензию или страницу реестра: только название, код, дату, статус, сферу — без имён людей */
+function m33AiParse(txt){ const mm=String(txt||'').match(/\{[\s\S]*\}/); if(!mm) return null; let o; try{ o=JSON.parse(mm[0]); }catch(e){ return null; } if(!o||typeof o!=='object') return null;
+  const s=(x,n)=>x==null||/^(null|none|нет)$/i.test(String(x).trim())?'':String(x).replace(/[<>]/g,'').replace(/\s+/g,' ').trim().slice(0,n);
+  const code=s(o.code,24).toUpperCase().replace(/\s+/g,''), date=/^\d{4}-\d{2}-\d{2}$/.test(String(o.date||''))?o.date:'', kind=['factory','trade','mixed','unknown'].includes(o.kind)?o.kind:'';
+  const r={nm:s(o.name_cn,60),code,date,cap:s(o.capital,40),status:s(o.status,30),kind,scope:s(o.scope,140),abnormal:o.abnormal===true?true:o.abnormal===false?false:null,flags:Array.isArray(o.flags)?o.flags.map(x=>s(x,120)).filter(Boolean).slice(0,4):[]};
+  return (r.nm||r.code||r.status||r.scope)?r:null; }
+async function m33AiRead(dataUrl){ const data=String(dataUrl||'').split(',')[1]; if(!data) throw new Error('nophoto');
+  const r=await fetch(API_BASE+'/api/mk/ai',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),q:L.m33RegAiQ,lang,hist:[],img:{type:'image/jpeg',data}})});
+  const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error==='limit'?'limit':'srv'); const res=m33AiParse(j.text); if(!res) throw new Error('none'); return res; }
+function m33AiApply(v,a){ const r=v.reg=v.reg||{}, chk=r.chk=r.chk||{}, flags=a.flags.slice();
+  if(a.nm) r.nm=a.nm; if(a.code&&m33Uscc(a.code).st==='ok') r.code=a.code;
+  const alive=/存续|在业|开业|正常|operat|active|работает|фаъол/i.test(a.status), closed=/吊销|注销|撤销|迁出|revok|cancel|closed|закрыт|ликвид/i.test(a.status);
+  if(alive) chk.alive=true; if(closed){ chk.alive=false; flags.unshift(L.m33RaClosed); }
+  if(a.kind==='factory'||a.kind==='mixed') chk.scope=true; if(a.abnormal===false) chk.abn=true; if(a.abnormal===true){ chk.abn=false; flags.unshift(L.m33RaAbn); }
+  if(a.date){ const old=daysUntil(parseYmd(a.date))<-365; chk.age=old; if(!old) flags.push(L.m33RaYoung); }
+  r.ai={date:a.date,cap:a.cap,status:a.status,kind:a.kind,scope:a.scope,flags:[...new Set(flags)].slice(0,5)};
+  if(closed) r.st='stop'; else if((a.abnormal===true||!r.code)&&r.st!=='stop') r.st='q'; r.d=dkey(); persist(); }
+function m33AiSheet(v,photo,res,err){ openSheet(`<h3>${m33Sf()} ${L.m33RegAi}</h3>${!photo?`<p class="lead">${L.m33RegAiLead}</p><div class="sheet-row"><button type="button" class="btn btn-primary" id="m33-ac">${ico('camera',18)} ${L.m33DCam}</button><button type="button" class="btn btn-ghost" id="m33-ag">${L.m33DGal}</button></div>`
+    :!res&&!err?`<p class="lead">${L.m33RegAiBusy}</p><div class="m33-busy" aria-busy="true"></div>`
+    :err?`<div class="err show">${esc(err)}</div><div class="sheet-row"><button type="button" class="btn btn-ghost" id="m33-ac">${ico('camera',18)} ${L.m33DCam}</button></div>`
+    :`<div class="m33-h4">${L.m33RegAiGot}</div><div class="m33-aiw">${[[L.m33RegName,res.nm],[L.m33RegCode,res.code],[L.m33RaDate,res.date?m33D(res.date):''],[L.m33RaCap,res.cap],[L.m33RaSt,res.status],[L.m33RaKind,res.kind?L.m33RaKinds[res.kind]:''],['',res.scope]].filter(x=>x[1]).map(x=>`<div>${x[0]?`<small>${x[0]}</small>`:''}<span>${esc(x[1])}</span></div>`).join('')}${res.flags.length?`<ul>${res.flags.map(f=>`<li>${ico('warn',14)} ${esc(f)}</li>`).join('')}</ul>`:''}</div>
+      ${res.code?m33RegMsg(v,res.code):''}<button type="button" class="btn btn-primary btn-full" id="m33-aa">${L.m33RegAiApply}</button>`}
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  const shoot=g=>camera(async data=>{ m33AiSheet(v,data); try{ const r=await m33AiRead(data); m33AiSheet(v,data,r); }catch(e){ const m=e&&e.message; m33AiSheet(v,data,null,m==='limit'?L.sfLimit:L.m33RegAiErr); } },g?{gallery:1}:null);
+  if($('#m33-ac')) $('#m33-ac').onclick=()=>shoot(false); if($('#m33-ag')) $('#m33-ag').onclick=()=>shoot(true);
+  if($('#m33-aa')) $('#m33-aa').onclick=()=>{ m33AiApply(v,res); closeSheet(); render(); toast(L.saved); }; }
+function m33VAct(k,v,el){ const [a,b,c]=k.split(':');
+  if(a==='star'){ v[b]=(+v[b]===+c)?0:+c; persist(); m33Redraw(true); return true; }
+  if(a==='ved'){ vendorForm(v,null,()=>{ closeSheet(); }); return true; }
+  if(a==='vph'){ phrasesSheet(v); return true; }
+  if(a==='vcap'){ const tr=activeTrip(); if(!tr) return true; lsSet('curv_'+tr.id,v.id); if(!(v.visits||[]).includes(tr.id)&&v.trip!==tr.id){ v.visits=(v.visits||[]).concat(tr.id); persist(); } capProduct(tr,v.id); return true; }
+  if(a==='pnew'){ m33PromForm(v); return true; }
+  if(a==='pdone'){ const p=(v.prom||[]).find(x=>x.id===b); if(p){ p.done=!p.done; p.dd=p.done?dkey():''; persist(); render(); } return true; }
+  if(a==='pdel'){ v.prom=(v.prom||[]).filter(x=>x.id!==b); persist(); render(); delToast(L.entryDeleted); return true; }
+  if(a==='dnew2'){ m33DefForm(v); return true; }
+  if(a==='ddel'){ const d=(v.def||[]).find(x=>x.id===b); if(d&&d.ph) phDel('vq_'+d.id); v.def=(v.def||[]).filter(x=>x.id!==b); persist(); render(); delToast(L.entryDeleted); return true; }
+  if(a==='sup'){ const s=state.sup.find(x=>x.id===b); if(s) supForm(s); return true; }
+  if(a==='supnew'){ supForm(null); const n=$('#su-n'); if(n) n.value=v.name; focusLater('#su-s'); return true; }
+  if(a==='ropen'){ window.open('https://www.gsxt.gov.cn/','_blank','noopener'); return true; }
+  if(a==='rcopy'){ const c=(v.reg||{}).code; if(c){ try{ navigator.clipboard.writeText(c).then(()=>toast(L.copied),()=>{}); }catch(e){} } return true; }
+  if(a==='rchk'){ v.reg=v.reg||{}; const ch=v.reg.chk=v.reg.chk||{}; ch[b]=!ch[b]; persist(); m33Redraw(true); return true; }
+  if(a==='rst'){ v.reg=v.reg||{}; v.reg.st=v.reg.st===b?'':b; v.reg.d=dkey(); persist(); m33Redraw(true); return true; }
+  if(a==='rai'){ m33AiSheet(v); return true; }
+  if(a==='jump'){ const t=BPG.el.querySelector('#'+b); if(t) t.scrollIntoView({behavior:'smooth',block:'start'}); return true; }
+  if(a==='vdel'){ const ps=state.tprods.filter(p=>p.vendor===v.id).length; openSheet(`<h3>${L.delete}: ${esc(v.name)}?</h3><p class="lead">${ps?L.vsDelProds(ps):''}</p><div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button><button type="button" class="btn btn-danger" id="m33-vy">${L.delete}</button></div>`);
+    $('#m33-vy').onclick=()=>{ state.vendors=state.vendors.filter(x=>x!==v); state.tprods=state.tprods.filter(p=>p.vendor!==v.id); state.torders=state.torders.filter(o=>o.vendor!==v.id); persist(); closeSheet(); setTimeout(()=>{ bpBack(); render(); },150); delToast(L.entryDeleted); }; return true; }
+  return false; }
+/* старый «справочник поставщиков» и «Мои поставщики» открывают раздел */
+vendorsDirSheet=function(){ m33Open('vnd'); };
+{ const _vs=vendorSheet; vendorSheet=function(v){ const x=_vs.apply(this,arguments); try{ const rows=sheet.querySelectorAll('.sheet-row'), last=rows[rows.length-1]; if(last&&v&&v.id) last.insertAdjacentHTML('beforebegin',`<button type="button" class="btn btn-ghost btn-full" data-m33v="${esc(v.id)}" style="margin-top:8px">${ico('people',18)} ${L.m33VAllInfo}</button>`); }catch(e){} return x; }; }
+
+/* ======================= 521. Документы ======================= */
+const M33DKI={loan:'loans',sched:'cal',rcpt:'receipt',iou:'doc',rent:'home',lic:'shield',sup:'truck',war:'star',id:'person',other:'folder'};
+function m33DKey(){ return DEMO?'m33_docs_demo':'m33_docs_v1'; }
+function m33Docs(){ const k=m33DKey(); let raw=lsGet(k);
+  if(raw==null&&DEMO){ const D=n=>dkey(addDays(today0(),n)); const seed=[{id:'dd_rent',k:'rent',t:L.m33DKinds.rent+' · Корвон',d:D(-345),exp:D(20),rem:30,ph:[],ts:3},{id:'dd_lic',k:'lic',t:L.m33DKinds.lic,d:D(-700),exp:'',ph:[],ts:2},{id:'dd_war',k:'war',t:L.m33DKinds.war+' · холодильник',d:D(-100),exp:D(265),rem:14,ph:[],ts:1}]; lsSet(k,JSON.stringify(seed)); raw=lsGet(k); }
+  try{ const a=JSON.parse(raw||'[]'); return Array.isArray(a)?a:[]; }catch(e){ return []; } }
+function m33DocsSave(a){ lsSet(m33DKey(),JSON.stringify(a)); }
+function m33DPre(d){ return d.k==='id'?'dcx_':'dcm_'; }
+function m33DExp(d){ if(!d.exp) return null; const n=daysUntil(parseYmd(d.exp)), rem=+d.rem||14; return {n,soon:n<=rem&&n>=-30,ended:n<0,txt:n<0?L.m33DEnded(m33D(d.exp)):n<=60?L.m33DLeft(n):L.m33DTill(m33D(d.exp))}; }
+function m33DCard(d,S){ const e=m33DExp(d), on=S.sel&&S.sel.includes(d.id), k=(d.ph||[])[0];
+  return `<button type="button" class="card m33-dc ${on?'sel':''}" data-m33a="dopen:${esc(d.id)}" ${S.sel?`role="checkbox" aria-checked="${on}"`:''}>${S.sel?`<span class="m33-dcb">${on?ico('check',16):''}</span>`:''}<span class="ava m33-ava ${k?'ph':''}">${k?`<img data-ph="${esc(k)}" alt="">`:ico(M33DKI[d.k]||'folder',22)}</span>
+    <div class="c-main"><div class="c-top"><span class="c-name">${esc(d.t)}</span></div><div class="c-sub"><span>${esc(L.m33DKinds[d.k]||'')}${d.d?' · '+m33D(d.d):''} · ${(d.ph||[]).length?L.m33DPages((d.ph||[]).length):L.m33DNoPh}</span></div>
+    ${e?`<div class="m33-bs"><i class="${e.ended?'bad':e.soon?(e.n<=7?'bad':'warn'):''}">${ico('clock',12)} ${e.txt}</i></div>`:''}</div></button>`; }
+function m33DocsHTML(){ const S=m33S(), q=S.dq.toLowerCase().trim(), all=m33Docs().sort((a,b)=>(b.ts||0)-(a.ts||0));
+  const list=all.filter(d=>(!S.dk||d.k===S.dk)&&(!q||[d.t,d.note,L.m33DKinds[d.k]].join(' ').toLowerCase().includes(q)));
+  const soon=all.filter(d=>{ const e=m33DExp(d); return e&&e.soon; }).sort((a,b)=>String(a.exp).localeCompare(String(b.exp)));
+  const kinds=[...new Set(all.map(d=>d.k))];
+  const loans=state.loans.filter(l=>!l.example), ld=loans.filter(l=>(l.docs||[]).length), lr=loans.map(l=>({l,n:state.payments.filter(p=>p.loanId===l.id&&p.rc).length})).filter(x=>x.n);
+  return `<p class="lead m33-lead">${L.m33DLead}</p>
+    ${S.sel?`<div class="m33-selbar"><button type="button" class="btn btn-primary" data-m33a="dshsel" ${S.sel.length?'':'disabled'}>${ico('share',18)} ${L.m33DShareSel(S.sel.length)}</button><button type="button" class="btn btn-ghost" data-m33a="dseloff">${L.m33DSelDone}</button></div>`
+      :`<div class="m33-acts"><button type="button" class="btn btn-primary" data-m33a="dnew">${ico('plus',18)} ${L.m33DAdd}</button>${all.length>1?`<button type="button" class="btn btn-ghost" data-m33a="dselon">${ico('check',16)} ${L.m33DSel}</button>`:''}</div>`}
+    ${all.length>3?`<div class="field m33-q"><input type="search" data-m33in="dq" value="${esc(S.dq)}" placeholder="🔎 ${esc(L.m33DSearch)}" aria-label="${esc(L.m33DSearch)}"></div>`:''}
+    ${kinds.length>1?`<div class="chips m33-ch"><button type="button" class="chip ${!S.dk?'on':''}" data-m33a="dfil:">${L.m33VAll}</button>${kinds.map(k=>`<button type="button" class="chip ${S.dk===k?'on':''}" data-m33a="dfil:${k}">${esc(L.m33DKinds[k]||k)}</button>`).join('')}</div>`:''}
+    ${soon.length&&!S.sel?`<div class="m33-sec"><h3>${ico('clock',18)} ${L.m33DSoon}</h3><div class="cards">${soon.map(d=>m33DCard(d,S)).join('')}</div></div>`:''}
+    <div class="m33-sec"><h3>${ico('folder',18)} ${L.m33DMine}</h3>${list.length?`<div class="cards">${list.map(d=>m33DCard(d,S)).join('')}</div>`:`<p class="m33-tip">${all.length?L.srNone:L.m33DNone}</p>`}</div>
+    ${(ld.length||lr.length)&&!S.sel?`<div class="m33-sec"><h3>${ico('loans',18)} ${L.m33DFromLoans}</h3><div class="cards">${ld.map(l=>`<button type="button" class="card m33-dc" data-m33a="lctr:${esc(l.id)}"><span class="ava m33-ava">${ico('doc',22)}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(l.name)}</span></div><div class="c-sub"><span>${L.m33DLoanDoc(l.docs.length)}</span></div></div></button>`).join('')}${lr.map(x=>`<button type="button" class="card m33-dc" data-m33a="lrc:${esc(x.l.id)}"><span class="ava m33-ava">${ico('receipt',22)}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(x.l.name)}</span></div><div class="c-sub"><span>${L.m33DLoanRc(x.n)}</span></div></div></button>`).join('')}</div></div>`:''}
+    <p class="m33-src">${ico('lock',14)} ${L.m33DLocal}</p>`; }
+let m33FileCb=null;
+function m33Files(gallery,cb){ let inp=document.getElementById('m33File'); if(!inp){ inp=document.createElement('input'); inp.type='file'; inp.accept='image/*'; inp.id='m33File'; inp.hidden=true; document.body.appendChild(inp);
+    inp.addEventListener('change',async()=>{ const fs=[...(inp.files||[])]; inp.value=''; const c=m33FileCb; m33FileCb=null; if(!fs.length||!c) return; const out=[]; for(const f of fs.slice(0,12)){ try{ out.push(await imgToJpeg(f,1600,0.8)); }catch(e){ toast(L.rcFail); } } if(out.length) c(out); }); }
+  if(gallery){ inp.removeAttribute('capture'); inp.multiple=true; } else { inp.setAttribute('capture','environment'); inp.multiple=false; }
+  m33FileCb=cb; inp.click(); }
+function m33DocForm(doc0){ const isNew=!doc0, d=doc0?JSON.parse(JSON.stringify(doc0)):{k:'other',t:'',d:dkey(),exp:'',rem:14,note:'',loan:'',ph:[]};
+  const pages=(d.ph||[]).map(k=>({k,src:null})); let auto=isNew;
+  const loans=state.loans.filter(l=>!l.example);
+  const draw=()=>{ openSheet(`<h3>${ico('folder',22)} ${isNew?L.m33DAdd:esc(d.t)}</h3>
+    <div class="chips m33-kinds">${Object.keys(L.m33DKinds).map(k=>`<button type="button" class="chip ${d.k===k?'on':''}" data-dk="${k}">${ico(M33DKI[k],14)} ${L.m33DKinds[k]}</button>`).join('')}</div>
+    <div class="field"><label for="m33-dt">${L.m33DTitle}</label><input id="m33-dt" maxlength="80" placeholder="${esc(L.m33DTitlePh)}" value="${esc(d.t)}"></div>
+    <div class="m33-pages">${pages.map((p,i)=>`<span class="m33-pg"><img ${p.src?`src="${p.src}"`:`data-ph="${esc(p.k)}"`} alt=""><button type="button" aria-label="${esc(L.m33DPgDel)}" data-pgdel="${i}">${ico('close',14)}</button></span>`).join('')}</div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="m33-dcam">${ico('camera',18)} ${L.m33DCam}</button><button type="button" class="btn btn-ghost" id="m33-dgal">${L.m33DGal}</button></div>
+    <div class="two"><div class="field"><label for="m33-dd">${L.m33DDate}</label><input id="m33-dd" type="date" value="${esc(d.d||'')}"></div><div class="field"><label for="m33-dx">${L.m33DExp} <span class="hint">${L.optional}</span></label><input id="m33-dx" type="date" value="${esc(d.exp||'')}"></div></div>
+    <div class="m33-h4">${L.m33DRem}</div><div class="chips">${[7,14,30,60].map(n=>`<button type="button" class="chip ${(+d.rem||14)===n?'on':''}" data-dr="${n}">${L.m33DRemD(n)}</button>`).join('')}</div>
+    ${loans.length?`<div class="field"><label for="m33-dln">${L.m33DLoan}</label><select id="m33-dln"><option value="">${L.m33DLoanNone}</option>${loans.map(l=>`<option value="${esc(l.id)}" ${d.loan===l.id?'selected':''}>${esc(l.name)}</option>`).join('')}</select></div>`:''}
+    <div class="field"><label for="m33-dn">${L.m33DNote} <span class="hint">${L.optional}</span></label><input id="m33-dn" maxlength="140" value="${esc(d.note||'')}"></div>
+    <p class="m33-src ${d.k==='id'?'priv':''}">${ico('lock',14)} ${d.k==='id'?L.m33DPrivate:L.m33DLocal}</p>
+    <div class="err" id="m33-dfe"></div><button type="button" class="btn btn-primary btn-full" id="m33-dfs">${L.save}</button>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.cancel}</button>${isNew?'':`<button type="button" class="btn btn-danger" id="m33-dfx">${L.delete}</button>`}</div>`);
+    fillPhotos(sheet);
+    const keep=()=>{ d.t=$('#m33-dt').value; d.d=$('#m33-dd').value; d.exp=$('#m33-dx').value; d.note=$('#m33-dn').value; const s=$('#m33-dln'); if(s) d.loan=s.value; };
+    $('#m33-dt').addEventListener('input',()=>{ auto=false; });
+    sheet.querySelectorAll('[data-dk]').forEach(b=>b.onclick=()=>{ keep(); const was=L.m33DKinds[d.k]; d.k=b.dataset.dk; if(auto||!d.t.trim()||d.t===was){ d.t=d.k==='other'?'':L.m33DKinds[d.k]; auto=true; } draw(); });
+    sheet.querySelectorAll('[data-dr]').forEach(b=>b.onclick=()=>{ keep(); d.rem=+b.dataset.dr; draw(); });
+    sheet.querySelectorAll('[data-pgdel]').forEach(b=>b.onclick=()=>{ keep(); pages.splice(+b.dataset.pgdel,1); draw(); });
+    const add=g=>{ keep(); m33Files(g,srcs=>{ for(const s of srcs) pages.push({k:null,src:s}); draw(); }); };
+    $('#m33-dcam').onclick=()=>add(false); $('#m33-dgal').onclick=()=>add(true);
+    $('#m33-dfs').onclick=async()=>{ keep(); const t=d.t.trim(); if(!t) return showErr($('#m33-dfe'),L.m33DErrT); const btn=$('#m33-dfs'); btn.disabled=true;
+      const id=d.id||uid('dc'), pre=m33DPre(d), keys=[];
+      for(let i=0;i<pages.length;i++){ const p=pages[i]; let src=p.src; if(!src&&p.k) src=await phGet(p.k); if(!src) continue; const k=pre+id+'_'+Date.now().toString(36)+i; await phPut(k,src); keys.push(k); }
+      for(const k of (doc0&&doc0.ph)||[]) if(!keys.includes(k)) phDel(k);
+      const rec={id,k:d.k,t,d:d.d||'',exp:d.exp||'',rem:+d.rem||14,note:(d.note||'').trim(),loan:d.loan||'',ph:keys,ts:(doc0&&doc0.ts)||Date.now()};
+      const all=m33Docs().filter(x=>x.id!==id); all.push(rec); m33DocsSave(all); closeSheet(); render(); toast(L.saved); };
+    if($('#m33-dfx')) $('#m33-dfx').onclick=()=>{ const b=$('#m33-dfx'); if(!confirmTwice(b)) return; m33DocDel(doc0.id); closeSheet(); render(); delToast(L.entryDeleted); }; };
+  draw(); }
+function m33DocDel(id){ const all=m33Docs(), d=all.find(x=>x.id===id); if(!d) return; for(const k of d.ph||[]) phDel(k); m33DocsSave(all.filter(x=>x.id!==id)); }
+function m33DocView(id){ const d=m33Docs().find(x=>x.id===id); if(!d){ return; } const e=m33DExp(d), loan=d.loan&&state.loans.find(l=>l.id===d.loan);
+  openSheet(`<h3>${ico(M33DKI[d.k]||'folder',22)} ${esc(d.t)}</h3><p class="lead">${esc(L.m33DKinds[d.k]||'')}${d.d?' · '+m33D(d.d):''}${loan?' · '+esc(loan.name):''}</p>
+    ${e?`<div class="m33-al ${e.ended||e.n<=7?'bad':e.soon?'warn':''}">${ico('clock',18)}<span>${e.txt}</span></div>`:''}
+    ${(d.ph||[]).length?`<div class="m33-gal">${d.ph.map(k=>`<button type="button" data-m33a="zoom:${esc(k)}"><img data-ph="${esc(k)}" alt=""></button>`).join('')}</div>`:`<p class="m33-tip">${L.m33DNoPh}</p>`}
+    ${d.note?`<div class="cu-note">${esc(d.note)}</div>`:''}
+    <div class="sheet-row">${(d.ph||[]).length?`<button type="button" class="btn btn-primary" id="m33-vsh">${ico('share',18)} ${L.m33DShare}</button>`:''}<button type="button" class="btn btn-ghost" id="m33-ved">${ico('edit',18)} ${L.edit}</button></div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  fillPhotos(sheet); if($('#m33-vsh')) $('#m33-vsh').onclick=()=>m33Share([d]); $('#m33-ved').onclick=()=>m33DocForm(d); }
+function m33FName(d,i,n){ const base=String(d.t||'doc').replace(/[\\/:*?"<>|]+/g,' ').replace(/\s+/g,'-').slice(0,40)||'doc'; return base+(n>1?'-'+(i+1):'')+'.jpg'; }
+async function m33Share(docs){ const files=[]; for(const d of docs){ const ks=d.ph||[]; for(let i=0;i<ks.length;i++){ const u=await phGet(ks[i]); if(!u) continue; try{ const b=await (await fetch(u)).blob(); files.push(new File([b],m33FName(d,i,ks.length),{type:'image/jpeg'})); }catch(e){} } }
+  if(!files.length){ toast(L.m33DNoFiles); return 0; }
+  try{ if(navigator.canShare&&navigator.share&&navigator.canShare({files})){ await navigator.share({files,title:docs.length===1?docs[0].t:L.m33DT}); return files.length; } }catch(e){ if(e&&e.name==='AbortError') return 0; }
+  for(const f of files){ const a=document.createElement('a'); a.href=URL.createObjectURL(f); a.download=f.name; document.body.appendChild(a); a.click(); setTimeout(()=>{ URL.revokeObjectURL(a.href); a.remove(); },1500); }
+  toast(L.m33DSaved); return files.length; }
+function m33RcSheet(l){ const ps=state.payments.filter(p=>p.loanId===l.id&&p.rc).sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  openSheet(`<h3>${ico('receipt',22)} ${L.m33DRcT}</h3><p class="lead">${esc(l.name)}</p><div class="m33-gal">${ps.map(p=>`<button type="button" data-m33a="zoom:${esc(p.id)}"><img data-ph="${esc(p.id)}" alt=""><small>${p.date?m33D(String(p.date).slice(0,10)):''} · ${money(+p.amount||0)}</small></button>`).join('')}</div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`); fillPhotos(sheet); }
+function m33DAct(a,b){ const S=m33S();
+  if(a==='dnew'){ m33DocForm(null); return true; }
+  if(a==='dopen'){ if(S.sel){ S.sel=S.sel.includes(b)?S.sel.filter(x=>x!==b):S.sel.concat(b); m33Redraw(true); } else m33DocView(b); return true; }
+  if(a==='dfil'){ S.dk=b||''; m33Redraw(true); return true; }
+  if(a==='dselon'){ S.sel=[]; m33Redraw(true); return true; }
+  if(a==='dseloff'){ S.sel=null; m33Redraw(true); return true; }
+  if(a==='dshsel'){ const ds=m33Docs().filter(d=>(S.sel||[]).includes(d.id)); m33Share(ds).then(n=>{ if(n){ S.sel=null; m33Redraw(true); } }); return true; }
+  if(a==='lctr'){ const l=byId(b); if(l) ctrSheet(l); return true; }
+  if(a==='lrc'){ const l=byId(b); if(l) m33RcSheet(l); return true; }
+  return false; }
+/* копия данных: документы (кроме паспорта) едут вместе с остальным, фото паспорта и удостоверений — никогда */
+{ const _bf=backupDataFull; backupDataFull=async function(){ const s=await _bf.apply(this,arguments); try{ const o=JSON.parse(s); if(o.rc) for(const k of Object.keys(o.rc)) if(k.startsWith('dcx_')) delete o.rc[k];
+    const ds=m33Docs().filter(d=>d.k!=='id'); if(ds.length) o.m33docs=ds; return JSON.stringify(o); }catch(e){ return s; } }; }
+{ const _rd=restoreData; restoreData=function(str){ const r=_rd.apply(this,arguments); try{ const o=JSON.parse(str); if(Array.isArray(o.m33docs)){ const cur=m33Docs(), ids=new Set(cur.map(d=>d.id)); m33DocsSave(cur.concat(o.m33docs.filter(d=>d&&d.id&&!ids.has(d.id)))); } }catch(e){} return r; }; }
+
+/* ======================= 525. Где закупать ======================= */
+const M33W=[{k:'gz',c:'CN',mk:['Baima 白马','Shahe 沙河','Shisanhang 十三行','Liuhua 流花'],near:['xt','dl'],al:['гуанчжоу','guangzhou','baima','shahe','баима','шахэ']},
+  {k:'yw',c:'CN',mk:['Yiwu Futian 义乌福田'],al:['иу','yiwu']},{k:'ur',c:'CN',mk:['Bianjiang 边疆','Hualing 华凌'],al:['урумчи','urumqi']},
+  {k:'ist',c:'TR',mk:['Laleli','Merter','Osmanbey','Zeytinburnu'],al:['стамбул','istanbul','laleli','merter','osmanbey','лалели','мертер']},{k:'bur',c:'TR',mk:[],al:['бурса','bursa']},
+  {k:'tas',c:'UZ',mk:['Абу Сахий','Ипподром','Чорсу'],al:['ташкент','tashkent']},{k:'fer',c:'UZ',mk:[],al:['андижан','наманган','фергана','маргилан','andijan','namangan','fergana']},
+  {k:'bis',c:'KG',mk:['Дордой','Мадина'],al:['бишкек','bishkek','дордой','dordoi']},{k:'osh',c:'KG',mk:['Кара-Суу'],al:['кара-суу','карасуу','kara-suu','ош']},
+  {k:'ala',c:'KZ',mk:['Барахолка'],al:['алматы','almaty']},{k:'dxb',c:'AE',mk:['Deira','Dragon Mart','Naif'],al:['дубай','dubai','шарджа','sharjah']},
+  {k:'msk',c:'RU',mk:['Садовод','Южные ворота','Люблино'],al:['москва','moscow','садовод']}];
+function m33WTrips(w){ return state.trips.filter(t=>t.country===w.c&&w.al.some(a=>{ const c=String(t.city||'').toLowerCase(); return a.length<3?c===a:c.includes(a); })); }
+function m33WStat(w){ const ts=m33WTrips(w); if(!ts.length) return null; let spent=0,pcs=0,last='',sold=[],vs=new Set(),cd=[];
+  for(const t of ts){ const tt=tripTotals(t); spent+=tt.all||0; pcs+=tt.pcs||0; if(String(t.from||'')>last) last=t.from||''; const s=m12Sell(t); if(s) sold.push(s.pct); for(const v of tripVendors(t)) vs.add(v.id); }
+  for(const s of state.cargo){ if(!ts.some(t=>t.id===s.trip)) continue; const a=s.dt&&s.dt.sent, b=s.dt&&(s.dt.tj||s.dt.got); if(a&&b){ const n=Math.round((parseYmd(b)-parseYmd(a))/864e5); if(n>=0) cd.push(n); } }
+  return {n:ts.length,spent,pcs,pc:pcs?spent/pcs:null,last,sold:sold.length?Math.round(sold.reduce((a,b)=>a+b,0)/sold.length):null,vs:[...vs],cargo:cd.length?Math.round(cd.reduce((a,b)=>a+b,0)/cd.length):null}; }
+function m33WGuide(w){ const ks=[w.k].concat(w.near||[]), rows=GUIDE.filter(g=>ks.includes(g[0])&&g[1]!=='💡'), cats={}; for(const g of rows) for(const c of g[2]) if(c!=='tips') cats[c]=(cats[c]||0)+1; return {rows,cats}; }
+function m33Goods(){ const by={}; for(const p of state.tprods) if(p.dec==='buy'&&p.kind) by[p.kind]=(by[p.kind]||0)+pcsOf(p); const ks=Object.keys(by).sort((a,b)=>by[b]-by[a]).slice(0,3).map(k=>L['wp_'+k]).filter(Boolean); return ks.length?ks.join(', '):L.m33WMyGoodsDef; }
+function m33WName(w){ return gCity(w.k)+' ('+(L['cn_'+w.c]||w.c)+')'; }
+function m33WCell(st,k){ if(!st) return L.m33WNoData; if(k==='n') return String(st.n); if(k==='pc') return st.pc?money(st.pc):L.m33WNoData; if(k==='sold') return st.sold!=null?st.sold+'%':L.m33WNoData; if(k==='cargo') return st.cargo!=null?String(st.cargo):L.m33WNoData; if(k==='last') return st.last?m33D(st.last):L.m33WNoData; return L.m33WNoData; }
+function m33WhereHTML(){ const S=m33S(), info=M33W.map(w=>({w,st:m33WStat(w),g:m33WGuide(w)})), cats={}; for(const x of info) for(const c in x.g.cats) cats[c]=(cats[c]||0)+x.g.cats[c];
+  const ck=Object.keys(cats).filter(c=>GCAT[c]).sort((a,b)=>cats[b]-cats[a]).slice(0,12), cat=S.wc&&cats[S.wc]?S.wc:'';
+  const mine=info.filter(x=>x.st).sort((a,b)=>String(b.st.last).localeCompare(String(a.st.last))), rest=info.filter(x=>!x.st);
+  let list=cat?info.slice().sort((a,b)=>(b.g.cats[cat]||0)-(a.g.cats[cat]||0)||(b.st?1:0)-(a.st?1:0)):mine.concat(rest);
+  const card=x=>{ const w=x.w, on=S.cmp.includes(w.k), top=Object.keys(x.g.cats).filter(c=>GCAT[c]).sort((a,b)=>(cat&&b===cat?99:0)-(cat&&a===cat?99:0)||x.g.cats[b]-x.g.cats[a]).slice(0,3);
+    return `<div class="card m33-wc" role="button" tabindex="0" data-m33a="wone:${w.k}"><span class="ava m33-fl">${m33Flag(w.c)}</span><div class="c-main"><div class="c-top"><span class="c-name">${esc(gCity(w.k))}</span>${x.st?`<span class="m33-mine">${L.m33WTrips(x.st.n)}</span>`:''}</div>
+      <div class="c-sub"><span>${esc(L['cn_'+w.c]||'')} · ${L.m33WGuideN(x.g.rows.length)}${x.st&&x.st.last?' · '+L.m33WLastTrip(m33D(x.st.last)):''}</span></div>
+      ${top.length?`<div class="m33-cats">${top.map(c=>`<i class="${c===cat?'on':''}">${GCAT[c]} ${esc(L['gc_'+c]||c)}${cat?' · '+x.g.cats[c]:''}</i>`).join('')}</div>`:''}</div>
+      <button type="button" class="m33-cmpb ${on?'on':''}" aria-pressed="${on}" data-m33a="wcmp:${w.k}">${on?ico('check',14)+' '+L.m33WCmpOn:L.m33WCmp}</button></div>`; };
+  let cmp=''; if(S.cmp.length){ const ws=S.cmp.map(k=>info.find(x=>x.w.k===k)).filter(Boolean);
+    if(ws.length<2) cmp=`<div class="m33-al">${ico('info',18)}<span>${L.m33WCmpPick}</span><button type="button" class="m33-mini" data-m33a="wcmpx">${L.m33WCmpClear}</button></div>`;
+    else { const rows=[[L.m33WTrips(''),'n'],[L.m33WLastTrip(''),'last'],[L.m33WPc,'pc'],[L.m33WSold,'sold'],[L.m33WCargo,'cargo']];
+      cmp=`<div class="m33-sec m33-cmpt"><h3>${ico('stats',18)} ${L.m33WCmpT}</h3><table><thead><tr><th></th>${ws.map(x=>`<th>${m33Flag(x.w.c)} ${esc(gCity(x.w.k))}</th>`).join('')}</tr></thead><tbody>
+        ${rows.map(r=>`<tr><th>${esc(m33Cap(r[0]))}</th>${ws.map(x=>`<td>${m33WCell(x.st,r[1])}</td>`).join('')}</tr>`).join('')}
+        <tr><th>${L.m33WGuideL}</th>${ws.map(x=>`<td>${cat?(x.g.cats[cat]||0):x.g.rows.length}</td>`).join('')}</tr></tbody></table>
+        <div class="m33-acts"><button type="button" class="btn btn-primary" data-sifra="${esc(L.m33WCmpQ(m33WName(ws[0].w),m33WName(ws[1].w),m33Goods()))}">${m33Sf()} ${L.m33WCmpAsk}</button><button type="button" class="btn btn-ghost" data-m33a="wcmpx">${L.m33WCmpClear}</button></div></div>`; } }
+  return `<p class="lead m33-lead">${L.m33WLead}</p>${cmp}
+    ${ck.length?`<div class="m33-h4">${L.m33WCat}</div><div class="chips m33-ch m33-scroll"><button type="button" class="chip ${!cat?'on':''}" data-m33a="wcat:">${L.m33WCatAll}</button>${ck.map(c=>`<button type="button" class="chip ${cat===c?'on':''}" data-m33a="wcat:${c}">${GCAT[c]} ${esc(L['gc_'+c]||c)}</button>`).join('')}</div>`:''}
+    ${!cat&&mine.length?`<div class="m33-sec"><h3>${ico('pin',18)} ${L.m33WMine}</h3><div class="cards">${mine.map(card).join('')}</div></div><div class="m33-sec"><h3>${ico('globe',18)} ${L.m33WAllT}</h3><div class="cards">${rest.map(card).join('')}</div></div>`
+      :`<div class="cards">${list.map(card).join('')}</div>`}
+    <p class="m33-src">${ico('info',14)} ${L.m33WSrc}</p>`; }
+function m33WoneHTML(w){ const st=m33WStat(w), g=m33WGuide(w), C=TCOUNTRY[w.c]||TCOUNTRY.XX, LI=lang==='tg'?4:lang==='en'?5:3;
+  const vs=st?st.vs.map(id=>state.vendors.find(v=>v.id===id)).filter(Boolean):state.vendors.filter(v=>v.country===w.c&&w.al.some(a=>String(v.city||'').toLowerCase().includes(a)));
+  const places=g.rows.filter(r=>r[1]!=='🏭').slice(0,6);
+  const grid=st?[[L.m33WTrips(''),String(st.n)],[L.m33WSpent,money(st.spent)],[L.m33WPc,st.pc?money(st.pc):'—'],[L.m33WSold,st.sold!=null?st.sold+'%':'—'],[L.m33WCargo,st.cargo!=null?String(st.cargo):'—'],[L.m33WVend,String(st.vs.length)]]:null;
+  return `<div class="m33-wh"><span class="m33-wfl">${C.f}</span><div><h2>${esc(gCity(w.k))}</h2><div class="muted">${esc(L['cn_'+w.c]||'')}</div></div></div>
+    <p class="m33-wn">${esc((L.m33WN||{})[w.k]||'')}</p>
+    ${w.mk.length?`<div class="m33-h4">${L.m33WMk}</div><div class="m33-cats">${w.mk.map(m=>`<i>${esc(m)}</i>`).join('')}</div>`:''}
+    <div class="m33-acts col"><button type="button" class="btn btn-primary" data-sifra="${esc(L.m33WAskQ(m33WName(w),m33Goods()))}">${m33Sf()} ${L.m33WAsk}</button>
+      ${g.rows.length?`<button type="button" class="btn btn-ghost" data-m33a="wguide:${w.k}">${ico('pin',16)} ${L.m33WGuide} · ${g.rows.length}</button>`:''}
+      <button type="button" class="btn btn-ghost" data-m33a="wtrip:${w.k}">${ico('plane',16)} ${L.m33WStart}</button></div>
+    <div class="m33-sec"><h3>${ico('history',18)} ${L.m33WYours}</h3>${grid?`<div class="m33-facts">${grid.map(x=>`<div><small>${esc(m33Cap(x[0]))}</small><b>${x[1]}</b></div>`).join('')}</div>`:`<p class="m33-tip">${L.m33WNoTrips}</p>`}</div>
+    ${vs.length?`<div class="m33-sec"><h3>${ico('people',18)} ${L.m33WYourV}</h3><div class="chips">${vs.map(v=>`<button type="button" class="chip" data-m33v="${esc(v.id)}">${VKIND[v.kind]||'🏪'} ${esc(v.name)}</button>`).join('')}</div></div>`:''}
+    ${places.length?`<div class="m33-sec"><h3>${ico('pin',18)} ${L.m33WGuide}</h3>${places.map(r=>`<div class="m33-pl"><b>${esc(r[1])}</b><span>${esc(String(r[LI]||r[3]).slice(0,180))}</span><small>${r[2].filter(c=>GCAT[c]&&c!=='tips').map(c=>GCAT[c]).join(' ')}</small></div>`).join('')}</div>`:''}
+    <div class="m33-sec"><h3>${ico('card',18)} ${L.m33WPay} · ${L.m33WMsg}</h3><div class="m33-cats">${(C.pay||[]).map(k=>`<i>${esc(L['pay_'+k]||k)}</i>`).join('')}${(C.msgs||[]).map(k=>`<i>${esc(({wa:'WhatsApp',wc:'WeChat',ig:'Instagram',tg:'Telegram',ph:'📞'})[k]||k)}</i>`).join('')}</div></div>
+    <p class="m33-src">${ico('info',14)} ${L.m33WSrc}</p>`; }
+function m33WAct(a,b){ const S=m33S();
+  if(a==='wone'){ bpGo('wone',b); return true; }
+  if(a==='wcmp'){ S.cmp=S.cmp.includes(b)?S.cmp.filter(x=>x!==b):S.cmp.concat(b).slice(-2); m33Redraw(true); const m=BPG.el.querySelector('#bpg-m'); if(S.cmp.length===2&&m) m.scrollTop=0; return true; }
+  if(a==='wcmpx'){ S.cmp=[]; m33Redraw(true); return true; }
+  if(a==='wcat'){ S.wc=b||''; m33Redraw(true); return true; }
+  if(a==='wguide'){ const w=M33W.find(x=>x.k===b); if(w){ guideSt.cat=null; guideSt.q=gCity(w.k); guideSheet(w.c); } return true; }
+  if(a==='wtrip'){ const w=M33W.find(x=>x.k===b); if(!w) return true; bpClose(); setTimeout(()=>{ tripForm(null); setTimeout(()=>{ const c=sheet.querySelector(`[data-tc="${w.c}"]`); if(c) c.click(); const i=$('#tf-c'); if(i) i.value=gCity(w.k); },60); },380); return true; }
+  return false; }
+
+/* ======================= общие клики ======================= */
+document.addEventListener('click',e=>{ const el=e.target&&e.target.closest&&e.target.closest('[data-m33go],[data-m33v],[data-m33doc],[data-m33a]'); if(!el) return;
+  const d=el.dataset; e.stopImmediatePropagation(); e.preventDefault();
+  if(d.m33go!=null){ m33Open(d.m33go); return; }
+  if(d.m33v!=null){ const t=m33Top(); if(t&&t.name==='vone'&&t.arg===d.m33v&&!m8SheetOn()) return; m33Open('vone',d.m33v); return; }
+  if(d.m33doc!=null){ const id=d.m33doc; m33Open('docs'); setTimeout(()=>m33DocView(id),260); return; }
+  const [a,...rest]=String(d.m33a||'').split(':'), b=rest.join(':'), t=m33Top();
+  if(a==='zoom'){ phGet(b).then(m33Zoom); return; }
+  if(a==='ph'){ priceHistSheet(b); return; }
+  if(a==='vnew'){ vendorForm(null,null,v=>{ closeSheet(); setTimeout(()=>bpGo('vone',v.id),120); }); return; }
+  if(a==='vfil'){ m33S().vc=b; m33Redraw(true); return; }
+  if(a==='vsort'){ m33S().vs=b; m33Redraw(true); return; }
+  if(t&&t.name==='vone'){ const v=state.vendors.find(x=>x.id===t.arg); if(v&&m33VAct(d.m33a,v,el)) return; }
+  if(m33DAct(a,b)) return; if(m33WAct(a,b)) return; },true);
+document.addEventListener('keydown',e=>{ if(e.key!=='Enter'&&e.key!==' ') return; const el=e.target&&e.target.closest&&e.target.closest('div[role="button"][data-m33a]'); if(el&&e.target===el){ e.preventDefault(); el.click(); } });
+document.addEventListener('input',e=>{ const i=e.target&&e.target.closest&&e.target.closest('[data-m33in]'); if(!i) return; const k=i.dataset.m33in; m33S()[k]=i.value; clearTimeout(i._t); i._t=setTimeout(()=>m33Refocus(k),200); });
+
+/* ======================= входы: «Ещё», «Закупка», «Деньги и бизнес», «Сегодня» ======================= */
+function m33VSubTxt(){ const vs=state.vendors.filter(v=>!v.draft); if(!vs.length) return L.m33VSub(0); let late=0; for(const v of vs) for(const p of v.prom||[]) if(!p.done&&p.due&&p.due<dkey()) late++; return L.m33VSub(vs.length,late?L.m33APromLate(late):''); }
+function m33DSubTxt(){ const ds=m33Docs(); if(!ds.length) return L.m33DSub(0); const s=ds.map(d=>({d,e:m33DExp(d)})).filter(x=>x.e&&x.e.soon).sort((a,b)=>a.e.n-b.e.n)[0]; return L.m33DSub(ds.length,s?s.d.t+' — '+s.e.txt:''); }
+{ const _mi=moreItems; moreItems=function(){ const a=_mi.apply(this,arguments); try{ const i=a.findIndex(x=>x.k==='buy');
+    a.splice(i>=0?i+1:a.length,0,{k:'vend',g:'s',a:'data-m33go="vnd"',i:'people',t:L.m33VT,s:m33VSubTxt()},{k:'where',g:'s',a:'data-m33go="where"',i:'globe',t:L.m33WT,s:L.m33WSub});
+    const j=a.findIndex(x=>x.k==='cal'); a.splice(j>=0?j+1:a.length,0,{k:'docs',g:'p',a:'data-m33go="docs"',i:'folder',t:L.m33DT,s:m33DSubTxt()}); }catch(e){} return a; }; }
+{ const _st=m12StartHTML; m12StartHTML=function(){ const h=_st.apply(this,arguments); return h.replace(/<\/div>\s*$/,`<button type="button" class="link-btn m33-wl" data-m33go="where">${ico('globe',16)} ${L.m33WHub}</button></div>`); }; }
+{ const _t=hbTodayHTML; hbTodayHTML=function(){ const h=_t.apply(this,arguments), btn=`<button type="button" class="m33-hbw" data-m33go="where"><span>${ico('globe',20)}</span><b>${L.m33WHub}</b>${ico('next',18)}</button>`; const i=h.indexOf('<section class="id-sec"'); return i>=0?h.slice(0,i)+btn+h.slice(i):h+btn; }; }
+{ const _ti=todayItems; todayItems=function(list){ const out=_ti.apply(this,arguments); try{
+    for(const v of state.vendors) for(const p of v.prom||[]){ if(p.done||!p.due) continue; const n=daysUntil(parseYmd(p.due)); if(n<=1) out.push({p:n<0?2:3,ic:'🤝',t:L.m33FiProm(esc(v.name),esc(p.t),m33D(p.due)),b:L.open,act:`data-m33v="${esc(v.id)}"`,red:n<0}); }
+    for(const d of m33Docs()){ const e=m33DExp(d); if(!e||!e.soon) continue; out.push({p:e.ended?2:e.n<=7?3:5,ic:'📄',t:e.ended?L.m33FiDocEnded(esc(d.t),m33D(d.exp)):L.m33FiDoc(esc(d.t),m33D(d.exp)),b:L.open,act:`data-m33doc="${esc(d.id)}"`,red:e.ended}); }
+  }catch(e){} return out.sort((x,y)=>x.p-y.p); }; }
+/* демо: обещание, брак и проверка у примерных поставщиков */
+{ const _dd=demoData; demoData=function(){ const o=_dd.apply(this,arguments); try{ const D=n=>dkey(addDays(new Date(),n)), V=id=>o.vendors.find(v=>v.id===id);
+    const a=V('dv1'); if(a) a.reg={nm:'广州莉莉服饰有限公司（示例）',code:'91440101MA5CK7Q2XD',st:'ok',d:D(-4),chk:{alive:true,scope:true,abn:true,black:true,age:true}};
+    const b=V('dv2'); if(b) b.prom=[{id:'dvp1',t:'Скидка 5% на следующую партию',due:D(40),done:false,d:D(-3)},{id:'dvp2',t:'Прислать замену 3 бракованных костюмов',due:D(-1),done:false,d:D(-3)}];
+    const c=V('dv4'); if(c) c.def=[{id:'dvq1',d:D(-44),bad:2,of:32,what:'Брюки — разошёлся шов',act:'disc',loss:180,ph:false}]; }catch(e){} return o; }; }
+/* <</v33 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
