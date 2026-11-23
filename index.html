@@ -3314,6 +3314,202 @@ html.hb35 .hb-ibs{display:grid; grid-template-columns:repeat(auto-fit,minmax(96p
 html.hb35 .hb-ibs .btn,html.hb35 .hb-ibs .f34-res{flex-direction:column; gap:4px; min-height:62px; margin:0; padding:8px 6px; font-size:.8rem; line-height:1.15; text-align:center; border-radius:16px; white-space:normal;}
 html.hb35 .f34h .hb-fx{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin-right:-16px; padding-right:16px; -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);} html.hb35 .f34h .hb-fx::-webkit-scrollbar{display:none;} html.hb35 .f34h .hb-fx i{flex:none;}
 /* <</v35 css>> */
+/* <<v36 css>> */
+/* ===================== v36 «Лес и шафран»: новое оформление всего приложения =====================
+   Цвет = смысл, и только один смысл на цвет (Apple HIG, Material color roles):
+   изумруд — действие и «оплачено»; шафран — «сделать сейчас»; коралл — только просрочка; фиолетовый — только Сифра (ИИ).
+   Фон — тёплый шалфей вместо холодного серо-голубого: спокойствие без «банковского» холода. 60-30-10: нейтральные поверхности,
+   изумрудный лес в главных блоках, шафран — точечно на главной кнопке. */
+:root[data-theme="light"].m36{
+  --bg:#F1F4EF; --surface:#FFFFFF; --surface-2:#EDF2EC; --ink:#0F1B16; --muted:#4E5E57; --line:#DFE7E0; --track:#E4EBE5; --m8-track:#E4EBE5;
+  --m-sun:#F5B52E; --gold:#F5B52E; --m-clay:#D9472F; --danger:#CF3F28; --m-clay-weak:#FCEBE6; --danger-weak:#FCEBE6;
+  --m-grape:#6A4BF5; --m-grape-weak:#EEEAFF;
+  --shadow:0 1px 2px rgba(15,27,22,.05), 0 10px 26px -14px rgba(15,27,22,.16);
+  --shadow-lg:0 2px 6px rgba(15,27,22,.05), 0 20px 40px -18px rgba(15,27,22,.22);
+  --m8-glass:rgba(255,255,255,.78);
+  --m36-on:#fff; --m36-ease:cubic-bezier(.2,.75,.2,1);
+}
+:root[data-theme="light"].m36:not([data-acc]){ --m-hero:#073B2C; --m-hero-2:#0C6A4C; --m-hero-sh:rgba(7,59,44,.34); --m-on-navy:#CFF5E3; }
+:root[data-theme="dark"].m36{ --bg:#0A1310; --surface:#111C18; --surface-2:#17251F; --ink:#E7EFEB; --muted:#9BAFA6; --line:#22342C; --track:#22342C; --m8-track:#22342C; --m8-glass:rgba(17,28,24,.88); --m36-on:#062419; --m36-ease:cubic-bezier(.2,.75,.2,1); }
+:root[data-theme="dark"].m36:not([data-acc]){ --m-hero:#0C4A37; --m-hero-2:#11684D; }
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme]).m36{ --bg:#0A1310; --surface:#111C18; --surface-2:#17251F; --ink:#E7EFEB; --muted:#9BAFA6; --line:#22342C; --track:#22342C; --m8-track:#22342C; --m8-glass:rgba(17,28,24,.88); --m36-on:#062419; --m36-ease:cubic-bezier(.2,.75,.2,1); }
+}
+@media (prefers-color-scheme:light){ :root:not([data-theme]).m36{ --m36-on:#fff; --m36-ease:cubic-bezier(.2,.75,.2,1); } }
+:root[data-theme="dark"].m36 body{background:var(--bg);}
+/* фон: мягкие пятна мяты и шафрана вместо мяты, сирени и персика */
+:root[data-theme="light"].m36 #m11Aurora{background:radial-gradient(circle at 40px 60px,rgba(126,224,183,.55) 0,rgba(126,224,183,.3) 120px,rgba(126,224,183,0) 250px),radial-gradient(circle at calc(100% - 30px) 170px,rgba(255,214,128,.42) 0,rgba(255,214,128,.22) 110px,rgba(255,214,128,0) 230px),radial-gradient(circle at 220px 640px,rgba(176,226,205,.35) 0,rgba(176,226,205,0) 240px),var(--bg);}
+
+/* ---------- кнопки: главная — объём и «нажатие»; второстепенные — заливка тоном, не рамка (NN/g: рамка слабее читается как кнопка) ---------- */
+html.m36 .btn{transition:transform .1s var(--m36-ease),box-shadow .12s var(--m36-ease),background .15s,filter .15s;}
+html.m36 .btn:active{transform:translateY(1px) scale(.975);}
+html.m36 .btn-primary{background:linear-gradient(180deg,color-mix(in srgb,var(--brand) 84%,#fff) 0%,var(--brand) 55%,color-mix(in srgb,var(--brand) 86%,#000) 100%); color:var(--m36-on); border:0;
+  box-shadow:0 1px 0 rgba(255,255,255,.25) inset,0 1px 2px rgba(0,0,0,.08),0 10px 20px -12px color-mix(in srgb,var(--brand) 85%,transparent);}
+html.m36 .btn-primary:active{box-shadow:0 1px 0 rgba(255,255,255,.18) inset,0 2px 6px -3px color-mix(in srgb,var(--brand) 70%,transparent);}
+html.m36 .btn-ghost,html.m36 .btn.tb-v,html.m36 .btn.wa{background:color-mix(in srgb,var(--brand) 11%,var(--surface)); color:var(--brand-ink); border:0; box-shadow:none;}
+html.m36 .btn-ghost:active,html.m36 .btn.tb-v:active{background:color-mix(in srgb,var(--brand) 19%,var(--surface));}
+html.m36 .btn.sd-exp{background:color-mix(in srgb,var(--out) 12%,var(--surface)); border:0;}
+html.m36 .btn:focus-visible,html.m36 .seg button:focus-visible,html.m36 .ssub button:focus-visible,html.m36 .chip:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+/* кнопки на тёмном лесу: «Подробнее» — полупрозрачная заливка вместо рамки */
+html.m36 .m7-hero .m7-b2{border:0; background:rgba(255,255,255,.14); box-shadow:0 1px 0 rgba(255,255,255,.14) inset;}
+html.m36 .m7-hero .m7-b2:active{background:rgba(255,255,255,.24);}
+:root[data-theme="light"].m36 .m7-hero .m7-b1{background:linear-gradient(180deg,#FFD263,#F5B52E); color:#1B1405; box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 10px 20px -12px rgba(0,0,0,.6);}
+
+/* тёмная тема: тень главного блока — без синего свечения прежней темы */
+:root[data-theme="dark"].m36 .m7-hero{background:linear-gradient(135deg,var(--m-hero),var(--m-hero-2,var(--m-hero))); box-shadow:0 18px 36px -18px rgba(0,0,0,.75);}
+@media (prefers-color-scheme:dark){ :root:not([data-theme]).m36 .m7-hero{box-shadow:0 18px 36px -18px rgba(0,0,0,.75);} }
+
+/* ---------- переключатели: одна дорожка, выбранный — залит цветом (Material 3 / iOS segmented control) ---------- */
+html.m36 .seg{background:var(--surface-2); padding:4px; border-radius:16px; gap:4px; box-shadow:inset 0 1px 2px rgba(15,27,22,.06);}
+html.m36 .seg button{background:transparent; border:0; color:var(--muted); border-radius:12px; min-height:44px; font-weight:800; transition:background .18s var(--m36-ease),color .18s,transform .1s var(--m36-ease),box-shadow .18s;}
+html.m36 .seg button:active{transform:scale(.96);}
+html.m36 .seg button.on{background:var(--brand); color:var(--m36-on); box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 6px 14px -8px color-mix(in srgb,var(--brand) 90%,transparent);}
+/* вкладки магазина: ровно на всю ширину, выбранная — изумруд */
+html.m36 .ssub{grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:minmax(0,1fr); gap:6px; background:transparent; -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px);}
+html.m36 .ssub button{border:0; background:var(--surface); color:var(--muted); min-height:58px; font-size:.78rem; box-shadow:0 1px 2px rgba(15,27,22,.05),0 6px 16px -10px rgba(15,27,22,.2); transition:transform .1s var(--m36-ease),background .2s,color .2s;}
+html.m36 .ssub button:active{transform:scale(.95);}
+html.m36 .ssub button.on{background:var(--brand); color:var(--m36-on); box-shadow:0 1px 0 rgba(255,255,255,.22) inset,0 8px 18px -10px color-mix(in srgb,var(--brand) 90%,transparent);}
+html.m36 .chip{transition:transform .1s var(--m36-ease),background .15s;} html.m36 .chip:active{transform:scale(.96);}
+html.m36 .chip.on{background:var(--brand); border-color:var(--brand); color:var(--m36-on);}
+
+/* ---------- нижнее меню: выбранный значок — «заполненный» (Material 3: активный значок залит) ---------- */
+html.m36 .bnav button.on .bi svg{fill:currentColor; fill-opacity:.18;}
+html.m36 .bnav button .bi{transition:background .2s var(--m36-ease),transform .15s var(--m36-ease);}
+html.m36 .bnav button:active .bi{transform:scale(.9);}
+
+/* ---------- карточки: нажимаются ощутимо ---------- */
+html.m36 .card,html.m36 .dy,html.m36 .m7-owed,html.m36 .er-today,html.m36 .wk,html.m36 .m11-hero,html.m36 .mr-g button,html.m36 .m36-pig{transition:transform .12s var(--m36-ease),box-shadow .15s;}
+html.m36 .card:active,html.m36 .dy:active,html.m36 .m7-owed:active,html.m36 .er-today:active,html.m36 .wk:active,html.m36 .m36-pig:active{transform:scale(.985);}
+
+/* ---------- «Сегодня»: сначала действие, потом мотивация, потом детали (NN/g: 57% внимания — первый экран) ---------- */
+html.m36 #view-today>#miraHello{order:1} html.m36 #view-today>#miraCheck{order:2}
+html.m36 #view-today>#miraNext{order:3} html.m36 #view-today>#focus{order:4} html.m36 #view-today>#m8Prog{order:5}
+html.m36 #view-today>#m10Box{order:6} html.m36 #view-today>#miraMonth{order:7} html.m36 #view-today>#erBox{order:8}
+html.m36 #view-today>#miraOwed{order:9} html.m36 #view-today>#quick{order:10} html.m36 #view-today>#fcCard{order:11}
+html.m36 #view-today>#piggy{order:12} html.m36 #view-today>#tripCard{order:13} html.m36 #view-today>#weekCard{order:14}
+html.m36 #view-today>#dayTip{order:15} html.m36 #view-today>.bk-slot{order:16} html.m36 #view-today>#simpleBox{order:17} html.m36 #view-today>#simpleLink{order:18}
+html.m36 #view-today>#focus .focus{margin-bottom:14px;}
+/* календарь двух недель: сегодня — изумруд, дни платежей подсвечены, просрочка — коралл */
+html.m36 .m10-d{transition:transform .1s;} html.m36 .m10-d.today{background:var(--brand); color:var(--m36-on);}
+html.m36 .m10-d.pay:not(.today){background:color-mix(in srgb,var(--brand) 13%,var(--surface));}
+html.m36 .m10-d.late:not(.today){background:var(--m-clay-weak,#FCEBE6);}
+/* копилка на платёж */
+html.m36 .m36-pig{display:flex; flex-direction:column; align-items:flex-start; gap:2px; width:100%; text-align:left; font:inherit; color:var(--ink); background:var(--surface); border:0; cursor:pointer; box-shadow:var(--shadow);}
+html.m36 .m36-pig .m10-sv{color:var(--ink);}
+.m36-pb{display:block; width:100%; height:8px; border-radius:99px; background:var(--track,#E4EBE5); overflow:hidden; margin:8px 0 2px;}
+.m36-pb i{display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,var(--m-sun,#F5B52E),var(--brand)); transform-origin:left;}
+html.m36 .m36-pig.ok .m36-pb i{background:var(--brand);}
+html.m36 .m36-pig .m10-note{display:flex; align-items:center; gap:4px; color:var(--muted);} html.m36 .m36-pig.ok .m10-note{color:var(--brand-ink); font-weight:800;}
+/* «= как раньше» */
+html.m36 .wk-h em.eq{background:var(--surface-2); color:var(--muted);}
+
+/* ---------- «Кредиты»: сначала сумма и банки; проверка договора — рядом с «Добавить кредит» ---------- */
+html.m36 #view-loans>#c29Entry{order:4} html.m36 #view-loans>#m36Gantt{order:6} html.m36 #view-loans>#strategy{order:8}
+html.m36 #view-loans>#dynamics{order:9} html.m36 #view-loans>#goldSection{order:10} html.m36 #view-loans>#closed{order:11}
+html.m36 #view-loans>.bk-slot,html.m36 #view-shop>.bk-slot{display:none;}
+html.m36 .c29-entry{border:0; background:var(--surface); box-shadow:var(--shadow); min-height:64px; padding:12px 14px; margin-top:12px;}
+html.m36 .c29-entry small{display:block;}
+html.m36 .c29-entry::after{content:"›"; margin-left:auto; font-size:1.5rem; color:var(--muted); line-height:1;}
+html.m36 .c29-ei{width:40px; height:40px; border-radius:13px; background:var(--m-grape-weak,#EEEAFF); color:var(--m-grape,#6A4BF5);}
+.m36-int{color:var(--m-clay-ink,#8A2716)!important; background:var(--m-clay-weak,#FCEBE6)!important;}
+:root[data-theme="dark"] .m36-int{color:#F7C3B5!important; background:#3A1F18!important;}
+
+/* ---------- общие стили новых графиков ---------- */
+.m36-sc,.m36-wf,.m36-gt{background:var(--surface); border-radius:22px; padding:16px; box-shadow:var(--shadow); margin:14px 0 0;}
+.m36-h{display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap;}
+.m36-h>b{display:flex; align-items:center; gap:7px; font-size:1rem;} .m36-h>b svg{color:var(--brand);}
+.m36-chip{font-style:normal; font-weight:800; font-size:.8rem; padding:5px 10px; border-radius:99px; background:var(--surface-2); color:var(--muted); white-space:nowrap;}
+.m36-chip small{font-weight:700; opacity:.8;} .m36-chip.up{background:color-mix(in srgb,var(--brand) 14%,var(--surface)); color:var(--brand-ink);} .m36-chip.down{background:var(--m-clay-weak,#FCEBE6); color:var(--m-clay,#D9472F);}
+.m36-cap{margin:10px 0 6px; min-height:2.6em;} .m36-cap b{display:block; font-size:1.06rem; font-variant-numeric:tabular-nums;} .m36-cap small{display:block; color:var(--muted); font-weight:600; font-size:.84rem;}
+.m36-plot{position:relative; touch-action:pan-y; -webkit-user-select:none; user-select:none; cursor:pointer; border-radius:12px; outline:none;}
+.m36-plot:focus-visible{box-shadow:0 0 0 3px var(--brand);}
+.m36-bars{display:grid; grid-template-columns:repeat(var(--n),minmax(0,1fr)); gap:5px; height:150px; align-items:end;}
+.m36-b{display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:5px;}
+.m36-b i{display:block; width:100%; max-width:30px; height:0; border-radius:7px 7px 3px 3px; background:color-mix(in srgb,var(--brand) 55%,var(--surface)); transform-origin:bottom; transition:background .15s, filter .15s;}
+.m36-b .tr{flex:1; width:100%; display:flex; align-items:flex-end; justify-content:center;}
+.m36-b small{font-size:.66rem; font-weight:800; color:var(--muted); height:13px; line-height:13px;}
+.m36-b.top i{background:var(--brand);} .m36-b.pv i{background:var(--track,#E4EBE5);} .m36-b.td small{color:var(--ink);}
+.m36-b.td.z i{height:6px!important; background:transparent; border:1.5px dashed color-mix(in srgb,var(--brand) 60%,transparent);}
+.m36-b.sel i{background:var(--m-sun,#F5B52E)!important;} .m36-b.sel small{color:var(--ink);}
+.m36-plot:has(.sel) .m36-b:not(.sel) i{filter:saturate(.6) opacity(.7);}
+.m36-avg{position:absolute; left:0; right:0; border-top:2px dashed color-mix(in srgb,var(--ink) 35%,transparent); pointer-events:none;}
+.m36-leg{display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:10px 0 0; font-size:.78rem; color:var(--muted); font-weight:700;}
+.m36-leg i{display:inline-block; width:12px; height:12px; border-radius:4px;} .m36-leg i.pv{background:var(--track,#E4EBE5);}
+/* календарь продаж */
+.m36-hm-g{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px;}
+.m36-hm-g .hd{font-size:.66rem; font-weight:800; color:var(--muted); text-align:center; padding-bottom:2px;}
+.m36-hm-g .c{aspect-ratio:1; border:0; border-radius:10px; font:800 .78rem var(--font-num,inherit); color:var(--ink); display:flex; align-items:center; justify-content:center; cursor:pointer; min-height:38px; padding:0; transition:transform .1s var(--m36-ease);}
+.m36-hm-g .c:active{transform:scale(.92);} .m36-hm-g .c:focus-visible{outline:3px solid var(--ink); outline-offset:1px;}
+.m36-hm-g .l0,.m36-leg i.e{background:var(--surface); box-shadow:inset 0 0 0 1.5px var(--line); color:var(--muted);}
+.m36-hm-g .l1,.m36-leg i.l1{background:color-mix(in srgb,var(--brand) 18%,var(--surface));}
+.m36-hm-g .l2,.m36-leg i.l2{background:color-mix(in srgb,var(--brand) 38%,var(--surface));}
+.m36-hm-g .l3,.m36-leg i.l3{background:color-mix(in srgb,var(--brand) 66%,var(--surface)); color:#fff;}
+.m36-hm-g .l4,.m36-leg i.l4{background:var(--brand); color:#fff;}
+:root[data-theme="dark"] .m36-hm-g .l3,:root[data-theme="dark"] .m36-hm-g .l4{color:#062419;}
+.m36-hm-g .lf{background:transparent; color:color-mix(in srgb,var(--muted) 55%,transparent); cursor:default;}
+.m36-hm-g .c.e{background-image:repeating-linear-gradient(135deg,transparent 0 5px,color-mix(in srgb,var(--line) 80%,transparent) 5px 6px);}
+.m36-hm-g .c.td{box-shadow:inset 0 0 0 2.5px var(--ink);}
+.m36-hm-g .c.sel{background:var(--m-sun,#F5B52E)!important; color:#1B1405!important; transform:scale(1.06);}
+.m36-leg.hm span{margin:0 2px;} .m36-leg.hm i.e{margin-left:10px;}
+.m36-ins{display:flex; align-items:center; gap:6px; margin:10px 0 0; font-weight:800; font-size:.88rem;} .m36-ins svg{color:var(--m-sun,#F5B52E);}
+.m36-tip{margin:8px 0 0; font-size:.82rem; color:var(--muted); line-height:1.4;}
+/* водопад */
+.m36-wf-p{position:relative; display:grid; grid-template-columns:repeat(var(--n),minmax(0,1fr)); gap:8px; height:150px; margin-top:14px;}
+.m36-wf-p .wc{position:relative;}
+.m36-wf-p .wb{position:absolute; left:0; right:0; border-radius:7px; transform-origin:top;}
+.m36-wf-p .wb.k-rev,.m36-wf-l .k-rev i{background:var(--brand);}
+.m36-wf-p .wb.k-exp,.m36-wf-l .k-exp i{background:var(--out,#D9472F);}
+.m36-wf-p .wb.k-home,.m36-wf-l .k-home i{background:#E08A3C;}
+.m36-wf-p .wb.k-loan,.m36-wf-l .k-loan i{background:#2F6FD6;}
+.m36-wf-p .wb.k-save,.m36-wf-l .k-save i{background:var(--m-grape,#6A4BF5);}
+.m36-wf-p .wb.k-left,.m36-wf-l .k-left i{background:var(--m-sun,#F5B52E);}
+.m36-wf-p .wb.k-neg,.m36-wf-l .k-neg i{background:var(--danger,#CF3F28);}
+.m36-wf-p .wb.k-rev,.m36-wf-p .wb.res{transform-origin:bottom;}
+.m36-wf-p .wl{position:absolute; left:100%; width:8px; border-top:1.5px dashed color-mix(in srgb,var(--ink) 35%,transparent);}
+.m36-wf-x{display:grid; grid-template-columns:repeat(var(--n),minmax(0,1fr)); gap:8px; margin-top:6px;}
+.m36-wf-x span{font-size:.64rem; font-weight:800; color:var(--muted); text-align:center; line-height:1.15; overflow-wrap:anywhere;}
+.m36-wf-l{list-style:none; margin:12px 0 0; padding:0; display:grid; gap:2px;}
+.m36-wf-l li{display:flex; align-items:center; gap:9px; padding:7px 0; border-top:1px solid var(--line); font-weight:700; font-size:.9rem;}
+.m36-wf-l li i{width:10px; height:10px; border-radius:3px; flex:none;} .m36-wf-l li b{margin-left:auto; font-variant-numeric:tabular-nums;}
+.m36-wf-n{margin:10px 0 0; font-weight:800; font-size:.9rem;} .m36-wf-n.ok{color:var(--brand-ink);} .m36-wf-n.bad{color:var(--danger,#CF3F28);}
+/* шкала закрытия кредитов (диаграмма Ганта) */
+.m36-gt-r{display:grid; grid-template-columns:76px 1fr; align-items:center; gap:10px; padding:8px 0; border-top:1px solid var(--line);}
+.m36-h+.m36-gt-r{border-top:0;}
+.m36-gt-n{font-weight:800; font-size:.86rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m36-gt-t{position:relative; height:26px; border-radius:8px; background:var(--surface-2);}
+.m36-gt-t i{position:absolute; left:0; top:0; bottom:0; border-radius:8px; transform-origin:left; display:flex; align-items:center; justify-content:flex-end; padding:0 7px; color:#fff; font-style:normal; font-weight:800; font-size:.7rem; white-space:nowrap; min-width:12px;}
+.m36-gt-ax{display:grid; grid-template-columns:76px 1fr; gap:10px; margin-top:4px;} .m36-gt-ax div{position:relative; height:16px; font-size:.64rem; font-weight:800; color:var(--muted);}
+.m36-gt-ax div span{position:absolute; top:0; transform:translateX(-50%); white-space:nowrap;} .m36-gt-ax div span:first-child{transform:none;} .m36-gt-ax div span:last-child{transform:translateX(-100%);}
+.m36-gt-s{margin:10px 0 0; display:flex; flex-direction:column; gap:6px;} .m36-gt-s p{margin:0; display:flex; align-items:center; gap:8px; font-size:.86rem; font-weight:700;} .m36-gt-s p b{color:var(--brand-ink);} .m36-gt-s svg{color:var(--brand); flex:none;}
+/* серия записей в дневнике магазина */
+.m36-fire-l{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:-2px 0 12px; font-size:.84rem; font-weight:700; color:var(--muted);}
+.m36-fire{display:inline-flex; align-items:center; gap:5px; font-style:normal; font-weight:800; font-size:.78rem; padding:4px 10px; border-radius:99px; background:color-mix(in srgb,var(--m-sun,#F5B52E) 22%,var(--surface)); color:#7A4C00;}
+:root[data-theme="dark"] .m36-fire{color:#FFD58A; background:#3A2D12;}
+
+/* ---------- живое появление графиков: растут один раз, когда впервые на экране ---------- */
+@keyframes m36g{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes m36x{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes m36p{from{opacity:0; transform:scale(.55)}to{opacity:1; transform:scale(1)}}
+.m36-rv:not(.m36-in):is(.wk-bars,.m8-bars,.m36-bars) i{transform:scaleY(0);}
+.m36-rv:not(.m36-in).m36-wf-p .wb{transform:scaleY(0);}
+.m36-rv:not(.m36-in).m36-hm-g .c{opacity:0;}
+.m36-rv:not(.m36-in).m36-pb i,.m36-rv:not(.m36-in).m36-gt .m36-gt-t i{transform:scaleX(0);}
+.m36-in:not(.m36-nof):is(.wk-bars,.m8-bars,.m36-bars) i{transform-origin:bottom; animation:m36g .55s var(--m36-ease,ease-out) both; animation-delay:calc(var(--i,0)*35ms);}
+.m36-in:not(.m36-nof).m36-wf-p .wb{animation:m36g .45s var(--m36-ease,ease-out) both; animation-delay:calc(var(--i,0)*150ms);}
+.m36-in:not(.m36-nof).m36-hm-g .c{animation:m36p .32s var(--m36-ease,ease-out) both; animation-delay:calc(var(--i,0)*14ms);}
+.m36-in:not(.m36-nof).m36-pb i,.m36-in:not(.m36-nof).m36-gt .m36-gt-t i{transform-origin:left; animation:m36x .7s var(--m36-ease,ease-out) both; animation-delay:calc(var(--i,0)*120ms);}
+
+/* ---------- Сифра: уходит при прокрутке вниз, возвращается при прокрутке вверх ---------- */
+html.m36 .sf-fab{transition:padding .25s ease,box-shadow .2s,transform .22s var(--m36-ease),opacity .2s;}
+html.m36 .sf-fab.m36-off{opacity:0; transform:translateY(18px) scale(.6); pointer-events:none;}
+html.m36 .sf-fab{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 92%,var(--m-grape,#6A4BF5)),var(--surface)); border-color:color-mix(in srgb,var(--m-grape,#6A4BF5) 22%,var(--line));}
+
+@media (prefers-reduced-motion:reduce){
+  .m36-rv :is(i,.c,.wb){animation:none!important; transform:none!important; opacity:1!important;}
+  html.m36 .sf-fab.m36-off{transform:none;}
+  html.m36 .btn,html.m36 .seg button,html.m36 .ssub button{transition:none;}
+}
+/* <</v36 css>> */
 
 
 </style>
@@ -6421,7 +6617,7 @@ ru:{ hbUpdBtn:'Обновить', hbUpdOk:'Рынок дня обновлён', 
   hbIn:m=>'Через '+m+' — обычно', hbPerM:x=>'≈ '+x+'% в месяц', hbBatch:'Одна партия',
   hbBatchT:(n,l,r,m,p)=>'Купите ≈ '+n+' шт по '+l+' $ с доставкой, продавайте по '+r+' $. Уйдёт за ≈ '+m+' мес., прибыль с партии ≈ '+p+'.',
   hbLiveMk:(mk,note)=>'По рынку дня наценка сейчас ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'Свежих данных по этому товару сегодня нет — расчёт по обычным цифрам.',
-  hbLimit:(i,s)=>'Магазин продаёт ≈ '+s+' в месяц, поэтому в товар за раз выгодно вложить ≈ '+i+'. Остальное ждёт следующей партии — или добавьте каналы продаж.',
+  hbCapLim:(i,s)=>'Магазин продаёт ≈ '+s+' в месяц, поэтому в товар за раз выгодно вложить ≈ '+i+'. Остальное ждёт следующей партии — или добавьте каналы продаж.',
   hbSales:(v,src)=>'Магазин продаёт ≈ '+v+' в месяц'+(src?' · '+src:''), hbSrc:{def:'примерно, поправьте',fact:'по вашим записям',user:'вы указали',buy:'по закупкам',sold:'по отметкам продаж',pay:'по платежам'}, hbFix:'Поправить', hbSalesQ:'Продажи в месяц, $',
   hbCalcNote:'Это расчёт, а не обещание: продажи зависят от места, цены и сезона. Цифры товара обновляются каждый день из рынка дня.', hbOld:'Подробный расчёт', hbToPlan:'Бизнес-план', hbMo:n=>n+' мес.',
   hbNew:'новое', hbMkL:'Наценка', hbSellL:'Продаётся за', hbBuyL:'Закупка', hbBestL:'Выгоднее брать', hbStartL:'Старт',
@@ -6477,7 +6673,7 @@ tg:{ hbUpdBtn:'Нав кардан', hbUpdOk:'Бозори рӯз нав шуд'
   hbIn:m=>'Баъди '+m+' — одатан', hbPerM:x=>'≈ '+x+'% дар як моҳ', hbBatch:'Як партия',
   hbBatchT:(n,l,r,m,p)=>'≈ '+n+' дона ба '+l+' $ бо расонидан харед, ба '+r+' $ фурӯшед. Дар ≈ '+m+' моҳ фурӯхта мешавад, фоидаи партия ≈ '+p+'.',
   hbLiveMk:(mk,note)=>'Аз рӯи бозори рӯз фоида ҳоло ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'Имрӯз дар бораи ин мол маълумоти нав нест — ҳисоб бо рақамҳои муқаррарӣ.',
-  hbLimit:(i,s)=>'Мағоза дар як моҳ ≈ '+s+' мефурӯшад, бинобар ин як бор ба мол ≈ '+i+' гузоштан фоиданок аст. Боқимонда партияи навбатиро интизор мешавад — ё роҳҳои фурӯшро зиёд кунед.',
+  hbCapLim:(i,s)=>'Мағоза дар як моҳ ≈ '+s+' мефурӯшад, бинобар ин як бор ба мол ≈ '+i+' гузоштан фоиданок аст. Боқимонда партияи навбатиро интизор мешавад — ё роҳҳои фурӯшро зиёд кунед.',
   hbSales:(v,src)=>'Мағоза дар як моҳ ≈ '+v+' мефурӯшад'+(src?' · '+src:''), hbSrc:{def:'тахминан, ислоҳ кунед',fact:'аз рӯи сабтҳои шумо',user:'шумо нишон додед',buy:'аз рӯи харидҳо',sold:'аз рӯи фурӯшҳо',pay:'аз рӯи пардохтҳо'}, hbFix:'Ислоҳ', hbSalesQ:'Фурӯш дар як моҳ, $',
   hbCalcNote:'Ин ҳисоб аст, на ваъда: фурӯш аз ҷой, нарх ва мавсим вобаста аст. Рақамҳои мол ҳар рӯз аз бозори рӯз нав мешаванд.', hbOld:'Ҳисоби муфассал', hbToPlan:'Нақшаи тиҷоратӣ', hbMo:n=>n+' моҳ',
   hbNew:'нав', hbMkL:'Фоида', hbSellL:'Фурӯхта мешавад дар', hbBuyL:'Харид', hbBestL:'Беҳтар аз', hbStartL:'Оғоз',
@@ -6533,7 +6729,7 @@ en:{ hbUpdBtn:'Refresh', hbUpdOk:'Market of the day updated', hbRecent:(m,w)=>'U
   hbIn:m=>'In '+m+' — usually', hbPerM:x=>'≈ '+x+'% a month', hbBatch:'One batch',
   hbBatchT:(n,l,r,m,p)=>'Buy ≈ '+n+' pcs at $'+l+' landed, sell at $'+r+'. Sells in ≈ '+m+' mo., profit per batch ≈ '+p+'.',
   hbLiveMk:(mk,note)=>'Today’s market markup ≈ '+mk+'%'+(note?': '+note:'.'), hbNoLive:'No fresh data for this product today — calculated with the usual numbers.',
-  hbLimit:(i,s)=>'The shop sells ≈ '+s+' a month, so it pays to put ≈ '+i+' into one batch. The rest waits for the next batch — or add sales channels.',
+  hbCapLim:(i,s)=>'The shop sells ≈ '+s+' a month, so it pays to put ≈ '+i+' into one batch. The rest waits for the next batch — or add sales channels.',
   hbSales:(v,src)=>'The shop sells ≈ '+v+' a month'+(src?' · '+src:''), hbSrc:{def:'approximate, adjust it',fact:'from your records',user:'you entered it',buy:'from purchases',sold:'from sales marks',pay:'from payments'}, hbFix:'Adjust', hbSalesQ:'Sales a month, $',
   hbCalcNote:'This is a calculation, not a promise: sales depend on place, price and season. Product numbers update daily from the market of the day.', hbOld:'Detailed calculation', hbToPlan:'Business plan', hbMo:n=>n+' mo.',
   hbNew:'new', hbMkL:'Markup', hbSellL:'Sells in', hbBuyL:'Purchase', hbBestL:'Best from', hbStartL:'Start',
@@ -7547,6 +7743,64 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M35S[k]);
 /* <</v35 str>> */
+/* <<v36 str>> */
+const M36S={
+ru:{
+  m36GtT:'Когда закроются кредиты', m36GtNow:'сейчас', m36GtA:'Шкала: когда закроется каждый кредит и как уменьшится платёж в месяц.',
+  m36GtLess:(n,mon,v,rest)=>'После «'+n+'» ('+mon+') платить в месяц '+rest+' (на '+v+' меньше)', m36GtFree:mon=>mon+' — последний платёж. Дальше без кредитов.',
+  m36IntM:'в месяц — проценты', m36Fire:n=>n+' дн. подряд', m36FireGo:'запишите сегодня — серия продолжится', m36FireOk:'сегодня записано — так держать', m36FireT:'Дней подряд с записями. Один пропуск серию не обнуляет.',
+  m36PigL:'Отложено на платёж', m36PigOf:a=>'из '+a+' — следующий платёж', m36PigOk:'Хватает на платёж',
+  m36WkEq:'= как раньше',
+  m36ScT:'Выручка по дням', m36ScA:'График выручки. Нажмите на столбик или проведите пальцем — увидите день. Стрелки влево и вправо тоже работают.',
+  m36Lbl7:'За 7 дней', m36LblM:'С 1-го числа', m36Avg:v=>'в среднем '+v+' в день с продажами',
+  m36Prev:'серые — прошлые 7 дней', m36CmpW:'к прошлым 7 дням', m36CmpM:'к тем же дням прошлого месяца', m36Same:'как раньше',
+  m36Exp:v=>'расходы −'+v, m36NoRev:'выручка не записана', m36Rev:v=>'выручка +'+v,
+  m36HmT:'Календарь продаж', m36HmA:'Календарь продаж за месяц: чем темнее день, тем больше выручка. Нажмите на день — увидите сумму.',
+  m36HmL:'меньше', m36HmM:'больше', m36HmE:'не записано', m36HmTip:'Пустые дни — где выручку не записали. Запишите — и картина станет точной.',
+  m36HmBest:d=>'Лучший день недели: '+d,
+  m36WfT:'Куда ушла выручка', m36WfA:'Водопад: выручка магазина и на что она разошлась в этом месяце.',
+  m36WfRev:'Выручка', m36WfExp:'Расходы', m36WfHome:'Дом', m36WfLoan:'Кредиты', m36WfSave:'Отложено', m36WfLeft:'Осталось', m36WfMinus:'Не хватило',
+  m36WfNote:(a,p)=>'Осталось на руках '+a+' — это '+p+'% выручки.', m36WfNeg:a=>'Расходы больше выручки на '+a+'.',
+  m36Ct:'Проверить договор по фото'
+},
+tg:{
+  m36GtT:'Қарзҳо кай пӯшида мешаванд', m36GtNow:'ҳозир', m36GtA:'Ҷадвал: ҳар қарз кай пӯшида мешавад ва пардохти моҳона чӣ қадар кам мешавад.',
+  m36GtLess:(n,mon,v,rest)=>'Баъди «'+n+'» ('+mon+') пардохти моҳона '+rest+' (ба '+v+' камтар)', m36GtFree:mon=>mon+' — пардохти охирин. Баъд бе қарз.',
+  m36IntM:'дар як моҳ — фоиз', m36Fire:n=>n+' рӯз пайдарпай', m36FireGo:'имрӯз сабт кунед — силсила идома меёбад', m36FireOk:'имрӯз сабт шуд — офарин', m36FireT:'Рӯзҳои пайдарпай бо сабт. Як рӯзи холӣ силсиларо вайрон намекунад.',
+  m36PigL:'Барои пардохт ҷамъ шуд', m36PigOf:a=>'аз '+a+' — пардохти навбатӣ', m36PigOk:'Барои пардохт мерасад',
+  m36WkEq:'= мисли пеш',
+  m36ScT:'Даромад аз рӯи рӯзҳо', m36ScA:'Графики даромад. Сутунро пахш кунед ё ангуштро гузаронед — рӯзро мебинед. Тирчаҳои чап ва рост низ кор мекунанд.',
+  m36Lbl7:'Дар 7 рӯз', m36LblM:'Аз рӯзи 1-ум', m36Avg:v=>'миёна '+v+' дар рӯзи фурӯш',
+  m36Prev:'хокистарӣ — 7 рӯзи гузашта', m36CmpW:'нисбат ба 7 рӯзи гузашта', m36CmpM:'нисбат ба ҳамон рӯзҳои моҳи гузашта', m36Same:'мисли пеш',
+  m36Exp:v=>'хароҷот −'+v, m36NoRev:'даромад сабт нашуд', m36Rev:v=>'даромад +'+v,
+  m36HmT:'Тақвими фурӯш', m36HmA:'Тақвими фурӯши моҳ: рӯз чӣ қадар торик бошад, даромад ҳамон қадар зиёд. Рӯзро пахш кунед — маблағро мебинед.',
+  m36HmL:'камтар', m36HmM:'бештар', m36HmE:'сабт нашуд', m36HmTip:'Рӯзҳои холӣ — даромад сабт нашудааст. Сабт кунед — расм дақиқ мешавад.',
+  m36HmBest:d=>'Беҳтарин рӯзи ҳафта: '+d,
+  m36WfT:'Даромад ба куҷо рафт', m36WfA:'Шаршара: даромади мағоза ва ба чӣ сарф шуд дар ин моҳ.',
+  m36WfRev:'Даромад', m36WfExp:'Хароҷот', m36WfHome:'Хона', m36WfLoan:'Қарзҳо', m36WfSave:'Ҷамъ шуд', m36WfLeft:'Монд', m36WfMinus:'Нарасид',
+  m36WfNote:(a,p)=>'Дар даст монд '+a+' — ин '+p+'% даромад аст.', m36WfNeg:a=>'Хароҷот аз даромад '+a+' зиёд аст.',
+  m36Ct:'Санҷиши шартнома аз рӯи акс'
+},
+en:{
+  m36GtT:'When each loan ends', m36GtNow:'now', m36GtA:'Timeline: when each loan closes and how the monthly payment goes down.',
+  m36GtLess:(n,mon,v,rest)=>'After “'+n+'” ('+mon+') you pay '+rest+' a month ('+v+' less)', m36GtFree:mon=>mon+' — the last payment. Debt-free after that.',
+  m36IntM:'a month in interest', m36Fire:n=>n+' days in a row', m36FireGo:'record today to keep it going', m36FireOk:'today is recorded — keep it up', m36FireT:'Days in a row with records. One missed day does not reset it.',
+  m36PigL:'Saved for the payment', m36PigOf:a=>'of '+a+' — next payment', m36PigOk:'Enough for the payment',
+  m36WkEq:'= same as before',
+  m36ScT:'Sales by day', m36ScA:'Sales chart. Tap a bar or slide your finger to see a day. Left and right arrow keys work too.',
+  m36Lbl7:'Last 7 days', m36LblM:'Since the 1st', m36Avg:v=>'average '+v+' per selling day',
+  m36Prev:'grey — the 7 days before', m36CmpW:'vs the 7 days before', m36CmpM:'vs the same days last month', m36Same:'same as before',
+  m36Exp:v=>'expenses −'+v, m36NoRev:'no sales recorded', m36Rev:v=>'sales +'+v,
+  m36HmT:'Sales calendar', m36HmA:'Sales calendar for the month: the darker the day, the higher the sales. Tap a day to see the amount.',
+  m36HmL:'less', m36HmM:'more', m36HmE:'not recorded', m36HmTip:'Empty days are days without a sales record. Record them and the picture gets accurate.',
+  m36HmBest:d=>'Best weekday: '+d,
+  m36WfT:'Where the sales went', m36WfA:'Waterfall: shop sales and what they went to this month.',
+  m36WfRev:'Sales', m36WfExp:'Expenses', m36WfHome:'Home', m36WfLoan:'Loans', m36WfSave:'Saved', m36WfLeft:'Left', m36WfMinus:'Short',
+  m36WfNote:(a,p)=>'Left in hand: '+a+' — '+p+'% of sales.', m36WfNeg:a=>'Spending is higher than sales by '+a+'.',
+  m36Ct:'Check a loan contract by photo'
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M36S[k]);
+/* <</v36 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -16103,7 +16357,7 @@ function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(
     <section class="hb-card hb-det" id="hb-s-det"><h3 class="hb-ct">${ico('bag',18)} ${L.hbDetT}</h3>
       ${f?`<div class="hb-batch"><h5>${ico('bag',16)} ${L.hbBatch}</h5><p>${L.hbBatchT(fx(f.pcs,0),fx(f.landed,f.landed<10?1:0),fx(f.retail,f.retail<10?1:0),fx(f.months,1),esc(ivUsd(f.profit)))}</p>
         ${row.live?`<p class="m">${ico('globe',14)} ${L.hbLiveMk(Math.round(mk0),esc(row.note||''))}</p>`:`<p class="m">${ico('info',14)} ${L.hbNoLive}</p>`}
-        ${lim?`<p class="bp-need hi">${L.hbLimit(esc(ivUsd(S.Imax)),esc(ivUsd(S0b.v)))}</p>`:''}</div>`:''}
+        ${lim?`<p class="bp-need hi">${L.hbCapLim(esc(ivUsd(S.Imax)),esc(ivUsd(S0b.v)))}</p>`:''}</div>`:''}
       <div class="hb-sales"><span>${L.hbSales(esc(ivUsd(S0b.v)),L.hbSrc[S0b.src]||'')}</span><button type="button" class="gp-mini" data-hbsales="1">${ico('edit',14)} ${L.hbFix}</button></div>
       <div class="hb-sales-in" hidden><div class="field n"><label for="hb-s">${L.hbSalesQ}</label><input id="hb-s" type="number" inputmode="decimal" min="0" value="${Math.round(S0b.v)}"></div><button type="button" class="btn btn-primary" data-hbsok="1">${L.save}</button></div>
       <p class="note">${L.hbCalcNote}</p>
@@ -18398,6 +18652,177 @@ function f35In(root){ const els=[...(root||document).querySelectorAll('[data-f35
     return r; }; }
 { const _ha=hbAfter; hbAfter=function(root){ const r=_ha.apply(this,arguments); try{ f35In(root); if(root&&root.querySelector&&root.querySelector('#f35-fxw')) f35HeroAfter(); }catch(e){} return r; }; }
 /* <</v35 js>> */
+/* <<v36 js>> */
+/* ===================== v36: главные экраны — порядок, цвета, кнопки, значки, живые графики =====================
+   Порядок блоков постоянный (не «умный»): постоянные меню находят быстрее, чем меняющиеся (Findlater & McGrenere, CHI 2004).
+   Графики: длина и положение читаются точнее угла и площади (Cleveland & McGill 1984) — поэтому столбики, водопад, календарь;
+   анимация — только при появлении на экране и один раз, с учётом «уменьшить движение». */
+document.documentElement.classList.add('m36');
+
+/* ---- Сифра: прячется, когда листаете вниз, и возвращается, когда вверх (поведение FAB в Material) ---- */
+(function(){ let y0=window.scrollY||0, acc=0;
+  window.addEventListener('scroll',()=>{ const b=document.getElementById('sfFab'); if(!b) return; const y=window.scrollY||0, d=y-y0; y0=y;
+    if(b.classList.contains('drag')) return;
+    if(y<80){ b.classList.remove('m36-off'); acc=0; return; }
+    acc=(d>0)===(acc>0)?acc+d:d;
+    if(acc>28) b.classList.add('m36-off'); else if(acc<-28) b.classList.remove('m36-off');
+  },{passive:true});
+})();
+function m36FabShow(){ try{ const b=document.getElementById('sfFab'); if(b) b.classList.remove('m36-off'); }catch(e){} }
+/* закрыли окно или страницу — Сифра снова на месте */
+try{ const _c36=closeSheet; closeSheet=function(){ const x=_c36.apply(this,arguments); m36FabShow(); return x; }; }catch(e){}
+try{ const _h36=bpHide; bpHide=function(){ const x=_h36.apply(this,arguments); m36FabShow(); return x; }; }catch(e){}
+try{ const _st36=setTab; setTab=function(){ const x=_st36.apply(this,arguments); try{ const b=document.getElementById('sfFab'); if(b) b.classList.remove('m36-off'); }catch(e){} return x; }; }catch(e){}
+
+/* ---- «Сегодня»: вместо повтора «Пройдено 4 из 12» — копилка на ближайший платёж (эффект близкой цели, Kivetz 2006) ---- */
+function m36Tiles(){ const w=document.querySelector('#m10Box .m11-tiles'); if(!w) return;
+  const t=[...w.querySelectorAll('.m11-tile')].find(x=>!x.dataset.m36&&(x.querySelector('.m10-lbl')||{}).textContent===L.m11Passed); if(!t) return;
+  let nx=null; try{ nx=m7Next(activeList()); }catch(e){}
+  const amt=nx?m7Amt(nx.a):0, pig=Math.max(0,envBal('loan'));
+  if(!amt){ t.remove(); w.style.gridTemplateColumns='1fr'; return; }
+  const pc=Math.min(100,Math.round(pig/amt*100)), ok=pig>=amt;
+  t.outerHTML=`<button type="button" class="m11-tile m10-card m36-pig${ok?' ok':''}" data-env="loan" data-m36="pig"><span class="m10-lbl">${L.m36PigL}</span><span class="m10-sv">${money(pig)}</span><span class="m36-pb" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pc}"><i style="width:${pc}%"></i></span><span class="m10-note">${ok?ico('check',14)+' '+L.m36PigOk:L.m36PigOf(money(amt))}</span></button>`;
+}
+try{ const _a36=m11After; m11After=function(){ const x=_a36.apply(this,arguments); try{ m36Tiles(); }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---- «Эта неделя»: «↑ 0%» → «= как раньше» ---- */
+try{ const _w36=renderWeekCard; renderWeekCard=function(){ const x=_w36.apply(this,arguments); try{ const em=document.querySelector('#weekCard .wk-h em'); if(em&&em.textContent.replace(/\D/g,'')==='0'){ em.className='eq'; em.textContent=L.m36WkEq; } }catch(e){} return x; }; }catch(e){}
+
+/* ---- общие помощники графиков ---- */
+function m36Maps(){ const sh=ensureShop(), s={}, x={}; for(const e of sh.sales) s[e.date]=(s[e.date]||0)+(+e.sum||0); for(const e of sh.exp) x[e.date]=(x[e.date]||0)+(+e.sum||0); return {s,x}; }
+function m36Chip(cur,prev,lbl){ if(!(prev>0)||!(cur>0)) return ''; const ch=Math.round((cur-prev)/prev*100);
+  if(Math.abs(ch)<1) return `<em class="m36-chip eq">= ${L.m36Same}</em>`;
+  return `<em class="m36-chip ${ch>0?'up':'down'}">${ch>0?'↑':'↓'} ${Math.abs(ch)}% · ${ch>0?'+':'−'}${money(Math.abs(cur-prev))} <small>${lbl}</small></em>`; }
+function m36DayName(d){ return L.weekdays[d.getDay()]+', '+d.getDate()+' '+MONTHS[lang].short[d.getMonth()]; }
+let M36D={}; /* данные графиков на экране: id → {days, def} */
+
+/* ---- «Магазин» → «Обзор»: столбики выручки по дням (День: 7 дней; Неделя: 7 + 7 прошлых серым) ---- */
+function m36Bars(M){
+  const t=today0(), per=shopPer, n=per==='week'?14:7, days=[];
+  for(let i=n-1;i>=0;i--){ const d=addDays(t,-i), k=dkey(d); days.push({k,d,v:M.s[k]||0,x:M.x[k]||0,prev:per==='week'&&i>=7,td:i===0}); }
+  if(!days.some(d=>d.v>0)) return '';
+  const cur=days.filter(d=>!d.prev), tot=cur.reduce((a,d)=>a+d.v,0), sold=cur.filter(d=>d.v>0), avg=sold.length?tot/sold.length:0, mx=Math.max(1,...days.map(d=>d.v));
+  const top=cur.reduce((b,d)=>d.v>(b?b.v:0)?d:b,null);
+  const chip=per==='week'?m36Chip(tot,days.filter(d=>d.prev).reduce((a,d)=>a+d.v,0),L.m36CmpW):'';
+  const def=`<b>${L.m36Lbl7}: +${money(tot)}</b><small>${avg>0?L.m36Avg(money(avg)):''}</small>`;
+  M36D.sc={days,def};
+  const bars=days.map((d,i)=>`<span class="m36-b${d.prev?' pv':''}${d.td?' td':''}${top&&d===top?' top':''}${d.v>0?'':' z'}"><span class="tr"><i style="height:${d.v>0?Math.max(4,Math.round(d.v/mx*100)):0}%"></i></span><small>${esc(L.wdShort[d.d.getDay()])}</small></span>`).join('');
+  const ap=avg>0?Math.round(avg/mx*100):0;
+  return `<div class="m36-sc" data-m36c="sc"><div class="m36-h"><b>${ico('chart',18)} ${L.m36ScT}</b>${chip}</div>
+    <div class="m36-cap" aria-live="polite">${def}</div>
+    <div class="m36-plot" tabindex="0" role="group" aria-label="${esc(L.m36ScA)}"><div class="m36-bars" style="--n:${n}">${bars}</div>${ap?`<em class="m36-avg" style="bottom:${(18+ap*1.32).toFixed(1)}px" aria-hidden="true"></em>`:''}</div>
+    ${per==='week'?`<p class="m36-leg"><i class="pv"></i>${L.m36Prev}</p>`:''}</div>`;
+}
+/* ---- «Месяц»: календарь продаж (тепловая карта) — видно ритм недели и пропущенные дни ---- */
+function m36Heat(M){
+  const t=today0(), y=t.getFullYear(), m=t.getMonth(), dim=new Date(y,m+1,0).getDate(), first=new Date(y,m,1), lead=(first.getDay()+6)%7;
+  const days=[]; for(let i=1;i<=dim;i++){ const d=new Date(y,m,i), k=dkey(d); days.push({k,d,v:M.s[k]||0,x:M.x[k]||0,fut:d>t,td:+d===+t}); }
+  const past=days.filter(d=>!d.fut); if(!past.some(d=>d.v>0)) return '';
+  const tot=past.reduce((a,d)=>a+d.v,0), sold=past.filter(d=>d.v>0), avg=sold.length?tot/sold.length:0, mx=Math.max(1,...past.map(d=>d.v));
+  /* те же дни прошлого месяца */
+  let pv=0; for(const d of past){ const p=new Date(y,m-1,d.d.getDate()); if(p.getMonth()===((m+11)%12)) pv+=M.s[dkey(p)]||0; }
+  const chip=m36Chip(tot,pv,L.m36CmpM);
+  /* лучший день недели — по 8 последним неделям, если записей хватает */
+  const wd=[0,0,0,0,0,0,0], wn=[0,0,0,0,0,0,0]; for(let i=1;i<=56;i++){ const d=addDays(t,-i), v=M.s[dkey(d)]||0; if(v>0){ wd[d.getDay()]+=v; wn[d.getDay()]++; } }
+  let best=-1, bv=0; for(let i=0;i<7;i++){ if(wn[i]>=3){ const a=wd[i]/wn[i]; if(a>bv){ bv=a; best=i; } } }
+  const gaps=past.filter(d=>!d.td&&d.v<=0&&!(M.x[d.k]>0)).length;
+  const def=`<b>${L.m36LblM}: +${money(tot)}</b><small>${avg>0?L.m36Avg(money(avg)):''}</small>`;
+  M36D.hm={days,def};
+  const lv=v=>v<=0?0:Math.min(4,1+Math.floor(v/mx*3.999));
+  const head=[1,2,3,4,5,6,0].map(i=>`<span class="hd">${esc(L.wdShort[i])}</span>`).join('');
+  const cells='<span class="sp"></span>'.repeat(lead)+days.map((d,i)=>`<button type="button" class="c l${d.fut?'f':lv(d.v)}${d.td?' td':''}${!d.fut&&d.v<=0?' e':''}" data-i="${i}" ${d.fut?'disabled':''} aria-label="${esc(m36DayName(d.d)+': '+(d.v>0?money(d.v):L.m36HmE))}">${d.d.getDate()}</button>`).join('');
+  return `<div class="m36-sc m36-hm" data-m36c="hm"><div class="m36-h"><b>${ico('cal',18)} ${L.m36HmT}</b>${chip}</div>
+    <div class="m36-cap" aria-live="polite">${def}</div>
+    <div class="m36-hm-g" role="group" aria-label="${esc(L.m36HmA)}">${head}${cells}</div>
+    <p class="m36-leg hm"><span>${L.m36HmL}</span><i class="l1"></i><i class="l2"></i><i class="l3"></i><i class="l4"></i><span>${L.m36HmM}</span><i class="e"></i><span>${L.m36HmE}</span></p>
+    ${best>=0?`<p class="m36-ins">${ico('star',16)} ${esc(L.m36HmBest(String(L.weekdays[best]).toLowerCase()))}</p>`:''}
+    ${gaps>=3?`<p class="m36-tip">${L.m36HmTip}</p>`:''}</div>`;
+}
+function m36ShopChart(){ const M=m36Maps(); return shopPer==='month'?m36Heat(M):m36Bars(M); }
+try{ const _s36=shopSumHTML; shopSumHTML=function(list){ const h=_s36.apply(this,arguments); let c=''; try{ c=m36ShopChart(); }catch(e){ console.error(e); } if(!c) return h;
+  const mk='<div class="section-h" style="margin-top:22px"><h2>'+L.shopDays+'</h2>'; const i=h.indexOf(mk); return i<0?h+c:h.slice(0,i)+c+h.slice(i); }; }catch(e){}
+
+/* выбор дня: касание, проведение пальцем, стрелки */
+function m36CapFor(kind,i){ const D=M36D[kind]; if(!D) return ''; const d=D.days[i]; if(!d) return D.def;
+  return `<b>${esc(m36DayName(d.d))}: ${d.v>0?'+'+money(d.v):L.m36NoRev}</b><small>${d.x>0?L.m36Exp(money(d.x)):'&nbsp;'}</small>`; }
+function m36Sel(box,i){ const kind=box.dataset.m36c, items=kind==='hm'?box.querySelectorAll('.m36-hm-g .c'):box.querySelectorAll('.m36-b');
+  if(box._m36i===i) return; box._m36i=i;
+  items.forEach((b,k)=>b.classList.toggle('sel',k===i));
+  const cap=box.querySelector('.m36-cap'); if(cap) cap.innerHTML=i==null?M36D[kind].def:m36CapFor(kind,i);
+  if(i!=null) try{ if(typeof f35Tick==='function') f35Tick(); }catch(e){} }
+let m36Drag=null;
+function m36PickX(pl,x){ const bars=pl.querySelectorAll('.m36-b'); if(!bars.length) return; const r=pl.querySelector('.m36-bars').getBoundingClientRect(); const i=Math.max(0,Math.min(bars.length-1,Math.floor((x-r.left)/r.width*bars.length))); m36Sel(pl.closest('.m36-sc'),i); }
+document.addEventListener('pointerdown',e=>{ const pl=e.target.closest&&e.target.closest('.m36-plot'); if(!pl) return; m36Drag=pl; m36PickX(pl,e.clientX); },true);
+document.addEventListener('pointermove',e=>{ if(m36Drag) m36PickX(m36Drag,e.clientX); },{passive:true});
+['pointerup','pointercancel'].forEach(t=>document.addEventListener(t,()=>{ m36Drag=null; },{passive:true}));
+document.addEventListener('click',e=>{ const c=e.target.closest&&e.target.closest('.m36-hm-g .c'); if(!c) return; e.stopPropagation(); const box=c.closest('.m36-sc'), i=+c.dataset.i; m36Sel(box,box._m36i===i?null:i); },true);
+document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.closest('.m36-plot,.m36-hm-g .c'); if(!pl) return; const box=pl.closest('.m36-sc'), kind=box.dataset.m36c, D=M36D[kind]; if(!D) return;
+  const n=D.days.length, cur=box._m36i==null?(kind==='hm'?D.days.findIndex(d=>d.td):n-1):box._m36i;
+  let i=null; if(e.key==='ArrowLeft') i=Math.max(0,cur-1); else if(e.key==='ArrowRight') i=Math.min(n-1,cur+1); else if(e.key==='Escape'){ m36Sel(box,null); return; } else return;
+  if(kind==='hm'&&D.days[i]&&D.days[i].fut) return; e.preventDefault(); m36Sel(box,i); if(kind==='hm'){ const c=box.querySelector('.m36-hm-g .c[data-i="'+i+'"]'); if(c) c.focus(); } });
+
+/* ---- «Деньги»: водопад «Куда ушла выручка» (как Cash Flow у Monarch Money и в отчётах о движении денег) ---- */
+function m36WfHTML(){
+  const mk=monthKey(new Date()), sh=ensureShop();
+  const rev=sumOf(sh.sales.filter(e=>String(e.date).slice(0,7)===mk)); if(!(rev>0)) return '';
+  const sexp=sumOf(sh.exp.filter(e=>String(e.date).slice(0,7)===mk));
+  const home=(state.home||[]).filter(h=>String(h.d).slice(0,7)===mk).reduce((s,h)=>s+(+h.sum||0),0);
+  const paid=(state.payments||[]).filter(p=>String(p.date).slice(0,7)===mk&&!state.loans.some(l=>l.example&&l.id===p.loanId)).reduce((s,p)=>s+(+p.amount||0),0);
+  const saved=(state.envTx||[]).filter(t=>String(t.d).slice(0,7)===mk&&t.a>0).reduce((s,t)=>s+(+t.a||0),0);
+  const steps=[['rev',L.m36WfRev,rev],['exp',L.m36WfExp,-sexp],['home',L.m36WfHome,-home],['loan',L.m36WfLoan,-paid],['save',L.m36WfSave,-saved]].filter((s,i)=>i===0||s[2]<0);
+  const left=rev-sexp-home-paid-saved; let run=0; const cols=[];
+  for(const [k,lb,v] of steps){ const a=run, b=run+v; cols.push({k,lb,v,lo:Math.min(a,b),hi:Math.max(a,b)}); run=b; }
+  cols.push({k:left>=0?'left':'neg',lb:left>=0?L.m36WfLeft:L.m36WfMinus,v:left,lo:Math.min(0,left),hi:Math.max(0,left),res:1});
+  const top=Math.max(rev,...cols.map(c=>c.hi)), bot=Math.min(0,...cols.map(c=>c.lo)), rg=Math.max(1,top-bot), P=v=>((top-v)/rg*100);
+  M36D.wf={cols};
+  const bars=cols.map((c,i)=>`<span class="wc"><span class="wb k-${c.k}${c.res?' res':''}${c.v<0&&!c.res?' dn':''}" style="top:${P(c.hi).toFixed(1)}%;height:${Math.max(1.2,(c.hi-c.lo)/rg*100).toFixed(1)}%" data-i="${i}"></span>${i<cols.length-1&&!c.res?`<i class="wl" style="top:${P(c.v<0?c.lo:c.hi).toFixed(1)}%"></i>`:''}</span>`).join('');
+  const lbs=cols.map(c=>`<span>${esc(c.lb)}</span>`).join('');
+  const rows=cols.map(c=>`<li class="k-${c.k}"><i></i><span>${esc(c.lb)}</span><b>${c.res?(c.v<0?'−':''):(c.v>0?'+':'−')}${money(Math.abs(c.v))}</b></li>`).join('');
+  const note=left>=0?L.m36WfNote(money(left),Math.round(left/rev*100)):L.m36WfNeg(money(-left));
+  return `<div class="m36-wf" role="img" aria-label="${esc(L.m36WfA+' '+cols.map(c=>c.lb+' '+money(c.v)).join(', '))}"><div class="m36-h"><b>${ico('chart',18)} ${L.m36WfT}</b></div>
+    <div class="m36-wf-p" style="--n:${cols.length}">${bars}</div><div class="m36-wf-x" style="--n:${cols.length}">${lbs}</div>
+    <ul class="m36-wf-l">${rows}</ul><p class="m36-wf-n ${left>=0?'ok':'bad'}">${note}</p></div>`;
+}
+try{ const _m36=renderMoney; renderMoney=function(){ const x=_m36.apply(this,arguments); try{ const box=$('#moneyTop'); const t=box&&box.querySelector('.mtiles'); if(t&&!box.querySelector('.m36-wf')){ const h=m36WfHTML(); if(h) t.insertAdjacentHTML('afterend',h); } }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---- живое появление графиков: столбики растут, клетки проявляются — один раз, когда график впервые на экране ---- */
+const M36RV=[['.wk-bars','i'],['.m8-bars','i'],['.m36-bars','i'],['.m36-hm-g','.c'],['.m36-wf-p','.wb'],['.m36-pb','i'],['.m36-gt','.m36-gt-t i']];
+const m36Seen=new Set();
+const m36IO=('IntersectionObserver' in window)?new IntersectionObserver(es=>{ for(const en of es){ if(en.isIntersecting){ const el=en.target; el.classList.add('m36-in'); m36Seen.add(el._m36sig); m36IO.unobserve(el); } } },{threshold:.35}):null;
+function m36Reveal(){ let rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  for(const [sel,ch] of M36RV) document.querySelectorAll(sel).forEach(el=>{ if(el._m36sig!==undefined) return; const sig=sel+'|'+el.textContent+'|'+[...el.querySelectorAll(ch)].map(x=>x.getAttribute('style')||x.className).join(',');
+    el._m36sig=sig; el.querySelectorAll(ch).forEach((x,k)=>x.style.setProperty('--i',k));
+    if(rm||!m36IO||m36Seen.has(sig)){ el.classList.add('m36-rv','m36-in','m36-nof'); return; }
+    el.classList.add('m36-rv'); m36IO.observe(el); }); }
+try{ const _r36=render; render=function(){ const x=_r36.apply(this,arguments); try{ m36Reveal(); }catch(e){} return x; }; }catch(e){}
+try{ const _ss36=setTab; setTab=function(){ const x=_ss36.apply(this,arguments); try{ setTimeout(m36Reveal,0); }catch(e){} return x; }; }catch(e){}
+setTimeout(()=>{ try{ m36Reveal(); }catch(e){} },0);
+
+/* ---- «Кредиты»: шкала закрытия (диаграмма Ганта) и проценты в деньгах вместо одних процентов ---- */
+function m36GanttHTML(){ let list=[]; try{ list=activeList(); }catch(e){ return ''; }
+  const now=today0(), rows=list.filter(x=>!x.loan.example&&!x.a.done&&x.a.remaining>0).map(({loan,a})=>({loan,a,d:m8LastDue(loan,a),m:Math.min(m7Amt(a),Math.max(0,a.remaining))})).filter(r=>r.d&&r.d>now).sort((p,q)=>p.d-q.d);
+  if(rows.length<2) return '';
+  const end=rows[rows.length-1].d, span=Math.max(1,end-now), sm=d=>MONTHS[lang].short[d.getMonth()]+" '"+String(d.getFullYear()).slice(2);
+  const mid=new Date(+now+span/2);
+  const bars=rows.map(r=>`<div class="m36-gt-r"><span class="m36-gt-n">${esc(r.loan.name)}</span><span class="m36-gt-t"><i style="width:${Math.max(6,(r.d-now)/span*100).toFixed(1)}%;background:${m8Col(r.loan)}">${esc(sm(r.d))}</i></span></div>`).join('');
+  let left=rows.reduce((s,r)=>s+r.m,0); const steps=rows.map((r,i)=>{ left-=r.m; return i<rows.length-1?`<p>${ico('down',16)}<span>${L.m36GtLess(esc(r.loan.name),m8MonLabel(r.d),'<b>'+money(r.m)+'</b>',money(left))}</span></p>`:`<p>${ico('flag',16)}<span>${L.m36GtFree('<b>'+m8MonLabel(r.d)+'</b>')}</span></p>`; }).join('');
+  return `<div class="m36-gt" role="img" aria-label="${esc(L.m36GtA)}"><div class="m36-h"><b>${ico('cal',18)} ${L.m36GtT}</b></div>${bars}
+    <div class="m36-gt-ax" aria-hidden="true"><i></i><div><span style="left:0">${L.m36GtNow}</span><span style="left:50%">${esc(sm(mid))}</span><span style="left:100%">${esc(sm(end))}</span></div></div>
+    <div class="m36-gt-s">${steps}</div></div>`; }
+function m36LoansAfter(){ const v=$('#view-loans'); if(!v) return;
+  let g=$('#m36Gantt'); const h=m36GanttHTML();
+  if(!h){ if(g) g.remove(); }
+  else { if(!g){ g=document.createElement('section'); g.id='m36Gantt'; const vic=$('#victory'); if(vic) vic.after(g); else v.appendChild(g); } if(g.dataset.h!==h){ g.innerHTML=h; g.dataset.h=h; } }
+  let list=[]; try{ list=activeList(); }catch(e){}
+  document.querySelectorAll('#cards .card[data-id]').forEach(c=>{ const meta=c.querySelector('.m12-meta'); if(!meta||meta.querySelector('.m36-int')) return; const it=list.find(x=>String(x.loan.id)===c.dataset.id); if(!it) return;
+    const r=+it.loan.rate||0, mi=it.a.remaining>0&&r>0?it.a.remaining*r/100/12:0; if(mi>=1) meta.insertAdjacentHTML('beforeend',`<span class="m36-int">≈ ${money(mi)} ${L.m36IntM}</span>`); }); }
+/* ---- «Магазин»: серия дней с записями (прощает один пропущенный день — без давления) ---- */
+function m36ShopAfter(){ const sd=document.querySelector('#shop .sday'); if(!sd||sd.querySelector('.m36-fire')) return; let n=0; try{ n=logStreak(); }catch(e){} if(n<2) return;
+  let done=false; try{ const sh=ensureShop(), t=dkey(); done=sh.sales.some(e=>e.date===t)||sh.exp.some(e=>e.date===t); }catch(e){}
+  const h=`<p class="m36-fire-l"><em class="m36-fire" title="${esc(L.m36FireT)}">${ico('zap',14)} ${L.m36Fire(n)}</em><span>${done?L.m36FireOk:L.m36FireGo}</span></p>`;
+  const btns=sd.querySelector('.sd-btns'); if(btns) btns.insertAdjacentHTML('beforebegin',h); else sd.insertAdjacentHTML('beforeend',h); }
+try{ const _r36b=render; render=function(){ const x=_r36b.apply(this,arguments); try{ m36LoansAfter(); }catch(e){ console.error(e); } try{ m36ShopAfter(); }catch(e){ console.error(e); } try{ m36Reveal(); }catch(e){} return x; }; }catch(e){}
+/* <</v36 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
