@@ -3008,6 +3008,21 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .f30-d2{display:block; font-size:.72rem; color:var(--muted); font-weight:600;}
 .f30-auto{margin:8px 0 4px; padding:8px 12px; border-radius:12px; font-size:.84rem; line-height:1.4; font-weight:600;} .f30-auto.on{background:color-mix(in srgb,var(--brand) 10%,transparent); color:var(--ink);} .f30-auto.off{background:color-mix(in srgb,#E08A2B 12%,transparent);}
 /* <</v30 css>> */
+/* <<v31 css>> */
+/* v31: изменения от Сифры */
+.f31-list{display:flex; flex-direction:column; gap:10px; margin:4px 0 10px;}
+.f31-it{display:flex; gap:12px; align-items:flex-start; padding:12px 14px; border-radius:16px; border:1.5px solid var(--line); background:var(--surface); cursor:pointer;}
+.f31-it:has(input:checked){border-color:var(--brand); background:color-mix(in srgb,var(--brand) 6%,var(--surface));}
+.f31-it.bad{cursor:default; border-color:color-mix(in srgb,#E08A2B 45%,transparent); background:color-mix(in srgb,#E08A2B 8%,var(--surface));}
+.f31-it input{margin-top:3px; width:20px; height:20px; flex:none; accent-color:var(--brand);}
+.f31-it > div{min-width:0; flex:1;}
+.f31-it b{display:block; font-size:.98rem; line-height:1.3;}
+.f31-it ul{margin:6px 0 0; padding:0 0 0 18px; font-size:.86rem; line-height:1.45;}
+.f31-it li{margin:2px 0;}
+.f31-w{margin:6px 0 0; font-size:.82rem; line-height:1.4; color:#B4610F; font-weight:600;}
+.f31-e{margin:6px 0 0; font-size:.85rem; line-height:1.4; font-weight:700; color:#B4610F;}
+:root[data-theme="dark"] .f31-w,:root[data-theme="dark"] .f31-e{color:#F0A95B;}
+/* <</v31 css>> */
 
 
 </style>
@@ -6802,6 +6817,56 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v31 str>> */
+/* ----- v31: Сифра ведёт кредиты ----- */
+const M31S={
+ru:{ f31Photos:n=>'Фото: '+n+' шт.', f31T:'Сифра подготовила изменения', f31Lead:n=>'Проверьте и нажмите «Применить». Изменений: '+n+'. Снять галочку — не применять.', f31None:'Применить нечего — посмотрите, что не так.',
+  f31Note:'После применения внизу будет «Вернуть».', f31Go:'Применить', f31GoN:n=>'Применить все '+n, f31Done:n=>'Сифра внесла изменения: '+n, f31Act:n=>n>1?'Посмотреть и применить ('+n+')':'Посмотреть и применить', f31Err:'Не получилось разобрать это действие.',
+  f31New:n=>'Новый кредит: '+n, f31NeedName:'Нет названия банка.', f31NeedSum:'Не хватает суммы кредита — спросите Сифру ещё раз или пришлите договор.', f31NeedDay:'Не хватает числа месяца для платежа.',
+  f31Cur:c=>'Кредит в '+c+': Mira считает в сомони — впишите суммы в сомони или уточните у Сифры.', f31SumBad:(a,b)=>'Основной долг по графику '+a+', а сумма кредита '+b+' — проверьте.',
+  f31Sum:m=>'Сумма кредита: '+m, f31Rate:r=>'Ставка: '+r+'% годовых', f31Term:n=>'Срок: '+n+' мес.', f31Mon:(m,d)=>'Платёж: '+m+', '+d+'-го числа',
+  f31Pen:(p,b)=>'Пеня: '+p+'% в день'+(b==='rem'?' от всего остатка':b==='pay'?' от просроченного платежа':''), f31NoPen:'Пеня: в документах не найдена — пришлите страницу договора про пеню',
+  f31Sch:(n,a,b)=>'График: '+n+' платежей, с '+a+' по '+b, f31SchAdd:'Добавлен', f31SchNew:'Заменён',
+  f31Left:m=>'Остаток долга: '+m, f31Next:(d,m)=>'Ближайший платёж: '+d+' · '+m, f31Check:d=>'Mira спросит, внесён ли платёж '+d, f31Closed:'Кредит закрыт',
+  f31Auto:'✓ Остаток будет сверяться с графиком банка после каждого платежа',
+  f31Ch:(l,x,y)=>l+': '+x+' → '+y, f31LName:'Название', f31LRate:'Ставка', f31LTerm:'Срок, мес.', f31LDay:'Число платежа', f31LPen:'Пеня в день', f31LPenB:'Пеня считается', f31B_pay:'от просроченного платежа', f31B_rem:'от всего остатка',
+  f31LNote:n=>'Заметка: '+n, f31LMon:'Платёж', f31LLeft:'Остаток долга', f31LNext:'Ближайший платёж', f31Over:m=>'Переплата '+m+' уйдёт в следующий платёж', f31NoCh:'Всё и так совпадает — менять нечего.',
+  f31NeedAmt:'Не хватает суммы платежа.', f31Future:'Дата платежа ещё не наступила.', f31Done0:'Этот кредит уже выплачен.',
+  f31ExtraL:(m,d)=>'Досрочно '+m+', '+d, f31ExtraSch:'После досрочного платежа банк пересчитает график — пришлите Сифре новый, чтобы остаток снова сверялся сам.',
+  f31PayL:(m,d,due)=>m+' от '+d+' — за платёж '+due, f31Late:n=>'Опоздание: '+n+' дн.', f31PenPaid:m=>'Из них пеня: '+m, f31Split:(p,i)=>'В долг: '+p+', проценты: '+i,
+  f31Dup:d=>'Платёж за '+d+' уже записан.', f31Hist:'Mira уже считала этот платёж внесённым — запишу в историю, остаток не изменится.', f31Skip:d=>'Сначала нужен платёж за '+d+'.', f31PartL:m=>'Это часть платежа: осталось внести '+m },
+tg:{ f31Photos:n=>'Акс: '+n+' адад', f31T:'Сифра тағйиротро омода кард', f31Lead:n=>'Санҷед ва «Татбиқ»-ро пахш кунед. Тағйирот: '+n+'. Аломатро гиред — татбиқ намешавад.', f31None:'Татбиқ кардан чизе нест — бинед, ки чӣ нодуруст аст.',
+  f31Note:'Баъди татбиқ дар поён «Баргардонидан» мешавад.', f31Go:'Татбиқ', f31GoN:n=>'Ҳамаи '+n+'-ро татбиқ кардан', f31Done:n=>'Сифра тағйирот ворид кард: '+n, f31Act:n=>n>1?'Дидан ва татбиқ кардан ('+n+')':'Дидан ва татбиқ кардан', f31Err:'Ин амалро фаҳмида нашуд.',
+  f31New:n=>'Қарзи нав: '+n, f31NeedName:'Номи бонк нест.', f31NeedSum:'Маблағи қарз намерасад — аз Сифра боз пурсед ё шартномаро фиристед.', f31NeedDay:'Рӯзи пардохт намерасад.',
+  f31Cur:c=>'Қарз бо '+c+': Mira бо сомонӣ ҳисоб мекунад — маблағҳоро бо сомонӣ нависед ё аз Сифра пурсед.', f31SumBad:(a,b)=>'Қарзи асосӣ аз рӯи ҷадвал '+a+', вале маблағи қарз '+b+' — санҷед.',
+  f31Sum:m=>'Маблағи қарз: '+m, f31Rate:r=>'Фоиз: '+r+'% солона', f31Term:n=>'Мӯҳлат: '+n+' моҳ', f31Mon:(m,d)=>'Пардохт: '+m+', рӯзи '+d,
+  f31Pen:(p,b)=>'Ҷарима: '+p+'% дар як рӯз'+(b==='rem'?' аз тамоми бақия':b==='pay'?' аз пардохти мӯҳлатгузашта':''), f31NoPen:'Ҷарима: дар ҳуҷҷатҳо ёфт нашуд — саҳифаи шартномаро дар бораи ҷарима фиристед',
+  f31Sch:(n,a,b)=>'Ҷадвал: '+n+' пардохт, аз '+a+' то '+b, f31SchAdd:'Илова шуд', f31SchNew:'Иваз шуд',
+  f31Left:m=>'Бақияи қарз: '+m, f31Next:(d,m)=>'Пардохти наздик: '+d+' · '+m, f31Check:d=>'Mira мепурсад, ки пардохти '+d+' супорида шудааст ё не', f31Closed:'Қарз пӯшида шуд',
+  f31Auto:'✓ Бақия баъди ҳар пардохт бо ҷадвали бонк муқоиса мешавад',
+  f31Ch:(l,x,y)=>l+': '+x+' → '+y, f31LName:'Ном', f31LRate:'Фоиз', f31LTerm:'Мӯҳлат, моҳ', f31LDay:'Рӯзи пардохт', f31LPen:'Ҷарима дар рӯз', f31LPenB:'Ҷарима ҳисоб мешавад', f31B_pay:'аз пардохти мӯҳлатгузашта', f31B_rem:'аз тамоми бақия',
+  f31LNote:n=>'Қайд: '+n, f31LMon:'Пардохт', f31LLeft:'Бақияи қарз', f31LNext:'Пардохти наздик', f31Over:m=>'Зиёдатии '+m+' ба пардохти навбатӣ меравад', f31NoCh:'Ҳама мувофиқ аст — чизе иваз кардан лозим нест.',
+  f31NeedAmt:'Маблағи пардохт намерасад.', f31Future:'Санаи пардохт ҳанӯз нарасидааст.', f31Done0:'Ин қарз аллакай пардохт шудааст.',
+  f31ExtraL:(m,d)=>'Пеш аз мӯҳлат '+m+', '+d, f31ExtraSch:'Баъди пардохти пеш аз мӯҳлат бонк ҷадвалро аз нав ҳисоб мекунад — ҷадвали навро ба Сифра фиристед.',
+  f31PayL:(m,d,due)=>m+' аз '+d+' — барои пардохти '+due, f31Late:n=>'Таъхир: '+n+' рӯз', f31PenPaid:m=>'Аз он ҷарима: '+m, f31Split:(p,i)=>'Ба қарз: '+p+', фоиз: '+i,
+  f31Dup:d=>'Пардохт барои '+d+' аллакай сабт шудааст.', f31Hist:'Mira ин пардохтро аллакай супоридашуда ҳисоб мекард — ба таърих сабт мекунам, бақия тағйир намеёбад.', f31Skip:d=>'Аввал пардохт барои '+d+' лозим аст.', f31PartL:m=>'Ин қисми пардохт аст: боз '+m+' супоред' },
+en:{ f31Photos:n=>'Photos: '+n, f31T:'Sifra prepared changes', f31Lead:n=>'Check them and tap “Apply”. Changes: '+n+'. Untick to skip one.', f31None:'Nothing to apply — see what is wrong.',
+  f31Note:'After applying, “Undo” appears at the bottom.', f31Go:'Apply', f31GoN:n=>'Apply all '+n, f31Done:n=>'Sifra made changes: '+n, f31Act:n=>n>1?'Review and apply ('+n+')':'Review and apply', f31Err:'Could not read this action.',
+  f31New:n=>'New loan: '+n, f31NeedName:'No lender name.', f31NeedSum:'The loan amount is missing — ask Sifra again or send the contract.', f31NeedDay:'The payment day is missing.',
+  f31Cur:c=>'Loan in '+c+': Mira counts in somoni — enter amounts in somoni or ask Sifra.', f31SumBad:(a,b)=>'Principal on the schedule is '+a+', but the loan amount is '+b+' — check it.',
+  f31Sum:m=>'Loan amount: '+m, f31Rate:r=>'Rate: '+r+'% a year', f31Term:n=>'Term: '+n+' months', f31Mon:(m,d)=>'Payment: '+m+', on day '+d,
+  f31Pen:(p,b)=>'Late fee: '+p+'% a day'+(b==='rem'?' on the whole balance':b==='pay'?' on the overdue payment':''), f31NoPen:'Late fee: not found in the documents — send the contract page about it',
+  f31Sch:(n,a,b)=>'Schedule: '+n+' payments, '+a+' to '+b, f31SchAdd:'Added', f31SchNew:'Replaced',
+  f31Left:m=>'Balance owed: '+m, f31Next:(d,m)=>'Next payment: '+d+' · '+m, f31Check:d=>'Mira will ask whether the '+d+' payment was made', f31Closed:'Loan closed',
+  f31Auto:'✓ The balance will be checked against the bank’s schedule after every payment',
+  f31Ch:(l,x,y)=>l+': '+x+' → '+y, f31LName:'Name', f31LRate:'Rate', f31LTerm:'Term, months', f31LDay:'Payment day', f31LPen:'Late fee a day', f31LPenB:'Late fee is on', f31B_pay:'the overdue payment', f31B_rem:'the whole balance',
+  f31LNote:n=>'Note: '+n, f31LMon:'Payment', f31LLeft:'Balance owed', f31LNext:'Next payment', f31Over:m=>'Overpayment of '+m+' goes to the next payment', f31NoCh:'Everything already matches — nothing to change.',
+  f31NeedAmt:'The payment amount is missing.', f31Future:'The payment date has not come yet.', f31Done0:'This loan is already paid off.',
+  f31ExtraL:(m,d)=>'Early repayment '+m+', '+d, f31ExtraSch:'After an early repayment the bank recalculates the schedule — send Sifra the new one so the balance is checked automatically again.',
+  f31PayL:(m,d,due)=>m+' on '+d+' — for the '+due+' payment', f31Late:n=>'Late by '+n+' days', f31PenPaid:m=>'Of it, late fee: '+m, f31Split:(p,i)=>'To principal: '+p+', interest: '+i,
+  f31Dup:d=>'The '+d+' payment is already recorded.', f31Hist:'Mira already counted this payment as made — it goes into history, the balance does not change.', f31Skip:d=>'The '+d+' payment needs to be recorded first.', f31PartL:m=>'This is part of the payment: '+m+' still to pay' }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M31S[k]);
+/* <</v31 str>> */
 /* <<v30 str>> */
 /* ----- v30: сверка с банком по графику и дате, график по фото, «за какой платёж» ----- */
 const M30S={
@@ -16453,6 +16518,158 @@ document.addEventListener('click',e=>{ const t=e.target;
   const ok=t.closest&&t.closest('[data-f30ok]'); if(ok){ e.stopImmediatePropagation(); const l=byId(ok.dataset.f30ok); if(!l) return; const pt=curPt(l); if(pt!=null) l.f30ok=pt; persist(); const b=$('#f30-ban'); if(b) b.remove(); render(); toast(L.f30OkDone); return; }
 },true);
 /* <</v30 js>> */
+/* <<v31 js>> */
+/* ===================== v31: Сифра ведёт кредиты — добавляет по договору и графику, исправляет, записывает платежи и пеню ===================== */
+const F31_RE=/кредит|график|догово|остат|пен[яиюеь]|просроч|переплат|рассроч|сверь|сверк|сверит|исправ|ставк|досрочн|займ|қарз|qarz|ҷадвал|шартнома|ҷарима|бақия|loan|schedule|contract|penalt|overdue|balance/i;
+let f31Cur=null;
+const f31Num=v=>{ const n=+String(v==null?'':v).replace(/\s/g,'').replace(',','.'); return isFinite(n)&&n>0&&n<1e11?f30R2(n):null; };
+const f31Num0=v=>{ if(v===''||v==null) return null; const n=+String(v).replace(/\s/g,'').replace(',','.'); return isFinite(n)&&n>=0&&n<1e11?f30R2(n):null; };
+const f31Int=(v,a,b)=>{ const n=Math.round(+v); return isFinite(n)&&n>=a&&n<=b?n:null; };
+const f31Str=(v,n)=>String(v==null?'':v).replace(/[<>]/g,'').replace(/\s+/g,' ').trim().slice(0,n);
+const f31Date=v=>{ const s=f30Ymd(v); return s?parseYmd(s):null; };
+const f31Ym=pt=>Math.floor(pt/12)+'-'+String(pt%12+1).padStart(2,'0');
+/* строки графика от Сифры → тот же разбор, что и при вставке (остатки, два платежа в месяц) */
+function f31Rows(arr){ if(!Array.isArray(arr)||arr.length<2) return null; const lines=[];
+  for(const r of arr.slice(0,400)){ if(!r||typeof r!=='object') continue; const d=f31Date(r.date), a=f31Num(r.payment); if(!d||!a) continue;
+    const dd=String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear(), p=f31Num0(r.principal), i=f31Num0(r.interest), b=f31Num0(r.balance);
+    lines.push(p!=null&&i!=null?[dd,a,p,i].concat(b!=null?[b]:[]).join('; '):dd+'; '+a); }
+  const rows=parseSchedule(lines.join('\n')); return rows.length>=2?rows:null; }
+/* полные данные о кредитах для Сифры (только в режиме кредитов) */
+function f31Full(){ return state.loans.filter(l=>!l.example).map(l=>{ const a=analyze(l), pt=curPt(l), s=schedOf(l);
+  const o={id:l.id,name:l.name,principal:f30R2(+l.total||0),paid:f30R2(+l.paid||0),left:f30R2(a.remaining),rate:+l.rate||0,term:+l.term||null,monthly:+l.monthly||null,due_day:l.dueDay||null,pen_pct_day:+l.pen||0,pen_base:l.penBase||null};
+  if(l.note) o.note=String(l.note).slice(0,80); if(a.done) o.done=true; if(pt!=null) o.paid_through=f31Ym(pt);
+  if(!a.done){ if(a.check) o.check_needed=ymd(a.due); else { o.next_due=ymd(a.due); o.next_amount=f30R2(a.amt||a.amtFull||0); if(a.overdue) o.overdue_days=-a.days; } }
+  if(l.part) o.credit={for:ymd(f30DueOf(l,l.part.per)),amount:f30R2(+l.part.a||0)};
+  if(s){ o.schedule=s.map(e=>[e.d,e.a,e.p!=null?e.p:'',e.i!=null?e.i:'',e.b!=null?e.b:''].join(';')+(e.d2?';+'+e.d2:'')); o.schedule_auto=f30AutoOn(l); }
+  o.payments=state.payments.filter(p=>p.loanId===l.id).slice(-8).map(p=>{ const x={date:p.date,amount:p.amount}; if(p.per!=null) x.for=ymd(f30DueOf(l,p.per)); if(p.principal!=null) x.principal=p.principal; if(p.interest!=null) x.interest=p.interest; if(p.late>0) x.late=p.late; if(p.pen>0) x.pen=p.pen; if(p.extra) x.extra=true; if(p.part) x.part=true; return x; });
+  return o; }); }
+const f31Ask0=sfAsk;
+sfAsk=function(q,voice){ const img=sfImg, more=img&&Array.isArray(img.more)?img.more.slice(0,3):[];
+  f31Cur={loan:!sfT&&!voice&&(F31_RE.test(String(q||''))||more.length>0),more};
+  try{ return f31Ask0.apply(this,arguments); } finally{ f31Cur=null; } };
+const f31Ctx0=sfCtx;
+sfCtx=function(){ const o=f31Ctx0.apply(this,arguments); try{ const v=sfCaps&&+sfCaps.v||0;
+    if(f31Cur&&f31Cur.loan&&v>=18){ o.mode='loan'; o.loans_full=f31Full(); }
+    if(f31Cur&&f31Cur.more&&f31Cur.more.length&&v>=18) o.__imgs=f31Cur.more.map(x=>({type:x.type,data:x.data})); }catch(e){} return o; };
+/* фото для Сифры: до 4 сразу (страницы договора и графика), чётче — до 1600 px */
+async function f31Prep(f,thumb){ const url=URL.createObjectURL(f);
+  try{ const im=await new Promise((res,rej)=>{ const x=new Image(); x.onload=()=>res(x); x.onerror=rej; x.src=url; }); const w=im.naturalWidth, h=im.naturalHeight; if(!w||!h) throw new Error('img');
+    const sc=(max,q)=>{ const k=Math.min(1,max/Math.max(w,h)), c=document.createElement('canvas'); c.width=Math.max(1,Math.round(w*k)); c.height=Math.max(1,Math.round(h*k)); const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); g.drawImage(im,0,0,c.width,c.height); return c.toDataURL('image/jpeg',q); };
+    const o={type:'image/jpeg',data:sc(1600,.85).split(',')[1]}; if(thumb) o.thumb=sc(160,.6); return o; }
+  finally{ URL.revokeObjectURL(url); } }
+sfPickPhoto=function(){ const i=document.createElement('input'); i.type='file'; i.accept='image/*'; i.multiple=true;
+  i.onchange=async()=>{ const fs=[...(i.files||[])].slice(0,4); if(!fs.length) return;
+    try{ const first=await f31Prep(fs[0],true), more=[]; for(const f of fs.slice(1)){ try{ more.push(await f31Prep(f,false)); }catch(e){} } first.more=more; sfImg=first; sfImgShow(); const t=$('#sf-in'); if(t) t.focus(); }catch(e){ toast(L.sfPhotoErr); } };
+  i.click(); };
+const f31Show0=sfImgShow;
+sfImgShow=function(){ const x=f31Show0.apply(this,arguments); try{ const p=$('#sf-pv'); if(p){ const s=p.querySelector('span'); const n=sfImg&&sfImg.more?sfImg.more.length:0; if(s) s.textContent=n?L.f31Photos(n+1):L.sfPhotoAdded; } }catch(e){} return x; };
+
+/* ---- исполнение: каждое действие меняет данные; для предпросмотра — на копии, потом всё возвращается ---- */
+function f31Credit(l,x){ const pt=l.pt!=null?l.pt:curPt(l); if(pt==null||!(x>0)) return; const per=pt+1, se=schedAt(l,per);
+  const iAll=se&&se.i!=null?+se.i||0:(+l.rate>0?Math.max(0,(+l.total||0)-(+l.paid||0))*(+l.rate)/1200:0), ci=f30R2(Math.min(x,iAll)), prev=l.part&&l.part.per===per?l.part:null;
+  l.part={per,a:f30R2((prev?+prev.a||0:0)+x),cr:f30R2((prev&&prev.cr?+prev.cr:0)+x),cri:f30R2((prev&&prev.cri?+prev.cri:0)+ci)};
+  l.paid=f30R2(Math.min(+l.total||0,(+l.paid||0)+Math.max(0,x-ci))); }
+function f31Nm(l){ return l.name+(state.loans.filter(x=>!x.example&&x.name===l.name).length>1?' · '+money(+l.total||0):''); }
+function f31NextLine(a){ return a.done?L.f31Closed:a.check?L.f31Check(fmtDate(a.due)):L.f31Next(fmtDate(a.due),f30M(a.amt||a.amtFull||0)); }
+function f31SchLine(rows){ const d=e=>fmtDate(parseYmd(e.d))+' '+parseYmd(e.d).getFullYear(); return L.f31Sch(rows.length+rows.filter(e=>e.d2).length,d(rows[0]),d(rows[rows.length-1])); }
+function f31Create(i){ const name=f31Str(i.name,60), warn=[]; if(!name) return {title:'➕',err:L.f31NeedName};
+  const rows=f31Rows(i.schedule), next=f31Date(i.next_due), sumP=rows&&rows.every(e=>e.p!=null)?f30R2(rows.reduce((x,e)=>x+e.p,0)):null;
+  let monthly=f31Num(i.monthly); const term=f31Int(i.term,1,600)||(rows?rows.length+rows.filter(e=>e.d2).length:null);
+  if(!monthly&&rows){ const fut=rows.find(e=>parseYmd(e.d)>=today0())||rows[0]; monthly=f30R2(fut.a); }
+  const principal=f31Num(i.principal)||sumP||(monthly&&term?f30R2(monthly*term):null); if(!principal) return {title:'➕ '+L.f31New(name),err:L.f31NeedSum};
+  let dueDay=f31Int(i.due_day,1,31); if(!dueDay&&next) dueDay=next.getDate(); if(!dueDay&&rows){ const fut=rows.find(e=>parseYmd(e.d)>=today0())||rows[rows.length-1]; dueDay=parseYmd(fut.d).getDate(); }
+  if(!dueDay) return {title:'➕ '+L.f31New(name),err:L.f31NeedDay};
+  const pen=f31Num(i.pen_pct_day), base=i.pen_base==='rem'||i.pen_base==='pay'?i.pen_base:null;
+  const l={id:'l'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name,note:f31Str(i.note,80),total:principal,paid:0,monthly:monthly||0,dueDay,rate:f31Num(i.rate)||0,gold:0,icon:null,term:term||0,pen:pen||0,phone:'',sf:1};
+  if(base) l.penBase=base; if(rows){ l.sched=rows; l.schedAt=ymd(new Date()); }
+  if(next){ l.pt=mIdx(next)-1; l.ptOk=l.pt; }
+  state.loans.push(l);
+  const left=f31Num0(i.bank_left); if(left!=null){ if(left<=principal) l.paid=f30R2(principal-left); else l.total=f30R2(left); } else if(rows&&l.pt!=null) f30Sync(l);
+  if(i.currency&&i.currency!=='TJS') warn.push(L.f31Cur(esc(String(i.currency).slice(0,4))));
+  if(sumP!=null&&f31Num(i.principal)&&Math.abs(sumP-principal)>Math.max(2,principal*0.002)) warn.push(L.f31SumBad(money(sumP),money(principal)));
+  const a=analyze(l), lines=[L.f31Sum(money(principal))];
+  if(l.rate) lines.push(L.f31Rate(rf.format(l.rate))); if(l.term) lines.push(L.f31Term(l.term)); if(monthly) lines.push(L.f31Mon(money(monthly),dueDay));
+  lines.push(pen?L.f31Pen(rf.format(pen),base):L.f31NoPen); if(rows) lines.push(f31SchLine(rows));
+  lines.push(L.f31Left(f30M(a.remaining))); lines.push(f31NextLine(a)); if(rows&&f30AutoOn(l)) lines.push(L.f31Auto);
+  return {title:'➕ '+L.f31New(name),lines,warn,loanId:l.id}; }
+function f31Update(i){ const l=byId(i.loan_id); if(!l||l.example) return {title:'✏️',err:L.sfNoLoan};
+  const a0=analyze(l), lines=[], warn=[], ch=(lab,x,y)=>lines.push(L.f31Ch(lab,x,y));
+  const nm=f31Str(i.name,60); if(nm&&nm!==l.name){ ch(L.f31LName,esc(l.name),esc(nm)); l.name=nm; }
+  const rate=f31Num(i.rate); if(rate!=null&&rate!==+l.rate){ ch(L.f31LRate,(+l.rate||0)+'%',rate+'%'); l.rate=rate; }
+  const term=f31Int(i.term,1,600); if(term&&term!==+l.term){ ch(L.f31LTerm,l.term||'—',term); l.term=term; }
+  const dd=f31Int(i.due_day,1,31); if(dd&&dd!==l.dueDay){ ch(L.f31LDay,l.dueDay||'—',dd); l.dueDay=dd; }
+  const pen=f31Num0(i.pen_pct_day), base=i.pen_base==='rem'||i.pen_base==='pay'?i.pen_base:null;
+  if(pen!=null&&pen!==(+l.pen||0)){ ch(L.f31LPen,l.pen?rf.format(l.pen)+'%':'—',pen?rf.format(pen)+'%':'—'); l.pen=pen; }
+  if(base&&base!==l.penBase){ ch(L.f31LPenB,l.penBase?L['f31B_'+l.penBase]:'—',L['f31B_'+base]); l.penBase=base; }
+  const note=f31Str(i.note,80); if(note&&note!==l.note){ l.note=note; lines.push(L.f31LNote(esc(note))); }
+  const rows=f31Rows(i.schedule); if(rows){ lines.push((schedOf(l)?L.f31SchNew:L.f31SchAdd)+' '+f31SchLine(rows)); l.sched=rows; l.schedAt=ymd(new Date()); const m=Math.round(rows[0].a); if(rows.every(e=>Math.round(e.a)===m)) l.monthly=f30R2(rows[0].a); }
+  const mo=f31Num(i.monthly); if(mo&&!rows&&!schedOf(l)&&Math.abs(mo-(+l.monthly||0))>=0.5){ ch(L.f31LMon,money(+l.monthly||0),money(mo)); l.monthly=mo; }
+  const left=f31Num0(i.bank_left), next=f31Date(i.next_due), over=f31Num(i.overpay);
+  if(next){ const dd2=daysUntil(next); if(dd2<-62||dd2>400) return {title:'✏️ '+f31Nm(l),err:L.f30DateErr}; }
+  if(left!=null||next) f30Apply(l,{rem:left,next,monthly:null});
+  else if(rows&&l.pt!=null) f30Sync(l);
+  if(over) f31Credit(l,over);
+  const a1=analyze(l);
+  if(Math.abs(a1.remaining-a0.remaining)>=0.5) ch(L.f31LLeft,f30M(a0.remaining),f30M(a1.remaining));
+  if(!a1.done&&!a1.check&&(a0.done||a0.check||ymd(a0.due)!==ymd(a1.due)||Math.abs((a0.amt||0)-(a1.amt||0))>=0.5)) ch(L.f31LNext,a0.done||a0.check?'—':fmtDate(a0.due)+' · '+f30M(a0.amt||0),fmtDate(a1.due)+' · '+f30M(a1.amt||0));
+  if(over) lines.push(L.f31Over(f30M(over)));
+  if(rows&&f30AutoOn(l)) lines.push(L.f31Auto);
+  if(!lines.length) warn.push(L.f31NoCh);
+  return {title:'✏️ '+f31Nm(l),lines,warn,loanId:l.id}; }
+function f31Pay(i){ const l=byId(i.loan_id), amount=f31Num(i.amount); if(!l||l.example) return {title:'💳',err:L.sfNoLoan}; const title='💳 '+f31Nm(l); if(!amount) return {title,err:L.f31NeedAmt};
+  const a0=analyze(l), date=f31Date(i.date)||today0(), pen=Math.min(amount,f31Num0(i.penalty)||0), net=f30R2(amount-pen), lines=[], warn=[];
+  if(daysUntil(date)>1) return {title,err:L.f31Future};
+  if(i.kind==='extra'){ const before=+l.paid||0, wasAuto=f30AutoOn(l); l.paid=f30R2(Math.min(+l.total||0,before+net));
+    state.payments.push({id:uid('p'),loanId:l.id,amount,principal:f30R2(l.paid-before),interest:0,date:ymd(date),extra:true,pen:pen||undefined,sf:1});
+    lines.push(L.f31ExtraL(f30M(amount),fmtDate(date))); if(pen) lines.push(L.f31PenPaid(f30M(pen)));
+    if(wasAuto) warn.push(L.f31ExtraSch);
+    const a1=analyze(l); lines.push(L.f31Left(f30M(a1.remaining))); lines.push(f31NextLine(a1)); return {title,lines,warn,loanId:l.id}; }
+  if(a0.done) return {title,err:L.f31Done0};
+  const ptc=curPt(l), fd=f31Date(i.for_due); let per=fd?mIdx(fd):(a0.check?lastDueIdx(l.dueDay||1):a0.per);
+  const due=f30DueOf(l,per), late=Math.max(0,Math.round((date-due)/864e5));
+  lines.push(L.f31PayL(f30M(amount),fmtDate(date),fmtDate(due))); if(late) lines.push(L.f31Late(late)); if(pen) lines.push(L.f31PenPaid(f30M(pen)));
+  if(ptc!=null&&per<=ptc){ if(state.payments.some(p=>p.loanId===l.id&&p.per===per&&!p.part)) return {title,err:L.f31Dup(fmtDate(due))};
+    const se=schedAt(l,per), i0=se&&se.i!=null?f30R2(Math.min(net,+se.i||0)):0;
+    state.payments.push({id:uid('p'),loanId:l.id,amount,principal:f30R2(Math.max(0,net-i0)),interest:i0,date:ymd(date),per,due:ymd(due),late,pen:pen||undefined,hist:1,rcx:1,sf:1});
+    lines.push(L.f31Hist); const a1=analyze(l); lines.push(f31NextLine(a1)); return {title,lines,warn,loanId:l.id}; }
+  const exp=ptc==null?per:ptc+1; if(per>exp) return {title,err:L.f31Skip(fmtDate(f30DueOf(l,exp)))};
+  const se=schedAt(l,per), full=se?+se.a||0:(+l.monthly||0), prevPart=l.part&&l.part.per===per?+l.part.a||0:0, dueAmt=f30R2(Math.max(0,full-prevPart));
+  let use=net, exc=0; if(dueAmt>0&&net>dueAmt+0.5){ exc=f30R2(net-dueAmt); use=dueAmt; }
+  const i1=interestFor(l,use,per,false), before=+l.paid||0; l.paid=f30R2(Math.min(+l.total||0,before+Math.max(0,use-i1)));
+  const rec={id:uid('p'),loanId:l.id,amount,principal:f30R2(l.paid-before),interest:i1,date:ymd(date),per,due:ymd(due),late,sf:1}; if(pen) rec.pen=pen;
+  if(dueAmt>0&&use<dueAmt-0.5){ l.part=Object.assign({},l.part&&l.part.per===per?l.part:{}, {per,a:f30R2(prevPart+use)}); rec.part=true; lines.push(L.f31PartL(money(f30R2(dueAmt-use)))); }
+  else { if(prevPart) rec.partPrev=prevPart; delete l.part; l.pt=per; l.ptOk=per; }
+  state.payments.push(rec);
+  if(!rec.part){ const d=f30Sync(l); if(d){ rec.principal=f30R2(Math.max(0,rec.principal+d)); rec.interest=f30R2(Math.max(0,rec.interest-d)); rec.f30adj=d; } }
+  lines.push(L.f31Split(f30M(rec.principal),f30M(rec.interest)));
+  if(exc>0){ f31Credit(l,exc); lines.push(L.f31Over(f30M(exc))); }
+  const a1=analyze(l); lines.push(L.f31Left(f30M(a1.remaining))); lines.push(f31NextLine(a1));
+  return {title,lines,warn,loanId:l.id}; }
+function f31One(it){ const n=it&&it.name, i=it&&it.input&&typeof it.input==='object'?it.input:{};
+  if(n==='create_loan') return f31Create(i); if(n==='update_loan') return f31Update(i);
+  if(n==='fix_loan') return f31Update({loan_id:i.loan_id,bank_left:i.bank_left,next_due:i.next_due,monthly:i.monthly});
+  if(n==='record_payment') return f31Pay(i); return {title:'—',err:L.f31Err}; }
+function f31Items(a){ return a&&a.name==='loan_batch'?((a.input&&Array.isArray(a.input.items))?a.input.items:[]).slice(0,6):[a]; }
+function f31Run(items,on){ return items.map((it,k)=>{ if(on&&!on[k]) return {skip:1}; try{ return f31One(it); }catch(e){ console.error(e); return {title:'—',err:L.f31Err}; } }); }
+function f31Preview(items){ items=(items||[]).filter(x=>x&&x.name); if(!items.length){ toast(L.f31Err); return; }
+  const snap=JSON.stringify({loans:state.loans,payments:state.payments}); let res;
+  try{ res=f31Run(items); } finally{ const o=JSON.parse(snap); state.loans=o.loans; state.payments=o.payments; }
+  const ok=res.filter(r=>!r.err).length;
+  openSheet(`<h3>✨ ${L.f31T}</h3><p class="lead">${ok?L.f31Lead(ok):L.f31None}</p>
+    <div class="f31-list">${res.map((r,k)=>`<label class="f31-it${r.err?' bad':''}"><input type="checkbox" data-f31k="${k}" ${r.err?'disabled':'checked'}><div><b>${esc(r.title||'')}</b>${r.lines&&r.lines.length?`<ul>${r.lines.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}${(r.warn||[]).map(w=>`<p class="f31-w">⚠️ ${w}</p>`).join('')}${r.err?`<p class="f31-e">${r.err}</p>`:''}</div></label>`).join('')}</div>
+    <p class="note">${L.f31Note}</p>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="f31-go" ${ok?'':'disabled'}>${L.f31Go}</button></div>`);
+  const upd=()=>{ const n=sheet.querySelectorAll('[data-f31k]:checked').length, b=$('#f31-go'); if(b){ b.disabled=!n; b.textContent=n>1?L.f31GoN(n):L.f31Go; } };
+  sheet.querySelectorAll('[data-f31k]').forEach(x=>x.addEventListener('change',upd)); upd();
+  $('#f31-go').onclick=()=>{ const on=items.map((_,k)=>{ const c=sheet.querySelector(`[data-f31k="${k}"]`); return !!(c&&c.checked); }); if(!on.some(Boolean)) return;
+    const r2=f31Run(items,on), n=r2.filter(r=>!r.skip&&!r.err).length; persist(); const snap2=prevSnap; render(); closeSheet();
+    const lid=(r2.find(r=>r.loanId)||{}).loanId; f30Bar(n?L.f31Done(n):L.f31None,snap2); if(lid&&n===1){ const l=byId(lid); if(l) setTimeout(()=>detailSheet(l),80); } }; }
+const F31_ACTS=['create_loan','update_loan','record_payment','loan_batch'];
+const f31Do0=sfDo;
+sfDo=function(a,manual){ if(a&&F31_ACTS.includes(a.name)){ f31Preview(f31Items(a)); return; } return f31Do0.apply(this,arguments); };
+const f31Lbl0=sfActLabel;
+sfActLabel=function(a){ if(a&&F31_ACTS.includes(a.name)){ const n=f31Items(a).length; return '✨ '+L.f31Act(n); } return f31Lbl0.apply(this,arguments); };
+/* <</v31 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
