@@ -7297,7 +7297,7 @@ ru:{
   f34Tone:{good:'хорошо для дела',bad:'плохо для дела',neutral:''},
   f34YouT:'Для вашего дела', f34YouLead:'Посчитано по вашим записям в Mira — в интернет они не уходят.',
   f34YouOwe:(a,tj,ch,d,up)=>'Не оплачено поставщикам: '+a+' ≈ '+tj+'.'+(ch?' Курс за день '+(up?'вырос':'упал')+' на '+ch+' — это '+(up?'+':'−')+d+' к сумме.':''),
-  f34YouBank:(b,t)=>'Про ваш банк «'+b+'»: '+t,
+  f34YouBank:(b,t)=>'Про ваш банк «'+b+'»: '+t, f34YouCtry:(c,t)=>'Где ваши поставщики и поездки — '+c+': '+t,
   f34YouCat:(n,dem,tr,mk,my)=>n+': спрос '+dem+(tr==='up'?' и растёт':tr==='down'?' и падает':'')+', обычная наценка '+mk+'%'+(my!=null?' — у вас '+my+'%':''),
   f34Dem:{hot:'высокий',normal:'обычный',cold:'низкий'},
   f34YouRoute:(c,n)=>'Ваша поездка — '+c+': '+n,
@@ -7349,7 +7349,7 @@ tg:{
   f34Tone:{good:'барои кор хуб',bad:'барои кор бад',neutral:''},
   f34YouT:'Барои кори шумо', f34YouLead:'Аз рӯи сабтҳои шумо дар Mira ҳисоб шуд — онҳо ба интернет намераванд.',
   f34YouOwe:(a,tj,ch,d,up)=>'Ба таъминкунандагон пардохт нашудааст: '+a+' ≈ '+tj+'.'+(ch?' Қурб дар як рӯз '+ch+' '+(up?'боло рафт':'паст шуд')+' — ин ба маблағ '+(up?'+':'−')+d+' аст.':''),
-  f34YouBank:(b,t)=>'Дар бораи бонки шумо «'+b+'»: '+t,
+  f34YouBank:(b,t)=>'Дар бораи бонки шумо «'+b+'»: '+t, f34YouCtry:(c,t)=>'Дар куҷо таъминкунандагон ва сафарҳои шумо — '+c+': '+t,
   f34YouCat:(n,dem,tr,mk,my)=>n+': талабот '+dem+(tr==='up'?' ва меафзояд':tr==='down'?' ва кам мешавад':'')+', нацаккаи маъмулӣ '+mk+'%'+(my!=null?' — дар шумо '+my+'%':''),
   f34Dem:{hot:'баланд',normal:'миёна',cold:'паст'},
   f34YouRoute:(c,n)=>'Сафари шумо — '+c+': '+n,
@@ -7400,7 +7400,7 @@ en:{
   f34Tone:{good:'good for business',bad:'bad for business',neutral:''},
   f34YouT:'For your business', f34YouLead:'Calculated from your records in Mira — they never leave your phone.',
   f34YouOwe:(a,tj,ch,d,up)=>'Unpaid to suppliers: '+a+' ≈ '+tj+'.'+(ch?' The rate '+(up?'rose':'fell')+' '+ch+' today — that is '+(up?'+':'−')+d+' on the total.':''),
-  f34YouBank:(b,t)=>'About your bank “'+b+'”: '+t,
+  f34YouBank:(b,t)=>'About your bank “'+b+'”: '+t, f34YouCtry:(c,t)=>'Where your suppliers and trips are — '+c+': '+t,
   f34YouCat:(n,dem,tr,mk,my)=>n+': demand '+dem+(tr==='up'?' and rising':tr==='down'?' and falling':'')+', usual markup '+mk+'%'+(my!=null?' — yours is '+my+'%':''),
   f34Dem:{hot:'high',normal:'normal',cold:'low'},
   f34YouRoute:(c,n)=>'Your trip — '+c+': '+n,
@@ -17996,7 +17996,7 @@ const f34Up=()=>!!(sfCaps&&+sfCaps.v>=20);
 { const _bp=bpPop; bpPop=function(){ const H=document.documentElement; if(H.classList.contains('f34-top')&&!H.classList.contains('m33-on')){ if(M8N.ign>0){ M8N.ign--; if(!m8SheetOn()) H.classList.remove('f34-top'); return; } if(m8SheetOn()){ m8CS0(); H.classList.remove('f34-top'); return; } H.classList.remove('f34-top'); } return _bp.apply(this,arguments); }; }
 function f34Ed(t){ return t.ed||(new Date(t.at).getHours()<14?'am':'pm'); }
 function f34Min(t){ const w=[t.summary,...(t.brief||[]).map(x=>[x.title,x.what,x.why,x.act].join(' '))].join(' ').split(/\s+/).length; return Math.max(1,Math.round(w/170)); }
-const F34_FX=[['usd','$'],['cny','¥'],['rub','₽'],['try','₺'],['aed','AED'],['kzt','₸']];
+const F34_FX=[['usd','$'],['eur','€'],['cny','¥'],['rub','₽'],['try','₺'],['aed','AED'],['kzt','₸']];
 function f34Chg(t,k){ const v=+(t.fx||{})[k], p=+(t.fxp||{})[k]; if(!(v>0&&p>0)) return null; const c=(v-p)/p*100; return Math.abs(c)>=0.005?c:0; }
 const f34Pct=c=>(c>0?'+':c<0?'−':'')+fx(Math.abs(c),Math.abs(c)<1?2:1)+'%';
 
@@ -18023,13 +18023,15 @@ function f34BriefHTML(t){ const a=t.brief||[], ed=f34Ed(t); if(!a.length) return
     <p>${esc(hbTx(x.what,320))}</p>${x.why?`<p class="f34-why"><b>${L.f34Why}:</b> ${esc(hbTx(x.why,240))}</p>`:''}${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${ed==='pm'?L.f34ActTom:L.f34Act}:</b> ${esc(hbTx(x.act,240))}</span></p>`:''}${f34Ft('b:'+i,x.src)}</article>`).join(''); }
 /* «Для вашего дела»: только по записям в телефоне */
 const F34_CUR={USD:['usd','$'],CNY:['cny','¥'],TRY:['try','₺'],AED:['aed','AED'],RUB:['rub','₽'],KZT:['kzt','₸']};
-function f34You(t){ const out=[], fxn=t.fx||{};
+const F34_CRE={CN:/кита|china|chinese|чин|гуанчжоу|guangzhou|иу\b|yiwu|шэньчжэн|shenzhen|пекин|beijing|шанха|shanghai/i,TR:/турци|turkey|türkiye|turkish|туркия|стамбул|istanbul/i,AE:/оаэ|дуба|uae|emirates|dubai|амороти/i,UZ:/узбек|uzbek|ӯзбек|ташкент|tashkent/i,KG:/кыргыз|киргиз|kyrgyz|қирғиз|бишкек|bishkek/i,KZ:/казах|kazakh|қазоқ|алмат|almaty/i,RU:/росси|russia|русия|москв|moscow/i,IN:/инди|india|ҳинд/i,KR:/коре|korea/i,JP:/япон|japan|ҷопон/i,VN:/вьетнам|vietnam|ветнам/i,US:/сша|\busa\b|америк|united states|амрико/i,EU:/европ|europe|\bеc\b|\beu\b|аврупо/i,IR:/иран|iran|эрон/i};
+function f34Ctry(t){ const out=[], have=new Set(); for(const v of state.vendors||[]) if(v&&v.country&&!v.draft) have.add(v.country); for(const x of state.trips||[]) if(x&&x.country) have.add(x.country);
+  const items=[...(t.brief||[]).map(x=>({ti:x.title,tx:[x.what,x.where].join(' '),go:'brief'})),...(t.world||[]).map(x=>({ti:x.title,tx:[x.text,x.where].join(' '),go:'world'})),...(t.trends||[]).map(x=>({ti:x.title,tx:[x.why,x.where].join(' '),go:'trends'})),...(t.watch||[]).map(x=>({ti:x.title,tx:x.text,go:'watch'}))];
+  const used=new Set(); for(const c of have){ const re=F34_CRE[c]; if(!re) continue; const hit=items.find(x=>!used.has(x.ti)&&re.test(x.ti+' '+x.tx)); if(hit){ used.add(hit.ti); out.push({ic:'globe',t:L.f34YouCtry(L['cn_'+c]||c,hit.ti),go:hit.go}); } if(out.length>=2) break; }
+  return out; }
+function f34You(t){ const out=f34Ctry(t), fxn=t.fx||{};
   try{ const owe={}; for(const o of state.torders||[]){ const left=(+o.total||0)-(+o.paid||0); if(left>0&&F34_CUR[o.cur]) owe[o.cur]=(owe[o.cur]||0)+left; }
     for(const [cur,a] of Object.entries(owe)){ const [k,sy]=F34_CUR[cur], r=+fxn[k]; if(!(r>0)) continue; const c=f34Chg(t,k), p=+(t.fxp||{})[k];
       out.push({ic:'cash',t:L.f34YouOwe(fx(a,0)+' '+sy,money(a*r),c?f34Pct(c):'',c&&p>0?money(Math.abs(a*(r-p))):'',c>0)}); } }catch(e){}
-  try{ const items=[...(t.brief||[]).map(x=>({ti:x.title,tx:x.what})),...(t.news||[]).map(x=>({ti:x.title,tx:x.text})),...(t.watch||[]).map(x=>({ti:x.title,tx:x.text}))];
-    const banks=[...new Set((state.loans||[]).filter(l=>!l.example&&!l.closed).map(l=>String(l.name||'').trim()).filter(n=>n.length>=4))];
-    for(const b of banks){ const stem=b.toLowerCase().slice(0,Math.max(4,b.length-2)), hit=items.find(x=>(String(x.ti)+' '+String(x.tx||'')).toLowerCase().includes(stem)); if(hit) out.push({ic:'loans',t:L.f34YouBank(b,hit.ti),go:'news'}); } }catch(e){}
   try{ const kinds=new Set(); for(const p of state.tprods||[]) if(p.dec==='buy'&&p.kind) kinds.add(p.kind); for(const i of state.inv||[]) if(i.cat) kinds.add(i.cat);
     for(const id of kinds){ const r=(t.cats||[]).find(c=>c.id===id); if(!r||!(+r.markup_pct>0)) continue;
       const mine=(state.inv||[]).filter(i=>i.cat===id&&+i.cost>0&&+i.price>0), my=mine.length?Math.round(mine.reduce((a,i)=>a+(i.price-i.cost)/i.cost*100,0)/mine.length):null;
@@ -18038,7 +18040,10 @@ function f34You(t){ const out=[], fxn=t.fx||{};
     if(ro&&ro.note) out.push({ic:'truck',t:L.f34YouRoute(tr.city||L['cn_'+tr.country]||tr.country,ro.note)});
     const go=(state.cargo||[]).filter(c=>c.st==='sent'), w=(t.watch||[]).find(x=>/границ|таможн|border|customs|сарҳад|гумрук|карго|cargo/i.test(x.title+' '+x.text));
     if(go.length&&w) out.push({ic:'truck',t:L.f34YouCargo(go.length,w.title),go:'watch'}); }catch(e){}
-  return out.slice(0,6); }
+  try{ const items=[...(t.brief||[]).map(x=>({ti:x.title,tx:x.what})),...(t.news||[]).map(x=>({ti:x.title,tx:x.text})),...(t.watch||[]).map(x=>({ti:x.title,tx:x.text}))];
+    const banks=[...new Set((state.loans||[]).filter(l=>!l.example&&!l.closed).map(l=>String(l.name||'').trim()).filter(n=>n.length>=4))];
+    for(const b of banks){ const stem=b.toLowerCase().slice(0,Math.max(4,b.length-2)), hit=items.find(x=>(String(x.ti)+' '+String(x.tx||'')).toLowerCase().includes(stem)); if(hit) out.push({ic:'loans',t:L.f34YouBank(b,hit.ti),go:'news'}); } }catch(e){}
+  return out.slice(0,7); }
 function f34YouHTML(t){ const a=f34You(t); if(!a.length) return '';
   return `<p class="bp-hint">${ico('shield',14)} ${L.f34YouLead}</p><ul class="f34-you">${a.map(x=>`<li>${ico(x.ic,18)}<span>${esc(x.t)}</span>${x.go?`<button type="button" class="link-btn" data-hbjump="${x.go}">${L.f34YouGo}</button>`:''}</li>`).join('')}</ul>`; }
 function f34DuoHTML(t){ const ed=f34Ed(t), td=t.todo, fg=t.figure, k=t.day+':'+ed, done=!!(state.misc&&state.misc.f34done&&state.misc.f34done[k]);
