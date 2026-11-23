@@ -3233,6 +3233,87 @@ html.f34-top .overlay{z-index:48;}
 
 .f34-past .f34-pd{border-top:1px solid var(--line); padding:10px 2px 4px;} .f34-past .f34-pd small{font-weight:800; color:var(--muted); font-size:.78rem;} .f34-past .f34-pd p{margin:4px 0; font-size:.9rem; line-height:1.45;} .f34-past ul{margin:4px 0 0; padding-left:18px; font-size:.86rem; line-height:1.45;} .f34-past li{margin:3px 0;}
 /* <</v34 css>> */
+/* <<v35 css>> */
+/* v35: «Деньги и бизнес» — кнопки с ясными признаками нажатия, глубиной и откликом; живые графики */
+html.hb35{--b35-t:cubic-bezier(.2,.75,.2,1); --b35-tone:color-mix(in srgb,var(--brand) 13%,var(--surface)); --b35-tone2:color-mix(in srgb,var(--brand) 20%,var(--surface)); --b35-ink:color-mix(in srgb,var(--brand) 82%,var(--ink));
+  --b35-pri:linear-gradient(180deg,color-mix(in srgb,var(--brand) 82%,#fff) 0%,var(--brand) 55%,color-mix(in srgb,var(--brand) 88%,#000) 100%);
+  --b35-lift:0 1px 0 rgba(255,255,255,.28) inset,0 1px 2px rgba(0,0,0,.08),0 8px 18px -10px color-mix(in srgb,var(--brand) 80%,transparent);
+  --b35-soft:0 1px 2px rgba(0,0,0,.05),0 6px 16px -10px rgba(0,0,0,.18);}
+/* главная кнопка: заливка с объёмом, тень, нажатие — «вдавливается» за 100 мс */
+html.hb35 #bpg-m .btn-primary{background:var(--b35-pri); color:#fff; border:0; box-shadow:var(--b35-lift); min-height:50px; border-radius:16px; letter-spacing:.005em; transition:transform .1s var(--b35-t),box-shadow .1s var(--b35-t),filter .15s;}
+html.hb35 #bpg-m .btn-primary:active{transform:translateY(1px) scale(.97); box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 2px 6px -3px color-mix(in srgb,var(--brand) 70%,transparent);}
+/* второстепенные — тоновые (заливка цветом бренда), не контуры: контуры хуже видны как кнопки (NN/g) */
+html.hb35 #bpg-m .btn-ghost{background:var(--b35-tone); color:var(--b35-ink); border:0; box-shadow:none; min-height:48px; border-radius:16px; transition:transform .1s var(--b35-t),background .15s;}
+html.hb35 #bpg-m .btn-ghost:active{transform:scale(.97); background:var(--b35-tone2);}
+html.hb35 #bpg-m .btn:focus-visible,html.hb35 #bpg-m .chip:focus-visible,html.hb35 .f35-seg button:focus-visible,html.hb35 .f35-plot:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+/* чипы: заливка вместо рамки; выбранный — тёмный с галочкой */
+html.hb35 #bpg-m .chip{background:var(--surface); border:0; box-shadow:var(--b35-soft); min-height:42px; transition:transform .1s var(--b35-t),background .15s,color .15s;}
+html.hb35 #bpg-m .chip:active{transform:scale(.96);}
+html.hb35 #bpg-m .chip.on{background:var(--ink); color:var(--surface); box-shadow:0 6px 14px -8px rgba(0,0,0,.5);}
+html.hb35 #bpg-m .chip.on::before{content:"✓"; margin-right:5px; font-weight:900;}
+html.hb35 #bpg-m .f34-nav .chip{background:var(--b35-tone); color:var(--b35-ink); box-shadow:none;}
+/* вкладки раздела: плитки с объёмом; выбранная — цвет бренда */
+html.hb35 .hb-tabs button{border:0!important; background:var(--surface); box-shadow:var(--b35-soft); transition:transform .1s var(--b35-t),background .2s,color .2s;}
+html.hb35 .hb-tabs button:active{transform:scale(.95);}
+html.hb35 .hb-tabs button.on{background:var(--b35-pri)!important; color:#fff!important; box-shadow:var(--b35-lift);}
+/* шапка выпуска: «Спросить Сифру» — главная (белая на тёмном), остальные — полупрозрачные */
+html.hb35 .f34h .f34-hact{display:grid; grid-template-columns:repeat(auto-fit,minmax(118px,1fr)); gap:8px;}
+html.hb35 .f34h .hb-upd{justify-content:center; min-height:48px; border-radius:16px; background:rgba(255,255,255,.16); box-shadow:0 1px 0 rgba(255,255,255,.18) inset; transition:transform .1s var(--b35-t),background .15s;}
+html.hb35 .f34h .hb-upd:active{transform:scale(.96); background:rgba(255,255,255,.26);}
+html.hb35 .f34h .hb-upd[data-sifra]{background:#fff; color:var(--m-hero,#1B2B57); box-shadow:0 8px 18px -10px rgba(0,0,0,.6); grid-column:1/-1;}
+html.hb35 .f34h .hb-upd.on{background:#fff; color:var(--m-hero,#1B2B57);}
+/* кнопки разделов и «Исследовать» */
+html.hb35 .f34-ref{border:0; background:var(--surface-2); box-shadow:0 1px 0 rgba(255,255,255,.5) inset,0 1px 2px rgba(0,0,0,.06); min-height:40px; padding:0 13px; transition:transform .1s var(--b35-t);}
+html.hb35 .f34-ref:active{transform:scale(.95);}
+html.hb35 .f34-res{border:0; background:var(--b35-tone); color:var(--b35-ink); min-height:42px; padding:0 15px; border-radius:14px; transition:transform .1s var(--b35-t),background .15s;}
+html.hb35 .f34-res:active{transform:scale(.96); background:var(--b35-tone2);}
+/* карточки и заголовки разделов */
+html.hb35 #bpg-m .id-sec{border-radius:22px; box-shadow:var(--b35-soft); border-color:transparent;}
+html.hb35 #bpg-m .id-sec h4>svg:first-child{display:block; box-sizing:content-box; padding:6px; border-radius:11px; background:var(--b35-tone); color:var(--brand); flex:none;}
+html.hb35 .f34-bi{border-radius:18px; box-shadow:var(--b35-soft); border-color:transparent; transition:transform .12s var(--b35-t);}
+html.hb35 .f34-num{font-size:.95rem; padding:4px 10px;}
+/* живой график курса */
+.f35-fx{position:relative; z-index:1; margin-top:12px; padding:10px 10px 8px; border-radius:18px; background:rgba(255,255,255,.08); box-shadow:0 1px 0 rgba(255,255,255,.12) inset;}
+.f35-fxh{display:flex; align-items:center; justify-content:space-between; gap:8px;}
+.f35-seg{display:inline-flex; gap:2px; padding:3px; border-radius:99px; background:rgba(0,0,0,.18);}
+.f35-seg button{min-height:34px; min-width:48px; padding:0 10px; border:0; border-radius:99px; background:transparent; color:rgba(255,255,255,.78); font:inherit; font-family:var(--font-num); font-weight:800; font-size:.8rem; cursor:pointer; transition:background .2s,color .2s;}
+.f35-seg button.on{background:#fff; color:var(--m-hero,#1B2B57);}
+.f35-ch{font-family:var(--font-num); font-weight:800; font-size:.86rem; white-space:nowrap;} .f35-ch.up{color:#FFD58A;} .f35-ch.dn{color:#9FF0C9;}
+.f35-plot{position:relative; height:96px; margin-top:6px; color:#fff; touch-action:pan-y; cursor:crosshair; border-radius:10px;}
+.f35-plot svg{display:block; overflow:visible;}
+.f35-line{fill:none; stroke:currentColor; stroke-width:2.4; stroke-linecap:round; stroke-linejoin:round;}
+.f35-line.draw{stroke-dasharray:1; stroke-dashoffset:1;} .f35-line.draw.go{stroke-dashoffset:0; transition:stroke-dashoffset .9s cubic-bezier(.2,.75,.2,1);}
+.f35-area.draw{opacity:0;} .f35-area.draw.go{opacity:1; transition:opacity .6s .35s ease-out;}
+.f35-dot{fill:#fff; stroke:var(--m-hero,#1B2B57); stroke-width:2;} .f35-dot.draw{opacity:0;} .f35-dot.draw.go{opacity:1; transition:opacity .2s .8s;}
+.f35-cur{stroke:rgba(255,255,255,.6); stroke-width:1; stroke-dasharray:3 3;}
+.f35-tip{position:absolute; top:-6px; padding:3px 8px; border-radius:8px; background:#fff; color:var(--m-hero,#1B2B57); font-family:var(--font-num); font-weight:800; font-size:.74rem; white-space:nowrap; pointer-events:none; box-shadow:0 4px 12px -4px rgba(0,0,0,.4);}
+.f35-fxf{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2px 10px; margin-top:4px; font-size:.74rem; font-weight:700; opacity:.86;}
+/* у вас / рынок */
+.f35-li{flex-wrap:wrap;} .f35-vs{flex-basis:100%; display:grid; gap:5px; margin:2px 0 0 27px;}
+.f35-vs>div{display:grid; grid-template-columns:52px 1fr 40px; align-items:center; gap:8px; font-size:.78rem;}
+.f35-vs small{color:var(--muted); font-weight:700;} .f35-vs b{font-family:var(--font-num); text-align:right;}
+.f35-vs span{height:9px; border-radius:6px; background:color-mix(in srgb,var(--ink) 8%,transparent); overflow:hidden;}
+.f35-vs i{display:block; height:100%; width:0; border-radius:6px; background:var(--muted); transition:width .7s cubic-bezier(.2,.75,.2,1);}
+.f35-vs i.me{background:linear-gradient(90deg,var(--brand),var(--m-leaf,var(--brand)));}
+.f35-vs.in i{width:var(--w);}
+/* окупаемость идеи */
+.f35-pay{margin:9px 0 2px;} .f35-pay span{display:block; height:8px; border-radius:6px; background:color-mix(in srgb,var(--ink) 8%,transparent); overflow:hidden;}
+.f35-pay i{display:block; height:100%; width:0; border-radius:6px; background:linear-gradient(90deg,var(--m-leaf,var(--brand)),var(--gold,#C8921E)); transition:width .8s cubic-bezier(.2,.75,.2,1);}
+.f35-pay.in i{width:calc(var(--p) * 100%);} .f35-pay small{display:flex; justify-content:space-between; margin-top:3px; color:var(--muted); font-size:.72rem; font-weight:700;} .f35-pay small em{font-style:normal;}
+/* неделя дела дня */
+.f35-week{margin:10px 0 0;} .f35-week>div{display:flex; gap:6px;}
+.f35-week span{flex:1; display:grid; justify-items:center; gap:3px;} .f35-week span small{font-size:.68rem; font-weight:700; color:var(--muted);}
+.f35-week span i{width:22px; height:22px; border-radius:50%; background:color-mix(in srgb,var(--ink) 8%,transparent); box-shadow:inset 0 0 0 2px transparent; transition:background .25s,transform .25s cubic-bezier(.3,1.6,.5,1);}
+.f35-week span.on i{background:var(--brand); transform:scale(1.04);} .f35-week span.now i{box-shadow:inset 0 0 0 2px var(--brand);}
+.f35-week span.on.now i{box-shadow:0 0 0 3px color-mix(in srgb,var(--brand) 30%,transparent);}
+.f35-week em{display:block; margin-top:6px; font-style:normal; font-weight:800; font-size:.8rem; color:var(--b35-ink,var(--brand));}
+.f34-todo.cel{animation:f35Cel .5s cubic-bezier(.3,1.5,.5,1);} @keyframes f35Cel{0%{transform:scale(1);} 40%{transform:scale(1.025);} 100%{transform:scale(1);}}
+.f34-todo.cel .f35-week span.now i{animation:f35Pop .45s cubic-bezier(.3,1.6,.5,1);} @keyframes f35Pop{0%{transform:scale(.6);} 70%{transform:scale(1.25);} 100%{transform:scale(1.04);}}
+@media (prefers-reduced-motion:reduce){ html.hb35 #bpg-m .btn,html.hb35 #bpg-m .chip,html.hb35 .hb-tabs button,html.hb35 .f34-res,html.hb35 .f34-ref{transition:none;} .f35-vs i,.f35-pay i{transition:none;} .f34-todo.cel,.f34-todo.cel .f35-week span.now i{animation:none;} }
+html.hb35 .hb-ibs{display:grid; grid-template-columns:repeat(auto-fit,minmax(96px,1fr)); gap:8px; margin-top:10px;}
+html.hb35 .hb-ibs .btn,html.hb35 .hb-ibs .f34-res{flex-direction:column; gap:4px; min-height:62px; margin:0; padding:8px 6px; font-size:.8rem; line-height:1.15; text-align:center; border-radius:16px; white-space:normal;}
+html.hb35 .f34h .hb-fx{flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin-right:-16px; padding-right:16px; -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);} html.hb35 .f34h .hb-fx::-webkit-scrollbar{display:none;} html.hb35 .f34h .hb-fx i{flex:none;}
+/* <</v35 css>> */
 
 
 </style>
@@ -7438,6 +7519,34 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M34S[k]);
 /* <</v34 str>> */
+/* <<v35 str>> */
+const M35S={
+ru:{
+  f35FxA:'График курса за 30 дней. Проведите пальцем — увидите любой день.',
+  f35FxSum:(a,b,ch)=>'30 дней: '+a+' → '+b+' ('+ch+')', f35Min:'мин', f35Max:'макс', f35Src:'курс НБТ по дням',
+  f35Week:n=>'На этой неделе: '+n+' из 7', f35Days:['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],
+  f35My:'у вас', f35Mkt:'рынок',
+  f35Pay:n=>'окупится за '+n+' мес.', f35PayScale:'окупаемость · 2 года',
+  f35Cel:'Сделано! Так держать'
+},
+tg:{
+  f35FxA:'Графики қурб барои 30 рӯз. Ангуштро гузаронед — ҳар рӯзро мебинед.',
+  f35FxSum:(a,b,ch)=>'30 рӯз: '+a+' → '+b+' ('+ch+')', f35Min:'камтарин', f35Max:'бештарин', f35Src:'қурби БМТ аз рӯи рӯзҳо',
+  f35Week:n=>'Дар ин ҳафта: '+n+' аз 7', f35Days:['Дш','Сш','Чш','Пш','Ҷм','Шб','Яш'],
+  f35My:'дар шумо', f35Mkt:'бозор',
+  f35Pay:n=>'дар '+n+' моҳ худро пӯшонад', f35PayScale:'бозгашти пул · 2 сол',
+  f35Cel:'Иҷро шуд! Офарин'
+},
+en:{
+  f35FxA:'30-day exchange rate chart. Slide your finger to see any day.',
+  f35FxSum:(a,b,ch)=>'30 days: '+a+' → '+b+' ('+ch+')', f35Min:'min', f35Max:'max', f35Src:'NBT rate by day',
+  f35Week:n=>'This week: '+n+' of 7', f35Days:['Mo','Tu','We','Th','Fr','Sa','Su'],
+  f35My:'yours', f35Mkt:'market',
+  f35Pay:n=>'pays back in '+n+' mo', f35PayScale:'payback · 2 years',
+  f35Cel:'Done! Keep it up'
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M35S[k]);
+/* <</v35 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -18035,7 +18144,7 @@ function f34You(t){ const out=f34Ctry(t), fxn=t.fx||{};
   try{ const kinds=new Set(); for(const p of state.tprods||[]) if(p.dec==='buy'&&p.kind) kinds.add(p.kind); for(const i of state.inv||[]) if(i.cat) kinds.add(i.cat);
     for(const id of kinds){ const r=(t.cats||[]).find(c=>c.id===id); if(!r||!(+r.markup_pct>0)) continue;
       const mine=(state.inv||[]).filter(i=>i.cat===id&&+i.cost>0&&+i.price>0), my=mine.length?Math.round(mine.reduce((a,i)=>a+(i.price-i.cost)/i.cost*100,0)/mine.length):null;
-      out.push({ic:'tag',t:L.f34YouCat(L['whC_'+id]||id,L.f34Dem[r.demand]||L.f34Dem.normal,r.trend,Math.round(r.markup_pct),my),go:'goods'}); if(out.length>=6) break; } }catch(e){}
+      out.push({ic:'tag',t:L.f34YouCat(L['whC_'+id]||id,L.f34Dem[r.demand]||L.f34Dem.normal,r.trend,Math.round(r.markup_pct),my),go:'goods',bars:my!=null?{my,mk:Math.round(r.markup_pct)}:null}); if(out.length>=6) break; } }catch(e){}
   try{ const d=dkey(), tr=(state.trips||[]).filter(x=>x.to&&x.to>=d).sort((a,b)=>String(a.from).localeCompare(String(b.from)))[0], ro=tr&&(t.routes||[]).find(r=>r.c===tr.country);
     if(ro&&ro.note) out.push({ic:'truck',t:L.f34YouRoute(tr.city||L['cn_'+tr.country]||tr.country,ro.note)});
     const go=(state.cargo||[]).filter(c=>c.st==='sent'), w=(t.watch||[]).find(x=>/границ|таможн|border|customs|сарҳад|гумрук|карго|cargo/i.test(x.title+' '+x.text));
@@ -18186,6 +18295,109 @@ function sfX(){ const sh=document.querySelector('#sheet'); if(!sh||!sh.querySele
     a.splice(i>=0?i+1:a.length,0,{k:'expert',g,a:'data-f34go="expert"',i:'star',t:L.f34xT,s:f34xNiche()?L.f34xBar(f34xNiche()):L.f34xSub}); }catch(e){} return a; }; }
 { const _l=hbLearnHTML; hbLearnHTML=function(){ const h=_l.apply(this,arguments); return `<button type="button" class="hb-lesson f34x-card" data-f34go="expert"><span class="hb-li">${ico('star',20)}</span><span><small>${L.f34xT}</small><b>${L.f34xCard}</b><em>${L.f34xCardSub}</em></span>${ico('next',18)}</button>`+h; }; }
 /* <</v34 js>> */
+/* <<v35 js>> */
+/* ===================== v35: «Деньги и бизнес» — новые кнопки и живые графики =====================
+   Откуда решения (исследование 24 ноября 2026):
+   - NN/g, eyetracking (71 человек, 9 пар страниц): у «плоских» кнопок-контуров ищут дольше на 22% и с 25% больше фиксаций взгляда
+     → действия — с заливкой, тенью и иконкой; одна главная кнопка на карточку, остальные — тоновые; контуров для действий нет.
+   - Google Android: кнопка не меньше 48 dp → все кнопки раздела ≥ 44–48 px, между ними ≥ 8 px.
+   - NN/g, длительность анимации: 100–500 мс, отклик на нажатие ≈ 100 мс, появление ≈ 200–300 мс, ease-out, «уменьшить движение» уважаем.
+   - Heer и Robertson (InfoVis 2007): анимированные переходы в графиках улучшают восприятие → график курса плавно перетекает
+     при смене валюты, полосы «Что выгоднее» переезжают на новые места при сортировке, а не перерисовываются.
+   - Robinhood: график, который «ведут пальцем», с лёгкой вибрацией на каждый день → график курса НБТ за 30 дней с бегунком.
+   - Kivetz, Urminsky, Zheng (JMR 2006, «goal gradient»): чем ближе цель, тем быстрее к ней идут → «Дело дня»: 7 кружков недели.
+   - Tufte: маленькие графики прямо рядом с цифрой (sparklines) → «у вас / рынок» полосками, окупаемость идеи полоской. */
+const f35Calm=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+function f35Tick(ms){ try{ if(!f35Calm()&&navigator.vibrate) navigator.vibrate(ms||8); }catch(e){} }
+/* стиль v35 действует в «Деньги и бизнес» и на странице эксперта */
+{ const _br=bpRender; bpRender=function(){ const r=_br.apply(this,arguments); try{ const t=bpTop(); document.documentElement.classList.toggle('hb35',!!(t&&(t.name==='hub'||t.name==='xp'))); }catch(e){} return r; }; }
+{ const _bh=bpHide; bpHide=function(){ document.documentElement.classList.remove('hb35'); return _bh.apply(this,arguments); }; }
+document.addEventListener('pointerdown',e=>{ if(!document.documentElement.classList.contains('hb35')) return; const b=e.target.closest&&e.target.closest('.btn-primary,.f34-res,.hb-upd,[data-f34done],.f34-ref,.hb-tabs button'); if(b) f35Tick(6); },{passive:true});
+
+/* ---------- курс НБТ за 30 дней: живой график в шапке ---------- */
+let f35Fx=null, f35FxP=null, f35Cur='USD', f35Drawn={}, f35Prev=null;
+function f35FxLoad(){ const h=hbSt(), c=h.fxh&&Array.isArray(h.fxh.pts)?h.fxh:null; if(c&&!f35Fx) f35Fx=c;
+  if(c&&c.day===dkey()) return Promise.resolve(c); if(f35FxP) return f35FxP; if(!navigator.onLine) return Promise.resolve(c);
+  f35FxP=(async()=>{ try{ try{ await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(r,2500))]); }catch(e){} if(!f34Up()) return c;
+      const r=await fetch(API_BASE+'/api/mk/fxhist?days=30',{cache:'no-store'}); const j=r.ok?await r.json():null;
+      if(j&&Array.isArray(j.pts)&&j.pts.length>=5){ const o={day:dkey(),pts:j.pts.slice(-60).filter(p=>p&&/^\d{4}-\d\d-\d\d$/.test(p.d)&&p.c&&typeof p.c==='object').map(p=>({d:p.d,c:p.c}))}; hbSt().fxh=o; persist(); f35Fx=o; return o; }
+      return c; }catch(e){ return c; } finally{ f35FxP=null; } })(); return f35FxP; }
+function f35Series(cur){ return (f35Fx&&f35Fx.pts||[]).filter(p=>+p.c[cur]>0).map(p=>({d:p.d,v:+p.c[cur]})); }
+function f35Curs(){ return ['USD','EUR','CNY','RUB'].filter(c=>f35Series(c).length>=5); }
+function f35Dg(v){ return v<0.1?4:v<50?3:2; }
+function f35FxHTML(){ const curs=f35Curs(); if(!curs.length) return ''; if(!curs.includes(f35Cur)) f35Cur=curs[0];
+  const s=f35Series(f35Cur), a=s[0].v, b=s[s.length-1].v, ch=(b-a)/a*100, vs=s.map(x=>x.v), mn=Math.min(...vs), mx=Math.max(...vs), dg=f35Dg(b);
+  return `<div class="f35-fx" role="group" aria-label="${esc(L.f35FxA)}"><div class="f35-fxh"><div class="f35-seg" role="radiogroup" aria-label="${esc(L.f35Src)}">${curs.map(c=>`<button type="button" role="radio" aria-checked="${c===f35Cur}" class="${c===f35Cur?'on':''}" data-f35cur="${c}">${c}</button>`).join('')}</div><span class="f35-ch ${ch>0?'up':ch<0?'dn':''}">${ch>0?'▲':ch<0?'▼':'·'} ${f34Pct(ch)}</span></div>
+    <div class="f35-plot" tabindex="0" aria-label="${esc(L.f35FxA)}" data-cur="${f35Cur}"></div>
+    <div class="f35-fxf"><span>${esc(L.f35FxSum(fx(a,dg),fx(b,dg),f34Pct(ch)))}</span><span>${esc(L.f35Min)} ${fx(mn,dg)} · ${esc(L.f35Max)} ${fx(mx,dg)}</span></div></div>`; }
+function f35Geom(s,W,H){ const P=6, vs=s.map(x=>x.v), mn=Math.min(...vs), mx=Math.max(...vs), rg=(mx-mn)||mx*0.002||1;
+  return {X:i=>P+i*(W-2*P)/Math.max(1,s.length-1), Y:v=>P+4+(H-2*P-8)*(1-(v-mn)/rg)}; }
+function f35Path(pts){ return pts.map((p,i)=>(i?'L':'M')+p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' '); }
+function f35Mount(root){ const plot=(root||document).querySelector('.f35-plot'); if(!plot) return; const s=f35Series(plot.dataset.cur); if(s.length<5) return;
+  const W=Math.max(200,Math.round(plot.clientWidth||300)), H=96, g=f35Geom(s,W,H), pts=s.map((p,i)=>[g.X(i),g.Y(p.v)]);
+  let from=f35Prev&&f35Prev.length===pts.length&&!f35Calm()?f35Prev:null; f35Prev=pts.map(p=>p.slice());
+  plot.innerHTML=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" aria-hidden="true"><defs><linearGradient id="f35g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="currentColor" stop-opacity=".32"/><stop offset="1" stop-color="currentColor" stop-opacity="0"/></linearGradient></defs><path class="f35-area" fill="url(#f35g)"/><path class="f35-line" pathLength="1"/><line class="f35-cur" y1="0" y2="${H}" hidden/><circle class="f35-dot" r="4.5"/></svg><div class="f35-tip" hidden></div>`;
+  const line=plot.querySelector('.f35-line'), area=plot.querySelector('.f35-area'), dot=plot.querySelector('.f35-dot'), cur=plot.querySelector('.f35-cur'), tip=plot.querySelector('.f35-tip');
+  const set=P=>{ const d=f35Path(P); line.setAttribute('d',d); area.setAttribute('d',d+` L${P[P.length-1][0].toFixed(1)} ${H} L${P[0][0].toFixed(1)} ${H} Z`); dot.setAttribute('cx',P[P.length-1][0].toFixed(1)); dot.setAttribute('cy',P[P.length-1][1].toFixed(1)); };
+  if(from){ /* смена валюты — линия перетекает (300 мс) */ const t0=performance.now(), D=320; const f=n=>{ const k=Math.min(1,(n-t0)/D), e=1-Math.pow(1-k,3); set(pts.map((p,i)=>[p[0],from[i][1]+(p[1]-from[i][1])*e])); if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); }
+  else { set(pts); if(!f35Drawn[plot.dataset.cur]&&!f35Calm()){ f35Drawn[plot.dataset.cur]=1; line.classList.add('draw'); area.classList.add('draw'); dot.classList.add('draw'); requestAnimationFrame(()=>requestAnimationFrame(()=>{ line.classList.add('go'); area.classList.add('go'); dot.classList.add('go'); })); } }
+  /* бегунок: ведите пальцем — дата и курс; лёгкая вибрация на каждый день */
+  let last=-1; const dg=f35Dg(s[s.length-1].v);
+  const show=i=>{ i=Math.max(0,Math.min(s.length-1,i)); if(i===last) return; last=i; const [x,y]=pts[i]; cur.hidden=false; cur.setAttribute('x1',x.toFixed(1)); cur.setAttribute('x2',x.toFixed(1)); dot.setAttribute('cx',x.toFixed(1)); dot.setAttribute('cy',y.toFixed(1));
+    tip.hidden=false; tip.textContent=fmtShort(parseYmd(s[i].d))+' · '+fx(s[i].v,dg)+' '+L.hbSom; tip.style.left=Math.max(4,Math.min(W-tip.offsetWidth-4,x-tip.offsetWidth/2))+'px'; f35Tick(4); };
+  const hide=()=>{ last=-1; cur.hidden=true; tip.hidden=true; const p=pts[pts.length-1]; dot.setAttribute('cx',p[0].toFixed(1)); dot.setAttribute('cy',p[1].toFixed(1)); };
+  const at=e=>{ const r=plot.getBoundingClientRect(); return Math.round((e.clientX-r.left-6)/((W-12)/Math.max(1,s.length-1))); };
+  plot.onpointerdown=e=>{ plot.setPointerCapture&&plot.setPointerCapture(e.pointerId); show(at(e)); };
+  plot.onpointermove=e=>{ if(e.pointerType==='mouse'||e.buttons||e.pressure>0) show(at(e)); };
+  plot.onpointerup=plot.onpointercancel=plot.onpointerleave=()=>hide();
+  plot.onkeydown=e=>{ if(e.key==='ArrowLeft'||e.key==='ArrowRight'){ e.preventDefault(); show((last<0?s.length-1:last)+(e.key==='ArrowLeft'?-1:1)); } else if(e.key==='Escape') hide(); };
+  plot.onblur=hide; }
+{ const _hh=hbHeroHTML; hbHeroHTML=function(){ const h=_hh.apply(this,arguments); if(!hbToday()) return h; const c=f35FxHTML(); return h.replace('<div class="f34-hact">',`<div id="f35-fxw">${c}</div><div class="f34-hact">`); }; }
+function f35HeroAfter(){ if(!hbOn()) return; const w=BPG.el.querySelector('#f35-fxw'); if(w) f35Mount(w);
+  if(!f35Fx||f35Fx.day!==dkey()) f35FxLoad().then(o=>{ if(!o||!hbOn()) return; const w2=BPG.el.querySelector('#f35-fxw'); if(w2&&!w2.querySelector('.f35-plot svg')){ w2.innerHTML=f35FxHTML(); f35Mount(w2); } }); }
+{ const _hd=hbHeroDraw; hbHeroDraw=function(){ const r=_hd.apply(this,arguments); try{ f35HeroAfter(); }catch(e){} return r; }; }
+{ const _r=hbR; hbR=function(){ const r=_r.apply(this,arguments); try{ f35HeroAfter(); }catch(e){} return r; }; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-f35cur]'); if(!b) return; e.preventDefault(); e.stopImmediatePropagation();
+  if(b.dataset.f35cur===f35Cur) return; f35Cur=b.dataset.f35cur; const w=BPG.el&&BPG.el.querySelector('#f35-fxw'); if(w){ w.innerHTML=f35FxHTML(); f35Mount(w); const n=w.querySelector(`[data-f35cur="${f35Cur}"]`); if(n) n.focus({preventScroll:true}); } },true);
+addEventListener('resize',()=>{ if(!hbOn()) return; clearTimeout(f35Mount._t); f35Mount._t=setTimeout(()=>{ f35Prev=null; const w=BPG.el.querySelector('#f35-fxw'); if(w) f35Mount(w); },200); });
+
+/* ---------- «Для вашего дела»: у вас / рынок полосками ---------- */
+{ const _y=f34YouHTML; f34YouHTML=function(t){ const h=_y.apply(this,arguments); if(!h) return h; try{ const a=f34You(t).filter(x=>x.bars);
+    let i=0; return h.replace(/<li>([\s\S]*?)<\/li>/g,(m0,inner)=>{ const x=a.find(z=>inner.includes(esc(z.t))); if(!x) return m0; const mx=Math.max(x.bars.my,x.bars.mk,1);
+      return `<li class="f35-li">${inner}<div class="f35-vs" data-f35in="1"><div><small>${L.f35My}</small><span><i class="me" style="--w:${Math.round(x.bars.my/mx*100)}%"></i></span><b>${x.bars.my}%</b></div><div><small>${L.f35Mkt}</small><span><i style="--w:${Math.round(x.bars.mk/mx*100)}%"></i></span><b>${x.bars.mk}%</b></div></div></li>`; }); }catch(e){ return h; } }; }
+
+/* ---------- идеи: окупаемость полоской (шкала 2 года) ---------- */
+{ const _hi=hbIdeaHTML; hbIdeaHTML=function(x){ const h=_hi.apply(this,arguments); const m=+x.payback_months; if(!(m>0)) return h; const p=Math.min(1,m/24);
+    return h.replace(/(<p class="m">)/,`<div class="f35-pay" data-f35in="1" style="--p:${p.toFixed(3)}" aria-label="${esc(L.f35Pay(Math.round(m)))}"><span><i></i></span><small><em>0</em><em>${esc(L.f35PayScale)}</em></small></div>$1`); }; }
+/* кнопки идеи — в один ряд плитками: проверить · план · исследовать */
+{ const _hi=hbIdeaHTML; hbIdeaHTML=function(x){ const h=_hi.apply(this,arguments); return h.replace(/(<div class="hb-ibs">[\s\S]*?)(<\/div>)(<button type="button" class="f34-res"[\s\S]*?<\/button>)(<\/div>\s*)$/,'$1$3$2$4'); }; }
+
+/* ---------- «Дело дня»: неделя кружками (чем ближе к цели, тем охотнее доделывают) ---------- */
+function f35Week(t){ const base=parseYmd(t.day)||new Date(), wd=(base.getDay()+6)%7, mon=addDays(base,-wd), done=state.misc&&state.misc.f34done||{}, ds=Object.keys(done).map(k=>k.split(':')[0]);
+  const days=[...Array(7)].map((_,i)=>{ const d=dkey(addDays(mon,i)); return {d,on:ds.includes(d),now:d===t.day}; }), n=days.filter(x=>x.on).length;
+  return `<div class="f35-week" aria-label="${esc(L.f35Week(n))}"><div>${days.map((x,i)=>`<span class="${x.on?'on':''} ${x.now?'now':''}"><i></i><small>${L.f35Days[i]}</small></span>`).join('')}</div><em>${esc(L.f35Week(n))}</em></div>`; }
+{ const _du=f34DuoHTML; f34DuoHTML=function(t){ const h=_du.apply(this,arguments); if(!h||!t.todo) return h; return h.replace(/(<button type="button" class="btn [^"]*" data-f34done=)/,f35Week(t)+'$1'); }; }
+addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-f34done]'); if(!b) return; const was=!!(state.misc&&state.misc.f34done&&state.misc.f34done[b.dataset.f34done]);
+  if(!was) setTimeout(()=>{ const td=BPG.el&&BPG.el.querySelector('.f34-todo'); if(td&&!f35Calm()) td.classList.add('cel'); f35Tick(18); toast(L.f35Cel); },60); },true);
+
+/* ---------- цифра дня считается до значения; полоски заполняются, когда видны ---------- */
+function f35Count(el){ const m=String(el.textContent).match(/^([^\d−-]*)([−-]?)(\d[\d\s]*(?:[.,]\d+)?)(.*)$/); if(!m||f35Calm()) return; const sign=m[2], raw=m[3].replace(/\s/g,''), dec=(raw.split(/[.,]/)[1]||'').length, to=parseFloat(raw.replace(',','.')); if(!(to>0)) return;
+  const t0=performance.now(), D=700, sep=raw.includes(',')?',':'.'; const f=n=>{ const k=Math.min(1,(n-t0)/D), e=1-Math.pow(1-k,3), v=(to*e).toFixed(dec).replace('.',sep); el.textContent=m[1]+sign+v+m[4]; if(k<1) requestAnimationFrame(f); }; requestAnimationFrame(f); }
+let f35IO=null;
+function f35In(root){ const els=[...(root||document).querySelectorAll('[data-f35in]:not(.in)')], fig=(root||document).querySelector('.f34-fig>b:not([data-f35c])');
+  if(fig){ fig.dataset.f35c='1'; fig.setAttribute('data-f35in','fig'); els.push(fig); }
+  if(!('IntersectionObserver' in window)||f35Calm()){ els.forEach(x=>x.classList.add('in')); return; }
+  if(!f35IO) f35IO=new IntersectionObserver(es=>es.forEach(en=>{ if(!en.isIntersecting) return; const x=en.target; f35IO.unobserve(x); x.classList.add('in'); if(x.dataset.f35in==='fig') f35Count(x); }),{threshold:.35});
+  els.forEach(x=>f35IO.observe(x)); }
+/* полосы «Что выгоднее сейчас» при сортировке переезжают на новые места (FLIP), а не прыгают */
+{ const _pd=hbPaneDraw; hbPaneDraw=function(k){ const old={}; try{ if(hbOn()&&!f35Calm()) BPG.el.querySelectorAll(`[data-hbpane="${k}"] .hb-bar[data-hbrow]`).forEach(b=>{ const i=b.querySelector('.hb-bt i'); old[b.dataset.hbrow]={top:b.getBoundingClientRect().top,w:i?i.style.width:''}; }); }catch(e){}
+    const r=_pd.apply(this,arguments);
+    try{ if(hbOn()){ const p=BPG.el.querySelector(`[data-hbpane="${k}"]`); if(p){ f35In(p); if(Object.keys(old).length) p.querySelectorAll('.hb-bar[data-hbrow]').forEach(b=>{ const o=old[b.dataset.hbrow]; if(!o) return; const dy=o.top-b.getBoundingClientRect().top, i=b.querySelector('.hb-bt i');
+        if(i&&o.w){ i.style.transition='none'; i.style.width=o.w; void i.offsetWidth; i.style.transition=''; }
+        if(Math.abs(dy)>1){ b.style.transition='none'; b.style.transform=`translateY(${dy}px)`; void b.offsetWidth; requestAnimationFrame(()=>{ b.style.transition='transform .32s cubic-bezier(.2,.75,.2,1)'; b.style.transform=''; }); } }); } } }catch(e){}
+    return r; }; }
+{ const _ha=hbAfter; hbAfter=function(root){ const r=_ha.apply(this,arguments); try{ f35In(root); if(root&&root.querySelector&&root.querySelector('#f35-fxw')) f35HeroAfter(); }catch(e){} return r; }; }
+/* <</v35 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
