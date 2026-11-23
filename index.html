@@ -16262,7 +16262,7 @@ reconSheet=function(loan,pre){ pre=pre||{}; const a=analyze(loan), s=schedOf(loa
   ['#rcn-v','#rcn-dt','#rcn-m','#rcn-o'].forEach(q=>{ const el=$(q); el.addEventListener('input',upd); el.addEventListener('change',upd); });
   const sel=$('#rcn-row');
   if(sel){ const fill=()=>{ const k=+sel.value, rem=f30RemAfter(loan,k), nx=s[k+1]; if(rem!=null) $('#rcn-v').value=rem; if(nx){ $('#rcn-dt').value=nx.d; $('#rcn-m').value=f30R2(nx.a); } else $('#rcn-dt').value=''; upd(); };
-    sel.addEventListener('change',fill); if(pre.left==null&&(pre.next||pre.row!=null)) fill(); }
+    sel.addEventListener('change',fill); if(pre.left==null&&(pre.next||pre.row!=null||pre.after)) fill(); }
   upd(); if(!sel) $('#rcn-v').focus();
   $('#rcn-s').onclick=()=>{ const r=read(); if(r.rem!=null&&!(r.rem>=0)) return showErr($('#rcn-e'),L.rcnErr); if(!(r.over>=0)) return showErr($('#rcn-e'),L.f30OverErr);
     if(r.next){ const dd=daysUntil(r.next); if(dd<-62||dd>400) return showErr($('#rcn-e'),L.f30DateErr); }
