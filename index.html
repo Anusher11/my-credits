@@ -3023,6 +3023,46 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .f31-e{margin:6px 0 0; font-size:.85rem; line-height:1.4; font-weight:700; color:#B4610F;}
 :root[data-theme="dark"] .f31-w,:root[data-theme="dark"] .f31-e{color:#F0A95B;}
 /* <</v31 css>> */
+/* <<v32 css>> */
+/* v32: страница плана и «Деньги и бизнес» не уезжают вбок; длинный текст переносится */
+#bpg-m{overflow-x:hidden; overscroll-behavior-x:none;}
+#bpg-m :is(p,li,b,span,a,em,small,h3,h4,i,div,summary){overflow-wrap:anywhere;}
+#bpg-m .bp-tb b,#bpg-m .bp-mo-h em,#bpg-m .bp-plus{white-space:normal;}
+#bpg-m .bp-tb1>span{min-width:0; flex:1 1 auto;} #bpg-m .bp-tb1>b{flex:0 1 auto; max-width:60%;}
+#bpg-m img,#bpg-m video{max-width:100%; height:auto;}
+.f32-pupd{display:flex; gap:8px; align-items:center; margin:8px 0 0; padding:9px 12px; border-radius:12px; background:var(--surface-2); font-size:.84rem; font-weight:700; line-height:1.35;}
+.f32-pupd .mi{flex:none; animation:f32spin 1.4s linear infinite;} @keyframes f32spin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion: reduce){ .f32-pupd .mi{animation:none;} }
+/* новости и мир */
+.f32-nw{padding:11px 0; border-top:1px solid var(--line);} .f32-nw:first-of-type{border-top:0; padding-top:4px;}
+.f32-nw b{display:block; font-size:.96rem; line-height:1.3; margin-top:6px;} .f32-nw p{margin:4px 0 0; font-size:.88rem; line-height:1.45;}
+.f32-nw p.m{color:var(--ink); font-weight:600;} .f32-nw .lv-tags{margin-top:0;}
+.lv-tags i.f32-na.banks,.lv-tags i.f32-na.finance{background:color-mix(in srgb,var(--brand) 14%,var(--surface)); color:var(--brand-ink);}
+.lv-tags i.f32-na.apps,.lv-tags i.f32-na.tech,.lv-tags i.f32-wa.app,.lv-tags i.f32-wa.platform{background:var(--m-leaf-weak); color:var(--m-leaf);}
+.lv-tags i.f32-wa.research,.lv-tags i.f32-wa.university{background:#EFE4FB; color:#5B2E91;}
+:root[data-theme="dark"] .lv-tags i.f32-wa.research,:root[data-theme="dark"] .lv-tags i.f32-wa.university{background:#3A2A52; color:#D9C4F5;}
+.f32-nw .hb-src1{margin-top:4px;}
+.hb-fx i.f32-fxs{background:transparent; padding-left:0; font-weight:700; opacity:.85;}
+/* закрыть кредит полностью */
+.f32-po .chips{margin:4px 0 10px;}
+.f32-big{display:flex; flex-direction:column; gap:2px; padding:14px 16px; border-radius:16px; background:var(--surface-2); margin:6px 0 10px;}
+.f32-big small{font-size:.82rem; font-weight:700; color:var(--muted);} .f32-big b{font-family:var(--font-num); font-size:1.7rem; line-height:1.15;}
+.f32-rows{display:grid; gap:0; margin:0 0 8px;} .f32-rows>div{display:flex; justify-content:space-between; gap:12px; padding:8px 0; border-top:1px solid var(--line); font-size:.9rem;}
+.f32-rows>div:first-child{border-top:0;} .f32-rows b{font-family:var(--font-num); white-space:nowrap;} .f32-rows span{min-width:0;}
+.f32-save{margin:6px 0 4px; padding:10px 12px; border-radius:12px; background:var(--m-leaf-weak); color:var(--m-leaf); font-weight:800; font-size:.92rem;}
+.f32-warn{margin:6px 0; padding:10px 12px; border-radius:12px; background:color-mix(in srgb,#E08A2B 12%,var(--surface)); color:#8A4A0C; font-weight:700; font-size:.88rem;}
+:root[data-theme="dark"] .f32-warn{color:#F0A95B;}
+/* самопроверка */
+.f32-chk{margin:0 0 12px; padding:12px 14px; border-radius:16px; border:1.5px solid color-mix(in srgb,#E08A2B 45%,transparent); background:color-mix(in srgb,#E08A2B 8%,var(--surface));}
+.f32-chk>b{display:block; font-size:.95rem; margin-bottom:4px;}
+.f32-chk ul{list-style:none; margin:0; padding:0;} .f32-chk li{padding:8px 0; border-top:1px solid var(--line);} .f32-chk li:first-child{border-top:0;}
+.f32-chk li>span{display:block; font-size:.88rem; line-height:1.4;} .f32-chk li>span b{font-weight:800;}
+.f32-chk .row{display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;} .f32-chk .row button{min-height:40px;}
+.f32-ok{color:var(--m-leaf); font-weight:700;}
+/* отпечаток */
+.lock .lk-bio{min-height:52px; padding:0 22px; font-size:1rem; margin-bottom:6px;}
+.f32-bio{margin-top:10px;}
+/* <</v32 css>> */
 
 
 </style>
@@ -6817,6 +6857,89 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v32 str>> */
+/* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
+const M32S={
+ru:{ hbNote:'Рынок дня собирает Сифра по свежим данным три раза в день — утром, днём и вечером, общий для всех. Это подсказки, а не обещания — решение за вами.',
+  hbLoading:'Сифра собирает рынок дня: новости, рынки и приложения мира, товары, 30 идей, советы. Части приходят по очереди за 1–3 минуты — пока можно посчитать по обычным цифрам.',
+  f32Upd:(d,t)=>'обновляется… готово '+d+' из '+t, f32NewsT:'Новости дня', f32WorldT:'Мир: исследования, приложения, площадки',
+  f32NArea:{banks:'Банки',finance:'Финансы',markets:'Рынки',trade:'Торговля',business:'Бизнес',startups:'Стартапы',apps:'Приложения',tech:'Технологии',law:'Законы'},
+  f32WArea:{research:'Исследование',university:'Университет',market:'Рынок',app:'Приложение',platform:'Площадка',review:'Отзывы',startup:'Стартап',retail:'Розница'},
+  f32Take:'Что взять себе:', f32More:n=>'Ещё '+n, f32FxSrc:s=>'курс '+s,
+  f32PartN:{news:'новости',goods:'товары',ideas:'идеи',ideas2:'идеи',world:'мир',learn:'советы'}, f32Miss:s=>'Не обновилось: '+s+' — здесь прежние данные, Сифра попробует в следующий раз.',
+  f32PlanBusy:'Обновляю план по свежим данным — пока можно читать прежний.', f32PlanUpd:'План обновлён по свежим данным', f32PlanFail:'Не получилось обновить план — попробую позже.',
+  f32PoBtn:'Закрыть полностью', f32PoT:'Закрыть кредит полностью', f32PoLead:n=>n+': сколько нести в банк, чтобы закрыть кредит в выбранный день.',
+  f32PoDay:'День погашения', f32PoToday:'Сегодня', f32PoNext:d=>d+' — день платежа', f32PoMonth:'Через месяц',
+  f32PoNeed:d=>'Нужно внести '+d, f32PoRem:'Остаток долга', f32PoInt:n=>'Проценты за '+n+' дн.', f32PoPen:n=>'Пеня за '+n+' дн. (примерно)', f32PoPart:'Уже внесено на счёт',
+  f32PoSched:(n,m)=>'Если до этого внесёте платежи по графику: '+n+' шт., '+m, f32PoSave:m=>'Не придётся платить процентов: ≈ '+m,
+  f32PoNoRate:'Ставка не указана — проценты не посчитать. Впишите ставку в кредите или загрузите график банка.',
+  f32PoNote:'Это расчёт Mira: остаток долга и проценты по дням с прошлого платежа, как в графике банка. Точную сумму к полному погашению на этот день спросите у банка — она может отличаться на дирамы, а по договору может быть плата за досрочное погашение и заявление заранее.',
+  f32PoAsk:'Спросить у банка', f32PoAskTxt:d=>'Здравствуйте! Хочу полностью погасить кредит досрочно '+d+'. Подскажите, пожалуйста, точную сумму к полному погашению на этот день, есть ли плата за досрочное погашение и нужно ли заранее написать заявление.',
+  f32PoDone:'Кредит уже выплачен.', f32PoPast:'Выберите сегодняшний или будущий день.',
+  f32ChkT:n=>'Mira проверила цифры: '+(n===1?'нашла 1 вопрос':'нашла вопросов: '+n), f32ChkShow:'Показать', f32ChkOk:'Всё верно', f32ChkFix:'Сверить с банком',
+  f32ChkNone:'Mira проверила цифры кредитов — ошибок не нашла.', f32ChkRun:'Проверить цифры сейчас', f32ChkSec:'Проверка цифр', f32ChkLead:'Каждый раз, когда вы открываете Миру, она сама проверяет цифры кредитов: двойные платежи, остаток против графика банка, записи в будущем, кредиты, добавленные дважды.',
+  f32cNan:'В кредите неверные числа (сумма или выплачено) — откройте и исправьте.', f32cOver:m=>'Выплачено больше суммы кредита на '+m+' — проверьте сумму кредита.',
+  f32cDup:(d,n)=>'Платёж за '+d+' записан '+n+' раза — если платили один раз, удалите лишний.', f32cFut:d=>'Есть платёж с датой в будущем ('+d+') — проверьте дату.',
+  f32cSplit:'В записи платежа основной долг больше самой суммы — проверьте платёж.', f32cSched:(a,b)=>'Остаток у Mira '+a+', а по графику банка '+b+' — сверьте с банком.',
+  f32cEnd:m=>'По графику банка кредит уже закрыт, а у Mira остаток '+m+'.', f32cDay:'Не указано число платежа — откройте кредит и впишите.', f32cTwin:n=>'Похоже, кредит «'+n+'» добавлен дважды.',
+  f32BioBtn:'Войти по отпечатку', f32BioFail:'Не получилось — введите код.', f32BioOnBtn:'Входить по отпечатку пальца', f32BioOff:'Выключить вход по отпечатку',
+  f32BioOnTxt:'Вход по отпечатку включён. Код остаётся запасным.', f32BioLead:'Вместо кода — отпечаток пальца или лицо, как в телефоне. Отпечаток не уходит из телефона — Mira его не видит.',
+  f32BioNeedPin:'Вход по отпечатку можно включить, когда поставите код — он нужен, если отпечаток не сработает.', f32BioNo:'Этот телефон или браузер не умеет вход по отпечатку для сайтов.',
+  f32BioSet:'Вход по отпечатку включён', f32BioErr:'Не получилось включить — попробуйте ещё раз.', f32BioOffd:'Вход по отпечатку выключен' },
+tg:{ hbNote:'Бозори рӯзро Сифра аз маълумоти тоза се бор дар рӯз ҷамъ мекунад — субҳ, рӯз ва бегоҳ, барои ҳама якхела. Ин маслиҳат аст, на ваъда — қарор аз шумост.',
+  hbLoading:'Сифра бозори рӯзро ҷамъ мекунад: хабарҳо, бозорҳо ва барномаҳои ҷаҳон, мол, 30 ғоя, маслиҳатҳо. Қисмҳо дар 1–3 дақиқа пай дар пай меоянд — ҳоло бо рақамҳои муқаррарӣ ҳисоб кардан мумкин.',
+  f32Upd:(d,t)=>'нав мешавад… '+d+' аз '+t+' тайёр', f32NewsT:'Хабарҳои рӯз', f32WorldT:'Ҷаҳон: тадқиқот, барномаҳо, майдончаҳо',
+  f32NArea:{banks:'Бонкҳо',finance:'Молия',markets:'Бозорҳо',trade:'Савдо',business:'Тиҷорат',startups:'Стартапҳо',apps:'Барномаҳо',tech:'Технология',law:'Қонунҳо'},
+  f32WArea:{research:'Тадқиқот',university:'Донишгоҳ',market:'Бозор',app:'Барнома',platform:'Майдонча',review:'Шарҳҳо',startup:'Стартап',retail:'Чакана'},
+  f32Take:'Чӣ гирифтан мумкин:', f32More:n=>'Боз '+n, f32FxSrc:s=>'қурби '+s,
+  f32PartN:{news:'хабарҳо',goods:'мол',ideas:'ғояҳо',ideas2:'ғояҳо',world:'ҷаҳон',learn:'маслиҳатҳо'}, f32Miss:s=>'Нав нашуд: '+s+' — ин ҷо маълумоти пешина, Сифра дафъаи оянда кӯшиш мекунад.',
+  f32PlanBusy:'Нақшаро бо маълумоти тоза нав мекунам — ҳоло нақшаи пешинаро хондан мумкин.', f32PlanUpd:'Нақша бо маълумоти тоза нав шуд', f32PlanFail:'Нақша нав нашуд — баъдтар кӯшиш мекунам.',
+  f32PoBtn:'Пурра пӯшидан', f32PoT:'Қарзро пурра пӯшидан', f32PoLead:n=>n+': барои дар рӯзи интихобшуда пӯшидани қарз ба бонк чӣ қадар бурдан лозим.',
+  f32PoDay:'Рӯзи пардохт', f32PoToday:'Имрӯз', f32PoNext:d=>d+' — рӯзи пардохт', f32PoMonth:'Пас аз як моҳ',
+  f32PoNeed:d=>'Бояд супорид '+d, f32PoRem:'Бақияи қарз', f32PoInt:n=>'Фоиз барои '+n+' рӯз', f32PoPen:n=>'Ҷарима барои '+n+' рӯз (тахминан)', f32PoPart:'Аллакай ба суратҳисоб супорида',
+  f32PoSched:(n,m)=>'Агар то он рӯз пардохтҳоро аз рӯи ҷадвал супоред: '+n+' адад, '+m, f32PoSave:m=>'Фоизе, ки пардохтан лозим намешавад: ≈ '+m,
+  f32PoNoRate:'Фоиз нишон дода нашудааст — фоизро ҳисоб кардан намешавад. Фоизро дар қарз нависед ё ҷадвали бонкро бор кунед.',
+  f32PoNote:'Ин ҳисоби Mira аст: бақияи қарз ва фоиз аз рӯи рӯзҳо аз пардохти гузашта, мисли ҷадвали бонк. Маблағи дақиқро барои пурра пӯшидан дар ин рӯз аз бонк пурсед — он метавонад чанд дирам фарқ кунад, ва аз рӯи шартнома пардохт барои пеш аз мӯҳлат ва ариза пешакӣ лозим шуда метавонад.',
+  f32PoAsk:'Аз бонк пурсидан', f32PoAskTxt:d=>'Ассалому алейкум! Мехоҳам қарзро '+d+' пеш аз мӯҳлат пурра пардохт кунам. Лутфан маблағи дақиқро барои пурра пӯшидан дар ин рӯз гӯед, оё пардохт барои пеш аз мӯҳлат ҳаст ва оё ариза пешакӣ лозим аст.',
+  f32PoDone:'Қарз аллакай пардохт шудааст.', f32PoPast:'Рӯзи имрӯза ё ояндаро интихоб кунед.',
+  f32ChkT:n=>'Mira рақамҳоро санҷид: '+n+' савол ёфт', f32ChkShow:'Нишон додан', f32ChkOk:'Ҳама дуруст', f32ChkFix:'Бо бонк муқоиса',
+  f32ChkNone:'Mira рақамҳои қарзҳоро санҷид — хато наёфт.', f32ChkRun:'Ҳозир санҷидан', f32ChkSec:'Санҷиши рақамҳо', f32ChkLead:'Ҳар бор, ки Мираро мекушоед, вай худаш рақамҳои қарзҳоро месанҷад: пардохтҳои дукарата, бақия бар зидди ҷадвали бонк, сабтҳо дар оянда, қарзҳои ду бор иловашуда.',
+  f32cNan:'Дар қарз рақамҳо нодурустанд (маблағ ё пардохтшуда) — кушоед ва ислоҳ кунед.', f32cOver:m=>'Аз маблағи қарз '+m+' зиёд пардохт шудааст — маблағи қарзро санҷед.',
+  f32cDup:(d,n)=>'Пардохт барои '+d+' '+n+' бор сабт шудааст — агар як бор пардохтед, зиёдатиро нест кунед.', f32cFut:d=>'Пардохт бо санаи оянда ҳаст ('+d+') — санаро санҷед.',
+  f32cSplit:'Дар сабти пардохт қарзи асосӣ аз худи маблағ зиёд аст — пардохтро санҷед.', f32cSched:(a,b)=>'Бақия дар Mira '+a+', аз рӯи ҷадвали бонк '+b+' — бо бонк муқоиса кунед.',
+  f32cEnd:m=>'Аз рӯи ҷадвали бонк қарз пӯшида шудааст, вале дар Mira бақия '+m+'.', f32cDay:'Рӯзи пардохт нишон дода нашудааст — қарзро кушоед ва нависед.', f32cTwin:n=>'Ба назар қарзи «'+n+'» ду бор илова шудааст.',
+  f32BioBtn:'Бо нақши ангушт даромадан', f32BioFail:'Нашуд — рамзро ворид кунед.', f32BioOnBtn:'Бо нақши ангушт даромадан', f32BioOff:'Даромадан бо нақши ангуштро хомӯш кардан',
+  f32BioOnTxt:'Даромадан бо нақши ангушт фаъол аст. Рамз эҳтиётӣ мемонад.', f32BioLead:'Ба ҷои рамз — нақши ангушт ё рӯй, мисли телефон. Нақши ангушт аз телефон берун намеравад — Mira онро намебинад.',
+  f32BioNeedPin:'Даромадан бо нақши ангуштро баъди гузоштани рамз фаъол кардан мумкин — рамз лозим аст, агар нақши ангушт кор накунад.', f32BioNo:'Ин телефон ё браузер даромадан бо нақши ангуштро барои сайтҳо намедонад.',
+  f32BioSet:'Даромадан бо нақши ангушт фаъол шуд', f32BioErr:'Фаъол нашуд — боз кӯшиш кунед.', f32BioOffd:'Даромадан бо нақши ангушт хомӯш шуд' },
+en:{ hbNote:'Sifra builds the market of the day from fresh data three times a day — morning, afternoon and evening, the same for everyone. These are hints, not promises — the decision is yours.',
+  hbLoading:'Sifra is gathering the market of the day: news, world markets and apps, goods, 30 ideas, tips. Parts arrive one by one over 1–3 minutes — meanwhile you can calculate with the usual numbers.',
+  f32Upd:(d,t)=>'updating… '+d+' of '+t+' ready', f32NewsT:'News of the day', f32WorldT:'World: research, apps, platforms',
+  f32NArea:{banks:'Banks',finance:'Finance',markets:'Markets',trade:'Trade',business:'Business',startups:'Startups',apps:'Apps',tech:'Tech',law:'Law'},
+  f32WArea:{research:'Research',university:'University',market:'Market',app:'App',platform:'Platform',review:'Reviews',startup:'Startup',retail:'Retail'},
+  f32Take:'What to take:', f32More:n=>n+' more', f32FxSrc:s=>s+' rate',
+  f32PartN:{news:'news',goods:'goods',ideas:'ideas',ideas2:'ideas',world:'world',learn:'tips'}, f32Miss:s=>'Not updated: '+s+' — earlier data is shown here, Sifra will try again next time.',
+  f32PlanBusy:'Updating the plan with fresh data — you can read the previous one meanwhile.', f32PlanUpd:'The plan is updated with fresh data', f32PlanFail:'Could not update the plan — will try later.',
+  f32PoBtn:'Pay off in full', f32PoT:'Pay off the loan in full', f32PoLead:n=>n+': how much to bring to the bank to close the loan on the chosen day.',
+  f32PoDay:'Payoff day', f32PoToday:'Today', f32PoNext:d=>d+' — payment day', f32PoMonth:'In a month',
+  f32PoNeed:d=>'To pay '+d, f32PoRem:'Balance owed', f32PoInt:n=>'Interest for '+n+' days', f32PoPen:n=>'Late fee for '+n+' days (approx.)', f32PoPart:'Already paid into the account',
+  f32PoSched:(n,m)=>'If you make the scheduled payments before that: '+n+', '+m, f32PoSave:m=>'Interest you won’t have to pay: ≈ '+m,
+  f32PoNoRate:'No rate given — interest can’t be calculated. Enter the rate in the loan or load the bank’s schedule.',
+  f32PoNote:'This is Mira’s calculation: the balance plus daily interest since the last payment, as in the bank’s schedule. Ask the bank for the exact payoff amount for that day — it may differ by a few dirams, and the contract may charge an early-repayment fee or require a written request in advance.',
+  f32PoAsk:'Ask the bank', f32PoAskTxt:d=>'Hello! I would like to repay my loan in full early on '+d+'. Could you tell me the exact payoff amount for that day, whether there is an early-repayment fee, and whether I need to submit a request in advance?',
+  f32PoDone:'This loan is already paid off.', f32PoPast:'Choose today or a future day.',
+  f32ChkT:n=>'Mira checked the numbers: '+(n===1?'1 question':n+' questions'), f32ChkShow:'Show', f32ChkOk:'All correct', f32ChkFix:'Check with the bank',
+  f32ChkNone:'Mira checked the loan numbers — no errors found.', f32ChkRun:'Check the numbers now', f32ChkSec:'Number check', f32ChkLead:'Every time you open Mira, it checks the loan numbers itself: double payments, the balance against the bank’s schedule, records dated in the future, loans added twice.',
+  f32cNan:'The loan has invalid numbers (amount or paid) — open it and fix.', f32cOver:m=>'Paid more than the loan amount by '+m+' — check the loan amount.',
+  f32cDup:(d,n)=>'The '+d+' payment is recorded '+n+' times — if you paid once, delete the extra.', f32cFut:d=>'There is a payment dated in the future ('+d+') — check the date.',
+  f32cSplit:'A payment record has more principal than the amount itself — check it.', f32cSched:(a,b)=>'Mira shows '+a+' owed, the bank’s schedule '+b+' — check with the bank.',
+  f32cEnd:m=>'By the bank’s schedule the loan is closed, but Mira still shows '+m+'.', f32cDay:'The payment day is missing — open the loan and enter it.', f32cTwin:n=>'The loan “'+n+'” seems to be added twice.',
+  f32BioBtn:'Unlock with fingerprint', f32BioFail:'Didn’t work — enter the code.', f32BioOnBtn:'Unlock with fingerprint', f32BioOff:'Turn off fingerprint unlock',
+  f32BioOnTxt:'Fingerprint unlock is on. The code stays as a backup.', f32BioLead:'Instead of the code — your fingerprint or face, as on the phone. The fingerprint never leaves the phone — Mira does not see it.',
+  f32BioNeedPin:'Fingerprint unlock can be turned on once you set a code — it is needed if the fingerprint fails.', f32BioNo:'This phone or browser cannot unlock websites with a fingerprint.',
+  f32BioSet:'Fingerprint unlock is on', f32BioErr:'Could not turn it on — try again.', f32BioOffd:'Fingerprint unlock is off' }};
+for(const k of ['ru','tg','en']){ const x=M32S[k]; Object.assign(D[k],x); }
+/* <</v32 str>> */
 /* <<v31 str>> */
 /* ----- v31: Сифра ведёт кредиты ----- */
 const M31S={
@@ -16678,6 +16801,180 @@ sfDo=function(a,manual){ if(a&&F31_ACTS.includes(a.name)){ f31Preview(f31Items(a
 const f31Lbl0=sfActLabel;
 sfActLabel=function(a){ if(a&&F31_ACTS.includes(a.name)){ const n=f31Items(a).length; return '✨ '+L.f31Act(n); } return f31Lbl0.apply(this,arguments); };
 /* <</v31 js>> */
+/* <<v32 js>> */
+/* ===================== v32: рынок дня по частям и в фоне; новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ===================== */
+/* ---- «Рынок дня»: сервер v19 собирает его частями (новости, товары, идеи ×2, мир, советы) — показываем, сколько готово;
+   приложение само обновляет рынок, когда наступило время (утро, день, вечер) и человек открыл Миру — не только раздел. ---- */
+let hbProg=null, hbPolls=0;
+const F32_PARTS=['news','goods','ideas','ideas2','world','learn'];
+const f32U=u=>typeof u==='string'&&/^https?:\/\//.test(u)?u:'';
+{ const _s=hbSave; hbSave=function(j){ _s.apply(this,arguments); const t=hbSt().today; if(!t||!j) return; const A=(a,n)=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x==='object'&&x.title).slice(0,n);
+    t.ideas=A(j.ideas,30); t.news=A(j.news,12); t.world=A(j.world,12); t.miss=(Array.isArray(j.miss)?j.miss:[]).filter(x=>F32_PARTS.includes(x)); t.fxs=hbTx(j.fx_src,24);
+    const ar=hbSt().arch.find(x=>x.day===t.day&&x.lang===lang); if(ar){ const old=Array.isArray(ar.ideas)?ar.ideas:[]; ar.ideas=t.ideas.concat(old.filter(x=>x&&!t.ideas.some(y=>y.title===x.title))).slice(0,30); }
+    persist(); }; }
+hbFetch=function(force){ if(hbBusy) return hbBusy; if(!navigator.onLine) return Promise.resolve({err:'off'});
+  hbBusy=(async()=>{ try{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+      if(!caps||caps.v<10) return {old:true};
+      const r=await fetch(API_BASE+'/api/mk/today',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(force?{id:mkId(),lang,force:true}:{id:mkId(),lang})}); const j=await r.json().catch(()=>({}));
+      const keep=x=>{ if(x&&x.summary&&(!hbToday()||Date.parse(x.at||0)>Date.parse(hbToday().at||0))) hbSave(Object.assign({},x,{next:new Date(0).toISOString()})); };
+      if(j&&j.pending){ keep(j.last); const p=j.progress; hbProg=p&&+p.total>0?{d:Math.max(0,Math.min(+p.total,Math.round(+p.done||0))),t:Math.round(+p.total)}:null; return {pending:true}; }
+      hbProg=null; if(!r.ok&&j&&j.last) keep(j.last); if(!r.ok||!j||!j.summary) return {err:j&&j.error||'x'}; hbSave(j); return j.recent?{ok:true,recent:true}:{ok:true}; }
+    catch(e){ return {err:'x'}; } finally{ hbBusy=null; } })(); return hbBusy; };
+const f32Vis=()=>document.visibilityState!=='hidden';
+hbKick=function(force){ if((!force&&hbFresh())||hbBusy) return; clearTimeout(hbPollT); hbState='load'; hbHeroDraw();
+  hbFetch(force).then(r=>{ const had=!!hbToday(); hbState=r.ok?'':r.pending?'pend':r.old?'old':(force&&had?'':'err'); if(r.ok){ hbPolls=0; hbProg=null; hbRedraw(); if(force&&hbOn()) toast(L.hbUpdOk); return; } hbHeroDraw();
+    if(force&&!r.pending&&hbOn()) toast(r.err==='limit'?L.hbUpdLimit:r.old?L.hbOld10:L.hbErr);
+    /* пока сервер собирает — спрашиваем снова: и когда раздел открыт, и когда Мира просто открыта (каждый запрос доделывает недостающие части) */
+    if(r.pending&&(hbOn()||f32Vis())&&hbPolls++<45) hbPollT=setTimeout(()=>{ if(hbOn()||f32Vis()) hbKick(force); },hbOn()?15000:20000); }); };
+/* «Ещё раз» после ошибки — сразу (сервер после полной неудачи держит паузу 20 минут, а кнопка её обходит) */
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-hbre1]'); if(!b) return; e.stopImmediatePropagation(); hbState=''; hbPolls=0; hbKick(true); },true);
+function f32Bg(){ try{ if(!navigator.onLine||hbBusy||!hbSt().seen||hbFresh()) return; hbPolls=0; hbKick(false); }catch(e){} }
+document.addEventListener('visibilitychange',()=>{ if(document.visibilityState==='visible') setTimeout(f32Bg,1500); });
+setTimeout(f32Bg,6000);
+{ const _hr=hbR; hbR=function(){ const h=hbSt(); if(!h.seen){ h.seen=1; persist(); } hbPolls=0; return _hr.apply(this,arguments); }; }
+{ const _hh=hbHeroHTML; hbHeroHTML=function(){ let h=_hh.apply(this,arguments); const t=hbToday();
+    if(hbProg&&(hbState==='load'||hbState==='pend')){ h=h.split(L.hbUpdating).join(L.f32Upd(hbProg.d,hbProg.t)); if(!t) h=h.replace(L.hbLoading,L.hbLoading+' '+L.f32Upd(hbProg.d,hbProg.t)); }
+    if(t&&t.fxs) h=h.replace('<div class="lv-tags hb-fx">','<div class="lv-tags hb-fx"><i class="f32-fxs">'+esc(L.f32FxSrc(t.fxs))+'</i>');
+    return h; }; }
+function f32Src(u){ u=f32U(u); return u?`<a class="hb-src1" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''; }
+function f32Dt(s){ const d=/^\d{4}-\d\d-\d\d$/.test(String(s||''))?parseYmd(s):null; return d&&!isNaN(d)?fmtDate(d):''; }
+function f32List(a,one){ return a.slice(0,4).map(one).join('')+(a.length>4?`<details class="wh-more"><summary>${L.f32More(a.length-4)}</summary>${a.slice(4).map(one).join('')}</details>`:''); }
+function f32NewsHTML(t){ const a=(t.news||[]).filter(x=>x&&x.title&&x.text); if(!a.length) return '';
+  const one=x=>`<div class="f32-nw"><div class="lv-tags"><i class="f32-na ${esc(x.area||'')}">${esc(L.f32NArea[x.area]||L.f32NArea.business)}</i>${x.where?`<i>${esc(hbTx(x.where,60))}</i>`:''}${f32Dt(x.date)?`<i>${esc(f32Dt(x.date))}</i>`:''}</div><b>${esc(hbTx(x.title,120))}</b><p>${esc(hbTx(x.text,300))}</p>${f32Src(x.src)}</div>`;
+  return `<section class="id-sec f32-news" id="hb-s-news"><h4>${ico('globe',18)} ${L.f32NewsT}</h4>${f32List(a,one)}</section>`; }
+function f32WorldHTML(t){ const a=(t.world||[]).filter(x=>x&&x.title&&x.text); if(!a.length) return '';
+  const one=x=>`<div class="f32-nw"><div class="lv-tags"><i class="f32-wa ${esc(x.area||'')}">${esc(L.f32WArea[x.area]||L.f32WArea.market)}</i>${x.where?`<i>${esc(hbTx(x.where,70))}</i>`:''}${f32Dt(x.date)?`<i>${esc(f32Dt(x.date))}</i>`:''}</div><b>${esc(hbTx(x.title,120))}</b><p>${esc(hbTx(x.text,300))}</p>${x.take?`<p class="m">${ico('next',14)} ${L.f32Take} ${esc(hbTx(x.take,200))}</p>`:''}${f32Src(x.src)}</div>`;
+  return `<section class="id-sec f32-world" id="hb-s-world"><h4>${ico('sparkle',18)} ${L.f32WorldT}</h4>${f32List(a,one)}</section>`; }
+function f32MissHTML(t){ const m=[...new Set((t.miss||[]).map(p=>L.f32PartN[p]).filter(Boolean))]; return m.length?`<p class="bp-hint">${ico('info',14)} ${esc(L.f32Miss(m.join(', ')))}</p>`:''; }
+{ const _t=hbTodayHTML; hbTodayHTML=function(){ const h=_t.apply(this,arguments), t=hbToday(); if(!t) return h; const add=f32MissHTML(t)+f32NewsHTML(t)+f32WorldHTML(t); if(!add) return h;
+    const i=h.indexOf('<section class="id-sec">'); return i<0?add+h:h.slice(0,i)+add+h.slice(i); }; }
+
+/* ---- страница плана и «Деньги и бизнес»: ничего не уезжает вбок (длинные цены и ссылки переносятся, см. m32.css) ---- */
+document.addEventListener('scroll',e=>{ const m=e.target; if(m&&m.id==='bpg-m'&&m.scrollLeft) m.scrollLeft=0; },true);
+
+/* ---- бизнес-план обновляется сам: если ему больше суток — при открытии Сифра пересобирает его по свежим данным
+   (рынок, цены, кредиты сегодня), план остаётся тем же: отметки шагов и «План и факт» сохраняются. «Обновить» делает то же сразу. ---- */
+let f32PB=null;
+function f32PlanBanner(){ try{ const t=bpTop(); if(!bpOpenNow()||!t||t.name!=='view') return; const m=BPG.el.querySelector('#bpg-m'), old=m.querySelector('.f32-pupd'); if(old) old.remove();
+    if(f32PB&&f32PB===t.arg){ const at=m.querySelector('.bp-at'); if(at) at.insertAdjacentHTML('afterend',`<p class="f32-pupd" role="status">${ico('repeat',16)} ${L.f32PlanBusy}</p>`); } }catch(e){} }
+function f32PlanAuto(it,force){ try{ if(!it||!it.f||f32PB||bpBusyNow||!navigator.onLine) return false; const age=Date.now()-Date.parse(it.at||0);
+    if(!force){ if(!(age>20*3600e3)) return false; if(it.autoAt&&Date.now()-Date.parse(it.autoAt)<6*3600e3) return false; }
+    const id=it.id; f32PB=id; it.autoAt=new Date().toISOString(); persist(); f32PlanBanner();
+    (async()=>{ let ok=false; try{ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){}
+        if(!caps||caps.v<9) throw 0; const f=it.f, base=bpReq(f), ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),600000);
+        const sq=Object.assign({stage:'scan',id:mkId(),places:bpIsTrade(f)?bpPlaces(f):[]},base); let r1=await bpPost(sq,ctl.signal); if(!r1.ok||!r1.j.rid) throw 0;
+        const tq=()=>bpPost(Object.assign({stage:'think',id:mkId(),rid:r1.j.rid,ctx:sfCtx()},base),ctl.signal); let r2=await tq();
+        if(r2.status===410){ r1=await bpPost(sq,ctl.signal); if(!r1.ok||!r1.j.rid) throw 0; r2=await tq(); } clearTimeout(to); if(!r2.ok||!r2.j.analysis) throw 0;
+        const cur=bpSt().plans.find(x=>x.id===id); if(!cur) return;
+        Object.assign(cur,{at:new Date().toISOString(),rat:r2.j.research_at||r1.j.at||'',a:r2.j.analysis,research:r1.j.research||cur.research,
+          src:(Array.isArray(r2.j.sources)?r2.j.sources:[]).filter(x=>x&&/^https?:\/\//.test(x.url||'')).slice(0,20),rid:r1.j.rid,aid:r2.j.aid});
+        /* план по месяцам остаётся прежним — по нему идёт «План и факт»; новый — только если его ещё не было */
+        persist(); ok=true; f32PB=null; const t=bpTop();
+        if(bpOpenNow()&&t&&t.name==='view'&&t.arg===id){ const m=BPG.el.querySelector('#bpg-m'), a=document.activeElement, busy=t.tab==='fact'||(a&&m.contains(a)&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName));
+          if(busy) f32PlanBanner(); else { const y=m.scrollTop; bpRender(); m.scrollTop=y; } }
+        toast(L.f32PlanUpd); if(!cur.road) bpRoad(cur); }
+      catch(e){ } finally{ if(!ok){ f32PB=null; f32PlanBanner(); if(force) toast(L.f32PlanFail); } } })();
+    return true; }catch(e){ f32PB=null; return false; } }
+{ const _bv=bpViewR; bpViewR=function(m,foot,id){ _bv.apply(this,arguments); try{ const t=bpTop(), it=bpSt().plans.find(x=>x.id===(t&&t.arg))||bpLast(); if(!it) return;
+      const re=foot&&foot.querySelector('#bp-re'); if(re) re.onclick=()=>{ if(!f32PlanAuto(it,true)&&!f32PB) toast(navigator.onLine?L.f32PlanFail:L.idOffline); };
+      if(!f32PlanAuto(it,false)) f32PlanBanner(); }catch(e){} }; }
+
+/* ---- 469: сколько нести, чтобы закрыть кредит полностью в выбранный день ---- */
+function f32DayN(a,b){ return Math.round((new Date(b.getFullYear(),b.getMonth(),b.getDate())-new Date(a.getFullYear(),a.getMonth(),a.getDate()))/864e5); }
+/* дневная ставка: из договора, иначе из графика банка (проценты строки ÷ остаток ÷ дни) */
+function f32Rd(loan,per,B){ if(+loan.rate>0) return +loan.rate/100/365; const se=schedAt(loan,per); if(!se||!(+se.i>0)||!(B>0)) return null;
+  const d=f32DayN(f30DueOf(loan,per-1),parseYmd(se.d)); return d>0?(+se.i)/B/d:null; }
+function f32Payoff(loan,T){ const a=analyze(loan); if(a.done) return {done:true}; const t0=today0(), T0=new Date(T.getFullYear(),T.getMonth(),T.getDate()); if(T0<t0) return {past:true};
+  let per=a.per, B=a.remaining, D=f30DueOf(loan,per-1), paidI=0, paidSum=0, n=0; const rd=f32Rd(loan,per,B);
+  /* платежи по графику, срок которых между сегодня и выбранным днём, считаем внесёнными вовремя */
+  if(!a.overdue&&!a.check) for(let k=0;k<240;k++){ const due=f30DueOf(loan,per); if(!(due<T0)||due<t0) break; const se=schedAt(loan,per), days=Math.max(0,f32DayN(D,due));
+    const iP=se&&se.i!=null?+se.i||0:(rd!=null?B*rd*days:0), amt=se?+se.a||0:a.monthly; let pr=se&&se.b!=null?Math.max(0,B-(+se.b)):Math.max(0,amt-iP); if(pr>B) pr=B;
+    if(per===a.per&&a.part>0){ paidSum+=Math.max(0,amt-a.part); } else paidSum+=amt; paidI+=iP; B=Math.max(0,B-pr); D=due; per++; n++; if(B<=0) break; }
+  const days=Math.max(0,f32DayN(D,T0)), acc=rd!=null?B*rd*days:null;
+  const part=n===0&&a.part>0?a.part:0;
+  let pen=0, pdays=0; if(a.overdue){ const due=f30DueOf(loan,a.per); pdays=Math.max(0,f32DayN(due,T0)); pen=penaltyPerDay(loan,a)*pdays; }
+  const need=Math.max(0,B+(acc||0)+pen-part), save=acc==null?null:Math.max(0,(a.interestLeft||0)-paidI-acc);
+  return {B,acc,days,pen,pdays,part,need,save,n,paidSum,rd}; }
+function f32PoSheet(loan,v){ const a=analyze(loan), nd=!a.done&&!a.check?f30DueOf(loan,a.per):null, t0=today0(), max=new Date(t0.getFullYear()+1,t0.getMonth(),t0.getDate());
+  const nxt=nd&&nd>=t0?nd:null, mon=new Date(t0.getFullYear(),t0.getMonth()+1,t0.getDate()); v=v||ymd(t0);
+  openSheet(`<div class="f32-po"><h3>${L.f32PoT}</h3><p class="lead">${esc(L.f32PoLead(loan.name))}</p>
+    <div class="chips bp-wrap" role="group"><button type="button" class="chip" data-f32d="${ymd(t0)}">${L.f32PoToday}</button>${nxt&&ymd(nxt)!==ymd(t0)?`<button type="button" class="chip" data-f32d="${ymd(nxt)}">${esc(L.f32PoNext(fmtDate(nxt)))}</button>`:''}<button type="button" class="chip" data-f32d="${ymd(mon)}">${L.f32PoMonth}</button></div>
+    <div class="field n"><label for="f32-d">${L.f32PoDay}</label><input id="f32-d" type="date" min="${ymd(t0)}" max="${ymd(max)}" value="${esc(v)}"></div>
+    <div id="f32-res" aria-live="polite"></div><p class="note">${L.f32PoNote}</p>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-action="open" data-id="${esc(loan.id)}">${L.back}</button><button type="button" class="btn btn-primary" id="f32-ask">${L.f32PoAsk}</button></div></div>`);
+  const inp=$('#f32-d'), draw=()=>{ const s=f30Ymd(inp.value), res=$('#f32-res'); if(!res) return; document.querySelectorAll('[data-f32d]').forEach(b=>b.classList.toggle('on',b.dataset.f32d===s));
+    if(!s){ res.innerHTML=''; return; } const T=parseYmd(s), r=f32Payoff(loan,T);
+    if(r.done){ res.innerHTML=`<p class="f32-warn">${L.f32PoDone}</p>`; return; } if(r.past){ res.innerHTML=`<p class="f32-warn">${L.f32PoPast}</p>`; return; }
+    res.innerHTML=`<div class="f32-big"><small>${esc(L.f32PoNeed(fmtDate(T)))}</small><b>${f30M(r.need)}</b></div>
+      <div class="f32-rows">${r.n?`<div><span>${esc(L.f32PoSched(r.n,f30M(r.paidSum)))}</span><b></b></div>`:''}<div><span>${L.f32PoRem}</span><b>${f30M(r.B)}</b></div>${r.acc!=null?`<div><span>${L.f32PoInt(r.days)}</span><b>+${f30M(r.acc)}</b></div>`:''}${r.pen>0?`<div><span>${L.f32PoPen(r.pdays)}</span><b>+${f30M(r.pen)}</b></div>`:''}${r.part>0?`<div><span>${L.f32PoPart}</span><b>−${f30M(r.part)}</b></div>`:''}</div>
+      ${r.acc==null?`<p class="f32-warn">${L.f32PoNoRate}</p>`:r.save>0?`<p class="f32-save">✓ ${esc(L.f32PoSave(f30M(r.save)))}</p>`:''}`; };
+  inp.addEventListener('input',draw); inp.addEventListener('change',draw);
+  document.querySelectorAll('[data-f32d]').forEach(b=>b.onclick=()=>{ inp.value=b.dataset.f32d; draw(); });
+  $('#f32-ask').onclick=()=>{ const s=f30Ymd(inp.value); shareText(L.f32PoAskTxt(s?fmtDate(parseYmd(s)):fmtDate(t0))); };
+  draw(); }
+{ const _ds=detailSheet; detailSheet=function(loan){ _ds.apply(this,arguments); try{ if(!loan||analyze(loan).done) return; const box=document.querySelector('.sheet .dtools'); if(!box||box.querySelector('[data-f32po]')) return;
+      box.insertAdjacentHTML('beforeend',`<button class="btn btn-ghost" data-f32po="${esc(loan.id)}">💰 ${L.f32PoBtn}</button>`); }catch(e){} }; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-f32po]'); if(!b) return; e.stopImmediatePropagation(); const l=byId(b.dataset.f32po); if(l) f32PoSheet(l); },true);
+
+/* ---- 475: Mira проверяет свои цифры — каждый раз, когда открывается «Сегодня» ---- */
+function f32Checks(){ const out=[], tday=ymd(today0()), loans=state.loans.filter(l=>!l.example);
+  for(const l of loans){ const a=analyze(l), ps=state.payments.filter(p=>p.loanId===l.id);
+    if(!Number.isFinite(+l.total)||!Number.isFinite(+(l.paid||0))||+l.total<0) out.push({k:'nan:'+l.id,l,t:L.f32cNan});
+    else if(+l.paid>+l.total+1) out.push({k:'over:'+l.id+':'+Math.round(+l.paid),l,t:L.f32cOver(f30M(+l.paid-+l.total))});
+    const by={}; for(const p of ps){ if(p.per==null||p.extra||p.part||p.hist) continue; (by[p.per]=by[p.per]||[]).push(p); }
+    for(const [per,arr] of Object.entries(by)) if(arr.length>1) out.push({k:'dup:'+l.id+':'+per+':'+arr.length,l,t:L.f32cDup(fmtDate(f30DueOf(l,+per)),arr.length)});
+    const fut=ps.filter(p=>String(p.date||'')>tday); if(fut.length) out.push({k:'fut:'+l.id+':'+fut.map(p=>p.id).join(','),l,t:L.f32cFut(fmtDate(parseYmd(fut[0].date)))});
+    if(ps.some(p=>+p.principal>(+p.amount||0)+0.5)) out.push({k:'split:'+l.id+':'+ps.length,l,t:L.f32cSplit});
+    if(!a.done){ if(!(+l.dueDay>=1&&+l.dueDay<=31)) out.push({k:'day:'+l.id,l,t:L.f32cDay});
+      let tg=null; try{ tg=f30SyncTarget(l); }catch(e){} if(tg&&Math.abs(a.remaining-tg.rem)>1) out.push({k:'sch:'+l.id+':'+Math.round(a.remaining)+':'+Math.round(tg.rem),l,t:L.f32cSched(f30M(a.remaining),f30M(tg.rem)),fix:1});
+      const s=schedOf(l); if(s&&l.pt!=null&&!s.some(e=>mIdx(parseYmd(e.d))>l.pt)&&a.remaining>1) out.push({k:'end:'+l.id+':'+Math.round(a.remaining),l,t:L.f32cEnd(f30M(a.remaining)),fix:1}); } }
+  for(let i=0;i<loans.length;i++) for(let j=i+1;j<loans.length;j++){ const x=loans[i], y=loans[j];
+    if(String(x.name||'').trim().toLowerCase()===String(y.name||'').trim().toLowerCase()&&Math.abs((+x.total||0)-(+y.total||0))<1&&(x.dueDay||1)===(y.dueDay||1)&&Math.abs((+x.monthly||0)-(+y.monthly||0))<1) out.push({k:'twin:'+x.id+':'+y.id,l:y,t:L.f32cTwin(y.name)}); }
+  const ok=(state.misc&&state.misc.f32ok)||{}; return out.filter(x=>!ok[x.k]); }
+function f32ChkHTML(list){ if(!list.length) return ''; return `<div class="f32-chk" role="status"><b>🔎 ${esc(L.f32ChkT(list.length))}</b><ul>${list.slice(0,6).map(x=>`<li><span><b>${esc(x.l.name||'')}:</b> ${esc(x.t)}</span><div class="row"><button type="button" class="btn btn-ghost" data-f32go="${esc(x.l.id)}" data-f32fix="${x.fix?1:''}">${x.fix?L.f32ChkFix:L.f32ChkShow}</button><button type="button" class="btn btn-ghost" data-f32ok="${esc(x.k)}">${L.f32ChkOk}</button></div></li>`).join('')}</ul></div>`; }
+function f32ChkDraw(){ const box=$('#miraCheck'); if(!box) return; box.querySelectorAll('.f32-chk').forEach(x=>x.remove()); let list=[]; try{ list=f32Checks(); }catch(e){}
+  state.misc=state.misc||{}; const d=ymd(today0()); if(!state.misc.f32day||state.misc.f32day.d!==d||state.misc.f32day.n!==list.length){ state.misc.f32day={d,n:list.length}; }
+  const h=f32ChkHTML(list); if(h) box.insertAdjacentHTML('beforeend',h); }
+try{ const _r32=render; render=function(){ const x=_r32.apply(this,arguments); try{ f32ChkDraw(); }catch(e){} return x; }; }catch(e){}
+document.addEventListener('click',e=>{ const t=e.target; const ok=t.closest&&t.closest('[data-f32ok]'); if(ok){ e.stopImmediatePropagation(); state.misc=state.misc||{}; state.misc.f32ok=state.misc.f32ok||{}; state.misc.f32ok[ok.dataset.f32ok]=1; persist(); f32ChkDraw(); return; }
+  const go=t.closest&&t.closest('[data-f32go]'); if(go){ e.stopImmediatePropagation(); const l=byId(go.dataset.f32go); if(!l) return; if(go.dataset.f32fix) reconSheet(l); else detailSheet(l); } },true);
+/* в «Данные, копия и семья» — строка проверки и «Проверить сейчас» */
+function f32ChkUI(){ const sh=document.querySelector('.sheet'); if(!sh||sh.querySelector('.f32-chks')) return; const anchor=sh.querySelector('#pin-change,#pin-on'); const blk=anchor&&anchor.closest('.sec-block'); if(!blk) return;
+  let n=0; try{ n=f32Checks().length; }catch(e){}
+  blk.insertAdjacentHTML('beforebegin',`<div class="sec-block f32-chks"><label>${L.f32ChkSec}</label><p class="note" style="margin-top:0">${L.f32ChkLead}</p><p class="${n?'f32-warn':'f32-ok'}" id="f32-chk-st">${n?'🔎 '+esc(L.f32ChkT(n)):'✓ '+esc(L.f32ChkNone)}</p><button type="button" class="btn btn-ghost btn-full" id="f32-chk-run">${L.f32ChkRun}</button></div>`);
+  sh.querySelector('#f32-chk-run').onclick=()=>{ let k=0; try{ k=f32Checks().length; }catch(e){} if(k){ closeSheet(); setTab('today'); render(); setTimeout(()=>{ const c=document.querySelector('.f32-chk'); if(c) c.scrollIntoView({block:'center',behavior:'smooth'}); },120); } else { const st=sh.querySelector('#f32-chk-st'); st.className='f32-ok'; st.textContent='✓ '+L.f32ChkNone; toast(L.f32ChkNone); } }; }
+
+/* ---- 479: вход по отпечатку пальца (или лицу) — passkey на этом телефоне; код остаётся запасным ---- */
+const F32B='bio_v1';
+const f32b64=b=>{ let s=''; for(const x of new Uint8Array(b)) s+=String.fromCharCode(x); return btoa(s).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,''); };
+const f32ub=s=>{ s=String(s).replace(/-/g,'+').replace(/_/g,'/'); while(s.length%4) s+='='; return Uint8Array.from(atob(s),c=>c.charCodeAt(0)); };
+function f32BioGet(){ try{ const o=JSON.parse(localStorage.getItem(F32B)||'null'); return o&&typeof o.id==='string'?o:null; }catch(e){ return null; } }
+async function f32BioAvail(){ try{ return !!(window.PublicKeyCredential&&navigator.credentials&&await PublicKeyCredential.isUserVerifyingPlatformAuthenticatorAvailable()); }catch(e){ return false; } }
+async function f32BioOn(){ const ch=crypto.getRandomValues(new Uint8Array(32)), u=crypto.getRandomValues(new Uint8Array(16));
+  const c=await navigator.credentials.create({publicKey:{challenge:ch,rp:{name:'Mira'},user:{id:u,name:'Mira',displayName:'Mira'},pubKeyCredParams:[{type:'public-key',alg:-7},{type:'public-key',alg:-257}],
+    authenticatorSelection:{authenticatorAttachment:'platform',userVerification:'required',residentKey:'discouraged'},timeout:60000,attestation:'none'}});
+  if(!c||!c.rawId) throw new Error('none'); localStorage.setItem(F32B,JSON.stringify({id:f32b64(c.rawId),at:Date.now()})); }
+/* проверка: телефон подтвердил отпечаток (флаги «присутствие» и «проверен»), ответ на наш свежий вызов, тот же ключ */
+async function f32BioCheck(){ const b=f32BioGet(); if(!b) return false; const ch=crypto.getRandomValues(new Uint8Array(32));
+  const a=await navigator.credentials.get({publicKey:{challenge:ch,allowCredentials:[{type:'public-key',id:f32ub(b.id),transports:['internal']}],userVerification:'required',timeout:60000}});
+  if(!a||!a.response||f32b64(a.rawId)!==b.id) return false; let cd=null; try{ cd=JSON.parse(new TextDecoder().decode(a.response.clientDataJSON)); }catch(e){ return false; }
+  if(!cd||cd.type!=='webauthn.get'||cd.challenge!==f32b64(ch)) return false; const ad=new Uint8Array(a.response.authenticatorData); return ad.length>32&&!!(ad[32]&1)&&!!(ad[32]&4); }
+{ const _cp=clearPin; clearPin=function(){ _cp.apply(this,arguments); try{ localStorage.removeItem(F32B); }catch(e){} }; }
+{ const _ml=maybeLock; maybeLock=function(){ _ml.apply(this,arguments); const lock=document.querySelector('.lock'); if(!lock||!f32BioGet()||lock.querySelector('#lk-bio')) return;
+    const inp=lock.querySelector('#lk'), err=lock.querySelector('#lk-e'); if(!inp) return; const b=document.createElement('button'); b.type='button'; b.id='lk-bio'; b.className='btn btn-primary lk-bio'; b.textContent='👆 '+L.f32BioBtn; inp.insertAdjacentElement('beforebegin',b);
+    let busy=false; const go=async auto=>{ if(busy) return; busy=true; try{ if(await f32BioCheck()){ lock.remove(); return; } if(!auto) err.textContent=L.f32BioFail; }catch(e){ if(!auto&&(!e||e.name!=='AbortError')) err.textContent=L.f32BioFail; } finally{ busy=false; } };
+    b.onclick=()=>go(false); setTimeout(()=>{ if(document.body.contains(lock)&&f32Vis()) go(true); },300); }; }
+async function f32BioUI(){ const sh=document.querySelector('.sheet'); const anchor=sh&&sh.querySelector('#pin-change,#pin-on'); const blk=anchor&&anchor.closest('.sec-block'); if(!blk||blk.querySelector('.f32-bio')) return;
+  const av=await f32BioAvail(); if(!document.body.contains(blk)||blk.querySelector('.f32-bio')) return; const hasPin=!!getPin(), on=!!f32BioGet(), d=document.createElement('div'); d.className='f32-bio';
+  if(!av) d.innerHTML=`<p class="note">👆 ${L.f32BioNo}</p>`;
+  else if(!hasPin) d.innerHTML=`<p class="note">👆 ${L.f32BioNeedPin}</p>`;
+  else d.innerHTML=on?`<p class="note ok">👆 ${L.f32BioOnTxt}</p><button type="button" class="btn btn-ghost btn-full" id="bio-off">${L.f32BioOff}</button>`:`<button type="button" class="btn btn-ghost btn-full" id="bio-on">👆 ${L.f32BioOnBtn}</button><p class="note">${L.f32BioLead}</p>`;
+  blk.appendChild(d);
+  const bOn=d.querySelector('#bio-on'), bOff=d.querySelector('#bio-off');
+  if(bOn) bOn.onclick=async()=>{ bOn.disabled=true; try{ await f32BioOn(); toast(L.f32BioSet); dataSheet(); }catch(e){ bOn.disabled=false; if(!e||e.name!=='NotAllowedError') toast(L.f32BioErr); } };
+  if(bOff) bOff.onclick=()=>{ try{ localStorage.removeItem(F32B); }catch(e){} toast(L.f32BioOffd); dataSheet(); }; }
+{ const _dsh=dataSheet; dataSheet=function(){ _dsh.apply(this,arguments); try{ f32ChkUI(); }catch(e){} f32BioUI(); }; }
+/* <</v32 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
