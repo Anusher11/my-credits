@@ -2973,6 +2973,40 @@ html.bp-lock,html.bp-lock body{overflow:hidden;}
 .w29-l li b{font-family:var(--font-num); text-align:right; white-space:nowrap;} .w29-l li small{font-family:inherit; font-weight:600; color:var(--muted);}
 .w29-f{margin:2px 0 0; font-size:.8rem; line-height:1.45; color:var(--muted);}
 /* <</v29 css>> */
+/* <<v30 css>> */
+/* v30: сверка с банком, график по фото, «за какой платёж» */
+.f30-rowf select{width:100%;}
+.f30-cmp:empty{display:none;}
+.f30-cmp{margin-top:6px; padding-top:6px; border-top:1px solid var(--line);}
+.f30-cmp .f30-h{display:flex; justify-content:space-between; font-size:.74rem; font-weight:700; color:var(--muted); margin:0 0 4px;}
+.f30-r b{display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:baseline; gap:4px; text-align:right;}
+.f30-r s{color:var(--muted); font-weight:600; text-decoration-thickness:1.5px;}
+.f30-to{color:var(--ink);}
+.f30-same{font-style:normal; color:var(--brand);}
+.f30-ok-n{margin:-2px 0 10px; padding:8px 12px; border-radius:12px; background:color-mix(in srgb,var(--brand) 12%,transparent); font-weight:700; font-size:.88rem;}
+.f30-q{margin:4px 0 12px; padding:12px; border-radius:16px; background:var(--surface-2); display:flex; flex-direction:column; gap:8px; border:2px solid transparent;}
+.f30-q.need{border-color:#E08A2B;}
+.f30-q > b{font-size:.95rem;}
+.f30-o{display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border-radius:12px; background:var(--surface); border:1.5px solid var(--line); cursor:pointer;}
+.f30-o:has(input:checked){border-color:var(--brand); background:color-mix(in srgb,var(--brand) 8%,var(--surface));}
+.f30-o input{margin-top:3px; accent-color:var(--brand); flex:none; width:18px; height:18px;}
+.f30-o span{display:flex; flex-direction:column; gap:2px;} .f30-o small{color:var(--muted); font-size:.8rem; line-height:1.4;}
+.f30-ban{margin:0 0 12px; padding:12px 14px; border-radius:16px; background:color-mix(in srgb,#E08A2B 14%,var(--surface)); border:1.5px solid color-mix(in srgb,#E08A2B 45%,transparent);}
+.f30-ban b{display:block; font-size:.95rem; line-height:1.35;} .f30-ban p{margin:6px 0 10px; font-size:.85rem; line-height:1.45;}
+.f30-bb{display:flex; gap:8px; flex-wrap:wrap;} .f30-bb .btn{flex:1 1 140px;}
+.f30-flag{margin-top:6px; font-size:.76rem; font-weight:700; color:#B4610F; line-height:1.3;}
+.f30-ph{display:flex; flex-direction:column; gap:6px; margin:12px 0 4px; padding:12px; border-radius:16px; border:2px dashed var(--line);}
+.f30-ph > small{color:var(--muted); font-size:.82rem; line-height:1.4;}
+.f30-res{display:flex; flex-direction:column; gap:6px; margin-top:6px; padding:10px 12px; border-radius:12px; background:var(--surface-2); font-size:.86rem; line-height:1.4;}
+.f30-res small{color:var(--muted);}
+.f30-good{color:var(--brand); font-weight:700;} .f30-warn{color:#B4610F; font-weight:700;}
+.f30-mark{margin:8px 0 4px;}
+.m8-pq.need{outline:2px solid #E08A2B; outline-offset:4px; border-radius:14px;}
+:root[data-theme="dark"] .f30-flag,:root[data-theme="dark"] .f30-warn{color:#F0A95B;}
+.f30-np{display:flex; align-items:center; gap:12px; width:100%; margin:0 0 10px; padding:12px 14px; border-radius:18px; border:1.5px solid color-mix(in srgb,#E08A2B 45%,transparent); background:color-mix(in srgb,#E08A2B 12%,var(--surface)); color:var(--ink); text-align:left; font:inherit; cursor:pointer;}
+.f30-np .f30-npi{font-size:1.3rem; flex:none;} .f30-np span{display:flex; flex-direction:column; gap:2px;} .f30-np small{font-size:.84rem; line-height:1.35; color:var(--ink); opacity:.85;}
+.f30-d2{display:block; font-size:.72rem; color:var(--muted); font-weight:600;}
+/* <</v30 css>> */
 
 
 </style>
@@ -6767,6 +6801,104 @@ tg:{ lxGlT:'Калимаҳо чӣ маъно доранд', lxG:{
  delivery:['Расонидан барои як дона','Фиристодани як мол ба харидор чанд пул аст.'],
  left:['Аз фурӯш мемонад','Аз як фурӯш пас аз ҳамаи тарҳҳо воқеан чӣ қадар мегиред.']}}};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M26S[k]);
+/* <<v30 str>> */
+/* ----- v30: сверка с банком по графику и дате, график по фото, «за какой платёж» ----- */
+const M30S={
+ru:{ f30How:'Откройте график платежей или приложение банка. Впишите остаток долга и дату следующего платежа — первого, который ещё не вносили.',
+  f30HowS:'Выберите в графике последний платёж, который уже внесли в банк, — Mira возьмёт остаток и дату следующего платежа из графика.',
+  f30Row:'Последний внесённый платёж', f30RowNone:'Ещё ни одного', f30RowOpt:(n,d,b)=>'№'+n+' · '+d+' · остаток '+b,
+  f30RowHint:'Не выбирайте платёж, срок которого ещё не наступил, если вы его не вносили.',
+  f30After1:'График сохранён ✓ Теперь выберите последний платёж, который уже внесли.',
+  f30Next:'Следующий платёж по банку', f30Pay:'Сумма платежа',
+  f30Over:'Переплата на счёте', f30OverHint:'Если заплатили больше и банк вычтет лишнее из следующего платежа. Если была пеня, впишите остаток после неё.',
+  f30OverN:(f,p,r)=>'Следующий платёж: '+f+' − переплата '+p+' = '+r+'.', f30OverErr:'Проверьте сумму переплаты.', f30NeedDate:'Впишите дату следующего платежа.',
+  f30Now:'сейчас', f30After:'станет', f30RemL:'Остаток долга', f30NextL:'Следующий платёж', f30LeftL:'Осталось платежей',
+  f30Earlier:(d,m)=>'Mira считала, что платёж '+d+' уже внесён. После исправления она напомнит заплатить '+m+' до '+d+'.',
+  f30Later:d=>'Mira считала, что платёж '+d+' ещё не внесён.',
+  f30Need:'Впишите остаток долга или дату следующего платежа.', f30DateErr:'Проверьте дату следующего платежа.',
+  f30Done:(r,d)=>'Поправлено по банку: осталось '+r+', следующий платёж '+d, f30DoneAll:'Поправлено по банку: кредит выплачен',
+  f30Q:'За какой платёж эти деньги?', f30Prev:d=>'За платёж '+d,
+  f30PrevD:'Даже если вносите его только сейчас, с опозданием. Mira уже вычла этот платёж из долга, поэтому остаток не изменится.',
+  f30NextO:d=>'За следующий — '+d, f30NextD:'Плачу заранее. Mira вычтет его из долга.',
+  f30Pick:'Выберите, за какой платёж эти деньги.', f30PrevDone:d=>'Записано как платёж '+d+'. Остаток не изменился.',
+  f30BanT:d=>'Платёж '+d+' уже отмечен как внесённый',
+  f30BanD:'Срок ещё не наступил. Если вы его не вносили, Mira не напомнит о нём и можно получить пеню. Поправьте по банку — это минута.',
+  f30SkipT:(p,d)=>'Платёж '+p+' не записан, а последний платёж засчитан за '+d,
+  f30SkipD:(p,d)=>'Если вы платили за '+p+' (например, с опозданием), поправьте — иначе Mira не напомнит о платеже '+d+'.',
+  f30BanFix:'Поправить по банку', f30BanOk:'Всё верно', f30OkDone:'Хорошо, оставили как есть.',
+  f30Flag:d=>'Платёж '+d+' отмечен заранее — проверьте', f30FlagS:p=>'Платёж '+p+' не записан — проверьте',
+  f30PhT:'График по фото', f30PhD:'Сфотографируйте лист с графиком платежей — Сифра перепишет все строки, вы проверите и сохраните.',
+  f30Steps:['Читаю таблицу…','Проверяю: долг + проценты = платёж…','Сверяю остатки по строкам…'],
+  f30PhNone:'На фото не получилось найти график. Сфотографируйте лист целиком, ровно и при хорошем свете.', f30PhProb:'Сифра пишет: ',
+  f30PhSum:(n,a,b)=>'Прочитано строк: '+n+' — с '+a+' по '+b+'.', f30PhOk:v=>'основной долг по строкам '+v+' — совпадает с суммой кредита',
+  f30PhBadSum:(v,t)=>'Основной долг по строкам '+v+', а сумма кредита '+t+'. Проверьте, все ли строки попали на фото.',
+  f30PhBad:l=>'Проверьте строки '+l+': цифры не сходятся или читаются неуверенно.', f30PhAllOk:'все строки сходятся: долг + проценты = платёж',
+  f30PhCheck:'Проверьте цифры в поле ниже и нажмите «Сохранить график».', f30Mark:'Отметить последний внесённый платёж',
+  f30Act:n=>'Сверить с банком'+(n?': '+n:''), f30SfCheck:'Сифра вписала цифры банка. Посмотрите, что изменится, и сохраните.', f30AlNeed:'Ответьте: этот платёж уже внесли или ещё нет?', f30D2:d=>'два платежа: и '+d },
+tg:{ f30How:'Ҷадвали пардохт ё барномаи бонкро кушоед. Бақияи қарз ва санаи пардохти навбатиро нависед — аввалин пардохте, ки ҳанӯз насупоридаед.',
+  f30HowS:'Дар ҷадвал охирин пардохтеро интихоб кунед, ки аллакай ба бонк супоридаед — Mira бақия ва санаи пардохти навбатиро аз ҷадвал мегирад.',
+  f30Row:'Охирин пардохти супоридашуда', f30RowNone:'Ҳанӯз ягонтааш не', f30RowOpt:(n,d,b)=>'№'+n+' · '+d+' · бақия '+b,
+  f30RowHint:'Пардохтеро, ки мӯҳлаташ нарасидааст ва онро насупоридаед, интихоб накунед.',
+  f30After1:'Ҷадвал нигоҳ дошта шуд ✓ Акнун охирин пардохти супоридашударо интихоб кунед.',
+  f30Next:'Пардохти навбатӣ аз рӯи бонк', f30Pay:'Маблағи пардохт',
+  f30Over:'Пулҳои зиёдатӣ дар суратҳисоб', f30OverHint:'Агар зиёдтар супоридед ва бонк зиёдатиро аз пардохти навбатӣ мегирад. Агар ҷарима буд, бақияи баъди онро нависед.',
+  f30OverN:(f,p,r)=>'Пардохти навбатӣ: '+f+' − зиёдатӣ '+p+' = '+r+'.', f30OverErr:'Маблағи зиёдатиро санҷед.', f30NeedDate:'Санаи пардохти навбатиро нависед.',
+  f30Now:'ҳозир', f30After:'мешавад', f30RemL:'Бақияи қарз', f30NextL:'Пардохти навбатӣ', f30LeftL:'Пардохтҳои боқимонда',
+  f30Earlier:(d,m)=>'Mira гумон мекард, ки пардохти '+d+' аллакай супорида шудааст. Баъди ислоҳ вай ёдрас мекунад, ки то '+d+' '+m+' супоред.',
+  f30Later:d=>'Mira гумон мекард, ки пардохти '+d+' ҳанӯз супорида нашудааст.',
+  f30Need:'Бақияи қарз ё санаи пардохти навбатиро нависед.', f30DateErr:'Санаи пардохти навбатиро санҷед.',
+  f30Done:(r,d)=>'Аз рӯи бонк ислоҳ шуд: бақия '+r+', пардохти навбатӣ '+d, f30DoneAll:'Аз рӯи бонк ислоҳ шуд: қарз пурра пардохт шудааст',
+  f30Q:'Ин пул барои кадом пардохт аст?', f30Prev:d=>'Барои пардохти '+d,
+  f30PrevD:'Ҳатто агар онро танҳо ҳозир, бо таъхир супоред. Mira ин пардохтро аллакай аз қарз кам карда буд, бинобар ин бақия тағйир намеёбад.',
+  f30NextO:d=>'Барои навбатӣ — '+d, f30NextD:'Пешакӣ месупорам. Mira онро аз қарз кам мекунад.',
+  f30Pick:'Интихоб кунед, ки ин пул барои кадом пардохт аст.', f30PrevDone:d=>'Ҳамчун пардохти '+d+' сабт шуд. Бақия тағйир наёфт.',
+  f30BanT:d=>'Пардохти '+d+' аллакай супоридашуда қайд шудааст',
+  f30BanD:'Мӯҳлаташ ҳанӯз нарасидааст. Агар онро насупорида бошед, Mira ёдрас намекунад ва ҷарима шуданаш мумкин аст. Аз рӯи бонк ислоҳ кунед — як дақиқа.',
+  f30SkipT:(p,d)=>'Пардохти '+p+' сабт нашудааст, вале пардохти охирин барои '+d+' ҳисоб шудааст',
+  f30SkipD:(p,d)=>'Агар барои '+p+' пардохт карда бошед (масалан, бо таъхир), ислоҳ кунед — вагарна Mira дар бораи пардохти '+d+' ёдрас намекунад.',
+  f30BanFix:'Аз рӯи бонк ислоҳ кардан', f30BanOk:'Ҳамааш дуруст', f30OkDone:'Хуб, ҳамон тавр монд.',
+  f30Flag:d=>'Пардохти '+d+' пешакӣ қайд шудааст — санҷед', f30FlagS:p=>'Пардохти '+p+' сабт нашудааст — санҷед',
+  f30PhT:'Ҷадвал аз акс', f30PhD:'Варақи ҷадвали пардохтро акс гиред — Сифра ҳамаи сатрҳоро менависад, шумо месанҷед ва нигоҳ медоред.',
+  f30Steps:['Ҷадвалро мехонам…','Месанҷам: қарз + фоиз = пардохт…','Бақияҳоро муқоиса мекунам…'],
+  f30PhNone:'Дар акс ҷадвал ёфт нашуд. Варақро пурра, рост ва дар рӯшноии хуб акс гиред.', f30PhProb:'Сифра менависад: ',
+  f30PhSum:(n,a,b)=>'Сатрҳо хонда шуд: '+n+' — аз '+a+' то '+b+'.', f30PhOk:v=>'қарзи асосӣ аз рӯи сатрҳо '+v+' — бо маблағи қарз мувофиқ аст',
+  f30PhBadSum:(v,t)=>'Қарзи асосӣ аз рӯи сатрҳо '+v+', вале маблағи қарз '+t+'. Санҷед, ки ҳамаи сатрҳо дар акс ҳастанд.',
+  f30PhBad:l=>'Сатрҳои '+l+'-ро санҷед: рақамҳо мувофиқ нестанд ё норавшан хонда шуданд.', f30PhAllOk:'ҳамаи сатрҳо мувофиқанд: қарз + фоиз = пардохт',
+  f30PhCheck:'Рақамҳоро дар майдони поён санҷед ва «Нигоҳ доштани ҷадвал»-ро пахш кунед.', f30Mark:'Охирин пардохти супоридашударо қайд кардан',
+  f30Act:n=>'Муқоиса бо бонк'+(n?': '+n:''), f30SfCheck:'Сифра рақамҳои бонкро навишт. Бинед, ки чӣ тағйир меёбад, ва нигоҳ доред.', f30AlNeed:'Ҷавоб диҳед: ин пардохт аллакай супорида шудааст ё ҳоло не?', f30D2:d=>'ду пардохт: ва '+d },
+en:{ f30How:'Open your payment schedule or the bank app. Enter the balance owed and the date of the next payment — the first one you have not paid yet.',
+  f30HowS:'Pick the last payment you have already made to the bank on the schedule — Mira will take the balance and the next payment date from it.',
+  f30Row:'Last payment made', f30RowNone:'None yet', f30RowOpt:(n,d,b)=>'#'+n+' · '+d+' · balance '+b,
+  f30RowHint:'Do not pick a payment that is not due yet unless you have actually paid it.',
+  f30After1:'Schedule saved ✓ Now pick the last payment you have already made.',
+  f30Next:'Next payment per the bank', f30Pay:'Payment amount',
+  f30Over:'Overpayment on the account', f30OverHint:'If you paid more and the bank will take the extra off your next payment. If there was a late fee, enter what is left after it.',
+  f30OverN:(f,p,r)=>'Next payment: '+f+' − overpayment '+p+' = '+r+'.', f30OverErr:'Check the overpayment amount.', f30NeedDate:'Enter the next payment date.',
+  f30Now:'now', f30After:'after', f30RemL:'Balance owed', f30NextL:'Next payment', f30LeftL:'Payments left',
+  f30Earlier:(d,m)=>'Mira thought the '+d+' payment was already made. After the fix it will remind you to pay '+m+' by '+d+'.',
+  f30Later:d=>'Mira thought the '+d+' payment had not been made yet.',
+  f30Need:'Enter the balance or the next payment date.', f30DateErr:'Check the next payment date.',
+  f30Done:(r,d)=>'Fixed to match the bank: '+r+' left, next payment '+d, f30DoneAll:'Fixed to match the bank: the loan is paid off',
+  f30Q:'Which payment is this money for?', f30Prev:d=>'For the '+d+' payment',
+  f30PrevD:'Even if you are only paying it now, late. Mira already took this payment off the balance, so the balance will not change.',
+  f30NextO:d=>'For the next one — '+d, f30NextD:'Paying early. Mira will take it off the balance.',
+  f30Pick:'Choose which payment this money is for.', f30PrevDone:d=>'Recorded as the '+d+' payment. The balance did not change.',
+  f30BanT:d=>'The '+d+' payment is already marked as paid',
+  f30BanD:'It is not due yet. If you have not paid it, Mira will not remind you and you could get a late fee. Fix it to match the bank — it takes a minute.',
+  f30SkipT:(p,d)=>'The '+p+' payment is not recorded, and your last payment counted toward '+d,
+  f30SkipD:(p,d)=>'If you were paying for '+p+' (for example, late), fix it — otherwise Mira will not remind you about the '+d+' payment.',
+  f30BanFix:'Fix to match the bank', f30BanOk:'It is correct', f30OkDone:'OK, left as it is.',
+  f30Flag:d=>'The '+d+' payment is marked early — check it', f30FlagS:p=>'The '+p+' payment is not recorded — check it',
+  f30PhT:'Schedule from a photo', f30PhD:'Take a photo of the payment schedule — Sifra will copy every row, you check and save.',
+  f30Steps:['Reading the table…','Checking: principal + interest = payment…','Checking the balances row by row…'],
+  f30PhNone:'Could not find a schedule in the photo. Take the whole page, straight on, in good light.', f30PhProb:'Sifra says: ',
+  f30PhSum:(n,a,b)=>'Rows read: '+n+' — from '+a+' to '+b+'.', f30PhOk:v=>'principal across rows is '+v+' — matches the loan amount',
+  f30PhBadSum:(v,t)=>'Principal across rows is '+v+', but the loan amount is '+t+'. Check that every row is in the photo.',
+  f30PhBad:l=>'Check rows '+l+': the numbers do not add up or were hard to read.', f30PhAllOk:'all rows add up: principal + interest = payment',
+  f30PhCheck:'Check the numbers in the box below and tap “Save schedule”.', f30Mark:'Mark the last payment made',
+  f30Act:n=>'Check with the bank'+(n?': '+n:''), f30SfCheck:'Sifra filled in the bank’s numbers. See what will change, then save.', f30AlNeed:'Tell Mira: has this payment been made, or not yet?', f30D2:d=>'two payments: also '+d }};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M30S[k]);
+/* <</v30 str>> */
 /* <<v29 str>> */
 /* ----- v29: договор по фото, тетрадь по фото, «Как посчитано?» ----- */
 const M29S={
@@ -16046,6 +16178,253 @@ document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closes
   else if(t.dataset.ct29Last){ const l=byId(t.dataset.ct29Last); if(l&&l.ct29){ ct29={pages:[],loan:l,note:'',busy:false,ab:null}; ct29Report(l.ct29.rep,{sources:l.ct29.src||[],at:l.ct29.at}); } }
   else if(t.dataset.nb29) nb29Open(); },true);
 /* <</v29 js>> */
+/* <<v30 js>> */
+/* ===================== v30: сверка с банком по графику и дате, график по фото, защита от «платежа вперёд» ===================== */
+const f30M=v=>rf.format(Math.round((+v||0)*100)/100)+' '+L.cur;
+const f30R2=v=>Math.round((+v||0)*100)/100;
+const f30Ymd=v=>{ const s=String(v||''); if(!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null; const d=parseYmd(s); return isNaN(d)?null:s; };
+function f30DueOf(loan,idx){ const se=schedAt(loan,idx); return se?parseYmd(se.d):dueAt(idx,loan.dueDay||1); }
+/* остаток основного долга по графику после строки k (k=-1 — ещё ничего не внесено) */
+function f30RemAfter(loan,k){ const s=schedOf(loan); if(!s) return null;
+  if(k>=0&&s[k]&&s[k].b!=null) return f30R2(s[k].b);
+  if(k<0&&s[0]&&s[0].b!=null&&s[0].p!=null) return f30R2(+s[0].b+(+s[0].p));
+  if(!s.every(e=>e.p!=null)) return null;
+  const all=s.reduce((x,e)=>x+(+e.p||0),0), tl=+loan.total||0;
+  if(!(tl>0&&Math.abs(all-tl)<=Math.max(5,tl*0.01))) return null;
+  let r=0; for(let j=k+1;j<s.length;j++) r+=+s[j].p||0; return f30R2(r); }
+/* применить цифры банка: остаток, дата следующего (ещё не внесённого) платежа, сумма платежа. dry — на копии, для показа «станет» */
+function f30Apply(loan,o,dry){ const T=dry?JSON.parse(JSON.stringify(loan)):loan, before=dry?null:analyze(loan);
+  if(o.rem!=null&&o.rem>=0){ const tot=+T.total||0, v=f30R2(o.rem); if(v<=tot) T.paid=f30R2(tot-v); else T.total=f30R2((+T.paid||0)+v); }
+  if(o.next){ const np=mIdx(o.next)-1; T.pt=np; if(!schedOf(T)) T.dueDay=o.next.getDate(); if(T.part&&T.part.per!==np+1) delete T.part; }
+  if(o.monthly>0&&!schedOf(T)) T.monthly=f30R2(o.monthly);
+  if(!dry){ T.recon={d:ymd(new Date()),diff:o.rem!=null?Math.round(o.rem-before.remaining):0,bank:o.rem!=null?Math.round(o.rem):Math.round(before.remaining),next:o.next?ymd(o.next):null};
+    const pays=state.payments.filter(p=>p.loanId===T.id);
+    /* записи, засчитанные за платёж, который ещё не вносили, переходят на прошлые сроки; опоздание пересчитывается */
+    if(o.next){ const np=T.pt; pays.filter(p=>!p.part&&!p.extra&&p.per!=null&&p.per>np).sort((a,b)=>String(b.date).localeCompare(String(a.date))).forEach((p,j)=>{ p.per=np-j; const du=f30DueOf(T,p.per); p.due=ymd(du); if(p.date) p.late=Math.max(0,Math.round((parseYmd(p.date)-du)/864e5)); }); }
+    pays.forEach(p=>{ p.rcx=1; }); delete T.f30ok; delete T.ptOk; }
+  /* переплата на счёте: банк вычтет её из следующего платежа — сначала она покрывает проценты этого платежа */
+  const ptX=o.over>0?(T.pt!=null?T.pt:curPt(T)):null;
+  if(o.over>0&&ptX!=null){ const per=ptX+1, x=f30R2(o.over), se=schedAt(T,per);
+    const iAll=se&&se.i!=null?+se.i||0:(+T.rate>0?Math.round(Math.max(0,(+T.total||0)-(+T.paid||0))*(+T.rate)/1200):0), ci=f30R2(Math.min(x,iAll));
+    const prev=T.part&&T.part.per===per?T.part:null;
+    T.part={per,a:f30R2((prev?+prev.a||0:0)+x),cr:f30R2((prev&&prev.cr?+prev.cr:0)+x),cri:f30R2((prev&&prev.cri?+prev.cri:0)+ci)};
+    T.paid=f30R2(Math.min(+T.total||0,(+T.paid||0)+Math.max(0,x-ci))); }
+  return T; }
+/* полоса «Вернуть» после правки (как после удаления) */
+function f30Bar(msg,snap){ let bar=$('#undoBar'); if(!bar){ bar=document.createElement('div'); bar.id='undoBar'; bar.className='undo'; document.body.appendChild(bar); }
+  if(!snap){ toast(msg); return; }
+  bar.innerHTML=`<span>🏦 ${esc(msg)}</span><button id="undoBtn">↩️ ${L.undoBtn}</button><i></i>`; bar.classList.remove('show'); void bar.offsetWidth; bar.classList.add('show');
+  clearTimeout(undoT); undoT=setTimeout(()=>bar.classList.remove('show'),12000);
+  $('#undoBtn').onclick=()=>{ clearTimeout(undoT); bar.classList.remove('show'); try{ const c=JSON.parse(snap); for(const k in c) state[k]=c[k]; ensureShop(); ensureV5(); ensureV6(); persist(); closeSheet(); render(); toast(L.undoDone); }catch(e){ toast(L.undoFail); } }; }
+
+/* ---- «Сверка с банком»: остаток + дата следующего платежа, или выбор последней внесённой строки графика ---- */
+reconSheet=function(loan,pre){ pre=pre||{}; const a=analyze(loan), s=schedOf(loan), mine=a.remaining;
+  let rowSel='', can=null;
+  if(s&&!a.done){ can=s.map((e,k)=>f30RemAfter(loan,k));
+    if(can.some(v=>v!=null)){ let selK;
+      if(pre.row!=null) selK=pre.row;
+      else if(pre.next){ const ni=mIdx(parseYmd(pre.next)); const j=s.findIndex(e=>mIdx(parseYmd(e.d))>=ni); selK=j<0?s.length-1:j-1; }
+      else { const ptNow=a.check?null:a.per-1; selK=-1; s.forEach((e,k)=>{ if(ptNow!=null&&mIdx(parseYmd(e.d))<=ptNow) selK=k; }); }
+      const dl=e=>{ const d=parseYmd(e.d); return fmtDate(d)+' '+d.getFullYear(); };
+      rowSel=`<div class="field f30-rowf"><label for="rcn-row">${L.f30Row}</label><select id="rcn-row"><option value="-1" ${selK<0?'selected':''}>${L.f30RowNone}</option>${s.map((e,k)=>`<option value="${k}" ${k===selK?'selected':''}>${esc(L.f30RowOpt(k+1,dl(e),can[k]!=null?f30M(can[k]):'—'))}</option>`).join('')}</select><p class="note">${L.f30RowHint}</p></div>`; } }
+  const nd=f30Ymd(pre.next)||(a.done?'':ymd(a.due));
+  const mo=pre.monthly!=null?pre.monthly:(a.done?'':f30R2(a.amtFull||loan.monthly||0)||'');
+  openSheet(`<h3>🏦 ${L.rcnT}</h3><p class="lead">${esc(loan.name)}</p>${pre.after?`<p class="f30-ok-n">${L.f30After1}</p>`:''}<p class="note" style="margin-top:-4px">${rowSel?L.f30HowS:L.f30How}</p>
+    ${rowSel}
+    <div class="field n"><label for="rcn-v">${L.rcnBank}</label><input id="rcn-v" type="number" inputmode="decimal" step="0.01" min="0" placeholder="${Math.round(mine)}" value="${pre.left!=null&&+pre.left>=0?f30R2(pre.left):''}"></div>
+    <div class="two"><div class="field"><label for="rcn-dt">${L.f30Next}</label><input id="rcn-dt" type="date" value="${nd}"></div>
+      <div class="field n"><label for="rcn-m">${L.f30Pay}</label><input id="rcn-m" type="number" inputmode="decimal" step="0.01" min="0" value="${mo}"></div></div>
+    <div class="field n"><label for="rcn-o">${L.f30Over}</label><input id="rcn-o" type="number" inputmode="decimal" step="0.01" min="0" placeholder="0" value="${pre.over>0?f30R2(pre.over):''}"><p class="note">${L.f30OverHint}</p></div>
+    <div class="rc-box"><div class="co-row"><span>${L.rcnMine}</span><b>${money(mine)}</b></div><div class="co-row"><span>${L.rcnDiff}</span><b id="rcn-d">—</b></div><div class="f30-cmp" id="rcn-cmp" aria-live="polite"></div></div>
+    <p class="note" id="rcn-n"></p><div class="err" id="rcn-e"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="rcn-s">${L.rcnSave}</button></div>`);
+  const nd0=nd;
+  const read=()=>{ const rv=$('#rcn-v').value.trim(), dv=$('#rcn-dt').value, mv=$('#rcn-m').value.trim(), ov=$('#rcn-o').value.trim();
+    return {rem:rv===''?null:+rv, next:f30Ymd(dv)?parseYmd(dv):null, dChanged:dv!==nd0, monthly:mv===''?null:+mv, over:ov===''?0:+ov}; };
+  const opt=r=>{ const o={rem:r.rem!=null&&r.rem>=0?r.rem:null, next:r.next&&(r.dChanged||a.check||r.rem!=null||r.over>0)?r.next:null, monthly:r.monthly>0?r.monthly:null, over:r.over>0?r.over:0};
+    if(o.over>0&&!o.next&&a.check&&r.next) o.next=r.next; return o; };
+  const upd=()=>{ const r=read(), box=$('#rcn-cmp'), nt=$('#rcn-n'), df=$('#rcn-d'); if(!box) return;
+    if(df){ if(r.rem!=null&&r.rem>=0){ const d=r.rem-mine; df.textContent=Math.abs(d)<0.5?L.rcnSame:(d>0?'+':'−')+money(Math.abs(d)); } else df.textContent='—'; }
+    if(r.rem!=null&&!(r.rem>=0)){ box.innerHTML=''; nt.textContent=''; return; }
+    const o=opt(r); if(o.rem==null&&!o.next&&!o.over){ box.innerHTML=''; nt.textContent=''; return; }
+    let b; try{ b=analyze(f30Apply(loan,o,true)); }catch(e){ return; }
+    const row=(lab,x,y,same)=>`<div class="co-row f30-r"><span>${lab}</span><b>${same?`${x} <i class="f30-same">✓</i>`:`<s>${x}</s> <span class="f30-to">→ ${y}</span>`}</b></div>`;
+    const remSame=Math.abs(b.remaining-a.remaining)<0.5, dueSame=a.done||b.done||ymd(a.due)===ymd(b.due);
+    let h=`<div class="f30-h"><span></span><span>${L.f30Now} → ${L.f30After}</span></div>`+(o.rem!=null&&Math.abs(b.remaining-o.rem)<0.5?'':row(L.f30RemL,money(a.remaining),money(b.remaining),remSame));
+    if(!b.done) h+=row(L.f30NextL,a.done?'—':fmtDate(a.due)+' · '+money(a.amt||a.amtFull||0),fmtDate(b.due)+' · '+money(b.amt||b.amtFull||0),dueSame&&Math.abs((a.amt||0)-(b.amt||0))<0.5);
+    if(a.monthsLeft!=null||b.monthsLeft!=null) h+=row(L.f30LeftL,a.monthsLeft!=null?a.monthsLeft:'—',b.done?0:(b.monthsLeft!=null?b.monthsLeft:'—'),a.monthsLeft===b.monthsLeft);
+    box.innerHTML=h;
+    const n=[]; if(!dueSame&&!a.check){ if(b.due<a.due) n.push(L.f30Earlier(fmtDate(b.due),money(b.amt||b.amtFull||0))); else n.push(L.f30Later(fmtDate(a.due))); }
+    else if(!remSame&&o.rem!=null) n.push(o.rem>a.remaining?L.rcnMore:L.rcnLess);
+    else if(remSame&&dueSame&&!o.over) n.push(L.rcnOk);
+    if(o.over>0&&!b.done&&b.part>0) n.push(L.f30OverN(money(b.amtFull||0),money(b.part),money(b.amt||0)));
+    nt.textContent=n.join(' '); };
+  ['#rcn-v','#rcn-dt','#rcn-m','#rcn-o'].forEach(q=>{ const el=$(q); el.addEventListener('input',upd); el.addEventListener('change',upd); });
+  const sel=$('#rcn-row');
+  if(sel){ const fill=()=>{ const k=+sel.value, rem=f30RemAfter(loan,k), nx=s[k+1]; if(rem!=null) $('#rcn-v').value=rem; if(nx){ $('#rcn-dt').value=nx.d; $('#rcn-m').value=f30R2(nx.a); } else $('#rcn-dt').value=''; upd(); };
+    sel.addEventListener('change',fill); if(pre.left==null&&(pre.next||pre.row!=null)) fill(); }
+  upd(); if(!sel) $('#rcn-v').focus();
+  $('#rcn-s').onclick=()=>{ const r=read(); if(r.rem!=null&&!(r.rem>=0)) return showErr($('#rcn-e'),L.rcnErr); if(!(r.over>=0)) return showErr($('#rcn-e'),L.f30OverErr);
+    if(r.next){ const dd=daysUntil(r.next); if(dd<-62||dd>400) return showErr($('#rcn-e'),L.f30DateErr); }
+    const o=opt(r); if(o.rem==null&&!o.next&&!o.over) return showErr($('#rcn-e'),L.f30Need);
+    if(o.over>0&&!o.next&&curPt(loan)==null) return showErr($('#rcn-e'),L.f30NeedDate);
+    f30Apply(loan,o); persist(); const snap=prevSnap, b=analyze(loan);
+    render(); detailSheet(loan); f30Bar(b.done?L.f30DoneAll:L.f30Done(money(b.remaining),fmtDate(b.due)),snap); };
+};
+
+/* платежи, внесённые до сверки, уже учтены в остатке банка: их удаление не меняет остаток */
+const f30Undo0=undoPayment;
+undoPayment=function(pid){ const p=state.payments.find(x=>x.id===pid); if(!p||!p.rcx) return f30Undo0.apply(this,arguments);
+  if(p.envA>0) envAdd('loan',p.envA,L.undoWord); state.payments=state.payments.filter(x=>x!==p); if(p.rc) rcDel(pid); };
+
+/* ---- «Платёж вперёд»: Mira уже считает прошлый платёж внесённым, а запись о нём делают только сейчас ---- */
+/* спросить «за какой платёж», если прошлый срок отмечен внесённым без записи об оплате (так было, когда Mira сама считала его оплаченным) */
+function f30NeedAsk(loan){ if(!loan||loan.example) return null; const a=analyze(loan); if(a.done||a.check||a.overdue||a.per==null) return null;
+  if(loan.pt==null||loan.part) return null;
+  const prev=a.per-1; if(loan.ptOk===prev||loan.f30ok===prev) return null; if(state.payments.some(p=>p.loanId===loan.id&&p.per===prev)) return null;
+  const pd=f30DueOf(loan,prev), dd=daysUntil(pd); if(dd>0||dd<-45) return null;
+  return {a,prev,pd}; }
+/* «Да, внесли» и «Отметить внесённым» — человек сам подтвердил платёж */
+const f30Mark0=markPaid;
+markPaid=function(loan){ const x=f30Mark0.apply(this,arguments); try{ if(loan&&loan.pt!=null) loan.ptOk=loan.pt; }catch(e){} return x; };
+function f30Guard(loan){ const g=f30NeedAsk(loan); if(!g) return; const save=$('#p-save'); if(!save||$('#f30-q')) return; const row=$('#p-part')||save.closest('.sheet-row'); if(!row) return;
+  row.insertAdjacentHTML(row.id==='p-part'?'afterend':'beforebegin',`<div class="f30-q" id="f30-q" role="radiogroup" aria-labelledby="f30-qh"><b id="f30-qh">${L.f30Q}</b>
+    <label class="f30-o"><input type="radio" name="f30w" value="prev"><span><b>${L.f30Prev(fmtDate(g.pd))}</b><small>${L.f30PrevD}</small></span></label>
+    <label class="f30-o"><input type="radio" name="f30w" value="next"><span><b>${L.f30NextO(fmtDate(g.a.due))}</b><small>${L.f30NextD}</small></span></label></div>`);
+  sheet.querySelectorAll('input[name="f30w"]').forEach(x=>x.addEventListener('change',()=>{ const q=$('#f30-q'); if(q) q.classList.remove('need'); const e=$('#p-err'); if(e) e.classList.remove('show'); }));
+  const orig=save.onclick;
+  save.onclick=async function(ev){ const ch=sheet.querySelector('input[name="f30w"]:checked');
+    if(!ch){ const q=$('#f30-q'); if(q){ q.classList.add('need'); try{ q.scrollIntoView({block:'center',behavior:'smooth'}); }catch(e){} } return showErr($('#p-err'),L.f30Pick); }
+    if(ch.value==='next') return orig&&orig.call(this,ev);
+    return f30SavePrev(loan,g); }; }
+async function f30SavePrev(loan,g){ const inp=$('#p-amt'), amt=Math.round(+(inp&&inp.value)); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
+  if(state.payments.some(p=>p.loanId===loan.id&&p.per===g.prev&&!p.part)){ closeSheet(); return; }
+  const se=schedAt(loan,g.prev), i=se&&se.i!=null?Math.min(amt,Math.round(+se.i||0)):0;
+  const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:Math.max(0,amt-i),interest:i,date:ymd(new Date()),per:g.prev,due:ymd(g.pd),late:Math.max(0,-daysUntil(g.pd)),hist:1,rcx:1};
+  const hb=sheet.querySelector('#p-how [data-how].on'); if(hb){ rec.how=hb.dataset.how; lsSet('m7how_v1',rec.how); }
+  const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
+  const rf0=$('#p-rc'), f=rf0&&rf0.files&&rf0.files[0]; if(f){ try{ const d=await imgToJpeg(f); await rcPut(rec.id,d); rec.rc=true; }catch(e){} }
+  state.payments.push(rec); persist(); closeSheet(); render(); toast(L.f30PrevDone(fmtDate(g.pd))); }
+const f30Pay0=payForm;
+payForm=function(loan){ const x=f30Pay0.apply(this,arguments); try{ f30Guard(loan); }catch(e){ console.error(e); } return x; };
+/* проценты одного срока считаются один раз: часть, внесённая раньше (или переплата), уже покрыла их долю */
+const f30Int0=interestFor;
+interestFor=function(loan,amount,per,extra){ const v=f30Int0.apply(this,arguments); if(extra||per==null||!loan) return v;
+  const used=state.payments.filter(p=>p.loanId===loan.id&&p.per===per&&p.part).reduce((s,p)=>s+(+p.interest||0),0)+(loan.part&&loan.part.per===per?+loan.part.cri||0:0);
+  if(!(used>0)) return v; const se=schedAt(loan,per); const full=se&&se.i!=null?(+se.i||0):(+loan.rate>0?analyze(loan).remaining*(+loan.rate)/1200:0);
+  return Math.max(0,Math.min(+amount||0,Math.round(full-used))); };
+
+/* быстрое добавление кредита: «Платёж … уже внесли?» — без ответа по умолчанию (раньше молча стояло «Да», и пропущенный платёж считался внесённым) */
+function f30AlUI(){ const pq=$('#al-pq'); if(!pq||pq.dataset.f30) return; pq.dataset.f30='1'; pq.dataset.v='';
+  pq.querySelectorAll('[data-pq]').forEach(b=>{ b.classList.remove('on'); b.addEventListener('click',()=>{ pq.dataset.v=b.dataset.pq; pq.classList.remove('need'); const er=$('#al-err'); if(er) er.classList.remove('show'); }); });
+  const sv=$('#al-save'); if(!sv) return; const o=sv.onclick;
+  sv.onclick=function(ev){ if(!pq.hidden&&pq.dataset.v===''){ const er=$('#al-err'); if(er) showErr(er,L.f30AlNeed); pq.classList.add('need'); try{ pq.scrollIntoView({block:'center',behavior:'smooth'}); }catch(e){} return; }
+    const n0=state.loans.length, v=pq.hidden?'':pq.dataset.v, x=o&&o.call(this,ev);
+    if(state.loans.length>n0&&v==='1'){ const l=state.loans[state.loans.length-1]; if(l.pt!=null){ l.ptOk=l.pt; persist(); } }
+    return x; }; }
+try{ const _al30=m7AddLoan; m7AddLoan=function(){ const x=_al30.apply(this,arguments); try{ f30AlUI(); }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---- Mira считает внесённым платёж, срок которого ещё не наступил ---- */
+/* ahead — отмечен внесённым платёж, до срока которого ещё больше 20 дней; skip — прошлый срок не записан, а свежий платёж засчитан за следующий */
+function f30Ahead(loan){ if(!loan||loan.example) return null; const a=analyze(loan); if(a.done||a.check) return null;
+  if(loan.pt==null) return null; const pt=loan.pt; if(loan.f30ok===pt) return null;
+  const d=f30DueOf(loan,pt); if(daysUntil(d)<=0) return null;
+  const mine=state.payments.filter(p=>p.loanId===loan.id&&!p.part), recs=mine.filter(p=>p.per===pt), from=ymd(addDays(d,-20));
+  if(!recs.length||recs.every(p=>String(p.date)<from)) return {pt,d,kind:'ahead'};
+  const prev=pt-1, pd=f30DueOf(loan,prev), pdd=daysUntil(pd);
+  if(pdd<=0&&pdd>=-45&&loan.ptOk!==prev&&!state.payments.some(p=>p.loanId===loan.id&&p.per===prev)) return {pt,d,pd,kind:'skip'};
+  return null; }
+function f30FixPre(loan,g){ const pre={next:ymd(g.d)}; const s=schedOf(loan);
+  if(s){ const ni=mIdx(g.d), j=s.findIndex(e=>mIdx(parseYmd(e.d))>=ni); const k=j<0?s.length-1:j-1, rem=f30RemAfter(loan,k); if(rem!=null){ pre.row=k; return pre; } }
+  const wrong=state.payments.filter(p=>p.loanId===loan.id&&!p.part&&p.per===g.pt), a=analyze(loan);
+  if(wrong.length) pre.left=f30R2(a.remaining+wrong.reduce((x,p)=>x+payPrincipal(p),0));
+  return pre; }
+function f30DetailBan(loan){ const g=f30Ahead(loan); if(!g||$('#f30-ban')) return; const lead=sheet.querySelector('.lead'); if(!lead) return;
+  const t=g.kind==='skip'?L.f30SkipT(fmtDate(g.pd),fmtDate(g.d)):L.f30BanT(fmtDate(g.d)), dsc=g.kind==='skip'?L.f30SkipD(fmtDate(g.pd),fmtDate(g.d)):L.f30BanD;
+  lead.insertAdjacentHTML('afterend',`<div class="f30-ban" id="f30-ban" role="alert"><b>⚠️ ${t}</b><p>${dsc}</p><div class="f30-bb"><button type="button" class="btn btn-primary" data-f30fix="${loan.id}">${L.f30BanFix}</button><button type="button" class="btn btn-ghost" data-f30ok="${loan.id}">${L.f30BanOk}</button></div></div>`); }
+try{ const _d30=detailSheet; detailSheet=function(loan){ const x=_d30.apply(this,arguments); try{ f30DetailBan(loan); }catch(e){} return x; }; }catch(e){}
+function f30Top(){ const items=state.loans.filter(l=>!l.example).map(l=>({l,g:f30Ahead(l)})).filter(x=>x.g);
+  const html=items.map(({l,g})=>`<button type="button" class="f30-np" data-action="open" data-id="${esc(l.id)}"><span class="f30-npi" aria-hidden="true">⚠️</span><span><b>${esc(l.name)}</b><small>${esc(g.kind==='skip'?L.f30FlagS(fmtDate(g.pd)):L.f30Flag(fmtDate(g.d)))}</small></span></button>`).join('');
+  ['#miraCheck','#nextPay'].forEach(q=>{ const box=$(q); if(!box) return; box.querySelectorAll('.f30-np').forEach(x=>x.remove()); if(html) box.insertAdjacentHTML('afterbegin',html); }); }
+function f30Flags(){ try{ f30Top(); }catch(e){} const cards=$('#cards'); if(!cards) return; cards.querySelectorAll('.card[data-action="open"]').forEach(c=>{ const old=c.querySelector('.f30-flag'); const l=byId(c.dataset.id), g=f30Ahead(l);
+    if(!g){ if(old) old.remove(); return; } const html=`⚠️ ${esc(g.kind==='skip'?L.f30FlagS(fmtDate(g.pd)):L.f30Flag(fmtDate(g.d)))}`; if(old){ if(old.innerHTML!==html) old.innerHTML=html; return; }
+    const m=c.querySelector('.c-main')||c; m.insertAdjacentHTML('beforeend',`<div class="f30-flag">${html}</div>`); }); }
+try{ const _r30=render; render=function(){ const x=_r30.apply(this,arguments); try{ f30Flags(); }catch(e){} return x; }; }catch(e){}
+
+/* ---- график: столбец «остаток» тоже запоминается (по нему сверка берёт точный остаток) ---- */
+const f30Parse0=parseSchedule;
+parseSchedule=function(text){ const rows=f30Parse0.apply(this,arguments); try{ const bal={};
+    for(const raw of String(text||'').split(/\n+/)){ const line=raw.trim(); if(!line) continue; let m=line.match(/(\d{1,2})[.\/-](\d{1,2})[.\/-](\d{2,4})/), d=null, rest=line;
+      if(m){ let y=+m[3]; if(y<100) y+=2000; d=new Date(y,+m[2]-1,+m[1]); rest=line.replace(m[0],' '); }
+      else { m=line.match(/(\d{4})-(\d{1,2})-(\d{1,2})/); if(m){ d=new Date(+m[1],+m[2]-1,+m[3]); rest=line.replace(m[0],' '); } }
+      if(!d||isNaN(d)) continue; const nums=(rest.replace(/(\d)[\s ](?=\d{3}\b)/g,'$1').match(/\d+(?:[.,]\d+)?/g)||[]).map(x=>+x.replace(',','.'));
+      if(nums.length>=4&&nums[3]>=0) bal[ymd(d)]=nums[3]; }
+    let n=0; rows.forEach(e=>{ if(bal[e.d]!=null&&e.p!=null){ e.b=f30R2(bal[e.d]); n++; } });
+    let ok=0, tot=0; for(let k=1;k<rows.length;k++){ const x=rows[k-1], y=rows[k]; if(x.b==null||y.b==null||y.p==null) continue; tot++; if(Math.abs(x.b-y.p-y.b)<=Math.max(1,y.p*0.01)) ok++; }
+    if(n&&(tot<1||ok/tot<0.7)) rows.forEach(e=>{ delete e.b; });
+    /* два платежа в одном месяце (последний платёж в конце срока): Mira считает по месяцам — объединяем, напоминание по первой дате */
+    for(let k=rows.length-1;k>0;k--){ const x=rows[k-1], y=rows[k]; if(mIdx(parseYmd(x.d))!==mIdx(parseYmd(y.d))) continue;
+      x.a=f30R2(x.a+y.a); if(x.p!=null&&y.p!=null) x.p=f30R2(x.p+y.p); else delete x.p; if(x.i!=null&&y.i!=null) x.i=f30R2(x.i+y.i); else delete x.i;
+      if(y.b!=null) x.b=y.b; else delete x.b; x.d2=y.d; rows.splice(k,1); } }catch(e){} return rows; };
+
+/* ---- график по фото: Сифра переписывает таблицу, человек проверяет и сохраняет ---- */
+let f30Sc={busy:false,ab:null};
+function f30Line(r){ const d=parseYmd(r.d), dd=String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear();
+  const f=v=>String(f30R2(v)); return r.p!=null&&r.i!=null?[dd,f(r.a),f(r.p),f(r.i)].concat(r.b!=null?[f(r.b)]:[]).join('; '):dd+'; '+f(r.a); }
+async function f30ReadSched(loan,pages){ if(f30Sc.busy) return; const st=$('#f30-ph-st'); if(!st) return; pages=pages.slice(0,2);
+  f30Sc.busy=true; f30Sc.ab=new AbortController(); st.innerHTML=p29Busy(L.f30Steps,L.p29Priv); const stop=p29Ticker(L.f30Steps);
+  const sb=$('#p29-stop'); if(sb) sb.onclick=()=>{ try{ f30Sc.ab.abort(); }catch(e){} };
+  let j=null, err='';
+  try{ const imgs=[], layout=[]; for(const pg of pages){ const o=await p29Out(pg,{tiles:true}); imgs.push(o.full,...o.tiles); layout.push(1+o.tiles.length); }
+    j=await p29Post('sched',{imgs,layout},f30Sc.ab.signal); }
+  catch(e){ err=e&&e.name==='AbortError'?'':p29ErrText(e&&e.message); }
+  finally{ stop(); f30Sc.busy=false; }
+  const box=$('#f30-ph-st'); if(!box) return;
+  if(err||!j){ box.innerHTML=err?`<p class="err-t">${esc(err)}</p>`:''; return; }
+  box.innerHTML=f30SchedRes(loan,j); }
+function f30SchedRes(loan,j){ const rows=Array.isArray(j.rows)?j.rows.filter(r=>r&&f30Ymd(r.d)&&+r.a>0):[];
+  const prob=(Array.isArray(j.problems)?j.problems:[]).filter(Boolean).slice(0,3).map(x=>esc(String(x))).join(' ');
+  if(rows.length<2) return `<p class="err-t">${L.f30PhNone}</p>${prob?`<p class="note">${L.f30PhProb}${prob}</p>`:''}`;
+  const ta=$('#sc-in'); if(ta){ ta.value=rows.map(f30Line).join('\n'); ta.dispatchEvent(new Event('input',{bubbles:true})); }
+  const d=k=>fmtDate(parseYmd(rows[k].d))+' '+parseYmd(rows[k].d).getFullYear();
+  const out=[`<b>${L.f30PhSum(rows.length,d(0),d(rows.length-1))}</b>`];
+  const sumP=f30R2(rows.reduce((x,r)=>x+(+r.p||0),0)), amt=+j.amount||0;
+  if(rows.every(r=>r.p!=null)&&amt>0) out.push(Math.abs(sumP-amt)<=Math.max(2,amt*0.002)?`<span class="f30-good">✓ ${L.f30PhOk(f30M(sumP))}</span>`:`<span class="f30-warn">⚠️ ${L.f30PhBadSum(f30M(sumP),f30M(amt))}</span>`);
+  const bad=rows.map((r,k)=>({r,k})).filter(x=>x.r.u||(Array.isArray(x.r.bad)&&x.r.bad.length));
+  out.push(bad.length?`<span class="f30-warn">⚠️ ${L.f30PhBad(bad.slice(0,8).map(x=>'№'+(x.r.n||x.k+1)).join(', ')+(bad.length>8?'…':''))}</span>`:`<span class="f30-good">✓ ${L.f30PhAllOk}</span>`);
+  if(prob) out.push(`<small>${L.f30PhProb}${prob}</small>`);
+  out.push(`<small>${L.f30PhCheck}</small>`);
+  return `<div class="f30-res">${out.join('')}</div>`; }
+function f30SchedUI(loan){ const ta=$('#sc-in'); if(!ta||$('#f30-ph')) return; const fld=ta.closest('.field'); if(!fld) return;
+  fld.insertAdjacentHTML('beforebegin',`<div class="f30-ph" id="f30-ph"><b>📷 ${L.f30PhT}</b><small>${L.f30PhD}</small><div class="p29-add"><button type="button" class="btn btn-primary" id="f30-cam">${ico('camera',18)} ${L.p29Cam}</button><button type="button" class="btn btn-ghost" id="f30-gal">${L.p29Gal}</button></div><div id="f30-ph-st"></div></div>`);
+  const a=analyze(loan), sc=schedOf(loan);
+  if(sc){ const rws=sheet.querySelectorAll('.sc-list .sc-row'); sc.forEach((e,k)=>{ if(e.d2&&rws[k]&&f30Ymd(e.d2)){ const d=rws[k].querySelector('.sc-d'); if(d) d.insertAdjacentHTML('beforeend',`<small class="f30-d2">${esc(L.f30D2(fmtShort(parseYmd(e.d2))))}</small>`); } }); }
+  if(sc&&!a.done){ const list=sheet.querySelector('.sc-list'); if(list) list.insertAdjacentHTML('afterend',`<button type="button" class="btn btn-ghost btn-full f30-mark" data-recon="${loan.id}">🏦 ${L.f30Mark}</button>`); }
+  $('#f30-cam').onclick=()=>p29Pick(false,pg=>f30ReadSched(loan,pg)); $('#f30-gal').onclick=()=>p29Pick(true,pg=>f30ReadSched(loan,pg));
+  const sv=$('#sc-save'); if(sv){ const o=sv.onclick; sv.onclick=function(ev){ const n0=JSON.stringify(loan.sched||null); const x=o&&o.call(this,ev);
+      if(JSON.stringify(loan.sched||null)!==n0&&schedOf(loan)&&!analyze(loan).done){ const g=f30Ahead(loan); setTimeout(()=>reconSheet(loan,Object.assign({after:1},g?f30FixPre(loan,g):{})),60); } return x; }; } }
+const f30Sched0=schedSheet;
+schedSheet=function(loan){ const x=f30Sched0.apply(this,arguments); try{ f30SchedUI(loan); }catch(e){ console.error(e); } return x; };
+
+/* ---- Сифра: видит дату следующего платежа и умеет открыть сверку с цифрами банка ---- */
+const f30Ctx0=sfCtx;
+sfCtx=function(){ const o=f30Ctx0.apply(this,arguments); try{ if(Array.isArray(o.loans)){ o.loans.forEach(x=>{ const l=byId(x.id); if(!l) return; const a=analyze(l);
+      x.left=f30R2(a.remaining); if(!a.done&&!a.check){ x.next_due=ymd(a.due); x.next_amount=f30R2(a.amt||a.amtFull||0); } if(a.check) x.check_needed=true;
+      const pt=curPt(l); if(pt!=null) x.paid_through=Math.floor(pt/12)+'-'+String(pt%12+1).padStart(2,'0'); x.has_schedule=!!schedOf(l); });
+    o.loans_note='left — остаток основного долга; next_due — ближайший ещё не внесённый платёж, как считает приложение; paid_through — месяц, до которого приложение считает платежи внесёнными'; } }catch(e){} return o; };
+const f30Lbl0=sfActLabel;
+sfActLabel=function(a){ if(a&&a.name==='fix_loan'){ const i=a.input||{}, ln=state.loans.find(l=>l.id===i.loan_id); return '🏦 '+L.f30Act(ln?ln.name:''); } return f30Lbl0.apply(this,arguments); };
+const f30Do0=sfDo;
+sfDo=function(a,manual){ if(a&&a.name==='fix_loan'){ const i=a.input||{}, ln=state.loans.find(l=>l.id===i.loan_id); if(!ln){ toast(L.sfNoLoan); return; }
+    const pre={}; if(i.bank_left!=null&&i.bank_left!==''&&+i.bank_left>=0) pre.left=f30R2(+i.bank_left); if(f30Ymd(i.next_due)) pre.next=i.next_due; if(+i.monthly>0) pre.monthly=f30R2(+i.monthly);
+    reconSheet(ln,pre); toast(L.f30SfCheck); return; }
+  return f30Do0.apply(this,arguments); };
+
+document.addEventListener('click',e=>{ const t=e.target;
+  const fx=t.closest&&t.closest('[data-f30fix]'); if(fx){ e.stopImmediatePropagation(); const l=byId(fx.dataset.f30fix), g=l&&f30Ahead(l); if(l) reconSheet(l,g?f30FixPre(l,g):{}); return; }
+  const ok=t.closest&&t.closest('[data-f30ok]'); if(ok){ e.stopImmediatePropagation(); const l=byId(ok.dataset.f30ok); if(!l) return; const pt=curPt(l); if(pt!=null) l.f30ok=pt; persist(); const b=$('#f30-ban'); if(b) b.remove(); render(); toast(L.f30OkDone); return; }
+},true);
+/* <</v30 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
