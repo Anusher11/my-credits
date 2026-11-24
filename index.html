@@ -4310,7 +4310,12 @@ html.m40[data-sk] .sd-btns>.btn.sd-exp,html.m40[data-sk] .sd-btns>.btn.sd-main{w
 /* нижние кнопки «Закупки» и Сифра — выше меню и круглой «+» */
 html.m40[data-sk] .buyfab{bottom:var(--m42-navb,72px)!important; padding-bottom:calc(var(--m42-nav,96px) - var(--m42-navb,72px) + 6px)!important; background:linear-gradient(to top, var(--bg) 78%, transparent)!important;}
 html.m40[data-sk="c"] .buyfab{background:linear-gradient(to top, rgba(246,242,252,.985) 80%, rgba(246,242,252,0))!important;}
-html.m40[data-sk] .sf-fab{bottom:calc(var(--m42-nav,96px) + 48px + var(--m42-bf,0px))!important;}
+/* Сифра — только значок: круглый, 56×56. Без !important у bottom: если кнопку перетащили, приложение ставит top и bottom:auto —
+   раньше наше bottom!important растягивало кнопку между top и низом экрана в длинную полосу */
+html.m40[data-sk] .sf-fab{bottom:calc(var(--m42-nav,96px) + 48px + var(--m42-bf,0px)); width:56px; height:56px; min-height:0; padding:0!important; gap:0!important; justify-content:center; border-radius:50%!important; background:transparent!important; border:0!important; box-shadow:none!important; overflow:visible;}
+html.m40[data-sk] .sf-fab > span{display:none!important;}
+html.m40[data-sk] .sf-fab > svg{width:56px!important; height:56px!important; filter:drop-shadow(0 8px 14px rgba(98,40,200,.38));}
+html.m40[data-sk] .sf-fab:focus-visible{outline-offset:3px; border-radius:50%;}
 /* названия в списках — до двух строк вместо обрезки на полуслове */
 html.m40[data-sk] .c-name{white-space:normal; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; overflow-wrap:break-word; line-height:1.22;}
 /* подписи «Куда ушла выручка» — не шире своей колонки */
