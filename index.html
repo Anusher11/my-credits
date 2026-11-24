@@ -4946,6 +4946,99 @@ html.m48-live .m48-lds i{animation:m48grow .7s cubic-bezier(.2,.8,.2,1) both; an
   .m48-nd{transform:rotate(var(--a));}
 }
 .m48-my text{paint-order:stroke; stroke:var(--surface); stroke-width:3px; stroke-linejoin:round;}
+/* ===== v49: «Кредиты 2.0» ===== */
+/* главная карточка */
+.m49-sum .m49-top{display:flex; align-items:center; justify-content:space-between; gap:12px;}
+.m49-sum .m49-top>div{min-width:0;}
+.m49-big{font-variant-numeric:tabular-nums;}
+.m49-of{display:block; font-size:.8rem; color:var(--muted); margin-top:2px;}
+.m49-ring{position:relative; flex:none; width:76px; height:76px; display:grid; place-items:center;}
+.m49-ring svg{position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg);}
+.m49-ring circle{fill:none; stroke-width:5.5;}
+.m49-ring .t{stroke:var(--track);} .m49-ring .f{stroke:var(--m-leaf,var(--brand)); stroke-linecap:round; stroke-dashoffset:var(--o);}
+html.m48-live .m49-go .m49-ring .f{animation:m49ring 1.2s cubic-bezier(.2,.8,.2,1) both;}
+@keyframes m49ring{from{stroke-dashoffset:var(--c)} to{stroke-dashoffset:var(--o)}}
+.m49-ring>span{position:relative; display:flex; flex-direction:column; align-items:center; line-height:1;}
+.m49-ring b{font-family:var(--font-num); font-weight:800; font-size:1.05rem;} .m49-ring small{font-size:.6rem; color:var(--muted); font-weight:700; margin-top:2px;}
+.m49-track{position:relative; display:flex; gap:3px; height:14px; margin:14px 0 22px;}
+.m49-track .pd{border-radius:7px; background:repeating-linear-gradient(135deg,var(--track) 0 5px,color-mix(in srgb,var(--m-leaf,var(--brand)) 30%,var(--track)) 5px 10px);}
+.m49-track .m49-st{display:flex; gap:3px; border-radius:7px; overflow:hidden;}
+.m49-track .m49-st.one{display:block;}
+.m49-track .m49-st i{display:block; height:100%; transform-origin:left;}
+html.m48-live .m49-go .m49-track .m49-st i{animation:m48grow .9s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(.15s + var(--i)*.1s);}
+.m49-here{position:absolute; top:-4px; width:2px; height:22px; margin-left:-1px; border-radius:2px; background:var(--ink); font-style:normal;}
+.m49-here span{position:absolute; top:24px; left:50%; transform:translateX(-50%); white-space:nowrap; font-size:.66rem; font-weight:800; color:var(--ink);}
+html.m48-live .m49-here{animation:m49here 2.4s ease-in-out infinite;}
+@keyframes m49here{0%,100%{box-shadow:0 0 0 0 transparent} 50%{box-shadow:0 0 0 4px color-mix(in srgb,var(--ink) 18%,transparent)}}
+.m49-leg2>span{display:grid!important; grid-template-columns:auto 1fr auto; column-gap:8px; row-gap:3px; align-items:center;}
+.m49-leg2 .m49-lp{grid-column:2/3; height:5px; border-radius:3px; background:var(--track); overflow:hidden;}
+.m49-leg2 .m49-lp u{display:block; height:100%; border-radius:3px; text-decoration:none;}
+.m49-leg2 small{grid-column:3/4; font-size:.68rem; color:var(--muted); font-weight:700; text-align:right;}
+.m49-stats>div{display:flex; flex-direction:column;}
+.m49-stats em{font-style:normal; font-size:.72rem; color:var(--muted); font-weight:700; margin-top:3px; line-height:1.25;}
+.m49-stats .go em{color:inherit; opacity:.8;}
+.m49-rt.hi{color:var(--danger);} .m49-rt.lo,.m49-rt.ok{color:var(--m-leaf,var(--brand));} .m49-rt.go{color:var(--brand-ink); cursor:pointer;}
+.m49-tk{display:flex; gap:4px; align-items:baseline; flex-wrap:wrap;}
+.m49-tk b{font-family:var(--font-num); font-weight:800; color:var(--ink); font-size:.78rem; font-variant-numeric:tabular-nums;}
+html.m48-live .m49-tk::before{content:''; width:6px; height:6px; border-radius:50%; background:var(--danger); align-self:center; animation:m48beat 1.6s ease-in-out infinite;}
+/* «Дорога к свободе» */
+.m49-road .m49-plot{position:relative; touch-action:pan-y; margin-top:4px; cursor:crosshair;}
+.m49-road .m49-plot:focus{outline:none;} .m49-road .m49-plot:focus-visible{outline:2px solid var(--brand); outline-offset:4px; border-radius:10px;}
+.m49-plot svg{display:block; width:100%; height:auto; overflow:visible;}
+.m49-plot .gr{stroke:var(--line); stroke-width:1; fill:none; stroke-dasharray:2 4;}
+.m49-plot .yl,.m49-plot .xl{font:700 9.5px/1 var(--font-num); fill:var(--muted);}
+.m49-plot .yr{stroke:var(--muted); stroke-width:1;}
+.m49-ar{fill:url(#m49g);}
+.m49-ln{fill:none; stroke:var(--brand); stroke-width:2.8; stroke-linejoin:round; stroke-linecap:round;}
+.m49-gh{fill:none; stroke:var(--gold); stroke-width:2.2; stroke-dasharray:5 4; stroke-linecap:round;}
+.m49-ghf circle{fill:var(--gold); stroke:var(--surface); stroke-width:2;}
+html.m48-live .m49-go .m49-ln{stroke-dasharray:1; stroke-dashoffset:1; animation:m48draw 1.6s cubic-bezier(.4,0,.2,1) forwards;}
+html.m48-live .m49-go .m49-ar{animation:m48fade .8s .9s both;}
+html.m48-live .m49-gh{animation:m48fade .6s both;}
+.m49-cl path{stroke:var(--muted); stroke-width:1; stroke-dasharray:2 3; opacity:.6;}
+.m49-cl circle{stroke:var(--surface); stroke-width:2.2;}
+html.m48-live .m49-go .m49-cl circle,html.m48-live .m49-go .m49-hf,html.m48-live .m49-go .m49-fl{animation:m48pop .5s cubic-bezier(.3,1.6,.5,1) both; animation-delay:1.3s; transform-box:fill-box; transform-origin:center;}
+.m49-hf circle{fill:var(--surface); stroke:var(--m-leaf,var(--brand)); stroke-width:2;} .m49-hf text{font:800 10px/1 var(--font-num); fill:var(--m-leaf,var(--brand));}
+.m49-fl path{stroke:var(--ink); stroke-width:1.6;} .m49-fl .fg{fill:var(--gold); stroke:none;}
+.m49-now circle{fill:var(--brand);} .m49-now .p{fill:var(--brand); opacity:.22;}
+html.m48-live .m49-now .p{animation:m49pulse 2s ease-out infinite; transform-box:fill-box; transform-origin:center;}
+@keyframes m49pulse{0%{transform:scale(.6); opacity:.45} 100%{transform:scale(1.9); opacity:0}}
+.m49-cur path{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:3 3;} .m49-cur circle{fill:var(--surface); stroke:var(--ink); stroke-width:2.4;}
+.m49-rd .m40-evs .in i{display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:4px; vertical-align:0;}
+.m49-leg i{display:inline-block; width:18px; height:3px; border-radius:2px; margin-right:6px; vertical-align:middle;}
+.m49-leg i.ln{background:var(--brand);} .m49-leg i.gh{background:repeating-linear-gradient(90deg,var(--gold) 0 5px,transparent 5px 8px);} .m49-leg i.cl{width:9px; height:9px; border-radius:50%; background:var(--muted);}
+.m49-x{margin:12px 0 4px; padding:10px 12px; border-radius:14px; background:var(--surface-2);}
+.m49-x>b{display:block; font-weight:800; margin-bottom:6px;}
+.m49-x .chips{display:flex; flex-wrap:wrap; gap:6px;}
+.m49-xr{display:flex; gap:6px; align-items:flex-start; margin:8px 0 0!important; font-weight:700; color:var(--ink);}
+.m49-xr svg{flex:none; color:var(--gold); margin-top:2px;}
+.m49-xt{margin:4px 0 0!important; font-size:.84rem; color:var(--muted);}
+.m49-ms{list-style:none; margin:12px 0 4px; padding:0 0 0 16px; position:relative;}
+.m49-ms::before{content:''; position:absolute; left:5px; top:8px; bottom:10px; width:2px; border-radius:2px; background:var(--track);}
+.m49-ms li{position:relative; padding:4px 0 8px; font-size:.9rem; line-height:1.35;}
+.m49-ms li>i{position:absolute; left:-15px; top:8px; width:10px; height:10px; border-radius:50%; background:var(--muted); box-shadow:0 0 0 2px var(--surface);}
+.m49-ms li.now>i{background:var(--brand);} .m49-ms li.hf>i{background:var(--m-leaf,var(--brand));} .m49-ms li.fr>i{background:var(--gold); width:12px; height:12px; left:-16px;}
+.m49-ms li.fr span{font-weight:800;}
+html.m48-live .m49-go .m49-ms li{animation:m48in .45s both; animation-delay:calc(var(--i)*.08s);}
+.m49-of{display:flex; gap:6px; align-items:flex-start; font-size:.84rem; color:var(--muted); margin:6px 0 10px!important;}
+.m49-of svg{flex:none; margin-top:2px;}
+.m49-ask{width:100%; justify-content:center;}
+/* проверка графика */
+.m49-chk{margin:8px 0 10px; padding:10px 12px; border-radius:14px; background:var(--warn-weak); border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);}
+.m49-chk>b{display:flex; gap:6px; align-items:center; color:var(--warn); font-weight:800;}
+.m49-ck p{margin:6px 0!important; font-size:.9rem;}
+.m49-cb{display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+.m49-cb .btn{min-height:40px; padding:6px 12px;}
+.m49-chk>small{display:block; margin-top:6px; color:var(--muted); font-size:.78rem;}
+@media (prefers-reduced-motion:reduce){ html.m48-live [class*="m49-"],html.m48-live [class*="m49-"] *{animation:none!important;} }
+
+.m49-track .m12-stack{margin:0; height:100%;}
+.m49-track>span{height:100%;}
+.m49-stats em.cmp{background:none; color:var(--brand-ink); cursor:pointer;}
+.m49-tk b{display:inline!important; font-size:.78rem!important; margin:0!important;}
+.m49-cb .btn{width:auto!important; flex:none; min-height:40px;}
+.m49-cb .link-btn{padding:8px 4px;}
+.m49-stats>div{display:flex!important; flex-direction:column;}
 /* <</v44 css>> */
 
 
@@ -23204,6 +23297,214 @@ document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.tar
   if(t.hasAttribute('data-m48ldq')){ const s=m48LdSt(); sifraOpen(L.m48LdQ(s.nm,L.m48LdFrom[s.cur]||s.cur)); return; }
   if(t.hasAttribute('data-m48gosec')){ hbSt().lsub='sec'; try{ hbTab('learn'); }catch(err){} return; } });
 document.addEventListener('keydown',e=>{ if(e.key!=='Enter'&&e.key!==' ') return; const t=e.target&&e.target.closest&&e.target.closest('[data-m48tr]'); if(!t) return; e.preventDefault(); m48TrGo(t.dataset.m48tr); });
+/* ---------- v49: строки — «Кредиты 2.0»: главная карточка, «Дорога к свободе», проверка графика, цена кредита в день ---------- */
+const M49S={
+  ru:{
+    m49PaidOf:(p,t)=>'Выплачено '+p+' из '+t, m49PaidL:'выплачено', m49LoanPaid:p=>p+'% выплачено', m49Here:'вы здесь',
+    m49MonSub:(m,v)=>'с '+m+' — '+v, m49MonFlat:'до конца не меняется', m49RateMkt:(a,b)=>'рынок '+a+'–'+b+'%', m49RateHi:'выше рынка', m49RateOk:'как на рынке', m49RateLo:'ниже рынка', m49RateCmp:'сравнить с рынком',
+    m49Day:v=>'≈ '+v+' в день', m49Today:'проценты сегодня', m49In:(y,m)=>'через '+(y?y+' г. ':'')+(m||!y?m+' мес.':''),
+    m49RoadT:'Дорога к свободе', m49RoadSub:(v,m)=>'Долг без будущих процентов '+v+' — до нуля к '+m, m49RoadA:'Как уменьшается ваш долг до последнего платежа',
+    m49Rd:(b)=>'Остаток долга: '+b, m49RdPay:(t,i)=>'платёж '+t+(i?', из него проценты '+i:''), m49RdNo:'платежей нет', m49RdNext:(t,m)=>'следующий платёж '+t+' — '+m, m49Now:'сейчас',
+    m49Leg:{debt:'остаток долга',extra:'с доплатой',close:'кредит закрыт'},
+    m49MsNow:(b,t)=>'Сейчас: долг '+b+', платёж '+t+' в месяц', m49MsClose:(n,m,v)=>'«'+n+'» закрыт — '+m+'. Платёж станет '+v, m49MsHalf:m=>'Половина долга позади — '+m, m49MsFree:(m,w)=>'Свобода от кредитов — '+m+' ('+w+')',
+    m49Of100:v=>'Сейчас из каждых 100 с. платежа '+v+' — проценты; к концу почти всё идёт в долг.',
+    m49XT:'А если платить больше?', m49X0:'как сейчас', m49XRes:(v,m,s,i)=>'+'+v+' в месяц: свобода — '+m+(s>0?', на '+s+' мес. раньше':'')+(i?'; проценты меньше на '+i:''), m49XNone:'Доплата почти не меняет срок — платёж уже большой.', m49XTip:n=>'Доплату — сначала в «'+n+'»: у него самая высокая ставка.',
+    m49Ask:'Спросить Сифру про мой план', m49AskQ:(t,m,r,i)=>'Мои кредиты: осталось '+t+', платёж '+m+' в месяц, средняя ставка '+r+'%, ещё уйдёт на проценты '+i+'. Как закрыть быстрее и дешевле? Посчитай варианты доплаты и перекредитования.',
+    m49ChkT:'Проверьте график', m49ChkLast:(n,v,u,m)=>'«'+n+'»: последний платёж по графику — '+v+' ('+m+'), а обычно '+u+'. Так и в графике банка?', m49ChkSum:(n,s,r)=>'«'+n+'»: по графику осталось заплатить '+s+', а по кредиту — '+r+'. Что-то не сходится.',
+    m49ChkWhy:'Если в графике ошибка, расчёты и дата свободы будут неверными.', m49ChkSch:'Открыть график', m49ChkEdit:'Изменить кредит', m49ChkOk:'Всё верно', m49ChkDone:'Отметили: всё верно',
+    m49PdT:'Цена кредитов в день', m49PdSub:'Столько процентов набегает каждый день. Досрочный платёж уменьшает эту цифру сразу.'
+  },
+  tg:{
+    m49PaidOf:(p,t)=>'Пардохт шуд '+p+' аз '+t, m49PaidL:'пардохт шуд', m49LoanPaid:p=>p+'% пардохт шуд', m49Here:'шумо дар ин ҷо',
+    m49MonSub:(m,v)=>'аз '+m+' — '+v, m49MonFlat:'то охир тағйир намеёбад', m49RateMkt:(a,b)=>'бозор '+a+'–'+b+'%', m49RateHi:'аз бозор баланд', m49RateOk:'мисли бозор', m49RateLo:'аз бозор паст', m49RateCmp:'бо бозор муқоиса',
+    m49Day:v=>'≈ '+v+' дар як рӯз', m49Today:'фоизи имрӯз', m49In:(y,m)=>'баъди '+(y?y+' сол ':'')+(m||!y?m+' моҳ':''),
+    m49RoadT:'Роҳ ба озодӣ', m49RoadSub:(v,m)=>'Қарз бе фоизҳои оянда '+v+' — то сифр то '+m, m49RoadA:'Қарзи шумо то пардохти охирин чӣ тавр кам мешавад',
+    m49Rd:(b)=>'Бақияи қарз: '+b, m49RdPay:(t,i)=>'пардохт '+t+(i?', аз он фоиз '+i:''), m49RdNo:'пардохт нест', m49RdNext:(t,m)=>'пардохти навбатӣ '+t+' — '+m, m49Now:'ҳозир',
+    m49Leg:{debt:'бақияи қарз',extra:'бо пардохти иловагӣ',close:'қарз пӯшида шуд'},
+    m49MsNow:(b,t)=>'Ҳозир: қарз '+b+', пардохт '+t+' дар моҳ', m49MsClose:(n,m,v)=>'«'+n+'» пӯшида мешавад — '+m+'. Пардохт '+v+' мешавад', m49MsHalf:m=>'Нисфи қарз пардохт шуд — '+m, m49MsFree:(m,w)=>'Озодӣ аз қарзҳо — '+m+' ('+w+')',
+    m49Of100:v=>'Ҳоло аз ҳар 100 с. пардохт '+v+' — фоиз; дар охир қариб ҳама ба қарз меравад.',
+    m49XT:'Агар бештар пардохт кунед?', m49X0:'мисли ҳозир', m49XRes:(v,m,s,i)=>'+'+v+' дар моҳ: озодӣ — '+m+(s>0?', '+s+' моҳ барвақттар':'')+(i?'; фоиз '+i+' камтар':''), m49XNone:'Пардохти иловагӣ мӯҳлатро қариб тағйир намедиҳад — пардохт аллакай калон аст.', m49XTip:n=>'Пардохти иловагӣ — аввал ба «'+n+'»: фоизаш аз ҳама баланд.',
+    m49Ask:'Аз Сифра дар бораи нақшаам пурсидан', m49AskQ:(t,m,r,i)=>'Қарзҳои ман: бақия '+t+', пардохт '+m+' дар моҳ, фоизи миёна '+r+'%, боз ба фоиз '+i+' меравад. Чӣ тавр зудтар ва арзонтар пӯшам? Вариантҳои пардохти иловагӣ ва аз нав гирифтанро ҳисоб кун.',
+    m49ChkT:'Ҷадвалро санҷед', m49ChkLast:(n,v,u,m)=>'«'+n+'»: пардохти охирин аз рӯи ҷадвал — '+v+' ('+m+'), вале одатан '+u+'. Дар ҷадвали бонк ҳам ҳамин тавр аст?', m49ChkSum:(n,s,r)=>'«'+n+'»: аз рӯи ҷадвал боз '+s+' пардохт мешавад, вале аз рӯи қарз — '+r+'. Чизе мувофиқ нест.',
+    m49ChkWhy:'Агар дар ҷадвал хато бошад, ҳисобҳо ва санаи озодӣ нодуруст мешаванд.', m49ChkSch:'Кушодани ҷадвал', m49ChkEdit:'Иваз кардани қарз', m49ChkOk:'Ҳама дуруст', m49ChkDone:'Қайд шуд: ҳама дуруст',
+    m49PdT:'Нархи қарзҳо дар як рӯз', m49PdSub:'Ҳар рӯз ин қадар фоиз ҷамъ мешавад. Пардохти пешакӣ ин рақамро фавран кам мекунад.'
+  },
+  en:{
+    m49PaidOf:(p,t)=>'Paid '+p+' of '+t, m49PaidL:'paid', m49LoanPaid:p=>p+'% paid', m49Here:'you are here',
+    m49MonSub:(m,v)=>'from '+m+' — '+v, m49MonFlat:'stays the same to the end', m49RateMkt:(a,b)=>'market '+a+'–'+b+'%', m49RateHi:'above market', m49RateOk:'in line', m49RateLo:'below market', m49RateCmp:'compare with market',
+    m49Day:v=>'≈ '+v+' a day', m49Today:'interest today', m49In:(y,m)=>'in '+(y?y+' yr ':'')+(m||!y?m+' mo':''),
+    m49RoadT:'Road to freedom', m49RoadSub:(v,m)=>'Debt excluding future interest '+v+' — down to zero by '+m, m49RoadA:'How your debt shrinks until the last payment',
+    m49Rd:(b)=>'Debt left: '+b, m49RdPay:(t,i)=>'payment '+t+(i?', of which interest '+i:''), m49RdNo:'no payments', m49RdNext:(t,m)=>'next payment '+t+' — '+m, m49Now:'now',
+    m49Leg:{debt:'debt left',extra:'with extra',close:'loan closed'},
+    m49MsNow:(b,t)=>'Now: debt '+b+', paying '+t+' a month', m49MsClose:(n,m,v)=>'“'+n+'” closes — '+m+'. Payment becomes '+v, m49MsHalf:m=>'Half the debt behind you — '+m, m49MsFree:(m,w)=>'Debt-free — '+m+' ('+w+')',
+    m49Of100:v=>'Right now '+v+' of every 100 you pay is interest; near the end almost all of it goes to the debt.',
+    m49XT:'What if you pay more?', m49X0:'as now', m49XRes:(v,m,s,i)=>'+'+v+' a month: debt-free '+m+(s>0?', '+s+' mo sooner':'')+(i?'; '+i+' less interest':''), m49XNone:'Extra barely changes the date — the payment is already high.', m49XTip:n=>'Put extra into “'+n+'” first: it has the highest rate.',
+    m49Ask:'Ask Sifra about my plan', m49AskQ:(t,m,r,i)=>'My loans: '+t+' left, paying '+m+' a month, average rate '+r+'%, '+i+' still to go on interest. How do I pay off faster and cheaper? Calculate extra-payment and refinancing options.',
+    m49ChkT:'Check the schedule', m49ChkLast:(n,v,u,m)=>'“'+n+'”: the last scheduled payment is '+v+' ('+m+'), usually '+u+'. Is that what the bank schedule says?', m49ChkSum:(n,s,r)=>'“'+n+'”: the schedule says '+s+' is left to pay, but the loan says '+r+'. Something doesn’t add up.',
+    m49ChkWhy:'If the schedule has a mistake, the calculations and the debt-free date will be wrong.', m49ChkSch:'Open schedule', m49ChkEdit:'Edit loan', m49ChkOk:'It’s correct', m49ChkDone:'Marked as correct',
+    m49PdT:'What your loans cost per day', m49PdSub:'This much interest builds up every day. An early payment lowers it right away.'
+  }
+};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M49S[k]); }catch(e){} Object.assign(D[k],M49S[k]); }
+/* ===================== v49: «Кредиты 2.0» =====================
+   Анушер (скрины 25.11): график «Платёж по месяцам» непонятный, с заливкой, бесполезный; карточка сверху — скучная; в последний месяц странный скачок.
+   Что сделали и почему:
+   - «Дорога к свободе» — одна понятная линия: сколько долга осталось и как он тает до нуля (Undebt.it, Debt Payoff Planner, Monarch:
+     линия остатка с вехами — самый понятный вид для погашения). Вехи — когда закрывается каждый кредит, половина, свобода. Палец ведёт — видно месяц.
+   - «А если платить больше?» — призрачная линия с доплатой и срок/экономия (те же расчёты, что в «Когда закроются кредиты»).
+   - Цена кредитов в день и счётчик «проценты сегодня» — Stango & Zinman 2009 (exponential growth bias): люди недооценивают стоимость долга;
+     когда цена видна в понятной единице (в день), досрочно платят чаще.
+   - Проверка графика: последний платёж намного больше обычного или сумма по графику не сходится с кредитом — подсказываем проверить
+     (ошибка распознавания фото или ввода сразу портит дату свободы).
+   - Главная карточка: кольцо «выплачено», полоса «вы здесь», у каждого кредита своя полоска прогресса, у плиток — следующая ступенька платежа,
+     ставка против рынка (с интернетом, из «Ваша ставка и рынок»), проценты в день и сколько осталось до свободы.
+   - Движение — только при интернете (html.m48-live), без интернета всё стоит; prefers-reduced-motion — без анимации. */
+const M49={cnt:0, tick:null, sel:null, geo:null, path:null};
+const m49F=v=>Math.round(v*10)/10;
+function m49Act(){ try{ return activeList().filter(x=>!x.loan.example&&!x.a.done); }catch(e){ return []; } }
+function m49Gen(d){ return lang==='ru'?MONTHS.ru.long[d.getMonth()]+' '+d.getFullYear():m8MonLabel(d); }
+function m49Wait(n){ const y=Math.floor(n/12), m=n%12; return L.m49In(y,m); }
+/* все платежи вперёд по каждому кредиту (по графику банка или по платежу) и сам долг без будущих процентов:
+   долг = сегодняшняя стоимость оставшихся платежей по ставке кредита — так линия ровно приходит к нулю в последний платёж */
+function m49Sig(){ try{ return mIdx(today0())+'|'+JSON.stringify((state.loans||[]).map(l=>[l.id,l.name,l.total,l.paid,l.monthly,l.rate,l.dueDay,l.pt,l.closed,l.example,l.part,(l.sched||[]).length,(l.sched||[]).reduce((s,e)=>s+(+e.a||0),0)]))+'|'+(state.payments||[]).length; }catch(e){ return String(Math.random()); } }
+function m49Data(){ const sig=m49Sig(); if(M49.dc!==undefined&&M49.sig===sig) return M49.dc; M49.sig=sig; let real=[]; try{ real=activeList().filter(x=>!x.loan.example); }catch(e){ return (M49.dc=null); }
+  const act=real.filter(x=>!x.a.done); if(!act.length) return (M49.dc=null); const i0=mIdx(today0()), L0={};
+  for(const {loan,a} of act) L0[loan.id]={id:loan.id,n:loan.name,col:m8Col(loan),r:(+loan.rate||0)/1200,rate:+loan.rate||0,sum:0,pv:0,last:-1,a};
+  const months=[]; for(let i=0;i<120;i++){ const dm=dueInMonth(i0+i,real)||{}, rows=[]; for(const r of (dm.rows||[])){ const o=r.kind==='loan'&&L0[r.id]; if(!o) continue; o.sum+=r.amt; o.pv+=r.amt/Math.pow(1+o.r,i+1); o.last=i; rows.push(r); }
+    months.push({i,d:new Date(Math.floor((i0+i)/12),(i0+i)%12,1),rows,t:rows.reduce((s,r)=>s+r.amt,0)}); }
+  for(const id in L0){ const o=L0[id]; if(!(o.sum>0)){ o.pv=Math.max(0,(+o.a.remaining||0)-(+o.a.interestLeft||0)); } o.int=(+o.a.interestLeft||0)>0?+o.a.interestLeft:Math.max(0,o.sum-o.pv); }
+  return (M49.dc={i0,L0,months}); }
+function m49PerDay(){ const D=m49Data(); if(!D) return 0; let s=0; for(const id in D.L0){ const o=D.L0[id]; s+=o.pv*o.rate/100/365; } return s; }
+function m49Nice(v){ if(v<=0) return 0; const p=Math.pow(10,Math.floor(Math.log10(v))), k=v/p; return Math.round((k<1.5?1:k<3.5?2:k<7.5?5:10)*p); }
+
+/* ---------- путь долга: остаток по месяцам (по графику банка, а без графика — по платежу и ставке) ---------- */
+function m49Path(){ const D=m49Data(); if(!D) return null; const bal={}; let B0=0; for(const id in D.L0){ bal[id]=D.L0[id].pv; B0+=bal[id]; } if(!(B0>0)) return null;
+  const M=[]; let last=-1; for(const m of D.months){ let p=0,it=0,t=0; const rows=[];
+    for(const r of m.rows){ const o=D.L0[r.id], b=bal[r.id]||0, ir=Math.min(r.amt,b*o.r), pr=Math.max(0,Math.min(b,r.amt-ir)); bal[r.id]=b-pr; p+=pr; it+=ir; t+=r.amt; rows.push({id:r.id,n:r.name,a:r.amt,col:o.col}); }
+    let b=0; for(const id in bal) b+=bal[id]; M.push({i:m.i,d:m.d,p,it,t,rows,b:b<0.5?0:b}); if(t>0.5) last=m.i; }
+  if(last<0) return null; const MM=M.slice(0,last+1); MM[MM.length-1].b=0;
+  const half=MM.findIndex(x=>x.b<=B0/2+0.5), first=MM.find(x=>x.t>0.5)||MM[0];
+  const close=Object.values(D.L0).filter(o=>o.last>=0).map(o=>({id:o.id,i:o.last,n:o.n,col:o.col})).sort((a,b)=>a.i-b.i);
+  return {B0,M:MM,n:MM.length,half,close,end:MM[MM.length-1].d,pay:first.t,first}; }
+/* доплата: срок и экономия — тем же расчётом, что «Когда закроются кредиты» (v41) */
+function m49Extra(x){ if(!(x>0)) return null; try{ const base=m41Sim(0), now=m41Sim(x), T=today0(), sched={}; for(const {loan,a} of m41Loans()){ const d=m8LastDue(loan,a); if(d) sched[loan.id]=Math.max(0,mIdx(d)-mIdx(T)); }
+    const E=base.map(b=>{ const n=now.find(o=>o.id===b.id)||b, sb=b.end==null?600:b.end, sn=n.end==null?600:n.end, eb=sched[b.id]!=null?sched[b.id]:sb; return {eb,en:Math.max(0,eb-Math.max(0,sb-sn))}; });
+    const endB=Math.max(...E.map(e=>e.eb)), endN=Math.max(...E.map(e=>e.en)), saved=Math.round(base.reduce((s,l)=>s+l.int,0)-now.reduce((s,l)=>s+l.int,0)); return {endB,endN,saved}; }catch(e){ return null; } }
+/* «Когда закроются кредиты» (v41) считал долг как «осталось выплатить» вместе с процентами по графику — проценты и экономия выходили завышенными.
+   Теперь долг — сегодняшняя стоимость оставшихся платежей (как у линии «Дорога к свободе»); без графика — как раньше. */
+try{ m41Sim=function(extra){ const D=m49Data(); const L0=m41Loans().map(({loan,a})=>{ const o=D&&D.L0[loan.id], b0=o&&o.pv>0?o.pv:(+a.remaining||0)-(+a.interestLeft||0);
+      return {id:loan.id,name:loan.name,col:m8Col(loan),rate:+loan.rate||0,r:(+loan.rate||0)/1200,bal:Math.max(1,b0),pay:Math.max(1,m7Amt(a)||a.monthly||0),end:null,int:0}; });
+    for(let m=0;m<600&&L0.some(l=>l.end==null);m++){ let pool=extra;
+      for(const l of L0){ if(l.end!=null) continue; const i=l.bal*l.r; l.int+=i; l.bal+=i; l.bal-=Math.min(l.bal,l.pay); if(l.bal<=0.5){ l.bal=0; l.end=m; } }
+      for(const l of L0.filter(l=>l.end==null).sort((a,b)=>b.r-a.r||a.bal-b.bal)){ if(pool<=0) break; const q=Math.min(l.bal,pool); l.bal-=q; pool-=q; if(l.bal<=0.5){ l.bal=0; l.end=m; } } }
+    return L0; }; }catch(e){}
+function m49XOpts(P){ const m=P.pay||0; const a=[m49Nice(m*0.1),m49Nice(m*0.25),m49Nice(m*0.5)].filter((v,i,s)=>v>0&&s.indexOf(v)===i); return [0].concat(a); }
+
+/* ---------- проверка графика ---------- */
+function m49Checks(){ const out=[]; for(const {loan,a} of m49Act()){ const s=schedOf(loan); if(!s) continue; const pt=curPt(loan), from=pt!=null?pt:(a.per!=null?a.per-1:mIdx(today0())-1);
+    const rest=s.filter(e=>mIdx(parseYmd(e.d))>from); if(rest.length<3) continue; const as=rest.map(e=>+e.a||0), body=as.slice(0,-1).slice().sort((x,y)=>x-y), med=body[Math.floor(body.length/2)], lastA=as[as.length-1];
+    const ck=loan.ck49||{};
+    if(med>0&&lastA>med*1.6&&lastA-med>300){ const sig='last:'+Math.round(lastA); if(ck.last!==sig) out.push({k:'last',sig,loan,txt:L.m49ChkLast(loan.name,money(lastA),money(med),m8MonLabel(parseYmd(rest[rest.length-1].d)))}); }
+    const sum=as.reduce((t,v)=>t+v,0), rem=+a.remaining||0; if(rem>0&&Math.abs(sum-rem)>Math.max(300,rem*0.05)){ const sig='sum:'+Math.round(sum)+':'+Math.round(rem); if(ck.sum!==sig) out.push({k:'sum',sig,loan,txt:L.m49ChkSum(loan.name,money(sum),money(rem))}); } }
+  return out; }
+function m49ChkHTML(){ const a=m49Checks(); if(!a.length) return '';
+  return `<div class="m49-chk" role="alert"><b>${ico('warn',16)} ${esc(L.m49ChkT)}</b>${a.map(c=>`<div class="m49-ck"><p>${esc(c.txt)}</p><div class="m49-cb"><button type="button" class="btn btn-ghost" data-action="sched" data-id="${esc(String(c.loan.id))}">${ico('cal',16)} ${esc(L.m49ChkSch)}</button>${c.k==='sum'?`<button type="button" class="btn btn-ghost" data-action="edit" data-id="${esc(String(c.loan.id))}">${esc(L.m49ChkEdit)}</button>`:''}<button type="button" class="link-btn" data-m49ok="${esc(String(c.loan.id))}|${c.k}|${esc(c.sig)}">${esc(L.m49ChkOk)}</button></div></div>`).join('')}<small>${esc(L.m49ChkWhy)}</small></div>`; }
+
+/* ---------- «Дорога к свободе» ---------- */
+function m49Geo(P,x){ const W=320, H=196, pL=4, pR=46, pT=26, pB=26, n=P.n; return {W,H,pL,pR,pT,pB,n,X:i=>pL+i/Math.max(1,n)*(W-pL-pR),Y:v=>pT+(1-v/P.B0)*(H-pT-pB),yb:H-pB}; }
+function m49Val(P,i){ return i<=0?P.B0:(P.M[Math.min(P.n-1,i-1)]||{b:0}).b; }
+function m49Plot(P,ex){ const g=m49Geo(P), f=m47Fx; let d=`M${f(g.X(0))},${f(g.Y(P.B0))}`; for(let i=1;i<=g.n;i++) d+=` L${f(g.X(i))},${f(g.Y(m49Val(P,i)))}`;
+  const area=d+` L${f(g.X(g.n))},${f(g.yb)} L${f(g.X(0))},${f(g.yb)} Z`;
+  const tk=m40Ticks(0,P.B0).filter(v=>v>0&&v<=P.B0*1.001), grid=tk.map(v=>`M${g.pL},${f(g.Y(v))} H${g.W-g.pR+4}`).join(' ')+` M${g.pL},${f(g.yb)} H${g.W-g.pR+4}`, labs=tk.concat([0]).map(v=>`<text class="yl" x="${g.W}" y="${f(g.Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('');
+  /* подписи месяцев: «сейчас», январи (годы), конец */
+  let xl=`<text class="xl" x="${f(g.X(0))}" y="${g.H-7}" text-anchor="start">${esc(L.m49Now)}</text>`; const used=[g.X(0)+34];
+  P.M.forEach((m,k)=>{ const i=k+1; if(m.d.getMonth()===0&&i<g.n-1){ const x=g.X(i); if(x>used[used.length-1]+22&&x<g.X(g.n)-40){ xl+=`<text class="xl" x="${f(x)}" y="${g.H-7}" text-anchor="middle">${m.d.getFullYear()}</text><path class="yr" d="M${f(x)},${f(g.yb)} v4"/>`; used.push(x); } } });
+  xl+=`<text class="xl e" x="${f(g.X(g.n))}" y="${g.H-7}" text-anchor="end">${esc(MONTHS[lang].short[P.end.getMonth()]+' '+String(P.end.getFullYear()).slice(2))}</text>`;
+  /* доплата — та же дорога, но короче */
+  let ghost=''; if(ex&&ex.endN<ex.endB){ const kx=(ex.endB+1)/(ex.endN+1); let gd=`M${f(g.X(0))},${f(g.Y(P.B0))}`; for(let k=1;k<=ex.endN+1;k++){ const t=Math.min(g.n,k*kx), a=Math.floor(t), b=Math.min(g.n,a+1), fr=t-a, v=m49Val(P,a)*(1-fr)+m49Val(P,b)*fr; gd+=` L${f(g.X(k))},${f(g.Y(v))}`; }
+    ghost=`<path class="m49-gh" d="${gd}" pathLength="1"/><g class="m49-ghf"><circle cx="${f(g.X(ex.endN+1))}" cy="${f(g.yb)}" r="4.5"/></g>`; }
+  /* вехи */
+  let mk=''; for(const c of P.close.slice(0,-1)){ const i=c.i+1, x=g.X(i), y=g.Y(m49Val(P,i)); mk+=`<g class="m49-cl"><path d="M${f(x)},${f(y)} V${f(g.yb)}"/><circle cx="${f(x)}" cy="${f(y)}" r="5.5" style="fill:${esc(c.col||'var(--muted)')}"/></g>`; }
+  if(P.half>=0){ const i=P.half+1, x=g.X(i), y=g.Y(m49Val(P,i)); mk+=`<g class="m49-hf"><circle cx="${f(x)}" cy="${f(y-15)}" r="9"/><text x="${f(x)}" y="${f(y-11.5)}" text-anchor="middle">½</text></g>`; }
+  const fx_=g.X(g.n); mk+=`<g class="m49-fl"><path d="M${f(fx_)},${f(g.yb)} V${f(g.yb-26)}"/><path class="fg" d="M${f(fx_)},${f(g.yb-26)} l-13,4.5 l13,4.5 Z"/></g>`;
+  const now=`<g class="m49-now"><circle class="p" cx="${f(g.X(0))}" cy="${f(g.Y(P.B0))}" r="9"/><circle cx="${f(g.X(0))}" cy="${f(g.Y(P.B0))}" r="5"/></g>`;
+  const s=M49.sel||0, sx=g.X(s), sy=g.Y(m49Val(P,s));
+  return `<svg viewBox="0 0 ${g.W} ${g.H}" aria-hidden="true"><defs><linearGradient id="m49g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--brand)" stop-opacity=".16"/><stop offset="1" stop-color="var(--brand)" stop-opacity="0"/></linearGradient></defs>
+    <path class="gr" d="${grid}"/>${labs}${xl}<path class="m49-ar" d="${area}"/>${ghost}<path class="m49-ln" d="${d}" pathLength="1"/>${mk}${now}
+    <g class="m49-cur" data-m49c${s?'':' hidden'}><path d="M${f(sx)},${g.pT-6} V${f(g.yb)}"/><circle cx="${f(sx)}" cy="${f(sy)}" r="6"/></g></svg>`; }
+function m49Rd(P,i){ const m=i>0?P.M[i-1]:P.first, lab=i>0?m8MonLabel(P.M[i-1].d):L.m49Now, v=m49Val(P,i);
+  return `<small>${esc(lab)}</small><b>${esc(L.m49Rd(money(v)))}</b><span class="m41-sp">${i===0&&m.t>0.5?esc(L.m49RdNext(money(m.t),m8MonLabel(m.d))):m.t>0.5?esc(L.m49RdPay(money(m.t),m.it>=1?money(m.it):'')):esc(L.m49RdNo)}</span><span class="m40-evs">${m.rows.map(r=>`<span class="in"><i style="background:${esc(r.col||'var(--muted)')}"></i>${esc(r.n)} ${money(r.a)}</span>`).join('')}</span>`; }
+function m49RoadHTML(){ const P=m49Path(); if(!P) return ''; M49.path=P; try{ M41M.D=P.M; }catch(e){} if(M49.sel==null||M49.sel>P.n) M49.sel=0;
+  const x=+(typeof M41G!=='undefined'&&M41G.x)||0, ex=m49Extra(x), opts=m49XOpts(P);
+  const T=today0(), endIdx=P.n, pc0=P.first.t>0?Math.round(P.first.it/P.first.t*100):0;
+  /* вехи списком */
+  const ms=[{i:0,c:'now',t:L.m49MsNow(money(P.B0),money(P.pay))}];
+  for(const c of P.close.slice(0,-1)){ const nx=P.M[c.i+1]; ms.push({i:c.i+1,c:'cl',col:c.col,t:L.m49MsClose(c.n,m8MonLabel(P.M[c.i].d),money(nx?nx.t:0))}); }
+  if(P.half>=0) ms.push({i:P.half+1,c:'hf',t:L.m49MsHalf(m8MonLabel(P.M[P.half].d))});
+  ms.push({i:endIdx+0.5,c:'fr',t:L.m49MsFree(m8MonLabel(P.end),m49Wait(Math.max(0,mIdx(P.end)-mIdx(T))))}); ms.sort((a,b)=>a.i-b.i);
+  const tg=(()=>{ try{ return m41Target(); }catch(e){ return null; } })();
+  const xres=x>0?(ex&&ex.endN<ex.endB?L.m49XRes(money(x),m8MonLabel(addMonths(T,ex.endN)),ex.endB-ex.endN,ex.saved>0?money(ex.saved):''):L.m49XNone):'';
+  const DD=m49Data(); let rw=0,rb=0,mon=0,int=0; for(const {loan,a} of m49Act()){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); const o=DD&&DD.L0[loan.id]; int+=o?o.int:Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
+  const q=L.m49AskQ(money(m8Totals(activeList().filter(z=>!z.loan.example)).left),money(mon),rb>0?m12Pct(rw/rb):'0',money(Math.round(int)));
+  return `<div class="m41-mo m49-road" data-m49io="road"><div class="m40-h"><h2>${ico('flag',20)} ${esc(L.m49RoadT)}</h2></div><p class="m47-sub">${esc(L.m49RoadSub(money(P.B0),m49Gen(P.end)))}</p>${m49ChkHTML()}
+    <div class="m40-rd m41-rd m49-rd" aria-live="polite">${m49Rd(P,M49.sel||0)}</div>
+    <div class="m49-plot" data-m49p tabindex="0" role="img" aria-label="${esc(L.m49RoadA+'. '+ms.map(m=>m.t).join('. '))}">${m49Plot(P,ex)}</div>
+    <div class="m40-leg m49-leg"><span><i class="ln"></i>${esc(L.m49Leg.debt)}</span>${ex&&ex.endN<ex.endB?`<span><i class="gh"></i>${esc(L.m49Leg.extra)}</span>`:''}${P.close.length>1?`<span><i class="cl"></i>${esc(L.m49Leg.close)}</span>`:''}</div>
+    <div class="m49-x"><b>${esc(L.m49XT)}</b><div class="chips" role="radiogroup">${opts.map(v=>`<button type="button" class="chip ${v===x?'on':''}" role="radio" aria-checked="${v===x}" data-m49x="${v}">${v?'+'+money(v):esc(L.m49X0)}</button>`).join('')}</div>${xres?`<p class="m49-xr" aria-live="polite">${ico('zap',14)}<span>${esc(xres)}</span></p>`:''}${x>0&&tg?`<p class="m49-xt">${esc(L.m49XTip(tg.name))}</p>`:''}</div>
+    <ol class="m49-ms">${ms.map((m,k)=>`<li class="${m.c}" style="--i:${k}"><i${m.col?` style="background:${esc(m.col)}"`:''}></i><span>${esc(m.t)}</span></li>`).join('')}</ol>
+    <p class="m49-of">${ico('info',14)}<span>${esc(L.m49Of100(pc0))}</span></p>
+    <button type="button" class="btn btn-ghost m49-ask" data-sifra="${esc(q)}">${ico('chat',18)} ${esc(L.m49Ask)}</button></div>${m47RtHTML()}`; }
+try{ m41MoHTML=m49RoadHTML; }catch(e){}
+/* красивое появление — один раз за открытие, когда блок впервые на экране (повторные перерисовки — без анимации) */
+const M49IO=('IntersectionObserver' in window)?new IntersectionObserver(es=>{ for(const e of es){ if(!e.isIntersecting) continue; const k=e.target.dataset.m49io; M49IO.unobserve(e.target); if(M49['seen_'+k]) continue; M49['seen_'+k]=1; e.target.classList.add('m49-go'); } },{threshold:0.25}):null;
+function m49Watch(){ if(!M49IO) return; document.querySelectorAll('[data-m49io]:not(.m49-go)').forEach(el=>{ if(!M49['seen_'+el.dataset.m49io]) M49IO.observe(el); }); }
+function m49Pick(i){ const P=M49.path, box=document.querySelector('.m49-road'); if(!P||!box) return; i=Math.max(0,Math.min(P.n,i)); M49.sel=i; const g=m49Geo(P), f=m47Fx, x=g.X(i), y=g.Y(m49Val(P,i));
+  const c=box.querySelector('[data-m49c]'); if(c){ c.hidden=false; const pa=c.querySelector('path'), ci=c.querySelector('circle'); pa.setAttribute('d',`M${f(x)},${g.pT-6} V${f(g.yb)}`); ci.setAttribute('cx',f(x)); ci.setAttribute('cy',f(y)); }
+  const rd=box.querySelector('.m49-rd'); if(rd) rd.innerHTML=m49Rd(P,i); }
+try{ m41MoSel=function(i){ m49Pick(i); }; }catch(e){}
+(function(){ let drag=false; const at=(e,el)=>{ const P=M49.path; if(!P) return 0; const r=el.getBoundingClientRect(), g=m49Geo(P), px=(e.clientX-r.left)/r.width*g.W; return Math.round((px-g.pL)/(g.W-g.pL-g.pR)*P.n); };
+  document.addEventListener('pointerdown',e=>{ const el=e.target.closest&&e.target.closest('[data-m49p]'); if(!el) return; drag=true; m49Pick(at(e,el)); try{ m40Vib(); }catch(err){} });
+  document.addEventListener('pointermove',e=>{ if(!drag) return; const el=document.querySelector('[data-m49p]'); if(el) m49Pick(at(e,el)); });
+  document.addEventListener('pointerup',()=>{ drag=false; }); document.addEventListener('pointercancel',()=>{ drag=false; });
+  document.addEventListener('keydown',e=>{ const el=e.target&&e.target.closest&&e.target.closest('[data-m49p]'); if(!el) return; if(e.key==='ArrowRight'){ e.preventDefault(); m49Pick((M49.sel||0)+1); } if(e.key==='ArrowLeft'){ e.preventDefault(); m49Pick((M49.sel||0)-1); } }); })();
+function m49Redraw(){ const ld=document.querySelector('#view-loans .m8-load'); if(ld){ ld.dataset.m41=''; try{ m41After(); m49Watch(); }catch(e){} } }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m49x],[data-m49ok]'); if(!t) return;
+  if(t.hasAttribute('data-m49x')){ M41G.x=+t.dataset.m49x||0; try{ m41GtUpd(); const r=document.querySelector('#m41x'); if(r) r.value=M41G.x; }catch(err){} m49Redraw(); return; }
+  const [id,k,sig]=String(t.dataset.m49ok).split('|'); const loan=state.loans.find(l=>String(l.id)===id); if(loan){ loan.ck49=Object.assign({},loan.ck49||{},{[k]:sig}); persist(); toast(L.m49ChkDone); m49Redraw(); } });
+/* ползунок «Когда закроются кредиты» двигает и призрачную линию */
+document.addEventListener('change',e=>{ if(e.target&&e.target.id==='m41x') m49Redraw(); });
+
+/* ---------- главная карточка «Кредиты» ---------- */
+function m49Ring(p){ const R=21, C=2*Math.PI*R; return `<span class="m49-ring" role="img" aria-label="${esc(L.m12PaidPct(p))}"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="${R}"/><circle class="f" cx="26" cy="26" r="${R}" stroke-dasharray="${C.toFixed(2)}" style="--o:${(C*(1-p/100)).toFixed(2)};--c:${C.toFixed(2)}"/></svg><span><b>${p}%</b> <small>${esc(L.m49PaidL)}</small></span></span>`; }
+function m49SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.filter(x=>!x.a.done); if(!act.length) return '';
+  const T=m8Totals(real), fr=m8Free(real);
+  const parts=act.map(x=>({n:x.loan.name,v:Math.max(0,x.a.remaining),col:m8Col(x.loan),pct:x.a.pct})).filter(p=>p.v>0).sort((p,q)=>q.v-p.v);
+  const top=parts.slice(0,4); if(parts.length>4) top.push({n:L.m8Other,v:parts.slice(4).reduce((s,p)=>s+p.v,0),col:'var(--muted)',pct:null});
+  const DD=m49Data(); let mon=0, int=0, rw=0, rb=0; for(const {loan,a} of act){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); const o=DD&&DD.L0[loan.id]; int+=o?o.int:Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
+  /* следующая ступенька платежа */
+  let step=null; try{ const ms=DD?DD.months:[], k0=ms.findIndex(m=>m.t>0.5); if(k0>=0){ const v0=ms[k0].t; for(let k=k0+1;k<ms.length;k++){ const v=ms[k].t; if(v<=0.5) break; if(v<v0-0.5){ step={d:ms[k].d,v}; break; } } } }catch(e){}
+  const S=state.misc&&state.misc.lr47, rep=S&&S.rep, avg=rb>0?rw/rb:0; let rateSub='';
+  if(rep&&+rep.avg_lo>0&&+rep.avg_hi>0&&avg>0){ const lo=+rep.avg_lo, hi=+rep.avg_hi, cls=avg>hi+0.5?'hi':avg<lo-0.5?'lo':'ok'; rateSub=`<em class="m49-rt ${cls}">${esc(L.m49RateMkt(m12Pct(lo),m12Pct(hi)))} · ${esc(cls==='hi'?L.m49RateHi:cls==='lo'?L.m49RateLo:L.m49RateOk)}</em>`; }
+  else if(avg>0) rateSub=`<em class="m49-rt cmp" data-m49rt>${esc(L.m49RateCmp)} ↓</em>`;
+  const pd=m49PerDay();
+  const st=[`<div><small>${L.m12Month}</small><b>${money(mon)}</b><em>${esc(step?L.m49MonSub(lang==='ru'?MONTHS.ru.long[step.d.getMonth()]+' '+step.d.getFullYear():m8MonLabel(step.d),money(step.v)):L.m49MonFlat)}</em></div>`];
+  if(rb>0) st.push(`<div><small>${L.m12AvgRate}</small><b>${m12Pct(avg)}%</b>${rateSub}</div>`);
+  if(int>0) st.push(`<div><small>${L.m12Int}</small><b>${money(Math.round(int))}</b>${pd>0.5?`<em>${esc(L.m49Day(money(pd)))}</em><em class="m49-tk" data-m49pd="${pd.toFixed(4)}"><span>${esc(L.m49Today)}</span> <b>${fx(pd*m49DayFrac(),2)}</b></em>`:''}</div>`);
+  if(fr) st.push(`<div class="go"><small>${L.m12FreeBy}</small><b>${m8MonLabel(fr.d)}</b><em>${esc(m49Wait(Math.max(0,fr.months-1)))}</em></div>`);
+  const paid=Math.max(0,T.total-T.left), tot=Math.max(1,T.total);
+  return `<div class="m12-sum m49-sum" data-m49io="sum">
+    <div class="m12-st m49-top"><div><small>${L.m8SumT}</small><b class="m49-big" data-m49cnt="${Math.round(T.left)}">${money(T.left)}</b><span class="m49-of">${esc(L.m49PaidOf(money(paid),money(T.total)))}</span></div>${m49Ring(T.pct)}</div>
+    <div class="m49-track" aria-hidden="true"><span class="pd" style="flex:${Math.max(0.001,paid/tot)}"></span>${top.length>1?`<span class="m12-stack m49-st" style="flex:${Math.max(0.001,T.left/tot)}">${top.map((p,k)=>`<i style="flex:${Math.max(1,Math.round(p.v))};background:${p.col};--i:${k}"></i>`).join('')}</span>`:`<span class="m49-st one" style="flex:${Math.max(0.001,T.left/tot)};background:${top[0]?top[0].col:'var(--brand)'}"></span>`}<em class="m49-here" style="left:${(paid/tot*100).toFixed(1)}%"><span>${esc(L.m49Here)}</span></em></div>
+    <div class="m12-leg m49-leg2">${top.map(p=>`<span><i style="background:${p.col}"></i><em>${esc(p.n)}</em><b>${money(p.v)}</b>${p.pct!=null?`<span class="m49-lp" title="${esc(L.m49LoanPaid(p.pct))}"><u style="width:${Math.max(2,p.pct)}%;background:${p.col}"></u></span><small>${esc(L.m49LoanPaid(p.pct))}</small>`:''}</span>`).join('')}</div>
+    <div class="m12-stats m49-stats n${st.length}">${st.join('')}</div></div>`; }
+function m49DayFrac(){ const n=new Date(); return (n.getHours()*3600+n.getMinutes()*60+n.getSeconds())/86400; }
+try{ m12SumHTML=m49SumHTML; }catch(e){}
+/* сумма «Всего осталось» один раз за открытие красиво набегает; счётчик процентов тикает, пока есть интернет */
+function m49Live(){ const big=document.querySelector('.m49-big[data-m49cnt]'); if(big&&!M49.cnt&&document.documentElement.classList.contains('m48-live')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){ M49.cnt=1; const v=+big.dataset.m49cnt, t0=performance.now(), D=900;
+    const step=t=>{ const k=Math.min(1,(t-t0)/D), e=1-Math.pow(1-k,3); if(!big.isConnected) return; big.textContent=money(v*e); if(k<1) requestAnimationFrame(step); else big.textContent=money(v); }; requestAnimationFrame(step); }
+  if(!M49.tick) M49.tick=setInterval(()=>{ const el=document.querySelector('[data-m49pd]'); if(!el){ return; } if(!document.documentElement.classList.contains('m48-live')||document.hidden) return; const b=el.querySelector('b'); if(b) b.textContent=fx(+el.dataset.m49pd*m49DayFrac(),2); },1000); }
+try{ const _r49=render; render=function(){ const x=_r49.apply(this,arguments); try{ m49Live(); m49Watch(); }catch(e){} return x; }; }catch(e){}
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m49rt]'); if(!t) return; const r=document.querySelector('.m47-rt'); if(r) r.scrollIntoView({behavior:'smooth',block:'start'}); });
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
