@@ -5039,6 +5039,150 @@ html.m48-live .m49-go .m49-ms li{animation:m48in .45s both; animation-delay:calc
 .m49-cb .btn{width:auto!important; flex:none; min-height:40px;}
 .m49-cb .link-btn{padding:8px 4px;}
 .m49-stats>div{display:flex!important; flex-direction:column;}
+/* ===== v50: команда Сифры, «Большая покупка 2.0», «Путь к цели 2.0» ===== */
+.m50-cur{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:2px 0 10px;}
+.m50-cur>span{font-size:.8rem; font-weight:700; color:var(--muted);}
+.m50-cur .chips{display:flex; flex-wrap:wrap; gap:6px;}
+.m50-cur .chip{min-width:44px; justify-content:center;}
+.m50-fxn{font-size:.82rem; color:var(--muted); margin:-2px 0 10px!important; line-height:1.4;}
+.m50-lead{font-size:.86rem; color:var(--muted); margin:2px 0 10px!important; line-height:1.4;}
+/* три пути */
+.m50-wg{display:grid; gap:10px;}
+.m50-way{border:1px solid var(--line); border-radius:16px; padding:11px 12px; background:var(--surface-2);}
+.m50-way.on{border-color:var(--brand); box-shadow:0 0 0 1px var(--brand) inset;}
+.m50-wh{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+.m50-wh>span{width:30px; height:30px; border-radius:10px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); flex:none;}
+.m50-wh b{font-weight:800; font-size:1rem;}
+.m50-wh em{font-style:normal; margin-left:auto; font-family:var(--font-num); font-weight:800; font-size:.82rem; padding:3px 9px; border-radius:99px; background:var(--surface); white-space:nowrap;}
+.m50-way>p{margin:7px 0 8px; font-size:.86rem; line-height:1.4;}
+.m50-wb,.m50-sn .mb{display:flex; height:10px; border-radius:5px; overflow:hidden; background:var(--track); gap:2px;}
+.m50-wb i,.m50-sn .mb i{display:block; height:100%; width:var(--w); transform-origin:left;}
+.m50-wb .p,.m50-sn .mb .p{background:var(--m-leaf,var(--brand));} .m50-wb .o,.m50-sn .mb .o{background:var(--danger);}
+html.m48-live .m50-wb i,html.m48-live .m49-go .m50-sn .mb i,html.m48-live .m49-go .m50-sn .tb i{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.08s);}
+.m50-wf{display:flex; justify-content:space-between; gap:8px; font-size:.8rem; font-weight:700; margin:6px 0 8px; font-family:var(--font-num);}
+.m50-wf .bad{color:var(--danger);} .m50-wf .good{color:var(--m-leaf,var(--brand));}
+.m50-dti{display:flex; gap:5px; align-items:flex-start; font-size:.8rem; color:var(--muted); margin:0 0 8px!important;} .m50-dti.bad{color:var(--danger); font-weight:700;}
+.m50-way .btn{min-height:40px; padding:6px 14px;}
+.m50-uf{margin-top:10px; width:100%; justify-content:center;}
+.m50-hint{display:flex; gap:6px; font-size:.84rem; color:var(--muted); margin:10px 0 0!important;}
+.m50-nos #m44L,.m50-nos section.m44-cd:has(#m44W){display:none;}
+/* команда */
+.m50-rl{list-style:none; margin:0 0 12px; padding:0; display:grid; gap:6px;}
+.m50-rl li{display:flex; align-items:center; gap:8px; font-size:.88rem; font-weight:600;}
+.m50-err{display:flex; gap:6px; color:var(--danger); font-size:.86rem; margin:0 0 10px!important;}
+.m50-prog{border-radius:16px; background:var(--surface-2); padding:12px; text-align:left;}
+.m50-ph{display:flex; justify-content:space-between; align-items:baseline; gap:8px; margin-bottom:8px;}
+.m50-ph b{font-weight:800;} .m50-ph span{font-family:var(--font-num); font-weight:800; color:var(--muted); font-variant-numeric:tabular-nums;}
+.m50-prog ul{list-style:none; margin:0; padding:0; display:grid; gap:6px;}
+.m50-prog li{display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:12px; background:var(--surface);}
+.m50-prog .ic{width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); flex:none;}
+.m50-prog li.dn .ic{background:var(--m-leaf-weak,var(--brand-weak)); color:var(--m-leaf,var(--brand));}
+.m50-prog li.wt{opacity:.55;}
+.m50-prog li.chief{margin-top:4px; border:1px dashed var(--line);} .m50-prog li.chief.on{border:1px solid var(--brand);}
+.m50-prog .tx{display:flex; flex-direction:column; min-width:0; flex:1;}
+.m50-prog .tx b{font-weight:700; font-size:.9rem;} .m50-prog .tx small{color:var(--muted); font-size:.76rem;}
+.m50-prog .dots{display:flex; gap:3px; flex:none;} .m50-prog .dots u{width:5px; height:5px; border-radius:50%; background:var(--brand); text-decoration:none; opacity:.35;}
+html.m48-live .m50-prog .dots u{animation:m50dot 1.2s ease-in-out infinite;} html.m48-live .m50-prog .dots u:nth-child(2){animation-delay:.2s;} html.m48-live .m50-prog .dots u:nth-child(3){animation-delay:.4s;}
+@keyframes m50dot{0%,100%{opacity:.25; transform:translateY(0)} 40%{opacity:1; transform:translateY(-3px)}}
+html.m48-live .m50-prog li.on .ic{animation:m50pulse 1.8s ease-in-out infinite;}
+@keyframes m50pulse{0%,100%{box-shadow:0 0 0 0 color-mix(in srgb,var(--brand) 40%,transparent)} 50%{box-shadow:0 0 0 6px transparent}}
+.m50-prog>p{display:flex; gap:5px; font-size:.76rem; color:var(--muted); margin:10px 0 0!important; line-height:1.35;}
+.m46-wait.m50-gw{display:block; text-align:left;} .m50-gt{display:block; font-size:1.1rem; font-weight:800; margin-bottom:4px;} .m50-gw>small{display:block; color:var(--muted); margin-bottom:12px; line-height:1.4;}
+/* план покупки */
+.m50-at{font-size:.76rem; color:var(--muted); margin:0 0 8px!important;}
+.m50-vd{font-size:1.02rem; font-weight:700; line-height:1.4; margin:0 0 12px!important;}
+.m50-sc{display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:16px; background:var(--surface-2); margin:0 0 10px;}
+.m50-sc small{font-weight:800; color:var(--muted); font-size:.78rem;} .m50-sc p{margin:2px 0 0; font-size:.86rem; line-height:1.35;}
+.m50-dial{position:relative; width:68px; height:68px; flex:none; display:grid; place-items:center;}
+.m50-dial svg{position:absolute; inset:0; transform:rotate(-90deg);} .m50-dial circle{fill:none; stroke-width:7;}
+.m50-dial .t{stroke:var(--track);} .m50-dial .f{stroke-linecap:round; stroke-dashoffset:var(--o); stroke:var(--warn);}
+.m50-sc.hi .m50-dial .f{stroke:var(--m-leaf,var(--brand));} .m50-sc.lo .m50-dial .f{stroke:var(--danger);}
+.m50-dial b{position:relative; font-family:var(--font-num); font-weight:800; font-size:1.3rem;}
+html.m48-live .m49-go .m50-dial .f,html.m48-live .m50-gtop .m50-dial .f{animation:m49ring 1.3s cubic-bezier(.2,.8,.2,1) both;}
+.m50-tr{display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:16px; border:1px solid var(--line); margin:0 0 10px;}
+.m50-tr small{font-weight:800; color:var(--muted); font-size:.76rem;} .m50-tr b{display:block; font-weight:800;} .m50-tr p{margin:2px 0 0; font-size:.84rem; color:var(--muted);}
+.m50-tr .nx,.m50-wh2 .nx{display:flex; gap:5px; color:var(--ink); margin-top:6px!important;} .m50-tr .nx b,.m50-wh2 .nx b{display:inline;}
+.m50-tmg{display:flex; gap:7px; padding:9px 11px; border-radius:12px; background:color-mix(in srgb,var(--gold) 14%,var(--surface)); margin:0 0 10px!important; font-size:.9rem; line-height:1.4;}
+.m50-bl{margin:14px 0 0; padding-top:12px; border-top:1px solid var(--line);}
+.m50-bl h4{display:flex; align-items:center; gap:7px; margin:0 0 9px; font-size:1rem; font-weight:800;}
+.m50-bl h4 em{font-style:normal; margin-left:auto; font-size:.74rem; font-weight:700; color:var(--muted);}
+.m50-pr{margin:0 0 10px;}
+.m50-pr .l{display:flex; justify-content:space-between; gap:8px; font-size:.86rem;} .m50-pr .l b{font-weight:700;} .m50-pr .l span{font-family:var(--font-num); font-weight:800; white-space:nowrap;}
+.m50-pr a{color:inherit; text-decoration:underline; text-decoration-color:var(--line);}
+.m50-pr .tk{position:relative; height:10px; border-radius:5px; background:var(--track); margin:5px 0 3px;}
+.m50-pr .tk i{position:absolute; top:0; bottom:0; border-radius:5px; background:var(--brand); opacity:.75;} .m50-pr.all .tk i{background:var(--muted); opacity:.5;}
+.m50-pr .tk u{position:absolute; top:-3px; width:3px; height:16px; margin-left:-1.5px; border-radius:2px; background:var(--ink);}
+.m50-pr .tk em,.m50-lg em{position:absolute; top:-5px; width:12px; height:12px; margin-left:-6px; border-radius:50%; background:var(--gold); border:2px solid var(--surface); box-sizing:border-box;}
+.m50-pr small{color:var(--muted); font-size:.76rem;}
+.m50-lg{display:flex; align-items:center; gap:7px; font-size:.8rem; color:var(--muted); margin:2px 0 0!important;} .m50-lg em{position:static; margin:0; flex:none;}
+.m50-sg{display:grid; gap:9px;}
+.m50-sn{border:1px solid var(--line); border-radius:14px; padding:10px 11px;}
+.m50-sn.best{border-color:var(--m-leaf,var(--brand)); background:color-mix(in srgb,var(--m-leaf,var(--brand)) 7%,transparent);}
+.m50-sn .h{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:7px;} .m50-sn .h b{font-weight:800;}
+.m50-sn .k{font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:99px; background:var(--surface-2); color:var(--muted);}
+.m50-sn .bs{display:inline-flex; gap:3px; align-items:center; font-size:.7rem; font-weight:800; padding:2px 8px; border-radius:99px; background:var(--m-leaf,var(--brand)); color:#fff;}
+.m50-sn .r{margin:0 0 6px;} .m50-sn .r small{display:block; font-size:.78rem; font-weight:700; font-family:var(--font-num); margin-bottom:3px;}
+.m50-sn .tb{height:8px; border-radius:4px; background:var(--track); overflow:hidden;} .m50-sn .tb i{display:block; height:100%; width:var(--w); background:var(--gold); border-radius:4px; transform-origin:left;}
+.m50-sn>p{margin:4px 0 0; font-size:.84rem; line-height:1.4; color:var(--muted);} .m50-sn>p b{color:var(--ink);}
+.m50-cg{margin:0 0 9px;} .m50-cg>small{font-weight:800; color:var(--muted); font-size:.78rem;}
+.m50-cg ul,.m50-ck,.m50-rk,.m50-fc,.m50-ev{list-style:none; margin:4px 0 0; padding:0;}
+.m50-cg li{display:flex; justify-content:space-between; gap:8px; padding:4px 0; font-size:.88rem; border-bottom:1px dashed var(--line);} .m50-cg li b{font-family:var(--font-num); font-weight:800; white-space:nowrap;}
+.m50-own{display:flex; gap:6px; font-size:.86rem; font-weight:700; margin:6px 0 0!important;}
+.m50-pb{height:6px; border-radius:3px; background:var(--track); overflow:hidden; margin:0 0 10px;} .m50-pb i{display:block; height:100%; background:var(--m-leaf,var(--brand)); border-radius:3px; transition:width .4s;}
+.m50-st{list-style:none; margin:0; padding:0 0 0 14px; position:relative;}
+.m50-st::before{content:''; position:absolute; left:4px; top:6px; bottom:6px; width:2px; border-radius:2px; background:var(--track);}
+.m50-st li{position:relative; padding:0 0 10px;}
+.m50-st li.mh{padding:6px 0 6px;} .m50-st li.mh span{display:inline-block; font-size:.74rem; font-weight:800; padding:3px 9px; border-radius:99px; background:var(--surface-2); color:var(--muted);}
+.m50-st li.mh::before{content:''; position:absolute; left:-14px; top:11px; width:10px; height:10px; border-radius:50%; background:var(--gold); box-shadow:0 0 0 2px var(--surface);}
+.m50-st label,.m50-ck label{display:flex; gap:9px; align-items:flex-start; cursor:pointer; font-size:.94rem; line-height:1.35;}
+.m50-st input,.m50-ck input{width:20px; height:20px; flex:none; margin-top:1px; accent-color:var(--m-leaf,var(--brand));}
+.m50-st li.dn label span{text-decoration:line-through; color:var(--muted);}
+.m50-st li.nx label span{font-weight:800;}
+.m50-st details{margin:4px 0 0 29px; font-size:.86rem;} .m50-st summary{color:var(--brand-ink); font-weight:700; cursor:pointer;} .m50-st details p{margin:4px 0; line-height:1.4;}
+html.m48-live .m49-go .m50-st li:not(.mh){animation:m48in .4s both; animation-delay:calc(var(--i)*.05s);}
+.m50-ck li{padding:5px 0;}
+.m50-tp{padding:8px 10px; border-radius:12px; background:var(--surface-2); margin:0 0 7px;} .m50-tp b{font-weight:800;} .m50-tp em{font-style:normal; float:right; font-size:.74rem; font-weight:800; color:var(--m-leaf,var(--brand)); font-family:var(--font-num);} .m50-tp p{margin:3px 0 0; font-size:.86rem; line-height:1.4;}
+.m50-al{margin:0 0 10px;} .m50-al>div:first-child{display:flex; flex-wrap:wrap; gap:8px; align-items:baseline;} .m50-al b{font-weight:800;} .m50-al span{font-family:var(--font-num); font-weight:800;} .m50-al em{font-style:normal; font-size:.76rem; font-weight:800; color:var(--m-leaf,var(--brand));}
+.m50-al .ab{height:8px; border-radius:4px; background:var(--track); margin:4px 0;} .m50-al .ab i{display:block; height:100%; width:var(--w); border-radius:4px; background:var(--m-leaf,var(--brand));} .m50-al p{margin:2px 0 0; font-size:.84rem; color:var(--muted);}
+.m50-rk li{display:flex; gap:9px; padding:6px 0;} .m50-rk i{width:10px; height:10px; border-radius:50%; margin-top:5px; flex:none; background:var(--muted);} .m50-rk .s3 i{background:var(--danger);} .m50-rk .s2 i{background:var(--warn);}
+.m50-rk b{font-weight:700;} .m50-rk p{margin:2px 0 0; font-size:.84rem; color:var(--muted);}
+.m50-fc li{display:flex; gap:9px; padding:6px 0; align-items:flex-start;} .m50-fc li>span{flex:none; font-size:.7rem; font-weight:800; padding:3px 8px; border-radius:99px; background:var(--surface-2); margin-top:1px;}
+.m50-fc .plus>span{background:var(--m-leaf-weak,var(--brand-weak)); color:var(--m-leaf,var(--brand));} .m50-fc .minus>span{background:var(--danger-weak); color:var(--danger);}
+.m50-fc b{font-weight:700;} .m50-fc p{margin:2px 0 0; font-size:.84rem; color:var(--muted); line-height:1.4;}
+.m50-ev li{display:flex; gap:10px; padding:7px 0;}
+.m50-ev .d{flex:none; width:44px; height:46px; border-radius:11px; background:var(--surface-2); display:flex; flex-direction:column; align-items:center; justify-content:center; border-top:3px solid var(--gold);}
+.m50-ev .soon .d{border-top-color:var(--danger);} .m50-ev .d b{font-family:var(--font-num); font-weight:800; line-height:1;} .m50-ev .d small{font-size:.66rem; color:var(--muted); font-weight:700;}
+.m50-ev .t em{font-style:normal; font-size:.72rem; font-weight:800; color:var(--muted);} .m50-ev .soon .t em{color:var(--danger);} .m50-ev .t b{display:block; font-weight:700;} .m50-ev .t p{margin:2px 0 0; font-size:.84rem; color:var(--muted);}
+.m50-tm summary{display:flex; align-items:center; gap:7px; font-weight:800; cursor:pointer;} .m50-tm summary em{font-style:normal; margin-left:auto; font-size:.72rem; color:var(--muted); font-weight:700;}
+.m50-tm>div{margin:9px 0 0;} .m50-tm>div b{display:flex; gap:6px; align-items:center; font-size:.88rem;} .m50-tm ul{margin:3px 0 0; padding-left:22px; font-size:.86rem; color:var(--muted);}
+.m50-pa{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:14px;}
+/* цель: верх, веер, торнадо, воронка */
+.m50-gtop{margin:10px 0 4px;}
+.m50-wh2{padding:10px 12px; border-radius:16px; border:1px solid var(--line); margin:0 0 10px;}
+.m50-wh2>small{display:flex; gap:5px; align-items:center; font-weight:800; color:var(--muted); font-size:.78rem; margin-bottom:7px;}
+.m50-wh2 .br{margin:0 0 6px;} .m50-wh2 .br span{display:block; font-size:.82rem; font-weight:700; font-family:var(--font-num); margin-bottom:3px;}
+.m50-wh2 .br i{display:block; height:9px; border-radius:5px; width:var(--w);} .m50-wh2 .pl{background:var(--track);} .m50-wh2 .fa{background:var(--m-leaf,var(--brand));}
+.m50-gfx{display:flex; gap:6px; font-size:.84rem; color:var(--muted); margin:0 0 10px!important; line-height:1.4;}
+.m50-fan svg{display:block; width:100%; height:auto; overflow:visible;}
+.m50-fan .gr{stroke:var(--line); stroke-dasharray:2 4; fill:none;} .m50-fan .z{stroke:var(--muted); stroke-width:1;} .m50-fan .yl,.m50-fan .xl{font:700 9.5px/1 var(--font-num); fill:var(--muted);}
+.m50-fan .bd{fill:var(--brand); fill-opacity:.13;} .m50-fan .lo,.m50-fan .hi{fill:none; stroke-width:1.6; stroke-dasharray:4 3;} .m50-fan .lo{stroke:var(--danger);} .m50-fan .hi{stroke:var(--m-leaf,var(--brand));}
+.m50-fan .bs{fill:none; stroke:var(--brand); stroke-width:2.8; stroke-linecap:round; stroke-linejoin:round;} .m50-fan .pt{fill:var(--brand); stroke:var(--surface); stroke-width:2;}
+.m50-fan .gl{stroke:var(--gold); stroke-width:1.6; stroke-dasharray:6 4;} .m50-fan .glt{font:800 9.5px/1 var(--font-num); fill:var(--gold);}
+html.m48-live .m49-go .m50-fan .bs{stroke-dasharray:1; stroke-dashoffset:1; animation:m48draw 1.5s ease-out forwards;} html.m48-live .m49-go .m50-fan .bd{animation:m48fade .9s .7s both;}
+html.m48-live .m49-go .m50-fan .pt{animation:m48beat 2s ease-in-out 1.5s infinite; transform-box:fill-box; transform-origin:center;}
+.m50-fl{display:flex; flex-wrap:wrap; gap:6px 14px; font-size:.8rem; margin-top:6px;} .m50-fl b{font-family:var(--font-num);} .m50-fl .lo{color:var(--danger);} .m50-fl .hi{color:var(--m-leaf,var(--brand));} .m50-fl .bs{color:var(--brand-ink);}
+.m50-tor .rw{display:grid; grid-template-columns:1fr 104px 1fr; gap:8px; align-items:center; padding:5px 0;}
+.m50-tor .rw>b{font-size:.78rem; font-weight:700; text-align:center; line-height:1.15;}
+.m50-tor .l,.m50-tor .r{display:flex; align-items:center; gap:5px;} .m50-tor .l{justify-content:flex-end;}
+.m50-tor i{display:block; height:14px; border-radius:7px; width:var(--w); min-width:2px;} .m50-tor .l i{background:var(--danger); transform-origin:right;} .m50-tor .r i{background:var(--m-leaf,var(--brand)); transform-origin:left;}
+.m50-tor em{font-style:normal; font-family:var(--font-num); font-weight:800; font-size:.72rem; white-space:nowrap;}
+html.m48-live .m49-go .m50-tor i{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.08s);}
+.m50-fun{display:flex; flex-direction:column; align-items:center; gap:4px;}
+.m50-fun .st{width:var(--w); min-width:150px; max-width:100%; box-sizing:border-box; padding:8px 10px; border-radius:12px; background:color-mix(in srgb,var(--brand) calc(18% + var(--i)*14%),var(--surface-2)); text-align:center; position:relative;}
+.m50-fun .st b{display:block; font-family:var(--font-num); font-weight:800; font-size:1.05rem;} .m50-fun .st span{font-size:.78rem;}
+.m50-fun .st em{position:absolute; right:8px; top:6px; font-style:normal; font-size:.68rem; font-weight:800; font-family:var(--font-num); opacity:.75;}
+html.m48-live .m49-go .m50-fun .st{animation:m48in .45s both; animation-delay:calc(var(--i)*.12s);}
+@media (prefers-reduced-motion:reduce){ html.m48-live [class*="m50-"],html.m48-live [class*="m50-"] *{animation:none!important;} }
 /* <</v44 css>> */
 
 
@@ -21639,10 +21783,10 @@ document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.clo
 const M44S={
 ru:{
   m44T:'Большая покупка', m44Lead:'Поставьте покупку на месяц — Mira покажет, хватит ли денег, когда вы сможете купить и сколько это стоит на самом деле.',
-  m44Ty:{home:'Квартира, дом',car:'Машина',thing:'Вещь',event:'Свадьба, той',study:'Учёба',trip:'Поездка',other:'Другое'},
-  m44TyS:{home:'Жильё',car:'Машина',thing:'Вещь',event:'Той',study:'Учёба',trip:'Поездка',other:'Другое'},
+  m44Ty:{home:'Квартира, дом',car:'Машина',thing:'Вещь',event:'Свадьба, праздник',study:'Учёба',trip:'Поездка',other:'Другое'},
+  m44TyS:{home:'Жильё',car:'Машина',thing:'Вещь',event:'Праздник',study:'Учёба',trip:'Поездка',other:'Другое'},
   m44Nm:'Что покупаете', m44NmPh:{home:'Например: 2 комнаты в новом доме',car:'Например: Toyota Camry 2019',thing:'Например: холодильник Samsung',event:'Например: свадьба сына',study:'Например: магистратура, 2 года',trip:'Например: Стамбул на 5 дней',other:'Своя цель'},
-  m44City:'Город', m44CityPh:'Например: Душанбе, Ташкент, Стамбул',
+  m44City:'Город', m44CityPh:'Например: Дубай, Стамбул, Лондон',
   m44Area:'Площадь, м²', m44Pm2:'Цена за 1 м²', m44Rooms:'Комнат', m44Kind:{new:'Новостройка',second:'Вторичка'}, m44CarK:{new:'Новая',second:'С пробегом'},
   m44Rep:'Ремонт', m44RepK:{none:'Не нужен',cosm:'Косметический',full:'Полный'}, m44RepM2:'Ремонт за 1 м²',
   m44Close:'Оформление сделки, % цены', m44Util:'Коммуналка и налог в месяц', m44Rent:'Сейчас снимаю жильё за (в месяц)', m44RentH:'Если снимаете — покажем, когда покупка начнёт выигрывать у аренды.', m44Grow:'Рост цен на жильё в год, %',
@@ -21711,10 +21855,10 @@ tg:{
 },
 en:{
   m44T:'Big purchase', m44Lead:'Put a purchase on a month — Mira shows whether the money is there, when you can buy it and what it really costs.',
-  m44Ty:{home:'Flat or house',car:'Car',thing:'Item',event:'Wedding',study:'Study',trip:'Trip',other:'Other'},
-  m44TyS:{home:'Home',car:'Car',thing:'Item',event:'Wedding',study:'Study',trip:'Trip',other:'Other'},
+  m44Ty:{home:'Flat or house',car:'Car',thing:'Item',event:'Wedding, event',study:'Study',trip:'Trip',other:'Other'},
+  m44TyS:{home:'Home',car:'Car',thing:'Item',event:'Event',study:'Study',trip:'Trip',other:'Other'},
   m44Nm:'What are you buying', m44NmPh:{home:'For example: 2 rooms in a new building',car:'For example: Toyota Camry 2019',thing:'For example: Samsung fridge',event:'For example: son’s wedding',study:'For example: master’s degree, 2 years',trip:'For example: Istanbul, 5 days',other:'Your own goal'},
-  m44City:'City', m44CityPh:'For example: Dushanbe, Tashkent, Istanbul',
+  m44City:'City', m44CityPh:'For example: Dubai, Istanbul, London',
   m44Area:'Area, m²', m44Pm2:'Price per m²', m44Rooms:'Rooms', m44Kind:{new:'New build',second:'Resale'}, m44CarK:{new:'New',second:'Used'},
   m44Rep:'Renovation', m44RepK:{none:'Not needed',cosm:'Light',full:'Full'}, m44RepM2:'Renovation per m²',
   m44Close:'Deal costs, % of price', m44Util:'Utilities and tax per month', m44Rent:'I rent now for (per month)', m44RentH:'If you rent, we show when buying starts to beat renting.', m44Grow:'Home prices grow per year, %',
@@ -21749,8 +21893,8 @@ en:{
 function m44P(s){ return String(s).replace(/\.\.(?=\s|$|\))/g,'.'); }
 function m44Wrap(o){ for(const k in o){ const v=o[k]; if(typeof v==='function') o[k]=function(){ return m44P(v.apply(this,arguments)); }; else if(v&&typeof v==='object'&&!Array.isArray(v)) m44Wrap(v); } return o; }
 for(const k of ['ru','tg','en']){ m44Wrap(M44S[k]); Object.assign(D[k],M44S[k]);
-  try{ D[k].m38It=Object.assign({},D[k].m38It,{bigbuy:M44S[k].m44T}); D[k].m38ItS=Object.assign({},D[k].m38ItS,{bigbuy:{ru:'квартира, машина, той — когда сможете',tg:'хона, мошин, тӯй — кай метавонед',en:'home, car, wedding — when you can'}[k]}); }catch(e){} }
-/* ===================== v44: «Большая покупка» (идея 609): квартира, машина, вещь, той, учёба, поездка — на графике ===================== */
+  try{ D[k].m38It=Object.assign({},D[k].m38It,{bigbuy:M44S[k].m44T}); D[k].m38ItS=Object.assign({},D[k].m38ItS,{bigbuy:{ru:'квартира, машина, праздник — когда сможете',tg:'хона, мошин, тӯй — кай метавонед',en:'home, car, wedding — when you can'}[k]}); }catch(e){} }
+/* ===================== v44: «Большая покупка» (идея 609): квартира, машина, вещь, праздник, учёба, поездка — на графике ===================== */
 const M44T=['home','car','thing','event','study','trip','other'];
 const M44I={home:'home',car:'car',thing:'mobile',event:'heart',study:'cap',trip:'plane',other:'star'};
 const M44={cur:null,find:null,ask:null,drag:null,tm:0,fresh:true};
@@ -23505,6 +23649,288 @@ function m49Live(){ const big=document.querySelector('.m49-big[data-m49cnt]'); i
   if(!M49.tick) M49.tick=setInterval(()=>{ const el=document.querySelector('[data-m49pd]'); if(!el){ return; } if(!document.documentElement.classList.contains('m48-live')||document.hidden) return; const b=el.querySelector('b'); if(b) b.textContent=fx(+el.dataset.m49pd*m49DayFrac(),2); },1000); }
 try{ const _r49=render; render=function(){ const x=_r49.apply(this,arguments); try{ m49Live(); m49Watch(); }catch(e){} return x; }; }catch(e){}
 document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m49rt]'); if(!t) return; const r=document.querySelector('.m47-rt'); if(r) r.scrollIntoView({behavior:'smooth',block:'start'}); });
+/* ---------- v50: строки — команда Сифры, «Большая покупка 2.0», «Путь к цели 2.0» ---------- */
+const M50S={
+  ru:{
+    m50CurL:'Валюта цены', m50FxNote:(c,r,v)=>'1 '+c+' = '+r+' с. · цена сегодня ≈ '+v, m50Fx30:(p,d,up)=>'За 30 дней курс '+p+' — цель '+(up?'подорожала':'подешевела')+' на '+d+'.',
+    m50WaysT:'Три пути к покупке', m50WaysLead:'Сравните и выберите — расчёт ниже пересчитается.', m50W:{save:'Накопить',loan:'Кредит',mix:'Накопить половину + кредит'},
+    m50In:(n,d)=>'через '+n+' мес. · '+d, m50Now:'сразу', m50PerMo:v=>v+' в месяц', m50Over:v=>'переплата '+v, m50NoOver:'без переплаты', m50Tot:v=>'всего '+v,
+    m50NeedMo:(v,d)=>'Чтобы купить к '+d+' — '+v+' в месяц', m50ByRec:v=>'по вашим записям свободно ≈ '+v+' в месяц', m50FreeNote:v=>'Mira взяла из ваших записей: свободно ≈ '+v+' в месяц. Хотите другую сумму — впишите её в «Откладываю в месяц».', m50Pick:'Выбрать', m50Picked:'выбрано',
+    m50Dti:p=>'платёж — '+p+'% дохода', m50DtiBad:'больше трети дохода — тяжело', m50SetS:'Впишите, сколько можете откладывать в месяц, — и увидите дату покупки.', m50LoanP:(r,y)=>'ставка '+r+'%, срок '+y+' г.',
+    m50TeamT:'План от команды Сифры', m50TeamLead:'Пять исследователей изучат цены и где купить, кредиты и накопление, как купить дешевле, курсы, новости и ближайшие события — а главный планировщик соберёт план до мелочей. Обычно 3–6 минут.',
+    m50TeamLeadG:'Пять исследователей изучают рынок, экономику, поставщиков и законы, похожие бизнесы, курсы и новости — потом главный планировщик собирает план до мелочей.',
+    m50TeamGo:'Собрать план', m50TeamAgain:'Собрать заново', m50TeamNeed:'Сначала впишите, что покупаете, или цену.', m50TeamOld:'Нужен новый сервер Mira (версия 26).', m50TeamLimit:'На сегодня планы закончились (4 в день). Завтра можно снова.', m50TeamErr:'Не получилось собрать план. Попробуйте ещё раз.', m50TeamOff:'Нужен интернет.',
+    m50Stage:{research:'Команда исследует',plan:'Главный планировщик собирает план'}, m50Elapsed:(m,s)=>m+':'+s, m50CanClose:'Не закрывайте этот экран надолго: если связь прервётся, Mira продолжит с того же места.',
+    m50Roles:{price:'Цены и где купить',fin:'Деньги: накопить, кредит, рассрочка',smart:'Как купить дешевле',now:'Курсы, новости, события',market:'Рынок и спрос',money:'Экономика и деньги',ops:'Поставщики, законы, запуск',cases:'Похожие случаи и секреты'},
+    m50Doing:['ищет в интернете','читает страницы','сверяет цифры','пишет отчёт'], m50RoleDone:'готово', m50Chief:'Главный планировщик', m50ChiefDo:['сводит отчёты','считает сценарии','расписывает шаги'], m50Wait:'ждёт отчёты',
+    m50Score:'Насколько реально', m50ScoreA:s=>'Насколько реально: '+s+' из 100', m50PriceT:'Цена на рынке', m50Yours:'ваша цена', m50MarketsT:'Где купить', m50ScenT:'Способы купить', m50Best:'лучше для вас',
+    m50Sk:{save:'накопить',loan:'кредит',mix:'накопить + кредит',alt:'вариант дешевле',inst:'рассрочка',lease:'лизинг'}, m50Down:v=>'первый взнос '+v,
+    m50CostsT:'Что ещё придётся платить', m50Per:{once:'один раз',month:'в месяц',year:'в год'}, m50Own5:v=>'За 5 лет владения: ≈ '+v,
+    m50StepsT:'План по шагам', m50StepM:m=>m?'через '+m+' мес.':'сейчас', m50How:'Как именно', m50CostL:'Сколько', m50DoneK:'Готово, когда', m50StepProg:(d,n)=>'Сделано '+d+' из '+n,
+    m50CheckT:'Проверить перед покупкой', m50TipsT:'Как купить дешевле и быстрее', m50SaveV:v=>'экономия ≈ '+v, m50AltsT:'Варианты дешевле', m50Cheaper:v=>'дешевле на '+v,
+    m50RisksT:'Риски и защита', m50FactT:'Что влияет сейчас', m50EvT:'Ближайшие события', m50Timing:'Когда покупать', m50TeamFound:'Что нашла команда', m50PlanAt:(d,c)=>'План от '+d+' · суммы в '+c,
+    m50Imp:{plus:'в плюс',minus:'в минус',mixed:'по-разному'}, m50InD:n=>n<=0?'сегодня':n===1?'завтра':'через '+n+' дн.',
+    m50Ask:'Спросить Сифру про этот план', m50AskQ:(nm,v)=>'Мой план покупки «'+nm+'»: '+v+' Что сделать на этой неделе и как ускорить?',
+    m50Track:'Вы на пути', m50SavedOf:(a,b)=>'Накоплено '+a+' из '+b, m50Next:'Следующий шаг', m50Left:(v,n)=>'Осталось '+v+(n?' — при вашем темпе '+n+' мес.':''),
+    m50ScenG:'Три сценария прибыли', m50ScenL:{low:'если хуже',base:'обычно',high:'если лучше'}, m50ScenA:'Прибыль по месяцам: три сценария', m50ScenGoal:'цель', m50ScenRd:(m,l,b,h)=>'Месяц '+m+': '+l+' · '+b+' · '+h,
+    m50SensT:'Что сильнее всего влияет на прибыль', m50SensLead:'Если фактор хуже или лучше на 20% — на сколько изменится прибыль в месяц.', m50FunT:'Воронка за месяц', m50FunConv:p=>p+'%',
+    m50WhereT:'Где вы сейчас', m50WhereM:n=>'Идёт '+n+'-й месяц плана', m50PlanP:v=>'по плану прибыль '+v, m50FactP:v=>'по вашим записям ≈ '+v, m50GoalFx:(v,c)=>'Цель сегодня: '+v+' в месяц по курсу Нацбанка ('+c+')',
+    m50EvG:'Ближайшие события для вашей цели', m50TeamBadge:n=>'команда: '+n+' исследователей'
+  },
+  tg:{
+    m50CurL:'Асъори нарх', m50FxNote:(c,r,v)=>'1 '+c+' = '+r+' с. · нарх имрӯз ≈ '+v, m50Fx30:(p,d,up)=>'Дар 30 рӯз қурб '+p+' — ҳадаф '+d+' '+(up?'гаронтар':'арзонтар')+' шуд.',
+    m50WaysT:'Се роҳ ба харид', m50WaysLead:'Муқоиса кунед ва интихоб кунед — ҳисоби поён аз нав мешавад.', m50W:{save:'Ҷамъ кардан',loan:'Қарз',mix:'Нисфро ҷамъ кардан + қарз'},
+    m50In:(n,d)=>'баъди '+n+' моҳ · '+d, m50Now:'фавран', m50PerMo:v=>v+' дар моҳ', m50Over:v=>'изофапулӣ '+v, m50NoOver:'бе изофапулӣ', m50Tot:v=>'ҳамагӣ '+v,
+    m50NeedMo:(v,d)=>'Барои харидан то '+d+' — '+v+' дар моҳ', m50ByRec:v=>'аз рӯи сабтҳоятон озод ≈ '+v+' дар моҳ', m50FreeNote:v=>'Mira аз сабтҳоятон гирифт: озод ≈ '+v+' дар моҳ. Агар маблағи дигар хоҳед — онро дар «Дар моҳ ҷамъ мекунам» нависед.', m50Pick:'Интихоб', m50Picked:'интихоб шуд',
+    m50Dti:p=>'пардохт — '+p+'% даромад', m50DtiBad:'аз сеяки даромад зиёд — вазнин', m50SetS:'Нависед, ки дар як моҳ чӣ қадар ҷамъ карда метавонед — санаи харидро мебинед.', m50LoanP:(r,y)=>'фоиз '+r+'%, '+y+' сол',
+    m50TeamT:'Нақша аз дастаи Сифра', m50TeamLead:'Панҷ тадқиқотчӣ нархҳо ва ҷои харид, қарз ва ҷамъоварӣ, чӣ тавр арзонтар харидан, қурбҳо, хабарҳо ва ҳодисаҳои наздикро меомӯзанд — ва нақшакаши асосӣ нақшаро то хурдтарин қадам тартиб медиҳад. Одатан 3–6 дақиқа.',
+    m50TeamLeadG:'Панҷ тадқиқотчӣ бозор, иқтисод, таъминкунандагон ва қонунҳо, тиҷоратҳои монанд, қурбҳо ва хабарҳоро меомӯзанд — баъд нақшакаши асосӣ нақшаро то хурдтарин қадам тартиб медиҳад.',
+    m50TeamGo:'Сохтани нақша', m50TeamAgain:'Аз нав сохтан', m50TeamNeed:'Аввал нависед, ки чӣ мехаред, ё нархро.', m50TeamOld:'Сервери нави Mira лозим (версияи 26).', m50TeamLimit:'Барои имрӯз нақшаҳо тамом шуданд (4 дар як рӯз). Фардо боз мумкин.', m50TeamErr:'Нақша сохта нашуд. Боз кӯшиш кунед.', m50TeamOff:'Интернет лозим.',
+    m50Stage:{research:'Даста тадқиқ мекунад',plan:'Нақшакаши асосӣ нақша месозад'}, m50Elapsed:(m,s)=>m+':'+s, m50CanClose:'Ин экранро муддати дароз набандед: агар алоқа канда шавад, Mira аз ҳамон ҷо давом медиҳад.',
+    m50Roles:{price:'Нархҳо ва ҷои харид',fin:'Пул: ҷамъ кардан, қарз, насия',smart:'Чӣ тавр арзонтар харидан',now:'Қурбҳо, хабарҳо, ҳодисаҳо',market:'Бозор ва талабот',money:'Иқтисод ва пул',ops:'Таъминкунандагон, қонунҳо, оғоз',cases:'Мисолҳои монанд ва сирҳо'},
+    m50Doing:['дар интернет меҷӯяд','саҳифаҳоро мехонад','рақамҳоро месанҷад','ҳисобот менависад'], m50RoleDone:'тайёр', m50Chief:'Нақшакаши асосӣ', m50ChiefDo:['ҳисоботҳоро ҷамъ мекунад','сенарияҳоро ҳисоб мекунад','қадамҳоро менависад'], m50Wait:'ҳисоботҳоро интизор аст',
+    m50Score:'Чӣ қадар воқеӣ', m50ScoreA:s=>'Чӣ қадар воқеӣ: '+s+' аз 100', m50PriceT:'Нарх дар бозор', m50Yours:'нархи шумо', m50MarketsT:'Аз куҷо харидан', m50ScenT:'Роҳҳои харид', m50Best:'барои шумо беҳтар',
+    m50Sk:{save:'ҷамъ кардан',loan:'қарз',mix:'ҷамъ + қарз',alt:'варианти арзонтар',inst:'насия',lease:'лизинг'}, m50Down:v=>'пардохти аввал '+v,
+    m50CostsT:'Боз чӣ пардохтан лозим', m50Per:{once:'як бор',month:'дар моҳ',year:'дар сол'}, m50Own5:v=>'Дар 5 соли соҳибӣ: ≈ '+v,
+    m50StepsT:'Нақша қадам ба қадам', m50StepM:m=>m?'баъди '+m+' моҳ':'ҳозир', m50How:'Чӣ тавр', m50CostL:'Чӣ қадар', m50DoneK:'Тайёр, вақте ки', m50StepProg:(d,n)=>'Иҷро шуд '+d+' аз '+n,
+    m50CheckT:'Пеш аз харид санҷед', m50TipsT:'Чӣ тавр арзонтар ва зудтар харидан', m50SaveV:v=>'сарфа ≈ '+v, m50AltsT:'Вариантҳои арзонтар', m50Cheaper:v=>v+' арзонтар',
+    m50RisksT:'Хатарҳо ва ҳимоя', m50FactT:'Ҳоло чӣ таъсир мерасонад', m50EvT:'Ҳодисаҳои наздик', m50Timing:'Кай харидан', m50TeamFound:'Даста чӣ ёфт', m50PlanAt:(d,c)=>'Нақша аз '+d+' · маблағҳо бо '+c,
+    m50Imp:{plus:'ба фоида',minus:'ба зарар',mixed:'ҳар хел'}, m50InD:n=>n<=0?'имрӯз':n===1?'фардо':'баъди '+n+' рӯз',
+    m50Ask:'Аз Сифра дар бораи ин нақша пурсидан', m50AskQ:(nm,v)=>'Нақшаи хариди ман «'+nm+'»: '+v+' Дар ин ҳафта чӣ кор кунам ва чӣ тавр тезонам?',
+    m50Track:'Шумо дар роҳед', m50SavedOf:(a,b)=>'Ҷамъ шуд '+a+' аз '+b, m50Next:'Қадами навбатӣ', m50Left:(v,n)=>'Монд '+v+(n?' — бо суръати шумо '+n+' моҳ':''),
+    m50ScenG:'Се сенарияи фоида', m50ScenL:{low:'агар бадтар',base:'одатан',high:'агар беҳтар'}, m50ScenA:'Фоида аз рӯи моҳҳо: се сенария', m50ScenGoal:'ҳадаф', m50ScenRd:(m,l,b,h)=>'Моҳи '+m+': '+l+' · '+b+' · '+h,
+    m50SensT:'Чӣ ба фоида бештар таъсир мекунад', m50SensLead:'Агар омил 20% бадтар ё беҳтар шавад — фоидаи моҳона чӣ қадар тағйир меёбад.', m50FunT:'Воронка дар як моҳ', m50FunConv:p=>p+'%',
+    m50WhereT:'Шумо ҳоло дар куҷо', m50WhereM:n=>'Моҳи '+n+'-уми нақша', m50PlanP:v=>'аз рӯи нақша фоида '+v, m50FactP:v=>'аз рӯи сабтҳоятон ≈ '+v, m50GoalFx:(v,c)=>'Ҳадаф имрӯз: '+v+' дар моҳ бо қурби Бонки миллӣ ('+c+')',
+    m50EvG:'Ҳодисаҳои наздик барои ҳадафи шумо', m50TeamBadge:n=>'даста: '+n+' тадқиқотчӣ'
+  },
+  en:{
+    m50CurL:'Price currency', m50FxNote:(c,r,v)=>'1 '+c+' = '+r+' TJS · price today ≈ '+v, m50Fx30:(p,d,up)=>'The rate moved '+p+' in 30 days — your target got '+d+' '+(up?'more expensive':'cheaper')+'.',
+    m50WaysT:'Three ways to buy', m50WaysLead:'Compare and pick — the calculation below updates.', m50W:{save:'Save up',loan:'Loan',mix:'Save half + loan'},
+    m50In:(n,d)=>'in '+n+' mo · '+d, m50Now:'right away', m50PerMo:v=>v+' a month', m50Over:v=>'overpay '+v, m50NoOver:'no overpayment', m50Tot:v=>v+' in total',
+    m50NeedMo:(v,d)=>'To buy by '+d+' — '+v+' a month', m50ByRec:v=>'your records show ≈ '+v+' free a month', m50FreeNote:v=>'Mira took this from your records: ≈ '+v+' free a month. Want a different amount? Enter it under “I set aside a month”.', m50Pick:'Choose', m50Picked:'chosen',
+    m50Dti:p=>'payment is '+p+'% of income', m50DtiBad:'over a third of income — heavy', m50SetS:'Enter how much you can set aside a month to see the purchase date.', m50LoanP:(r,y)=>'rate '+r+'%, '+y+' yrs',
+    m50TeamT:'Plan from Sifra’s team', m50TeamLead:'Five researchers study prices and where to buy, loans and saving, how to pay less, exchange rates, news and upcoming events — then the lead planner builds a step-by-step plan. Usually 3–6 minutes.',
+    m50TeamLeadG:'Five researchers study the market, the economics, suppliers and laws, similar businesses, exchange rates and news — then the lead planner builds a step-by-step plan.',
+    m50TeamGo:'Build the plan', m50TeamAgain:'Build again', m50TeamNeed:'First enter what you’re buying or the price.', m50TeamOld:'Mira needs the new server (version 26).', m50TeamLimit:'No plans left for today (4 a day). Try again tomorrow.', m50TeamErr:'Couldn’t build the plan. Try again.', m50TeamOff:'You need internet.',
+    m50Stage:{research:'The team is researching',plan:'The lead planner is building the plan'}, m50Elapsed:(m,s)=>m+':'+s, m50CanClose:'Don’t leave this screen for long: if the connection drops, Mira continues from the same place.',
+    m50Roles:{price:'Prices and where to buy',fin:'Money: save, loan, instalments',smart:'How to pay less',now:'Rates, news, events',market:'Market and demand',money:'Economics and money',ops:'Suppliers, laws, launch',cases:'Similar cases and secrets'},
+    m50Doing:['searching the web','reading pages','checking numbers','writing the report'], m50RoleDone:'done', m50Chief:'Lead planner', m50ChiefDo:['merging reports','calculating scenarios','writing steps'], m50Wait:'waiting for reports',
+    m50Score:'How realistic', m50ScoreA:s=>'How realistic: '+s+' of 100', m50PriceT:'Market price', m50Yours:'your price', m50MarketsT:'Where to buy', m50ScenT:'Ways to buy', m50Best:'best for you',
+    m50Sk:{save:'save up',loan:'loan',mix:'save + loan',alt:'cheaper option',inst:'instalments',lease:'lease'}, m50Down:v=>'down payment '+v,
+    m50CostsT:'What else you’ll pay', m50Per:{once:'once',month:'a month',year:'a year'}, m50Own5:v=>'Over 5 years of ownership: ≈ '+v,
+    m50StepsT:'Step-by-step plan', m50StepM:m=>m?'in '+m+' mo':'now', m50How:'How exactly', m50CostL:'Cost', m50DoneK:'Done when', m50StepProg:(d,n)=>d+' of '+n+' done',
+    m50CheckT:'Check before buying', m50TipsT:'How to pay less and buy sooner', m50SaveV:v=>'saves ≈ '+v, m50AltsT:'Cheaper options', m50Cheaper:v=>v+' cheaper',
+    m50RisksT:'Risks and protection', m50FactT:'What matters right now', m50EvT:'Upcoming events', m50Timing:'When to buy', m50TeamFound:'What the team found', m50PlanAt:(d,c)=>'Plan from '+d+' · amounts in '+c,
+    m50Imp:{plus:'helps',minus:'hurts',mixed:'mixed'}, m50InD:n=>n<=0?'today':n===1?'tomorrow':'in '+n+' days',
+    m50Ask:'Ask Sifra about this plan', m50AskQ:(nm,v)=>'My purchase plan “'+nm+'”: '+v+' What should I do this week and how can I speed it up?',
+    m50Track:'You’re on the way', m50SavedOf:(a,b)=>'Saved '+a+' of '+b, m50Next:'Next step', m50Left:(v,n)=>v+' to go'+(n?' — '+n+' mo at your pace':''),
+    m50ScenG:'Three profit scenarios', m50ScenL:{low:'if worse',base:'expected',high:'if better'}, m50ScenA:'Profit by month: three scenarios', m50ScenGoal:'goal', m50ScenRd:(m,l,b,h)=>'Month '+m+': '+l+' · '+b+' · '+h,
+    m50SensT:'What moves profit the most', m50SensLead:'If a factor is 20% worse or better — how much monthly profit changes.', m50FunT:'Monthly funnel', m50FunConv:p=>p+'%',
+    m50WhereT:'Where you are now', m50WhereM:n=>'Month '+n+' of the plan', m50PlanP:v=>'plan profit '+v, m50FactP:v=>'your records show ≈ '+v, m50GoalFx:(v,c)=>'Your goal today: '+v+' a month at the National Bank rate ('+c+')',
+    m50EvG:'Upcoming events for your goal', m50TeamBadge:n=>'team: '+n+' researchers'
+  }
+};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M50S[k]); }catch(e){} Object.assign(D[k],M50S[k]); }
+/* ===================== v50: команда Сифры · «Большая покупка 2.0» · «Путь к цели 2.0» =====================
+   Анушер (25.11): в «Большой покупке» нельзя выбрать валюту, линия при пустых полях ничего не значит, советы пустые; план должен быть
+   до мелочей, как у эксперта, который учёл курсы, новости, ближайшие события и все факторы — то, чего обычный ИИ не даёт.
+   Что сделали и почему:
+   - Команда агентов (сервер v26): 5 исследователей параллельно (цены/рынок, деньги, поставки или «как дешевле», кейсы, курсы-новости-события),
+     потом главный планировщик. Так делают глубокие исследования у лучших ИИ-продуктов (несколько агентов + сборка) — ответ опирается на
+     десятки свежих страниц, а не на память модели.
+   - Цена в любой валюте; курс Нацбанка живой: «цель сегодня стоит…» и что сделал курс за 30 дней.
+   - «Три пути к покупке» сразу, без единой цифры «откладываю»: накопить / кредит / половина + кредит — срок, платёж, переплата;
+     Mira сама берёт из записей, сколько свободно в месяц (Fidelity, Monarch «Goals»: цель начинается с «сколько в месяц»).
+   - Вместо одной линии — разные виды: шкала «насколько реально», полоса цен по городам, сравнение способов (срок и переплата),
+     дорога шагов с галочками, проверка перед покупкой, факторы и события с обратным отсчётом; для цели — веер сценариев,
+     «торнадо» чувствительности, воронка, «где вы сейчас» против плана (план против факта — основа сопровождения у YNAB и Monarch).
+   - Движение — только при интернете (m48-live); prefers-reduced-motion — без анимации. */
+const M50={prog:{},run:{},tick:null};
+const M50_CUR=['TJS','USD','EUR','RUB','CNY','AED','TRY','KZT'], M50_SY={USD:'$',EUR:'€',RUB:'₽',CNY:'¥',AED:'AED',TRY:'₺',KZT:'₸'};
+const M50_ROLES={buy:['price','fin','smart','now'],goal:['market','money','ops','cases','now']};
+const M50_RICO={price:'tag',fin:'loans',smart:'bulb',now:'zap',market:'stats',money:'cash',ops:'truck',cases:'star'};
+const m50Sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function m50Rate(c){ if(c==='TJS') return 1; try{ return +rateOf(c)||0; }catch(e){ return 0; } }
+function m50Pc(b){ return b&&M50_CUR.includes(b.pc)&&b.pc!=='TJS'&&m50Rate(b.pc)>0?b.pc:'TJS'; }
+function m50Key(b){ return b.t==='home'?'pm2':'price'; }
+function m50F(v,cur){ return !cur||cur==='TJS'?money(v):fx(v,0)+' '+(M50_SY[cur]||cur); }      /* сумма уже в этой валюте */
+function m50M(v,b){ const c=m50Pc(b); return c==='TJS'?money(v):m50F(v/m50Rate(c),c); }          /* сомони → валюта покупки */
+function m50B(){ try{ const t=bpTop(); return bpOpenNow()&&t&&t.name==='buy'?m44Item(t.arg):null; }catch(e){ return null; } }
+
+/* ---------- цена в любой валюте ---------- */
+function m50FxNote(b){ const c=m50Pc(b); if(c==='TJS') return ''; const r=m50Rate(c), base=m44N(b[m50Key(b)])*(b.t==='home'?Math.max(1,m44N(b.area)):1);
+  let s=L.m50FxNote(c,fx(r,r<0.1?4:r<50?3:2),money(base)); try{ const a=typeof f35Series==='function'?f35Series(c):[]; if(a.length>=5&&base>0){ const ch=(a[a.length-1].v-a[0].v)/a[0].v*100; if(Math.abs(ch)>=0.05) s+=' '+L.m50Fx30(f34Pct(ch),money(Math.abs(base*ch/100)),ch>0); } }catch(e){}
+  return s; }
+try{ const _f50=m44FormHTML; m44FormHTML=function(b){ let h=_f50.apply(this,arguments); try{ const pc=m50Pc(b), key=m50Key(b);
+    const chips=`<div class="m50-cur"><span>${esc(L.m50CurL)}</span><div class="chips" role="radiogroup" aria-label="${esc(L.m50CurL)}">${M50_CUR.filter(c=>c==='TJS'||m50Rate(c)>0).map(c=>`<button type="button" class="chip ${pc===c?'on':''}" role="radio" aria-checked="${pc===c}" data-m50cur="${c}">${esc(c==='TJS'?L.cur:M50_SY[c])}</button>`).join('')}</div></div><p class="m50-fxn" id="m50Fx"${pc==='TJS'?' hidden':''}>${esc(m50FxNote(b))}</p>`;
+    if(pc!=='TJS'){ h=h.replace(new RegExp(`(<input id="m44f-${key}"[^>]*?)value="[^"]*"([^>]*?)data-m44="${key}"`),(m,a,c)=>`${a}value="${b.pv!=null?esc(String(b.pv)):''}"${c}data-m50pv="${key}"`)
+        .replace(new RegExp(`(<label for="m44f-${key}">)([^<]*)(</label>)`),(m,a,t,c)=>a+t+', '+esc(M50_SY[pc])+c); }
+    const i=h.indexOf('<div class="m44-g">'); return i>=0?h.slice(0,i)+chips+h.slice(i):chips+h; }catch(e){ return h; } }; }catch(e){}
+function m50Sync(b){ const pc=m50Pc(b); if(pc==='TJS'||!(+b.pv>0)) return; b[m50Key(b)]=Math.round(+b.pv*m50Rate(pc)); }
+function m50CurSet(c){ const b=m50B(); if(!b||!M50_CUR.includes(c)) return; const key=m50Key(b), old=m50Pc(b), shown=old==='TJS'?b[key]:b.pv; b.pc=c;
+  if(m50Pc(b)==='TJS'){ b.pc='TJS'; b[key]=shown!=null&&shown!==''?+shown:null; b.pv=null; } else { b.pv=shown!=null&&shown!==''?+shown:null; m50Sync(b); if(!(+b.pv>0)) b[key]=null; }
+  const fm=document.getElementById('m44Fm'); if(fm){ fm.innerHTML=m44FormHTML(b); } m44Upd(b,true); m44Touch(b); }
+document.addEventListener('input',e=>{ const el=e.target&&e.target.closest&&e.target.closest('[data-m50pv]'); if(!el) return; const b=m50B(); if(!b) return; b.pv=el.value===''?null:Math.max(0,+el.value); if(+b.pv>0) m50Sync(b); else b[m50Key(b)]=null;
+  const n=document.getElementById('m50Fx'); if(n) n.textContent=m50FxNote(b); m44Upd(b); m44Touch(b); });
+try{ const _uf50=m44UseFound; m44UseFound=function(b){ const r=_uf50.apply(this,arguments); try{ const pc=m50Pc(b); if(pc!=='TJS'&&m44N(b[m50Key(b)])>0){ b.pv=Math.round(m44N(b[m50Key(b)])/m50Rate(pc)); const fm=document.getElementById('m44Fm'); if(fm) fm.innerHTML=m44FormHTML(b); } }catch(e){} return r; }; }catch(e){}
+
+/* ---------- «Три пути к покупке» ---------- */
+function m50Ways(b){ const c=m44Calc(b), E=m44Est(); if(!(c.base>0)) return null; const now=m44Mi(), total=c.total, have=m44N(b.have), need=Math.max(0,total-have), S=m44N(b.S), free=+E.free||0, P=b.pay||{}, mp=Math.max(1,m44MiOf(b.mon)-now);
+  const ann=(L0,rp,n)=>{ const r=rp/1200; return L0>0?(r>0?L0*r/(1-Math.pow(1+r,-n)):L0/n):0; };
+  const rate=m44N(P.r)||24, yrs=Math.max(1,m44N(P.y)||3), n=Math.round(yrs*12), pace=S>0?S:free>0?free:0, out=[];
+  /* накопить */
+  { const o={k:'save',total,over:0}; if(pace>0){ o.months=Math.ceil(need/pace); o.monthly=pace; o.rec=!(S>0); } else { o.months=mp; o.monthly=need/mp; o.req=true; } out.push(o); }
+  /* кредит */
+  { const dp=Math.min(90,Math.max(0,m44N(P.dp)||(b.t==='home'?20:30))), down=Math.max(have,c.base*dp/100), L0=Math.max(0,total-down), A=ann(L0,rate,n), wait=have>=down?0:(pace>0?Math.ceil((down-have)/pace):null);
+    out.push({k:'loan',months:wait,monthly:A,over:Math.max(0,A*n-L0),total:total+Math.max(0,A*n-L0),down,rate,yrs,dti:E.inc>0?Math.round((A+(+E.lp||0))/E.inc*100):null}); }
+  /* половина + кредит */
+  { const down=Math.max(have,total/2), L0=Math.max(0,total-down), n2=Math.max(12,Math.round(n/2)), A=ann(L0,rate,n2), wait=have>=down?0:(pace>0?Math.ceil((down-have)/pace):null);
+    out.push({k:'mix',months:wait,monthly:A,over:Math.max(0,A*n2-L0),total:total+Math.max(0,A*n2-L0),down,rate,yrs:Math.round(n2/12*10)/10,dti:E.inc>0?Math.round((A+(+E.lp||0))/E.inc*100):null}); }
+  return {c,E,out,free,S,need,total,have}; }
+function m50WaysHTML(b){ const W=m50Ways(b); if(!W) return ''; const mx=Math.max(...W.out.map(o=>o.total),1), now=m44Mi(), cur=(b.pay||{}).k==='loan'?((+b.pay.dp>=45)?'mix':'loan'):(b.pay||{}).k==='save'?'save':'';
+  const ic={save:'goal',loan:'loans',mix:'repeat'};
+  const cards=W.out.map((o,i)=>{ const when=o.months==null?'':o.months<=0?L.m50Now:L.m50In(o.months,m44Ml(now+o.months));
+    const sub=o.k==='save'?(o.req?L.m50NeedMo(m50M(o.monthly,b),m44Ml(now+o.months)):(o.rec?L.m50ByRec(m50M(W.free,b)):L.m50PerMo(m50M(o.monthly,b)))):L.m50PerMo(m50M(o.monthly,b))+' · '+L.m50LoanP(fx(o.rate,o.rate%1?1:0),fx(o.yrs,o.yrs%1?1:0))+' · '+L.m50Down(m50M(o.down,b));
+    return `<article class="m50-way ${o.k}${cur===o.k?' on':''}" style="--i:${i}"><div class="m50-wh"><span>${ico(ic[o.k],18)}</span><b>${esc(L.m50W[o.k])}</b>${when?`<em>${esc(when)}</em>`:''}</div>
+      <p>${esc(sub)}</p><div class="m50-wb" aria-hidden="true"><i class="p" style="--w:${(W.total/mx*100).toFixed(1)}%"></i>${o.over>0?`<i class="o" style="--w:${(o.over/mx*100).toFixed(1)}%"></i>`:''}</div>
+      <div class="m50-wf"><span class="${o.over>0?'bad':'good'}">${esc(o.over>0?L.m50Over(m50M(o.over,b)):L.m50NoOver)}</span><span>${esc(L.m50Tot(m50M(o.total,b)))}</span></div>
+      ${o.dti!=null?`<p class="m50-dti ${o.dti>33?'bad':''}">${ico(o.dti>33?'warn':'info',13)}<span>${esc(L.m50Dti(o.dti))}${o.dti>33?' — '+esc(L.m50DtiBad):''}</span></p>`:''}
+      <button type="button" class="btn btn-ghost" data-m50way="${o.k}" aria-pressed="${cur===o.k}">${ico(cur===o.k?'check':'next',16)} ${esc(cur===o.k?L.m50Picked:L.m50Pick)}</button></article>`; }).join('');
+  const hint=!(W.S>0)?`<p class="m50-hint">${ico('info',14)}<span>${esc(W.free>0?L.m50FreeNote(m50M(W.free,b)):L.m50SetS)}</span></p>`:'';
+  return `<section class="m44-cd m50-ways"><h3>${ico('flag',18)} ${esc(L.m50WaysT)}</h3><p class="m50-lead">${esc(L.m50WaysLead)}</p><div class="m50-wg">${cards}</div>${hint}</section>`; }
+function m50WayPick(k){ const b=m50B(); if(!b) return; b.pay=b.pay||{}; if(k==='save') b.pay.k='save'; else { b.pay.k='loan'; if(k==='mix'){ b.pay.dp=50; b.pay.y=Math.max(1,Math.round((m44N(b.pay.y)||3)/2)); } else if(+b.pay.dp>=45) b.pay.dp=b.t==='home'?20:30; }
+  const fm=document.getElementById('m44Fm'); if(fm) fm.innerHTML=m44FormHTML(b); m44Upd(b,true); m44Touch(b); try{ m40Vib(); }catch(e){} }
+
+/* ---------- команда Сифры: запрос, ход работы ---------- */
+async function m50Team(kind,payload,key,job){ if(navigator.onLine===false) throw new Error('off'); let c=null; try{ c=await sfCapsLoad(); }catch(e){} if(!(c&&+c.v>=26)) throw new Error('old');
+  const P=M50.prog[key]={kind,stage:'research',done:[],t0:Date.now()}; m50Tick(); let fails=0;
+  try{ for(let i=0;i<90;i++){ let r=null,j=null; try{ r=await fetch(API_BASE+'/api/mk/team',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(Object.assign({id:mkId(),lang,kind,job},payload))}); j=await r.json().catch(()=>({})); }
+      catch(e){ if(++fails>6) throw new Error('srv'); await m50Sleep(4000); continue; }
+      if(j&&j.plan) return j; if(!r.ok) throw new Error(j&&j.error==='limit'?'limit':r.status===404&&!(j&&j.error)?'old':'srv');
+      if(j&&j.pending){ P.stage=j.stage||P.stage; if(Array.isArray(j.done)) P.done=j.done; m50ProgDraw(); await m50Sleep(j.stage==='plan'&&!j.retry&&P.done.length?600:3000); continue; }
+      throw new Error('srv'); } throw new Error('srv'); }
+  finally{ delete M50.prog[key]; } }
+function m50ProgHTML(key){ const P=M50.prog[key]; if(!P) return ''; const el=Math.floor((Date.now()-P.t0)/1000), mm=Math.floor(el/60), ss=String(el%60).padStart(2,'0'), roles=M50_ROLES[P.kind]||[], plan=P.stage==='plan';
+  return `<div class="m50-prog" data-m50key="${esc(key)}" aria-live="polite"><div class="m50-ph"><b>${esc(L.m50Stage[plan?'plan':'research'])}</b><span>${esc(L.m50Elapsed(mm,ss))}</span></div>
+    <ul>${roles.map((k,i)=>{ const dn=P.done.includes(k)||plan; return `<li class="${dn?'dn':'on'}" style="--i:${i}"><span class="ic">${ico(dn?'check':M50_RICO[k],16)}</span><span class="tx"><b>${esc(L.m50Roles[k])}</b><small>${esc(dn?L.m50RoleDone:L.m50Doing[(Math.floor(el/4)+i)%L.m50Doing.length]+'…')}</small></span>${dn?'':'<i class="dots" aria-hidden="true"><u></u><u></u><u></u></i>'}</li>`; }).join('')}
+      <li class="chief ${plan?'on':'wt'}"><span class="ic">${ico('sparkle',16)}</span><span class="tx"><b>${esc(L.m50Chief)}</b><small>${esc(plan?L.m50ChiefDo[Math.floor(el/5)%L.m50ChiefDo.length]+'…':L.m50Wait)}</small></span>${plan?'<i class="dots" aria-hidden="true"><u></u><u></u><u></u></i>':''}</li></ul>
+    <p>${ico('info',13)} ${esc(L.m50CanClose)}</p></div>`; }
+function m50ProgDraw(){ document.querySelectorAll('.m50-prog[data-m50key]').forEach(el=>{ const h=m50ProgHTML(el.dataset.m50key); if(h){ const d=document.createElement('div'); d.innerHTML=h; el.replaceWith(d.firstElementChild); } });
+  /* «Путь к цели»: вместо простого ожидания — команда */
+  try{ const t=bpTop(); if(t&&t.name==='goal46'&&M50.prog[t.arg]){ const w=document.querySelector('.m46-wait'); if(w&&!w.querySelector('.m50-prog')){ w.classList.add('m50-gw'); w.innerHTML=`<b class="m50-gt">${esc(L.m50TeamT)}</b><small>${esc(L.m50TeamLeadG)}</small>`+m50ProgHTML(t.arg); } } }catch(e){} }
+function m50Tick(){ if(M50.tick) return; M50.tick=setInterval(()=>{ if(!Object.keys(M50.prog).length){ clearInterval(M50.tick); M50.tick=null; return; } m50ProgDraw(); },1000); }
+
+/* ---------- «Большая покупка»: план от команды ---------- */
+function m50Dial(s,why){ const R=30, C=2*Math.PI*R, cls=s>=70?'hi':s>=40?'mid':'lo';
+  return `<div class="m50-sc ${cls}"><span class="m50-dial" role="img" aria-label="${esc(L.m50ScoreA(s))}"><svg viewBox="0 0 72 72" aria-hidden="true"><circle class="t" cx="36" cy="36" r="${R}"/><circle class="f" cx="36" cy="36" r="${R}" stroke-dasharray="${C.toFixed(1)}" style="--o:${(C*(1-s/100)).toFixed(1)};--c:${C.toFixed(1)}"/></svg><b>${s}</b></span><div><small>${esc(L.m50Score)}</small>${why?`<p>${esc(why)}</p>`:''}</div></div>`; }
+function m50EvHTML(a,title){ if(!(a||[]).length) return ''; const d0=parseYmd(dkey()).getTime();
+  return `<div class="m50-bl"><h4>${ico('cal',16)} ${esc(title)}</h4><ul class="m50-ev">${a.map(x=>{ const dt=parseYmd(x.date), n=Math.round((dt.getTime()-d0)/86400e3); return `<li class="${n<=14?'soon':''}"><span class="d"><b>${dt.getDate()}</b><small>${esc(MONTHS[lang].short[dt.getMonth()])}</small></span><span class="t"><em>${esc(L.m50InD(n))}</em><b>${esc(x.title)}</b>${x.what?`<p>${esc(x.what)}</p>`:''}</span></li>`; }).join('')}</ul></div>`; }
+function m50FactHTML(a){ return (a||[]).length?`<div class="m50-bl"><h4>${ico('zap',16)} ${esc(L.m50FactT)}</h4><ul class="m50-fc">${a.map(f=>`<li class="${esc(f.impact)}"><span>${esc(L.m50Imp[f.impact]||'')}</span><div><b>${esc(f.f)}</b><p>${esc(f.what)}</p></div></li>`).join('')}</ul></div>`:''; }
+function m50TeamHTML(team,meta){ const a=(team||[]).filter(x=>x&&L.m50Roles[x.k]&&(x.find||[]).length); if(!a.length) return '';
+  return `<details class="m50-bl m50-tm"><summary>${ico('people',16)} ${esc(L.m50TeamFound)}${meta&&meta.length?` <em>${esc(L.m50TeamBadge(meta.length))}</em>`:''}</summary>${a.map(x=>`<div><b>${ico(M50_RICO[x.k]||'star',14)} ${esc(L.m50Roles[x.k])}</b><ul>${x.find.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`).join('')}</details>`; }
+function m50SrcHTML(src){ return (src||[]).length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${esc(L.bpSrcN(src.length))}</summary><div class="id-src">${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||String(s.url).replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:''; }
+function m50PlanHTML(b){ const T=b.tp, P=T.plan, cur=T.cur||'TJS', F=v=>m50F(v,cur), r=m50Rate(cur)||1, c=m44Calc(b), mine=c.base>0?c.base/r:null, done=T.done||{}, chk=T.chk||{};
+  /* вы на пути */
+  const have=m44N(b.have)/r, tot=c.total>0?c.total/r:(P.price&&P.price.mid)||0, S=m44N(b.S)/r, pct=tot>0?Math.min(100,Math.round(have/tot*100)):0, left=Math.max(0,tot-have), nx=(P.steps||[]).findIndex((s,i)=>!done[i]);
+  const track=tot>0?`<div class="m50-tr"><span class="m49-ring" role="img" aria-label="${pct}%"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="21"/><circle class="f" cx="26" cy="26" r="21" stroke-dasharray="131.95" style="--o:${(131.95*(1-pct/100)).toFixed(2)};--c:131.95"/></svg><span><b>${pct}%</b></span></span>
+      <div><small>${esc(L.m50Track)}</small><b>${esc(L.m50SavedOf(F(have),F(tot)))}</b><p>${esc(L.m50Left(F(left),S>0?Math.ceil(left/S):0))}</p>${nx>=0?`<p class="nx">${ico('next',14)}<span><b>${esc(L.m50Next)}:</b> ${esc(P.steps[nx].l)}</span></p>`:''}</div></div>`:'';
+  /* цена на рынке и где купить */
+  const pr=P.price||{}, mk=P.markets||[], vals=[pr.lo,pr.mid,pr.hi,mine].concat(...mk.map(m=>[m.lo,m.hi])).filter(v=>v>0); let band='';
+  if(vals.length>=2){ const lo=Math.min(...vals)*0.97, hi=Math.max(...vals)*1.03, X=v=>((v-lo)/(hi-lo)*100).toFixed(1);
+    const row=(lab,a,z,mid,cls,url,note)=>{ const A=a>0?a:z, Z=z>0?z:a; return `<div class="m50-pr ${cls||''}"><div class="l"><b>${url?`<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(lab)} ${ico('external',12)}</a>`:esc(lab)}</b><span>${esc(A===Z?F(A):F(A)+' – '+F(Z))}</span></div><div class="tk"><i style="left:${X(A)}%;width:${Math.max(1.5,X(Z)-X(A)).toFixed(1)}%"></i>${mid>0?`<u style="left:${X(mid)}%"></u>`:''}${mine?`<em style="left:${X(mine)}%"></em>`:''}</div>${note?`<small>${esc(note)}</small>`:''}</div>`; };
+    band=`<div class="m50-bl"><h4>${ico('tag',16)} ${esc(L.m50PriceT)}</h4>${pr.lo>0||pr.hi>0?row(L.m50PriceT,pr.lo,pr.hi,pr.mid,'all','',pr.note):''}${mk.map(m=>row(m.where,m.lo,m.hi,0,'',m.url,m.note)).join('')}${mine?`<p class="m50-lg"><em></em>${esc(L.m50Yours)}: ${esc(F(mine))}</p>`:''}</div>`; }
+  /* способы купить */
+  const sc=P.scen||[], mxM=Math.max(...sc.map(s=>s.months||0),1), mxT=Math.max(...sc.map(s=>s.total||0),1), now=m44Mi();
+  const scen=sc.length?`<div class="m50-bl"><h4>${ico('repeat',16)} ${esc(L.m50ScenT)}</h4><div class="m50-sg">${sc.map((s,i)=>`<article class="m50-sn${s.best?' best':''}" style="--i:${i}"><div class="h"><b>${esc(s.name)}</b><span class="k">${esc(L.m50Sk[s.k]||'')}</span>${s.best?`<span class="bs">${ico('star',12)} ${esc(L.m50Best)}</span>`:''}</div>
+      <div class="r"><small>${esc(s.months>0?L.m50In(Math.round(s.months),m44Ml(now+Math.round(s.months))):L.m50Now)}</small><div class="tb"><i style="--w:${Math.max(2,s.months/mxM*100).toFixed(1)}%"></i></div></div>
+      ${s.total>0?`<div class="r"><small>${esc(L.m50Tot(F(s.total)))}${s.overpay>0?' · '+esc(L.m50Over(F(s.overpay))):' · '+esc(L.m50NoOver)}</small><div class="mb"><i class="p" style="--w:${((s.total-(s.overpay||0))/mxT*100).toFixed(1)}%"></i>${s.overpay>0?`<i class="o" style="--w:${(s.overpay/mxT*100).toFixed(1)}%"></i>`:''}</div></div>`:''}
+      <p>${s.monthly>0?`<b>${esc(L.m50PerMo(F(s.monthly)))}</b>`:''}${s.down>0?' · '+esc(L.m50Down(F(s.down))):''}${s.note?' · '+esc(s.note):''}</p></article>`).join('')}</div></div>`:'';
+  /* что ещё платить */
+  const cs=P.costs||[], sum=p=>cs.filter(x=>x.per===p).reduce((s,x)=>s+x.v,0), own5=sum('once')+sum('year')*5+sum('month')*60;
+  const costs=cs.length?`<div class="m50-bl"><h4>${ico('cash',16)} ${esc(L.m50CostsT)}</h4>${['once','year','month'].filter(p=>cs.some(x=>x.per===p)).map(p=>`<div class="m50-cg"><small>${esc(L.m50Per[p])} · ${esc(F(sum(p)))}</small><ul>${cs.filter(x=>x.per===p).map(x=>`<li><span>${esc(x.l)}</span><b>${esc(F(x.v))}</b></li>`).join('')}</ul></div>`).join('')}<p class="m50-own">${ico('info',14)}<span>${esc(L.m50Own5(F(own5)))}</span></p></div>`:'';
+  /* план по шагам */
+  const st=P.steps||[], dn=st.filter((s,i)=>done[i]).length; let lastM=null;
+  const steps=st.length?`<div class="m50-bl"><h4>${ico('flag',16)} ${esc(L.m50StepsT)} <em>${esc(L.m50StepProg(dn,st.length))}</em></h4><div class="m50-pb"><i style="width:${Math.round(dn/st.length*100)}%"></i></div><ol class="m50-st">${st.map((s,i)=>{ const head=s.m!==lastM?`<li class="mh"><span>${esc(L.m50StepM(s.m))}${s.m?' · '+esc(m44Ml(now+s.m)):''}</span></li>`:''; lastM=s.m;
+      return head+`<li class="${done[i]?'dn':''}${i===nx?' nx':''}" style="--i:${i}"><label><input type="checkbox" data-m50st="${i}" ${done[i]?'checked':''}><span>${esc(s.l)}</span></label>${s.how||s.cost||s.k?`<details><summary>${esc(L.m50How)}</summary>${s.how?`<p>${esc(s.how)}</p>`:''}${s.cost?`<p><b>${esc(L.m50CostL)}:</b> ${esc(s.cost)}</p>`:''}${s.k?`<p><b>${esc(L.m50DoneK)}:</b> ${esc(s.k)}</p>`:''}</details>`:''}</li>`; }).join('')}</ol></div>`:'';
+  const check=(P.check||[]).length?`<div class="m50-bl"><h4>${ico('shield',16)} ${esc(L.m50CheckT)}</h4><ul class="m50-ck">${P.check.map((x,i)=>`<li><label><input type="checkbox" data-m50ck="${i}" ${chk[i]?'checked':''}><span>${esc(x)}</span></label></li>`).join('')}</ul></div>`:'';
+  const tips=(P.tips||[]).length?`<div class="m50-bl"><h4>${ico('bulb',16)} ${esc(L.m50TipsT)}</h4>${P.tips.map(x=>`<div class="m50-tp"><b>${esc(x.t)}</b>${x.save>0?`<em>${esc(L.m50SaveV(F(x.save)))}</em>`:''}<p>${esc(x.d)}</p></div>`).join('')}</div>`:'';
+  const ref=mine||pr.mid||0, alts=(P.alts||[]).length?`<div class="m50-bl"><h4>${ico('search',16)} ${esc(L.m50AltsT)}</h4>${P.alts.map(x=>`<div class="m50-al"><div><b>${esc(x.name)}</b>${x.price>0?`<span>${esc(F(x.price))}</span>`:''}${x.price>0&&ref>x.price?`<em>${esc(L.m50Cheaper(F(ref-x.price)))}</em>`:''}</div>${x.price>0&&ref>0?`<div class="ab"><i style="--w:${Math.min(100,x.price/ref*100).toFixed(1)}%"></i></div>`:''}<p>${esc(x.why)}</p></div>`).join('')}</div>`:'';
+  const risks=(P.risks||[]).length?`<div class="m50-bl"><h4>${ico('warn',16)} ${esc(L.m50RisksT)}</h4><ul class="m50-rk">${P.risks.slice().sort((a,z)=>z.p*z.i-a.p*a.i).map(x=>`<li class="s${x.p*x.i>=6?3:x.p*x.i>=3?2:1}"><i></i><div><b>${esc(x.l)}</b>${x.fix?`<p>${ico('shield',13)} ${esc(x.fix)}</p>`:''}</div></li>`).join('')}</ul></div>`:'';
+  const timing=P.timing?`<p class="m50-tmg">${ico('clock',15)}<span><b>${esc(L.m50Timing)}:</b> ${esc(P.timing)}</span></p>`:'';
+  const q=L.m50AskQ(b.nm||L.m44TyS[b.t]||'',P.verdict||'');
+  return `<section class="m44-cd m50-plan" data-m49io="bp${esc(b.id)}"><h3>${ico('sparkle',18)} ${esc(L.m50TeamT)}</h3><p class="m50-at">${esc(L.m50PlanAt(fmtDate(parseYmd(T.at)||new Date()),cur==='TJS'?L.cur:M50_SY[cur]||cur))}</p>
+    <p class="m50-vd">${esc(P.verdict)}</p>${P.score!=null?m50Dial(P.score,P.score_why):''}${track}${timing}${band}${scen}${steps}${m50FactHTML(P.factors)}${m50EvHTML(P.events,L.m50EvT)}${costs}${check}${tips}${alts}${risks}${m50TeamHTML(P.team,T.team)}${m50SrcHTML(T.src)}
+    <div class="m50-pa"><button type="button" class="btn btn-ghost" data-sifra="${esc(q)}">${ico('chat',16)} ${esc(L.m50Ask)}</button><button type="button" class="link-btn" data-m50go="1">${ico('repeat',14)} ${esc(L.m50TeamAgain)}</button></div></section>`; }
+function m50PlanBox(b){ const T=b.tp; if(T&&T.st==='ok'&&T.plan) return m50PlanHTML(b);
+  if(T&&T.st==='wait'){ if(M50.prog[b.id]) return `<section class="m44-cd m50-cta"><h3>${ico('sparkle',18)} ${esc(L.m50TeamT)}</h3>${m50ProgHTML(b.id)}</section>`; if(Date.now()-(T.t0||0)<25*60e3&&T.job){ setTimeout(()=>m50BuyResume(b),50); return `<section class="m44-cd m50-cta"><h3>${ico('sparkle',18)} ${esc(L.m50TeamT)}</h3><div class="p29-busy"><span class="p29-spin" aria-hidden="true"></span></div></section>`; } T.st='err'; T.err='srv'; }
+  const err=T&&T.st==='err'?`<p class="m50-err">${ico('warn',14)} ${esc(T.err==='limit'?L.m50TeamLimit:T.err==='old'?L.m50TeamOld:T.err==='off'?L.m50TeamOff:L.m50TeamErr)}</p>`:'';
+  return `<section class="m44-cd m50-cta"><h3>${ico('sparkle',18)} ${esc(L.m50TeamT)}</h3><p class="m50-lead">${esc(L.m50TeamLead)}</p><ul class="m50-rl">${M50_ROLES.buy.map(k=>`<li>${ico(M50_RICO[k],15)} ${esc(L.m50Roles[k])}</li>`).join('')}</ul>${err}<button type="button" class="btn btn-primary btn-block" data-m50go="1">${ico('sparkle',16)} ${esc(L.m50TeamGo)}</button></section>`; }
+function m50PlanDraw(b){ const el=document.getElementById('m50Plan'), cur=m50B(); if(el&&cur&&cur.id===b.id){ el.innerHTML=m50PlanBox(b); try{ m49Watch(); }catch(e){} } }
+function m50BuyPayload(b){ const c=m44Calc(b), E=m44Est(), pc=m50Pc(b), r=m50Rate(pc)||1, cv=v=>v>0?Math.round(v/r):null, reg=(()=>{ try{ return m8Region(); }catch(e){ return ''; } })();
+  return {buy:{t:{event:'toi',study:'edu'}[b.t]||b.t,nm:String(b.nm||'').slice(0,120),city:String(b.city||'').slice(0,60),country:reg,cname:(reg&&L['cn_'+reg])||'',price:cv(c.base),cur:pc,year:+b.year||null,kind:b.t==='car'||b.t==='home'?(b.kind==='new'?'new':'used'):'',
+    saved:cv(m44N(b.have)),monthly:cv(m44N(b.S)),free:cv(+E.free||0),loans:cv(+E.lp||0),income:cv(+E.inc||0),by:b.mon,fx:pc==='TJS'?null:r,pay:(b.pay||{}).k||''}}; }
+function m50BuyGo(b,resume){ if(M50.run[b.id]) return; if(!resume){ if(!(String(b.nm||'').trim()||m44Calc(b).base>0)){ toast(L.m50TeamNeed); return; }
+    b.tp={st:'wait',t0:Date.now(),cur:m50Pc(b),job:'tj'+Date.now().toString(36)+Math.random().toString(36).slice(2,8)}; }
+  const T=b.tp; M50.run[b.id]=1; m44Touch(b); const pr=m50Team('buy',m50BuyPayload(b),b.id,T.job); setTimeout(()=>m50PlanDraw(b),30);
+  pr.then(j=>{ Object.assign(T,{st:'ok',plan:j.plan,src:(j.sources||[]).slice(0,14),team:j.team||[],at:j.at||ymd(new Date()),done:{},chk:{}}); delete T.err; }).catch(x=>{ T.st='err'; T.err=x&&x.message||'srv'; })
+    .finally(()=>{ delete M50.run[b.id]; m44Touch(b); try{ persist(); }catch(e){} m50PlanDraw(b); if(T.st==='ok'){ const cur=m50B(); if(!cur||cur.id!==b.id) toast(L.m50TeamT+': '+(b.nm||L.m44TyS[b.t]||'')); } }); }
+function m50BuyResume(b){ if(b.tp&&b.tp.st==='wait'&&!M50.run[b.id]) m50BuyGo(b,true); }
+
+/* результаты «Большой покупки»: сверху — три пути и план команды; пустые графики не показываем */
+function m50Nos(b,c){ return (b.pay||{}).k!=='loan'&&(b.pay||{}).k!=='inst'&&!(+c.S>0)&&!(m44N(b.have)>0); }   /* нечего показывать: не сказано «откладываю» и по записям свободных денег нет */
+try{ const _r50=m44ResHTML; m44ResHTML=function(b){ try{ m50Sync(b); }catch(e){} const h=_r50.apply(this,arguments); try{ const c=M44.c||m44Calc(b);
+    return `<div id="m50Ways">${m50WaysHTML(b)}</div><div id="m50Plan">${m50PlanBox(b)}</div><div class="m50-calc${c.base>0&&m50Nos(b,c)?' m50-nos':''}" id="m50Calc">${h}</div>`; }catch(e){ return h; } }; }catch(e){}
+try{ const _u50=m44Upd; m44Upd=function(b,full){ const r=_u50.apply(this,arguments); clearTimeout(M50.ut); M50.ut=setTimeout(()=>{ try{ const w=document.getElementById('m50Ways'), cc=document.getElementById('m50Calc'), cur=m50B(); if(!cur||cur.id!==b.id) return; if(w) w.innerHTML=m50WaysHTML(b); if(cc){ const c=m44Calc(b); cc.classList.toggle('m50-nos',c.base>0&&m50Nos(b,c)); } }catch(e){} },full===0?10:170); return r; }; }catch(e){}
+
+/* ---------- «Путь к цели»: команда и новые виды ---------- */
+try{ const _run50=m46Run; m46Run=function(e){ const self=this, args=arguments; e.st='wait'; e.t0=Date.now(); delete e.err; try{ persist(); }catch(x){} M46.run.add(e.id);
+  const fin=()=>{ M46.run.delete(e.id); try{ persist(); }catch(x){} if(bpOpenNow()&&bpTop()&&bpTop().name==='goal46'&&bpTop().arg===e.id) bpRender(true); else if(e.st==='ok') toast(L.m46T+': '+m46Title(e.G)); };
+  Promise.resolve().then(()=>sfCapsLoad()).catch(()=>null).then(c=>{ if(!(c&&+c.v>=26)){ M46.run.delete(e.id); return _run50.apply(self,args); }
+    e.job=e.job&&Date.now()-(e.jt||0)<25*60e3?e.job:'tj'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); e.jt=e.jt||Date.now();
+    const pr=m50Team('goal',{goal:e.G,answers:e.ans,ctx:m46Ctx()},e.id,e.job); setTimeout(m50ProgDraw,60);
+    return pr.then(j=>{ e.plan=j.plan; e.src=(j.sources||[]).slice(0,14); e.model=j.model||''; e.at=j.at||ymd(new Date()); e.team=j.team||[]; e.st='ok'; delete e.job; delete e.jt; }).catch(x=>{ e.st='err'; e.err=x&&x.message||'srv'; delete e.job; delete e.jt; }).finally(fin); }); }; }catch(e){}
+function m50U(v){ return (v<0?'−':'')+fx(Math.abs(v),0)+' $'; }
+function m50FanHTML(P,goal){ const a=(P.scen||[]).filter(x=>x.base!=null); if(a.length<3) return ''; const W=320, H=170, pL=6, pR=46, pT=14, pB=24, ms=a.map(x=>x.m), m0=Math.min(...ms), m1=Math.max(...ms);
+  const all=a.flatMap(x=>[x.low!=null?x.low:x.base,x.base,x.high!=null?x.high:x.base]).concat(goal>0?[goal]:[]), lo=Math.min(0,...all), hi=Math.max(...all)*1.08||1, X=m=>pL+(m-m0)/Math.max(1,m1-m0)*(W-pL-pR), Y=v=>pT+(1-(v-lo)/(hi-lo))*(H-pT-pB), f=v=>v.toFixed(1);
+  const line=k=>a.map((x,i)=>(i?'L':'M')+f(X(x.m))+','+f(Y(x[k]!=null?x[k]:x.base))).join(' ');
+  const band='M'+a.map(x=>f(X(x.m))+','+f(Y(x.high!=null?x.high:x.base))).join(' L')+' L'+a.slice().reverse().map(x=>f(X(x.m))+','+f(Y(x.low!=null?x.low:x.base))).join(' L')+' Z';
+  const tk=m40Ticks(lo,hi).filter(v=>v<=hi), last=a[a.length-1];
+  return `<section class="m46-sec m50-gs" id="m46s-scen" data-m49io="fan"><h3 class="m44-h3">${esc(L.m50ScenG)}</h3><div class="m50-fan" role="img" aria-label="${esc(L.m50ScenA+'. '+L.m50ScenRd(last.m,m50U(last.low!=null?last.low:last.base),m50U(last.base),m50U(last.high!=null?last.high:last.base)))}"><svg viewBox="0 0 ${W} ${H}" aria-hidden="true">
+      ${tk.map(v=>`<path class="gr" d="M${pL},${f(Y(v))} H${W-pR+4}"/><text class="yl" x="${W}" y="${f(Y(v)+3.5)}" text-anchor="end">${m40Num(v)}</text>`).join('')}${lo<0?`<path class="z" d="M${pL},${f(Y(0))} H${W-pR+4}"/>`:''}
+      <path class="bd" d="${band}"/><path class="lo" d="${line('low')}"/><path class="hi" d="${line('high')}"/><path class="bs" d="${line('base')}" pathLength="1"/>
+      ${goal>0?`<path class="gl" d="M${pL},${f(Y(goal))} H${W-pR+4}"/><text class="glt" x="${pL+2}" y="${f(Y(goal)-4)}">${esc(L.m50ScenGoal)} ${m40Num(goal)}</text>`:''}
+      ${a.filter((x,i)=>i===0||i===a.length-1||i===Math.floor(a.length/2)).map(x=>`<text class="xl" x="${f(X(x.m))}" y="${H-7}" text-anchor="${x.m===m0?'start':x.m===m1?'end':'middle'}">${esc(L.m46Mo?L.m46Mo(x.m):String(x.m))}</text>`).join('')}
+      <circle class="pt" cx="${f(X(last.m))}" cy="${f(Y(last.base))}" r="4.5"/></svg></div>
+    <div class="m50-fl"><span class="lo">${esc(L.m50ScenL.low)} <b>${esc(m50U(last.low!=null?last.low:last.base))}</b></span><span class="bs">${esc(L.m50ScenL.base)} <b>${esc(m50U(last.base))}</b></span><span class="hi">${esc(L.m50ScenL.high)} <b>${esc(m50U(last.high!=null?last.high:last.base))}</b></span></div></section>`; }
+function m50TorHTML(P){ const a=(P.sens||[]).slice().sort((x,y)=>(y.plus-y.minus)-(x.plus-x.minus)); if(a.length<2) return ''; const mx=Math.max(...a.map(x=>Math.max(-x.minus,x.plus)),1);
+  return `<section class="m46-sec m50-gs" id="m46s-sens" data-m49io="tor"><h3 class="m44-h3">${esc(L.m50SensT)}</h3><p class="m50-lead">${esc(L.m50SensLead)}</p><div class="m50-tor">${a.map((x,i)=>`<div class="rw" style="--i:${i}"><span class="l">${x.minus<0?`<em>−${Math.abs(Math.round(x.minus))}%</em>`:''}<i style="--w:${(-x.minus/mx*100).toFixed(1)}%"></i></span><b>${esc(x.f)}</b><span class="r"><i style="--w:${(x.plus/mx*100).toFixed(1)}%"></i>${x.plus>0?`<em>+${Math.round(x.plus)}%</em>`:''}</span></div>`).join('')}</div></section>`; }
+function m50FunHTML(P){ const a=P.funnel||[]; if(a.length<2||!(a[0].v>0)) return '';
+  return `<section class="m46-sec m50-gs" id="m46s-fun" data-m49io="fun"><h3 class="m44-h3">${esc(L.m50FunT)}</h3><div class="m50-fun">${a.map((x,i)=>`<div class="st" style="--w:${Math.max(18,Math.sqrt(x.v/a[0].v)*100).toFixed(1)}%;--i:${i}"><b>${fx(x.v,0)}</b><span>${esc(x.l)}</span>${i&&a[i-1].v>0?`<em>${esc(L.m50FunConv(fx(x.v/a[i-1].v*100,x.v/a[i-1].v<0.1?1:0)))}</em>`:''}</div>`).join('')}</div></section>`; }
+function m50WhereHTML(e){ const P=e.plan, G=e.G; let h='';
+  try{ const d0=parseYmd(e.at||dkey()), n=Math.max(1,(new Date().getFullYear()-d0.getFullYear())*12+new Date().getMonth()-d0.getMonth()+1), pm=(P.months||[]).find(m=>+m.m===n), E=m44Est(), u=usdRate(), fact=E.inc>0&&u>0?E.inc/u:null, st=P.steps||[], nx=st.findIndex((s,i)=>!(e.done||{})[i]);
+    if(pm||nx>=0){ const mx=Math.max(Math.abs(pm?pm.profit:0),Math.abs(fact||0),1);
+      h+=`<div class="m50-wh2"><small>${ico('goal',14)} ${esc(L.m50WhereT)} · ${esc(L.m50WhereM(n))}</small>${pm?`<div class="br"><span>${esc(L.m50PlanP(m50U(pm.profit)))}</span><i class="pl" style="--w:${Math.max(3,Math.abs(pm.profit)/mx*100).toFixed(1)}%"></i></div>`:''}${fact!=null&&pm?`<div class="br"><span>${esc(L.m50FactP(m50U(fact)))}</span><i class="fa" style="--w:${Math.max(3,Math.abs(fact)/mx*100).toFixed(1)}%"></i></div>`:''}${nx>=0?`<p class="nx">${ico('next',14)}<span><b>${esc(L.m50Next)}:</b> ${esc(st[nx].l)}</span></p>`:''}</div>`; } }catch(x){}
+  try{ if(G.kind==='income'&&+G.amount>0&&G.cur&&G.cur!=='TJS'){ const r=m50Rate(G.cur); if(r>0) h+=`<p class="m50-gfx">${ico('zap',14)}<span>${esc(L.m50GoalFx(money(+G.amount*r),'1 '+(M50_SY[G.cur]||G.cur)+' = '+fx(r,r<50?3:2)+' '+L.cur))}</span></p>`; } }catch(x){}
+  return h; }
+try{ const _ph50=m46PlanHTML; m46PlanHTML=function(e){ let h=_ph50.apply(this,arguments); try{ const P=e.plan, G=e.G;
+    const usdGoal=G.kind==='income'&&+G.amount>0?(G.cur==='USD'?+G.amount:(()=>{ const r=rateOf(G.cur), u=usdRate(); return r&&u?+G.amount*r/u:0; })()):0;
+    const top=(P.score!=null?m50Dial(P.score,P.score_why):'')+m50WhereHTML(e)+m50TeamHTML(P.team,e.team), mid=m50FanHTML(P,usdGoal)+m50TorHTML(P)+m50FunHTML(P), ev=m50EvHTML(P.events,L.m50EvG);
+    if(top){ const i=h.indexOf('<nav class="m46-nav"'); if(i>=0) h=h.slice(0,i)+`<div class="m50-gtop">${top}</div>`+h.slice(i); }
+    const j=h.indexOf('<section class="m46-sec" id="m46s-factors"'); if(mid||ev){ if(j>=0) h=h.slice(0,j)+mid+h.slice(j); else h+=mid; }
+    if(ev){ const k=h.indexOf('<section class="m46-sec" id="m46s-risks"'); const blk=`<section class="m46-sec m50-gs" id="m46s-ev">${ev}</section>`; h=k>=0?h.slice(0,k)+blk+h.slice(k):h+blk; } }catch(x){} return h; }; }catch(e){}
+try{ const _br50=bpRender; bpRender=function(){ const r=_br50.apply(this,arguments); try{ setTimeout(()=>{ m50ProgDraw(); try{ m49Watch(); }catch(e){} },40); }catch(e){} return r; }; }catch(e){}
+
+/* ---------- нажатия ---------- */
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m50cur],[data-m50way],[data-m50free],[data-m50go]'); if(!t) return; const b=m50B(); if(!b) return;
+  if(t.hasAttribute('data-m50cur')){ m50CurSet(t.dataset.m50cur); return; }
+  if(t.hasAttribute('data-m50way')){ m50WayPick(t.dataset.m50way); return; }
+  if(t.hasAttribute('data-m50free')){ b.S=+t.dataset.m50free||0; const fm=document.getElementById('m44Fm'); if(fm) fm.innerHTML=m44FormHTML(b); m44Upd(b,true); m44Touch(b); return; }
+  if(t.hasAttribute('data-m50go')){ m50BuyGo(b); return; } });
+document.addEventListener('change',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m50st],[data-m50ck]'); if(!t) return; const b=m50B(); if(!b||!b.tp) return;
+  if(t.hasAttribute('data-m50st')){ b.tp.done=b.tp.done||{}; b.tp.done[t.dataset.m50st]=t.checked; const li=t.closest('li'); if(li) li.classList.toggle('dn',t.checked); try{ if(t.checked) m40Vib(); }catch(x){} }
+  else { b.tp.chk=b.tp.chk||{}; b.tp.chk[t.dataset.m50ck]=t.checked; }
+  m44Touch(b); try{ persist(); }catch(x){}
+  const P=b.tp.plan, st=P&&P.steps||[], dn=st.filter((s,i)=>b.tp.done&&b.tp.done[i]).length, box=document.querySelector('.m50-plan'); if(box&&st.length){ const pb=box.querySelector('.m50-pb i'); if(pb) pb.style.width=Math.round(dn/st.length*100)+'%'; const em=box.querySelector('.m50-st')&&box.querySelector('.m50-st').previousElementSibling&&box.querySelector('h4 em'); const hs=[...box.querySelectorAll('h4 em')].find(x=>x.closest('.m50-bl')&&x.closest('.m50-bl').querySelector('.m50-st')); if(hs) hs.textContent=L.m50StepProg(dn,st.length); } });
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
