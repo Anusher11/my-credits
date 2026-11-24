@@ -20745,8 +20745,9 @@ function m42Lock(){ try{ const ov=document.getElementById('overlay'); if(!ov||!w
   new MutationObserver(upd).observe(ov,{attributes:true,attributeFilter:['class']}); upd(); }catch(e){} }
 
 /* 2. Подпись кнопки «значок + текст» — в одном строчном блоке: при переносе значок стоит перед первым словом, строки по центру. */
-const M42_SKIP='.m12-safe,.id-entry,.id-it,.m7-owed,.m7-li,.qa,.ssub button,.bnav button,#m10Plus,.m40-sty,[role=tab],[data-m42no]';
-const M42_INL=/^(B|STRONG|SMALL|SPAN|I)$/;
+const M42_SKIP='.m12-safe,.id-entry,.id-it,.m7-owed,.m7-li,.qa,.ssub button,.bnav button,#m10Plus,.m40-sty,[role=tab],.sf-fab,#sfFab,[data-m42no]';
+/* SPAN не трогаем: у подписей-span своё оформление и код, который меняет их текст (Сифра сворачивается, «Обновить» → «Обновляется…») */
+const M42_INL=/^(B|STRONG|SMALL|I)$/;
 function m42Cand(b){
   if(b.closest('svg')||b.matches(M42_SKIP)) return false;
   const ch=[...b.childNodes].filter(n=>!(n.nodeType===3&&!n.nodeValue.trim()));
@@ -20760,7 +20761,7 @@ let M42Q=[], M42T=0;
 function m42Q(root){ if(!root||root.nodeType!==1) return; M42Q.push(root); if(!M42T) M42T=requestAnimationFrame(m42Run); }
 function m42Run(){ M42T=0; const roots=M42Q; M42Q=[]; const cand=new Set();
   for(const r of roots){ if(!r.isConnected) continue; if(r.matches&&r.matches('button,.btn')&&m42Cand(r)) cand.add(r); if(r.querySelectorAll) r.querySelectorAll('button,.btn').forEach(b=>{ if(m42Cand(b)) cand.add(b); }); }
-  const list=[...cand].filter(b=>/flex|grid/.test(getComputedStyle(b).display)&&!/column/.test(getComputedStyle(b).flexDirection));
+  const list=[...cand].filter(b=>{ const cs=getComputedStyle(b); return /flex|grid/.test(cs.display)&&!/column/.test(cs.flexDirection)&&!/fixed|absolute|sticky/.test(cs.position); });
   for(const b of list){ const sp=document.createElement('span'); sp.className='m42-l'; while(b.firstChild) sp.appendChild(b.firstChild); b.appendChild(sp); }
   /* пересчёт рядов — только когда появились кнопки (часики и счётчики, которые меняют текст каждую секунду, не тратят батарею) */
   if(list.length||roots.some(r=>r.isConnected&&(r.matches&&r.matches('button,.btn')||r.querySelector&&r.querySelector('button,.btn')||r.closest&&r.closest('button,.btn')))) m42RowsSoon();
