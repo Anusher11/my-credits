@@ -4235,6 +4235,16 @@ html.m40[data-sk] .id-sec h4{display:flex; align-items:center; gap:8px; font:800
 html.m40[data-sk] .id-sec h4 .mi{color:var(--c4);}
 
 @media (prefers-reduced-motion: reduce){ .m40-dr,.m40-fd,.m40-gr,.m40-plot .pu,.m40-coins i.on,#m8Prog .m11-path i.n,.m40-ih button.busy .mi{animation:none!important; stroke-dasharray:none!important;} }
+
+/* аватар профиля: буквы видны в каждом стиле (раньше — белые буквы на полупрозрачном белом) */
+html.m40[data-sk] .me-btn .me-ava{border:0!important; -webkit-backdrop-filter:none; backdrop-filter:none; font-weight:800; letter-spacing:.02em;}
+html.m40[data-sk="a"] .me-btn .me-ava:not(.noava){background:linear-gradient(140deg,#9A55FF,#7A2BE2)!important; color:#FFFFFF!important; box-shadow:0 0 0 2px #FFFFFF,0 8px 16px -8px rgba(122,43,226,.7)!important;}
+html.m40[data-sk="b"] .me-btn .me-ava:not(.noava){background:#C6F432!important; color:#0C0A10!important; box-shadow:0 0 0 2px #17141E,0 0 0 3.5px #2C2738!important;}
+html.m40[data-sk="c"] .me-btn .me-ava:not(.noava){background:linear-gradient(140deg,#FF6A55,#9B5CF6)!important; color:#FFFFFF!important; box-shadow:0 0 0 2px #FFFFFF,0 8px 16px -8px rgba(155,92,246,.7)!important;}
+html.m40[data-sk] .me-btn .me-ava.noava{background:var(--surface)!important; color:var(--ink)!important; box-shadow:0 0 0 1.5px var(--line)!important;}
+html.m40[data-sk] .me-btn .me-ava img{border-radius:50%;}
+/* активный значок меню: в v36 у него была прозрачность заливки 18% — теперь значок яркий */
+html.m40[data-sk] .bnav button .bi svg,html.m40[data-sk] .bnav button.on .bi svg{fill-opacity:1!important;}
 /* <</v40 css>> */
 /* <<v41 css>> */
 /* ===================== v41: живые графики «Кредитов» ===================== */
@@ -4283,6 +4293,96 @@ html.m40[data-sk] #m36Gantt .m36-gt{display:none!important;}
 .m41-steps{display:flex; flex-direction:column; gap:8px;}
 .m41-steps p{margin:0; display:flex; gap:8px; align-items:flex-start; font-size:.88rem; line-height:1.4;} .m41-steps .mi{flex:none; margin-top:2px; color:var(--m-leaf);}
 /* <</v41 css>> */
+/* <<v42 css>> */
+/* ===================== v42: кнопки без вылезающих слов; окно не тянет страницу ===================== */
+/* окно открыто — страница под ним не двигается, прокрутка окна не передаётся странице */
+html.m42-lock,html.m42-lock body{overflow:hidden!important;}
+.overlay,#overlay,.sheet,#sheet,#bpg-m{overscroll-behavior:contain;}
+/* подпись кнопки: значок + текст одним блоком, ровные строки по центру */
+.m42-l{display:block; min-width:0; max-width:100%; text-align:center; text-wrap:balance; overflow-wrap:break-word; line-height:1.18;}
+.m42-l>svg.mi{display:inline-block; margin-right:.32em; vertical-align:-.22em;}
+html.m40[data-sk] .btn{white-space:normal; overflow-wrap:break-word; text-wrap:balance; line-height:1.18; min-width:0;}
+html.m40[data-sk] .sd-btns>.btn.sd-exp,html.m40[data-sk] .sd-btns>.btn.sd-main{white-space:normal;}
+.n29-link{text-wrap:balance;}
+/* ряд кнопок не помещается — кнопки друг под другом, на всю ширину */
+.m42-st{flex-wrap:wrap!important; row-gap:10px!important;}
+.m42-st>*{flex:1 1 100%!important; max-width:100%!important; min-width:0!important; width:100%!important; margin-left:0!important; margin-right:0!important;}
+/* нижние кнопки «Закупки» и Сифра — выше меню и круглой «+» */
+html.m40[data-sk] .buyfab{bottom:var(--m42-navb,72px)!important; padding-bottom:calc(var(--m42-nav,96px) - var(--m42-navb,72px) + 6px)!important; background:linear-gradient(to top, var(--bg) 78%, transparent)!important;}
+html.m40[data-sk="c"] .buyfab{background:linear-gradient(to top, rgba(246,242,252,.985) 80%, rgba(246,242,252,0))!important;}
+html.m40[data-sk] .sf-fab{bottom:calc(var(--m42-nav,96px) + 48px + var(--m42-bf,0px))!important;}
+/* названия в списках — до двух строк вместо обрезки на полуслове */
+html.m40[data-sk] .c-name{white-space:normal; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; overflow-wrap:break-word; line-height:1.22;}
+/* подписи «Куда ушла выручка» — не шире своей колонки */
+html.m40[data-sk] .m40-skl{width:44%;}
+html.m40[data-sk] .m40-skl button{padding-left:10px;}
+html.m40[data-sk] .m40-skl button span{overflow-wrap:break-word; min-width:0;}
+/* <</v42 css>> */
+/* <<v43 css>> */
+/* ===================== v43: выпуски дня, «Карта выгоды», «Пульс трендов» ===================== */
+/* выпуски дня */
+.m43-eb{display:flex; flex-direction:column; gap:8px; margin:2px 0 14px; padding:12px 14px; border-radius:18px; background:var(--surface); border:1px solid var(--line);}
+html.m40[data-sk="c"] .m43-eb{background:rgba(255,255,255,.62); -webkit-backdrop-filter:blur(14px); backdrop-filter:blur(14px);}
+.m43-eds{display:grid; grid-template-columns:repeat(auto-fit,minmax(0,1fr)); gap:6px; margin:0; padding:0; list-style:none; position:relative;}
+.m43-ed{display:flex; flex-direction:column; align-items:center; gap:3px; padding:8px 4px; border-radius:14px; background:var(--surface-2); min-width:0;}
+.m43-ed i{width:20px; height:20px; border-radius:50%; display:grid; place-items:center; border:2px solid var(--line); background:var(--surface); color:#fff;}
+.m43-ed i svg{width:12px; height:12px;}
+.m43-ed b{font:800 .84rem var(--font-num);} .m43-ed small{font:700 .76rem var(--font-num); color:var(--muted);}
+.m43-ed.done i{background:var(--m-leaf); border-color:var(--m-leaf);}
+.m43-ed.on{background:var(--m40-act); color:var(--m40-act-ink);} .m43-ed.on small{color:inherit; opacity:.85;}
+.m43-ed.on i{border-color:currentColor; background:transparent; box-shadow:inset 0 0 0 4px currentColor;}
+.m43-ed.late i{border-color:var(--warn,#B4531F); border-style:dashed;}
+.m43-eb p{margin:0; font-size:.84rem; line-height:1.35; color:var(--muted); text-wrap:pretty;}
+/* пульс трендов */
+.m43-pulse{display:flex; flex-direction:column; gap:8px; margin:4px 0 12px;}
+.m43-pb{display:flex; gap:3px; height:10px; border-radius:99px; overflow:hidden;}
+.m43-pb i{display:block; border-radius:99px; min-width:6px;} .m43-pb .u{background:var(--m-leaf);} .m43-pb .d{background:var(--warn,#C9781A);}
+.m43-pl{display:flex; flex-wrap:wrap; gap:6px 14px; font:700 .84rem var(--font-num);} .m43-pl .u{color:var(--m-leaf);} .m43-pl .d{color:var(--warn,#B4531F);} .m43-pl .s{color:var(--muted);}
+.m43-tf{display:flex; flex-wrap:wrap; gap:6px;} .m43-tf .chip em{font-style:normal; opacity:.65; margin-left:3px; font-variant-numeric:tabular-nums;}
+.m43-bd{display:inline-flex; align-items:center; gap:6px; margin-left:8px; vertical-align:2px;}
+.m43-num{font:800 .74rem var(--font-num); padding:2px 8px; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); white-space:nowrap;}
+.hb-tc.dn .m43-num{background:color-mix(in srgb,var(--warn,#C9781A) 16%,transparent); color:var(--warn,#B4531F);}
+.m43-pw{display:inline-flex; gap:2px; align-items:flex-end; height:12px;} .m43-pw i{width:4px; border-radius:2px; background:var(--line);}
+.m43-pw i:nth-child(1){height:5px;} .m43-pw i:nth-child(2){height:8px;} .m43-pw i:nth-child(3){height:12px;}
+.m43-pw.p1 i:nth-child(-n+1),.m43-pw.p2 i:nth-child(-n+2),.m43-pw.p3 i{background:var(--m-leaf);}
+.hb-tc.dn .m43-pw.p1 i:nth-child(-n+1),.hb-tc.dn .m43-pw.p2 i:nth-child(-n+2),.hb-tc.dn .m43-pw.p3 i{background:var(--warn,#C9781A);}
+.hb-tc[hidden]{display:none!important;}
+/* карта выгоды */
+.m43-map{display:flex; flex-direction:column; gap:8px; margin:4px 0 16px; padding:14px; border-radius:20px; background:var(--surface-2);}
+html.m40[data-sk="c"] .m43-map{background:rgba(255,255,255,.58);}
+.m43-mh{display:flex; flex-direction:column; gap:3px;} .m43-mh b{display:flex; align-items:center; gap:6px; font:800 1rem var(--font-num);} .m43-mh small{font-size:.82rem; line-height:1.35; color:var(--muted); text-wrap:pretty;}
+.m43-plot{position:relative; border-radius:14px; outline:none; touch-action:pan-y;}
+.m43-plot:focus-visible{outline:3px solid var(--m40-act); outline-offset:3px;}
+.m43-plot svg{display:block; width:100%; height:auto; overflow:visible;}
+.m43-gz{fill:color-mix(in srgb,var(--m-leaf) 12%,transparent);}
+.m43-gzl{font:800 10px var(--font-num); fill:var(--m-leaf); letter-spacing:.01em;}
+.m43-gl{stroke:var(--line); stroke-width:1;} .m43-md{stroke:var(--muted); stroke-width:1; stroke-dasharray:3 4; opacity:.45;}
+.m43-ax{font:700 9.5px var(--font-num); fill:var(--muted);}
+.m43-pt{cursor:pointer;} .m43-pt circle{fill:var(--brand); fill-opacity:.78; stroke:var(--surface); stroke-width:1.6; transition:fill-opacity .2s, r .25s;}
+.m43-pt.up circle{fill:var(--m-leaf);} .m43-pt.down circle{fill:var(--warn,#C9781A);}
+.m43-pt.dim circle{fill-opacity:.28;} .m43-pt.on circle{fill-opacity:1;}
+.m43-pt circle.ring{fill:none; stroke:var(--ink); stroke-width:2; stroke-dasharray:3 3;}
+.m43-lb{font:800 10px var(--font-num); fill:var(--ink); paint-order:stroke; stroke:var(--surface-2); stroke-width:3px; stroke-linejoin:round; pointer-events:none;}
+html.m40[data-sk="c"] .m43-lb{stroke:#F3EEFB;}
+.m43-axl{display:flex; justify-content:space-between; font:700 .74rem var(--font-num); color:var(--muted); margin-top:-4px;}
+.m43-leg{display:flex; flex-wrap:wrap; gap:4px 12px; font-size:.76rem; color:var(--muted); font-weight:600;}
+.m43-leg i{display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:5px; vertical-align:-1px; background:var(--brand);}
+.m43-leg i.up{background:var(--m-leaf);} .m43-leg i.down{background:var(--warn,#C9781A);} .m43-leg i.sz{width:14px; height:14px; background:transparent; border:2px solid var(--muted); vertical-align:-3px;}
+.m43-det{display:flex; flex-direction:column; gap:10px; padding:12px; border-radius:16px; background:var(--surface); border:1px solid var(--line); animation:m40Pop .3s cubic-bezier(.2,.9,.3,1.2);}
+.m43-dh{display:flex; align-items:center; flex-wrap:wrap; gap:6px 8px;} .m43-dh b{font:800 1.02rem var(--font-num);}
+.m43-best{font:800 .72rem var(--font-num); padding:3px 8px; border-radius:99px; background:color-mix(in srgb,var(--m-leaf) 16%,transparent); color:var(--m-leaf);}
+.m43-sc{margin-left:auto; position:relative; isolation:isolate; display:grid; place-items:center; width:40px; height:40px; border-radius:50%; font:800 .84rem var(--font-num); color:var(--ink); background:conic-gradient(var(--m-leaf) calc(var(--s)*1%), var(--track,#E7E2EF) 0);}
+.m43-sc::before{content:''; position:absolute; inset:4px; border-radius:50%; background:var(--surface); z-index:-1;} .m43-sc i{display:none;}
+.m43-kv{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;}
+.m43-kv span{display:flex; flex-direction:column; gap:2px; padding:8px 10px; border-radius:12px; background:var(--surface-2); min-width:0;}
+.m43-kv small{font-size:.74rem; color:var(--muted); font-weight:600;} .m43-kv b{font:800 .95rem var(--font-num);}
+.m43-kv b.tr.up{color:var(--m-leaf);} .m43-kv b.tr.down{color:var(--warn,#B4531F);}
+.m43-act{display:flex; gap:6px; align-items:flex-start; margin:0; font-size:.88rem; line-height:1.4; font-weight:600;} .m43-act .mi{flex:none; margin-top:2px; color:var(--m-leaf);}
+.m43-sub{margin:0; font-size:.8rem; color:var(--muted); line-height:1.4;} .m43-sub .rk.high{color:var(--danger);} .m43-sub .mi{vertical-align:-2px;}
+.m43-more{align-self:stretch;}
+@media (prefers-reduced-motion: reduce){ .m43-det{animation:none;} .m43-pt circle{transition:none;} }
+.m43-det{position:relative;} .m43-dh{padding-right:50px; min-height:40px;} .m43-sc{position:absolute; top:12px; right:12px; margin:0;}
+/* <</v43 css>> */
 
 
 </style>
@@ -20637,6 +20737,246 @@ window.addEventListener('online',m41Net); window.addEventListener('offline',m41N
 
 setTimeout(()=>{ try{ m41After(); }catch(e){} },0);
 /* <</v41 js>> */
+/* <<v42 js>> */
+/* ===================== v42: кнопки без вылезающих слов; окно не тянет страницу ===================== */
+/* 1. Пока открыто окно снизу — страница под ним стоит на месте (раньше, докрутив окно до конца, палец тянул страницу). */
+function m42Lock(){ try{ const ov=document.getElementById('overlay'); if(!ov||!window.MutationObserver) return;
+  const upd=()=>document.documentElement.classList.toggle('m42-lock',ov.classList.contains('open'));
+  new MutationObserver(upd).observe(ov,{attributes:true,attributeFilter:['class']}); upd(); }catch(e){} }
+
+/* 2. Подпись кнопки «значок + текст» — в одном строчном блоке: при переносе значок стоит перед первым словом, строки по центру. */
+const M42_SKIP='.m12-safe,.id-entry,.id-it,.m7-owed,.m7-li,.qa,.ssub button,.bnav button,#m10Plus,.m40-sty,[role=tab],[data-m42no]';
+const M42_INL=/^(B|STRONG|SMALL|SPAN|I)$/;
+function m42Cand(b){
+  if(b.closest('svg')||b.matches(M42_SKIP)) return false;
+  const ch=[...b.childNodes].filter(n=>!(n.nodeType===3&&!n.nodeValue.trim()));
+  if(ch.length<2) return false; if(ch[0].nodeType===1&&ch[0].classList&&ch[0].classList.contains('m42-l')) return false;
+  const isIco=n=>n.nodeType===1&&n.tagName.toLowerCase()==='svg'&&n.classList.contains('mi');
+  if(!isIco(ch[0])) return false;
+  let tx=0; for(const n of ch.slice(1)){ if(n.nodeType===3) tx++; else if(n.nodeType===1&&M42_INL.test(n.tagName)&&!n.className&&!n.querySelector('svg,img')) tx++; else return false; }
+  return tx>0;
+}
+let M42Q=[], M42T=0;
+function m42Q(root){ if(!root||root.nodeType!==1) return; M42Q.push(root); if(!M42T) M42T=requestAnimationFrame(m42Run); }
+function m42Run(){ M42T=0; const roots=M42Q; M42Q=[]; const cand=new Set();
+  for(const r of roots){ if(!r.isConnected) continue; if(r.matches&&r.matches('button,.btn')&&m42Cand(r)) cand.add(r); if(r.querySelectorAll) r.querySelectorAll('button,.btn').forEach(b=>{ if(m42Cand(b)) cand.add(b); }); }
+  const list=[...cand].filter(b=>/flex|grid/.test(getComputedStyle(b).display)&&!/column/.test(getComputedStyle(b).flexDirection));
+  for(const b of list){ const sp=document.createElement('span'); sp.className='m42-l'; while(b.firstChild) sp.appendChild(b.firstChild); b.appendChild(sp); }
+  /* пересчёт рядов — только когда появились кнопки (часики и счётчики, которые меняют текст каждую секунду, не тратят батарею) */
+  if(list.length||roots.some(r=>r.isConnected&&(r.matches&&r.matches('button,.btn')||r.querySelector&&r.querySelector('button,.btn')||r.closest&&r.closest('button,.btn')))) m42RowsSoon();
+}
+
+/* 3. Ряд из кнопок: если подпись не помещается в одну строку или вылезает — кнопки встают друг под другом, на всю ширину. */
+let M42R=0;
+function m42RowsSoon(){ clearTimeout(M42R); M42R=setTimeout(m42Rows,60); }
+function m42Lines(b){ const r=b.getBoundingClientRect(); const tops=[]; let over=0; const fs=parseFloat(getComputedStyle(b).fontSize)||16;
+  const blk=[...b.querySelectorAll('*')].some(e=>!e.classList.contains('m42-l')&&!e.closest('svg')&&/^(block|flex|grid|list-item|table)$/.test(getComputedStyle(e).display));
+  const tw=document.createTreeWalker(b,NodeFilter.SHOW_TEXT); let n;
+  while((n=tw.nextNode())){ if(!n.nodeValue.trim()) continue; const pe=n.parentElement; if(pe&&pe.closest('svg')) continue; if(pe&&pe!==b&&/absolute|fixed/.test(getComputedStyle(pe).position)) continue;
+    const rg=document.createRange(); rg.selectNodeContents(n); for(const q of rg.getClientRects()){ if(q.width<.5) continue; tops.push(q.top); over=Math.max(over,r.left-q.left,q.right-r.right); } }
+  b.querySelectorAll('svg.mi').forEach(x=>{ const q=x.getBoundingClientRect(); if(q.width) over=Math.max(over,r.left-q.left,q.right-r.right); });
+  tops.sort((a,c)=>a-c); let lines=tops.length?1:0; if(!blk) for(let i=1;i<tops.length;i++) if(tops[i]-tops[i-1]>fs*.7) lines++;
+  return {lines,over}; }
+function m42IsRow(p){ if(!p||p.matches('[role=tablist],.seg,.ssub,.bnav,.chips,.m40-chips,.hb-ibs,.qa-row,[data-m42no]')) return false;
+  const kids=[...p.children].filter(e=>e.offsetWidth>0); if(kids.length<2||kids.length>3) return false;
+  if(!kids.every(e=>e.matches('button,.btn,a.btn'))) return false;
+  const s=getComputedStyle(p); if(!/flex/.test(s.display)||/column/.test(s.flexDirection)) return false; if(/auto|scroll/.test(s.overflowX)) return false;
+  return kids; }
+function m42Rows(){
+  const roots=[]; const ov=document.querySelector('#overlay.open .sheet, #overlay.open'); if(ov) roots.push(ov);
+  try{ if(typeof BPG!=='undefined'&&BPG.el&&BPG.el.classList.contains('open')) roots.push(BPG.el); }catch(e){}
+  const v=[...document.querySelectorAll('[id^="view-"]')].find(e=>e.offsetParent); if(v) roots.push(v);
+  const bf=document.getElementById('buyFab'); if(bf&&!bf.hidden) roots.push(bf);
+  const seen=new Set();
+  for(const root of roots) root.querySelectorAll('button,.btn').forEach(b=>{ const p=b.parentElement; if(!p||seen.has(p)) return; seen.add(p);
+    const was=p.classList.contains('m42-st'); if(was) p.classList.remove('m42-st');
+    const kids=m42IsRow(p); if(!kids){ if(was) p.classList.add('m42-st'); return; }
+    let bad=false; for(const k of kids){ if(k.scrollWidth>k.clientWidth+1){ bad=true; break; } const m=m42Lines(k); if(m.lines>1||m.over>1.5){ bad=true; break; } }
+    if(bad) p.classList.add('m42-st'); });
+  m42Nav(); try{ for(const r of roots) m42Fit(r); }catch(e){} try{ m42Skl(); }catch(e){}
+}
+
+/* 5. Подписи «Куда ушла выручка»: не налезают друг на друга даже при крупном шрифте телефона. */
+function m42Skl(){ document.querySelectorAll('.m40-skl').forEach(box=>{ const bs=[...box.querySelectorAll('button')]; if(bs.length<2) return;
+  const host=box.parentElement; const H0=box.clientHeight; if(!H0) return;
+  const it=bs.map(b=>{ b.style.minHeight=''; const kids=[...b.children]; const ch=kids.reduce((a,k)=>a+k.getBoundingClientRect().height,0)+4; const h=Math.max(ch,24); if(b.dataset.m42c==null) b.dataset.m42c=((b.offsetTop+b.offsetHeight/2)/H0).toFixed(4); return {b,h,r:+b.dataset.m42c}; });
+  const need=it.reduce((a,o)=>a+o.h+4,0); let H=H0; if(need>H0&&host){ host.style.minHeight=Math.ceil(need)+'px'; H=box.clientHeight||need; }
+  let prev=null; it.forEach(o=>{ o.y=prev?Math.max(o.r*H,prev.y+(prev.h+o.h)/2+4):Math.max(o.r*H,o.h/2); prev=o; });
+  let lim=H; for(let k=it.length-1;k>=0;k--){ const o=it[k]; if(o.y+o.h/2>lim) o.y=lim-o.h/2; lim=o.y-o.h/2-4; }
+  it.forEach(o=>{ if(o.y<o.h/2) o.y=o.h/2; o.b.style.top=(o.y-o.h/2).toFixed(1)+'px'; o.b.style.height=o.h.toFixed(1)+'px'; }); }); }
+
+/* 6. Плитки и вкладки (узкие кнопки в сетке): если самое длинное слово не помещается — шрифт подписи чуть меньше, слово целиком. */
+const M42_TILE='.seg>button,.trseg>button,[role=tablist]>button,[role=tab],.m12-strip>button,.m38-act>button,.m40-skl>button,.qa>button,.chips>button,.ssub>button';
+function m42TileCand(b){ if(b.matches(M42_TILE)) return true; const p=b.parentElement; if(!p) return false; const ps=getComputedStyle(p);
+  if(ps.display.includes('grid')&&ps.gridTemplateColumns.split(' ').length>=2) return true;
+  const bs=getComputedStyle(b); return bs.flexDirection==='column'&&b.getBoundingClientRect().width<220; }
+function m42Fit(root){ (root||document).querySelectorAll('button,[role=button],.c-name').forEach(b=>{ if(!b.offsetWidth||b.closest('svg,.bnav')||b.matches('#m10Plus,[data-m42no]')) return; const isN=b.classList.contains('c-name'); if(!isN&&!m42TileCand(b)) return;
+  const hold=[]; const tw=document.createTreeWalker(b,NodeFilter.SHOW_TEXT); let n; while((n=tw.nextNode())){ const pe=n.parentElement; if(!n.nodeValue.trim()||!pe||pe.closest('svg')||/absolute|fixed/.test(getComputedStyle(pe).position)&&pe!==b) continue; if(isN&&pe!==b) continue; if(!hold.includes(pe)) hold.push(pe); }
+  if(!hold.length) return;
+  for(let i=hold.length-1;i>=0;i--){ if(hold.some(x=>x!==hold[i]&&x.contains(hold[i]))) hold.splice(i,1); }
+  hold.forEach(e=>{ if(e.dataset.m42fs!=null){ e.style.fontSize=e.dataset.m42fs; delete e.dataset.m42fs; } });
+  const bs=getComputedStyle(b), inner=b.clientWidth-parseFloat(bs.paddingLeft)-parseFloat(bs.paddingRight)-2; if(inner<20) return;
+  const row=/flex/.test(bs.display)&&!/column/.test(bs.flexDirection), gap=parseFloat(bs.columnGap)||0;
+  const availOf=e=>{ if(!row||e===b) return inner; let c=e; while(c.parentElement&&c.parentElement!==b) c=c.parentElement; const oth=[...b.children].filter(x=>x!==c&&x.offsetWidth>0&&!/absolute|fixed/.test(getComputedStyle(x).position)); return inner-oth.reduce((a,x)=>a+x.getBoundingClientRect().width,0)-gap*oth.length; };
+  let worst=1; for(const e of hold){ const avail=availOf(e); if(avail<16) continue; for(const t of e.childNodes){ if(t.nodeType!==3) continue; const re=/[^ \t\n\r\u00ad]+/g; let m; while((m=re.exec(t.nodeValue))){ const rg=document.createRange(); rg.setStart(t,m.index); rg.setEnd(t,m.index+m[0].length); let w=0; for(const q of rg.getClientRects()) w+=q.width; if(w>avail) worst=Math.min(worst,avail/w); } } }
+  if(worst<1){ const f=Math.max(isN?.78:.68,worst*.97); const sz=hold.map(e=>parseFloat(getComputedStyle(e).fontSize)/(parseFloat(getComputedStyle(e.parentElement).fontSize)||16)); hold.forEach((e,i)=>{ e.dataset.m42fs=e.style.fontSize||''; e.style.fontSize=(sz[i]*f).toFixed(3)+'em'; }); } }); }
+
+/* 4. Кнопки «Закупки» внизу и Сифра — всегда выше меню и круглой «+», ничего не налезает. */
+function m42Nav(){ try{ const de=document.documentElement, bn=document.querySelector('.bnav'); let top=innerHeight;
+  if(bn&&getComputedStyle(bn).display!=='none'&&bn.getBoundingClientRect().height>0){ top=Math.min(top,bn.getBoundingClientRect().top); const pi=document.querySelector('#m10Plus .m10-pi')||document.querySelector('#m10Plus'); if(pi&&pi.offsetWidth) top=Math.min(top,pi.getBoundingClientRect().top); }
+  const nav=Math.max(0,Math.round(innerHeight-top)); if(nav<400) de.style.setProperty('--m42-nav',(nav+6)+'px');
+  const nb=bn&&getComputedStyle(bn).display!=='none'?Math.max(0,Math.round(innerHeight-bn.getBoundingClientRect().top)):0; if(nb<400) de.style.setProperty('--m42-navb',nb+'px');
+  const bf=document.getElementById('buyFab'); const h=bf&&!bf.hidden&&bf.offsetHeight?bf.offsetHeight:0; de.style.setProperty('--m42-bf',h+'px'); }catch(e){} }
+
+try{ const _m7=m7Ico; m7Ico=function(root){ _m7(root); try{ m42Q(root&&root.nodeType===3?root.parentElement:root); }catch(e){} }; }catch(e){}
+try{ const _r42=render; render=function(){ const x=_r42.apply(this,arguments); m42RowsSoon(); return x; }; }catch(e){}
+try{ const _s42=setTab; setTab=function(){ const x=_s42.apply(this,arguments); m42RowsSoon(); return x; }; }catch(e){}
+try{ m42Lock(); m42Q(document.body); addEventListener('resize',()=>{ m42RowsSoon(); }); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(m42RowsSoon);
+  const sh=document.getElementById('sheet'); if(sh&&window.MutationObserver) new MutationObserver(m42RowsSoon).observe(sh,{childList:true}); }catch(e){}
+/* «Запас на дозаказ … — цел» читалось как обрезанное слово */
+try{ D.ru.m12ResOk=v=>'Запас на дозаказ '+v+' не тронут'; }catch(e){}
+/* очень длинное таджикское слово в узкой плитке «Закупки» — с мягким переносом */
+try{ D.tg.trDirShort='Таъмин\u00adкунандагон'; }catch(e){}
+/* <</v42 js>> */
+/* <<v43 js>> */
+const M43S={
+ru:{
+  m43EdN:{am:'Утро',mid:'День',pm:'Вечер'}, m43EdFull:{am:'Утренний выпуск',mid:'Дневной выпуск',pm:'Вечерний выпуск'}, m43EdsA:n=>n+' выпуска в день',
+  m43Next:(ed,hm,in_)=>'Следующий выпуск — '+ed+', в '+hm+' (через '+in_+'). Обновить раздел можно в любой момент.', m43NextTm:hm=>'Следующий — завтра утром, в '+hm+'. Обновить раздел можно в любой момент.',
+  m43Late:'Вышел новый выпуск — нажмите «Обновить» у раздела, и Сифра соберёт свежее.', m43Min:m=>m+' мин', m43Hr:(h,m)=>h+' ч'+(m?' '+m+' мин':''),
+  m43PwA:{1:'Ранний сигнал',2:'Набирает силу',3:'Меняет рынок уже сейчас'}, m43PulseA:(u,d)=>'Растут: '+u+', слабеют: '+d,
+  m43Up:n=>'растут '+n, m43Dn:n=>'слабеют '+n, m43Strong:n=>'сильных: '+n, m43TfA:'Темы трендов', m43All:'Все', m43Other:'Другое',
+  m43MapT:'Карта выгоды', m43MapS:'Справа вверху — «золотая зона»: большая наценка, и товар уходит быстро. Чем больше круг, тем больше доход за год. Нажмите круг.',
+  m43MapA:'Карта выгоды: наценка и как быстро уходит товар. Стрелки — переход между товарами.', m43Gold:'Золотая зона',
+  m43AxY:'↑ наценка', m43AxX:'быстрее продаётся →', m43Tk:m=>m>=1?m+' мес':m===0.5?'2 нед':'1 нед',
+  m43Tr:{up:'спрос растёт',flat:'ровно',down:'спрос падает'}, m43SzL:'доход за год', m43YrL:'За год', m43TrL:'Спрос', m43Best:'выгоднее всего сейчас', m43More:'Подробнее и расчёт'
+},
+tg:{
+  m43EdN:{am:'Саҳар',mid:'Рӯз',pm:'Бегоҳ'}, m43EdFull:{am:'Нашри саҳарӣ',mid:'Нашри рӯзона',pm:'Нашри бегоҳӣ'}, m43EdsA:n=>n+' нашр дар як рӯз',
+  m43Next:(ed,hm,in_)=>'Нашри навбатӣ — '+ed+', соати '+hm+' (баъди '+in_+'). Бахшро ҳар вақт навсозӣ кардан мумкин аст.', m43NextTm:hm=>'Навбатӣ — фардо саҳар, соати '+hm+'. Бахшро ҳар вақт навсозӣ кардан мумкин аст.',
+  m43Late:'Нашри нав баромад — дар бахш «Навсозӣ»-ро пахш кунед, Сифра навашро ҷамъ мекунад.', m43Min:m=>m+' дақ', m43Hr:(h,m)=>h+' соат'+(m?' '+m+' дақ':''),
+  m43PwA:{1:'Аломати аввал',2:'Қувват мегирад',3:'Бозорро ҳоло дигар мекунад'}, m43PulseA:(u,d)=>'Меафзоянд: '+u+', суст мешаванд: '+d,
+  m43Up:n=>'меафзоянд '+n, m43Dn:n=>'суст мешаванд '+n, m43Strong:n=>'қавӣ: '+n, m43TfA:'Мавзӯъҳои трендҳо', m43All:'Ҳама', m43Other:'Дигар',
+  m43MapT:'Харитаи фоида', m43MapS:'Боло аз рост — «минтақаи тиллоӣ»: нархафзоии калон ва мол зуд фурӯхта мешавад. Доира калонтар — даромади солона бештар. Доираро пахш кунед.',
+  m43MapA:'Харитаи фоида: нархафзоӣ ва суръати фурӯш. Тирчаҳо — гузариш байни молҳо.', m43Gold:'Минтақаи тиллоӣ',
+  m43AxY:'↑ нархафзоӣ', m43AxX:'зудтар фурӯхта мешавад →', m43Tk:m=>m>=1?m+' моҳ':m===0.5?'2 ҳафта':'1 ҳафта',
+  m43Tr:{up:'талабот меафзояд',flat:'баробар',down:'талабот кам мешавад'}, m43SzL:'даромади солона', m43YrL:'Дар як сол', m43TrL:'Талабот', m43Best:'ҳоло аз ҳама фоидаовар', m43More:'Муфассал ва ҳисоб'
+},
+en:{
+  m43EdN:{am:'Morning',mid:'Midday',pm:'Evening'}, m43EdFull:{am:'Morning edition',mid:'Midday edition',pm:'Evening edition'}, m43EdsA:n=>n+' editions a day',
+  m43Next:(ed,hm,in_)=>'Next edition — '+ed+', at '+hm+' (in '+in_+'). You can refresh any section at any time.', m43NextTm:hm=>'Next — tomorrow morning at '+hm+'. You can refresh any section at any time.',
+  m43Late:'A new edition is out — tap “Refresh” on a section and Sifra will gather fresh data.', m43Min:m=>m+' min', m43Hr:(h,m)=>h+' h'+(m?' '+m+' min':''),
+  m43PwA:{1:'Early signal',2:'Gaining strength',3:'Changing the market now'}, m43PulseA:(u,d)=>'Rising: '+u+', fading: '+d,
+  m43Up:n=>n+' rising', m43Dn:n=>n+' fading', m43Strong:n=>n+' strong', m43TfA:'Trend topics', m43All:'All', m43Other:'Other',
+  m43MapT:'Profit map', m43MapS:'Top right is the “golden zone”: a big markup and the goods sell fast. The bigger the circle, the more you earn in a year. Tap a circle.',
+  m43MapA:'Profit map: markup and how fast goods sell. Arrow keys move between goods.', m43Gold:'Golden zone',
+  m43AxY:'↑ markup', m43AxX:'sells faster →', m43Tk:m=>m>=1?m+' mo':m===0.5?'2 wk':'1 wk',
+  m43Tr:{up:'demand rising',flat:'steady',down:'demand falling'}, m43SzL:'yearly income', m43YrL:'Per year', m43TrL:'Demand', m43Best:'best right now', m43More:'Details and calculation'
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M43S[k]);
+/* ===================== v43: три выпуска в день, «Карта выгоды», «Пульс трендов» ===================== */
+/* Выпуски: время начала по Душанбе (минуты от полуночи) — как на сервере (TD_B). Показываем в местном времени телефона. */
+const M43_B={1:[360],2:[360,1110],3:[360,720,1110],4:[360,600,840,1110]};
+const M43={ta:'all', sel:null};
+try{ const _hs43=hbSave; hbSave=function(j){ const r=_hs43.apply(this,arguments); try{ const t=hbSt().today; if(t&&j){
+    if(['am','mid','pm'].includes(j.ed)) t.ed=j.ed; if(Number.isFinite(+j.slot)) t.slot=+j.slot; if(M43_B[+j.slots]) t.slots=+j.slots;
+    if(Array.isArray(j.trends)&&j.trends.length>t.trends.length) t.trends=j.trends.filter(x=>x&&typeof x==='object').slice(0,10);
+    try{ persist(); }catch(e){} } }catch(e){} return r; }; }catch(e){}
+function m43Slots(t){ const S=t&&M43_B[t.slots]?t.slots:3; return M43_B[S]; }
+/* время выпуска по Душанбе → Date */
+function m43At(day,min){ const [y,m,d]=String(day).split('-').map(Number); return new Date(Date.UTC(y,(m||1)-1,d||1,0,min-300)); }
+function m43HM(d){ return d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); }
+function m43In(ms){ const m=Math.max(1,Math.round(ms/60000)); return m<60?L.m43Min(m):L.m43Hr(Math.floor(m/60),m%60); }
+function m43EdOf(i,n){ return n===1||i===0?'am':i===n-1?'pm':'mid'; }
+/* полоса «Выпуски дня»: утро · день · вечер — что уже вышло, что сейчас, когда следующий */
+function m43EdsHTML(t){ if(!t) return ''; const B=m43Slots(t), now=Date.now(), dk=hbDay();
+  const cur=t.day===dk&&Number.isFinite(t.slot)?t.slot:(t.day===dk?(t.ed==='pm'?B.length-1:t.ed==='mid'?1:0):-1);
+  let nx=-1; const items=B.map((mn,i)=>{ const at=m43At(dk,mn), past=at.getTime()<=now; if(!past&&nx<0) nx=i;
+    const st=i===cur?'on':past&&i<cur?'done':past?'late':'soon';
+    return `<li class="m43-ed ${st}"><i aria-hidden="true">${st==='done'?ico('check',12):''}</i><b>${esc(L.m43EdN[m43EdOf(i,B.length)])}</b><small>${m43HM(at)}</small></li>`; }).join('');
+  let line=''; if(nx>=0){ const at=m43At(dk,B[nx]); line=L.m43Next(L.m43EdN[m43EdOf(nx,B.length)].toLowerCase(),m43HM(at),m43In(at.getTime()-now)); }
+  else { const at=m43At(new Date(now+86400e3+5*3600e3).toISOString().slice(0,10),B[0]); line=L.m43NextTm(m43HM(at)); }
+  const late=B.some((mn,i)=>i>cur&&m43At(dk,mn).getTime()<=now);
+  return `<div class="m43-eb"><ol class="m43-eds" aria-label="${esc(L.m43EdsA(B.length))}">${items}</ol><p>${esc(late?L.m43Late:line)}</p></div>`; }
+try{ const _ft43=f34TodayHTML; f34TodayHTML=function(t){ const h=_ft43.apply(this,arguments); try{ return m43EdsHTML(t)+h; }catch(e){ return h; } }; }catch(e){}
+/* шапка «Идей дня»: утренний, дневной или вечерний выпуск и когда следующий */
+try{ const _ih43=m40IdHead; m40IdHead=function(){ if(navigator.onLine===false) return _ih43.apply(this,arguments); /* без интернета — строка v41 «Нет интернета — показаны идеи от …» */
+  const t=hbToday(), busy=typeof hbBusy!=='undefined'&&!!hbBusy; let a='', b='', old=false;
+  if(!t||!(t.ideas||[]).length){ a=L.m40IdNone; b=L.m40IdNoneS; old=true; }
+  else { const d=new Date(t.at||Date.now());
+    if(t.day!==hbDay()){ old=true; a=L.m40IdOld(fmtShort(parseYmd(t.day)||d)); b=L.m40IdOldS; }
+    else { const ed=t.ed||(d.getHours()>=14?'pm':'am'); a=L.m43EdFull[ed]+' · '+m43HM(d)+' · '+L.m40IdN(t.ideas.length);
+      const B=m43Slots(t), now=Date.now(), dk=hbDay(); const i=B.findIndex(mn=>m43At(dk,mn).getTime()>now);
+      b=i>=0?L.m43Next(L.m43EdN[m43EdOf(i,B.length)].toLowerCase(),m43HM(m43At(dk,B[i])),m43In(m43At(dk,B[i]).getTime()-now)):L.m43NextTm(m43HM(m43At(new Date(now+86400e3+5*3600e3).toISOString().slice(0,10),B[0]))); } }
+  return `<div class="m40-ih"><i class="dot${old?' old':''}"></i><span><b>${esc(a)}</b><small>${esc(b)}</small></span><button type="button" data-m40upd class="${busy?'busy':''}" aria-label="${esc(L.m40Upd)}">${ico('refresh',18)}${esc(busy?L.m40Upding:L.m40Upd)}</button></div>`; }; }catch(e){}
+
+/* ---------- «Пульс трендов»: сколько растёт и слабеет, сила и цифра у каждого, фильтр по теме ---------- */
+const M43_AREA=['online','consumer','fashion','food','tech','medtech','finance','export','other'];
+try{ const _tr43=f34TrendsHTML; f34TrendsHTML=function(t){ const a=(t.trends||[]); const h=_tr43.apply(this,arguments); if(!h||!a.length) return h;
+  try{ const parts=h.split('<div class="hb-tc '); const cards=parts.slice(1).map((c,i)=>{ const x=a[i]||{}, p=[1,2,3].includes(+x.power)?+x.power:0;
+      const badge=(x.num?`<span class="m43-num">${esc(String(x.num).slice(0,16))}</span>`:'')+(p?`<span class="m43-pw p${p}" title="${esc(L.m43PwA[p])}" aria-label="${esc(L.m43PwA[p])}"><i></i><i></i><i></i></span>`:'');
+      const ar=M43_AREA.includes(x.area)?x.area:'other', hide=M43.ta!=='all'&&M43.ta!==ar;
+      return `<div data-m43a="${ar}"${hide?' hidden':''} class="hb-tc `+(badge?c.replace('</b>','</b><span class="m43-bd">'+badge+'</span>'):c); });
+    return m43PulseHTML(a)+parts[0]+cards.join(''); }catch(e){ return h; } }; }catch(e){}
+function m43PulseHTML(a){ const up=a.filter(x=>x.dir!=='down').length, dn=a.length-up, strong=a.filter(x=>+x.power===3).length;
+  const cnt={}; a.forEach(x=>{ const k=M43_AREA.includes(x.area)?x.area:'other'; cnt[k]=(cnt[k]||0)+1; });
+  const ks=M43_AREA.filter(k=>cnt[k]); if(M43.ta!=='all'&&!cnt[M43.ta]) M43.ta='all';
+  const chip=(k,n,lab)=>`<button type="button" class="chip ${M43.ta===k?'on':''}" data-m43ta="${k}" aria-pressed="${M43.ta===k}">${esc(lab)} <em>${n}</em></button>`;
+  return `<div class="m43-pulse"><div class="m43-pb" role="img" aria-label="${esc(L.m43PulseA(up,dn))}"><i class="u" style="flex:${up||0.001}"></i><i class="d" style="flex:${dn||0.001}"></i></div>
+    <div class="m43-pl"><span class="u">↑ ${esc(L.m43Up(up))}</span>${dn?`<span class="d">↓ ${esc(L.m43Dn(dn))}</span>`:''}${strong?`<span class="s">${esc(L.m43Strong(strong))}</span>`:''}</div>
+    ${ks.length>1?`<div class="chips m43-tf" role="group" aria-label="${esc(L.m43TfA)}">${chip('all',a.length,L.m43All)}${ks.map(k=>chip(k,cnt[k],L.hbArea[k]||L.m43Other)).join('')}</div>`:''}</div>`; }
+function m43TaSet(k){ M43.ta=k; document.querySelectorAll('[data-m43ta]').forEach(b=>{ const on=b.dataset.m43ta===k; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on); });
+  document.querySelectorAll('.hb-tc[data-m43a]').forEach(c=>{ c.hidden=k!=='all'&&c.dataset.m43a!==k; }); }
+
+/* ---------- «Карта выгоды»: наценка × как быстро уходит; размер — доход за год; цвет — куда идёт спрос ---------- */
+function m43Pts(t){ const rows=hbRows(t).filter(r=>r.mk>0&&r.m>0); return rows.map(r=>{ const x=t&&!r.isNew?(t.cats||[]).find(c=>c.id===r.id):null;
+  const yr=hbYear(r), sc=x&&Number.isFinite(+x.score)&&x.score!==null?+x.score:null;
+  return Object.assign({},r,{yr,sc,risk:x&&x.risk||'',rn:x&&x.risk_note||'',season:x&&x.season||'',act:x&&x.act||''}); }); }
+/* оценка 0–100 от Сифры; если её нет (старый сервер или новый товар) — по доходу за год; без оценки не выше 70, когда у других она есть */
+function m43Score(p,has){ return p.sc!=null?p.sc:Math.min(has?70:100,Math.round(p.yr/4)); }
+const M43_W=320, M43_H=212, M43_L=40, M43_R=12, M43_T=12, M43_BT=34;
+const m43Xv=m=>Math.log2(12/Math.min(12,Math.max(0.25,m)));            /* 0 (раз в год) … 5.6 (раз в неделю) */
+function m43Sc(pts){ const xs=pts.map(p=>m43Xv(p.m)), ys=pts.map(p=>p.mk); const x0=Math.max(0,Math.min(...xs)-0.35), x1=Math.max(...xs)+0.35, y1=Math.max(100,Math.ceil(Math.max(...ys)*1.12/50)*50);
+  return {x:v=>M43_L+(m43Xv(v)-x0)/(x1-x0||1)*(M43_W-M43_L-M43_R), y:v=>M43_T+(1-Math.min(v,y1)/y1)*(M43_H-M43_T-M43_BT), x0,x1,y1}; }
+function m43MapHTML(t){ const pts=m43Pts(t); if(pts.length<3) return ''; const S=m43Sc(pts);
+  const med=a=>{ const s=a.slice().sort((p,q)=>p-q); return s[Math.floor(s.length/2)]; }, mx=med(pts.map(p=>p.m)), my=med(pts.map(p=>p.mk));
+  const gx=S.x(mx), gy=S.y(my), yrMax=Math.max(...pts.map(p=>p.yr),1);
+  const rr=p=>6+Math.sqrt(Math.max(0,p.yr)/yrMax)*11;
+  const has=pts.some(p=>p.sc!=null), best=pts.slice().sort((p,q)=>m43Score(q,has)-m43Score(p,has)||q.yr-p.yr), top=best[0]; if(M43.sel&&!pts.some(p=>p.id===M43.sel)) M43.sel=null;
+  const sel=pts.find(p=>p.id===M43.sel)||null;
+  const yT=[0,0.5,1].map(f=>Math.round(S.y1*f)), xT=[6,3,1,0.5,0.25].filter(m=>m43Xv(m)>=S.x0-0.01&&m43Xv(m)<=S.x1+0.01);
+  let g=`<rect class="m43-gz" x="${gx.toFixed(1)}" y="${M43_T}" width="${(M43_W-M43_R-gx).toFixed(1)}" height="${(gy-M43_T).toFixed(1)}" rx="10"/>`;
+  g+=yT.map(v=>`<line class="m43-gl" x1="${M43_L}" x2="${M43_W-M43_R}" y1="${S.y(v).toFixed(1)}" y2="${S.y(v).toFixed(1)}"/><text class="m43-ax" x="${M43_L-6}" y="${(S.y(v)+4).toFixed(1)}" text-anchor="end">${v}%</text>`).join('');
+  g+=xT.map(m=>`<text class="m43-ax" x="${S.x(m).toFixed(1)}" y="${M43_H-M43_BT+16}" text-anchor="middle">${esc(L.m43Tk(m))}</text>`).join('');
+  g+=`<line class="m43-md" x1="${gx.toFixed(1)}" x2="${gx.toFixed(1)}" y1="${M43_T}" y2="${M43_H-M43_BT}"/><line class="m43-md" x1="${M43_L}" x2="${M43_W-M43_R}" y1="${gy.toFixed(1)}" y2="${gy.toFixed(1)}"/>`;
+  g+=`<text class="m43-gzl" x="${M43_W-M43_R-6}" y="${M43_T+14}" text-anchor="end">${esc(L.m43Gold)}</text>`;
+  const ord=pts.slice().sort((p,q)=>rr(q)-rr(p));
+  g+=ord.map(p=>{ const cx=S.x(p.m), cy=S.y(p.mk), on=sel&&sel.id===p.id; return `<g class="m43-pt ${p.trend||'flat'}${on?' on':''}${sel&&!on?' dim':''}" data-m43c="${esc(p.id)}"><circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${rr(p).toFixed(1)}"/>${on?`<circle class="ring" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${(rr(p)+5).toFixed(1)}"/>`:''}</g>`; }).join('');
+  /* подписи: самые выгодные и выбранная, без наложений */
+  const boxes=[]; let lab=''; const want=[sel].concat(best.slice(0,5)).filter(Boolean).filter((p,i,a)=>a.indexOf(p)===i);
+  for(const p of want){ const cx=S.x(p.m), cy=S.y(p.mk), r=rr(p), nm=String(p.name).slice(0,16), w=nm.length*5.6+6; let lx=cx+r+3, an='start'; if(lx+w>M43_W-2){ lx=cx-r-3; an='end'; }
+    const bx={l:an==='start'?lx:lx-w,r:an==='start'?lx+w:lx,t:cy-8,b:cy+6}; if(boxes.some(o=>!(bx.r<o.l||bx.l>o.r||bx.b<o.t||bx.t>o.b))) continue; boxes.push(bx);
+    lab+=`<text class="m43-lb${sel&&sel.id===p.id?' on':''}" x="${lx.toFixed(1)}" y="${(cy+4).toFixed(1)}" text-anchor="${an}">${esc(nm)}</text>`; }
+  const P=sel||top; const det=`<div class="m43-det" aria-live="polite"><div class="m43-dh"><b>${esc(P.name)}</b>${P.isNew?`<em class="hb-new">${L.hbNew}</em>`:''}${sel?'':`<span class="m43-best">${esc(L.m43Best)}</span>`}${P.sc!=null?`<span class="m43-sc" style="--s:${P.sc}"><i></i>${Math.round(P.sc)}</span>`:''}</div>
+    <div class="m43-kv"><span><small>${L.hbMkL}</small><b>+${Math.round(P.mk)}%</b></span><span><small>${L.hbSellL}</small><b>${esc(L.hbMo(hbF1(P.m)))}</b></span><span><small>${L.m43YrL}</small><b>+${Math.round(P.yr)}%</b></span><span><small>${L.m43TrL}</small><b class="tr ${P.trend||'flat'}">${esc(L.m43Tr[P.trend||'flat'])}</b></span></div>
+    ${P.act?`<p class="m43-act">${ico('next',14)}<span>${esc(P.act)}</span></p>`:''}${P.season||P.rn?`<p class="m43-sub">${P.season?`${ico('calendar',14)} ${esc(P.season)}`:''}${P.season&&P.rn?' · ':''}${P.rn?`<span class="rk ${P.risk||''}">${ico('warn',13)} ${esc(P.rn)}</span>`:''}</p>`:''}
+    <button type="button" class="btn btn-ghost m43-more" data-m43open="${esc(P.id)}">${ico('next',16)} ${L.m43More}</button></div>`;
+  return `<div class="m43-map" id="m43Map"><div class="m43-mh"><b>${ico('chart',16)} ${L.m43MapT}</b><small>${L.m43MapS}</small></div>
+    <div class="m43-plot" tabindex="0" role="group" aria-label="${esc(L.m43MapA)}"><svg viewBox="0 0 ${M43_W} ${M43_H}" aria-hidden="true">${g}${lab}</svg></div>
+    <div class="m43-axl"><span>${L.m43AxY}</span><span>${L.m43AxX}</span></div>
+    <div class="m43-leg"><span><i class="up"></i>${L.m43Tr.up}</span><span><i class="flat"></i>${L.m43Tr.flat}</span><span><i class="down"></i>${L.m43Tr.down}</span><span><i class="sz"></i>${L.m43SzL}</span></div>${det}</div>`; }
+try{ const _g43=f34GoodsHTML; f34GoodsHTML=function(t){ const h=_g43.apply(this,arguments); try{ return m43MapHTML(t)+h; }catch(e){ return h; } }; }catch(e){}
+function m43MapRe(){ const box=document.getElementById('m43Map'); const t=hbToday(); if(!box||!t) return; const w=document.createElement('div'); w.innerHTML=m43MapHTML(t); if(w.firstElementChild) box.replaceWith(w.firstElementChild); }
+function m43Pick(id){ M43.sel=M43.sel===id?null:id; try{ m40Vib(); }catch(e){} m43MapRe(); const f=document.querySelector('#m43Map .m43-plot'); if(f) f.focus({preventScroll:true}); }
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('[data-m43c],[data-m43ta],[data-m43open]'); if(!t) return;
+  if(t.hasAttribute('data-m43c')){ m43Pick(t.getAttribute('data-m43c')); return; }
+  if(t.hasAttribute('data-m43ta')){ m43TaSet(t.dataset.m43ta); return; }
+  if(t.hasAttribute('data-m43open')){ const id=t.dataset.m43open; const row=document.querySelector(`[data-hbrow="${CSS.escape(id)}"]`); if(row){ if(row.getAttribute('aria-expanded')!=='true') row.click(); setTimeout(()=>{ const r2=document.querySelector(`[data-hbrow="${CSS.escape(id)}"]`); if(r2) r2.scrollIntoView({block:'center',behavior:'smooth'}); },60); } } });
+/* пальцем по карте — ближайшая точка; стрелки — от самой выгодной к менее выгодной */
+document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.closest('#m43Map .m43-plot'); if(!pl||!['ArrowRight','ArrowLeft','ArrowUp','ArrowDown','Escape'].includes(e.key)) return; e.preventDefault(); const t=hbToday(); if(!t) return;
+  if(e.key==='Escape'){ M43.sel=null; m43MapRe(); const f=document.querySelector('#m43Map .m43-plot'); if(f) f.focus({preventScroll:true}); return; }
+  const P=m43Pts(t), has=P.some(p=>p.sc!=null), best=P.sort((p,q)=>m43Score(q,has)-m43Score(p,has)||q.yr-p.yr); let i=best.findIndex(p=>p.id===M43.sel); i=e.key==='ArrowRight'||e.key==='ArrowDown'?i+1:i-1; if(i<0) i=best.length-1; if(i>=best.length) i=0; M43.sel=null; m43Pick(best[i].id); });
+/* <</v43 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
