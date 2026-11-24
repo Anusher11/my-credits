@@ -4719,6 +4719,233 @@ html.m40[data-sk="b"] .m44-plot svg svg{color:#0C0A10;}
 .m47-mo .m47-plot .gr{stroke:var(--line); stroke-width:1; stroke-dasharray:2 4; fill:none;}
 .m47-mo .m47-plot .vl{stroke:var(--ink); stroke-width:1; opacity:.35; fill:none;}
 .m47-mo .m47-plot{touch-action:pan-y; cursor:pointer;}
+/* ===== v48: «Главное 2.0», пульс рынков, сферы, «Что впереди», кривая трендов, секреты, «Цена у двери» ===== */
+.m48-it .f34-why{line-height:1.45;}
+.m48-upd{display:block; font-size:.86rem; background:var(--surface-2); border-radius:10px; padding:6px 9px; margin:6px 0 4px!important; border-left:3px solid var(--gold);}
+.m48-upd b{font-weight:800;}
+.lv-tags .m48-st{background:color-mix(in srgb,var(--gold) 18%,transparent); color:var(--ink); font-weight:700;}
+.lv-tags .m48-ln{font-weight:700;}
+.m48-meta{margin-top:8px;}
+.m48-meta .m48-im{background:var(--brand-weak); color:var(--brand-ink); font-weight:700;}
+.m48-meta .m48-hz{display:inline-flex; align-items:center; gap:4px;}
+.m48-meta .m48-cf{display:inline-flex; align-items:center; gap:2px;}
+.m48-cf b{display:inline-block; width:5px; height:10px; border-radius:2px; background:var(--track); margin-right:1px;}
+.m48-cf.low b:nth-child(1),.m48-cf.mid b:nth-child(-n+2),.m48-cf.high b{background:var(--m-leaf,var(--brand));}
+.m48-cf.low b:nth-child(1){background:var(--warn);}
+/* цепочка «как доходит до вас» */
+.m48-ch{margin:9px 0 2px; padding:9px 10px 6px; border-radius:12px; background:var(--surface-2);}
+.m48-ch>small{display:flex; align-items:center; gap:5px; font-weight:800; color:var(--muted); font-size:.74rem; letter-spacing:.02em; margin-bottom:6px;}
+.m48-ch ol{list-style:none; margin:0; padding:0 0 0 18px; position:relative;}
+.m48-ch ol::before{content:''; position:absolute; left:6px; top:8px; bottom:12px; width:2px; border-radius:2px; background:linear-gradient(var(--track),var(--brand));}
+.m48-ch li{position:relative; padding:0 0 7px; font-size:.88rem; line-height:1.35;}
+.m48-ch li::before{content:''; position:absolute; left:-16px; top:5px; width:10px; height:10px; border-radius:50%; background:var(--surface); border:2px solid var(--muted); box-sizing:border-box;}
+.m48-ch li:last-child::before{border-color:var(--brand); background:var(--brand);}
+.m48-ch li:last-child span{font-weight:800; color:var(--ink);}
+.m48-ch li:not(:last-child)::after{content:'↓'; position:absolute; left:-15px; top:16px; font-size:.6rem; color:var(--muted); line-height:1;}
+html.m48-live .m48-ch ol::after{content:''; position:absolute; left:4px; top:6px; width:6px; height:6px; border-radius:50%; background:var(--brand); box-shadow:0 0 0 4px color-mix(in srgb,var(--brand) 25%,transparent); animation:m48flow 2.8s ease-in-out infinite;}
+@keyframes m48flow{0%{transform:translateY(0); opacity:0} 12%{opacity:1} 85%{opacity:1} 100%{transform:translateY(var(--m48h,90px)); opacity:0}}
+.m48-ch li{animation:none;}
+html.m48-live .m48-ch li{animation:m48in .5s both; animation-delay:calc(var(--i)*.12s);}
+@keyframes m48in{from{opacity:0; transform:translateX(-6px)} to{opacity:1; transform:none}}
+.m48-for{display:flex; gap:6px; align-items:flex-start; margin-top:8px!important; padding:7px 9px; border-radius:10px; background:color-mix(in srgb,var(--gold) 14%,var(--surface)); border:1px solid color-mix(in srgb,var(--gold) 35%,transparent);}
+.m48-for b{font-weight:800;}
+.m48-who{display:flex; gap:6px; align-items:flex-start; font-size:.85rem; color:var(--muted); margin-top:6px!important;}
+.m48-who b{color:var(--ink); font-weight:700;}
+/* график курса у новости */
+.m48-sp{display:flex; align-items:center; gap:10px; margin:6px 0 2px; padding:6px 9px; border-radius:10px; background:var(--surface-2);}
+.m48-sp svg{width:120px; height:34px; flex:none; overflow:visible;}
+.m48-sp .ln{fill:none; stroke:var(--muted); stroke-width:1.8; stroke-linejoin:round; stroke-linecap:round;}
+.m48-sp .ar{fill:var(--muted); opacity:.12;}
+.m48-sp circle{fill:var(--muted);}
+.m48-sp.up .ln{stroke:var(--danger);} .m48-sp.up .ar,.m48-sp.up circle{fill:var(--danger);}
+.m48-sp.dn .ln{stroke:var(--m-leaf,var(--brand));} .m48-sp.dn .ar,.m48-sp.dn circle{fill:var(--m-leaf,var(--brand));}
+.m48-sp span{display:flex; flex-direction:column; min-width:0;}
+.m48-sp small{color:var(--muted); font-size:.72rem;}
+.m48-sp b{font-family:var(--font-num); font-weight:800; font-size:.92rem;}
+.m48-sp em{font-style:normal; font-size:.78rem; font-weight:700; margin-left:4px;}
+html.m48-live .m48-sp .ln{stroke-dasharray:1; stroke-dashoffset:1; animation:m48draw 1.3s ease-out forwards;}
+html.m48-live .m48-sp circle{animation:m48beat 2s ease-in-out 1.3s infinite; transform-box:fill-box; transform-origin:center;}
+@keyframes m48draw{to{stroke-dashoffset:0}}
+@keyframes m48beat{0%,100%{transform:scale(1)} 50%{transform:scale(1.6)}}
+/* пульс рынков */
+.m48-mood{display:flex; gap:12px; align-items:center; padding:10px 12px; border-radius:16px; background:var(--surface); border:1px solid var(--line); margin-bottom:10px;}
+.m48-mood>svg{width:128px; height:70px; flex:none;}
+.m48-mact svg{flex:none; margin-top:2px;}
+.m48-ga{fill:none; stroke-width:9; stroke-linecap:round;}
+.m48-ga.p{stroke:var(--danger);} .m48-ga.f{stroke:color-mix(in srgb,var(--danger) 55%,var(--warn));} .m48-ga.c{stroke:var(--track);} .m48-ga.g{stroke:color-mix(in srgb,var(--m-leaf,var(--brand)) 60%,var(--gold));} .m48-ga.e{stroke:var(--gold);}
+.m48-nd{transform-box:view-box; transform-origin:64px 60px; transform:rotate(var(--a));}
+.m48-nd line{stroke:var(--ink); stroke-width:2.6; stroke-linecap:round;} .m48-nd circle{fill:var(--ink);}
+.m48-gd{fill:var(--surface); stroke:var(--ink); stroke-width:1.5;}
+html.m48-live .m48-nd{animation:m48needle 1.6s cubic-bezier(.3,1.5,.5,1) both;}
+@keyframes m48needle{from{transform:rotate(-90deg)} to{transform:rotate(var(--a))}}
+html.m48-live .m48-gd{animation:m48fade .4s 1.4s both;}
+@keyframes m48fade{from{opacity:0} to{opacity:1}}
+.m48-mt{min-width:0;}
+.m48-mt small{color:var(--muted); font-size:.74rem; font-weight:700;}
+.m48-mt b{display:block; font-family:var(--font-num); font-weight:800; font-size:1.05rem; margin:1px 0 3px;}
+.m48-mt p{margin:0; font-size:.84rem; line-height:1.35;}
+.m48-mact{display:flex; gap:4px; margin-top:4px!important; color:var(--ink); font-weight:600;}
+.m48-tick{overflow:hidden; border-radius:14px; background:var(--surface-2); padding:2px 0; mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); -webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);}
+.m48-tr{display:flex; width:max-content;}
+.m48-dup{display:flex;}
+.m48-tk{display:flex; flex-direction:column; gap:1px; padding:7px 14px; min-width:96px; text-decoration:none; color:var(--ink); border-right:1px solid var(--line);}
+.m48-tk b{font-size:.74rem; color:var(--muted); font-weight:700; white-space:nowrap;}
+.m48-tk span{font-family:var(--font-num); font-weight:800; font-size:.98rem; white-space:nowrap;}
+.m48-tk em{font-style:normal; font-family:var(--font-num); font-weight:800; font-size:.78rem; color:var(--muted); white-space:nowrap;}
+.m48-tk.up em{color:var(--m-leaf,var(--brand));} .m48-tk.dn em{color:var(--danger);}
+html.m48-live .m48-tr{animation:m48tick calc(var(--n,6)*4.5s) linear infinite;}
+html.m48-live .m48-tick:hover .m48-tr,html.m48-live .m48-tick:focus-within .m48-tr,html.m48-live .m48-tick:active .m48-tr{animation-play-state:paused;}
+@keyframes m48tick{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+html:not(.m48-live) .m48-tick{mask-image:none; -webkit-mask-image:none;}
+html:not(.m48-live) .m48-tr{width:auto; flex-wrap:wrap;}
+html:not(.m48-live) .m48-dup{display:none;}
+.m48-tkn{display:flex; align-items:flex-start; gap:6px; font-size:.74rem; color:var(--muted); margin:5px 2px 10px!important;}
+.m48-dot{width:7px; height:7px; border-radius:50%; background:var(--muted); flex:none; margin-top:5px;}
+html.m48-live .m48-dot{background:var(--m-leaf,var(--brand)); animation:m48beat 1.6s ease-in-out infinite;}
+html.m48-live .m48-tkn .off{display:none;} html:not(.m48-live) .m48-tkn .on{display:none;}
+.m48-bal{padding:10px 12px; border-radius:16px; border:1px solid var(--line); background:var(--surface);}
+.m48-bh{display:flex; flex-direction:column; gap:2px; margin-bottom:8px;}
+.m48-bh b{display:flex; align-items:center; gap:6px; font-weight:800;}
+.m48-bh small{color:var(--muted); font-size:.8rem; line-height:1.35;}
+.m48-bl{display:grid; grid-template-columns:1fr 1fr; font-size:.72rem; font-weight:800; margin-bottom:4px;}
+.m48-bl .b{color:var(--danger);} .m48-bl .g{color:var(--m-leaf,var(--brand)); text-align:right;}
+.m48-br{display:grid; grid-template-columns:1fr 96px 1fr; align-items:center; gap:8px; width:100%; padding:5px 0; background:none; border:0; color:var(--ink); font:inherit; cursor:pointer; border-radius:8px;}
+.m48-br>b{font-size:.8rem; font-weight:700; text-align:center; line-height:1.15;}
+.m48-br .l,.m48-br .r{position:relative; height:16px; display:flex; align-items:center;}
+.m48-br .l{justify-content:flex-end;}
+.m48-br i{display:block; height:12px; border-radius:6px; width:var(--w);}
+.m48-br .l i{background:var(--danger);} .m48-br .r i{background:var(--m-leaf,var(--brand));}
+.m48-br em{font-style:normal; font-family:var(--font-num); font-weight:800; font-size:.72rem; padding:0 4px;}
+.m48-br .l em{order:-1;}
+.m48-br.on{background:var(--surface-2);} .m48-br.on>b{color:var(--brand-ink);}
+html.m48-live .m48-br i{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.07s);}
+.m48-br .l i{transform-origin:right;} .m48-br .r i{transform-origin:left;}
+@keyframes m48grow{from{transform:scaleX(0)} to{transform:scaleX(1)}}
+.m48-ball{margin-top:6px;}
+/* сферы */
+.m48-lf{margin:2px 0 10px;}
+.m48-lf .chip em{font-style:normal; opacity:.65; margin-left:2px;}
+/* что впереди */
+.m48-cs{position:relative; height:42px; margin:4px 6px 14px; }
+.m48-cs::before{content:''; position:absolute; left:0; right:0; top:14px; height:4px; border-radius:4px; background:var(--track);}
+.m48-cs b{position:absolute; top:9px; left:var(--x); width:14px; height:14px; margin-left:-7px; border-radius:50%; background:var(--gold); border:2px solid var(--surface); box-sizing:border-box;}
+.m48-cs b.k-rates{background:var(--danger);} .m48-cs b.k-sale,.m48-cs b.k-holiday{background:var(--m-leaf,var(--brand));} .m48-cs b.k-data,.m48-cs b.k-earnings{background:var(--muted);}
+.m48-now{position:absolute; left:0; top:7px; width:4px; height:18px; margin-left:-2px; border-radius:2px; background:var(--ink);}
+.m48-cs span{position:absolute; top:28px; font-size:.7rem; color:var(--muted); font-weight:700;}
+.m48-cs .s{left:0;} .m48-cs .e{right:0;}
+html.m48-live .m48-cs b{animation:m48pop .5s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(var(--i)*.08s);}
+html.m48-live .m48-now{animation:m48beat 1.8s ease-in-out infinite;}
+@keyframes m48pop{from{transform:scale(0)} to{transform:scale(1)}}
+.m48-cal{list-style:none; margin:0; padding:0;}
+.m48-ev{display:flex; gap:10px; padding:10px 0; border-top:1px solid var(--line);}
+.m48-ev:first-child{border-top:0;}
+.m48-ed{flex:none; width:48px; height:52px; border-radius:12px; background:var(--surface-2); display:flex; flex-direction:column; align-items:center; justify-content:center; border-top:4px solid var(--gold);}
+.m48-ev.k-rates .m48-ed{border-top-color:var(--danger);} .m48-ev.k-sale .m48-ed,.m48-ev.k-holiday .m48-ed{border-top-color:var(--m-leaf,var(--brand));}
+.m48-ed b{font-family:var(--font-num); font-weight:800; font-size:1.2rem; line-height:1;} .m48-ed small{font-size:.7rem; color:var(--muted); font-weight:700;}
+.m48-eb{min-width:0; flex:1;} .m48-eb>b{display:block; font-weight:800; margin:3px 0 2px;} .m48-eb p{margin:2px 0;}
+.m48-cd{font-weight:800;}
+.m48-ev.soon .m48-cd{background:var(--danger-weak); color:var(--danger);}
+html.m48-live .m48-ev.soon .m48-ed{animation:m48glow 2.4s ease-in-out infinite;}
+@keyframes m48glow{0%,100%{box-shadow:0 0 0 0 transparent} 50%{box-shadow:0 0 0 4px color-mix(in srgb,var(--danger) 22%,transparent)}}
+/* кривая трендов */
+.m48-cv{padding:10px 12px; border-radius:16px; border:1px solid var(--line); background:var(--surface); margin-bottom:10px;}
+.m48-cvp svg{width:100%; height:auto; display:block; overflow:visible;}
+.m48-cvl{fill:none; stroke:var(--ink); stroke-width:2; opacity:.55;}
+.m48-cvf{fill:var(--brand); opacity:.07;}
+.m48-zb{stroke:var(--line); stroke-dasharray:3 4;}
+.m48-zl{font:700 9.5px/1 var(--font-num); fill:var(--muted);}
+.m48-cd2{cursor:pointer;}
+.m48-cd2 circle{stroke:var(--surface); stroke-width:2;}
+.m48-cd2.seed circle{fill:var(--gold);} .m48-cd2.rise circle{fill:var(--m-leaf,var(--brand));} .m48-cd2.peak circle{fill:var(--warn);} .m48-cd2.fade circle{fill:var(--danger);}
+.m48-cd2 text{font:800 9.5px/1 var(--font-num); fill:#fff; pointer-events:none;}
+.m48-cd2:focus{outline:none;} .m48-cd2:focus circle{stroke:var(--ink);}
+html.m48-live .m48-cvl{stroke-dasharray:1; stroke-dashoffset:1; animation:m48draw 1.4s ease-out forwards;}
+html.m48-live .m48-cd2{animation:m48pop .55s cubic-bezier(.3,1.6,.5,1) both; animation-delay:calc(1s + var(--d)); transform-box:fill-box; transform-origin:center;}
+.m48-stg{display:flex; align-items:center; gap:7px; font-size:.84rem; margin:6px 0 0!important;}
+.m48-stg>b{flex:none; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; font:800 .7rem/1 var(--font-num); color:#fff; background:var(--muted);}
+.m48-stg em{font-style:normal; font-weight:800;}
+.m48-stg.seed>b{background:var(--gold);} .m48-stg.rise>b{background:var(--m-leaf,var(--brand));} .m48-stg.peak>b{background:var(--warn);} .m48-stg.fade>b{background:var(--danger);}
+.hb-tc.m48-flash{animation:m48hl 1.4s ease-out;}
+@keyframes m48hl{0%{box-shadow:0 0 0 3px var(--gold)} 100%{box-shadow:0 0 0 0 transparent}}
+/* карта выгоды: ваша наценка */
+.m48-my line{stroke:var(--ink); stroke-width:1.4; stroke-dasharray:3 3; opacity:.7;}
+.m48-my circle{fill:none; stroke:var(--ink); stroke-width:2.2;}
+.m48-my.lo circle{stroke:var(--gold);}
+.m48-my text{font:800 9px/1 var(--font-num); fill:var(--ink);}
+html.m48-live .m48-my circle{animation:m48ring 2.2s ease-in-out infinite; transform-box:fill-box; transform-origin:center;}
+@keyframes m48ring{0%,100%{transform:scale(1)} 50%{transform:scale(1.25)}}
+.m48-mapl{display:flex; align-items:center; gap:5px; font-size:.78rem; color:var(--muted); margin:6px 0 0!important;}
+.m48-mapn{display:flex; gap:6px; align-items:flex-start; font-size:.86rem; padding:7px 9px; border-radius:10px; margin:6px 0!important;}
+.m48-mapn.lo{background:color-mix(in srgb,var(--gold) 14%,var(--surface));} .m48-mapn.hi{background:var(--warn-weak);}
+/* секреты и ваши секреты */
+.m48-sec{border:1px solid var(--line); border-radius:16px; padding:11px 12px; margin:0 0 10px; background:var(--surface); border-top:3px solid var(--gold);}
+.m48-sec h5{display:flex; gap:6px; align-items:flex-start; margin:4px 0; font-size:1rem; line-height:1.3;}
+.m48-sec>p{margin:4px 0;}
+.m48-sa{font-weight:700;}
+.m48-how{background:var(--surface-2); border-radius:12px; padding:8px 10px; margin:8px 0;}
+.m48-how small{font-weight:800; color:var(--muted); font-size:.74rem;}
+.m48-how ol{margin:4px 0 0; padding-left:20px;} .m48-how li{margin:3px 0; font-size:.9rem;}
+.m48-rare{font-size:.86rem; color:var(--muted);} .m48-rare b{color:var(--ink);}
+.m48-proof{display:flex; gap:6px; font-size:.84rem; color:var(--muted);} .m48-proof b{color:var(--ink);}
+.m48-scard{border:1px solid color-mix(in srgb,var(--gold) 45%,transparent)!important;}
+.m48-mi{border:1px solid var(--line); border-radius:16px; padding:11px 12px; margin:0 0 10px; background:var(--surface);}
+.m48-mh{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px;}
+.m48-mh>span{width:30px; height:30px; border-radius:10px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m48-mi.k-dead .m48-mh>span,.m48-mi.k-exp .m48-mh>span{background:var(--warn-weak); color:var(--warn);}
+.m48-mh small{font-weight:800; font-size:.86rem;}
+.m48-mh b{font-family:var(--font-num); font-weight:800; font-size:1.15rem;}
+.m48-mi>p{margin:6px 0;}
+.m48-vb{display:grid; grid-template-columns:repeat(7,1fr); gap:6px; align-items:end; height:86px; margin:8px 0 4px;}
+.m48-vb.m3{grid-template-columns:repeat(3,1fr);}
+.m48-vb span{display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:4px;}
+.m48-vb i{display:block; width:100%; max-width:34px; height:var(--h); border-radius:7px 7px 3px 3px; background:var(--track); transform-origin:bottom;}
+.m48-vb .b i{background:var(--m-leaf,var(--brand));} .m48-vb .w i{background:color-mix(in srgb,var(--danger) 45%,var(--track));}
+.m48-vb small{font-size:.7rem; color:var(--muted); font-weight:700;}
+html.m48-live .m48-vb i{animation:m48up .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.06s);}
+@keyframes m48up{from{transform:scaleY(0)} to{transform:scaleY(1)}}
+.m48-vs{height:12px; border-radius:6px; background:var(--track); overflow:hidden; margin:6px 0;}
+.m48-vs i{display:block; height:100%; width:var(--w); background:var(--m-leaf,var(--brand)); border-radius:6px; transform-origin:left;}
+html.m48-live .m48-vs i{animation:m48grow .9s cubic-bezier(.2,.8,.2,1) both;}
+.m48-v2{display:grid; gap:6px; margin:8px 0;}
+.m48-v2 span{display:grid; grid-template-columns:86px 1fr auto; align-items:center; gap:8px; font-size:.78rem;}
+.m48-v2 small{color:var(--muted); font-weight:700;}
+.m48-v2 i{display:block; height:10px; border-radius:5px; width:var(--w); background:var(--track); transform-origin:left;}
+.m48-v2 .n i{background:var(--warn);}
+.m48-v2 b{font-family:var(--font-num); font-weight:800;}
+html.m48-live .m48-v2 i{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) both;}
+.m48-empty{display:flex; gap:6px; align-items:flex-start; color:var(--muted); font-size:.88rem; padding:8px 2px;}
+.m48-tsec{margin-top:8px; padding:10px 12px; border-radius:14px; background:color-mix(in srgb,var(--gold) 10%,var(--surface)); border:1px solid color-mix(in srgb,var(--gold) 30%,transparent);}
+.m48-tsec>small{display:flex; align-items:center; gap:5px; font-weight:800;}
+.m48-ts{margin:7px 0;} .m48-ts b{font-weight:800;} .m48-ts p{margin:2px 0; font-size:.88rem;}
+/* урок дня */
+.m48-mist{display:flex; gap:8px; align-items:flex-start; padding:9px 11px; border-radius:12px; background:var(--danger-weak); margin:10px 0;}
+.m48-mist b{display:block; font-weight:800; color:var(--danger);}
+.m48-calc{padding:9px 11px; border-radius:12px; background:var(--surface-2); margin:10px 0;}
+.m48-calc small{display:flex; gap:5px; align-items:center; font-weight:800; color:var(--muted);}
+.m48-calc pre{margin:5px 0 0; white-space:pre-wrap; font:600 .92rem/1.45 var(--font-num); color:var(--ink);}
+/* цена у двери */
+.m48-ldg{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.m48-ldg label{display:flex; flex-direction:column; gap:3px; min-width:0;}
+.m48-ldg label.w{grid-column:1/-1;}
+.m48-ldg small{font-size:.74rem; color:var(--muted); font-weight:700;}
+.m48-ldg input,.m48-ldg select{width:100%; box-sizing:border-box; padding:9px 10px; border-radius:10px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-family:var(--font-num); font-weight:700;}
+.m48-ldo{margin-top:12px; padding:11px 12px; border-radius:16px; background:var(--surface-2);}
+.m48-ldu small{color:var(--muted); font-weight:700; font-size:.78rem;} .m48-ldu b{display:block; font-family:var(--font-num); font-weight:800; font-size:1.6rem; line-height:1.15;}
+.m48-lds{display:flex; height:14px; border-radius:7px; overflow:hidden; margin:9px 0 7px; background:var(--track);}
+.m48-lds i{display:block; height:100%; width:var(--w); transform-origin:left;}
+.m48-lds .goods,.m48-ldl .goods i{background:var(--m-leaf,var(--brand));} .m48-lds .cargo,.m48-ldl .cargo i{background:var(--gold);} .m48-lds .duty,.m48-ldl .duty i{background:var(--warn);} .m48-lds .vat,.m48-ldl .vat i{background:var(--danger);} .m48-lds .other,.m48-ldl .other i{background:var(--muted);}
+html.m48-live .m48-lds i{animation:m48grow .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.08s);}
+.m48-ldl{list-style:none; margin:0; padding:0; display:grid; gap:4px;}
+.m48-ldl li{display:grid; grid-template-columns:10px 1fr auto 40px; align-items:center; gap:8px; font-size:.86rem;}
+.m48-ldl li i{width:10px; height:10px; border-radius:3px;}
+.m48-ldl b{font-family:var(--font-num); font-weight:800;} .m48-ldl em{font-style:normal; color:var(--muted); text-align:right; font-family:var(--font-num); font-weight:700;}
+.m48-ldt,.m48-ldfx{font-size:.8rem; color:var(--muted); margin:8px 0 0!important;}
+@media (prefers-reduced-motion:reduce){
+  html.m48-live .m48-tr{animation:none!important; flex-wrap:wrap; width:auto;} html.m48-live .m48-dup{display:none;}
+  html.m48-live [class*="m48-"],html.m48-live [class*="m48-"]::after,html.m48-live .m48-ch ol::after{animation:none!important;}
+  .m48-nd{transform:rotate(var(--a));}
+}
+.m48-my text{paint-order:stroke; stroke:var(--surface); stroke-width:3px; stroke-linejoin:round;}
 /* <</v44 css>> */
 
 
@@ -22579,6 +22806,404 @@ async function m47RtRun(){ if(M47.rtBusy) return; const S=m47RtSt(); if(navigato
 document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m47rt],[data-m47rtq]'); if(!t) return; e.preventDefault();
   if(t.hasAttribute('data-m47rtq')){ sifraOpen(t.getAttribute('data-m47rtq')); return; } m47RtRun(); });
 try{ const ld=$('#m40Fc'); if(ld){ ld.dataset.h=''; m40FcDraw(); } }catch(e){}
+/* ---------- v48: строки — «Главное 2.0», пульс рынков, сферы, «Что впереди», кривая трендов, секреты, «Цена у двери» ---------- */
+const M48S={
+  ru:{
+    m48Chain:'Как это доходит до вас', m48Upd:'Что изменилось', m48Story:n=>'сюжет · '+n+'-й выпуск', m48Who:'Кого касается', m48For:'Для вас',
+    m48Imp:{purchase:'Закупка',fx:'Курсы',demand:'Спрос',credit:'Кредиты',prices:'Цены',logistics:'Доставка',stocks:'Акции и вложения',costs:'Расходы',jobs:'Работа',rules:'Законы'},
+    m48Hor:{now:'уже сейчас',week:'на этой неделе',month:'в течение месяца',year:'в течение года'}, m48Conf:{high:'точно',mid:'вероятно',low:'ранний сигнал'}, m48ConfA:'Насколько точно',
+    m48ForOwe:(a,v)=>'Ваши неоплаченные заказы: '+a+' ≈ '+v+'.', m48ForOwe30:(p,d,up)=>'Курс за 30 дней '+p+': для вас это '+d+(up?' дороже':' дешевле')+'.',
+    m48ForLoans:n=>'Касается ваших кредитов (активных: '+n+') — сравните свою ставку с рынком в «Кредитах».', m48ForCargo:n=>'У вас в пути грузов: '+n+' — уточните сроки у карго.',
+    m48ForTrip:(c,d)=>'Ваша поездка: '+c+', '+d+' — учтите при закупке.', m48ForCat:c=>'Касается ваших товаров: '+c+'.',
+    m48Spark30:c=>c+' к сомони за 30 дней', m48Spark:(c,p)=>c+' к сомони за 30 дней: '+p,
+    m48PulseT:'Пульс рынков', m48PulseAt:d=>'Цифры на '+d+' — нажмите, чтобы открыть источник', m48PulseOff:'Без интернета — цифры прошлого выпуска',
+    m48Mood:'Настроение денег в мире', m48MoodL:{panic:'паника',fear:'страх',calm:'спокойно',greed:'азарт',euphoria:'жадность'}, m48MoodA:(s,l)=>'Настроение денег в мире: '+s+' из 100 — '+l, m48MoodS:['паника','страх','спокойно','азарт','жадность'],
+    m48Bal:'Что сегодня давит и что помогает', m48BalLead:'События дня по сферам вашего дела. Нажмите строку — останутся только эти события.', m48BalBad:'давит', m48BalGood:'помогает', m48BalAll:'Показать все события', m48BalOn:n=>'Показаны события: '+n,
+    m48LensT:'Мир бизнеса по сферам', m48LensLead:'Самое важное в каждой сфере: что случилось, почему важно и как это доходит до вас.', m48All:'Все',
+    m48Lens:{trade:'Торговля',ecom:'Онлайн-торговля',markets:'Рынки и трейдеры',banks:'Банки и финтех',ai:'ИИ',bigtech:'Бигтех',it:'IT и приложения',medtech:'Медтех',logistics:'Логистика',industry:'Производство',food:'Еда и агро',realty:'Недвижимость',energy:'Энергия',edu:'Университеты',startups:'Стартапы и сделки'},
+    m48CalT:'Что впереди', m48CalLead:'События ближайших недель, которые сдвинут курсы, цены и спрос. Готовьтесь заранее.', m48CalA:(n,d)=>n+' событий в ближайшие '+d+' дней',
+    m48Kind:{rates:'ставка',data:'данные',earnings:'отчёт',holiday:'праздник',sale:'распродажа',fair:'выставка',law:'закон',other:'событие'}, m48In:{0:'сегодня',1:'завтра'}, m48InD:n=>'через '+n+' дн.', m48Prep:'Подготовьте',
+    m48Remind:'В календарь', m48RemindOk:'Событие сохранено — откройте файл, и телефон добавит его в календарь с напоминанием за день.', m48CalQ:x=>'Событие «'+x.title+'» ('+x.date+'). Что это значит для моего дела и как подготовиться заранее?',
+    m48Old:'Нужен новый сервер Mira (версия 25).', m48PartOk:'Сферы обновлены',
+    m48StageT:'Кривая жизни трендов', m48StageLead:'Где каждый тренд сейчас. Раньше зайти — дешевле; на пике — тесно; на спаде — пора выходить. Нажмите номер.', m48StageA:n=>'Кривая жизни: '+n+' трендов по стадиям',
+    m48Stage:{seed:'появился',rise:'растёт',peak:'на пике',fade:'слабеет'}, m48StageAct:{seed:'присмотреться и попробовать малой партией',rise:'лучшее время зайти',peak:'тесно — нужна своя фишка',fade:'распродавать, а не закупать'}, m48WhoEarn:'Кто уже зарабатывает',
+    m48MyMk:'вы', m48MapMine:'Кольца — ваша наценка по вашим товарам; линия — разница с рынком.', m48MapGap:(c,my,mk)=>'«'+c+'»: ваша наценка '+my+'%, на рынке '+mk+'% — можно поднять цену или искать закупку дешевле.', m48MapOver:(c,my,mk)=>'«'+c+'»: ваша наценка '+my+'% выше рынка ('+mk+'%) — следите, чтобы товар не залёживался.',
+    m48SecTab:'Секреты', m48SecT:'Секреты практиков', m48SecLead:'Приёмы, которые знают опытные торговцы, закупщики и банкиры, но редко пишут. Сифра ищет их в разборах, интервью и исследованиях — с источником.', m48Rare:'Почему мало кто знает', m48Proof:'Откуда известно', m48SecHow:'Как применить',
+    m48SecAsk:'Как применить у меня', m48SecQ:x=>'Секрет практиков: «'+x.title+'». '+x.text+' Как применить это в моём деле? Дай шаги на неделю и посчитай на моих цифрах.',
+    m48SecArea:{buy:'закупка',sell:'продажи',price:'цена',bank:'банк',money:'деньги',people:'люди',online:'онлайн',negotiation:'переговоры',stock:'склад',export:'экспорт'}, m48SecNone:'Секреты практиков появятся с новым выпуском (сервер Mira версии 25).', m48SecPast:n=>'Прошлые секреты ('+n+')',
+    m48SecCard:n=>n?'Секреты дня: '+n+' приёмов практиков':'Секреты практиков и ваши личные', m48SecCardSub:'И ваши личные закономерности — по вашим записям', m48SecTips:'Секреты практиков', m48SecAll:'Все секреты',
+    m48MineT:'Ваши секреты — из ваших записей', m48MineLead:'Этого нет ни в интернете, ни у ИИ: только ваши цифры в телефоне.', m48MineNone:'Записывайте продажи и товар 2–3 недели — и здесь появятся ваши личные закономерности.',
+    m48WdT:'Ваш сильный день недели', m48WdN:['в воскресенье','в понедельник','во вторник','в среду','в четверг','в пятницу','в субботу'], m48WdS:['вс','пн','вт','ср','чт','пт','сб'], m48Wd:(b,p,w)=>b.charAt(0).toUpperCase()+b.slice(1)+' продажи в среднем на '+p+'% выше, чем '+w+'.', m48WdAct:'Ставьте на этот день новинки и полную выкладку; слабый день — для закупки и учёта.',
+    m48MonT:'Ритм месяца', m48MonA:{s:'в начале',m:'в середине',e:'в конце'}, m48Mon:(a,p)=>a.charAt(0).toUpperCase()+a.slice(1)+' месяца продажи на '+p+'% выше, чем в слабую треть.', m48MonAct:'Закупайте к сильной части месяца, а крупные платежи не ставьте на слабую.', m48MonS:['1–10','11–20','21–31'],
+    m48DeadT:'Деньги, которые лежат', m48Dead:(n,v,d)=>'Товаров без продаж '+d+'+ дней: '+n+'. В них заморожено '+v+'.', m48DeadAct:'Соберите из них комплект или дайте скидку 10–15% — и верните деньги в оборот.',
+    m48TopT:'Что приносит больше всего', m48Top:(nm,v)=>'«'+nm+'» принёс '+v+' прибыли за 60 дней — больше всех.', m48TopAct:'Держите его всегда в наличии, а рядом ставьте то, что берут вместе с ним.',
+    m48ExpT:'Расход, который растёт', m48Exp:(c,v,p)=>'«'+c+'» за 30 дней: '+v+' — на '+p+'% больше, чем месяцем раньше.', m48ExpAct:'Проверьте, за что именно: чаще всего это мелкие ежедневные траты.', m48ExpPrev:'месяц назад', m48ExpNow:'сейчас',
+    m48LdT:'Цена у двери', m48LdLead:'Сколько на самом деле стоит одна штука у вас: товар, доставка, пошлина и НДС — по курсу Нацбанка.', m48LdNm:'Товар', m48LdCur:'Валюта цены', m48LdPrice:'Цена за штуку', m48LdQty:'Штук в партии', m48LdKg:'Вес партии, кг', m48LdCargo:'Карго за кг, $', m48LdDuty:'Пошлина, %', m48LdVat:'НДС, %', m48LdOther:'Прочие расходы, с.', m48LdCat:'Вид товара (для наценки рынка)', m48LdNoCat:'— не выбран —',
+    m48LdUnit:'Одна штука у двери', m48LdParts:{goods:'товар',cargo:'доставка',duty:'пошлина',vat:'НДС',other:'прочее'}, m48LdTot:v=>'Вся партия: '+v, m48LdShelf:(mk,v)=>'На полке при наценке рынка '+mk+'%: '+v+' за штуку', m48LdFx:(c,v)=>'Курс: 1 '+c+' = '+v+' с.',
+    m48LdAsk:'Спросить Сифру про пошлину', m48LdQ:(nm,c)=>'Какая пошлина и НДС на «'+(nm||'мой товар')+'» при ввозе в мою страну из '+c+'? Код ТН ВЭД, документы и как законно сэкономить.', m48LdNoFx:'Нет курса — откройте «Деньги и бизнес» с интернетом, чтобы загрузить курсы Нацбанка.', m48LdHint:'Ставки пошлины и НДС уточните у таможенного брокера — здесь ваш расчёт.', m48LdNeed:'Введите цену и количество.',
+    m48LdC:{CNY:'юань',USD:'доллар',TRY:'лира',AED:'дирхам',RUB:'рубль',EUR:'евро',KZT:'тенге'}, m48LdFrom:{CNY:'Китая',USD:'США',TRY:'Турции',AED:'ОАЭ',RUB:'России',EUR:'Европы',KZT:'Казахстана'},
+    m48Mist:'Частая ошибка', m48Calc:'Посчитаем', m48Live:'вживую', m48Static:'без интернета'
+  },
+  tg:{
+    m48Chain:'Чӣ тавр ба шумо мерасад', m48Upd:'Чӣ тағйир ёфт', m48Story:n=>'мавзӯъ · нашри '+n+'-ум', m48Who:'Ба кӣ дахл дорад', m48For:'Барои шумо',
+    m48Imp:{purchase:'Харид',fx:'Қурбҳо',demand:'Талабот',credit:'Қарзҳо',prices:'Нархҳо',logistics:'Расонидан',stocks:'Саҳмия ва сармоя',costs:'Хароҷот',jobs:'Кор',rules:'Қонунҳо'},
+    m48Hor:{now:'ҳозир',week:'дар ин ҳафта',month:'дар давоми моҳ',year:'дар давоми сол'}, m48Conf:{high:'дақиқ',mid:'эҳтимол',low:'аломати аввал'}, m48ConfA:'Чӣ қадар дақиқ',
+    m48ForOwe:(a,v)=>'Фармоишҳои пардохтнашудаи шумо: '+a+' ≈ '+v+'.', m48ForOwe30:(p,d,up)=>'Қурб дар 30 рӯз '+p+': барои шумо ин '+d+(up?' гаронтар':' арзонтар')+'.',
+    m48ForLoans:n=>'Ба қарзҳои шумо дахл дорад (фаъол: '+n+') — фоизи худро бо бозор дар «Қарзҳо» муқоиса кунед.', m48ForCargo:n=>'Борҳои шумо дар роҳ: '+n+' — мӯҳлатро аз карго пурсед.',
+    m48ForTrip:(c,d)=>'Сафари шумо: '+c+', '+d+' — ҳангоми харид ба назар гиред.', m48ForCat:c=>'Ба моли шумо дахл дорад: '+c+'.',
+    m48Spark30:c=>c+' ба сомонӣ дар 30 рӯз', m48Spark:(c,p)=>c+' ба сомонӣ дар 30 рӯз: '+p,
+    m48PulseT:'Набзи бозорҳо', m48PulseAt:d=>'Рақамҳо то '+d+' — пахш кунед, манбаъ кушода мешавад', m48PulseOff:'Бе интернет — рақамҳои нашри пештара',
+    m48Mood:'Кайфияти пул дар ҷаҳон', m48MoodL:{panic:'воҳима',fear:'тарс',calm:'ором',greed:'ҳавас',euphoria:'тамаъ'}, m48MoodA:(s,l)=>'Кайфияти пул дар ҷаҳон: '+s+' аз 100 — '+l, m48MoodS:['воҳима','тарс','ором','ҳавас','тамаъ'],
+    m48Bal:'Имрӯз чӣ фишор меорад ва чӣ кӯмак мекунад', m48BalLead:'Ҳодисаҳои рӯз аз рӯи соҳаҳои кори шумо. Сатрро пахш кунед — танҳо ҳамон ҳодисаҳо мемонанд.', m48BalBad:'фишор', m48BalGood:'кӯмак', m48BalAll:'Ҳамаи ҳодисаҳо', m48BalOn:n=>'Ҳодисаҳо: '+n,
+    m48LensT:'Ҷаҳони тиҷорат аз рӯи соҳаҳо', m48LensLead:'Муҳимтарин дар ҳар соҳа: чӣ шуд, чаро муҳим аст ва чӣ тавр ба шумо мерасад.', m48All:'Ҳама',
+    m48Lens:{trade:'Савдо',ecom:'Савдои онлайн',markets:'Бозорҳо ва трейдерҳо',banks:'Бонкҳо ва финтех',ai:'ЗС (ИИ)',bigtech:'Бигтех',it:'IT ва барномаҳо',medtech:'Медтех',logistics:'Логистика',industry:'Истеҳсолот',food:'Хӯрок ва агро',realty:'Амволи ғайриманқул',energy:'Энергия',edu:'Донишгоҳҳо',startups:'Стартапҳо ва аҳдҳо'},
+    m48CalT:'Чӣ дар пеш аст', m48CalLead:'Ҳодисаҳои ҳафтаҳои наздик, ки қурб, нарх ва талаботро тағйир медиҳанд. Пешакӣ омода шавед.', m48CalA:(n,d)=>n+' ҳодиса дар '+d+' рӯзи наздик',
+    m48Kind:{rates:'фоиз',data:'маълумот',earnings:'ҳисобот',holiday:'ид',sale:'фурӯши арзон',fair:'намоишгоҳ',law:'қонун',other:'ҳодиса'}, m48In:{0:'имрӯз',1:'фардо'}, m48InD:n=>'баъди '+n+' рӯз', m48Prep:'Омода кунед',
+    m48Remind:'Ба тақвим', m48RemindOk:'Ҳодиса нигоҳ дошта шуд — файлро кушоед, телефон онро бо ёдрас як рӯз пеш ба тақвим илова мекунад.', m48CalQ:x=>'Ҳодисаи «'+x.title+'» ('+x.date+'). Ин барои кори ман чӣ маъно дорад ва чӣ тавр пешакӣ омода шавам?',
+    m48Old:'Сервери нави Mira лозим (версияи 25).', m48PartOk:'Соҳаҳо нав шуданд',
+    m48StageT:'Хатти ҳаёти тамоюлҳо', m48StageLead:'Ҳар тамоюл ҳоло дар куҷост. Барвақт даромадан арзонтар; дар қулла — тангӣ; дар паст шудан — вақти баромадан. Рақамро пахш кунед.', m48StageA:n=>'Хатти ҳаёт: '+n+' тамоюл аз рӯи марҳила',
+    m48Stage:{seed:'пайдо шуд',rise:'меафзояд',peak:'дар қулла',fade:'суст мешавад'}, m48StageAct:{seed:'бо партияи хурд санҷед',rise:'беҳтарин вақти даромадан',peak:'тангӣ — фарқияти худ лозим',fade:'фурӯшед, нахаред'}, m48WhoEarn:'Кӣ аллакай фоида мегирад',
+    m48MyMk:'шумо', m48MapMine:'Ҳалқаҳо — фоизи иловагии шумо аз рӯи моли худатон; хат — фарқ бо бозор.', m48MapGap:(c,my,mk)=>'«'+c+'»: фоизи иловагии шумо '+my+'%, дар бозор '+mk+'% — нархро баланд кардан ё хариди арзонтар ҷустан мумкин.', m48MapOver:(c,my,mk)=>'«'+c+'»: фоизи иловагии шумо '+my+'% аз бозор ('+mk+'%) баланд — нигаред, ки мол нахобад.',
+    m48SecTab:'Сирҳо', m48SecT:'Сирҳои таҷрибакорон', m48SecLead:'Усулҳое, ки савдогарон, харидорон ва бонкдорони ботаҷриба медонанд, вале кам менависанд. Сифра онҳоро дар таҳлилҳо, мусоҳибаҳо ва тадқиқотҳо меҷӯяд — бо манбаъ.', m48Rare:'Чаро кам касон медонанд', m48Proof:'Аз куҷо маълум', m48SecHow:'Чӣ тавр истифода бурдан',
+    m48SecAsk:'Дар кори ман чӣ тавр', m48SecQ:x=>'Сирри таҷрибакорон: «'+x.title+'». '+x.text+' Инро дар кори ман чӣ тавр истифода барам? Қадамҳо барои як ҳафта деҳ ва бо рақамҳои ман ҳисоб кун.',
+    m48SecArea:{buy:'харид',sell:'фурӯш',price:'нарх',bank:'бонк',money:'пул',people:'одамон',online:'онлайн',negotiation:'гуфтушунид',stock:'анбор',export:'содирот'}, m48SecNone:'Сирҳои таҷрибакорон бо нашри нав пайдо мешаванд (сервери Mira, версияи 25).', m48SecPast:n=>'Сирҳои пештара ('+n+')',
+    m48SecCard:n=>n?'Сирҳои рӯз: '+n+' усули таҷрибакорон':'Сирҳои таҷрибакорон ва шахсии шумо', m48SecCardSub:'Ва қонуниятҳои шахсии шумо — аз рӯи сабтҳоятон', m48SecTips:'Сирҳои таҷрибакорон', m48SecAll:'Ҳамаи сирҳо',
+    m48MineT:'Сирҳои шумо — аз сабтҳоятон', m48MineLead:'Инро на дар интернет ва на дар ЗС меёбед: танҳо рақамҳои шумо дар телефон.', m48MineNone:'2–3 ҳафта фурӯш ва молро сабт кунед — дар ин ҷо қонуниятҳои шахсии шумо пайдо мешаванд.',
+    m48WdT:'Рӯзи пурқуввати ҳафтаи шумо', m48WdN:['якшанбе','душанбе','сешанбе','чоршанбе','панҷшанбе','ҷумъа','шанбе'], m48WdS:['яш','дш','сш','чш','пш','ҷм','шн'], m48Wd:(b,p,w)=>'Рӯзи '+b+' фурӯш ба ҳисоби миёна '+p+'% зиёдтар аст, назар ба рӯзи '+w+'.', m48WdAct:'Дар ин рӯз моли нав ва намоиши пурраро гузоред; рӯзи суст — барои харид ва ҳисоб.',
+    m48MonT:'Ритми моҳ', m48MonA:{s:'дар аввали',m:'дар миёнаи',e:'дар охири'}, m48Mon:(a,p)=>a.charAt(0).toUpperCase()+a.slice(1)+' моҳ фурӯш '+p+'% зиёдтар аст, назар ба қисми суст.', m48MonAct:'Ба қисми пурқуввати моҳ харид кунед ва пардохтҳои калонро ба қисми суст нагузоред.', m48MonS:['1–10','11–20','21–31'],
+    m48DeadT:'Пуле, ки хобидааст', m48Dead:(n,v,d)=>'Моли бе фурӯш зиёда аз '+d+' рӯз: '+n+'. Дар онҳо '+v+' хобидааст.', m48DeadAct:'Аз онҳо маҷмӯа созед ё 10–15% тахфиф диҳед — пулро ба гардиш баргардонед.',
+    m48TopT:'Чӣ бештар фоида меорад', m48Top:(nm,v)=>'«'+nm+'» дар 60 рӯз '+v+' фоида овард — аз ҳама зиёд.', m48TopAct:'Онро ҳамеша дар анбор нигоҳ доред ва дар паҳлӯяш моли ҳамроҳро гузоред.',
+    m48ExpT:'Хароҷоте, ки меафзояд', m48Exp:(c,v,p)=>'«'+c+'» дар 30 рӯз: '+v+' — '+p+'% зиёдтар аз моҳи пеш.', m48ExpAct:'Санҷед, барои чӣ: аксар вақт ин хароҷоти хурди ҳаррӯза аст.', m48ExpPrev:'моҳи пеш', m48ExpNow:'ҳоло',
+    m48LdT:'Нарх то дари мағоза', m48LdLead:'Як дона дар асл ба шумо чанд меафтад: мол, расонидан, боҷ ва ААИ — бо қурби Бонки миллӣ.', m48LdNm:'Мол', m48LdCur:'Асъори нарх', m48LdPrice:'Нархи як дона', m48LdQty:'Донаҳо дар партия', m48LdKg:'Вазни партия, кг', m48LdCargo:'Карго барои 1 кг, $', m48LdDuty:'Боҷ, %', m48LdVat:'ААИ, %', m48LdOther:'Хароҷоти дигар, с.', m48LdCat:'Намуди мол (барои фоизи бозор)', m48LdNoCat:'— интихоб нашудааст —',
+    m48LdUnit:'Як дона то дари мағоза', m48LdParts:{goods:'мол',cargo:'расонидан',duty:'боҷ',vat:'ААИ',other:'дигар'}, m48LdTot:v=>'Тамоми партия: '+v, m48LdShelf:(mk,v)=>'Дар раф бо фоизи бозор '+mk+'%: '+v+' барои як дона', m48LdFx:(c,v)=>'Қурб: 1 '+c+' = '+v+' с.',
+    m48LdAsk:'Аз Сифра дар бораи боҷ пурсидан', m48LdQ:(nm,c)=>'Боҷ ва ААИ барои «'+(nm||'моли ман')+'» ҳангоми воридот ба кишвари ман аз '+c+' чанд аст? Рамзи ТН ВЭД, ҳуҷҷатҳо ва чӣ тавр қонунӣ сарфа кардан.', m48LdNoFx:'Қурб нест — «Пул ва тиҷорат»-ро бо интернет кушоед, то қурбҳои Бонки миллӣ бор шаванд.', m48LdHint:'Фоизи боҷ ва ААИ-ро аз брокери гумрукӣ пурсед — ин ҷо ҳисоби шумо.', m48LdNeed:'Нарх ва шумораро ворид кунед.',
+    m48LdC:{CNY:'юан',USD:'доллар',TRY:'лира',AED:'дирҳам',RUB:'рубл',EUR:'евро',KZT:'тенге'}, m48LdFrom:{CNY:'Чин',USD:'ИМА',TRY:'Туркия',AED:'АМА',RUB:'Русия',EUR:'Аврупо',KZT:'Қазоқистон'},
+    m48Mist:'Хатои маъмул', m48Calc:'Ҳисоб мекунем', m48Live:'зинда', m48Static:'бе интернет'
+  },
+  en:{
+    m48Chain:'How it reaches you', m48Upd:'What changed', m48Story:n=>'story · issue '+n, m48Who:'Who it hits', m48For:'For you',
+    m48Imp:{purchase:'Purchasing',fx:'Exchange rates',demand:'Demand',credit:'Loans',prices:'Prices',logistics:'Shipping',stocks:'Stocks & investing',costs:'Costs',jobs:'Jobs',rules:'Rules'},
+    m48Hor:{now:'right now',week:'this week',month:'within a month',year:'within a year'}, m48Conf:{high:'confirmed',mid:'likely',low:'early signal'}, m48ConfA:'How certain',
+    m48ForOwe:(a,v)=>'Your unpaid orders: '+a+' ≈ '+v+'.', m48ForOwe30:(p,d,up)=>'The rate moved '+p+' in 30 days: that’s '+d+(up?' more':' less')+' for you.',
+    m48ForLoans:n=>'This affects your loans ('+n+' active) — compare your rate with the market in Loans.', m48ForCargo:n=>'Shipments on the way: '+n+' — check timing with your cargo company.',
+    m48ForTrip:(c,d)=>'Your trip: '+c+', '+d+' — factor this into purchasing.', m48ForCat:c=>'This affects your goods: '+c+'.',
+    m48Spark30:c=>c+' to somoni, 30 days', m48Spark:(c,p)=>c+' to somoni over 30 days: '+p,
+    m48PulseT:'Market pulse', m48PulseAt:d=>'Figures as of '+d+' — tap to open the source', m48PulseOff:'Offline — figures from the last issue',
+    m48Mood:'Money mood worldwide', m48MoodL:{panic:'panic',fear:'fear',calm:'calm',greed:'appetite',euphoria:'greed'}, m48MoodA:(s,l)=>'Money mood worldwide: '+s+' of 100 — '+l, m48MoodS:['panic','fear','calm','appetite','greed'],
+    m48Bal:'What’s pushing down and what helps today', m48BalLead:'Today’s events by area of your business. Tap a row to keep only those events.', m48BalBad:'pushes down', m48BalGood:'helps', m48BalAll:'Show all events', m48BalOn:n=>'Showing: '+n,
+    m48LensT:'Business world by sector', m48LensLead:'The most important thing in each sector: what happened, why it matters and how it reaches you.', m48All:'All',
+    m48Lens:{trade:'Trade',ecom:'E-commerce',markets:'Markets & traders',banks:'Banks & fintech',ai:'AI',bigtech:'Big Tech',it:'IT & apps',medtech:'Medtech',logistics:'Logistics',industry:'Manufacturing',food:'Food & agri',realty:'Real estate',energy:'Energy',edu:'Universities',startups:'Startups & deals'},
+    m48CalT:'Coming up', m48CalLead:'Events in the next weeks that will move rates, prices and demand. Prepare early.', m48CalA:(n,d)=>n+' events in the next '+d+' days',
+    m48Kind:{rates:'rate decision',data:'data',earnings:'earnings',holiday:'holiday',sale:'sale',fair:'trade fair',law:'law',other:'event'}, m48In:{0:'today',1:'tomorrow'}, m48InD:n=>'in '+n+' days', m48Prep:'Prepare',
+    m48Remind:'Add to calendar', m48RemindOk:'Event saved — open the file and your phone will add it to the calendar with a reminder a day before.', m48CalQ:x=>'Event “'+x.title+'” ('+x.date+'). What does it mean for my business and how do I prepare?',
+    m48Old:'Mira needs the new server (version 25).', m48PartOk:'Sectors updated',
+    m48StageT:'Trend life curve', m48StageLead:'Where each trend is now. Earlier entry is cheaper; at the peak it’s crowded; when it fades, time to exit. Tap a number.', m48StageA:n=>'Life curve: '+n+' trends by stage',
+    m48Stage:{seed:'emerging',rise:'rising',peak:'at peak',fade:'fading'}, m48StageAct:{seed:'watch and test a small batch',rise:'best time to enter',peak:'crowded — you need an edge',fade:'sell off, don’t restock'}, m48WhoEarn:'Who already makes money',
+    m48MyMk:'you', m48MapMine:'Rings show your markup on your own goods; the line is the gap to the market.', m48MapGap:(c,my,mk)=>'“'+c+'”: your markup is '+my+'%, the market '+mk+'% — you can raise the price or look for cheaper supply.', m48MapOver:(c,my,mk)=>'“'+c+'”: your markup '+my+'% is above the market ('+mk+'%) — make sure stock doesn’t sit.',
+    m48SecTab:'Secrets', m48SecT:'Practitioners’ secrets', m48SecLead:'Techniques experienced traders, buyers and bankers know but rarely write about. Sifra finds them in case studies, interviews and research — with a source.', m48Rare:'Why few people know', m48Proof:'How we know', m48SecHow:'How to apply',
+    m48SecAsk:'How to apply it for me', m48SecQ:x=>'Practitioners’ secret: “'+x.title+'”. '+x.text+' How do I apply this in my business? Give me steps for a week and calculate with my numbers.',
+    m48SecArea:{buy:'buying',sell:'selling',price:'pricing',bank:'bank',money:'money',people:'people',online:'online',negotiation:'negotiation',stock:'stock',export:'export'}, m48SecNone:'Practitioners’ secrets will appear with a new issue (Mira server version 25).', m48SecPast:n=>'Earlier secrets ('+n+')',
+    m48SecCard:n=>n?'Today’s secrets: '+n+' practitioner techniques':'Practitioners’ secrets and your own', m48SecCardSub:'Plus your personal patterns — from your records', m48SecTips:'Practitioners’ secrets', m48SecAll:'All secrets',
+    m48MineT:'Your secrets — from your records', m48MineLead:'You won’t find this online or in any AI: only your own numbers on this phone.', m48MineNone:'Log sales and stock for 2–3 weeks — your personal patterns will appear here.',
+    m48WdT:'Your strongest weekday', m48WdN:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'], m48WdS:['Su','Mo','Tu','We','Th','Fr','Sa'], m48Wd:(b,p,w)=>'On '+b+' sales are on average '+p+'% higher than on '+w+'.', m48WdAct:'Put new arrivals and a full display on that day; use the weak day for buying and stock-taking.',
+    m48MonT:'Monthly rhythm', m48MonA:{s:'at the start of',m:'in the middle of',e:'at the end of'}, m48Mon:(a,p)=>a.charAt(0).toUpperCase()+a.slice(1)+' the month sales are '+p+'% higher than in the weakest third.', m48MonAct:'Buy stock ahead of the strong part of the month and keep big payments off the weak part.', m48MonS:['1–10','11–20','21–31'],
+    m48DeadT:'Money sitting still', m48Dead:(n,v,d)=>'Items with no sales for '+d+'+ days: '+n+'. They hold '+v+'.', m48DeadAct:'Bundle them or discount 10–15% — and put the money back to work.',
+    m48TopT:'Your top earner', m48Top:(nm,v)=>'“'+nm+'” earned '+v+' profit in 60 days — more than anything else.', m48TopAct:'Never run out of it, and place what sells with it right next to it.',
+    m48ExpT:'A growing expense', m48Exp:(c,v,p)=>'“'+c+'” in 30 days: '+v+' — '+p+'% more than the month before.', m48ExpAct:'Check what exactly: usually it’s small daily spending.', m48ExpPrev:'month before', m48ExpNow:'now',
+    m48LdT:'Landed cost', m48LdLead:'What one item really costs you at your door: goods, shipping, duty and VAT — at the National Bank rate.', m48LdNm:'Item', m48LdCur:'Price currency', m48LdPrice:'Price per item', m48LdQty:'Items in batch', m48LdKg:'Batch weight, kg', m48LdCargo:'Cargo per kg, $', m48LdDuty:'Duty, %', m48LdVat:'VAT, %', m48LdOther:'Other costs, TJS', m48LdCat:'Goods type (for market markup)', m48LdNoCat:'— not selected —',
+    m48LdUnit:'One item at your door', m48LdParts:{goods:'goods',cargo:'shipping',duty:'duty',vat:'VAT',other:'other'}, m48LdTot:v=>'Whole batch: '+v, m48LdShelf:(mk,v)=>'Shelf price at the market markup of '+mk+'%: '+v+' each', m48LdFx:(c,v)=>'Rate: 1 '+c+' = '+v+' TJS',
+    m48LdAsk:'Ask Sifra about duty', m48LdQ:(nm,c)=>'What duty and VAT apply to “'+(nm||'my goods')+'” imported into my country from '+c+'? HS code, documents and how to save legally.', m48LdNoFx:'No exchange rate — open Money & business online to load National Bank rates.', m48LdHint:'Confirm duty and VAT rates with a customs broker — this is your estimate.', m48LdNeed:'Enter the price and quantity.',
+    m48LdC:{CNY:'yuan',USD:'dollar',TRY:'lira',AED:'dirham',RUB:'rouble',EUR:'euro',KZT:'tenge'}, m48LdFrom:{CNY:'China',USD:'the USA',TRY:'Turkey',AED:'the UAE',RUB:'Russia',EUR:'Europe',KZT:'Kazakhstan'},
+    m48Mist:'Common mistake', m48Calc:'Let’s calculate', m48Live:'live', m48Static:'offline'
+  }
+};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M48S[k]); }catch(e){} Object.assign(D[k],M48S[k]);
+  D[k].f34Nav=Object.assign({},D[k].f34Nav||{},{pulse:M48S[k].m48PulseT.split(' ')[0],lens:k==='ru'?'Сферы':k==='tg'?'Соҳаҳо':'Sectors',cal:k==='ru'?'Впереди':k==='tg'?'Дар пеш':'Coming up'});
+  D[k].f34PartOk=Object.assign({},D[k].f34PartOk||{},{lens:M48S[k].m48PartOk}); D[k].hbLsub=Object.assign({},D[k].hbLsub||{},{sec:M48S[k].m48SecTab}); }
+/* ===================== v48: «Главное 2.0» и разделы «Деньги и бизнес» =====================
+   Что и почему (исследования и лучшие приложения):
+   - Reuters Institute Digital News Report 2025: новости избегают из-за перегруза и бессилия; «что это значит для меня» — главное,
+     чего не хватает → у события цепочка «как доходит до вас», строка «Для вас» по её записям и «что сделать».
+   - Axios Smart Brevity, Morning Brew: «Why it matters» сразу после факта → длиннее «Почему важно».
+   - Apple News / Google News «developing story»: сюжет и «что изменилось» с прошлого раза → значок сюжета.
+   - Bloomberg Terminal, Koyfin, Investing.com: экономический календарь и полоса котировок — инструменты трейдеров каждый день → «Что впереди», «Пульс рынков».
+   - CNN Fear & Greed: настроение рынка одним числом → «Настроение денег в мире» (стрелка 0–100).
+   - Gartner Hype Cycle и кривая диффузии Роджерса: стадия тренда решает, заходить ли → «Кривая жизни трендов».
+   - Своя наценка против рынка (Meituan «经营参谋», Square «Insights»): сравнение с соседями — самое полезное для малого магазина → кольца на «Карте выгоды».
+   - IGC (Кения, 2024): автоматические выводы из записей подняли учёт и продажи → «Ваши секреты» считаются только по её цифрам в телефоне.
+   - Движение — только при интернете (живые данные), без интернета графики спокойные; prefers-reduced-motion — без анимации. */
+const M48_LENS=['trade','ecom','markets','banks','ai','bigtech','it','medtech','logistics','industry','food','realty','energy','edu','startups'];
+const M48_IMP=['purchase','fx','demand','credit','prices','logistics','stocks','costs','jobs','rules'];
+const M48_LICO={trade:'globe',ecom:'tag',markets:'stats',banks:'loans',ai:'sparkle',bigtech:'zap',it:'zap',medtech:'shield',logistics:'truck',industry:'goal',food:'bulb',realty:'flag',energy:'zap',edu:'doc',startups:'star'};
+const M48_STG=['seed','rise','peak','fade'];
+const M48={lens:'all', imp:'', fxAsk:0};
+try{ if(!F34_PARTS.includes('lens')) F34_PARTS.push('lens'); }catch(e){}
+const m48Up=()=>!!(sfCaps&&+sfCaps.v>=25);
+/* живые графики — только когда есть интернет */
+function m48Live(){ try{ document.documentElement.classList.toggle('m48-live',navigator.onLine!==false); }catch(e){} }
+m48Live(); window.addEventListener('online',m48Live); window.addEventListener('offline',m48Live);
+
+/* ---------- данные выпуска ---------- */
+try{ const _hs48=hbSave; hbSave=function(j){ const r=_hs48.apply(this,arguments); try{ const t=hbSt().today; if(t&&j&&typeof j==='object'){ const A=(a,n)=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x==='object').slice(0,n);
+      t.brief=A(j.brief,8).filter(x=>x.title&&x.what);
+      t.lens=A(j.lens,16).filter(x=>x.title&&x.what&&M48_LENS.includes(x.lens));
+      t.cal=A(j.cal,12).filter(x=>/^\d{4}-\d\d-\d\d$/.test(String(x.date||''))&&x.title);
+      t.pulse=A(j.pulse,10).filter(x=>x.name&&x.value);
+      t.mood=j.mood&&typeof j.mood==='object'&&Number.isFinite(+j.mood.score)&&j.mood.why?j.mood:null;
+      t.secrets=A(j.secrets,6).filter(x=>x.title&&x.text);
+      m48StoryRec(t); m48SecKeep(t);
+      try{ const h=hbSt(), ar=h.arch.find(a=>a.day===t.day&&a.lang===lang); if(ar&&t.brief.length) ar.brief=t.brief.slice(0,8).map(x=>({title:hbTx(x.title,110),what:hbTx(x.what,300),act:hbTx(x.act,220),story:hbTx(x.story,40)})); }catch(e){}
+      persist(); } }catch(e){} return r; }; }catch(e){}
+/* сюжеты: сколько выпусков подряд Сифра о нём пишет */
+function m48StoryRec(t){ const m=state.misc||(state.misc={}), S=m.st48||(m.st48={}), key=t.day+':'+(t.ed||'');
+  for(const x of [].concat(t.brief||[],t.lens||[])){ const k=String(x.story||''); if(!/^[a-z0-9-]{3,40}$/.test(k)) continue; const o=S[k]||(S[k]={d0:t.day,n:0,last:''}); if(o.last!==key){ o.n++; o.last=key; o.d=t.day; } }
+  const now=parseYmd(dkey()).getTime(); for(const k of Object.keys(S)){ const d=parseYmd(S[k].d||S[k].d0); if(!S[k].d||now-d.getTime()>21*86400e3) delete S[k]; } }
+function m48StoryN(x){ const S=state.misc&&state.misc.st48||{}, o=x&&x.story&&S[x.story]; return o?o.n:0; }
+/* секреты копятся (30 последних), чтобы не терялись на следующий день */
+function m48SecKeep(t){ const h=hbSt(), a=Array.isArray(h.sec48)?h.sec48:[], seen=new Set(a.map(x=>String(x.title).toLowerCase()));
+  for(const x of (t.secrets||[]).slice().reverse()){ const k=String(x.title).toLowerCase(); if(seen.has(k)) continue; seen.add(k); a.unshift(Object.assign({},x,{day:t.day,lang})); }
+  h.sec48=a.slice(0,30); }
+
+/* ---------- одна новость: цифра, сюжет, что изменилось, график курса, почему важно, цепочка, влияние, «для вас», что сделать ---------- */
+function m48Spark(cur){ if(typeof f35Series!=='function') return ''; const s=f35Series(cur); if(s.length<5) return '';
+  const vs=s.map(p=>p.v), mn=Math.min(...vs), mx=Math.max(...vs), W=120, H=34, n=s.length, X=i=>2+i/(n-1)*(W-4), Y=v=>3+(1-(mx>mn?(v-mn)/(mx-mn):0.5))*(H-6);
+  const d=s.map((p,i)=>(i?'L':'M')+X(i).toFixed(1)+' '+Y(p.v).toFixed(1)).join(' '), a=vs[0], b=vs[n-1], ch=(b-a)/a*100, cls=ch>0.005?'up':ch<-0.005?'dn':'';
+  return `<div class="m48-sp ${cls}" role="img" aria-label="${esc(L.m48Spark(cur,f34Pct(ch)))}"><svg viewBox="0 0 ${W} ${H}" aria-hidden="true"><path class="ar" d="${d} L${X(n-1).toFixed(1)} ${H} L${X(0).toFixed(1)} ${H} Z"/><path class="ln" d="${d}" pathLength="1"/><circle cx="${X(n-1).toFixed(1)}" cy="${Y(b).toFixed(1)}" r="2.8"/></svg><span><small>${esc(L.m48Spark30(cur))}</small><b>${fx(b,f35Dg(b))} ${L.hbSom} <em>${cls==='up'?'▲':cls==='dn'?'▼':''} ${f34Pct(ch)}</em></b></span></div>`; }
+function m48ChainHTML(x){ const c=(Array.isArray(x.chain)?x.chain:[]).filter(Boolean).slice(0,4); if(c.length<2) return '';
+  return `<div class="m48-ch"><small>${ico('zap',13)} ${L.m48Chain}</small><ol style="--m48h:${(c.length-1)*27+4}px">${c.map((s,i)=>`<li style="--i:${i}"><span>${esc(hbTx(s,90))}</span></li>`).join('')}</ol></div>`; }
+function m48Meta(x){ const im=(Array.isArray(x.impact)?x.impact:[]).filter(k=>M48_IMP.includes(k)).slice(0,3).map(k=>`<i class="m48-im">${esc(L.m48Imp[k])}</i>`).join('');
+  const hz=L.m48Hor[x.horizon]?`<i class="m48-hz">${ico('clock',12)} ${esc(L.m48Hor[x.horizon])}</i>`:'';
+  const cf=L.m48Conf[x.conf]?`<i class="m48-cf ${esc(x.conf)}" title="${esc(L.m48ConfA)}"><b></b><b></b><b></b> ${esc(L.m48Conf[x.conf])}</i>`:'';
+  return im||hz||cf?`<div class="lv-tags m48-meta">${im}${hz}${cf}</div>`:''; }
+/* «Для вас» — только по её записям в телефоне, одна строка */
+function m48For(x,t){ const im=new Set(Array.isArray(x.impact)?x.impact:[]), txt=[x.title,x.what,x.why].join(' ').toLowerCase();
+  try{ if(im.has('fx')||im.has('purchase')||x.cur){ const owe={}; for(const o of state.torders||[]){ const left=(+o.total||0)-(+o.paid||0); if(left>0&&F34_CUR[o.cur]) owe[o.cur]=(owe[o.cur]||0)+left; }
+      const cur=x.cur&&owe[x.cur]?x.cur:(x.cur?'':Object.keys(owe)[0]); if(cur){ const [k,sy]=F34_CUR[cur], r=+((t.fx||{})[k]); if(r>0){ let line=L.m48ForOwe(fx(owe[cur],0)+' '+sy,money(owe[cur]*r));
+          const s=typeof f35Series==='function'?f35Series(cur):[]; if(s.length>=5){ const a=s[0].v, b=s[s.length-1].v, ch=(b-a)/a*100; if(Math.abs(ch)>=0.05) line+=' '+L.m48ForOwe30(f34Pct(ch),money(Math.abs(owe[cur]*(b-a))),ch>0); }
+          return line; } } } }catch(e){}
+  try{ if(im.has('credit')){ const n=(state.loans||[]).filter(l=>!l.example&&!l.closed).length; if(n) return L.m48ForLoans(n); } }catch(e){}
+  try{ if(im.has('logistics')||im.has('purchase')){ const go=(state.cargo||[]).filter(c=>c.st==='sent').length; if(go) return L.m48ForCargo(go);
+      const d=dkey(), tr=(state.trips||[]).filter(z=>z.from&&z.from>=d).sort((a,b)=>String(a.from).localeCompare(String(b.from)))[0];
+      if(tr) return L.m48ForTrip(tr.city||L['cn_'+tr.country]||tr.country,fmtShort(parseYmd(tr.from))); } }catch(e){}
+  try{ if(im.has('demand')||im.has('prices')){ const kinds=new Set(); for(const i of state.inv||[]) if(i.cat) kinds.add(i.cat);
+      const hit=[...kinds].find(id=>{ const nm=String(L['whC_'+id]||'').toLowerCase(); return nm.length>3&&txt.includes(nm.slice(0,Math.max(4,nm.length-2))); }); if(hit) return L.m48ForCat(L['whC_'+hit]); } }catch(e){}
+  return ''; }
+function m48ItemHTML(x,k,t,ed){ const n=m48StoryN(x), fo=m48For(x,t), lens=M48_LENS.includes(x.lens)?x.lens:'', imp=(Array.isArray(x.impact)?x.impact:[]).filter(v=>M48_IMP.includes(v)).join(' ');
+  const hide=M48.imp&&!imp.split(' ').includes(M48.imp);
+  const tag0=lens?`<i class="m48-ln">${ico(M48_LICO[lens],12)} ${esc(L.m48Lens[lens])}</i>`:`<i>${esc(L.f34BArea[x.area]||L.f34BArea.business)}</i>`;
+  return `<article class="f34-bi m48-it ${esc(x.tone||'neutral')}"${lens?` data-m48l="${lens}"`:''} data-m48im="${esc(imp)}"${hide?' hidden':''}><div class="f34-bt">${x.num?`<span class="f34-num ${esc(x.dir||'flat')}">${esc(hbTx(x.num,16))}</span>`:''}<h5>${esc(hbTx(x.title,110))}</h5></div>
+    <div class="lv-tags">${tag0}${x.where?`<i>${esc(hbTx(x.where,60))}</i>`:''}${x.tone&&L.f34Tone[x.tone]?`<i class="f34-t ${esc(x.tone)}">${esc(L.f34Tone[x.tone])}</i>`:''}${n>=2?`<i class="m48-st">${ico('repeat',12)} ${esc(L.m48Story(n))}</i>`:''}</div>
+    ${x.upd?`<p class="m48-upd"><b>${L.m48Upd}:</b> ${esc(hbTx(x.upd,180))}</p>`:''}<p>${esc(hbTx(x.what,320))}</p>${x.cur?m48Spark(x.cur):''}
+    ${x.why?`<p class="f34-why"><b>${L.f34Why}:</b> ${esc(hbTx(x.why,420))}</p>`:''}${m48ChainHTML(x)}${m48Meta(x)}
+    ${fo?`<p class="m48-for">${ico('goal',14)}<span><b>${L.m48For}:</b> ${esc(fo)}</span></p>`:''}${x.who?`<p class="m48-who">${ico('flag',13)}<span><b>${L.m48Who}:</b> ${esc(hbTx(x.who,100))}</span></p>`:''}
+    ${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${ed==='pm'?L.f34ActTom:L.f34Act}:</b> ${esc(hbTx(x.act,240))}</span></p>`:''}${f34Ft(k,x.src)}</article>`; }
+f34BriefHTML=function(t){ const a=t.brief||[], ed=f34Ed(t); if(!a.length) return ''; m48FxKick(t); return a.map((x,i)=>m48ItemHTML(x,'b:'+i,t,ed)).join(''); };
+/* курсы за 30 дней нужны для графиков у новостей про курс — один раз загрузить и перерисовать */
+function m48FxKick(t){ try{ if(M48.fxAsk||typeof f35FxLoad!=='function'||(typeof f35Fx!=='undefined'&&f35Fx)) return; if(![].concat(t.brief||[],t.lens||[]).some(x=>x.cur)) return; M48.fxAsk=1;
+    f35FxLoad().then(o=>{ if(o&&hbOn()&&(bpTop().tab||'today')==='today'){ const m=BPG.el.querySelector('#bpg-m'), y=m?m.scrollTop:0; hbPaneDraw('today'); if(m) m.scrollTop=y; } }).catch(()=>{}); }catch(e){} }
+
+/* ---------- «Пульс рынков»: настроение денег, бегущая строка котировок, что давит и что помогает ---------- */
+function m48MoodHTML(m){ if(!m) return ''; const s=Math.max(0,Math.min(100,Math.round(+m.score))), lab=L.m48MoodL[m.label]||'', R=50, cx=64, cy=60;
+  const P=v=>{ const a=(180-v*1.8)*Math.PI/180; return [cx+R*Math.cos(a),cy-R*Math.sin(a)]; };
+  const arc=(a,b,c)=>{ const [x1,y1]=P(a),[x2,y2]=P(b); return `<path class="m48-ga ${c}" d="M${x1.toFixed(1)} ${y1.toFixed(1)} A${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}"/>`; };
+  const [tx,ty]=P(s);
+  return `<div class="m48-mood" role="img" aria-label="${esc(L.m48MoodA(s,lab))}"><svg viewBox="0 0 128 70" aria-hidden="true">${arc(1,19,'p')+arc(21,39,'f')+arc(41,59,'c')+arc(61,79,'g')+arc(81,99,'e')}
+      <g class="m48-nd" style="--a:${((s-50)*1.8).toFixed(1)}deg"><line x1="${cx}" y1="${cy}" x2="${cx}" y2="${cy-R+9}"/><circle cx="${cx}" cy="${cy}" r="4.5"/></g><circle class="m48-gd" cx="${tx.toFixed(1)}" cy="${ty.toFixed(1)}" r="3.2"/></svg>
+    <div class="m48-mt"><small>${L.m48Mood}</small><b><span class="m48-ms">${s}</span> · ${esc(lab)}</b><p>${esc(hbTx(m.why,260))}</p>${m.act?`<p class="m48-mact">${ico('next',13)}<span>${esc(hbTx(m.act,200))}</span></p>`:''}</div></div>`; }
+function m48TickItems(a,dup){ return a.map(x=>{ const c=+x.chg, has=x.chg!==null&&x.chg!==''&&Number.isFinite(c), up=x.kind==='fear'?c<0:c>0, dn=x.kind==='fear'?c>0:c<0, cls=has?(up?'up':dn?'dn':''):'';
+    return `<a class="m48-tk ${cls}" href="${esc(x.src)}" target="_blank" rel="noopener noreferrer"${dup?' tabindex="-1"':''}><b>${esc(hbTx(x.name,24))}</b><span>${esc(hbTx(x.value,18))}</span>${has?`<em>${c>0?'▲':c<0?'▼':'•'} ${f34Pct(c)}</em>`:''}</a>`; }).join(''); }
+function m48TickHTML(t){ const a=(t.pulse||[]).filter(x=>/^https?:\/\//.test(String(x.src||''))); if(!a.length) return '';
+  const asof=a.map(x=>x.as_of).filter(Boolean).sort().pop(), d=asof?fmtDate(parseYmd(asof)):fmtDate(parseYmd(t.day)||new Date());
+  return `<div class="m48-tick" style="--n:${a.length}"><div class="m48-tr">${m48TickItems(a)}<span class="m48-dup" aria-hidden="true">${m48TickItems(a,1)}</span></div></div><p class="m48-tkn"><i class="m48-dot" aria-hidden="true"></i><span class="on">${esc(L.m48PulseAt(d))}</span><span class="off">${esc(L.m48PulseOff)}</span></p>`; }
+function m48BalData(t){ const c={}; for(const x of [].concat(t.brief||[],t.lens||[])){ const w=x.tone==='bad'?-1:x.tone==='good'?1:0; if(!w) continue; for(const k of (Array.isArray(x.impact)?x.impact:[])) if(M48_IMP.includes(k)){ const o=c[k]||(c[k]={g:0,b:0}); if(w>0) o.g++; else o.b++; } }
+  return M48_IMP.filter(k=>c[k]).map(k=>Object.assign({k},c[k])).sort((p,q)=>(q.g+q.b)-(p.g+p.b)).slice(0,7); }
+function m48BalHTML(t){ const rows=m48BalData(t); if(rows.length<2) return ''; const mx=Math.max(...rows.map(r=>Math.max(r.g,r.b)),1); if(M48.imp&&!rows.some(r=>r.k===M48.imp)) M48.imp='';
+  return `<div class="m48-bal"><div class="m48-bh"><b>${ico('stats',15)} ${L.m48Bal}</b><small>${L.m48BalLead}</small></div><div class="m48-bl" aria-hidden="true"><span class="b">← ${L.m48BalBad}</span><span class="g">${L.m48BalGood} →</span></div>
+    ${rows.map((r,i)=>`<button type="button" class="m48-br ${M48.imp===r.k?'on':''}" style="--i:${i}" data-m48imp="${r.k}" aria-pressed="${M48.imp===r.k}"><span class="l"><i style="--w:${Math.round(r.b/mx*100)}%"></i>${r.b?`<em>${r.b}</em>`:''}</span><b>${esc(L.m48Imp[r.k])}</b><span class="r"><i style="--w:${Math.round(r.g/mx*100)}%"></i>${r.g?`<em>${r.g}</em>`:''}</span></button>`).join('')}
+    <button type="button" class="link-btn m48-ball" data-m48imp=""${M48.imp?'':' hidden'}>${ico('close',14)} ${L.m48BalAll}</button></div>`; }
+function m48PulseHTML(t){ const a=m48MoodHTML(t.mood), b=m48TickHTML(t), c=m48BalHTML(t); return a||b||c?a+b+c:''; }
+function m48ImpSet(k){ M48.imp=M48.imp===k?'':k; try{ m40Vib(); }catch(e){}
+  document.querySelectorAll('.m48-br').forEach(b=>{ const on=b.dataset.m48imp===M48.imp; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on); });
+  document.querySelectorAll('.m48-ball').forEach(b=>{ b.hidden=!M48.imp; });
+  document.querySelectorAll('.m48-it').forEach(el=>{ const lensOff=el.closest('.m48-lg')&&M48.lens!=='all'&&el.dataset.m48l!==M48.lens; el.hidden=lensOff||(!!M48.imp&&!String(el.dataset.m48im||'').split(' ').includes(M48.imp)); });
+  if(M48.imp){ toast(L.m48BalOn(L.m48Imp[M48.imp])); const f=document.querySelector('#hb-s-brief .m48-it:not([hidden]), #hb-s-lens .m48-it:not([hidden])'); if(f) f.scrollIntoView({behavior:'smooth',block:'start'}); } }
+
+/* ---------- «Мир бизнеса по сферам» ---------- */
+function m48LensHTML(t){ const a=t.lens||[]; if(!a.length) return ''; const ed=f34Ed(t), cnt={}; a.forEach(x=>{ cnt[x.lens]=(cnt[x.lens]||0)+1; }); const ks=M48_LENS.filter(k=>cnt[k]); if(M48.lens!=='all'&&!cnt[M48.lens]) M48.lens='all';
+  const chip=(k,n,lab,ic)=>`<button type="button" class="chip ${M48.lens===k?'on':''}" data-m48lens="${k}" aria-pressed="${M48.lens===k}">${ic?ico(ic,13)+' ':''}${esc(lab)} <em>${n}</em></button>`;
+  return `<p class="bp-hint">${L.m48LensLead}</p><div class="chips hb-scroll m48-lf" role="group" aria-label="${esc(L.m48LensT)}">${chip('all',a.length,L.m48All)}${ks.map(k=>chip(k,cnt[k],L.m48Lens[k],M48_LICO[k])).join('')}</div>
+    <div class="m48-lg">${a.map((x,i)=>{ let h=m48ItemHTML(x,'l:'+i,t,ed); if(M48.lens!=='all'&&M48.lens!==x.lens&&!/ hidden>/.test(h.slice(0,300))) h=h.replace('<article ','<article hidden '); return h; }).join('')}</div>`; }
+function m48LensSet(k){ M48.lens=k; document.querySelectorAll('[data-m48lens]').forEach(b=>{ const on=b.dataset.m48lens===k; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on); });
+  document.querySelectorAll('.m48-lg .m48-it').forEach(el=>{ el.hidden=(k!=='all'&&el.dataset.m48l!==k)||(!!M48.imp&&!String(el.dataset.m48im||'').split(' ').includes(M48.imp)); }); }
+
+/* ---------- «Что впереди»: полоса 30 дней и события с обратным отсчётом ---------- */
+function m48CalList(t){ const d0=dkey(); return (t.cal||[]).filter(x=>x.date>=d0).slice(0,10); }
+function m48CalHTML(t){ const a=m48CalList(t); if(!a.length) return ''; const d0=dkey(), DD=s=>Math.round((parseYmd(s).getTime()-parseYmd(d0).getTime())/86400e3), last=Math.max(14,...a.map(x=>DD(x.date)));
+  const strip=`<div class="m48-cs" role="img" aria-label="${esc(L.m48CalA(a.length,last))}"><i class="m48-now"></i>${a.map((x,i)=>`<b class="k-${esc(x.kind)}" style="--x:${(DD(x.date)/last*100).toFixed(1)}%;--i:${i}"></b>`).join('')}<span class="s">${esc(L.m48In[0])}</span><span class="e">${esc(L.m48InD(last))}</span></div>`;
+  const rows=a.map((x,i)=>{ const n=DD(x.date), dt=parseYmd(x.date);
+    return `<li class="m48-ev k-${esc(x.kind)}${n<=2?' soon':''}"><div class="m48-ed"><b>${dt.getDate()}</b><small>${esc(MONTHS[lang].short[dt.getMonth()])}</small></div><div class="m48-eb"><div class="lv-tags"><i class="m48-cd">${esc(n<=1?L.m48In[n]:L.m48InD(n))}</i><i>${esc(L.m48Kind[x.kind]||L.m48Kind.other)}</i>${x.lens&&L.m48Lens[x.lens]?`<i>${esc(L.m48Lens[x.lens])}</i>`:''}${x.where?`<i>${esc(hbTx(x.where,40))}</i>`:''}</div>
+      <b>${esc(hbTx(x.title,100))}</b>${x.what?`<p>${esc(hbTx(x.what,220))}</p>`:''}${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${L.m48Prep}:</b> ${esc(hbTx(x.act,200))}</span></p>`:''}
+      <div class="f34-ft"><button type="button" class="f34-res" data-m48ics="${i}">${ico('calendar',15)} ${L.m48Remind}</button>${f34ResB('c:'+i)}${f32Src(x.src)}</div></div></li>`; }).join('');
+  return `<p class="bp-hint">${L.m48CalLead}</p>${strip}<ol class="m48-cal">${rows}</ol>`; }
+function m48Ics(i){ const t=hbToday(), x=t&&m48CalList(t)[+i]; if(!x) return; const d=x.date.replace(/-/g,''), e2=new Date(parseYmd(x.date).getTime()+36*3600e3), e=dkey(e2).replace(/-/g,'');
+  const q=s=>String(s||'').replace(/[\;,]/g,m=>'\\'+m).replace(/\r?\n/g,'\\n');
+  const ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Mira//Money//'+lang.toUpperCase(),'BEGIN:VEVENT','UID:'+uid('ev')+'@mira','DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z','DTSTART;VALUE=DATE:'+d,'DTEND;VALUE=DATE:'+e,
+    'SUMMARY:'+q(x.title),'DESCRIPTION:'+q([x.what,x.act].filter(Boolean).join(' — ')),'BEGIN:VALARM','TRIGGER:-P1D','ACTION:DISPLAY','DESCRIPTION:'+q(x.title),'END:VALARM','END:VEVENT','END:VCALENDAR'].join('\r\n');
+  try{ const b=new Blob([ics],{type:'text/calendar'}), u=URL.createObjectURL(b), a=document.createElement('a'); a.href=u; a.download='mira-'+x.date+'.ics'; document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(u),5000); M48.ics=ics; toast(L.m48RemindOk); }catch(e){} }
+/* «Исследовать» у сфер, событий календаря */
+try{ const _rq48=f34ResQ; f34ResQ=function(k){ const t=hbToday(), [a,b]=String(k).split(':'); if(t&&a==='l'){ const x=(t.lens||[])[+b]; return x?L.f34Q.b(x):''; } if(t&&a==='c'){ const x=m48CalList(t)[+b]; return x?L.m48CalQ(x):''; } return _rq48.apply(this,arguments); }; }catch(e){}
+/* обновить раздел «Сферы» можно только с сервером v25 */
+try{ const _fp48=f34Part; f34Part=async function(part){ if(part==='lens'&&!m48Up()){ try{ await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(r,2500))]); }catch(e){} if(!m48Up()){ toast(L.m48Old); return; } } return _fp48.apply(this,arguments); }; }catch(e){}
+
+/* ---------- вкладка «Сегодня»: новый порядок разделов ---------- */
+function m48TodayHTML(t){ const N=L.f34Nav, secs=[]; const add=(id,head,body,cls)=>{ const h=f34Sec(id,head,body,cls); if(h) secs.push({id,h}); return h; };
+  const brief=add('brief',f34Head('brief','zap',L.f34BriefT,'news'),f34BriefHTML(t),'f34-brief');
+  const pulse=add('pulse',f34Head('pulse','stats',L.m48PulseT),m48PulseHTML(t),'m48-ps');
+  const you=add('you',f34Head('you','goal',L.f34YouT),f34YouHTML(t),'f34-yous');
+  const duo=f34DuoHTML(t);
+  const ls=t.lesson?`<button type="button" class="hb-lesson" data-hblesson="${esc(t.day)}"><span class="hb-li">${ico('sparkle',20)}</span><span><small>${L.hbLessonT} · ${esc(L.hbAreaL[t.lesson.area]||'')}</small><b>${esc(t.lesson.title)}</b><em>${esc(t.lesson.lead)}</em></span>${ico('next',18)}</button>`:'';
+  const where=typeof L.m33WHub==='string'?`<button type="button" class="m33-hbw" data-m33go="where"><span>${ico('globe',20)}</span><b>${L.m33WHub}</b>${ico('next',18)}</button>`:'';
+  const lens=add('lens',f34Head('lens','globe',L.m48LensT,'lens'),m48LensHTML(t),'m48-ls');
+  const cal=add('cal',f34Head('cal','calendar',L.m48CalT),m48CalHTML(t),'m48-cs0');
+  const world=add('world',f34Head('world','sparkle',L.f32WorldT,'world'),f34WorldHTML(t));
+  const news=add('news',f34Head('news','globe',L.f32NewsT,'news'),f34NewsHTML(t));
+  const trends=add('trends',f34Head('trends','stats',L.hbTrendsT,'news'),f34TrendsHTML(t));
+  const goods=add('goods',f34Head('goods','chart',L.hbBarsT,'goods'),f34GoodsHTML(t));
+  const ideas=add('ideas',f34Head('ideas','bulb',L.hbIdeasT,'ideas',L.f34MoreIdeas),t.ideas.length?t.ideas.slice(0,3).map(hbIdeaHTML).join('')+`<button type="button" class="hb-more" data-hbtab="ideas">${L.hbAllIdeas(t.ideas.length)} ${ico('next',16)}</button>`:'');
+  const tips=add('tips',f34Head('tips','sparkle',L.hbTipsT,'learn',L.f34NewTips),f34TipsHTML(t));
+  const watch=add('watch',f34Head('watch','warn',L.hbWatchT),f34WatchHTML(t));
+  const co=t.country?hbCountryHTML(t.country):'';
+  const src=t.src.length?`<details class="wh-more bp-src"><summary>${ico('external',16)} ${L.bpSrcN(t.src.length)}</summary><div class="id-src">${t.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url.replace(/^https?:\/\/(www\.)?/,'').slice(0,60))}</a>`).join('')}</div></details>`:'';
+  const nav=secs.length>2?`<nav class="chips f34-nav" aria-label="${esc(L.f34NavA)}">${secs.map(s=>`<button type="button" class="chip" data-hbjump="${s.id}">${esc(N[s.id]||s.id)}</button>`).join('')}</nav>`:'';
+  const past=hbSt().arch.filter(a=>a.lang===lang&&a.brief&&a.brief.length&&a.day!==t.day).slice(0,14);
+  const arch=past.length?`<details class="wh-more f34-past"><summary>${ico('clock',16)} ${L.f34Past(past.length)}</summary>${past.map(a=>`<div class="f34-pd"><small>${esc(fmtDate(parseYmd(a.day)||new Date()))}${a.ed&&L.f34Ed[a.ed]?' · '+esc(L.f34Ed[a.ed]):''}</small>${a.sum?`<p>${esc(a.sum)}</p>`:''}<ul>${a.brief.map(x=>`<li><b>${esc(x.title)}</b>${x.act?` — ${esc(x.act)}`:''}</li>`).join('')}</ul></div>`).join('')}</details>`:'';
+  let eds=''; try{ eds=m43EdsHTML(t); }catch(e){}
+  return `${eds}${nav}${brief}${pulse}${you}${duo}${ls}${where}${lens}${cal}${world}${news}${trends}${goods}${ideas}${tips}${watch}${co}${f32MissHTML(t)}${src}${arch}<p class="note f34-how">${ico('info',14)} ${L.f34How}</p><p class="note">${L.hbNote}</p>`; }
+f34TodayHTML=m48TodayHTML;
+
+/* ---------- «Тренды»: кривая жизни, стадия и кто уже зарабатывает ---------- */
+function m48CurveHTML(a){ const pts=a.map((x,i)=>({x,i})).filter(o=>M48_STG.includes(o.x.stage)); if(pts.length<2) return '';
+  const W=320, H=128, f=u=>Math.exp(-Math.pow((u-0.55)/0.21,2)), X=u=>16+u*(W-32), Y=u=>H-26-f(u)*(H-46);
+  let d=''; for(let k=0;k<=64;k++){ const u=k/64; d+=(k?'L':'M')+X(u).toFixed(1)+' '+Y(u).toFixed(1); }
+  const pos={seed:[0.1,0.24],rise:[0.3,0.45],peak:[0.5,0.62],fade:[0.7,0.9]}, by={}; pts.forEach(o=>(by[o.x.stage]=by[o.x.stage]||[]).push(o));
+  let dots=''; for(const s of M48_STG){ const arr=by[s]||[], [u0,u1]=pos[s]; arr.forEach((o,j)=>{ const u=arr.length===1?(u0+u1)/2:u0+(u1-u0)*j/(arr.length-1), cx=X(u), cy=Y(u)-(j%2?12:0);
+    dots+=`<g class="m48-cd2 ${s}${o.x.dir==='down'?' dn':''}" style="--d:${(M48_STG.indexOf(s)*0.18+j*0.08).toFixed(2)}s" data-m48tr="${o.i}" role="button" tabindex="0" aria-label="${esc((o.i+1)+'. '+o.x.title+' — '+L.m48Stage[s])}"><circle cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="9.5"/><text x="${cx.toFixed(1)}" y="${(cy+3.6).toFixed(1)}" text-anchor="middle">${o.i+1}</text></g>`; }); }
+  const zl=M48_STG.map((s,k)=>`<text class="m48-zl ${s}" x="${X([0.17,0.38,0.56,0.8][k]).toFixed(1)}" y="${H-7}" text-anchor="middle">${esc(L.m48Stage[s])}</text>`).join('');
+  const zb=[0.27,0.475,0.66].map(u=>`<line class="m48-zb" x1="${X(u).toFixed(1)}" x2="${X(u).toFixed(1)}" y1="14" y2="${H-20}"/>`).join('');
+  return `<div class="m48-cv"><div class="m48-bh"><b>${ico('stats',15)} ${L.m48StageT}</b><small>${L.m48StageLead}</small></div><div class="m48-cvp" role="group" aria-label="${esc(L.m48StageA(pts.length))}"><svg viewBox="0 0 ${W} ${H}">${zb}<path class="m48-cvf" d="${d} L${X(1).toFixed(1)} ${H-26} L${X(0).toFixed(1)} ${H-26} Z"/><path class="m48-cvl" d="${d}" pathLength="1"/>${zl}${dots}</svg></div></div>`; }
+try{ const _tr48=f34TrendsHTML; f34TrendsHTML=function(t){ let h=_tr48.apply(this,arguments); const a=t.trends||[]; if(!h||!a.length) return h;
+  try{ a.forEach((x,i)=>{ const st=M48_STG.includes(x.stage)?x.stage:''; if(!st&&!x.who) return; const mk=`<div class="f34-ft"><button type="button" class="f34-res" data-f34res="t:${i}">`;
+      const add=`${st?`<p class="m48-stg ${st}"><b>${i+1}</b><span><em>${esc(L.m48Stage[st])}</em> — ${esc(L.m48StageAct[st])}</span></p>`:''}${x.who?`<p class="m48-who">${ico('cash',13)}<span><b>${L.m48WhoEarn}:</b> ${esc(hbTx(x.who,160))}</span></p>`:''}`;
+      h=h.replace(mk,add+mk); }); return m48CurveHTML(a)+h; }catch(e){ return h; } }; }catch(e){}
+function m48TrGo(i){ const c=document.querySelectorAll('#hb-s-trends .hb-tc')[+i]; if(!c) return; if(c.hidden){ try{ m43TaSet('all'); }catch(e){} } c.scrollIntoView({behavior:'smooth',block:'center'}); c.classList.remove('m48-flash'); void c.offsetWidth; c.classList.add('m48-flash'); }
+
+/* ---------- «Карта выгоды»: ваша наценка рядом с рынком ---------- */
+function m48MyMk(){ const o={}, by={}; for(const i of state.inv||[]){ if(!i.cat||!(+i.cost>0)||!(+i.price>0)) continue; (by[i.cat]=by[i.cat]||[]).push((i.price-i.cost)/i.cost*100); }
+  for(const k in by){ const a=by[k]; o[k]=a.reduce((s,v)=>s+v,0)/a.length; } return o; }
+try{ const _mp48=m43MapHTML; m43MapHTML=function(t){ const h=_mp48.apply(this,arguments); if(!h) return h; try{ const my=m48MyMk(), pts=m43Pts(t); if(pts.length<3) return h; const S=m43Sc(pts);
+    const rows=pts.filter(p=>my[p.id]!=null).map(p=>({p,my:my[p.id],d:my[p.id]-p.mk})); if(!rows.length) return h;
+    let g=''; for(const r of rows){ const cx=S.x(r.p.m), cy=S.y(r.p.mk), y2=S.y(Math.max(0,r.my)), right=cx+60<M43_W; g+=`<g class="m48-my ${r.d<0?'lo':'hi'}"><line x1="${cx.toFixed(1)}" y1="${cy.toFixed(1)}" x2="${cx.toFixed(1)}" y2="${y2.toFixed(1)}"/><circle cx="${cx.toFixed(1)}" cy="${y2.toFixed(1)}" r="6"/><text x="${(right?cx+9:cx-9).toFixed(1)}" y="${(y2+3.5).toFixed(1)}" text-anchor="${right?'start':'end'}">${esc(L.m48MyMk)} ${Math.round(r.my)}%</text></g>`; }
+    const gap=rows.slice().sort((a,b)=>Math.abs(b.d)-Math.abs(a.d))[0];
+    const note=Math.abs(gap.d)>=10?`<p class="m48-mapn ${gap.d<0?'lo':'hi'}">${ico(gap.d<0?'next':'warn',14)}<span>${esc((gap.d<0?L.m48MapGap:L.m48MapOver)(gap.p.name,Math.round(gap.my),Math.round(gap.p.mk)))}</span></p>`:'';
+    const ip=h.indexOf('<div class="m43-plot"'), ie=ip>=0?h.indexOf('</svg>',ip):-1; if(ie<0) return h; const h2=h.slice(0,ie)+g+h.slice(ie);
+    return h2.replace('<div class="m43-axl">',`<p class="m48-mapl">${ico('tag',13)} ${L.m48MapMine}</p>${note}<div class="m43-axl">`); }catch(e){ return h; } }; }catch(e){}
+
+/* ---------- «Учиться»: вкладка «Секреты» — секреты практиков и ваши личные ---------- */
+function m48SecSub(){ try{ if(LX_SUBS.includes('sec')) return; const k=LX_SUBS.indexOf('prac'); LX_SUBS.splice(k>=0?k+1:1,0,'sec'); LX_SICO.sec='star'; }catch(e){} }
+m48SecSub(); setTimeout(m48SecSub,0);
+function m48SecList(){ const h=hbSt(); return (Array.isArray(h.sec48)?h.sec48:[]).filter(x=>x&&x.lang===lang&&x.title&&x.text); }
+function m48SecHTML(x){ const old=x.day&&x.day!==hbDay();
+  return `<article class="m48-sec"><div class="lv-tags">${L.m48SecArea[x.area]?`<i class="m48-sa">${esc(L.m48SecArea[x.area])}</i>`:''}${old?`<i>${esc(fmtShort(parseYmd(x.day)))}</i>`:''}</div><h5>${ico('star',15)} ${esc(hbTx(x.title,100))}</h5><p>${esc(hbTx(x.text,420))}</p>
+    ${(x.how||[]).length?`<div class="m48-how"><small>${L.m48SecHow}</small><ol>${x.how.slice(0,4).map(s=>`<li>${esc(hbTx(s,180))}</li>`).join('')}</ol></div>`:''}
+    ${x.why_rare?`<p class="m48-rare"><b>${L.m48Rare}:</b> ${esc(hbTx(x.why_rare,200))}</p>`:''}${x.proof?`<p class="m48-proof">${ico('doc',13)}<span><b>${L.m48Proof}:</b> ${esc(hbTx(x.proof,220))}</span></p>`:''}
+    <div class="f34-ft"><button type="button" class="f34-res" data-sifra="${esc(L.m48SecQ(x))}">${ico('chat',15)} ${L.m48SecAsk}</button>${f32Src(x.src)}</div></article>`; }
+/* ваши секреты: закономерности только по её записям */
+function m48Mine(){ const out=[], sh=state.shop||{}, D=dkey(), ago=n=>{ const d=parseYmd(D); d.setDate(d.getDate()-n); return dkey(d); };
+  const tot={}; for(const s of (sh.sales||[])) if(s&&s.date&&s.date>=ago(84)&&s.date<=D) tot[s.date]=(tot[s.date]||0)+(+s.sum||0);
+  try{ for(const d in state.dayx||{}){ if(d<ago(84)||d>D||tot[d]) continue; const x=state.dayx[d]; const v=(+x.cash||0)+(+x.card||0); if(v>0) tot[d]=v; } }catch(e){}
+  const days=Object.keys(tot).filter(d=>tot[d]>0);
+  /* 1. сильный день недели */
+  if(days.length>=14){ const s=[0,0,0,0,0,0,0], c=[0,0,0,0,0,0,0]; for(const d of days){ const w=parseYmd(d).getDay(); s[w]+=tot[d]; c[w]++; }
+    const av=s.map((v,i)=>c[i]>=2?v/c[i]:null), ok=av.map((v,i)=>v!=null?i:-1).filter(i=>i>=0);
+    if(ok.length>=3){ const best=ok.reduce((a,b)=>av[b]>av[a]?b:a), worst=ok.reduce((a,b)=>av[b]<av[a]?b:a), p=Math.round((av[best]-av[worst])/av[worst]*100);
+      if(p>=15){ const ord=lang==='en'?[0,1,2,3,4,5,6]:[1,2,3,4,5,6,0], mx=Math.max(...ok.map(i=>av[i]));
+        out.push({k:'wd',ic:'calendar',t:L.m48WdT,big:'+'+p+'%',txt:L.m48Wd(L.m48WdN[best],p,L.m48WdN[worst]),act:L.m48WdAct,viz:`<div class="m48-vb">${ord.map((w,j)=>`<span class="${w===best?'b':w===worst?'w':''}" style="--h:${av[w]!=null?Math.max(6,Math.round(av[w]/mx*100)):0}%;--i:${j}"><i></i><small>${esc(L.m48WdS[w])}</small></span>`).join('')}</div>`}); } } }
+  /* 2. ритм месяца */
+  if(days.length>=30){ const s=[0,0,0], c=[0,0,0]; for(const d of days){ const n=parseYmd(d).getDate(), k=n<=10?0:n<=20?1:2; s[k]+=tot[d]; c[k]++; }
+    if(c.every(v=>v>=5)){ const av=s.map((v,i)=>v/c[i]), b=av.indexOf(Math.max(...av)), w=av.indexOf(Math.min(...av)), p=Math.round((av[b]-av[w])/av[w]*100), mx=av[b];
+      if(p>=15) out.push({k:'mon',ic:'clock',t:L.m48MonT,big:'+'+p+'%',txt:L.m48Mon(L.m48MonA[['s','m','e'][b]],p),act:L.m48MonAct,viz:`<div class="m48-vb m3">${av.map((v,i)=>`<span class="${i===b?'b':i===w?'w':''}" style="--h:${Math.round(v/mx*100)}%;--i:${i}"><i></i><small>${esc(L.m48MonS[i])}</small></span>`).join('')}</div>`}); } }
+  /* 3. что приносит больше всего (продажи со склада за 60 дней) */
+  try{ const pr={}; for(const l of state.invLog||[]){ if(l.k!=='sale'||!l.d||l.d<ago(60)) continue; const it=(state.inv||[]).find(i=>i.id===l.i); if(!it||!(+it.price>0)) continue; pr[it.id]=(pr[it.id]||0)+Math.abs(+l.q||0)*((+it.price||0)-(+it.cost||0)); }
+    const top=Object.entries(pr).filter(([,v])=>v>0).sort((a,b)=>b[1]-a[1]); if(top.length>=2){ const it=state.inv.find(i=>i.id===top[0][0]), sum=top.reduce((a,b)=>a+b[1],0), sh0=Math.round(top[0][1]/sum*100);
+      out.push({k:'top',ic:'star',t:L.m48TopT,big:sh0+'%',txt:L.m48Top(it.name||'—',money(top[0][1])),act:L.m48TopAct,viz:`<div class="m48-vs"><i style="--w:${sh0}%"></i></div>`}); } }catch(e){}
+  /* 4. деньги, которые лежат (нет продаж 45+ дней) */
+  try{ const lim=ago(45), last={}; for(const l of state.invLog||[]) if(l.k==='sale'&&l.d&&(!last[l.i]||l.d>last[l.i])) last[l.i]=l.d; let n=0, v=0;
+    for(const it of state.inv||[]){ const q=Object.values(it.sizes||{}).reduce((a,b)=>a+(+b||0),0); if(!(q>0)||!(+it.cost>0)) continue; if((it.d&&it.d>lim)||(last[it.id]&&last[it.id]>lim)) continue; n++; v+=q*(+it.cost); }
+    if(n>=2&&v>0) out.push({k:'dead',ic:'warn',t:L.m48DeadT,big:money(v),txt:L.m48Dead(n,money(v),45),act:L.m48DeadAct}); }catch(e){}
+  /* 5. расход, который растёт */
+  try{ const a={}, b={}; for(const e of (sh.exp||[])){ if(!e||!e.date) continue; if(e.date>ago(30)&&e.date<=D) a[e.cat]=(a[e.cat]||0)+(+e.sum||0); else if(e.date>ago(60)&&e.date<=ago(30)) b[e.cat]=(b[e.cat]||0)+(+e.sum||0); }
+    const all=Object.values(a).reduce((x,y)=>x+y,0); let best=null; for(const c in a){ if(!(b[c]>0)) continue; const p=(a[c]-b[c])/b[c]*100; if(p>=25&&a[c]>=all*0.08&&(!best||a[c]-b[c]>best.d)) best={c,p:Math.round(p),d:a[c]-b[c],now:a[c],prev:b[c]}; }
+    if(best){ const mx=Math.max(best.now,best.prev); out.push({k:'exp',ic:'cash',t:L.m48ExpT,big:'+'+best.p+'%',txt:L.m48Exp(catName(best.c),money(best.now),best.p),act:L.m48ExpAct,viz:`<div class="m48-v2"><span style="--w:${Math.round(best.prev/mx*100)}%"><small>${L.m48ExpPrev}</small><i></i><b>${money(best.prev)}</b></span><span class="n" style="--w:100%"><small>${L.m48ExpNow}</small><i></i><b>${money(best.now)}</b></span></div>`}); } }catch(e){}
+  return out; }
+function m48MineHTML(){ let a=[]; try{ a=m48Mine(); }catch(e){}
+  return `<section class="id-sec m48-mine"><div class="f34-sh"><h4>${ico('shield',18)} ${L.m48MineT}</h4></div><p class="bp-hint">${L.m48MineLead}</p>${a.length?a.map(x=>`<article class="m48-mi k-${x.k}"><div class="m48-mh"><span>${ico(x.ic,16)}</span><small>${esc(x.t)}</small><b>${esc(x.big)}</b></div><p>${esc(x.txt)}</p>${x.viz||''}<p class="f34-act">${ico('next',14)}<span>${esc(x.act)}</span></p></article>`).join(''):`<p class="m48-empty">${ico('info',14)} ${L.m48MineNone}</p>`}</section>`; }
+function m48SecPageHTML(){ const all=m48SecList(), d=hbDay(), now=all.filter(x=>x.day===d), past=all.filter(x=>x.day!==d);
+  const top=now.length?now:past.slice(0,3), rest=now.length?past:past.slice(3);
+  return m48MineHTML()+`<section class="id-sec m48-secs"><div class="f34-sh"><h4>${ico('star',18)} ${L.m48SecT}</h4></div><p class="bp-hint">${L.m48SecLead}</p>${top.length?top.map(m48SecHTML).join(''):`<p class="m48-empty">${ico('info',14)} ${L.m48SecNone}</p>`}
+    ${rest.length?`<details class="wh-more"><summary>${ico('clock',16)} ${L.m48SecPast(rest.length)}</summary>${rest.map(m48SecHTML).join('')}</details>`:''}</section>`; }
+try{ const _lh48=hbLearnHTML; hbLearnHTML=function(){ const h=hbSt();
+  if(h.lsub!=='sec'){ const base=_lh48.apply(this,arguments); if((h.lsub||'day')!=='day') return base;
+    try{ const div=document.createElement('div'); div.innerHTML=base; const nav=div.querySelector('.lx-nav'); if(!nav) return base; const n=m48SecList().filter(x=>x.day===hbDay()).length;
+      nav.insertAdjacentHTML('afterend',`<button type="button" class="hb-lesson m48-scard" data-m48lx="sec"><span class="hb-li">${ico('star',20)}</span><span><small>${L.m48SecTab}</small><b>${esc(L.m48SecCard(n))}</b><em>${L.m48SecCardSub}</em></span>${ico('next',18)}</button>`); return div.innerHTML; }catch(e){ return base; } }
+  h.lsub='books'; let base=''; try{ base=_lh48.apply(this,arguments); }finally{ h.lsub='sec'; }
+  let nav=''; try{ const div=document.createElement('div'); div.innerHTML=base; const n=div.querySelector('.lx-nav'); if(n){ n.querySelectorAll('[data-lxsub]').forEach(b=>{ const on=b.dataset.lxsub==='sec'; b.classList.toggle('on',on); b.setAttribute('aria-selected',on); }); nav=n.outerHTML; } }catch(e){}
+  return nav+m48SecPageHTML(); }; }catch(e){}
+/* «Советы дня» на «Сегодня»: два секрета практиков и переход ко всем */
+try{ const _tp48=f34TipsHTML; f34TipsHTML=function(t){ const h=_tp48.apply(this,arguments); const s=(t.secrets||[]).slice(0,2); if(!s.length) return h;
+  return h+`<div class="m48-tsec"><small>${ico('star',14)} ${L.m48SecTips}</small>${s.map(x=>`<div class="m48-ts"><b>${esc(hbTx(x.title,100))}</b><p>${esc(hbTx(x.text,260))}</p></div>`).join('')}<button type="button" class="hb-more" data-m48gosec="1">${L.m48SecAll} ${ico('next',16)}</button></div>`; }; }catch(e){}
+/* урок дня: частая ошибка и расчёт на цифрах */
+try{ const _lg48=hbLessonGuide; hbLessonGuide=function(day){ const g=_lg48.apply(this,arguments); if(!g) return g; try{ const t=hbToday(), a=t&&t.day===day&&t.lesson?t.lesson:(hbSt().arch.find(x=>x.day===day&&x.lang===lang)||{}).lesson; if(a){ g.mistake=a.mistake||''; g.calc=a.calc||''; } }catch(e){} return g; }; }catch(e){}
+try{ const _gh48=hbGuideHTML; hbGuideHTML=function(g){ const h=_gh48.apply(this,arguments); if(!g||!(g.mistake||g.calc)) return h;
+  const add=`${g.mistake?`<div class="m48-mist">${ico('warn',16)}<span><b>${L.m48Mist}</b>${esc(hbTx(g.mistake,300))}</span></div>`:''}${g.calc?`<div class="m48-calc"><small>${ico('cash',14)} ${L.m48Calc}</small><pre>${esc(hbTx(g.calc,400))}</pre></div>`:''}`;
+  const i=h.indexOf('</ol>'); return i>=0?h.slice(0,i+5)+add+h.slice(i+5):add+h; }; }catch(e){}
+
+/* ---------- «Где закупать»: «Цена у двери» ---------- */
+const M48_LDC=['CNY','USD','TRY','AED','RUB','EUR','KZT'];
+function m48LdSt(){ const m=state.misc||(state.misc={}); return m.ld48||(m.ld48={cur:'CNY',vat:15}); }
+function m48LdCalc(s){ const t=hbToday(), F=t&&t.fx||{}, r=+F[String(s.cur||'CNY').toLowerCase()], usd=+F.usd, p=+s.p||0, q=Math.round(+s.q||0);
+  if(!(r>0)) return {nofx:true}; if(!(p>0&&q>0)) return {need:true,r};
+  const goods=p*q*r, cargo=(+s.kg||0)*(+s.cg||0)*(usd>0?usd:0), base=goods+cargo, duty=base*(+s.du||0)/100, vat=(base+duty)*(+s.vat||0)/100, other=+s.ot||0, tot=goods+cargo+duty+vat+other;
+  const c=t&&(t.cats||[]).find(x=>x.id===s.cat), mk=c&&+c.markup_pct>0?Math.round(+c.markup_pct):0;
+  return {r,q,goods,cargo,duty,vat,other,tot,unit:tot/q,mk,shelf:mk?tot/q*(1+mk/100):0}; }
+function m48LdOut(s){ const c=m48LdCalc(s); if(c.nofx) return `<p class="m48-empty">${ico('info',14)} ${L.m48LdNoFx}</p>`; if(c.need) return `<p class="m48-empty">${ico('info',14)} ${L.m48LdNeed}</p><p class="m48-ldfx">${esc(L.m48LdFx(s.cur,fx(c.r,c.r<0.1?4:3)))}</p>`;
+  const P=['goods','cargo','duty','vat','other'].filter(k=>c[k]>0);
+  return `<div class="m48-ldu"><small>${L.m48LdUnit}</small><b>${money(c.unit)}</b></div><div class="m48-lds" role="img" aria-label="${esc(P.map(k=>L.m48LdParts[k]+' '+Math.round(c[k]/c.tot*100)+'%').join(', '))}">${P.map((k,i)=>`<i class="${k}" style="--w:${(c[k]/c.tot*100).toFixed(2)}%;--i:${i}"></i>`).join('')}</div>
+    <ul class="m48-ldl">${P.map(k=>`<li class="${k}"><i></i><span>${L.m48LdParts[k]}</span><b>${money(c[k]/c.q)}</b><em>${Math.round(c[k]/c.tot*100)}%</em></li>`).join('')}</ul>
+    <p class="m48-ldt">${esc(L.m48LdTot(money(c.tot)))} · ${esc(L.m48LdFx(s.cur,fx(c.r,c.r<0.1?4:3)))}</p>${c.mk?`<p class="f34-act">${ico('tag',14)}<span>${esc(L.m48LdShelf(c.mk,money(c.shelf)))}</span></p>`:''}`; }
+function m48LdHTML(){ const s=m48LdSt(), t=hbToday(), cats=(t&&t.cats||[]).filter(c=>+c.markup_pct>0);
+  const inp=(k,lab,ph,step)=>`<label><small>${lab}</small><input type="number" inputmode="decimal" min="0" step="${step||'any'}" data-m48ld="${k}" value="${s[k]!=null&&s[k]!==''?esc(String(s[k])):''}" placeholder="${ph||''}"></label>`;
+  return `<section class="id-sec m48-ld" id="m48Ld"><div class="f34-sh"><h4>${ico('cash',18)} ${L.m48LdT}</h4></div><p class="bp-hint">${L.m48LdLead}</p>
+    <div class="m48-ldg"><label class="w"><small>${L.m48LdNm}</small><input type="text" data-m48ld="nm" maxlength="60" value="${esc(s.nm||'')}"></label>
+      <label><small>${L.m48LdCur}</small><select data-m48ld="cur">${M48_LDC.map(c=>`<option value="${c}"${s.cur===c?' selected':''}>${c} — ${esc(L.m48LdC[c])}</option>`).join('')}</select></label>
+      ${inp('p',L.m48LdPrice)}${inp('q',L.m48LdQty,'','1')}${inp('kg',L.m48LdKg)}${inp('cg',L.m48LdCargo)}${inp('du',L.m48LdDuty,'0')}${inp('vat',L.m48LdVat,'0')}${inp('ot',L.m48LdOther,'0')}
+      ${cats.length?`<label class="w"><small>${L.m48LdCat}</small><select data-m48ld="cat"><option value="">${L.m48LdNoCat}</option>${cats.map(c=>`<option value="${esc(c.id)}"${s.cat===c.id?' selected':''}>${esc(L['whC_'+c.id]||c.id)} · +${Math.round(c.markup_pct)}%</option>`).join('')}</select></label>`:''}</div>
+    <div class="m48-ldo" id="m48LdO" aria-live="polite">${m48LdOut(s)}</div>
+    <div class="f34-ft"><button type="button" class="f34-res" data-m48ldq="1">${ico('chat',15)} ${L.m48LdAsk}</button></div><p class="note">${ico('info',13)} ${L.m48LdHint}</p></section>`; }
+try{ const _wh48=m33WhereHTML; m33WhereHTML=function(){ const h=_wh48.apply(this,arguments); try{ const div=document.createElement('div'); div.innerHTML=h; const f=div.firstElementChild; if(f){ f.insertAdjacentHTML('afterend',m48LdHTML()); return div.innerHTML; } return h+m48LdHTML(); }catch(e){ return h; } }; }catch(e){}
+document.addEventListener('input',e=>{ const i=e.target&&e.target.closest&&e.target.closest('[data-m48ld]'); if(!i) return; const s=m48LdSt(), k=i.dataset.m48ld; s[k]=i.tagName==='INPUT'&&i.type==='number'?(i.value===''?'':+i.value):i.value; clearTimeout(M48.ldT); M48.ldT=setTimeout(()=>{ try{ persist(); }catch(e){} },600);
+  const o=document.getElementById('m48LdO'); if(o) o.innerHTML=m48LdOut(s); });
+document.addEventListener('change',e=>{ const i=e.target&&e.target.closest&&e.target.closest('select[data-m48ld]'); if(!i) return; const s=m48LdSt(); s[i.dataset.m48ld]=i.value; try{ persist(); }catch(e){} const o=document.getElementById('m48LdO'); if(o) o.innerHTML=m48LdOut(s); });
+
+/* ---------- нажатия ---------- */
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m48lens],[data-m48imp],[data-m48ics],[data-m48gosec],[data-m48tr],[data-m48ldq],[data-m48lx]'); if(!t) return;
+  if(t.hasAttribute('data-m48lx')){ hbSt().lsub=t.dataset.m48lx; try{ ldDraw(); const m=BPG.el.querySelector('#bpg-m'), nav=BPG.el.querySelector('.lx-nav'); if(m&&nav) m.scrollTop=Math.max(0,nav.getBoundingClientRect().top-m.getBoundingClientRect().top+m.scrollTop-70); }catch(err){} return; }
+  if(t.hasAttribute('data-m48lens')){ m48LensSet(t.dataset.m48lens); return; }
+  if(t.hasAttribute('data-m48imp')){ m48ImpSet(t.dataset.m48imp); return; }
+  if(t.hasAttribute('data-m48ics')){ m48Ics(t.dataset.m48ics); return; }
+  if(t.hasAttribute('data-m48tr')){ m48TrGo(t.dataset.m48tr); return; }
+  if(t.hasAttribute('data-m48ldq')){ const s=m48LdSt(); sifraOpen(L.m48LdQ(s.nm,L.m48LdFrom[s.cur]||s.cur)); return; }
+  if(t.hasAttribute('data-m48gosec')){ hbSt().lsub='sec'; try{ hbTab('learn'); }catch(err){} return; } });
+document.addEventListener('keydown',e=>{ if(e.key!=='Enter'&&e.key!==' ') return; const t=e.target&&e.target.closest&&e.target.closest('[data-m48tr]'); if(!t) return; e.preventDefault(); m48TrGo(t.dataset.m48tr); });
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
