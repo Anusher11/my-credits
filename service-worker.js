@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v61';
+const CACHE='mira-v62';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -62,7 +62,7 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE && k !== 'mk-state').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE && k !== 'mk-state' && k !== 'mira-share').map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -73,6 +73,29 @@ function isPageRequest(req) {
   return url.origin === location.origin &&
          (url.pathname.endsWith('/') || url.pathname.endsWith('.html'));
 }
+
+/* «Поделиться → Mira»: фото и текст из других приложений кладём в кэш 'mira-share',
+   приложение откроется с ?share=1, заберёт их и сразу удалит */
+self.addEventListener('fetch', e => {
+  const req = e.request;
+  if (req.method !== 'POST') return;
+  const url = new URL(req.url);
+  if (url.origin !== location.origin || !url.pathname.endsWith('/share-target')) return;
+  e.respondWith((async () => {
+    try {
+      const fd = await req.formData();
+      await caches.delete('mira-share');
+      const c = await caches.open('mira-share');
+      const all = fd.getAll('files').filter(f => f && typeof f !== 'string' && /^image\//.test(f.type || ''));
+      const files = all.slice(0, 8);
+      for (let i = 0; i < files.length; i++) await c.put('share/f' + i, new Response(files[i], { headers: { 'content-type': files[i].type } }));
+      const meta = { at: Date.now(), n: files.length, big: all.length > files.length,
+        title: String(fd.get('title') || '').slice(0, 300), text: String(fd.get('text') || '').slice(0, 2000), url: String(fd.get('url') || '').slice(0, 1000) };
+      await c.put('share/meta', new Response(JSON.stringify(meta), { headers: { 'content-type': 'application/json' } }));
+    } catch (_) {}
+    return Response.redirect(new URL('./index.html?share=1', self.registration.scope).href, 303);
+  })());
+});
 
 self.addEventListener('fetch', e => {
   const req = e.request;

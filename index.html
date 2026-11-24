@@ -4388,6 +4388,184 @@ html.m40[data-sk="c"] .m43-lb{stroke:#F3EEFB;}
 @media (prefers-reduced-motion: reduce){ .m43-det{animation:none;} .m43-pt circle{transition:none;} }
 .m43-det{position:relative;} .m43-dh{padding-right:50px; min-height:40px;} .m43-sc{position:absolute; top:12px; right:12px; margin:0;}
 /* <</v43 css>> */
+/* <<v44 css>> */
+/* ---------- v44: «Большая покупка» ---------- */
+.m44{display:flex; flex-direction:column; gap:14px;}
+.m44-hico{flex:none; width:52px; height:52px; border-radius:16px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m44-h3{margin:18px 0 10px; font-size:1rem; font-weight:800;}
+.m44-tys{display:grid; grid-template-columns:repeat(auto-fill,minmax(96px,1fr)); gap:8px;}
+.m44-ty{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:6px; min-height:84px; padding:10px 6px; border:1.5px solid var(--line); border-radius:16px; background:var(--surface); color:var(--ink); font:inherit; font-weight:700; font-size:.84rem; text-align:center; cursor:pointer; transition:transform .12s, border-color .15s;}
+.m44-ty .mi{color:var(--m40-line);} .m44-ty:active{transform:scale(.96);}
+.m44-tys.sm{display:flex; overflow-x:auto; gap:6px; padding-bottom:2px; scrollbar-width:none;} .m44-tys.sm::-webkit-scrollbar{display:none;}
+.m44-tys.sm .m44-ty{flex:none; min-width:76px; min-height:64px; font-size:.78rem; padding:8px;}
+.m44-ty.on{border-color:var(--m40-line); background:var(--brand-weak); box-shadow:0 0 0 1px var(--m40-line) inset;}
+.m44-cd{background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:16px; display:flex; flex-direction:column; gap:10px; min-width:0;}
+.m44-cd h3{margin:0; font-size:1rem; font-weight:800; display:flex; align-items:center; gap:8px;}
+.m44-cd h3 .mi{color:var(--m40-line);}
+.m44-g{display:grid; grid-template-columns:1fr 1fr; gap:0 10px;}
+.m44-g .field{margin-bottom:10px; min-width:0;} .m44-g .field.w{grid-column:1/-1;}
+.m44-g .field input{padding:11px 12px;}
+@media (max-width:340px){ .m44-g{grid-template-columns:1fr;} }
+.m44-chs{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:6px;}
+.m44-cd .bp-lab{margin:4px 0 6px; display:block;}
+.m44-more summary{cursor:pointer; font-weight:800; font-size:.9rem; color:var(--brand-ink); padding:8px 0; min-height:40px; display:flex; align-items:center;}
+.m44-more[open] summary{margin-bottom:8px;}
+.m44-find{margin:4px 0 0; align-self:flex-start;}
+.m44-fr{border-radius:16px; background:var(--surface-2); padding:12px 14px; display:flex; flex-direction:column; gap:6px;}
+.m44-fr b{font:800 1.25rem/1.2 var(--font-num);} .m44-fr small{color:var(--muted); font-weight:700;}
+.m44-fr p{margin:0; font-size:.88rem; line-height:1.42;}
+.m44-fr details summary{cursor:pointer; font-size:.84rem; font-weight:700; color:var(--muted);}
+.m44-fr ul{margin:6px 0 0; padding-left:18px; font-size:.82rem;} .m44-fr a{color:var(--brand-ink); word-break:break-word;}
+.m44-fr .gp-mini{margin:4px 0 0; align-self:flex-start;}
+.m44-tg{display:flex; gap:10px; align-items:flex-start; font-size:.88rem; line-height:1.38; cursor:pointer; padding:4px 0;}
+.m44-tg input{width:20px; height:20px; flex:none; margin:1px 0 0; accent-color:var(--m40-line);}
+.m44-empty{display:flex; gap:8px; align-items:center; color:var(--muted); font-weight:600; padding:14px; border-radius:16px; background:var(--surface-2); margin:0;}
+.m44-kpi{display:grid; grid-template-columns:repeat(3,1fr); gap:8px;}
+.m44-kpi div{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:10px 10px 12px; display:flex; flex-direction:column; gap:4px; min-width:0;}
+.m44-kpi small{font-size:.74rem; font-weight:700; color:var(--muted); line-height:1.2;}
+.m44-kpi b{font:800 1rem/1.15 var(--font-num); overflow-wrap:anywhere;}
+@media (max-width:360px){ .m44-kpi{grid-template-columns:1fr 1fr;} .m44-kpi div:last-child{grid-column:1/-1;} }
+.m44-rds{font-size:.8rem; font-weight:700; color:var(--muted);}
+.m44-plot{position:relative; width:100%; touch-action:pan-y; border-radius:12px; outline:none; -webkit-user-select:none; user-select:none; cursor:ew-resize; color:var(--ink);}
+.m44-plot.st{cursor:default;}
+.m44-plot:focus-visible{box-shadow:0 0 0 3px var(--m40-line);}
+.m44-plot svg{display:block; width:100%; height:auto; overflow:visible;}
+.m44-plot text{font:600 11px var(--font-num); fill:var(--muted);}
+.m44-plot .gr{fill:none; stroke:var(--line); stroke-width:1; stroke-dasharray:3 4;}
+.m44-plot .z{fill:none; stroke:var(--danger); stroke-width:1.2; stroke-dasharray:5 4; opacity:.75;}
+.m44-plot .arn{fill:var(--danger); opacity:.16;}
+.m44-plot .ln{fill:none; stroke:var(--m40-line); stroke-width:3; stroke-linejoin:round; stroke-linecap:round; filter:var(--m40-glow);}
+.m44-plot .l0{fill:none; stroke:var(--muted); stroke-width:1.6; stroke-dasharray:4 4; opacity:.7;}
+.m44-plot .vl{stroke:var(--ink); stroke-width:1.2; opacity:.35; stroke-dasharray:2 3;}
+.m44-plot .pin{fill:var(--m40-line); stroke:var(--surface); stroke-width:3; filter:drop-shadow(0 3px 6px rgba(40,10,90,.28));}
+.m44-plot .pin.bad{fill:var(--danger);}
+.m44-plot svg svg{color:#FFFFFF; pointer-events:none;}
+html.m40[data-sk="b"] .m44-plot svg svg{color:#0C0A10;}
+.m44-plot .ex{stroke:var(--m-leaf); stroke-width:1.4; stroke-dasharray:3 3;} .m44-plot .exd{fill:var(--m-leaf); stroke:var(--surface); stroke-width:2;}
+.m44-plot .tg{stroke:var(--ink); stroke-width:1.4; stroke-dasharray:6 4; opacity:.7;} .m44-plot .tgl{font-weight:800; fill:var(--ink);}
+.m44-plot .mpv{stroke:var(--m40-line); stroke-width:1.2; opacity:.35;}
+.m44-plot .w{fill:none; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round;}
+.m44-plot .w.lo{stroke:var(--muted); stroke-dasharray:3 4;} .m44-plot .w.hi{stroke:var(--m-leaf);} .m44-plot .w.mid{stroke:var(--m40-line); stroke-width:3;}
+.m44-plot .wd{stroke:var(--surface); stroke-width:2;} .m44-plot .wd.lo{fill:var(--muted);} .m44-plot .wd.mid{fill:var(--m40-line);} .m44-plot .wd.hi{fill:var(--m-leaf);}
+.m44-plot .rr{fill:none; stroke:var(--muted); stroke-width:2.4; stroke-dasharray:5 4;} .m44-plot .rb{fill:none; stroke:var(--m40-line); stroke-width:3;}
+.m44-plot .cr{fill:var(--m-leaf); stroke:var(--surface); stroke-width:3;}
+.m44-leg{display:flex; gap:12px; flex-wrap:wrap; font-size:.8rem; font-weight:700; color:var(--muted);}
+.m44-leg span{display:inline-flex; align-items:center; gap:6px;} .m44-leg span::before{content:''; width:16px; height:3px; border-radius:2px; background:currentColor;}
+.m44-leg .lo::before{background:var(--muted);} .m44-leg .mid::before{background:var(--m40-line);} .m44-leg .hi::before{background:var(--m-leaf);}
+.m44-leg .r::before{background:var(--muted);} .m44-leg .b::before{background:var(--m40-line);}
+.m44-note{margin:0; font-size:.88rem; line-height:1.42; color:var(--ink);}
+.m44-note.bad{color:var(--danger); font-weight:700;} .m44-note.hard{color:var(--ink);} .m44-note.ok{color:var(--ink);}
+.m44-mv{margin:0; align-self:flex-start;}
+.m44-sl{display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:.86rem; font-weight:700; margin-top:4px;}
+.m44-sl b{font:800 1.05rem var(--font-num);}
+#m44S{width:100%; accent-color:var(--m40-line); height:32px; margin:0;}
+.m44-bul{position:relative; display:flex; height:14px; border-radius:99px; overflow:visible; margin:30px 0 4px;}
+.m44-bul i{height:100%;} .m44-bul .z1{width:42.86%; background:var(--m-leaf-weak); border-radius:99px 0 0 99px;} .m44-bul .z2{width:21.43%; background:var(--warn-weak);} .m44-bul .z3{flex:1; background:var(--danger-weak); border-radius:0 99px 99px 0;}
+.m44-bul em{position:absolute; top:-6px; width:4px; height:26px; margin-left:-2px; border-radius:2px; background:var(--muted); font-style:normal;}
+.m44-bul em.aft{background:var(--m40-line); width:6px; margin-left:-3px;} .m44-bul em.aft.bad{background:var(--danger);}
+.m44-bul em span{position:absolute; bottom:calc(100% + 3px); left:50%; transform:translateX(-50%); white-space:nowrap; font:800 .72rem var(--font-num); color:var(--muted);}
+.m44-bul em.aft span{color:var(--ink); bottom:auto; top:calc(100% + 3px);}
+.m44-bz{display:flex; justify-content:space-between; gap:4px; font-size:.7rem; font-weight:700; color:var(--muted); margin-top:16px;}
+.m44-tc{display:flex; height:18px; border-radius:99px; overflow:hidden; background:var(--surface-2);}
+.m44-tcb{height:10px; border-radius:99px; background:var(--surface-2); overflow:hidden;} .m44-tcb i{display:block; height:100%; background:repeating-linear-gradient(135deg,var(--m-leaf) 0 6px,transparent 6px 10px); opacity:.8;}
+.tc-base{background:var(--m40-line);} .tc-int{background:var(--danger);} .tc-once{background:var(--m-sun);} .tc-run{background:var(--c4,#E879A8);}
+.m44-tc i{display:block; height:100%;} .m44-tc i+i{border-left:2px solid var(--surface);}
+.m44-lg{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px;}
+.m44-lg li{display:flex; align-items:center; gap:8px; font-size:.86rem;} .m44-lg li i{width:12px; height:12px; border-radius:4px; flex:none;}
+.m44-lg li span{flex:1; color:var(--muted); font-weight:600; min-width:0;} .m44-lg li b{font:800 .9rem var(--font-num); white-space:nowrap;}
+.m44-lg li.bk i{background:repeating-linear-gradient(135deg,var(--m-leaf) 0 3px,transparent 3px 5px);} .m44-lg li.bk b{color:var(--m-leaf);}
+.m44-x ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:6px; font-size:.9rem; line-height:1.42;}
+.m44-x .gp-mini{margin:4px 0 0; align-self:flex-start;}
+.m44-ans{border-left:3px solid var(--m40-line); padding:2px 0 2px 12px; font-size:.92rem; line-height:1.5;} .m44-ans p{margin:0 0 6px;}
+.m44-its{display:flex; flex-direction:column; gap:8px;}
+.m44-it{display:flex; align-items:center; gap:12px; width:100%; text-align:left; padding:12px 14px; border:1px solid var(--line); border-radius:18px; background:var(--surface); color:var(--ink); font:inherit; cursor:pointer; min-height:64px;}
+.m44-iti{width:42px; height:42px; border-radius:14px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); flex:none;}
+.m44-itt{flex:1; display:flex; flex-direction:column; gap:3px; min-width:0;} .m44-itt b{font-weight:800; overflow-wrap:anywhere;} .m44-itt small{color:var(--muted); font-weight:600;}
+.m44-st.ok{color:var(--m-leaf);} .m44-st.bad{color:var(--danger);}
+/* «Деньги вперёд»: значки покупок */
+.m44-hr{display:flex; flex-direction:column; gap:8px; padding-top:12px; border-top:1px dashed var(--line);}
+.m44-hrh{display:flex; justify-content:space-between; align-items:center; gap:8px;} .m44-hrh b{display:flex; align-items:center; gap:6px; font-size:.92rem;}
+.m44-hrh .mi{color:var(--m40-line);}
+.m44-all{border:0; background:none; color:var(--brand-ink); font:inherit; font-weight:800; font-size:.82rem; cursor:pointer; min-height:36px; padding:0 4px;}
+.m44-icons{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px;}
+.m44-ic{width:100%; max-width:52px; height:44px; justify-self:center; border-radius:14px; border:1.5px dashed var(--m40-line); background:var(--surface-2); color:var(--m40-line); display:grid; place-items:center; cursor:grab; touch-action:none; padding:0; transition:transform .12s;}
+.m44-ic.hold{transform:scale(1.08); background:var(--brand-weak);}
+.m44-chips{display:flex; gap:6px; flex-wrap:wrap;}
+.m44-chip{display:inline-flex; align-items:center; gap:6px; border:0; border-radius:99px; padding:6px 11px; min-height:34px; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-weight:800; font-size:.78rem; cursor:pointer; max-width:100%;}
+.m44-chip span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m44-hr small{color:var(--muted); font-size:.78rem;}
+.m44-ghost{position:fixed; left:0; top:0; z-index:60; width:48px; height:48px; border-radius:16px; display:grid; place-items:center; background:var(--m40-line); color:#FFFFFF; box-shadow:0 10px 24px rgba(40,10,90,.35); pointer-events:none;}
+.m40-plot.m44-over{box-shadow:0 0 0 3px var(--m40-line); background:var(--brand-weak);}
+@media (prefers-reduced-motion:reduce){ .m44-ty,.m44-ic{transition:none;} }
+
+.bp-foot #m44Add{width:100%;} .bp-foot .sheet-row{display:flex; gap:8px;} .bp-foot .sheet-row .btn{flex:1;}
+.m44-bul em.r span{left:auto; right:-2px; transform:none;} .m44-bul em.l span{left:-2px; transform:none;}
+/* ---------- v45: график в ответе Сифры (627) ---------- */
+.sf-m.a.m45-m{max-width:94%; width:94%;}
+.m45-ch{margin:8px 0 2px; padding:10px 10px 8px; border-radius:14px; background:var(--surface); border:1px solid var(--line); display:flex; flex-direction:column; gap:6px; min-width:0;}
+.m45-t{display:flex; align-items:center; gap:6px; font-weight:800; font-size:.86rem; line-height:1.3;}
+.m45-t .mi{flex:none; color:var(--m40-line);}
+.m45-svg{display:block; width:100%; height:auto; overflow:visible; touch-action:manipulation;}
+.m45-svg .gr{stroke:var(--line); stroke-width:1; stroke-dasharray:3 4;}
+.m45-svg .z{stroke:var(--muted); stroke-width:1; opacity:.55;}
+.m45-svg .gl,.m45-svg .xl{fill:var(--muted); font:600 9.5px/1 var(--font-num);}
+.m45-svg .b{fill:var(--m40-line); opacity:.5; transition:opacity .15s;}
+.m45-svg .b.n{fill:var(--danger);}
+.m45-svg .b.on{opacity:1;}
+.m45-svg .ln{fill:none; stroke:var(--m40-line); stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round;}
+.m45-svg .ar{fill:var(--m40-line); opacity:.13;}
+.m45-svg .dt{fill:var(--surface); stroke:var(--m40-line); stroke-width:2; opacity:0;}
+.m45-svg .dt.on{opacity:1;}
+.m45-svg .hit{fill:transparent; cursor:pointer;}
+.m45-tip{min-height:1.2em; font-size:.8rem; font-weight:700; color:var(--muted);}
+.m45-cap p{margin:2px 0; font-size:.86rem; line-height:1.42;}
+.m45-at{color:var(--muted); font-size:.7rem;}
+.m45-e p{margin:0; font-size:.86rem; color:var(--muted);}
+.m45-rows{display:flex; flex-direction:column; gap:8px;}
+.m45-r{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:3px 10px; align-items:baseline; font-size:.86rem;}
+.m45-rl{min-width:0; overflow-wrap:anywhere;}
+.m45-r b{font:800 .86rem/1.2 var(--font-num); white-space:nowrap;}
+.m45-rb{grid-column:1/-1; height:7px; border-radius:99px; background:var(--surface-2); overflow:hidden;}
+.m45-rb i{display:block; height:100%; border-radius:99px; background:var(--m40-line);}
+/* ---------- v45: сканер документа (628) ---------- */
+.p29-pg .m45-eb{position:absolute; right:6px; top:6px; width:34px; height:34px; border-radius:10px; border:0; background:rgba(255,255,255,.94); color:#1d2433; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,.25);}
+.m45-ok{position:absolute; left:6px; top:32px; display:flex; align-items:center; gap:3px; padding:2px 7px 2px 5px; border-radius:99px; background:var(--m-leaf,#2F8F5B); color:#fff; font-size:.66rem; font-weight:800;}
+.m45-ed{position:fixed; inset:0; z-index:90; display:flex; flex-direction:column; background:#141414; color:#fff; overscroll-behavior:contain;}
+.m45-eh{display:flex; align-items:flex-start; gap:12px; padding:calc(12px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px));}
+.m45-eh>div{flex:1; min-width:0; display:flex; flex-direction:column; gap:3px;}
+.m45-eh b{font-size:1rem;} .m45-eh small{color:rgba(255,255,255,.72); font-size:.82rem; line-height:1.35;}
+.m45-ex{flex:none; width:44px; height:44px; border-radius:12px; border:0; background:rgba(255,255,255,.12); color:#fff; display:grid; place-items:center; cursor:pointer;}
+.m45-ew{flex:1; min-height:0; display:flex; align-items:center; justify-content:center; padding:12px; touch-action:none;}
+.m45-st{position:relative; flex:none;}
+.m45-cv{display:block; width:100%; height:100%; border-radius:4px;}
+.m45-st svg{position:absolute; inset:0; width:100%; height:100%; overflow:visible;}
+.m45-sh{fill:rgba(0,0,0,.52); fill-rule:evenodd;}
+.m45-pl{fill:none; stroke:#FFC94A; stroke-linejoin:round;}
+.m45-hd{cursor:grab; outline:none;} .m45-hd.drag{cursor:grabbing;}
+.m45-hh{fill:transparent;}
+.m45-hc{fill:rgba(255,201,74,.28); stroke:#FFC94A;}
+.m45-hd:focus-visible .m45-hc,.m45-hd.drag .m45-hc{fill:rgba(255,255,255,.35); stroke:#fff;}
+.m45-lp{position:absolute; left:8px; top:8px; width:112px; height:112px; border-radius:50%; border:3px solid #fff; box-shadow:0 6px 18px rgba(0,0,0,.5); pointer-events:none; background:#fff;}
+.m45-lp.r{left:auto; right:8px;}
+.m45-ef{display:flex; flex-direction:column; gap:10px; padding:12px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px)); background:#1d1d1d;}
+.m45-ed .m45-seg{display:flex; gap:6px; align-self:center; background:rgba(255,255,255,.08); padding:4px; border-radius:12px;}
+.m45-ed .m45-seg button{min-height:38px; min-width:92px; padding:0 14px; border:0; border-radius:9px; background:transparent; color:#fff; font:inherit; font-weight:700; cursor:pointer;}
+.m45-ed .m45-seg button[aria-pressed="true"]{background:#fff; color:#141414;}
+.m45-eb2{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.m45-ef .btn-ghost{color:#fff; border-color:rgba(255,255,255,.28); background:transparent;}
+.m45-ef .btn{min-height:46px; display:flex; align-items:center; justify-content:center; gap:6px;}
+/* ---------- v45: «Поделиться → Mira» (629) ---------- */
+.m45-shp{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:0 0 10px; position:relative;}
+.m45-shp img{width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:10px; background:var(--surface-2);}
+.m45-shp span{position:absolute; right:6px; bottom:6px; padding:2px 8px; border-radius:99px; background:rgba(0,0,0,.65); color:#fff; font-weight:800; font-size:.78rem;}
+.m45-sht{margin:0 0 12px; padding:10px 12px; border-left:3px solid var(--m40-line); background:var(--surface-2); border-radius:0 12px 12px 0; font-size:.88rem; white-space:pre-wrap; overflow-wrap:anywhere;}
+.m45-sho{display:flex; flex-direction:column; gap:8px; margin-bottom:12px;}
+.m45-so{display:flex; align-items:center; gap:12px; padding:14px; border:1px solid var(--line); border-radius:16px; background:var(--surface); color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+.m45-so .mi{flex:none; color:var(--m40-line);}
+.m45-so span{display:flex; flex-direction:column; gap:2px; min-width:0;}
+.m45-so b{font-weight:800;} .m45-so small{color:var(--muted); font-size:.8rem; line-height:1.3;}
+.m45-so:active{transform:scale(.98);}
+/* <</v44 css>> */
 
 
 </style>
@@ -20983,6 +21161,844 @@ document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.clo
   if(e.key==='Escape'){ M43.sel=null; m43MapRe(); const f=document.querySelector('#m43Map .m43-plot'); if(f) f.focus({preventScroll:true}); return; }
   const P=m43Pts(t), has=P.some(p=>p.sc!=null), best=P.sort((p,q)=>m43Score(q,has)-m43Score(p,has)||q.yr-p.yr); let i=best.findIndex(p=>p.id===M43.sel); i=e.key==='ArrowRight'||e.key==='ArrowDown'?i+1:i-1; if(i<0) i=best.length-1; if(i>=best.length) i=0; M43.sel=null; m43Pick(best[i].id); });
 /* <</v43 js>> */
+/* <<v44 js>> */
+const M44S={
+ru:{
+  m44T:'Большая покупка', m44Lead:'Поставьте покупку на месяц — Mira покажет, хватит ли денег, когда вы сможете купить и сколько это стоит на самом деле.',
+  m44Ty:{home:'Квартира, дом',car:'Машина',thing:'Вещь',event:'Свадьба, той',study:'Учёба',trip:'Поездка',other:'Другое'},
+  m44TyS:{home:'Жильё',car:'Машина',thing:'Вещь',event:'Той',study:'Учёба',trip:'Поездка',other:'Другое'},
+  m44Nm:'Что покупаете', m44NmPh:{home:'Например: 2 комнаты в новом доме',car:'Например: Toyota Camry 2019',thing:'Например: холодильник Samsung',event:'Например: свадьба сына',study:'Например: магистратура, 2 года',trip:'Например: Стамбул на 5 дней',other:'Своя цель'},
+  m44City:'Город', m44CityPh:'Например: Душанбе, Ташкент, Стамбул',
+  m44Area:'Площадь, м²', m44Pm2:'Цена за 1 м²', m44Rooms:'Комнат', m44Kind:{new:'Новостройка',second:'Вторичка'}, m44CarK:{new:'Новая',second:'С пробегом'},
+  m44Rep:'Ремонт', m44RepK:{none:'Не нужен',cosm:'Косметический',full:'Полный'}, m44RepM2:'Ремонт за 1 м²',
+  m44Close:'Оформление сделки, % цены', m44Util:'Коммуналка и налог в месяц', m44Rent:'Сейчас снимаю жильё за (в месяц)', m44RentH:'Если снимаете — покажем, когда покупка начнёт выигрывать у аренды.', m44Grow:'Рост цен на жильё в год, %',
+  m44Price:'Цена', m44Year:'Год выпуска', m44Km:'Км в месяц', m44L100:'Расход, л на 100 км', m44Fuel:'Цена литра бензина', m44Ins:'Страховка в год', m44Tax:'Налог в год', m44Fix:'Ремонт и ТО в год', m44Depr:'Теряет в цене в год, %', m44Life:'Прослужит, лет', m44Sum:'Сумма',
+  m44More:'Ещё цифры', m44Find:'Сифра, найди цену', m44Finding:'Сифра ищет цены в объявлениях и обзорах…', m44Range:(lo,hi)=>'Обычно '+lo+' – '+hi, m44Per:{m2:'за 1 м²',total:''}, m44Use:'Подставить цифры', m44Used:'Подставлено',
+  m44Src:'Где смотрела', m44FindErr:'Не получилось найти цену. Впишите сами или попробуйте позже.', m44Old:'Для поиска цен нужен новый сервер Mira (версия 22).', m44Limit:'На сегодня поиски закончились — завтра снова можно.', m44Off:'Нет интернета — впишите цену сами.', m44NeedNm:'Сначала напишите, что покупаете, и город.',
+  m44PayT:'Как платить', m44Pay:{save:'Накопить',loan:'Кредит',inst:'Рассрочка'}, m44Dp:'Первый взнос, %', m44Rate:'Ставка, % в год', m44Yrs:'Срок, лет', m44N:'Месяцев', m44Mk:'Наценка, %',
+  m44MoneyT:'Мои деньги', m44Have:'Уже отложено на это', m44S:'Откладываю в месяц', m44SH:v=>'По вашим записям свободно примерно '+v+' в месяц.', m44SH0:'Впишите, сколько можете откладывать в месяц.', m44Inc:'Доход в месяц', m44IncH:'Чистый доход: выручка минус расходы магазина (или зарплата), до кредитов. Нужен, чтобы показать нагрузку.', m44Free:'Когда кредит закроется, его платёж тоже откладывать',
+  m44Tot:'Полная цена', m44Need:'Нужно к покупке', m44Pm:'Платёж в месяц', m44When:'Месяц покупки',
+  m44LineT:'Деньги на покупку', m44LineS:'Ведите значок по графику — всё пересчитается.', m44With:'с покупкой', m44Without:'без покупки', m44LineA:(m,v)=>'Деньги на покупку по месяцам. Покупка: '+m+'. Меньше всего: '+v+'.',
+  m44Ok:(m,v)=>m+': денег хватает, после покупки останется '+v+'.', m44Bad:(m,v)=>m+': не хватит '+v+'.', m44Neg:(m,v)=>'После покупки деньги уйдут в минус: '+m+', не хватит '+v+'.',
+  m44Early:m=>'Раньше всего можно: '+m+'.', m44Never:'В ближайшие 10 лет при таких цифрах не получится — нужно откладывать больше или выбрать дешевле.', m44PerM:(v,m)=>'Чтобы купить в этот месяц ('+m+'), откладывайте по '+v+'.', m44Move:'Перенести сюда',
+  m44WhenT:'Когда смогу', m44WhenL:{lo:'если хуже',mid:'обычно',hi:'если лучше'}, m44WhenR:(mid,lo,hi)=>'Обычно — '+mid+'. Если откладывать на 20% меньше — '+lo+', если на 20% больше — '+hi+'.', m44WhenN:'Нужная сумма не собирается за 10 лет.', m44Goal:'нужно', m44SetS:'Откладывать в месяц', m44WhenA:'Как растут отложенные деньги в трёх вариантах и когда соберётся нужная сумма.',
+  m44DtiT:'Платежи к доходу', m44Dz:{ok:'спокойно',hard:'тяжело',bad:'опасно'}, m44DtiS:(p,z)=>'Все кредиты вместе — '+p+'% дохода: '+z+'.', m44DtiNo:'Впишите доход в «Мои деньги» — покажем нагрузку.', m44Now:'сейчас', m44After:'с покупкой', m44DtiA:(a,b)=>'Нагрузка кредитов: сейчас '+a+'%, с покупкой '+b+'%.',
+  m44TcoT:'Настоящая цена за 5 лет', m44Tc:{base:'цена',int:'проценты',once:'оформление и ремонт',run:'расходы владения',back:'можно продать через 5 лет'}, m44TcoS:(v,m)=>'За 5 лет: '+v+', это '+m+' в месяц.', m44TcoUp:v=>'Через 5 лет жильё может стоить около '+v+' — это не потраченные деньги.',
+  m44RvbT:'Снимать или купить', m44Rvb:{rent:'снимать',buy:'купить'}, m44RvbS:y=>'Покупка начинает выигрывать у аренды примерно через '+y+'.', m44RvbN:'За 15 лет покупка не выигрывает у аренды при таких цифрах.', m44Yr:y=>y+' г.', m44YrW:y=>y===1?'1 год':y<5?y+' года':y+' лет', m44RvbA:'Сколько всего уйдёт денег: аренда против покупки, за 15 лет.',
+  m44ShortT:'Коротко', m44Ask:'Сифра, объясни подробнее', m44Asking:'Сифра считает и пишет…', m44AskErr:'Сифра сейчас не ответила. Попробуйте позже.', m44NoLoan:'Mira не советует брать кредит — она честно показывает цифры, решение за вами.',
+  m44X:{tot:(v,o)=>'Полная цена — '+v+(o?' (из них оформление и ремонт — '+o+')':'')+'.',
+    save:(s,m,lo)=>'Если откладывать по '+s+' в месяц, нужная сумма соберётся: '+m+(lo?' (если хуже — '+lo+')':'')+'.',
+    loan:(d,m,a,y,i)=>'Первый взнос '+d+' соберётся: '+m+'. Дальше платёж '+a+' в месяц '+y+', проценты за весь срок — '+i+'.',
+    inst:(a,n,i)=>'Рассрочка: '+a+' в месяц, '+n+' мес., переплата — '+i+'.',
+    run:v=>'Владение будет стоить ещё '+v+' в месяц.',
+    dti:(p,z)=>'Все кредиты вместе — '+p+'% дохода: '+z+'.',
+    tco:(v,m)=>'За 5 лет со всеми расходами — '+v+', или '+m+' в месяц.',
+    rvb:y=>'Купить выгоднее, чем снимать, примерно через '+y+'.',
+    never:'Нужная сумма за 10 лет не собирается — нужно откладывать больше, взять дешевле или дольше копить.'},
+  m44Save:'Сохранить на график', m44Saved:'Покупка на графике «Деньги вперёд»', m44Del:'Удалить покупку', m44DelQ:'Удалить эту покупку?', m44Fill:'Впишите цену — и графики оживут.', m44Cancel:'Отмена', m44Done:'Готово',
+  m44Home:'Большая покупка', m44HomeH:'Перетащите значок на график или нажмите.', m44List:'Мои покупки', m44New:'Новая покупка', m44Empty:'Пока нет покупок. Выберите, что хотите купить.',
+  m44Ev:n=>'Покупка: '+n
+},
+tg:{
+  m44T:'Хариди калон', m44Lead:'Харидро ба моҳ гузоред — Mira нишон медиҳад, ки пул мерасад ё не, кай харида метавонед ва он дар асл чанд меарзад.',
+  m44Ty:{home:'Квартира, хона',car:'Мошин',thing:'Ашё',event:'Тӯй',study:'Таҳсил',trip:'Сафар',other:'Дигар'},
+  m44TyS:{home:'Хона',car:'Мошин',thing:'Ашё',event:'Тӯй',study:'Таҳсил',trip:'Сафар',other:'Дигар'},
+  m44Nm:'Чӣ мехаред', m44NmPh:{home:'Масалан: 2 ҳуҷра дар хонаи нав',car:'Масалан: Toyota Camry 2019',thing:'Масалан: яхдони Samsung',event:'Масалан: тӯйи писар',study:'Масалан: магистратура, 2 сол',trip:'Масалан: Истамбул, 5 рӯз',other:'Ҳадафи худ'},
+  m44City:'Шаҳр', m44CityPh:'Масалан: Душанбе, Тошканд, Истамбул',
+  m44Area:'Масоҳат, м²', m44Pm2:'Нарх барои 1 м²', m44Rooms:'Ҳуҷра', m44Kind:{new:'Хонаи нав',second:'Дуюмдаста'}, m44CarK:{new:'Нав',second:'Корфармуда'},
+  m44Rep:'Таъмир', m44RepK:{none:'Лозим нест',cosm:'Сабук',full:'Пурра'}, m44RepM2:'Таъмир барои 1 м²',
+  m44Close:'Расмикунонӣ, % аз нарх', m44Util:'Пардохтҳои коммуналӣ ва андоз дар моҳ', m44Rent:'Ҳоло иҷора медиҳам (дар моҳ)', m44RentH:'Агар иҷора нишинед — нишон медиҳем, ки кай харид аз иҷора фоиданоктар мешавад.', m44Grow:'Афзоиши нархи манзил дар сол, %',
+  m44Price:'Нарх', m44Year:'Соли истеҳсол', m44Km:'Км дар моҳ', m44L100:'Сарф, литр ба 100 км', m44Fuel:'Нархи 1 литр бензин', m44Ins:'Суғурта дар сол', m44Tax:'Андоз дар сол', m44Fix:'Таъмир ва хизматрасонӣ дар сол', m44Depr:'Дар сол арзон мешавад, %', m44Life:'Чанд сол хизмат мекунад', m44Sum:'Маблағ',
+  m44More:'Рақамҳои дигар', m44Find:'Сифра, нархро ёб', m44Finding:'Сифра нархҳоро дар эълонҳо ва шарҳҳо меҷӯяд…', m44Range:(lo,hi)=>'Одатан '+lo+' – '+hi, m44Per:{m2:'барои 1 м²',total:''}, m44Use:'Рақамҳоро гузоштан', m44Used:'Гузошта шуд',
+  m44Src:'Аз куҷо дидам', m44FindErr:'Нарх ёфт нашуд. Худатон нависед ё баъдтар кӯшиш кунед.', m44Old:'Барои ҷустани нарх сервери нави Mira (версияи 22) лозим аст.', m44Limit:'Ҷустуҷӯҳои имрӯза тамом шуданд — фардо боз мумкин аст.', m44Off:'Интернет нест — нархро худатон нависед.', m44NeedNm:'Аввал нависед, ки чӣ мехаред ва дар кадом шаҳр.',
+  m44PayT:'Чӣ тавр пардохт', m44Pay:{save:'Ҷамъ кардан',loan:'Қарз',inst:'Насия'}, m44Dp:'Пардохти аввал, %', m44Rate:'Фоиз дар сол, %', m44Yrs:'Мӯҳлат, сол', m44N:'Моҳ', m44Mk:'Иловапулӣ, %',
+  m44MoneyT:'Пули ман', m44Have:'Аллакай барои ин гузоштам', m44S:'Дар як моҳ мегузорам', m44SH:v=>'Аз рӯи сабтҳоятон тақрибан '+v+' дар моҳ озод аст.', m44SH0:'Нависед, ки дар як моҳ чанд гузошта метавонед.', m44Inc:'Даромад дар моҳ', m44IncH:'Даромади тоза: фурӯш тарҳи хароҷоти мағоза (ё маош), то қарзҳо. Барои нишон додани сарбории қарз лозим аст.', m44Free:'Вақте қарз пӯшида шавад, пардохташро ҳам гузоштан',
+  m44Tot:'Нархи пурра', m44Need:'Барои харид лозим', m44Pm:'Пардохт дар моҳ', m44When:'Моҳи харид',
+  m44LineT:'Пул барои харид', m44LineS:'Нишонаро дар график кашед — ҳама аз нав ҳисоб мешавад.', m44With:'бо харид', m44Without:'бе харид', m44LineA:(m,v)=>'Пул барои харид аз рӯи моҳҳо. Харид: '+m+'. Камтарин: '+v+'.',
+  m44Ok:(m,v)=>m+': пул мерасад, пас аз харид '+v+' мемонад.', m44Bad:(m,v)=>m+': '+v+' намерасад.', m44Neg:(m,v)=>'Пас аз харид пул ба минус меравад: '+m+', '+v+' намерасад.',
+  m44Early:m=>'Барвақттарин: '+m+'.', m44Never:'Бо ин рақамҳо дар 10 соли наздик намешавад — бештар гузоред ё арзонтар интихоб кунед.', m44PerM:(v,m)=>'Барои харид дар ҳамин моҳ ('+m+') ҳар моҳ '+v+' гузоред.', m44Move:'Ба ин ҷо гузарондан',
+  m44WhenT:'Кай метавонам', m44WhenL:{lo:'агар бадтар',mid:'одатан',hi:'агар беҳтар'}, m44WhenR:(mid,lo,hi)=>'Одатан — '+mid+'. Агар 20% камтар гузоред — '+lo+', агар 20% бештар — '+hi+'.', m44WhenN:'Маблағи лозимӣ дар 10 сол ҷамъ намешавад.', m44Goal:'лозим', m44SetS:'Дар моҳ гузоштан', m44WhenA:'Пули ҷамъшуда дар се вариант чӣ тавр меафзояд ва маблағи лозимӣ кай ҷамъ мешавад.',
+  m44DtiT:'Пардохтҳо нисбат ба даромад', m44Dz:{ok:'ором',hard:'вазнин',bad:'хатарнок'}, m44DtiS:(p,z)=>'Ҳамаи қарзҳо якҷоя — '+p+'% даромад: '+z+'.', m44DtiNo:'Даромадро дар «Пули ман» нависед — сарбориро нишон медиҳем.', m44Now:'ҳозир', m44After:'бо харид', m44DtiA:(a,b)=>'Сарбории қарз: ҳозир '+a+'%, бо харид '+b+'%.',
+  m44TcoT:'Нархи аслӣ дар 5 сол', m44Tc:{base:'нарх',int:'фоизҳо',once:'расмикунонӣ ва таъмир',run:'хароҷоти нигоҳдорӣ',back:'пас аз 5 сол фурӯхтан мумкин'}, m44TcoS:(v,m)=>'Дар 5 сол: '+v+', яъне '+m+' дар моҳ.', m44TcoUp:v=>'Пас аз 5 сол манзил метавонад тақрибан '+v+' арзад — ин пули сарфшуда нест.',
+  m44RvbT:'Иҷора ё харид', m44Rvb:{rent:'иҷора',buy:'харид'}, m44RvbS:y=>'Харид аз иҷора тақрибан пас аз '+y+' фоиданоктар мешавад.', m44RvbN:'Бо ин рақамҳо дар 15 сол харид аз иҷора фоиданоктар намешавад.', m44Yr:y=>y+' с.', m44YrW:y=>y+' сол', m44RvbA:'Чӣ қадар пул меравад: иҷора ва харид, дар 15 сол.',
+  m44ShortT:'Мухтасар', m44Ask:'Сифра, муфассал фаҳмон', m44Asking:'Сифра ҳисоб карда менависад…', m44AskErr:'Сифра ҳоло ҷавоб надод. Баъдтар кӯшиш кунед.', m44NoLoan:'Mira қарз гирифтанро маслиҳат намедиҳад — рақамҳоро ростқавлона нишон медиҳад, қарор аз худи шумо.',
+  m44X:{tot:(v,o)=>'Нархи пурра — '+v+(o?' (аз он расмикунонӣ ва таъмир — '+o+')':'')+'.',
+    save:(s,m,lo)=>'Агар ҳар моҳ '+s+' гузоред, маблағи лозимӣ то '+m+' ҷамъ мешавад'+(lo?' (агар бадтар — то '+lo+')':'')+'.',
+    loan:(d,m,a,y,i)=>'Пардохти аввал '+d+' то '+m+' ҷамъ мешавад. Баъд ҳар моҳ '+a+' дар давоми '+y+', фоизҳо дар тамоми мӯҳлат — '+i+'.',
+    inst:(a,n,i)=>'Насия: '+a+' дар моҳ, '+n+' моҳ, пули зиёдатӣ — '+i+'.',
+    run:v=>'Нигоҳдорӣ боз '+v+' дар моҳ меарзад.',
+    dti:(p,z)=>'Ҳамаи қарзҳо якҷоя — '+p+'% даромад: '+z+'.',
+    tco:(v,m)=>'Дар 5 сол бо ҳамаи хароҷот — '+v+', ё '+m+' дар моҳ.',
+    rvb:y=>'Харидан аз иҷора тақрибан пас аз '+y+' фоиданоктар мешавад.',
+    never:'Маблағи лозимӣ дар 10 сол ҷамъ намешавад — бештар гузоред, арзонтар гиред ё дарозтар ҷамъ кунед.'},
+  m44Save:'Ба график гузоштан', m44Saved:'Харид дар графики «Пул ба пеш»', m44Del:'Харидро нест кардан', m44DelQ:'Ин харид нест карда шавад?', m44Fill:'Нархро нависед — графикҳо зинда мешаванд.', m44Cancel:'Бекор', m44Done:'Тайёр',
+  m44Home:'Хариди калон', m44HomeH:'Нишонаро ба график кашед ё пахш кунед.', m44List:'Харидҳои ман', m44New:'Хариди нав', m44Empty:'Ҳоло харид нест. Интихоб кунед, ки чӣ харидан мехоҳед.',
+  m44Ev:n=>'Харид: '+n
+},
+en:{
+  m44T:'Big purchase', m44Lead:'Put a purchase on a month — Mira shows whether the money is there, when you can buy it and what it really costs.',
+  m44Ty:{home:'Flat or house',car:'Car',thing:'Item',event:'Wedding',study:'Study',trip:'Trip',other:'Other'},
+  m44TyS:{home:'Home',car:'Car',thing:'Item',event:'Wedding',study:'Study',trip:'Trip',other:'Other'},
+  m44Nm:'What are you buying', m44NmPh:{home:'For example: 2 rooms in a new building',car:'For example: Toyota Camry 2019',thing:'For example: Samsung fridge',event:'For example: son’s wedding',study:'For example: master’s degree, 2 years',trip:'For example: Istanbul, 5 days',other:'Your own goal'},
+  m44City:'City', m44CityPh:'For example: Dushanbe, Tashkent, Istanbul',
+  m44Area:'Area, m²', m44Pm2:'Price per m²', m44Rooms:'Rooms', m44Kind:{new:'New build',second:'Resale'}, m44CarK:{new:'New',second:'Used'},
+  m44Rep:'Renovation', m44RepK:{none:'Not needed',cosm:'Light',full:'Full'}, m44RepM2:'Renovation per m²',
+  m44Close:'Deal costs, % of price', m44Util:'Utilities and tax per month', m44Rent:'I rent now for (per month)', m44RentH:'If you rent, we show when buying starts to beat renting.', m44Grow:'Home prices grow per year, %',
+  m44Price:'Price', m44Year:'Year', m44Km:'Km per month', m44L100:'Fuel, l per 100 km', m44Fuel:'Price per litre', m44Ins:'Insurance per year', m44Tax:'Tax per year', m44Fix:'Repairs and service per year', m44Depr:'Loses value per year, %', m44Life:'Will last, years', m44Sum:'Amount',
+  m44More:'More numbers', m44Find:'Sifra, find the price', m44Finding:'Sifra is checking listings and reviews…', m44Range:(lo,hi)=>'Usually '+lo+' – '+hi, m44Per:{m2:'per m²',total:''}, m44Use:'Use these numbers', m44Used:'Filled in',
+  m44Src:'Where I looked', m44FindErr:'Couldn’t find the price. Type it in or try later.', m44Old:'Price search needs the new Mira server (version 22).', m44Limit:'Today’s searches are used up — try again tomorrow.', m44Off:'No internet — type the price in yourself.', m44NeedNm:'First write what you are buying and the city.',
+  m44PayT:'How to pay', m44Pay:{save:'Save up',loan:'Loan',inst:'Instalments'}, m44Dp:'Down payment, %', m44Rate:'Rate, % a year', m44Yrs:'Term, years', m44N:'Months', m44Mk:'Mark-up, %',
+  m44MoneyT:'My money', m44Have:'Already saved for it', m44S:'I set aside per month', m44SH:v=>'From your records about '+v+' a month is free.', m44SH0:'Type how much you can set aside each month.', m44Inc:'Income per month', m44IncH:'Net income: sales minus shop costs (or your salary), before loans. Needed to show the loan burden.', m44Free:'When a loan is paid off, set its payment aside too',
+  m44Tot:'Full price', m44Need:'Needed to buy', m44Pm:'Monthly payment', m44When:'Purchase month',
+  m44LineT:'Money for the purchase', m44LineS:'Drag the icon along the chart — everything recalculates.', m44With:'with purchase', m44Without:'without', m44LineA:(m,v)=>'Money for the purchase by month. Purchase: '+m+'. Lowest: '+v+'.',
+  m44Ok:(m,v)=>m+': the money is there, '+v+' left after buying.', m44Bad:(m,v)=>m+': '+v+' short.', m44Neg:(m,v)=>'After buying, the money goes negative: '+m+', '+v+' short.',
+  m44Early:m=>'Earliest possible: '+m+'.', m44Never:'With these numbers it won’t happen in the next 10 years — save more or choose something cheaper.', m44PerM:(v,m)=>'To buy in this month ('+m+'), set aside '+v+' a month.', m44Move:'Move it here',
+  m44WhenT:'When can I', m44WhenL:{lo:'if worse',mid:'usually',hi:'if better'}, m44WhenR:(mid,lo,hi)=>'Usually — '+mid+'. Saving 20% less — '+lo+', 20% more — '+hi+'.', m44WhenN:'The amount isn’t reached within 10 years.', m44Goal:'needed', m44SetS:'Set aside per month', m44WhenA:'How savings grow in three cases and when the needed amount is reached.',
+  m44DtiT:'Payments vs income', m44Dz:{ok:'comfortable',hard:'heavy',bad:'risky'}, m44DtiS:(p,z)=>'All loans together — '+p+'% of income: '+z+'.', m44DtiNo:'Add your income under “My money” to see the burden.', m44Now:'now', m44After:'with purchase', m44DtiA:(a,b)=>'Loan burden: now '+a+'%, with purchase '+b+'%.',
+  m44TcoT:'Real cost over 5 years', m44Tc:{base:'price',int:'interest',once:'deal costs and renovation',run:'running costs',back:'resale in 5 years'}, m44TcoS:(v,m)=>'Over 5 years: '+v+', that is '+m+' a month.', m44TcoUp:v=>'In 5 years the home may be worth about '+v+' — that money isn’t spent.',
+  m44RvbT:'Rent or buy', m44Rvb:{rent:'rent',buy:'buy'}, m44RvbS:y=>'Buying starts to beat renting after about '+y+'.', m44RvbN:'With these numbers buying doesn’t beat renting within 15 years.', m44Yr:y=>y+' y', m44YrW:y=>y===1?'1 year':y+' years', m44RvbA:'Total money spent: renting versus buying, over 15 years.',
+  m44ShortT:'In short', m44Ask:'Sifra, explain in more detail', m44Asking:'Sifra is working it out…', m44AskErr:'Sifra didn’t answer. Try later.', m44NoLoan:'Mira never advises taking a loan — it shows the numbers honestly, the decision is yours.',
+  m44X:{tot:(v,o)=>'Full price — '+v+(o?' (of which deal costs and renovation — '+o+')':'')+'.',
+    save:(s,m,lo)=>'Setting aside '+s+' a month, you’ll have the amount by '+m+(lo?' (if worse — by '+lo+')':'')+'.',
+    loan:(d,m,a,y,i)=>'The down payment of '+d+' will be ready by '+m+'. Then '+a+' a month for '+y+', interest over the whole term — '+i+'.',
+    inst:(a,n,i)=>'Instalments: '+a+' a month for '+n+' months, extra paid — '+i+'.',
+    run:v=>'Owning it costs another '+v+' a month.',
+    dti:(p,z)=>'All loans together — '+p+'% of income: '+z+'.',
+    tco:(v,m)=>'Over 5 years with all costs — '+v+', or '+m+' a month.',
+    rvb:y=>'Buying beats renting after about '+y+'.',
+    never:'The amount isn’t reached within 10 years — save more, pick something cheaper or save for longer.'},
+  m44Save:'Put on the chart', m44Saved:'Purchase added to “Money ahead”', m44Del:'Delete purchase', m44DelQ:'Delete this purchase?', m44Fill:'Type a price — and the charts come alive.', m44Cancel:'Cancel', m44Done:'Done',
+  m44Home:'Big purchase', m44HomeH:'Drag an icon onto the chart or tap it.', m44List:'My purchases', m44New:'New purchase', m44Empty:'No purchases yet. Choose what you want to buy.',
+  m44Ev:n=>'Purchase: '+n
+}};
+/* «550 800 с..» → «550 800 с.»: после суммы с точкой не ставим вторую */
+function m44P(s){ return String(s).replace(/\.\.(?=\s|$|\))/g,'.'); }
+function m44Wrap(o){ for(const k in o){ const v=o[k]; if(typeof v==='function') o[k]=function(){ return m44P(v.apply(this,arguments)); }; else if(v&&typeof v==='object'&&!Array.isArray(v)) m44Wrap(v); } return o; }
+for(const k of ['ru','tg','en']){ m44Wrap(M44S[k]); Object.assign(D[k],M44S[k]);
+  try{ D[k].m38It=Object.assign({},D[k].m38It,{bigbuy:M44S[k].m44T}); D[k].m38ItS=Object.assign({},D[k].m38ItS,{bigbuy:{ru:'квартира, машина, той — когда сможете',tg:'хона, мошин, тӯй — кай метавонед',en:'home, car, wedding — when you can'}[k]}); }catch(e){} }
+/* ===================== v44: «Большая покупка» (идея 609): квартира, машина, вещь, той, учёба, поездка — на графике ===================== */
+const M44T=['home','car','thing','event','study','trip','other'];
+const M44I={home:'home',car:'car',thing:'mobile',event:'heart',study:'cap',trip:'plane',other:'star'};
+const M44={cur:null,find:null,ask:null,drag:null,tm:0,fresh:true};
+function m44List(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.buys)) state.misc.buys=[]; return state.misc.buys; }
+function m44Save(){ try{ persist(); }catch(e){} }
+function m44Mi(){ const n=new Date(); return n.getFullYear()*12+n.getMonth(); }
+function m44MiOf(s){ const p=String(s||'').split('-'); return (+p[0])*12+((+p[1]||1)-1); }
+function m44Key(ai){ return Math.floor(ai/12)+'-'+String(ai%12+1).padStart(2,'0'); }
+function m44Ml(ai){ return L.m40Mn[((ai%12)+12)%12]+' '+Math.floor(ai/12); }
+function m44Ms(ai){ return MONTHS[lang].short[((ai%12)+12)%12]+' '+String(Math.floor(ai/12)).slice(2); }
+function m44N(v){ if(v==null||v==='') return 0; const n=+String(v).replace(/\s/g,'').replace(',','.'); return isFinite(n)?n:0; }
+function m44Has(v){ return v!=null&&v!==''&&isFinite(+v); }
+function m44New(t,ai,day){ t=M44T.includes(t)?t:'other'; const now=m44Mi(), dl={home:24,car:12}[t]||6;
+  return {id:'b'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),t,nm:'',city:'',mon:m44Key(ai!=null?Math.max(now,ai):now+dl),day:day||1,price:null,area:t==='home'?60:null,pm2:null,rooms:2,kind:'second',rep:'none',repM2:null,
+    close:t==='home'?2:t==='car'?1:0,util:null,grow:3,rent:null,km:1000,l100:8,fuel:null,ins:null,tax:null,fix:null,depr:null,life:5,
+    pay:{k:'save',dp:t==='home'?20:30,r:t==='home'?16:24,y:t==='home'?15:3,n:12,mk:10},S:null,have:null,inc:null,free:true,src:null,at:new Date().toISOString()}; }
+
+/* что известно из записей: доход, расходы, кредиты (с концом), свободные деньги в месяц */
+function m44Est(){ try{ const sh=ensureShop(), T=today0(), from=dkey(addDays(T,-60)); const mg=marginPct()||30, rev=revEst();
+    const exp=(sh.exp||[]).filter(e=>e.date>=from&&!String(e.id).endsWith('_b')).reduce((s,e)=>s+(+e.sum||0),0)/2;
+    const home=(state.home||[]).filter(h=>h.d>=from&&h.cat!=='bills').reduce((s,h)=>s+(+h.sum||0),0)/2;
+    const bills=(state.bills||[]).reduce((s,b)=>s+(+b.sum||0),0);
+    const loans=activeList().filter(x=>!x.loan.example&&!x.a.done&&!x.a.check).map(x=>({m:Math.round(x.a.monthly||0),left:Math.max(0,Math.round(x.a.monthsLeft||0))})).filter(l=>l.m>0);
+    const lp=loans.reduce((s,l)=>s+l.m,0), inc=rev&&rev.v>0?Math.max(0,rev.v*mg/100-exp):null;
+    return {inc:inc!=null?Math.round(inc):null,home,bills,loans,lp,free:inc!=null?Math.max(0,Math.round((inc-home-bills-lp)/10)*10):null}; }
+  catch(e){ return {inc:null,home:0,bills:0,loans:[],lp:0,free:null}; } }
+
+/* весь расчёт покупки */
+function m44Calc(b,E){ E=E||m44Est(); const now=m44Mi(), ai=Math.max(now,m44MiOf(b.mon)), mp=ai-now, P=b.pay||{k:'save'}, t=b.t;
+  let base=0, once=0, run=0, back5=0, rentSave=0, val=null;
+  if(t==='home'){ base=m44N(b.area)*m44N(b.pm2); const rm2=b.rep==='none'?0:(m44Has(b.repM2)?m44N(b.repM2):m44N(b.pm2)*(b.rep==='full'?0.25:0.1));
+    once=base*m44N(b.close)/100+m44N(b.area)*rm2; run=m44N(b.util); rentSave=m44N(b.rent); const g=m44N(b.grow)/100; val=y=>base*Math.pow(1+g,y); back5=val(5); }
+  else if(t==='car'){ base=m44N(b.price); once=base*m44N(b.close)/100; const fix=m44Has(b.fix)?m44N(b.fix):base*0.03;
+    run=m44N(b.km)*m44N(b.l100)/100*m44N(b.fuel)+(m44N(b.ins)+m44N(b.tax)+fix)/12; const d=(m44Has(b.depr)?m44N(b.depr):(b.kind==='new'?15:10))/100; back5=base*Math.pow(1-Math.min(.9,d),5); }
+  else if(t==='thing'){ base=m44N(b.price); const life=Math.max(1,m44N(b.life)||5); back5=base*Math.max(0,1-5/life); }
+  else base=m44N(b.price);
+  const total=base+once, have=m44N(b.have);
+  let outlay=total, A=0, n=0, intr=0, L0=0, r=0, int5=0;
+  if(P.k==='loan'&&base>0){ const dp=Math.min(100,Math.max(0,m44N(P.dp))), down=base*dp/100; L0=base-down; n=Math.max(1,Math.round(m44N(P.y)*12)); r=m44N(P.r)/1200;
+    A=L0>0?(r>0?L0*r/(1-Math.pow(1+r,-n)):L0/n):0; intr=Math.max(0,A*n-L0); outlay=down+once; let bal=L0; for(let k=0;k<Math.min(60,n);k++){ const i=bal*r; int5+=i; bal-=A-i; } }
+  else if(P.k==='inst'&&base>0){ n=Math.max(1,Math.round(m44N(P.n)||12)); const tot=base*(1+m44N(P.mk)/100); A=tot/n; intr=tot-base; int5=intr; outlay=once; }
+  const loanBal=m=>{ if(!(L0>0)) return 0; if(m>=n) return 0; return r>0?L0*Math.pow(1+r,m)-A*(Math.pow(1+r,m)-1)/r:L0-A*m; };
+  const S=m44Has(b.S)?Math.max(0,m44N(b.S)):(E.free!=null?E.free:0), noS=!m44Has(b.S)&&E.free==null;
+  const freed=k=>b.free?E.loans.filter(l=>l.left>0&&l.left<k).reduce((s,l)=>s+l.m,0):0;
+  const sim=(m,Sx,buy,H)=>{ const arr=[]; let pot=have, mn=Infinity, mi=0, neg=null;
+    for(let k=0;k<=H;k++){ if(k>0){ pot+=Sx+freed(k); if(buy&&k>m){ const j=k-m; if(A>0&&j<=n) pot-=A; pot+=rentSave-run; } }
+      if(buy&&k===m) pot-=outlay; arr.push(pot); if(k>=m&&pot<mn){ mn=pot; mi=k; } if(k>=m&&pot<-0.5&&neg==null) neg=k; }
+    return {arr,mn,mi,neg}; };
+  const H=Math.min(120,Math.max(24,mp+36)), W1=sim(mp,S,true,H), W0=sim(mp,S,false,H);
+  let early=null; if(base>0) for(let m=0;m<=120;m++){ const s=sim(m,S,true,Math.min(156,m+36)); if(s.neg==null){ early=m; break; } }
+  let sumFreed=0; for(let k=1;k<=mp;k++) sumFreed+=freed(k);
+  const perM=base>0?Math.max(mp>0?(outlay-have-sumFreed)/mp:0, A+run-rentSave-freed(mp+1), 0):0;
+  const reach=Sx=>{ if(have>=outlay) return 0; let pot=have; for(let k=1;k<=120;k++){ pot+=Sx+freed(k); if(pot>=outlay) return k; } return null; };
+  const rh={lo:reach(S*0.8),mid:reach(S),hi:reach(S*1.2)};
+  const inc=m44Has(b.inc)?m44N(b.inc):E.inc, lpAt=E.loans.filter(l=>l.left>mp).reduce((s,l)=>s+l.m,0);
+  const dti=inc>0?{now:Math.round(E.lp/inc*100),after:Math.round((lpAt+(A>0?A:0))/inc*100),inc}:null;
+  const net5=base+int5+once+run*60-back5;
+  let cross=null; const rv=[]; if(t==='home'&&rentSave>0&&base>0){ const g=m44N(b.grow)/100; let rc=0;
+    for(let y=0;y<=15;y++){ if(y>0) for(let k=(y-1)*12;k<y*12;k++) rc+=rentSave*Math.pow(1+g,k/12);
+      const paid=outlay+(A>0?A*Math.min(y*12,n):0)+run*12*y, eq=val(y)-loanBal(y*12), bn=paid-eq; rv.push({y,rent:rc,buy:bn}); if(cross==null&&y>0&&bn<=rc) cross=y; } }
+  return {noS,t,base,once,run,back5,rentSave,total,have,outlay,A,n,intr,int5,L0,r,S,ai,mp,H,W1,W0,early,perM,rh,dti,net5,rv,cross,k:P.k,freed,inc,E}; }
+
+/* понятный текст без интернета */
+function m44Short(c){ const X=L.m44X, out=[]; if(!(c.base>0)) return out;
+  out.push(X.tot(money(c.total),c.once>1?money(c.once):''));
+  const when=k=>k==null?null:m44Ml(m44Mi()+k);
+  if(c.noS&&c.outlay>c.have){ out.push(L.m44SH0); }
+  else if(c.k==='loan'){ if(c.rh.mid==null) out.push(X.never); else out.push(X.loan(money(c.outlay),when(c.rh.mid),money(c.A),L.m44YrW(Math.round(c.n/12)||1),money(c.intr))); }
+  else if(c.k==='inst'){ out.push(X.inst(money(c.A),c.n,money(c.intr))); if(c.outlay>c.have&&c.rh.mid!=null&&c.rh.mid>0) out.push(X.save(money(c.S),when(c.rh.mid),'')); }
+  else { if(c.rh.mid==null) out.push(X.never); else if(c.rh.mid>0) out.push(X.save(money(c.S),when(c.rh.mid),c.rh.lo!=null&&c.rh.lo!==c.rh.mid?when(c.rh.lo):'')); }
+  if(c.run>1) out.push(X.run(money(c.run)));
+  if(c.dti&&(c.k==='loan'||c.k==='inst')) out.push(X.dti(c.dti.after,L.m44Dz[m44Zone(c.dti.after)]));
+  if(c.t==='home'&&c.cross) out.push(X.rvb(L.m44YrW(c.cross)));
+  else if(c.net5>0&&(c.t==='car'||c.t==='thing'||c.run>0)) out.push(X.tco(money(c.net5),money(c.net5/60)));
+  return out; }
+function m44Zone(p){ return p<=30?'ok':p<=45?'hard':'bad'; }
+
+/* ---------- графики ---------- */
+const M44G={W:320,H:176,pT:14,pB:22,pL:2,pR:46};
+function m44Geo(vals,n){ const {W,H,pT,pB,pL,pR}=M44G; let lo=Math.min(0,...vals), hi=Math.max(0,...vals); const pad=(hi-lo)*0.1||100; hi+=pad; if(lo<0) lo-=pad;
+  const X=i=>pL+i*(W-pL-pR)/Math.max(1,n-1), Y=v=>pT+(hi-v)/(hi-lo)*(H-pT-pB); return {W,H,pT,pB,pL,pR,lo,hi,X,Y,yb:H-pB,y0:Math.min(H-pB,Y(0))}; }
+function m44Path(arr,g){ return arr.map((v,i)=>(i?'L':'M')+m40X(g.X(i))+','+m40X(g.Y(v))).join(' '); }
+function m44Axes(g,n,start){ const tk=m40Ticks(g.lo,g.hi).filter(v=>g.Y(v)>g.pT-2&&g.Y(v)<g.yb+2);
+  const grid=tk.map(v=>`M${g.pL},${m40X(g.Y(v))} H${g.W-g.pR+4}`).join(' '), labs=tk.map(v=>`<text x="${g.W}" y="${m40X(g.Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('');
+  const yStep=n>72?2:1, y0=Math.floor(start/12); let xl=`<text x="${m40X(g.X(0))}" y="${g.H-5}" text-anchor="start">${esc(m44Ms(start))}</text>`;
+  for(let i=1;i<n;i++){ const ai=start+i; if(ai%12===0&&i>=Math.max(4,Math.ceil(n*0.2))&&(Math.floor(ai/12)-y0)%yStep===0&&i<=n-2) xl+=`<text x="${m40X(g.X(i))}" y="${g.H-5}" text-anchor="middle">${Math.floor(ai/12)}</text>`; }
+  return `<path class="gr" d="${grid}"/>${labs}${xl}`; }
+function m44Icon(t,x,y,s){ return ico(M44I[t],s).replace('<svg ',`<svg x="${m40X(x-s/2)}" y="${m40X(y-s/2)}" `); }
+function m44LineRd(c,k){ const ai=m44Mi()+k, v1=c.W1.arr[k], v0=c.W0.arr[k];
+  return `<small>${esc(m44Ml(ai))}${k===c.mp?' · '+esc(L.m44When.toLowerCase()):''}</small><b class="${v1<0?'neg':''}">${v1<0?'−':''}${money(Math.abs(v1))}</b><span class="m44-rds">${esc(L.m44Without)}: ${v0<0?'−':''}${money(Math.abs(v0))}</span>`; }
+function m44LineSVG(c,b){ const arr=c.W1.arr, n=arr.length, g=m44Geo(arr.concat(c.W0.arr),n), start=m44Mi();
+  const l1=m44Path(arr,g), l0=m44Path(c.W0.arr,g), area=l1+` L${m40X(g.X(n-1))},${m40X(g.y0)} L${m40X(g.X(0))},${m40X(g.y0)} Z`, neg=c.W1.mn<0;
+  const mx=g.X(c.mp), my=g.Y(arr[c.mp]), ex=c.early!=null&&c.early!==c.mp&&c.early<n?g.X(c.early):null;
+  return `<svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" aria-hidden="true">
+    <clipPath id="m44cn"><rect x="0" y="${m40X(g.y0)}" width="${g.W}" height="${g.H}"/></clipPath>
+    ${m44Axes(g,n,start)}${neg?`<path class="z" d="M${g.pL},${m40X(g.y0)} H${g.W-g.pR+4}"/><path class="arn" d="${area}" clip-path="url(#m44cn)"/>`:''}
+    <path class="l0" d="${l0}"/><path class="ln${M44.fresh?' m40-dr':''}" pathLength="1" d="${l1}"/>
+    ${ex!=null?`<path class="ex" d="M${m40X(ex)},${g.pT} V${m40X(g.yb)}"/><circle class="exd" cx="${m40X(ex)}" cy="${m40X(g.Y(arr[c.early]))}" r="4"/>`:''}
+    <path class="vl" d="M${m40X(mx)},${g.pT} V${m40X(g.yb)}"/><circle class="pin${arr[c.mp]<0?' bad':''}" cx="${m40X(mx)}" cy="${m40X(my)}" r="14"/>${m44Icon(b.t,mx,my,16)}</svg>`; }
+function m44Ins(c){ const ml=m44Ml(c.ai); let h='';
+  const at=c.W1.arr[c.mp];
+  if(at<0) h=`<div class="m40-ins bad">${ico('warn',20)}<span><b>${esc(L.m44Bad(ml,money(-at)))}</b>`;
+  else if(c.W1.neg!=null) h=`<div class="m40-ins bad">${ico('warn',20)}<span><b>${esc(L.m44Neg(m44Ml(m44Mi()+c.W1.neg),money(-c.W1.mn)))}</b>`;
+  else h=`<div class="m40-ins ok">${ico('paid',20)}<span><b>${esc(L.m44Ok(ml,money(at)))}</b>`;
+  const bad=at<0||c.W1.neg!=null;
+  if(c.noS&&bad) h+=`<small>${esc(L.m44SH0)}</small>`;
+  else if(c.early==null) h+=`<small>${esc(L.m44Never)}</small>`;
+  else if(bad){ h+=`<small>${esc(L.m44Early(m44Ml(m44Mi()+c.early)))} ${esc(L.m44PerM(money(Math.ceil(c.perM/10)*10),ml))}</small>`; }
+  h+='</span></div>';
+  if(bad&&c.early!=null&&c.early!==c.mp) h+=`<button type="button" class="gp-mini m44-mv" data-m44mv="${c.early}">${ico('cal',14)} ${esc(L.m44Move)}: ${esc(m44Ml(m44Mi()+c.early))}</button>`;
+  return h; }
+function m44WhenSVG(c){ const ks=['lo','mid','hi'], f={lo:.8,mid:1,hi:1.2}; const maxR=Math.max(...ks.map(k=>c.rh[k]==null?120:c.rh[k])), Hw=Math.min(120,Math.max(12,maxR+6,c.mp+3));
+  const cum=x=>{ const a=[]; let p=c.have; for(let k=0;k<=Hw;k++){ if(k>0) p+=c.S*x+c.freed(k); a.push(p); } return a; };
+  const S={}; ks.forEach(k=>S[k]=cum(f[k])); const n=Hw+1, g=m44Geo([].concat(S.lo,S.hi,[c.outlay*1.05]),n), start=m44Mi();
+  const ty=m40X(g.Y(c.outlay)), dots=ks.map(k=>c.rh[k]!=null&&c.rh[k]<=Hw?`<circle class="wd ${k}" cx="${m40X(g.X(c.rh[k]))}" cy="${m40X(g.Y(S[k][c.rh[k]]))}" r="${k==='mid'?5.5:4}"/>`:'').join('');
+  return `<svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" aria-hidden="true">${m44Axes(g,n,start)}
+    <path class="tg" d="M${g.pL},${ty} H${g.W-g.pR+4}"/><text class="tgl" x="${g.pL+4}" y="${m40X(Math.max(g.pT+9,+ty-5))}">${esc(L.m44Goal)} ${m40Num(c.outlay)}</text>
+    ${c.mp<=Hw?`<path class="mpv" d="M${m40X(g.X(c.mp))},${g.pT} V${m40X(g.yb)}"/>`:''}
+    <path class="w lo" d="${m44Path(S.lo,g)}"/><path class="w hi" d="${m44Path(S.hi,g)}"/><path class="w mid${M44.fresh?' m40-dr':''}" pathLength="1" d="${m44Path(S.mid,g)}"/>${dots}</svg>`; }
+function m44WhenTxt(c){ if(c.noS&&c.outlay>c.have) return L.m44SH0; const w=k=>c.rh[k]==null?'—':c.rh[k]===0?L.m40Today:m44Ml(m44Mi()+c.rh[k]); if(c.rh.mid==null&&c.rh.hi==null) return L.m44WhenN; return L.m44WhenR(w('mid'),w('lo'),w('hi')); }
+function m44DtiHTML(c){ if(!(c.k==='loan'||c.k==='inst')) return ''; if(!c.dti) return `<section class="m44-cd"><h3>${esc(L.m44DtiT)}</h3><p class="m44-note">${esc(L.m44DtiNo)}</p></section>`;
+  const d=c.dti, pos=p=>Math.max(0,Math.min(100,p/70*100)), al=p=>pos(p)>72?' r':pos(p)<22?' l':'', z=m44Zone(d.after);
+  return `<section class="m44-cd"><h3>${esc(L.m44DtiT)}</h3><div class="m44-bul" role="img" aria-label="${esc(L.m44DtiA(d.now,d.after))}"><i class="z1"></i><i class="z2"></i><i class="z3"></i>
+    <em class="now${al(d.now)}" style="left:${pos(d.now)}%"><span>${esc(L.m44Now)} ${d.now}%</span></em><em class="aft ${z}${al(d.after)}" style="left:${pos(d.after)}%"><span>${esc(L.m44After)} ${d.after}%</span></em></div>
+    <div class="m44-bz"><span>${esc(L.m44Dz.ok)} ≤30%</span><span>${esc(L.m44Dz.hard)} 30–45%</span><span>${esc(L.m44Dz.bad)} 45%+</span></div>
+    <p class="m44-note ${z}">${esc(L.m44DtiS(d.after,L.m44Dz[z]))} ${esc(L.m44NoLoan)}</p></section>`; }
+function m44TcoHTML(c){ if(!(c.base>0)) return ''; const parts=[['base',c.base],['int',c.int5],['once',c.once],['run',c.run*60]].filter(p=>p[1]>0.5), sum=parts.reduce((s,p)=>s+p[1],0);
+  const bar=parts.map(p=>`<i class="tc-${p[0]}" style="width:${(p[1]/sum*100).toFixed(2)}%"></i>`).join(''), back=c.back5>0.5?`<div class="m44-tcb"><i style="width:${Math.min(100,c.back5/sum*100).toFixed(2)}%"></i></div>`:'';
+  const rows=parts.map(p=>`<li><i class="tc-${p[0]}"></i><span>${esc(L.m44Tc[p[0]])}</span><b>${money(p[1])}</b></li>`).join('')+(c.back5>0.5?`<li class="bk"><i></i><span>${esc(L.m44Tc.back)}</span><b>−${money(c.back5)}</b></li>`:'');
+  const s=c.t==='home'&&c.back5>=c.base?L.m44TcoUp(money(c.back5)):L.m44TcoS(money(Math.max(0,c.net5)),money(Math.max(0,c.net5)/60));
+  return `<section class="m44-cd"><h3>${esc(L.m44TcoT)}</h3><div class="m44-tc" role="img" aria-label="${esc(s)}">${bar}</div>${back}<ul class="m44-lg">${rows}</ul><p class="m44-note">${esc(s)}</p></section>`; }
+function m44RvbHTML(c){ if(!(c.t==='home'&&c.rv.length)) return ''; const n=c.rv.length, g=m44Geo(c.rv.map(x=>x.rent).concat(c.rv.map(x=>x.buy)),n);
+  const p=k=>c.rv.map((x,i)=>(i?'L':'M')+m40X(g.X(i))+','+m40X(g.Y(x[k]))).join(' '); let xl=''; [0,5,10,15].forEach(y=>{ if(y<n) xl+=`<text x="${m40X(g.X(y))}" y="${g.H-5}" text-anchor="${y===0?'start':'middle'}">${esc(L.m44Yr(y))}</text>`; });
+  const tk=m40Ticks(g.lo,g.hi).filter(v=>g.Y(v)>g.pT-2&&g.Y(v)<g.yb+2), grid=tk.map(v=>`M${g.pL},${m40X(g.Y(v))} H${g.W-g.pR+4}`).join(' '), labs=tk.map(v=>`<text x="${g.W}" y="${m40X(g.Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('');
+  const cx=c.cross!=null?`<circle class="cr" cx="${m40X(g.X(c.cross))}" cy="${m40X(g.Y(c.rv[c.cross].buy))}" r="6"/>`:'';
+  return `<section class="m44-cd"><h3>${esc(L.m44RvbT)}</h3><div class="m44-plot st" role="img" aria-label="${esc(L.m44RvbA)}"><svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" aria-hidden="true"><path class="gr" d="${grid}"/>${labs}${xl}
+    <path class="rr" d="${p('rent')}"/><path class="rb" d="${p('buy')}"/>${cx}</svg></div>
+    <div class="m44-leg"><span class="r">${esc(L.m44Rvb.rent)}</span><span class="b">${esc(L.m44Rvb.buy)}</span></div>
+    <p class="m44-note">${esc(c.cross!=null?L.m44RvbS(L.m44YrW(c.cross)):L.m44RvbN)}</p></section>`; }
+
+/* ---------- результат ---------- */
+function m44ResHTML(b){ const c=m44Calc(b); M44.c=c; if(!(c.base>0)) return `<p class="m44-empty">${ico('info',18)} ${esc(L.m44Fill)}</p>`;
+  const sh=m44Short(c), asked=M44.ask&&M44.ask.id===b.id?M44.ask:null;
+  return `<div class="m44-kpi" id="m44K">${m44KpiHTML(c)}</div>
+  <section class="m44-cd" id="m44L">${m44LineBox(c,b)}</section>
+  <section class="m44-cd"><h3>${esc(L.m44WhenT)}</h3><div class="m44-plot st" id="m44W" role="img" aria-label="${esc(L.m44WhenA)}">${m44WhenSVG(c)}</div>
+    <div class="m44-leg"><span class="lo">${esc(L.m44WhenL.lo)}</span><span class="mid">${esc(L.m44WhenL.mid)}</span><span class="hi">${esc(L.m44WhenL.hi)}</span></div>
+    <p class="m44-note" id="m44Wt">${esc(m44WhenTxt(c))}</p>
+    <label class="m44-sl" for="m44S"><span>${esc(L.m44SetS)}</span><b id="m44Sv">${money(c.S)}</b></label><input type="range" id="m44S" min="0" max="${m44SMax(c)}" step="${m44SStep(c)}" value="${Math.round(c.S)}" aria-valuetext="${esc(money(c.S))}"></section>
+  <div id="m44D">${m44DtiHTML(c)}</div><div id="m44T">${m44TcoHTML(c)}</div><div id="m44R">${m44RvbHTML(c)}</div>
+  <section class="m44-cd m44-x" id="m44X"><h3>${ico('sparkle',18)} ${esc(L.m44ShortT)}</h3><ul>${sh.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>
+    ${asked&&asked.text?`<div class="m44-ans">${asked.text.split(/\n+/).map(p=>`<p>${esc(p)}</p>`).join('')}</div>`:''}
+    <button type="button" class="gp-mini" id="m44Ask" ${asked&&asked.busy?'disabled':''}>${ico('chat',14)} ${esc(asked&&asked.busy?L.m44Asking:L.m44Ask)}</button></section>`; }
+function m44KpiHTML(c){ return `<div><small>${esc(L.m44Tot)}</small><b>${money(c.total)}</b></div><div><small>${esc(c.k==='save'?L.m44Need:L.m44Pm)}</small><b>${money(c.k==='save'?c.outlay:c.A)}</b></div><div><small>${esc(L.m44When)}</small><b>${esc(m44Ml(c.ai))}</b></div>`; }
+function m44LineBox(c,b){ return `<h3>${esc(L.m44LineT)}</h3><div class="m40-rd m44-rd" aria-live="polite">${m44LineRd(c,c.mp)}</div>
+  <div class="m44-plot" id="m44Ln" tabindex="0" role="slider" aria-label="${esc(L.m44When)}" aria-valuemin="0" aria-valuemax="120" aria-valuenow="${c.mp}" aria-valuetext="${esc(m44Ml(c.ai))}">${m44LineSVG(c,b)}</div>
+  <span class="m40-hint">${esc(L.m44LineS)}</span>${m44Ins(c)}`; }
+function m44SMax(c){ const v=Math.max(c.S*2,c.outlay/6,c.A*1.5,100); const p=Math.pow(10,Math.floor(Math.log10(v))); return Math.ceil(v/p)*p; }
+function m44SStep(c){ const v=m44SMax(c); return v>=100000?1000:v>=10000?100:v>=1000?10:1; }
+
+/* ---------- страница ---------- */
+function m44Open(arg){ try{ if(typeof m8SheetOn==='function'&&m8SheetOn()) closeSheet(); }catch(e){}
+  if(arg&&typeof arg==='object'){ M44.cur=m44New(arg.t,arg.mi,arg.day); M44.fresh=true; bpGo('buy',M44.cur.id); return; }
+  if(typeof arg==='string'&&arg!=='list'){ const x=m44List().find(z=>z.id===arg); if(x){ M44.cur=null; M44.fresh=true; bpGo('buy',arg); return; } }
+  bpGo('buy','list'); }
+function m44Item(id){ return m44List().find(z=>z.id===id)||(M44.cur&&M44.cur.id===id?M44.cur:null); }
+function m44Saved(b){ return m44List().some(z=>z.id===b.id); }
+function m44Fld(k,lab,v,o){ o=o||{}; const id='m44f-'+k; return `<div class="field n${o.w?' w':''}"><label for="${id}">${esc(lab)}</label><input id="${id}" type="${o.text?'text':'number'}" ${o.text?'maxlength="80"':'inputmode="decimal" min="0" step="any"'} value="${v==null?'':esc(String(v))}" placeholder="${esc(o.ph||'')}" data-m44${o.p?'p':''}="${k}" ${o.text?'autocomplete="off"':''}></div>`; }
+function m44Chips(k,list,cur,lab,p){ return `<div class="m44-chs" role="group">${list.map(v=>`<button type="button" class="chip ${cur===v?'on':''}" data-m44c="${k}" ${p?'data-m44cp="1"':''} data-v="${esc(String(v))}" aria-pressed="${cur===v}">${esc(lab(v))}</button>`).join('')}</div>`; }
+function m44FormHTML(b){ const t=b.t, P=b.pay, E=m44Est(); let f='';
+  f+=`<div class="m44-g">${m44Fld('nm',L.m44Nm,b.nm,{text:1,w:1,ph:L.m44NmPh[t]})}${['home','car','thing','trip'].includes(t)?m44Fld('city',L.m44City,b.city,{text:1,w:1,ph:L.m44CityPh}):''}`;
+  if(t==='home') f+=m44Fld('area',L.m44Area,b.area)+m44Fld('pm2',L.m44Pm2,b.pm2)+'</div>'+`<span class="bp-lab">${esc(L.m44Rooms)}</span>`+m44Chips('rooms',[1,2,3,4,5],+b.rooms,v=>v===5?'5+':String(v))+m44Chips('kind',['new','second'],b.kind,v=>L.m44Kind[v])
+    +`<span class="bp-lab">${esc(L.m44Rep)}</span>`+m44Chips('rep',['none','cosm','full'],b.rep,v=>L.m44RepK[v]);
+  else if(t==='car') f+=m44Fld('price',L.m44Price,b.price)+m44Fld('year',L.m44Year,b.year)+'</div>'+m44Chips('kind',['new','second'],b.kind,v=>L.m44CarK[v]);
+  else if(t==='thing') f+=m44Fld('price',L.m44Price,b.price)+m44Fld('life',L.m44Life,b.life)+'</div>';
+  else f+=m44Fld('price',L.m44Sum,b.price)+'</div>';
+  if(t==='home'||t==='car'){ const more=t==='home'?(b.rep!=='none'?m44Fld('repM2',L.m44RepM2,b.repM2,{ph:b.pm2?String(Math.round(m44N(b.pm2)*(b.rep==='full'?.25:.1))):''}):'')+m44Fld('close',L.m44Close,b.close)+m44Fld('util',L.m44Util,b.util)+m44Fld('grow',L.m44Grow,b.grow)+m44Fld('rent',L.m44Rent,b.rent,{w:1})
+      :m44Fld('km',L.m44Km,b.km)+m44Fld('l100',L.m44L100,b.l100)+m44Fld('fuel',L.m44Fuel,b.fuel)+m44Fld('ins',L.m44Ins,b.ins)+m44Fld('tax',L.m44Tax,b.tax)+m44Fld('fix',L.m44Fix,b.fix,{ph:b.price?String(Math.round(m44N(b.price)*.03)):''})+m44Fld('depr',L.m44Depr,b.depr,{ph:b.kind==='new'?'15':'10'})+m44Fld('close',L.m44Close,b.close);
+    f+=`<details class="m44-more" ${M44.more?'open':''}><summary>${esc(L.m44More)}</summary><div class="m44-g">${more}</div>${t==='home'?`<p class="bp-hint">${esc(L.m44RentH)}</p>`:''}</details>`; }
+  if(['home','car','thing','trip','event','study'].includes(t)) f+=`<button type="button" class="gp-mini m44-find" id="m44Find" ${M44.find&&M44.find.busy?'disabled':''}>${ico('search',14)} ${esc(M44.find&&M44.find.busy?L.m44Finding:L.m44Find)}</button><div id="m44Fr">${m44FindHTML(b)}</div>`;
+  let pay=m44Chips('pay',['save','loan','inst'],P.k,v=>L.m44Pay[v],1);
+  if(P.k==='loan') pay+=`<div class="m44-g">${m44Fld('dp',L.m44Dp,P.dp,{p:1})}${m44Fld('r',L.m44Rate,P.r,{p:1})}${m44Fld('y',L.m44Yrs,P.y,{p:1})}</div>`;
+  if(P.k==='inst') pay+=`<div class="m44-g">${m44Fld('n',L.m44N,P.n,{p:1})}${m44Fld('mk',L.m44Mk,P.mk,{p:1})}</div>`;
+  const sh=E.free!=null?L.m44SH(money(E.free)):L.m44SH0;
+  let mon=`<div class="m44-g">${m44Fld('have',L.m44Have,b.have)}${m44Fld('S',L.m44S,b.S,{ph:E.free!=null?String(E.free):''})}</div><p class="bp-hint">${esc(sh)}</p>`;
+  if(P.k!=='save') mon+=`<div class="m44-g">${m44Fld('inc',L.m44Inc,b.inc,{ph:E.inc!=null?String(E.inc):'',w:1})}</div><p class="bp-hint">${esc(L.m44IncH)}</p>`;
+  if(E.loans.length) mon+=`<label class="m44-tg"><input type="checkbox" id="m44Free" ${b.free?'checked':''}> <span>${esc(L.m44Free)}</span></label>`;
+  return `<section class="m44-cd m44-fm"><h3>${ico(M44I[t],18)} ${esc(L.m44Ty[t])}</h3>${f}</section><section class="m44-cd m44-fm"><h3>${esc(L.m44PayT)}</h3>${pay}</section><section class="m44-cd m44-fm"><h3>${esc(L.m44MoneyT)}</h3>${mon}</section>`; }
+function m44FindHTML(b){ const F=M44.find&&M44.find.id===b.id?M44.find:null; if(!F||F.busy) return ''; if(F.err) return `<p class="m44-note bad">${esc(F.err)}</p>`;
+  const r=F.rep, cv=v=>m44Cv(v,r.cur), pr=cv(r.price), lo=cv(r.low), hi=cv(r.high), per=r.per==='m2'?' '+L.m44Per.m2:'';
+  const src=(F.sources||[]).map(s=>`<li><a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||s.url)}</a></li>`).join('');
+  return `<div class="m44-fr"><b>${pr!=null?money(pr):esc(r.price+' '+r.cur)}${esc(per)}</b>${lo!=null&&hi!=null?`<small>${esc(L.m44Range(money(lo),money(hi)))}${esc(per)}</small>`:''}${r.note?`<p>${esc(r.note)}</p>`:''}
+    ${src?`<details><summary>${esc(L.m44Src)}</summary><ul>${src}</ul></details>`:''}<button type="button" class="gp-mini" id="m44Use" ${F.used?'disabled':''}>${ico(F.used?'check':'download',14)} ${esc(F.used?L.m44Used:L.m44Use)}</button></div>`; }
+function m44Cv(v,cur){ if(!(+v>0)) return null; if(!cur||cur==='TJS') return Math.round(+v); const r=rateOf(cur); return r?Math.round(+v*r):null; }
+function m44ListHTML(){ const xs=m44List(), E=m44Est();
+  const types=`<div class="m44-tys">${M44T.map(t=>`<button type="button" class="m44-ty" data-m44new="${t}">${ico(M44I[t],26)}<span>${esc(L.m44Ty[t])}</span></button>`).join('')}</div>`;
+  const items=xs.map(b=>{ const c=m44Calc(b,E), ok=c.base>0&&c.W1.arr[c.mp]>=0&&c.W1.neg==null;
+    return `<button type="button" class="m44-it" data-m44open="${esc(b.id)}"><span class="m44-iti">${ico(M44I[b.t],22)}</span><span class="m44-itt"><b>${esc(b.nm||L.m44Ty[b.t])}</b><small>${esc(m44Ml(c.ai))}${c.base>0?' · '+money(c.total):''}</small></span>${c.base>0?`<span class="m44-st ${ok?'ok':'bad'}">${ico(ok?'paid':'warn',16)}</span>`:''}</button>`; }).join('');
+  return `<div class="bp-top bp-hero"><span class="m44-hico">${ico('bag',28)}</span><div><h2>${esc(L.m44T)}</h2><p>${esc(L.m44Lead)}</p></div></div>
+    <h3 class="m44-h3">${esc(L.m44New)}</h3>${types}<h3 class="m44-h3">${esc(L.m44List)}</h3>${items?`<div class="m44-its">${items}</div>`:`<p class="m44-empty">${esc(L.m44Empty)}</p>`}`; }
+function m44R(m,foot,arg){ BPG.el.querySelector('#bpg-t').textContent=L.m44T; m.classList.add('m44-pg');
+  if(arg==='list'||!m44Item(arg)){ m.innerHTML=m44ListHTML(); foot.hidden=true; foot.innerHTML=''; return; }
+  const b=m44Item(arg), saved=m44Saved(b);
+  m.innerHTML=`<div class="m44">${saved?'':`<div class="m44-tys sm" role="group" aria-label="${esc(L.m44T)}">${M44T.map(t=>`<button type="button" class="m44-ty${t===b.t?' on':''}" data-m44ty="${t}" aria-pressed="${t===b.t}">${ico(M44I[t],20)}<span>${esc(L.m44TyS[t])}</span></button>`).join('')}</div>`}
+    <div id="m44Fm">${m44FormHTML(b)}</div><div id="m44Res">${m44ResHTML(b)}</div></div>`;
+  M44.fresh=false;
+  foot.hidden=false; foot.innerHTML=saved?`<div class="sheet-row"><button type="button" class="btn btn-ghost" id="m44Del">${ico('trash',16)} ${esc(L.m44Del)}</button><button type="button" class="btn btn-primary" id="m44Done">${ico('check',16)} ${esc(L.m44Done)}</button></div>`
+    :`<button type="button" class="btn btn-primary btn-block" id="m44Add">${ico('cal',16)} ${esc(L.m44Save)}</button>`;
+  m44Bind(m,foot,b); }
+
+/* обновить только результаты (поля ввода остаются, фокус не теряется) */
+function m44Upd(b,full){ clearTimeout(M44.tm); const go=()=>{ const box=$('#m44Res'); if(!box) return;
+    if(full){ box.innerHTML=m44ResHTML(b); m44PlotBind(b); return; }
+    const c=m44Calc(b); M44.c=c; if(!(c.base>0)||!$('#m44K')){ box.innerHTML=m44ResHTML(b); m44PlotBind(b); return; }
+    $('#m44K').innerHTML=m44KpiHTML(c); $('#m44L').innerHTML=m44LineBox(c,b); $('#m44W').innerHTML=m44WhenSVG(c); $('#m44Wt').textContent=m44WhenTxt(c); $('#m44Sv').textContent=money(c.S);
+    const sl=$('#m44S'); if(sl&&document.activeElement!==sl){ sl.max=m44SMax(c); sl.step=m44SStep(c); sl.value=Math.round(c.S); } if(sl) sl.setAttribute('aria-valuetext',money(c.S));
+    $('#m44D').innerHTML=m44DtiHTML(c); $('#m44T').innerHTML=m44TcoHTML(c); $('#m44R').innerHTML=m44RvbHTML(c);
+    const x=$('#m44X ul'); if(x) x.innerHTML=m44Short(c).map(s=>`<li>${esc(s)}</li>`).join(''); m44PlotBind(b); };
+  if(full===0) go(); else M44.tm=setTimeout(go,120); }
+function m44Touch(b){ if(m44Saved(b)) m44Save(); }
+function m44Bind(m,foot,b){
+  m.oninput=e=>{ const el=e.target;
+    if(el.id==='m44S'){ b.S=+el.value; $('#m44Sv').textContent=money(b.S); const fs=$('#m44f-S'); if(fs) fs.value=b.S; m44Upd(b,0); m44Touch(b); return; }
+    if(el.id==='m44Free'){ b.free=el.checked; m44Upd(b); m44Touch(b); return; }
+    const k=el.dataset.m44, kp=el.dataset.m44p; if(!k&&!kp) return;
+    const v=el.type==='number'?(el.value===''?null:Math.max(0,+el.value)):el.value.slice(0,80);
+    if(kp) b.pay[kp]=v; else b[k]=v; m44Upd(b); m44Touch(b); };
+  m.onchange=m.oninput;
+  m.onclick=e=>{ const t=e.target.closest('button,a'); if(!t) return;
+    if(t.dataset.m44ty&&t.dataset.m44ty!==b.t){ const nb=m44New(t.dataset.m44ty,m44MiOf(b.mon)); nb.id=b.id; nb.nm=''; nb.city=b.city; nb.have=b.have; nb.S=b.S; nb.inc=b.inc; M44.cur=nb; m44R(m,foot,nb.id); return; }
+    if(t.dataset.m44c){ const k=t.dataset.m44c, v=t.dataset.v; if(t.dataset.m44cp) b.pay.k=v; else b[k]=k==='rooms'?+v:v; M44.more=!!(m.querySelector('.m44-more')||{}).open; $('#m44Fm').innerHTML=m44FormHTML(b); const f=m.querySelector(`[data-m44c="${k}"][data-v="${CSS.escape(v)}"]`); if(f) f.focus(); m44Upd(b,0); m44Touch(b); return; }
+    if(t.id==='m44Find'){ m44Find(b); return; }
+    if(t.id==='m44Use'){ m44UseFound(b); return; }
+    if(t.id==='m44Ask'){ m44AskSf(b); return; }
+    if(t.dataset.m44mv!=null){ b.mon=m44Key(m44Mi()+(+t.dataset.m44mv)); m44Upd(b,0); m44Touch(b); const p=$('#m44Ln'); if(p) p.focus(); return; } };
+  foot.onclick=e=>{ const t=e.target.closest('button'); if(!t) return;
+    if(t.id==='m44Add'){ if(!(m44Calc(b).base>0)){ toast(L.m44Fill); return; } m44List().push(b); M44.cur=null; m44Save(); toast(L.m44Saved); try{ m40FcDraw(); }catch(x){} bpReplace('buy',b.id); return; }
+    if(t.id==='m44Done'){ m44Save(); try{ m40FcDraw(); }catch(x){} bpBack(); return; }
+    if(t.id==='m44Del'){ if(t.dataset.sure!=='1'){ t.dataset.sure='1'; t.innerHTML=ico('trash',16)+' '+esc(L.m44DelQ); setTimeout(()=>{ if(t.isConnected){ t.dataset.sure=''; t.innerHTML=ico('trash',16)+' '+esc(L.m44Del); } },4000); return; }
+      state.misc.buys=m44List().filter(z=>z.id!==b.id); m44Save(); try{ m40FcDraw(); }catch(x){} bpBack(); } };
+  m44PlotBind(b); }
+/* ведём значок по графику: месяц покупки */
+function m44PlotBind(b){ const pl=$('#m44Ln'); if(!pl||pl._m44) return; pl._m44=true;
+  const idx=cx=>{ const r=pl.getBoundingClientRect(), g=M44G, n=(M44.c?M44.c.H:24)+1, x0=r.left+r.width*g.pL/g.W, w=r.width*(g.W-g.pL-g.pR)/g.W; return Math.max(0,Math.min(Math.min(120,n-1),Math.round((cx-x0)/w*(n-1)))); };
+  const set=(k,live)=>{ const now=m44Mi(); if(m44MiOf(b.mon)-now===k&&live) return; b.mon=m44Key(now+k); try{ navigator.vibrate&&navigator.vibrate(4); }catch(e){}
+    if(live){ const c=m44Calc(b); M44.c=c; const keep=c.H; pl.innerHTML=m44LineSVG(c,b); pl.setAttribute('aria-valuenow',k); pl.setAttribute('aria-valuetext',m44Ml(c.ai)); const rd=pl.parentNode.querySelector('.m44-rd'); if(rd) rd.innerHTML=m44LineRd(c,k); return keep; }
+    m44Upd(b,0); m44Touch(b); const p2=$('#m44Ln'); if(p2) p2.focus({preventScroll:true}); };
+  pl.addEventListener('pointerdown',e=>{ if(e.button>0) return; pl.setPointerCapture&&pl.setPointerCapture(e.pointerId); M44.drag={id:e.pointerId,moved:false,x:e.clientX}; set(idx(e.clientX),true); });
+  pl.addEventListener('pointermove',e=>{ const d=M44.drag; if(!d||d.id!==e.pointerId) return; if(Math.abs(e.clientX-d.x)>3) d.moved=true; set(idx(e.clientX),true); });
+  const end=e=>{ const d=M44.drag; if(!d||d.id!==e.pointerId) return; M44.drag=null; set(idx(e.clientX),false); };
+  pl.addEventListener('pointerup',end); pl.addEventListener('pointercancel',end);
+  pl.addEventListener('keydown',e=>{ const k=m44MiOf(b.mon)-m44Mi(); let j=null; if(e.key==='ArrowRight') j=k+1; else if(e.key==='ArrowLeft') j=k-1; else if(e.key==='PageUp') j=k+12; else if(e.key==='PageDown') j=k-12; else if(e.key==='Home') j=0;
+    if(j==null) return; e.preventDefault(); set(Math.max(0,Math.min(120,j)),false); }); }
+
+/* ---------- Сифра: цена и объяснение (сервер v22) ---------- */
+async function m44Caps(){ let caps=null; try{ caps=await Promise.race([sfCapsLoad(),new Promise(r=>setTimeout(()=>r(sfCaps||{v:0}),2500))]); }catch(e){} return caps; }
+function m44Q(b){ const q={nm:String(b.nm||'').slice(0,80),city:String(b.city||'').slice(0,60)}; if(b.t==='home') Object.assign(q,{area:m44N(b.area)||undefined,rooms:b.rooms,kind:b.kind,rep:b.rep});
+  if(b.t==='car') Object.assign(q,{year:m44N(b.year)||undefined,kind:b.kind,km:m44N(b.km)||undefined}); return q; }
+async function m44Find(b){ if(!String(b.nm||'').trim()&&!String(b.city||'').trim()){ toast(L.m44NeedNm); return; } if(navigator.onLine===false){ toast(L.m44Off); return; }
+  M44.find={id:b.id,busy:true}; const fb=$('#m44Find'); if(fb){ fb.disabled=true; fb.innerHTML=ico('search',14)+' '+esc(L.m44Finding); } const fr=$('#m44Fr'); if(fr) fr.innerHTML='';
+  const caps=await m44Caps(); if(!caps||!(caps.v>=22)){ M44.find={id:b.id,err:L.m44Old}; m44FindDone(b); return; }
+  try{ const r=await fetch(API_BASE+'/api/mk/buy',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,mode:'price',t:b.t,q:m44Q(b),cur:'TJS'})}), j=await r.json().catch(()=>({}));
+    if(!r.ok||!j.rep) M44.find={id:b.id,err:j.error==='limit'?L.m44Limit:L.m44FindErr}; else M44.find={id:b.id,rep:j.rep,sources:j.sources||[]}; }
+  catch(e){ M44.find={id:b.id,err:navigator.onLine===false?L.m44Off:L.m44FindErr}; }
+  m44FindDone(b); }
+function m44FindDone(b){ const fb=$('#m44Find'); if(fb){ fb.disabled=false; fb.innerHTML=ico('search',14)+' '+esc(L.m44Find); } const fr=$('#m44Fr'); if(fr) fr.innerHTML=m44FindHTML(b); }
+function m44UseFound(b){ const F=M44.find; if(!F||!F.rep) return; const r=F.rep, cv=v=>m44Cv(v,r.cur), x=r.extras||{};
+  const pr=cv(r.price); if(pr!=null){ if(b.t==='home'&&r.per==='m2') b.pm2=pr; else if(b.t==='home'&&r.per==='total'&&m44N(b.area)>0) b.pm2=Math.round(pr/m44N(b.area)); else b.price=pr; }
+  const put=(k,v,raw)=>{ if(v!=null&&+v>0) b[k]=raw?Math.round(+v*10)/10:v; };
+  if(b.t==='home'){ put('util',cv(x.util_month)); put('rent',cv(x.rent_month)); put('repM2',cv(x.repair_m2)); put('grow',x.growth_pct,1); put('close',x.closing_pct,1); }
+  if(b.t==='car'){ put('fuel',cv(x.fuel_price)); put('l100',x.l100,1); put('ins',cv(x.ins_year)); put('tax',cv(x.tax_year)); put('fix',cv(x.repair_year)); put('depr',x.depr_pct,1); }
+  if(+x.rate_pct>0&&+x.rate_pct<200) b.pay.r=Math.round(+x.rate_pct*10)/10;
+  b.src={note:String(r.note||'').slice(0,300),sources:(F.sources||[]).slice(0,5),at:new Date().toISOString()}; F.used=true;
+  M44.more=true; $('#m44Fm').innerHTML=m44FormHTML(b); m44Upd(b,0); m44Touch(b); }
+function m44Brief(b,c){ const R=v=>Math.round(v||0); return {t:b.t,nm:String(b.nm||'').slice(0,80),city:String(b.city||'').slice(0,60),cur:L.cur,month:m44Key(c.ai),pay:c.k,
+  total:R(c.total),base:R(c.base),once:R(c.once),run_month:R(c.run),outlay:R(c.outlay),have:R(c.have),save_month:R(c.S),payment:R(c.A),months:c.n,rate:c.k==='loan'?m44N(b.pay.r):null,interest:R(c.intr),
+  short_at_month:R(Math.max(0,-c.W1.arr[c.mp])),goes_negative:c.W1.neg!=null,earliest:c.early!=null?m44Key(m44Mi()+c.early):null,need_month:R(c.perM),
+  when:{worse:c.rh.lo!=null?m44Key(m44Mi()+c.rh.lo):null,usual:c.rh.mid!=null?m44Key(m44Mi()+c.rh.mid):null,better:c.rh.hi!=null?m44Key(m44Mi()+c.rh.hi):null},
+  dti:c.dti?{now:c.dti.now,after:c.dti.after,income:R(c.dti.inc)}:null,cost5:R(c.net5),resale5:R(c.back5),rent:R(c.rentSave),rent_vs_buy_year:c.cross,loans_end:c.E.loans.map(l=>({pay:l.m,months_left:l.left}))}; }
+async function m44AskSf(b){ const c=m44Calc(b); if(!(c.base>0)){ toast(L.m44Fill); return; } if(navigator.onLine===false){ toast(L.m44Off); return; }
+  M44.ask={id:b.id,busy:true}; const bt=$('#m44Ask'); if(bt){ bt.disabled=true; bt.innerHTML=ico('chat',14)+' '+esc(L.m44Asking); }
+  const caps=await m44Caps(); if(!caps||!(caps.v>=22)){ M44.ask=null; toast(L.m44Old); const r=$('#m44Res'); if(r){ r.innerHTML=m44ResHTML(b); m44PlotBind(b); } return; }
+  try{ const r=await fetch(API_BASE+'/api/mk/buy',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,mode:'explain',calc:m44Brief(b,c)})}), j=await r.json().catch(()=>({}));
+    if(r.ok&&j.text) M44.ask={id:b.id,text:String(j.text).slice(0,2500)}; else { M44.ask=null; toast(j.error==='limit'?L.m44Limit:L.m44AskErr); } }
+  catch(e){ M44.ask=null; toast(L.m44AskErr); }
+  const r=$('#m44Res'); if(r){ const y=BPG.el?BPG.el.querySelector('#bpg-m').scrollTop:0; r.innerHTML=m44ResHTML(b); m44PlotBind(b); if(BPG.el) BPG.el.querySelector('#bpg-m').scrollTop=y; } }
+
+/* ---------- «Деньги вперёд»: покупки как события, значки для перетаскивания ---------- */
+function m44DayOf(b){ const ai=m44MiOf(b.mon), d=new Date(Math.floor(ai/12),ai%12,Math.min(28,Math.max(1,+b.day||1))); const T=today0(); return d<T&&ai===m44Mi()?T:d; }
+try{ const _fd44=m40FcData; m40FcData=function(N){ const f=_fd44.apply(this,arguments); try{ const xs=m44List(); if(!xs.length) return f; const E=m44Est(); let add=false;
+    for(const b of xs){ const c=m44Calc(b,E); if(!(c.base>0)) continue; const d0=m44DayOf(b), i0=daysUntil(d0); const put=(i,a)=>{ if(i<0||i>N-1||!(a>0)) return; add=true; const ev={i,n:L.m44Ev(b.nm||L.m44TyS[b.t]),a:-Math.round(a)}; f.ev.push(ev); f.days[i].ev.push(ev); for(let j=i;j<N;j++) f.days[j].bal-=a; };
+      put(i0,c.outlay); if(c.A>0) for(let k=1;k<=Math.min(c.n,4);k++){ const dk=new Date(d0.getFullYear(),d0.getMonth()+k,d0.getDate()); put(daysUntil(dk),c.A); } }
+    if(add){ let firstNeg=null,minBal=Infinity,minI=0; f.days.forEach((d,i)=>{ if(d.bal<0&&firstNeg==null) firstNeg=i; if(d.bal<minBal){ minBal=d.bal; minI=i; } }); f.firstNeg=firstNeg; f.minBal=minBal; f.minI=minI; f.perDay=firstNeg!=null?round10(-minBal/Math.max(1,minI)):0; } }catch(e){ console.error(e); } return f; }; }catch(e){}
+function m44Priced(b){ return b.t==='home'?m44N(b.area)*m44N(b.pm2)>0:m44N(b.price)>0; }
+try{ const _on44=m40FcOn; m40FcOn=function(){ return _on44.apply(this,arguments)||(hasRealData()&&m44List().some(m44Priced)); }; }catch(e){}
+function m44HomeRow(){ const xs=m44List(), E=m44Est();
+  const chips=xs.slice(0,4).map(b=>{ const c=m44Calc(b,E); return `<button type="button" class="m44-chip" data-m44open="${esc(b.id)}">${ico(M44I[b.t],14)}<span>${esc(b.nm||L.m44TyS[b.t])} · ${esc(m44Ms(c.ai))}</span></button>`; }).join('');
+  return `<div class="m44-hr"><div class="m44-hrh"><b>${ico('bag',16)} ${esc(L.m44Home)}</b>${xs.length?`<button type="button" class="m44-all" data-m44open="list">${esc(L.m44List)} ›</button>`:''}</div>
+    <div class="m44-icons" role="group" aria-label="${esc(L.m44Home)}">${M44T.map(t=>`<button type="button" class="m44-ic" data-m44drag="${t}" aria-label="${esc(L.m44Ty[t])}" title="${esc(L.m44Ty[t])}">${ico(M44I[t],20)}</button>`).join('')}</div>
+    ${chips?`<div class="m44-chips">${chips}</div>`:''}<small>${esc(L.m44HomeH)}</small></div>`; }
+try{ const _fh44=m40FcHTML; m40FcHTML=function(){ const h=_fh44.apply(this,arguments); if(!h) return h; try{ const i=h.lastIndexOf('</section>'); if(i>0) return h.slice(0,i)+m44HomeRow()+h.slice(i); }catch(e){} return h; }; }catch(e){}
+try{ const _ex44=m38Extra; m38Extra=function(){ const a=_ex44.apply(this,arguments); try{ a.splice(1,0,{k:'bigbuy',g:'m',a:'data-m44open="list"',i:'bag',t:L.m38It.bigbuy,s:L.m38ItS.bigbuy}); }catch(e){} return a; }; }catch(e){}
+document.addEventListener('click',e=>{ const o=e.target.closest&&e.target.closest('[data-m44open],[data-m44new]'); if(!o) return;
+  if(o.dataset.m44new){ e.preventDefault(); e.stopImmediatePropagation(); const m=$('#bpg-m'); if(bpOpenNow()&&bpTop()&&bpTop().name==='buy'){ M44.cur=m44New(o.dataset.m44new); M44.fresh=true; bpGo('buy',M44.cur.id); } else m44Open({t:o.dataset.m44new}); return; }
+  e.preventDefault(); e.stopImmediatePropagation(); if(bpOpenNow()&&bpTop()&&bpTop().name==='buy'){ const id=o.dataset.m44open; if(id==='list') bpGo('buy','list'); else { M44.cur=null; M44.fresh=true; bpGo('buy',id); } return; } m44Open(o.dataset.m44open); },true);
+/* значок тянем на график «Деньги вперёд» — покупка встаёт на этот день; просто нажали — откроется с месяцем по умолчанию */
+document.addEventListener('pointerdown',e=>{ const ic=e.target.closest&&e.target.closest('[data-m44drag]'); if(!ic||e.button>0) return; e.preventDefault();
+  const D=M44.hd={t:ic.dataset.m44drag,x:e.clientX,y:e.clientY,id:e.pointerId,moved:false,gh:null,ic}; try{ ic.setPointerCapture(e.pointerId); }catch(x){} ic.classList.add('hold'); });
+document.addEventListener('pointermove',e=>{ const D=M44.hd; if(!D||D.id!==e.pointerId) return; const dx=e.clientX-D.x, dy=e.clientY-D.y; if(!D.moved&&Math.hypot(dx,dy)<8) return;
+  if(!D.gh){ D.moved=true; D.gh=document.createElement('div'); D.gh.className='m44-ghost'; D.gh.innerHTML=ico(M44I[D.t],22); document.body.appendChild(D.gh); }
+  D.gh.style.transform=`translate(${e.clientX-24}px,${e.clientY-24}px)`; const pl=document.querySelector('#m40Fc .m40-plot'); if(pl){ const r=pl.getBoundingClientRect(), on=e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top-10&&e.clientY<=r.bottom+10; pl.classList.toggle('m44-over',on);
+    if(on){ try{ m40PlotGo(pl,m40PlotIdx(pl,e.clientX),false); }catch(x){} } } });
+const m44Up=e=>{ const D=M44.hd; if(!D||D.id!==e.pointerId) return; M44.hd=null; D.ic.classList.remove('hold'); if(D.gh) D.gh.remove(); const pl=document.querySelector('#m40Fc .m40-plot'); if(pl) pl.classList.remove('m44-over');
+  if(e.type==='pointercancel') return;
+  if(!D.moved){ m44Open({t:D.t}); return; }
+  if(pl){ const r=pl.getBoundingClientRect(); if(e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top-10&&e.clientY<=r.bottom+10){ try{ const i=m40PlotIdx(pl,e.clientX), d=M40F.f.days[i].d; m44Open({t:D.t,mi:d.getFullYear()*12+d.getMonth(),day:d.getDate()}); }catch(x){ m44Open({t:D.t}); } } } };
+document.addEventListener('pointerup',m44Up); document.addEventListener('pointercancel',m44Up);
+document.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.closest&&e.target.closest('[data-m44drag]')){ e.preventDefault(); m44Open({t:e.target.closest('[data-m44drag]').dataset.m44drag}); } });
+
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||t.name!=='buy'){ const mm=BPG.el&&BPG.el.querySelector('#bpg-m'); if(mm) mm.classList.remove('m44-pg'); _br(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; m.oninput=null; m.onchange=null; f.innerHTML=''; f.hidden=true; f.onclick=null;
+    m44R(m,f,t.arg); m.scrollTop=restore?(t.y||0):0; }; }
+/* ---------- v45: строки — график в ответе Сифры (627), сканер документа (628), «Поделиться → Mira» (629) ---------- */
+const M45S={
+  ru:{
+    m45Met:{sales:'Продажи',expenses:'Расходы магазина',profit:'Прибыль',home:'Траты семьи',loan_pay:'Платежи по кредитам',loan_left:'Остаток по кредитам',savings:'Копилки'},
+    m45Per:{week:'за 7 дней',month:'за 30 дней',quarter:'за 3 месяца',year:'за 12 месяцев',all:'за всё время'},
+    m45PerPrev:{week:'прошлым 7 дням',month:'прошлым 30 дням',quarter:'прошлым 3 месяцам',year:'прошлому году'},
+    m45ByCat:'по видам', m45ByLoan:'по кредитам', m45ByEnv:'по копилкам', m45ByWd:'по дням недели',
+    m45Head:(m,p,v)=>m+' '+p+': '+v,
+    m45Avg:(v,u)=>'В среднем '+v+' '+({d:'в день',w:'в неделю',m:'в месяц'})[u]+'.',
+    m45Max:(l,v)=>'Больше всего — '+l+': '+v+'.',
+    m45Vs:(p,w)=>'К '+w+': '+(p>0?'+':'')+p+'%.',
+    m45Neg:(n,t)=>'В минусе '+n+' из '+t+' — это красные столбики.',
+    m45NoMg:'Наценка не указана — считаю как продажи минус расходы.',
+    m45Top:(l,p)=>'Больше всего — '+l+': '+p+'% всех.',
+    m45BestWd:(l,v)=>'Лучший день — '+l+': в среднем '+v+'.',
+    m45WorstWd:(l,v)=>'Тише всего — '+l+': '+v+'.',
+    m45Now:v=>'Сейчас: '+v+'.',
+    m45Down:(v)=>'За это время стало меньше на '+v+'.',
+    m45Up:(v)=>'За это время стало больше на '+v+'.',
+    m45LoanBig:(n,p)=>'Больше всего осталось по «'+n+'» — '+p+'% долга.',
+    m45Other:'Другое',
+    m45Empty:'Пока нет записей за этот период — график появится, когда они будут.',
+    m45Tap:'Нажмите на столбик — покажу цифру',
+    m45TapL:'Нажмите на график — покажу цифру',
+    m45At:d=>'Данные на '+d,
+    m45ChartAct:'График',
+    m45Wd:['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'],
+    m45Scan:'Края', m45ScanT:'Края листа', m45ScanLead:'Потяните кружки к углам листа — страница выпрямится и станет чётче.',
+    m45Flat:'Выровнено', m45Orig:'Без выравнивания', m45Apply:'Выровнять', m45Auto:'Найти края', m45Whole:'Весь снимок',
+    m45Mode:{c:'Цвет',g:'Ч/б'}, m45ModeL:'Как сохранить', m45Busy:'Выравниваю страницу…', m45NoEdge:'Края не нашлись сами — потяните кружки к углам листа.',
+    m45Corner:['левый верхний угол','правый верхний угол','правый нижний угол','левый нижний угол'], m45Move:'стрелками можно двигать',
+    m45ShT:'Поделились с Mira', m45ShLead:'Что сделать с этим?', m45ShSf:'Сифра, разбери', m45ShSfS:'Скажет, что здесь, и предложит записать',
+    m45ShCt:'Разобрать договор кредита', m45ShCtS:'Настоящая ставка, комиссии, на что смотреть', m45ShNb:'Перенести записи из тетради', m45ShNbS:'Продажи и расходы со страниц — в Mira',
+    m45ShNone:'Ничего не пришло — попробуйте поделиться ещё раз.', m45ShQ:'Что здесь? Разбери и подскажи, что записать в Mira.', m45ShPh:n=>n===1?'1 фото':n+' фото',
+    m45ShLink:'Ссылка', m45ShBig:'Можно до 8 фото за раз — остальные не взяла.'
+  },
+  tg:{
+    m45Met:{sales:'Фурӯш',expenses:'Хароҷоти мағоза',profit:'Фоида',home:'Хароҷоти оила',loan_pay:'Пардохтҳои қарз',loan_left:'Боқимондаи қарзҳо',savings:'Ҷамъғармаҳо'},
+    m45Per:{week:'дар 7 рӯз',month:'дар 30 рӯз',quarter:'дар 3 моҳ',year:'дар 12 моҳ',all:'дар тамоми вақт'},
+    m45PerPrev:{week:'7 рӯзи гузашта',month:'30 рӯзи гузашта',quarter:'3 моҳи гузашта',year:'соли гузашта'},
+    m45ByCat:'аз рӯи намуд', m45ByLoan:'аз рӯи қарзҳо', m45ByEnv:'аз рӯи ҷамъғармаҳо', m45ByWd:'аз рӯи рӯзҳои ҳафта',
+    m45Head:(m,p,v)=>m+' '+p+': '+v,
+    m45Avg:(v,u)=>'Ба ҳисоби миёна '+v+' '+({d:'дар як рӯз',w:'дар як ҳафта',m:'дар як моҳ'})[u]+'.',
+    m45Max:(l,v)=>'Аз ҳама зиёд — '+l+': '+v+'.',
+    m45Vs:(p,w)=>'Нисбат ба '+w+': '+(p>0?'+':'')+p+'%.',
+    m45Neg:(n,t)=>'Дар зиён '+n+' аз '+t+' — сутунҳои сурх.',
+    m45NoMg:'Фоизи нархгузорӣ нест — фурӯш минуси хароҷот ҳисоб мекунам.',
+    m45Top:(l,p)=>'Аз ҳама зиёд — '+l+': '+p+'% ҳама.',
+    m45BestWd:(l,v)=>'Рӯзи беҳтарин — '+l+': ба ҳисоби миёна '+v+'.',
+    m45WorstWd:(l,v)=>'Оромтарин — '+l+': '+v+'.',
+    m45Now:v=>'Ҳоло: '+v+'.',
+    m45Down:(v)=>'Дар ин муддат '+v+' кам шуд.',
+    m45Up:(v)=>'Дар ин муддат '+v+' зиёд шуд.',
+    m45LoanBig:(n,p)=>'Аз ҳама зиёд аз «'+n+'» монд — '+p+'% қарз.',
+    m45Other:'Дигар',
+    m45Empty:'Барои ин давра ҳоло сабт нест — вақте ки бошад, график пайдо мешавад.',
+    m45Tap:'Ба сутун пахш кунед — рақамро нишон медиҳам',
+    m45TapL:'Ба график пахш кунед — рақамро нишон медиҳам',
+    m45At:d=>'Маълумот то '+d,
+    m45ChartAct:'График',
+    m45Wd:['якшанбе','душанбе','сешанбе','чоршанбе','панҷшанбе','ҷумъа','шанбе'],
+    m45Scan:'Канорҳо', m45ScanT:'Канорҳои варақ', m45ScanLead:'Доираҳоро ба кунҷҳои варақ кашед — саҳифа рост ва равшантар мешавад.',
+    m45Flat:'Рост шуд', m45Orig:'Бе ростнамоӣ', m45Apply:'Рост кардан', m45Auto:'Ёфтани канорҳо', m45Whole:'Тамоми акс',
+    m45Mode:{c:'Ранга',g:'Сиёҳу сафед'}, m45ModeL:'Чӣ тавр нигоҳ дорем', m45Busy:'Саҳифаро рост мекунам…', m45NoEdge:'Канорҳо худ ёфт нашуданд — доираҳоро ба кунҷҳои варақ кашед.',
+    m45Corner:['кунҷи чапи боло','кунҷи рости боло','кунҷи рости поён','кунҷи чапи поён'], m45Move:'бо тугмаҳои тир ҳаракат додан мумкин',
+    m45ShT:'Ба Mira фиристоданд', m45ShLead:'Бо ин чӣ кунем?', m45ShSf:'Сифра, таҳлил кун', m45ShSfS:'Мегӯяд, ки ин чист, ва сабт карданро пешниҳод мекунад',
+    m45ShCt:'Таҳлили шартномаи қарз', m45ShCtS:'Фоизи воқеӣ, комиссияҳо, ба чӣ диққат додан', m45ShNb:'Сабтҳо аз дафтар', m45ShNbS:'Фурӯш ва хароҷот аз саҳифаҳо — ба Mira',
+    m45ShNone:'Чизе наомад — боз як бор фиристед.', m45ShQ:'Ин чист? Таҳлил кун ва бигӯ, ки дар Mira чӣ сабт кунам.', m45ShPh:n=>n+' акс',
+    m45ShLink:'Пайванд', m45ShBig:'Якбора то 8 акс мумкин — боқимондаро нагирифтам.'
+  },
+  en:{
+    m45Met:{sales:'Sales',expenses:'Shop expenses',profit:'Profit',home:'Family spending',loan_pay:'Loan payments',loan_left:'Left to repay',savings:'Savings jars'},
+    m45Per:{week:'over 7 days',month:'over 30 days',quarter:'over 3 months',year:'over 12 months',all:'all time'},
+    m45PerPrev:{week:'the previous 7 days',month:'the previous 30 days',quarter:'the previous 3 months',year:'the previous year'},
+    m45ByCat:'by type', m45ByLoan:'by loan', m45ByEnv:'by jar', m45ByWd:'by weekday',
+    m45Head:(m,p,v)=>m+' '+p+': '+v,
+    m45Avg:(v,u)=>'On average '+v+' '+({d:'a day',w:'a week',m:'a month'})[u]+'.',
+    m45Max:(l,v)=>'Highest — '+l+': '+v+'.',
+    m45Vs:(p,w)=>'Compared with '+w+': '+(p>0?'+':'')+p+'%.',
+    m45Neg:(n,t)=>'In the red: '+n+' of '+t+' — the red bars.',
+    m45NoMg:'No markup set — counting sales minus expenses.',
+    m45Top:(l,p)=>'Biggest — '+l+': '+p+'% of the total.',
+    m45BestWd:(l,v)=>'Best day — '+l+': '+v+' on average.',
+    m45WorstWd:(l,v)=>'Quietest — '+l+': '+v+'.',
+    m45Now:v=>'Now: '+v+'.',
+    m45Down:(v)=>'Down by '+v+' over this time.',
+    m45Up:(v)=>'Up by '+v+' over this time.',
+    m45LoanBig:(n,p)=>'Most is left on “'+n+'” — '+p+'% of the debt.',
+    m45Other:'Other',
+    m45Empty:'No records for this period yet — the chart will appear once there are some.',
+    m45Tap:'Tap a bar to see the number',
+    m45TapL:'Tap the chart to see the number',
+    m45At:d=>'Data as of '+d,
+    m45ChartAct:'Chart',
+    m45Wd:['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'],
+    m45Scan:'Edges', m45ScanT:'Page edges', m45ScanLead:'Drag the circles to the corners of the page — it will be straightened and sharpened.',
+    m45Flat:'Straightened', m45Orig:'Keep as is', m45Apply:'Straighten', m45Auto:'Find edges', m45Whole:'Whole photo',
+    m45Mode:{c:'Colour',g:'B&W'}, m45ModeL:'Save as', m45Busy:'Straightening the page…', m45NoEdge:'Couldn’t find the edges — drag the circles to the corners of the page.',
+    m45Corner:['top-left corner','top-right corner','bottom-right corner','bottom-left corner'], m45Move:'arrow keys move it',
+    m45ShT:'Shared with Mira', m45ShLead:'What should I do with it?', m45ShSf:'Sifra, take a look', m45ShSfS:'Says what it is and offers to record it',
+    m45ShCt:'Check a loan contract', m45ShCtS:'Real rate, fees, what to watch for', m45ShNb:'Copy records from a notebook', m45ShNbS:'Sales and expenses from the pages — into Mira',
+    m45ShNone:'Nothing arrived — try sharing again.', m45ShQ:'What is this? Take a look and tell me what to record in Mira.', m45ShPh:n=>n===1?'1 photo':n+' photos',
+    m45ShLink:'Link', m45ShBig:'Up to 8 photos at a time — I didn’t take the rest.'
+  }
+};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M45S[k]); }catch(e){} Object.assign(D[k],M45S[k]); }
+/* ===================== v45: 627 график в ответе Сифры · 628 сканер документа · 629 «Поделиться → Mira» ===================== */
+/* ---------- 627: что рисовать ---------- */
+const M45_MET=['sales','expenses','profit','home','loan_pay','loan_left','savings'], M45_PER=['week','month','quarter','year','all'];
+function m45Spec(i){ i=i&&typeof i==='object'?i:{}; const metric=M45_MET.includes(i.metric)?i.metric:'sales', st=metric==='loan_left'||metric==='savings';
+  let group=i.group==='category'||i.group==='time'?i.group:(metric==='loan_left'?'category':'time'); if(metric==='profit') group='time';
+  const period=M45_PER.includes(i.period)?i.period:(st?'year':'month');
+  const kind=i.kind==='line'||i.kind==='bars'?i.kind:(st?'line':'bars');
+  return {metric,period,group,kind,title:String(i.title||'').replace(/[<>]/g,'').slice(0,80)}; }
+/* вопрос сам просит картинку — рисуем сразу в телефоне: быстро, бесплатно и без интернета */
+function m45Metric(s){
+  if(/прибыл|чистыми|заработал|фоида|profit|earning/.test(s)) return 'profit';
+  if(/осталось|остаток|долг|боқимонда|left to (re)?pay|\bdebt|\bowe/.test(s)) return 'loan_left';
+  if(/платеж|платил|выплат|взнос|пардохт|repay|payment/.test(s)) return 'loan_pay';
+  if(/копил|накоп|отложен|сбереж|конверт|ҷамъғарма|пасандоз|saving|\bjars?\b/.test(s)) return 'savings';
+  if(/(дом|семь|семей|хона|оила|household|family|home)/.test(s)&&/(трат|расход|хароҷ|харҷ|spend|expens|cost)/.test(s)) return 'home';
+  if(/трат|расход|хароҷ|харҷ|spend|expens|cost/.test(s)) return 'expenses';
+  if(/продаж|продал|выручк|касс|торгов|фурӯш|савдо|даромад|sales|revenue|\bsold|takings/.test(s)) return 'sales';
+  return null; }
+function m45Period(s){ s=s.replace(/дн\S* недел\S*|рӯзҳои ҳафта|week ?days?|days? of the week/g,' ');
+  if(/по месяцам|помесячно|аз рӯи моҳ|моҳ ба моҳ|by month|monthly|month by month/.test(s)) return 'year';
+  if(/по неделям|понедельно|аз рӯи ҳафта|by week\b|weekly/.test(s)) return 'quarter';
+  if(/все время|за все|с начала|тамоми вақт|all time|ever/.test(s)) return 'all';
+  if(/квартал|3 месяц|три месяц|3 моҳ|се моҳ|quarter|3 month|three month/.test(s)) return 'quarter';
+  if(/(за|этот|весь|целый|последний|прошлый)\s+год|12 месяц|(як|дар|соли|ин)\s+сол|\byear|12 month/.test(s)) return 'year';
+  if(/недел|7 дн|семь дн|ҳафта|\bweek|7 day/.test(s)) return 'week';
+  if(/месяц|30 дн|моҳ|month|30 day|по дням|by day|daily/.test(s)) return 'month';
+  return null; }
+function m45Group(s){
+  if(/дн\S* недел|рӯзҳои ҳафта|weekday|day of the week|days of the week/.test(s)) return 'category';
+  if(/по вид|по категор|на что|куда уход|по статьям|по кредит|по каждому|по копилк|по конверт|аз рӯи намуд|ба чӣ|by type|by categor|breakdown|by loan|each loan|by jar|where .*go/.test(s)) return 'category';
+  if(/как менял|динамик|по времени|over time|trend/.test(s)) return 'time';
+  return null; }
+function m45Kind(s){ if(/линией|линия|кривой|\bline/.test(s)) return 'line'; if(/столбик|столбц|\bbars?\b/.test(s)) return 'bars'; return null; }
+function m45Intent(q){ const s=String(q||'').toLowerCase().replace(/ё/g,'е'); if(!s||s.length>160) return null;
+  const metric=m45Metric(s); if(!metric) return null;
+  const strong=/диаграмм|нарисуй|построй|на график|в виде график|графиком|наглядн|визуал|кашед|\bchart|\bgraph|\bplot|visuali/.test(s)||(/график/.test(s)&&!/график\S*\s+(платеж|погашен|выплат|работ|пардохт)|по\s+график/.test(s));
+  const per=m45Period(s), grp=m45Group(s);
+  if(!strong&&!(/покажи|показать|сравни|как менял|динамик|нишон|муқоиса|\bshow|compare|trend/.test(s)&&(per||grp))) return null;
+  const sp={metric}; if(per) sp.period=per; if(grp) sp.group=grp; const k=m45Kind(s); if(k) sp.kind=k; return m45Spec(sp); }
+
+/* ---------- 627: цифры из приложения ---------- */
+function m45Ev(metric){ const out=[], sh=ensureShop(), ex=new Set(state.loans.filter(l=>l.example).map(l=>l.id)), d=s=>String(s||'').slice(0,10);
+  if(metric==='sales'||metric==='profit'){ const mg=metric==='profit'?marginPct():null; for(const x of sh.sales||[]){ const v=+x.sum||0; if(v&&x.date) out.push({d:d(x.date),v:mg?v*mg/100:v}); } }
+  if(metric==='expenses'||metric==='profit'){ for(const x of sh.exp||[]){ const v=+x.sum||0; if(v&&x.date) out.push({d:d(x.date),v:metric==='profit'?-v:v,c:catName(x.cat||'other')}); } }
+  if(metric==='home'){ for(const x of state.home||[]){ const v=+x.sum||0; if(v&&x.d) out.push({d:d(x.d),v,c:hcName(x.cat||'other')}); } }
+  if(metric==='loan_pay'){ for(const p of state.payments||[]){ if(ex.has(p.loanId)) continue; const v=+p.amount||0, ln=state.loans.find(l=>l.id===p.loanId); if(v&&p.date) out.push({d:d(p.date),v,c:ln?ln.name:L.m45Other}); } }
+  return out; }
+function m45Day0(){ const t=new Date(); t.setHours(0,0,0,0); return t; }
+function m45Bk(period,first){ const t=m45Day0(), MS=MONTHS[lang].short, B=[]; let u='d';
+  if(period==='week'||period==='month'){ const n=period==='week'?7:30; for(let i=n-1;i>=0;i--){ const x=addDays(t,-i), k=ymd(x); B.push({a:k,b:k,l:n===7?L.m40Wd[x.getDay()]:String(x.getDate()),f:x.getDate()+' '+MS[x.getMonth()],v:0}); } }
+  else if(period==='quarter'){ u='w'; for(let i=12;i>=0;i--){ const b=addDays(t,-7*i), a=addDays(b,-6); B.push({a:ymd(a),b:ymd(b),l:a.getDate()+' '+MS[a.getMonth()],f:a.getDate()+(a.getMonth()!==b.getMonth()?' '+MS[a.getMonth()]:'')+'–'+b.getDate()+' '+MS[b.getMonth()],v:0}); } }
+  else { u='m'; let n=12; if(period==='all'){ const f=first?parseYmd(first):t; n=Math.max(2,Math.min(24,(t.getFullYear()-f.getFullYear())*12+t.getMonth()-f.getMonth()+1)); }
+    for(let i=n-1;i>=0;i--){ const a=new Date(t.getFullYear(),t.getMonth()-i,1), e=new Date(a.getFullYear(),a.getMonth()+1,0);
+      B.push({a:ymd(a),b:ymd(i===0?t:e),l:MS[a.getMonth()]+(a.getMonth()===0?' '+String(a.getFullYear()).slice(2):''),f:MS[a.getMonth()]+' '+a.getFullYear(),v:0}); } }
+  return {B,u}; }
+const m45R=v=>Math.round(+v||0);
+function m45Born(l){ const ps=(state.payments||[]).filter(p=>p.loanId===l.id).map(p=>String(p.date||'')).filter(Boolean).sort(); let b=ps[0]||'';
+  const ms=+String(l.id||'').slice(1); if(ms>1e12&&ms<4e12){ const k=ymd(new Date(ms)); if(!b||k<b) b=k; } return b; }
+function m45Make(sp){ const m=sp.metric, met=L.m45Met[m], lines=[], ch={m,p:sp.period,g:sp.group,k:sp.kind,pts:[],at:ymd(new Date()),lines};
+  const per=L.m45Per[sp.period], first=a=>a.reduce((x,e)=>!x||e<x?e:x,'');
+  const done=(t)=>{ ch.t=sp.title||t; ch.pts=ch.pts.map(p=>Object.assign(p,{v:m45R(p.v)})); if(!ch.pts.length||ch.pts.every(p=>!p.v)){ ch.empty=1; ch.lines.splice(0,ch.lines.length,L.m45Empty); } return ch; };
+  /* остатки кредитов и копилки — это «сколько сейчас», а не поток */
+  if(m==='loan_left'||m==='savings'){
+    const loans=state.loans.filter(l=>!l.example);
+    if(sp.group==='category'){ ch.hz=1;
+      if(m==='loan_left') ch.pts=activeList().filter(x=>!x.loan.example&&!x.a.done).map(x=>({l:x.loan.name,v:x.a.remaining||0}));
+      else ch.pts=ENVS.map(e=>({l:(ENV_IC[e]||'')+' '+(L['env_'+e]||e),v:envBal(e)})).filter(p=>p.v>0);
+      ch.pts.sort((a,b)=>b.v-a.v); const tot=ch.pts.reduce((s,p)=>s+p.v,0); ch.tot=m45R(tot);
+      lines.push(met+': '+money(tot)+'.'); if(ch.pts.length>1&&tot>0){ const t=ch.pts[0], pc=Math.round(t.v/tot*100); lines.push(m==='loan_left'?L.m45LoanBig(t.l,pc):L.m45Top(t.l,pc)); }
+      return done(met+' '+(m==='loan_left'?L.m45ByLoan:L.m45ByEnv)); }
+    const ev=m==='savings'?(state.envTx||[]).map(t=>String(t.d||'')).filter(Boolean):loans.map(m45Born).filter(Boolean);
+    const {B,u}=m45Bk(sp.period,first(ev)); ch.u=u;
+    if(m==='savings'){ const tx=(state.envTx||[]).filter(t=>t.d); for(const b of B) b.v=tx.filter(t=>String(t.d)<=b.b).reduce((s,t)=>s+(+t.a||0),0); }
+    else { const now=new Map(activeList().filter(x=>!x.loan.example).map(x=>[x.loan.id,x.a.remaining||0]));
+      for(const b of B) b.v=loans.reduce((s,l)=>{ const born=m45Born(l); if(born&&b.b<born) return s; return s+(now.get(l.id)||0)+(state.payments||[]).filter(p=>p.loanId===l.id&&String(p.date)>b.b).reduce((q,p)=>q+(+p.amount||0),0); },0); }
+    ch.pts=B.map(b=>({l:b.l,f:b.f,v:b.v})); const a=B[0].v, z=B[B.length-1].v; ch.tot=m45R(z);
+    lines.push(met+': '+money(z)+'.'); if(Math.abs(z-a)>=1) lines.push(z<a?L.m45Down(money(a-z)):L.m45Up(money(z-a)));
+    return done(met+' '+per); }
+  /* поток денег: продажи, расходы, прибыль, траты семьи, платежи */
+  const ev=m45Ev(m), {B,u}=m45Bk(sp.period,first(ev.map(e=>e.d))), A=B[0].a, Z=B[B.length-1].b, win=ev.filter(e=>e.d>=A&&e.d<=Z), tot=win.reduce((s,e)=>s+e.v,0);
+  ch.tot=m45R(tot); ch.u=u;
+  if(sp.group==='category'&&m==='sales'){ /* продажи по дням недели — в среднем за такой день */
+    const sum=[0,0,0,0,0,0,0], cnt=[0,0,0,0,0,0,0]; for(let x=parseYmd(A);ymd(x)<=Z;x=addDays(x,1)) cnt[x.getDay()]++;
+    for(const e of win) sum[parseYmd(e.d).getDay()]+=e.v;
+    ch.pts=[1,2,3,4,5,6,0].map(w=>({l:L.m40Wd[w],f:L.m45Wd[w],v:cnt[w]?sum[w]/cnt[w]:0,w})); ch.wd=1;
+    lines.push(L.m45Head(met,per,money(tot))); const nz=ch.pts.filter(p=>p.v>0);
+    if(nz.length>1){ const best=nz.reduce((a,b)=>b.v>a.v?b:a), worst=nz.reduce((a,b)=>b.v<a.v?b:a); lines.push(L.m45BestWd(best.f,money(best.v))); if(worst!==best) lines.push(L.m45WorstWd(worst.f,money(worst.v))); }
+    return done(met+' '+L.m45ByWd+' · '+per); }
+  if(sp.group==='category'){ ch.hz=1; const by=new Map(); for(const e of win){ const c=e.c||L.m45Other; by.set(c,(by.get(c)||0)+e.v); }
+    let pts=[...by].map(([l,v])=>({l,v})).filter(p=>p.v>0).sort((a,b)=>b.v-a.v); if(pts.length>8){ const rest=pts.slice(7).reduce((s,p)=>s+p.v,0); pts=pts.slice(0,7).concat([{l:L.m45Other,v:rest}]); }
+    ch.pts=pts; lines.push(L.m45Head(met,per,money(tot))); if(pts.length>1&&tot>0) lines.push(L.m45Top(pts[0].l,Math.round(pts[0].v/tot*100)));
+    return done(met+' '+L.m45ByCat+' · '+per); }
+  for(const e of win){ for(const b of B) if(e.d>=b.a&&e.d<=b.b){ b.v+=e.v; break; } }
+  ch.pts=B.map(b=>({l:b.l,f:b.f,v:b.v}));
+  lines.push(L.m45Head(met,per,money(tot)));
+  if(B.length>1&&win.length) lines.push(L.m45Avg(money(tot/B.length),u));
+  const mx=B.reduce((a,b)=>b.v>a.v?b:a,B[0]); if(mx.v>0&&B.length>1) lines.push(L.m45Max(mx.f,money(mx.v)));
+  if(m==='profit'){ const neg=B.filter(b=>b.v<0).length; if(neg) lines.push(L.m45Neg(neg,B.length)); if(!marginPct()) lines.push(L.m45NoMg); }
+  if(sp.period!=='all'&&win.length){ const n=Math.round((parseYmd(Z)-parseYmd(A))/864e5)+1, pa=ymd(addDays(parseYmd(A),-n)), pz=ymd(addDays(parseYmd(A),-1));
+    const prev=ev.filter(e=>e.d>=pa&&e.d<=pz).reduce((s,e)=>s+e.v,0); if(prev>0&&tot>=0){ const pc=Math.round((tot-prev)/prev*100); if(Math.abs(pc)<1000) lines.push(L.m45Vs(pc,L.m45PerPrev[sp.period])); } }
+  return done(met+' '+per); }
+
+/* ---------- 627: рисунок в пузыре Сифры ---------- */
+function m45SvgHTML(ch){ const P=ch.pts, n=P.length, W=320, H=164, T=10, Bm=22, X0=34, ih=H-T-Bm, line=ch.k==='line'&&!ch.wd;
+  const vs=P.map(p=>p.v), mx=Math.max(0,...vs), mn=Math.min(0,...vs), span=(mx-mn)||1, y=v=>T+(mx-v)/span*ih, y0=y(0), cw=(W-X0)/n, f=v=>v.toFixed(1), X=i=>X0+i*cw;
+  let g='';
+  if(mx>0) g+=`<line class="gr" x1="${X0}" x2="${W}" y1="${f(y(mx))}" y2="${f(y(mx))}"/><text class="gl" x="${X0-5}" y="${f(y(mx)+3)}" text-anchor="end">${m40Num(mx)}</text>`;
+  if(mx>0&&mn===0) g+=`<line class="gr" x1="${X0}" x2="${W}" y1="${f(y(mx/2))}" y2="${f(y(mx/2))}"/><text class="gl" x="${X0-5}" y="${f(y(mx/2)+3)}" text-anchor="end">${m40Num(mx/2)}</text>`;
+  if(mn<0) g+=`<line class="gr" x1="${X0}" x2="${W}" y1="${f(y(mn))}" y2="${f(y(mn))}"/><text class="gl" x="${X0-5}" y="${f(y(mn)+3)}" text-anchor="end">${m40Num(mn)}</text>`;
+  g+=`<line class="z" x1="${X0}" x2="${W}" y1="${f(y0)}" y2="${f(y0)}"/>`+(mn<0||!mx?`<text class="gl" x="${X0-5}" y="${f(y0+3)}" text-anchor="end">0</text>`:'');
+  if(line){ const pt=P.map((p,i)=>[X(i)+cw/2,y(p.v)]), d=pt.map((q,i)=>(i?'L':'M')+f(q[0])+' '+f(q[1])).join(' ');
+    g+=`<path class="ar" d="${d} L${f(pt[n-1][0])} ${f(y0)} L${f(pt[0][0])} ${f(y0)} Z"/><path class="ln" d="${d}"/>`;
+    g+=pt.map((q,i)=>`<circle class="dt${i===n-1?' on':''}" data-m45b="${i}" cx="${f(q[0])}" cy="${f(q[1])}" r="4.5"/>`).join(''); }
+  else g+=P.map((p,i)=>{ const v=p.v, h=Math.max(v?1.5:0,Math.abs(y(v)-y0)), x=X(i)+cw*0.16, w=Math.max(1.5,cw*0.68), top=v>=0?y0-h:y0;
+    return `<rect class="b${v<0?' n':''}" data-m45b="${i}" x="${f(x)}" y="${f(top)}" width="${f(w)}" height="${f(h)}" rx="${f(Math.min(3,w/2))}"/>`; }).join('');
+  const step=Math.max(1,Math.ceil(n/(ch.wd?7:6)));
+  g+=P.map((p,i)=>{ if((n-1-i)%step) return ''; const x=X(i)+cw/2, a=x>W-16?'end':'middle'; return `<text class="xl" x="${f(a==='end'?W-1:x)}" y="${H-6}" text-anchor="${a}">${esc(p.l)}</text>`; }).join('');
+  g+=P.map((p,i)=>`<rect class="hit" data-m45i="${i}" data-m45t="${esc((p.f||p.l)+': '+money(p.v))}" x="${f(X(i))}" y="0" width="${f(cw)}" height="${H}"/>`).join('');
+  return `<svg class="m45-svg" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(ch.t+'. '+(ch.lines[0]||''))}">${g}</svg>`; }
+function m45RowsHTML(ch){ const mx=Math.max(1,...ch.pts.map(p=>Math.abs(p.v)));
+  return `<div class="m45-rows" role="list">${ch.pts.map(p=>`<div class="m45-r" role="listitem"><span class="m45-rl">${esc(p.l)}</span><b>${esc(money(p.v))}</b><span class="m45-rb" aria-hidden="true"><i style="width:${Math.max(2,Math.round(Math.abs(p.v)/mx*100))}%"></i></span></div>`).join('')}</div>`; }
+function m45CardHTML(ch){ const ttl=esc(ch.t||'');
+  if(ch.empty) return `<figure class="m45-ch m45-e"><figcaption class="m45-t">${ico('chart',16)} ${ttl}</figcaption>${ch.cap?`<p>${esc(L.m45Empty)}</p>`:''}</figure>`;
+  return `<figure class="m45-ch"><figcaption class="m45-t">${ico('chart',16)} ${ttl}</figcaption>${ch.hz?m45RowsHTML(ch):m45SvgHTML(ch)+`<div class="m45-tip" aria-live="polite">${esc(ch.k==='line'&&!ch.wd?L.m45TapL:L.m45Tap)}</div>`}
+    ${ch.cap&&ch.lines.length?`<div class="m45-cap">${ch.lines.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`:''}<small class="m45-at">${esc(L.m45At(dShort(ch.at)))}</small></figure>`; }
+function m45MsgHTML(m,i){ return `<div class="sf-m a m45-m">${m.t?sfMd(m.t):''}${m45CardHTML(m.ch)}
+    ${m.src&&m.src.length?`<div class="sf-src">${m.src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||sfHost(s.url))}</a>`).join('')}</div>`:''}
+    ${m.t?`<button class="sf-say" data-sfsay="${i}" aria-label="${L.sfSay}">🔊</button>`:''}</div>`; }
+/* ответ сервера «show_chart» превращается в рисунок при первом показе; цифры — из телефона, а не из модели */
+try{ const m45Msg0=sfMsgHTML; sfMsgHTML=function(m,i){ try{ if(m&&m.r==='a'){
+      if(m.act&&m.act.name==='show_chart'&&!m.ch){ const ch=m45Make(m45Spec(m.act.input)); delete m.act; if(!m.t||m.t===L.sfDone) m.t=ch.lines.join('\n'); else ch.cap=1; m.ch=ch; }
+      if(m.ch&&typeof m.ch==='object'&&Array.isArray(m.ch.pts)) return m45MsgHTML(m,i); } }catch(e){} return m45Msg0.apply(this,arguments); }; }catch(e){}
+try{ const m45Lbl0=sfActLabel; sfActLabel=function(a){ if(a&&a.name==='show_chart') return '📊 '+L.m45ChartAct; return m45Lbl0.apply(this,arguments); }; }catch(e){}
+try{ const m45Do0=sfDo; sfDo=function(a){ if(a&&a.name==='show_chart') return; return m45Do0.apply(this,arguments); }; }catch(e){}
+function m45Local(q,voice,sp){ const log=sfLog(), ch=m45Make(sp), t=ch.lines.join('\n');
+  log.push({r:'u',t:q,v:voice?1:0,ts:Date.now()}); log.push({r:'a',t,ch,ts:Date.now()}); log.splice(0,Math.max(0,log.length-SF_KEEP)); persist();
+  const inp=$('#sf-in'); if(inp){ inp.value=''; inp.style.height=''; }
+  if($('#sf-log')&&overlay.classList.contains('open')) sfRedraw();
+  try{ if(sfT){ sfT.said=1; sfCapShow(); sfTalkSet('speak'); sfSay(t,()=>{ if(!sfT) return; if(sfTalkHere()) sfTalkListen(); else sfTalkEnd(); }); } else if(voice) sfSay(t); }catch(e){} }
+try{ const m45Ask0=sfAsk; sfAsk=function(q,voice){ try{ const s=String(q||'').trim(); if(s&&!sfBusy&&!sfImg){ const sp=m45Intent(s); if(sp){ m45Local(s,voice,sp); return Promise.resolve(); } } }catch(e){} return m45Ask0.apply(this,arguments); }; }catch(e){}
+document.addEventListener('click',e=>{ const h=e.target&&e.target.closest&&e.target.closest('.m45-ch [data-m45i]'); if(!h) return; const fg=h.closest('.m45-ch'), i=h.getAttribute('data-m45i');
+  fg.querySelectorAll('[data-m45b]').forEach(b=>b.classList.toggle('on',b.getAttribute('data-m45b')===i)); const tp=fg.querySelector('.m45-tip'); if(tp) tp.textContent=h.getAttribute('data-m45t')||''; });
+
+/* ---------- 628: сканер — находим лист, выпрямляем, убираем тень ---------- */
+const M45_CROP='<svg class="mi" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8V4h4M21 8V4h-4M3 16v4h4M21 16v4h-4"/><path d="M8 9h8v6H8z"/></svg>';
+function m45Detect(im,W,H){ try{ const k=Math.min(1,360/Math.max(W,H)), w=Math.max(16,Math.round(W*k)), h=Math.max(16,Math.round(H*k)), N=w*h;
+    const c=document.createElement('canvas'); c.width=w; c.height=h; const g=c.getContext('2d',{willReadFrequently:true}); g.drawImage(im,0,0,w,h); const px=g.getImageData(0,0,w,h).data;
+    let f=new Float32Array(N); for(let i=0,j=0;j<N;i+=4,j++){ const r=px[i],gg=px[i+1],b=px[i+2]; f[j]=(r*299+gg*587+b*114)/1000-0.5*(Math.max(r,gg,b)-Math.min(r,gg,b)); }
+    for(let pass=0;pass<2;pass++){ const o=new Float32Array(N); for(let y=0;y<h;y++) for(let x=0;x<w;x++){ let s=0,n=0; for(let dy=-1;dy<=1;dy++){ const yy=y+dy; if(yy<0||yy>=h) continue; for(let dx=-1;dx<=1;dx++){ const xx=x+dx; if(xx<0||xx>=w) continue; s+=f[yy*w+xx]; n++; } } o[y*w+x]=s/n; } f=o; }
+    const hist=new Float64Array(256); for(let j=0;j<N;j++){ const v=f[j]; hist[v<0?0:v>255?255:v|0]++; }
+    let sum=0; for(let i=0;i<256;i++) sum+=i*hist[i]; let sB=0,wB=0,best=-1,t=128; for(let i=0;i<256;i++){ wB+=hist[i]; if(!wB) continue; const wF=N-wB; if(!wF) break; sB+=i*hist[i]; const mB=sB/wB, mF=(sum-sB)/wF, v=wB*wF*(mB-mF)*(mB-mF); if(v>best){ best=v; t=i; } }
+    const m0=new Uint8Array(N); for(let j=0;j<N;j++) m0[j]=f[j]>t?1:0;
+    const m=new Uint8Array(N); for(let y=1;y<h-1;y++) for(let x=1;x<w-1;x++){ const j=y*w+x; m[j]=m0[j]&&m0[j-1]&&m0[j+1]&&m0[j-w]&&m0[j+w]?1:0; }
+    /* самый большой светлый кусок, который задевает середину снимка */
+    const lab=new Int32Array(N), st=new Int32Array(N); let id=0, bestId=0, bestN=0;
+    const cx0=w*0.3, cx1=w*0.7, cy0=h*0.3, cy1=h*0.7;
+    for(let j=0;j<N;j++){ if(!m[j]||lab[j]) continue; id++; let sp=0, n=0, mid=false; st[sp++]=j; lab[j]=id;
+      while(sp){ const q=st[--sp], x=q%w, y=(q-x)/w; n++; if(x>=cx0&&x<=cx1&&y>=cy0&&y<=cy1) mid=true;
+        if(x>0&&m[q-1]&&!lab[q-1]){ lab[q-1]=id; st[sp++]=q-1; } if(x<w-1&&m[q+1]&&!lab[q+1]){ lab[q+1]=id; st[sp++]=q+1; }
+        if(y>0&&m[q-w]&&!lab[q-w]){ lab[q-w]=id; st[sp++]=q-w; } if(y<h-1&&m[q+w]&&!lab[q+w]){ lab[q+w]=id; st[sp++]=q+w; } }
+      if(mid&&n>bestN){ bestN=n; bestId=id; } }
+    if(!bestId) return null;
+    /* дырки внутри (текст, клетки) заливаем: снаружи — то, что достаётся от края снимка */
+    const out=new Uint8Array(N); let sp=0; const push=q=>{ if(!out[q]&&lab[q]!==bestId){ out[q]=1; st[sp++]=q; } };
+    for(let x=0;x<w;x++){ push(x); push((h-1)*w+x); } for(let y=0;y<h;y++){ push(y*w); push(y*w+w-1); }
+    while(sp){ const q=st[--sp], x=q%w, y=(q-x)/w; if(x>0) push(q-1); if(x<w-1) push(q+1); if(y>0) push(q-w); if(y<h-1) push(q+w); }
+    let A=0, s1=1e9, s2=-1e9, d1=1e9, d2=-1e9, P=[[0,0],[0,0],[0,0],[0,0]], fin=0, fout=0, nin=0, nout=0;
+    for(let j=0;j<N;j++){ const x=j%w, y=(j-x)/w; if(out[j]){ fout+=f[j]; nout++; continue; } A++; fin+=f[j]; nin++;
+      const a=x+y, b=x-y; if(a<s1){ s1=a; P[0]=[x,y]; } if(a>s2){ s2=a; P[2]=[x,y]; } if(b>d2){ d2=b; P[1]=[x,y]; } if(b<d1){ d1=b; P[3]=[x,y]; } }
+    const area=q=>{ let s=0; for(let i=0;i<4;i++){ const p=q[i], r=q[(i+1)%4]; s+=p[0]*r[1]-r[0]*p[1]; } return Math.abs(s)/2; }, Aq=area(P);
+    if(!(Aq>0)||A/N<0.12||A/N>0.965||A/Aq<0.88||A/Aq>1.08) return null;
+    if(nout&&nin&&fin/nin-fout/nout<18) return null;
+    for(let i=0;i<4;i++){ const a=P[(i+3)%4], b=P[i], c2=P[(i+1)%4], u=[a[0]-b[0],a[1]-b[1]], v=[c2[0]-b[0],c2[1]-b[1]], lu=Math.hypot(...u), lv=Math.hypot(...v);
+      if(lu<Math.min(w,h)*0.2||lv<Math.min(w,h)*0.2) return null; const ang=Math.acos(Math.max(-1,Math.min(1,(u[0]*v[0]+u[1]*v[1])/(lu*lv))))*180/Math.PI; if(ang<50||ang>130) return null; }
+    const e=0.5; return P.map(([x,y])=>[Math.max(0,Math.min(W,(x+e)/k)),Math.max(0,Math.min(H,(y+e)/k))]); }catch(e){ return null; } }
+function m45Order(q){ const cx=q.reduce((s,p)=>s+p[0],0)/4, cy=q.reduce((s,p)=>s+p[1],0)/4, s=q.map(p=>p.slice()).sort((a,b)=>Math.atan2(a[1]-cy,a[0]-cx)-Math.atan2(b[1]-cy,b[0]-cx));
+  let k=0; for(let i=1;i<4;i++) if(s[i][0]+s[i][1]<s[k][0]+s[k][1]) k=i; return s.slice(k).concat(s.slice(0,k)); }
+function m45Hom(src,dst){ const A=[], b=[]; for(let i=0;i<4;i++){ const [x,y]=src[i], [u,v]=dst[i]; A.push([u,v,1,0,0,0,-u*x,-v*x]); b.push(x); A.push([0,0,0,u,v,1,-u*y,-v*y]); b.push(y); }
+  for(let c=0;c<8;c++){ let p=c; for(let r=c+1;r<8;r++) if(Math.abs(A[r][c])>Math.abs(A[p][c])) p=r; [A[c],A[p]]=[A[p],A[c]]; [b[c],b[p]]=[b[p],b[c]]; const d=A[c][c]; if(Math.abs(d)<1e-10) return null;
+    for(let r=0;r<8;r++){ if(r===c) continue; const k=A[r][c]/d; if(!k) continue; for(let j=c;j<8;j++) A[r][j]-=k*A[c][j]; b[r]-=k*b[c]; } }
+  return b.map((v,i)=>v/A[i][i]); }
+/* тень и жёлтый свет: делим на «бумагу» — светлый уровень в каждой клетке листа */
+function m45Clean(a,W,H,mode){ const cs=Math.max(8,Math.round(Math.max(W,H)/36)), gw=Math.ceil(W/cs), gh=Math.ceil(H/cs), bg=new Float32Array(gw*gh*3), lum=new Float32Array(gw*gh);
+  for(let gy=0;gy<gh;gy++) for(let gx=0;gx<gw;gx++){ const S=[]; for(let y=gy*cs;y<Math.min(H,(gy+1)*cs);y+=3) for(let x=gx*cs;x<Math.min(W,(gx+1)*cs);x+=3){ const o=(y*W+x)*4; S.push([a[o]*0.299+a[o+1]*0.587+a[o+2]*0.114,a[o],a[o+1],a[o+2]]); }
+    S.sort((p,q)=>q[0]-p[0]); const top=S.slice(0,Math.max(1,Math.round(S.length*0.12))); let r=0,g=0,b=0; for(const s of top){ r+=s[1]; g+=s[2]; b+=s[3]; } const n=top.length, c=gy*gw+gx;
+    bg[c*3]=r/n; bg[c*3+1]=g/n; bg[c*3+2]=b/n; lum[c]=(r*0.299+g*0.587+b*0.114)/n; }
+  const sl=Array.from(lum).sort((p,q)=>p-q), med=sl[Math.floor(sl.length*0.6)]||200, floor=Math.max(60,med*0.62);
+  for(let c=0;c<gw*gh;c++) if(lum[c]<floor){ const k=floor/Math.max(1,lum[c]); bg[c*3]*=k; bg[c*3+1]*=k; bg[c*3+2]*=k; }
+  const sm=new Float32Array(bg.length); for(let gy=0;gy<gh;gy++) for(let gx=0;gx<gw;gx++) for(let ch=0;ch<3;ch++){ let s=0,n=0; for(let dy=-1;dy<=1;dy++) for(let dx=-1;dx<=1;dx++){ const yy=gy+dy, xx=gx+dx; if(yy<0||yy>=gh||xx<0||xx>=gw) continue; s+=bg[(yy*gw+xx)*3+ch]; n++; } sm[(gy*gw+gx)*3+ch]=s/n; }
+  for(let y=0;y<H;y++){ let fy=(y+0.5)/cs-0.5; if(fy<0) fy=0; if(fy>gh-1) fy=gh-1; const y0=Math.floor(fy), y1=Math.min(gh-1,y0+1), ty=fy-y0;
+    for(let x=0;x<W;x++){ let fx=(x+0.5)/cs-0.5; if(fx<0) fx=0; if(fx>gw-1) fx=gw-1; const x0=Math.floor(fx), x1=Math.min(gw-1,x0+1), tx=fx-x0, o=(y*W+x)*4;
+      const i00=(y0*gw+x0)*3, i10=(y0*gw+x1)*3, i01=(y1*gw+x0)*3, i11=(y1*gw+x1)*3;
+      for(let c=0;c<3;c++){ const t0=sm[i00+c]+(sm[i10+c]-sm[i00+c])*tx, t1=sm[i01+c]+(sm[i11+c]-sm[i01+c])*tx, B=Math.max(24,t0+(t1-t0)*ty); let v=a[o+c]/B*250; a[o+c]=v>255?255:v; }
+      if(mode==='g'){ const l=a[o]*0.299+a[o+1]*0.587+a[o+2]*0.114; let v=(l-48)*255/(232-48); v=v<0?0:v>255?255:v; a[o]=a[o+1]=a[o+2]=v; } } } }
+async function m45Warp(im,q,mode){ const sw=im.naturalWidth||im.width, sh=im.naturalHeight||im.height, d=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1]);
+  let W=Math.max(d(q[0],q[1]),d(q[3],q[2])), H=Math.max(d(q[0],q[3]),d(q[1],q[2])); const k=Math.min(1,2200/Math.max(W,H)); W=Math.max(16,Math.round(W*k)); H=Math.max(16,Math.round(H*k));
+  const h=m45Hom(q,[[0,0],[W-1,0],[W-1,H-1],[0,H-1]]); if(!h) throw new Error('hom');
+  const sc=document.createElement('canvas'); sc.width=sw; sc.height=sh; const sg=sc.getContext('2d',{willReadFrequently:true}); sg.fillStyle='#fff'; sg.fillRect(0,0,sw,sh); sg.drawImage(im,0,0); const S=sg.getImageData(0,0,sw,sh).data;
+  const oc=document.createElement('canvas'); oc.width=W; oc.height=H; const og=oc.getContext('2d'), O=og.createImageData(W,H), od=O.data, mx=sw-2, my=sh-2;
+  for(let v=0;v<H;v++){ let nx=h[1]*v+h[2], ny=h[4]*v+h[5], nz=h[7]*v+1;
+    for(let u=0;u<W;u++){ const z=nz+h[6]*u, x=(nx+h[0]*u)/z, y=(ny+h[3]*u)/z; let x0=x|0, y0=y|0; if(x0<0) x0=0; else if(x0>mx) x0=mx; if(y0<0) y0=0; else if(y0>my) y0=my;
+      let fx=x-x0, fy=y-y0; fx=fx<0?0:fx>1?1:fx; fy=fy<0?0:fy>1?1:fy; const i00=(y0*sw+x0)*4, i10=i00+4, i01=i00+sw*4, i11=i01+4, o=(v*W+u)*4;
+      for(let c=0;c<3;c++){ const p=S[i00+c]+(S[i10+c]-S[i00+c])*fx, r=S[i01+c]+(S[i11+c]-S[i01+c])*fx; od[o+c]=p+(r-p)*fy; } od[o+3]=255; } }
+  m45Clean(od,W,H,mode); og.putImageData(O,0,0); return {src:oc.toDataURL('image/jpeg',0.9),w:W,h:H}; }
+let m45TT=0;
+try{ const m45Ing0=p29Ingest; p29Ingest=async function(){ const pg=await m45Ing0.apply(this,arguments);
+    try{ const n=Date.now(); if(n-m45TT>4000){ m45TT=n; toast(L.m45Busy); } const im=await p29Load(pg.src); pg.orig=pg.src; pg.ow=pg.w; pg.oh=pg.h; pg.mode='c'; const q=m45Detect(im,pg.w,pg.h); pg.quad=q; pg.scan=0;
+      if(q){ const o=await m45Warp(im,q,'c'); pg.src=o.src; pg.w=o.w; pg.h=o.h; pg.scan=1; pg.dark=false; } }catch(e){ if(pg.orig) pg.src=pg.orig; pg.scan=0; }
+    return pg; }; }catch(e){}
+p29Pages=function(pages,attr){ return `<div class="p29-pages">${pages.map((p,i)=>`<div class="p29-pg${p.scan?' m45-sc':''}"><img src="${p.th||p.src}" alt="${esc(L.p29Page(i+1))}"><span class="p29-pn">${i+1}</span>${p.scan?`<span class="m45-ok">${ico('check',12)}${esc(L.m45Flat)}</span>`:''}${p.dark?`<span class="p29-warn">${L.p29Dark}</span>`:p.small?`<span class="p29-warn">${L.p29Small}</span>`:''}${attr==='c29'||attr==='n29'?`<button type="button" class="m45-eb" data-m45scan="${attr}:${i}" aria-label="${esc(L.m45ScanT)} ${i+1}">${M45_CROP}</button>`:''}<div class="p29-pb"><button type="button" data-${attr}-rot="${i}" aria-label="${esc(L.p29Rot)} ${i+1}">${ico('repeat',16)}</button><button type="button" data-${attr}-del="${i}" aria-label="${esc(L.p29Del)} ${i+1}">${ico('close',16)}</button></div></div>`).join('')}</div>`; };
+function m45Ctx(a){ if(a==='c29') return {pages:ct29.pages,redraw:()=>{ const n=$('#c29-note'); if(n) ct29.note=n.value.trim(); ct29Sheet(); }};
+  if(a==='n29') return {pages:nb29.pages,redraw:()=>{ const y=$('#n29-y'); if(y&&/^\d{4}$/.test(y.value)) nb29.year=y.value; nb29Sheet(); }}; return null; }
+/* поворот снимка: точка оригинала ↔ точка на экране (как в p29Out) */
+function m45Rot(p,r,W,H){ const [x,y]=p; return r===90?[H-y,x]:r===180?[W-x,H-y]:r===270?[y,W-x]:[x,y]; }
+function m45Unrot(p,r,W,H){ const [X,Y]=p; return r===90?[Y,H-X]:r===180?[W-X,H-Y]:r===270?[W-Y,X]:[X,Y]; }
+let M45E=null;
+async function m45Edit(a,i,btn){ const ctx=m45Ctx(a); if(!ctx) return; const pg=ctx.pages[i]; if(!pg||M45E) return;
+  const src=pg.orig||pg.src; let im; try{ im=await p29Load(src); }catch(e){ toast(L.rcFail); return; }
+  const W=im.naturalWidth, H=im.naturalHeight, r=(((pg.rot||0)%360)+360)%360, DW=r%180?H:W, DH=r%180?W:H;
+  let q=pg.quad&&pg.quad.length===4?pg.quad.map(p=>p.slice()):m45Detect(im,W,H), miss=!q; if(!q) q=[[W*.06,H*.06],[W*.94,H*.06],[W*.94,H*.94],[W*.06,H*.94]];
+  const k=Math.min(1,1400/Math.max(DW,DH)), cv=document.createElement('canvas'); cv.width=Math.round(DW*k); cv.height=Math.round(DH*k); const cg=cv.getContext('2d'); cg.translate(cv.width/2,cv.height/2); cg.rotate(r*Math.PI/180); cg.drawImage(im,-W*k/2,-H*k/2,W*k,H*k);
+  const root=document.createElement('div'); root.className='m45-ed'; root.setAttribute('role','dialog'); root.setAttribute('aria-modal','true'); root.setAttribute('aria-label',L.m45ScanT);
+  root.innerHTML=`<div class="m45-eh"><div><b>${esc(L.m45ScanT)} · ${esc(L.p29Page(i+1))}</b><small id="m45Lead">${esc(miss?L.m45NoEdge:L.m45ScanLead)}</small></div><button type="button" class="m45-ex" id="m45X" aria-label="${esc(L.close)}">${ico('close',22)}</button></div>
+    <div class="m45-ew" id="m45W"><div class="m45-st" id="m45St"><svg id="m45Sv" viewBox="0 0 ${DW} ${DH}" preserveAspectRatio="none"><path class="m45-sh" id="m45Sh"/><path class="m45-pl" id="m45Pl"/>${[0,1,2,3].map(j=>`<g class="m45-hd" data-m45h="${j}" tabindex="0" role="slider" aria-label="${esc(L.m45Corner[j]+' — '+L.m45Move)}" aria-valuetext=""><circle class="m45-hh" r="1"/><circle class="m45-hc" r="1"/></g>`).join('')}</svg><canvas class="m45-lp" id="m45Lp" width="112" height="112" hidden></canvas></div></div>
+    <div class="m45-ef"><div class="seg m45-seg" role="group" aria-label="${esc(L.m45ModeL)}">${['c','g'].map(x=>`<button type="button" data-m45md="${x}" aria-pressed="${(pg.mode||'c')===x}">${esc(L.m45Mode[x])}</button>`).join('')}</div>
+      <div class="m45-eb2"><button type="button" class="btn btn-ghost" id="m45Auto">${esc(L.m45Auto)}</button><button type="button" class="btn btn-ghost" id="m45All">${esc(L.m45Whole)}</button></div>
+      <div class="m45-eb2"><button type="button" class="btn btn-ghost" id="m45Off">${esc(L.m45Orig)}</button><button type="button" class="btn btn-primary" id="m45Go">${M45_CROP} ${esc(L.m45Apply)}</button></div></div>`;
+  root.querySelector('.m45-st').prepend(cv); cv.className='m45-cv'; document.body.appendChild(root);
+  const E=M45E={root,pg,ctx,im,W,H,r,DW,DH,q,mode:pg.mode||'c',sc:1,btn,cv,busy:false};
+  const sv=root.querySelector('#m45Sv'), st=root.querySelector('#m45St'), wr=root.querySelector('#m45W'), lp=root.querySelector('#m45Lp');
+  const D=()=>E.q.map(p=>m45Rot(p,r,W,H));
+  const fit=()=>{ const bw=wr.clientWidth-24, bh=wr.clientHeight-24; E.sc=Math.max(0.01,Math.min(bw/DW,bh/DH)); st.style.width=Math.round(DW*E.sc)+'px'; st.style.height=Math.round(DH*E.sc)+'px'; draw(); };
+  const draw=()=>{ const P=D(), d='M'+P.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join(' L')+' Z', R=1/E.sc;
+    sv.querySelector('#m45Pl').setAttribute('d',d); sv.querySelector('#m45Sh').setAttribute('d',`M0 0H${DW}V${DH}H0Z `+d); sv.querySelector('#m45Pl').style.strokeWidth=(2.5*R)+'px';
+    sv.querySelectorAll('[data-m45h]').forEach(g=>{ const j=+g.getAttribute('data-m45h'), p=P[j]; g.setAttribute('transform',`translate(${p[0].toFixed(1)} ${p[1].toFixed(1)})`);
+      g.querySelector('.m45-hh').setAttribute('r',(24*R).toFixed(2)); const c=g.querySelector('.m45-hc'); c.setAttribute('r',(11*R).toFixed(2)); c.style.strokeWidth=(3*R)+'px';
+      g.setAttribute('aria-valuetext',Math.round(E.q[j][0]/W*100)+'%, '+Math.round(E.q[j][1]/H*100)+'%'); }); };
+  const loupe=(P,cx,cy)=>{ const z=2.2/E.sc, s=56*z/k*k, g=lp.getContext('2d'); lp.hidden=false; lp.classList.toggle('r',cx<DW/2);
+    g.fillStyle='#fff'; g.fillRect(0,0,112,112); g.drawImage(cv,(P[0]-28/ (E.sc*2.2))*k,(P[1]-28/(E.sc*2.2))*k,56/(E.sc*2.2)*k,56/(E.sc*2.2)*k,0,0,112,112);
+    g.strokeStyle='rgba(0,0,0,.55)'; g.lineWidth=1; g.beginPath(); g.moveTo(56,44); g.lineTo(56,68); g.moveTo(44,56); g.lineTo(68,56); g.stroke(); };
+  const setP=(j,X,Y)=>{ X=Math.max(0,Math.min(DW,X)); Y=Math.max(0,Math.min(DH,Y)); E.q[j]=m45Unrot([X,Y],r,W,H); draw(); return [X,Y]; };
+  sv.querySelectorAll('[data-m45h]').forEach(g=>{ const j=+g.getAttribute('data-m45h');
+    g.addEventListener('pointerdown',ev=>{ ev.preventDefault(); try{ g.setPointerCapture(ev.pointerId); }catch(_){} g.classList.add('drag'); const rc=sv.getBoundingClientRect(), p0=D()[j], ox=(ev.clientX-rc.left)/E.sc-p0[0], oy=(ev.clientY-rc.top)/E.sc-p0[1];
+      const mv=e2=>{ const rc2=sv.getBoundingClientRect(); const P=setP(j,(e2.clientX-rc2.left)/E.sc-ox,(e2.clientY-rc2.top)/E.sc-oy); loupe(P,P[0],P[1]); };
+      const up=()=>{ g.classList.remove('drag'); lp.hidden=true; g.removeEventListener('pointermove',mv); g.removeEventListener('pointerup',up); g.removeEventListener('pointercancel',up); };
+      g.addEventListener('pointermove',mv); g.addEventListener('pointerup',up); g.addEventListener('pointercancel',up); });
+    g.addEventListener('keydown',ev=>{ const dd={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]}[ev.key]; if(!dd) return; ev.preventDefault(); const s=(ev.shiftKey?0.04:0.01)*Math.max(DW,DH), p=D()[j]; setP(j,p[0]+dd[0]*s,p[1]+dd[1]*s); }); });
+  root.querySelectorAll('[data-m45md]').forEach(b=>b.onclick=()=>{ E.mode=b.getAttribute('data-m45md'); root.querySelectorAll('[data-m45md]').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); });
+  root.querySelector('#m45Auto').onclick=()=>{ const d=m45Detect(im,W,H); if(d){ E.q=d; root.querySelector('#m45Lead').textContent=L.m45ScanLead; draw(); } else { root.querySelector('#m45Lead').textContent=L.m45NoEdge; toast(L.m45NoEdge); } };
+  root.querySelector('#m45All').onclick=()=>{ E.q=[[0,0],[W,0],[W,H],[0,H]]; draw(); };
+  root.querySelector('#m45X').onclick=()=>m45EdClose(false);
+  root.querySelector('#m45Off').onclick=async()=>{ if(E.busy) return; E.busy=true; pg.src=src; pg.w=W; pg.h=H; pg.orig=src; pg.quad=E.q; pg.scan=0; pg.th=await p29Thumb(pg).catch(()=>src); m45EdClose(true); };
+  root.querySelector('#m45Go').onclick=async()=>{ if(E.busy) return; E.busy=true; const b=root.querySelector('#m45Go'); b.disabled=true; b.textContent=L.m45Busy;
+    await new Promise(res=>setTimeout(res,30));
+    try{ const q2=m45Order(E.q), o=await m45Warp(im,q2,E.mode); pg.orig=src; pg.quad=q2; pg.mode=E.mode; pg.src=o.src; pg.w=o.w; pg.h=o.h; pg.scan=1; pg.dark=false; pg.th=await p29Thumb(pg).catch(()=>o.src); m45EdClose(true); }
+    catch(e){ E.busy=false; b.disabled=false; b.innerHTML=M45_CROP+' '+esc(L.m45Apply); toast(L.rcFail); } };
+  E.key=ev=>{ if(ev.key==='Escape'){ ev.stopPropagation(); m45EdClose(false); } }; document.addEventListener('keydown',E.key,true);
+  E.rs=()=>fit(); addEventListener('resize',E.rs);
+  requestAnimationFrame(()=>{ fit(); const h0=sv.querySelector('[data-m45h="0"]'); if(h0) h0.focus({preventScroll:true}); }); }
+function m45EdClose(redraw){ const E=M45E; if(!E) return; M45E=null; document.removeEventListener('keydown',E.key,true); removeEventListener('resize',E.rs); E.root.remove();
+  if(redraw) E.ctx.redraw(); else if(E.btn&&document.contains(E.btn)) try{ E.btn.focus(); }catch(e){} }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest&&e.target.closest('[data-m45scan]'); if(!b) return; e.stopPropagation(); const [a,i]=String(b.getAttribute('data-m45scan')).split(':'); m45Edit(a,+i,b); },true);
+
+/* ---------- 629: «Поделиться → Mira» — фото и текст из других приложений ---------- */
+let M45SH=null;
+async function m45ShareGet(){ if(!('caches' in window)) return null; const c=await caches.open('mira-share'), mr=await c.match('share/meta'); if(!mr){ await caches.delete('mira-share'); return null; }
+  const meta=await mr.json().catch(()=>({})), files=[]; for(let i=0;i<Math.min(8,+meta.n||0);i++){ const r=await c.match('share/f'+i); if(r){ const b=await r.blob(); if(/^image\//.test(b.type)&&b.size>0) files.push(b); } }
+  await caches.delete('mira-share');
+  const parts=[]; for(const s of [meta.title,meta.text,meta.url]){ const t=String(s||'').trim(); if(t&&!parts.some(p=>p.includes(t))) parts.push(t); }
+  return {files,text:parts.join('\n').slice(0,1500),big:!!meta.big,urls:files.map(f=>URL.createObjectURL(f))}; }
+function m45ShareDone(){ if(M45SH){ for(const u of M45SH.urls||[]) try{ URL.revokeObjectURL(u); }catch(e){} } M45SH=null; }
+async function m45ShareOpen(){ let S=null; try{ S=await m45ShareGet(); }catch(e){} if(!S||(!S.files.length&&!S.text)){ toast(L.m45ShNone); return; } m45ShareDone(); M45SH=S; m45ShareSheet(); }
+function m45ShareSheet(){ const S=M45SH; if(!S) return; const n=S.files.length;
+  openSheet(`<h3>${ico('share',22)} ${esc(L.m45ShT)}</h3><p class="lead">${esc(L.m45ShLead)}${n?' · '+esc(L.m45ShPh(n)):''}</p>
+    ${n?`<div class="m45-shp">${S.urls.slice(0,4).map((u,i)=>`<img src="${u}" alt="${esc(L.p29Page(i+1))}">`).join('')}${n>4?`<span>+${n-4}</span>`:''}</div>`:''}
+    ${S.text?`<blockquote class="m45-sht">${esc(S.text.slice(0,280))}${S.text.length>280?'…':''}</blockquote>`:''}
+    ${S.big?`<p class="note">${esc(L.m45ShBig)}</p>`:''}
+    <div class="m45-sho">
+      <button type="button" class="m45-so" data-m45sh="sf">${ico('sparkle',22)}<span><b>${esc(L.m45ShSf)}</b><small>${esc(L.m45ShSfS)}</small></span></button>
+      ${n?`<button type="button" class="m45-so" data-m45sh="ct">${ico('doc',22)}<span><b>${esc(L.m45ShCt)}</b><small>${esc(L.m45ShCtS)}</small></span></button>
+      <button type="button" class="m45-so" data-m45sh="nb">${ico('stats',22)}<span><b>${esc(L.m45ShNb)}</b><small>${esc(L.m45ShNbS)}</small></span></button>`:''}
+    </div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-m45sh]').forEach(b=>b.onclick=()=>m45ShareGo(b.getAttribute('data-m45sh'))); }
+async function m45ShareGo(k){ const S=M45SH; if(!S) return; const fs=S.files;
+  if(k==='sf'){ const q=(S.text||L.m45ShQ).slice(0,700);
+    if(fs.length){ try{ const first=await f31Prep(fs[0],true), more=[]; for(const f of fs.slice(1,4)){ try{ more.push(await f31Prep(f,false)); }catch(e){} } first.more=more; sfImg=first; }catch(e){ toast(L.sfPhotoErr); } }
+    m45ShareDone(); sifraOpen(q); return; }
+  if(k==='ct'||k==='nb'){ const ct=k==='ct', max=ct?8:12; if(ct) ct29Open(null); else nb29Open(); toast(L.m45Busy);
+    for(const f of fs.slice(0,max)){ try{ const p=await p29Ingest(f); p.th=await p29Thumb(p).catch(()=>p.src); (ct?ct29.pages:nb29.pages).push(p); }catch(e){} }
+    m45ShareDone(); if(ct){ if(!ct29.busy) ct29Sheet(); } else if(!nb29.busy) nb29Sheet(); } }
+try{ const m45Go0=handleGo; handleGo=function(){ let s=''; try{ s=new URLSearchParams(location.search).get('share')||''; }catch(e){}
+    if(s){ try{ history.replaceState(null,'',location.pathname); }catch(e){} setTimeout(m45ShareOpen,350); return true; } return m45Go0.apply(this,arguments); }; }catch(e){}
+/* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
