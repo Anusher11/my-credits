@@ -4236,6 +4236,53 @@ html.m40[data-sk] .id-sec h4 .mi{color:var(--c4);}
 
 @media (prefers-reduced-motion: reduce){ .m40-dr,.m40-fd,.m40-gr,.m40-plot .pu,.m40-coins i.on,#m8Prog .m11-path i.n,.m40-ih button.busy .mi{animation:none!important; stroke-dasharray:none!important;} }
 /* <</v40 css>> */
+/* <<v41 css>> */
+/* ===================== v41: живые графики «Кредитов» ===================== */
+#view-loans .m8-load.m41-on{display:block; margin-top:16px; padding-top:16px; border-top:1px solid var(--line);}
+.m41-mo{display:flex; flex-direction:column; gap:12px;}
+.m41-mo .m40-h h2 .mi,.m41-gt .m40-h h2 .mi{color:var(--c5);}
+.m41-gt .m40-h h2 .mi{color:var(--c3);}
+.m41-sp{font-size:.84rem; color:var(--muted); font-weight:600;}
+.m40-plot .m41-it{fill:var(--danger); opacity:.38;}
+.m40-plot .m41-it.on{opacity:.9;}
+.m40-leg i.m41-li{background:var(--danger); opacity:.6;}
+.m41-mo .m8-drop{margin:0;}
+
+.m41-gt{margin:0 0 16px;}
+.m41-res{display:flex; flex-direction:column; gap:3px;}
+.m41-res small{font-size:.86rem; font-weight:600; color:var(--muted);}
+.m41-res b{font:800 1.7rem/1.1 var(--font-num); letter-spacing:-.02em;}
+.m41-res em{align-self:flex-start; font-style:normal; font:800 .84rem var(--font-num); padding:5px 10px; border-radius:99px; background:var(--m-leaf-weak); color:var(--m-leaf); animation:m40Pop .35s cubic-bezier(.2,.9,.3,1.3);}
+.m41-sm{font-size:.86rem; color:var(--muted);}
+.m41-x{display:flex; flex-direction:column; gap:8px; padding:14px; border-radius:18px; background:var(--surface-2);}
+html.m40[data-sk="c"] .m41-x{background:rgba(255,255,255,.6);}
+.m41-x label{font-size:.92rem; font-weight:700;} .m41-x label b{color:var(--m40-act); font-family:var(--font-num);}
+html.m40[data-sk="a"] .m41-x label b,html.m40[data-sk="c"] .m41-x label b{color:var(--brand);}
+.m41-x input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:32px; background:transparent; margin:0; cursor:pointer; touch-action:pan-y;}
+.m41-x input[type=range]::-webkit-slider-runnable-track{height:10px; border-radius:99px; background:linear-gradient(90deg,var(--m40-act) 0 var(--v,0%),var(--track) var(--v,0%) 100%);}
+.m41-x input[type=range]::-moz-range-track{height:10px; border-radius:99px; background:var(--track);}
+.m41-x input[type=range]::-moz-range-progress{height:10px; border-radius:99px; background:var(--m40-act);}
+.m41-x input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:30px; height:30px; margin-top:-10px; border-radius:50%; background:var(--surface); border:4px solid var(--m40-act); box-shadow:0 4px 12px -4px rgba(0,0,0,.4);}
+.m41-x input[type=range]::-moz-range-thumb{width:24px; height:24px; border-radius:50%; background:var(--surface); border:4px solid var(--m40-act);}
+html.m40[data-sk="c"] .m41-x input[type=range]::-webkit-slider-runnable-track{background:linear-gradient(90deg,#FF6A55 0,#9B5CF6 var(--v,0%),var(--track) var(--v,0%) 100%);}
+.m41-x input[type=range]:focus-visible{outline:3px solid var(--m40-act); outline-offset:4px; border-radius:99px;}
+.m41-xs{display:flex; justify-content:space-between; font-size:.74rem; color:var(--muted); font-weight:600;}
+.m41-rows{display:flex; flex-direction:column; gap:12px;}
+.m41-r{display:grid; grid-template-columns:1fr auto; gap:6px 10px; align-items:center;}
+.m41-n{display:flex; align-items:center; gap:7px; font-weight:700; font-size:.92rem; min-width:0;} .m41-n i{width:10px; height:10px; border-radius:50%; flex:none;}
+.m41-d{font:800 .86rem var(--font-num); text-align:right;} .m41-d s{color:var(--muted); font-weight:600; margin-left:4px;}
+.m41-t{grid-column:1 / -1; position:relative; height:14px; border-radius:99px; background:var(--track); overflow:hidden;}
+.m41-t i{position:absolute; left:0; top:0; bottom:0; border-radius:99px; transition:width .45s cubic-bezier(.2,.8,.2,1);}
+.m41-t i.b{opacity:.25;} .m41-t i.n{opacity:1;}
+.m41-ax{display:flex; justify-content:space-between; font-size:.72rem; color:var(--muted); font-weight:600;}
+.m41-tip{display:flex; flex-direction:column; gap:10px; font-size:.88rem; line-height:1.4; padding:12px 14px; border-radius:16px; background:var(--surface-2);}
+.m41-tip:empty{display:none;}
+.m41-tip .btn{align-self:stretch;}
+html.m40[data-sk] #m36Gantt .m36-gt{display:none!important;}
+@media (prefers-reduced-motion: reduce){ .m41-t i,.m41-res em{transition:none!important; animation:none!important;} }
+.m41-steps{display:flex; flex-direction:column; gap:8px;}
+.m41-steps p{margin:0; display:flex; gap:8px; align-items:flex-start; font-size:.88rem; line-height:1.4;} .m41-steps .mi{flex:none; margin-top:2px; color:var(--m-leaf);}
+/* <</v41 css>> */
 
 
 </style>
@@ -8754,6 +8801,31 @@ en:{
 }};
 for(const k of ['ru','tg','en']){ Object.assign(D[k],M40S[k]); try{ if(D[k].m39B) D[k].m39B.m40Fc=M40S[k].m40Fc39; }catch(e){} }
 /* <</v40 str>> */
+/* <<v41 str>> */
+const M41S={
+ru:{
+  m41MoT:'Сколько платить по месяцам', m41N:{12:'12 мес',24:'2 года'}, m41Prin:'в погашение долга', m41Int:'проценты', m41MoA:'Платежи по месяцам: долг и проценты. Ведите пальцем или стрелками.',
+  m41MoSum:(p,i)=>'долг '+p+' · проценты '+i, m41Now:'сейчас', m41NoPay:'платежей нет',
+  m41GtT:'Когда закроются кредиты', m41Free:'Свобода от кредитов', m41Extra:'Доплачивать каждый месяц', m41Sooner:n=>'на '+n+' мес. раньше', m41Save:v=>'проценты −'+v, m41Same:'Без доплаты — как сейчас по графику.',
+  m41Tip:(n,r)=>'Доплата идёт в «'+n+'» — у него самая высокая ставка ('+r+'%). Так переплата меньше всего.', m41TipNo:n=>'Доплата идёт в «'+n+'» — он закроется раньше всех.', m41PayX:'Внести доплату', m41Never:'Платёж меньше процентов — долг не уменьшается. Нужна доплата.', m41Was:'было',
+  m41Off:d=>'Нет интернета — показаны идеи от '+d, m41OffS:'Как появится интернет, нажмите «Обновить».', m41OffToast:'Нет интернета. Идеи обновятся, когда он появится.'
+},
+tg:{
+  m41MoT:'Пардохт аз рӯи моҳҳо', m41N:{12:'12 моҳ',24:'2 сол'}, m41Prin:'ба пардохти қарз', m41Int:'фоиз', m41MoA:'Пардохтҳо аз рӯи моҳҳо: қарз ва фоиз. Ангушт ё тирчаҳоро истифода баред.',
+  m41MoSum:(p,i)=>'қарз '+p+' · фоиз '+i, m41Now:'ҳозир', m41NoPay:'пардохт нест',
+  m41GtT:'Кай қарзҳо пӯшида мешаванд', m41Free:'Озодӣ аз қарз', m41Extra:'Ҳар моҳ иловатан пардохтан', m41Sooner:n=>n+' моҳ барвақттар', m41Save:v=>'фоиз −'+v, m41Same:'Бе пардохти иловагӣ — мувофиқи ҷадвал.',
+  m41Tip:(n,r)=>'Пардохти иловагӣ ба «'+n+'» меравад — фоизаш аз ҳама баланд ('+r+'%). Ҳамин тавр зиёдпардохт камтарин мешавад.', m41TipNo:n=>'Пардохти иловагӣ ба «'+n+'» меравад — вай аз ҳама пештар пӯшида мешавад.', m41PayX:'Пардохти иловагӣ', m41Never:'Пардохт аз фоиз кам аст — қарз кам намешавад. Пардохти иловагӣ лозим.', m41Was:'буд',
+  m41Off:d=>'Интернет нест — ғояҳо аз '+d, m41OffS:'Вақте интернет пайдо шуд, «Навсозӣ»-ро пахш кунед.', m41OffToast:'Интернет нест. Ғояҳо баъди пайдо шудани интернет нав мешаванд.'
+},
+en:{
+  m41MoT:'Payments by month', m41N:{12:'12 mo',24:'2 years'}, m41Prin:'towards the debt', m41Int:'interest', m41MoA:'Monthly payments: debt and interest. Slide your finger or use the arrow keys.',
+  m41MoSum:(p,i)=>'debt '+p+' · interest '+i, m41Now:'now', m41NoPay:'no payments',
+  m41GtT:'When the loans close', m41Free:'Free of loans', m41Extra:'Pay extra every month', m41Sooner:n=>n+' mo sooner', m41Save:v=>'interest −'+v, m41Same:'With no extra — as scheduled now.',
+  m41Tip:(n,r)=>'The extra goes to “'+n+'” — it has the highest rate ('+r+'%). That way you overpay the least.', m41TipNo:n=>'The extra goes to “'+n+'” — it will close first.', m41PayX:'Pay extra', m41Never:'The payment is below the interest — the debt does not shrink. An extra payment is needed.', m41Was:'was',
+  m41Off:d=>'No internet — showing ideas from '+d, m41OffS:'When you are back online, tap “Refresh”.', m41OffToast:'No internet. Ideas will refresh when you are back online.'
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M41S[k]);
+/* <</v41 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -20467,6 +20539,104 @@ document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.clo
 
 setTimeout(()=>{ try{ m40Apply(); m38TodayAfter(); }catch(e){} },0);
 /* <</v40 js>> */
+/* <<v41 js>> */
+/* ===================== v41: оставшиеся графики — живые; всё работает без интернета =====================
+   «Кредиты»: «Сколько платить по месяцам» — долг и проценты по месяцам (12 мес / 2 года), ведите пальцем;
+   «Когда закроются кредиты» — ползунок доплаты: сразу видно, на сколько раньше свобода и сколько процентов не уйдёт
+   (как планировщики долгов Undebt.it и Tally: доплата — в кредит с самой высокой ставкой).
+   «Идеи дня» без интернета — сохранённые идеи и понятная подпись. */
+
+/* ---------- «Сколько платить по месяцам» ---------- */
+const M41M={n:12,sel:null};
+function m41MoData(N){ let real=[]; try{ real=activeList().filter(x=>!x.loan.example); }catch(e){ return null; } const act=real.filter(x=>!x.a.done); if(!act.length) return null;
+  const i0=mIdx(today0()), bal={}, rate={};
+  for(const {loan,a} of act){ bal[loan.id]=Math.max(0,(+a.remaining||0)-(+a.interestLeft||0)); rate[loan.id]=(+loan.rate||0)/1200; }
+  const out=[]; for(let i=0;i<N;i++){ const dm=dueInMonth(i0+i,real)||{}; let p=0,it=0; const rows=[];
+    for(const r of (dm.rows||[])){ if(r.kind!=='loan') continue; const b=bal[r.id]||0, ir=Math.min(r.amt,b*(rate[r.id]||0)), pr=Math.max(0,r.amt-ir); bal[r.id]=Math.max(0,b-pr); p+=pr; it+=ir; rows.push({n:r.name,a:r.amt}); }
+    out.push({i,d:new Date(Math.floor((i0+i)/12),(i0+i)%12,1),p,it,t:p+it,rows}); }
+  return out; }
+function m41MoRd(x){ if(!x) return ''; const mn=(L.m40Mn?L.m40Mn[x.d.getMonth()]:MONTHS[lang].short[x.d.getMonth()])+' '+x.d.getFullYear();
+  return `<small>${esc(mn)}${x.i===0?' · '+esc(L.m41Now):''}</small><b>${x.t>0?money(x.t):esc(L.m41NoPay)}</b>${x.t>0?`<span class="m41-sp">${esc(L.m41MoSum(money(x.p),money(x.it)))}</span><span class="m40-evs">${x.rows.map(r=>`<span class="in">${esc(r.n)} ${money(r.a)}</span>`).join('')}</span>`:''}`; }
+function m41MoGeo(D_){ const n=D_.length, W=320,H=170,pT=10,pB=24,pR=44, slot=(W-pR)/n, hi=Math.max(1,...D_.map(x=>x.t))*1.15;
+  return {n,W,H,pT,pB,pR,slot,hi,Y:v=>pT+(hi-v)/hi*(H-pT-pB),yb:H-pB,X:i=>slot*(i+.5),bw:Math.min(18,slot*.62)}; }
+function m41MoBars(D_,g,sel){ let p='',it='',ps='',is=''; D_.forEach((x,i)=>{ if(!(x.t>0)) return; const l=g.X(i)-g.bw/2, yP=g.Y(x.p), yT=g.Y(x.t);
+    const a=m40Bar(l,yP,g.bw,g.yb), b=x.it>0.5?`M${m40X(l)},${m40X(yP)} V${m40X(yT+Math.min(4,(yP-yT)/2))} Q${m40X(l)},${m40X(yT)} ${m40X(l+Math.min(4,g.bw/2))},${m40X(yT)} H${m40X(l+g.bw-Math.min(4,g.bw/2))} Q${m40X(l+g.bw)},${m40X(yT)} ${m40X(l+g.bw)},${m40X(yT+Math.min(4,(yP-yT)/2))} V${m40X(yP)} Z `:'';
+    if(i===sel){ ps+=a; is+=b; } else { p+=a; it+=b; } }); return {p,it,ps,is}; }
+function m41MoHTML(){ const D_=m41MoData(M41M.n); if(!D_||!D_.some(x=>x.t>0)) return ''; const g=m41MoGeo(D_), sel=M41M.sel==null||M41M.sel>=g.n?0:M41M.sel; M41M.D=D_;
+  const B=m41MoBars(D_,g,sel), tk=m40Ticks(0,g.hi).filter(v=>g.Y(v)>g.pT-2), grid=tk.map(v=>`M0,${m40X(g.Y(v))} H${g.W-g.pR+4}`).join(' '), labs=tk.map(v=>`<text x="${g.W}" y="${m40X(g.Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('');
+  const step=g.n>12?6:3, xl=D_.map((x,i)=>i%step===0?`<text x="${m40X(Math.max(10,g.X(i)))}" y="${g.H-6}" text-anchor="middle">${esc(i===0?L.m41Now:MONTHS[lang].short[x.d.getMonth()])}</text>`:'').join('');
+  let drop=-1; for(let i=1;i<g.n;i++){ if(D_[i].t<D_[0].t-0.5){ drop=i; break; } }
+  const dropTxt=drop>0?L.m8Drop((L.m40Mn||MONTHS[lang].long)[D_[drop].d.getMonth()],money(D_[drop].t)):L.m8Flat;
+  return `<div class="m41-mo"><div class="m40-h"><h2>${ico('cal',20)} ${esc(L.m41MoT)}</h2><div class="m40-chips" role="group" aria-label="${esc(L.m41MoT)}">${[12,24].map(k=>`<button type="button" data-m41mn="${k}" aria-pressed="${k===M41M.n}">${esc(L.m41N[k])}</button>`).join('')}</div></div>
+    <div class="m40-rd m41-rd" aria-live="polite">${m41MoRd(D_[sel])}</div>
+    <div class="m40-plot" data-m41p="mo" tabindex="0" role="img" aria-label="${esc(L.m41MoA)}"><svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" aria-hidden="true">
+      <path class="gr" d="${grid}"/>${drop>0?`<path class="av" d="M${m40X(g.X(drop)-g.slot/2)},${g.pT} V${m40X(g.yb)}"/>`:''}
+      <path class="bar m40-gr" data-a d="${B.p}"/><path class="m41-it m40-gr" data-b d="${B.it}"/><path class="bar on m40-gr" data-c d="${B.ps}"/><path class="m41-it on m40-gr" data-d d="${B.is}"/>
+      ${labs}${xl}</svg></div>
+    <div class="m40-leg"><span><i></i>${esc(L.m41Prin)}</span><span><i class="m41-li"></i>${esc(L.m41Int)}</span></div>
+    <p class="m8-drop ${drop>0?'good':''}">${drop>0?ico('down',16):''}<span>${dropTxt}</span></p></div>`; }
+function m41MoSel(i){ const D_=M41M.D, box=document.querySelector('.m41-mo'); if(!D_||!box) return; i=Math.max(0,Math.min(D_.length-1,i)); if(i===M41M.sel) return; M41M.sel=i;
+  const g=m41MoGeo(D_), B=m41MoBars(D_,g,i); const set=(s,d)=>{ const e=box.querySelector(s); if(e){ e.setAttribute('d',d); e.classList.remove('m40-gr'); } };
+  set('[data-a]',B.p); set('[data-b]',B.it); set('[data-c]',B.ps); set('[data-d]',B.is); const rd=box.querySelector('.m41-rd'); if(rd) rd.innerHTML=m41MoRd(D_[i]); }
+function m41After(){ const ld=document.querySelector('#view-loans .m8-load'); if(!ld) return; const h=m41MoHTML(); if(!h) return; if(ld.dataset.m41!==h){ ld.innerHTML=h; ld.dataset.m41=h; ld.classList.add('m41-on'); } }
+try{ const _r41=render; render=function(){ const x=_r41.apply(this,arguments); try{ m41After(); }catch(e){ console.error(e); } return x; }; }catch(e){}
+
+/* ---------- «Когда закроются кредиты»: ползунок доплаты ---------- */
+const M41G={x:0};
+function m41Loans(){ let list=[]; try{ list=activeList(); }catch(e){ return []; } return list.filter(x=>!x.loan.example&&!x.a.done&&x.a.remaining>0); }
+function m41Sim(extra){ const L0=m41Loans().map(({loan,a})=>({id:loan.id,name:loan.name,col:m8Col(loan),rate:+loan.rate||0,r:(+loan.rate||0)/1200,bal:Math.max(1,(+a.remaining||0)-(+a.interestLeft||0)),pay:Math.max(1,m7Amt(a)||a.monthly||0),end:null,int:0}));
+  for(let m=0;m<600&&L0.some(l=>l.end==null);m++){ let pool=extra;
+    for(const l of L0){ if(l.end!=null) continue; const i=l.bal*l.r; l.int+=i; l.bal+=i; l.bal-=Math.min(l.bal,l.pay); if(l.bal<=0.5){ l.bal=0; l.end=m; } }
+    for(const l of L0.filter(l=>l.end==null).sort((a,b)=>b.r-a.r||a.bal-b.bal)){ if(pool<=0) break; const p=Math.min(l.bal,pool); l.bal-=p; pool-=p; if(l.bal<=0.5){ l.bal=0; l.end=m; } } }
+  return L0; }
+function m41Target(){ const L0=m41Loans().map(({loan,a})=>({id:loan.id,name:loan.name,rate:+loan.rate||0,bal:(+a.remaining||0)})); return L0.sort((a,b)=>b.rate-a.rate||a.bal-b.bal)[0]||null; }
+function m41Max(){ const m=m41Loans().reduce((s,{a})=>s+(m7Amt(a)||a.monthly||0),0); return Math.max(1000,Math.ceil(m/100)*100); }
+function m41Parts(){ const x=M41G.x, base=m41Sim(0), now=m41Sim(x), T=today0(); if(!base.length) return null;
+  /* даты «как сейчас» — из графика банка (как везде в Mira); доплата сдвигает их на столько месяцев, сколько показал расчёт */
+  const sched={}; for(const {loan,a} of m41Loans()){ const d=m8LastDue(loan,a); if(d) sched[loan.id]=Math.max(0,mIdx(d)-mIdx(T)); }
+  const E=base.map(b=>{ const n=now.find(o=>o.id===b.id)||b, sb=b.end==null?600:b.end, sn=n.end==null?600:n.end, eb=sched[b.id]!=null?sched[b.id]:sb; return {b,eb,en:Math.max(0,eb-Math.max(0,sb-sn))}; });
+  const mo=k=>addMonths(T,k), endB=Math.max(...E.map(e=>e.eb)), endN=Math.max(...E.map(e=>e.en));
+  const intB=base.reduce((s,l)=>s+l.int,0), intN=now.reduce((s,l)=>s+l.int,0), never=endB>=600&&!x;
+  const span=Math.max(1,endB+1);
+  const rows=E.sort((p,q)=>p.eb-q.eb).map(({b,eb,en})=>{
+    return `<div class="m41-r"><span class="m41-n"><i style="background:${b.col}"></i>${esc(b.name)}</span><span class="m41-d">${eb>=600?'∞':esc(m8MonLabel(mo(en)))}${en<eb?` <s>${esc(m8MonLabel(mo(eb)))}</s>`:''}</span>
+      <span class="m41-t"><i class="b" style="width:${Math.min(100,(eb+1)/span*100).toFixed(1)}%;background:${b.col}"></i><i class="n" style="width:${Math.min(100,(en+1)/span*100).toFixed(1)}%;background:${b.col}"></i></span></div>`; }).join('');
+  const sooner=endB-endN, saved=Math.round(intB-intN);
+  const res=`<small>${esc(L.m41Free)}</small><b>${endN>=600?'∞':esc(m8MonLabel(mo(endN)))}</b>${x>0&&sooner>0?`<em>${esc(L.m41Sooner(sooner))}${saved>0?' · '+esc(L.m41Save(money(saved))):''}</em>`:x>0&&saved>0?`<em>${esc(L.m41Save(money(saved)))}</em>`:`<span class="m41-sm">${esc(never?L.m41Never:L.m41Same)}</span>`}`;
+  const amt={}; for(const {loan,a} of m41Loans()) amt[loan.id]=Math.min(m7Amt(a)||a.monthly||0,Math.max(0,+a.remaining||0));
+  let left=E.reduce((s,e)=>s+(amt[e.b.id]||0),0); const steps=E.map((e,i)=>{ left-=amt[e.b.id]||0; return i<E.length-1?`<p>${ico('down',16)}<span>${L.m36GtLess(esc(e.b.name),m8MonLabel(mo(e.en)),'<b>'+money(amt[e.b.id]||0)+'</b>',money(left))}</span></p>`:`<p>${ico('flag',16)}<span>${L.m36GtFree('<b>'+m8MonLabel(mo(e.en))+'</b>')}</span></p>`; }).join('');
+  const tg=m41Target(); const tip=tg?`<span>${esc(tg.rate>0?L.m41Tip(tg.name,fx(tg.rate,tg.rate%1?1:0)):L.m41TipNo(tg.name))}</span>${x>0?`<button type="button" class="btn btn-primary" data-action="pay" data-id="${esc(String(tg.id))}">${ico('paid',18)} ${esc(L.m41PayX)}</button>`:''}`:'';
+  return {res,rows,tip,steps,ax:`<span>${esc(L.m36GtNow||L.m41Now)}</span><span>${esc(m8MonLabel(mo(Math.floor(span/2))))}</span><span>${esc(m8MonLabel(mo(endB)))}</span>`}; }
+function m41GtHTML(){ const P=m41Parts(); if(!P) return ''; const mx=m41Max(), st=mx>4000?100:50; if(M41G.x>mx) M41G.x=mx;
+  return `<section class="m40-cd m41-gt" aria-labelledby="m41GtH"><div class="m40-h"><h2 id="m41GtH">${ico('flag',20)} ${esc(L.m41GtT)}</h2></div>
+    <div class="m41-res" aria-live="polite">${P.res}</div>
+    <div class="m41-x"><label for="m41x">${esc(L.m41Extra)}: <b data-m41xv>+${money(M41G.x)}</b></label><input type="range" id="m41x" min="0" max="${mx}" step="${st}" value="${M41G.x}" style="--v:${(M41G.x/mx*100).toFixed(1)}%"><span class="m41-xs"><span>0</span><span>+${money(mx)}</span></span></div>
+    <div class="m41-rows">${P.rows}</div><div class="m41-ax" aria-hidden="true">${P.ax}</div><div class="m41-steps">${P.steps}</div>
+    <div class="m41-tip">${P.tip}</div></section>`; }
+try{ m36GanttHTML=function(){ try{ return m41GtHTML(); }catch(e){ console.error(e); return ''; } }; }catch(e){}
+function m41GtUpd(){ const box=document.querySelector('.m41-gt'); if(!box) return; const P=m41Parts(); if(!P) return;
+  const q=(s,h)=>{ const e=box.querySelector(s); if(e) e.innerHTML=h; }; q('.m41-res',P.res); q('.m41-rows',P.rows); q('.m41-tip',P.tip); q('.m41-ax',P.ax); q('.m41-steps',P.steps);
+  const v=box.querySelector('[data-m41xv]'); if(v) v.textContent='+'+money(M41G.x); const r=box.querySelector('#m41x'); if(r) r.style.setProperty('--v',(M41G.x/(+r.max||1)*100).toFixed(1)+'%'); }
+document.addEventListener('input',e=>{ if(e.target&&e.target.id==='m41x'){ M41G.x=+e.target.value||0; m41GtUpd(); } });
+
+/* ---------- события графика платежей ---------- */
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('[data-m41mn]'); if(!t) return; M41M.n=+t.dataset.m41mn; M41M.sel=null; const ld=document.querySelector('#view-loans .m8-load'); if(ld){ ld.dataset.m41=''; m41After(); const b=ld.querySelector(`[data-m41mn="${M41M.n}"]`); if(b) b.focus(); } });
+function m41Idx(pl,cx){ const r=pl.getBoundingClientRect(), n=M41M.D?M41M.D.length:1, rel=Math.max(0,Math.min(.9999,(cx-r.left)/(r.width*(320-44)/320))); return Math.floor(rel*n); }
+document.addEventListener('pointerdown',e=>{ const pl=e.target.closest&&e.target.closest('[data-m41p]'); if(!pl) return; const b=M41M.sel; m41MoSel(m41Idx(pl,e.clientX)); if(e.pointerType==='touch'&&b!==M41M.sel) m40Vib(); });
+document.addEventListener('pointermove',e=>{ const pl=e.target.closest&&e.target.closest('[data-m41p]'); if(!pl) return; if(e.pointerType==='mouse'&&!e.buttons) return; const b=M41M.sel; m41MoSel(m41Idx(pl,e.clientX)); if(e.pointerType==='touch'&&b!==M41M.sel) m40Vib(); },{passive:true});
+document.addEventListener('keydown',e=>{ const pl=e.target.closest&&e.target.closest('[data-m41p]'); if(!pl||!M41M.D) return; const n=M41M.D.length, c=M41M.sel==null?0:M41M.sel; let i=null;
+  if(e.key==='ArrowRight') i=c+1; else if(e.key==='ArrowLeft') i=c-1; else if(e.key==='Home') i=0; else if(e.key==='End') i=n-1; if(i==null) return; e.preventDefault(); m41MoSel(Math.max(0,Math.min(n-1,i))); });
+
+/* ---------- без интернета ---------- */
+try{ const _ih41=m40IdHead; m40IdHead=function(){ if(navigator.onLine!==false) return _ih41.apply(this,arguments); const t=hbToday();
+  const d=t?fmtShort(parseYmd(t.day)||new Date(t.at||Date.now())):'—';
+  return `<div class="m40-ih m41-off"><i class="dot old"></i><span><b>${esc(L.m41Off(d))}</b><small>${esc(L.m41OffS)}</small></span><button type="button" data-m40upd aria-label="${esc(L.m40Upd)}">${ico('refresh',18)}${esc(L.m40Upd)}</button></div>`; }; }catch(e){}
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('[data-m40upd]'); if(t&&navigator.onLine===false){ e.stopImmediatePropagation(); e.preventDefault(); toast(L.m41OffToast); } },true);
+function m41Net(){ try{ document.querySelectorAll('.m40-ih').forEach(x=>{ const w=document.createElement('div'); w.innerHTML=m40IdHead(); x.replaceWith(w.firstElementChild); }); }catch(e){} }
+window.addEventListener('online',m41Net); window.addEventListener('offline',m41Net);
+
+setTimeout(()=>{ try{ m41After(); }catch(e){} },0);
+/* <</v41 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
