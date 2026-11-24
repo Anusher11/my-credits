@@ -20506,7 +20506,7 @@ try{ m36WfHTML=function(){ const mk=monthKey(new Date()), sh=ensureShop();
   const per=T.filter(x=>x[0]!==L.m36WfLeft).map(x=>L.m40SkPart(Math.round(x[1]/rev*100),x[0])).join(', ');
   const note=sel>=0?L.m40SkOne(T[sel][0],money(T[sel][1]),Math.round(T[sel][1]/rev*100)):L.m40Sk100(money(100),per);
   return `<section class="m40-cd m40-skc" style="margin:16px 0"><div class="m40-h"><h2>${ico('flow',20)} ${esc(L.m40SkT)}</h2></div>
-    <p style="margin:0;font-size:.9rem;color:var(--muted);line-height:1.4">${esc(L.m40SkSub(money(rev),L.m40Mn[new Date().getMonth()]))}</p>
+    <p style="margin:0;font-size:.9rem;color:var(--muted);line-height:1.4">${esc(L.m40SkSub(money(rev),L.m40Mn[new Date().getMonth()]).replace(/\.\./g,'.'))}</p>
     <div class="m40-sk"><svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="${esc(L.m40SkT)}">${src}${links}${nodes}</svg><div class="m40-skl">${labs}</div></div>
     <div class="m40-note" aria-live="polite">${esc(note)}</div></section>`; }; }catch(e){}
 
@@ -20564,9 +20564,9 @@ function m41MoBars(D_,g,sel){ let p='',it='',ps='',is=''; D_.forEach((x,i)=>{ if
     if(i===sel){ ps+=a; is+=b; } else { p+=a; it+=b; } }); return {p,it,ps,is}; }
 function m41MoHTML(){ const D_=m41MoData(M41M.n); if(!D_||!D_.some(x=>x.t>0)) return ''; const g=m41MoGeo(D_), sel=M41M.sel==null||M41M.sel>=g.n?0:M41M.sel; M41M.D=D_;
   const B=m41MoBars(D_,g,sel), tk=m40Ticks(0,g.hi).filter(v=>g.Y(v)>g.pT-2), grid=tk.map(v=>`M0,${m40X(g.Y(v))} H${g.W-g.pR+4}`).join(' '), labs=tk.map(v=>`<text x="${g.W}" y="${m40X(g.Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('');
-  const step=g.n>12?6:3, xl=D_.map((x,i)=>i%step===0?`<text x="${m40X(Math.max(10,g.X(i)))}" y="${g.H-6}" text-anchor="middle">${esc(i===0?L.m41Now:MONTHS[lang].short[x.d.getMonth()])}</text>`:'').join('');
+  const step=g.n>12?6:3, xl=D_.map((x,i)=>i%step===0?`<text x="${i===0?0:m40X(g.X(i))}" y="${g.H-6}" text-anchor="${i===0?'start':'middle'}">${esc(i===0?L.m41Now:MONTHS[lang].short[x.d.getMonth()])}</text>`:'').join('');
   let drop=-1; for(let i=1;i<g.n;i++){ if(D_[i].t<D_[0].t-0.5){ drop=i; break; } }
-  const dropTxt=drop>0?L.m8Drop((L.m40Mn||MONTHS[lang].long)[D_[drop].d.getMonth()],money(D_[drop].t)):L.m8Flat;
+  const dropTxt=drop>0?L.m8Drop(MONTHS[lang].long[D_[drop].d.getMonth()],money(D_[drop].t)):L.m8Flat;
   return `<div class="m41-mo"><div class="m40-h"><h2>${ico('cal',20)} ${esc(L.m41MoT)}</h2><div class="m40-chips" role="group" aria-label="${esc(L.m41MoT)}">${[12,24].map(k=>`<button type="button" data-m41mn="${k}" aria-pressed="${k===M41M.n}">${esc(L.m41N[k])}</button>`).join('')}</div></div>
     <div class="m40-rd m41-rd" aria-live="polite">${m41MoRd(D_[sel])}</div>
     <div class="m40-plot" data-m41p="mo" tabindex="0" role="img" aria-label="${esc(L.m41MoA)}"><svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" aria-hidden="true">
@@ -20604,7 +20604,7 @@ function m41Parts(){ const x=M41G.x, base=m41Sim(0), now=m41Sim(x), T=today0(); 
   const sooner=endB-endN, saved=Math.round(intB-intN);
   const res=`<small>${esc(L.m41Free)}</small><b>${endN>=600?'∞':esc(m8MonLabel(mo(endN)))}</b>${x>0&&sooner>0?`<em>${esc(L.m41Sooner(sooner))}${saved>0?' · '+esc(L.m41Save(money(saved))):''}</em>`:x>0&&saved>0?`<em>${esc(L.m41Save(money(saved)))}</em>`:`<span class="m41-sm">${esc(never?L.m41Never:L.m41Same)}</span>`}`;
   const amt={}; for(const {loan,a} of m41Loans()) amt[loan.id]=Math.min(m7Amt(a)||a.monthly||0,Math.max(0,+a.remaining||0));
-  let left=E.reduce((s,e)=>s+(amt[e.b.id]||0),0); const steps=E.map((e,i)=>{ left-=amt[e.b.id]||0; return i<E.length-1?`<p>${ico('down',16)}<span>${L.m36GtLess(esc(e.b.name),m8MonLabel(mo(e.en)),'<b>'+money(amt[e.b.id]||0)+'</b>',money(left))}</span></p>`:`<p>${ico('flag',16)}<span>${L.m36GtFree('<b>'+m8MonLabel(mo(e.en))+'</b>')}</span></p>`; }).join('');
+  let left=E.reduce((s,e)=>s+(amt[e.b.id]||0),0); const ES=E.slice().sort((p,q)=>p.en-q.en); const steps=ES.map((e,i)=>{ left-=amt[e.b.id]||0; return i<ES.length-1?`<p>${ico('down',16)}<span>${L.m36GtLess(esc(e.b.name),m8MonLabel(mo(e.en)),'<b>'+money(amt[e.b.id]||0)+'</b>',money(left))}</span></p>`:`<p>${ico('flag',16)}<span>${L.m36GtFree('<b>'+m8MonLabel(mo(e.en))+'</b>')}</span></p>`; }).join('');
   const tg=m41Target(); const tip=tg?`<span>${esc(tg.rate>0?L.m41Tip(tg.name,fx(tg.rate,tg.rate%1?1:0)):L.m41TipNo(tg.name))}</span>${x>0?`<button type="button" class="btn btn-primary" data-action="pay" data-id="${esc(String(tg.id))}">${ico('paid',18)} ${esc(L.m41PayX)}</button>`:''}`:'';
   return {res,rows,tip,steps,ax:`<span>${esc(L.m36GtNow||L.m41Now)}</span><span>${esc(m8MonLabel(mo(Math.floor(span/2))))}</span><span>${esc(m8MonLabel(mo(endB)))}</span>`}; }
 function m41GtHTML(){ const P=m41Parts(); if(!P) return ''; const mx=m41Max(), st=mx>4000?100:50; if(M41G.x>mx) M41G.x=mx;
