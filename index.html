@@ -5183,6 +5183,187 @@ html.m48-live .m49-go .m50-tor i{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) 
 .m50-fun .st em{position:absolute; right:8px; top:6px; font-style:normal; font-size:.68rem; font-weight:800; font-family:var(--font-num); opacity:.75;}
 html.m48-live .m49-go .m50-fun .st{animation:m48in .45s both; animation-delay:calc(var(--i)*.12s);}
 @media (prefers-reduced-motion:reduce){ html.m48-live [class*="m50-"],html.m48-live [class*="m50-"] *{animation:none!important;} }
+/* ===== v51: «Закупка как местный», «Сколько выйдет у вас» ===== */
+.m51-mini{border:none; background:none; color:var(--brand-ink); font:inherit; font-weight:800; font-size:.82rem; cursor:pointer; padding:6px 4px; flex:none; display:inline-flex; align-items:center; gap:4px; min-height:32px; text-decoration:underline; text-underline-offset:2px;}
+.m51-note,.m51-nl,.m51-ldn{display:flex; gap:6px; align-items:flex-start; font-size:.8rem; color:var(--muted); line-height:1.4; margin:0!important;}
+.m51-note .mi,.m51-nl .mi,.m51-ldn .mi{flex:none; margin-top:2px;}
+.m51-mine{align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:.88rem!important; margin-top:-6px;}
+.m51 .lead{margin:0;}
+.m51-who .m50-rl{margin:0;}
+/* вход на «Где закупать» */
+.m51-wh{margin:0 0 12px;}
+.m51-whb{display:flex!important; flex-direction:row!important; align-items:center; gap:12px; width:100%; margin:0!important; padding:14px; border:none!important; border-radius:20px; background:var(--brand); color:var(--m36-on,#fff); font:inherit; text-align:left; cursor:pointer;}
+.m51-whb .ic{width:44px; height:44px; border-radius:14px; display:grid; place-items:center; background:color-mix(in srgb,currentColor 16%,transparent); flex:none;}
+.m51-whb .tx{display:flex; flex-direction:column; gap:3px; min-width:0; flex:1;}
+.m51-whb .tx b{font-size:1.06rem; font-weight:800; display:block;}
+.m51-whb .tx small{font-size:.8rem; line-height:1.35; opacity:.9; color:inherit;}
+.m51-whb>.mi{flex:none; opacity:.8;}
+.m51-whl{display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-top:8px;}
+.m51-whl small{font-size:.76rem; font-weight:700; color:var(--muted); margin-right:2px;}
+.m51-locb{order:-1;}
+/* итог сверху */
+.m51-top{display:flex; flex-direction:column; gap:9px;}
+.m51-top h2{margin:0; font-size:1.3rem; font-weight:800; line-height:1.2; text-wrap:balance;}
+.m51-vd{margin:0!important; font-size:.98rem; line-height:1.45;}
+.m51-best{display:flex; gap:10px; align-items:flex-start; padding:11px 12px; border-radius:16px; background:var(--m-leaf-weak,var(--brand-weak));}
+.m51-best>span{font-size:1.5rem; line-height:1; flex:none;}
+.m51-best b{font-weight:800;} .m51-best p{margin:3px 0 0; font-size:.86rem; line-height:1.4; color:var(--ink);}
+.m51-at{display:flex; align-items:center; gap:5px; margin:0!important; font-size:.78rem; color:var(--muted); font-weight:700;}
+.m51-stale{display:flex; align-items:center; gap:7px; padding:8px 10px; border-radius:12px; background:var(--warn-weak,var(--surface-2)); font-size:.84rem;}
+.m51-stale span{flex:1; min-width:0;}
+.m51-nav{position:sticky; top:calc(-1*var(--m51pt,16px) - 2px); z-index:3; display:flex; gap:6px; overflow-x:auto; padding:10px 0 8px; margin:-6px 0 -4px; background:var(--bg); scrollbar-width:none;}
+.m51-nav::-webkit-scrollbar{display:none;} .m51-nav .chip{flex:none;}
+.m51-sec{scroll-margin-top:56px;}
+/* фоновое обновление, «каждый день» */
+.m51-up{display:flex!important; align-items:center; gap:10px; padding:9px 12px!important; border-radius:14px!important; background:var(--brand-weak)!important;}
+.m51-up .p29-spin{width:20px; height:20px; border-width:3px; flex:none;}
+.m51-up .tx{display:flex; flex-direction:column; min-width:0;} .m51-up .tx b{font-weight:800; font-size:.9rem;} .m51-up .tx small{font-size:.76rem; color:var(--muted); line-height:1.35;}
+.m51-auto{display:flex; gap:10px; align-items:flex-start; padding:10px 12px; border-radius:14px; background:var(--surface-2); cursor:pointer;}
+.m51-auto input{width:22px; height:22px; flex:none; margin:1px 0 0; accent-color:var(--m-leaf,var(--brand));}
+.m51-auto span{display:flex; flex-direction:column; gap:2px; min-width:0;} .m51-auto b{font-weight:800; font-size:.9rem;} .m51-auto small{font-size:.78rem; color:var(--muted); line-height:1.35;}
+/* страны */
+.m51-cs{display:grid; gap:8px;}
+.m51-c{display:flex; flex-direction:column; gap:6px; width:100%; text-align:left; padding:11px 12px; border:1px solid var(--line); border-radius:16px; background:var(--surface-2); color:var(--ink); font:inherit; cursor:pointer;}
+.m51-c.best{border-color:var(--m-leaf,var(--brand));} .m51-c.on{box-shadow:0 0 0 2px var(--brand) inset; border-color:var(--brand);}
+.m51-c .h{display:flex; align-items:center; gap:8px;}
+.m51-c .h i{font-style:normal; font-size:1.25rem; line-height:1;} .m51-c .h b{font-weight:800; font-size:1rem;}
+.m51-c .h em{font-style:normal; font-size:.7rem; font-weight:800; padding:2px 8px; border-radius:99px; background:var(--m-leaf,var(--brand)); color:var(--surface);}
+.m51-c .h u{margin-left:auto; text-decoration:none; font-family:var(--font-num); font-weight:800; font-size:.9rem; min-width:34px; text-align:center; padding:2px 7px; border-radius:99px; background:var(--surface);}
+.m51-c .tr{position:relative; display:block; height:14px; border-radius:7px; background:var(--track); margin:2px 7px;}
+.m51-c .tr .r{position:absolute; top:3px; height:8px; left:var(--a); width:var(--w); max-width:calc(100% - var(--a)); border-radius:4px; background:var(--gold); transform-origin:left;}
+.m51-c .tr .d{position:absolute; top:-1px; left:calc(var(--a) - 8px); width:16px; height:16px; border-radius:50%; background:var(--m-leaf,var(--brand)); border:3px solid var(--surface-2);}
+.m51-c .l,.m51-c .m{display:flex; flex-wrap:wrap; gap:3px 12px; font-size:.82rem;}
+.m51-c .l span{font-family:var(--font-num); font-weight:700;} .m51-c .l .y{color:var(--m-leaf,var(--brand)); font-weight:800;}
+.m51-c .m{color:var(--muted); font-size:.78rem;} .m51-c .m span{display:inline-flex; align-items:center; gap:4px;}
+.m51-c .pc{display:flex; gap:5px; align-items:flex-start; font-size:.8rem; line-height:1.35;} .m51-c .pc .mi{flex:none; margin-top:2px;}
+.m51-c .pc.good .mi{color:var(--m-leaf,var(--brand));} .m51-c .pc.bad .mi{color:var(--warn);}
+/* места */
+.m51-pf{display:flex; gap:6px; overflow-x:auto; padding-bottom:2px; scrollbar-width:none;} .m51-pf::-webkit-scrollbar{display:none;} .m51-pf .chip{flex:none; display:inline-flex; align-items:center; gap:3px;}
+.m51-fc{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-top:8px; padding:4px 6px 4px 12px; border-radius:12px; background:var(--brand-weak); font-weight:700; font-size:.88rem;}
+.m51-ps{display:grid; gap:8px; margin-top:10px;}
+.m51-p{border:1px solid var(--line); border-radius:16px; background:var(--surface-2); overflow:hidden;}
+.m51-p.k-few{border-color:color-mix(in srgb,var(--gold) 55%,var(--line));}
+.m51-p[open]{background:var(--surface); border-color:var(--brand);}
+.m51-p summary{display:flex; gap:10px; align-items:flex-start; padding:11px 12px; cursor:pointer; list-style:none;} .m51-p summary::-webkit-details-marker{display:none;}
+.m51-p .ic{width:34px; height:34px; border-radius:11px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); flex:none;}
+.m51-p .tx{display:flex; flex-direction:column; gap:2px; min-width:0; flex:1;}
+.m51-p .tx b{font-weight:800; font-size:.98rem; line-height:1.25; overflow-wrap:anywhere;} .m51-p .tx small{font-size:.78rem; color:var(--muted);}
+.m51-p .m51-tg{display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;}
+.m51-p .m51-tg em{font-style:normal; font-size:.72rem; font-weight:700; padding:2px 8px; border-radius:99px; background:var(--surface); display:inline-flex; align-items:center; gap:3px; font-family:var(--font-num);}
+.m51-p[open] .m51-tg em{background:var(--surface-2);}
+.m51-p .m51-tg .kn.few{background:color-mix(in srgb,var(--gold) 26%,var(--surface)); color:var(--ink);} .m51-p .m51-tg .kn.some{background:var(--brand-weak); color:var(--brand-ink);} .m51-p .m51-tg .kn.all{color:var(--muted);}
+.m51-p .m51-tg .cm{background:var(--brand); color:var(--m36-on,#fff);}
+.m51-p .sc{display:flex; flex-direction:column; align-items:center; flex:none; min-width:40px;}
+.m51-p .sc b{font-family:var(--font-num); font-weight:800; font-size:1.1rem; line-height:1.1;} .m51-p .sc small{font-size:.62rem; color:var(--muted); font-weight:700;}
+.m51-p .sc.hi b{color:var(--m-leaf,var(--brand));} .m51-p .sc.lo b{color:var(--muted);}
+.m51-p .bd{display:flex; flex-direction:column; gap:8px; padding:0 12px 12px;}
+.m51-p .bd p{margin:0; font-size:.9rem; line-height:1.45;}
+.m51-p .bd .ar,.m51-p .bd .mq{display:flex; gap:6px; color:var(--muted); font-size:.84rem;} .m51-p .bd .ar .mi,.m51-p .bd .mq .mi{flex:none; margin-top:2px;}
+.m51-p .bd .m51-tip{display:flex; gap:7px; padding:9px 11px; border-radius:12px; background:color-mix(in srgb,var(--gold) 14%,var(--surface));} .m51-p .bd .m51-tip .mi{flex:none; margin-top:2px;}
+.m51-loc,.m51-ln .ct{display:grid; grid-template-columns:1fr auto; align-items:center; gap:0 8px; padding:8px 11px; border-radius:12px; background:var(--surface-2);}
+.m51-loc small,.m51-ln .ct small{grid-column:1/-1; font-size:.72rem; font-weight:700; color:var(--muted);}
+.m51-loc b,.m51-ln .ct b{font-size:1.02rem; font-weight:800; overflow-wrap:anywhere; user-select:all;}
+.m51-ln{display:flex; flex-direction:column; gap:6px;}
+.m51-ln a{display:inline-flex; align-items:center; gap:5px; font-weight:700; font-size:.86rem; color:var(--brand-ink); overflow-wrap:anywhere; min-height:32px;}
+.m51-ax{list-style:none; margin:0; padding:0; display:grid; gap:4px;}
+.m51-ax li{display:flex; align-items:center; justify-content:space-between; gap:10px; font-size:.82rem;}
+.m51-ax i{display:flex; gap:3px;} .m51-ax u{width:20px; height:7px; border-radius:4px; background:var(--track); text-decoration:none;} .m51-ax u.on{background:var(--m-leaf,var(--brand));}
+.m51-pa{display:grid; grid-template-columns:1fr 1fr; gap:8px;} .m51-pa .btn{min-height:42px; padding:6px 10px; font-size:.84rem;} .m51-pa .btn.on{border-color:var(--brand); color:var(--brand-ink);}
+/* кто лучший в чём, порядок */
+.m51-win{margin-top:10px; padding:10px 12px; border-radius:14px; background:var(--m-leaf-weak,var(--brand-weak));}
+.m51-win>b{display:flex; align-items:center; gap:6px; font-weight:800; font-size:.92rem;}
+.m51-win ul{list-style:none; margin:4px 0 0; padding:0;}
+.m51-win li{display:grid; grid-template-columns:minmax(84px,auto) 1fr auto; align-items:center; gap:8px; font-size:.84rem; border-top:1px solid color-mix(in srgb,var(--ink) 8%,transparent);} .m51-win li:first-child{border-top:none;}
+.m51-win li span{color:var(--muted); font-weight:700;} .m51-win li .m51-mini{justify-content:flex-start; text-align:left; overflow-wrap:anywhere; min-height:36px;} .m51-win li em{font-style:normal; font-family:var(--font-num); font-weight:800; font-size:.8rem;}
+.m51-so{display:flex; align-items:center; gap:8px; margin-top:10px;} .m51-so small{font-size:.8rem; font-weight:700; color:var(--muted); flex:none;} .m51-so select{flex:1; min-width:0; min-height:42px;}
+/* сравнение */
+.m51-cmp{margin-top:10px; padding:11px 12px; border-radius:16px; border:1px solid var(--brand); background:var(--surface);}
+.m51-cmp.one{display:flex; align-items:center; gap:8px; font-size:.86rem;} .m51-cmp.one span{flex:1; min-width:0;}
+.m51-cmp .h{display:flex; align-items:center; justify-content:space-between; gap:8px;} .m51-cmp .h b{display:flex; align-items:center; gap:6px; font-weight:800;}
+.m51-rd{display:block; width:100%; max-width:360px; margin:4px auto 0;}
+.m51-rd .rg{fill:none; stroke:var(--line); stroke-width:1;} .m51-rd .rg.o{stroke:var(--muted); stroke-opacity:.5;}
+.m51-rd text{font-size:11.5px; font-weight:700; fill:var(--muted); font-family:inherit;}
+.m51-rd .rs polygon{fill-opacity:.14; stroke-width:2.2; stroke-linejoin:round; transform-box:view-box; transform-origin:110px 100px;}
+.m51-rd .s0 polygon{fill:var(--brand); stroke:var(--brand);} .m51-rd .s0 circle{fill:var(--brand);}
+.m51-rd .s1 polygon{fill:var(--gold); stroke:var(--gold); stroke-dasharray:6 3;} .m51-rd .s1 circle{fill:var(--gold);}
+.m51-rd .s2 polygon{fill:var(--m-leaf,#2F8F5B); stroke:var(--m-leaf,#2F8F5B); stroke-dasharray:2 3;} .m51-rd .s2 circle{fill:var(--m-leaf,#2F8F5B);}
+.m51-lg{list-style:none; margin:4px 0 8px; padding:0; display:flex; flex-wrap:wrap; gap:4px 14px; justify-content:center; font-size:.8rem; font-weight:700;}
+.m51-lg li{display:flex; align-items:center; gap:6px;} .m51-lg i{width:18px; height:0; border-top:3px solid var(--brand);} .m51-lg .s1 i{border-top:3px dashed var(--gold);} .m51-lg .s2 i{border-top:3px dotted var(--m-leaf,#2F8F5B);}
+.m51-tw{overflow-x:auto; margin:4px -2px 0;}
+.m51-tw table{border-collapse:collapse; width:100%; font-size:.8rem; table-layout:fixed;}
+.m51-tw thead th:first-child{width:29%;}
+.m51-tw th,.m51-tw td{padding:6px 6px; text-align:left; vertical-align:top; border-top:1px solid var(--line);}
+.m51-tw thead th{border-top:none; font-weight:800; overflow-wrap:anywhere;} .m51-tw tbody th{color:var(--muted); font-weight:700; overflow-wrap:anywhere;} .m51-tw td{overflow-wrap:anywhere;}
+.m51-tw tbody th::first-letter{text-transform:uppercase;}
+.m51-tw td b{font-family:var(--font-num); font-weight:800;} .m51-tw td b.bst{color:var(--m-leaf,var(--brand));} .m51-tw td small{color:var(--muted);}
+/* сколько выйдет у вас */
+.m51-lu em{font-style:normal; font-family:var(--font-num); font-weight:700; color:var(--muted); font-size:.9rem;}
+.m51-qs{display:flex; align-items:center; justify-content:space-between; gap:10px; font-weight:700; font-size:.9rem;}
+.m51-qs>div{display:flex; align-items:center; gap:6px;}
+.m51-qs input{width:86px; text-align:center; font-family:var(--font-num); font-weight:800; min-height:44px;}
+.m51-sb{width:44px; height:44px; border-radius:14px; border:1px solid var(--line); background:var(--surface-2); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+.m51-hs{display:flex; flex-wrap:wrap; gap:4px 14px; margin:0!important; font-size:.82rem; color:var(--muted); font-weight:700;} .m51-hs span{display:inline-flex; align-items:center; gap:4px;}
+.m51-qd{border-top:1px solid var(--line); padding-top:10px; margin-top:2px;}
+.m51-qd summary{display:flex; align-items:center; gap:6px; font-weight:800; font-size:.9rem; cursor:pointer; min-height:36px; color:var(--brand-ink);}
+.m51-qd .m48-ldg{margin-top:8px;}
+.m51-ex{margin:10px 0 0; padding-left:18px; font-size:.8rem; color:var(--muted); line-height:1.45; display:grid; gap:3px;}
+.m51-q{display:flex; flex-direction:column; gap:10px;} .m51-q>*{margin:0!important;}
+.m51-qa{display:flex; gap:6px; align-items:flex-start; padding:8px 10px; border-radius:12px; background:var(--warn-weak,var(--surface-2)); font-size:.84rem; line-height:1.4;} .m51-qa .mi{flex:none; margin-top:2px;}
+.m51-qf{padding:10px 12px; border-radius:14px; background:var(--m-leaf-weak,var(--brand-weak)); display:flex; flex-direction:column; gap:5px;}
+.m51-qf>b{display:flex; align-items:center; flex-wrap:wrap; gap:5px; font-weight:800;} .m51-qf>b small{font-weight:600; color:var(--muted); font-size:.8rem;}
+.m51-qf p{margin:0; font-size:.88rem; line-height:1.4;} .m51-qf .nt{font-size:.78rem; color:var(--muted);} .m51-qf .sr2{font-size:.8rem;} .m51-qf a{color:var(--brand-ink); font-weight:700;}
+.m51-qgo{display:flex; align-items:center; justify-content:center; gap:8px;} .m51-qgo .p29-spin{width:16px; height:16px; border-width:2px;}
+#m51QE{margin:0!important;}
+/* сообщения */
+.m51-msg{border:1px solid var(--line); border-radius:16px; padding:11px 12px; background:var(--surface-2); display:flex; flex-direction:column; gap:8px;}
+.m51-msg .h{display:flex; align-items:center; justify-content:space-between; gap:8px;} .m51-msg .h b{font-weight:800;} .m51-msg .h em{font-style:normal; font-size:.74rem; font-weight:700; color:var(--muted);}
+.m51-msg .tx{margin:0; font-size:.98rem; line-height:1.5; white-space:pre-wrap; overflow-wrap:anywhere; user-select:all;}
+.m51-msg .btn{min-height:42px; align-self:flex-start;}
+.m51-msg details summary{font-size:.84rem; font-weight:700; color:var(--brand-ink); cursor:pointer; min-height:30px;} .m51-msg details p{margin:4px 0 0; font-size:.88rem; line-height:1.45; color:var(--muted); white-space:pre-wrap;}
+/* шаги, проверка, сорта */
+.m51-st{list-style:none; margin:0; padding:0; display:grid; gap:8px; counter-reset:m51s;}
+.m51-st li{counter-increment:m51s; padding:10px 12px; border-radius:14px; background:var(--surface-2); display:flex; flex-direction:column; gap:5px;}
+.m51-st label{display:flex; gap:10px; align-items:flex-start; cursor:pointer; font-weight:800; line-height:1.3;}
+.m51-st label span::before{content:counter(m51s) ". "; font-family:var(--font-num); color:var(--muted);}
+.m51-st input{width:22px; height:22px; flex:none; margin:0; accent-color:var(--m-leaf,var(--brand));}
+.m51-st p{margin:0 0 0 32px; font-size:.88rem; line-height:1.45;} .m51-st small{margin-left:32px; font-size:.78rem; color:var(--muted); display:flex; gap:4px; align-items:flex-start;}
+.m51-st li.dn{opacity:.6;} .m51-st li.dn label span{text-decoration:line-through;}
+.m51-ck,.m51-gr,.m51-sm{list-style:none; margin:0; padding:0; display:grid; gap:7px;}
+.m51-ck li{display:flex; gap:7px; align-items:flex-start; font-size:.9rem; line-height:1.4;} .m51-ck .mi{flex:none; margin-top:2px; color:var(--m-leaf,var(--brand));}
+.m51-gr li{padding:9px 11px; border-radius:12px; background:var(--surface-2);} .m51-gr li>div{display:flex; justify-content:space-between; gap:8px;} .m51-gr b{font-weight:800;} .m51-gr em{font-style:normal; font-family:var(--font-num); font-weight:700; font-size:.84rem; white-space:nowrap;}
+.m51-gr p,.m51-sm p{margin:4px 0 0; font-size:.86rem; line-height:1.4;} .m51-gr small,.m51-sm small{color:var(--muted); font-weight:700;}
+/* секреты, обманы, сезон */
+.m51-sx{margin:0; padding:0; list-style:none; display:grid; gap:8px; counter-reset:m51x;}
+.m51-sx li{counter-increment:m51x; position:relative; padding:10px 12px 10px 44px; border-radius:14px; background:color-mix(in srgb,var(--gold) 12%,var(--surface));}
+.m51-sx li::before{content:counter(m51x); position:absolute; left:12px; top:10px; width:22px; height:22px; border-radius:50%; display:grid; place-items:center; background:var(--gold); color:var(--ink); font-family:var(--font-num); font-weight:800; font-size:.8rem;}
+.m51-sx b{font-weight:800; line-height:1.3;} .m51-sx p{margin:3px 0 0; font-size:.88rem; line-height:1.45;}
+.m51-sm li{padding:9px 11px; border-radius:12px; background:var(--danger-weak,var(--surface-2));} .m51-sm b{font-weight:800;} .m51-sm .fx small{color:var(--m-leaf,var(--brand));}
+.m51-se{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(12,1fr); gap:3px;}
+.m51-se li{display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:40px; border-radius:8px; background:var(--surface-2); font-size:.62rem; font-weight:700; color:var(--muted); padding-bottom:4px; overflow:hidden;}
+.m51-se li.best{background:var(--m-leaf,var(--brand)); color:var(--surface); height:46px; margin-top:-6px;} .m51-se li.worst{background:var(--danger-weak,var(--track)); color:var(--danger); background-image:repeating-linear-gradient(135deg,transparent 0 4px,color-mix(in srgb,var(--danger) 18%,transparent) 4px 6px);}
+.m51-se li.now{outline:2px solid var(--ink); outline-offset:1px;}
+.m51-sel{display:flex; gap:14px; margin:8px 0 0!important; font-size:.78rem; color:var(--muted); font-weight:700;} .m51-sel span{display:inline-flex; align-items:center; gap:5px;}
+.m51-sel i{width:12px; height:12px; border-radius:4px;} .m51-sel .best i{background:var(--m-leaf,var(--brand));} .m51-sel .worst i{background:var(--danger-weak,var(--track)); background-image:repeating-linear-gradient(135deg,transparent 0 3px,color-mix(in srgb,var(--danger) 30%,transparent) 3px 5px);}
+.m51-tail .m50-bl:first-child{margin-top:0; padding-top:0; border-top:none;}
+.m51-ta{display:flex; justify-content:space-between; gap:10px;} .m51-ta .link-btn{display:inline-flex; align-items:center; gap:4px; min-height:36px;}
+.m51-del{color:var(--danger)!important;}
+.m51-li .m51-lm{font-size:.76rem; font-weight:700; color:var(--muted); font-family:var(--font-num);}
+.m51-errc p{margin:0; line-height:1.45;} .m51-errc .btn{align-self:flex-start;} .m51-errc .m51-del{align-self:flex-start; min-height:36px;}
+.m51-wait .m50-prog{background:var(--surface-2);}
+/* движение — только при интернете и когда блок на экране */
+html.m48-live .m49-go .m51-c .tr .r{animation:m48grow .8s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*.09s);}
+html.m48-live .m49-go .m51-c .tr .d{animation:m51drop .5s cubic-bezier(.3,1.5,.5,1) both; animation-delay:calc(.5s + var(--i)*.09s);}
+html.m48-live .m49-go .m51-ps>.m51-p{animation:m48in .4s both; animation-delay:calc(var(--i)*.04s);}
+html.m48-live .m51-rd .rs polygon{animation:m51pop .7s cubic-bezier(.2,.8,.2,1) both;} html.m48-live .m51-rd .s1 polygon{animation-delay:.12s;} html.m48-live .m51-rd .s2 polygon{animation-delay:.24s;}
+html.m48-live .m49-go .m51-se li{animation:m51rise .45s both; animation-delay:calc(var(--i)*.035s);}
+html.m48-live .m49-go .m51-st li{animation:m48in .4s both; animation-delay:calc(var(--i)*.05s);}
+html.m48-live .m51-p.k-few .kn.few .mi{animation:m51tw 2.4s ease-in-out infinite;}
+@keyframes m51drop{from{opacity:0; transform:translateY(-8px) scale(.6)} to{opacity:1; transform:none}}
+@keyframes m51pop{from{opacity:0; transform:scale(.2)} to{opacity:1; transform:none}}
+@keyframes m51rise{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
+@keyframes m51tw{0%,100%{transform:rotate(0)} 50%{transform:rotate(-18deg)}}
+@media (prefers-reduced-motion:reduce){ html.m48-live [class*="m51-"],html.m48-live [class*="m51-"] *{animation:none!important; transition:none!important;} }
+#bpg-f [data-m51again][disabled]{opacity:.5;}
 /* <</v44 css>> */
 
 
@@ -22056,7 +22237,8 @@ function m44SMax(c){ const v=Math.max(c.S*2,c.outlay/6,c.A*1.5,100); const p=Mat
 function m44SStep(c){ const v=m44SMax(c); return v>=100000?1000:v>=10000?100:v>=1000?10:1; }
 
 /* ---------- страница ---------- */
-function m44Open(arg){ try{ if(typeof m8SheetOn==='function'&&m8SheetOn()) closeSheet(); }catch(e){}
+function m44Open(arg){ let sh=false; try{ sh=typeof m8SheetOn==='function'&&m8SheetOn(); }catch(e){} if(sh){ try{ closeSheet(); }catch(e){} setTimeout(()=>m44Go(arg),120); } else m44Go(arg); }   /* v51: страницу — после того как лист закрылся, иначе его «назад» закрывает и её */
+function m44Go(arg){
   if(arg&&typeof arg==='object'){ M44.cur=m44New(arg.t,arg.mi,arg.day); M44.fresh=true; bpGo('buy',M44.cur.id); return; }
   if(typeof arg==='string'&&arg!=='list'){ const x=m44List().find(z=>z.id===arg); if(x){ M44.cur=null; M44.fresh=true; bpGo('buy',arg); return; } }
   bpGo('buy','list'); }
@@ -22754,7 +22936,9 @@ const M46={G:null,qs:null,ans:{},own:{},asking:false,run:new Set()};
 function m46St(){ state.misc=state.misc||{}; const s=state.misc.g46&&typeof state.misc.g46==='object'?state.misc.g46:(state.misc.g46={}); if(!Array.isArray(s.list)) s.list=[]; return s; }
 function m46Def(){ const s=m46St(), last=s.list.length?s.list[s.list.length-1].G:null; return {want:'',kind:'income',amount:'',cur:'USD',months:12,place:last?last.place:(lang==='en'?'Dushanbe, Tajikistan':lang==='tg'?'Душанбе, Тоҷикистон':'Душанбе, Таджикистан'),cap:'',capCur:'USD',hours:8,risk:'mid',niche:'',skills:''}; }
 function m46Title(G){ return G.want||(G.amount?L.m46Kinds[G.kind]+': '+m46F(+G.amount,G.cur==='USD'?'$':G.cur):L.m46Kinds[G.kind]); }
-function m46Open(arg){ try{ if(overlay.classList.contains('open')) closeSheet(); }catch(e){} if(arg==='new'){ M46.G=m46Def(); M46.qs=null; } bpGo('goal46',arg||(m46St().list.length?'list':'new')); }
+/* v51: лист закрывается через history.back(); страница, открытая в тот же миг, этим «назад» и закрывалась — «Путь к цели» из чата Сифры уводил на «Сегодня». Сначала закрываем лист, страницу открываем чуть позже. */
+function m46Open(arg){ if(arg==='new'){ M46.G=m46Def(); M46.qs=null; } const go=()=>bpGo('goal46',arg||(m46St().list.length?'list':'new')); let sh=false; try{ sh=overlay.classList.contains('open'); }catch(e){}
+  if(sh){ try{ closeSheet(); }catch(e){} setTimeout(go,120); } else go(); }
 const M46CUR=['USD','TJS','RUB','EUR','UZS','KZT','CNY'];
 function m46Chips(name,list,val,lab){ return `<div class="m44-chs" role="group">${list.map(([v,t])=>`<button type="button" class="chip${String(val)===String(v)?' on':''}" data-m46c="${name}" data-v="${esc(String(v))}" aria-pressed="${String(val)===String(v)}">${esc(t)}</button>`).join('')}</div>`; }
 function m46FormHTML(G){ const cur=k=>`<select data-m46f="${k}" aria-label="${esc(L.m46Cur)}">${M46CUR.map(c=>`<option${G[k]===c?' selected':''}>${c}</option>`).join('')}</select>`;
@@ -23931,6 +24115,397 @@ document.addEventListener('change',e=>{ const t=e.target&&e.target.closest&&e.ta
   else { b.tp.chk=b.tp.chk||{}; b.tp.chk[t.dataset.m50ck]=t.checked; }
   m44Touch(b); try{ persist(); }catch(x){}
   const P=b.tp.plan, st=P&&P.steps||[], dn=st.filter((s,i)=>b.tp.done&&b.tp.done[i]).length, box=document.querySelector('.m50-plan'); if(box&&st.length){ const pb=box.querySelector('.m50-pb i'); if(pb) pb.style.width=Math.round(dn/st.length*100)+'%'; const em=box.querySelector('.m50-st')&&box.querySelector('.m50-st').previousElementSibling&&box.querySelector('h4 em'); const hs=[...box.querySelectorAll('h4 em')].find(x=>x.closest('.m50-bl')&&x.closest('.m50-bl').querySelector('.m50-st')); if(hs) hs.textContent=L.m50StepProg(dn,st.length); } });
+/* ---------- v51: строки — «Закупка как местный», «Сколько выйдет у вас» ---------- */
+const M51S={
+  ru:{
+    m51T:'Закупка как местный', m51Sub:'Фабрики, рынки и улицы, которые знают местные, — с ценами, контактами и сравнением', m51Short:'Найти, где закупать',
+    m51Lead:'Напишите, что хотите закупать. Пять закупщиков Сифры ищут так, как ищут местные и самые опытные: на языке страны, за пределами мест, которые знают все. Потом главный закупщик собирает всё в один план.',
+    m51What:'Что закупаете', m51WhatPh:'Например: женские платья, кешью, шуруповёрты', m51Ex:['женская одежда','кешью','шуруповёрты','детская обувь','ткани','чехлы для телефонов'],
+    m51From:'Откуда', m51Any:'Весь мир — найти, где выгоднее', m51C:{CN:'Китай',TR:'Турция',AE:'ОАЭ',IN:'Индия',UZ:'Узбекистан',VN:'Вьетнам',IR:'Иран',RU:'Россия',KZ:'Казахстан',EU:'Европа'},
+    m51City:'Город или район (если знаете)', m51CityPh:'Например: Стамбул, Гуанчжоу', m51Qty:'Сколько берёте', m51QtyPh:'Например: 200 штук, 500 кг, на 3 000 $',
+    m51Go:'Найти как местный', m51Need:'Напишите, что хотите закупать.', m51Honest:'Сифра показывает только то, что нашла, со ссылкой. Обещать «все места без единого пропуска» нельзя — но это намного глубже путеводителя. Контакты перед оплатой проверяйте.',
+    m51Old:'Нужен новый сервер Mira (версия 27).', m51Limit:'На сегодня поиски закончились (4 в день). Завтра можно снова.', m51Err:'Не получилось. Попробуйте ещё раз.', m51Off:'Нужен интернет.', m51Retry:'Попробовать ещё раз',
+    m51Mine:'Мои поиски', m51New:'Новый поиск', m51Empty:'Здесь будут ваши поиски поставщиков.', m51Age:n=>n<=0?'сегодня':n===1?'вчера':n+' дн. назад', m51Stale:'Цены и условия меняются — обновите поиск.', m51Refresh:'Обновить поиск', m51Del:'Удалить', m51DelSure:'Точно удалить?',
+    m51WaitT:'Закупщики Сифры за работой', m51Roles:{local:'Местный знаток: где это делают и продают',fab:'Фабрики и поставщики',price:'Цены, сорта и качество',ship:'Доставка, пошлина и налоги',ins:'Секреты, лазейки и обманы'},
+    m51Nav:{c:'Страны',p:'Места',l:'Выйдет у вас',m:'Написать',s:'Как купить',x:'Секреты'}, m51Best:'лучше всего', m51BestC:c=>'Лучше всего: '+c,
+    m51CT:'Страны: где выгоднее', m51CLead:'Полоса — цена у поставщика, кружок — сколько выйдет у вас с доставкой и налогами. Нажмите страну — покажу её места.',
+    m51CAt:(a,u)=>'у поставщика '+a+(u?' / '+u:''), m51CYou:v=>'у вас ≈ '+v, m51Days:n=>n+' дн.', m51Moq:'мин. партия', m51Pros:'Плюс', m51Cons:'Минус', m51AllC:'Все страны',
+    m51PT:'Места и поставщики', m51PN:n=>'Найдено: '+n, m51F:{all:'Все',fab:'Фабрики и кластеры',mkt:'Рынки и улицы',onl:'Онлайн и агенты',few:'Знают немногие'},
+    m51Kind:{factory:'фабрика',market:'оптовый рынок',street:'улица, квартал',cluster:'город-кластер',online:'площадка',agent:'агент, карго',fair:'выставка'},
+    m51Known:{all:'знают все',some:'знают опытные',few:'знают единицы'}, m51Local:'На местном языке', m51Copy:'Скопировать', m51Copied:'Скопировано', m51Why:'Почему сюда', m51Tip:'Совет местного', m51Contact:'Контакт со страницы', m51Page:'Открыть страницу', m51NoLink:'Ссылки нет — проверьте сами, прежде чем ехать или платить.',
+    m51Cmp:'Сравнить', m51CmpOn:'В сравнении', m51CmpT:'Сравнение', m51CmpHint:'Выберите 2–3 места кнопкой «Сравнить».', m51CmpMax:'Сравнить можно не больше трёх.', m51Ax:{price:'цена',quality:'качество',speed:'скорость',trust:'надёжность',moq:'малая партия'}, m51Score:'оценка',
+    m51ToV:'В мои поставщики', m51ToVOk:n=>'«'+n+'» — в «Поставщиках»', m51ToVHas:'Уже в «Поставщиках»',
+    m51LT:'Сколько выйдет у вас', m51LLead:'Одна штука с доставкой и налогами — по курсу Нацбанка сегодня.', m51LUnit:u=>'за 1 '+(u||'шт'), m51LQty:'Сколько штук', m51LTot:(q,v)=>'Партия '+q+' шт: '+v,
+    m51LP:{goods:'товар',cargo:'доставка',duty:'пошлина',vat:'НДС',other:'прочее'}, m51LHow:'Как посчитано — изменить', m51LF:{p:'Цена у поставщика, $',kg:'Вес штуки, кг',cg:'Доставка за кг, $',du:'Пошлина, %',vat:'НДС, %',ot:'Прочее на штуку, $'},
+    m51LEx:{cargo:'Доставка (карго) — плата перевозчику, обычно за килограмм.',duty:'Пошлина — налог государству за ввоз, процент от цены с доставкой.',vat:'НДС — ещё один налог при ввозе, считается после пошлины.',other:'Прочее — сертификат, брокер, упаковка.'},
+    m51LHs:c=>'Код товара для таможни (ТН ВЭД): '+c, m51LShelf:(mk,v)=>'На полке при наценке '+mk+'%: '+v, m51LNoFx:'Нет курса доллара — откройте приложение с интернетом.',
+    m51MT:'Написать поставщику', m51MLead:'Готовые сообщения на языке поставщика. Скопируйте и отправьте в WhatsApp или WeChat.', m51MTr:'Перевод',
+    m51ST:'Как купить: шаги', m51SProg:(d,n)=>'Сделано '+d+' из '+n, m51How:'Как именно', m51DoneK:'Готово, когда', m51ChkT:'Проверить поставщика за 10 минут', m51GrT:'Сорта и качество', m51GrHow:'Как отличить',
+    m51XT:'Что знают опытные', m51ScT:'Частые обманы', m51Sign:'Признак', m51Fix:'Защита', m51SeT:'Когда покупать', m51SeL:{best:'выгодно',worst:'дорого или закрыто'}, m51Ask:'Спросить Сифру про эту закупку', m51AskQ:(w,v)=>'Моя закупка «'+w+'»: '+v+' С чего начать на этой неделе и как сбить цену?',
+    m51Loc:'Что знают местные', m51LocSub:c=>'Не из путеводителя: '+c,
+    m51QT:'Сколько выйдет у вас за штуку', m51QLead:'Впишите товар и цену у поставщика. Вес, доставку, пошлину и НДС Сифра найдёт сама.', m51QNm:'Товар', m51QNmPh:'Например: женское платье', m51QFrom:'Откуда везёте', m51QPrice:'Цена за штуку', m51QCur:'Валюта', m51QQty:'Сколько штук',
+    m51QGo:'Сифра, найди доставку и налоги', m51QBusy:'Ищу вес, карго, пошлину и НДС…', m51QNeedNm:'Сначала впишите товар.', m51QFound:'Сифра нашла', m51QNote:'Ставки уточните у таможенного брокера — здесь расчёт по найденным данным.', m51QNeed:'Впишите цену и сколько штук.',
+    m51QF:{kg:'Вес штуки, кг',cg:'Доставка за кг, $',du:'Пошлина, %',vat:'НДС, %',ot:'Прочее на всю партию'}, m51QUnit:'Одна штука у вас', m51QDays:n=>'В пути ≈ '+n+' дн.', m51QAuto:'Пока без доставки и налогов — нажмите кнопку ниже, и Сифра добавит их.'
+  },
+  tg:{
+    m51T:'Харид мисли маҳаллӣ', m51Sub:'Фабрикаҳо, бозорҳо ва кӯчаҳое, ки маҳаллиҳо медонанд — бо нарх, тамос ва муқоиса', m51Short:'Ёфтани ҷои харид',
+    m51Lead:'Нависед, ки чӣ харидан мехоҳед. Панҷ харидори Сифра мисли маҳаллиҳо ва ботаҷрибатаринҳо меҷӯянд: бо забони кишвар, берун аз ҷойҳое, ки ҳама медонанд. Баъд харидори асосӣ ҳамаро ба як нақша ҷамъ мекунад.',
+    m51What:'Чӣ мехаред', m51WhatPh:'Масалан: куртаи занона, кешью, пармаи барқӣ', m51Ex:['либоси занона','кешью','пармаи барқӣ','пойафзоли кӯдакона','матоъ','ғилофи телефон'],
+    m51From:'Аз куҷо', m51Any:'Тамоми ҷаҳон — дар куҷо фоиданоктар', m51C:{CN:'Чин',TR:'Туркия',AE:'АМА',IN:'Ҳиндустон',UZ:'Ӯзбекистон',VN:'Ветнам',IR:'Эрон',RU:'Русия',KZ:'Қазоқистон',EU:'Аврупо'},
+    m51City:'Шаҳр ё ноҳия (агар донед)', m51CityPh:'Масалан: Истамбул, Гуанҷоу', m51Qty:'Чӣ қадар мегиред', m51QtyPh:'Масалан: 200 дона, 500 кг, ба 3 000 $',
+    m51Go:'Мисли маҳаллӣ ёфтан', m51Need:'Нависед, ки чӣ харидан мехоҳед.', m51Honest:'Сифра танҳо он чиро нишон медиҳад, ки ёфтааст, бо истинод. Ваъда додани «ҳамаи ҷойҳо бе ягон камбудӣ» мумкин нест — вале ин аз роҳнамо хеле амиқтар аст. Тамосҳоро пеш аз пардохт санҷед.',
+    m51Old:'Сервери нави Mira лозим (версияи 27).', m51Limit:'Барои имрӯз ҷустуҷӯҳо тамом шуданд (4 дар як рӯз). Фардо боз мумкин.', m51Err:'Нашуд. Боз кӯшиш кунед.', m51Off:'Интернет лозим.', m51Retry:'Боз кӯшиш кардан',
+    m51Mine:'Ҷустуҷӯҳои ман', m51New:'Ҷустуҷӯи нав', m51Empty:'Дар ин ҷо ҷустуҷӯҳои таъминкунандагон мешаванд.', m51Age:n=>n<=0?'имрӯз':n===1?'дирӯз':n+' рӯз пеш', m51Stale:'Нарх ва шартҳо тағйир меёбанд — ҷустуҷӯро нав кунед.', m51Refresh:'Нав кардани ҷустуҷӯ', m51Del:'Нест кардан', m51DelSure:'Ҳатман нест кунам?',
+    m51WaitT:'Харидорони Сифра кор мекунанд', m51Roles:{local:'Донандаи маҳаллӣ: дар куҷо месозанд ва мефурӯшанд',fab:'Фабрикаҳо ва таъминкунандагон',price:'Нархҳо, навъҳо ва сифат',ship:'Расонидан, боҷ ва андозҳо',ins:'Сирҳо, роҳҳо ва фиребҳо'},
+    m51Nav:{c:'Кишварҳо',p:'Ҷойҳо',l:'Ба шумо меафтад',m:'Навиштан',s:'Чӣ тавр харидан',x:'Сирҳо'}, m51Best:'беҳтарин', m51BestC:c=>'Беҳтарин: '+c,
+    m51CT:'Кишварҳо: дар куҷо фоиданоктар', m51CLead:'Хат — нарх дар назди таъминкунанда, доира — бо расонидан ва андозҳо ба шумо чанд меафтад. Кишварро пахш кунед — ҷойҳояшро нишон медиҳам.',
+    m51CAt:(a,u)=>'дар назди таъминкунанда '+a+(u?' / '+u:''), m51CYou:v=>'ба шумо ≈ '+v, m51Days:n=>n+' рӯз', m51Moq:'партияи хурдтарин', m51Pros:'Бартарӣ', m51Cons:'Камбудӣ', m51AllC:'Ҳамаи кишварҳо',
+    m51PT:'Ҷойҳо ва таъминкунандагон', m51PN:n=>'Ёфт шуд: '+n, m51F:{all:'Ҳама',fab:'Фабрикаҳо ва кластерҳо',mkt:'Бозорҳо ва кӯчаҳо',onl:'Онлайн ва агентҳо',few:'Кам касон медонанд'},
+    m51Kind:{factory:'фабрика',market:'бозори яклухт',street:'кӯча, маҳалла',cluster:'шаҳр-кластер',online:'платформа',agent:'агент, карго',fair:'намоишгоҳ'},
+    m51Known:{all:'ҳама медонанд',some:'ботаҷрибаҳо медонанд',few:'ангуштшуморҳо медонанд'}, m51Local:'Бо забони маҳаллӣ', m51Copy:'Нусха гирифтан', m51Copied:'Нусха гирифта шуд', m51Why:'Чаро ба ин ҷо', m51Tip:'Маслиҳати маҳаллӣ', m51Contact:'Тамос аз саҳифа', m51Page:'Кушодани саҳифа', m51NoLink:'Истинод нест — пеш аз рафтан ё пардохт худатон санҷед.',
+    m51Cmp:'Муқоиса', m51CmpOn:'Дар муқоиса', m51CmpT:'Муқоиса', m51CmpHint:'Бо тугмаи «Муқоиса» 2–3 ҷойро интихоб кунед.', m51CmpMax:'Зиёда аз се ҷойро муқоиса кардан мумкин нест.', m51Ax:{price:'нарх',quality:'сифат',speed:'суръат',trust:'боэътимодӣ',moq:'партияи хурд'}, m51Score:'баҳо',
+    m51ToV:'Ба таъминкунандагони ман', m51ToVOk:n=>'«'+n+'» — дар «Таъминкунандагон»', m51ToVHas:'Аллакай дар «Таъминкунандагон»',
+    m51LT:'Ба шумо чанд меафтад', m51LLead:'Як дона бо расонидан ва андозҳо — бо қурби имрӯзаи Бонки миллӣ.', m51LUnit:u=>'барои 1 '+(u||'дона'), m51LQty:'Чанд дона', m51LTot:(q,v)=>'Партияи '+q+' дона: '+v,
+    m51LP:{goods:'мол',cargo:'расонидан',duty:'боҷ',vat:'ААИ',other:'дигар'}, m51LHow:'Чӣ тавр ҳисоб шуд — иваз кардан', m51LF:{p:'Нарх дар назди таъминкунанда, $',kg:'Вазни як дона, кг',cg:'Расонидан барои 1 кг, $',du:'Боҷ, %',vat:'ААИ, %',ot:'Дигар барои як дона, $'},
+    m51LEx:{cargo:'Расонидан (карго) — пардохт ба боркашон, одатан барои як килограмм.',duty:'Боҷ — андоз ба давлат барои воридот, фоиз аз нарх бо расонидан.',vat:'ААИ — андози дигар ҳангоми воридот, пас аз боҷ ҳисоб мешавад.',other:'Дигар — сертификат, брокер, борпеч.'},
+    m51LHs:c=>'Рамзи мол барои гумрук (ТН ВЭД): '+c, m51LShelf:(mk,v)=>'Дар раф бо иловаи '+mk+'%: '+v, m51LNoFx:'Қурби доллар нест — барномаро бо интернет кушоед.',
+    m51MT:'Ба таъминкунанда навиштан', m51MLead:'Паёмҳои тайёр бо забони таъминкунанда. Нусха гиред ва ба WhatsApp ё WeChat фиристед.', m51MTr:'Тарҷума',
+    m51ST:'Чӣ тавр харидан: қадамҳо', m51SProg:(d,n)=>'Иҷро шуд '+d+' аз '+n, m51How:'Чӣ тавр', m51DoneK:'Тайёр, вақте ки', m51ChkT:'Санҷиши таъминкунанда дар 10 дақиқа', m51GrT:'Навъҳо ва сифат', m51GrHow:'Чӣ тавр фарқ кардан',
+    m51XT:'Ботаҷрибаҳо чӣ медонанд', m51ScT:'Фиребҳои маъмул', m51Sign:'Аломат', m51Fix:'Ҳимоя', m51SeT:'Кай харидан', m51SeL:{best:'фоиданок',worst:'гарон ё баста'}, m51Ask:'Аз Сифра дар бораи ин харид пурсидан', m51AskQ:(w,v)=>'Хариди ман «'+w+'»: '+v+' Дар ин ҳафта аз чӣ сар кунам ва нархро чӣ тавр паст кунам?',
+    m51Loc:'Маҳаллиҳо чӣ медонанд', m51LocSub:c=>'На аз роҳнамо: '+c,
+    m51QT:'Як дона ба шумо чанд меафтад', m51QLead:'Мол ва нархро дар назди таъминкунанда нависед. Вазн, расонидан, боҷ ва ААИ-ро Сифра худаш меёбад.', m51QNm:'Мол', m51QNmPh:'Масалан: куртаи занона', m51QFrom:'Аз куҷо меоред', m51QPrice:'Нархи як дона', m51QCur:'Асъор', m51QQty:'Чанд дона',
+    m51QGo:'Сифра, расонидан ва андозҳоро ёб', m51QBusy:'Вазн, карго, боҷ ва ААИ-ро меҷӯям…', m51QNeedNm:'Аввал молро нависед.', m51QFound:'Сифра ёфт', m51QNote:'Фоизҳоро аз брокери гумрукӣ аниқ кунед — ин ҷо ҳисоб аз рӯи маълумоти ёфтшуда.', m51QNeed:'Нарх ва шумораро нависед.',
+    m51QF:{kg:'Вазни як дона, кг',cg:'Расонидан барои 1 кг, $',du:'Боҷ, %',vat:'ААИ, %',ot:'Дигар барои тамоми партия'}, m51QUnit:'Як дона ба шумо', m51QDays:n=>'Дар роҳ ≈ '+n+' рӯз', m51QAuto:'Ҳоло бе расонидан ва андозҳо — тугмаи поёнро пахш кунед, Сифра онҳоро илова мекунад.'
+  },
+  en:{
+    m51T:'Source like a local', m51Sub:'Factories, markets and streets the locals know — with prices, contacts and comparison', m51Short:'Find where to source',
+    m51Lead:'Write what you want to source. Five of Sifra’s buyers search the way locals and seasoned traders do: in the country’s language, beyond the places everyone knows. Then the lead buyer puts it all into one plan.',
+    m51What:'What are you sourcing', m51WhatPh:'For example: women’s dresses, cashews, cordless drills', m51Ex:['women’s clothing','cashews','cordless drills','kids’ shoes','fabric','phone cases'],
+    m51From:'From where', m51Any:'Anywhere — find the best deal', m51C:{CN:'China',TR:'Turkey',AE:'UAE',IN:'India',UZ:'Uzbekistan',VN:'Vietnam',IR:'Iran',RU:'Russia',KZ:'Kazakhstan',EU:'Europe'},
+    m51City:'City or district (if you know)', m51CityPh:'For example: Istanbul, Guangzhou', m51Qty:'How much', m51QtyPh:'For example: 200 pieces, 500 kg, $3,000',
+    m51Go:'Search like a local', m51Need:'Write what you want to source.', m51Honest:'Sifra shows only what she found, with a link. Nobody can promise “every place without a single gap” — but this goes far deeper than a guidebook. Verify contacts before paying.',
+    m51Old:'Mira needs the new server (version 27).', m51Limit:'No searches left for today (4 a day). Try again tomorrow.', m51Err:'That didn’t work. Try again.', m51Off:'You need internet.', m51Retry:'Try again',
+    m51Mine:'My searches', m51New:'New search', m51Empty:'Your supplier searches will appear here.', m51Age:n=>n<=0?'today':n===1?'yesterday':n+' days ago', m51Stale:'Prices and terms change — refresh the search.', m51Refresh:'Refresh search', m51Del:'Delete', m51DelSure:'Really delete?',
+    m51WaitT:'Sifra’s buyers are at work', m51Roles:{local:'Local expert: where it’s made and sold',fab:'Factories and suppliers',price:'Prices, grades and quality',ship:'Shipping, duty and taxes',ins:'Secrets, shortcuts and scams'},
+    m51Nav:{c:'Countries',p:'Places',l:'Your cost',m:'Message',s:'How to buy',x:'Secrets'}, m51Best:'best', m51BestC:c=>'Best: '+c,
+    m51CT:'Countries: where it pays', m51CLead:'The bar is the supplier price, the dot is what it costs you with shipping and taxes. Tap a country to see its places.',
+    m51CAt:(a,u)=>'at the supplier '+a+(u?' / '+u:''), m51CYou:v=>'for you ≈ '+v, m51Days:n=>n+' days', m51Moq:'min. order', m51Pros:'Pro', m51Cons:'Con', m51AllC:'All countries',
+    m51PT:'Places and suppliers', m51PN:n=>'Found: '+n, m51F:{all:'All',fab:'Factories & clusters',mkt:'Markets & streets',onl:'Online & agents',few:'Few people know'},
+    m51Kind:{factory:'factory',market:'wholesale market',street:'street, district',cluster:'cluster city',online:'platform',agent:'agent, cargo',fair:'trade fair'},
+    m51Known:{all:'everyone knows',some:'seasoned buyers know',few:'only a few know'}, m51Local:'In the local language', m51Copy:'Copy', m51Copied:'Copied', m51Why:'Why go here', m51Tip:'Local tip', m51Contact:'Contact from the page', m51Page:'Open page', m51NoLink:'No link — verify yourself before you travel or pay.',
+    m51Cmp:'Compare', m51CmpOn:'Comparing', m51CmpT:'Comparison', m51CmpHint:'Pick 2–3 places with “Compare”.', m51CmpMax:'You can compare up to three.', m51Ax:{price:'price',quality:'quality',speed:'speed',trust:'reliability',moq:'small batch'}, m51Score:'score',
+    m51ToV:'Add to my suppliers', m51ToVOk:n=>'“'+n+'” is in Suppliers', m51ToVHas:'Already in Suppliers',
+    m51LT:'What it costs you', m51LLead:'One item with shipping and taxes — at today’s National Bank rate.', m51LUnit:u=>'per 1 '+(u||'pc'), m51LQty:'How many', m51LTot:(q,v)=>'Batch of '+q+': '+v,
+    m51LP:{goods:'goods',cargo:'shipping',duty:'duty',vat:'VAT',other:'other'}, m51LHow:'How it’s calculated — edit', m51LF:{p:'Supplier price, $',kg:'Item weight, kg',cg:'Shipping per kg, $',du:'Duty, %',vat:'VAT, %',ot:'Other per item, $'},
+    m51LEx:{cargo:'Shipping (cargo) — what you pay the carrier, usually per kilogram.',duty:'Duty — a tax to the state for importing, a percent of price plus shipping.',vat:'VAT — another import tax, calculated after duty.',other:'Other — certificate, broker, packaging.'},
+    m51LHs:c=>'Customs code (HS): '+c, m51LShelf:(mk,v)=>'Shelf price at '+mk+'% markup: '+v, m51LNoFx:'No dollar rate — open the app online.',
+    m51MT:'Message the supplier', m51MLead:'Ready messages in the supplier’s language. Copy and send via WhatsApp or WeChat.', m51MTr:'Translation',
+    m51ST:'How to buy: steps', m51SProg:(d,n)=>d+' of '+n+' done', m51How:'How exactly', m51DoneK:'Done when', m51ChkT:'Check a supplier in 10 minutes', m51GrT:'Grades and quality', m51GrHow:'How to tell',
+    m51XT:'What seasoned buyers know', m51ScT:'Common scams', m51Sign:'Sign', m51Fix:'Protection', m51SeT:'When to buy', m51SeL:{best:'good time',worst:'expensive or closed'}, m51Ask:'Ask Sifra about this sourcing', m51AskQ:(w,v)=>'My sourcing “'+w+'”: '+v+' Where do I start this week and how do I push the price down?',
+    m51Loc:'What locals know', m51LocSub:c=>'Not from a guidebook: '+c,
+    m51QT:'What one item costs you', m51QLead:'Enter the item and the supplier price. Sifra finds weight, shipping, duty and VAT herself.', m51QNm:'Item', m51QNmPh:'For example: women’s dress', m51QFrom:'Shipping from', m51QPrice:'Price per item', m51QCur:'Currency', m51QQty:'How many',
+    m51QGo:'Sifra, find shipping and taxes', m51QBusy:'Looking up weight, cargo, duty and VAT…', m51QNeedNm:'Enter the item first.', m51QFound:'Sifra found', m51QNote:'Confirm rates with a customs broker — this estimate uses what was found.', m51QNeed:'Enter the price and quantity.',
+    m51QF:{kg:'Item weight, kg',cg:'Shipping per kg, $',du:'Duty, %',vat:'VAT, %',ot:'Other for the whole batch'}, m51QUnit:'One item, delivered', m51QDays:n=>'In transit ≈ '+n+' days', m51QAuto:'No shipping or taxes yet — tap the button below and Sifra adds them.'
+  }
+};
+const M51S2={
+  ru:{ m51WhoT:'Кто будет искать', m51MineN:n=>'Мои поиски · '+n, m51Sum:(p,c)=>'мест: '+p+(c?' · стран: '+c:''), m51Daily:'Сумма в вашей валюте пересчитывается по курсу каждый день. Места и цены — кнопкой «Обновить поиск».',
+    m51Chat:'Спросить Сифру в чате', m51TeamFound:'Что нашла команда', m51Clear:'Очистить', m51None:'По этому фильтру ничего нет.', m51Ask2:'Спросить Сифру', m51CmpN:n=>'Сравнение · '+n, m51Unit:'шт',
+    m51Row:{city:'Где',price:'Сколько стоит',moq:'Мин. партия',known:'Кто знает'}, m51QFb:{kg:v=>'вес '+v+' кг',cg:v=>'доставка '+v+' $ за кг',du:v=>'пошлина '+v+'%',vat:v=>'НДС '+v+'%'}, m51QFor:(w,c)=>'для «'+w+'»'+(c?' · '+c:''),
+    m51QLimit:'Сегодня Сифра уже искала 10 раз. Завтра можно снова — или впишите ставки сами ниже.', m51QErr:'Не получилось найти. Попробуйте позже или впишите ставки сами ниже.', m51QSrc:'Откуда ставки',
+    m51GuideLead:'Ниже — известные оптовые города и ваши поездки. Фабрики и места, которые знают местные, ищите через «Закупка как местный».', m51Radar:'Сравнение по пяти оценкам', m51Open:'Открыть', m51Chief:'Главный закупщик', m51ToL:'Куда везёте', m51ToPh:'Страна, город', m51Upd:'Команда обновляет поиск', m51UpdSub:(n,all,t)=>'готово '+n+' из '+all+' · '+t+' · пока смотрите прежний план', m51Updated:'Поиск обновлён', m51AutoL:'Обновлять каждый день, когда открываю', m51AutoS:'Раз в день Сифра сама перепроверит места и цены. Это один из 4 поисков в день.', m51WinT:'Кто лучший в чём', m51SortL:'Сначала', m51Sort:{rec:'как советует Сифра',score:'выше оценка',price:'дешевле',quality:'лучше качество',speed:'быстрее',trust:'надёжнее',moq:'меньше партия'} },
+  tg:{ m51WhoT:'Кӣ меҷӯяд', m51MineN:n=>'Ҷустуҷӯҳои ман · '+n, m51Sum:(p,c)=>'ҷойҳо: '+p+(c?' · кишварҳо: '+c:''), m51Daily:'Маблағ бо асъори шумо ҳар рӯз аз рӯи қурб аз нав ҳисоб мешавад. Ҷойҳо ва нархҳо — бо тугмаи «Нав кардани ҷустуҷӯ».',
+    m51Chat:'Аз Сифра дар чат пурсидан', m51TeamFound:'Гурӯҳ чӣ ёфт', m51Clear:'Тоза кардан', m51None:'Бо ин филтр чизе нест.', m51Ask2:'Аз Сифра пурсидан', m51CmpN:n=>'Муқоиса · '+n, m51Unit:'дона',
+    m51Row:{city:'Дар куҷо',price:'Чанд пул',moq:'Партияи хурдтарин',known:'Кӣ медонад'}, m51QFb:{kg:v=>'вазн '+v+' кг',cg:v=>'расонидан '+v+' $ барои 1 кг',du:v=>'боҷ '+v+'%',vat:v=>'ААИ '+v+'%'}, m51QFor:(w,c)=>'барои «'+w+'»'+(c?' · '+c:''),
+    m51QLimit:'Имрӯз Сифра аллакай 10 маротиба ҷуст. Фардо боз мумкин — ё фоизҳоро худатон дар поён нависед.', m51QErr:'Ёфт нашуд. Баъдтар кӯшиш кунед ё фоизҳоро худатон дар поён нависед.', m51QSrc:'Фоизҳо аз куҷо',
+    m51GuideLead:'Дар поён — шаҳрҳои маъруфи яклухт ва сафарҳои шумо. Фабрикаҳо ва ҷойҳоеро, ки маҳаллиҳо медонанд, тавассути «Харид мисли маҳаллӣ» ҷӯед.', m51Radar:'Муқоиса аз рӯи панҷ баҳо', m51Open:'Кушодан', m51Chief:'Харидори асосӣ', m51ToL:'Ба куҷо мебаред', m51ToPh:'Кишвар, шаҳр', m51Upd:'Гурӯҳ ҷустуҷӯро нав мекунад', m51UpdSub:(n,all,t)=>'тайёр '+n+' аз '+all+' · '+t+' · ҳоло нақшаи пештараро бинед', m51Updated:'Ҷустуҷӯ нав шуд', m51AutoL:'Ҳар рӯз, вақте мекушоям, нав кардан', m51AutoS:'Рӯзе як бор Сифра худаш ҷойҳо ва нархҳоро аз нав месанҷад. Ин яке аз 4 ҷустуҷӯи рӯз аст.', m51WinT:'Кӣ дар чӣ беҳтар', m51SortL:'Аввал', m51Sort:{rec:'чунон ки Сифра маслиҳат медиҳад',score:'баҳои баландтар',price:'арзонтар',quality:'сифати беҳтар',speed:'тезтар',trust:'боэътимодтар',moq:'партияи хурдтар'} },
+  en:{ m51WhoT:'Who will search', m51MineN:n=>'My searches · '+n, m51Sum:(p,c)=>'places: '+p+(c?' · countries: '+c:''), m51Daily:'The amount in your currency is recalculated at the rate every day. Places and prices update with “Refresh search”.',
+    m51Chat:'Ask Sifra in chat', m51TeamFound:'What the team found', m51Clear:'Clear', m51None:'Nothing matches this filter.', m51Ask2:'Ask Sifra', m51CmpN:n=>'Comparison · '+n, m51Unit:'pc',
+    m51Row:{city:'Where',price:'Costs',moq:'Min. order',known:'Who knows it'}, m51QFb:{kg:v=>'weight '+v+' kg',cg:v=>'shipping $'+v+' per kg',du:v=>'duty '+v+'%',vat:v=>'VAT '+v+'%'}, m51QFor:(w,c)=>'for “'+w+'”'+(c?' · '+c:''),
+    m51QLimit:'Sifra has already searched 10 times today. Try tomorrow — or enter the rates yourself below.', m51QErr:'Couldn’t find it. Try later or enter the rates yourself below.', m51QSrc:'Where the rates come from',
+    m51GuideLead:'Below are well-known wholesale cities and your trips. For factories and places the locals know, use “Source like a local”.', m51Radar:'Comparison across five scores', m51Open:'Open', m51Chief:'Lead buyer', m51ToL:'Shipping to', m51ToPh:'Country, city', m51Upd:'The team is refreshing the search', m51UpdSub:(n,all,t)=>n+' of '+all+' done · '+t+' · the earlier plan stays on screen', m51Updated:'Search refreshed', m51AutoL:'Refresh every day when I open it', m51AutoS:'Once a day Sifra rechecks places and prices herself. It uses one of your 4 daily searches.', m51WinT:'Best at what', m51SortL:'First', m51Sort:{rec:'as Sifra recommends',score:'higher score',price:'cheaper',quality:'better quality',speed:'faster',trust:'more reliable',moq:'smaller batch'} }
+};
+for(const k of ['ru','tg','en']) Object.assign(M51S[k],M51S2[k]);
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M51S[k]); }catch(e){} Object.assign(D[k],M51S[k]); }
+/* ---------- v51: «Закупка как местный» (команда закупщиков) и простое «Сколько выйдет у вас» ----------
+   Анушер (25.11): «Цена у двери» непонятна — человек не знает вес партии, пошлину, НДС; места в «Где закупать» — из путеводителей,
+   которые знают все. Нужно как местный: все места и фабрики с адресами, контактами, сравнением, секретами; любой товар.
+   Честно: «все места без пропуска» обещать нельзя; контакт показываем только вместе со страницей, где он найден. */
+const M51={run:{},Q:null,busy:false};
+const M51_C=['CN','TR','AE','IN','UZ','VN','IR','RU','KZ','EU'], M51_AX=['price','quality','speed','trust','moq'], M51_LP=['goods','cargo','duty','vat','other'];
+const M51_KF={fab:['factory','cluster'],mkt:['market','street','fair'],onl:['online','agent']}, M51_KI={factory:'box',market:'shop',street:'pin',cluster:'globe',online:'mobile',agent:'people',fair:'flag'};
+const M51_CCUR={CN:'CNY',TR:'USD',AE:'AED',IN:'USD',UZ:'USD',VN:'USD',IR:'USD',RU:'RUB',KZ:'KZT',EU:'EUR'};
+try{ M50_ROLES.src=['local','fab','price','ship','ins']; Object.assign(M50_RICO,{local:'pin',fab:'box',ship:'truck',ins:'key'}); }catch(e){}
+
+function m51St(){ state.misc=state.misc||{}; const s=state.misc.src51&&typeof state.misc.src51==='object'?state.misc.src51:(state.misc.src51={}); if(!Array.isArray(s.list)) s.list=[]; return s; }
+function m51Def(){ let to=''; try{ const l=m51St().list; to=l.length&&l[l.length-1].Q.to||''; }catch(e){} return {what:'',qty:'',from:[],city:'',to:to||m51To()}; }
+function m51Rate(c){ let v=0; try{ v=+rateOf(c)||0; }catch(e){} if(!v){ try{ const t=hbToday(), F=t&&t.fx||{}; v=+F[String(c).toLowerCase()]||0; }catch(e){} } return v; }
+function m51Usd(){ return m51Rate('USD'); }
+function m51N(v,d){ return new Intl.NumberFormat(lang==='en'?'en-US':'ru-RU',{minimumFractionDigits:0,maximumFractionDigits:d}).format(+v||0); }
+function m51Dg(v){ const a=Math.abs(+v||0); return a>=100?0:a>=10?1:2; }
+function m51D(v){ return m51N(v,m51Dg(v))+' $'; }
+function m51Loc(v){ const r=m51Usd(); return r>0?money(v*r):m51D(v); }                       /* доллары → валюта пользователя по курсу сегодня */
+function m51Flag(c){ return HB_FLAG[c]||(TCOUNTRY[c]&&TCOUNTRY[c].f)||'🌍'; }
+function m51To(){ try{ const r=m8Region(); return r==='XX'?'':m8RegName(r); }catch(e){ return ''; } }
+function m51Days(e){ return Math.max(0,Math.floor((Date.now()-(e.ts||Date.now()))/86400e3)); }
+function m51Title(Q){ return String(Q&&Q.what||'').trim()||L.m51T; }
+function m51Top(){ try{ const t=bpTop(); return bpOpenNow()&&t&&t.name==='src51'?t:null; }catch(e){ return null; } }
+function m51E(id){ return m51St().list.find(x=>x.id===id)||null; }
+function m51ErrT(k){ return k==='limit'?L.m51Limit:k==='old'?L.m51Old:k==='off'?L.m51Off:L.m51Err; }
+function m51Fix(P){ for(const k of ['countries','places','grades','msgs','steps','checks','secrets','scams','team']) if(!Array.isArray(P[k])) P[k]=[]; if(P.season){ P.season.best=P.season.best||[]; P.season.worst=P.season.worst||[]; } P.best=P.best||{}; return P; }
+function m51Url(u){ return /^https?:\/\//i.test(String(u||''))?String(u):''; }
+function m51Norm(x){ return String(x||'').trim().toLowerCase(); }
+function m51CodeOf(e,country){ const n=m51Norm(country); if(!n) return ''; const c=(e.plan.countries||[]).find(x=>m51Norm(x.c)===n); if(c&&c.code) return c.code;
+  for(const k of M51_C) for(const lg of ['ru','tg','en']) if(m51Norm(M51S[lg].m51C[k])===n) return k; for(const k in TCOUNTRY) if(m51Norm(L['cn_'+k])===n) return k; return ''; }
+function m51CopyFb(t){ try{ const ta=document.createElement('textarea'); ta.value=t; ta.setAttribute('readonly',''); ta.style.cssText='position:fixed;top:0;left:0;opacity:0'; document.body.appendChild(ta); ta.select(); const r=document.execCommand('copy'); ta.remove(); return r; }catch(e){ return false; } }
+function m51Copy(t){ t=String(t||''); if(!t) return; const ok=()=>{ toast(L.m51Copied); try{ m40Vib(); }catch(e){} }; try{ navigator.clipboard.writeText(t).then(ok,()=>{ if(m51CopyFb(t)) ok(); }); }catch(e){ if(m51CopyFb(t)) ok(); } }
+function m51Open(arg,pre){ if(pre||arg==='new'){ M51.Q=Object.assign(m51Def(),pre||{}); arg='new'; } const go=()=>bpGo('src51',arg||(m51St().list.length?'list':'new'));
+  let sh=false; try{ sh=m8SheetOn(); }catch(e){} if(sh){ closeSheet(); setTimeout(go,120); } else go(); }
+
+/* ---------- запуск команды ---------- */
+function m51Run(e,auto){ if(M51.run[e.id]) return; const keep=!!e.plan; e.st='wait'; e.t0=Date.now(); delete e.err; M51.run[e.id]=1;
+  e.job=e.job&&Date.now()-(e.jt||0)<25*60e3?e.job:'tj'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); e.jt=e.jt||Date.now(); try{ persist(); }catch(x){}
+  const fin=()=>{ delete M51.run[e.id]; try{ persist(); }catch(x){} const t=m51Top(), here=t&&t.arg===e.id;
+    if(here){ const m=$('#bpg-m'), y=m?m.scrollTop:0; bpRender(e.st!=='ok'||keep); if(keep&&m) m.scrollTop=y; if(keep&&e.st==='ok'&&!e.err2) toast(L.m51Updated); } else if(e.st==='ok'&&!e.err2&&!auto) toast(L.m51T+': '+m51Title(e.Q)); delete e.err2; };
+  Promise.resolve().then(()=>sfCapsLoad()).catch(()=>null).then(c=>{ if(navigator.onLine===false) throw new Error('off'); if(!(c&&+c.v>=27)) throw new Error('old');
+      const Q=e.Q, pr=m50Team('src',{src:{what:Q.what,qty:Q.qty,from:(Q.from||[]).map(k=>L.m51C[k]||k),city:Q.city,to:String(Q.to||'').trim()||m51To(),toCity:''}},e.id,e.job); setTimeout(m50ProgDraw,60); return pr; })
+    .then(j=>{ const od=e.done||{}, ol=((e.plan&&e.plan.steps)||[]).map(x=>x.l), q=e.ld&&+e.ld.q; e.plan=m51Fix(j.plan); e.src=(j.sources||[]).slice(0,16); e.team=j.team||[]; e.model=j.model||''; e.at=j.at||ymd(new Date()); e.ts=Date.now(); e.st='ok';
+      e.done={}; e.plan.steps.forEach((x,i)=>{ const k=ol.indexOf(x.l); if(k>=0&&od[k]) e.done[i]=true; }); e.cmp=[]; e.pf='all'; e.fc=''; e.ps='rec'; delete e.ld; if(q>0){ const o=m51LdOf(e); if(o) o.q=q; } delete e.job; delete e.jt; })
+    .catch(x=>{ const m=x&&x.message||'srv'; delete e.job; delete e.jt; if(keep){ e.st='ok'; e.err2=m; if(!auto) toast(m51ErrT(m)); } else { e.st='err'; e.err=m; } }).finally(fin); }
+/* раз в день, когда человек открывает вчерашний поиск, — команда сама перепроверяет его (прежний план остаётся на экране) */
+function m51AutoDue(e){ const s=m51St(); return s.auto!==0&&e.st==='ok'&&!!e.plan&&navigator.onLine!==false&&m51Days(e)>=1&&s.autoDay!==ymd(new Date())&&!Object.keys(M51.run).length; }
+function m51MiniHTML(id){ const P=M50.prog[id], el=P?Math.floor((Date.now()-P.t0)/1000):0, n=P?(P.stage==='plan'?M50_ROLES.src.length:P.done.length):0;
+  return `<div class="m50-prog m51-up" data-m50key="${esc(id)}#mini" role="status"><span class="p29-spin" aria-hidden="true"></span><span class="tx"><b>${esc(L.m51Upd)}</b><small>${esc(L.m51UpdSub(n,M50_ROLES.src.length,Math.floor(el/60)+':'+String(el%60).padStart(2,'0')))}</small></span></div>`; }
+function m51ProgHTML(key){ const P=M50.prog[key]; if(!P) return ''; const el=Math.floor((Date.now()-P.t0)/1000), mm=Math.floor(el/60), ss=String(el%60).padStart(2,'0'), plan=P.stage==='plan';
+  return `<div class="m50-prog m51-prog" data-m50key="${esc(key)}" aria-live="polite"><div class="m50-ph"><b>${esc(L.m50Stage[plan?'plan':'research'])}</b><span>${esc(L.m50Elapsed(mm,ss))}</span></div>
+    <ul>${M50_ROLES.src.map((k,i)=>{ const dn=P.done.includes(k)||plan; return `<li class="${dn?'dn':'on'}" style="--i:${i}"><span class="ic">${ico(dn?'check':M50_RICO[k],16)}</span><span class="tx"><b>${esc(L.m51Roles[k])}</b><small>${esc(dn?L.m50RoleDone:L.m50Doing[(Math.floor(el/4)+i)%L.m50Doing.length]+'…')}</small></span>${dn?'':'<i class="dots" aria-hidden="true"><u></u><u></u><u></u></i>'}</li>`; }).join('')}
+      <li class="chief ${plan?'on':'wt'}"><span class="ic">${ico('sparkle',16)}</span><span class="tx"><b>${esc(L.m51Chief)}</b><small>${esc(plan?L.m50ChiefDo[Math.floor(el/5)%L.m50ChiefDo.length]+'…':L.m50Wait)}</small></span>${plan?'<i class="dots" aria-hidden="true"><u></u><u></u><u></u></i>':''}</li></ul>
+    <p>${ico('info',13)} ${esc(L.m50CanClose)}</p></div>`; }
+try{ const _ph51=m50ProgHTML; m50ProgHTML=function(key){ if(/#mini$/.test(String(key))){ const id=String(key).slice(0,-5); return M50.prog[id]?m51MiniHTML(id):''; } const P=M50.prog[key]; return P&&P.kind==='src'?m51ProgHTML(key):_ph51.apply(this,arguments); }; }catch(e){}
+
+/* ---------- форма ---------- */
+function m51FromHTML(Q){ const ch=(k,t,on)=>`<button type="button" class="chip${on?' on':''}" aria-pressed="${on}" data-m51from="${k}">${t}</button>`;
+  return ch('',ico('globe',15)+' '+esc(L.m51Any),!Q.from.length)+M51_C.map(k=>ch(k,m51Flag(k)+' '+esc(L.m51C[k]),Q.from.includes(k))).join(''); }
+function m51FormHTML(Q){ const n=m51St().list.length;
+  return `<div class="m44 m51"><p class="lead">${esc(L.m51Lead)}</p>${n?`<button type="button" class="link-btn m51-mine" data-m51go="list">${ico('history',15)} ${esc(L.m51MineN(n))}</button>`:''}
+    <div class="m44-cd"><div class="field"><label for="m51-w">${esc(L.m51What)}</label><input id="m51-w" maxlength="120" data-m51f="what" placeholder="${esc(L.m51WhatPh)}" value="${esc(Q.what||'')}" autocomplete="off"></div>
+      <div class="m44-chs">${L.m51Ex.map(x=>`<button type="button" class="chip" data-m51ex="${esc(x)}">${esc(x)}</button>`).join('')}</div>
+      <span class="bp-lab" id="m51-frl">${esc(L.m51From)}</span><div class="m44-chs" id="m51-fr" role="group" aria-labelledby="m51-frl">${m51FromHTML(Q)}</div>
+      <div class="field"><label for="m51-c">${esc(L.m51City)}</label><input id="m51-c" maxlength="60" data-m51f="city" placeholder="${esc(L.m51CityPh)}" value="${esc(Q.city||'')}" autocomplete="off"></div>
+      <div class="field"><label for="m51-q">${esc(L.m51Qty)}</label><input id="m51-q" maxlength="60" data-m51f="qty" placeholder="${esc(L.m51QtyPh)}" value="${esc(Q.qty||'')}" autocomplete="off"></div>
+      <div class="field"><label for="m51-t">${esc(L.m51ToL)}</label><input id="m51-t" maxlength="60" data-m51f="to" placeholder="${esc(L.m51ToPh)}" value="${esc(Q.to||'')}" autocomplete="off"></div>
+      <div class="err" id="m51-err" role="alert"></div></div>
+    <div class="m44-cd m51-who"><h3>${ico('people',18)} ${esc(L.m51WhoT)}</h3><ul class="m50-rl">${M50_ROLES.src.map(k=>`<li>${ico(M50_RICO[k],15)} ${esc(L.m51Roles[k])}</li>`).join('')}<li>${ico('sparkle',15)} ${esc(L.m51Chief)}</li></ul></div>
+    <p class="m51-note">${ico('info',14)}<span>${esc(L.m51Honest)}</span></p></div>`; }
+
+/* ---------- страны: где выгоднее ---------- */
+function m51CountriesHTML(e){ const P=e.plan, a=P.countries||[]; if(!a.length) return ''; const mx=Math.max(...a.map(c=>Math.max(c.hi||0,c.lo||0,c.landed||0)))||1, best=m51Norm(P.best&&P.best.country), f=m51Norm(e.fc), usd=m51Usd();
+  return `<p class="m50-lead">${esc(L.m51CLead)}</p><div class="m51-cs">${a.map((c,i)=>{ const lo=c.lo!=null?c.lo:c.hi, hi=c.hi!=null?c.hi:c.lo, on=f&&f===m51Norm(c.c), isB=best&&m51Norm(c.c)===best;
+    const rng=lo!=null?(lo===hi?m51D(lo):m51N(lo,m51Dg(lo))+'–'+m51D(hi)):'';
+    return `<button type="button" class="m51-c${on?' on':''}${isB?' best':''}" style="--i:${i}" aria-pressed="${!!on}" data-m51c="${esc(c.c)}">
+      <span class="h"><i aria-hidden="true">${c.code?m51Flag(c.code):'🌍'}</i><b>${esc(c.c)}</b>${isB?`<em>${esc(L.m51Best)}</em>`:''}${c.score!=null?`<u title="${esc(L.m51Score)}">${c.score}</u>`:''}</span>
+      <span class="tr" aria-hidden="true">${lo!=null?`<i class="r" style="--a:${(lo/mx*100).toFixed(1)}%;--w:${(Math.max(hi-lo,mx*.03)/mx*100).toFixed(1)}%"></i>`:''}${c.landed!=null?`<i class="d" style="--a:${(c.landed/mx*100).toFixed(1)}%"></i>`:''}</span>
+      <span class="l">${rng?`<span>${esc(L.m51CAt(rng,c.unit))}</span>`:''}${c.landed!=null?`<span class="y">${esc(L.m51CYou(m51Loc(c.landed)))}${usd>0?' · '+m51D(c.landed):''}</span>`:''}</span>
+      <span class="m">${c.days!=null?`<span>${ico('truck',13)} ${esc(L.m51Days(Math.round(c.days)))}</span>`:''}${c.moq?`<span>${ico('box',13)} ${esc(L.m51Moq)}: ${esc(c.moq)}</span>`:''}</span>
+      ${c.pros?`<span class="pc good">${ico('check',13)}<span>${esc(c.pros)}</span></span>`:''}${c.cons?`<span class="pc bad">${ico('warn',13)}<span>${esc(c.cons)}</span></span>`:''}</button>`; }).join('')}</div>`; }
+
+/* ---------- места и поставщики ---------- */
+function m51InV(p){ return (state.vendors||[]).some(v=>m51Norm(v.name)===m51Norm(p.name)&&m51Norm(v.city)===m51Norm(p.city)); }
+function m51PlList(e){ const P=e.plan, f=e.pf||'all', c=m51Norm(e.fc), ord={few:0,some:1,all:2};
+  const a=P.places.map((p,i)=>({p,i})).filter(x=>(!c||m51Norm(x.p.country)===c)&&(f==='all'||(f==='few'?x.p.known!=='all':(M51_KF[f]||[]).includes(x.p.kind))));
+  const k=e.ps||'rec'; if(k==='score') a.sort((x,y)=>(y.p.score!=null?y.p.score:-1)-(x.p.score!=null?x.p.score:-1)||x.i-y.i);
+  else if(M51_AX.includes(k)){ const v=x=>x.p.s&&x.p.s[k]!=null?x.p.s[k]:-1; a.sort((x,y)=>v(y)-v(x)||(y.p.score||0)-(x.p.score||0)||x.i-y.i); }
+  else if(f==='few') a.sort((x,y)=>ord[x.p.known]-ord[y.p.known]||x.i-y.i); return a; }
+function m51WinHTML(e){ const P=e.plan, c=m51Norm(e.fc), a=P.places.map((p,i)=>({p,i})).filter(x=>!c||m51Norm(x.p.country)===c); if(a.length<3) return '';
+  const rows=M51_AX.map(k=>{ let b=null; for(const x of a){ const v=x.p.s&&x.p.s[k]; if(v!=null&&(!b||v>b.v||(v===b.v&&(x.p.score||0)>(b.x.p.score||0)))) b={v,x}; } return b?{k,v:b.v,x:b.x}:null; }).filter(Boolean); if(rows.length<3) return '';
+  return `<div class="m51-win"><b>${ico('trophy',15)} ${esc(L.m51WinT)}</b><ul>${rows.map(r=>`<li><span>${esc(L.m51Ax[r.k])}</span><button type="button" class="m51-mini" data-m51jump="${r.x.i}">${esc(r.x.p.name)}</button><em>${r.v} / 5</em></li>`).join('')}</ul></div>`; }
+function m51PlaceHTML(e,p,i,open){ const on=(e.cmp||[]).includes(i), sc=M51_AX.filter(k=>p.s&&p.s[k]!=null), code=m51CodeOf(e,p.country), inV=m51InV(p), url=m51Url(p.url);
+  return `<details class="m51-p k-${p.known}" style="--i:${Math.min(i,10)}" data-m51p="${i}"${open?' open':''}><summary><span class="ic">${ico(M51_KI[p.kind]||'pin',18)}</span>
+      <span class="tx"><b>${esc(p.name)}</b><small>${code?m51Flag(code)+' ':''}${esc([p.city,p.country].filter(Boolean).join(', '))}${L.m51Kind[p.kind]?' · '+esc(L.m51Kind[p.kind]):''}</small>
+        <span class="m51-tg"><em class="kn ${p.known}">${p.known==='few'?ico('key',12)+' ':''}${esc(L.m51Known[p.known]||'')}</em>${p.price?`<em>${esc(p.price)}</em>`:''}${on?`<em class="cm">${ico('check',12)} ${esc(L.m51CmpOn)}</em>`:''}</span></span>
+      ${p.score!=null?`<span class="sc ${p.score>=75?'hi':p.score>=50?'mid':'lo'}"><b>${p.score}</b><small>${esc(L.m51Score)}</small></span>`:''}</summary>
+    <div class="bd">${p.local?`<div class="m51-loc"><small>${esc(L.m51Local)}</small><b dir="auto">${esc(p.local)}</b><button type="button" class="m51-mini" data-m51copy="${esc(p.local)}">${ico('copy',14)} ${esc(L.m51Copy)}</button></div>`:''}
+      ${p.area?`<p class="ar">${ico('pin',14)}<span>${esc(p.area)}</span></p>`:''}<p>${esc(p.what)}</p>${p.moq?`<p class="mq">${ico('box',14)}<span>${esc(L.m51Moq)}: ${esc(p.moq)}</span></p>`:''}
+      ${p.why?`<p class="wy"><b>${esc(L.m51Why)}.</b> ${esc(p.why)}</p>`:''}${p.tip?`<p class="m51-tip">${ico('bulb',15)}<span><b>${esc(L.m51Tip)}.</b> ${esc(p.tip)}</span></p>`:''}
+      ${sc.length?`<ul class="m51-ax">${sc.map(k=>`<li><span>${esc(L.m51Ax[k])}</span><i role="img" aria-label="${p.s[k]} / 5">${[1,2,3,4,5].map(n=>`<u class="${n<=p.s[k]?'on':''}"></u>`).join('')}</i></li>`).join('')}</ul>`:''}
+      ${url?`<div class="m51-ln">${p.contact?`<div class="ct"><small>${esc(L.m51Contact)}</small><b dir="auto">${esc(p.contact)}</b><button type="button" class="m51-mini" data-m51copy="${esc(p.contact)}">${ico('copy',14)} ${esc(L.m51Copy)}</button></div>`:''}<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${esc(L.m51Page)} · ${esc(sfHost(url))}</a></div>`:`<p class="m51-nl">${ico('info',13)}<span>${esc(L.m51NoLink)}</span></p>`}
+      <div class="m51-pa"><button type="button" class="btn btn-ghost${on?' on':''}" aria-pressed="${on}" data-m51cmp="${i}">${ico(on?'check':'stats',16)} ${esc(on?L.m51CmpOn:L.m51Cmp)}</button><button type="button" class="btn btn-ghost" data-m51v="${i}"${inV?' disabled':''}>${ico(inV?'check':'plus',16)} ${esc(inV?L.m51ToVHas:L.m51ToV)}</button></div></div></details>`; }
+function m51Radar(a){ const cx=110, cy=100, R=70, pt=(i,v)=>{ const an=(-90+72*i)*Math.PI/180; return [(cx+Math.cos(an)*R*v/5).toFixed(1),(cy+Math.sin(an)*R*v/5).toFixed(1)]; };
+  const ring=n=>M51_AX.map((k,i)=>pt(i,n).join(',')).join(' ');
+  return `<svg class="m51-rd" viewBox="-60 0 340 196" role="img" aria-label="${esc(L.m51Radar+': '+a.map(x=>x.p.name).join(', '))}">${[1,2,3,4,5].map(n=>`<polygon class="rg${n===5?' o':''}" points="${ring(n)}"/>`).join('')}
+    ${M51_AX.map((k,i)=>{ const e=pt(i,5), l=pt(i,6.35); return `<line class="rg" x1="${cx}" y1="${cy}" x2="${e[0]}" y2="${e[1]}"/><text x="${l[0]}" y="${(+l[1]+3).toFixed(1)}" text-anchor="${i===0?'middle':i<3?'start':'end'}">${esc(L.m51Ax[k])}</text>`; }).join('')}
+    ${a.map((x,n)=>`<g class="rs s${n}"><polygon points="${M51_AX.map((k,i)=>pt(i,x.p.s[k]).join(',')).join(' ')}"/>${M51_AX.map((k,i)=>{ const q=pt(i,x.p.s[k]); return `<circle cx="${q[0]}" cy="${q[1]}" r="3"/>`; }).join('')}</g>`).join('')}</svg>`; }
+function m51CmpHTML(e){ const P=e.plan, a=(e.cmp||[]).map(i=>({i,p:P.places[i]})).filter(x=>x.p); if(!a.length) return '';
+  if(a.length<2) return `<div class="m51-cmp one">${ico('stats',16)}<span><b>${esc(a[0].p.name)}</b> — ${esc(L.m51CmpHint)}</span><button type="button" class="m51-mini" data-m51cmpx="1">${esc(L.m51Clear)}</button></div>`;
+  const full=a.filter(x=>M51_AX.every(k=>x.p.s&&x.p.s[k]!=null)), best=k=>Math.max(...a.map(x=>x.p.s&&x.p.s[k]!=null?x.p.s[k]:-1)), bs=Math.max(...a.map(x=>x.p.score!=null?x.p.score:-1));
+  const row=(lab,fn,cls)=>`<tr${cls?` class="${cls}"`:''}><th scope="row">${esc(lab)}</th>${a.map((x,n)=>`<td>${fn(x.p,n)}</td>`).join('')}</tr>`;
+  return `<div class="m51-cmp" id="m51Cmp"><div class="h"><b>${ico('stats',16)} ${esc(L.m51CmpN(a.length))}</b><button type="button" class="m51-mini" data-m51cmpx="1">${esc(L.m51Clear)}</button></div>
+    ${full.length>=2?m51Radar(full)+`<ul class="m51-lg">${full.map((x,n)=>`<li class="s${n}"><i></i>${esc(x.p.name)}</li>`).join('')}</ul>`:''}
+    <div class="m51-tw"><table><thead><tr><th></th>${a.map((x,n)=>`<th scope="col" class="s${full.indexOf(x)}">${esc(x.p.name)}</th>`).join('')}</tr></thead><tbody>
+      ${row(L.m51Score,p=>p.score!=null?`<b class="${p.score===bs?'bst':''}">${p.score}</b>`:'—')}
+      ${M51_AX.map(k=>row(L.m51Ax[k],p=>p.s&&p.s[k]!=null?`<b class="${p.s[k]===best(k)?'bst':''}">${p.s[k]}</b><small> / 5</small>`:'—')).join('')}
+      ${row(L.m51Row.price,p=>esc(p.price||'—'))}${row(L.m51Row.moq,p=>esc(p.moq||'—'))}${row(L.m51Row.city,p=>esc([p.city,p.country].filter(Boolean).join(', ')||'—'))}${row(L.m51Row.known,p=>esc(L.m51Known[p.known]||'—'))}</tbody></table></div></div>`; }
+function m51PlacesBody(e,open){ const P=e.plan, a=m51PlList(e), f=e.pf||'all', cnt=k=>{ const c=m51Norm(e.fc); return P.places.filter(p=>(!c||m51Norm(p.country)===c)&&(k==='all'||(k==='few'?p.known!=='all':(M51_KF[k]||[]).includes(p.kind)))).length; };
+  open=open||[]; const fc=e.fc?(P.countries.find(c=>m51Norm(c.c)===m51Norm(e.fc))||{c:e.fc}):null;
+  return `<div class="chips m51-pf" role="group" aria-label="${esc(L.m51PT)}">${Object.keys(L.m51F).map(k=>{ const n=cnt(k); return n||k==='all'?`<button type="button" class="chip${f===k?' on':''}" aria-pressed="${f===k}" data-m51pf="${k}">${k==='few'?ico('key',13)+' ':''}${esc(L.m51F[k])} · ${n}</button>`:''; }).join('')}</div>
+    ${fc?`<div class="m51-fc"><span>${fc.code?m51Flag(fc.code)+' ':''}${esc(fc.c)}</span><button type="button" class="m51-mini" data-m51c="">${esc(L.m51AllC)}</button></div>`:''}
+    ${m51WinHTML(e)}${P.places.length>3?`<label class="m51-so"><small>${esc(L.m51SortL)}</small><select data-m51sort="1">${Object.keys(L.m51Sort).map(k=>`<option value="${k}"${(e.ps||'rec')===k?' selected':''}>${esc(L.m51Sort[k])}</option>`).join('')}</select></label>`:''}
+    ${m51CmpHTML(e)}<div class="m51-ps">${a.length?a.map(x=>m51PlaceHTML(e,x.p,x.i,open.includes(x.i))).join(''):`<p class="m48-empty">${ico('info',14)} ${esc(L.m51None)}</p>`}</div>`; }
+function m51PlRedraw(e,toCmp){ const b=document.getElementById('m51PlB'); if(!b) return; const open=[...b.querySelectorAll('details[open]')].map(d=>+d.dataset.m51p); b.innerHTML=m51PlacesBody(e,open);
+  if(toCmp) m51Scroll(document.getElementById('m51Cmp')); }
+function m51Scroll(el){ const m=$('#bpg-m'); if(!el||!m) return; const nav=m.querySelector('.m51-nav'); m.scrollTo({top:Math.max(0,el.getBoundingClientRect().top-m.getBoundingClientRect().top+m.scrollTop-(nav?nav.offsetHeight:0)-6),behavior:document.documentElement.classList.contains('m48-live')?'smooth':'auto'}); }
+function m51ToV(e,i){ const p=e.plan.places[i]; if(!p||m51InV(p)) return; const code=m51CodeOf(e,p.country);
+  state.vendors.push({id:uid('v'),name:p.name,kind:p.kind==='factory'?'factory':p.kind==='market'||p.kind==='street'?'market':'showroom',country:TCOUNTRY[code]?code:'XX',city:p.city||'',market:'',addr:p.area||'',note:[p.local,p.what,p.price,p.tip,p.contact].filter(Boolean).join(' · ').slice(0,400),site:m51Url(p.url),trip:null,ts:Date.now(),from51:1});
+  try{ persist(); }catch(x){} toast(L.m51ToVOk(p.name)); }
+
+/* ---------- «Сколько выйдет у вас» в плане ---------- */
+function m51LdOf(e){ const d=e.plan.landed; if(!d) return null; if(!e.ld){ const m=/^\s*(\d[\d\s]{0,8})\s*(шт|дона|pcs?\b|pieces?|пар|pairs?|ед)/i.exec(String(e.Q.qty||'')), q=m?parseInt(m[1].replace(/\s/g,''),10):0;
+    e.ld={p:d.price_usd,kg:d.kg,cg:d.cargo_usd_kg,du:d.duty_pct,vat:d.vat_pct,ot:d.other_usd,q:q>0?q:100}; } return e.ld; }
+function m51Land(o){ const p=+o.p||0, cargo=(+o.kg||0)*(+o.cg||0), base=p+cargo, duty=base*(+o.du||0)/100, vat=(base+duty)*(+o.vat||0)/100, other=+o.ot||0; return {goods:p,cargo,duty,vat,other,tot:p+cargo+duty+vat+other}; }
+function m51LdOut(e){ const o=m51LdOf(e), c=m51Land(o), usd=m51Usd(), P=M51_LP.filter(k=>c[k]>0), q=Math.max(1,Math.round(+o.q||1)), d=e.plan.landed; if(!(c.tot>0)) return `<p class="m48-empty">${ico('info',14)} ${esc(L.m51QNeed)}</p>`;
+  return `<div class="m48-ldu m51-lu"><small>${esc(L.m51LUnit(d.unit))}</small><b>${m51Loc(c.tot)}</b>${usd>0?`<em>${m51D(c.tot)}</em>`:''}</div>
+    <div class="m48-lds" role="img" aria-label="${esc(P.map(k=>L.m51LP[k]+' '+Math.round(c[k]/c.tot*100)+'%').join(', '))}">${P.map((k,i)=>`<i class="${k}" style="--w:${(c[k]/c.tot*100).toFixed(2)}%;--i:${i}"></i>`).join('')}</div>
+    <ul class="m48-ldl">${P.map(k=>`<li class="${k}"><i></i><span>${esc(L.m51LP[k])}</span><b>${m51Loc(c[k])}</b><em>${Math.round(c[k]/c.tot*100)}%</em></li>`).join('')}</ul>
+    <p class="m48-ldt">${esc(L.m51LTot(fx(q,0),m51Loc(c.tot*q)))}${usd>0?' · '+m51D(c.tot*q):''}</p>${usd>0?'':`<p class="m51-nl">${ico('info',13)}<span>${esc(L.m51LNoFx)}</span></p>`}`; }
+function m51LandHTML(e){ const d=e.plan.landed; if(!d) return ''; const o=m51LdOf(e), inp=k=>`<label><small>${esc(L.m51LF[k])}</small><input type="number" inputmode="decimal" min="0" step="any" data-m51ld="${k}" value="${o[k]!=null&&o[k]!==''?esc(String(o[k])):''}"></label>`;
+  return `<p class="m50-lead">${esc(L.m51LLead)}</p><div id="m51LdO" aria-live="polite">${m51LdOut(e)}</div>
+    <div class="m51-qs"><span id="m51-ql">${esc(L.m51LQty)}</span><div role="group" aria-labelledby="m51-ql"><button type="button" class="m51-sb" data-m51qd="-1" aria-label="−">${ico('minus',16)}</button><input type="number" inputmode="numeric" min="1" step="1" data-m51ld="q" value="${esc(String(o.q||1))}" aria-labelledby="m51-ql"><button type="button" class="m51-sb" data-m51qd="1" aria-label="+">${ico('plus',16)}</button></div></div>
+    ${d.hs||d.days!=null?`<p class="m51-hs">${d.hs?`<span>${ico('doc',13)} ${esc(L.m51LHs(d.hs))}</span>`:''}${d.days!=null?`<span>${ico('truck',13)} ${esc(L.m51QDays(Math.round(d.days)))}</span>`:''}</p>`:''}${d.note?`<p class="m51-ldn">${ico('info',13)}<span>${esc(d.note)}</span></p>`:''}
+    <details class="m51-qd"><summary>${ico('gear',15)} ${esc(L.m51LHow)}</summary><div class="m48-ldg">${['p','kg','cg','du','vat','ot'].map(inp).join('')}</div><ul class="m51-ex">${['cargo','duty','vat','other'].map(k=>`<li>${esc(L.m51LEx[k])}</li>`).join('')}</ul></details>
+    <p class="m51-nl">${ico('clock',13)}<span>${esc(L.m51Daily)} ${esc(L.m51QNote)}</span></p>`; }
+
+/* ---------- план целиком ---------- */
+function m51SeasonHTML(se){ if(!se||!((se.best||[]).length||(se.worst||[]).length)) return ''; const now=new Date().getMonth()+1;
+  return `<div class="m50-bl"><h4>${ico('cal',16)} ${esc(L.m51SeT)}</h4><ol class="m51-se" aria-label="${esc(L.m51SeT)}">${MONTHS[lang].short.map((n,i)=>{ const k=se.best.includes(i+1)?'best':se.worst.includes(i+1)?'worst':''; return `<li class="${k}${i+1===now?' now':''}" style="--i:${i}"><span>${esc(n)}</span>${k?`<small class="sr">${esc(L.m51SeL[k])}</small>`:''}</li>`; }).join('')}</ol>
+    <p class="m51-sel"><span class="best"><i></i>${esc(L.m51SeL.best)}</span><span class="worst"><i></i>${esc(L.m51SeL.worst)}</span></p>${se.note?`<p class="m51-ldn">${ico('info',13)}<span>${esc(se.note)}</span></p>`:''}</div>`; }
+function m51TeamHTML(e){ const a=((e.plan.team)||[]).filter(x=>x&&L.m51Roles[x.k]&&(x.find||[]).length); if(!a.length) return '';
+  return `<details class="m50-bl m50-tm"><summary>${ico('people',16)} ${esc(L.m51TeamFound)}</summary>${a.map(x=>`<div><b>${ico(M50_RICO[x.k]||'star',14)} ${esc(L.m51Roles[x.k])}</b><ul>${x.find.map(f=>`<li>${esc(f)}</li>`).join('')}</ul></div>`).join('')}</details>`; }
+function m51StepsProg(e){ const n=e.plan.steps.length, d=Object.keys(e.done||{}).filter(k=>e.done[k]&&+k<n).length; return {n,d}; }
+function m51PlanHTML(e){ const P=e.plan, Q=e.Q, age=m51Days(e), done=e.done||{}, sp=m51StepsProg(e);
+  const sec=(id,ic,t,body)=>body?`<section class="m44-cd m51-sec" id="m51-${id}" data-m49io="s51${id}${esc(e.id)}"><h3>${ico(ic,18)} ${esc(t)}</h3>${body}</section>`:'';
+  const bc=P.best&&P.best.country, bcode=bc?m51CodeOf(e,bc):'';
+  const hero=`<section class="m51-top"><h2>${esc(m51Title(Q))}</h2><p class="m51-vd">${esc(P.verdict)}</p>${bc?`<div class="m51-best"><span aria-hidden="true">${bcode?m51Flag(bcode):ico('star',18)}</span><div><b>${esc(L.m51BestC(bc))}</b>${P.best.why?`<p>${esc(P.best.why)}</p>`:''}</div></div>`:''}
+    <p class="m51-at">${ico('clock',13)} ${esc(L.m51Age(age))} · ${esc(L.m51Sum(P.places.length,P.countries.length))}</p>${e.st==='wait'?m51MiniHTML(e.id):age>=7?`<div class="m51-stale">${ico('warn',15)}<span>${esc(L.m51Stale)}</span><button type="button" class="m51-mini" data-m51again="${e.id}">${esc(L.m51Refresh)}</button></div>`:''}</section>`;
+  const have={c:P.countries.length>0,p:true,l:!!P.landed,m:P.msgs.length>0,s:P.steps.length>0||P.checks.length>0||P.grades.length>0,x:P.secrets.length>0||P.scams.length>0||!!(P.season&&(P.season.best.length||P.season.worst.length))};
+  const nav=`<nav class="m51-nav" aria-label="${esc(L.m51T)}">${Object.keys(L.m51Nav).filter(k=>have[k]).map(k=>`<button type="button" class="chip" data-m51nav="${k}">${esc(L.m51Nav[k])}</button>`).join('')}</nav>`;
+  const msgs=P.msgs.length?`<p class="m50-lead">${esc(L.m51MLead)}</p>${P.msgs.map((m,i)=>`<article class="m51-msg"><div class="h"><b>${esc(m.title||m.lang||'')}</b>${m.lang&&m.title?`<em>${esc(m.lang)}</em>`:''}</div><p class="tx" dir="auto">${esc(m.text)}</p><button type="button" class="btn btn-ghost" data-m51cm="${i}">${ico('copy',16)} ${esc(L.m51Copy)}</button>${m.tr?`<details><summary>${esc(L.m51MTr)}</summary><p>${esc(m.tr)}</p></details>`:''}</article>`).join('')}`:'';
+  const steps=(P.steps.length?`<span class="m46-pg" id="m51Pg"><span>${esc(L.m51SProg(sp.d,sp.n))}</span><i><b style="width:${sp.n?Math.round(sp.d/sp.n*100):0}%"></b></i></span><ol class="m51-st">${P.steps.map((s,i)=>`<li class="${done[i]?'dn':''}" style="--i:${Math.min(i,10)}"><label><input type="checkbox" data-m51done="${i}"${done[i]?' checked':''}><span>${esc(s.l)}</span></label>${s.how?`<p>${esc(s.how)}</p>`:''}${s.k?`<small>${ico('check',12)} ${esc(L.m51DoneK)}: ${esc(s.k)}</small>`:''}</li>`).join('')}</ol>`:'')
+    +(P.checks.length?`<div class="m50-bl"><h4>${ico('shield',16)} ${esc(L.m51ChkT)}</h4><ul class="m51-ck">${P.checks.map(c=>`<li>${ico('check',14)}<span>${esc(c)}</span></li>`).join('')}</ul></div>`:'')
+    +(P.grades.length?`<div class="m50-bl"><h4>${ico('star',16)} ${esc(L.m51GrT)}</h4><ul class="m51-gr">${P.grades.map(g=>`<li><div><b>${esc(g.name)}</b>${g.price?`<em>${esc(g.price)}</em>`:''}</div>${g.how?`<p><small>${esc(L.m51GrHow)}:</small> ${esc(g.how)}</p>`:''}</li>`).join('')}</ul></div>`:'');
+  const secr=(P.secrets.length?`<ol class="m51-sx">${P.secrets.map(s=>`<li><b>${esc(s.t)}</b>${s.d?`<p>${esc(s.d)}</p>`:''}</li>`).join('')}</ol>`:'')
+    +(P.scams.length?`<div class="m50-bl"><h4>${ico('warn',16)} ${esc(L.m51ScT)}</h4><ul class="m51-sm">${P.scams.map(s=>`<li><b>${esc(s.t)}</b>${s.sign?`<p><small>${esc(L.m51Sign)}:</small> ${esc(s.sign)}</p>`:''}${s.fix?`<p class="fx"><small>${esc(L.m51Fix)}:</small> ${esc(s.fix)}</p>`:''}</li>`).join('')}</ul></div>`:'')+m51SeasonHTML(P.season);
+  const tail=`<section class="m44-cd m51-tail">${m51TeamHTML(e)}${m50SrcHTML((e.src||[]).filter(s=>m51Url(s.url)))}<p class="m51-note">${ico('info',14)}<span>${esc(L.m51Honest)}</span></p>
+    <label class="m51-auto"><input type="checkbox" data-m51auto="1"${m51St().auto!==0?' checked':''}><span><b>${esc(L.m51AutoL)}</b><small>${esc(L.m51AutoS)}</small></span></label>
+    <div class="m51-ta"><button type="button" class="link-btn" data-m51go="list">${ico('history',14)} ${esc(L.m51Mine)}</button><button type="button" class="link-btn m51-del" data-m51del="${e.id}">${esc(L.m51Del)}</button></div></section>`;
+  return hero+nav+sec('c','globe',L.m51CT,`<div id="m51CsB">${m51CountriesHTML(e)}</div>`)+sec('p','pin',L.m51PT,`<div id="m51PlB">${m51PlacesBody(e)}</div>`)+sec('l','calc',L.m51LT,m51LandHTML(e))+sec('m','chat',L.m51MT,msgs)+sec('s','flag',L.m51ST,steps)+sec('x','key',L.m51XT,secr)+tail; }
+
+/* ---------- страница ---------- */
+function m51R(m,f,arg){ $('#bpg-t').textContent=L.m51T; const s=m51St(); let foot=''; try{ m.style.setProperty('--m51pt',getComputedStyle(m).paddingTop); }catch(x){}
+  if(arg==='list'){ m.innerHTML=`<div class="m44 m51">${s.list.length?s.list.slice().reverse().map(e=>`<button type="button" class="m46-gc m51-li" data-m51go="${e.id}"><b>${esc(m51Title(e.Q))}</b><small>${esc(e.plan?(e.plan.verdict||''):e.st==='wait'?L.m51WaitT:m51ErrT(e.err))}</small>${e.plan?`<span class="m51-lm">${esc(L.m51Sum(e.plan.places.length,e.plan.countries.length))} · ${esc(L.m51Age(m51Days(e)))}</span>`:''}</button>`).join(''):`<p class="lead">${esc(L.m51Empty)}</p>`}</div>`;
+    foot=`<button type="button" class="btn btn-primary btn-full" data-m51new="1">${ico('plus',18)} ${esc(L.m51New)}</button>`; }
+  else if(arg==='new'){ if(!M51.Q) M51.Q=m51Def(); m.innerHTML=m51FormHTML(M51.Q); foot=`<button type="button" class="btn btn-primary btn-full" id="m51Go">${ico('search',18)} ${esc(L.m51Go)}</button>`; }
+  else { const e=m51E(arg); if(!e){ bpReplace('src51',s.list.length?'list':'new'); return; }
+    if(e.st==='wait'&&!M51.run[e.id]){ if(e.job&&Date.now()-(e.jt||0)<25*60e3) m51Run(e); else { e.st=e.plan?'ok':'err'; e.err='srv'; } }
+    if(m51AutoDue(e)){ s.autoDay=ymd(new Date()); m51Run(e,true); }
+    if(e.st==='wait'&&!e.plan) m.innerHTML=`<div class="m44 m51"><section class="m44-cd m51-wait"><h3>${ico('sparkle',18)} ${esc(L.m51WaitT)}</h3><p class="m50-lead">${esc(m51Title(e.Q))}</p>${m50ProgHTML(e.id)||`<div class="m50-prog m51-prog" data-m50key="${esc(e.id)}"><div class="p29-busy"><span class="p29-spin" aria-hidden="true"></span></div></div>`}</section></div>`;
+    else if(e.st==='err'||!e.plan) m.innerHTML=`<div class="m44 m51"><section class="m44-cd m51-errc"><h3>${ico('warn',18)} ${esc(m51Title(e.Q))}</h3><p>${esc(m51ErrT(e.err))}</p><button type="button" class="btn btn-primary" data-m51again="${e.id}">${ico('repeat',16)} ${esc(L.m51Retry)}</button>
+        ${e.err==='old'?`<button type="button" class="btn btn-ghost" data-sifra="${esc(L.m46SrcQ(e.Q.what,e.Q.qty,m51To()||m46Def().place,L.m46Fors.retail).slice(0,700))}">${ico('chat',16)} ${esc(L.m51Chat)}</button>`:''}<button type="button" class="link-btn m51-del" data-m51del="${e.id}">${esc(L.m51Del)}</button></section></div>`;
+    else { m.innerHTML=`<div class="m44 m51 m51-plan">${m51PlanHTML(e)}</div>`; setTimeout(()=>{ try{ m49Watch(); }catch(x){} },60);
+      foot=`<div class="m46-fb2"><button type="button" class="btn btn-ghost" data-sifra="${esc(L.m51AskQ(m51Title(e.Q),e.plan.verdict).slice(0,700))}">${ico('chat',18)} ${esc(L.m51Ask2)}</button><button type="button" class="btn btn-ghost" data-m51again="${e.id}"${e.st==='wait'?' disabled':''}>${ico('repeat',18)} ${esc(L.m51Refresh)}</button></div>`; } }
+  if(foot){ f.innerHTML=foot; f.hidden=false; } }
+{ const _br51=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||t.name!=='src51'){ _br51(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    document.documentElement.classList.remove('m33-on'); d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; m.oninput=null; m.onchange=null; f.innerHTML=''; f.hidden=true; f.onclick=null;
+    m51R(m,f,t.arg); m.scrollTop=restore?(t.y||0):0; }; }
+
+/* ---------- простое «Сколько выйдет у вас за штуку» (вместо «Цена у двери») ---------- */
+function m51QSt(){ const s=m48LdSt(); if(!s.v51){ s.v51=1; if(s.ukg==null&&+s.kg>0&&+s.q>0) s.ukg=Math.round(s.kg/s.q*1000)/1000; delete s.kg; if(s.vat===15&&!(+s.du>0)&&!(+s.cg>0)) delete s.vat; }
+  if(!M51_C.includes(s.fromC)) s.fromC={CNY:'CN',TRY:'TR',AED:'AE',RUB:'RU',KZT:'KZ',EUR:'EU'}[s.cur]||'CN'; if(!M48_LDC.includes(s.cur)) s.cur='CNY'; return s; }
+function m51QCalc(s){ const r=m51Rate(s.cur||'CNY'), usd=m51Usd(), p=+s.p||0, q=Math.round(+s.q||0); if(!(r>0)) return {nofx:true}; if(!(p>0&&q>0)) return {need:true,r};
+  const goods=p*q*r, cargo=(+s.ukg||0)*q*(+s.cg||0)*(usd>0?usd:0), base=goods+cargo, duty=base*(+s.du||0)/100, vat=(base+duty)*(+s.vat||0)/100, other=+s.ot||0, tot=goods+cargo+duty+vat+other;
+  let mk=0; try{ const t=hbToday(), c=t&&(t.cats||[]).find(x=>x.id===s.cat); mk=c&&+c.markup_pct>0?Math.round(+c.markup_pct):0; }catch(e){}
+  return {r,q,goods,cargo,duty,vat,other,tot,unit:tot/q,mk,shelf:mk?tot/q*(1+mk/100):0,bare:!(cargo>0||duty>0||vat>0)}; }
+function m51QOut(s){ const c=m51QCalc(s); if(c.nofx) return `<p class="m48-empty">${ico('info',14)} ${esc(L.m51LNoFx)}</p>`; if(c.need) return `<p class="m48-empty">${ico('info',14)} ${esc(L.m51QNeed)}</p>`;
+  const P=M51_LP.filter(k=>c[k]>0);
+  return `<div class="m48-ldu"><small>${esc(L.m51QUnit)}</small><b>${money(c.unit)}</b></div><div class="m48-lds" role="img" aria-label="${esc(P.map(k=>L.m51LP[k]+' '+Math.round(c[k]/c.tot*100)+'%').join(', '))}">${P.map((k,i)=>`<i class="${k}" style="--w:${(c[k]/c.tot*100).toFixed(2)}%;--i:${i}"></i>`).join('')}</div>
+    <ul class="m48-ldl">${P.map(k=>`<li class="${k}"><i></i><span>${esc(L.m51LP[k])}</span><b>${money(c[k]/c.q)}</b><em>${Math.round(c[k]/c.tot*100)}%</em></li>`).join('')}</ul>
+    <p class="m48-ldt">${esc(L.m51LTot(fx(c.q,0),money(c.tot)))} · ${esc(L.m48LdFx(s.cur,fx(c.r,c.r<0.1?4:3)))}</p>${c.bare?`<p class="m51-qa">${ico('info',14)}<span>${esc(L.m51QAuto)}</span></p>`:''}${c.mk?`<p class="f34-act">${ico('tag',14)}<span>${esc(L.m51LShelf(c.mk,money(c.shelf)))}</span></p>`:''}`; }
+function m51QFoundHTML(s){ const a=s.auto; if(!a) return ''; const n=v=>fx(+v,(+v)%1?(+v<1?2:1):0), b=[]; if(a.kg!=null) b.push(L.m51QFb.kg(n(a.kg))); if(a.cg!=null) b.push(L.m51QFb.cg(n(a.cg))); if(a.du!=null) b.push(L.m51QFb.du(n(a.du))); if(a.vat!=null) b.push(L.m51QFb.vat(n(a.vat)));
+  const url=m51Url(a.url), src=(a.src||[]).filter(x=>m51Url(x.url)).slice(0,3);
+  return `<div class="m51-qf"><b>${ico('check',15)} ${esc(L.m51QFound)} <small>${esc(L.m51QFor(a.what||'',L.m51C[a.fromC]||''))}</small></b><p>${esc(b.join(' · '))}</p>${a.hs||a.days!=null?`<p class="m51-hs">${a.hs?`<span>${ico('doc',13)} ${esc(L.m51LHs(a.hs))}</span>`:''}${a.days!=null?`<span>${ico('truck',13)} ${esc(L.m51QDays(Math.round(a.days)))}</span>`:''}</p>`:''}
+    ${a.other?`<p>${esc(a.other)}</p>`:''}${a.note?`<p class="nt">${esc(a.note)}</p>`:''}${url||src.length?`<p class="sr2"><small>${esc(L.m51QSrc)}:</small> ${(url?[{url,title:''}]:[]).concat(src.filter(x=>x.url!==url)).slice(0,3).map(x=>`<a href="${esc(x.url)}" target="_blank" rel="noopener noreferrer">${esc(sfHost(x.url))}</a>`).join(' · ')}</p>`:''}<p class="nt">${ico('info',13)} ${esc(L.m51QNote)}</p></div>`; }
+function m51QHTML(){ const s=m51QSt(); let cats=[]; try{ const t=hbToday(); cats=(t&&t.cats||[]).filter(c=>+c.markup_pct>0); }catch(e){}
+  const inp=(k,lab,step)=>`<label><small>${esc(lab)}</small><input type="number" inputmode="decimal" min="0" step="${step||'any'}" data-m48ld="${k}" value="${s[k]!=null&&s[k]!==''?esc(String(s[k])):''}"></label>`;
+  return `<section class="id-sec m48-ld m51-q" id="m48Ld"><div class="f34-sh"><h4>${ico('calc',18)} ${esc(L.m51QT)}</h4></div><p class="bp-hint">${esc(L.m51QLead)}</p>
+    <div class="m48-ldg"><label class="w"><small>${esc(L.m51QNm)}</small><input type="text" data-m48ld="nm" maxlength="60" placeholder="${esc(L.m51QNmPh)}" value="${esc(s.nm||'')}" autocomplete="off"></label>
+      <label class="w"><small>${esc(L.m51QFrom)}</small><select data-m48ld="fromC">${M51_C.map(c=>`<option value="${c}"${s.fromC===c?' selected':''}>${m51Flag(c)} ${esc(L.m51C[c])}</option>`).join('')}</select></label>
+      ${inp('p',L.m51QPrice)}<label><small>${esc(L.m51QCur)}</small><select data-m48ld="cur">${M48_LDC.map(c=>`<option value="${c}"${s.cur===c?' selected':''}>${c} — ${esc(L.m48LdC[c])}</option>`).join('')}</select></label>${inp('q',L.m51QQty,'1')}</div>
+    <div class="m48-ldo" id="m48LdO" aria-live="polite">${m51QOut(s)}</div><div id="m51QF">${m51QFoundHTML(s)}</div>
+    <button type="button" class="btn btn-primary btn-full m51-qgo" data-m51qgo="1"${M51.busy?' disabled':''}>${M51.busy?'<span class="p29-spin" aria-hidden="true"></span> '+esc(L.m51QBusy):ico('sparkle',16)+' '+esc(L.m51QGo)}</button><p class="err" id="m51QE" role="alert"></p>
+    <details class="m51-qd"${s.qd?' open':''}><summary>${ico('gear',15)} ${esc(L.m51LHow)}</summary><div class="m48-ldg">${inp('ukg',L.m51QF.kg)}${inp('cg',L.m51QF.cg)}${inp('du',L.m51QF.du)}${inp('vat',L.m51QF.vat)}${inp('ot',L.m51QF.ot+', '+L.cur)}
+      ${cats.length?`<label class="w"><small>${esc(L.m48LdCat)}</small><select data-m48ld="cat"><option value="">${esc(L.m48LdNoCat)}</option>${cats.map(c=>`<option value="${esc(c.id)}"${s.cat===c.id?' selected':''}>${esc(L['whC_'+c.id]||c.id)} · +${Math.round(c.markup_pct)}%</option>`).join('')}</select></label>`:''}</div>
+      <ul class="m51-ex">${['cargo','duty','vat','other'].map(k=>`<li>${esc(L.m51LEx[k])}</li>`).join('')}</ul></details></section>`; }
+try{ m48LdHTML=m51QHTML; m48LdOut=function(){ return m51QOut(m51QSt()); }; m48LdCalc=function(s){ return m51QCalc(s||m51QSt()); }; }catch(e){}
+function m51QDraw(){ const el=document.getElementById('m48Ld'); if(!el) return; const d=el.querySelector('.m51-qd'); if(d) m51QSt().qd=d.open?1:0; el.outerHTML=m51QHTML(); }
+async function m51QGo(){ const s=m51QSt(), nm=String(s.nm||'').trim(), fail=t=>{ const e=document.getElementById('m51QE'); if(e){ e.textContent=t; e.classList.add('show'); } }; if(M51.busy) return;
+  if(!nm){ fail(L.m51QNeedNm); const i=document.querySelector('#m48Ld [data-m48ld="nm"]'); if(i) i.focus(); return; } if(navigator.onLine===false){ fail(L.m51Off); return; }
+  M51.busy=true; m51QDraw();
+  try{ const c=await Promise.resolve(sfCapsLoad()).catch(()=>null); if(!(c&&+c.v>=27)) throw new Error('old');
+    const r=await fetch(API_BASE+'/api/mk/landed',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:mkId(),lang,what:nm,from:L.m51C[s.fromC]||'',to:m51Def().to})}), j=await r.json().catch(()=>({}));
+    if(!r.ok||!j.rep) throw new Error(j&&j.error==='limit'?'limit':r.status===404&&!(j&&j.error)?'old':'srv');
+    const R=j.rep; if(R.kg!=null) s.ukg=R.kg; if(R.cargo_usd_kg!=null) s.cg=R.cargo_usd_kg; if(R.duty_pct!=null) s.du=R.duty_pct; if(R.vat_pct!=null) s.vat=R.vat_pct;
+    s.auto={at:Date.now(),what:nm,fromC:s.fromC,kg:R.kg,cg:R.cargo_usd_kg,du:R.duty_pct,vat:R.vat_pct,hs:String(R.hs||''),days:R.days!=null?+R.days:null,note:String(R.note||''),other:String(R.other||''),url:m51Url(R.url),src:(j.sources||[]).slice(0,4)}; try{ persist(); }catch(x){} M51.busy=false; m51QDraw(); try{ m40Vib(); }catch(x){} }
+  catch(x){ M51.busy=false; m51QDraw(); const k=x&&x.message; fail(k==='limit'?L.m51QLimit:k==='old'?L.m51Old:L.m51QErr); } }
+
+/* ---------- входы: «Где закупать», страница города, «Ещё», Сифра ---------- */
+function m51HeroHTML(){ const s=m51St(), last=s.list.slice(-2).reverse(); try{ sfCapsLoad(); }catch(e){}
+  return `<section class="m51-wh"><button type="button" class="m46-wsrc m51-whb" data-m46open="src"><span class="ic">${ico('search',22)}</span><span class="tx"><b>${esc(L.m51T)}</b><small>${esc(L.m51Sub)}</small></span>${ico('next',18)}</button>
+    ${last.length?`<div class="m51-whl"><small>${esc(L.m51Mine)}</small>${last.map(e=>`<button type="button" class="chip" data-m51open="${e.id}">${esc(m51Title(e.Q).slice(0,26))}</button>`).join('')}${s.list.length>2?`<button type="button" class="chip" data-m51open="list" aria-label="${esc(L.m51Mine)}">+${s.list.length-2}</button>`:''}</div>`:''}</section>`; }
+try{ const _wh51=m33WhereHTML; m33WhereHTML=function(){ const h=_wh51.apply(this,arguments); try{ const d=document.createElement('div'); d.innerHTML=h; const b=d.querySelector('.m46-wsrc'); if(b) b.outerHTML=m51HeroHTML(); else d.insertAdjacentHTML('afterbegin',m51HeroHTML());
+      const ld=d.querySelector('.m33-lead'); if(ld) ld.textContent=L.m51GuideLead; return d.innerHTML; }catch(e){ return h; } }; }catch(e){}
+try{ const _wo51=m33WoneHTML; m33WoneHTML=function(w){ const h=_wo51.apply(this,arguments); try{ const d=document.createElement('div'); d.innerHTML=h; const a=d.querySelector('.m33-acts');
+      if(a&&w&&w.k){ a.insertAdjacentHTML('afterbegin',`<button type="button" class="btn btn-primary m51-locb" data-m51loc="${esc(w.k)}">${ico('key',16)} ${esc(L.m51Loc)}</button>`); return d.innerHTML; } return h; }catch(e){ return h; } }; }catch(e){}
+try{ const _ss51=m46SrcSheet; m46SrcSheet=function(w){ let c=null; try{ c=sfCaps; }catch(e){} if(c&&c.at&&+c.v>0&&+c.v<27) return _ss51.apply(this,arguments); m51Open('new',w?{what:String(w).slice(0,120)}:null); }; }catch(e){}
+
+/* ---------- клики и ввод ---------- */
+document.addEventListener('click',ev=>{ const t=ev.target; if(!t||!t.closest) return;
+  const cp=t.closest('[data-m51copy]'); if(cp){ ev.preventDefault(); m51Copy(cp.getAttribute('data-m51copy')); return; }
+  if(t.closest('[data-m51qgo]')){ m51QGo(); return; }
+  const op=t.closest('[data-m51open]'); if(op){ ev.preventDefault(); m51Open(op.getAttribute('data-m51open')||''); return; }
+  const lo=t.closest('[data-m51loc]'); if(lo){ ev.preventDefault(); let w=null; try{ w=M33W.find(x=>x.k===lo.getAttribute('data-m51loc')); }catch(e){} if(!w) return; const inC=M51_C.includes(w.c); let city=''; try{ city=gCity(w.k); }catch(e){}
+    m51Open('new',{from:inC?[w.c]:[],city:(city+(inC?'':', '+(L['cn_'+w.c]||''))).slice(0,60)}); return; }
+  const top=m51Top(); if(!top||!t.closest('#bpPage')) return; const s=m51St(), m=$('#bpg-m'), e=m51E(top.arg);
+  const ex=t.closest('[data-m51ex]'); if(ex&&M51.Q){ M51.Q.what=ex.getAttribute('data-m51ex'); const i=$('#m51-w'); if(i) i.value=M51.Q.what; return; }
+  const fr=t.closest('[data-m51from]'); if(fr&&M51.Q){ const k=fr.getAttribute('data-m51from'), Q=M51.Q; if(!k) Q.from=[]; else Q.from=Q.from.includes(k)?Q.from.filter(x=>x!==k):Q.from.concat(k).slice(-4); const g=$('#m51-fr'); if(g) g.innerHTML=m51FromHTML(Q); return; }
+  if(t.closest('#m51Go')){ const Q=M51.Q||m51Def(); Q.what=String(Q.what||'').trim().slice(0,120); Q.qty=String(Q.qty||'').trim().slice(0,60); Q.city=String(Q.city||'').trim().slice(0,60); Q.to=String(Q.to||'').trim().slice(0,60);
+    if(!Q.what){ const er=$('#m51-err'); if(er){ er.textContent=L.m51Need; er.classList.add('show'); } const i=$('#m51-w'); if(i) i.focus(); return; }
+    const ne={id:uid('s'),at:ymd(new Date()),ts:Date.now(),Q:{what:Q.what,qty:Q.qty,from:Q.from.slice(),city:Q.city,to:Q.to},done:{},cmp:[]}; s.list.push(ne); s.list=s.list.slice(-8); M51.Q=null; m51Run(ne); bpReplace('src51',ne.id); return; }
+  const go=t.closest('[data-m51go]'); if(go){ bpGo('src51',go.getAttribute('data-m51go')); return; }
+  if(t.closest('[data-m51new]')){ M51.Q=m51Def(); bpGo('src51','new'); return; }
+  const ag=t.closest('[data-m51again]'); if(ag){ const x=m51E(ag.getAttribute('data-m51again')); if(x&&!M51.run[x.id]){ const y=m?m.scrollTop:0, had=!!x.plan; m51Run(x); bpRender(had); if(had&&m) m.scrollTop=ag.closest('.m51-stale')?0:y; } return; }
+  const dl=t.closest('[data-m51del]'); if(dl){ if(dl.dataset.sure!=='1'){ dl.dataset.sure='1'; dl.textContent=L.m51DelSure; return; } s.list=s.list.filter(z=>z.id!==dl.getAttribute('data-m51del')); try{ persist(); }catch(x){} bpReplace('src51',s.list.length?'list':'new'); return; }
+  if(!e||!e.plan||e.st==='err') return;
+  const nv=t.closest('[data-m51nav]'); if(nv){ m51Scroll(document.getElementById('m51-'+nv.getAttribute('data-m51nav'))); return; }
+  const cc=t.closest('[data-m51c]'); if(cc){ const v=cc.getAttribute('data-m51c'); e.fc=m51Norm(e.fc)===m51Norm(v)?'':v; const cb=$('#m51CsB'); if(cb) cb.innerHTML=m51CountriesHTML(e); m51PlRedraw(e);
+    if(e.fc) m51Scroll(document.getElementById('m51-p')); return; }
+  const pf=t.closest('[data-m51pf]'); if(pf){ e.pf=pf.getAttribute('data-m51pf'); m51PlRedraw(e); return; }
+  if(t.closest('[data-m51cmpx]')){ e.cmp=[]; try{ persist(); }catch(x){} m51PlRedraw(e); return; }
+  const cm=t.closest('[data-m51cmp]'); if(cm){ const i=+cm.getAttribute('data-m51cmp'); e.cmp=e.cmp||[]; if(e.cmp.includes(i)) e.cmp=e.cmp.filter(x=>x!==i); else { if(e.cmp.length>=3){ toast(L.m51CmpMax); return; } e.cmp.push(i); } try{ persist(); }catch(x){} m51PlRedraw(e,e.cmp.length>=2&&e.cmp.includes(i)); return; }
+  const tv=t.closest('[data-m51v]'); if(tv){ m51ToV(e,+tv.getAttribute('data-m51v')); m51PlRedraw(e); return; }
+  const jp=t.closest('[data-m51jump]'); if(jp){ const i=+jp.getAttribute('data-m51jump'); if(!m51PlList(e).some(x=>x.i===i)) e.pf='all'; m51PlRedraw(e); const d=m.querySelector('.m51-p[data-m51p="'+i+'"]'); if(d){ d.open=true; m51Scroll(d); } return; }
+  const mc=t.closest('[data-m51cm]'); if(mc){ const x=e.plan.msgs[+mc.getAttribute('data-m51cm')]; if(x) m51Copy(x.text); return; }
+  const qd=t.closest('[data-m51qd]'); if(qd){ const o=m51LdOf(e); if(!o) return; const stp=o.q>=1000?100:o.q>=100?10:o.q>=20?5:1; o.q=Math.max(1,Math.round((+o.q||1)+(+qd.getAttribute('data-m51qd'))*stp)); const i=m.querySelector('[data-m51ld="q"]'); if(i) i.value=o.q; const out=$('#m51LdO'); if(out) out.innerHTML=m51LdOut(e); clearTimeout(M51.pt); M51.pt=setTimeout(()=>{ try{ persist(); }catch(x){} },500); return; }
+});
+document.addEventListener('input',ev=>{ const t=ev.target; if(!t||!t.closest) return; const top=m51Top(); if(!top) return;
+  if(t.dataset.m51f&&M51.Q){ M51.Q[t.dataset.m51f]=t.value; const er=$('#m51-err'); if(er) er.classList.remove('show'); return; }
+  if(t.dataset.m51ld){ const e=m51E(top.arg), o=e&&e.plan&&m51LdOf(e); if(!o) return; const k=t.dataset.m51ld; o[k]=t.value===''?'':Math.max(0,+t.value||0); const out=$('#m51LdO'); if(out) out.innerHTML=m51LdOut(e); clearTimeout(M51.pt); M51.pt=setTimeout(()=>{ try{ persist(); }catch(x){} },600); } });
+document.addEventListener('change',ev=>{ const t=ev.target; if(!t||!t.closest) return;
+  if(t.matches&&t.matches('select[data-m48ld="fromC"]')){ const s=m51QSt(); s.fromC=t.value; const c=M51_CCUR[t.value]; if(c&&M48_LDC.includes(c)) s.cur=c; try{ persist(); }catch(x){} m51QDraw(); return; }
+  const top=m51Top(); if(!top) return;
+  if(t.matches&&t.matches('select[data-m51sort]')){ const e=m51E(top.arg); if(e&&e.plan){ e.ps=t.value; m51PlRedraw(e); } return; }
+  if(t.dataset.m51auto!=null){ m51St().auto=t.checked?1:0; try{ persist(); }catch(x){} return; }
+  if(t.dataset.m51done!=null){ const e=m51E(top.arg); if(!e||!e.plan) return; e.done=e.done||{}; e.done[t.dataset.m51done]=t.checked; try{ persist(); }catch(x){} const li=t.closest('li'); if(li) li.classList.toggle('dn',t.checked); const pg=$('#m51Pg'), sp=m51StepsProg(e);
+    if(pg){ pg.querySelector('span').textContent=L.m51SProg(sp.d,sp.n); pg.querySelector('i b').style.width=(sp.n?Math.round(sp.d/sp.n*100):0)+'%'; } if(t.checked){ try{ m40Vib(); }catch(x){} } } });
+document.addEventListener('toggle',ev=>{ const d=ev.target; if(d&&d.classList&&d.classList.contains('m51-qd')&&d.closest&&d.closest('#m48Ld')){ try{ m48LdSt().qd=d.open?1:0; }catch(e){} } },true);
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
