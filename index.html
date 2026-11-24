@@ -3824,6 +3824,40 @@ html.m38 .mr-tiles .mr-tile{border-radius:20px;}
 html.m38 .m8-sw-light i:nth-child(1),html.m38 .m8-sw-auto i:nth-child(1){background:#F4F2F9} html.m38 .m8-sw-light i:nth-child(2){background:var(--brand)} html.m38 .m8-sw-light i:nth-child(3),html.m38 .m8-sw-dark i:nth-child(3),html.m38 .m8-sw-auto i:nth-child(3){background:var(--m38-lime)}
 html.m38 .m8-sw-dark i:nth-child(1),html.m38 .m8-sw-auto i:nth-child(2){background:#110C1E} html.m38 .m8-sw-dark i:nth-child(2){background:color-mix(in srgb,var(--brand) 60%,#fff)}
 /* <</v38 css>> */
+/* <<v39 css>> */
+/* v39: «Настроить главную» */
+html.m38 #view-today>#m39Link{order:17}
+html.m38 #view-today>.m39-off{display:none!important;}
+.m38-act{grid-template-columns:repeat(var(--n,4),minmax(0,1fr));}
+.m38-bento>.m39-fill{grid-column:1 / -1;}
+.m39-bh{display:flex; align-items:center; gap:10px; margin:20px 2px 10px;}
+.m39-bh .m38-bh{margin:0; flex:1; min-width:0;}
+.m39-edit{display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 12px; border:0; border-radius:99px; background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-size:.84rem; font-weight:800; cursor:pointer;}
+.m39-edit:focus-visible,.m39-lnk:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+.m39-lnk{display:flex; align-items:center; justify-content:center; gap:8px; width:100%; min-height:48px; margin:4px 0 8px; border:1.5px dashed var(--line); border-radius:16px; background:transparent; color:var(--muted); font:inherit; font-weight:700; cursor:pointer;}
+.m39-cfg{display:flex; flex-direction:column;}
+.m39-h{display:flex; align-items:baseline; gap:8px; margin:18px 2px 8px; font-size:1rem;}
+.m39-h small{margin-left:auto; font-size:.8rem; font-weight:800; color:var(--brand-ink); background:var(--brand-weak); padding:2px 9px; border-radius:99px;}
+.m39-l{list-style:none; margin:0; padding:0; background:var(--surface-2); border-radius:18px; overflow:hidden;}
+.m39-r{display:flex; align-items:center; gap:10px; min-height:58px; padding:6px 8px 6px 12px; border-top:1px solid var(--line); background:var(--surface-2); position:relative; cursor:pointer;}
+.m39-r:first-child{border-top:0;}
+.m39-r:not(.on) .m39-i,.m39-r:not(.on) .m39-t{opacity:.5;}
+.m39-r.m39-moved{background:color-mix(in srgb,var(--brand) 9%,var(--surface-2));}
+.m39-i{width:34px; height:34px; flex:none; border-radius:11px; display:grid; place-items:center; color:var(--brand); background:var(--surface);}
+.m39-t{flex:1; min-width:0; display:flex; flex-direction:column; gap:1px;} .m39-t b{font-weight:700; line-height:1.25;} .m39-t small{color:var(--muted); font-size:.78rem;}
+.m39-mv{display:flex; gap:2px; flex:none;}
+.m39-mv button{width:40px; height:40px; border:0; border-radius:12px; background:transparent; color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+.m39-mv button:disabled{opacity:.22; cursor:default;}
+.m39-mv button:not(:disabled):active{background:var(--track);}
+.m39-sw{position:relative; width:50px; height:30px; flex:none; border:0; border-radius:99px; background:var(--track); cursor:pointer; transition:background .18s; margin-left:2px;}
+.m39-sw i{position:absolute; left:3px; top:3px; width:24px; height:24px; border-radius:50%; background:#fff; box-shadow:0 1px 3px rgba(0,0,0,.25); transition:transform .2s cubic-bezier(.2,.75,.2,1);}
+.m39-sw[aria-checked="true"]{background:var(--brand);} .m39-sw[aria-checked="true"] i{transform:translateX(20px);}
+.m39-mv button:focus-visible,.m39-sw:focus-visible{outline:3px solid var(--brand); outline-offset:2px;}
+.m39-hint{margin:0 2px 8px; padding:10px 12px; border-radius:14px; background:color-mix(in srgb,var(--m-sun) 16%,var(--surface)); font-size:.88rem; font-weight:600;}
+.m39-note{margin:0 0 4px; padding:10px 12px; border-radius:14px; background:var(--brand-weak); color:var(--brand-ink); font-size:.88rem;}
+.m39-btns{display:flex; gap:10px; margin-top:18px;} .m39-btns .btn{flex:1;}
+@media (prefers-reduced-motion: reduce){ .m39-sw,.m39-sw i{transition:none;} }
+/* <</v39 css>> */
 
 
 </style>
@@ -8247,6 +8281,49 @@ en:{
 }};
 for(const k of ['ru','tg','en']) Object.assign(D[k],M38S[k]);
 /* <</v38 str>> */
+/* <<v39 str>> */
+const M39S={
+ru:{
+  m39Title:'Настроить главную', m39Edit:'Настроить', m39Sub:'кнопки, плитки и порядок блоков',
+  m39Lead:'Выберите, что показывать на главной и в каком порядке. Mira сама ничего не переставляет — только вы.',
+  m39Simple:'Сейчас включён простой режим — в нём главная короче. Эти настройки заработают, когда выключите его.',
+  m39HA:'Кнопки сверху', m39HAs:(n,m)=>n+' из '+m, m39HT:'Плитки «Коротко о главном»', m39HB:'Блоки главной',
+  m39Up:t=>'Выше: '+t, m39Dn:t=>'Ниже: '+t, m39Show:t=>'Показывать: '+t,
+  m39Reset:'Вернуть как было', m39Done:'Готово', m39ResetOk:'Главная — как было',
+  m39Min:'Нужна хотя бы одна кнопка.', m39Max:n=>'Помещается '+n+' кнопки. Сначала выключите одну из включённых.',
+  m39A:{save:'Отложить',debt:'Мне должны',rates:'Курсы',calc:'Калькулятор',voice:'Сказать выручку',nb:'Тетрадь по фото',goals:'Цели'},
+  m39T:{rev:'Выручка за 7 дней',pig:'Копилка на платёж',idx:'Индекс спокойствия',fc:'Прогноз на 30 дней',owed:'Мне должны',usd:'Курс доллара'},
+  m39B:{focus:'Что сделать сегодня',m8Prog:'Путь к свободе',m38Bento:'Плитки «Коротко о главном»',m10Box:'Ближайшие 2 недели',miraMonth:'Этот месяц',erBox:'Дело недели',tripCard:'Поездка за товаром',dayTip:'Совет дня'},
+  m39BS:{m8Prog:'когда есть кредиты',tripCard:'когда планируете поездку'}
+},
+tg:{
+  m39Title:'Танзими саҳифаи асосӣ', m39Edit:'Танзим', m39Sub:'тугмаҳо, лавҳаҳо ва тартиби блокҳо',
+  m39Lead:'Интихоб кунед, ки дар саҳифаи асосӣ чӣ ва бо кадом тартиб нишон дода шавад. Mira худаш чизеро ҷой иваз намекунад — танҳо шумо.',
+  m39Simple:'Ҳоло реҷаи содда фаъол аст — дар он саҳифаи асосӣ кӯтоҳтар аст. Ин танзимот баъди хомӯш кардани он кор мекунанд.',
+  m39HA:'Тугмаҳои боло', m39HAs:(n,m)=>n+' аз '+m, m39HT:'Лавҳаҳои «Мухтасар дар бораи асосӣ»', m39HB:'Блокҳои саҳифаи асосӣ',
+  m39Up:t=>'Болотар: '+t, m39Dn:t=>'Поёнтар: '+t, m39Show:t=>'Нишон додан: '+t,
+  m39Reset:'Ба ҳолати аввал', m39Done:'Тайёр', m39ResetOk:'Саҳифаи асосӣ — мисли пештара',
+  m39Min:'Ақаллан як тугма лозим аст.', m39Max:n=>'Танҳо '+n+' тугма ҷой мегирад. Аввал яке аз фаъолҳоро хомӯш кунед.',
+  m39A:{save:'Ҷамъ кардан',debt:'Ба ман қарздоранд',rates:'Қурбҳо',calc:'Ҳисобкунак',voice:'Даромадро гуфтан',nb:'Дафтар аз сурат',goals:'Ҳадафҳо'},
+  m39T:{rev:'Даромад, 7 рӯз',pig:'Хуки пулӣ барои пардохт',idx:'Индекси оромӣ',fc:'Пешгӯӣ, 30 рӯз',owed:'Ба ман қарздоранд',usd:'Қурби доллар'},
+  m39B:{focus:'Имрӯз чӣ кор кардан лозим',m8Prog:'Роҳ ба озодӣ',m38Bento:'Лавҳаҳои «Мухтасар дар бораи асосӣ»',m10Box:'2 ҳафтаи наздик',miraMonth:'Ҳамин моҳ',erBox:'Кори ҳафта',tripCard:'Сафар барои мол',dayTip:'Маслиҳати рӯз'},
+  m39BS:{m8Prog:'вақте ки қарз ҳаст',tripCard:'вақте ки сафар ба нақша гирифтаед'}
+},
+en:{
+  m39Title:'Customise home', m39Edit:'Customise', m39Sub:'buttons, tiles and block order',
+  m39Lead:'Choose what the home screen shows and in what order. Mira never rearranges anything on its own — only you do.',
+  m39Simple:'Simple mode is on, so the home screen is shorter. These settings take effect when you turn it off.',
+  m39HA:'Top buttons', m39HAs:(n,m)=>n+' of '+m, m39HT:'“The main things, briefly” tiles', m39HB:'Home blocks',
+  m39Up:t=>'Move up: '+t, m39Dn:t=>'Move down: '+t, m39Show:t=>'Show: '+t,
+  m39Reset:'Restore default', m39Done:'Done', m39ResetOk:'Home restored to default',
+  m39Min:'Keep at least one button.', m39Max:n=>'Only '+n+' buttons fit. Turn one of the others off first.',
+  m39A:{save:'Put aside',debt:'Owed to me',rates:'Rates',calc:'Calculator',voice:'Say the sales',nb:'Notebook by photo',goals:'Goals'},
+  m39T:{rev:'Sales, 7 days',pig:'Payment piggy bank',idx:'Calm index',fc:'30-day forecast',owed:'Owed to me',usd:'Dollar rate'},
+  m39B:{focus:'To do today',m8Prog:'Road to freedom',m38Bento:'“The main things, briefly” tiles',m10Box:'Next 2 weeks',miraMonth:'This month',erBox:'Task of the week',tripCard:'Buying trip',dayTip:'Tip of the day'},
+  m39BS:{m8Prog:'when you have loans',tripCard:'when you plan a trip'}
+}};
+for(const k of ['ru','tg','en']) Object.assign(D[k],M39S[k]);
+/* <</v39 str>> */
 /* <<v32 str>> */
 /* ----- v32: рынок дня по частям, новости и мир; экран плана; закрыть кредит; самопроверка; отпечаток ----- */
 const M32S={
@@ -19621,6 +19698,104 @@ function m38Reveal(){ let rm=false; try{ rm=matchMedia('(prefers-reduced-motion:
 try{ const _os38=openSheet; openSheet=function(){ const x=_os38.apply(this,arguments); try{ setTimeout(m38Reveal,0); }catch(e){} return x; }; }catch(e){}
 setTimeout(()=>{ try{ m38TodayAfter(); m38Reveal(); }catch(e){} },0);
 /* <</v38 js>> */
+/* <<v39 js>> */
+/* v39 (идея 534): «Настроить главную» — кнопки, плитки и блоки выбирает и расставляет сам человек; Mira сама ничего не переставляет */
+const M39A={
+  day:{a:()=>'data-shop="day"',i:'edit',c:'a-day',t:()=>L.m38ADay},
+  pay:{a:()=>{ let nx=null; try{ nx=m7Next(activeList()); }catch(e){} return nx?`data-action="pay" data-id="${esc(String(nx.loan.id))}"`:''; },i:'check',c:'a-pay',t:()=>L.m38APay,dis:()=>{ try{ return !m7Next(activeList()); }catch(e){ return true; } }},
+  exp:{a:()=>'data-qexp="1"',i:'receipt',c:'a-exp',t:()=>L.m38AExp},
+  sifra:{a:()=>'data-sifra=""',i:'sparkle',c:'a-sf',t:()=>L.m38ASf},
+  save:{a:()=>'data-env="loan"',i:'piggy',c:'a-save',t:()=>L.m39A.save},
+  debt:{a:()=>'data-ssubgo="debt"',i:'people',c:'a-debt',t:()=>L.m39A.debt},
+  rates:{a:()=>'data-rates="1"',i:'rate',c:'a-rates',t:()=>L.m39A.rates},
+  calc:{a:()=>'data-m39calc="1"',i:'calc',c:'a-calc',t:()=>L.m39A.calc},
+  voice:{a:()=>'data-m38go="voice"',i:'mic',c:'a-voice',t:()=>L.m39A.voice},
+  nb:{a:()=>'data-nb29="1"',i:'camera',c:'a-nb',t:()=>L.m39A.nb},
+  goals:{a:()=>'data-m38go="goals"',i:'goal',c:'a-goals',t:()=>L.m39A.goals}
+};
+const M39T={rev:'chart',pig:'piggy',idx:'heart',fc:'zap',owed:'people',usd:'rate'};
+const M39B={focus:'check',m8Prog:'flag',m38Bento:'stats',m10Box:'cal',miraMonth:'money',erBox:'star',tripCard:'plane',dayTip:'bulb'};
+const M39MAX=4, M39DEF_ON=['day','pay','exp','sifra'];
+
+function m39Fix(o,all){ o=(Array.isArray(o)?o:[]).filter((k,i,a)=>all.includes(k)&&a.indexOf(k)===i); all.forEach(k=>{ if(!o.includes(k)) o.push(k); }); return o; }
+function m39Cfg(){ const m=(state.misc&&state.misc.m39h)||{}, A=Object.keys(M39A), T=Object.keys(M39T), B=Object.keys(M39B);
+  let aon=(Array.isArray(m.aon)?m.aon:M39DEF_ON).filter(k=>A.includes(k)); if(!aon.length) aon=M39DEF_ON.slice();
+  return {ao:m39Fix(m.ao,A), aon:aon.slice(0,M39MAX), to:m39Fix(m.to,T), toff:(m.toff||[]).filter(k=>T.includes(k)), bo:m39Fix(m.bo,B), boff:(m.boff||[]).filter(k=>B.includes(k))}; }
+function m39Save(c){ state.misc=state.misc||{}; state.misc.m39h=c; try{ persist(); }catch(e){} }
+function m39IsDef(){ return !(state.misc&&state.misc.m39h); }
+
+/* быстрые кнопки по выбору человека */
+try{ m38ActHTML=function(){ const c=m39Cfg(), ks=c.ao.filter(k=>c.aon.includes(k));
+  const b=k=>{ const o=M39A[k], dis=o.dis&&o.dis(); return `<button type="button" class="m38-a ${o.c}" data-ak="${k}" ${o.a()} ${dis?'disabled aria-disabled="true"':''}><span class="m38-ai">${ico(o.i,26)}</span><b>${o.t()}</b></button>`; };
+  return `<div class="m38-act" role="group" aria-label="${L.m38Act}" style="--n:${ks.length}">${ks.map(b).join('')}</div>`; }; }catch(e){}
+
+/* плитки: показываем выбранные в выбранном порядке; одинокая маленькая плитка растягивается на всю ширину */
+try{ const _b39=m38BentoHTML; m38BentoHTML=function(){ const h=_b39.apply(this,arguments); if(!h) return h;
+  try{ const c=m39Cfg(), d=document.createElement('div'); d.innerHTML=h; const g=d.querySelector('.m38-bento'); if(!g) return h;
+    const by={}; g.querySelectorAll('.m38-t').forEach(t=>{ const m=t.className.match(/\bt-([a-z]+)\b/); if(m) by[m[1]]=t; });
+    const ks=c.to.filter(k=>by[k]&&!c.toff.includes(k)); if(!ks.length) return '';
+    g.innerHTML=''; let col=0, last=null; ks.forEach(k=>{ const t=by[k], w=t.classList.contains('w2'); t.classList.remove('m39-fill');
+      if(w){ if(col===1&&last) last.classList.add('m39-fill'); col=0; } else { col=col?0:1; last=t; } g.appendChild(t); });
+    if(col===1&&last) last.classList.add('m39-fill');
+    const hd=d.querySelector('.m38-bh'); if(hd) hd.outerHTML=`<div class="m39-bh"><h2 class="m38-bh">${L.m38Bento}</h2><button type="button" class="m39-edit" data-m39home="1" aria-label="${esc(L.m39Title)}">${ico('gear',16)}<span>${L.m39Edit}</span></button></div>`;
+    return d.innerHTML; }catch(e){ return h; } }; }catch(e){}
+
+/* блоки главной: порядок и видимость */
+function m39ApplyBlocks(){ const v=$('#view-today'); if(!v) return; const simple=isSimple(), c=m39Cfg();
+  c.bo.forEach((k,i)=>{ const el=document.getElementById(k); if(!el||el.parentElement!==v) return;
+    if(simple){ el.style.removeProperty('order'); el.classList.remove('m39-off'); return; }
+    el.style.order=String(5+i); el.classList.toggle('m39-off',c.boff.includes(k)); });
+  let ln=$('#m39Link'); if(simple){ if(ln) ln.remove(); return; }
+  if(!ln){ ln=document.createElement('section'); ln.id='m39Link'; v.appendChild(ln); }
+  const h=`<button type="button" class="m39-lnk" data-m39home="1">${ico('gear',18)}<span>${L.m39Title}</span></button>`; if(ln.dataset.h!==h){ ln.innerHTML=h; ln.dataset.h=h; } }
+try{ const _ta39=m38TodayAfter; m38TodayAfter=function(){ const x=_ta39.apply(this,arguments); try{ m39ApplyBlocks(); }catch(e){} return x; }; }catch(e){}
+
+/* лист «Настроить главную» */
+let M39Hint='';
+function m39Row(s,k,i,n,on,ic,t,sub){ return `<li class="m39-r${on?' on':''}" data-s="${s}" data-k="${k}"><span class="m39-i">${ico(ic,20)}</span><span class="m39-t"><b>${t}</b>${sub?`<small>${sub}</small>`:''}</span>
+  <span class="m39-mv"><button type="button" class="m39-up" data-m39mv="-1" ${i===0?'disabled':''} aria-label="${esc(L.m39Up(t))}">${ico('up',18)}</button><button type="button" class="m39-dn" data-m39mv="1" ${i===n-1?'disabled':''} aria-label="${esc(L.m39Dn(t))}">${ico('arrowdown',18)}</button></span>
+  <button type="button" class="m39-sw" role="switch" aria-checked="${on?'true':'false'}" aria-label="${esc(L.m39Show(t))}" data-m39sw="1"><i></i></button></li>`; }
+function m39Body(){ const c=m39Cfg();
+  const A=c.ao.map((k,i)=>m39Row('a',k,i,c.ao.length,c.aon.includes(k),M39A[k].i,M39A[k].t(),''));
+  const T=c.to.map((k,i)=>m39Row('t',k,i,c.to.length,!c.toff.includes(k),M39T[k],L.m39T[k],''));
+  const B=c.bo.map((k,i)=>m39Row('b',k,i,c.bo.length,!c.boff.includes(k),M39B[k],L.m39B[k],L.m39BS[k]||''));
+  return `${isSimple()?`<p class="m39-note">${L.m39Simple}</p>`:''}
+    <h4 class="m39-h">${L.m39HA}<small>${L.m39HAs(c.aon.length,M39MAX)}</small></h4>${M39Hint?`<p class="m39-hint" role="status">${M39Hint}</p>`:''}<ul class="m39-l">${A.join('')}</ul>
+    <h4 class="m39-h">${L.m39HT}</h4><ul class="m39-l">${T.join('')}</ul>
+    <h4 class="m39-h">${L.m39HB}</h4><ul class="m39-l">${B.join('')}</ul>`; }
+function m39Sheet(){ M39Hint='';
+  openSheet(`<h3>${L.m39Title}</h3><p class="lead">${L.m39Lead}</p><div class="m39-cfg" id="m39Cfg">${m39Body()}</div>
+    <div class="m39-btns"><button type="button" class="btn btn-ghost" id="m39-reset" ${m39IsDef()?'disabled':''}>${L.m39Reset}</button><button type="button" class="btn btn-primary" id="m39-done">${L.m39Done}</button></div>`);
+  const box=$('#m39Cfg'); if(!box) return;
+  $('#m39-done').onclick=()=>closeSheet();
+  $('#m39-reset').onclick=()=>{ if(state.misc) delete state.misc.m39h; try{ persist(); }catch(e){} M39Hint=''; m39Redraw(null); toast(L.m39ResetOk); };
+  box.addEventListener('click',e=>{ const li=e.target.closest('.m39-r'); if(!li) return; const s=li.dataset.s, k=li.dataset.k, c=m39Cfg();
+    const mv=e.target.closest('[data-m39mv]'), sw=e.target.closest('[data-m39sw]')||(mv?null:li); if(mv&&mv.disabled) return; if(!mv&&!sw) return;
+    const ord=c[s+'o'];
+    if(mv){ const i=ord.indexOf(k), j=i+(+mv.dataset.m39mv); if(j<0||j>=ord.length) return; ord.splice(i,1); ord.splice(j,0,k); M39Hint=''; m39Save(c); m39Redraw({s,k,f:mv.dataset.m39mv==='-1'?'.m39-up':'.m39-dn'}); return; }
+    if(s==='a'){ const on=c.aon.includes(k);
+      if(on){ if(c.aon.length<=1){ M39Hint=L.m39Min; m39Redraw({s,k,f:'.m39-sw'}); return; } c.aon=c.aon.filter(x=>x!==k); }
+      else { if(c.aon.length>=M39MAX){ M39Hint=L.m39Max(M39MAX); m39Redraw({s,k,f:'.m39-sw'}); return; } c.aon.push(k); }
+    } else { const off=c[s+'off']; c[s+'off']=off.includes(k)?off.filter(x=>x!==k):off.concat(k); }
+    M39Hint=''; m39Save(c); m39Redraw({s,k,f:'.m39-sw'}); }); }
+/* перерисовка листа: строки плавно переезжают на новые места (FLIP), фокус остаётся на нажатой кнопке */
+function m39Redraw(foc){ const box=$('#m39Cfg'); if(!box) return; let rm=false; try{ rm=matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){}
+  const pos={}; box.querySelectorAll('.m39-r').forEach(r=>{ pos[r.dataset.s+':'+r.dataset.k]=r.getBoundingClientRect().top; });
+  box.innerHTML=m39Body(); const rs=$('#m39-reset'); if(rs) rs.disabled=m39IsDef();
+  if(!rm) box.querySelectorAll('.m39-r').forEach(r=>{ const p=pos[r.dataset.s+':'+r.dataset.k]; if(p==null) return; const dy=p-r.getBoundingClientRect().top; if(Math.abs(dy)<1) return;
+    r.style.transform=`translateY(${dy}px)`; r.style.transition='none'; requestAnimationFrame(()=>{ r.style.transition='transform .28s cubic-bezier(.2,.75,.2,1)'; r.style.transform=''; }); });
+  if(foc){ const r=box.querySelector(`.m39-r[data-s="${foc.s}"][data-k="${foc.k}"]`); if(r){ r.classList.add('m39-moved'); setTimeout(()=>r.classList.remove('m39-moved'),700);
+    let f=r.querySelector(foc.f); if(f&&f.disabled) f=r.querySelector(foc.f==='.m39-up'?'.m39-dn':'.m39-up'); try{ (f||r.querySelector('.m39-sw')).focus({preventScroll:true}); }catch(e){} } }
+  try{ render(); }catch(e){} }
+
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closest('[data-m39home],[data-m39calc]'); if(!t) return; e.stopImmediatePropagation();
+  if(t.hasAttribute('data-m39calc')){ try{ calcSheet('basic'); }catch(err){} return; } m39Sheet(); },true);
+
+/* «Ещё» → «Настройки»: строка «Настроить главную» */
+try{ const _x39=m38Extra; m38Extra=function(){ const r=_x39.apply(this,arguments); try{ r.push({k:'homecfg',g:'d',a:'data-m39home="1"',i:'gear',t:L.m39Title,s:L.m39Sub}); }catch(e){} return r; }; }catch(e){}
+
+setTimeout(()=>{ try{ m38TodayAfter(); }catch(e){} },0);
+/* <</v39 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
   if(e.target.closest('[data-close]')){ closeSheet(); return; }
