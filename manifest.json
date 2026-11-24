@@ -9,8 +9,8 @@
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",
-  "background_color": "#F4F6FD",
-  "theme_color": "#F4F6FD",
+  "background_color": "#F1F4EF",
+  "theme_color": "#F1F4EF",
   "icons": [
     {
       "src": "icon-192.png",
@@ -33,50 +33,82 @@
   ],
   "shortcuts": [
     {
-      "name": "Записать оплату",
-      "short_name": "Оплата",
-      "url": "./index.html?go=pay",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Мне должны",
-      "short_name": "Мне должны",
-      "url": "./index.html?go=owed",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
-      "name": "Записать голосом",
-      "short_name": "Голосом",
-      "url": "./index.html?go=voice",
-      "icons": [
-        {
-          "src": "icon-192.png",
-          "sizes": "192x192",
-          "type": "image/png"
-        }
-      ]
-    },
-    {
       "name": "Записать день",
       "short_name": "День",
+      "description": "Выручка и расходы за сегодня",
       "url": "./index.html?go=day",
       "icons": [
         {
-          "src": "icon-192.png",
+          "src": "sc-day.png",
           "sizes": "192x192",
-          "type": "image/png"
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "sc-day-96.png",
+          "sizes": "96x96",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Оплатила платёж",
+      "short_name": "Оплата",
+      "description": "Отметить ближайший платёж по кредиту",
+      "url": "./index.html?go=pay",
+      "icons": [
+        {
+          "src": "sc-pay.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "sc-pay-96.png",
+          "sizes": "96x96",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Расход",
+      "short_name": "Расход",
+      "description": "Записать расход магазина",
+      "url": "./index.html?go=exp",
+      "icons": [
+        {
+          "src": "sc-exp.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "sc-exp-96.png",
+          "sizes": "96x96",
+          "type": "image/png",
+          "purpose": "any"
+        }
+      ]
+    },
+    {
+      "name": "Спросить Сифру",
+      "short_name": "Сифра",
+      "description": "Помощница Mira",
+      "url": "./index.html?go=sifra",
+      "icons": [
+        {
+          "src": "sc-sifra.png",
+          "sizes": "192x192",
+          "type": "image/png",
+          "purpose": "any"
+        },
+        {
+          "src": "sc-sifra-96.png",
+          "sizes": "96x96",
+          "type": "image/png",
+          "purpose": "any"
         }
       ]
     }
