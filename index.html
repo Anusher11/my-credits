@@ -6127,6 +6127,15 @@ html.m48-live .m56.m49-go .m56-plot .ars{animation:m56Rise .8s cubic-bezier(.2,.
 .m56 .m56-lc span{max-width:none; font-size:.76rem; font-weight:600; color:var(--muted);} .m56 .m56-lc b{font:800 .9rem/1.1 var(--font-num); color:var(--ink);}
 .m56 .m56-leg.pay{display:flex; flex-wrap:wrap; gap:6px 14px;} .m56 .m56-leg.pay>span{grid-column:auto;}
 .m56 .m56-lc b svg{width:16px; height:16px; color:var(--m-leaf,var(--ok,#12A37A)); vertical-align:-3px;}
+/* ===================== v57: профиль дела в листе «Страна» ===================== */
+.m57-prof{margin:14px 0 4px;padding-top:14px;border-top:1px solid var(--line);display:grid;gap:6px}
+.m57-prof h4{margin:8px 0 0;font-size:16px}
+.m57-prof label{font-size:13px;font-weight:600;color:var(--muted);margin-top:6px}
+.m57-prof input{width:100%;box-sizing:border-box;min-height:48px;padding:10px 14px;border-radius:14px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:16px}
+.m57-prof input:focus-visible{outline:2px solid var(--brand);outline-offset:1px}
+.m57-chips{display:flex;flex-wrap:wrap;gap:6px}
+.m57-chip{min-height:36px;padding:6px 12px;border-radius:99px;border:1.5px solid var(--line);background:var(--surface-2);color:var(--ink);font:inherit;font-size:14px;font-weight:600}
+.m57-note{margin:6px 0 0;font-size:13px;color:var(--muted)}
 /* <</v44 css>> */
 
 
@@ -11507,12 +11516,12 @@ function analyze(loan){
   const due=done?nextDueDate(dd):(se?parseYmd(se.d):dueAt(per,dd)), days=daysUntil(due), overdue=!done&&!check&&days<0;
   const amtFull=se?(+se.a||0):monthly, part=(!done&&loan.part&&loan.part.per===per)?Math.max(0,Math.min(amtFull,+loan.part.a||0)):0;
   const amt=Math.max(0,amtFull-part);
-  let monthsLeft=null, interestLeft=0;
+  let monthsLeft=null, interestLeft=0, lastAmt=null;
   const sch=schedOf(loan);
   if(!done && sch){ const rest=sch.filter(e=>mIdx(parseYmd(e.d))>(pt!=null?pt:per-1)); monthsLeft=rest.length||null; interestLeft=Math.round(rest.reduce((s,e)=>s+(+e.i||0),0)); }
-  else if(!done && monthly>0){ const sim=payoffSim(remaining,monthly,+loan.rate||0); if(sim){ monthsLeft=sim.months; interestLeft=sim.interest; } }
+  else if(!done && monthly>0){ const sim=payoffSim(remaining,monthly,+loan.rate||0); if(sim){ monthsLeft=sim.months; interestLeft=sim.interest; lastAmt=Math.max(0,Math.min(monthly,Math.round(remaining+sim.interest-monthly*(sim.months-1)))); } }
   let urg='none'; if(!done){ if(check)urg='soon'; else if(days<=3)urg='urgent'; else if(days<=REMIND)urg='soon'; }
-  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg,overdue,check,per,amt,amtFull,part};
+  return {total,paid,remaining,pct,done,monthly,due,days,monthsLeft,interestLeft,urg,overdue,check,per,amt,amtFull,part,lastAmt};
 }
 
 const RC=2*Math.PI*20;
@@ -12530,7 +12539,7 @@ function dueInMonth(idx,list){
     const pt=curPt(loan), s=schedOf(loan);
     let amt=0, d=null;
     if(s){ const e=schedAt(loan,idx); if(e){ amt=+e.a||0; d=parseYmd(e.d); } }
-    else { const lastIdx=(pt!=null?pt:lastDueIdx(loan.dueDay||1)-1)+(a.monthsLeft!=null?a.monthsLeft:600); if(idx<=lastIdx){ amt=a.monthly||0; d=dueAt(idx,loan.dueDay||1); } }
+    else { const lastIdx=(pt!=null?pt:lastDueIdx(loan.dueDay||1)-1)+(a.monthsLeft!=null?a.monthsLeft:600); if(idx<=lastIdx){ amt=(idx===lastIdx&&a.lastAmt>0)?a.lastAmt:(a.monthly||0); d=dueAt(idx,loan.dueDay||1); } }
     if(amt>0){ const paid=pt!=null&&pt>=idx; loans+=amt; rows.push({kind:'loan',name:loan.name,amt,d,paid,id:loan.id}); }
   }
   for(const s of state.sup){ if(!s.due) continue; const d=parseYmd(s.due); if(mIdx(d)===idx){ sup+=(+s.sum||0); rows.push({kind:'sup',name:s.name,amt:+s.sum||0,d,paid:!!s.paid,id:s.id}); } }
@@ -14100,25 +14109,8 @@ document.addEventListener('click', e=>{
 /* ===================== v7: прогноз на 30 дней, уведомление о курсе, лимит насии, курсы всех банков, сохранность данных ===================== */
 
 /* ---- прогноз денег на 30 дней: когда может не хватить ---- */
-function fcData(opts){
-  opts=opts||{}; const T=today0(), list=activeList().filter(x=>!x.loan.example), sh=ensureShop();
-  const mgReal=marginPct(), mg=mgReal||30;
-  const firstSale=sh.sales.map(e=>e.date).sort()[0]; const span=firstSale?Math.max(7,Math.min(60,-daysUntil(parseYmd(firstSale)))):60, from=dkey(addDays(T,-span));
-  const wd=bestWeekdays(), rev=revEst();
-  const revDay=d=>{ if(wd&&wd.days>=10&&wd.n[d.getDay()]) return wd.avg[d.getDay()]; return rev&&rev.v>0?rev.v/30:0; };
-  const expDay=sh.exp.filter(e=>e.date>=from&&!String(e.id).endsWith('_b')).reduce((s,e)=>s+(+e.sum||0),0)/span;
-  const homeDay=state.home.filter(h=>h.d>=from&&h.cat!=='bills').reduce((s,h)=>s+(+h.sum||0),0)/span;
-  const ev=[]; const put=(i,n,a,ic)=>{ if(i>29) return; ev.push({i:Math.max(0,i),n,a:Math.round(a),ic}); };
-  for(const {loan,a} of list){ if(a.done||a.check||a.per==null) continue; let per=a.per;
-    for(let k=0;k<3;k++){ const se=schedAt(loan,per), due=se?parseYmd(se.d):dueAt(per,loan.dueDay||1), di=daysUntil(due); if(di>29) break; put(di,loan.name,-(se?+se.a:(k===0?(a.amt||a.monthly||0):(+loan.monthly||a.monthly||0))),'💳'); per++; } }
-  for(const b of state.bills){ const d=billDue(b); if(!d.paid) put(d.days,b.name,-(+b.sum||0),b.ic||'🔁'); const nx=new Date(d.due.getFullYear(),d.due.getMonth()+1,Math.min(28,+b.day||1)); put(d.paid?daysUntil(d.due):daysUntil(nx),b.name,-(+b.sum||0),b.ic||'🔁'); }
-  for(const s of state.sup) if(!s.paid&&s.due) put(daysUntil(parseYmd(s.due)),s.name,-(+s.sum||0),'🤝');
-  if(opts.cust) for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.due) put(daysUntil(parseYmd(st.due)),c.name,st.bal,'🧾'); }
-  const fs=state.misc.fcStart, start=fs&&fs.d&&-daysUntil(parseYmd(fs.d))<=7?+fs.v||0:Math.max(0,envBal('loan'))+Math.max(0,envBal('cush'));
-  const days=[]; let bal=start, firstNeg=null, minBal=start, minI=0;
-  for(let i=0;i<30;i++){ const d=addDays(T,i); const net=revDay(d)*mg/100-expDay-homeDay; bal+=net; const es=ev.filter(e=>e.i===i); for(const e of es) bal+=e.a; days.push({i,d,bal,net,ev:es}); if(bal<0&&firstNeg==null) firstNeg=i; if(bal<minBal){ minBal=bal; minI=i; } }
-  const perDay=firstNeg!=null?round10(-minBal/Math.max(1,minI)):0;
-  return {days,ev,start,firstNeg,minBal,minI,perDay,mg,noMg:!mgReal,hasRev:!!(rev&&rev.v>0)};
+function fcData(opts){ /* v57: тот же расчёт, что у карточки на главной (m57Fc), вместе с запланированными покупками */
+  const r=m40FcData(30,Object.assign({},opts||{})); if(r.start<r.minBal){ r.minBal=r.start; r.minI=0; } for(const e of r.ev) if(!e.ic) e.ic='🛒'; return r;
 }
 function renderFcCard(){
   const box=$('#fcCard'); if(!box) return;
@@ -16603,7 +16595,7 @@ function m8Daily(list){
   const f=[], du=dueInMonth(mIdx(today0()),real), lr=du.rows.filter(r=>r.kind==='loan'), pn=lr.filter(r=>r.paid).length;
   if(lr.length&&pn===lr.length) f.push(L.m8DAll); else if(lr.length&&pn>0) f.push(L.m8DMonth(pn,lr.length));
   const nx=m7Next(list); if(nx&&nx.a.days>3) f.push(L.m8DNone(fmtDate(nx.a.due)));
-  const fr=m8Free(real); if(fr&&fr.months>0) f.push(L.m8DFree(fr.months));
+  const fr=m8Free(real); if(fr&&fr.months>1) f.push(L.m8DFree(fr.months-1));
   if(!f.length) return ''; const t=today0(), doy=Math.floor((t-new Date(t.getFullYear(),0,0))/864e5);
   return `<p class="m8-daily">${ico('leaf',16)}<span>${f[doy%f.length]}</span></p>`;
 }
@@ -17377,7 +17369,7 @@ function m11HeroHTML(list){ const real=list.filter(x=>!x.loan.example); if(!real
   let path=''; if(pr&&pr.m>1&&pr.m<=36){ const seg=[]; for(let i=0;i<pr.m;i++) seg.push(`<i class="${i<pr.k?'p':i===pr.k?'n':''}"></i>`); path=`<div class="m11-path" aria-hidden="true">${seg.join('')}</div><div class="m11-pl"><span>${L.m11Done(pr.k,pr.m)}</span><span>${fr?m8MonLabel(fr.d):''}</span></div>`; }
   return `<button type="button" class="m11-hero" data-tab="loans" aria-label="${esc(L.m8FreeT)}">
     <span class="m11-top"><span class="m11-ring"><svg viewBox="0 0 108 108" aria-hidden="true"><circle class="tr" cx="54" cy="54" r="42" fill="none" stroke-width="12"/><circle class="rg" cx="54" cy="54" r="42" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${(C*(1-pct/100)).toFixed(1)}" transform="rotate(-90 54 54)"/></svg><span class="m11-pc"><b><span data-m8n="${pct}">${pct}</span><i>%</i></b><small>${L.m8PctL}</small></span></span>
-      <span class="m11-h"><small>${L.m11Free}</small><b>${fr?m8MonLabel(fr.d):'—'}</b>${fr&&fr.months>0?`<span>${L.m11In(fr.months)}</span>`:''}</span></span>
+      <span class="m11-h"><small>${L.m11Free}</small><b>${fr?m8MonLabel(fr.d):'—'}</b>${fr&&fr.months>0?`<span>${m49Wait(Math.max(0,fr.months-1))}</span>`:''}</span></span>
     <span class="m11-nums"><div class="p"><small>${L.m11Paid}</small><b>${money(T.paid)}</b></div><div><small>${L.m8LeftL}</small><b>${money(T.left)}</b></div></span>
     ${path}
     ${pct<100&&toStep>0?`<span class="m11-step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4M5 5h11l-2 4 2 4H5"/></svg><span>${L.m11Step(step)} <b>${money(toStep)}</b></span></span>`:''}</button>`; }
@@ -22193,26 +22185,7 @@ function m40Dn(d){ return L.weekdays[d.getDay()]+', '+fmtShort(d); }
 function m40Vib(){ try{ if(navigator.vibrate) navigator.vibrate(4); }catch(e){} }
 
 /* ---------- «Деньги вперёд»: 7 / 30 / 90 дней ---------- */
-function m40FcData(N){
-  const T=today0(), list=activeList().filter(x=>!x.loan.example), sh=ensureShop();
-  const mgReal=marginPct(), mg=mgReal||30;
-  const firstSale=sh.sales.map(e=>e.date).sort()[0]; const span=firstSale?Math.max(7,Math.min(60,-daysUntil(parseYmd(firstSale)))):60, from=dkey(addDays(T,-span));
-  const wd=bestWeekdays(), rev=revEst();
-  const revDay=d=>{ if(wd&&wd.days>=10&&wd.n[d.getDay()]) return wd.avg[d.getDay()]; return rev&&rev.v>0?rev.v/30:0; };
-  const expDay=sh.exp.filter(e=>e.date>=from&&!String(e.id).endsWith('_b')).reduce((s,e)=>s+(+e.sum||0),0)/span;
-  const homeDay=state.home.filter(h=>h.d>=from&&h.cat!=='bills').reduce((s,h)=>s+(+h.sum||0),0)/span;
-  const ev=[]; const put=(i,n,a)=>{ if(i>N-1||!(Math.abs(a)>0)) return; ev.push({i:Math.max(0,i),n,a:Math.round(a)}); };
-  for(const {loan,a} of list){ if(a.done||a.check||a.per==null) continue; let per=a.per;
-    for(let k=0;k<6;k++){ const se=schedAt(loan,per), due=se?parseYmd(se.d):dueAt(per,loan.dueDay||1), di=daysUntil(due); if(di>N-1) break; put(di,loan.name,-(se?+se.a:(k===0?(a.amt||a.monthly||0):(+loan.monthly||a.monthly||0)))); per++; } }
-  for(const b of state.bills){ const d=billDue(b), sum=-(+b.sum||0); if(!d.paid) put(d.days,b.name,sum); const base=d.paid?d.due:new Date(d.due.getFullYear(),d.due.getMonth()+1,Math.min(28,+b.day||1)); put(daysUntil(base),b.name,sum);
-    for(let m=1;m<=3;m++) put(daysUntil(new Date(base.getFullYear(),base.getMonth()+m,Math.min(28,+b.day||1))),b.name,sum); }
-  for(const s of state.sup) if(!s.paid&&s.due) put(daysUntil(parseYmd(s.due)),s.name,-(+s.sum||0));
-  const fs=state.misc.fcStart, start=fs&&fs.d&&-daysUntil(parseYmd(fs.d))<=7?+fs.v||0:Math.max(0,envBal('loan'))+Math.max(0,envBal('cush'));
-  const days=[]; let bal=start, firstNeg=null, minBal=Infinity, minI=0;
-  for(let i=0;i<N;i++){ const d=addDays(T,i); const net=revDay(d)*mg/100-expDay-homeDay; bal+=net; const es=ev.filter(e=>e.i===i); for(const e of es) bal+=e.a; days.push({i,d,bal,net,ev:es}); if(bal<0&&firstNeg==null) firstNeg=i; if(bal<minBal){ minBal=bal; minI=i; } }
-  const perDay=firstNeg!=null?round10(-minBal/Math.max(1,minI)):0;
-  return {days,ev,start,firstNeg,minBal,minI,perDay};
-}
+function m40FcData(N,opts){ return m57Fc(N,opts); } /* v57: один расчёт — см. m57Fc */
 const M40F={n:30,sel:null,run:0};
 function m40FcOn(){ return hasRealData()&&(state.loans.some(l=>!l.example)||state.bills.length||state.sup.length); }
 function m40FcGeo(f){ const W=320,H=180,pT=12,pB=24,pL=2,pR=44, n=f.days.length, vals=f.days.map(d=>d.bal);
@@ -24469,7 +24442,8 @@ function m49Data(){ const sig=m49Sig(); if(M49.dc!==undefined&&M49.sig===sig) re
   const months=[]; for(let i=0;i<120;i++){ const dm=dueInMonth(i0+i,real)||{}, rows=[]; for(const r of (dm.rows||[])){ const o=r.kind==='loan'&&L0[r.id]; if(!o) continue; if(r.paid){ if(i===0) o.sh=1; continue; } o.sum+=r.amt; o.pv+=r.amt/Math.pow(1+o.r,Math.max(1,i+1-(o.sh||0))); o.last=i; rows.push(r); }
     months.push({i,d:new Date(Math.floor((i0+i)/12),(i0+i)%12,1),rows,t:rows.reduce((s,r)=>s+r.amt,0)}); }
   for(const id in L0){ const o=L0[id]; if(!(o.sum>0)){ o.pv=Math.max(0,(+o.a.remaining||0)-(+o.a.interestLeft||0)); }
-    else { try{ const s=schedOf(o.loan), pt=curPt(o.loan), from=pt!=null?pt:(o.a.per!=null?o.a.per-1:i0-1), rest=s?s.filter(e=>mIdx(parseYmd(e.d))>from):[]; if(rest.length&&rest.every(e=>e.p!=null)){ const sp=rest.reduce((t,e)=>t+(+e.p||0),0); if(sp>0) o.pv=sp; } }catch(e){} } o.int=(+o.a.interestLeft||0)>0?+o.a.interestLeft:Math.max(0,o.sum-o.pv); }
+    else { let hasS=false; try{ const s=schedOf(o.loan), pt=curPt(o.loan), from=pt!=null?pt:(o.a.per!=null?o.a.per-1:i0-1), rest=s?s.filter(e=>mIdx(parseYmd(e.d))>from):[]; hasS=!!s; if(rest.length&&rest.every(e=>e.p!=null)){ const sp=rest.reduce((t,e)=>t+(+e.p||0),0); if(sp>0) o.pv=sp; } }catch(e){}
+      if(!hasS){ const rem=+o.a.remaining||0; if(rem>0.5) o.pv=rem; } /* v57: без графика банка остаток — тот же, что в шапке (total − paid), а не пересчёт по платежам */ } o.int=(+o.a.interestLeft||0)>0?+o.a.interestLeft:Math.max(0,o.sum-o.pv); }
   return (M49.dc={i0,L0,months}); }
 function m49PerDay(){ const D=m49Data(); if(!D) return 0; let s=0; for(const id in D.L0){ const o=D.L0[id]; s+=o.pv*o.rate/100/365; } return s; }
 function m49Nice(v){ if(v<=0) return 0; const p=Math.pow(10,Math.floor(Math.log10(v))), k=v/p; return Math.round((k<1.5?1:k<3.5?2:k<7.5?5:10)*p); }
@@ -27408,6 +27382,95 @@ try{ const _r56=render; render=function(){ const x=_r56.apply(this,arguments); t
 try{ m49Redraw=function(){ const ld=document.querySelector('#view-loans .m8-load'); if(ld){ ld.dataset.m41=''; try{ m41After(); }catch(e){} } }; }catch(e){}
 /* метка «гасить первым» на карточке кредита — тот же порядок, что выбран в расчёте (раньше карточки и расчёт могли показывать на разные кредиты) */
 try{ const f0=m12First; m12First=function(list){ try{ const act=(list||[]).filter(x=>!x.a.done&&!x.loan.example); if(act.length>=2){ const P=m56P(), M=m56Model(); if(M&&M.Ls.length>=2){ const q=M.Ls.slice().sort((a,b)=>P.ord==='snow'?(a.b0-b.b0||b.r-a.r):(b.r-a.r||a.b0-b.b0)); return q[0].id; } } }catch(e){} return f0.apply(this,arguments); }; }catch(e){}
+/* ===================== v57: одна цифра — один расчёт; профиль дела — строки ===================== */
+const M57S={
+ru:{
+  m57Now:'в этом месяце',
+  m57Ctry:'Страна, если её нет в списке', m57CtryPh:'например: Германия',
+  m57ProfT:'Ваше дело', m57Kind:'Чем занимаетесь', m57KindPh:'например: магазин одежды, кафе, студия',
+  m57KindChips:['магазин','услуги','еда','производство','IT','онлайн-продажи'],
+  m57Mk:'Куда продаёте', m57MkPh:'например: свой город, вся страна, США и Европа',
+  m57Note:'Сифра учитывает страну, дело и рынки в советах. Пока поля пустые, она ничего не предполагает о вашем деле.',
+  m57Saved:'Сохранено'
+},
+tg:{
+  m57Now:'дар ҳамин моҳ',
+  m57Ctry:'Кишвар, агар дар рӯйхат набошад', m57CtryPh:'масалан: Олмон',
+  m57ProfT:'Кори шумо', m57Kind:'Бо чӣ машғулед', m57KindPh:'масалан: мағозаи либос, қаҳвахона, студия',
+  m57KindChips:['мағоза','хизматрасонӣ','хӯрок','истеҳсолот','IT','фурӯши онлайн'],
+  m57Mk:'Ба куҷо мефурӯшед', m57MkPh:'масалан: шаҳри худ, тамоми кишвар, ИМА ва Аврупо',
+  m57Note:'Сифра кишвар, кор ва бозорҳоро дар маслиҳатҳо ба назар мегирад. То холӣ будани майдонҳо вай дар бораи кори шумо чизе тахмин намекунад.',
+  m57Saved:'Сабт шуд'
+},
+en:{
+  m57Now:'this month',
+  m57Ctry:'Country, if it is not in the list', m57CtryPh:'e.g. Germany',
+  m57ProfT:'Your business', m57Kind:'What you do', m57KindPh:'e.g. clothing shop, café, studio',
+  m57KindChips:['shop','services','food','manufacturing','IT','online sales'],
+  m57Mk:'Where you sell', m57MkPh:'e.g. my city, the whole country, the US and Europe',
+  m57Note:'Sifra uses your country, business and markets in her advice. While the fields are empty she assumes nothing about your business.',
+  m57Saved:'Saved'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M57S[k]); }catch(e){} Object.assign(D[k],M57S[k]); }
+/* ===================== v57: одна цифра — один расчёт (867); профиль дела (883) ===================== */
+
+/* ---- 867. Прогноз денег: один расчёт для карточки на главной (m40FcData) и листа «30 дней вперёд» (fcData).
+   Раньше это были две копии. Новое в расчёте:
+   — день недели, в который при истории от 14 дней ни разу не было продаж, считается выходным (выручка 0), а не «средним днём»;
+   — если сегодняшняя выручка уже записана, сегодня берётся по факту, а не по среднему;
+   — платежи по кредиту не учитываются после его последнего платежа; последний платёж — остаток, а не полный. ---- */
+function m57Fc(N,opts){ opts=opts||{}; N=Math.max(1,+N||30);
+  const T=today0(), list=activeList().filter(x=>!x.loan.example), sh=ensureShop();
+  const mgReal=marginPct(), mg=mgReal||30;
+  const firstSale=sh.sales.map(e=>e.date).sort()[0], hist=firstSale?-daysUntil(parseYmd(firstSale)):0, span=firstSale?Math.max(7,Math.min(60,hist)):60, from=dkey(addDays(T,-span));
+  const wd=bestWeekdays(), rev=revEst(), known=!!(wd&&wd.days>=10), tk=dkey(); let tSum=0, tHas=false;
+  for(const e of sh.sales){ if(e.date===tk){ tSum+=(+e.sum||0); tHas=true; } }
+  const revDay=(d,i)=>{ if(i===0&&tHas) return tSum; if(known){ const w=d.getDay(); if(wd.n[w]) return wd.avg[w]; if(hist>=14) return 0; } return rev&&rev.v>0?rev.v/30:0; };
+  const expDay=sh.exp.filter(e=>e.date>=from&&!String(e.id).endsWith('_b')).reduce((s,e)=>s+(+e.sum||0),0)/span;
+  const homeDay=state.home.filter(h=>h.d>=from&&h.cat!=='bills').reduce((s,h)=>s+(+h.sum||0),0)/span;
+  const ev=[]; const put=(i,n,a,ic)=>{ if(i>N-1||!(Math.abs(a)>0)) return; ev.push({i:Math.max(0,i),n,a:Math.round(a),ic}); };
+  for(const {loan,a} of list){ if(a.done||a.check||a.per==null) continue; let per=a.per; const hasS=!!schedOf(loan);
+    for(let k=0;k<6;k++){ const se=schedAt(loan,per); if(hasS&&!se) break; if(!hasS&&a.monthsLeft!=null&&k>=a.monthsLeft) break;
+      const due=se?parseYmd(se.d):dueAt(per,loan.dueDay||1), di=daysUntil(due); if(di>N-1) break;
+      let amt=se?+se.a:(k===0?(a.amt||a.monthly||0):(+loan.monthly||a.monthly||0)); if(!se&&a.monthsLeft!=null&&k===a.monthsLeft-1&&a.lastAmt>0) amt=Math.min(amt,a.lastAmt);
+      put(di,loan.name,-amt,'💳'); per++; } }
+  for(const b of state.bills){ const d=billDue(b), sum=-(+b.sum||0), ic=b.ic||'🔁'; if(!d.paid) put(d.days,b.name,sum,ic); const base=d.paid?d.due:new Date(d.due.getFullYear(),d.due.getMonth()+1,Math.min(28,+b.day||1)); put(daysUntil(base),b.name,sum,ic);
+    for(let m=1;m<=3;m++) put(daysUntil(new Date(base.getFullYear(),base.getMonth()+m,Math.min(28,+b.day||1))),b.name,sum,ic); }
+  for(const s of state.sup) if(!s.paid&&s.due) put(daysUntil(parseYmd(s.due)),s.name,-(+s.sum||0),'🤝');
+  if(opts.cust) for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.due) put(daysUntil(parseYmd(st.due)),c.name,st.bal,'🧾'); }
+  const fs=state.misc.fcStart, start=fs&&fs.d&&-daysUntil(parseYmd(fs.d))<=7?+fs.v||0:Math.max(0,envBal('loan'))+Math.max(0,envBal('cush'));
+  const days=[]; let bal=start, firstNeg=null, minBal=Infinity, minI=0;
+  for(let i=0;i<N;i++){ const d=addDays(T,i), net=revDay(d,i)*mg/100-expDay-homeDay; bal+=net; const es=ev.filter(e=>e.i===i); for(const e of es) bal+=e.a; days.push({i,d,bal,net,ev:es}); if(bal<0&&firstNeg==null) firstNeg=i; if(bal<minBal){ minBal=bal; minI=i; } }
+  const perDay=firstNeg!=null?round10(-minBal/Math.max(1,minI)):0;
+  return {days,ev,start,firstNeg,minBal,minI,perDay,mg,noMg:!mgReal,hasRev:!!(rev&&rev.v>0),today:tHas?tSum:null}; }
+
+/* ---- 867. «Через N мес.»: один счёт месяцев до даты для всех экранов; ноль — «в этом месяце» ---- */
+(function(){ if(typeof m49Wait!=='function') return; const _w=m49Wait; m49Wait=function(n){ return (+n||0)<=0?L.m57Now:_w(n); }; })();
+
+/* ---- 883. Профиль дела: страна, вид дела, рынки. Уходит на сервер с каждым вопросом Сифре, чтобы она не предполагала «магазин одежды в Таджикистане». ---- */
+function m57P(){ state.misc=state.misc||{}; const p=state.misc.m57prof; return p&&typeof p==='object'?p:{}; }
+function m57Prof(){ const p=m57P(), o={}; let cc='XX'; try{ cc=m8Region(); }catch(e){}
+  const own=String(p.country||'').trim(), cn=own||(cc!=='XX'&&M8_REG[cc]?M8_REG[cc].n.ru:'');
+  if(cn) o.country=cn.slice(0,60); if(!own&&cc&&cc!=='XX') o.cc=cc;
+  const k=String(p.kind||'').trim(); if(k) o.kind=k.slice(0,60); const m=String(p.markets||'').trim(); if(m) o.markets=m.slice(0,80); return o; }
+function m57Tz(){ try{ const z=-new Date().getTimezoneOffset(); return isFinite(z)?z:null; }catch(e){ return null; } }
+(function(){ if(typeof window==='undefined'||typeof window.fetch!=='function') return; const _f=window.fetch;
+  window.fetch=function(u,o){ try{ const url=typeof u==='string'?u:(u&&u.url)||'';
+      if(o&&typeof o.body==='string'&&url.indexOf('/api/mk/')>=0&&o.body.charAt(0)==='{'){ const b=JSON.parse(o.body);
+        if(b&&typeof b==='object'&&!Array.isArray(b)&&!(b.img&&!b.ctx)){ /* запрос «только фото и вопрос» остаётся таким: к нему ничего не добавляется */ let ch=false; if(b.prof===undefined){ const pr=m57Prof(); if(Object.keys(pr).length){ b.prof=pr; ch=true; } } if(b.tz===undefined){ const tz=m57Tz(); if(tz!=null){ b.tz=tz; ch=true; } }
+          if(ch) o=Object.assign({},o,{body:JSON.stringify(b)}); } } }catch(e){}
+    return _f.call(this,u,o); }; })();
+function m57ProfBlock(){ if(typeof sheet==='undefined'||!sheet||sheet.querySelector('.m57-prof')) return; const p=m57P(), row=sheet.querySelector('.sheet-row'), box=document.createElement('div'); box.className='m57-prof';
+  box.innerHTML=`<label for="m57-ct">${esc(L.m57Ctry)}</label><input id="m57-ct" type="text" maxlength="60" autocomplete="off" value="${esc(p.country||'')}" placeholder="${esc(L.m57CtryPh)}">
+    <h4>${esc(L.m57ProfT)}</h4><label for="m57-kind">${esc(L.m57Kind)}</label><input id="m57-kind" type="text" maxlength="60" autocomplete="off" value="${esc(p.kind||'')}" placeholder="${esc(L.m57KindPh)}">
+    <div class="m57-chips">${(L.m57KindChips||[]).map(c=>`<button type="button" class="m57-chip" data-m57k="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+    <label for="m57-mk">${esc(L.m57Mk)}</label><input id="m57-mk" type="text" maxlength="80" autocomplete="off" value="${esc(p.markets||'')}" placeholder="${esc(L.m57MkPh)}">
+    <p class="m57-note">${esc(L.m57Note)}</p>`;
+  if(row&&row.parentNode) row.parentNode.insertBefore(box,row); else sheet.appendChild(box);
+  const q=id=>box.querySelector('#'+id), save=()=>{ state.misc=state.misc||{}; state.misc.m57prof={country:q('m57-ct').value.trim(),kind:q('m57-kind').value.trim(),markets:q('m57-mk').value.trim()}; try{ persist(); }catch(e){} };
+  box.querySelectorAll('input').forEach(i=>{ i.addEventListener('change',save); i.addEventListener('blur',save); });
+  box.querySelectorAll('[data-m57k]').forEach(b=>b.addEventListener('click',()=>{ q('m57-kind').value=b.dataset.m57k; save(); try{ toast(L.m57Saved); }catch(e){} })); }
+(function(){ if(typeof m8RegionSheet!=='function') return; const _rs=m8RegionSheet; m8RegionSheet=function(){ const r=_rs.apply(this,arguments); try{ m57ProfBlock(); }catch(e){} return r; }; })();
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
