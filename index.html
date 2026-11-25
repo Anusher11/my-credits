@@ -5973,6 +5973,160 @@ html.m48-live .m55-intro .m55-steps li{animation:m55up .42s cubic-bezier(.2,.8,.
 @media (max-width:360px){ .m55-st button{font-size:.74rem;} .m55-tabs button{font-size:.68rem;} .m55-hd{gap:3px;} }
 
 .m55 .m46-chip.mid{color:var(--warn,#8A5A00);}
+/* ===================== v56 ===================== */
+/* --- Сифра: «К началу ответа», точка «есть ответ» --- */
+#m56-up{position:absolute; left:50%; transform:translateX(-50%); bottom:calc(92px + env(safe-area-inset-bottom,0px)); z-index:2; display:inline-flex; align-items:center; gap:6px; min-height:40px; padding:0 14px 0 10px; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:13.5px; font-weight:700; box-shadow:0 6px 18px rgba(20,16,40,.16); cursor:pointer;}
+#m56-up[hidden]{display:none;}
+.sheet.m52.m52-p>#m56-up{display:none !important;}
+.sf-fab.m56-new::after{content:""; position:absolute; top:4px; right:4px; width:12px; height:12px; border-radius:50%; background:var(--ok,#12A37A); border:2px solid var(--surface);}
+/* --- команда Сифры: живой экран ожидания --- */
+.m56t .m56t-bar{height:8px; border-radius:99px; background:color-mix(in srgb,var(--brand) 14%,transparent); overflow:hidden;}
+.m56t .m56t-bar i{display:block; height:100%; width:0; border-radius:99px; background:var(--brand); transition:width .9s cubic-bezier(.2,.7,.2,1);}
+.m56t>p.m56t-pc{display:flex; flex-wrap:wrap; justify-content:space-between; gap:2px 10px; margin:6px 0 0!important; font-size:.84rem; color:var(--ink); font-weight:700;}
+.m56t>p.m56t-pc small{font-weight:500; color:var(--muted); font-size:.76rem;}
+.m56t>p.m56t-al{margin:8px 0 0!important; padding:8px 10px; border-radius:10px; background:var(--brand-weak); color:var(--brand-ink); font-size:.8rem; font-weight:600;}
+.m56t>p.m56t-al.off{background:color-mix(in srgb,var(--warn,#B7791F) 16%,transparent); color:var(--warn,#8A5A00);}
+.m56t>p.m56t-al[hidden]{display:none;}
+.m56t .m56t-orb{margin:8px 0 2px;} .m56t .m56t-orb svg{display:block; width:100%; height:auto; max-height:150px;}
+.m56t-orb .ln{fill:none; stroke:var(--line); stroke-width:1.5; stroke-dasharray:3 5;}
+.m56t-orb .nd.on .ln{stroke:var(--brand); opacity:.55;} .m56t-orb .nd.dn .ln{stroke:var(--m-leaf,var(--ok,#12A37A)); stroke-dasharray:none; opacity:.5;} .m56t-orb .nd.fl .ln{opacity:.35;}
+.m56t-orb .bd{fill:var(--surface); stroke:var(--line); stroke-width:1.5;} .m56t-orb .nd.on .bd{stroke:var(--brand); fill:var(--brand-weak);} .m56t-orb .nd.dn .bd{fill:var(--m-leaf,var(--ok,#12A37A)); stroke:none;} .m56t-orb .nd.fl .bd{fill:var(--surface-2);}
+.m56t-orb .hl{fill:var(--brand); opacity:0;} .m56t-orb .ck{fill:none; stroke:#fff; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; opacity:0;} .m56t-orb .nd.dn .ck{opacity:1;}
+.m56t-orb .pk{fill:var(--brand); opacity:0;}
+.m56t-orb .ch .rg{fill:none; stroke:color-mix(in srgb,var(--brand) 16%,transparent); stroke-width:5;} .m56t-orb .ch .pr{fill:none; stroke:var(--brand); stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset .9s cubic-bezier(.2,.7,.2,1);}
+.m56t-orb .ch .bd{fill:var(--surface); stroke:none;} .m56t-orb .ch .sp{fill:var(--brand); opacity:.45; transform-origin:160px 66px;} .m56t-orb .ch.on .sp{opacity:1;}
+.m56t .m56t-cnt{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; margin:4px 0 10px;}
+.m56t .m56t-cnt span{display:flex; flex-direction:column; align-items:center; text-align:center; padding:7px 4px; border-radius:12px; background:var(--surface); font-size:.72rem; color:var(--muted); line-height:1.2;}
+.m56t .m56t-cnt b{font-family:var(--font-num); font-size:1.15rem; font-weight:800; color:var(--ink); font-variant-numeric:tabular-nums;}
+.m56t ul.m56t-rl li{align-items:flex-start;} .m56t ul.m56t-rl li .ic{margin-top:1px;}
+.m56t ul.m56t-rl .tx small{display:block; overflow-wrap:anywhere; line-height:1.3; min-height:1.3em;}
+.m56t ul.m56t-rl li.on .tx small{color:var(--brand-ink);} .m56t ul.m56t-rl li.fl .tx small{color:var(--muted);} .m56t ul.m56t-rl li.fl .ic{background:var(--surface-2); color:var(--muted);}
+.m56t .m56t-ch{display:flex; flex-wrap:wrap; gap:4px; margin-top:4px;} .m56t .m56t-ch:empty{display:none;}
+.m56t .m56t-ch em{font-style:normal; font-size:.7rem; padding:2px 7px; border-radius:99px; background:var(--surface-2); color:var(--muted); max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m56t .pb{display:block; height:3px; border-radius:9px; background:color-mix(in srgb,var(--brand) 12%,transparent); overflow:hidden; margin-top:6px;} .m56t .pb u{display:block; height:100%; width:0; background:var(--brand); border-radius:9px; text-decoration:none; transition:width .9s ease;}
+.m56t li.dn .pb u{background:var(--m-leaf,var(--ok,#12A37A));} .m56t li.fl .pb{display:none;}
+.m56t .m56t-fd{margin-top:10px; padding:10px 12px; border-radius:14px; background:var(--surface);} .m56t .m56t-fd[hidden]{display:none;}
+.m56t .m56t-fd h4{display:flex; align-items:center; gap:6px; margin:0 0 6px; font-size:.86rem; font-weight:800;}
+.m56t .m56t-fd ul{gap:0;} .m56t .m56t-fd li{display:block; padding:7px 0; border-radius:0; background:none; border-top:1px solid var(--line);} .m56t .m56t-fd li:first-child{border-top:0; padding-top:0;}
+.m56t .m56t-fd li b{display:block; font-size:.72rem; font-weight:700; color:var(--muted);} .m56t .m56t-fd li span{display:block; font-size:.86rem; line-height:1.4; overflow-wrap:anywhere;}
+.m56t>p.m56t-note{align-items:flex-start;} .m56t>p.m56t-note svg{flex:none; margin-top:2px;}
+/* движение — только при сети и без «меньше движения» */
+html.m48-live .m56t-orb .nd.on .hl{animation:m56tHalo 1.9s ease-out infinite; animation-delay:calc(var(--i)*.23s); transform-box:fill-box; transform-origin:center;}
+html.m48-live .m56t-orb .nd.on .ln{animation:m56tFlow 1.1s linear infinite;}
+html.m48-live .m56t-orb .nd.on .pk{opacity:.9;}
+html.m48-live .m56t-orb .ch.on .sp{animation:m56tSpin 5s linear infinite;} html.m48-live .m56t-orb .ch.wt .sp{animation:m56tBreath 2.6s ease-in-out infinite;}
+html.m48-live .m56t ul.m56t-rl .tx small.nw{animation:m56tIn .35s ease-out;} html.m48-live .m56t .m56t-fd li.nw{animation:m56tIn .5s ease-out;}
+@keyframes m56tHalo{0%{opacity:.34; transform:scale(.7);}100%{opacity:0; transform:scale(1.5);}}
+@keyframes m56tFlow{to{stroke-dashoffset:-16;}}
+@keyframes m56tSpin{to{transform:rotate(360deg);}}
+@keyframes m56tBreath{0%,100%{opacity:.35;}50%{opacity:.8;}}
+@keyframes m56tIn{from{opacity:0; transform:translateY(5px);}to{opacity:1; transform:none;}}
+@media (prefers-reduced-motion: reduce){ .m56t-orb .hl,.m56t-orb .ln,.m56t-orb .sp,.m56t small.nw,.m56t .m56t-fd li.nw{animation:none!important;} .m56t-orb .pk{display:none;} .m56t .m56t-bar i,.m56t .pb u,.m56t-orb .ch .pr{transition:none;} }
+html:not(.m48-live) .m56t-orb .pk{display:none;}
+/* --- первый экран без кредитов: большой была только картинка, а значки на кнопках — обычные (ошибка: правило .m7-first svg раздувало и их) --- */
+.m7-first .btn svg.mi, .m7-first .link-btn svg.mi, .m7-first button svg.mi{width:20px; height:20px; flex:none;}
+/* --- «Кредиты»: дорога к свободе, «а если платить больше», что впереди --- */
+#view-loans.m56-on>#victory, #view-loans.m56-on>#m36Gantt, #view-loans.m56-on>#strategy{display:none!important;}
+#view-loans.m56-on>#dynamics:not(:has(svg)){display:none!important;}
+.m56 .m56-hero{display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 10px; margin:2px 0 12px;}
+.m56 .m56-hero small{flex:1 0 100%; font-size:.86rem; font-weight:600; color:var(--muted);}
+.m56 .m56-hero b{font:800 2rem/1.08 var(--font-num); letter-spacing:-.02em;}
+.m56 .m56-hero s{font:700 1rem/1.2 var(--font-num); color:var(--muted);}
+.m56 .m56-hero span{flex:1 0 100%; display:flex; flex-wrap:wrap; align-items:center; gap:6px; font-size:.92rem; color:var(--muted); font-weight:600;}
+.m56 .m56-pill{font-style:normal; font-weight:800; font-size:.8rem; padding:3px 9px; border-radius:99px; background:var(--m-leaf-weak,color-mix(in srgb,var(--ok,#12A37A) 16%,transparent)); color:var(--m-leaf,var(--ok,#0E8A66));}
+.m56 .m56-bar{display:flex; align-items:center; gap:8px; margin-bottom:10px;}
+.m56 .m56-seg{flex:1; margin:0;}
+.m56 .m56-play{flex:none; width:44px; height:44px; border-radius:50%; border:1px solid var(--line); background:var(--surface-2); color:var(--brand-ink,var(--brand)); display:grid; place-items:center; cursor:pointer;}
+.m56 .m56-play path{fill:currentColor;} .m56 .m56-play .st{display:none;} .m56 .m56-play.on .st{display:inline;} .m56 .m56-play.on .pl{display:none;}
+html:not(.m48-live) .m56 .m56-play{display:none;}
+.m56 .m56-rd{min-height:112px;} .m56 .m56-rd b{font-size:1.45rem;}
+.m56 .m40-evs .in, .m56 .m56-ol .in{display:inline-flex; align-items:center; gap:5px; font-size:.78rem; font-weight:700; padding:3px 9px; border-radius:99px; background:var(--surface-2); color:var(--ink); max-width:100%;}
+.m56 .m40-evs .in i, .m56 .m56-ol .in i, .m56 .m56-lc i{width:8px; height:8px; border-radius:50%; flex:none;}
+.m56-plot{position:relative; touch-action:pan-y; margin-top:6px; cursor:crosshair; -webkit-user-select:none; user-select:none;}
+.m56-plot:focus{outline:none;} .m56-plot:focus-visible{outline:2px solid var(--brand); outline-offset:4px; border-radius:10px;}
+.m56-plot svg{display:block; width:100%; height:auto; overflow:visible;}
+.m56-plot .gr{stroke:var(--line); stroke-width:1; fill:none; stroke-dasharray:2 4;} .m56-plot .yl,.m56-plot .xl{font:700 9.5px/1 var(--font-num); fill:var(--muted);} .m56-plot .yr{stroke:var(--muted); stroke-width:1;}
+.m56-plot .ar{stroke:var(--surface); stroke-width:.8; stroke-linejoin:round; opacity:.92;}
+.m56-plot .tp{fill:none; stroke:var(--ink); stroke-width:2; stroke-linejoin:round; stroke-linecap:round; opacity:.85;}
+.m56-plot .gh{fill:none; stroke:var(--muted); stroke-width:1.6; stroke-dasharray:4 4; stroke-linejoin:round;}
+.m56-plot .cl{stroke:var(--surface); stroke-width:1.5;}
+.m56-plot .fl path{stroke:var(--ink); stroke-width:1.6; fill:none;} .m56-plot .fl .fg{fill:var(--m-leaf,var(--ok,#12A37A)); stroke:none;}
+.m56-plot .now circle{fill:var(--ink);} .m56-plot .now .p{fill:var(--ink); opacity:.14;}
+.m56-plot .cur path{stroke:var(--ink); stroke-width:1.2; stroke-dasharray:3 3; opacity:.6;} .m56-plot .cur circle{fill:var(--surface); stroke:var(--ink); stroke-width:2.5;} .m56-plot .cur[hidden]{display:none;}
+.m56-plot .bp{fill:var(--brand);} .m56-plot .bx{fill:var(--m-leaf,var(--ok,#12A37A));} .m56-plot .bi{fill:var(--m-sun,#F2A93B);}
+.m56 .m56-leg{display:flex; flex-wrap:wrap; gap:6px 8px; margin-top:10px; align-items:center; font-size:.78rem; color:var(--muted); font-weight:600;}
+.m56 .m56-leg>span{display:inline-flex; align-items:center; gap:6px;}
+.m56 .m56-leg .sq{width:10px; height:10px; border-radius:3px;} .m56 .m56-leg .sq.p{background:var(--brand);} .m56 .m56-leg .sq.i{background:var(--m-sun,#F2A93B);} .m56 .m56-leg .sq.x{background:var(--m-leaf,var(--ok,#12A37A));}
+.m56 .m56-leg .gh{width:18px; height:0; border-top:2px dashed var(--muted);}
+.m56 .m56-lc{display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 12px; border-radius:99px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:.8rem; font-weight:700; cursor:pointer;}
+.m56 .m56-lc.on{border-color:var(--ink); background:var(--surface-2);} .m56 .m56-lc:disabled{cursor:default; opacity:1;}
+.m56 .m56-hint{margin:8px 0 0; font-size:.76rem; color:var(--muted);}
+.m56 .m56-x{margin-top:18px; padding:16px 14px; border-radius:20px; background:var(--surface-2);}
+.m56 .m56-h3{display:flex; align-items:center; gap:8px; margin:0 0 4px; font-size:1.12rem; font-weight:800;} .m56 .m56-h3 svg{color:var(--brand); flex:none;}
+.m56 .m56-xsub{margin:0 0 12px; font-size:.84rem; color:var(--muted);}
+.m56 .m56-x .m56-seg{display:flex; width:100%;} .m56 .m56-x .m56-seg button{flex:1; min-width:0; padding-left:4px; padding-right:4px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+.m56 .m56-amt{margin-top:14px;} .m56 .m56-al{display:block; font-size:.86rem; font-weight:700; color:var(--muted); text-align:center;}
+.m56 .m56-ar{display:flex; align-items:center; justify-content:space-between; gap:8px; margin:6px 0 2px;}
+.m56 .m56-pm{flex:none; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--ink); display:grid; place-items:center; cursor:pointer;}
+.m56 .m56-av{flex:1; min-width:0; display:flex; align-items:baseline; justify-content:center; gap:4px; font:800 1.9rem/1.1 var(--font-num); color:var(--brand-ink,var(--brand));}
+.m56 .m56-av input{width:6.2ch; min-width:0; max-width:60%; border:0; border-bottom:2px dashed color-mix(in srgb,var(--brand) 45%,transparent); background:transparent; color:inherit; font:inherit; text-align:center; padding:0 0 2px; -moz-appearance:textfield; appearance:textfield;}
+.m56 .m56-av input::-webkit-outer-spin-button,.m56 .m56-av input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
+.m56 .m56-av input:focus{outline:none; border-bottom-style:solid;} .m56 .m56-av span:last-child{font-size:1.1rem;}
+.m56 .m56-dv{flex:1; text-align:center; font:800 1.6rem/1.15 var(--font-num); color:var(--brand-ink,var(--brand));}
+.m56 #m56x{-webkit-appearance:none; appearance:none; width:100%; height:40px; background:transparent; margin:4px 0 0; cursor:pointer; touch-action:pan-y;}
+.m56 #m56x::-webkit-slider-runnable-track{height:12px; border-radius:99px; background:linear-gradient(90deg,var(--brand) 0 var(--v,0%),color-mix(in srgb,var(--brand) 16%,transparent) var(--v,0%) 100%);}
+.m56 #m56x::-moz-range-track{height:12px; border-radius:99px; background:color-mix(in srgb,var(--brand) 16%,transparent);} .m56 #m56x::-moz-range-progress{height:12px; border-radius:99px; background:var(--brand);}
+.m56 #m56x::-webkit-slider-thumb{-webkit-appearance:none; width:34px; height:34px; margin-top:-11px; border-radius:50%; background:var(--surface); border:5px solid var(--brand); box-shadow:0 4px 12px -4px rgba(0,0,0,.4);}
+.m56 #m56x::-moz-range-thumb{width:26px; height:26px; border-radius:50%; background:var(--surface); border:5px solid var(--brand);}
+.m56 #m56x:focus-visible{outline:2px solid var(--brand); outline-offset:2px; border-radius:99px;}
+.m56 .m56-xs{display:flex; justify-content:space-between; font:700 .74rem/1 var(--font-num); color:var(--muted);}
+.m56 .m56-need{margin:12px 0 0; padding:9px 12px; border-radius:12px; background:var(--brand-weak); color:var(--brand-ink,var(--ink)); font-size:.9rem; font-weight:700;}
+.m56 .m56-tiles{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:12px;}
+.m56 .m56-tile{display:flex; flex-direction:column; gap:3px; padding:12px; border-radius:16px; background:var(--surface); min-width:0;}
+.m56 .m56-tile small{font-size:.76rem; font-weight:600; color:var(--muted);} .m56 .m56-tile b{font:800 1.18rem/1.15 var(--font-num); overflow-wrap:anywhere;} .m56 .m56-tile em{font-style:normal; font-size:.78rem; font-weight:700; color:var(--muted);}
+.m56 .m56-tile.go{background:var(--m-leaf-weak,color-mix(in srgb,var(--ok,#12A37A) 14%,var(--surface)));} .m56 .m56-tile.go em{color:var(--m-leaf,var(--ok,#0E8A66));}
+.m56 .m56-sum{margin:10px 0 0; font-size:.88rem; line-height:1.45; color:var(--ink);}
+.m56 .m56-ord{margin-top:16px; padding-top:14px; border-top:1px solid var(--line);} .m56 .m56-h{display:block; font-size:.95rem; font-weight:800; margin-bottom:8px;}
+.m56 .m56-obs{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;}
+.m56 .m56-ob{display:flex; flex-direction:column; align-items:flex-start; gap:2px; text-align:left; padding:10px 12px; border-radius:14px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; cursor:pointer; min-width:0;}
+.m56 .m56-ob.on{border-color:var(--brand); background:var(--brand-weak);} .m56 .m56-ob b{font-size:.86rem; font-weight:800;} .m56 .m56-ob small{font-size:.74rem; color:var(--muted);} .m56 .m56-ob em{font-style:normal; font-size:.76rem; font-weight:700; margin-top:3px; overflow-wrap:anywhere;}
+.m56 .m56-eq{grid-column:1/-1; margin:0; font-size:.78rem; color:var(--muted);}
+.m56 .m56-ol{display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:10px 0 0; font-size:.78rem; color:var(--muted); font-weight:600;}
+.m56 .m56-ol .in{background:var(--surface);} .m56 .m56-ol .in u{text-decoration:none; font:800 .72rem/1 var(--font-num); color:var(--muted);} .m56 .m56-ol .in em{font-style:normal; color:var(--muted); font-weight:700;}
+.m56 .m56-sw{display:flex; align-items:flex-start; gap:10px; margin-top:12px; cursor:pointer;} .m56 .m56-sw input{flex:none; width:22px; height:22px; margin:2px 0 0; accent-color:var(--brand);}
+.m56 .m56-sw span{display:flex; flex-direction:column; gap:2px;} .m56 .m56-sw b{font-size:.88rem; font-weight:700;} .m56 .m56-sw small{font-size:.76rem; color:var(--muted); line-height:1.35;}
+.m56 .m56-ft{display:flex; flex-direction:column; align-items:center; gap:6px; margin-top:12px;} .m56 .m56-ft:empty{display:none;} .m56 .m56-pay{width:100%;} .m56 .m56-rs{min-height:40px;}
+.m56 .m56-bank{display:flex; gap:7px; align-items:flex-start; margin:12px 0 0; font-size:.78rem; line-height:1.4; color:var(--muted);} .m56 .m56-bank svg{flex:none; margin-top:2px;}
+.m56 .m56-how{margin-top:8px;} .m56 .m56-how summary, .m56 .m56-tb summary{cursor:pointer; font-size:.84rem; font-weight:700; color:var(--brand-ink,var(--brand)); min-height:40px; display:flex; align-items:center; gap:6px; list-style:none;}
+.m56 .m56-how summary::-webkit-details-marker,.m56 .m56-tb summary::-webkit-details-marker{display:none;} .m56 .m56-how ul{margin:2px 0 0; padding-left:18px; font-size:.8rem; line-height:1.45; color:var(--muted);} .m56 .m56-how li{margin-bottom:5px;}
+.m56 .m56-ms{list-style:none; margin:6px 0 0; padding:0; position:relative;}
+.m56 .m56-ms li{position:relative; display:flex; gap:12px; padding:0 0 14px 0;} .m56 .m56-ms li:last-child{padding-bottom:0;}
+.m56 .m56-ms li>i{flex:none; width:14px; height:14px; border-radius:50%; background:var(--brand); margin-top:3px; position:relative; z-index:1; box-shadow:0 0 0 3px var(--surface);}
+.m56 .m56-ms li:not(:last-child)::before{content:""; position:absolute; left:6px; top:14px; bottom:-3px; width:2px; background:var(--line);}
+.m56 .m56-ms li.now>i{background:var(--ink);} .m56 .m56-ms li.hf>i{background:var(--surface); border:3px solid var(--muted);} .m56 .m56-ms li.fr>i{background:var(--m-leaf,var(--ok,#12A37A)); width:18px; height:18px; margin-left:-2px;}
+.m56 .m56-ms li>div{display:flex; flex-direction:column; gap:3px; min-width:0; flex:1;} .m56 .m56-ms small{font-size:.78rem; color:var(--muted); font-weight:600;} .m56 .m56-ms small s{margin-left:4px;}
+.m56 .m56-ms small u{text-decoration:none; font-weight:800; color:var(--brand-ink,var(--brand)); background:var(--brand-weak); padding:2px 7px; border-radius:99px; margin-right:4px;}
+.m56 .m56-ms b{font-size:.98rem; font-weight:800; line-height:1.25;} .m56 .m56-ms li.fr b{font-size:1.08rem;} .m56 .m56-sub{font-size:.82rem; color:var(--muted);}
+.m56 .m56-ms li.win>div{padding:10px 12px; border-radius:14px; background:var(--surface-2); margin-top:-6px;}
+.m56 .m56-gp{display:flex; align-items:center; gap:8px; margin-top:2px;} .m56 .m56-gp>i{flex:1; height:6px; border-radius:9px; background:var(--line); overflow:hidden;} .m56 .m56-gp u{display:block; height:100%; border-radius:9px; text-decoration:none;} .m56 .m56-gp em{font-style:normal; font-size:.74rem; font-weight:700; color:var(--muted); white-space:nowrap;}
+.m56>[data-m56="ms"]{margin-top:20px;} .m56>[data-m56="ms"]:empty{display:none;}
+.m56 .m56-tb{margin-top:10px;} .m56 .m56-tw{overflow-x:auto; margin-top:4px;} .m56 .m56-tw table{width:100%; border-collapse:collapse; font-size:.78rem; font-variant-numeric:tabular-nums;}
+.m56 .m56-tw th{font-weight:700; color:var(--muted); text-align:left; padding:6px 8px 6px 0; border-bottom:1px solid var(--line); white-space:nowrap;} .m56 .m56-tw td{padding:6px 8px 6px 0; border-bottom:1px solid var(--line); white-space:nowrap;} .m56 .m56-tw .n{text-align:right; padding-right:0; padding-left:8px;}
+.m56 .m49-ask{margin-top:14px;}
+html.m48-live .m56.m49-go .m56-plot .ars{animation:m56Rise .8s cubic-bezier(.2,.7,.2,1) both; transform-origin:0 100%; transform-box:fill-box;}
+@keyframes m56Rise{from{opacity:0; transform:scaleY(.6);}to{opacity:1; transform:none;}}
+@media (prefers-reduced-motion: reduce){ .m56 .m56-plot .ars{animation:none!important;} }
+.m56 .m56-lc b{font:800 .78rem/1 var(--font-num); color:var(--muted);} .m56 .m56-lc span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:11.5em;}
+.m56 .m56-rd{min-height:92px;}
+.m56 .m56-hintb{margin-top:10px; padding:12px; border-radius:14px; background:var(--brand-weak); display:flex; flex-direction:column; gap:8px;} .m56 .m56-hintb p{margin:0; font-size:.86rem; line-height:1.45; color:var(--brand-ink,var(--ink));} .m56 .m56-hintb .btn{align-self:flex-start; min-height:40px; background:var(--surface);}
+/* легенда плитками: имя и остаток на выбранный месяц */
+.m56 .m56-leg{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px;}
+.m56 .m56-leg>span{grid-column:1/-1;} .m56 .m56-leg>.m56-lg{justify-content:flex-start; padding-top:2px;}
+.m56 .m56-lc{display:grid; grid-template-columns:auto minmax(0,1fr); column-gap:8px; row-gap:1px; align-items:center; text-align:left; min-height:48px; padding:6px 12px; border-radius:14px;}
+.m56 .m56-lc i{grid-row:1/3; width:10px; height:10px;} .m56 .m56-lc i.all{background:var(--ink);}
+.m56 .m56-lc span{max-width:none; font-size:.76rem; font-weight:600; color:var(--muted);} .m56 .m56-lc b{font:800 .9rem/1.1 var(--font-num); color:var(--ink);}
+.m56 .m56-leg.pay{display:flex; flex-wrap:wrap; gap:6px 14px;} .m56 .m56-leg.pay>span{grid-column:auto;}
+.m56 .m56-lc b svg{width:16px; height:16px; color:var(--m-leaf,var(--ok,#12A37A)); vertical-align:-3px;}
 /* <</v44 css>> */
 
 
@@ -26702,6 +26856,558 @@ try{ const _iv55=m54InsViz; m54InsViz=function(x){ if(x&&x.id==='ment'){ const R
 try{ const _h55=m52HelloHTML; m52HelloHTML=function(){ let h=_h55.apply(this,arguments); try{ if(!m55Cur()){ const b=`<button type="button" class="m55-hello" data-m55open="1"><span aria-hidden="true">${ico('mentor',22)}</span><span><b>${esc(L.m55InsNew)}</b><small>${esc(L.m55InsK+' — '+L.m55InsNewS)}</small></span>${ico('next',16)}</button>`, k=h.indexOf('<p class="m52-cap">'); h=k>=0?h.slice(0,k)+b+h.slice(k):h+b; } }catch(e){} return h; }; }catch(e){}
 try{ const _tr55=m54Tray; m54Tray=function(on){ const r=_tr55.apply(this,arguments); try{ const g=on&&sheet.querySelector('#m54-tray .m54-tg'); if(g&&!g.querySelector('.m55-tw')) g.insertAdjacentHTML('afterbegin',`<button type="button" role="menuitem" class="m55-tw" data-m55open="1"><span>${ico('mentor',22)}</span><b>${esc(L.m55Tray[0])}</b><small>${esc(L.m55Tray[1])}</small></button>`); }catch(e){} return r; }; }catch(e){}
 document.addEventListener('click',e=>{ const c=e.target&&e.target.closest&&e.target.closest('.m54-ic.ment'); if(c){ e.preventDefault(); e.stopImmediatePropagation(); m55Open(); } },true);
+/* ===================== v56: Сифра — ответ не теряется, одна камера на всё, второе мнение — строки ===================== */
+const M56SS={
+ru:{
+  m56Cont:'Связь прерывалась — забираю ответ', m56Net:'Нет сети — жду', m56Again:'Продолжаю работу над ответом',
+  m56Back:'Сифра ответила, пока вас не было', m56NtfT:'Сифра ответила', m56NtfB:'Откройте Mira — ответ готов.',
+  m56Up:'К началу ответа',
+  m56SeeU:'Фото', m56SeeBusy:'Смотрю, что на фото…',
+  m56SeeK:{receipt:'Это чек',contract:'Это договор',schedule:'Это график платежей',notebook:'Это страница тетради',pricelist:'Это прайс поставщика',pricetag:'Это ценник',goods:'Это товар',other:'Не уверена, что это за бумага'},
+  m56SeeDo:{receipt:'Записать расход',contract:'Разобрать договор',schedule:'Сверить с моими кредитами',notebook:'Перенести записи',pricelist:'Разобрать прайс',pricetag:'Посчитать наценку',goods:'Найти, где закупать',other:'Спросить Сифру про фото'},
+  m56SeeQ:{schedule:'Это график платежей банка. Сверь его с моими кредитами: что совпадает, что изменилось и что мне сделать.',pricelist:'Это прайс поставщика. Что здесь выгодно, что дорого и на что обратить внимание?',pricetag:'Это ценник. Посчитай, какая у меня будет наценка и стоит ли брать.',goods:'Что это за товар, сколько он может стоить и где его выгоднее закупать?',other:'Посмотри на фото и скажи, что это и что мне с этим делать.'},
+  m56SeeSum:v=>'Сумма: '+v, m56SeeDate:v=>'Дата: '+v, m56SeeWho:v=>'Кто выдал: '+v, m56SeeWhat:v=>'За что: '+v,
+  m56SeeLow:'Фото видно плохо — проверьте, я могла ошибиться.', m56SeeAsk:'Спросить про фото', m56SeeOther:'Это другое',
+  m56SeeErr:'Не получилось разобрать фото. Прикрепите его ещё раз и напишите вопрос словами.', m56SeeLim:'На сегодня фото много — попробуйте завтра или напишите вопрос словами.',
+  m56SeeGone:'Фото уже не под рукой — прикрепите его ещё раз.', m56SeeHint:'Отправьте фото без слов — Сифра сама поймёт, что это',
+  m56So:'Второе мнение', m56SoBusy:'Спрашиваю вторую модель. Первый ответ она не видит…',
+  m56SoT:'Второе мнение', m56SoBy:(a,b)=>'Отвечала '+b+', первой была '+a, m56SoSame:'Главный вывод совпал', m56SoDiff:'Ответы расходятся',
+  m56SoAgree:'В чём сошлись', m56SoDiffer:'В чём расходятся', m56SoCheck:'Что стоит проверить самой', m56SoA:'Первый ответ', m56SoB:'Второй ответ',
+  m56SoFull:'Второй ответ целиком', m56SoErr:'Не получилось получить второе мнение. Попробуйте ещё раз через минуту.', m56SoLim:'На сегодня вторых мнений достаточно — продолжим завтра.',
+  m56SoNote:'Обе модели могут ошибаться. Важное проверяйте по ссылкам и решайте сами.', m56SoSrc:'Ссылки'
+},
+tg:{
+  m56Cont:'Алоқа канда шуда буд — ҷавобро мегирам', m56Net:'Шабака нест — интизорам', m56Again:'Корро дар болои ҷавоб идома медиҳам',
+  m56Back:'Сифра дар набудани шумо ҷавоб дод', m56NtfT:'Сифра ҷавоб дод', m56NtfB:'Mira-ро кушоед — ҷавоб тайёр аст.',
+  m56Up:'Ба аввали ҷавоб',
+  m56SeeU:'Акс', m56SeeBusy:'Мебинам, ки дар акс чист…',
+  m56SeeK:{receipt:'Ин чек аст',contract:'Ин шартнома аст',schedule:'Ин ҷадвали пардохтҳо аст',notebook:'Ин саҳифаи дафтар аст',pricelist:'Ин нархномаи таъминкунанда аст',pricetag:'Ин нархнамо аст',goods:'Ин мол аст',other:'Боварӣ надорам, ки ин чӣ коғаз аст'},
+  m56SeeDo:{receipt:'Хароҷотро сабт кардан',contract:'Шартномаро таҳлил кардан',schedule:'Бо қарзҳои ман муқоиса кардан',notebook:'Сабтҳоро гузаронидан',pricelist:'Нархномаро таҳлил кардан',pricetag:'Иловапулиро ҳисоб кардан',goods:'Ёфтан, ки аз куҷо харам',other:'Аз Сифра дар бораи акс пурсидан'},
+  m56SeeQ:{schedule:'Ин ҷадвали пардохтҳои бонк аст. Онро бо қарзҳои ман муқоиса кун: чӣ мувофиқ аст, чӣ тағйир ёфт ва ман чӣ кор кунам.',pricelist:'Ин нархномаи таъминкунанда аст. Дар ин ҷо чӣ фоидаовар, чӣ қимат аст ва ба чӣ диққат диҳам?',pricetag:'Ин нархнамо аст. Ҳисоб кун, ки иловапулии ман чӣ қадар мешавад ва оё гирифтан меарзад.',goods:'Ин чӣ мол аст, чанд пул буда метавонад ва аз куҷо харидан фоиданоктар аст?',other:'Ба акс нигар ва бигӯ, ки ин чист ва ман бо он чӣ кор кунам.'},
+  m56SeeSum:v=>'Маблағ: '+v, m56SeeDate:v=>'Сана: '+v, m56SeeWho:v=>'Кӣ додааст: '+v, m56SeeWhat:v=>'Барои чӣ: '+v,
+  m56SeeLow:'Акс бад дида мешавад — санҷед, шояд хато карда бошам.', m56SeeAsk:'Дар бораи акс пурсидан', m56SeeOther:'Ин чизи дигар аст',
+  m56SeeErr:'Аксро таҳлил карда натавонистам. Онро боз замима кунед ва саволро бо калима нависед.', m56SeeLim:'Барои имрӯз аксҳо зиёданд — фардо кӯшиш кунед ё саволро бо калима нависед.',
+  m56SeeGone:'Акс дигар дар даст нест — онро боз замима кунед.', m56SeeHint:'Аксро бе калима фиристед — Сифра худаш мефаҳмад, ки ин чист',
+  m56So:'Фикри дуюм', m56SoBusy:'Аз модели дуюм мепурсам. Вай ҷавоби якумро намебинад…',
+  m56SoT:'Фикри дуюм', m56SoBy:(a,b)=>'Ҷавоб дод '+b+', якум '+a+' буд', m56SoSame:'Хулосаи асосӣ мувофиқ омад', m56SoDiff:'Ҷавобҳо фарқ мекунанд',
+  m56SoAgree:'Дар чӣ мувофиқанд', m56SoDiffer:'Дар чӣ фарқ мекунанд', m56SoCheck:'Чиро худатон санҷед', m56SoA:'Ҷавоби якум', m56SoB:'Ҷавоби дуюм',
+  m56SoFull:'Ҷавоби дуюм пурра', m56SoErr:'Фикри дуюмро гирифта натавонистам. Пас аз як дақиқа боз кӯшиш кунед.', m56SoLim:'Барои имрӯз фикрҳои дуюм кифоя — фардо идома медиҳем.',
+  m56SoNote:'Ҳарду модел метавонанд хато кунанд. Чизи муҳимро аз рӯи истинодҳо санҷед ва худатон қарор диҳед.', m56SoSrc:'Истинодҳо'
+},
+en:{
+  m56Cont:'The connection dropped — fetching the answer', m56Net:'No network — waiting', m56Again:'Still working on the answer',
+  m56Back:'Sifra answered while you were away', m56NtfT:'Sifra has answered', m56NtfB:'Open Mira — the answer is ready.',
+  m56Up:'To the start of the answer',
+  m56SeeU:'Photo', m56SeeBusy:'Looking at the photo…',
+  m56SeeK:{receipt:'This is a receipt',contract:'This is a contract',schedule:'This is a payment schedule',notebook:'This is a notebook page',pricelist:'This is a supplier price list',pricetag:'This is a price tag',goods:'This is a product',other:'I am not sure what this paper is'},
+  m56SeeDo:{receipt:'Log the expense',contract:'Review the contract',schedule:'Check against my loans',notebook:'Import the entries',pricelist:'Review the price list',pricetag:'Work out the markup',goods:'Find where to buy it',other:'Ask Sifra about the photo'},
+  m56SeeQ:{schedule:'This is a bank payment schedule. Check it against my loans: what matches, what changed and what I should do.',pricelist:'This is a supplier price list. What is a good deal here, what is expensive and what should I watch out for?',pricetag:'This is a price tag. Work out my markup and whether it is worth buying.',goods:'What is this product, what could it cost and where is it best to buy it?',other:'Look at the photo and tell me what it is and what I should do with it.'},
+  m56SeeSum:v=>'Amount: '+v, m56SeeDate:v=>'Date: '+v, m56SeeWho:v=>'Issued by: '+v, m56SeeWhat:v=>'For: '+v,
+  m56SeeLow:'The photo is hard to read — please check, I may be wrong.', m56SeeAsk:'Ask about the photo', m56SeeOther:'It is something else',
+  m56SeeErr:'Couldn’t read the photo. Attach it again and type your question.', m56SeeLim:'Lots of photos today — try tomorrow or type your question.',
+  m56SeeGone:'The photo is no longer at hand — attach it again.', m56SeeHint:'Send a photo with no words — Sifra will work out what it is',
+  m56So:'Second opinion', m56SoBusy:'Asking a second model. It does not see the first answer…',
+  m56SoT:'Second opinion', m56SoBy:(a,b)=>'Answered by '+b+'; the first was '+a, m56SoSame:'The main conclusion matches', m56SoDiff:'The answers differ',
+  m56SoAgree:'Where they agree', m56SoDiffer:'Where they differ', m56SoCheck:'What to check yourself', m56SoA:'First answer', m56SoB:'Second answer',
+  m56SoFull:'Second answer in full', m56SoErr:'Couldn’t get a second opinion. Try again in a minute.', m56SoLim:'Enough second opinions for today — we will continue tomorrow.',
+  m56SoNote:'Both models can be wrong. Check what matters by the links and decide yourself.', m56SoSrc:'Links'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M56SS[k]); }catch(e){} Object.assign(D[k],M56SS[k]); }
+/* ===================== v56: Сифра — ответ не улетает вниз и не теряется =====================
+   Анушер (25.11, 21:46–21:47): «когда ответ появляется, экран уходит в самый низ ответа — потом надо вверх, чтобы прочитать»;
+   «когда Сифра думает, а я выхожу из приложения или выключаю телефон — захожу обратно, а там ошибка „не получилось ответить“».
+   Причины:
+   1) Удержание начала ответа (v54) выключалось от любого движения пальца по экрану, и готовый ответ перерисовывался «в самый низ».
+      Теперь без удержания экран остаётся ровно там, где его оставил человек; вниз сам не уезжает никогда. Появилась кнопка «К началу ответа».
+   2) Вопрос уходил одним соединением: телефон уснул — соединение умерло — ошибка. Теперь у вопроса есть номер (job, сервер v32):
+      сервер дописывает ответ и хранит его, пока телефон не заберёт; приложение при возвращении само забирает ответ, а если сервер
+      не успел (Cloudflare даёт работе около 30 секунд после разрыва) — само продолжает вопрос. Ошибка показывается, только если
+      ответа действительно не получить. Страницу убила система — вопрос подхватывается при следующем открытии окна Сифры.
+      Срок ожидания считается по времени, когда экран включён (прежний таймер срабатывал сразу после возвращения).
+   Со старым сервером (до v32) всё работает как раньше. */
+const M56={act:0,adopt:null,last:null,run:0,ready:null};
+const m56Sleep=ms=>new Promise(r=>setTimeout(r,ms));
+function m56JobOn(){ try{ return !!sfCaps&&+sfCaps.v>=32; }catch(e){ return false; } }
+function m56NewJob(){ const a=new Uint8Array(14); crypto.getRandomValues(a); return 'cj'+Array.from(a,x=>(x%36).toString(36)).join(''); }
+function m56Cut(){ try{ return !!sfCut; }catch(e){ return false; } }
+function m56AbortErr(){ const e=new Error('aborted'); e.name='AbortError'; return e; }
+function m56Json(j,st){ return new Response(JSON.stringify(j),{status:st||200,headers:{'content-type':'application/json'}}); }
+/* строка в «ходе работы» под вопросом: видно, что Сифра не бросила, а продолжает */
+function m56Step(s){ try{ const w=document.querySelector('#sheet.m52 #sf-log .sf-wait'); if(!w) return; m52Live({step:'m56'}); const ol=w.querySelector('.m52-steps'); if(!ol) return; const p=ol.lastElementChild; if(p&&p.dataset.s===s) return;
+    ol.querySelectorAll('li.now').forEach(x=>{ x.classList.remove('now'); x.classList.add('ok'); }); const li=document.createElement('li'); li.className='now'; li.dataset.s=s; li.innerHTML='<i>'+M52_I.ok+'</i><span></span>'; li.querySelector('span').textContent=s; ol.appendChild(li); while(ol.children.length>6) ol.removeChild(ol.firstElementChild); }catch(e){} }
+async function m56Poll(F,job,ack){ const ctl=new AbortController(), to=setTimeout(()=>ctl.abort(),12000);
+  try{ const r=await F.call(window,API_BASE+'/api/mk/job',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(ack?{id:mkId(),job,ack:1}:{id:mkId(),job}),signal:ctl.signal}); if(!r.ok) return {net:1}; const j=await r.json(); return j&&typeof j==='object'?j:{net:1}; }
+  catch(e){ return {net:1}; } finally{ clearTimeout(to); } }
+/* пока идёт поток — изредка спрашиваем сервер о задаче: готовый ответ забираем сразу; сервер бросил задачу, а поток молчит — начинаем заново */
+function m56Watch(F,job,t0,vis){ let res, live=true, busy=false, hidAt=0; const p=new Promise(r=>{ res=r; });
+  const check=async()=>{ if(!live||busy||document.hidden||navigator.onLine===false) return; if(vis()>8*60e3){ res({slow:1}); return; } busy=true; const j=await m56Poll(F,job); busy=false; if(!live) return;
+    if(j.done) res({done:j.done}); else if(j.error){ if(Date.now()-M56.act>6000) res({fail:j}); } else if(j.gone&&Date.now()-M56.act>40000&&Date.now()-t0>30000) res({gone:1}); };
+  const onVis=()=>{ if(document.hidden) hidAt=Date.now(); else if(hidAt&&Date.now()-hidAt>2500) setTimeout(check,350); }, onNet=()=>setTimeout(check,600);
+  document.addEventListener('visibilitychange',onVis); window.addEventListener('online',onNet); const tm=setInterval(check,20000);
+  return {p,stop(){ live=false; clearInterval(tm); document.removeEventListener('visibilitychange',onVis); window.removeEventListener('online',onNet); }}; }
+/* связь оборвалась: ждём сеть и экран, потом спрашиваем сервер, что с задачей */
+async function m56Resume(F,job,vis){ let fails=0; const v0=vis();
+  for(;;){ if(m56Cut()) return {cut:1}; if(vis()-v0>6*60e3) return {slow:1};
+    if(document.hidden||navigator.onLine===false){ if(navigator.onLine===false) m56Step(L.m56Net); await m56Sleep(600); continue; }
+    const j=await m56Poll(F,job); if(m56Cut()) return {cut:1};
+    if(j.done) return {done:j.done}; if(j.error) return {error:String(j.error),status:+j.status||502}; if(j.gone) return {gone:1};
+    if(j.net){ if(++fails>=8) return {gone:1}; await m56Sleep(1500); continue; } fails=0; await m56Sleep(2200); } }
+function m56Pend(v){ try{ state.misc=state.misc||{}; if(v) state.misc.m56j=v; else if(state.misc.m56j) delete state.misc.m56j; else return; persist(); }catch(e){} }
+async function m56Chat(F,u,o,b){ const sig=o.signal, t0=Date.now(); let vis=0, lastT=Date.now(), ctl=null; M56.run++;
+  const tm=setInterval(()=>{ const n=Date.now(); if(!document.hidden) vis+=Math.min(1000,n-lastT); lastT=n; if(m56Cut()&&ctl){ try{ ctl.abort(); }catch(e){} } },300), visF=()=>vis;
+  const adopt=M56.adopt; M56.adopt=null; let job=adopt?adopt.job:m56NewJob(), tries=0, first=!adopt, hadImg=!!b.img||!!(adopt&&adopt.img);
+  const fin=async r=>{ try{ if(r&&r.ok){ const j=await r.clone().json(); M56.last={model:String(j&&j.model||'')}; } }catch(e){} return r; };
+  try{
+    for(;;){ if(m56Cut()) throw m56AbortErr(); let gone=false;
+      if(first){ b.job=job; m56Pend({job,ts:Date.now(),q:String(b.q||'').slice(0,700),img:hadImg?1:0}); ctl=new AbortController(); M56.act=Date.now();
+        const inner=F.call(window,u,Object.assign({},o,{body:JSON.stringify(b),signal:ctl.signal})).then(r=>({r}),e=>({e})), watch=m56Watch(F,job,Date.now(),visF);
+        const w=await Promise.race([inner,watch.p]); watch.stop();
+        if(w.r){ const r=w.r; if(r.ok){ m56Poll(F,job,1); return fin(r); } if(r.status<500&&r.status!==408) return r; }
+        else if(w.e){ if(m56Cut()) throw m56AbortErr(); }
+        else { try{ ctl.abort(); }catch(e){} if(w.done){ m56Poll(F,job,1); return fin(m56Json(w.done)); } if(w.fail) return m56Json({error:String(w.fail.error||'ai')},+w.fail.status||502); if(w.slow) throw m56AbortErr(); gone=!!w.gone; } }
+      first=true;
+      if(!gone){ m56Step(L.m56Cont); const res=await m56Resume(F,job,visF); if(res.cut||res.slow) throw m56AbortErr(); if(res.done){ m56Poll(F,job,1); return fin(m56Json(res.done)); } if(res.error) return m56Json({error:res.error},res.status); }
+      /* сервер задачу не знает или бросил: продолжаем сами, но не бесконечно; фото после перезапуска страницы уже нет */
+      if(hadImg&&!b.img) return m56Json({error:'ai'},502); if(++tries>2) return m56Json({error:'ai'},502);
+      m56Step(L.m56Again); try{ M52.noStream=0; }catch(e){} job=m56NewJob(); }
+  } finally { clearInterval(tm); M56.run--; m56Pend(null); } }
+try{ const F0=window.fetch; window.fetch=function(u,o){
+    try{ if(typeof u==='string'&&/\/api\/mk\/ai$/.test(u)&&o&&typeof o.body==='string'&&!/"img_only"/.test(o.body)){ let b=null; try{ b=JSON.parse(o.body); }catch(e){}
+        if(b&&typeof b.q==='string'&&!b.job){ let mine=false; try{ mine=!!sfCtl&&!!o.signal&&sfCtl.signal===o.signal; }catch(e){} if(mine&&m56JobOn()) return m56Chat(F0,u,o,b); M56.adopt=null;
+          return F0.apply(this,arguments).then(async r=>{ try{ if(r&&r.ok){ const j=await r.clone().json(); M56.last={model:String(j&&j.model||'')}; } }catch(e){} return r; }); } } }catch(e){ console.error(e); }
+    return F0.apply(this,arguments); }; }catch(e){}
+
+/* ---------- прокрутка: экран остаётся там, где его оставил человек ---------- */
+function m56Keep(){ try{ const box=$('#sf-log'); return box&&m54On()&&!M54.anchor?box.scrollTop:null; }catch(e){ return null; } }
+{ const f0=sfRedraw; sfRedraw=function(){ const keep=m56Keep(); const r=f0.apply(this,arguments); try{ const box=$('#sf-log'); if(box&&keep!=null){ box.scrollTop=Math.min(keep,Math.max(0,box.scrollHeight-box.clientHeight)); try{ m52Scroll(); }catch(e){} } m56UpSync(); }catch(e){} return r; }; }
+{ const f0=m52Live; m52Live=function(ev){ M56.act=Date.now(); const keep=m56Keep(); const r=f0.apply(this,arguments); try{ const box=$('#sf-log'); if(box&&keep!=null&&Math.abs(box.scrollTop-keep)>1) box.scrollTop=keep; }catch(e){} return r; }; }
+/* «К началу ответа»: показывается, когда начало последнего ответа ушло вверх за экран */
+function m56LastA(){ const box=$('#sf-log'); if(!box) return null; const as=box.querySelectorAll('.sf-m.a:not(.sf-wait)'); return as.length?as[as.length-1]:null; }
+function m56UpSync(){ try{ if(!m54On()) return; const sh=sheet, box=$('#sf-log'); if(!box) return; let b=sh.querySelector('#m56-up');
+    if(!b){ const dn=sh.querySelector('#m52-down'); if(!dn) return; dn.insertAdjacentHTML('beforebegin',`<button type="button" id="m56-up" hidden aria-label="${esc(L.m56Up)}">${ico('up',16)}<span>${esc(L.m56Up)}</span></button>`); b=sh.querySelector('#m56-up');
+      if(!box.dataset.m56){ box.dataset.m56='1'; box.addEventListener('scroll',()=>{ if(M56.upT) return; M56.upT=setTimeout(()=>{ M56.upT=0; m56UpSync(); },120); },{passive:true}); } }
+    const a=m56LastA(); let show=false; if(a){ const top=a.offsetTop-box.scrollTop; show=top<-140&&a.offsetHeight>box.clientHeight*0.9; } b.hidden=!show; }catch(e){} }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('#m56-up'); if(!t) return; const box=$('#sf-log'), a=m56LastA(); if(!box||!a) return; try{ M54.anchor=false; }catch(x){}
+  const us=box.querySelectorAll('.sf-m.u'), u=us[us.length-1], top=u&&u.offsetTop<a.offsetTop&&a.offsetTop-u.offsetTop<box.clientHeight*0.45?u.offsetTop:a.offsetTop;
+  box.scrollTo({top:Math.max(0,top-10),behavior:m54Motion()?'smooth':'auto'}); });
+
+/* ---------- ответ пришёл, пока человека не было ---------- */
+function m56Notify(){ try{ if(!document.hidden||!('Notification' in window)||Notification.permission!=='granted'||!navigator.serviceWorker) return;
+    navigator.serviceWorker.ready.then(r=>r.showNotification(L.m56NtfT,{body:L.m56NtfB,icon:'icon-192.png',badge:'badge-96.png',tag:'mk-sf',data:{url:'./?go=sifra'}})).catch(()=>{}); }catch(e){} }
+function m56NtfClear(){ try{ if(document.hidden||!navigator.serviceWorker||!navigator.serviceWorker.getRegistration) return; navigator.serviceWorker.getRegistration().then(r=>r&&r.getNotifications?r.getNotifications({tag:'mk-sf'}):[]).then(a=>(a||[]).forEach(n=>n.close())).catch(()=>{}); }catch(e){} }
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden){ m56NtfClear(); setTimeout(m56Back,500); } });
+{ const f0=sfAsk; sfAsk=function(q,voice){ M56.last=null; try{ if(m56JobOn()&&navigator.onLine!==false) M52.noStream=0; }catch(e){} const p=f0.apply(this,arguments);
+    const fin=()=>{ M56.adopt=null; try{ const log=sfLog(), last=log[log.length-1]; if(!last||last.r!=='a'||!M56.last) return; if(!last.err&&!last.md){ last.md=M56.last.model||'srv'; persist(); try{ if(typeof m56xAfter==='function') m56xAfter(last); }catch(e){} } M56.last=null; m56Notify(); }catch(e){} };
+    if(p&&typeof p.then==='function') p.then(fin,fin); return p; }; }
+/* страницу закрыли, пока Сифра думала: при открытии окна вопрос подхватывается — ответ с сервера или продолжение работы */
+function m56Recover(){ try{ if(!m56JobOn()||M56.run||sfBusy||navigator.onLine===false) return; const j=state.misc&&state.misc.m56j; if(!j||!j.job) return;
+    const log=sfLog(), last=log[log.length-1]; if(Date.now()-(+j.ts||0)>6*3600e3||!last||last.r!=='u'||String(last.t||'').slice(0,700)!==String(j.q||'')){ m56Pend(null); return; }
+    if(!$('#sf-log')||!overlay.classList.contains('open')) return; const th=last.img||''; log.pop(); M56.adopt={job:j.job,img:j.img?1:0}; M56.ready=null;
+    const p=sfAsk(j.q,false); if(th){ try{ const l2=sfLog(), u=l2[l2.length-1]; if(u&&u.r==='u'&&!u.img){ u.img=th; } }catch(e){} } return p; }catch(e){ console.error(e); } }
+{ const f0=sifraOpen; sifraOpen=function(){ const r=f0.apply(this,arguments); try{ setTimeout(()=>{ if(!sfCaps||!(+sfCaps.v>0)) sfCapsLoad().then(m56Recover).catch(()=>{}); else m56Recover(); m56UpSync(); },350); const f=document.getElementById('sfFab'); if(f) f.classList.remove('m56-new'); }catch(e){} return r; }; }
+/* окно закрыто, а ответ уже лежит на сервере — подсказываем */
+async function m56Back(){ try{ const j=state.misc&&state.misc.m56j; if(!j||!j.job||M56.run||M56.ready===j.job||navigator.onLine===false) return; if($('#sf-log')&&overlay.classList.contains('open')){ let c=sfCaps; if(!c||!(+c.v>0)) c=await sfCapsLoad().catch(()=>null); m56Recover(); return; }
+    let c=sfCaps; if(!c||!(+c.v>0)) c=await sfCapsLoad().catch(()=>null); if(!m56JobOn()) return; const r=await m56Poll(window.fetch,j.job); if(r.done){ M56.ready=j.job; toast(L.m56Back); const f=document.getElementById('sfFab'); if(f) f.classList.add('m56-new'); } }catch(e){} }
+setTimeout(m56Back,2600);
+try{ navigator.serviceWorker&&navigator.serviceWorker.addEventListener('message',e=>{ if(e.data&&e.data.mk==='go'&&e.data.to==='sifra'){ try{ if(!($('#sf-log')&&overlay.classList.contains('open'))) sifraOpen(); }catch(x){} } }); }catch(e){}
+try{ if(new URLSearchParams(location.search).get('go')==='sifra'){ history.replaceState(history.state,'',location.pathname+location.hash); setTimeout(()=>{ try{ sifraOpen(); }catch(e){} },900); } }catch(e){}
+/* ===================== v56: команда Сифры — живой экран ожидания — строки ===================== */
+const M56TS={
+ru:{
+  m56tSt:{start:'начинает работу',search:q=>'ищет: «'+q+'»',found:n=>'найдено страниц: '+n,read:u=>'читает '+u,write:'пишет отчёт',done:n=>n?'отчёт готов · источников: '+n:'отчёт готов',fail:'не получилось — план соберут без этого отчёта',wait:'ждёт своей очереди'},
+  m56tCnt:{q:'запросов',n:'страниц найдено',u:'прочитано'}, m56tPc:p=>'Готово примерно на '+p+'%', m56tLast:m=>'В прошлый раз такая работа заняла около '+m+' мин.',
+  m56tChiefWait:(a,b)=>'ждёт отчёты: '+a+' из '+b, m56tChiefDo:(n,s)=>'читает отчёты ('+n+'), сверяет цифры и собирает план'+(s?' · источников: '+s:''),
+  m56tFind:'Уже нашли', m56tBack:'Связь прерывалась — продолжаю с того же места', m56tOff:'Нет сети — жду. Готовые отчёты сохранены.',
+  m56tNote:'Можно закрыть этот экран и даже выйти из приложения: готовые отчёты сохраняются сразу. Вернётесь — Mira продолжит с того же места и покажет план.',
+  m56tNtf:' Когда план будет готов, придёт уведомление.', m56tResumed:'Команда Сифры продолжает работу',
+  m56tA11y:(p,d,n)=>'Команда работает. Готово примерно на '+p+'%. Отчётов готово: '+d+' из '+n+'.'
+},
+tg:{
+  m56tSt:{start:'корро оғоз мекунад',search:q=>'меҷӯяд: «'+q+'»',found:n=>'саҳифаҳо ёфт шуд: '+n,read:u=>u+'-ро мехонад',write:'ҳисобот менависад',done:n=>n?'ҳисобот тайёр · манбаъҳо: '+n:'ҳисобот тайёр',fail:'нашуд — нақшаро бе ин ҳисобот месозанд',wait:'навбати худро интизор аст'},
+  m56tCnt:{q:'дархост',n:'саҳифа ёфт шуд',u:'хонда шуд'}, m56tPc:p=>'Тақрибан '+p+'% тайёр', m56tLast:m=>'Дафъаи гузашта чунин кор тақрибан '+m+' дақиқа гирифт.',
+  m56tChiefWait:(a,b)=>'ҳисоботҳоро интизор аст: '+a+' аз '+b, m56tChiefDo:(n,s)=>'ҳисоботҳоро ('+n+') мехонад, рақамҳоро месанҷад ва нақша месозад'+(s?' · манбаъҳо: '+s:''),
+  m56tFind:'Аллакай ёфтем', m56tBack:'Алоқа канда шуда буд — аз ҳамон ҷо идома медиҳам', m56tOff:'Шабака нест — интизорам. Ҳисоботҳои тайёр нигоҳ дошта шудаанд.',
+  m56tNote:'Ин экранро пӯшидан ва ҳатто аз барнома баромадан мумкин аст: ҳисоботҳои тайёр дарҳол нигоҳ дошта мешаванд. Баргардед — Mira аз ҳамон ҷо идома медиҳад ва нақшаро нишон медиҳад.',
+  m56tNtf:' Вақте нақша тайёр шавад, огоҳинома меояд.', m56tResumed:'Дастаи Сифра корро идома медиҳад',
+  m56tA11y:(p,d,n)=>'Даста кор мекунад. Тақрибан '+p+'% тайёр. Ҳисоботҳои тайёр: '+d+' аз '+n+'.'
+},
+en:{
+  m56tSt:{start:'getting started',search:q=>'searching: “'+q+'”',found:n=>'pages found: '+n,read:u=>'reading '+u,write:'writing the report',done:n=>n?'report ready · sources: '+n:'report ready',fail:'didn’t work — the plan will be built without this report',wait:'waiting for its turn'},
+  m56tCnt:{q:'searches',n:'pages found',u:'read'}, m56tPc:p=>'About '+p+'% done', m56tLast:m=>'Last time this kind of work took about '+m+' min.',
+  m56tChiefWait:(a,b)=>'waiting for reports: '+a+' of '+b, m56tChiefDo:(n,s)=>'reading the reports ('+n+'), checking the figures and building the plan'+(s?' · sources: '+s:''),
+  m56tFind:'Found so far', m56tBack:'The connection dropped — continuing from the same place', m56tOff:'No network — waiting. Finished reports are saved.',
+  m56tNote:'You can close this screen and even leave the app: finished reports are saved right away. When you come back, Mira continues from the same place and shows the plan.',
+  m56tNtf:' You will get a notification when the plan is ready.', m56tResumed:'Sifra’s team is back at work',
+  m56tA11y:(p,d,n)=>'The team is working. About '+p+'% done. Reports ready: '+d+' of '+n+'.'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M56TS[k]); }catch(e){} Object.assign(D[k],M56TS[k]); }
+/* ===================== v56: команда Сифры — работа не теряется, ожидание видно =====================
+   Анушер (25.11, 21:57, скрин «Закупщики Сифры за работой»): «если закрыть окно или выйти — чтобы она продолжала»; «чтобы процесс был удивительным,
+   удержал пользователя, когда он ждёт и смотрит».
+   Что было: один длинный запрос на всех исследователей; отчёты сохранялись только все вместе, а замок на работу держался 7 минут —
+   телефон уснул, и после возвращения команда ждала замок и начинала с нуля. Статусы «ищет / читает / пишет» менялись по таймеру, а не по делу.
+   Что стало (сервер v32):
+   - каждый отчёт сохраняется сразу; замок живёт, пока жив запрос; после разрыва у сервера есть ещё ~30 секунд; приложение при возвращении само продолжает
+     (и само возобновляет работу при запуске) — заново делается только то, что не успели;
+   - один запрос ведёт оба этапа (drive), а экран раз в 2 секунды спрашивает, что происходит (peek): настоящие запросы в поиск, сайты, счётчики,
+     первые находки из готовых отчётов;
+   - экран не гаснет, пока команда работает и приложение открыто (Wake Lock);
+   - честный процент: по делу, а не по времени. Движение — только при сети и без «меньше движения».
+   Основа: Buell & Norton 2011 — когда человеку показывают, какая работа делается для него, он ценит результат выше, даже если ждёт дольше;
+   Maister 1985 — занятое и объяснённое ожидание кажется короче; Myers 1985 — люди предпочитают индикатор с долей готовности. Никаких поддельных шагов. */
+const M56T={wl:null,vib:{}};
+function m56tWake(){ try{ const on=Object.keys(M50.prog).some(k=>M50.prog[k]&&M50.prog[k].v56)&&!document.hidden; if(on&&!M56T.wl&&navigator.wakeLock&&navigator.wakeLock.request){ M56T.wl=1; navigator.wakeLock.request('screen').then(w=>{ M56T.wl=w; try{ w.addEventListener('release',()=>{ if(M56T.wl===w) M56T.wl=null; }); }catch(e){} m56tWake(); }).catch(()=>{ M56T.wl=null; }); }
+    else if(!on&&M56T.wl&&M56T.wl!==1){ const w=M56T.wl; M56T.wl=null; try{ w.release(); }catch(e){} } }catch(e){} }
+document.addEventListener('visibilitychange',()=>{ setTimeout(m56tWake,200); });
+function m56tDur(kind,sec){ try{ state.misc=state.misc||{}; const s=state.misc.m56t&&typeof state.misc.m56t==='object'?state.misc.m56t:(state.misc.m56t={}); s.dur=s.dur||{}; if(sec>0){ const a=s.dur[kind]=(s.dur[kind]||[]).concat([Math.round(sec)]).slice(-5); return a; } return s.dur[kind]||[]; }catch(e){ return []; } }
+async function m56tRun(kind,payload,key,job){ const P=M50.prog[key]={kind,stage:'research',done:[],fail:[],act:{},t0:Date.now(),job,v56:1,alive:true}; m50Tick(); m56tWake();
+  const body=x=>JSON.stringify(Object.assign({id:mkId(),lang,kind,job},payload,x||{})), H={'content-type':'application/json'}; let out=null, err='', ctl=null, drv=null, fails=0, dead=0, vis=0, lastT=Date.now(), wake=null;
+  const nap=ms=>new Promise(r=>{ const t=setTimeout(()=>{ wake=null; r(); },ms); wake=()=>{ clearTimeout(t); wake=null; r(); }; });
+  const onRes=j=>{ if(!j||typeof j!=='object') return; if(j.plan){ out=j; if(wake) wake(); return; } if(j.error&&!j.pending){ if(j.error==='nojob') return; err=j.error==='limit'?'limit':'srv'; if(wake) wake(); return; }
+    if(j.pending){ if(P.net){ P.net=0; P.back=Date.now(); } P.stage=j.stage||P.stage; if(Array.isArray(j.done)) P.done=j.done; if(Array.isArray(j.fail)) P.fail=j.fail; if(j.act&&typeof j.act==='object') P.act=j.act; if(+j.t0>0&&Date.now()-j.t0>=0&&Date.now()-j.t0<40*60e3) P.t0=Math.min(P.t0,+j.t0); P.alive=j.alive!==false; } };
+  const drive=()=>{ const my=ctl=new AbortController(); drv=fetch(API_BASE+'/api/mk/team',{method:'POST',headers:H,body:body({drive:1}),signal:my.signal}).then(r=>r.text()).then(t=>{ let j=null; try{ j=JSON.parse(t); }catch(e){} return j; })
+      .then(j=>{ if(my!==ctl) return; drv=null; if(j) onRes(j); else P.net=1; },()=>{ if(my!==ctl) return; drv=null; P.net=1; }); };
+  try{ drive();
+    for(;;){ if(!out&&!err) await nap(document.hidden?1200:2000); const n=Date.now(); if(!document.hidden) vis+=Math.min(3000,n-lastT); lastT=n;
+      if(out){ m56tDur(kind,(Date.now()-P.t0)/1000); return out; } if(err) throw new Error(err);
+      if(document.hidden) continue; if(navigator.onLine===false){ P.net=1; m50ProgDraw(); continue; }
+      let j=null; try{ const r=await fetch(API_BASE+'/api/mk/team',{method:'POST',headers:H,body:body({peek:1})}); j=await r.json().catch(()=>null); }catch(e){ j=null; }
+      if(out) continue;
+      if(!j){ P.net=1; if(++fails>30&&!drv) throw new Error('srv'); if(!drv&&fails%3===0) drive(); m50ProgDraw(); continue; } fails=0; onRes(j); m50ProgDraw(); if(out||err) continue;
+      /* сторож: сервер говорит, что над задачей никто не работает, а наш запрос молчит — запускаем его заново; никто не ведёт — ведём */
+      if(j.error==='nojob'){ if(!drv) drive(); continue; }
+      if(j.pending&&j.alive===false){ if(!dead) dead=Date.now(); if(!drv||Date.now()-dead>9000){ try{ if(ctl) ctl.abort(); }catch(e){} drive(); dead=0; } } else { dead=0; if(!drv) drive(); }
+      if(vis>30*60e3) throw new Error('srv'); } }
+  finally{ const c=ctl; ctl=null; try{ if(c) c.abort(); }catch(e){} delete M50.prog[key]; m56tWake(); } }
+{ const f0=m50Team; m50Team=async function(kind,payload,key,job){ if(navigator.onLine===false) throw new Error('off'); let c=null; try{ c=await sfCapsLoad(); }catch(e){} if(!(c&&+c.v>=32)||!job) return f0.apply(this,arguments); return m56tRun(kind,payload,key,job); }; }
+
+/* ---------- экран ожидания ---------- */
+function m56tRoleT(P,k){ return (P.kind==='src'&&L.m51Roles&&L.m51Roles[k])||L.m50Roles[k]||k; }
+function m56tChiefT(P){ return P.kind==='src'?L.m51Chief:P.kind==='mentor'?L.m55Chief:L.m50Chief; }
+function m56tStageT(P){ return P.stage==='plan'?(P.kind==='mentor'?L.m55ChiefStage:L.m50Stage.plan):L.m50Stage.research; }
+/* доля готовности одного исследователя — по тому, что он уже сделал */
+function m56tRolePc(P,k){ if(P.done.includes(k)||P.stage==='plan') return 1; if(P.fail.includes(k)) return 1; const a=P.act[k]; if(!a) return 0.03;
+  if(a.s==='done'||a.s==='fail') return 1; const q=Math.min(1,((+a.qn||0)+(+a.un||0))/7), w=Math.min(1,(+a.w||0)/3200); return Math.min(0.96,0.06+q*0.5+(a.s==='write'||w>0?0.08:0)+w*0.32); }
+function m56tPct(P){ const roles=M50_ROLES[P.kind]||[]; if(!roles.length) return 0; const r=roles.reduce((s,k)=>s+m56tRolePc(P,k),0)/roles.length;
+  if(P.stage!=='plan') return Math.round(r*70); if(!P.pt) P.pt=Date.now(); const t=(Date.now()-P.pt)/1000; return Math.round(70+28*(1-Math.exp(-t/55))); }
+function m56tSum(P){ let q=0,n=0,u=0,src=0; for(const k in P.act){ const a=P.act[k]||{}; q+=+a.qn||0; n+=+a.n||0; u+=+a.un||0; src+=+a.src||0; } return {q,n,u,src}; }
+function m56tStT(P,k){ const a=P.act[k], S=L.m56tSt; if(P.fail.includes(k)||(a&&a.s==='fail')) return S.fail; if(P.done.includes(k)||(a&&a.s==='done')||P.stage==='plan') return S.done(a&&+a.src||0); if(!a) return S.start;
+  if(a.s==='search'&&a.q&&a.q.length) return S.search(a.q[a.q.length-1]); if(a.s==='found') return S.found(+a.n||0); if(a.s==='read'&&a.u&&a.u.length) return S.read(a.u[a.u.length-1]); if(a.s==='write') return S.write; return S.start; }
+function m56tCls(P,k){ const a=P.act[k]; if(P.fail.includes(k)||(a&&a.s==='fail')) return 'fl'; if(P.done.includes(k)||(a&&a.s==='done')||P.stage==='plan') return 'dn'; return 'on'; }
+function m56tOrb(P){ const roles=M50_ROLES[P.kind]||[], n=roles.length, cx=160, cy=66, rx=126, ry=45; let h='';
+  roles.forEach((k,i)=>{ const a=-Math.PI/2+i*2*Math.PI/n+(n%2?0:Math.PI/n), x=cx+rx*Math.cos(a), y=cy+ry*Math.sin(a); h+=`<g class="nd ${m56tCls(P,k)}" data-n="${esc(k)}" style="--i:${i}"><path class="ln" d="M${x.toFixed(1)},${y.toFixed(1)} L${cx},${cy}"/><circle class="hl" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="15"/><circle class="bd" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="10.5"/><path class="ck" d="M${(x-4.2).toFixed(1)},${y.toFixed(1)} l3,3.2 l5.6,-6.2"/><circle class="pk" r="3"><animateMotion dur="${(1.5+i*0.17).toFixed(2)}s" repeatCount="indefinite" path="M${x.toFixed(1)},${y.toFixed(1)} L${cx},${cy}"/></circle></g>`; });
+  const C=2*Math.PI*27; return `<svg viewBox="0 0 320 132" aria-hidden="true">${h}<g class="ch ${P.stage==='plan'?'on':'wt'}" data-n="chief"><circle class="rg" cx="${cx}" cy="${cy}" r="27"/><circle class="pr" data-s="ring" cx="${cx}" cy="${cy}" r="27" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${C.toFixed(1)}" transform="rotate(-90 ${cx} ${cy})"/><circle class="bd" cx="${cx}" cy="${cy}" r="20"/><path class="sp" d="M160,54 l3.4,8.6 l8.6,3.4 l-8.6,3.4 l-3.4,8.6 l-3.4,-8.6 l-8.6,-3.4 l8.6,-3.4 Z"/></g></svg>`; }
+function m56tHTML(key){ const P=M50.prog[key]; if(!P) return ''; const roles=M50_ROLES[P.kind]||[]; let ntf=false; try{ ntf=('Notification' in window)&&Notification.permission==='granted'; }catch(e){}
+  const last=m56tDur(P.kind).slice(-1)[0];
+  return `<div class="m50-prog m56t" data-m50key="${esc(key)}" data-m56t="1" role="status"><div class="m50-ph"><b data-s="stage"></b><span data-s="el"></span></div>
+    <div class="m56t-bar" aria-hidden="true"><i data-s="bar"></i></div><p class="m56t-pc"><span data-s="pc"></span>${last>50?`<small>${esc(L.m56tLast(Math.max(1,Math.round(last/60))))}</small>`:''}</p>
+    <p class="m56t-al" data-s="al" hidden></p>
+    <div class="m56t-orb">${m56tOrb(P)}</div>
+    <div class="m56t-cnt"><span><b data-s="cq">0</b>${esc(L.m56tCnt.q)}</span><span><b data-s="cn">0</b>${esc(L.m56tCnt.n)}</span><span><b data-s="cu">0</b>${esc(L.m56tCnt.u)}</span></div>
+    <ul class="m56t-rl">${roles.map((k,i)=>`<li data-r="${esc(k)}" style="--i:${i}"><span class="ic" data-s="ic">${ico(M50_RICO[k]||'search',16)}</span><div class="tx"><b>${esc(m56tRoleT(P,k))}</b><small data-s="st"></small><span class="m56t-ch" data-s="ch"></span><i class="pb" aria-hidden="true"><u data-s="pb"></u></i></div></li>`).join('')}
+      <li class="chief" data-r="chief"><span class="ic">${ico('sparkle',16)}</span><div class="tx"><b>${esc(m56tChiefT(P))}</b><small data-s="st"></small></div></li></ul>
+    <div class="m56t-fd" data-s="fd" hidden><h4>${ico('zap',15)} ${esc(L.m56tFind)}</h4><ul></ul></div>
+    <p class="m56t-note">${ico('info',13)} <span>${esc(L.m56tNote+(ntf?L.m56tNtf:''))}</span></p><span class="m54-sr" data-s="sr" aria-live="polite"></span></div>`; }
+function m56tSet(el,sel,v,attr){ const e=el.querySelector(sel); if(!e) return; if(attr){ if(e.getAttribute(attr)!==v) e.setAttribute(attr,v); } else if(e.textContent!==v) e.textContent=v; }
+function m56tUpd(el,P){ const roles=M50_ROLES[P.kind]||[], sec=Math.floor((Date.now()-P.t0)/1000), pc=Math.max(1,Math.min(99,m56tPct(P))), S=m56tSum(P), q=s=>el.querySelector(s);
+  P.pcMax=Math.max(P.pcMax||0,pc); const p=P.pcMax; m56tSet(el,'[data-s="stage"]',m56tStageT(P)); m56tSet(el,'[data-s="el"]',L.m50Elapsed(Math.floor(sec/60),String(sec%60).padStart(2,'0')));
+  const bar=q('[data-s="bar"]'); if(bar) bar.style.width=p+'%'; m56tSet(el,'[data-s="pc"]',L.m56tPc(p)); const ring=q('[data-s="ring"]'); if(ring){ const C=2*Math.PI*27; ring.setAttribute('stroke-dashoffset',(C*(1-p/100)).toFixed(1)); }
+  m56tSet(el,'[data-s="cq"]',String(S.q)); m56tSet(el,'[data-s="cn"]',String(S.n)); m56tSet(el,'[data-s="cu"]',String(S.u));
+  const al=q('[data-s="al"]'); if(al){ const off=navigator.onLine===false||P.net, back=!off&&P.back&&Date.now()-P.back<9000; al.hidden=!(off||back); if(off) m56tSet(el,'[data-s="al"]',L.m56tOff); else if(back) m56tSet(el,'[data-s="al"]',L.m56tBack); al.className='m56t-al'+(off?' off':''); }
+  let finds=[];
+  for(const k of roles){ const li=q('li[data-r="'+k+'"]'), nd=q('.nd[data-n="'+k+'"]'), cls=m56tCls(P,k), a=P.act[k]||{}; if(nd&&nd.getAttribute('class')!=='nd '+cls) nd.setAttribute('class','nd '+cls);
+    if(!li) continue; if(li.dataset.c!==cls){ li.dataset.c=cls; li.className=cls; const ic=li.querySelector('[data-s="ic"]'); if(ic) ic.innerHTML=ico(cls==='dn'?'check':cls==='fl'?'close':(M50_RICO[k]||'search'),16); if(cls==='dn'&&P.seen&&!M56T.vib[P.job+k]){ M56T.vib[P.job+k]=1; try{ m40Vib(); }catch(e){} } }
+    const st=m56tStT(P,k), se=li.querySelector('[data-s="st"]'); if(se&&se.textContent!==st){ se.textContent=st; se.classList.remove('nw'); void se.offsetWidth; se.classList.add('nw'); }
+    const pb=li.querySelector('[data-s="pb"]'); if(pb) pb.style.width=Math.round(m56tRolePc(P,k)*100)+'%';
+    const ch=li.querySelector('[data-s="ch"]'), hs=cls==='on'&&Array.isArray(a.u)?a.u.slice(-3):[], sig=hs.join('|'); if(ch&&ch.dataset.g!==sig){ ch.dataset.g=sig; ch.innerHTML=hs.map(h=>`<em>${esc(h)}</em>`).join(''); }
+    if(Array.isArray(a.find)) for(const f of a.find.slice(0,2)) finds.push({k,f}); }
+  const chief=q('li[data-r="chief"]'), plan=P.stage==='plan', cg=q('.ch[data-n="chief"]'); if(cg) cg.setAttribute('class','ch '+(plan?'on':'wt')); if(chief){ chief.className='chief '+(plan?'on':'wt'); m56tSet(chief,'[data-s="st"]',plan?L.m56tChiefDo(P.done.length,S.src):L.m56tChiefWait(P.done.length,roles.length)); }
+  const fd=q('[data-s="fd"]'); if(fd){ const sig=finds.map(x=>x.k+x.f).join('|'); if(fd.dataset.g!==sig){ const had=(fd.dataset.g||'').split('|').length; fd.dataset.g=sig; fd.hidden=!finds.length; fd.querySelector('ul').innerHTML=finds.slice(0,8).map((x,i)=>`<li${P.seen&&i>=had-1?' class="nw"':''}><b>${esc(m56tRoleT(P,x.k))}</b><span>${esc(x.f)}</span></li>`).join(''); } }
+  const sr=Math.floor(sec/20); if(P.sr!==sr){ P.sr=sr; m56tSet(el,'[data-s="sr"]',L.m56tA11y(p,P.done.length,roles.length)); } P.seen=1; }
+{ const f0=m50ProgHTML; m50ProgHTML=function(key){ const P=M50.prog[key]; if(!P||!P.v56||/#mini$/.test(String(key))) return f0.apply(this,arguments); const d=document.createElement('div'); d.innerHTML=m56tHTML(key); const el=d.firstElementChild; if(!el) return ''; const seen=P.seen; P.seen=0; try{ m56tUpd(el,P); }catch(e){ console.error(e); } P.seen=seen; return el.outerHTML; }; }
+{ const f0=m50ProgDraw; m50ProgDraw=function(){ const hold=[]; try{ document.querySelectorAll('.m50-prog[data-m56t][data-m50key]').forEach(el=>{ const P=M50.prog[el.dataset.m50key]; if(P&&P.v56){ try{ m56tUpd(el,P); }catch(e){ console.error(e); } el.dataset.k56=el.dataset.m50key; el.removeAttribute('data-m50key'); hold.push(el); } }); }catch(e){}
+    try{ return f0.apply(this,arguments); } finally { for(const el of hold){ el.dataset.m50key=el.dataset.k56; delete el.dataset.k56; } } }; }
+
+/* ---------- вернулись в приложение или запустили его заново: незаконченная работа продолжается сама ---------- */
+function m56tResume(){ try{ if(navigator.onLine===false||document.hidden) return; const fresh=e=>e&&e.st==='wait'&&e.job&&Date.now()-(+e.jt||+e.t0||0)<25*60e3; let n=0;
+    try{ for(const b of m44List()){ const T=b.tp; if(T&&T.st==='wait'&&T.job&&Date.now()-(+T.t0||0)<25*60e3&&!M50.run[b.id]){ m50BuyResume(b); n++; } } }catch(e){}
+    try{ for(const e of m46St().list){ if(fresh(e)&&!M46.run.has(e.id)){ m46Run(e); n++; } } }catch(e){}
+    try{ for(const e of m51St().list){ if(fresh(e)&&!M51.run[e.id]){ m51Run(e); n++; } } }catch(e){}
+    try{ for(const p of m55St().list){ if(fresh(p)&&!M55.run.has(p.id)){ m55Run(p); n++; } } }catch(e){}
+    if(n&&!document.querySelector('.m50-prog')) toast(L.m56tResumed); }catch(e){} }
+setTimeout(()=>{ try{ sfCapsLoad().then(c=>{ if(c&&+c.v>=32) m56tResume(); }).catch(()=>{}); }catch(e){} },3200);
+document.addEventListener('visibilitychange',()=>{ if(!document.hidden) setTimeout(()=>{ try{ if(sfCaps&&+sfCaps.v>=32) m56tResume(); }catch(e){} },900); });
+try{ navigator.serviceWorker&&navigator.serviceWorker.addEventListener('message',e=>{ if(e.data&&e.data.mk==='go'&&e.data.to==='team') setTimeout(m56tResume,300); }); }catch(e){}
+try{ if(new URLSearchParams(location.search).get('go')==='team') history.replaceState(history.state,'',location.pathname+location.hash); }catch(e){}
+/* ===================== v56: «Кредиты» — дорога, «а если платить больше», что впереди — строки ===================== */
+const M56S={
+ru:{
+  m56FreeL:'Свобода от кредитов', m56Earlier:n=>n<12?'на '+n+' мес. раньше':'на '+Math.floor(n/12)+' г.'+(n%12?' '+(n%12)+' мес.':'')+' раньше', m56Was:d=>'по графику: '+d, m56Never:'больше 10 лет',
+  m56Lens:{debt:'Долг',pay:'Платёж'}, m56LensA:'Что показать на графике',
+  m56RdDebt:v=>'Останется долга: '+v, m56RdNow:v=>'Долг сейчас: '+v, m56RdFree:'Кредитов уже нет',
+  m56RdPay:(t,p,i)=>'Платёж '+t+': в долг '+p+(i?', проценты '+i:''), m56RdEx:v=>' + доплата '+v, m56RdNoPay:'В этом месяце платежей нет',
+  m56Play:'Показать, как тает долг', m56Stop:'Остановить', m56All:'Все кредиты', m56Scrub:'Ведите пальцем по графику — увидите любой месяц',
+  m56Leg:{base:'по графику банка',p:'в долг',i:'проценты',x:'доплата',close:'кредит закрыт'},
+  m56XT:'А если платить больше?', m56XSub:'Двигайте ползунок — срок и экономия пересчитаются сразу.',
+  m56Mode:{mo:'В месяц',one:'Один раз',date:'К дате'}, m56ModeA:'Как доплачивать',
+  m56Amt:{mo:'Доплачивать каждый месяц',one:'Внести один раз сейчас',date:'Хочу закрыть все кредиты к'}, m56Less:'Меньше', m56More:'Больше',
+  m56Need:v=>'Для этого нужно доплачивать '+v+' в месяц', m56NeedNo:'Это срок по графику банка — доплата не нужна.',
+  m56T1:'Свобода', m56T2:'Экономия на процентах', m56Same:'как по графику', m56Zero:'пока нет',
+  m56Sum:(tot,sv,roi)=>'Всего доплатите '+tot+' и не заплатите банкам '+sv+'.'+(roi?' Каждые '+roi[0]+' доплаты экономят '+roi[1]+' процентов.':''),
+  m56SumT:(tot)=>'Всего доплатите '+tot+'. Процентов по этим кредитам нет — выигрыш только во времени.',
+  m56Sum0:'Сейчас расчёт идёт по графику банка. Сдвиньте ползунок — увидите, что изменится.', m56SumRoll:sv=>'Вы платите столько же, сколько сейчас, но не снижаете платёж после закрытия кредита. Банкам не заплатите '+sv+'.',
+  m56OrdT:'Куда направить доплату', m56Ord:{aval:'Где ставка выше',snow:'Где долг меньше'}, m56OrdS:{aval:'меньше всего процентов',snow:'быстрее первая победа'},
+  m56OrdR:(sv,d)=>(sv?'экономия '+sv+' · ':'')+'свобода: '+d, m56OrdEq:'Сейчас оба порядка дают один результат.',
+  m56OrdL:'Порядок', m56OrdIdle:'Появятся свободные деньги — сначала сюда:', m56Rate:r=>r+'%',
+  m56Roll:'Платёж закрытого кредита — тоже в долг', m56RollS:'Кредит закрыт — его платёж не тратить, а добавлять к следующему кредиту.',
+  m56RollHint:(n,d,k)=>'Срок пока не изменился: доплата раньше закрывает небольшие кредиты, а «'+n+'» идёт по своему графику. Если платёж закрытого кредита тоже пускать в долг, свобода — '+d+' ('+k+').', m56RollMore:(d,k)=>'Если платёж закрытого кредита тоже пускать в долг, свобода — '+d+' (ещё '+k+').', m56RollOn:'Включить',
+  m56Reset:'Сбросить', m56PayTo:n=>'Записать платёж в «'+n+'»',
+  m56Bank:'Перед досрочным платежом напишите заявление в банк и попросите сократить срок, а не платёж — так экономия больше.',
+  m56How:'Как это посчитано', m56HowP:['Расчёт идёт по графику банка, если он внесён, а без графика — по платежу и ставке кредита.','Доплата гасит основной долг кредита, который стоит первым в порядке. Обычные платежи остаются прежними — сокращается срок.','Экономия — это проценты, которые банк не начислит на досрочно погашенную часть. Точную сумму даст только новый график банка.','Банк может попросить заявление заранее или взять комиссию — уточните в своём банке.'],
+  m56MsT:'Что впереди', m56MsNow:(b,p)=>'Долг '+b+(p?' · платёж '+p+' в месяц':''), m56MsWin:'Ближайшая победа', m56MsClose:n=>n===1?'Кредит закрыт':'Закрыто кредитов: '+n,
+  m56MsAfter:v=>'Дальше платёж в месяц — '+v, m56MsHalf:'Половина долга позади', m56MsFree:'Свобода от кредитов', m56MsFreeS:'Последний платёж. Дальше — без кредитов.',
+  m56MsPaid:p=>'этот кредит выплачен на '+p+'%', m56NowL:'Сейчас',
+  m56Tbl:'Все месяцы таблицей', m56TblH:['Месяц','Платёж','В долг','Проценты','Остаток'],
+  m56A11y:(b,d)=>'График долга: сейчас '+b+', до нуля — '+d+'. Стрелки влево и вправо показывают месяцы.',
+  m56AskX:(x,d)=>' Думаю доплачивать '+x+' в месяц — тогда свобода: '+d+'. Что посоветуешь?', m56AskOne:(x,d)=>' Думаю внести сразу '+x+' — тогда свобода: '+d+'. Что посоветуешь?'
+},
+tg:{
+  m56FreeL:'Озодӣ аз қарзҳо', m56Earlier:n=>n<12?n+' моҳ барвақттар':Math.floor(n/12)+' сол'+(n%12?'у '+(n%12)+' моҳ':'')+' барвақттар', m56Was:d=>'аз рӯи ҷадвал: '+d, m56Never:'зиёда аз 10 сол',
+  m56Lens:{debt:'Қарз',pay:'Пардохт'}, m56LensA:'Дар график чиро нишон диҳам',
+  m56RdDebt:v=>'Қарз мемонад: '+v, m56RdNow:v=>'Қарз ҳозир: '+v, m56RdFree:'Дигар қарз нест',
+  m56RdPay:(t,p,i)=>'Пардохт '+t+': ба қарз '+p+(i?', фоиз '+i:''), m56RdEx:v=>' + иловапардохт '+v, m56RdNoPay:'Дар ин моҳ пардохт нест',
+  m56Play:'Нишон деҳ, ки қарз чӣ тавр кам мешавад', m56Stop:'Боздоштан', m56All:'Ҳамаи қарзҳо', m56Scrub:'Ангуштро аз рӯи график гузаронед — ҳар моҳро мебинед',
+  m56Leg:{base:'аз рӯи ҷадвали бонк',p:'ба қарз',i:'фоиз',x:'иловапардохт',close:'қарз пӯшида шуд'},
+  m56XT:'Агар бештар пардозам?', m56XSub:'Лағжакро ҳаракат диҳед — мӯҳлат ва сарфа дарҳол ҳисоб мешавад.',
+  m56Mode:{mo:'Ҳар моҳ',one:'Як бор',date:'То сана'}, m56ModeA:'Чӣ тавр илова пардозам',
+  m56Amt:{mo:'Ҳар моҳ илова пардохтан',one:'Ҳозир як бор гузоштан',date:'Мехоҳам ҳамаи қарзҳоро пӯшам то'}, m56Less:'Камтар', m56More:'Бештар',
+  m56Need:v=>'Барои ин ҳар моҳ '+v+' илова пардохтан лозим', m56NeedNo:'Ин мӯҳлати ҷадвали бонк аст — иловапардохт лозим нест.',
+  m56T1:'Озодӣ', m56T2:'Сарфа аз фоизҳо', m56Same:'мисли ҷадвал', m56Zero:'ҳоло нест',
+  m56Sum:(tot,sv,roi)=>'Ҳамагӣ '+tot+' илова мепардозед ва ба бонкҳо '+sv+' намедиҳед.'+(roi?' Ҳар '+roi[0]+' иловапардохт '+roi[1]+' фоизро сарфа мекунад.':''),
+  m56SumT:(tot)=>'Ҳамагӣ '+tot+' илова мепардозед. Дар ин қарзҳо фоиз нест — фоида танҳо дар вақт.',
+  m56Sum0:'Ҳоло ҳисоб аз рӯи ҷадвали бонк аст. Лағжакро ҳаракат диҳед — мебинед, ки чӣ тағйир меёбад.', m56SumRoll:sv=>'Шумо ҳамон қадар мепардозед, ки ҳоло, вале пас аз пӯшидани қарз пардохтро кам намекунед. Ба бонкҳо '+sv+' намедиҳед.',
+  m56OrdT:'Иловапардохтро ба куҷо равон кунам', m56Ord:{aval:'Ба қарзи фоизаш баландтар',snow:'Ба қарзи хурдтар'}, m56OrdS:{aval:'фоизи камтарин',snow:'ғалабаи аввал тезтар'},
+  m56OrdR:(sv,d)=>(sv?'сарфа '+sv+' · ':'')+'озодӣ: '+d, m56OrdEq:'Ҳоло ҳарду тартиб як натиҷа медиҳанд.',
+  m56OrdL:'Тартиб', m56OrdIdle:'Пули озод пайдо шавад — аввал ба ин ҷо:', m56Rate:r=>r+'%',
+  m56Roll:'Пардохти қарзи пӯшида — низ ба қарз', m56RollS:'Қарз пӯшида шуд — пардохти онро сарф накунед, ба қарзи навбатӣ илова кунед.',
+  m56RollHint:(n,d,k)=>'Мӯҳлат ҳоло тағйир наёфт: иловапардохт қарзҳои хурдро барвақттар мепӯшад, «'+n+'» бошад аз рӯи ҷадвали худ меравад. Агар пардохти қарзи пӯшидаро низ ба қарз равон кунед, озодӣ — '+d+' ('+k+').', m56RollMore:(d,k)=>'Агар пардохти қарзи пӯшидаро низ ба қарз равон кунед, озодӣ — '+d+' (боз '+k+').', m56RollOn:'Фаъол кардан',
+  m56Reset:'Аз нав', m56PayTo:n=>'Пардохтро ба «'+n+'» сабт кардан',
+  m56Bank:'Пеш аз пардохти пеш аз мӯҳлат ба бонк ариза нависед ва хоҳиш кунед, ки мӯҳлатро кӯтоҳ кунанд, на пардохтро — сарфа бештар мешавад.',
+  m56How:'Ин чӣ тавр ҳисоб шуд', m56HowP:['Ҳисоб аз рӯи ҷадвали бонк аст, агар он ворид шуда бошад; бе ҷадвал — аз рӯи пардохт ва фоизи қарз.','Иловапардохт қарзи асосии қарзеро мепӯшад, ки дар тартиб якум аст. Пардохтҳои муқаррарӣ ҳамон мемонанд — мӯҳлат кӯтоҳ мешавад.','Сарфа — фоизҳое, ки бонк ба қисми пеш аз мӯҳлат пардохташуда ҳисоб намекунад. Маблағи дақиқро танҳо ҷадвали нави бонк медиҳад.','Бонк метавонад пешакӣ ариза талаб кунад ё комиссия гирад — аз бонки худ пурсед.'],
+  m56MsT:'Дар пеш чӣ ҳаст', m56MsNow:(b,p)=>'Қарз '+b+(p?' · пардохт '+p+' дар як моҳ':''), m56MsWin:'Ғалабаи наздиктарин', m56MsClose:n=>n===1?'Қарз пӯшида шуд':'Қарзҳои пӯшида: '+n,
+  m56MsAfter:v=>'Минбаъд пардохти моҳона — '+v, m56MsHalf:'Нисфи қарз паси сар шуд', m56MsFree:'Озодӣ аз қарзҳо', m56MsFreeS:'Пардохти охирин. Минбаъд — бе қарз.',
+  m56MsPaid:p=>'ин қарз '+p+'% пардохта шудааст', m56NowL:'Ҳозир',
+  m56Tbl:'Ҳамаи моҳҳо дар ҷадвал', m56TblH:['Моҳ','Пардохт','Ба қарз','Фоиз','Бақия'],
+  m56A11y:(b,d)=>'Графики қарз: ҳозир '+b+', то сифр — '+d+'. Тирчаҳои чап ва рост моҳҳоро нишон медиҳанд.',
+  m56AskX:(x,d)=>' Фикр дорам ҳар моҳ '+x+' илова пардозам — он гоҳ озодӣ: '+d+'. Чӣ маслиҳат медиҳӣ?', m56AskOne:(x,d)=>' Фикр дорам якбора '+x+' гузорам — он гоҳ озодӣ: '+d+'. Чӣ маслиҳат медиҳӣ?'
+},
+en:{
+  m56FreeL:'Debt-free', m56Earlier:n=>n<12?n+' mo sooner':Math.floor(n/12)+' yr'+(n%12?' '+(n%12)+' mo':'')+' sooner', m56Was:d=>'on schedule: '+d, m56Never:'more than 10 years',
+  m56Lens:{debt:'Debt',pay:'Payment'}, m56LensA:'What the chart shows',
+  m56RdDebt:v=>'Debt left: '+v, m56RdNow:v=>'Debt now: '+v, m56RdFree:'No loans left',
+  m56RdPay:(t,p,i)=>'Payment '+t+': principal '+p+(i?', interest '+i:''), m56RdEx:v=>' + extra '+v, m56RdNoPay:'No payments this month',
+  m56Play:'Show the debt melting', m56Stop:'Stop', m56All:'All loans', m56Scrub:'Slide a finger along the chart to see any month',
+  m56Leg:{base:'bank schedule',p:'principal',i:'interest',x:'extra',close:'loan closed'},
+  m56XT:'What if I pay more?', m56XSub:'Move the slider — the date and the savings update at once.',
+  m56Mode:{mo:'Monthly',one:'Once',date:'By date'}, m56ModeA:'How to pay extra',
+  m56Amt:{mo:'Extra every month',one:'One-off payment now',date:'I want all loans closed by'}, m56Less:'Less', m56More:'More',
+  m56Need:v=>'That takes '+v+' extra a month', m56NeedNo:'This is the bank schedule — no extra needed.',
+  m56T1:'Debt-free', m56T2:'Interest saved', m56Same:'as scheduled', m56Zero:'none yet',
+  m56Sum:(tot,sv,roi)=>'You pay '+tot+' extra in total and keep '+sv+' from the banks.'+(roi?' Every '+roi[0]+' extra saves '+roi[1]+' in interest.':''),
+  m56SumT:(tot)=>'You pay '+tot+' extra in total. These loans carry no interest — the gain is time only.',
+  m56Sum0:'Right now this follows the bank schedule. Move the slider to see what changes.', m56SumRoll:sv=>'You pay the same as now but do not lower the payment when a loan closes. You keep '+sv+' from the banks.',
+  m56OrdT:'Where the extra goes', m56Ord:{aval:'Highest rate first',snow:'Smallest debt first'}, m56OrdS:{aval:'least interest',snow:'fastest first win'},
+  m56OrdR:(sv,d)=>(sv?'saves '+sv+' · ':'')+'debt-free: '+d, m56OrdEq:'Right now both orders give the same result.',
+  m56OrdL:'Order', m56OrdIdle:'When spare money appears — here first:', m56Rate:r=>r+'%',
+  m56Roll:'Roll a closed loan’s payment into the next', m56RollS:'When a loan closes, keep paying its amount towards the next loan.',
+  m56RollHint:(n,d,k)=>'The date has not moved yet: the extra closes the smaller loans sooner, while “'+n+'” follows its own schedule. If a closed loan’s payment also goes to debt, you are debt-free by '+d+' ('+k+').', m56RollMore:(d,k)=>'If a closed loan’s payment also goes to debt, you are debt-free by '+d+' (another '+k+').', m56RollOn:'Turn on',
+  m56Reset:'Reset', m56PayTo:n=>'Log a payment to “'+n+'”',
+  m56Bank:'Before paying early, file a request with the bank and ask to shorten the term, not the payment — the savings are bigger.',
+  m56How:'How this is calculated', m56HowP:['The numbers follow the bank schedule if it is entered; otherwise the payment and the loan rate.','Extra money pays down the principal of the loan that is first in the order. Regular payments stay the same — the term gets shorter.','The saving is the interest the bank will not charge on the part repaid early. Only a new bank schedule gives the exact amount.','The bank may require a request in advance or charge a fee — check with your bank.'],
+  m56MsT:'What lies ahead', m56MsNow:(b,p)=>'Debt '+b+(p?' · payment '+p+' a month':''), m56MsWin:'Next win', m56MsClose:n=>n===1?'Loan closed':'Loans closed: '+n,
+  m56MsAfter:v=>'Then the monthly payment is '+v, m56MsHalf:'Half the debt behind you', m56MsFree:'Debt-free', m56MsFreeS:'The last payment. No loans after that.',
+  m56MsPaid:p=>'this loan is '+p+'% paid', m56NowL:'Now',
+  m56Tbl:'All months as a table', m56TblH:['Month','Payment','Principal','Interest','Balance'],
+  m56A11y:(b,d)=>'Debt chart: '+b+' now, down to zero by '+d+'. Left and right arrows step through months.',
+  m56AskX:(x,d)=>' I am thinking of paying '+x+' extra a month — then debt-free: '+d+'. What do you advise?', m56AskOne:(x,d)=>' I am thinking of paying '+x+' at once — then debt-free: '+d+'. What do you advise?'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M56S[k]); }catch(e){} Object.assign(D[k],M56S[k]); }
+/* ===================== v56: «Кредиты» — дорога к свободе, «а если платить больше», что впереди =====================
+   Анушер (25.11, 21:39–21:41, два скрина): график «Дорога к свободе» — «неудобный, непонятный, неполезный»; «А если платить больше?» —
+   «как будто там всё написано»; «раздел кредиты… сделай идеальным, анализируй везде».
+   Что было не так (разбор экрана с настоящими данными):
+   - одна почти прямая линия — на ней не видно ни кредитов, ни процентов, ни того, что меняется со временем;
+   - «а если» — четыре кнопки с суммами и абзац текста; ниже второй такой же расчёт с ползунком («Когда закроются кредиты»), а ещё ниже третий
+     («Стратегия погашения») — три блока про одно, и ни один не показывает разницу в деньгах;
+   - вехи и «когда закроются» — стена текста: три строки подряд про один и тот же апрель 2029.
+   Что стало:
+   1) Один график с двумя видами. «Долг» — из чего он состоит и как тает (кредиты слоями, самый большой — внизу: у нижнего слоя ровная опора, остальные
+      можно посмотреть по одному нажатием — Thudt и др. 2016: в «стопке» хорошо читается только нижний слой). «Платёж» — сколько каждый месяц уходит
+      в долг, а сколько в проценты (люди считают, что долг убывает ровно — Foltice 2015; столбики показывают, как это на самом деле).
+      Палец по графику — любой месяц; «проиграть» — долг тает на глазах (только при сети).
+   2) «А если платить больше?» — один живой расчёт вместо трёх блоков (Bret Victor, «Explorable Explanations»: число — это ручка, которую можно
+      покрутить и сразу увидеть последствия). Три вопроса: каждый месяц, один раз, к дате (сколько нужно, чтобы закрыть к сроку — как в YNAB Loan Planner).
+      Ответ — в деньгах и месяцах, крупно (Scientific American / исследование о долгах: когда разницу в процентах показывали деньгами и графиком,
+      люди были готовы сделать для неё вдвое больше). Здесь же — куда направить доплату: «где ставка выше» против «где долг меньше» с настоящими цифрами
+      обоих вариантов (Gal & McShane 2012: закрытые счета держат мотивацию; при близких ставках можно начинать с малого) и «платёж закрытого кредита —
+      тоже в долг». Выбранный расчёт запоминается.
+   3) «Что впереди» — короткая лента: ближайшая победа (сколько уже выплачено по этому кредиту — эффект приближения к цели, Kivetz и др. 2006),
+      закрытия в один месяц собраны в одну строку, половина пути, свобода.
+   Расчёт: база — график банка (как везде в Mira); доплата гасит основной долг, обычные платежи не меняются, срок сокращается. Экономия — разница
+   двух прогонов одного и того же расчёта. Перед досрочным платежом — заявление в банк и «сократить срок» (Т—Ж: при том же платеже срок даёт экономию
+   больше, чем уменьшение платежа). Движение — только при сети и без «меньше движения». */
+const M56L={sel:0,lens:'debt',iso:null,M:null,B:null,S:null,raf:0,play:0,sig:''};
+function m56P(){ state.misc=state.misc||{}; const d={mode:'mo',x:0,one:0,tm:0,ord:'aval',roll:0}; let s=state.misc.m56p; if(!s||typeof s!=='object'){ s=state.misc.m56p=Object.assign({},d); try{ if(localStorage.getItem('strat_v1')==='snowball') s.ord='snow'; }catch(e){} }
+  for(const k in d) if(s[k]==null) s[k]=d[k]; if(!['mo','one','date'].includes(s.mode)) s.mode='mo'; if(s.ord!=='snow') s.ord='aval'; s.x=Math.max(0,+s.x||0); s.one=Math.max(0,+s.one||0); s.tm=Math.max(0,Math.round(+s.tm||0)); s.roll=s.roll?1:0; return s; }
+function m56Model(){ const D=m49Data(); if(!D) return null; const N=D.months.length, Ls=[], by={}; let ID={mono:{}}; try{ ID=m54Ident(); }catch(e){}
+  for(const id in D.L0){ const o=D.L0[id]; if(!(o.pv>0.5)||o.last<0) continue; const l={id:o.id,n:o.n,nm:String(o.loan.name||''),col:o.col,r:o.r,rate:o.rate,b0:o.pv,pay:new Array(N).fill(0),last:o.last,int0:+o.int||0,pct:Math.max(0,Math.min(100,Math.round(+o.a.pct||0)))}; l.mono=(ID.mono&&ID.mono[o.id])||''; l.short=l.nm+(l.mono?' '+l.mono:''); Ls.push(l); by[o.id]=l; }
+  if(!Ls.length) return null; D.months.forEach((m,i)=>{ for(const r of m.rows){ const l=by[r.id]; if(l) l.pay[i]+=+r.amt||0; } }); for(const l of Ls) l.reg=l.pay.find(v=>v>0.5)||0; Ls.sort((a,b)=>b.b0-a.b0);
+  return {dates:D.months.map(m=>m.d),Ls,N,B0:Ls.reduce((s,l)=>s+l.b0,0),int0:Ls.reduce((s,l)=>s+l.int0,0)}; }
+/* один расчёт на всё: месяц за месяцем — проценты, платёж по графику, доплата по порядку */
+function m56Sim(M,o){ o=o||{}; const x=Math.max(0,+o.x||0), one=Math.max(0,+o.one||0), snow=o.ord==='snow', roll=!!o.roll, st=M.Ls.map(l=>({l,b:l.b0,end:-1})), R=[]; let intT=0, exT=0, nwT=0, n=0, first=null;
+  const ord=()=>st.filter(s=>s.b>0.5).sort((a,b)=>snow?(a.b-b.b||b.l.r-a.l.r):(b.l.r-a.l.r||a.b-b.b));
+  for(let i=0;i<M.N;i++){ let it=0,p=0,ex=0,freed=0,tr=0,any=false;
+    for(const s of st){ const due=s.l.pay[i]; if(s.b<=0.5){ if(i>s.end) freed+=s.l.reg; continue; } if(!(due>0)) continue; any=true; const ir=Math.min(due,s.b*s.l.r), pr=Math.min(s.b,due-ir); s.b-=pr; it+=ir; p+=pr; tr+=Math.round(ir+pr); freed+=Math.max(0,due-ir-pr); if(i>=s.l.last||s.b<=0.5) s.b=0; if(s.b===0&&s.end<0) s.end=i; }
+    const fresh=(any?x:0)+(i===0?one:0); let pool=fresh+(roll?freed:0); if(pool>0.005){ const q=ord(); if(i===0||first==null){ if(q[0]&&first==null) first=q[0].l; } for(const s of q){ if(pool<=0.005) break; const pay=Math.min(s.b,pool); s.b-=pay; pool-=pay; ex+=pay; if(s.b<=0.5){ s.b=0; if(s.end<0) s.end=i; } } }
+    const b=st.reduce((t,s)=>t+s.b,0); R.push({d:M.dates[i],b:b<0.5?0:b,it,p,ex,t:it+p+ex,tr,bl:st.map(s=>s.b)}); intT+=it; exT+=ex; nwT+=Math.min(ex,fresh); if(it+p+ex>0.5) n=i+1; if(b<0.5) break; }
+  const ok=st.every(s=>s.b<=0.5); if(first==null){ const q=M.Ls.slice().sort((a,b)=>snow?(a.b0-b.b0||b.r-a.r):(b.r-a.r||a.b0-b.b0)); first=q[0]||null; }
+  return {R,n:ok?n:M.N,ok,int:intT,ex:exT,nw:nwT,end:M.dates[Math.max(0,(ok?n:M.N)-1)],close:st.map(s=>({l:s.l,i:s.end})),first}; }
+function m56Seek(M,tm,o){ const base=m56Sim(M,Object.assign({},o,{x:0,one:0})); if(tm>=base.n) return 0; let lo=0, hi=M.B0; for(let k=0;k<30;k++){ const mid=(lo+hi)/2; if(m56Sim(M,Object.assign({},o,{x:mid,one:0})).n<=tm) hi=mid; else lo=mid; } return Math.min(Math.ceil(M.B0),Math.ceil(hi/10)*10); }
+function m56Opt(M,B,P){ const o={ord:P.ord,roll:P.roll}; if(P.mode==='mo') o.x=P.x; else if(P.mode==='one') o.one=P.one; else { const tm=P.tm>0?Math.min(P.tm,B.n):B.n; o.x=tm<B.n?m56Seek(M,tm,{ord:P.ord,roll:P.roll}):0; } return o; }
+function m56Calc(){ const M=m56Model(); if(!M) return null; const P=m56P(), B=m56Sim(M,{}); if(P.mode==='date'&&(!(P.tm>0)||P.tm>B.n)) P.tm=B.n; const o=m56Opt(M,B,P), on=(o.x>0)||(o.one>0)||!!o.roll, S=on?m56Sim(M,o):B;
+  const act=on&&(S.n<B.n||B.int-S.int>0.5), pay=(B.R.find(r=>r.t>0.5)||{tr:0}).tr; M56L.M=M; M56L.B=B; M56L.S=S; return {M,P,B,S,o,on,act,pay,saved:Math.max(0,Math.round(B.int-S.int)),sooner:Math.max(0,B.n-S.n)}; }
+function m56MaxX(C){ return Math.max(1000,Math.ceil((C.pay||0)/100)*100); } function m56StepX(C){ return m56MaxX(C)>4000?100:50; }
+function m56MaxOne(C){ const b=C.M.B0, st=m56StepOne(C); return Math.max(st,Math.ceil(b/st)*st); } function m56StepOne(C){ const b=C.M.B0; return b>400000?5000:b>80000?1000:b>20000?500:100; }
+const m56Mon=d=>m8MonLabel(d), m56F=v=>(Math.round(v*10)/10).toFixed(1);
+
+/* ---------- график ---------- */
+function m56Geo(C){ const W=320,H=200,pL=6,pR=44,pT=14,pB=24,n=Math.max(1,C.B.n); return {W,H,pL,pR,pT,pB,n,pw:W-pL-pR,X:i=>pL+i/n*(W-pL-pR),yb:H-pB}; }
+function m56Bal(S,M,k,i){ if(i<=0) return k==null?M.B0:M.Ls[k].b0; const r=S.R[i-1]; if(!r) return 0; return k==null?r.b:r.bl[k]; }
+function m56XL(C,g){ const f=m56F; let h=`<text class="xl" x="${f(g.X(0))}" y="${g.H-7}" text-anchor="start">${esc(L.m49Now)}</text>`; const used=[g.X(0)+34];
+  C.B.R.forEach((m,k)=>{ const i=k+1; if(m.d.getMonth()===0&&i<g.n-1){ const x=g.X(i); if(x>used[used.length-1]+22&&x<g.X(g.n)-40){ h+=`<text class="xl" x="${f(x)}" y="${g.H-7}" text-anchor="middle">${m.d.getFullYear()}</text><path class="yr" d="M${f(x)},${f(g.yb)} v4"/>`; used.push(x); } } });
+  return h+`<text class="xl" x="${f(g.X(g.n))}" y="${g.H-7}" text-anchor="end">${esc(MONTHS[lang].short[C.B.end.getMonth()]+' '+String(C.B.end.getFullYear()).slice(2))}</text>`; }
+function m56YL(g,mx){ const f=m56F, Y=v=>g.pT+(1-v/mx)*(g.yb-g.pT), tk=m40Ticks(0,mx).filter(v=>v>0&&v<=mx*1.001); return {Y,h:`<path class="gr" d="${tk.map(v=>`M${g.pL},${f(Y(v))} H${g.W-g.pR+4}`).join(' ')} M${g.pL},${f(g.yb)} H${g.W-g.pR+4}"/>`+tk.concat([0]).map(v=>`<text class="yl" x="${g.W}" y="${f(Y(v)+4)}" text-anchor="end">${m40Num(v)}</text>`).join('')}; }
+function m56Cur(C,g,Y){ const f=m56F, i=Math.max(0,Math.min(g.n,M56L.sel|0)), iso=M56L.lens==='debt'&&M56L.iso!=null?M56L.iso:null, v=m56Bal(C.S,C.M,iso,i), x=M56L.lens==='pay'?g.X(Math.max(0.5,i-0.5)):g.X(i);
+  return `<g class="cur" data-m56c${i?'':' hidden'}><path d="M${f(x)},${g.pT-8} V${f(g.yb)}"/>${M56L.lens==='pay'?'':`<circle cx="${f(x)}" cy="${f(Y(v))}" r="5.5"/>`}</g>`; }
+function m56DebtSVG(C){ const g=m56Geo(C), f=m56F, M=C.M, iso=M56L.iso!=null&&M.Ls[M56L.iso]?M56L.iso:null, mx=iso!=null?M.Ls[iso].b0:M.B0, ax=m56YL(g,mx), Y=ax.Y, ks=iso!=null?[iso]:M.Ls.map((l,k)=>k);
+  const line=(S,k)=>{ let d=''; for(let i=0;i<=g.n;i++) d+=(i?' L':'M')+f(g.X(i))+','+f(Y(m56Bal(S,M,k,i))); return d; };
+  let areas='', prev=new Array(g.n+1).fill(0);
+  for(const k of ks){ const up=prev.map((v,i)=>v+m56Bal(C.S,M,k,i)); let d=''; for(let i=0;i<=g.n;i++) d+=(i?' L':'M')+f(g.X(i))+','+f(Y(up[i])); for(let i=g.n;i>=0;i--) d+=' L'+f(g.X(i))+','+f(Y(prev[i])); areas+=`<path class="ar" style="fill:${esc(M.Ls[k].col||'var(--brand)')};--i:${k}" d="${d} Z"/>`; prev=up; }
+  let top=''; for(let i=0;i<=g.n;i++) top+=(i?' L':'M')+f(g.X(i))+','+f(Y(prev[i]));
+  const ghost=C.act?`<path class="gh" d="${line(C.B,iso)}"/>`:'';
+  let mk=''; const seen={}; for(const c of C.S.close){ if(c.i<0||(iso!=null&&c.l!==M.Ls[iso])) continue; const i=c.i+1; if(i>=C.S.n&&iso==null) continue; const x=g.X(i), y=Y(prev[i]), key=i; seen[key]=(seen[key]||0)+1; mk+=`<circle class="cl" cx="${f(x)}" cy="${f(y-(seen[key]-1)*7)}" r="4.5" style="fill:${esc(c.l.col||'var(--muted)')}"/>`; }
+  const fx_=g.X(Math.min(g.n,C.S.n)); mk+=`<g class="fl"><path d="M${f(fx_)},${f(g.yb)} V${f(g.yb-26)}"/><path class="fg" d="M${f(fx_)},${f(g.yb-26)} l-13,4.5 l13,4.5 Z"/></g>`;
+  return `<svg viewBox="0 0 ${g.W} ${g.H}" aria-hidden="true">${ax.h}${m56XL(C,g)}<g class="ars">${areas}</g>${ghost}<path class="tp" d="${top}"/>${mk}<g class="now"><circle class="p" cx="${f(g.X(0))}" cy="${f(Y(mx))}" r="9"/><circle cx="${f(g.X(0))}" cy="${f(Y(mx))}" r="4.5"/></g>${m56Cur(C,g,Y)}</svg>`; }
+function m56PaySVG(C){ const g=m56Geo(C), f=m56F, mx=Math.max(1,...C.B.R.map(r=>r.t),...C.S.R.map(r=>r.t))*1.08, ax=m56YL(g,mx), Y=ax.Y, slot=g.pw/g.n, bw=Math.max(1.2,slot*0.72); let p='',it='',ex='';
+  C.S.R.forEach((r,k)=>{ if(!(r.t>0.5)) return; const x=g.X(k)+(slot-bw)/2, y1=Y(r.p), y2=Y(r.p+r.ex), y3=Y(r.p+r.ex+r.it), rr=Math.min(2,bw/2); p+=`M${f(x)},${f(g.yb)} V${f(y1)} h${f(bw)} V${f(g.yb)} Z `; if(r.ex>0.5) ex+=`M${f(x)},${f(y1)} V${f(y2)} h${f(bw)} V${f(y1)} Z `; if(r.it>0.5) it+=`M${f(x)},${f(y2)} V${f(y3+rr)} q0,${-rr} ${rr},${-rr} h${f(bw-2*rr)} q${rr},0 ${rr},${rr} V${f(y2)} Z `; });
+  let gh=''; if(C.act){ C.B.R.forEach((r,k)=>{ const x0=g.X(k), y=Y(r.t); gh+=(k?' L':'M')+f(x0)+','+f(y)+' L'+f(x0+slot)+','+f(y); }); gh=`<path class="gh" d="${gh}"/>`; }
+  return `<svg viewBox="0 0 ${g.W} ${g.H}" aria-hidden="true">${ax.h}${m56XL(C,g)}<path class="bp" d="${p}"/><path class="bx" d="${ex}"/><path class="bi" d="${it}"/>${gh}${m56Cur(C,g,Y)}</svg>`; }
+function m56RdHTML(C){ const i=Math.max(0,Math.min(C.B.n,M56L.sel|0)), S=C.S, M=C.M, r=i>0?S.R[i-1]:null, d=i>0?C.B.R[i-1].d:null, b=m56Bal(S,M,null,i), nx=S.R.find(q=>q.tr>0.5);
+  const payT=q=>L.m56RdPay(money(q.tr),money(q.tr-Math.round(q.it)),q.it>=1?money(Math.round(q.it)):'')+(q.ex>0.5?L.m56RdEx(money(q.ex)):'');
+  return `<small>${esc(i>0?m56Mon(d):L.m56NowL)}</small><b>${esc(i>0?(b>0.5?L.m56RdDebt(money(b)):L.m56RdFree):L.m56RdNow(money(b)))}</b><span class="m41-sp">${esc(i>0?(r&&r.t>0.5?payT(r):L.m56RdNoPay):(nx?payT(nx)+(S.R[0]&&S.R[0]!==nx&&S.R[0].ex>0.5?L.m56RdEx(money(S.R[0].ex)):''):L.m56RdNoPay))}</span>`; }
+function m56HeroHTML(C){ const T=today0(), w=n=>m49Wait(Math.max(0,n-1)); if(!C.B.ok&&!C.S.ok) return `<small>${esc(L.m56FreeL)}</small><b>${esc(L.m56Never)}</b>`;
+  return `<small>${esc(L.m56FreeL)}</small><b>${esc(C.S.ok?m56Mon(C.S.end):L.m56Never)}</b>${C.act&&C.sooner>0?`<s>${esc(C.B.ok?m56Mon(C.B.end):L.m56Never)}</s>`:''}<span>${esc(C.S.ok?w(Math.max(0,mIdx(C.S.end)-mIdx(T))+1):'')}${C.act&&C.sooner>0?` <em class="m56-pill">${esc(L.m56Earlier(C.sooner))}</em>`:''}</span>`; }
+function m56LbT(C,k){ const v=m56Bal(C.S,C.M,k<0?null:k,Math.max(0,Math.min(C.B.n,M56L.sel|0))); return v>0.5?money(v):'✓'; }
+function m56LegHTML(C){ if(M56L.lens==='pay') return `<span><i class="sq p"></i>${esc(L.m56Leg.p)}</span><span><i class="sq i"></i>${esc(L.m56Leg.i)}</span>${C.S.ex>0.5?`<span><i class="sq x"></i>${esc(L.m56Leg.x)}</span>`:''}${C.act?`<span><i class="gh"></i>${esc(L.m56Leg.base)}</span>`:''}`;
+  const M=C.M, one=M.Ls.length<2; return (one?'':`<button type="button" class="m56-lc${M56L.iso==null?' on':''}" data-m56iso="-1" aria-pressed="${M56L.iso==null}"><i class="all"></i><span>${esc(L.m56All)}</span><b data-m56lb="-1">${m56LbT(C,-1)}</b></button>`)+M.Ls.map((l,k)=>`<button type="button" class="m56-lc${M56L.iso===k?' on':''}" data-m56iso="${k}" aria-pressed="${M56L.iso===k}"${one?' disabled':''}><i style="background:${esc(l.col||'var(--muted)')}"></i><span>${esc(l.short)}</span><b data-m56lb="${k}">${m56LbT(C,k)}</b></button>`).join('')+(C.act?`<span class="m56-lg"><i class="gh"></i>${esc(L.m56Leg.base)}</span>`:''); }
+
+/* ---------- «а если платить больше?» ---------- */
+function m56CtlHTML(C){ const P=C.P, md=P.mode; let val, max, st, lab=L.m56Amt[md], out;
+  if(md==='date'){ max=C.B.n; st=1; val=Math.min(max,Math.max(1,P.tm||max)); out=`<output class="m56-dv" data-m56="dv">${esc(m56Mon(C.B.R[val-1].d))}</output>`; }
+  else { max=md==='mo'?m56MaxX(C):m56MaxOne(C); st=md==='mo'?m56StepX(C):m56StepOne(C); val=Math.min(max,md==='mo'?P.x:P.one); out=`<label class="m56-av"><span aria-hidden="true">+</span><input type="number" inputmode="numeric" min="0" max="${Math.ceil(C.M.B0)}" step="${st}" id="m56amt" value="${Math.round(md==='mo'?P.x:P.one)||''}" placeholder="0" aria-label="${esc(lab)}"><span>${esc(L.cur)}</span></label>`; }
+  return `<div class="seg m56-seg" role="radiogroup" aria-label="${esc(L.m56ModeA)}">${['mo','one','date'].map(k=>`<button type="button" role="radio" aria-checked="${k===md}" class="${k===md?'on':''}" data-m56mode="${k}">${esc(L.m56Mode[k])}</button>`).join('')}</div>
+    <div class="m56-amt"><span class="m56-al">${esc(lab)}</span><div class="m56-ar"><button type="button" class="m56-pm" data-m56step="-1" aria-label="${esc(L.m56Less)}">${ico('minus',18)}</button>${out}<button type="button" class="m56-pm" data-m56step="1" aria-label="${esc(L.m56More)}">${ico('plus',18)}</button></div>
+      <input type="range" id="m56x" min="${md==='date'?1:0}" max="${max}" step="${st}" value="${val}" style="--v:${((val-(md==='date'?1:0))/Math.max(1,max-(md==='date'?1:0))*100).toFixed(1)}%" aria-label="${esc(lab)}"${md==='date'?` aria-valuetext="${esc(m56Mon(C.B.R[val-1].d))}"`:''}>
+      <span class="m56-xs">${md==='date'?`<span>${esc(m56Mon(C.B.R[0].d))}</span><span>${esc(m56Mon(C.B.end))}</span>`:`<span>0</span><span>+${money(max)}</span>`}</span></div>`; }
+function m56ResHTML(C){ const P=C.P, tot=Math.round(C.S.nw), rollOnly=C.on&&!(C.o.x>0)&&!(C.o.one>0);
+  const need=P.mode==='date'?`<p class="m56-need">${esc(C.o.x>0?L.m56Need(money(C.o.x)):L.m56NeedNo)}</p>`:'';
+  const roi=tot>0&&C.saved>0?[money(100),money(Math.round(C.saved/tot*100))]:null;
+  const sum=!C.on?L.m56Sum0:rollOnly?(C.act?L.m56SumRoll(money(C.saved)):L.m56Sum0):!C.act?L.m56Sum0:C.saved>0?L.m56Sum(money(tot),money(C.saved),roi):L.m56SumT(money(tot));
+  let hint=''; if(((C.o.x>0)||(C.o.one>0))&&!C.o.roll&&C.M.Ls.length>1){ const R2=m56Sim(C.M,Object.assign({},C.o,{roll:1})); if(R2.ok&&R2.n<C.S.n){ const lastL=C.S.close.slice().sort((a,b)=>b.i-a.i)[0]; hint=`<div class="m56-hintb"><p>${esc(C.sooner>0?L.m56RollMore(m56Mon(R2.end),L.m56Earlier(C.S.n-R2.n)):L.m56RollHint(lastL?lastL.l.short:'',m56Mon(R2.end),L.m56Earlier(C.S.n-R2.n)))}</p><button type="button" class="btn btn-ghost" data-m56rollon>${esc(L.m56RollOn)}</button></div>`; } }
+  return `${need}<div class="m56-tiles"><div class="m56-tile${C.act&&C.sooner>0?' go':''}"><small>${esc(L.m56T1)}</small><b>${esc(C.S.ok?m56Mon(C.S.end):L.m56Never)}</b><em>${esc(C.act&&C.sooner>0?L.m56Earlier(C.sooner):L.m56Same)}</em></div>
+    <div class="m56-tile${C.saved>0?' go':''}"><small>${esc(L.m56T2)}</small><b>${C.saved>0?money(C.saved):'—'}</b><em>${esc(C.saved>0?(C.M.int0>0?'−'+Math.min(100,Math.round(C.saved/Math.max(1,C.M.int0)*100))+'%':''):L.m56Zero)}</em></div></div><p class="m56-sum">${esc(sum)}</p>${hint}`; }
+function m56OrdHTML(C){ const M=C.M; if(M.Ls.length<2) return ''; const P=C.P, mk=k=>m56Sim(M,Object.assign({},C.o,{ord:k})), extra=(C.o.x>0)||(C.o.one>0)||!!C.o.roll;
+  let opts=''; if(extra){ const A=mk('aval'), Sn=mk('snow'), same=A.n===Sn.n&&Math.abs(A.int-Sn.int)<1;
+    opts=['aval','snow'].map(k=>{ const R=k==='aval'?A:Sn, sv=Math.max(0,Math.round(C.B.int-R.int)); return `<button type="button" role="radio" aria-checked="${P.ord===k}" class="m56-ob${P.ord===k?' on':''}" data-m56ord="${k}"><b>${esc(L.m56Ord[k])}</b><small>${esc(L.m56OrdS[k])}</small><em>${esc(L.m56OrdR(sv>0?money(sv):'',R.ok?m56Mon(R.end):L.m56Never))}</em></button>`; }).join('')+(same?`<p class="m56-eq">${esc(L.m56OrdEq)}</p>`:''); }
+  else opts=['aval','snow'].map(k=>`<button type="button" role="radio" aria-checked="${P.ord===k}" class="m56-ob${P.ord===k?' on':''}" data-m56ord="${k}"><b>${esc(L.m56Ord[k])}</b><small>${esc(L.m56OrdS[k])}</small></button>`).join('');
+  const q=M.Ls.slice().sort((a,b)=>P.ord==='snow'?(a.b0-b.b0||b.r-a.r):(b.r-a.r||a.b0-b.b0));
+  return `<div class="m56-ord"><b class="m56-h">${esc(L.m56OrdT)}</b><div class="m56-obs" role="radiogroup" aria-label="${esc(L.m56OrdT)}">${opts}</div>
+    <p class="m56-ol"><span>${esc(extra?L.m56OrdL:L.m56OrdIdle)}</span>${q.map((l,i)=>`<span class="in"><u>${i+1}</u><i style="background:${esc(l.col||'var(--muted)')}"></i>${esc(l.short)}${l.rate>0?` <em>${esc(L.m56Rate(m12Pct(l.rate)))}</em>`:''}</span>`).join('')}</p>
+    <label class="m56-sw"><input type="checkbox" data-m56roll${P.roll?' checked':''}><span><b>${esc(L.m56Roll)}</b><small>${esc(L.m56RollS)}</small></span></label></div>`; }
+function m56FootHTML(C){ const t=C.S.first, extra=(C.o.x>0)||(C.o.one>0);
+  return `${extra&&t?`<button type="button" class="btn btn-primary m56-pay" data-action="pay" data-id="${esc(String(t.id))}">${ico('paid',18)} ${esc(L.m56PayTo(t.short))}</button>`:''}${C.on?`<button type="button" class="link-btn m56-rs" data-m56reset>${esc(L.m56Reset)}</button>`:''}`; }
+/* ---------- «что впереди» ---------- */
+function m56MsHTML(C){ const S=C.S, B=C.B, M=C.M, T=today0(), rows=[], byI={}; for(const c of S.close){ if(c.i>=0) (byI[c.i]=byI[c.i]||[]).push(c.l); }
+  const baseI={}; for(const c of B.close) baseI[c.l.id]=c.i; const idx=Object.keys(byI).map(Number).sort((a,b)=>a-b), half=S.R.findIndex(r=>r.b<=M.B0/2+0.5); let win=false, hf=false;
+  const when=i=>m49Wait(Math.max(0,mIdx(S.R[i].d)-mIdx(T)));
+  rows.push(`<li class="now"><i></i><div><small>${esc(L.m56NowL)}</small><b>${esc(L.m56MsNow(money(M.B0),C.pay>0?money(C.pay):''))}</b></div></li>`);
+  for(const i of idx){ const ls=byI[i], last=i===S.n-1, was=ls.some(l=>baseI[l.id]!==i)&&C.act; if(!hf&&half>=0&&half<i){ hf=true; rows.push(`<li class="hf"><i></i><div><small>${esc(m56Mon(S.R[half].d))} · ${esc(when(half))}</small><b>${esc(L.m56MsHalf)}</b></div></li>`); }
+    const nx=S.R[i+1], after=!last&&nx&&nx.t>0.5?L.m56MsAfter(money(nx.tr)):'', chips=ls.map(l=>`<span class="in"><i style="background:${esc(l.col||'var(--muted)')}"></i>${esc(l.short)}</span>`).join(''), wn=!win&&!last; if(wn) win=true;
+    rows.push(`<li class="${last?'fr':'cl'}${wn?' win':''}"><i${last?'':` style="background:${esc(ls[0].col||'var(--muted)')}"`}></i><div><small>${wn?`<u>${esc(L.m56MsWin)}</u> `:''}${esc(m56Mon(S.R[i].d))} · ${esc(when(i))}${was?` <s>${esc(m56Mon(B.R[Math.max(...ls.map(l=>baseI[l.id]))].d))}</s>`:''}</small><b>${esc(last?L.m56MsFree:L.m56MsClose(ls.length))}</b><span class="m40-evs">${chips}</span>${last?`<span class="m56-sub">${esc(L.m56MsFreeS)}</span>`:after?`<span class="m56-sub">${esc(after)}</span>`:''}${wn&&ls[0].pct>0?`<span class="m56-gp" role="img" aria-label="${esc(L.m56MsPaid(ls[0].pct))}"><i><u style="width:${ls[0].pct}%;background:${esc(ls[0].col||'var(--brand)')}"></u></i><em>${esc(L.m56MsPaid(ls[0].pct))}</em></span>`:''}</div></li>`); }
+  if(!idx.length||!S.ok) return ''; return `<h3 class="m56-h3">${ico('flag',18)} ${esc(L.m56MsT)}</h3><ol class="m56-ms">${rows.join('')}</ol>`; }
+function m56TblHTML(C){ const H=L.m56TblH; return `<div class="m56-tw"><table><thead><tr>${H.map((h,i)=>`<th${i?' class="n"':''}>${esc(h)}</th>`).join('')}</tr></thead><tbody>${C.S.R.slice(0,C.S.n).filter(r=>r.t>0.5).map(r=>`<tr><td>${esc(MONTHS[lang].short[r.d.getMonth()]+' '+r.d.getFullYear())}</td><td class="n">${money(r.tr+Math.round(r.ex))}</td><td class="n">${money(r.tr-Math.round(r.it)+Math.round(r.ex))}</td><td class="n">${money(Math.round(r.it))}</td><td class="n">${money(r.b)}</td></tr>`).join('')}</tbody></table></div>`; }
+
+/* ---------- сборка ---------- */
+function m56AskQ(C){ try{ const DD=m49Data(); let rw=0,rb=0,mon=0,int=0; for(const {loan,a} of m49Act()){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); const o=DD&&DD.L0[loan.id]; int+=o?o.int:Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
+    let q=L.m49AskQ(money(m8Totals(activeList().filter(z=>!z.loan.example)).left),money(mon),rb>0?m12Pct(rw/rb):'0',money(Math.round(int))); if(C.act&&C.o.x>0) q+=L.m56AskX(money(C.o.x),m56Mon(C.S.end)); else if(C.act&&C.o.one>0) q+=L.m56AskOne(money(C.o.one),m56Mon(C.S.end)); return q; }catch(e){ return ''; } }
+function m56RoadHTML(){ const C=m56Calc(); if(!C) return ''; try{ M41M.D=C.B.R; M41G.x=C.P.mode==='mo'?C.P.x:0; }catch(e){} if(M56L.sel>C.B.n) M56L.sel=0; if(M56L.iso!=null&&!C.M.Ls[M56L.iso]) M56L.iso=null;
+  const q=m56AskQ(C);
+  return `<div class="m41-mo m49-road m56" data-m49io="road"><div class="m40-h"><h2>${ico('flag',20)} ${esc(L.m49RoadT)}</h2></div>${m49ChkHTML()}
+    <div class="m56-hero" data-m56="hero" aria-live="polite">${m56HeroHTML(C)}</div>
+    <div class="m56-bar"><div class="seg m56-seg" role="radiogroup" aria-label="${esc(L.m56LensA)}">${['debt','pay'].map(k=>`<button type="button" role="radio" aria-checked="${M56L.lens===k}" class="${M56L.lens===k?'on':''}" data-m56lens="${k}">${esc(L.m56Lens[k])}</button>`).join('')}</div><button type="button" class="m56-play" data-m56play aria-label="${esc(L.m56Play)}" title="${esc(L.m56Play)}"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="pl" d="M8 5.5v13l11-6.5z"/><path class="st" d="M7 6h10v12H7z"/></svg></button></div>
+    <div class="m40-rd m41-rd m56-rd" data-m56="rd" aria-live="polite">${m56RdHTML(C)}</div>
+    <div class="m56-plot" data-m56p data-m56="plot" tabindex="0" role="img" aria-label="${esc(L.m56A11y(money(C.M.B0),C.S.ok?m56Mon(C.S.end):L.m56Never))}">${M56L.lens==='pay'?m56PaySVG(C):m56DebtSVG(C)}</div>
+    <div class="m56-leg${M56L.lens==='pay'?' pay':''}" data-m56="leg">${m56LegHTML(C)}</div><p class="m56-hint">${esc(L.m56Scrub)}</p>
+    <section class="m56-x" aria-labelledby="m56xh"><h3 id="m56xh" class="m56-h3">${ico('zap',18)} ${esc(L.m56XT)}</h3><p class="m56-xsub">${esc(L.m56XSub)}</p>
+      <div data-m56="ctl">${m56CtlHTML(C)}</div><div data-m56="res" aria-live="polite">${m56ResHTML(C)}</div><div data-m56="ord">${m56OrdHTML(C)}</div><div class="m56-ft" data-m56="ft">${m56FootHTML(C)}</div>
+      <p class="m56-bank">${ico('info',14)}<span>${esc(L.m56Bank)}</span></p>
+      <details class="m56-how"><summary>${esc(L.m56How)}</summary><ul>${L.m56HowP.map(p=>`<li>${esc(p)}</li>`).join('')}</ul></details></section>
+    <div data-m56="ms">${m56MsHTML(C)}</div>
+    <details class="m56-tb"><summary>${ico('doc',16)} ${esc(L.m56Tbl)}</summary><div data-m56="tb"></div></details>
+    ${q?`<button type="button" class="btn btn-ghost m49-ask" data-m56="ask" data-sifra="${esc(q)}">${ico('chat',18)} ${esc(L.m49Ask)}</button>`:''}</div>${m47RtHTML()}`; }
+try{ m41MoHTML=m56RoadHTML; }catch(e){}
+/* перерисовать всё, кроме ручек (чтобы ползунок не терял палец) */
+function m56Paint(ctl){ const box=document.querySelector('#view-loans .m56'); if(!box) return; const C=m56Calc(); if(!C) return; box.classList.remove('m49-go'); const set=(k,h)=>{ const e=box.querySelector('[data-m56="'+k+'"]'); if(e) e.innerHTML=h; };
+  if(M56L.sel>C.B.n) M56L.sel=C.B.n; set('hero',m56HeroHTML(C)); set('rd',m56RdHTML(C)); set('plot',M56L.lens==='pay'?m56PaySVG(C):m56DebtSVG(C)); set('leg',m56LegHTML(C)); { const lg=box.querySelector('[data-m56="leg"]'); if(lg) lg.classList.toggle('pay',M56L.lens==='pay'); } if(ctl) set('ctl',m56CtlHTML(C)); set('res',m56ResHTML(C)); set('ord',m56OrdHTML(C)); set('ft',m56FootHTML(C)); set('ms',m56MsHTML(C));
+  const tb=box.querySelector('details.m56-tb'); if(tb&&tb.open) set('tb',m56TblHTML(C)); const ask=box.querySelector('[data-m56="ask"]'); if(ask) ask.setAttribute('data-sifra',m56AskQ(C));
+  box.querySelectorAll('.m56-seg [data-m56lens]').forEach(b=>{ const on=b.dataset.m56lens===M56L.lens; b.classList.toggle('on',on); b.setAttribute('aria-checked',on); });
+  if(!ctl){ const P=C.P, r=box.querySelector('#m56x'); if(r){ const mn=+r.min||0, mx=+r.max||1; r.style.setProperty('--v',((+r.value-mn)/Math.max(1,mx-mn)*100).toFixed(1)+'%'); if(P.mode==='date'){ const dv=box.querySelector('[data-m56="dv"]'), d=C.B.R[Math.max(1,Math.min(C.B.n,P.tm))-1]; if(dv&&d) dv.textContent=m56Mon(d.d); if(d) r.setAttribute('aria-valuetext',m56Mon(d.d)); } } }
+  try{ const ld=box.parentElement; if(ld) ld.dataset.m41=m56RoadHTML(); M41G.x=C.P.mode==='mo'?C.P.x:0; }catch(e){} }
+function m56Soon(ctl){ if(M56L.raf) return; M56L.raf=requestAnimationFrame(()=>{ M56L.raf=0; try{ m56Paint(ctl); }catch(e){ console.error(e); } }); }
+function m56Save(){ clearTimeout(M56L.sv); M56L.sv=setTimeout(()=>{ try{ persist(); }catch(e){} },500); }
+function m56SetVal(v,fromRange){ const P=m56P(), box=document.querySelector('#view-loans .m56'); if(!box) return; const r=box.querySelector('#m56x'), a=box.querySelector('#m56amt'); v=Math.max(0,+v||0);
+  if(P.mode==='date'){ P.tm=Math.max(1,Math.round(v)); if(r&&!fromRange) r.value=P.tm; } else { v=Math.min(v,Math.ceil(M56L.M?M56L.M.B0:v)); if(P.mode==='mo') P.x=v; else P.one=v; if(r&&fromRange!==1) r.value=Math.min(+r.max,v); if(a&&fromRange!==2) a.value=v?Math.round(v):''; }
+  m56Soon(false); m56Save(); }
+function m56Pick(i){ const C=M56L.B&&M56L.S&&M56L.M?{B:M56L.B,S:M56L.S,M:M56L.M}:null, box=document.querySelector('#view-loans .m56'); if(!C||!box) return; i=Math.max(0,Math.min(C.B.n,i)); if(i===M56L.sel) return false; M56L.sel=i;
+  const g=m56Geo(C), f=m56F, cur=box.querySelector('[data-m56c]'), iso=M56L.lens==='debt'&&M56L.iso!=null?M56L.iso:null; if(cur){ cur.removeAttribute('hidden'); const x=M56L.lens==='pay'?g.X(Math.max(0.5,i-0.5)):g.X(i), pa=cur.querySelector('path'), ci=cur.querySelector('circle'); pa.setAttribute('d',`M${f(x)},${g.pT-8} V${f(g.yb)}`);
+    if(ci){ const mx=iso!=null?C.M.Ls[iso].b0:C.M.B0; let v=0; if(iso!=null) v=m56Bal(C.S,C.M,iso,i); else v=m56Bal(C.S,C.M,null,i); ci.setAttribute('cx',f(x)); ci.setAttribute('cy',f(g.pT+(1-v/mx)*(g.yb-g.pT))); } }
+  const rd=box.querySelector('[data-m56="rd"]'); if(rd) rd.innerHTML=m56RdHTML(Object.assign({pay:0},C)); box.querySelectorAll('[data-m56lb]').forEach(e=>{ const t=m56LbT(C,+e.dataset.m56lb); if(e.dataset.v!==t){ e.dataset.v=t; e.textContent=t; } }); return true; }
+function m56Play(on){ const box=document.querySelector('#view-loans .m56'), b=box&&box.querySelector('[data-m56play]'); cancelAnimationFrame(M56L.play); M56L.play=0; if(b){ b.classList.toggle('on',!!on); b.setAttribute('aria-label',on?L.m56Stop:L.m56Play); } if(!on||!box||!M56L.B) return;
+  const n=M56L.B.n, t0=performance.now(), D=Math.max(2600,Math.min(5200,n*120)); M56L.sel=-1; const step=t=>{ const k=Math.min(1,(t-t0)/D); m56Pick(Math.round(k*n)); if(k<1&&box.isConnected) M56L.play=requestAnimationFrame(step); else m56Play(false); }; M56L.play=requestAnimationFrame(step); }
+(function(){ let drag=false; const at=(e,el)=>{ const C=M56L.B&&{B:M56L.B}; if(!C) return 0; const r=el.getBoundingClientRect(), g=m56Geo(C), px=(e.clientX-r.left)/r.width*g.W, k=(px-g.pL)/g.pw*g.n; return M56L.lens==='pay'?Math.floor(k)+1:Math.round(k); };
+  document.addEventListener('pointerdown',e=>{ const el=e.target.closest&&e.target.closest('[data-m56p]'); if(!el) return; if(M56L.play) m56Play(false); drag=true; if(m56Pick(at(e,el))) try{ m40Vib(); }catch(x){} });
+  document.addEventListener('pointermove',e=>{ if(!drag) return; if(e.pointerType==='mouse'&&!e.buttons){ drag=false; return; } const el=document.querySelector('[data-m56p]'); if(el&&m56Pick(at(e,el))&&e.pointerType==='touch') try{ m40Vib(); }catch(x){} },{passive:true});
+  document.addEventListener('pointerup',()=>{ drag=false; }); document.addEventListener('pointercancel',()=>{ drag=false; });
+  document.addEventListener('keydown',e=>{ const el=e.target&&e.target.closest&&e.target.closest('[data-m56p]'); if(!el||!M56L.B) return; let i=null; if(e.key==='ArrowRight') i=(M56L.sel|0)+1; else if(e.key==='ArrowLeft') i=(M56L.sel|0)-1; else if(e.key==='Home') i=0; else if(e.key==='End') i=M56L.B.n; if(i==null) return; e.preventDefault(); m56Pick(i); }); })();
+document.addEventListener('input',e=>{ const t=e.target; if(!t||!t.closest||!t.closest('.m56')) return; if(t.id==='m56x') m56SetVal(t.value,1); else if(t.id==='m56amt') m56SetVal(t.value,2); });
+document.addEventListener('change',e=>{ const t=e.target; if(!t||!t.closest||!t.closest('.m56')) return; if(t.matches('[data-m56roll]')){ m56P().roll=t.checked?1:0; m56Soon(false); m56Save(); } });
+document.addEventListener('toggle',e=>{ const t=e.target; if(t&&t.matches&&t.matches('details.m56-tb')&&t.open){ const C=m56Calc(), d=t.querySelector('[data-m56="tb"]'); if(C&&d) d.innerHTML=m56TblHTML(C); } },true);
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('.m56 [data-m56mode],.m56 [data-m56ord],.m56 [data-m56lens],.m56 [data-m56iso],.m56 [data-m56play],.m56 [data-m56reset],.m56 [data-m56step],.m56 [data-m56rollon]'); if(!t) return; const P=m56P();
+  if(t.hasAttribute('data-m56rollon')){ P.roll=1; m56Paint(false); m56Save(); const c=document.querySelector('.m56 [data-m56roll]'); if(c) c.focus(); return; }
+  if(t.hasAttribute('data-m56mode')){ P.mode=t.dataset.m56mode; if(P.mode==='date'&&M56L.B&&!(P.tm>0)) P.tm=M56L.B.n; m56Paint(true); m56Save(); const b=document.querySelector('.m56 [data-m56mode="'+P.mode+'"]'); if(b) b.focus(); }
+  else if(t.hasAttribute('data-m56ord')){ P.ord=t.dataset.m56ord==='snow'?'snow':'aval'; try{ localStorage.setItem('strat_v1',P.ord==='snow'?'snowball':'avalanche'); }catch(x){} m56Paint(false); m56Save(); try{ render(); }catch(x){} const b=document.querySelector('.m56 [data-m56ord="'+P.ord+'"]'); if(b) b.focus(); }
+  else if(t.hasAttribute('data-m56lens')){ M56L.lens=t.dataset.m56lens==='pay'?'pay':'debt'; if(M56L.play) m56Play(false); m56Paint(false); }
+  else if(t.hasAttribute('data-m56iso')){ const k=+t.dataset.m56iso; M56L.iso=k<0||M56L.iso===k?null:k; m56Paint(false); const b=document.querySelector('.m56 [data-m56iso="'+(M56L.iso==null?-1:M56L.iso)+'"]'); if(b) b.focus(); }
+  else if(t.hasAttribute('data-m56play')){ m56Play(!M56L.play); }
+  else if(t.hasAttribute('data-m56reset')){ Object.assign(P,{x:0,one:0,tm:M56L.B?M56L.B.n:0,roll:0}); m56Paint(true); m56Save(); }
+  else if(t.hasAttribute('data-m56step')){ const r=document.querySelector('.m56 #m56x'); if(!r) return; const st=+r.step||1, d=+t.dataset.m56step, cur=P.mode==='date'?(P.tm||+r.max):P.mode==='mo'?P.x:P.one, v=Math.max(+r.min||0,Math.min(P.mode==='date'?+r.max:Math.ceil(M56L.M?M56L.M.B0:+r.max),(d>0?Math.floor(cur/st)*st+st:Math.ceil(cur/st)*st-st))); m56SetVal(v); try{ m40Vib(); }catch(x){} } });
+/* старые блоки про то же самое больше не нужны: всё собрано в дороге */
+function m56Hide(){ try{ const v=document.getElementById('view-loans'); if(!v) return; const on=!!v.querySelector('.m8-load .m56'); v.classList.toggle('m56-on',on); }catch(e){} }
+{ const f0=m41After; m41After=function(){ const r=f0.apply(this,arguments); try{ m56Hide(); m49Watch(); }catch(e){} return r; }; }
+try{ const _r56=render; render=function(){ const x=_r56.apply(this,arguments); try{ m56Hide(); }catch(e){} return x; }; }catch(e){}
+try{ m49Redraw=function(){ const ld=document.querySelector('#view-loans .m8-load'); if(ld){ ld.dataset.m41=''; try{ m41After(); }catch(e){} } }; }catch(e){}
+/* метка «гасить первым» на карточке кредита — тот же порядок, что выбран в расчёте (раньше карточки и расчёт могли показывать на разные кредиты) */
+try{ const f0=m12First; m12First=function(list){ try{ const act=(list||[]).filter(x=>!x.a.done&&!x.loan.example); if(act.length>=2){ const P=m56P(), M=m56Model(); if(M&&M.Ls.length>=2){ const q=M.Ls.slice().sort((a,b)=>P.ord==='snow'?(a.b0-b.b0||b.r-a.r):(b.r-a.r||a.b0-b.b0)); return q[0].id; } } }catch(e){} return f0.apply(this,arguments); }; }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
