@@ -5476,6 +5476,57 @@ html .sheet.m52:has(.sf-head), html.m40[data-sk] .sheet.m52:has(.sf-head){width:
 @keyframes m52blink{50%{opacity:0}}
 @media (prefers-reduced-motion:reduce){ .m52-ltxt>p:last-child::after, .m52-ltxt>ul:last-child>li:last-child::after{animation:none} }
 .sheet.m52:has(.sf-head)::after{flex:none;}
+/* v53: кредит в валюте */
+.m53-rate{display:flex;align-items:center;gap:12px;justify-content:space-between;margin:10px 0 12px;padding:12px 14px;border-radius:16px;background:var(--surface-2);border:1px solid var(--line)}
+.m53-rate .m53-rt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.m53-rate b{font-size:.92rem;color:var(--ink)}
+.m53-rate small{font-size:.8rem;color:var(--muted);line-height:1.35}
+.m53-rate .link-btn{flex:none;white-space:nowrap;font-size:.84rem}
+.card .c-sub .m53-eq{color:var(--muted);font-variant-numeric:tabular-nums}
+.note.m53-eq{margin:6px 0 0;font-variant-numeric:tabular-nums}
+.m53-ff select{width:100%}
+.m53-fr{display:grid;grid-template-columns:1fr;gap:6px;margin-top:10px}
+.m53-fr label{font-size:.84rem;color:var(--muted)}
+.m53-fr small{font-size:.78rem;color:var(--muted)}
+.m53-ff .note{margin:8px 0 0}
+.m53-pvr{display:grid;grid-template-columns:auto minmax(84px,120px) auto;align-items:center;gap:6px 8px;margin:12px 0 4px;padding:10px 12px;border-radius:14px;background:var(--surface-2);border:1px solid var(--line)}
+.m53-pvr label{font-size:.88rem;font-weight:600;color:var(--ink)}
+.m53-pvr input{width:100%;min-width:0;padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-variant-numeric:tabular-nums}
+.m53-pvr span{font-size:.88rem;color:var(--ink)}
+.m53-pvr small{grid-column:1/-1;font-size:.78rem;color:var(--muted)}
+.m53-rm{display:block;margin:10px auto 0}
+.sf-uimg{width:180px}
+/* наглядные ответы Сифры: плитки цифр, «за и против», шкала, следующие вопросы */
+.m53-kpi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.m53-kpi.n3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.m53-kpi.n1{grid-template-columns:1fr}
+.m53-k{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:14px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.m53-k small{font-size:.74rem;color:var(--muted);line-height:1.25}
+.m53-k b{font-size:1.06rem;line-height:1.2;color:var(--ink);font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.m53-k em{font-style:normal;font-size:.76rem;color:var(--muted)}
+.m53-k.good em,.m53-gz.good{color:#0E7A52}.m53-k.bad em,.m53-gz.bad{color:#B42344}.m53-k.warn em,.m53-gz.warn{color:#9A5B06}
+.m53-k.good{border-color:rgba(14,122,82,.35)}.m53-k.bad{border-color:rgba(180,35,68,.35)}.m53-k.warn{border-color:rgba(154,91,6,.35)}
+.m53-pc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.m53-pc>div{padding:10px 12px;border-radius:14px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.m53-pc b{display:flex;align-items:center;gap:6px;font-size:.84rem;margin-bottom:6px}
+.m53-pc .p b{color:#0E7A52}.m53-pc .c b{color:#B42344}
+.m53-pc ul{margin:0;padding-left:16px;display:grid;gap:4px}
+.m53-pc li{font-size:.82rem;line-height:1.35;color:var(--ink);overflow-wrap:anywhere}
+@media (max-width:359px){ .m53-pc,.m53-kpi.n3{grid-template-columns:1fr} }
+.m53-gv{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.m53-gv b{font-size:1.5rem;line-height:1;font-variant-numeric:tabular-nums;color:var(--ink)}
+.m53-gv small{font-size:.8rem;color:var(--muted)}
+.m53-gz{margin-left:auto;font-size:.8rem;font-weight:700}
+.m53-gt{position:relative;display:flex;gap:2px;height:12px}
+.m53-gt i{display:block;height:100%;border-radius:6px;background:var(--track,#E5E0EE)}
+.m53-gt i.good{background:#2FB27E}.m53-gt i.warn{background:#E0A32B}.m53-gt i.bad{background:#E0557B}
+.m53-gp{position:absolute;top:-4px;width:4px;height:20px;margin-left:-2px;border-radius:2px;background:var(--ink);box-shadow:0 0 0 2px var(--surface-2)}
+.m53-gs{display:flex;justify-content:space-between;margin-top:6px;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.m53-draw{margin:8px 0 0;font-size:.82rem;color:var(--muted)}
+.m53-nx{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:2px 0 12px;padding:0 4px}
+.m53-nx small{flex-basis:100%;font-size:.74rem;color:var(--muted)}
+.m53-nx .chip{max-width:100%;white-space:normal;text-align:left;line-height:1.25}
+@media (prefers-color-scheme: dark){ .m53-k.good em,.m53-gz.good,.m53-pc .p b{color:#5FD3A4} .m53-k.bad em,.m53-gz.bad,.m53-pc .c b{color:#FF8FA9} .m53-k.warn em,.m53-gz.warn{color:#F2C063} }
 /* <</v44 css>> */
 
 
@@ -10801,7 +10852,7 @@ if(cached){ state.envTx=cached.envTx||[]; state.sup=cached.sup||[]; state.stock=
 ensureV5(); ensureV6();
 
 /* ---- помощники ---- */
-function money(n){ return nf.format(Math.round(n)) + ' ' + L.cur; }
+function money(n){ if(typeof M53!=='undefined'&&M53&&M53.c){ const s=m53Ctx(n); if(s!=null) return s; } return nf.format(Math.round(n)) + ' ' + L.cur; }
 function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
 const AVA=['#5B6CF0','#0EA5A3','#8B5CF6','#E0557B','#E08A2B','#2E8BE0','#1F9D6B','#D9476B'];
 function avaColor(n){ let h=0; for(const c of String(n)) h=(h+c.charCodeAt(0))%AVA.length; return AVA[h]; }
@@ -10900,7 +10951,7 @@ function renderCards(list){
   const active=list.filter(x=>!x.a.done);
   if(!active.length){ $('#cards').innerHTML=`<div class="empty" style="padding:28px 20px"><div class="em">🎉</div><p>${L.noActive}<br>${L.seeHistory}</p></div>`; return; }
   $('#cards').innerHTML=active.map(({loan,a})=>{
-    const right=`<span class="c-rem">${money(a.remaining)}</span>`;
+    const right=`<span class="c-rem">${m53M(loan,a.remaining)}</span>`;
     const gold=loan.gold?`<span class="gb" title="gold">🔶</span>`:'';
     const sub=`<span>${a.pct}% ${L.pctPaidWord}</span>${a.overdue?`<span class="mo od">${L.overdueShort}</span>`:a.monthsLeft?`<span class="mo">≈ ${a.monthsLeft} ${L.noun(a.monthsLeft,'payment')}</span>`:''}`;
     return `<div class="card" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}${gold}</span>${right}</div><div class="cbar"><i style="width:${a.pct}%"></i></div><div class="c-sub">${sub}</div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`;
@@ -10927,7 +10978,7 @@ function renderStrategy(list){
   else order=[...active].sort((a,b)=>a.a.remaining-b.a.remaining);
   const desc = method==='avalanche' ? L.avalancheDesc : L.snowballDesc;
   const noRates = method==='avalanche' && active.some(x=>!(x.loan.rate>0));
-  const items=order.map((x,i)=>`<div class="strat-item ${i===0?'first':''}"><span class="strat-rank">${i+1}</span><span class="strat-nm">${esc(x.loan.name)}</span>${i===0?`<span class="strat-first-tag">${L.payFirst}</span>`:''}<span class="strat-amt">${money(x.a.remaining)}</span></div>`).join('');
+  const items=order.map((x,i)=>`<div class="strat-item ${i===0?'first':''}"><span class="strat-rank">${i+1}</span><span class="strat-nm">${esc(x.loan.name)}</span>${i===0?`<span class="strat-first-tag">${L.payFirst}</span>`:''}<span class="strat-amt">${m53M(x.loan,x.a.remaining)}</span></div>`).join('');
   box.innerHTML=`<div class="section-h"><h2>${L.strategyTitle}</h2></div><div class="strat"><div class="seg"><button data-strat="snowball" class="${method==='snowball'?'on':''}">${L.snowball}</button><button data-strat="avalanche" class="${method==='avalanche'?'on':''}">${L.avalanche}</button></div><div class="strat-desc">${desc}</div><div class="strat-list">${items}</div>${noRates?`<div class="strat-hint">${L.strategyHint}</div>`:''}</div>`;
 }
 let tipIdx=Math.floor(Date.now()/86400000);
@@ -10952,7 +11003,7 @@ function checkMilestone(list){ if(DEMO) return;
 function renderClosed(list){
   const box=$('#closed'), closed=list.filter(x=>x.a.done);
   if(!closed.length){ box.innerHTML=''; return; }
-  box.innerHTML=`<div class="section-h"><h2>${L.historyClosed}</h2><span class="count">${closed.length}</span></div><div class="cards">${closed.map(({loan,a})=>`<div class="card closed" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem done">${L.paidOff}</span></div><div class="c-sub"><span>${L.paidLabel} ${money(a.paid)}</span><span class="mo">${L.closed}</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`).join('')}</div>`;
+  box.innerHTML=`<div class="section-h"><h2>${L.historyClosed}</h2><span class="count">${closed.length}</span></div><div class="cards">${closed.map(({loan,a})=>`<div class="card closed" role="button" tabindex="0" data-action="open" data-id="${loan.id}" aria-label="${esc(loan.name)}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem done">${L.paidOff}</span></div><div class="c-sub"><span>${L.paidLabel} ${m53M(loan,a.paid)}</span><span class="mo">${L.closed}</span></div></div><svg class="c-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></svg></div>`).join('')}</div>`;
 }
 function renderExampleNote(){ $('#exampleNote').innerHTML=state.loans.some(l=>l.example)?`<div class="example-note"><span>${L.examplesShown}</span><button id="clearEx">${L.clearExamples}</button><button data-bk="pick">${L.bkRestoreShort}</button></div>`:''; }
 function renderSync(){ $('#syncLine').innerHTML=`<div class="sync"><span class="dot"></span>${L.storedOnPhone}</div>`; }
@@ -10974,7 +11025,7 @@ function renderDynamics(list){
   for(const p of pays){ running-=payPrincipal(p); pts.push({ts:new Date(p.date).getTime(),y:Math.max(0,running)}); }
   pts.push({ts:Date.now(),y:totalRem});
   const recent=[...state.payments].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,5);
-  const rows=recent.map(p=>{ const l=byId(p.loanId); return `<div class="hrow">${l?avaHTML(l,'sm'):''}<span class="hn">${l?esc(l.name):'—'}</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${money(p.amount)}</span></div>`; }).join('');
+  const rows=recent.map(p=>{ const l=byId(p.loanId); return `<div class="hrow">${l?avaHTML(l,'sm'):''}<span class="hn">${l?esc(l.name):'—'}</span><span class="hd">${fmtShort(new Date(p.date))}</span><span class="ha">−${m53M(l,p.amount)}</span></div>`; }).join('');
   box.innerHTML=`<div class="dyn"><div class="dyn-h"><h3>${L.debtDynTitle}</h3><span class="drop">−${money(totalLogged)}</span></div><div class="dyn-sub">${L.chartSub}</div>${buildChart(pts)}<div class="hist"><h4>${L.lastPayments}</h4>${rows}</div></div>`;
 }
 
@@ -11393,8 +11444,8 @@ function parseSchedule(text){
 function interestFor(loan,amount,per,extra){
   if(extra) return 0;
   const se=schedAt(loan,per);
-  if(se && se.i!=null) return Math.min(amount, Math.round(+se.i||0));
-  if(+loan.rate>0){ const a=analyze(loan); return Math.min(amount, Math.round(a.remaining*(+loan.rate)/1200)); }
+  if(se && se.i!=null) return Math.min(amount, m53R(+se.i||0,loan));
+  if(+loan.rate>0){ const a=analyze(loan); return Math.min(amount, m53R(a.remaining*(+loan.rate)/1200,loan)); }
   return 0;
 }
 function payPrincipal(p){ return p.principal!=null?(+p.principal||0):(+p.amount||0); }
@@ -11641,7 +11692,7 @@ function detailSheet(loan){
 function payForm(loan){
   const a=analyze(loan), rem=a.remaining, per=a.done?null:a.per;
   const envB=envBal('loan');
-  const amt0=Math.round(a.amt||+loan.monthly||0)||'';
+  const amt0=m53R(a.amt||+loan.monthly||0,loan)||'';
   const canSplit=+loan.rate>0 || !!schedAt(loan,per);
   openSheet(`<h3>${L.makePayment}</h3><p class="lead">${esc(loan.name)} · ${L.leftWord} ${money(rem)}</p>
     <div class="field n"><label>${L.paymentAmount}</label><input id="p-amt" type="number" inputmode="numeric" min="0" value="${amt0}" placeholder="2000"></div>
@@ -11658,8 +11709,8 @@ function payForm(loan){
   const inp=$('#p-amt'), ii=$('#p-int'), pp=$('#p-prin'), ex=$('#p-extra'); let rcData=null, intTouched=false;
   function upd(){ if(!ii) return; const amt=+inp.value||0; if(!intTouched||ex.checked) ii.value=ex.checked?0:interestFor(loan,amt,per,false); ii.disabled=ex.checked; pp.value=Math.max(0,amt-(+ii.value||0)); }
   inp.addEventListener('input',upd); if(ii) ii.addEventListener('input',()=>{ intTouched=true; upd(); }); ex.addEventListener('change',upd); upd();
-  const dueAmt=Math.round(a.amt||0), isPart=()=>{ const v=Math.round(+inp.value||0); return !ex.checked&&!a.done&&dueAmt>0&&v>0&&v<dueAmt; };
-  const partUpd=()=>{ const el=$('#p-part'); if(!el) return; const on=isPart(); el.hidden=!on; if(on) el.textContent=L.partNote(money(dueAmt-Math.round(+inp.value||0))); };
+  const dueAmt=m53R(a.amt||0,loan), isPart=()=>{ const v=m53R(+inp.value||0,loan); return !ex.checked&&!a.done&&dueAmt>0&&v>0&&v<dueAmt-m53Tol(loan); };
+  const partUpd=()=>{ const el=$('#p-part'); if(!el) return; const on=isPart(); el.hidden=!on; if(on) el.textContent=L.partNote(money(dueAmt-m53R(+inp.value||0,loan))); };
   inp.addEventListener('input',partUpd); ex.addEventListener('change',partUpd); partUpd();
   let how=lsGet('m7how_v1')||''; const howSet=k=>{ how=k; sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.classList.toggle('on',b.dataset.how===k)); const hn=$('#p-how-n'); if(hn) hn.hidden=k!=='term'; };
   sheet.querySelectorAll('#p-how [data-how]').forEach(b=>b.onclick=()=>howSet(how===b.dataset.how?'':b.dataset.how)); howSet(how);
@@ -11674,8 +11725,8 @@ function payForm(loan){
     if(!$('#p-ai-b')) return; b.disabled=false; b.innerHTML='✨ '+L.prBtn;
     if(err){ aiShow(`<p class="err-t" style="margin:0">${err}</p>`); return; }
     const parts=[], warn=[]; aiPrev={v:inp.value,d:payDate};
-    if(r.cur&&r.cur!=='TJS'){ warn.push(L.prCur(esc(r.cur))); }
-    else if(r.amount){ inp.value=Math.round(r.amount); inp.dispatchEvent(new Event('input')); parts.push(money(r.amount)); }
+    const rk53=m53Rc(loan,r); if(rk53==null){ warn.push(m53RcMsg(loan,r)); }
+    else if(r.amount){ inp.value=m53R(r.amount*rk53,loan); inp.dispatchEvent(new Event('input')); parts.push(money(r.amount*rk53)); }
     if(r.date){ payDate=r.date===ymd(new Date())?null:r.date; parts.push(fmtDate(parseYmd(r.date))); }
     const info=r.fee?`<small>${L.prFee(money(r.fee))}</small>`:'';
     if(r.ok===false) warn.push(L.prFail);
@@ -11683,11 +11734,11 @@ function payForm(loan){
     aiShow(`<p>✨ ${parts.length?L.prDone(parts.join(', ')):L.prNone}</p>${warn.map(w=>`<small class="pr-w">⚠️ ${w}</small>`).join('')}${info}${payDate?`<small>${L.prDate(fmtDate(parseYmd(payDate)))}</small>`:''}<small>${L.prCheck}</small>${parts.length?`<button type="button" class="link-btn" id="p-ai-u">${L.ivAiUndo}</button>`:''}`); };
   let warned=false; inp.addEventListener('input',()=>{ warned=false; $('#p-save').textContent=L.record; });
   $('#p-save').onclick=async()=>{
-    const amt=Math.round(+inp.value); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
+    const amt=m53R(+inp.value,loan); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
     const extra=ex.checked;
     const partial=isPart();
     if(!warned){ const w=payGuard(loan,a,amt,extra,partial); if(w){ warned=true; $('#p-save').textContent=L.guardYes; return showErr($('#p-err'),w); } }
-    let i=extra?0:(ii?Math.max(0,Math.min(amt,Math.round(+ii.value||0))):0);
+    let i=extra?0:(ii?Math.max(0,Math.min(amt,m53R(+ii.value||0,loan))):0);
     const pctBefore=a.pct, before=+loan.paid||0;
     loan.paid=Math.min(+loan.total||0, before+(amt-i));
     const applied=Math.max(0,loan.paid-before);
@@ -11711,9 +11762,9 @@ function payForm(loan){
 /* защита от опечаток и двойных платежей: переспросить */
 function payGuard(loan,a,amt,extra,partial){
   const t=today0();
-  const dup=state.payments.find(p=>p.loanId===loan.id&&+p.amount===amt&&Math.abs(daysUntil(parseYmd(p.date),t))<=5);
+  const dup=state.payments.find(p=>p.loanId===loan.id&&Math.abs((+p.amount||0)-amt)<=m53Tol(loan)&&Math.abs(daysUntil(parseYmd(p.date),t))<=5);
   if(dup) return L.guardDup(fmtDate(parseYmd(dup.date)));
-  const exp=Math.round(a.amt||+loan.monthly||0);
+  const exp=m53R(a.amt||+loan.monthly||0,loan);
   if(!extra&&exp>0&&(amt>exp*3||(!partial&&amt<exp*0.3))) return L.guardOdd(money(amt),money(exp));
   const rem=a.remaining+(a.interestLeft||0)+exp; if(rem>0&&amt>rem*1.1) return L.guardOver(money(a.remaining));
   return '';
@@ -11835,7 +11886,7 @@ function schedSheet(loan){
   $('#sc-save').onclick=()=>{ const rows=parseSchedule($('#sc-in').value); if(rows.length<2) return showErr($('#sc-err'),L.schedErr);
     loan.sched=rows;
     const fut=rows.find(e=>parseYmd(e.d)>=today0())||rows[rows.length-1]; loan.dueDay=parseYmd(fut.d).getDate();
-    if(rows.every(e=>e.a===rows[0].a)) loan.monthly=rows[0].a; else loan.monthly=Math.round(fut.a);
+    if(rows.every(e=>e.a===rows[0].a)) loan.monthly=rows[0].a; else loan.monthly=m53R(fut.a,loan);
     persist(); render(); schedSheet(loan); toast(L.schedSaved(rows.length)); };
   if(s) $('#sc-del').onclick=()=>{ delete loan.sched; persist(); render(); schedSheet(loan); toast(L.saved); };
 }
@@ -12231,13 +12282,13 @@ function renderNextPay(list){
   if(up.kind==='sup'){ const s=up.s, d=parseYmd(s.due), urg=up.days<0||up.days<=3?'urgent':'soon';
     box.innerHTML=chk+`<div class="nextpay ${urg}"><div class="np-main"><div class="np-cap">${up.days<0?L.overdueCap:L.supNear}</div><div class="np-bank"><span class="ava sm" style="background:${avaColor(s.name)}">🤝</span><span class="nm">${esc(s.name)}</span></div><div class="np-when ${urg}">${fmtDate(d)} · ${up.days<0?L.overdue(-up.days):whenText(up.days)}</div></div><div class="np-right"><div class="np-amt">${money(s.sum)}</div><button class="btn btn-primary" data-sup="${esc(s.id)}">${L.open}</button></div></div>`; return; }
   const {loan,a}=up.x, pen=a.overdue?penaltyPerDay(loan,a):0;
-  box.innerHTML=chk+`<div class="nextpay ${a.urg}"><div class="np-main"><div class="np-cap">${a.overdue?L.overdueCap:L.nearestPayment}</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when ${a.urg}">${fmtDate(a.due)} · ${dueText(a)}</div>${a.overdue?`<div class="np-hint">${L.overdueHint}${pen>0?' '+L.penaltyDay(money(pen),money(pen*(-a.days))):''}${loan.phone?` <a class="link-btn" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}</div>`:''}</div><div class="np-right"><div class="np-amt">${money(a.amt||a.monthly||0)}</div><button class="btn btn-primary" data-action="pay" data-id="${loan.id}">${L.pay}</button></div></div>`;
+  box.innerHTML=chk+`<div class="nextpay ${a.urg}"><div class="np-main"><div class="np-cap">${a.overdue?L.overdueCap:L.nearestPayment}</div><div class="np-bank">${avaHTML(loan,'sm')}<span class="nm">${esc(loan.name)}</span></div><div class="np-when ${a.urg}">${fmtDate(a.due)} · ${dueText(a)}</div>${a.overdue?`<div class="np-hint">${L.overdueHint}${pen>0?' '+L.penaltyDay(money(pen),money(pen*(-a.days))):''}${loan.phone?` <a class="link-btn" href="tel:${esc(String(loan.phone).replace(/[^\d+]/g,''))}">📞 ${L.callBank}</a>`:''}</div>`:''}</div><div class="np-right"><div class="np-amt">${m53M(loan,a.amt||a.monthly||0)}</div><button class="btn btn-primary" data-action="pay" data-id="${loan.id}">${L.pay}</button></div></div>`;
 }
 /* закон Фиттса: главное действие — внизу, под большим пальцем */
 function renderFab(list){
   const btn=$('#addMain'), txt=$('#addMainText'); if(!btn||!txt) return;
   const c=list.filter(x=>!x.a.done&&!x.a.check&&!x.loan.example&&(x.a.days<=7)).sort((a,b)=>a.a.days-b.a.days)[0];
-  if(c){ btn.dataset.pay=c.loan.id; btn.classList.toggle('fab-urgent',c.a.overdue||c.a.days<=3); txt.textContent=L.fabPay(c.loan.name,money(c.a.amt||c.a.monthly||0)); btn.querySelector('svg').style.display='none'; }
+  if(c){ btn.dataset.pay=c.loan.id; btn.classList.toggle('fab-urgent',c.a.overdue||c.a.days<=3); txt.textContent=L.fabPay(c.loan.name,m53M(c.loan,c.a.amt||c.a.monthly||0)); btn.querySelector('svg').style.display='none'; }
   else { delete btn.dataset.pay; btn.classList.remove('fab-urgent'); txt.textContent=L.addBank; btn.querySelector('svg').style.display=''; }
 }
 /* эффект нового старта: первый вход в новом месяце */
@@ -12362,8 +12413,8 @@ function todayItems(list){
   const out=[], now=new Date(), today=dkey();
   for(const {loan,a} of list){ if(loan.example||a.done) continue;
     if(a.check) out.push({p:1,ic:'❓',t:L.fiCheck(esc(loan.name),fmtDate(a.due)),b:L.fiAnswer,act:`data-action="open" data-id="${loan.id}"`});
-    else if(a.overdue) out.push({p:0,ic:'⏰',t:L.fiLate(esc(loan.name),money(a.amt||a.monthly||0),-a.days),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`,red:1});
-    else if(a.days<=1) out.push({p:1,ic:'💳',t:L.fiDue(esc(loan.name),money(a.amt||a.monthly||0),whenText(a.days)),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`}); }
+    else if(a.overdue) out.push({p:0,ic:'⏰',t:L.fiLate(esc(loan.name),m53M(loan,a.amt||a.monthly||0),-a.days),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`,red:1});
+    else if(a.days<=1) out.push({p:1,ic:'💳',t:L.fiDue(esc(loan.name),m53M(loan,a.amt||a.monthly||0),whenText(a.days)),b:L.pay,act:`data-action="pay" data-id="${loan.id}"`}); }
   for(const s of state.sup){ if(s.paid||!s.due) continue; const d=daysUntil(parseYmd(s.due)); if(d<=2) out.push({p:d<0?0:2,ic:'🤝',t:L.fiSup(esc(s.name),money(s.sum),d<0?L.overdue(-d):whenText(d)),b:L.open,act:`data-sup="${esc(s.id)}"`,red:d<0}); }
   for(const b of state.bills){ const bd=billDue(b); if(!bd.paid&&bd.days<=2) out.push({p:bd.days<0?0:2,ic:'🔁',t:L.fiBill(esc(b.name),money(b.sum),bd.days<0?L.overdue(-bd.days):whenText(bd.days)),b:L.blPayBtn,act:`data-billpay="${esc(b.id)}"`,red:bd.days<0}); }
   for(const c of state.cust){ const st=custState(c); if(st.bal>0&&st.overdue) out.push({p:3,ic:'🧾',t:L.fiCust(esc(c.name),money(st.bal),fmtDate(parseYmd(st.due))),b:L.custRemind,act:`data-cust="${esc(c.id)}"`}); }
@@ -12408,7 +12459,7 @@ function renderToday(list){
 function payPicker(){
   const act=activeList().filter(x=>!x.a.done&&!x.loan.example).sort((a,b)=>a.a.days-b.a.days);
   if(!act.length){ toast(L.noActive); return; } if(act.length===1){ payForm(act[0].loan); return; }
-  openSheet(`<h3>💳 ${L.qaPay}</h3><p class="lead">${L.payPickLead}</p><div class="cards">${act.map(({loan,a})=>`<div class="card" role="button" tabindex="0" data-action="pay" data-id="${loan.id}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem">${money(a.amt||a.monthly||0)}</span></div><div class="c-sub"><span class="${a.overdue?'tx-urgent':''}">${fmtDate(a.due)} · ${dueText(a)}</span></div></div></div>`).join('')}</div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
+  openSheet(`<h3>💳 ${L.qaPay}</h3><p class="lead">${L.payPickLead}</p><div class="cards">${act.map(({loan,a})=>`<div class="card" role="button" tabindex="0" data-action="pay" data-id="${loan.id}">${avaHTML(loan)}<div class="c-main"><div class="c-top"><span class="c-name">${esc(loan.name)}</span><span class="c-rem">${m53M(loan,a.amt||a.monthly||0)}</span></div><div class="c-sub"><span class="${a.overdue?'tx-urgent':''}">${fmtDate(a.due)} · ${dueText(a)}</span></div></div></div>`).join('')}</div><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
 }
 /* что нового — один раз после обновления */
 function maybeWhatsNew(){ if(lsGet('wn_v8')==='1'||DEMO) return false; const saw6=lsGet('wn_v6')==='1', saw7=lsGet('wn_v7')==='1'; lsSet('wn_v8','1'); lsSet('wn_v7','1'); lsSet('wn_v6','1'); if(!hasRealData()) return false;
@@ -15444,7 +15495,7 @@ function m7IcoStart(){
 function m7Real(list){ return list.filter(x=>!x.loan.example); }
 function m7Next(list){ return m7Real(list).filter(x=>!x.a.done&&!x.a.check).sort((p,q)=>p.a.days-q.a.days)[0]||null; }
 function m7Amt(a){ return Math.round(a.amt||a.monthly||0); }
-function m7Num0(v){ return nf.format(Math.round(v||0)); }
+function m7Num0(v){ if(typeof M53!=='undefined'&&M53&&M53.c){ const s=m53Ctx(v||0,1); if(s!=null) return s; } return nf.format(Math.round(v||0)); }
 function m7HowLabel(k){ return ({app:L.m7HowApp,term:L.m7HowTerm,bank:L.m7HowBank,fam:L.m7HowFam})[k]||''; }
 async function m7CopyText(t){ try{ await navigator.clipboard.writeText(t); toast(L.m7Copied); return; }catch(e){} try{ const ta=document.createElement('textarea'); ta.value=t; ta.style.position='fixed'; ta.style.opacity='0'; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); toast(L.m7Copied); }catch(e){} }
 async function m7ShareText(t){ try{ if(navigator.share){ await navigator.share({text:t}); return; } }catch(e){ if(e&&e.name==='AbortError') return; } m7CopyText(t); }
@@ -15497,7 +15548,7 @@ function m7HeroHTML(list){
     if(lateG){ const pp=grp.map(x=>penaltyPerDay(x.loan,x.a)), mx=Math.max(...pp);
       if(mx>0&&pp.filter(v=>v===mx).length===1){ first=grp[pp.indexOf(mx)]; firstWhy=L.m7FirstPen; }
       else if(!(mx>0)){ const rr=grp.map(x=>+x.loan.rate||0), mr=Math.max(...rr); if(mr>0&&rr.filter(v=>v===mr).length===1){ first=grp[rr.indexOf(mr)]; firstWhy=L.m7FirstRate; } } }
-    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn">${x===first?`<span class="m7-h-first">${firstWhy}</span>`:''}<b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${money(m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${x.a.part>0?`<span>${L.m7PartOf(money(x.a.part),money(x.a.amtFull))}</span>`:''}${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${money(m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
+    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn">${x===first?`<span class="m7-h-first">${firstWhy}</span>`:''}<b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${m53M(x.loan,m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${x.a.part>0?`<span>${L.m7PartOf(money(x.a.part),money(x.a.amtFull))}</span>`:''}${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${m53M(x.loan,m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
     return `<div class="m7-hero m7-multi ${lateG?'late':''}">
       <div class="m7-h-top"><div class="m7-h-n"><span>${lateG?L.m7LateN(grp.length):L.m7SameDay(grp.length)}</span><b>${lateG?L.m7LateSum:fmtDate(nx.a.due)+' · '+whenText(nx.a.days)}</b></div></div>
       <div class="m7-h-amt">${m7Num0(tot)}<small>${esc(L.cur)}</small></div>
@@ -15780,7 +15831,7 @@ function m7VoiceSheet(){
       <div class="sheet-row"><button class="btn btn-ghost" id="v-undo">${L.m7VUndo}</button><button class="btn btn-primary" data-close>${L.m7VDone}</button></div></div>`);
     $('#v-undo').onclick=()=>{ if(saved){ state.cdebt=state.cdebt.filter(r=>r.id!==saved.rid); if(saved.cid) state.cust=state.cust.filter(c=>c.id!==saved.cid); persist(); render(); } closeSheet(); }; };
   const save=()=>{
-    if(res.k==='pay'){ const l=res.loan; closeSheet(); payForm(l); const i=$('#p-amt'); if(i){ i.value=res.amt; i.dispatchEvent(new Event('input')); } toast(L.m7VPayOpen); return; }
+    if(res.k==='pay'){ const l=res.loan; closeSheet(); payForm(l); const i=$('#p-amt'); if(i){ i.value=m53R(res.amt*m53K(l),l); i.dispatchEvent(new Event('input')); } toast(L.m7VPayOpen); return; }
     if(res.k==='day'){ closeSheet(); dayForm(); const c=$('#dy-cash'), k=$('#dy-card'); const p=res.p||{}; if(c){ c.value=p.cash!=null?p.cash:res.amt; if(k&&p.card!=null) k.value=p.card; c.dispatchEvent(new Event('input')); } return; }
     let c=res.c, cid=null; if(!c){ c={id:uid('c'),name:res.nn,phone:'',size:'',note:'',reg:false}; state.cust.push(c); cid=c.id; }
     const rid=uid('cd'); state.cdebt.push({id:rid,c:c.id,t:res.k==='ret'?'pay':'debt',a:res.amt,d:dkey(),n:'',ts:Date.now()});
@@ -16257,8 +16308,8 @@ async function sfAsk(q,voice){ q=String(q||'').trim(); if(sfBusy) return; const 
 /* выполнить: открыть нужную форму уже заполненной — сохраняет человек сам */
 function sfDo(a,manual){ const i=a.input||{}; const num=v=>+v>0?Math.round(+v):'';
   const fill=(sel,v,ev)=>{ const e=$(sel); if(e&&v!==''&&v!=null){ e.value=v; e.dispatchEvent(new Event(ev||'input',{bubbles:true})); } };
-  if(a.name==='pay_loan'){ const ln=state.loans.find(l=>l.id===i.loan_id); if(!ln){ toast(L.sfNoLoan); return; } payForm(ln); fill('#p-amt',num(i.amount)); toast(L.sfCheckA(num(i.amount)?money(num(i.amount)):'')); }
-  else if(a.name==='add_loan'){ loanForm(null,{name:String(i.name||'').slice(0,60),note:'',total:num(i.total),paid:num(i.paid),monthly:num(i.monthly),dueDay:+i.due_day>=1&&+i.due_day<=31?Math.round(+i.due_day):'',gold:'',rate:+i.rate>0?+i.rate:'',term:num(i.term)}); toast(L.sfCheck); }
+  if(a.name==='pay_loan'){ const ln=state.loans.find(l=>l.id===i.loan_id); if(!ln){ toast(L.sfNoLoan); return; } const av53=+i.amount>0?m53R(+i.amount*m53K(ln),ln):''; payForm(ln); fill('#p-amt',av53); toast(L.sfCheckA(av53?m53M(ln,av53):'')); }
+  else if(a.name==='add_loan'){ loanForm(null,{name:String(i.name||'').slice(0,60),note:'',total:num(i.total),paid:num(i.paid),monthly:num(i.monthly),dueDay:+i.due_day>=1&&+i.due_day<=31?Math.round(+i.due_day):'',gold:'',rate:+i.rate>0?+i.rate:'',term:num(i.term),cur53:String(i.currency||'')}); toast(L.sfCheck); }
   else if(a.name==='record_day'){ dayForm(/^\d{4}-\d{2}-\d{2}$/.test(i.date||'')?i.date:undefined); fill('#dy-card',num(i.card)); fill('#dy-cash',num(i.cash)); toast(L.sfCheckA((+i.cash||0)+(+i.card||0)>0?money((+i.cash||0)+(+i.card||0)):'')); }
   else if(a.name==='add_expense'){ quickExpForm(CATS.includes(i.category)?i.category:'other'); fill('#qe-a',num(i.amount)); if(i.note) fill('#qe-n',String(i.note).slice(0,80)); toast(L.sfCheckA(num(i.amount)?money(num(i.amount)):'')); }
   else if(a.name==='open_invest'){ const P=ivP(); if(+i.amount>0){ P.cap=Math.round(+i.amount); P.cur=i.cur==='TJS'?'TJS':'USD'; } if(IV_CATS.includes(i.category)) P.cat=i.category;
@@ -16567,7 +16618,7 @@ function m10Nav(){ const nav=document.querySelector('.bnav .bn-in')||document.qu
 function m10PlusSheet(){ const nx=activeList().filter(x=>!x.a.done&&!x.loan.example&&!x.a.check).sort((a,b)=>a.a.days-b.a.days)[0];
   const act=(cls,attr,ic,t,s)=>`<button type="button" class="m10-act ${cls}" ${attr}><span class="m10-ai">${ic}</span><b>${t}</b><small>${s}</small></button>`;
   openSheet(`<h3>${L.m10PlusTitle}</h3><div class="m10-acts">
-    ${act('pay','data-qa="pay"',M10_I.pay,L.m10Pay,nx?esc(nx.loan.name)+' · '+money(nx.a.amt||nx.a.monthly||0):L.m10PaySub)}
+    ${act('pay','data-qa="pay"',M10_I.pay,L.m10Pay,nx?esc(nx.loan.name)+' · '+m53M(nx.loan,nx.a.amt||nx.a.monthly||0):L.m10PaySub)}
     ${act('day','data-shop="day"',M10_I.day,L.m10Day,L.m10DaySub)}
     ${act('exp','data-qexp="other"',M10_I.exp,L.m10Exp,L.m10ExpSub)}
     ${act('photo','id="m10Photo"',M10_I.photo,L.m10Photo,L.m10PhotoSub)}
@@ -16789,7 +16840,7 @@ function m12LoansAfter(){ const list=activeList();
 
 /* ---------- 3. ползунок «если платить больше» ---------- */
 function m12WhatIf(loan){ const box=sheet.querySelector('.m7-ifm'); if(!box||box.querySelector('#m12wr')) return; const a=analyze(loan), m=m7Amt(a); if(a.done||!(m>0)) return;
-  const step=m>=4000?200:m>=1500?100:50, max=Math.max(step*4,Math.ceil(m/step)*step), last=m8LastDue(loan,a);
+  const fk53=m53K(loan), mN53=m/fk53, step=(fk53===1?(m>=4000?200:m>=1500?100:50):(mN53>=4000?200:mN53>=1500?100:mN53>=400?50:mN53>=150?20:mN53>=60?10:5))*fk53, max=Math.max(step*4,Math.ceil(m/step)*step), last=m8LastDue(loan,a);
   box.innerHTML=`<b>${L.m7IfMore}</b>
     <div class="m12-wt"><span>${L.m12Extra}</span><b id="m12wv">+${money(0)}</b></div>
     <input type="range" class="m12-range" id="m12wr" min="0" max="${max}" step="${step}" value="0" data-nodirty aria-label="${esc(L.m12Extra)}">
@@ -19317,8 +19368,8 @@ function ct29Report(rep,o){ o=o||{}; const loan=ct29.loan, cur=rep.currency||'TJ
   $('#c29-done').onclick=()=>{ if(loan) detailSheet(loan); else closeSheet(); };
   const ap=$('#c29-ap'); if(ap) ap.onclick=()=>{ const on=[...sheet.querySelectorAll('[data-c29-k]')].filter(x=>x.checked&&!x.disabled).map(x=>x.dataset.c29K); if(!on.length) return;
     for(const k of on){ const r=rows.find(x=>x.k===k); if(!r) continue; if(k==='term') loan.term=Math.round(r.v); else loan[k]=r.v; } persist(); render(); toast(L.ctrApplied(on.length)); detailSheet(loan); };
-  const ad=$('#c29-add'); if(ad) ad.onclick=()=>{ const tj=!rep.currency||rep.currency==='TJS';
-    const pre={name:String(rep.bank||'').slice(0,60),note:'',total:tj&&rep.amount?Math.round(rep.amount):'',paid:'',monthly:tj&&rep.monthly?Math.round(rep.monthly):'',dueDay:rep.dueDay||'',gold:'',rate:rep.rate||'',term:rep.term?Math.round(rep.term):'',pen:rep.pen&&rep.pen.pct||'',penBase:rep.pen&&rep.pen.base==='rem'?'rem':'pay'};
+  const ad=$('#c29-add'); if(ad) ad.onclick=()=>{ const tj=!rep.currency||rep.currency==='TJS'||!!m53CurCode(rep.currency);
+    const pre={name:String(rep.bank||'').slice(0,60),note:'',total:tj&&rep.amount?Math.round(rep.amount):'',paid:'',monthly:tj&&rep.monthly?Math.round(rep.monthly):'',dueDay:rep.dueDay||'',gold:'',rate:rep.rate||'',term:rep.term?Math.round(rep.term):'',pen:rep.pen&&rep.pen.pct||'',penBase:rep.pen&&rep.pen.base==='rem'?'rem':'pay',cur53:String(rep.currency||'')};
     const pages=ct29.pages.slice(), saved={at:o.at||dkey(),rep,src:(o.sources||[]).slice(0,3)};
     loanForm(null,pre); const f=$('#f-save'); if(!f) return; const orig=f.onclick;
     f.onclick=function(){ const before=new Set(state.loans.map(l=>l.id)); orig.apply(this,arguments); const nl=state.loans.find(l=>!before.has(l.id)); if(!nl) return;
@@ -19532,8 +19583,8 @@ document.addEventListener('click',e=>{ const t=e.target.closest&&e.target.closes
 /* <</v29 js>> */
 /* <<v30 js>> */
 /* ===================== v30: сверка с банком по графику и дате, график по фото, защита от «платежа вперёд» ===================== */
-const f30M=v=>rf.format(Math.round((+v||0)*100)/100)+' '+L.cur;
-const f30R2=v=>Math.round((+v||0)*100)/100;
+const f30M=v=>{ if(typeof M53!=='undefined'&&M53&&M53.c){ const s=m53Ctx(+v||0); if(s!=null) return s; } return rf.format(Math.round((+v||0)*100)/100)+' '+L.cur; };
+const f30R2=v=>{ const k=(typeof M53!=='undefined'&&M53&&M53.c)?1e6:100; return Math.round((+v||0)*k)/k; };
 const f30Ymd=v=>{ const s=String(v||''); if(!/^\d{4}-\d{2}-\d{2}$/.test(s)) return null; const d=parseYmd(s); return isNaN(d)?null:s; };
 function f30DueOf(loan,idx){ const se=schedAt(loan,idx); return se?parseYmd(se.d):dueAt(idx,loan.dueDay||1); }
 /* остаток основного долга по графику после строки k (k=-1 — ещё ничего не внесено) */
@@ -19649,9 +19700,9 @@ function f30Guard(loan){ const g=f30NeedAsk(loan); if(!g) return; const save=$('
     if(!ch){ const q=$('#f30-q'); if(q){ q.classList.add('need'); try{ q.scrollIntoView({block:'center',behavior:'smooth'}); }catch(e){} } return showErr($('#p-err'),L.f30Pick); }
     if(ch.value==='next') return orig&&orig.call(this,ev);
     return f30SavePrev(loan,g); }; }
-async function f30SavePrev(loan,g){ const inp=$('#p-amt'), amt=Math.round(+(inp&&inp.value)); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
+async function f30SavePrev(loan,g){ const inp=$('#p-amt'), amt=m53R(+(inp&&inp.value),loan); if(!(amt>0)) return showErr($('#p-err'),L.errPaymentAmount);
   if(state.payments.some(p=>p.loanId===loan.id&&p.per===g.prev&&!p.part)){ closeSheet(); return; }
-  const se=schedAt(loan,g.prev), i=se&&se.i!=null?Math.min(amt,Math.round(+se.i||0)):0;
+  const se=schedAt(loan,g.prev), i=se&&se.i!=null?Math.min(amt,m53R(+se.i||0,loan)):0;
   const rec={id:uid('p'),loanId:loan.id,amount:amt,principal:Math.max(0,amt-i),interest:i,date:ymd(new Date()),per:g.prev,due:ymd(g.pd),late:Math.max(0,-daysUntil(g.pd)),hist:1,rcx:1};
   const hb=sheet.querySelector('#p-how [data-how].on'); if(hb){ rec.how=hb.dataset.how; lsSet('m7how_v1',rec.how); }
   const envC=$('#p-env'); if(envC&&envC.checked){ const take=Math.min(envBal('loan'),amt); if(take>0){ envAdd('loan',-take,loan.name); rec.envA=take; } }
@@ -19667,7 +19718,7 @@ const f30Int0=interestFor;
 interestFor=function(loan,amount,per,extra){ if(extra||per==null||!loan) return f30Int0.apply(this,arguments);
   const full=f30IntFull(loan,per); if(full==null) return f30Int0.apply(this,arguments);
   const used=state.payments.filter(p=>p.loanId===loan.id&&p.per===per&&p.part).reduce((s,p)=>s+(+p.interest||0),0)+(loan.part&&loan.part.per===per?+loan.part.cri||0:0);
-  return Math.max(0,Math.min(+amount||0,Math.round(full-Math.max(0,used)))); };
+  return Math.max(0,Math.min(+amount||0,m53R(full-Math.max(0,used),loan))); };
 
 /* автоматическая правка: если есть график банка с остатками, после каждого платежа остаток берётся из графика (до копейки).
    Не сверяет после досрочного платежа — банк тогда пересчитывает график. */
@@ -19795,7 +19846,7 @@ const f30Lbl0=sfActLabel;
 sfActLabel=function(a){ if(a&&a.name==='fix_loan'){ const i=a.input||{}, ln=state.loans.find(l=>l.id===i.loan_id); return '🏦 '+L.f30Act(ln?ln.name:''); } return f30Lbl0.apply(this,arguments); };
 const f30Do0=sfDo;
 sfDo=function(a,manual){ if(a&&a.name==='fix_loan'){ const i=a.input||{}, ln=state.loans.find(l=>l.id===i.loan_id); if(!ln){ toast(L.sfNoLoan); return; }
-    const pre={}; if(i.bank_left!=null&&i.bank_left!==''&&+i.bank_left>=0) pre.left=f30R2(+i.bank_left); if(f30Ymd(i.next_due)) pre.next=i.next_due; if(+i.monthly>0) pre.monthly=f30R2(+i.monthly);
+    const pre={}; if(i.bank_left!=null&&i.bank_left!==''&&+i.bank_left>=0) pre.left=f30R2(+i.bank_left*m53K(ln)); if(f30Ymd(i.next_due)) pre.next=i.next_due; if(+i.monthly>0) pre.monthly=f30R2(+i.monthly*m53K(ln));
     reconSheet(ln,pre); toast(L.f30SfCheck); return; }
   return f30Do0.apply(this,arguments); };
 
@@ -22999,7 +23050,7 @@ for(const k of ['ru','tg','en']){ try{ m44Wrap(M46S[k]); }catch(e){} Object.assi
   try{ const w0=D[k].sfWait; if(typeof w0==='function') D[k].sfWait=s=>s>=25?w0(s)+' · '+M46S[k].m46Deep:w0(s); }catch(e){} }
 /* ===================== v46: «Путь к цели» (план эксперта), графики в ответах Сифры, «Найти фабрику» ===================== */
 /* ---------- графики из ответа: math, table, steps, line, bars, ranges, stack, cal, risk, sup ---------- */
-const M46VI={math:'calc',table:'flow',steps:'flag',line:'chart',bars:'stats',ranges:'ruler',stack:'coins',cal:'calendar',risk:'warn',sup:'truck'};
+const M46VI={math:'calc',table:'flow',steps:'flag',line:'chart',bars:'stats',ranges:'ruler',stack:'coins',cal:'calendar',risk:'warn',sup:'truck',kpi:'stats',pros:'flag',gauge:'ruler'};
 const m46F=(v,u)=>{ if(v==null||!isFinite(v)) return ''; const s=new Intl.NumberFormat(lang==='en'?'en-US':'ru-RU',{maximumFractionDigits:Math.abs(v)<10?2:0}).format(v); return u?s+' '+u:s; };
 const m46Usd=v=>m46F(Math.round(+v||0),'$');
 function m46Rows(items,u){ const mx=Math.max(1e-9,...items.map(p=>Math.abs(p.v)));
@@ -23030,6 +23081,10 @@ function m46Viz(o){ try{ if(!o||!o.t) return ''; const t=o.t, u=o.u||''; let b='
   else if(t==='cal'){ const MS=MONTHS[lang].short; b=`<div class="m46-cal"><span></span>${MS.map(m=>`<span class="h">${esc(m.slice(0,1).toUpperCase())}</span>`).join('')}${o.items.map((i,k)=>`<span class="l">${esc(i.l)}</span>${MS.map((m,j)=>`<span class="c${i.m.includes(j+1)?' on c'+(k%8):''}" title="${esc(m)}"></span>`).join('')}`).join('')}</div>`; }
   else if(t==='risk'){ const it=o.items.slice().sort((a,b)=>b.p*b.i-a.p*a.i); b=`<ul class="m46-rk">${it.map(i=>{ const s=i.p*i.i>=6?3:i.p*i.i>=3?2:1; return `<li><span class="m46-sev s${s}">${esc(L.m46RiskL[s])}</span><div><b>${esc(i.l)}</b>${i.fix?`<small>${esc(L.m46Fix)}: ${esc(i.fix)}</small>`:''}</div></li>`; }).join('')}</ul>`; }
   else if(t==='sup') b=`<div class="m46-sups">${o.items.map(i=>`<div class="m46-sup"><a href="${esc(i.url)}" target="_blank" rel="noopener noreferrer">${esc(i.n)} ${ico('external',13)}</a>${i.rare?`<span class="m46-rare">${esc(L.m46Rare)}</span>`:''}<small>${esc([i.where,i.kind].filter(Boolean).join(' · '))}</small>${i.what?`<p>${esc(i.what)}</p>`:''}<div class="m46-chs">${i.moq?`<span>${esc(L.m46Moq)}: ${esc(i.moq)}</span>`:''}${i.price?`<span>${esc(i.price)}</span>`:''}</div>${i.why?`<p class="why">${esc(i.why)}</p>`:''}${i.check?`<p class="chk">${ico('shield',12)} ${esc(i.check)}</p>`:''}</div>`).join('')}</div>`;
+  else if(t==='kpi') b=`<div class="m53-kpi n${o.items.length}">${o.items.map(i=>`<div class="m53-k ${esc(i.s||'')}"><small>${esc(i.l)}</small><b>${esc(i.v)}</b>${i.d?`<em>${esc(i.d)}</em>`:''}</div>`).join('')}</div>`;
+  else if(t==='pros') b=`<div class="m53-pc"><div class="p"><b>${ico('check',14)} ${esc(o.pl||L.m53Pro)}</b><ul>${(o.pro||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="c"><b>${ico('warn',14)} ${esc(o.cl||L.m53Con)}</b><ul>${(o.con||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`;
+  else if(t==='gauge'){ const mn=+o.min||0, mx=+o.max, sp=(mx-mn)||1, p=Math.max(0,Math.min(100,(o.v-mn)/sp*100)); let prev=mn; const zs=(o.zones||[]).filter(z=>z.to>mn).map(z=>{ const to=Math.min(mx,z.to), w=(to-prev)/sp*100; prev=to; return {w,l:z.l,s:z.s}; }).filter(z=>z.w>0), cur=(o.zones||[]).find(z=>o.v<=z.to);
+    b=`<div class="m53-g"><div class="m53-gv"><b>${esc(m46F(o.v,u))}</b>${o.l?`<small>${esc(o.l)}</small>`:''}${cur&&cur.l?`<span class="m53-gz ${esc(cur.s||'')}">${esc(cur.l)}</span>`:''}</div><div class="m53-gt" aria-hidden="true">${zs.length?zs.map(z=>`<i class="${esc(z.s||'')}" style="width:${z.w.toFixed(2)}%"></i>`).join(''):'<i style="width:100%"></i>'}<span class="m53-gp" style="left:${p.toFixed(1)}%"></span></div><div class="m53-gs" aria-hidden="true"><span>${esc(m46F(mn,u))}</span><span>${esc(m46F(mx,u))}</span></div></div>`; }
   else return '';
   return `<figure class="m45-ch m46-v m46-${t}">${o.title?`<figcaption class="m45-t">${ico(M46VI[t]||'chart',16)} ${esc(o.title)}</figcaption>`:''}${b}</figure>`; }catch(e){ return ''; } }
 function m46Body(t){ const parts=String(t||'').split(/<viz>([\s\S]*?)<\/viz>/); let h=''; parts.forEach((p,k)=>{ if(k%2){ try{ h+=m46Viz(JSON.parse(p)); }catch(e){} } else if(p.trim()) h+=sfMd(p.trim()); }); return h; }
@@ -23844,8 +23899,8 @@ function m49XOpts(P){ const m=P.pay||0; const a=[m49Nice(m*0.1),m49Nice(m*0.25),
 function m49Checks(){ const out=[]; for(const {loan,a} of m49Act()){ const s=schedOf(loan); if(!s) continue; const pt=curPt(loan), from=pt!=null?pt:(a.per!=null?a.per-1:mIdx(today0())-1);
     const rest=s.filter(e=>mIdx(parseYmd(e.d))>from); if(rest.length<3) continue; const as=rest.map(e=>+e.a||0), body=as.slice(0,-1).slice().sort((x,y)=>x-y), med=body[Math.floor(body.length/2)], lastA=as[as.length-1];
     const ck=loan.ck49||{};
-    if(med>0&&lastA>med*1.6&&lastA-med>300){ const sig='last:'+Math.round(lastA); if(ck.last!==sig) out.push({k:'last',sig,loan,txt:L.m49ChkLast(loan.name,money(lastA),money(med),m8MonLabel(parseYmd(rest[rest.length-1].d)))}); }
-    const sum=as.reduce((t,v)=>t+v,0), rem=+a.remaining||0; if(rem>0&&Math.abs(sum-rem)>Math.max(300,rem*0.05)){ const sig='sum:'+Math.round(sum)+':'+Math.round(rem); if(ck.sum!==sig) out.push({k:'sum',sig,loan,txt:L.m49ChkSum(loan.name,money(sum),money(rem))}); } }
+    if(med>0&&lastA>med*1.6&&lastA-med>300){ const sig='last:'+Math.round(lastA/m53K(loan)); if(ck.last!==sig) out.push({k:'last',sig,loan,txt:L.m49ChkLast(loan.name,m53M(loan,lastA),m53M(loan,med),m8MonLabel(parseYmd(rest[rest.length-1].d)))}); }
+    const sum=as.reduce((t,v)=>t+v,0), rem=+a.remaining||0; if(rem>0&&Math.abs(sum-rem)>Math.max(300,rem*0.05)){ const sig='sum:'+Math.round(sum/m53K(loan))+':'+Math.round(rem/m53K(loan)); if(ck.sum!==sig) out.push({k:'sum',sig,loan,txt:L.m49ChkSum(loan.name,m53M(loan,sum),m53M(loan,rem))}); } }
   return out; }
 function m49ChkHTML(){ const a=m49Checks(); if(!a.length) return '';
   return `<div class="m49-chk" role="alert"><b>${ico('warn',16)} ${esc(L.m49ChkT)}</b>${a.map(c=>`<div class="m49-ck"><p>${esc(c.txt)}</p><div class="m49-cb"><button type="button" class="btn btn-ghost" data-action="sched" data-id="${esc(String(c.loan.id))}">${ico('cal',16)} ${esc(L.m49ChkSch)}</button>${c.k==='sum'?`<button type="button" class="btn btn-ghost" data-action="edit" data-id="${esc(String(c.loan.id))}">${esc(L.m49ChkEdit)}</button>`:''}<button type="button" class="link-btn" data-m49ok="${esc(String(c.loan.id))}|${c.k}|${esc(c.sig)}">${esc(L.m49ChkOk)}</button></div></div>`).join('')}<small>${esc(L.m49ChkWhy)}</small></div>`; }
@@ -24747,12 +24802,12 @@ function m52When(d){ return d<0?L.m52WLate(-d):d===0?L.m52WToday:d===1?L.m52WTom
 function m52Answer(it){ const Q=L.m52Q;
   if(it.k==='debt'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'debt'}};
     const left=a.reduce((s,x)=>s+(+x.a.remaining||0),0), tot=a.reduce((s,x)=>s+Math.max(+x.loan.total||0,+x.a.remaining||0),0), int=a.reduce((s,x)=>s+(+x.a.interestLeft||0),0), p=tot>0?Math.round((1-left/tot)*100):0;
-    const rows=a.slice().sort((x,y)=>(+y.a.remaining||0)-(+x.a.remaining||0)).slice(0,5).map(x=>[String(x.loan.name||''),money(+x.a.remaining||0)]); if(int>0) rows.push([L.m52AInt,money(int)]);
+    const rows=a.slice().sort((x,y)=>(+y.a.remaining||0)-(+x.a.remaining||0)).slice(0,5).map(x=>[String(x.loan.name||''),m53M(x.loan,+x.a.remaining||0)]); if(int>0) rows.push([L.m52AInt,money(int)]);
     return {t:L.m52ADebt(money(left),a.length),loc:{k:'debt',big:money(left),rows,bar:p>0&&p<100?{p,l:L.m52APaid(p)}:null,fu:[Q.next,Q.free,Q.chartLoan]}}; }
   if(it.k==='next'){ const a=m52Loans().filter(x=>x.a.days!=null).sort((x,y)=>x.a.days-y.a.days); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'next'}};
     const amt=x=>+x.a.monthly||+x.a.amt||0, f=a[0], w7=a.filter(x=>x.a.days<=7).reduce((s,x)=>s+amt(x),0);
-    const rows=a.slice(0,4).map(x=>[String(x.loan.name||''),money(amt(x))+' · '+m52When(x.a.days),x.a.days<0?'bad':'']); if(a.filter(x=>x.a.days<=7).length>1) rows.push([L.m52AWeek7,money(w7)]);
-    return {t:L.m52ANext(String(f.loan.name||''),money(amt(f)),m52When(f.a.days)),loc:{k:'next',big:money(amt(f)),sub:String(f.loan.name||'')+' · '+m52When(f.a.days),warn:f.a.days<0,rows:a.length>1?rows:null,fu:[Q.enough,Q.debt]}}; }
+    const rows=a.slice(0,4).map(x=>[String(x.loan.name||''),m53M(x.loan,amt(x))+' · '+m52When(x.a.days),x.a.days<0?'bad':'']); if(a.filter(x=>x.a.days<=7).length>1) rows.push([L.m52AWeek7,money(w7)]);
+    return {t:L.m52ANext(String(f.loan.name||''),m53M(f.loan,amt(f)),m52When(f.a.days)),loc:{k:'next',big:m53M(f.loan,amt(f)),sub:String(f.loan.name||'')+' · '+m52When(f.a.days),warn:f.a.days<0,rows:a.length>1?rows:null,fu:[Q.enough,Q.debt]}}; }
   if(it.k==='free'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'free'}}; let fr=null; try{ fr=m8Free(activeList()); }catch(e){}
     if(!fr||!fr.d) return {t:L.m52ANoFree,loc:{k:'free',fu:[Q.debt,Q.next]}}; let ds=''; try{ ds=fr.d instanceof Date?MONTHS[lang].short[fr.d.getMonth()]+' '+fr.d.getFullYear():String(fr.d); }catch(e){ ds=String(fr.d); }
     const int=a.reduce((s,x)=>s+(+x.a.interestLeft||0),0);
@@ -24900,7 +24955,8 @@ function m52Live(ev){ const w=document.querySelector('#sheet.m52 #sf-log .sf-wai
   else if(ev.step==='read'){ if(ev.u) step(L.m52StRead(String(ev.u).slice(0,40))); }
   else if(ev.step==='tool') step(L.m52StTool);
   else if(ev.step==='write') step(L.m52StWrite);
-  else if(typeof ev.delta==='string'){ lv._t+=ev.delta; let s=lv._t; const cut=s.search(/<(viz|niche)\b/i); if(cut>=0) s=s.slice(0,cut); s=s.replace(/<[a-z\/][^>]{0,40}$/i,''); if(s.trim()){ tx.hidden=false; w.classList.add('m52-wt'); tx.innerHTML=sfMd(s); } }
+  else if(typeof ev.delta==='string'){ lv._t+=ev.delta; const now=Date.now(); if(lv._r&&now-lv._r<90&&lv._t.length>400) return; lv._r=now; let s=lv._t.replace(/<next>[\s\S]*$/i,'').replace(/<niche>[\s\S]*?(<\/niche>|$)/gi,''), draw=false; const op=s.lastIndexOf('<viz>'), cl=s.lastIndexOf('</viz>'); if(op>cl){ s=s.slice(0,op); draw=true; } s=s.replace(/<[a-z\/][^>]{0,40}$/i,'');
+    if(s.trim()||draw){ tx.hidden=false; w.classList.add('m52-wt'); let h=''; try{ h=s.includes('<viz>')&&typeof m46Body==='function'?m46Body(s):sfMd(s); }catch(e){ h=sfMd(s.replace(/<viz>[\s\S]*?<\/viz>/g,' ')); } tx.innerHTML=h+(draw?`<p class="m53-draw">${esc(L.m53Draw||'…')}</p>`:''); } }
   if(box&&near) box.scrollTop=box.scrollHeight; }
 function m52Expert(j){ try{ if(!j||!j.expert) return; const was=f34xNiche(); if(j.expert.off){ if(was){ f34xSet(''); toast(L.f34xOffOk); } } else if(j.expert.niche&&j.expert.niche!==was){ f34xSet(j.expert.niche); toast(L.f34xOnOk(f34xNiche())); } setTimeout(sfX,30); }catch(e){} }
 try{ const m52F0=window.fetch; window.fetch=function(u,o){
@@ -24917,6 +24973,345 @@ try{ const m52F0=window.fetch; window.fetch=function(u,o){
               return new Response(JSON.stringify(body),{status:fin.done?200:(+fin.status||502),headers:{'content-type':'application/json'}});
             }).catch(e=>{ if(e&&e.name==='AbortError') throw e; if(!got) return classic(); throw e; }); } } } }catch(e){}
     return m52F0.apply(this,arguments); }; }catch(e){}
+/* v53: строки — кредит в валюте */
+const M53S={
+ru:{
+  m53CurL:'Валюта кредита',
+  m53CurN:{TJS:'Сомони',USD:'Доллар США',RUB:'Российский рубль',EUR:'Евро',CNY:'Юань',KZT:'Тенге',UZS:'Узбекский сум',KGS:'Киргизский сом',TRY:'Турецкая лира',AED:'Дирхам ОАЭ'},
+  m53RateL:u=>'Курс: сколько сомони за '+u,
+  m53RateMk:v=>'Курс по рынку сейчас: '+v,
+  m53RateNone:'Курса по рынку сейчас нет — впишите сами.',
+  m53FormNote:s=>'Все суммы этого кредита пишите в валюте кредита ('+s+'). Общий долг Mira покажет в сомони по курсу.',
+  m53ErrRate:'Впишите курс — число больше нуля.',
+  m53NoRate:s=>'Нет курса для '+s+'. Впишите курс ниже — и Mira посчитает.',
+  m53Head:n=>'Кредит в валюте: '+n,
+  m53RateAuto:d=>'курс на '+d,
+  m53RateMine:'свой курс',
+  m53EqDebt:v=>'Остаток в сомони по курсу: ≈ '+v,
+  m53RateBtn:'Изменить курс',
+  m53RateT:'Курс для этого кредита',
+  m53RateLead:(n,s)=>n+': долг и платежи записаны в '+s+'. Курс нужен, чтобы показать этот кредит в общем долге в сомони.',
+  m53RateHint:'Если вписать свой курс, он не будет меняться сам — пока вы его не поправите.',
+  m53RateUseMk:'Вернуть курс по рынку',
+  m53RateSaved:'Курс сохранён',
+  m53PvL:u=>'Курс: '+u+' =',
+  m53PvHint:d=>'курс на '+d+' — можно вписать свой',
+  m53PvMine:'ваш курс',
+  m53PvNone:'курса нет — впишите',
+  m53PvLine:(r,v)=>'В общем долге: ≈ '+v+' ('+r+')',
+  m53Eq:v=>'≈ '+v,
+  m53PayEq:(v,r)=>'≈ '+v+' по курсу '+r,
+  m53RcOther:(c,s)=>'Чек в '+c+', а кредит в '+s+' — впишите сумму в '+s+' сами.',
+  m53Changed:s=>'Валюта кредита: '+s+'. Цифры те же — поменялась только валюта.',
+  m53QNote:s=>'Платёж пишите в '+s+'.',
+  f31Cur:c=>'Кредит в '+c+': такой валюты в Mira пока нет, суммы записаны как сомони. Проверьте и выберите валюту в «Изменить».',
+  m53Draw:'Рисую график…', m53Pro:'За', m53Con:'Против', m53NextT:'Спросить дальше'
+},
+tg:{
+  m53CurL:'Асъори қарз',
+  m53CurN:{TJS:'Сомонӣ',USD:'Доллари ИМА',RUB:'Рубли Русия',EUR:'Евро',CNY:'Юан',KZT:'Тенге',UZS:'Сӯми ӯзбекӣ',KGS:'Соми қирғизӣ',TRY:'Лираи туркӣ',AED:'Дирҳами АМА'},
+  m53RateL:u=>'Қурб: барои '+u+' чанд сомонӣ',
+  m53RateMk:v=>'Қурби бозор ҳоло: '+v,
+  m53RateNone:'Ҳоло қурби бозор нест — худатон нависед.',
+  m53FormNote:s=>'Ҳамаи маблағҳои ин қарзро бо асъори қарз ('+s+') нависед. Қарзи умумиро Mira бо сомонӣ аз рӯи қурб нишон медиҳад.',
+  m53ErrRate:'Қурбро нависед — адади аз сифр калон.',
+  m53NoRate:s=>'Барои '+s+' қурб нест. Қурбро дар поён нависед — Mira ҳисоб мекунад.',
+  m53Head:n=>'Қарз бо асъор: '+n,
+  m53RateAuto:d=>'қурби '+d,
+  m53RateMine:'қурби худатон',
+  m53EqDebt:v=>'Бақия бо сомонӣ аз рӯи қурб: ≈ '+v,
+  m53RateBtn:'Иваз кардани қурб',
+  m53RateT:'Қурб барои ин қарз',
+  m53RateLead:(n,s)=>n+': қарз ва пардохтҳо бо '+s+' навишта шудаанд. Қурб лозим аст, то ин қарз дар қарзи умумӣ бо сомонӣ нишон дода шавад.',
+  m53RateHint:'Агар қурби худро нависед, он худ аз худ иваз намешавад — то худатон ислоҳ накунед.',
+  m53RateUseMk:'Баргардонидани қурби бозор',
+  m53RateSaved:'Қурб сабт шуд',
+  m53PvL:u=>'Қурб: '+u+' =',
+  m53PvHint:d=>'қурби '+d+' — метавонед қурби худро нависед',
+  m53PvMine:'қурби шумо',
+  m53PvNone:'қурб нест — нависед',
+  m53PvLine:(r,v)=>'Дар қарзи умумӣ: ≈ '+v+' ('+r+')',
+  m53Eq:v=>'≈ '+v,
+  m53PayEq:(v,r)=>'≈ '+v+' аз рӯи қурби '+r,
+  m53RcOther:(c,s)=>'Чек бо '+c+' аст, қарз бо '+s+' — маблағро бо '+s+' худатон нависед.',
+  m53Changed:s=>'Асъори қарз: '+s+'. Рақамҳо ҳамон — танҳо асъор иваз шуд.',
+  m53QNote:s=>'Пардохтро бо '+s+' нависед.',
+  f31Cur:c=>'Қарз бо '+c+': чунин асъор дар Mira ҳоло нест, маблағҳо бо сомонӣ навишта шуданд. Санҷед ва асъорро дар «Иваз кардан» интихоб кунед.',
+  m53Draw:'Графикро мекашам…', m53Pro:'Тарафдор', m53Con:'Муқобил', m53NextT:'Боз пурсед'
+},
+en:{
+  m53CurL:'Loan currency',
+  m53CurN:{TJS:'Somoni',USD:'US dollar',RUB:'Russian rouble',EUR:'Euro',CNY:'Yuan',KZT:'Tenge',UZS:'Uzbek som',KGS:'Kyrgyz som',TRY:'Turkish lira',AED:'UAE dirham'},
+  m53RateL:u=>'Rate: somoni per '+u,
+  m53RateMk:v=>'Market rate now: '+v,
+  m53RateNone:'No market rate right now — enter it yourself.',
+  m53FormNote:s=>'Enter all amounts of this loan in the loan currency ('+s+'). Mira shows total debt in somoni at the rate.',
+  m53ErrRate:'Enter the rate — a number above zero.',
+  m53NoRate:s=>'No rate for '+s+'. Enter the rate below and Mira will calculate.',
+  m53Head:n=>'Loan currency: '+n,
+  m53RateAuto:d=>'rate of '+d,
+  m53RateMine:'your rate',
+  m53EqDebt:v=>'Balance in somoni at the rate: ≈ '+v,
+  m53RateBtn:'Change rate',
+  m53RateT:'Rate for this loan',
+  m53RateLead:(n,s)=>n+': the debt and payments are recorded in '+s+'. The rate is only used to show this loan in your total debt in somoni.',
+  m53RateHint:'If you enter your own rate, it will not change by itself until you edit it.',
+  m53RateUseMk:'Use the market rate again',
+  m53RateSaved:'Rate saved',
+  m53PvL:u=>'Rate: '+u+' =',
+  m53PvHint:d=>'rate of '+d+' — you can enter your own',
+  m53PvMine:'your rate',
+  m53PvNone:'no rate — enter it',
+  m53PvLine:(r,v)=>'In total debt: ≈ '+v+' ('+r+')',
+  m53Eq:v=>'≈ '+v,
+  m53PayEq:(v,r)=>'≈ '+v+' at '+r,
+  m53RcOther:(c,s)=>'The receipt is in '+c+' but the loan is in '+s+' — enter the amount in '+s+' yourself.',
+  m53Changed:s=>'Loan currency: '+s+'. The numbers are the same — only the currency changed.',
+  m53QNote:s=>'Enter the payment in '+s+'.',
+  f31Cur:c=>'Loan in '+c+': Mira does not have this currency yet, the amounts are saved as somoni. Check and pick the currency in “Edit”.',
+  m53Draw:'Drawing the chart…', m53Pro:'For', m53Con:'Against', m53NextT:'Ask next'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M53S[k]); }catch(e){} Object.assign(D[k],M53S[k]); }
+/* ===== v53: кредит в валюте (доллар, рубль, евро и другие) =====
+   Как хранится. У валютного кредита есть loan.cur (код валюты) и loan.fx (сколько сомони за 1 единицу).
+   Все суммы кредита и записи его платежей лежат в сомони по курсу loan.fx: сумма в валюте = сумма / fx.
+   Когда курс меняется, суммы кредита и его платежей умножаются на «новый курс / старый» — в валюте они остаются теми же.
+   Поэтому общий долг, нагрузка, прогнозы и графики считаются прежним кодом и всегда в сомони по нынешнему курсу,
+   а в окнах самого кредита суммы показываются и вводятся в его валюте (M53.c — кредит, в валюте которого сейчас идёт показ). */
+var M53={c:null,d:0,ev:0,root:null,ps:null,pr:{},pvSeen:{},pv:null};
+function m53Is(l){ return !!(l&&l.cur&&l.cur!=='TJS'&&CURS[l.cur]&&+l.fx>0); }
+function m53K(l){ return m53Is(l)?+l.fx:1; }
+function m53Sym(c){ return c&&c!=='TJS'&&CURS[c]?CURS[c].s:L.cur; }
+function m53CurCode(v){ const c=String(v==null?'':v).trim().toUpperCase(); if(!c||c==='TJS') return 'TJS'; return CURS[c]?c:null; }
+function m53Mkt(c){ try{ const r=rates(); return r&&r.c&&+r.c[c]>0?+r.c[c]:null; }catch(e){ return null; } }
+function m53Day(){ try{ const r=rates(); return (r&&r.day)||ymd(new Date()); }catch(e){ return ymd(new Date()); } }
+function m53Loc(){ return lang==='en'?'en-US':'ru-RU'; }
+function m53T(v){ return nf.format(Math.round(+v||0))+'\u00a0'+L.cur; }
+function m53N(x,cur){ x=+x||0; const whole=cur==='UZS'||cur==='KZT'; let r=whole?Math.round(x):Math.round(x*100)/100; if(Object.is(r,-0)) r=0;
+  const d=(whole||Math.abs(r-Math.round(r))<0.005)?0:2; return new Intl.NumberFormat(m53Loc(),{minimumFractionDigits:d,maximumFractionDigits:d}).format(r); }
+function m53F(x,cur){ return m53N(x,cur)+'\u00a0'+m53Sym(cur); }
+/* сумма в сомони v → строка в валюте кредита l (у обычного кредита — как всегда) */
+function m53M(l,v){ return m53Is(l)?m53F((+v||0)/(+l.fx),l.cur):money(v); }
+function m53Ctx(v,bare){ const l=M53.c; if(!l||!l.cur||!CURS[l.cur]||!(+l.fx>0)) return null; const x=(+v||0)/(+l.fx); return bare?m53N(x,l.cur):m53F(x,l.cur); }
+function m53R(v,l){ v=+v||0; return m53Is(l)?Math.round(v*1e6)/1e6:Math.round(v); }
+/* допуск «полкопейки валюты» в сомони: суммы валютного кредита сравниваются не до последнего знака */
+function m53Tol(l){ return m53Is(l)?0.0051*(+l.fx):0; }
+function m53With(l,fn){ if(!l||!l.cur||!CURS[l.cur]||!(+l.fx>0)) return fn(); const p=M53.c; M53.c=l; M53.d++; try{ return fn(); } finally{ M53.c=p; M53.d--; } }
+/* курс «как говорят»: за 1 единицу, у сума и тенге — за 1000 */
+function m53U(c){ return c==='UZS'||c==='KZT'?1000:1; }
+function m53UL(c){ const u=m53U(c); return (u>1?nf.format(u)+' ':'1 ')+m53Sym(c); }
+function m53RateStr(v){ return String(+(+v).toPrecision(6)); }
+function m53RateTxt(v){ return new Intl.NumberFormat(m53Loc(),{maximumSignificantDigits:5}).format(+v||0); }
+function m53RateLine(l){ const u=m53U(l.cur); return m53UL(l.cur)+' = '+m53RateTxt((+l.fx)*u)+' '+L.cur; }
+function m53In(x){ let r=Math.round((+x||0)*100)/100; if(Object.is(r,-0)) r=0; return String(r); }
+function m53DayTxt(d){ try{ return fmtDate(parseYmd(d)); }catch(e){ return String(d||''); } }
+
+/* ---- пересчёт сумм ---- */
+const M53_PF=['amount','principal','interest','pen','partPrev','f30adj'];
+function m53ScaleLoan(l,k){ if(!(k>0)||k===1) return; const mul=(o,f)=>{ if(o[f]!=null&&o[f]!==''&&isFinite(+o[f])) o[f]=(+o[f])*k; };
+  ['total','paid','monthly'].forEach(f=>mul(l,f));
+  if(Array.isArray(l.sched)) for(const e of l.sched){ if(e&&typeof e==='object') ['a','p','i','b'].forEach(f=>mul(e,f)); }
+  if(l.part&&typeof l.part==='object') ['a','cr','cri'].forEach(f=>mul(l.part,f));
+  if(l.recon&&typeof l.recon==='object') ['diff','bank'].forEach(f=>mul(l.recon,f));
+  if(l._f30adj&&typeof l._f30adj==='object') mul(l._f30adj,'d'); }
+function m53ScalePay(p,k){ if(!(k>0)||k===1) return; for(const f of M53_PF) if(p[f]!=null&&p[f]!==''&&isFinite(+p[f])) p[f]=(+p[f])*k; }
+/* привести всё к нынешнему курсу: записи платежей получают отметку курса, кредит и записи пересчитываются, если курс другой */
+function m53Norm(){ let ch=false; try{ if(!state||!Array.isArray(state.loans)) return false;
+    for(const l of state.loans){ if(!m53Is(l)) continue; const pays=(state.payments||[]).filter(p=>p.loanId===l.id);
+      for(const p of pays) if(!(+p.fx>0)){ p.fx=+l.fx; ch=true; }
+      const mk=m53Mkt(l.cur), want=+l.fxm>0?+l.fxm:mk;
+      if(want&&Math.abs(want/(+l.fx)-1)>1e-9){ m53ScaleLoan(l,want/(+l.fx)); l.fx=want; ch=true; }
+      if(!(+l.fxm>0)&&mk){ const d=m53Day(); if(l.fxd!==d){ l.fxd=d; } }
+      for(const p of pays) if(Math.abs((+l.fx)/(+p.fx)-1)>1e-9){ m53ScalePay(p,(+l.fx)/(+p.fx)); p.fx=+l.fx; ch=true; } } }catch(e){ console.error(e); } return ch; }
+/* сменить валюту кредита: цифры остаются те же, меняется только валюта (и курс для общего долга) */
+function m53SetCur(l,cur,rate,manual){ const k0=m53K(l); cur=cur&&cur!=='TJS'&&CURS[cur]?cur:'TJS'; const k1=cur==='TJS'?1:+rate; if(!(k1>0)) return false;
+  m53ScaleLoan(l,k1/k0);
+  for(const p of state.payments) if(p.loanId===l.id){ m53ScalePay(p,k1/(+p.fx>0?+p.fx:k0)); if(cur==='TJS') delete p.fx; else p.fx=k1; }
+  if(cur==='TJS'){ delete l.cur; delete l.fx; delete l.fxm; delete l.fxd; }
+  else { l.cur=cur; l.fx=k1; if(manual) l.fxm=k1; else delete l.fxm; l.fxd=m53Day(); }
+  return true; }
+
+/* ---- поля ввода: человек видит и пишет сумму в валюте кредита, остальной код читает её в сомони ---- */
+const M53_VD=Object.getOwnPropertyDescriptor(HTMLInputElement.prototype,'value');
+const M53_LENS=['p-amt','p-int','p-prin','rcn-v','rcn-m','rcn-o'];
+function m53LensOn(inp,loan){ if(!inp||inp.dataset.m53l) return; inp.dataset.m53l='1'; const raw0=M53_VD.get.call(inp);
+  Object.defineProperty(inp,'value',{configurable:true,enumerable:true,
+    get(){ const s=M53_VD.get.call(this); if(String(s).trim()===''||!m53Is(loan)) return s; const n=+String(s).replace(',','.'); return isFinite(n)?String(Math.round(n*(+loan.fx)*1e6)/1e6):s; },
+    set(v){ if(v===''||v==null||!m53Is(loan)){ M53_VD.set.call(this,v==null?'':v); return; } const n=+v; M53_VD.set.call(this,isFinite(n)?m53In(n/(+loan.fx)):String(v)); }});
+  if(String(raw0).trim()!==''&&isFinite(+raw0)) inp.value=raw0;
+  inp.setAttribute('inputmode','decimal'); inp.setAttribute('step','any'); if(/^[\d\s.,]+$/.test(inp.getAttribute('placeholder')||'')) inp.setAttribute('placeholder',''); }
+function m53LensAll(loan){ for(const id of M53_LENS){ const e=sheet.querySelector('#'+id); if(e) m53LensOn(e,loan); } }
+
+/* ---- окна одного кредита: показ в его валюте ---- */
+function m53Sheet(loan,fn){ if(!m53Is(loan)) return fn(); const r=m53With(loan,fn);
+  try{ if(overlay.classList.contains('open')){ sheet.dataset.m53=String(loan.id); m53LensAll(loan); m53Deco(loan); } }catch(e){ console.error(e); } return r; }
+function m53Deco(loan){
+  const g=sheet.querySelector('.detail-grid');
+  if(g&&!sheet.querySelector('.m53-rate')){ const a=analyze(loan);
+    g.insertAdjacentHTML('afterend',`<div class="m53-rate"><div class="m53-rt"><b>${esc(L.m53Head((L.m53CurN[loan.cur]||loan.cur)+' ('+m53Sym(loan.cur)+')'))}</b><small>${esc(m53RateLine(loan))} · ${esc(+loan.fxm>0?L.m53RateMine:L.m53RateAuto(m53DayTxt(loan.fxd||m53Day())))}</small>${a.done?'':`<small>${esc(L.m53EqDebt(m53T(a.remaining)))}</small>`}</div><button type="button" class="link-btn" data-m53rate="${esc(String(loan.id))}">${esc(L.m53RateBtn)}</button></div>`); }
+  const pa=sheet.querySelector('#p-amt');
+  if(pa&&!sheet.querySelector('#m53-peq')){ const fld=pa.closest('.field'); if(fld){ fld.insertAdjacentHTML('beforeend',`<p class="note m53-eq" id="m53-peq"></p>`);
+      const lb=fld.querySelector('label'); if(lb&&!lb.querySelector('.m53-sy')) lb.insertAdjacentHTML('beforeend',` <span class="hint m53-sy">${esc(m53Sym(loan.cur))}</span>`);
+      const upd=()=>{ const el=sheet.querySelector('#m53-peq'); if(!el) return; const v=+pa.value||0; el.textContent=v>0?L.m53PayEq(m53T(v),m53RateLine(loan)):''; };
+      pa.addEventListener('input',upd); upd(); } } }
+{ const o0=openSheet; openSheet=function(){ try{ delete sheet.dataset.m53; }catch(e){} return o0.apply(this,arguments); }; }
+{ const c0=closeSheet; closeSheet=function(){ try{ delete sheet.dataset.m53; }catch(e){} return c0.apply(this,arguments); }; }
+{ const f0=detailSheet; detailSheet=function(loan){ return m53Sheet(loan,()=>f0.apply(this,arguments)); }; }
+{ const f0=payForm; payForm=function(loan){ return m53Sheet(loan,()=>f0.apply(this,arguments)); }; }
+{ const f0=reconSheet; reconSheet=function(loan){ return m53Sheet(loan,()=>f0.apply(this,arguments)); }; }
+{ const f0=afterPaySheet; afterPaySheet=function(loan){ return m53Sheet(loan,()=>f0.apply(this,arguments)); }; }
+{ const f0=f32PoSheet; f32PoSheet=function(loan){ return m53Sheet(loan,()=>f0.apply(this,arguments)); }; }
+{ const f0=paySheet; paySheet=function(pid){ let l=null; try{ const p=state.payments.find(x=>x.id===pid); l=p?byId(p.loanId):null; }catch(e){} return m53Sheet(l,()=>f0.apply(this,arguments)); }; }
+/* график: вставленные цифры — в валюте кредита */
+{ const f0=schedSheet; schedSheet=function(loan){ const r=m53Sheet(loan,()=>f0.apply(this,arguments));
+    try{ const b=$('#sc-save'); if(b&&m53Is(loan)&&!b.dataset.m53){ b.dataset.m53='1'; const h=b.onclick; b.onclick=function(ev){ M53.ps=loan; try{ return h&&h.call(this,ev); } finally{ M53.ps=null; } }; } }catch(e){ console.error(e); } return r; }; }
+{ const p0=parseSchedule; parseSchedule=function(){ const rows=p0.apply(this,arguments); try{ const l=M53.ps; if(l&&m53Is(l)&&Array.isArray(rows)){ const k=+l.fx; for(const e of rows) for(const f of ['a','p','i','b']) if(e[f]!=null&&isFinite(+e[f])) e[f]=(+e[f])*k; } }catch(e){} return rows; }; }
+/* события внутри окна валютного кредита идут «в его валюте»; общий экран всегда рисуется в сомони */
+['click','input','change','keydown','keyup','pointerdown','pointerup'].forEach(t=>{
+  window.addEventListener(t,e=>{ try{ if(e.isTrusted&&M53.d===0){ M53.c=null; M53.root=null; }
+      const id=sheet&&sheet.dataset.m53; if(!id||M53.c||!overlay.classList.contains('open')||!(e.target&&sheet.contains(e.target))) return; const l=byId(id); if(!m53Is(l)) return;
+      M53.c=l; M53.root=e; const n=++M53.ev; setTimeout(()=>{ if(M53.ev===n&&M53.d===0){ M53.c=null; M53.root=null; } },0); }catch(_){} },true);
+  window.addEventListener(t,e=>{ if(M53.root===e){ M53.root=null; if(M53.d===0) M53.c=null; } },false); });
+{ const r0=render; render=function(){ const p=M53.c; M53.c=null; try{ m53Norm(); return r0.apply(this,arguments); } finally{ M53.c=p; try{ m53Cards(); }catch(e){} } }; }
+try{ const s0=sifraOpen; sifraOpen=function(){ const p=M53.c; M53.c=null; try{ return s0.apply(this,arguments); } finally{ M53.c=p; } }; }catch(e){}
+try{ const fr0=fetchRates; fetchRates=async function(){ const r=await fr0.apply(this,arguments); try{ if(state.loans.some(m53Is)&&m53Norm()&&!overlay.classList.contains('open')) render(); }catch(e){} return r; }; }catch(e){}
+/* карточка кредита: рядом с остатком в валюте — сколько это в сомони */
+function m53Cards(){ document.querySelectorAll('#cards .card[data-id], #closed .card[data-id]').forEach(c=>{ const l=byId(c.dataset.id); const old=c.querySelector('.m53-eq'); if(old) old.remove(); if(!m53Is(l)) return;
+    const a=analyze(l), sub=c.querySelector('.c-sub'); if(sub&&!a.done) sub.insertAdjacentHTML('beforeend',`<span class="m53-eq">${esc(L.m53Eq(m53T(a.remaining)))}</span>`); }); }
+
+/* ---- окно «Курс для этого кредита» ---- */
+function m53RateSheet(loan){ if(!m53Is(loan)) return; const c=loan.cur, U=m53U(c), mk=m53Mkt(c);
+  openSheet(`<h3>${esc(L.m53RateT)}</h3><p class="lead">${esc(L.m53RateLead(loan.name,(L.m53CurN[c]||c)+' ('+m53Sym(c)+')'))}</p>
+    <div class="field n"><label for="m53-rv">${esc(L.m53RateL(m53UL(c)))}</label><input id="m53-rv" type="number" inputmode="decimal" step="any" min="0" value="${esc(m53RateStr((+loan.fx)*U))}"></div>
+    <p class="note">${esc(mk?L.m53RateMk(m53UL(c)+' = '+m53RateTxt(mk*U)+' '+L.cur)+' ('+m53DayTxt(m53Day())+')':L.m53RateNone)}</p><p class="note">${esc(L.m53RateHint)}</p><div class="err" id="m53-re"></div>
+    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-action="open" data-id="${esc(String(loan.id))}">${L.back}</button><button type="button" class="btn btn-primary" id="m53-rs">${L.save}</button></div>
+    ${+loan.fxm>0&&mk?`<button type="button" class="link-btn m53-rm" id="m53-rm">${esc(L.m53RateUseMk)}</button>`:''}`);
+  const done=()=>{ m53Norm(); persist(); render(); detailSheet(loan); toast(L.m53RateSaved); };
+  $('#m53-rs').onclick=()=>{ const v=(+$('#m53-rv').value)/U; if(!(v>0)) return showErr($('#m53-re'),L.m53ErrRate); if(mk&&Math.abs(v/mk-1)<=1e-6) delete loan.fxm; else loan.fxm=v; done(); };
+  const rm=$('#m53-rm'); if(rm) rm.onclick=()=>{ delete loan.fxm; done(); }; }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest&&e.target.closest('[data-m53rate]'); if(!b) return; e.stopImmediatePropagation(); const l=byId(b.dataset.m53rate); if(l) m53RateSheet(l); },true);
+
+/* ---- форма кредита: валюта и курс ---- */
+function m53CurOpts(sel){ return ['TJS'].concat(Object.keys(CURS)).map(c=>`<option value="${c}" ${c===sel?'selected':''}>${esc(L.m53CurN[c]||c)} (${esc(m53Sym(c))})</option>`).join(''); }
+function m53CurField(sel,idp){ return `<div class="field m53-ff"><label for="${idp}cur">${esc(L.m53CurL)}</label><select id="${idp}cur">${m53CurOpts(sel)}</select>
+    <div class="m53-fr" id="${idp}fr" hidden><label for="${idp}rate" id="${idp}rl"></label><input id="${idp}rate" type="number" inputmode="decimal" step="any" min="0"><small id="${idp}rh"></small></div>
+    <p class="note" id="${idp}fn" hidden></p></div>`; }
+/* общая логика выбора валюты и курса; возвращает чтение {cur,rate,manual,err} */
+function m53CurBind(idp,cur0,fx0,fxm0,noteFn,onCh){ const sel=$('#'+idp+'cur'), ri=$('#'+idp+'rate'); let touched=false;
+  const upd=init=>{ const c=sel.value, fr=$('#'+idp+'fr'), fn=$('#'+idp+'fn'); fr.hidden=c==='TJS'; fn.hidden=c==='TJS'; if(onCh) try{ onCh(c); }catch(e){} if(c==='TJS') return;
+    const mk=m53Mkt(c), U=m53U(c); $('#'+idp+'rl').textContent=L.m53RateL(m53UL(c));
+    if(!touched) ri.value=(init&&fx0&&c===cur0)?m53RateStr(fx0*U):(mk?m53RateStr(mk*U):'');
+    $('#'+idp+'rh').textContent=mk?L.m53RateMk(m53RateTxt(mk*U)+' '+L.cur):L.m53RateNone; fn.textContent=noteFn(m53Sym(c)); };
+  sel.addEventListener('change',()=>{ touched=false; upd(false); }); ri.addEventListener('input',()=>{ touched=true; }); upd(true);
+  return ()=>{ const c=sel.value; if(c==='TJS') return {cur:'TJS',rate:1,manual:false}; const U=m53U(c), rate=(+ri.value)/U; if(!(rate>0)) return {err:1};
+    const mk=m53Mkt(c); let manual=!mk||Math.abs(rate/mk-1)>1e-6; if(fx0&&c===cur0&&Math.abs(rate/fx0-1)<1e-9) manual=!!fxm0; return {cur:c,rate,manual}; }; }
+function m53FormUI(loan,isNew,pre){ const tot=$('#f-total'); if(!tot||$('#m53f-cur')) return; const two=tot.closest('.two')||tot.closest('.field'); if(!two) return;
+  const ids=['f-total','f-paid','f-monthly'], fx0=!isNew&&m53Is(loan)?+loan.fx:null; let cur0=fx0?loan.cur:'TJS';
+  if(isNew&&pre&&pre.cur53){ const c=m53CurCode(pre.cur53); if(c&&c!=='TJS') cur0=c; }
+  two.insertAdjacentHTML('beforebegin',m53CurField(cur0,'m53f-'));
+  if(fx0) ids.forEach(id=>{ const e=$('#'+id); if(e&&String(e.value).trim()!==''&&isFinite(+e.value)) e.value=m53In((+e.value)/fx0); });
+  const read=m53CurBind('m53f-',cur0,fx0,fx0?loan.fxm:0,s=>L.m53FormNote(s),c=>{ ids.forEach(id=>{ const e=$('#'+id); if(e){ e.setAttribute('inputmode',c==='TJS'?'numeric':'decimal'); if(c!=='TJS') e.setAttribute('step','any'); } }); });
+  const btn=$('#f-save'), h=btn.onclick;
+  btn.onclick=function(ev){ const o=read(), err=$('#f-err'); if(o.err) return showErr(err,L.m53ErrRate);
+    const keep=ids.map(id=>$('#'+id).value), n0=state.loans.length;
+    const snap=isNew?null:JSON.stringify({l:loan,p:state.payments.filter(p=>p.loanId===loan.id)});
+    if(o.cur!=='TJS') ids.forEach(id=>{ const e=$('#'+id); if(e&&String(e.value).trim()!==''&&isFinite(+e.value)) e.value=String(Math.round((+e.value)*o.rate*1e6)/1e6); });
+    if(!isNew) m53SetCur(loan,o.cur,o.rate,o.manual);
+    let r; try{ r=h&&h.call(this,ev); }catch(e){ console.error(e); }
+    if(overlay.classList.contains('open')&&$('#f-save')){   /* форма не закрылась — в полях ошибка: вернуть всё как было */
+      ids.forEach((id,k)=>{ const e=$('#'+id); if(e) e.value=keep[k]; });
+      if(snap){ const s0=JSON.parse(snap); for(const k in loan) delete loan[k]; Object.assign(loan,s0.l); s0.p.forEach(pp=>{ const q=state.payments.find(x=>x.id===pp.id); if(q){ for(const k in q) delete q[k]; Object.assign(q,pp); } }); }
+      return r; }
+    if(isNew&&o.cur!=='TJS'&&state.loans.length>n0){ const nl=state.loans[state.loans.length-1]; nl.cur=o.cur; nl.fx=o.rate; if(o.manual) nl.fxm=o.rate; nl.fxd=m53Day(); persist(); render(); }
+    return r; }; }
+/* быстрая форма «Новый кредит»: платёж в валюте кредита */
+function m53QuickUI(){ const mi=$('#al-m'); if(!mi||$('#m53q-cur')) return; const fld=mi.closest('.field'); if(!fld) return;
+  fld.insertAdjacentHTML('afterend',m53CurField('TJS','m53q-'));
+  const read=m53CurBind('m53q-','TJS',null,0,s=>L.m53QNote(s),null);
+  const sv=$('#al-save'); if(sv){ const h=sv.onclick; sv.onclick=function(ev){ const o=read(); if(o.err){ const er=$('#al-err'); if(er) showErr(er,L.m53ErrRate); return; }
+      const n0=state.loans.length, r=h&&h.call(this,ev); if(o.cur!=='TJS'&&state.loans.length>n0){ const nl=state.loans[state.loans.length-1]; m53SetCur(nl,o.cur,o.rate,o.manual); persist(); render(); } return r; }; }
+  const mo=$('#al-more'); if(mo){ const h=mo.onclick; mo.onclick=function(ev){ const c=$('#m53q-cur')?$('#m53q-cur').value:'TJS'; const r=h&&h.call(this,ev); try{ if($('#f-total')) m53FormUI(null,true,{cur53:c}); }catch(e){ console.error(e); } return r; }; } }
+{ const f0=loanForm; loanForm=function(loan,prefill){ const r=f0.apply(this,arguments); try{ if($('#f-total')) m53FormUI(loan||null,!loan,prefill||null); else if($('#al-m')) m53QuickUI(); }catch(e){ console.error(e); } return r; }; }
+
+/* ---- чек к платежу: валюта чека и кредита ---- */
+function m53Rc(loan,r){ const rc=m53CurCode(r&&r.cur), lc=m53Is(loan)?loan.cur:'TJS'; if(rc==null||rc!==lc) return null; return m53K(loan); }
+function m53RcMsg(loan,r){ const rc=String((r&&r.cur)||'TJS').slice(0,4); return m53Is(loan)?L.m53RcOther(esc(rc==='TJS'?L.cur:rc),esc(m53Sym(loan.cur))):L.prCur(esc(rc)); }
+
+/* ---- Сифра: кредиты в их валюте ---- */
+function m53InScale(i,k){ const o=Object.assign({},i), num=v=>+String(v).replace(/\s/g,'').replace(',','.');
+  for(const f of ['principal','monthly','bank_left','overpay','amount','penalty']) if(o[f]!=null&&o[f]!==''&&isFinite(num(o[f]))) o[f]=num(o[f])*k;
+  if(Array.isArray(o.schedule)) o.schedule=o.schedule.map(r=>{ if(!r||typeof r!=='object') return r; const q=Object.assign({},r); for(const f of ['payment','principal','interest','balance']) if(q[f]!=null&&q[f]!==''&&isFinite(num(q[f]))) q[f]=num(q[f])*k; return q; });
+  return o; }
+function m53PvRate(c){ const v=+M53.pr[c]>0?+M53.pr[c]:m53Mkt(c); M53.pvSeen[c]=v||0; return v||0; }
+function m53PvManual(c,rate){ const mk=m53Mkt(c); return +M53.pr[c]>0&&(!mk||Math.abs(rate/mk-1)>1e-6); }
+{ const c0=f31Create; f31Create=function(i){ i=i||{}; const c=m53CurCode(i.currency); if(c==null||c==='TJS') return c0.call(this,i);
+    const name=f31Str(i.name,60), rate=m53PvRate(c); if(!rate) return {title:'➕ '+(name?L.f31New(name):''),err:L.m53NoRate(m53Sym(c)),m53:c};
+    const i2=m53InScale(i,rate); delete i2.currency;
+    const res=m53With({cur:c,fx:rate},()=>c0.call(this,i2));
+    if(res&&res.loanId){ const l=byId(res.loanId); if(l){ l.cur=c; l.fx=rate; if(m53PvManual(c,rate)) l.fxm=rate; l.fxd=m53Day(); const a=analyze(l); res.lines=(res.lines||[]).concat([esc(L.m53PvLine(m53RateLine(l),m53T(a.remaining)))]); } }
+    if(res) res.m53=c; return res; }; }
+{ const u0=f31Update; f31Update=function(i){ i=i||{}; const l=byId(i.loan_id); if(!l||l.example) return u0.call(this,i);
+    const pre=[], want=i.currency!=null&&i.currency!==''?m53CurCode(i.currency):null, have=m53Is(l)?l.cur:'TJS';
+    if(want&&want!==have){ const rate=want==='TJS'?1:m53PvRate(want); if(!rate) return {title:'✏️ '+f31Nm(l),err:L.m53NoRate(m53Sym(want)),m53:want};
+      m53SetCur(l,want,rate,want!=='TJS'&&m53PvManual(want,rate)); pre.push(L.f31Ch(esc(L.m53CurL),esc(m53Sym(have)),esc(m53Sym(want)))); }
+    const fx=m53Is(l), i2=fx?m53InScale(i,+l.fx):Object.assign({},i); delete i2.currency;
+    const res=m53With(fx?l:null,()=>u0.call(this,i2));
+    if(pre.length&&res&&!res.err){ res.lines=pre.concat(res.lines||[]); res.warn=(res.warn||[]).filter(w=>w!==L.f31NoCh); }
+    return res; }; }
+{ const p0=f31Pay; f31Pay=function(i){ i=i||{}; const l=byId(i.loan_id); if(!m53Is(l)) return p0.call(this,i); return m53With(l,()=>p0.call(this,m53InScale(i,+l.fx))); }; }
+/* окно «Сифра подготовила изменения»: строка курса, которую можно поправить */
+{ const p0=f31Preview; f31Preview=function(items){ if(items!==M53.pv){ M53.pr={}; M53.pv=items; } M53.pvSeen={}; const r=p0.apply(this,arguments); try{ m53PvUI(); }catch(e){ console.error(e); } return r; }; }
+function m53PvUI(){ const cs=Object.keys(M53.pvSeen); if(!cs.length||!$('#f31-go')) return; const note=sheet.querySelector('.f31-list'); if(!note||sheet.querySelector('.m53-pvr')) return;
+  note.insertAdjacentHTML('afterend',cs.map(c=>{ const U=m53U(c), v=M53.pvSeen[c], mine=+M53.pr[c]>0;
+    return `<div class="m53-pvr"><label for="m53-pr-${c}">${esc(L.m53PvL(m53UL(c)))}</label><input id="m53-pr-${c}" data-m53pr="${c}" type="number" inputmode="decimal" step="any" min="0" value="${v?esc(m53RateStr(v*U)):''}"><span>${esc(L.cur)}</span><small>${esc(!v?L.m53PvNone:mine?L.m53PvMine:L.m53PvHint(m53DayTxt(m53Day())))}</small></div>`; }).join(''));
+  sheet.querySelectorAll('[data-m53pr]').forEach(inp=>inp.addEventListener('change',()=>{ const c=inp.dataset.m53pr, v=(+inp.value)/m53U(c), mk=m53Mkt(c);
+      if(v>0&&(!mk||Math.abs(v/mk-1)>1e-6)) M53.pr[c]=v; else delete M53.pr[c]; f31Preview(M53.pv); })); }
+/* данные для Сифры: суммы валютного кредита — в его валюте, рядом валюта и курс */
+function m53CtxFix(o){ const r2=v=>Math.round((+v||0)*100)/100;
+  if(Array.isArray(o.loans)) o.loans.forEach(x=>{ const l=byId(x.id); if(!m53Is(l)) return; const k=+l.fx, a=analyze(l);
+    x.currency=l.cur; x.left=r2(a.remaining/k); x.monthly=r2((a.monthly||a.amt||0)/k); x.interest_left=r2((a.interestLeft||0)/k); x.left_tjs=Math.round(a.remaining); x.tjs_per_unit=+(+k).toPrecision(6); });
+  if(Array.isArray(o.loans_full)) o.loans_full.forEach(x=>{ const l=byId(x.id); if(!m53Is(l)){ x.currency='TJS'; return; } const k=+l.fx, a=analyze(l), s=schedOf(l), n=v=>v!=null&&v!==''?r2((+v)/k):'';
+    x.currency=l.cur; x.tjs_per_unit=+(+k).toPrecision(6); x.principal=r2((+l.total||0)/k); x.paid=r2((+l.paid||0)/k); x.left=r2(a.remaining/k); x.monthly=+l.monthly?r2(+l.monthly/k):null; x.left_tjs=Math.round(a.remaining);
+    if(x.next_amount!=null) x.next_amount=r2((a.amt||a.amtFull||0)/k); if(x.credit&&l.part) x.credit.amount=r2((+l.part.a||0)/k);
+    if(s) x.schedule=s.map(e=>[e.d,n(e.a),n(e.p),n(e.i),n(e.b)].join(';')+(e.d2?';+'+e.d2:''));
+    x.payments=state.payments.filter(p=>p.loanId===l.id).slice(-8).map(p=>{ const y={date:p.date,amount:r2((+p.amount||0)/k)}; if(p.per!=null) y.for=ymd(f30DueOf(l,p.per)); if(p.principal!=null) y.principal=r2(+p.principal/k); if(p.interest!=null) y.interest=r2(+p.interest/k); if(p.late>0) y.late=p.late; if(p.pen>0) y.pen=r2(+p.pen/k); if(p.extra) y.extra=true; if(p.part) y.part=true; return y; }); }); }
+try{ const s0=sfCtx; sfCtx=function(){ const o=s0.apply(this,arguments); try{ m53CtxFix(o); }catch(e){ console.error(e); } return o; }; }catch(e){}
+
+/* ===== v53: фото для Сифры — чётче =====
+   Раньше фото уменьшалось до 1600 точек по длинной стороне. Модель читает до 2576 точек и до 4784 «клеток» 28×28 на картинку,
+   поэтому теперь: обычное фото уходит в этом полном размере; у фото документа (график, договор, чек) вдобавок уходят
+   две увеличенные половины страницы — мелкие цифры на них в полтора-два раза крупнее. Тёмный лист осветляется. Нужен сервер v29. */
+const M53_IMG={edge:2576,tok:4550,q:0.9,cap:3400000};
+function m53Hi(){ try{ if(!(sfCaps&&+sfCaps.v>=29)) return false; const c=navigator.connection; if(c&&(c.saveData||/(^|-)2g$/.test(String(c.effectiveType||'')))) return false; return true; }catch(e){ return false; } }
+function m53Fit(w,h,edge,tok){ return Math.min(1,edge/Math.max(w,h),Math.sqrt(tok*784/(w*h))); }
+function m53Jpeg(src,x,y,w,h,edge,tok,q,levels){ const k=m53Fit(w,h,edge,tok), c=document.createElement('canvas'); c.width=Math.max(1,Math.round(w*k)); c.height=Math.max(1,Math.round(h*k));
+  const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); try{ g.imageSmoothingQuality='high'; }catch(e){} g.drawImage(src,x,y,w,h,0,0,c.width,c.height); if(levels){ try{ p29Levels(g,c.width,c.height); }catch(e){} }
+  let u=c.toDataURL('image/jpeg',q); while(u.length>M53_IMG.cap&&q>0.62){ q-=0.08; u=c.toDataURL('image/jpeg',q); } return {type:'image/jpeg',data:u.split(',')[1],w:c.width,h:c.height}; }
+/* похоже ли фото на документ (много светлого и неяркого) и не тёмное ли оно */
+function m53Look(im){ try{ const c=document.createElement('canvas'); c.width=64; c.height=64; const g=c.getContext('2d'); g.drawImage(im,0,0,64,64); const a=g.getImageData(0,0,64,64).data; let paper=0, n=0; const ls=[];
+    for(let i=0;i<a.length;i+=4){ const r=a[i], gg=a[i+1], b=a[i+2], mx=Math.max(r,gg,b), mn=Math.min(r,gg,b), l=(r*299+gg*587+b*114)/1000; n++; ls.push(l); if(l>95&&(mx-mn)<Math.max(34,mx*0.3)) paper++; }
+    ls.sort((x,y)=>x-y); const p95=ls[Math.floor(n*0.95)]; return {doc:paper/n>0.42,dim:p95<205}; }catch(e){ return {doc:false,dim:false}; } }
+async function m53Prep(f,thumb){ const url=URL.createObjectURL(f);
+  try{ const im=await new Promise((res,rej)=>{ const x=new Image(); x.onload=()=>res(x); x.onerror=rej; x.src=url; }); const w=im.naturalWidth, h=im.naturalHeight; if(!w||!h) throw new Error('img');
+    const lk=m53Look(im), E=M53_IMG, tl=[];
+    if(lk.doc&&Math.max(w,h)>=2000){ const fr=0.56; for(let k=0;k<2;k++){ if(h>=w){ const th=Math.round(h*fr); tl.push(m53Jpeg(im,0,k?h-th:0,w,th,E.edge,E.tok,E.q,lk.dim)); } else { const tw=Math.round(w*fr); tl.push(m53Jpeg(im,k?w-tw:0,0,tw,h,E.edge,E.tok,E.q,lk.dim)); } } }
+    const full=tl.length?m53Jpeg(im,0,0,w,h,1568,1500,0.86,lk.dim):m53Jpeg(im,0,0,w,h,E.edge,E.tok,lk.doc?E.q:0.86,lk.doc&&lk.dim);
+    const o={type:full.type,data:full.data,m53:1,doc:lk.doc,land:w>h,tl:tl.map(t=>({type:t.type,data:t.data}))};
+    if(thumb){ const k=Math.min(1,420/Math.max(w,h)), c=document.createElement('canvas'); c.width=Math.max(1,Math.round(w*k)); c.height=Math.max(1,Math.round(h*k)); const g=c.getContext('2d'); g.fillStyle='#fff'; g.fillRect(0,0,c.width,c.height); try{ g.imageSmoothingQuality='high'; }catch(e){} g.drawImage(im,0,0,c.width,c.height);
+      let q=0.8, u=c.toDataURL('image/jpeg',q); while(u.length>58000&&q>0.4){ q-=0.1; u=c.toDataURL('image/jpeg',q); } o.thumb=u; }
+    return o; } finally{ URL.revokeObjectURL(url); } }
+try{ const p0=f31Prep; f31Prep=async function(f,thumb){ if(!m53Hi()) return p0.apply(this,arguments); try{ return await m53Prep(f,thumb); }catch(e){ return p0.apply(this,arguments); } }; }catch(e){}
+/* что уходит: целые фото и увеличенные части, с подписями (части — только когда фото одно или два) */
+function m53Imgs(img){ const ph=[img].concat(Array.isArray(img.more)?img.more:[]).filter(p=>p&&p.data).slice(0,4), useT=ph.length<=2, list=[], lbl=[];
+  ph.forEach((p,i)=>{ const nm='Фото '+(i+1), t=useT&&Array.isArray(p.tl)?p.tl:[]; list.push({type:p.type,data:p.data}); lbl.push(nm+(t.length?' — вся страница':''));
+    t.forEach((x,k)=>{ list.push({type:x.type,data:x.data}); lbl.push(nm+' — '+(p.land?(k?'правая':'левая'):(k?'нижняя':'верхняя'))+' часть крупнее'); }); });
+  return {list:list.slice(0,8),lbl:lbl.slice(0,8)}; }
+/* ===== v53: «Спросить дальше» — Сифра предлагает 2–3 следующих вопроса (сервер v29) ===== */
+function m53NextAttach(){ try{ const nx=M53.nx; M53.nx=null; if(!nx||!nx.a.length) return; const log=sfLog(), m=log[log.length-1]; if(!m||m.r!=='a'||m.err||m.loc||m.nx) return; m.nx=nx.a; try{ persist(); }catch(e){} if($('#sf-log')) sfRedraw(); }catch(e){} }
+try{ const a0=sfAsk; sfAsk=function(){ const im=sfImg; M53.im=im&&im.m53?im:null; M53.nx=null; let r; try{ r=a0.apply(this,arguments); } finally{ M53.im=null; } try{ Promise.resolve(r).then(()=>setTimeout(m53NextAttach,0),()=>{}); }catch(e){} return r; }; }catch(e){}
+try{ const f1=window.fetch; window.fetch=function(u,o){ const p=f1.apply(this,arguments); try{ if(typeof u==='string'&&/\/api\/mk\/ai$/.test(u)&&o&&typeof o.body==='string'&&!/"img_only"/.test(o.body)) return p.then(r=>{ try{ r.clone().json().then(j=>{ M53.nx=j&&Array.isArray(j.next)&&j.next.length?{a:j.next.slice(0,3).map(x=>String(x).slice(0,80)).filter(Boolean)}:null; }).catch(()=>{}); }catch(e){} return r; }); }catch(e){} return p; }; }catch(e){}
+try{ const m0=sfMsgHTML; sfMsgHTML=function(m,i){ let h=m0.apply(this,arguments); try{ if(m&&m.r==='a'&&Array.isArray(m.nx)&&m.nx.length&&i===sfLog().length-1) h+=`<div class="m53-nx" role="group" aria-label="${esc(L.m53NextT)}"><small>${esc(L.m53NextT)}</small>${m.nx.map(q=>`<button type="button" class="chip" data-m52q="${esc(q)}">${esc(q)}</button>`).join('')}</div>`; }catch(e){} return h; }; }catch(e){}
+try{ const s1=sfCtx; sfCtx=function(){ const o=s1.apply(this,arguments); try{ if(M53.im){ const x=m53Imgs(M53.im); if(x.list.length>1){ o.__imgs=x.list.slice(1); o.__imgl=x.lbl; } } }catch(e){ console.error(e); } return o; }; }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
