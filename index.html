@@ -5797,6 +5797,182 @@ html.m54 #cards .card.m54-c .m12-meta{min-width:0; max-width:100%;}
 html.m54 #cards .card.m54-c .m12-meta span{white-space:normal; max-width:100%; text-align:left;}
 html.m54 #cards .card.m54-c .c-top,html.m54 #cards .card.m54-c .c-sub{min-width:0; flex-wrap:wrap;}
 html.m54 #cards .card.m54-c .c-rem{margin-left:auto;}
+
+/* v55: «Платежи месяца» — значок кредита тем же цветом и буквой, что на карточке; счётчик платежей словами */
+.m54-mb{display:inline-grid; place-items:center; min-width:24px; height:24px; padding:0 4px; margin-right:8px; border-radius:99px; color:#fff; font-style:normal; font-size:.66rem; font-weight:800; font-family:var(--font-num); vertical-align:middle; text-decoration:none; box-sizing:border-box;}
+.streak.m54-pg{white-space:nowrap;}
+.m54-tg2{display:inline-grid; place-items:center; min-width:22px; height:20px; padding:0 5px; margin-left:4px; border-radius:99px; background:var(--lc,var(--brand)); color:#fff; font:800 .62rem var(--font-num); font-style:normal; vertical-align:middle; text-decoration:none; box-sizing:border-box;}
+.m54-sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap;}
+.mc-r{position:relative;}
+/* ===================== v55: «Наставник» ===================== */
+.m55{display:flex; flex-direction:column; gap:12px; min-width:0;}
+.m55 p{margin:0;} .m55 ul,.m55 ol{margin:0; padding:0; list-style:none;}
+.m55-lead2{font-size:.88rem; color:var(--muted); line-height:1.4;}
+.m55-honest,.m55-early{display:flex; gap:7px; align-items:flex-start; font-size:.8rem; color:var(--muted); line-height:1.4;} .m55-honest .mi,.m55-early .mi{flex:none; margin-top:2px;}
+.m55-errp{padding:9px 12px; border-radius:12px; background:var(--danger-weak,#FDE2E2); color:var(--danger); font-size:.86rem; font-weight:700;}
+.m55 .m44-cd>ul>li{position:relative; padding-left:16px; line-height:1.4; font-size:.9rem;} .m55 .m44-cd>ul>li+li{margin-top:6px;}
+.m55 .m44-cd>ul>li::before{content:""; position:absolute; left:3px; top:.58em; width:6px; height:6px; border-radius:50%; background:var(--m40-line,var(--brand));}
+.m55-f1{display:grid; width:100%;} .m55-fb{display:grid; grid-template-columns:auto minmax(0,1fr); gap:8px; width:100%;}
+.m55-f1 .btn,.m55-fb .btn{min-height:48px; display:flex; align-items:center; justify-content:center; gap:6px; padding-left:14px; padding-right:14px; line-height:1.15;}
+
+/* вступление */
+.m55-intro{align-items:stretch;} .m55-ih{width:64px; height:64px; border-radius:22px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink); margin:6px 0 2px;}
+.m55-it{margin:0; font-size:1.35rem; font-weight:800; line-height:1.2; text-wrap:balance;}
+.m55-steps{display:flex; flex-direction:column; gap:0; margin:4px 0 6px!important;}
+.m55-steps li{display:flex; gap:12px; align-items:flex-start; padding:0 0 16px; position:relative;}
+.m55-steps li>span{width:30px; height:30px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--brand); color:#fff; font-family:var(--font-num); font-weight:800; font-size:.9rem; position:relative; z-index:1;}
+.m55-steps li:not(:last-child)::before{content:""; position:absolute; left:14px; top:30px; bottom:0; width:2px; background:var(--line);}
+.m55-steps b{display:block; font-size:.96rem; line-height:1.25;} .m55-steps small{color:var(--muted); font-size:.82rem;}
+.m55-exs{margin-top:-4px;}
+.m55-qn{font-size:.8rem; font-weight:800; color:var(--muted);}
+.m55-wait .m55-wq{font-weight:800; line-height:1.3; overflow-wrap:anywhere;}
+
+/* шапка программы */
+.m55-hero{display:flex; flex-direction:column; gap:10px; padding:16px; border-radius:22px; background:var(--surface); border:1px solid var(--line); min-width:0;}
+.m55-want{font-size:.86rem; color:var(--muted); line-height:1.35; overflow-wrap:anywhere;}
+.m55-top{display:flex; gap:14px; align-items:center; min-width:0;}
+.m55-meta{display:flex; flex-direction:column; gap:2px; min-width:0;} .m55-meta small{font-size:.74rem; font-weight:800; color:var(--muted);}
+.m55-meta b{font-size:1.02rem; line-height:1.25; overflow-wrap:anywhere;} .m55-meta span{font-size:.84rem; color:var(--muted);}
+.m55-verdict{font-size:.94rem; line-height:1.45;} .m55-why{font-size:.84rem; color:var(--muted); line-height:1.4;}
+.m55-dial{position:relative; width:68px; height:68px; flex:none; display:grid; place-items:center;}
+.m55-dial svg{position:absolute; inset:0; transform:rotate(-90deg);} .m55-dial circle{fill:none; stroke-width:7;}
+.m55-dial .t{stroke:var(--track);} .m55-dial .f{stroke-linecap:round; stroke-dashoffset:var(--o); stroke:var(--warn,#C98A00);}
+.m55-dial.hi .f{stroke:var(--m-leaf,var(--brand));} .m55-dial.lo .f{stroke:var(--danger);}
+.m55-dial b{position:relative; font-family:var(--font-num); font-weight:800; font-size:1.3rem;}
+.m55-dial.sm{width:52px; height:52px;} .m55-dial.sm b{font-size:1.02rem;}
+.m55-strip{display:flex; align-items:center; gap:0; width:100%; align-self:stretch;}
+.m55-strip li{display:flex; align-items:center; flex:1 1 0; min-width:0;} .m55-strip li:last-child{flex:0 0 auto;}
+.m55-strip i{width:24px; height:24px; flex:none; border-radius:50%; display:grid; place-items:center; font-style:normal; font-family:var(--font-num); font-size:.72rem; font-weight:800; background:var(--surface-2); color:var(--muted); border:2px solid var(--line);}
+.m55-strip li:not(:last-child)::after{content:""; flex:1; height:3px; background:var(--line); border-radius:2px; margin:0 3px;}
+.m55-strip li.done i{background:var(--m-leaf,var(--brand)); border-color:transparent; color:#fff;} .m55-strip li.done::after{background:var(--m-leaf,var(--brand));}
+.m55-strip li.here i{background:var(--brand); border-color:transparent; color:#fff; box-shadow:0 0 0 4px var(--brand-weak);}
+
+/* вкладки */
+/* лента прилипает к верху страницы; у прокрутки отступ 16px, поэтому top отрицательный, а фон — на всю ширину, чтобы текст не просвечивал */
+.m55-tabs{position:sticky; top:-16px; z-index:3; margin:-4px -16px; padding:8px 16px; background:var(--bg); box-shadow:0 -6px 0 var(--bg);}
+.m55-tb{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px; padding:4px; border-radius:16px; background:var(--surface-2);}
+.m55-tabs button{position:relative; display:flex; flex-direction:column; align-items:center; gap:2px; padding:7px 2px 6px; min-height:48px; border:0; border-radius:12px; background:none; color:var(--muted); font:inherit; font-size:.74rem; font-weight:800; cursor:pointer; min-width:0;}
+.m55-tabs button span{max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m55-tabs button.on{background:var(--surface); color:var(--ink); box-shadow:0 1px 4px rgba(20,16,40,.1);}
+.m55-dot{position:absolute; top:6px; right:calc(50% - 16px); width:8px; height:8px; border-radius:50%; background:var(--danger);}
+.m55-pane{display:flex; flex-direction:column; gap:12px; min-width:0;}
+.m55-pane .m44-h3{margin:6px 0 0;}
+
+/* неделя */
+.m55-wk{display:flex; flex-direction:column; gap:6px; padding:14px 16px; border-radius:18px; background:var(--brand-weak); color:var(--brand-ink);}
+.m55-wh{display:flex; justify-content:space-between; align-items:center; gap:10px;} .m55-wh b{display:block; font-size:1.1rem;} .m55-wh small{font-size:.8rem; opacity:.85;}
+.m55-days{display:flex; gap:3px; flex:none;} .m55-days i{width:9px; height:22px; border-radius:5px; background:currentColor; opacity:.18;} .m55-days i.p{opacity:.55;} .m55-days i.n{opacity:1;}
+.m55-days.due i{opacity:1; background:var(--danger);}
+.m55-wsum{font-size:.84rem; font-weight:700;}
+.m55-first{display:flex; gap:7px; align-items:flex-start; margin-top:4px!important; padding-top:9px; border-top:1px solid color-mix(in srgb,currentColor 18%,transparent); font-size:.9rem; line-height:1.4;} .m55-first .mi{flex:none; margin-top:3px;}
+.m55-tasks{display:flex; flex-direction:column; gap:10px;}
+.m55-task{position:relative; overflow:hidden; display:flex; flex-direction:column; gap:9px; padding:14px 14px 14px 18px; border-radius:18px; background:var(--surface); border:1px solid var(--line); min-width:0;}
+.m55-task::before,.m55-rt li::before{content:""; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--line);}
+.m55-task.st-yes::before{background:var(--m-leaf,var(--brand));} .m55-task.st-part::before{background:var(--warn,#C98A00);} .m55-task.st-no::before{background:var(--danger);}
+.m55-th{display:flex; gap:10px; align-items:flex-start;} .m55-th>div{min-width:0;} .m55-th b{display:block; line-height:1.3; overflow-wrap:anywhere;} .m55-th small{color:var(--muted); font-size:.8rem;}
+.m55-tn{width:26px; height:26px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); font-family:var(--font-num); font-weight:800; font-size:.82rem;}
+.m55-task.st-yes .m55-tn{background:var(--m-leaf,var(--brand)); color:#fff;}
+.m55-how summary,.m55-ds summary,.m55-lw summary{cursor:pointer; font-weight:800; font-size:.84rem; color:var(--brand-ink); list-style:none; min-height:32px; display:flex; align-items:center; gap:6px;}
+.m55-how summary::-webkit-details-marker,.m55-ds summary::-webkit-details-marker,.m55-lw summary::-webkit-details-marker,.m55-route summary::-webkit-details-marker{display:none;}
+.m55-how summary::before,.m55-ds summary::before{content:"›"; display:inline-block; font-size:1.1rem; line-height:1; transition:transform .18s;} .m55-how[open] summary::before,.m55-ds[open] summary::before{transform:rotate(90deg);}
+.m55-how p{font-size:.88rem; line-height:1.45; padding:2px 0 2px 14px;}
+.m55-proof{display:flex; gap:7px; align-items:flex-start; font-size:.86rem; line-height:1.4;} .m55-proof .mi{flex:none; margin-top:3px; color:var(--m-leaf,var(--brand));} .m55-proof small{color:var(--muted); font-weight:800;}
+.m55-st{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px;}
+.m55-st button{min-height:42px; padding:6px 4px; border-radius:12px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:.8rem; font-weight:800; cursor:pointer; overflow-wrap:anywhere; line-height:1.15;}
+.m55-st button.on[data-m55st="yes"]{background:var(--m-leaf-weak,#DDF3E6); border-color:var(--m-leaf,#1F7A47); color:var(--m-leaf,#1F7A47);}
+.m55-st button.on[data-m55st="part"]{background:var(--warn-weak,#FFF1D6); border-color:var(--warn,#C98A00); color:var(--warn,#8A5A00);}
+.m55-st button.on[data-m55st="no"]{background:var(--danger-weak,#FDE2E2); border-color:var(--danger); color:var(--danger);}
+.m55-task textarea,.m55-note textarea,.m55-qa input{width:100%; padding:10px 12px; border-radius:12px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; resize:vertical; min-height:44px;}
+.m55-qa{display:flex; flex-direction:column; gap:5px;} .m55-qa span{font-weight:700; line-height:1.35; font-size:.92rem;}
+.m55-h{display:flex; flex-direction:column; gap:6px;} .m55-h+.m55-h{padding-top:8px; border-top:1px solid var(--line);} .m55-h>span{font-size:.9rem; line-height:1.35;}
+.m55-hd{display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:5px;}
+.m55-hd button{aspect-ratio:1; max-height:40px; min-height:34px; border-radius:11px; border:1.5px solid var(--line); background:var(--surface); color:var(--muted); font:inherit; font-family:var(--font-num); font-size:.8rem; font-weight:800; cursor:pointer; padding:0;}
+.m55-hd button.now{border-color:var(--brand);} .m55-hd button.on{background:var(--m-leaf,var(--brand)); border-color:transparent; color:#fff;} .m55-hd button:disabled{opacity:.4; cursor:default;}
+.m55-rwait{min-height:220px;}
+
+/* разбор */
+.m55-rev{display:flex; flex-direction:column; gap:12px; min-width:0;}
+.m55-rh{display:flex; gap:12px; align-items:flex-start; padding:14px; border-radius:18px; background:var(--surface-2);} .m55-rh>div{min-width:0;} .m55-rh b{display:block; font-size:1.02rem;} .m55-rh small{color:var(--muted); font-size:.78rem;} .m55-rh p{margin-top:4px; line-height:1.45; font-size:.92rem;}
+.m55-rt{display:flex; flex-direction:column; gap:8px;}
+.m55-rt li{position:relative; overflow:hidden; display:flex; flex-direction:column; gap:6px; padding:12px 14px 12px 18px; border-radius:16px; background:var(--surface); border:1px solid var(--line);}
+.m55-rt li::before{background:var(--warn,#C98A00);} .m55-rt li.ok-yes::before{background:var(--m-leaf,var(--brand));} .m55-rt li.ok-no::before{background:var(--danger);}
+.m55-ok{align-self:flex-start; padding:2px 9px; border-radius:99px; font-size:.72rem; font-weight:800; background:var(--warn-weak,#FFF1D6); color:var(--warn,#8A5A00);}
+.ok-yes .m55-ok{background:var(--m-leaf-weak,#DDF3E6); color:var(--m-leaf,#1F7A47);} .ok-no .m55-ok{background:var(--danger-weak,#FDE2E2); color:var(--danger);}
+.m55-rt b{line-height:1.3; overflow-wrap:anywhere;} .m55-rt p{font-size:.88rem; line-height:1.45; margin-top:3px;} .m55-rt .fix small,.m55-nw small,.m55-kv>small{color:var(--muted); font-weight:800;}
+.m55-sp{display:flex; gap:8px; align-items:flex-start; padding:11px 14px; border-radius:14px; background:var(--surface-2); font-size:.9rem; line-height:1.4;} .m55-sp .mi{flex:none; margin-top:2px;}
+.m55-sp.pass{background:var(--m-leaf-weak,#DDF3E6); color:var(--m-leaf,#1F7A47);}
+.m55-bl{display:flex; flex-direction:column; gap:7px; padding:14px; border-radius:18px; background:var(--surface); border:1px solid var(--line);}
+.m55-bl h4{margin:0; font-size:.94rem; font-weight:800; display:flex; align-items:center; gap:7px;}
+.m55-bl.wrong h4{color:var(--danger);} .m55-bl.good h4{color:var(--m-leaf,#1F7A47);}
+.m55-bl ul li{position:relative; padding-left:16px; font-size:.9rem; line-height:1.45;} .m55-bl ul li+li{margin-top:6px;}
+.m55-bl ul li::before{content:""; position:absolute; left:3px; top:.6em; width:6px; height:6px; border-radius:50%; background:currentColor; opacity:.45;}
+.m55-nw+.m55-nw{padding-top:9px; border-top:1px solid var(--line);} .m55-nw a,.m55 .m46-case a,.m55-learn a{color:var(--brand-ink); font-weight:800; text-decoration:none; overflow-wrap:anywhere;} .m55-nw p{font-size:.88rem; line-height:1.4; margin-top:3px;}
+.m55-win{display:flex; gap:9px; align-items:center; padding:14px; border-radius:16px; background:var(--m-leaf-weak,#DDF3E6); color:var(--m-leaf,#1F7A47); font-weight:800; line-height:1.35;}
+.m55-stgo{display:flex; align-items:center; justify-content:center; gap:7px; min-height:48px;}
+.m55-chg{border-color:var(--warn,#C98A00);} .m55-chg p{line-height:1.45; font-size:.92rem;}
+.m55-next{display:flex; flex-direction:column; gap:8px; counter-reset:m55n;}
+.m55-next li{counter-increment:m55n; position:relative; padding:11px 14px 11px 46px; border-radius:14px; background:var(--surface); border:1px solid var(--line); min-height:48px;}
+.m55-next li::before{content:counter(m55n); position:absolute; left:12px; top:11px; width:24px; height:24px; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); font-family:var(--font-num); font-weight:800; font-size:.8rem;}
+.m55-next b{display:block; line-height:1.3; overflow-wrap:anywhere;} .m55-next small{color:var(--muted); font-size:.8rem;}
+
+/* маршрут */
+.m55-kv{display:flex; flex-direction:column; gap:4px; font-size:.9rem; line-height:1.45;} .m55-kv>small{font-size:.76rem;}
+.m55-kv ul li{position:relative; padding-left:16px;} .m55-kv ul li+li{margin-top:4px;} .m55-kv ul li::before{content:""; position:absolute; left:3px; top:.6em; width:6px; height:6px; border-radius:50%; background:var(--muted); opacity:.6;}
+.m55-kv ul.m55-ex li::before{content:"✓"; width:auto; height:auto; top:0; left:0; background:none; opacity:1; color:var(--m-leaf,var(--brand)); font-weight:800; font-size:.8rem;}
+.m55-chips{display:flex; flex-wrap:wrap; gap:6px;} .m55-chips span{padding:4px 10px; border-radius:99px; background:var(--m-leaf-weak,#DDF3E6); color:var(--m-leaf,#1F7A47); font-size:.8rem; font-weight:700; line-height:1.3;}
+.m55-gaps{display:flex; flex-direction:column; gap:9px;} .m55-gaps li{display:flex; flex-direction:column; gap:4px; padding-left:0!important;} .m55-gaps li::before{display:none;} .m55-gaps .m46-chip{align-self:flex-start;} .m55-gaps b{line-height:1.3;} .m55-gaps p{font-size:.86rem; color:var(--muted); line-height:1.4;}
+.m55-route{display:flex; flex-direction:column;}
+.m55-route>li{position:relative; display:flex; gap:12px; padding:0 0 14px; min-width:0;}
+.m55-route>li:not(:last-child)::before{content:""; position:absolute; left:15px; top:32px; bottom:0; width:3px; border-radius:2px; background:var(--line);}
+.m55-route>li.done:not(:last-child)::before{background:var(--m-leaf,var(--brand));}
+.m55-rn{width:33px; height:33px; flex:none; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); border:2px solid var(--line); font-family:var(--font-num); font-weight:800; font-size:.86rem; color:var(--muted); position:relative; z-index:1;}
+.m55-route li.done .m55-rn{background:var(--m-leaf,var(--brand)); border-color:transparent; color:#fff;} .m55-route li.here .m55-rn{background:var(--brand); border-color:transparent; color:#fff; box-shadow:0 0 0 5px var(--brand-weak);}
+.m55-route details{flex:1; min-width:0; padding:10px 14px; border-radius:16px; background:var(--surface); border:1px solid var(--line); display:flex; flex-direction:column;}
+.m55-route li.here details{border-color:var(--brand);} .m55-route li.next details{opacity:.92;}
+.m55-route summary{list-style:none; cursor:pointer; display:flex; flex-direction:column; gap:1px; min-height:40px; justify-content:center;} .m55-route summary b{line-height:1.3; overflow-wrap:anywhere;} .m55-route summary small{color:var(--muted); font-size:.78rem;}
+.m55-route details[open] summary{margin-bottom:8px;} .m55-route details>.m55-kv+.m55-kv{margin-top:9px;}
+.m55-kill{border-color:var(--danger);} .m55-kill h3 .mi{color:var(--danger)!important;}
+
+/* досье и журнал */
+.m55-ds,.m55-lw{padding:4px 14px; border-radius:16px; background:var(--surface); border:1px solid var(--line);} .m55-ds[open],.m55-lw[open]{padding-bottom:12px;}
+.m55-ds summary{min-height:44px; font-size:.94rem; color:var(--ink);} .m55-ds ul li{position:relative; padding-left:16px; font-size:.9rem; line-height:1.45;} .m55-ds ul li+li{margin-top:6px;}
+.m55-ds ul li::before{content:""; position:absolute; left:3px; top:.6em; width:6px; height:6px; border-radius:50%; background:var(--m40-line,var(--brand));}
+.m55-rep{white-space:pre-wrap; overflow-wrap:anywhere; font-size:.86rem; line-height:1.5; color:var(--ink); padding-top:2px;}
+.m55-evs{display:flex; flex-direction:column; gap:9px;} .m55-evs li{display:flex; gap:10px; padding-left:0!important; align-items:flex-start;} .m55-evs li::before{display:none;}
+.m55-evs li>span{flex:none; padding:3px 9px; border-radius:10px; background:var(--surface-2); font-size:.78rem; font-weight:800; white-space:nowrap;} .m55-evs b{line-height:1.3;} .m55-evs p{font-size:.86rem; color:var(--muted); line-height:1.4;}
+.m55-learn li{display:flex; flex-direction:column; gap:1px; padding-left:0!important;} .m55-learn li::before{display:none;} .m55-learn small{color:var(--muted); font-size:.8rem;}
+.m55-adm{display:flex; flex-wrap:wrap; gap:6px 16px; padding:4px 0 8px;} .m55-adm .link-btn{min-height:40px;}
+.m55-chart{margin:0; padding:14px; border-radius:18px; background:var(--surface); border:1px solid var(--line);} .m55-chart figcaption{font-size:.8rem; font-weight:800; color:var(--muted); margin-bottom:8px;}
+.m55-bars{display:flex; align-items:flex-end; gap:8px; height:124px; padding-top:4px; background:linear-gradient(var(--line),var(--line)) 0 calc(100% - 18px)/100% 1px no-repeat;}
+.m55-bars>div{flex:1 1 0; max-width:34px; min-width:0; height:100%; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; gap:3px;}
+.m55-bars b{font-family:var(--font-num); font-size:.72rem; font-weight:800;} .m55-bars small{font-family:var(--font-num); font-size:.7rem; color:var(--muted);}
+.m55-bars i{display:block; width:100%; height:calc(var(--h)*.66); min-height:4px; border-radius:8px 8px 2px 2px; background:var(--warn,#C98A00); transform-origin:bottom;}
+.m55-bars .hi i{background:var(--m-leaf,var(--brand));} .m55-bars .lo i{background:var(--danger);}
+.m55-log{display:flex; flex-direction:column; gap:8px;} .m55-lw summary{justify-content:space-between; min-height:50px; color:var(--ink);} .m55-lw summary>span:first-child{display:flex; flex-direction:column; min-width:0;} .m55-lw summary small{color:var(--muted); font-size:.78rem; font-weight:600;}
+.m55-lw .m55-rev{padding-top:4px;}
+.m55-empty{text-align:center; padding:26px 8px; color:var(--muted);}
+
+/* входы: приветствие Сифры и лоток «+» */
+.m55-hello{display:flex; align-items:center; gap:12px; width:100%; margin:4px 0 12px; padding:12px 14px; border-radius:20px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; text-align:left; cursor:pointer; min-height:60px;}
+.m55-hello>span:first-child{width:42px; height:42px; flex:none; border-radius:14px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m55-hello>span:nth-child(2){flex:1; min-width:0; display:flex; flex-direction:column; gap:1px;} .m55-hello b{line-height:1.25;} .m55-hello small{color:var(--muted); font-size:.8rem;} .m55-hello>.mi{flex:none; color:var(--muted);}
+.m54-tg .m55-tw{grid-column:1/-1; flex-direction:row; align-items:center; text-align:left; gap:12px; min-height:62px; padding:8px 10px; background:var(--surface-2); flex-wrap:wrap; row-gap:0;}
+.m54-tg .m55-tw span{flex:none;} .m54-tg .m55-tw b{font-size:.92rem;} .m54-tg .m55-tw small{flex:1 1 40%; min-width:0; font-size:.76rem;}
+
+/* движение — только с сетью и если в телефоне не включено «меньше движения» */
+@keyframes m55up{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:none;}}
+@keyframes m55ring{from{stroke-dashoffset:var(--c);} to{stroke-dashoffset:var(--o);}}
+@keyframes m55grow{from{transform:scaleY(.05);} to{transform:none;}}
+@keyframes m55pop{0%{transform:scale(.4); opacity:0;} 70%{transform:scale(1.12);} 100%{transform:none; opacity:1;}}
+html.m48-live .m55-go .m55-dial .f{animation:m55ring 1.2s cubic-bezier(.2,.8,.2,1) both;}
+html.m48-live .m55-go .m55-strip i{animation:m55pop .4s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*70ms + 150ms);}
+html.m48-live .m55-go .m55-task,html.m48-live .m55-go .m55-route>li{animation:m55up .42s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*60ms);}
+html.m48-live .m55-go .m55-bars i{animation:m55grow .7s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*55ms);}
+html.m48-live .m55-intro .m55-steps li{animation:m55up .42s cubic-bezier(.2,.8,.2,1) both; animation-delay:calc(var(--i)*90ms);}
+@media (prefers-reduced-motion: reduce){ .m55 *,.m55-hello,.m55-tw{animation:none!important; transition:none!important;} }
+@media (max-width:360px){ .m55-st button{font-size:.74rem;} .m55-tabs button{font-size:.68rem;} .m55-hd{gap:3px;} }
+
+.m55 .m46-chip.mid{color:var(--warn,#8A5A00);}
 /* <</v44 css>> */
 
 
@@ -24249,7 +24425,7 @@ function m49SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.
   const top=parts.slice(0,8); if(parts.length>8) top.push({n:L.m8Other,v:parts.slice(8).reduce((s,p)=>s+p.v,0),col:'var(--muted)',pct:null});
   const DD=m49Data(); let mon=0, int=0, rw=0, rb=0; for(const {loan,a} of act){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); const o=DD&&DD.L0[loan.id]; int+=o?o.int:Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
   /* следующая ступенька платежа */
-  let step=null; try{ const ms=DD?DD.months:[], k0=ms.findIndex(m=>m.t>0.5); if(k0>=0){ const v0=ms[k0].t; for(let k=k0+1;k<ms.length;k++){ const v=ms[k].t; if(v<=0.5) break; if(v<v0-0.5){ step={d:ms[k].d,v}; break; } } } }catch(e){}
+  let step=null; try{ const ms=DD?DD.months:[], k0=ms.findIndex(m=>m.t>0.5); if(k0>=0){ const v0=ms[k0].t; for(let k=k0+1;k<ms.length;k++){ const v=ms[k].t; if(v<=0.5) break; if(v<v0-0.5){ step={d:ms[k].d,v:(ms[k].rows||[]).reduce((s,r)=>s+Math.round(+r.amt||0),0)||v}; break; } } } }catch(e){}
   const S=state.misc&&state.misc.lr47, rep=S&&S.rep, avg=rb>0?rw/rb:0; let rateSub='';
   if(rep&&+rep.avg_lo>0&&+rep.avg_hi>0&&avg>0){ const lo=+rep.avg_lo, hi=+rep.avg_hi, cls=avg>hi+0.5?'hi':avg<lo-0.5?'lo':'ok'; rateSub=`<em class="m49-rt ${cls}">${esc(L.m49RateMkt(m12Pct(lo),m12Pct(hi)))} · ${esc(cls==='hi'?L.m49RateHi:cls==='lo'?L.m49RateLo:L.m49RateOk)}</em>`; }
   else if(avg>0) rateSub=`<em class="m49-rt cmp" data-m49rt>${esc(L.m49RateCmp)} ↓</em>`;
@@ -25601,7 +25777,7 @@ ru:{
   m54MyLoans:'Мои кредиты', m54Cnt:n=>String(n),
   m54SortL:'Порядок', m54Sort:{add:'как добавлены',due:'ближайший платёж',left:'больше долг',rate:'выше ставка'},
   m54Share:p=>p+'% всего долга', m54ShareA:'Доля этого кредита во всём долге',
-  m54IntPct:p=>'('+p+'% платежа)',
+  m54IntPct:p=>'('+p+'% платежа)', m54IntNext:(v,p)=>'проценты в платеже: '+v+' ('+p+'%)', m54ProgN:(k,m)=>'позади '+k+' из '+m,
   m54NpL:'Платёж', m54NpCheck:'проверьте дату платежа', m54NpLate:d=>'просрочен на '+d+' дн.',
   m54Tick:'проценты сегодня',
   m54ColorL:'Цвет кредита', m54ColorAuto:'Сам', m54MonoL:'Значок', m54MonoHint:'1–3 буквы или цифры — чтобы отличать похожие кредиты', m54MonoPh:'К1',
@@ -25657,7 +25833,7 @@ tg:{
   m54MyLoans:'Қарзҳои ман', m54Cnt:n=>String(n),
   m54SortL:'Тартиб', m54Sort:{add:'чӣ тавре илова шуд',due:'пардохти наздик',left:'қарзи калонтар',rate:'фоизи баландтар'},
   m54Share:p=>p+'% ҳамаи қарз', m54ShareA:'Ҳиссаи ин қарз дар ҳамаи қарз',
-  m54IntPct:p=>'('+p+'% пардохт)',
+  m54IntPct:p=>'('+p+'% пардохт)', m54IntNext:(v,p)=>'фоиз дар пардохт: '+v+' ('+p+'%)', m54ProgN:(k,m)=>'гузашт '+k+' аз '+m,
   m54NpL:'Пардохт', m54NpCheck:'санаи пардохтро санҷед', m54NpLate:d=>d+' рӯз дер шуд',
   m54Tick:'фоизи имрӯз',
   m54ColorL:'Ранги қарз', m54ColorAuto:'Худаш', m54MonoL:'Нишона', m54MonoHint:'1–3 ҳарф ё рақам — барои фарқ кардани қарзҳои монанд', m54MonoPh:'К1',
@@ -25712,7 +25888,7 @@ en:{
   m54MyLoans:'My loans', m54Cnt:n=>String(n),
   m54SortL:'Order', m54Sort:{add:'as added',due:'next payment',left:'largest debt',rate:'highest rate'},
   m54Share:p=>p+'% of all debt', m54ShareA:'Share of this loan in all debt',
-  m54IntPct:p=>'('+p+'% of the payment)',
+  m54IntPct:p=>'('+p+'% of the payment)', m54IntNext:(v,p)=>'interest in the payment: '+v+' ('+p+'%)', m54ProgN:(k,m)=>k+' of '+m+' done',
   m54NpL:'Payment', m54NpCheck:'check the payment date', m54NpLate:d=>d+' days late',
   m54Tick:'interest today',
   m54ColorL:'Loan colour', m54ColorAuto:'Auto', m54MonoL:'Badge', m54MonoHint:'1–3 letters or digits — to tell similar loans apart', m54MonoPh:'K1',
@@ -25836,6 +26012,14 @@ function m54SortGet(){ try{ const k=localStorage.getItem('m54sort'); return ['ad
 { const f0=renderCards; renderCards=function(list){ try{ const k=m54SortGet(), key={due:x=>x.a.done?9e9:(x.a.check?-1e6:(x.a.days==null?9e8:x.a.days)), left:x=>-(+x.a.remaining||0), rate:x=>-(+x.loan.rate||0)}[k];
       if(key&&Array.isArray(list)) list=list.map((x,i)=>({x,i})).sort((a,b)=>(key(a.x)-key(b.x))||(a.i-b.i)).map(o=>o.x); }catch(e){} return f0.call(this,list); }; }
 function m54Ring(p,ava){ const R=25, C=2*Math.PI*R, o=C*(1-Math.max(0,Math.min(100,p))/100); return `<span class="m54-rg"><svg viewBox="0 0 58 58" aria-hidden="true"><circle class="t" cx="29" cy="29" r="${R}"/><circle class="f" cx="29" cy="29" r="${R}" stroke-dasharray="${C.toFixed(1)}" style="--c:${C.toFixed(1)};--o:${o.toFixed(1)}"/></svg>${ava}</span>`; }
+/* По графику банка платежей может быть больше, чем месяцев: два платежа в одном месяце записаны одной строкой с двумя датами. Считаем платежи, а не месяцы. */
+function m54PaysLeft(loan,a){ try{ const s=schedOf(loan); if(!s||a.done) return null; const pt=curPt(loan), from=pt!=null?pt:(a.per!=null?a.per-1:null); if(from==null) return null; const rest=s.filter(e=>mIdx(parseYmd(e.d))>from); return rest.length?rest.length+rest.filter(e=>e.d2).length:null; }catch(e){ return null; } }
+{ const f0=loanProgressCounts; loanProgressCounts=function(loan,a){ const r=f0.apply(this,arguments); try{ const s=schedOf(loan); if(r&&s&&s.some(e=>e.d2)){ const pt=curPt(loan), dn=e=>pt==null?parseYmd(e.d)<today0():mIdx(parseYmd(e.d))<=pt; let k=0, m=0; for(const e of s){ const w=e.d2?2:1; m+=w; if(dn(e)) k+=w; } return {k:Math.min(k,m),m}; } }catch(e){} return r; }; }
+/* «Платежи месяца»: одинаковые названия банков различаем той же меткой и тем же цветом, что на карточках; счётчик — словами */
+{ const f0=renderMonthCheck; renderMonthCheck=function(list){ const r=f0.apply(this,arguments); try{ const I=m54Ident(); document.querySelectorAll('#monthCheck .mc-r[data-id]').forEach(b=>{ const l=(state.loans||[]).find(x=>String(x.id)===b.dataset.id), nm=b.querySelector('.mc-n'); if(!l||!nm||nm.querySelector('.m54-mb')) return;
+      const mn=String(l.short||I.mono[l.id]||String(l.name||'?').trim().charAt(0)||'?').toUpperCase().slice(0,2), tg=I.tag[l.id];
+      nm.insertAdjacentHTML('afterbegin',`<i class="m54-mb" style="background:${esc(m8Col(l))}" aria-hidden="true">${esc(mn)}</i>`); if(tg) nm.insertAdjacentHTML('beforeend',`<span class="m54-sr"> · ${esc(tg)}</span>`); });
+    const ch=document.querySelector('#monthCheck .mc-h .streak'), p=m7Progress(); if(ch&&p){ ch.textContent=L.m54ProgN(p.k,p.m); ch.classList.add('m54-pg'); } }catch(e){} return r; }; }
 function m54IntShare(loan,a){ try{ const se=a.per!=null?schedAt(loan,a.per):null; if(se&&se.i!=null&&+se.a>0) return Math.round((+se.i||0)/(+se.a)*100); const m=+a.amtFull||+a.monthly||0, r=+loan.rate||0; if(m>0&&r>0) return Math.min(100,Math.round(a.remaining*r/1200/m*100)); }catch(e){} return null; }
 function m54Cards(){ const box=$('#cards'), v=$('#view-loans'); if(!box||!v) return; let list=[]; try{ list=activeList().filter(x=>!x.loan.example); }catch(e){ return; }
   const act=list.filter(x=>!x.a.done), left=act.reduce((s,x)=>s+Math.max(0,x.a.remaining),0)||1, I=m54Ident();
@@ -25848,6 +26032,7 @@ function m54Cards(){ const box=$('#cards'), v=$('#view-loans'); if(!box||!v) ret
     c.classList.add('m54-c'); c.style.setProperty('--lc',col); c.style.setProperty('--i',k); c.setAttribute('aria-label',m54Nm(loan));
     const nm=c.querySelector('.c-name'); if(nm&&I.tag[loan.id]&&!nm.querySelector('.m54-tag')){ const gb=nm.querySelector('.gb'); const t=`<em class="m54-tag">${esc(I.tag[loan.id])}</em>`; if(gb) gb.insertAdjacentHTML('beforebegin',t); else nm.insertAdjacentHTML('beforeend',t); }
     const av=c.querySelector(':scope > .ava'); if(av){ const tmp=document.createElement('span'); tmp.innerHTML=m54Ring(a.pct,av.outerHTML); av.replaceWith(tmp.firstChild); }
+    const pn=m54PaysLeft(loan,a), mo=c.querySelector('.c-sub .mo:not(.od)'); if(pn&&mo) mo.textContent=pn+' '+L.noun(pn,'payment');
     /* строка платежа: когда и сколько */
     const main=c.querySelector('.c-main'), sub=c.querySelector('.c-sub');
     if(main&&sub&&!a.done&&!main.querySelector('.m54-np')){ const amt=m53M(loan,a.amt||a.monthly||0), cls=a.check?'chk':a.overdue?'late':a.days<=3?'urg':a.days<=7?'soon':'';
@@ -25856,7 +26041,9 @@ function m54Cards(){ const box=$('#cards'), v=$('#view-loans'); if(!box||!v) ret
     /* доля во всём долге и доля процентов в платеже */
     const meta=c.querySelector('.m12-meta'); if(meta&&!a.done&&!meta.querySelector('.m54-sh')){ const sh=Math.round(Math.max(0,a.remaining)/left*100); if(act.length>1&&sh>0) meta.insertAdjacentHTML('beforeend',`<span class="m54-sh" title="${esc(L.m54ShareA)}"><i style="--p:${sh}"></i>${esc(L.m54Share(sh))}</span>`);
       if(+loan.gold>0&&!meta.querySelector('.m54-gd')) meta.insertAdjacentHTML('beforeend',`<span class="m54-gd">${ico('gold',14)}${esc(L.m54GoldChip(rf.format(+loan.gold)))}</span>`);
-      const ip=m54IntShare(loan,a), mi=meta.querySelector('.m36-int'); if(ip!=null&&ip>0){ if(mi) mi.insertAdjacentHTML('beforeend',` <u>${esc(L.m54IntPct(ip))}</u>`); } }
+      const mi=meta.querySelector('.m36-int'), se=a.per!=null?schedAt(loan,a.per):null;
+      if(mi&&se&&se.i!=null&&+se.i>0&&+se.a>0){ mi.textContent=L.m54IntNext(m53M(loan,+se.i),Math.round(+se.i/+se.a*100)); mi.classList.add('m54-ix'); }
+      else { const ip=m54IntShare(loan,a); if(ip!=null&&ip>0&&mi) mi.insertAdjacentHTML('beforeend',` <u>${esc(L.m54IntPct(ip))}</u>`); } }
   });
   /* кнопка «из файла» рядом с «Добавить кредит» */
   if(!box.querySelector('.m54-file')){ const add=box.querySelector('.m8-addc'), emp=box.querySelector('#addEmpty'); const b=`<button type="button" class="m54-file" data-m54imp="1"><span class="m54-fi">${ico('doc',20)}</span><span><b>${esc(L.m54ImpBtn)}</b><small>${esc(L.m54ImpSub)}</small></span></button>`;
@@ -25872,8 +26059,17 @@ function m54Flip(){ const prev=M54.flip; M54.flip=null; if(!prev||!m54Motion()) 
 document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m54sort],[data-m54seg]'); if(!t) return;
   if(t.hasAttribute('data-m54sort')){ const k=t.dataset.m54sort; if(k===m54SortGet()) return; const pos={}; document.querySelectorAll('#cards .card[data-id]').forEach(c=>{ pos[c.dataset.id]=c.getBoundingClientRect().top; }); M54.flip=pos; try{ localStorage.setItem('m54sort',k); }catch(x){} render(); return; }
   const c=document.querySelector(`#cards .card[data-id="${CSS.escape(t.dataset.m54seg)}"]`); if(c){ c.scrollIntoView({behavior:m54Motion()?'smooth':'auto',block:'center'}); c.classList.remove('m54-hit'); void c.offsetWidth; c.classList.add('m54-hit'); setTimeout(()=>c.classList.remove('m54-hit'),1600); } });
-{ const f0=render; render=function(){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){ console.error(e); } return r; }; }
-{ const f0=setTab; setTab=function(t){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){} return r; }; }
+/* v55: одинаковые названия банков различаем везде, где кредит стоит в списке: «Сегодня» (платежи месяца, платежи одного дня) и «Порядок погашения».
+   Там, где у строки нет номера кредита, узнаём его по названию и сумме в строке; если так не отличить — метку не ставим. */
+function m54NameFix(){ try{ const I=m54Ident(); if(!Object.keys(I.tag).length) return; const act=activeList().filter(x=>!x.loan.example), N=s=>String(s||'').replace(/\s+/g,' ').trim();
+    const put=(el,l)=>{ if(!el||!l||!I.tag[l.id]||el.querySelector('.m54-tg2')) return; el.insertAdjacentHTML('beforeend',` <em class="m54-tg2" style="--lc:${esc(m8Col(l))}" title="${esc(I.tag[l.id])}">${esc(I.mono[l.id]||'')}</em>`); };
+    document.querySelectorAll('.m7-r[data-id]').forEach(b=>{ const l=byId(b.dataset.id); if(!l) return; const c=b.querySelector('.m7-c'); if(c) c.style.background=m8Col(l); put(b.querySelector('.m7-n > b'),l); });
+    document.querySelectorAll('.strat-item').forEach(r=>{ const e=r.querySelector('.strat-nm'); if(!e||e.querySelector('.m54-tg2')) return; const nm=N(e.textContent), am=N((r.querySelector('.strat-amt')||{}).textContent), c=act.filter(x=>N(x.loan.name)===nm&&N(m53M(x.loan,x.a.remaining))===am); if(c.length===1) put(e,c[0].loan); });
+    document.querySelectorAll('.m7-h-row').forEach(r=>{ const e=r.querySelector('.m7-h-rn > b'); if(!e||e.querySelector('.m54-tg2')) return; const nm=N(e.textContent), am=N((r.querySelector('.m7-h-ra')||{}).textContent), c=act.filter(x=>N(x.loan.name)===nm&&N(m53M(x.loan,m7Amt(x.a)))===am); if(c.length===1) put(e,c[0].loan); });
+  }catch(e){} }
+{ const f0=render; render=function(){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){ console.error(e); } m54NameFix(); return r; }; }
+{ const f0=setTab; setTab=function(t){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){} m54NameFix(); return r; }; }
+document.addEventListener('click',e=>{ const t=e.target; if(t&&t.closest&&t.closest('.strat, #view-today, #view-loans')) setTimeout(m54NameFix,80); });
 /* полоса долга: части стали кнопками — нажатие показывает карточку кредита */
 /* (сама полоса рисуется в m49SumHTML; здесь — только подписи для чтения с экрана) */
 
@@ -26104,6 +26300,408 @@ document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest||!m54
     if(a==='listen'){ if(el.classList.contains('on')){ try{ sfHush(); }catch(x){} el.classList.remove('on'); return; } sheet.querySelectorAll('.m54-acts .on').forEach(x=>x.classList.remove('on')); el.classList.add('on'); try{ sfSay(m.t,()=>{ try{ el.classList.remove('on'); }catch(x){} }); }catch(x){ el.classList.remove('on'); } return; }
     if(a==='share'){ const txt=m52Text(m); try{ if(navigator.share){ navigator.share({text:txt}).catch(()=>{}); return; } }catch(x){} m52Copy(txt); return; } }
 });
+/* ===================== v55: «Наставник» — строки ===================== */
+const M55S={
+ru:{
+  m55T:'Наставник', m55Sub:'от «хочу стать…» до своего дела', m55SubDue:'пора разобрать неделю', m55SubWeek:n=>'идёт неделя '+n,
+  m55Lead:'Напишите, кем хотите стать. Сифра разберёт всё до мелочей — рынок, деньги, законы, похожие пути, свежие новости — и поведёт по ступеням: задания на неделю, в конце недели — разбор по фактам.',
+  m55How:[['Вы пишете, кем хотите стать','и отвечаете на вопросы наставницы'],['Команда собирает досье','рынок, деньги, законы, люди, новости'],['Задания на неделю','маленькие, с доказательством'],['Разбор в конце недели','что так, что не так, что дальше']],
+  m55Start:'Начать с наставницей', m55Want:'Кем вы хотите стать?', m55WantPh:'Например: хочу построить крупное дело — продавать сухофрукты за границу',
+  m55Ex:[['Стартап в ИТ','Хочу создать ИТ-стартап и вырастить его в большую компанию'],['Медтех','Хочу создать стартап в медицинских технологиях'],['Марка одежды','Хочу создать свою марку одежды и продавать в разных странах'],['Сухофрукты','Хочу построить крупное дело по продаже сухофруктов, в том числе за границу'],['Сеть магазинов','Хочу открыть магазин и вырастить из него сеть'],['Крупный предприниматель','Хочу стать крупным предпринимателем — помогите выбрать дело и пройти путь с нуля']],
+  m55Place:'Где вы живёте и начинаете', m55PlacePh:'Город, страна', m55Cap:'Деньги на старт', m55CapHint:'Можно 0 — это тоже ответ.',
+  m55Hours:'Сколько часов в день готовы тратить', m55H:n=>n+' ч', m55Months:'К какому сроку', m55MoOpts:[[0,'не знаю'],[12,'1 год'],[24,'2 года'],[36,'3 года'],[60,'5 лет']],
+  m55Exp:'Ваш опыт', m55ExpPh:'Кем работали, что уже пробовали', m55Has:'Что у вас уже есть', m55HasPh:'Навыки, связи, помещение, машина, языки',
+  m55Next:'Дальше — вопросы наставницы', m55NeedWant:'Напишите, кем хотите стать', m55Asking:'Сифра готовит вопросы…',
+  m55QT:'Диагностика старта', m55QLead:'Чем точнее ответы, тем точнее программа. Любой вопрос можно пропустить.', m55QN:(k,n)=>'Отвечено '+k+' из '+n,
+  m55Own:'Свой ответ', m55Skip:'Без вопросов', m55Build:'Собрать программу', m55NoQs:'Вопросы не пришли — программу можно собрать и без них.',
+  m55Chief:'Наставница', m55ChiefStage:'Наставница собирает программу', m55TeamT:'Команда наставницы работает', m55TeamLead:'Шесть исследователей собирают досье, потом Сифра собирает программу. Обычно 3–6 минут.',
+  m55Err:{off:'Нет интернета. Нажмите «Ещё раз», когда появится сеть.',old:'Наставнице нужен обновлённый сервер (v31). Загрузите архив mira-api в Cloudflare.',limit:'На сегодня лимит: программу можно собрать два раза в день, разбор недели — четыре.',srv:'Не получилось. Попробуйте ещё раз через минуту.',week:'Отметьте хотя бы одно задание или напишите, что сделали.'},
+  m55Again:'Ещё раз',
+  m55Tabs:{week:'Неделя',route:'Маршрут',dos:'Досье',log:'Журнал'},
+  m55Chance:'Шанс дойти', m55ChanceA:n=>'Шанс дойти: '+n+' из 100', m55Term:(a,b)=>'Честный срок: '+(a&&b&&a!==b?a+'–'+b:(b||a))+' мес.', m55Price:'Цена пути',
+  m55StageOf:(i,n)=>'Ступень '+i+' из '+n, m55WeekN:n=>'Неделя '+n, m55WeekFrom:d=>'с '+d, m55Day:k=>'день '+k+' из 7', m55Due:'пора разобрать неделю',
+  m55First:'Начните сегодня', m55Tasks:'Задания недели', m55TasksSum:(d,n)=>'сделано '+d+' из '+n, m55TimeSum:t=>'на неделю '+t, m55TaskSt:{yes:'Сделано',part:'Частично',no:'Не сделано'},
+  m55How2:'Как именно', m55Proof:'Чем подтвердить', m55RepPh:'Что получилось: цифра, имя, ссылка', m55RepL:i=>'Отчёт по заданию '+i, m55Min:n=>'≈ '+(n>=60?Math.floor(n/60)+' ч'+(n%60?' '+n%60+' мин':''):n+' мин'),
+  m55Note:'Что ещё рассказать наставнице', m55NotePh:'Что мешало, что удивило, что изменилось', m55AskT:'Наставница спрашивает', m55AnsPh:'Ваш ответ',
+  m55Habits:'Привычки пути', m55HabitA:(h,d)=>h+', день '+d, m55HabSum:(h,k,n)=>'«'+h+'» — '+k+' из '+n+' дн.',
+  m55Review:'Разобрать неделю', m55ReviewLead:'Сифра сверит отчёт с заданиями, проверит, что изменилось за неделю, и даст задания дальше.', m55ReviewEarly:n=>'Идёт '+n+'-й день недели. Разбор лучше в конце недели, но можно и сейчас.',
+  m55Reviewing:['Сверяю отчёт с заданиями…','Ищу, что изменилось за неделю…','Проверяю признаки выхода из ступени…','Готовлю задания на следующую неделю…'], m55RevWait:'Обычно 1–3 минуты. Экран можно не закрывать.',
+  m55RevOf:n=>'Разбор недели '+n, m55Score:'Оценка недели', m55ScoreA:n=>'Оценка недели: '+n+' из 100', m55Ok:{yes:'засчитано',part:'частично',no:'не засчитано'}, m55Fix:'Как исправить',
+  m55Good:'Что получилось', m55Wrong:'Что сделано не так', m55Lessons:'Уроки недели',
+  m55StagePass:'Ступень пройдена', m55StageStay:'Ступень пока не пройдена', m55StageGo:n=>'Перейти на ступень «'+n+'»', m55StageLast:'Это была последняя ступень. Вы дошли — поздравляю.', m55StageMoved:n=>'Вы на ступени «'+n+'»',
+  m55Change:'Наставница предлагает изменить путь', m55ChangeAsk:'Обсудить с Сифрой', m55ChangeRe:'Пересобрать программу', m55ChangeQ:c=>'Наставница предложила изменить путь: '+c+' Объясни подробнее, что это значит для меня и с чего начать.',
+  m55News:'Что изменилось за неделю', m55NewsDo:'Что сделать', m55NextT:'Задания на следующую неделю', m55NextGo:n=>'Начать неделю '+n, m55NextStarted:n=>'Неделя '+n+' началась',
+  m55Level:'Где вы сейчас', m55Strong:'Что уже есть', m55Gaps:'Чего не хватает', m55Pri:{1:'срочно',2:'скоро',3:'позже'},
+  m55Route:'Маршрут', m55RouteLead:'На следующую ступень — только когда пройдены признаки выхода. Решение о переходе — за вами.',
+  m55Goal:'Что должно быть в конце', m55Exit:'Признаки выхода', m55Do:'Главные дела', m55Money:'Деньги', m55Risk:'Главная опасность', m55Pivot:'Меняем путь, если',
+  m55MoS:n=>'≈ '+String(n).replace('.',',')+' мес.', m55Here:'вы здесь', m55Done:'пройдена', m55Kill:'Когда останавливаемся',
+  m55DosLead:'Цифры о рынке — найденные, со ссылками внизу; оценки помечены словом «оценка».',
+  m55Reports:'Полные отчёты команды', m55ReportsLead:'Рабочие записи шести исследователей — как есть, без правки. Короткая выжимка — в разделах выше.', m55Events:'Ближайшие события', m55Cases:'Похожие пути', m55Learn:'Где учиться и к кому идти', m55Src:'Источники',
+  m55Log:'Журнал пути', m55LogEmpty:'Здесь появятся разборы недель: оценка, что получилось и что нет.', m55LogChart:'Оценки по неделям',
+  m55Ask:'Спросить наставницу', m55AskQ:(w,s)=>'Я иду по программе наставницы: «'+w+'». Сейчас ступень «'+s+'». Мой вопрос: ', m55RevAskQ:n=>'Давай обсудим разбор недели '+n+': что мне делать по-другому и почему?', m55RevAsk:'Обсудить разбор с Сифрой', m55RevAskS:'Обсудить', m55AskS:'Спросить',
+  m55Re:'Пересобрать программу', m55ReSure:'Нажмите ещё раз — соберу заново', m55ReNote:(i,n,w)=>'Пройдено: ступень '+i+' из '+n+', недель с разбором: '+w+'.', m55ReQ:'Что уже пройдено по прошлой программе',
+  m55Del:'Удалить программу', m55DelSure:'Нажмите ещё раз — удалю', m55New:'Новая программа', m55ListT:'Мои программы', m55ListSt:{wait:'собирается…',err:'не собралась'},
+  m55Ready:t=>'Программа готова: '+t, m55RevReady:'Разбор недели готов',
+  m55Tray:['Наставник','ведёт к своему делу по неделям'], m55InsK:'Наставник', m55InsNew:'Кем вы хотите стать?', m55InsNewS:'Сифра поведёт с нуля',
+  m55SentQ:{ask:'Наставник: вопросы',plan:'Наставник: программа',review:'Наставник: разбор недели'},
+  m55Honest:'Наставница — программа, а не человек. Сверяйте цифры по ссылкам и решайте сами: деньги и риск — ваши.',
+  m55Offline:'Без сети программу можно читать и отмечать задания. Разбор недели — когда появится интернет.',
+  m55Priv:'Программа хранится в телефоне. На сервер уходит только то, что вы написали здесь, и только когда собирается программа или идёт разбор недели.', m55Max:'Программ уже пять. Удалите одну, чтобы начать новую.', m55Redo:'Дополнить отчёт и разобрать заново', m55RedoSure:'Нажмите ещё раз — этот разбор сотрётся',
+  m55Skills:'Навыки, люди и где учиться'
+},
+tg:{
+  m55T:'Роҳнамо', m55Sub:'аз «мехоҳам шавам…» то кори худ', m55SubDue:'вақти таҳлили ҳафта', m55SubWeek:n=>'ҳафтаи '+n+' меравад',
+  m55Lead:'Нависед, ки кӣ шудан мехоҳед. Сифра ҳамаашро то майда-чуйда таҳлил мекунад — бозор, пул, қонунҳо, роҳҳои монанд, хабарҳои нав — ва зина ба зина мебарад: супоришҳои ҳафта, дар охири ҳафта — таҳлил аз рӯи далел.',
+  m55How:[['Шумо менависед, ки кӣ шудан мехоҳед','ва ба саволҳои роҳнамо ҷавоб медиҳед'],['Даста маълумот ҷамъ мекунад','бозор, пул, қонун, одамон, хабарҳо'],['Супоришҳои ҳафта','хурд, бо далел'],['Таҳлил дар охири ҳафта','чӣ дуруст, чӣ нодуруст, чӣ баъд']],
+  m55Start:'Бо роҳнамо оғоз кардан', m55Want:'Кӣ шудан мехоҳед?', m55WantPh:'Масалан: мехоҳам кори калон созам — меваи хушк ба хориҷ фурӯшам',
+  m55Ex:[['Стартап дар ИТ','Мехоҳам ИТ-стартап созам ва онро ба ширкати калон табдил диҳам'],['Медтех','Мехоҳам стартап дар технологияҳои тиббӣ созам'],['Тамғаи либос','Мехоҳам тамғаи либоси худро созам ва дар кишварҳои гуногун фурӯшам'],['Меваи хушк','Мехоҳам кори калони фурӯши меваи хушк, аз ҷумла ба хориҷ, созам'],['Шабакаи мағозаҳо','Мехоҳам мағоза кушоям ва аз он шабака созам'],['Соҳибкори калон','Мехоҳам соҳибкори калон шавам — кӯмак кунед корро интихоб кунам ва роҳро аз сифр гузарам']],
+  m55Place:'Дар куҷо зиндагӣ ва оғоз мекунед', m55PlacePh:'Шаҳр, кишвар', m55Cap:'Пул барои оғоз', m55CapHint:'0 ҳам мешавад — ин ҳам ҷавоб аст.',
+  m55Hours:'Дар як рӯз чанд соат сарф карда метавонед', m55H:n=>n+' с', m55Months:'То кадом мӯҳлат', m55MoOpts:[[0,'намедонам'],[12,'1 сол'],[24,'2 сол'],[36,'3 сол'],[60,'5 сол']],
+  m55Exp:'Таҷрибаи шумо', m55ExpPh:'Дар куҷо кор кардед, чӣ санҷидед', m55Has:'Шумо аллакай чӣ доред', m55HasPh:'Малака, шиносҳо, бино, мошин, забонҳо',
+  m55Next:'Баъд — саволҳои роҳнамо', m55NeedWant:'Нависед, ки кӣ шудан мехоҳед', m55Asking:'Сифра саволҳо тайёр мекунад…',
+  m55QT:'Ташхиси оғоз', m55QLead:'Ҷавобҳо ҳар қадар дақиқ бошанд, барнома ҳамон қадар дақиқ аст. Ҳар саволро гузаштан мумкин.', m55QN:(k,n)=>'Ҷавоб дода шуд: '+k+' аз '+n,
+  m55Own:'Ҷавоби худ', m55Skip:'Бе савол', m55Build:'Барнома сохтан', m55NoQs:'Саволҳо наомаданд — барномаро бе онҳо ҳам сохтан мумкин.',
+  m55Chief:'Роҳнамо', m55ChiefStage:'Роҳнамо барнома месозад', m55TeamT:'Дастаи роҳнамо кор мекунад', m55TeamLead:'Шаш тадқиқотчӣ маълумот ҷамъ мекунанд, баъд Сифра барнома месозад. Одатан 3–6 дақиқа.',
+  m55Err:{off:'Интернет нест. Вақте шабака пайдо шуд, «Боз як бор»-ро пахш кунед.',old:'Ба роҳнамо сервери нав (v31) лозим аст. Архиви mira-api-ро ба Cloudflare бор кунед.',limit:'Маҳдудияти имрӯза: барнома — ду бор дар як рӯз, таҳлили ҳафта — чор бор.',srv:'Нашуд. Пас аз як дақиқа боз кӯшиш кунед.',week:'Ақаллан як супоришро қайд кунед ё нависед, ки чӣ кардед.'},
+  m55Again:'Боз як бор',
+  m55Tabs:{week:'Ҳафта',route:'Роҳ',dos:'Маълумот',log:'Дафтар'},
+  m55Chance:'Имкони расидан', m55ChanceA:n=>'Имкони расидан: '+n+' аз 100', m55Term:(a,b)=>'Мӯҳлати ростқавлона: '+(a&&b&&a!==b?a+'–'+b:(b||a))+' моҳ', m55Price:'Нархи роҳ',
+  m55StageOf:(i,n)=>'Зинаи '+i+' аз '+n, m55WeekN:n=>'Ҳафтаи '+n, m55WeekFrom:d=>'аз '+d, m55Day:k=>'рӯзи '+k+' аз 7', m55Due:'вақти таҳлили ҳафта',
+  m55First:'Имрӯз оғоз кунед', m55Tasks:'Супоришҳои ҳафта', m55TasksSum:(d,n)=>'иҷро шуд '+d+' аз '+n, m55TimeSum:t=>'барои ҳафта '+t, m55TaskSt:{yes:'Иҷро шуд',part:'Қисман',no:'Иҷро нашуд'},
+  m55How2:'Чӣ тавр', m55Proof:'Бо чӣ тасдиқ кардан', m55RepPh:'Чӣ шуд: рақам, ном, пайванд', m55RepL:i=>'Ҳисобот оид ба супориши '+i, m55Min:n=>'≈ '+(n>=60?Math.floor(n/60)+' с'+(n%60?' '+n%60+' дақ':''):n+' дақ'),
+  m55Note:'Боз ба роҳнамо чӣ гуфтан', m55NotePh:'Чӣ халал расонд, чӣ ҳайрон кард, чӣ тағйир ёфт', m55AskT:'Роҳнамо мепурсад', m55AnsPh:'Ҷавоби шумо',
+  m55Habits:'Одатҳои роҳ', m55HabitA:(h,d)=>h+', рӯзи '+d, m55HabSum:(h,k,n)=>'«'+h+'» — '+k+' аз '+n+' рӯз',
+  m55Review:'Ҳафтаро таҳлил кардан', m55ReviewLead:'Сифра ҳисоботро бо супоришҳо месанҷад, мебинад, ки дар як ҳафта чӣ тағйир ёфт, ва супоришҳои навбатӣ медиҳад.', m55ReviewEarly:n=>'Рӯзи '+n+'-уми ҳафта меравад. Таҳлил дар охири ҳафта беҳтар аст, вале ҳозир ҳам мумкин.',
+  m55Reviewing:['Ҳисоботро бо супоришҳо месанҷам…','Меҷӯям, ки дар як ҳафта чӣ тағйир ёфт…','Нишонаҳои баромадан аз зинаро месанҷам…','Супоришҳои ҳафтаи оянда тайёр мекунам…'], m55RevWait:'Одатан 1–3 дақиқа. Экранро напӯшед.',
+  m55RevOf:n=>'Таҳлили ҳафтаи '+n, m55Score:'Баҳои ҳафта', m55ScoreA:n=>'Баҳои ҳафта: '+n+' аз 100', m55Ok:{yes:'қабул шуд',part:'қисман',no:'қабул нашуд'}, m55Fix:'Чӣ тавр ислоҳ кардан',
+  m55Good:'Чӣ шуд', m55Wrong:'Чӣ нодуруст шуд', m55Lessons:'Дарсҳои ҳафта',
+  m55StagePass:'Зина гузашта шуд', m55StageStay:'Зина ҳанӯз гузашта нашудааст', m55StageGo:n=>'Ба зинаи «'+n+'» гузаштан', m55StageLast:'Ин зинаи охирин буд. Шумо расидед — табрик.', m55StageMoved:n=>'Шумо дар зинаи «'+n+'»',
+  m55Change:'Роҳнамо пешниҳод мекунад, ки роҳро иваз кунед', m55ChangeAsk:'Бо Сифра муҳокима кардан', m55ChangeRe:'Барномаро аз нав сохтан', m55ChangeQ:c=>'Роҳнамо пешниҳод кард, ки роҳро иваз кунам: '+c+' Муфассалтар фаҳмон, ки ин барои ман чӣ маъно дорад ва аз чӣ оғоз кунам.',
+  m55News:'Дар як ҳафта чӣ тағйир ёфт', m55NewsDo:'Чӣ кор кардан', m55NextT:'Супоришҳои ҳафтаи оянда', m55NextGo:n=>'Ҳафтаи '+n+'-ро оғоз кардан', m55NextStarted:n=>'Ҳафтаи '+n+' оғоз шуд',
+  m55Level:'Шумо ҳоло дар куҷоед', m55Strong:'Чӣ аллакай ҳаст', m55Gaps:'Чӣ намерасад', m55Pri:{1:'фаврӣ',2:'ба наздикӣ',3:'баъдтар'},
+  m55Route:'Роҳ', m55RouteLead:'Ба зинаи оянда — танҳо вақте ки нишонаҳои баромадан иҷро шуданд. Қарори гузариш — аз шумо.',
+  m55Goal:'Дар охир чӣ бояд бошад', m55Exit:'Нишонаҳои баромадан', m55Do:'Корҳои асосӣ', m55Money:'Пул', m55Risk:'Хатари асосӣ', m55Pivot:'Роҳро иваз мекунем, агар',
+  m55MoS:n=>'≈ '+String(n).replace('.',',')+' моҳ', m55Here:'шумо ин ҷо', m55Done:'гузашта шуд', m55Kill:'Кай меистем',
+  m55DosLead:'Рақамҳои бозор — ёфташуда, пайвандҳо дар поён; тахминҳо бо калимаи «тахмин» қайд шудаанд.',
+  m55Reports:'Ҳисоботҳои пурраи даста', m55ReportsLead:'Қайдҳои кории шаш тадқиқотчӣ — чунон ки ҳаст, бе таҳрир. Хулосаи кӯтоҳ — дар бахшҳои боло.', m55Events:'Ҳодисаҳои наздик', m55Cases:'Роҳҳои монанд', m55Learn:'Дар куҷо омӯхтан ва ба кӣ рафтан', m55Src:'Сарчашмаҳо',
+  m55Log:'Дафтари роҳ', m55LogEmpty:'Ин ҷо таҳлилҳои ҳафтаҳо пайдо мешаванд: баҳо, чӣ шуд ва чӣ нашуд.', m55LogChart:'Баҳоҳо аз рӯи ҳафтаҳо',
+  m55Ask:'Аз роҳнамо пурсидан', m55AskQ:(w,s)=>'Ман аз рӯи барномаи роҳнамо меравам: «'+w+'». Ҳоло зинаи «'+s+'». Саволи ман: ', m55RevAskQ:n=>'Биё таҳлили ҳафтаи '+n+'-ро муҳокима кунем: ман чиро дигар хел кунам ва чаро?', m55RevAsk:'Таҳлилро бо Сифра муҳокима кардан', m55RevAskS:'Муҳокима', m55AskS:'Пурсидан',
+  m55Re:'Барномаро аз нав сохтан', m55ReSure:'Боз пахш кунед — аз нав месозам', m55ReNote:(i,n,w)=>'Гузашта шуд: зинаи '+i+' аз '+n+', ҳафтаҳо бо таҳлил: '+w+'.', m55ReQ:'Аз рӯи барномаи пешина чӣ гузашта шуд',
+  m55Del:'Барномаро нест кардан', m55DelSure:'Боз пахш кунед — нест мекунам', m55New:'Барномаи нав', m55ListT:'Барномаҳои ман', m55ListSt:{wait:'сохта мешавад…',err:'сохта нашуд'},
+  m55Ready:t=>'Барнома тайёр: '+t, m55RevReady:'Таҳлили ҳафта тайёр',
+  m55Tray:['Роҳнамо','ҳафта ба ҳафта ба кори худ мебарад'], m55InsK:'Роҳнамо', m55InsNew:'Кӣ шудан мехоҳед?', m55InsNewS:'Сифра аз сифр мебарад',
+  m55SentQ:{ask:'Роҳнамо: саволҳо',plan:'Роҳнамо: барнома',review:'Роҳнамо: таҳлили ҳафта'},
+  m55Honest:'Роҳнамо барнома аст, на одам. Рақамҳоро аз рӯи пайвандҳо санҷед ва худатон қарор қабул кунед: пул ва хатар — аз они шумо.',
+  m55Offline:'Бе шабака барномаро хондан ва супоришҳоро қайд кардан мумкин. Таҳлили ҳафта — вақте интернет пайдо шавад.',
+  m55Priv:'Барнома дар телефон нигоҳ дошта мешавад. Ба сервер танҳо он чизе меравад, ки шумо ин ҷо навиштед, ва танҳо ҳангоми сохтани барнома ё таҳлили ҳафта.', m55Max:'Аллакай панҷ барнома ҳаст. Барои оғози нав якеро нест кунед.', m55Redo:'Ҳисоботро пурра карда, аз нав таҳлил кардан', m55RedoSure:'Боз пахш кунед — ин таҳлил пок мешавад',
+  m55Skills:'Малакаҳо, одамон ва ҷои омӯзиш'
+},
+en:{
+  m55T:'Mentor', m55Sub:'from “I want to become…” to your own business', m55SubDue:'time to review the week', m55SubWeek:n=>'week '+n+' in progress',
+  m55Lead:'Write who you want to become. Sifra studies everything in detail — market, money, laws, similar paths, fresh news — and leads you stage by stage: tasks for the week, and at the end of the week a review based on facts.',
+  m55How:[['You write who you want to become','and answer the mentor’s questions'],['The team builds a dossier','market, money, laws, people, news'],['Tasks for the week','small, each with proof'],['Review at the end of the week','what worked, what didn’t, what’s next']],
+  m55Start:'Start with the mentor', m55Want:'Who do you want to become?', m55WantPh:'For example: I want to build a large business exporting dried fruit',
+  m55Ex:[['IT startup','I want to found an IT startup and grow it into a large company'],['Medtech','I want to found a medical technology startup'],['Clothing brand','I want to create my own clothing brand and sell it in several countries'],['Dried fruit','I want to build a large dried-fruit business, including export'],['Chain of shops','I want to open a shop and grow it into a chain'],['Major entrepreneur','I want to become a major entrepreneur — help me choose a business and go the whole way from zero']],
+  m55Place:'Where you live and start', m55PlacePh:'City, country', m55Cap:'Money to start', m55CapHint:'0 is fine — that is an answer too.',
+  m55Hours:'Hours a day you can give', m55H:n=>n+' h', m55Months:'By when', m55MoOpts:[[0,'not sure'],[12,'1 year'],[24,'2 years'],[36,'3 years'],[60,'5 years']],
+  m55Exp:'Your experience', m55ExpPh:'Where you worked, what you have tried', m55Has:'What you already have', m55HasPh:'Skills, contacts, premises, a car, languages',
+  m55Next:'Next — the mentor’s questions', m55NeedWant:'Write who you want to become', m55Asking:'Sifra is preparing questions…',
+  m55QT:'Starting-point check', m55QLead:'The more exact the answers, the more exact the programme. You can skip any question.', m55QN:(k,n)=>'Answered '+k+' of '+n,
+  m55Own:'Your own answer', m55Skip:'No questions', m55Build:'Build the programme', m55NoQs:'No questions arrived — you can build the programme without them.',
+  m55Chief:'The mentor', m55ChiefStage:'The mentor is building the programme', m55TeamT:'The mentor’s team is working', m55TeamLead:'Six researchers build the dossier, then Sifra builds the programme. Usually 3–6 minutes.',
+  m55Err:{off:'No internet. Tap “Try again” when you are back online.',old:'The mentor needs the updated server (v31). Upload the mira-api archive to Cloudflare.',limit:'Today’s limit: a programme twice a day, a weekly review four times.',srv:'That didn’t work. Try again in a minute.',week:'Mark at least one task or write what you did.'},
+  m55Again:'Try again',
+  m55Tabs:{week:'Week',route:'Route',dos:'Dossier',log:'Journal'},
+  m55Chance:'Chance to get there', m55ChanceA:n=>'Chance to get there: '+n+' out of 100', m55Term:(a,b)=>'Honest timeline: '+(a&&b&&a!==b?a+'–'+b:(b||a))+' mo', m55Price:'Price of the path',
+  m55StageOf:(i,n)=>'Stage '+i+' of '+n, m55WeekN:n=>'Week '+n, m55WeekFrom:d=>'since '+d, m55Day:k=>'day '+k+' of 7', m55Due:'time to review the week',
+  m55First:'Start today', m55Tasks:'Tasks for the week', m55TasksSum:(d,n)=>d+' of '+n+' done', m55TimeSum:t=>t+' for the week', m55TaskSt:{yes:'Done',part:'Partly',no:'Not done'},
+  m55How2:'How exactly', m55Proof:'Proof', m55RepPh:'What happened: a number, a name, a link', m55RepL:i=>'Report on task '+i, m55Min:n=>'≈ '+(n>=60?Math.floor(n/60)+' h'+(n%60?' '+n%60+' min':''):n+' min'),
+  m55Note:'What else to tell the mentor', m55NotePh:'What got in the way, what surprised you, what changed', m55AskT:'The mentor asks', m55AnsPh:'Your answer',
+  m55Habits:'Habits of the path', m55HabitA:(h,d)=>h+', day '+d, m55HabSum:(h,k,n)=>'“'+h+'” — '+k+' of '+n+' days',
+  m55Review:'Review the week', m55ReviewLead:'Sifra checks your report against the tasks, looks at what changed this week and gives the next tasks.', m55ReviewEarly:n=>'It is day '+n+' of the week. A review works best at the end of the week, but you can do it now.',
+  m55Reviewing:['Checking the report against the tasks…','Looking for what changed this week…','Checking the stage exit signs…','Preparing next week’s tasks…'], m55RevWait:'Usually 1–3 minutes. Keep this screen open.',
+  m55RevOf:n=>'Review of week '+n, m55Score:'Week score', m55ScoreA:n=>'Week score: '+n+' out of 100', m55Ok:{yes:'accepted',part:'partly',no:'not accepted'}, m55Fix:'How to fix',
+  m55Good:'What worked', m55Wrong:'What was done wrong', m55Lessons:'Lessons of the week',
+  m55StagePass:'Stage passed', m55StageStay:'Stage not passed yet', m55StageGo:n=>'Move to stage “'+n+'”', m55StageLast:'That was the last stage. You made it — congratulations.', m55StageMoved:n=>'You are on stage “'+n+'”',
+  m55Change:'The mentor suggests changing the path', m55ChangeAsk:'Discuss with Sifra', m55ChangeRe:'Rebuild the programme', m55ChangeQ:c=>'The mentor suggested changing my path: '+c+' Explain in more detail what this means for me and where to start.',
+  m55News:'What changed this week', m55NewsDo:'What to do', m55NextT:'Tasks for next week', m55NextGo:n=>'Start week '+n, m55NextStarted:n=>'Week '+n+' has started',
+  m55Level:'Where you are now', m55Strong:'What you already have', m55Gaps:'What is missing', m55Pri:{1:'urgent',2:'soon',3:'later'},
+  m55Route:'Route', m55RouteLead:'Move to the next stage only when the exit signs are met. The decision to move is yours.',
+  m55Goal:'What must be there at the end', m55Exit:'Exit signs', m55Do:'Main things to do', m55Money:'Money', m55Risk:'Main danger', m55Pivot:'We change the path if',
+  m55MoS:n=>'≈ '+n+' mo', m55Here:'you are here', m55Done:'passed', m55Kill:'When we stop',
+  m55DosLead:'Market figures are found ones, with links below; estimates are marked “estimate”.',
+  m55Reports:'The team’s full reports', m55ReportsLead:'The six researchers’ working notes — as they are, unedited. The short version is in the sections above.', m55Events:'Upcoming events', m55Cases:'Similar paths', m55Learn:'Where to learn and whom to go to', m55Src:'Sources',
+  m55Log:'Journal of the path', m55LogEmpty:'Weekly reviews will appear here: the score, what worked and what didn’t.', m55LogChart:'Scores by week',
+  m55Ask:'Ask the mentor', m55AskQ:(w,s)=>'I am following the mentor’s programme: “'+w+'”. I am on the stage “'+s+'”. My question: ', m55RevAskQ:n=>'Let’s discuss the review of week '+n+': what should I do differently and why?', m55RevAsk:'Discuss the review with Sifra', m55RevAskS:'Discuss', m55AskS:'Ask',
+  m55Re:'Rebuild the programme', m55ReSure:'Tap again — I will rebuild it', m55ReNote:(i,n,w)=>'Passed: stage '+i+' of '+n+', weeks reviewed: '+w+'.', m55ReQ:'What has been done under the previous programme',
+  m55Del:'Delete the programme', m55DelSure:'Tap again — I will delete it', m55New:'New programme', m55ListT:'My programmes', m55ListSt:{wait:'being built…',err:'not built'},
+  m55Ready:t=>'Programme ready: '+t, m55RevReady:'The weekly review is ready',
+  m55Tray:['Mentor','leads you to your own business, week by week'], m55InsK:'Mentor', m55InsNew:'Who do you want to become?', m55InsNewS:'Sifra leads you from zero',
+  m55SentQ:{ask:'Mentor: questions',plan:'Mentor: programme',review:'Mentor: weekly review'},
+  m55Honest:'The mentor is a programme, not a person. Check the figures by the links and decide yourself: the money and the risk are yours.',
+  m55Offline:'Offline you can read the programme and mark tasks. The weekly review needs the internet.',
+  m55Priv:'The programme is kept on your phone. Only what you wrote here goes to the server, and only when the programme is built or a week is reviewed.', m55Max:'You already have five programmes. Delete one to start a new one.', m55Redo:'Add to the report and review again', m55RedoSure:'Tap again — this review will be erased',
+  m55Skills:'Skills, people and where to learn'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M55S[k]); }catch(e){} Object.assign(D[k],M55S[k]);
+  try{ D[k].m38It=Object.assign({},D[k].m38It,{ment55:M55S[k].m55T}); D[k].m38ItS=Object.assign({},D[k].m38ItS,{ment55:M55S[k].m55Sub}); D[k].m50Roles=Object.assign({},D[k].m50Roles,{skills:M55S[k].m55Skills}); }catch(e){} }
+/* ===================== v55: «Наставник» — от «кем хочу стать» до своего дела =====================
+   Анушер (25.11): «пишу, кем хочу стать — ИТ, медтех, одежда, сухофрукты, крупный предприниматель — и он как наставник делает из меня это с нуля:
+   анализирует до мелочей, все факторы, новости; сегодня — план; в конце недели обсуждаем, что сделал, он говорит, что не так, спрашивает, что нужно».
+   Как устроено: форма → вопросы диагностики → команда из шести исследователей и программа (сервер v31, вид mentor) → неделя с заданиями и доказательствами →
+   разбор недели по фактам → журнал. Переход на следующую ступень и новую неделю начинает человек, не приложение.
+   Данные — в state.misc.m55 (в телефоне). На сервер уходят только при сборке программы и разборе недели. */
+var M55={G:null,qs:null,ans:{},own:{},asking:false,qerr:'',run:new Set(),rev:new Set(),tab:'week',logOpen:null,st:0};
+try{ M50_ROLES.mentor=['market','money','ops','cases','skills','now']; M50_RICO.skills='people'; }catch(e){}
+/* значок «компас»: в обоих наборах значков (сплошной и двухтонный) и в старом штриховом */
+try{ MI.mentor='<circle cx="12" cy="12" r="9"/><path d="M15.6 8.4l-2.1 5.1-5.1 2.1 2.1-5.1z"/>'; }catch(e){}
+try{ const M55_CMP='M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216ZM172.42,72.84l-64,32a8.05,8.05,0,0,0-3.58,3.58l-32,64A8,8,0,0,0,80,184a8.1,8.1,0,0,0,3.58-.84l64-32a8.05,8.05,0,0,0,3.58-3.58l32-64a8,8,0,0,0-10.74-10.74ZM138,138,97.89,158.11,118,118l40.15-20.07Z';
+  M40IC.f.mentor=['M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z',M55_CMP]; M40IC.d.mentor=['M224,128a96,96,0,1,1-96-96A96,96,0,0,1,224,128Z',M55_CMP]; }catch(e){}
+
+/* в ходе работы команды главную зовём наставницей, а не планировщиком */
+try{ const _ph55=m50ProgHTML; m50ProgHTML=function(key){ let h=_ph55.apply(this,arguments); try{ const P=M50.prog[key]; if(h&&P&&P.kind==='mentor') h=h.split(esc(L.m50Stage.plan)).join(esc(L.m55ChiefStage)).split(esc(L.m50Chief)).join(esc(L.m55Chief)); }catch(e){} return h; }; }catch(e){}
+
+/* ---------- состояние ---------- */
+function m55St(){ state.misc=state.misc||{}; const s=state.misc.m55&&typeof state.misc.m55==='object'?state.misc.m55:(state.misc.m55={}); if(!Array.isArray(s.list)) s.list=[]; return s; }
+function m55Cur(){ const s=m55St(), ok=s.list.filter(x=>x&&x.plan&&Array.isArray(x.plan.stages)&&x.plan.stages.length); return ok.find(x=>x.id===s.cur)||ok[ok.length-1]||null; }
+function m55Def(){ const s=m55St(), last=s.list.length?s.list[s.list.length-1].M:null; let pl=last?last.place:''; if(!pl){ try{ const g=m46St().list.slice(-1)[0]; if(g&&g.G&&g.G.place) pl=g.G.place; }catch(e){} }
+  return {want:'',place:pl||'',cap:'',capCur:last&&last.capCur||'USD',hours:2,months:0,exp:'',has:''}; }
+function m55Title(p){ const w=String(p&&p.M&&p.M.want||'').trim(); return w.length>72?w.slice(0,70)+'…':w; }
+function m55Week(p){ return p&&Array.isArray(p.weeks)&&p.weeks.length?p.weeks[p.weeks.length-1]:null; }
+function m55DayN(w){ try{ return Math.max(1,Math.round((parseYmd(dkey()).getTime()-parseYmd(w.at).getTime())/86400e3)+1); }catch(e){ return 1; } }
+function m55Due(p){ const w=m55Week(p); return !!(w&&!w.review&&w.rst!=='wait'&&m55DayN(w)>=7); }
+function m55Stage(p){ const a=p.plan.stages; return a[Math.min(a.length-1,Math.max(0,p.stage|0))]; }
+function m55NewWeek(p,tasks,n){ const st=m55Stage(p); return {n,at:dkey(),si:p.stage|0,sn:st?st.name:'',tasks:(tasks||[]).slice(0,5).map(t=>({l:String(t.l||''),how:String(t.how||''),when:String(t.when||''),proof:String(t.proof||''),min:+t.min||0,st:'',rep:''})).filter(t=>t.l),note:'',qa:{},hb:{},asks:[]}; }
+function m55Trim(p){ try{ const ws=p.weeks.filter(w=>w.review); ws.slice(0,Math.max(0,ws.length-12)).forEach(w=>{ if(w.review.full!==0){ w.review={verdict:w.review.verdict,score:w.review.score,stage_pass:w.review.stage_pass,full:0,next:[]}; delete w.rsrc; w.tasks=w.tasks.map(t=>({l:t.l,st:t.st})); } }); if(p.weeks.length>80) p.weeks=p.weeks.slice(-80); }catch(e){} }
+function m55Save(now){ clearTimeout(M55.st); if(now){ try{ persist(); }catch(e){} return; } M55.st=setTimeout(()=>{ try{ persist(); }catch(e){} },500); }
+function m55Url(u){ return typeof u==='string'&&/^https?:\/\//i.test(u)?u:''; }
+function m55ErrT(c){ return L.m55Err[c]||L.m55Err.srv; }
+function m55On(arg){ try{ const t=bpTop(); return !!(bpOpenNow()&&t&&t.name==='ment55'&&(arg==null||t.arg===arg)); }catch(e){ return false; } }
+function m55Open(arg){ const go=()=>{ let a=arg; if(!a){ const s=m55St(), p=m55Cur()||s.list[s.list.length-1]; a=p?p.id:'intro'; } if(a==='new'){ M55.G=m55Def(); M55.qs=null; } bpGo('ment55',a); };
+  let sh=false; try{ sh=overlay.classList.contains('open'); }catch(e){} if(sh){ try{ closeSheet(); }catch(e){} setTimeout(go,120); } else go(); }
+
+/* ---------- сервер ---------- */
+async function m55Caps(){ if(navigator.onLine===false) throw new Error('off'); let c=null; try{ c=await sfCapsLoad(); }catch(e){} if(!c||!(+c.v>0)) throw new Error('srv'); if(!(+c.v>=31)){ try{ sfCaps=null; }catch(e){} throw new Error('old'); } return c; }
+function m55Ctx(){ try{ const o=Object.assign({},sfCtx()); for(const k of ['invest','mentor','viz_pref','__imgs','__imgl','expert']) delete o[k]; return o; }catch(e){ return {}; } }
+function m55Sent(k,raw,ctx){ try{ m52SentAdd({q:L.m55SentQ[k],ctx:ctx||{}},raw.length,false); }catch(e){} }
+async function m55Post(body){ await m55Caps(); const raw=JSON.stringify(Object.assign({id:mkId(),lang},body)); let r; try{ r=await fetch(API_BASE+'/api/mk/mentor',{method:'POST',headers:{'content-type':'application/json'},body:raw}); }catch(e){ throw new Error('srv'); }
+  m55Sent('ask',raw); const j=await r.json().catch(()=>({})); if(!r.ok) throw new Error(j.error==='limit'?'limit':r.status===404&&!j.error?'old':'srv'); return j; }
+async function m55RevPost(body){ await m55Caps(); const raw=JSON.stringify(Object.assign({id:mkId(),lang},body)); m55Sent('review',raw,body.ctx); let fails=0;
+  for(let i=0;i<70;i++){ let r=null,j=null; try{ r=await fetch(API_BASE+'/api/mk/mentor',{method:'POST',headers:{'content-type':'application/json'},body:raw}); j=await r.json().catch(()=>({})); }
+    catch(e){ if(++fails>8) throw new Error(navigator.onLine===false?'off':'srv'); await m50Sleep(4000); continue; }
+    if(j&&j.review) return j; if(!r.ok) throw new Error(j&&j.error==='limit'?'limit':j&&j.error==='week'?'week':r.status===404&&!(j&&j.error)?'old':'ai');
+    if(j&&j.pending){ await m50Sleep(j.retry?1500:5000); continue; } throw new Error('ai'); }
+  throw new Error('srv'); }
+
+/* ---------- вопросы диагностики ---------- */
+function m55AskQs(){ const G=M55.G; M55.qs=null; M55.ans={}; M55.own={}; M55.asking=true; M55.qerr='';
+  m55Post({mode:'ask',mentor:G}).then(j=>{ M55.qs=(Array.isArray(j.qs)?j.qs:[]).filter(q=>q&&q.q&&Array.isArray(q.opts)).slice(0,12); })
+    .catch(x=>{ M55.qs=[]; M55.qerr=x&&x.message||'srv'; }).finally(()=>{ M55.asking=false; if(m55On('qs')) bpRender(true); }); }
+function m55Answers(){ const out=[]; (M55.qs||[]).forEach((q,k)=>{ const a=[].concat(M55.ans[k]||[]), o=String(M55.own[k]||'').trim(); if(o) a.push(o); if(a.length) out.push({q:q.q,a:a.join('; ')}); }); return out; }
+function m55Answered(){ let n=0; (M55.qs||[]).forEach((q,k)=>{ if([].concat(M55.ans[k]||[]).length||String(M55.own[k]||'').trim()) n++; }); return n; }
+
+/* ---------- программа: сборка командой ---------- */
+function m55ReText(p){ const ws=p.weeks.filter(w=>w.review), lr=ws[ws.length-1]; return (L.m55ReNote((p.stage|0)+1,p.plan.stages.length,ws.length)+(lr?' '+String(lr.review.verdict||''):'')+(lr&&lr.review.change?' '+lr.review.change:'')).slice(0,300); }
+function m55Apply(p,j){ const had=!!p.plan; p.plan=j.plan; p.reports=(Array.isArray(j.reports)?j.reports:[]).slice(0,6).map(x=>({k:String(x&&x.k||''),t:String(x&&x.t||''),text:String(x&&x.text||'').slice(0,6000)})).filter(x=>x.text); p.src=(j.sources||[]).slice(0,16); p.model=j.model||''; p.at=j.at||dkey(); p.st='ok'; p.stage=0; p.weeks=Array.isArray(p.weeks)?p.weeks:[];
+  const last=p.weeks[p.weeks.length-1]; if(last&&!last.review) p.weeks.pop(); const n=(p.weeks.length?p.weeks[p.weeks.length-1].n:0)+1;
+  const w=m55NewWeek(p,p.plan.week,n); w.asks=(p.plan.need||[]).slice(0,4); w.first=String(p.plan.first||''); p.weeks.push(w); m55Trim(p); if(had) p.rb=(p.rb||0)+1; m55St().cur=p.id; }
+function m55Run(p){ const had=!!p.plan; p.st='wait'; p.t0=Date.now(); delete p.err; M55.run.add(p.id); m55Save(true);
+  if(!(p.job&&Date.now()-(p.jt||0)<25*60e3)){ p.job='tj'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); p.jt=Date.now(); }
+  const ans=(p.ans||[]).slice(0,13); if(had&&p.weeks&&p.weeks.some(w=>w.review)) ans.push({q:L.m55ReQ,a:m55ReText(p)});
+  m55Caps().then(()=>{ const ctx=m55Ctx(), pr=m50Team('mentor',{mentor:p.M,answers:ans,ctx},p.id,p.job); m55Sent('plan',JSON.stringify({mentor:p.M,answers:ans,ctx}),ctx); setTimeout(()=>{ if(m55On(p.id)) bpRender(true); },40); return pr; })
+    .then(j=>{ const P=j&&j.plan; if(!P||!Array.isArray(P.stages)||P.stages.length<2||!Array.isArray(P.week)||!P.week.length) throw new Error('srv'); m55Apply(p,j); })
+    .catch(x=>{ const c=x&&x.message||'srv'; if(had){ p.st='ok'; try{ toast(m55ErrT(c)); }catch(e){} } else { p.st='err'; p.err=c; } })
+    .finally(()=>{ delete p.job; delete p.jt; M55.run.delete(p.id); m55Save(true); if(m55On(p.id)){ M55.tab='week'; bpRender(); } else if(p.st==='ok'&&!had){ try{ toast(L.m55Ready(m55Title(p))); }catch(e){} } }); }
+function m55Build(skip){ const s=m55St(), p={id:uid('mt'),at:dkey(),M:Object.assign({},M55.G),ans:skip?[]:m55Answers(),stage:0,weeks:[]}; p.M.want=String(p.M.want||'').trim().slice(0,400);
+  s.list=s.list.filter(x=>x&&(x.plan||M55.run.has(x.id))); s.list.push(p); s.cur=p.id; M55.tab='week'; m55Run(p); bpReplace('ment55',p.id); }
+
+/* ---------- разбор недели ---------- */
+function m55RevBody(p,w){ const P=p.plan, st=P.stages[Math.min(P.stages.length-1,w.si|0)]||m55Stage(p), notes=[], nt=String(w.note||'').trim(); if(nt) notes.push(nt);
+  const qa=(w.asks||[]).map((q,i)=>{ const a=String(w.qa&&w.qa[i]||'').trim(); return a?q+' → '+a:''; }).filter(Boolean); if(qa.length) notes.push(L.m55AskT+': '+qa.join('; '));
+  const days=Math.min(7,m55DayN(w)), hb=(P.habits||[]).map((h,i)=>{ const o=w.hb&&w.hb[i]||{}, k=Object.keys(o).filter(d=>o[d]).length; return L.m55HabSum(h,k,days); });
+  if(hb.length&&Object.keys(w.hb||{}).some(i=>Object.keys(w.hb[i]||{}).length)) notes.push(L.m55Habits+': '+hb.join('; '));
+  return {mode:'review',job:w.rjob,prog:{want:p.M.want,place:p.M.place,verdict:P.verdict,total:P.stages.length,stage:{i:(w.si|0)+1,name:st.name,goal:st.goal,exit:st.exit||[],pivot:st.pivot||''},kill:P.kill||[]},
+    week:{n:w.n,tasks:w.tasks.map(t=>({l:t.l,proof:t.proof,st:t.st||'no',rep:t.rep||''})),note:notes.join('\n').slice(0,1600)},
+    log:p.weeks.filter(x=>x.review&&x!==w).slice(-8).map(x=>({n:x.n,verdict:x.review.verdict,score:x.review.score})),ctx:m55Ctx()}; }
+function m55Review(p,w){ if(M55.rev.has(p.id)) return; w.rst='wait'; w.rt0=w.rt0||Date.now(); delete w.rerr; M55.rev.add(p.id);
+  if(!(w.rjob&&Date.now()-(w.rjt||0)<25*60e3)){ w.rjob='tj'+Date.now().toString(36)+Math.random().toString(36).slice(2,8); w.rjt=Date.now(); w.rt0=Date.now(); } m55Save(true);
+  m55RevPost(m55RevBody(p,w)).then(j=>{ if(!j||!j.review||!Array.isArray(j.review.next)||!j.review.next.length) throw new Error('ai'); w.review=j.review; w.rsrc=(j.sources||[]).slice(0,10); w.rat=j.at||dkey(); w.rmodel=j.model||''; delete w.rst; delete w.rjob; delete w.rjt; })
+    .catch(x=>{ w.rst='err'; w.rerr=x&&x.message||'srv'; if(!['srv','off'].includes(w.rerr)){ delete w.rjob; delete w.rjt; } })
+    .finally(()=>{ M55.rev.delete(p.id); delete w.rt0; m55Trim(p); m55Save(true); if(m55On(p.id)){ M55.tab='week'; bpRender(); } else if(w.review){ try{ toast(L.m55RevReady); }catch(e){} } }); }
+function m55NextWeek(p){ const w=m55Week(p); if(!w||!w.review||!(w.review.next||[]).length) return; const nw=m55NewWeek(p,w.review.next,w.n+1); nw.asks=(w.review.ask||[]).slice(0,4); nw.first=String(w.review.first||''); p.weeks.push(nw); m55Trim(p); m55Save(true); try{ toast(L.m55NextStarted(nw.n)); }catch(e){} }
+
+/* ---------- части экрана ---------- */
+function m55Cls(n){ return n>=65?'hi':n>=40?'mid':'lo'; }
+function m55Dial(n,lab,cls){ const R=30, C=2*Math.PI*R; return `<span class="m55-dial ${m55Cls(n)}${cls?' '+cls:''}" role="img" aria-label="${esc(lab)}"><svg viewBox="0 0 72 72" aria-hidden="true"><circle class="t" cx="36" cy="36" r="${R}"/><circle class="f" cx="36" cy="36" r="${R}" stroke-dasharray="${C.toFixed(1)}" style="--o:${(C*(1-n/100)).toFixed(1)};--c:${C.toFixed(1)}"/></svg><b>${n}</b></span>`; }
+function m55Meta(t){ return [t.when?esc(t.when):'',t.min?esc(L.m55Min(Math.round(t.min))):''].filter(Boolean).join(' · '); }
+function m55HeroHTML(p){ const P=p.plan, n=P.stages.length, si=Math.min(n-1,p.stage|0), st=P.stages[si];
+  return `<header class="m55-hero"><p class="m55-want">${esc(p.M.want)}</p>
+    <div class="m55-top">${P.chance!=null?m55Dial(P.chance,L.m55ChanceA(P.chance)):''}<div class="m55-meta">${P.chance!=null?`<small>${esc(L.m55Chance)}</small>`:''}<b>${esc(L.m55StageOf(si+1,n))}: ${esc(st.name)}</b>${P.months_lo||P.months_hi?`<span>${esc(L.m55Term(P.months_lo,P.months_hi))}</span>`:''}</div></div>
+    <ol class="m55-strip" aria-hidden="true">${P.stages.map((s,k)=>`<li class="${k<si?'done':k===si?'here':''}" style="--i:${k}"><i>${k<si?ico('check',12):k+1}</i></li>`).join('')}</ol>
+    <p class="m55-verdict">${esc(P.verdict)}</p>${P.chance_why?`<p class="m55-why">${esc(P.chance_why)}</p>`:''}</header>`; }
+function m55TabsHTML(p){ const T=L.m55Tabs, ic={week:'cal',route:'flag',dos:'doc',log:'history'}, w=m55Week(p), mark=m55Due(p)||!!(w&&w.review);
+  return `<div class="m55-tabs"><div class="m55-tb" role="tablist">${Object.keys(T).map(k=>`<button type="button" role="tab" id="m55t-${k}" aria-selected="${M55.tab===k}" aria-controls="m55-pane" data-m55tab="${k}" class="${M55.tab===k?'on':''}">${ico(ic[k],16)}<span>${esc(T[k])}</span>${k==='week'&&mark?'<u class="m55-dot" aria-hidden="true"></u>':''}</button>`).join('')}</div></div>`; }
+function m55TaskHTML(t,i){ const S=L.m55TaskSt, mt=m55Meta(t);
+  return `<article class="m55-task${t.st?' st-'+esc(t.st):''}" data-m55task="${i}" style="--i:${i}"><div class="m55-th"><span class="m55-tn" aria-hidden="true">${i+1}</span><div><b>${esc(t.l)}</b>${mt?`<small>${mt}</small>`:''}</div></div>
+    ${t.how?`<details class="m55-how"><summary>${esc(L.m55How2)}</summary><p>${esc(t.how)}</p></details>`:''}${t.proof?`<p class="m55-proof">${ico('check',14)}<span><small>${esc(L.m55Proof)}:</small> ${esc(t.proof)}</span></p>`:''}
+    <div class="m55-st" role="group" aria-label="${esc(t.l)}">${['yes','part','no'].map(k=>`<button type="button" data-m55st="${k}" aria-pressed="${t.st===k}" class="${t.st===k?'on':''}">${esc(S[k])}</button>`).join('')}</div>
+    <textarea data-m55rep="${i}" rows="2" maxlength="500" placeholder="${esc(L.m55RepPh)}" aria-label="${esc(L.m55RepL(i+1))}">${esc(t.rep||'')}</textarea></article>`; }
+function m55SumT(w){ const dn=w.tasks.filter(t=>t.st==='yes').length, tot=w.tasks.reduce((s,t)=>s+(+t.min||0),0); return L.m55TasksSum(dn,w.tasks.length)+(tot?' · '+L.m55TimeSum(L.m55Min(Math.round(tot))):''); }
+function m55ReviewHTML(p,w){ const r=w.review, O=L.m55Ok; if(!r) return ''; const li=a=>a.map(x=>`<li>${esc(x)}</li>`).join('');
+  return `<section class="m55-rev"><div class="m55-rh">${r.score!=null?m55Dial(r.score,L.m55ScoreA(r.score),'sm'):''}<div><b>${esc(L.m55RevOf(w.n))}</b><small>${[w.rat?esc(dShort(w.rat)):'',w.sn?esc(w.sn):''].filter(Boolean).join(' · ')}</small><p>${esc(r.verdict)}</p></div></div>
+    ${(r.tasks||[]).length?`<ul class="m55-rt">${r.tasks.map(t=>{ const src=w.tasks[t.i-1]; return src?`<li class="ok-${esc(t.ok)}"><span class="m55-ok">${esc(O[t.ok]||'')}</span><div><b>${esc(src.l)}</b>${t.note?`<p>${esc(t.note)}</p>`:''}${t.fix?`<p class="fix"><small>${esc(L.m55Fix)}:</small> ${esc(t.fix)}</p>`:''}</div></li>`:''; }).join('')}</ul>`:''}
+    ${r.full===0?'':`<p class="m55-sp ${r.stage_pass?'pass':'stay'}">${ico(r.stage_pass?'trophy':'flag',16)}<span><b>${esc(r.stage_pass?L.m55StagePass:L.m55StageStay)}</b>${r.stage_why?' — '+esc(r.stage_why):''}</span></p>`}
+    ${(r.wrong||[]).length?`<div class="m55-bl wrong"><h4>${ico('warn',16)} ${esc(L.m55Wrong)}</h4><ul>${li(r.wrong)}</ul></div>`:''}
+    ${(r.good||[]).length?`<div class="m55-bl good"><h4>${ico('check',16)} ${esc(L.m55Good)}</h4><ul>${li(r.good)}</ul></div>`:''}
+    ${(r.lessons||[]).length?`<div class="m55-bl"><h4>${ico('bulb',16)} ${esc(L.m55Lessons)}</h4><ul>${li(r.lessons)}</ul></div>`:''}
+    ${(r.news||[]).filter(n=>m55Url(n.url)).length?`<div class="m55-bl news"><h4>${ico('zap',16)} ${esc(L.m55News)}</h4>${r.news.filter(n=>m55Url(n.url)).map(n=>`<div class="m55-nw"><a href="${esc(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.t)} ${ico('external',12)}</a>${n.why?`<p>${esc(n.why)}</p>`:''}${n.act?`<p><small>${esc(L.m55NewsDo)}:</small> ${esc(n.act)}</p>`:''}</div>`).join('')}</div>`:''}
+    ${(w.rsrc||[]).filter(s=>m55Url(s.url)).length?`<div class="sf-src m46-srcs">${w.rsrc.filter(s=>m55Url(s.url)).map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||sfHost(s.url))}</a>`).join('')}</div>`:''}</section>`; }
+function m55AfterHTML(p,w){ const r=w.review, n=p.plan.stages.length, si=p.stage|0, last=si>=n-1; let h=m55ReviewHTML(p,w);
+  if(r.stage_pass&&!w.moved&&(w.si|0)===si) h+=last?`<p class="m55-win">${ico('trophy',18)}<span>${esc(L.m55StageLast)}</span></p>`:`<button type="button" class="btn btn-primary btn-full m55-stgo" data-m55stage="1">${ico('next',18)} ${esc(L.m55StageGo(p.plan.stages[si+1].name))}</button>`;
+  if(r.change) h+=`<section class="m44-cd m55-chg"><h3>${ico('refresh',18)} ${esc(L.m55Change)}</h3><p>${esc(r.change)}</p><div class="m46-fb2"><button type="button" class="btn btn-ghost" data-m55chask="1">${ico('chat',16)} ${esc(L.m55ChangeAsk)}</button><button type="button" class="btn btn-ghost" data-m55re="1">${ico('refresh',16)} ${esc(L.m55ChangeRe)}</button></div></section>`;
+  h+=`<h3 class="m44-h3">${esc(L.m55NextT)}</h3><ol class="m55-next">${(r.next||[]).map(t=>{ const mt=m55Meta(t); return `<li><b>${esc(t.l)}</b>${mt?`<small>${mt}</small>`:''}</li>`; }).join('')}</ol>`;
+  if((r.ask||[]).length) h+=`<div class="m55-bl"><h4>${ico('chat',16)} ${esc(L.m55AskT)}</h4><ul>${r.ask.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`;
+  if(!w.moved) h+=`<div class="m55-adm"><button type="button" class="link-btn" data-m55redo="1">${esc(L.m55Redo)}</button></div>`;
+  return h; }
+function m55WeekHTML(p){ const w=m55Week(p); if(!w) return '';
+  if(w.rst==='wait') return `<div class="p29-busy m55-rwait" aria-live="polite"><span class="p29-spin" aria-hidden="true"></span><b id="m55Rw">${esc(L.m55Reviewing[0])}</b><small>${esc(L.m55RevWait)}</small><small id="m55Rs"></small></div>`;
+  if(w.review) return m55AfterHTML(p,w);
+  const day=m55DayN(w), d7=Math.min(7,day), hbs=p.plan.habits||[], asks=w.asks||[];
+  let h=`<section class="m55-wk"><div class="m55-wh"><div><b>${esc(L.m55WeekN(w.n))}</b><small>${esc(L.m55WeekFrom(dShort(w.at)))} · ${esc(day>=7?L.m55Due:L.m55Day(d7))}</small></div><span class="m55-days${day>=7?' due':''}" aria-hidden="true">${[1,2,3,4,5,6,7].map(k=>`<i class="${k<d7?'p':k===d7?'n':''}"></i>`).join('')}</span></div><p class="m55-wsum" id="m55Sum">${esc(m55SumT(w))}</p>${w.first?`<p class="m55-first">${ico('zap',15)}<span><b>${esc(L.m55First)}:</b> ${esc(w.first)}</span></p>`:''}</section>
+    <h3 class="m44-h3">${esc(L.m55Tasks)}</h3><div class="m55-tasks">${w.tasks.map((t,i)=>m55TaskHTML(t,i)).join('')}</div>`;
+  if(asks.length) h+=`<section class="m44-cd m55-asks"><h3>${ico('chat',18)} ${esc(L.m55AskT)}</h3>${asks.map((q,i)=>`<label class="m55-qa"><span>${esc(q)}</span><input type="text" maxlength="240" data-m55qa="${i}" placeholder="${esc(L.m55AnsPh)}" value="${esc(w.qa&&w.qa[i]||'')}"></label>`).join('')}</section>`;
+  if(hbs.length) h+=`<section class="m44-cd m55-hb"><h3>${ico('repeat',18)} ${esc(L.m55Habits)}</h3>${hbs.map((x,i)=>{ const o=w.hb&&w.hb[i]||{}; return `<div class="m55-h"><span>${esc(x)}</span><div class="m55-hd" role="group" aria-label="${esc(x)}">${[1,2,3,4,5,6,7].map(k=>`<button type="button" data-m55hb="${i}" data-d="${k}" aria-pressed="${!!o[k]}" aria-label="${esc(L.m55HabitA(x,k))}" class="${o[k]?'on':''}${k===d7?' now':''}"${k>d7?' disabled':''}>${k}</button>`).join('')}</div></div>`; }).join('')}</section>`;
+  h+=`<div class="field m55-note"><label for="m55-note">${esc(L.m55Note)}</label><textarea id="m55-note" data-m55note="1" rows="3" maxlength="800" placeholder="${esc(L.m55NotePh)}">${esc(w.note||'')}</textarea></div>
+    <section class="m44-cd m55-rv"><h3>${ico('sparkle',18)} ${esc(L.m55Review)}</h3><p class="m55-lead2">${esc(L.m55ReviewLead)}</p>${day<6?`<p class="m55-early">${ico('info',14)}<span>${esc(L.m55ReviewEarly(day))}</span></p>`:''}${navigator.onLine===false?`<p class="m55-early">${ico('info',14)}<span>${esc(L.m55Offline)}</span></p>`:''}${w.rst==='err'?`<p class="m55-errp" role="alert">${esc(m55ErrT(w.rerr))}</p>`:''}<div class="err" id="m55-rerr" role="alert"></div></section>`;
+  return h; }
+function m55RouteHTML(p){ const P=p.plan, si=Math.min(P.stages.length-1,p.stage|0), lv=P.level||{};
+  const row=(k,v)=>v?`<p class="m55-kv"><small>${esc(k)}</small>${esc(v)}</p>`:'', ul=(k,a,cls)=>(a||[]).length?`<div class="m55-kv"><small>${esc(k)}</small><ul${cls?` class="${cls}"`:''}>${a.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`:'';
+  let h=`<section class="m44-cd m55-lv"><h3>${ico('pin',18)} ${esc(L.m55Level)}</h3>${lv.now?`<p>${esc(lv.now)}</p>`:''}${(lv.strong||[]).length?`<div class="m55-kv"><small>${esc(L.m55Strong)}</small><div class="m55-chips">${lv.strong.map(x=>`<span>${esc(x)}</span>`).join('')}</div></div>`:''}
+    ${(lv.gaps||[]).length?`<div class="m55-kv"><small>${esc(L.m55Gaps)}</small><ul class="m55-gaps">${lv.gaps.map(g=>`<li><span class="m46-chip ${g.pri===1?'lo':g.pri===2?'mid':''}">${esc(L.m55Pri[g.pri]||'')}</span><div><b>${esc(g.l)}</b>${g.how?`<p>${esc(g.how)}</p>`:''}</div></li>`).join('')}</ul></div>`:''}</section>
+    <h3 class="m44-h3">${esc(L.m55Route)}</h3><p class="m55-lead2">${esc(L.m55RouteLead)}</p><ol class="m55-route">${P.stages.map((s,k)=>`<li class="${k<si?'done':k===si?'here':'next'}" style="--i:${k}"><span class="m55-rn" aria-hidden="true">${k<si?ico('check',14):k+1}</span><details${k===si?' open':''}><summary><b>${esc(s.name)}</b><small>${[s.months?esc(L.m55MoS(s.months)):'',k===si?esc(L.m55Here):k<si?esc(L.m55Done):''].filter(Boolean).join(' · ')}</small></summary>
+      ${row(L.m55Goal,s.goal)}${ul(L.m55Exit,s.exit,'m55-ex')}${ul(L.m55Do,s.do)}${row(L.m55Money,s.money)}${row(L.m55Risk,s.risk)}${row(L.m55Pivot,s.pivot)}</details></li>`).join('')}</ol>`;
+  if((P.kill||[]).length) h+=`<section class="m44-cd m55-kill"><h3>${ico('shield',18)} ${esc(L.m55Kill)}</h3><ul>${P.kill.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></section>`;
+  if(P.price) h+=`<section class="m44-cd"><h3>${ico('cash',18)} ${esc(L.m55Price)}</h3><p>${esc(P.price)}</p></section>`;
+  return h; }
+function m55DosHTML(p){ const P=p.plan, a=(u,t)=>{ const x=m55Url(u); return x?`<a href="${esc(x)}" target="_blank" rel="noopener noreferrer">${esc(t)} ${ico('external',12)}</a>`:esc(t); };
+  let h=`<p class="m55-lead2">${esc(L.m55DosLead)}</p>`+(P.dossier||[]).map((d,k)=>`<details class="m55-ds"${k===0?' open':''}><summary>${esc(d.t)}</summary><ul>${(d.points||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></details>`).join('');
+  if((P.events||[]).length) h+=`<section class="m44-cd"><h3>${ico('cal',18)} ${esc(L.m55Events)}</h3><ul class="m55-evs">${P.events.map(e=>`<li>${e.d?`<span>${esc(e.d)}</span>`:''}<div><b>${esc(e.l)}</b>${e.act?`<p>${esc(e.act)}</p>`:''}</div></li>`).join('')}</ul></section>`;
+  if((P.cases||[]).length) h+=`<section class="m44-cd"><h3>${ico('star',18)} ${esc(L.m55Cases)}</h3>${P.cases.map(c=>`<div class="m46-case"><b>${a(c.url,c.name)}</b><p>${esc(c.what)}</p></div>`).join('')}</section>`;
+  if((P.learn||[]).length) h+=`<section class="m44-cd"><h3>${ico('cap',18)} ${esc(L.m55Learn)}</h3><ul class="m55-learn">${P.learn.map(c=>`<li><b>${a(c.url,c.t)}</b>${c.where?`<small>${esc(c.where)}</small>`:''}</li>`).join('')}</ul></section>`;
+  if((p.reports||[]).length) h+=`<h3 class="m44-h3">${esc(L.m55Reports)}</h3><p class="m55-lead2">${esc(L.m55ReportsLead)}</p>`+p.reports.map(x=>`<details class="m55-ds m55-rp"><summary>${esc(L.m50Roles[x.k]||x.t)}</summary><div class="m55-rep">${esc(x.text)}</div></details>`).join('');
+  const src=(p.src||[]).filter(s=>m55Url(s.url)); if(src.length) h+=`<h3 class="m44-h3">${esc(L.m55Src)}</h3><div class="sf-src m46-srcs">${src.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">${esc(s.title||sfHost(s.url))}</a>`).join('')}</div>`;
+  h+=`<p class="m46-note">${esc(L.m46At(dShort(p.at)))}${p.model?' · '+esc(L.m46By(p.model)):''}</p><p class="m55-honest">${ico('info',14)}<span>${esc(L.m55Honest)}</span></p>
+    <div class="m55-adm"><button type="button" class="link-btn" data-m55re="1">${esc(L.m55Re)}</button><button type="button" class="link-btn" data-m55list="1">${esc(L.m55ListT)}</button><button type="button" class="link-btn m46-del" data-m55del="${esc(p.id)}">${esc(L.m55Del)}</button></div>`;
+  return h; }
+function m55LogHTML(p){ const ws=p.weeks.filter(w=>w.review), sc=ws.filter(w=>w.review.score!=null).slice(-12); if(!ws.length) return `<p class="lead m55-empty">${esc(L.m55LogEmpty)}</p>`; let h='';
+  if(sc.length) h+=`<figure class="m55-chart" role="img" aria-label="${esc(L.m55LogChart+': '+sc.map(w=>L.m55WeekN(w.n)+' — '+w.review.score).join(', '))}"><figcaption>${esc(L.m55LogChart)}</figcaption><div class="m55-bars">${sc.map((w,k)=>`<div class="${m55Cls(w.review.score)}" style="--h:${Math.max(4,w.review.score)}%;--i:${k}"><b>${w.review.score}</b><i></i><small>${w.n}</small></div>`).join('')}</div></figure>`;
+  h+=`<div class="m55-log">${ws.slice().reverse().map(w=>{ const r=w.review; return `<details class="m55-lw"${M55.logOpen===w.n?' open':''} data-m55lw="${w.n}"><summary><span><b>${esc(L.m55WeekN(w.n))}</b><small>${[w.rat?esc(dShort(w.rat)):'',w.sn?esc(w.sn):''].filter(Boolean).join(' · ')}</small></span>${r.score!=null?`<span class="m46-chip ${m55Cls(r.score)}">${r.score}</span>`:''}</summary>${m55ReviewHTML(p,w)}</details>`; }).join('')}</div>`;
+  return h; }
+function m55FormHTML(G){ const cur=`<select data-m55f="capCur" aria-label="${esc(L.m46Cur)}">${M46CUR.map(c=>`<option${G.capCur===c?' selected':''}>${c}</option>`).join('')}</select>`;
+  const chips=(name,list,val)=>`<div class="m44-chs" role="group">${list.map(([v,t])=>`<button type="button" class="chip${String(val)===String(v)?' on':''}" data-m55c="${name}" data-v="${esc(String(v))}" aria-pressed="${String(val)===String(v)}">${esc(t)}</button>`).join('')}</div>`;
+  return `<div class="m44 m46 m55"><div class="field"><label for="m55-want">${esc(L.m55Want)}</label><textarea id="m55-want" data-m55f="want" rows="3" maxlength="400" placeholder="${esc(L.m55WantPh)}">${esc(G.want)}</textarea></div>
+    <div class="m44-chs m55-exs">${L.m55Ex.map((x,k)=>`<button type="button" class="chip" data-m55ex="${k}">${esc(x[0])}</button>`).join('')}</div>
+    <div class="field"><label for="m55-pl">${esc(L.m55Place)}</label><input id="m55-pl" data-m55f="place" maxlength="80" placeholder="${esc(L.m55PlacePh)}" value="${esc(G.place)}"></div>
+    <div class="m46-row"><div class="field"><label for="m55-cap">${esc(L.m55Cap)}</label><input id="m55-cap" data-m55f="cap" type="number" inputmode="numeric" min="0" value="${esc(String(G.cap==null?'':G.cap))}" placeholder="0"></div>${cur}</div><p class="m46-note">${esc(L.m55CapHint)}</p>
+    <span class="bp-lab">${esc(L.m55Hours)}</span>${chips('hours',[1,2,4,8,12].map(n=>[n,L.m55H(n)]),G.hours)}
+    <span class="bp-lab">${esc(L.m55Months)}</span>${chips('months',L.m55MoOpts,G.months)}
+    <div class="field"><label for="m55-exp">${esc(L.m55Exp)}</label><input id="m55-exp" data-m55f="exp" maxlength="300" placeholder="${esc(L.m55ExpPh)}" value="${esc(G.exp)}"></div>
+    <div class="field"><label for="m55-has">${esc(L.m55Has)}</label><input id="m55-has" data-m55f="has" maxlength="300" placeholder="${esc(L.m55HasPh)}" value="${esc(G.has)}"></div>
+    <div class="err" id="m55-err" role="alert"></div></div>`; }
+function m55Foot(p){ const w=m55Week(p), ask=t=>`<button type="button" class="btn btn-ghost" data-m55ask="1" aria-label="${esc(L.m55Ask)}">${ico('chat',18)} ${esc(t)}</button>`;
+  if(M55.tab!=='week'||!w) return `<div class="m55-f1">${ask(L.m55Ask)}</div>`; if(w.rst==='wait') return '';
+  if(w.review) return `<div class="m55-fb"><button type="button" class="btn btn-ghost" data-m55revask="1" aria-label="${esc(L.m55RevAsk)}">${ico('chat',18)} ${esc(L.m55RevAskS)}</button><button type="button" class="btn btn-primary" data-m55next="1">${ico('next',18)} ${esc(L.m55NextGo(w.n+1))}</button></div>`;
+  return `<div class="m55-fb">${ask(L.m55AskS)}<button type="button" class="btn btn-primary" id="m55Rev">${ico('sparkle',18)} ${esc(L.m55Review)}</button></div>`; }
+function m55Pane(p){ return M55.tab==='route'?m55RouteHTML(p):M55.tab==='dos'?m55DosHTML(p):M55.tab==='log'?m55LogHTML(p):m55WeekHTML(p); }
+
+/* ---------- страница ---------- */
+function m55R(m,f,arg){ $('#bpg-t').textContent=L.m55T; const s=m55St(); let foot='';
+  if(arg==='intro'){ m.innerHTML=`<div class="m44 m55 m55-intro"><div class="m55-ih" aria-hidden="true">${ico('mentor',30)}</div><h3 class="m55-it">${esc(L.m55InsNew)}</h3><p class="lead">${esc(L.m55Lead)}</p>
+      <ol class="m55-steps">${L.m55How.map((x,k)=>`<li style="--i:${k}"><span aria-hidden="true">${k+1}</span><div><b>${esc(x[0])}</b><small>${esc(x[1])}</small></div></li>`).join('')}</ol><p class="m55-honest">${ico('info',14)}<span>${esc(L.m55Honest)}</span></p><p class="m55-honest">${ico('lock',14)}<span>${esc(L.m55Priv)}</span></p></div>`;
+    foot=`<button type="button" class="btn btn-primary btn-full" data-m55new="1">${ico('sparkle',18)} ${esc(L.m55Start)}</button>`; }
+  else if(arg==='list'){ m.innerHTML=`<div class="m44 m46 m55">${s.list.length?s.list.slice().reverse().map(p=>{ const w=m55Week(p), ok=p.st==='ok'&&p.plan; return `<button type="button" class="m46-gc" data-m55go="${esc(p.id)}"><b>${esc(m55Title(p))}</b><small>${esc(ok?L.m55StageOf((p.stage|0)+1,p.plan.stages.length)+(w?' · '+L.m55WeekN(w.n):''):L.m55ListSt[p.st==='wait'?'wait':'err'])}</small></button>`; }).join(''):`<p class="lead">${esc(L.m55Lead)}</p>`}</div>`;
+    foot=`<button type="button" class="btn btn-primary btn-full" data-m55new="1">${ico('plus',18)} ${esc(L.m55New)}</button>`; }
+  else if(arg==='new'){ if(!M55.G) M55.G=m55Def(); m.innerHTML=m55FormHTML(M55.G); foot=`<button type="button" class="btn btn-primary btn-full" id="m55Go">${ico('next',18)} ${esc(L.m55Next)}</button>`; }
+  else if(arg==='qs'){ if(!M55.G){ bpReplace('ment55','new'); return; } const hard=M55.qerr==='old'||M55.qerr==='off'||M55.qerr==='limit';
+    if(M55.asking||M55.qs==null) m.innerHTML=`<div class="m44 m46 m55"><div class="p29-busy"><span class="p29-spin" aria-hidden="true"></span><b>${esc(L.m55Asking)}</b></div></div>`;
+    else if(!M55.qs.length) m.innerHTML=`<div class="m44 m46 m55"><div class="m44-cd"><b>${esc(L.m55QT)}</b><p>${esc(hard?m55ErrT(M55.qerr):L.m55NoQs)}</p>${hard?`<button type="button" class="btn btn-primary" data-m55qsretry="1">${esc(L.m55Again)}</button>`:''}</div></div>`;
+    else m.innerHTML=`<div class="m44 m46 m55"><h3 class="m44-h3">${esc(L.m55QT)}</h3><p class="lead">${esc(L.m55QLead)}</p><p class="m55-qn" id="m55Qn" aria-live="polite">${esc(L.m55QN(m55Answered(),M55.qs.length))}</p>${M55.qs.map((q,k)=>`<div class="m44-cd m46-q"><b>${esc(q.q)}</b>${q.why?`<small>${esc(q.why)}</small>`:''}
+        <div class="m44-chs" role="group">${q.opts.map((o,j)=>{ const on=[].concat(M55.ans[k]||[]).includes(o); return `<button type="button" class="chip${on?' on':''}" aria-pressed="${on}" data-m55q="${k}" data-j="${j}">${esc(o)}</button>`; }).join('')}</div>
+        <input type="text" maxlength="200" data-m55own="${k}" placeholder="${esc(L.m55Own)}" value="${esc(M55.own[k]||'')}" aria-label="${esc(q.q+' — '+L.m55Own)}"></div>`).join('')}</div>`;
+    const off=M55.asking||M55.qs==null||(hard&&!M55.qs.length);
+    foot=M55.qs&&M55.qs.length?`<div class="m46-fb2"><button type="button" class="btn btn-ghost" data-m55build="skip">${esc(L.m55Skip)}</button><button type="button" class="btn btn-primary" data-m55build="1">${ico('sparkle',18)} ${esc(L.m55Build)}</button></div>`:`<button type="button" class="btn btn-primary btn-full" data-m55build="skip" ${off?'disabled':''}>${ico('sparkle',18)} ${esc(L.m55Build)}</button>`; }
+  else { const p=s.list.find(x=>x.id===arg); if(!p){ bpReplace('ment55',s.list.length?'list':'intro'); return; }
+    if(p.st==='wait'&&!M55.run.has(p.id)){ if(p.job&&Date.now()-(p.jt||0)<25*60e3){ setTimeout(()=>{ if(!M55.run.has(p.id)) m55Run(p); },0); } else if(p.plan) p.st='ok'; else { p.st='err'; p.err=p.err||'srv'; } }
+    if(p.st==='wait'){ m.innerHTML=`<div class="m44 m55"><section class="m44-cd m50-cta m55-wait"><h3>${ico('sparkle',18)} ${esc(L.m55TeamT)}</h3><p class="m50-lead">${esc(L.m55TeamLead)}</p><p class="m55-wq">${esc(m55Title(p))}</p>${m50ProgHTML(p.id)||`<div class="p29-busy"><span class="p29-spin" aria-hidden="true"></span></div>`}</section></div>`; }
+    else if(p.st==='err'||!p.plan){ m.innerHTML=`<div class="m44 m55"><div class="m44-cd"><b>${esc(m55Title(p))}</b><p role="alert">${esc(m55ErrT(p.err))}</p><button type="button" class="btn btn-primary" data-m55again="${esc(p.id)}">${esc(L.m55Again)}</button><button type="button" class="link-btn m46-del" data-m55del="${esc(p.id)}">${esc(L.m55Del)}</button></div></div>`; }
+    else { const w=m55Week(p); if(w&&w.rst==='wait'&&!M55.rev.has(p.id)){ if(w.rjob&&Date.now()-(w.rjt||0)<25*60e3) setTimeout(()=>{ if(!M55.rev.has(p.id)) m55Review(p,w); },0); else { w.rst='err'; w.rerr='srv'; } }
+      if(!L.m55Tabs[M55.tab]) M55.tab='week';
+      m.innerHTML=`<div class="m44 m46 m55 m55-p${m54Motion()?' m55-go':''}">${m55HeroHTML(p)}${m55TabsHTML(p)}<div class="m55-pane" id="m55-pane" role="tabpanel" aria-labelledby="m55t-${M55.tab}" data-tab="${M55.tab}">${m55Pane(p)}</div></div>`; foot=m55Foot(p);
+      if(w&&w.rst==='wait'){ const iv=setInterval(()=>{ const a=$('#m55Rw'), b=$('#m55Rs'); if(!a||w.rst!=='wait'){ clearInterval(iv); return; } const sec=Math.round((Date.now()-(w.rt0||Date.now()))/1000); if(b) b.textContent=Math.floor(sec/60)+':'+String(sec%60).padStart(2,'0'); a.textContent=L.m55Reviewing[Math.min(L.m55Reviewing.length-1,Math.floor(sec/20))]; },1000); } } }
+  if(foot){ f.innerHTML=foot; f.hidden=false; }
+  m.oninput=ev=>{ const t=ev.target, d=t.dataset||{}; if(d.m55f&&M55.G){ M55.G[d.m55f]=t.value; return; } if(d.m55own!=null){ M55.own[+d.m55own]=t.value; const q=$('#m55Qn'); if(q&&M55.qs) q.textContent=L.m55QN(m55Answered(),M55.qs.length); return; }
+    const p=s.list.find(x=>x.id===arg), w=p&&m55Week(p); if(!w||w.review) return;
+    if(d.m55rep!=null&&w.tasks[+d.m55rep]){ w.tasks[+d.m55rep].rep=t.value.slice(0,500); m55Save(); } else if(d.m55qa!=null){ w.qa=w.qa||{}; w.qa[+d.m55qa]=t.value.slice(0,240); m55Save(); } else if(d.m55note){ w.note=t.value.slice(0,800); m55Save(); } };
+  m.onchange=ev=>{ const t=ev.target, d=t.dataset||{}; if(d.m55f&&M55.G){ M55.G[d.m55f]=t.value; return; } if(d.m55rep!=null||d.m55qa!=null||d.m55note) m55Save(true); }; }
+{ const _br55=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||t.name!=='ment55'){ _br55(restore); return; } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f');
+    d.querySelector('#bpg-back').innerHTML=ico('back',22)+`<span class="sr">${esc(L.back)}</span>`; d.querySelector('#bpg-x').innerHTML=ico('close',22)+`<span class="sr">${esc(L.close)}</span>`; m.onclick=null; m.oninput=null; m.onchange=null; f.innerHTML=''; f.hidden=true; f.onclick=null;
+    m55R(m,f,t.arg); m.scrollTop=restore?(t.y||0):0; }; }
+function m55Redraw(keepY){ const m=$('#bpg-m'), f=$('#bpg-f'), t=bpTop(); if(!m||!f||!t||t.name!=='ment55') return; const y=m.scrollTop; f.innerHTML=''; f.hidden=true; m55R(m,f,t.arg); m.scrollTop=keepY===false?0:y; }
+function m55AskSifra(q,send){ try{ if(send){ sifraOpen(q); return; } sifraOpen(); setTimeout(()=>{ const i=$('#sf-in'); if(i){ i.value=q; i.dispatchEvent(new Event('input')); i.focus(); try{ i.setSelectionRange(q.length,q.length); }catch(e){} } },160); }catch(e){} }
+
+/* ---------- нажатия ---------- */
+document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) return; const o=t.closest('[data-m55open]');
+  if(o){ e.preventDefault(); e.stopImmediatePropagation(); m55Open(o.getAttribute('data-m55open')==='new'?'new':''); return; }
+  if(!t.closest('#bpPage')||!m55On()) return; const s=m55St(), m=$('#bpg-m'), arg=bpTop().arg, p=s.list.find(x=>x.id===arg), w=p&&m55Week(p); let el;
+  if((el=t.closest('[data-m55c]'))&&M55.G){ const k=el.dataset.m55c, v=el.dataset.v; M55.G[k]=+v; const y=m.scrollTop; m.innerHTML=m55FormHTML(M55.G); m.scrollTop=y; const nb=m.querySelector(`[data-m55c="${k}"][data-v="${CSS.escape(v)}"]`); if(nb) nb.focus(); return; }
+  if((el=t.closest('[data-m55ex]'))&&M55.G){ const x=L.m55Ex[+el.dataset.m55ex]; if(x){ M55.G.want=x[1]; const i=$('#m55-want'); if(i){ i.value=x[1]; i.focus(); } } return; }
+  if(t.closest('#m55Go')){ const G=M55.G; G.want=String(G.want||'').trim(); if(G.want.length<3){ const er=$('#m55-err'); if(er){ er.textContent=L.m55NeedWant; er.classList.add('show'); } const i=$('#m55-want'); if(i) i.focus(); return; } m55AskQs(); bpGo('ment55','qs'); return; }
+  if(t.closest('[data-m55qsretry]')){ m55AskQs(); m55Redraw(); return; }
+  if((el=t.closest('[data-m55q]'))&&M55.qs){ const k=+el.dataset.m55q, Q=M55.qs[k], op=Q.opts[+el.dataset.j]; let a=[].concat(M55.ans[k]||[]); if(a.includes(op)) a=a.filter(x=>x!==op); else a=Q.multi?a.concat(op):[op]; M55.ans[k]=a;
+    el.parentElement.querySelectorAll('[data-m55q]').forEach(b=>{ const on=a.includes(Q.opts[+b.dataset.j]); b.classList.toggle('on',on); b.setAttribute('aria-pressed',String(on)); }); const q=$('#m55Qn'); if(q) q.textContent=L.m55QN(m55Answered(),M55.qs.length); return; }
+  if((el=t.closest('[data-m55build]'))){ if(el.disabled||!M55.G) return; m55Build(el.dataset.m55build==='skip'); return; }
+  if((el=t.closest('[data-m55go]'))){ M55.tab='week'; s.cur=el.dataset.m55go; bpGo('ment55',el.dataset.m55go); return; }
+  if(t.closest('[data-m55new]')){ if(s.list.filter(x=>x&&x.plan).length>=5){ try{ toast(L.m55Max); }catch(x){} if(arg!=='list') bpGo('ment55','list'); return; } M55.G=m55Def(); M55.qs=null; bpGo('ment55','new'); return; }
+  if(t.closest('[data-m55list]')){ bpGo('ment55','list'); return; }
+  if((el=t.closest('[data-m55again]'))){ const x=s.list.find(z=>z.id===el.dataset.m55again); if(x){ m55Run(x); m55Redraw(false); } return; }
+  if((el=t.closest('[data-m55del]'))){ if(el.dataset.sure!=='1'){ el.dataset.sure='1'; el.textContent=L.m55DelSure; return; } s.list=s.list.filter(z=>z.id!==el.dataset.m55del); if(s.cur===el.dataset.m55del) delete s.cur; m55Save(true); bpReplace('ment55',s.list.length?'list':'intro'); return; }
+  if(!p||!p.plan) return;
+  if((el=t.closest('[data-m55tab]'))){ const k=el.dataset.m55tab; if(k===M55.tab) return; M55.tab=k; const tabs=m.querySelector('.m55-tabs'), y=Math.min(m.scrollTop,tabs?Math.max(0,tabs.offsetTop):0); m55Redraw(); m.scrollTop=y; const nb=m.querySelector(`[data-m55tab="${k}"]`); if(nb) nb.focus({preventScroll:true}); return; }
+  if(t.closest('[data-m55ask]')){ m55AskSifra(L.m55AskQ(m55Title(p),m55Stage(p).name)); return; }
+  if(t.closest('[data-m55re]')){ el=t.closest('[data-m55re]'); if(el.dataset.sure!=='1'){ el.dataset.sure='1'; el.lastChild.textContent=' '+L.m55ReSure; return; } m55Run(p); m55Redraw(false); return; }
+  if(!w) return;
+  if((el=t.closest('[data-m55st]'))&&!w.review){ const card=el.closest('[data-m55task]'), i=+card.dataset.m55task, tk=w.tasks[i], v=el.dataset.m55st; if(!tk) return; tk.st=tk.st===v?'':v; card.className='m55-task'+(tk.st?' st-'+tk.st:'');
+    card.querySelectorAll('[data-m55st]').forEach(b=>{ const on=b.dataset.m55st===tk.st; b.classList.toggle('on',on); b.setAttribute('aria-pressed',String(on)); }); const sm=$('#m55Sum'); if(sm) sm.textContent=m55SumT(w); m55Save(true); try{ m40Vib(); }catch(x){} return; }
+  if((el=t.closest('[data-m55hb]'))&&!w.review){ if(el.disabled) return; const i=el.dataset.m55hb, d=el.dataset.d; w.hb=w.hb||{}; const o=w.hb[i]=w.hb[i]||{}; if(o[d]) delete o[d]; else o[d]=1; el.classList.toggle('on',!!o[d]); el.setAttribute('aria-pressed',String(!!o[d])); m55Save(true); return; }
+  if(t.closest('#m55Rev')){ const er=$('#m55-rerr'), bad=c=>{ if(er){ er.textContent=m55ErrT(c); er.classList.add('show'); er.scrollIntoView({block:'center'}); } };
+    if(!w.tasks.some(x=>x.st||String(x.rep||'').trim())&&!String(w.note||'').trim()){ bad('week'); return; } if(navigator.onLine===false){ bad('off'); return; } m55Review(p,w); m55Redraw(false); return; }
+  if(t.closest('[data-m55next]')){ m55NextWeek(p); M55.tab='week'; m55Redraw(false); return; }
+  if(t.closest('[data-m55stage]')&&w.review){ const n=p.plan.stages.length; if((p.stage|0)<n-1){ p.stage=(p.stage|0)+1; w.moved=1; m55Save(true); try{ toast(L.m55StageMoved(m55Stage(p).name)); }catch(x){} m55Redraw(); } return; }
+  if((el=t.closest('[data-m55redo]'))&&w.review&&!w.moved){ if(el.dataset.sure!=='1'){ el.dataset.sure='1'; el.textContent=L.m55RedoSure; return; } delete w.review; delete w.rsrc; delete w.rat; delete w.rmodel; delete w.rst; delete w.rerr; m55Save(true); m55Redraw(false); return; }
+  if(t.closest('[data-m55revask]')){ m55AskSifra(L.m55RevAskQ(w.n),true); return; }
+  if(t.closest('[data-m55chask]')&&w.review){ m55AskSifra(L.m55ChangeQ(String(w.review.change||'').slice(0,400)),true); return; } },true);
+document.addEventListener('keydown',e=>{ if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft') return; const b=e.target&&e.target.closest&&e.target.closest('.m55-tb [role=tab]'); if(!b) return; const a=[...b.parentElement.querySelectorAll('[role=tab]')], k=a.indexOf(b), nx=a[(k+(e.key==='ArrowRight'?1:a.length-1))%a.length]; if(nx){ e.preventDefault(); nx.click(); } });
+document.addEventListener('toggle',e=>{ const d=e.target; if(d&&d.matches&&d.matches('.m55-lw')) M55.logOpen=d.open?+d.dataset.m55lw:(M55.logOpen===+d.dataset.m55lw?null:M55.logOpen); },true);
+
+/* ---------- Сифра знает про программу; входы: «Ещё», «+» у Сифры, приветствие ---------- */
+function m55CtxMentor(){ const p=m55Cur(); if(!p) return null; const st=m55Stage(p), w=m55Week(p), cut=(s,n)=>String(s||'').slice(0,n);
+  const o={want:cut(p.M.want,160),chance:p.plan.chance,stage:{i:(p.stage|0)+1,of:p.plan.stages.length,name:cut(st.name,60),goal:cut(st.goal,160),exit:(st.exit||[]).slice(0,4).map(x=>cut(x,90))}};
+  if(w) o.week={n:w.n,day:Math.min(99,m55DayN(w)),tasks:w.tasks.slice(0,5).map(t=>({l:cut(t.l,90),st:t.st||'todo'}))};
+  const lr=p.weeks.filter(x=>x.review).slice(-1)[0]; if(lr) o.last={n:lr.n,score:lr.review.score,verdict:cut(lr.review.verdict,200),wrong:(lr.review.wrong||[]).slice(0,2).map(x=>cut(x,120))};
+  return o; }
+{ const f0=sfCtx; sfCtx=function(){ const o=f0.apply(this,arguments); try{ const mm=m55CtxMentor(); if(mm&&o&&typeof o==='object'&&!Array.isArray(o)) return Object.assign({mentor:mm},o); }catch(e){} return o; }; }
+try{ const _ex55=m38Extra; m38Extra=function(){ const a=_ex55.apply(this,arguments); try{ const p=m55Cur(), w=p?m55Week(p):null, it={k:'ment55',g:'k',a:'data-m55open="1"',i:'mentor',t:L.m38It.ment55,s:p&&w?(m55Due(p)?L.m55SubDue:L.m55SubWeek(w.n)):L.m38ItS.ment55}; if(p&&m55Due(p)) it.w=1;
+    const k=a.findIndex(x=>x.k==='sifra'); a.splice(k>=0?k+1:a.length,0,it); }catch(e){} return a; }; }catch(e){}
+/* «Ещё» перерисовывается только вместе со всем экраном — подпись под «Наставник» обновляем сами, когда человек туда заходит */
+function m55MoreSync(){ try{ const c=document.querySelector('#moreView [data-mk="ment55"] small'); if(!c) return; const p=m55Cur(), w=p?m55Week(p):null, due=!!(p&&m55Due(p)); c.textContent=p&&w?(due?L.m55SubDue:L.m55SubWeek(w.n)):L.m38ItS.ment55; c.classList.toggle('warn',due); }catch(e){} }
+try{ const _st55=setTab; setTab=function(t){ const r=_st55.apply(this,arguments); if(t==='more') m55MoreSync(); return r; }; }catch(e){}
+try{ const _in55=m54Insights; m54Insights=function(){ const out=_in55.apply(this,arguments); try{ const p=m55Cur(), w=p?m55Week(p):null; if(p&&w){ const dn=w.tasks.filter(t=>t.st==='yes').length, due=m55Due(p)||!!w.review;
+      const it={id:'ment',k:L.m55InsK,v:w.review?L.m55RevOf(w.n):L.m55TasksSum(dn,w.tasks.length),s:w.review?L.m55NextGo(w.n+1):m55Due(p)?L.m55Due:L.m55WeekN(w.n)+' · '+L.m55Day(Math.min(7,m55DayN(w))),pct:w.tasks.length?Math.round(dn/w.tasks.length*100):0};
+      if(due) out.unshift(it); else out.splice(Math.min(2,out.length),0,it); return out.slice(0,6); } }catch(e){} return out; }; }catch(e){}
+try{ const _iv55=m54InsViz; m54InsViz=function(x){ if(x&&x.id==='ment'){ const R=9, C=2*Math.PI*R; return `<svg class="m54-iv rg" viewBox="0 0 24 24" aria-hidden="true"><circle class="t" cx="12" cy="12" r="${R}"/><circle class="f" cx="12" cy="12" r="${R}" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${(C*(1-(+x.pct||0)/100)).toFixed(1)}"/></svg>`; } return _iv55.apply(this,arguments); }; }catch(e){}
+try{ const _h55=m52HelloHTML; m52HelloHTML=function(){ let h=_h55.apply(this,arguments); try{ if(!m55Cur()){ const b=`<button type="button" class="m55-hello" data-m55open="1"><span aria-hidden="true">${ico('mentor',22)}</span><span><b>${esc(L.m55InsNew)}</b><small>${esc(L.m55InsK+' — '+L.m55InsNewS)}</small></span>${ico('next',16)}</button>`, k=h.indexOf('<p class="m52-cap">'); h=k>=0?h.slice(0,k)+b+h.slice(k):h+b; } }catch(e){} return h; }; }catch(e){}
+try{ const _tr55=m54Tray; m54Tray=function(on){ const r=_tr55.apply(this,arguments); try{ const g=on&&sheet.querySelector('#m54-tray .m54-tg'); if(g&&!g.querySelector('.m55-tw')) g.insertAdjacentHTML('afterbegin',`<button type="button" role="menuitem" class="m55-tw" data-m55open="1"><span>${ico('mentor',22)}</span><b>${esc(L.m55Tray[0])}</b><small>${esc(L.m55Tray[1])}</small></button>`); }catch(e){} return r; }; }catch(e){}
+document.addEventListener('click',e=>{ const c=e.target&&e.target.closest&&e.target.closest('.m54-ic.ment'); if(c){ e.preventDefault(); e.stopImmediatePropagation(); m55Open(); } },true);
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
