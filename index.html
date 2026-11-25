@@ -5364,6 +5364,118 @@ html.m48-live .m51-p.k-few .kn.few .mi{animation:m51tw 2.4s ease-in-out infinite
 @keyframes m51tw{0%,100%{transform:rotate(0)} 50%{transform:rotate(-18deg)}}
 @media (prefers-reduced-motion:reduce){ html.m48-live [class*="m51-"],html.m48-live [class*="m51-"] *{animation:none!important; transition:none!important;} }
 #bpg-f [data-m51again][disabled]{opacity:.5;}
+/* ---------- v52: «Сифра 2.0» — окно на весь экран, карточки мгновенных ответов, ход работы, память ---------- */
+html .overlay.m52-ov:has(.sf-head){align-items:stretch !important; background:var(--bg) !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important;}
+html .sheet.m52:has(.sf-head), html.m40[data-sk] .sheet.m52:has(.sf-head){width:100%; max-width:720px; height:100vh; height:100dvh; max-height:none !important; border-radius:0 !important; padding:0 !important; display:flex; flex-direction:column; overflow:hidden; box-shadow:none !important; background:var(--bg) !important; animation:m52in .2s ease-out;}
+.sheet.m52:has(.sf-head)::before{display:none;}
+@keyframes m52in{from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none}}
+@media (prefers-reduced-motion:reduce){ .sheet.m52:has(.sf-head){animation:none} }
+@media (min-width:720px){ .overlay.m52-ov:has(.sf-head){justify-content:center;} .sheet.m52:has(.sf-head){border-left:1px solid var(--line); border-right:1px solid var(--line);} }
+
+.sheet.m52 .sf-head{flex:none; margin:0; gap:10px; padding:calc(10px + env(safe-area-inset-top,0px)) max(10px,env(safe-area-inset-right,0px)) 10px max(14px,env(safe-area-inset-left,0px)); background:var(--surface); border-bottom:1px solid var(--line); position:relative; z-index:3;}
+.sheet.m52 .sf-head h3{font-size:1.08rem; line-height:1.2;}
+.sheet.m52 .sf-head small{display:flex; align-items:center; gap:6px; font-size:.78rem; min-width:0;}
+.sheet.m52 .sf-head>div{min-width:0; flex:1;}
+.sheet.m52 .sf-head .sf-talkbtn{margin-left:0; padding:8px 10px;}
+.sheet.m52 .sf-head .sf-tic{width:40px; height:40px; margin-left:0;}
+.m52-dot{flex:none; width:8px; height:8px; border-radius:50%; background:#1FA971;} .m52-dot.off{background:var(--gold,#E0A030);}
+@media (max-width:380px){ .sheet.m52 .sf-head .sf-talkbtn span{display:none;} }
+
+.sheet.m52 .f34x-bar{flex:none; margin:8px 14px 0;}
+.sheet.m52 .sf-log{flex:1 1 auto; min-height:0; max-height:none; padding:14px max(14px,env(safe-area-inset-right,0px)) 12px max(14px,env(safe-area-inset-left,0px)); gap:10px; scroll-behavior:auto;}
+.sheet.m52 .sf-m{max-width:90%; font-size:.97rem; border-radius:20px; padding:11px 14px;}
+.sheet.m52 .sf-m.u{border-bottom-right-radius:7px;}
+.sheet.m52 .sf-m.a{border-bottom-left-radius:7px; background:var(--surface); border:1px solid var(--line); padding-right:40px;}
+.sheet.m52 .sf-m.a.m45-m, .sheet.m52 .sf-m.a.m46-m{max-width:100%; width:100%;}
+.sheet.m52 .sf-qs{flex:none; margin:0; padding:6px max(14px,env(safe-area-inset-right,0px)) 8px max(14px,env(safe-area-inset-left,0px));}
+.sheet.m52 .sf-pv{flex:none; margin:0 14px 6px;}
+.sheet.m52 .sf-bar{flex:none; margin:0 max(12px,env(safe-area-inset-right,0px)) 0 max(12px,env(safe-area-inset-left,0px)); border-radius:26px; box-shadow:0 6px 22px rgba(20,16,40,.07);}
+.sheet.m52 .sf-note{flex:none; margin:6px 16px calc(8px + env(safe-area-inset-bottom,0px)); font-size:.72rem; line-height:1.35; text-align:center;}
+.sheet.m52 .sf-tp{flex:none;}
+.sheet.m52.sf-talking{height:100vh; height:100dvh; padding-top:calc(14px + env(safe-area-inset-top,0px));}
+.sheet.m52.sf-talking .sf-tp{flex:1;}
+
+/* метки дней */
+.m52-day{align-self:center; margin:4px 0 0;} .m52-day span{display:inline-block; font-size:.74rem; font-weight:700; color:var(--muted); background:var(--surface-2); border-radius:999px; padding:3px 11px;}
+
+/* действия под ответом */
+.m52-acts{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+.m52-acts button{border:1px solid var(--line); background:transparent; color:var(--brand-ink); border-radius:999px; padding:6px 12px; min-height:34px; font:inherit; font-size:.8rem; font-weight:800; cursor:pointer;}
+.m52-acts button:active{background:var(--brand-weak);}
+.sheet.m52 .sf-m.a .m52-acts{margin-right:-26px;}
+
+/* карточка мгновенного ответа */
+.sheet.m52 .sf-m.a.m52-loc{max-width:100%; width:100%; padding:14px; border-color:color-mix(in srgb,var(--brand) 26%,var(--line)); display:flex; flex-direction:column; gap:6px;}
+.sheet.m52 .sf-m.a.m52-loc.warn{border-color:color-mix(in srgb,#D5483A 45%,var(--line));}
+.sheet.m52 .sf-m.a.m52-loc .m52-acts{margin-right:0;}
+.m52-tag{align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:.72rem; font-weight:800; color:var(--brand-ink); background:var(--brand-weak); border-radius:999px; padding:3px 10px 3px 7px;}
+.m52-big{margin:4px 0 0 !important; font-size:1.9rem; font-weight:800; line-height:1.1; letter-spacing:-.01em; font-variant-numeric:tabular-nums; display:flex; align-items:baseline; flex-wrap:wrap; gap:8px;}
+.m52-cmp{font-size:.84rem; font-weight:800; border-radius:999px; padding:2px 9px;} .m52-cmp.up{color:#0E8F5B; background:color-mix(in srgb,#0E8F5B 14%,transparent);} .m52-cmp.dn{color:#D5483A; background:color-mix(in srgb,#D5483A 13%,transparent);}
+.m52-sub{margin:0 !important; color:var(--muted); font-size:.86rem; font-weight:600;}
+.m52-txt{margin:2px 0 0 !important; line-height:1.45;}
+.m52-bar{height:10px; border-radius:5px; background:var(--track,var(--surface-2)); overflow:hidden; margin-top:6px;} .m52-bar i{display:block; height:100%; border-radius:5px; background:var(--brand);}
+.m52-barl{color:var(--muted); font-size:.78rem; font-weight:600;}
+.m52-sp{display:block; width:100%; height:auto; margin-top:4px;} .m52-sp rect{fill:color-mix(in srgb,var(--brand) 38%,transparent);} .m52-sp rect.on{fill:var(--brand);} .m52-sp rect.z{fill:var(--line);} .m52-sp text{font-size:10px; font-weight:700; fill:var(--muted);}
+.m52-bars{display:grid; gap:7px; margin-top:6px;} .m52-bars>div{display:grid; grid-template-columns:minmax(0,7.4em) 1fr auto; gap:8px; align-items:center; font-size:.84rem;}
+.m52-bars span{min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;} .m52-bars i{display:block; height:10px; border-radius:5px; background:var(--track,var(--surface-2)); overflow:hidden;} .m52-bars u{display:block; height:100%; border-radius:5px; background:var(--brand);} .m52-bars b{font-variant-numeric:tabular-nums; white-space:nowrap;}
+.m52-rows{list-style:none; margin:6px 0 0 !important; padding:0 !important;} .m52-rows li{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 !important; padding:7px 0; border-top:1px solid var(--line); font-size:.9rem;}
+.m52-rows li span{min-width:0; overflow-wrap:anywhere;} .m52-rows li b{font-variant-numeric:tabular-nums; text-align:right; white-space:nowrap;} .m52-rows li.bad b{color:#D5483A;}
+.m52-fu{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;} .m52-fu .chip{white-space:normal; text-align:left;}
+
+/* приветствие */
+.sheet.m52 .sf-hello.m52-hi{background:none; padding:6px 2px 0; border-radius:0; line-height:1.4;}
+.m52-hi-t{margin:0; font-size:1.36rem; font-weight:800; line-height:1.2; letter-spacing:-.01em; text-wrap:balance;}
+.m52-hi-s{margin:8px 0 0; color:var(--muted); font-size:.92rem; font-weight:600; max-width:44ch;}
+.m52-cap{margin:18px 0 8px; font-size:.82rem; font-weight:800; color:var(--muted);}
+.m52-now{display:grid; gap:8px;}
+.m52-now button{display:flex; align-items:center; gap:10px; width:100%; text-align:left; border:1px solid color-mix(in srgb,var(--brand) 24%,var(--line)); background:var(--surface); color:var(--ink); border-radius:16px; padding:12px 12px 12px 10px; min-height:52px; font:inherit; cursor:pointer;}
+.m52-now button span{flex:none; width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m52-now button b{flex:1; min-width:0; font-size:.97rem; line-height:1.3;} .m52-now button>svg{flex:none; color:var(--muted);}
+.m52-grid{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
+.m52-grid button{display:flex; flex-direction:column; align-items:flex-start; gap:4px; text-align:left; border:1px solid var(--line); background:var(--surface); color:var(--ink); border-radius:16px; padding:12px; font:inherit; cursor:pointer; min-width:0;}
+.m52-grid button span{width:36px; height:36px; border-radius:12px; display:grid; place-items:center; background:var(--surface-2); color:var(--brand-ink); margin-bottom:2px;}
+.m52-grid button b{font-size:.9rem; line-height:1.25;} .m52-grid button small{color:var(--muted); font-size:.78rem; font-weight:600; line-height:1.3;}
+
+/* кнопка «вниз» */
+#m52-down{position:absolute; right:14px; bottom:calc(150px + env(safe-area-inset-bottom,0px)); z-index:2; width:42px; height:42px; border-radius:50%; border:1px solid var(--line); background:var(--surface); color:var(--ink); display:grid; place-items:center; box-shadow:0 6px 18px rgba(20,16,40,.16); cursor:pointer;}
+#m52-down[hidden]{display:none;}
+.sheet.m52{position:relative;}
+
+/* меню */
+#m52-pop{position:absolute; top:calc(58px + env(safe-area-inset-top,0px)); right:10px; z-index:6; min-width:240px; max-width:calc(100% - 20px); background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:6px; box-shadow:0 18px 44px rgba(20,16,40,.22); display:grid;}
+#m52-pop button{display:flex; align-items:center; justify-content:space-between; gap:12px; border:0; background:none; color:var(--ink); text-align:left; font:inherit; font-weight:700; font-size:.95rem; padding:12px; border-radius:12px; min-height:46px; cursor:pointer;}
+#m52-pop button:active{background:var(--surface-2);} #m52-pop button.warn{color:#D5483A;} #m52-pop button i{font-style:normal; font-size:.78rem; font-weight:800; color:var(--muted); background:var(--surface-2); border-radius:999px; padding:2px 8px;}
+
+/* страницы внутри окна */
+.sheet.m52.m52-p>#sf-log, .sheet.m52.m52-p>#sf-qs, .sheet.m52.m52-p>.sf-bar, .sheet.m52.m52-p>.sf-note, .sheet.m52.m52-p>#m52-down, .sheet.m52.m52-p>.sf-pv, .sheet.m52.m52-p>.f34x-bar{display:none !important;}
+#m52-panel{flex:1 1 auto; min-height:0; overflow-y:auto; padding:10px max(16px,env(safe-area-inset-right,0px)) calc(20px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));}
+#m52-panel[hidden]{display:none;}
+.m52-ph{display:flex; align-items:center; gap:10px; margin:0 0 8px -4px;} .m52-ph h4{margin:0; font-size:1.12rem; font-weight:800;} .m52-ph .sf-tic{width:40px; height:40px;}
+.m52-lead{margin:0 0 12px; color:var(--muted); font-size:.9rem; font-weight:600; line-height:1.45; max-width:60ch;}
+.m52-add{display:flex; gap:8px; margin-bottom:12px;} .m52-add input{flex:1; min-width:0; border:1.5px solid var(--line); background:var(--surface); color:var(--ink); border-radius:14px; padding:12px 14px; font:inherit; font-size:1rem;} .m52-add .btn{flex:none; width:auto; padding:0 16px; min-height:48px;}
+.m52-list{list-style:none; margin:0; padding:0; display:grid; gap:8px;}
+.m52-list li{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:12px 14px; display:flex; align-items:center; justify-content:space-between; gap:12px; min-width:0;}
+.m52-list li>span{min-width:0; overflow-wrap:anywhere; line-height:1.4;}
+.m52-list.sent li, .m52-list.saved li{flex-direction:column; align-items:stretch; gap:4px;}
+.m52-list.sent li>div{display:flex; justify-content:space-between; gap:10px; align-items:baseline;} .m52-list small{color:var(--muted); font-size:.78rem; font-weight:600; line-height:1.35;}
+.m52-pt{font-size:.94rem; line-height:1.5; overflow-wrap:anywhere;} .m52-pt p{margin:0 0 6px;} .m52-pt ul{margin:4px 0 6px; padding-left:18px;}
+.m52-empty{margin:8px 0; color:var(--muted); font-weight:600; line-height:1.45;}
+.m52-auto{margin:0; padding-left:18px; color:var(--muted); font-size:.9rem; font-weight:600; line-height:1.6;}
+
+/* ход работы и ответ по мере набора */
+.sheet.m52 .sf-wait.m52-w{flex-wrap:wrap; max-width:100%; width:100%; align-items:flex-start; padding-right:14px;}
+.sheet.m52 .sf-wait.m52-wt>.sf-dots, .sheet.m52 .sf-wait.m52-wt>#sf-tm{display:none;}
+.m52-live{flex:1 1 100%; min-width:0; display:flex; flex-direction:column; gap:8px; font-weight:500;}
+.m52-steps{list-style:none; margin:4px 0 0; padding:0; display:grid; gap:6px;}
+.m52-steps li{display:flex; align-items:flex-start; gap:8px; margin:0 !important; font-size:.86rem; font-weight:700; color:var(--muted); line-height:1.35;}
+.m52-steps li i{flex:none; width:18px; height:18px; border-radius:50%; display:grid; place-items:center; background:var(--surface-2); color:transparent; margin-top:1px;}
+.m52-steps li.ok i{background:color-mix(in srgb,#0E8F5B 16%,transparent); color:#0E8F5B;}
+.m52-steps li.now{color:var(--ink);} .m52-steps li.now i{background:var(--brand); box-shadow:0 0 0 4px var(--brand-weak);}
+.m52-steps li span{min-width:0; overflow-wrap:anywhere;}
+.m52-ltxt{color:var(--ink); font-size:.97rem; line-height:1.5; overflow-wrap:anywhere;} .m52-ltxt>p:last-child::after, .m52-ltxt>ul:last-child>li:last-child::after{content:'▍'; margin-left:2px; color:var(--brand); animation:m52blink 1s steps(2,end) infinite;}
+@keyframes m52blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){ .m52-ltxt>p:last-child::after, .m52-ltxt>ul:last-child>li:last-child::after{animation:none} }
+.sheet.m52:has(.sf-head)::after{flex:none;}
 /* <</v44 css>> */
 
 
@@ -24506,6 +24618,305 @@ document.addEventListener('change',ev=>{ const t=ev.target; if(!t||!t.closest) r
   if(t.dataset.m51done!=null){ const e=m51E(top.arg); if(!e||!e.plan) return; e.done=e.done||{}; e.done[t.dataset.m51done]=t.checked; try{ persist(); }catch(x){} const li=t.closest('li'); if(li) li.classList.toggle('dn',t.checked); const pg=$('#m51Pg'), sp=m51StepsProg(e);
     if(pg){ pg.querySelector('span').textContent=L.m51SProg(sp.d,sp.n); pg.querySelector('i b').style.width=(sp.n?Math.round(sp.d/sp.n*100):0)+'%'; } if(t.checked){ try{ m40Vib(); }catch(x){} } } });
 document.addEventListener('toggle',ev=>{ const d=ev.target; if(d&&d.classList&&d.classList.contains('m51-qd')&&d.closest&&d.closest('#m48Ld')){ try{ m48LdSt().qd=d.open?1:0; }catch(e){} } },true);
+/* ---------- v52: строки — «Сифра 2.0»: новое окно, мгновенные ответы, ход работы, память, журнал отправок ---------- */
+const M52S={
+  ru:{
+    m52Sub:'Отвечает из ваших записей сразу, остальное ищет в интернете', m52On:'на связи', m52Off:'нет сети — отвечаю из ваших записей',
+    m52Menu:'Ещё', m52MMem:'Что Сифра помнит', m52MSent:'Что уходило Сифре', m52MSaved:'Сохранённые ответы', m52MClear:'Очистить переписку', m52Back:'Назад к переписке',
+    m52Hi:'Спросите о своих деньгах или скажите, что записать', m52HiSub:'На частые вопросы о ваших цифрах отвечаю сразу и без интернета. Остальное ищу и считаю на сервере.',
+    m52Now:'Сейчас важно', m52Can:'Что я умею',
+    m52Caps:[['Ответить о ваших цифрах','«Сколько осталось по кредитам?»'],['Записать по словам','«Расход 30 на дорогу»'],['Разобрать фото','чек, договор, график, товар'],['Показать графиком','«Покажи продажи за неделю»'],['Найти свежее в интернете','«Что сейчас с ценами на хлопок?»'],['Посчитать и спланировать','«Хватит ли денег на платежи?»']],
+    m52CapQ:['Сколько осталось по кредитам?','Расход 30 на дорогу','','Покажи продажи за неделю графиком','Что сейчас с ценами на хлопок?','Хватит ли денег на платежи в этом месяце?'],
+    m52Q:{debt:'Сколько осталось по кредитам?',next:'Когда ближайший платёж?',free:'Когда закроются все кредиты?',owed:'Кто мне должен?',today:'Сколько выручки сегодня?',week:'Как прошла неделя?',month:'Сколько выручки в этом месяце?',exp:'На что ушли деньги в этом месяце?',chartLoan:'Покажи остаток по кредитам графиком',chartWeek:'Покажи продажи за неделю графиком',first:'Какой кредит гасить первым?',enough:'Хватит ли денег на платежи в этом месяце?',remind:'Кому из должников напомнить первым?'},
+    m52Loc:'посчитано на телефоне', m52LocSub:'из ваших записей, без интернета', m52AskSrv:'Подробнее у Сифры', m52Copy:'Копировать', m52Copied:'Скопировано', m52Simple:'Проще', m52More:'Подробнее', m52Pin:'Сохранить', m52Pinned:'Сохранено — лежит в «Сохранённых ответах»', m52Retry:'Повторить', m52Del:'Удалить',
+    m52SimpleQ:'Объясни свой последний ответ проще и короче, обычными словами.', m52MoreQ:'Объясни свой последний ответ подробнее, с примером на моих цифрах.',
+    m52ANoLoans:'Кредитов в Mira нет.', m52ADebt:(s,n)=>'Осталось выплатить '+s+'. Кредитов: '+n+'.', m52APaid:p=>'выплачено '+p+'% от взятого', m52AInt:'Процентов ещё впереди',
+    m52ANext:(nm,s,w)=>'Ближайший платёж: '+nm+' — '+s+', '+w+'.', m52AWeek7:'Всего за 7 дней', m52WToday:'сегодня', m52WTom:'завтра', m52WIn:d=>'через '+d+' дн.', m52WLate:d=>'просрочен на '+d+' дн.',
+    m52AFree:(d,m)=>'Все кредиты закроются к '+d+' — через '+m+' мес., если платить по графику.', m52ANoFree:'Не хватает данных о сроках кредитов, чтобы назвать дату.',
+    m52AOwed:(s,n)=>'Вам должны '+s+'. Человек: '+n+'.', m52ANoOwed:'Сейчас вам никто не должен.',
+    m52ASales:(p,s)=>'Выручка '+p+': '+s+'.', m52P:{today:'сегодня',yest:'вчера',week:'за 7 дней',month:'в этом месяце'}, m52AUp:p=>'Это на '+p+'% больше, чем за прошлый такой же срок.', m52ADown:p=>'Это на '+p+'% меньше, чем за прошлый такой же срок.', m52ANoSales:'Записей о выручке за это время нет.', m52ABest:'Лучший день', m52AAvg:'В среднем в день', m52APrev:'Прошлый такой же срок',
+    m52AExp:s=>'Расходы магазина в этом месяце: '+s+'.', m52ANoExp:'Записей о расходах магазина в этом месяце нет.', m52AHome:'Отдельно — дом и семья',
+    m52ARate:(c,v)=>'1 '+c+' = '+v+'.', m52ARateSub:'курс из Mira',
+    m52StSent:'Вопрос у Сифры', m52StMode:{chat:'обычный ответ',loan:'проверяю кредиты как бухгалтер',expert:'отвечаю как эксперт',biz:'разбираю ваше дело',source:'ищу поставщиков'}, m52StSearch:q=>'Ищу: «'+q+'»', m52StFound:n=>'Нашла страниц: '+n, m52StRead:u=>'Читаю '+u, m52StTool:'Готовлю запись', m52StWrite:'Пишу ответ',
+    m52MemT:'Что Сифра помнит', m52MemLead:'Эти строки уходят Сифре вместе с каждым вопросом, чтобы она отвечала с учётом вашего дела. Хранятся в телефоне. Удалить можно в любой момент.', m52MemPh:'Например: аренда 3 000 в месяц', m52MemAdd:'Добавить', m52MemEmpty:'Пока пусто. Напишите в чате «запомни: …» или добавьте строку здесь.', m52MemSaved:t=>'Запомнила: «'+t+'». Буду учитывать в ответах. Напоминание по дате это не ставит.', m52MemFull:'Память полна — 20 строк. Удалите лишнее.', m52MemOpen:'Открыть память',
+    m52MemAuto:'Из записей Сифра также видит', m52MemA:{loans:n=>'кредиты: '+n,shop:'выручку и расходы за месяц',rates:'курсы валют',invest:'расчёт закупки',trips:'последние поездки',earn:'дело недели и проверку магазина'},
+    m52SentT:'Что уходило Сифре', m52SentLead:'Последние отправки с этого телефона. Вопросы, на которые Mira ответила сама, никуда не уходят.', m52SentEmpty:'Пока ничего не уходило.', m52SentImg:'фото', m52SentKb:k=>k+' КБ', m52SentHas:'в данных', m52SentH:{loans:'кредиты',loans_full:'кредиты целиком с графиком',shop_month_tjs:'выручка и расходы',rates_tjs:'курсы',invest:'расчёт закупки',recent_trips:'поездки',earn:'дело недели',memory:'память',expert:'ниша эксперта'},
+    m52SavedT:'Сохранённые ответы', m52SavedEmpty:'Нажмите «Сохранить» под ответом — он останется здесь, даже когда переписка очистится.',
+    m52Today:'Сегодня', m52Yest:'Вчера', m52Down:'К последнему сообщению', m52OffMsg:'Нет интернета. На вопросы о ваших записях отвечу сама, остальное — когда появится сеть.',
+    m52Note:'Мгновенные ответы считаются в телефоне. Остальное Сифра ищет и считает на сервере. Решаете вы.'
+  },
+  tg:{
+    m52Sub:'Аз сабтҳои шумо дарҳол ҷавоб медиҳад, боқиро дар интернет меҷӯяд', m52On:'дар тамос', m52Off:'интернет нест — аз сабтҳои шумо ҷавоб медиҳам',
+    m52Menu:'Боз', m52MMem:'Сифра чиро дар ёд дорад', m52MSent:'Ба Сифра чӣ фиристода шуд', m52MSaved:'Ҷавобҳои нигоҳдошта', m52MClear:'Тоза кардани мукотиба', m52Back:'Бозгашт ба мукотиба',
+    m52Hi:'Дар бораи пулатон пурсед ё гӯед, ки чиро сабт кунам', m52HiSub:'Ба саволҳои маъмул дар бораи рақамҳои шумо дарҳол ва бе интернет ҷавоб медиҳам. Боқиро дар сервер меҷӯям ва ҳисоб мекунам.',
+    m52Now:'Ҳоло муҳим', m52Can:'Чӣ кор карда метавонам',
+    m52Caps:[['Дар бораи рақамҳои шумо ҷавоб додан','«Ман ба бонкҳо чанд қарздорам?»'],['Аз рӯи сухан сабт кардан','«Хароҷот 30 барои роҳ»'],['Суратро хондан','чек, шартнома, ҷадвал, мол'],['Бо график нишон додан','«Фурӯши ҳафтаро нишон деҳ»'],['Маълумоти навро дар интернет ёфтан','«Нархи пахта ҳоло чӣ гуна аст?»'],['Ҳисоб ва нақша','«Пул барои пардохтҳо мерасад?»']],
+    m52CapQ:['Ман ба бонкҳо чанд қарздорам?','Хароҷот 30 барои роҳ','','Фурӯши ҳафтаро бо график нишон деҳ','Нархи пахта ҳоло чӣ гуна аст?','Дар ин моҳ пул барои пардохтҳо мерасад?'],
+    m52Q:{debt:'Ман ба бонкҳо чанд қарздорам?',next:'Пардохти наздик кай аст?',free:'Кай ҳамаи қарзҳоро мепӯшам?',owed:'Кӣ ба ман қарздор аст?',today:'Даромади имрӯз чанд аст?',week:'Ҳафта чӣ хел гузашт?',month:'Даромади ин моҳ чанд аст?',exp:'Дар ин моҳ пул ба чӣ рафт?',chartLoan:'Бақияи қарзҳоро бо график нишон деҳ',chartWeek:'Фурӯши ҳафтаро бо график нишон деҳ',first:'Кадом қарзро аввал пардозам?',enough:'Дар ин моҳ пул барои пардохтҳо мерасад?',remind:'Ба кадом қарздор аввал ёдрас кунам?'},
+    m52Loc:'дар телефон ҳисоб шуд', m52LocSub:'аз сабтҳои шумо, бе интернет', m52AskSrv:'Муфассал аз Сифра', m52Copy:'Нусха', m52Copied:'Нусха шуд', m52Simple:'Соддатар', m52More:'Муфассалтар', m52Pin:'Нигоҳ доштан', m52Pinned:'Нигоҳ дошта шуд — дар «Ҷавобҳои нигоҳдошта»', m52Retry:'Такрор', m52Del:'Нест кардан',
+    m52SimpleQ:'Ҷавоби охиринатро соддатар ва кӯтоҳтар, бо суханони оддӣ фаҳмон.', m52MoreQ:'Ҷавоби охиринатро муфассалтар, бо мисол дар рақамҳои ман фаҳмон.',
+    m52ANoLoans:'Дар Mira қарз нест.', m52ADebt:(s,n)=>'Боқӣ мондааст '+s+'. Қарзҳо: '+n+'.', m52APaid:p=>p+'% аз маблағи гирифта пардохта шуд', m52AInt:'Фоизҳо ҳанӯз дар пеш',
+    m52ANext:(nm,s,w)=>'Пардохти наздик: '+nm+' — '+s+', '+w+'.', m52AWeek7:'Ҳамагӣ дар 7 рӯз', m52WToday:'имрӯз', m52WTom:'фардо', m52WIn:d=>'пас аз '+d+' рӯз', m52WLate:d=>d+' рӯз гузаштааст',
+    m52AFree:(d,m)=>'Ҳамаи қарзҳо то '+d+' пӯшида мешаванд — пас аз '+m+' моҳ, агар аз рӯи ҷадвал пардозед.', m52ANoFree:'Барои гуфтани сана маълумот дар бораи мӯҳлати қарзҳо намерасад.',
+    m52AOwed:(s,n)=>'Ба шумо '+s+' қарздоранд. Одамон: '+n+'.', m52ANoOwed:'Ҳоло касе ба шумо қарздор нест.',
+    m52ASales:(p,s)=>'Даромад '+p+': '+s+'.', m52P:{today:'имрӯз',yest:'дирӯз',week:'дар 7 рӯз',month:'дар ин моҳ'}, m52AUp:p=>'Ин аз мӯҳлати гузаштаи ҳамин гуна '+p+'% зиёдтар аст.', m52ADown:p=>'Ин аз мӯҳлати гузаштаи ҳамин гуна '+p+'% камтар аст.', m52ANoSales:'Дар ин муддат сабти даромад нест.', m52ABest:'Беҳтарин рӯз', m52AAvg:'Ба ҳисоби миёна дар як рӯз', m52APrev:'Мӯҳлати гузаштаи ҳамин гуна',
+    m52AExp:s=>'Хароҷоти мағоза дар ин моҳ: '+s+'.', m52ANoExp:'Дар ин моҳ сабти хароҷоти мағоза нест.', m52AHome:'Алоҳида — хона ва оила',
+    m52ARate:(c,v)=>'1 '+c+' = '+v+'.', m52ARateSub:'қурб аз Mira',
+    m52StSent:'Савол дар назди Сифра', m52StMode:{chat:'ҷавоби оддӣ',loan:'қарзҳоро чун муҳосиб месанҷам',expert:'чун коршинос ҷавоб медиҳам',biz:'кори шуморо таҳлил мекунам',source:'таъминкунандагонро меҷӯям'}, m52StSearch:q=>'Меҷӯям: «'+q+'»', m52StFound:n=>'Саҳифаҳо ёфт шуд: '+n, m52StRead:u=>'Мехонам: '+u, m52StTool:'Сабтро тайёр мекунам', m52StWrite:'Ҷавоб менависам',
+    m52MemT:'Сифра чиро дар ёд дорад', m52MemLead:'Ин сатрҳо бо ҳар савол ба Сифра мераванд, то ӯ бо назардошти кори шумо ҷавоб диҳад. Дар телефон нигоҳ дошта мешаванд. Ҳар вақт нест кардан мумкин аст.', m52MemPh:'Масалан: иҷора 3 000 дар як моҳ', m52MemAdd:'Илова', m52MemEmpty:'Ҳоло холӣ. Дар чат нависед «дар ёд дор: …» ё дар ин ҷо сатр илова кунед.', m52MemSaved:t=>'Дар ёд гирифтам: «'+t+'». Дар ҷавобҳо ба назар мегирам. Ин ёдраскунӣ барои сана намегузорад.', m52MemFull:'Хотира пур аст — 20 сатр. Зиёдатиро нест кунед.', m52MemOpen:'Кушодани хотира',
+    m52MemAuto:'Аз сабтҳо Сифра инчунин мебинад', m52MemA:{loans:n=>'қарзҳо: '+n,shop:'даромад ва хароҷоти моҳ',rates:'қурби асъор',invest:'ҳисоби харид',trips:'сафарҳои охирин',earn:'кори ҳафта ва санҷиши мағоза'},
+    m52SentT:'Ба Сифра чӣ фиристода шуд', m52SentLead:'Фиристодаҳои охирин аз ин телефон. Саволҳое, ки Mira худаш ҷавоб додааст, ба ҳеҷ куҷо намераванд.', m52SentEmpty:'Ҳоло чизе фиристода нашудааст.', m52SentImg:'сурат', m52SentKb:k=>k+' КБ', m52SentHas:'дар маълумот', m52SentH:{loans:'қарзҳо',loans_full:'қарзҳо пурра бо ҷадвал',shop_month_tjs:'даромад ва хароҷот',rates_tjs:'қурбҳо',invest:'ҳисоби харид',recent_trips:'сафарҳо',earn:'кори ҳафта',memory:'хотира',expert:'соҳаи коршинос'},
+    m52SavedT:'Ҷавобҳои нигоҳдошта', m52SavedEmpty:'Зери ҷавоб «Нигоҳ доштан»-ро пахш кунед — он дар ин ҷо мемонад, ҳатто агар мукотиба тоза шавад.',
+    m52Today:'Имрӯз', m52Yest:'Дирӯз', m52Down:'Ба паёми охирин', m52OffMsg:'Интернет нест. Ба саволҳо дар бораи сабтҳои шумо худам ҷавоб медиҳам, боқӣ — вақте ки шабака пайдо шавад.',
+    m52Note:'Ҷавобҳои фаврӣ дар телефон ҳисоб мешаванд. Боқиро Сифра дар сервер меҷӯяд ва ҳисоб мекунад. Қарор аз шумост.'
+  },
+  en:{
+    m52Sub:'Answers from your records at once, looks up the rest online', m52On:'online', m52Off:'no connection — answering from your records',
+    m52Menu:'More', m52MMem:'What Sifra remembers', m52MSent:'What was sent to Sifra', m52MSaved:'Saved answers', m52MClear:'Clear the chat', m52Back:'Back to the chat',
+    m52Hi:'Ask about your money or tell me what to record', m52HiSub:'Common questions about your own numbers are answered at once, without internet. The rest I look up and work out on the server.',
+    m52Now:'Worth a look now', m52Can:'What I can do',
+    m52Caps:[['Answer about your numbers','“How much do I owe the banks?”'],['Record from your words','“Expense 30 for transport”'],['Read a photo','receipt, contract, schedule, product'],['Show a chart','“Show sales for the week”'],['Find fresh facts online','“What is happening with cotton prices?”'],['Work out and plan','“Is there enough for the payments?”']],
+    m52CapQ:['How much do I owe the banks?','Expense 30 for transport','','Show sales for the week as a chart','What is happening with cotton prices?','Is there enough money for this month’s payments?'],
+    m52Q:{debt:'How much do I owe the banks?',next:'When is the next payment?',free:'When will I pay off all loans?',owed:'Who owes me?',today:'How much revenue today?',week:'How did the week go?',month:'How much revenue this month?',exp:'Where did the money go this month?',chartLoan:'Show loan balances as a chart',chartWeek:'Show sales for the week as a chart',first:'Which loan should I pay off first?',enough:'Is there enough money for this month’s payments?',remind:'Which debtor should I remind first?'},
+    m52Loc:'worked out on the phone', m52LocSub:'from your records, no internet', m52AskSrv:'Ask Sifra for more', m52Copy:'Copy', m52Copied:'Copied', m52Simple:'Simpler', m52More:'More detail', m52Pin:'Save', m52Pinned:'Saved — see “Saved answers”', m52Retry:'Try again', m52Del:'Delete',
+    m52SimpleQ:'Explain your last answer more simply and briefly, in plain words.', m52MoreQ:'Explain your last answer in more detail, with an example on my numbers.',
+    m52ANoLoans:'There are no loans in Mira.', m52ADebt:(s,n)=>s+' left to pay. Loans: '+n+'.', m52APaid:p=>p+'% of the borrowed amount is paid', m52AInt:'Interest still ahead',
+    m52ANext:(nm,s,w)=>'Next payment: '+nm+' — '+s+', '+w+'.', m52AWeek7:'Total in 7 days', m52WToday:'today', m52WTom:'tomorrow', m52WIn:d=>'in '+d+' days', m52WLate:d=>d+' days overdue',
+    m52AFree:(d,m)=>'All loans will be paid off by '+d+' — in '+m+' months, if you pay on schedule.', m52ANoFree:'Not enough data on loan terms to name a date.',
+    m52AOwed:(s,n)=>'You are owed '+s+'. People: '+n+'.', m52ANoOwed:'Nobody owes you right now.',
+    m52ASales:(p,s)=>'Revenue '+p+': '+s+'.', m52P:{today:'today',yest:'yesterday',week:'over 7 days',month:'this month'}, m52AUp:p=>'That is '+p+'% more than the previous period of the same length.', m52ADown:p=>'That is '+p+'% less than the previous period of the same length.', m52ANoSales:'No revenue records for this time.', m52ABest:'Best day', m52AAvg:'Average per day', m52APrev:'Previous same period',
+    m52AExp:s=>'Shop expenses this month: '+s+'.', m52ANoExp:'No shop expense records this month.', m52AHome:'Separately — home and family',
+    m52ARate:(c,v)=>'1 '+c+' = '+v+'.', m52ARateSub:'rate from Mira',
+    m52StSent:'Question is with Sifra', m52StMode:{chat:'regular answer',loan:'checking loans like an accountant',expert:'answering as an expert',biz:'looking into your business',source:'looking for suppliers'}, m52StSearch:q=>'Searching: “'+q+'”', m52StFound:n=>'Pages found: '+n, m52StRead:u=>'Reading '+u, m52StTool:'Preparing an entry', m52StWrite:'Writing the answer',
+    m52MemT:'What Sifra remembers', m52MemLead:'These lines go to Sifra with every question so that she answers with your business in mind. They are stored on the phone. You can delete them at any time.', m52MemPh:'For example: rent 3,000 a month', m52MemAdd:'Add', m52MemEmpty:'Empty for now. Write “remember: …” in the chat or add a line here.', m52MemSaved:t=>'Remembered: “'+t+'”. I will take it into account. This does not set a dated reminder.', m52MemFull:'Memory is full — 20 lines. Delete what you no longer need.', m52MemOpen:'Open memory',
+    m52MemAuto:'From your records Sifra also sees', m52MemA:{loans:n=>'loans: '+n,shop:'revenue and expenses for the month',rates:'exchange rates',invest:'purchase calculation',trips:'recent trips',earn:'task of the week and shop check'},
+    m52SentT:'What was sent to Sifra', m52SentLead:'Recent sends from this phone. Questions that Mira answered herself go nowhere.', m52SentEmpty:'Nothing has been sent yet.', m52SentImg:'photo', m52SentKb:k=>k+' KB', m52SentHas:'data included', m52SentH:{loans:'loans',loans_full:'full loans with schedule',shop_month_tjs:'revenue and expenses',rates_tjs:'rates',invest:'purchase calculation',recent_trips:'trips',earn:'task of the week',memory:'memory',expert:'expert niche'},
+    m52SavedT:'Saved answers', m52SavedEmpty:'Tap “Save” under an answer — it will stay here even after the chat is cleared.',
+    m52Today:'Today', m52Yest:'Yesterday', m52Down:'To the latest message', m52OffMsg:'No internet. I will answer questions about your records myself, the rest — when the connection is back.',
+    m52Note:'Instant answers are worked out on the phone. The rest Sifra looks up and works out on the server. You decide.'
+  }
+};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M52S[k]); }catch(e){} Object.assign(D[k],M52S[k]); }
+/* ---------- v52: «Сифра 2.0» ----------
+   Новое окно на весь экран, мгновенные ответы из записей на телефоне (781), ход работы и ответ по мере набора (793, сервер v28),
+   «Проще / Подробнее» (788), память на виду (785), журнал «Что уходило Сифре» (820), сохранённые ответы.
+   Всё прежнее (голос, фото, формы, графики, эксперт, кредиты) работает как раньше: окно строит прежний код, здесь оно переодевается. */
+const M52={skip:0, noStream:0, draft:'', pop:false};
+const M52_I={
+  dots:'<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="5" cy="12" r="2" fill="currentColor"/><circle cx="12" cy="12" r="2" fill="currentColor"/><circle cx="19" cy="12" r="2" fill="currentColor"/></svg>',
+  bolt:'<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="M13 2 4 14h6l-1 8 9-12h-6z" fill="currentColor"/></svg>',
+  down:'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v13M6 12l6 6 6-6"/></svg>',
+  back:'<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>',
+  go:'<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>',
+  ok:'<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  cap:['<path d="M4 19V9M10 19V5M16 19v-7M21 19H3"/>','<path d="M4 20l4-1 11-11-3-3L5 16z"/>','<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.4"/>','<path d="M4 18l5-6 4 3 7-9"/><path d="M4 21h17"/>','<circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/>','<rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 8h6M9 12h2M13 12h2M9 16h2M13 16h2"/>']
+};
+const m52Svg=p=>'<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+p+'</svg>';
+
+/* ---------- хранилища: память, сохранённое, журнал отправок ---------- */
+function m52Mem(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.m52mem)) state.misc.m52mem=[]; return state.misc.m52mem; }
+function m52Pins(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.m52pin)) state.misc.m52pin=[]; return state.misc.m52pin; }
+function m52Sent(){ try{ const a=JSON.parse(localStorage.getItem('m52sent')||'[]'); return Array.isArray(a)?a:[]; }catch(e){ return []; } }
+function m52SentAdd(b,len,stream){ try{ const C=b&&b.ctx&&typeof b.ctx==='object'?b.ctx:{}, has=[]; for(const k of ['loans','loans_full','shop_month_tjs','rates_tjs','invest','recent_trips','earn','memory','expert']) if(C[k]!=null&&!(Array.isArray(C[k])&&!C[k].length)) has.push(k);
+    const a=m52Sent(); a.push({ts:Date.now(),q:String(b.q||'').slice(0,90),kb:Math.max(0.1,Math.round(len/102.4)/10),has,img:(b.img?1:0)+(Array.isArray(C.__imgs)?C.__imgs.length:0),st:stream?1:0}); localStorage.setItem('m52sent',JSON.stringify(a.slice(-40))); }catch(e){} }
+function m52MemAdd(t){ t=String(t||'').replace(/\s+/g,' ').trim().slice(0,160); if(t.length<3) return 0; const a=m52Mem(); if(a.some(x=>x.t.toLowerCase()===t.toLowerCase())) return 1; if(a.length>=20) return -1; a.push({t,ts:Date.now()}); persist(); return 1; }
+
+/* ---------- мгновенные ответы: вопросы о своих цифрах считает телефон ---------- */
+const M52_RX={
+  guard:/почему|зачем|стоит ли|лучше|выгодн|посовет|совет|что делать|как мне|первым|первой|кому |если |чи тавр|барои чӣ|маслиҳат|аввал|агар |why|should|advice|better|first\b|which|what if| if /,
+  cmd:/заплат|внес|оплат|запиш|добав|запомни|пардохт кардам|илова кун|сабт кун|\bpaid\b|\badd\b|record /,
+  debt:/(сколько|какой|какая|сумма).{0,30}(должн|долг|остал|остат).{0,30}(банк|кредит)|(сколько|что).{0,12}остал\S* по кредит|остат\S* по кредит|общий долг|(ба бонк|қарз).{0,30}(чанд|чӣ қадар)|чанд қарз|how much.{0,24}(owe|debt|left.{0,12}loan)|total debt|loan balance/,
+  next:/(когда|какой|сколько).{0,24}(ближайш|следующ).{0,14}плат[её]ж|ближайш\S* плат[её]ж|когда.{0,10}платить|пардохти (наздик|оянда)|next (loan )?payment|when.{0,14}(do i |to )pay\b/,
+  free:/когда.{0,40}(закро|погаш|выплач|освобо|свобод|расплач)|дата свободы|кай.{0,30}қарз.{0,30}(пӯш|тамом|халос)|when.{0,40}(debt.?free|pay off|paid off)/,
+  owed:/кто.{0,12}долж|(мне|нам) должны|долг\S* покупател|должник|кӣ.{0,14}қарздор|қарздорон|who owes|owed to me|owe me/,
+  exp:/(на что|куда).{0,16}(ушл|уход|потра|трач|дел)|сколько.{0,16}(потра|расход)|расходы (за|в этом)|пул ба чӣ|хароҷот.{0,14}(чанд|ин моҳ)|where.{0,16}(money|did it) go|how much.{0,12}spen|expenses (this|for the) month/,
+  sales:/(сколько|какая|как).{0,24}(выручк|продал|продаж|наторгов|заработа)|выручка (сегодня|вчера|за)|как прошл\S* (недел|день|месяц)|даромад\S*.{0,20}(имрӯз|дирӯз|ҳафта|моҳ|чанд)|ҳафта чӣ хел|(revenue|sales).{0,24}(today|yesterday|week|month)|how much.{0,14}(sold|made|earned|revenue)|how did the (week|day|month) go/,
+  rate:/курс\S*.{0,14}(доллар|юан|рубл|лир|евро|дирхам|usd|cny|rub|try|eur|aed)|(доллар|юан|рубл|лир|евро)\S*.{0,10}(курс|сколько|почем)|қурб\S*.{0,14}(доллар|юан|рубл|лира|евро)|(usd|dollar|yuan|cny|rub|ruble|lira|euro|eur).{0,10}(rate|exchange)|exchange rate/
+};
+const M52_CUR=[[/доллар|usd|dollar/,'USD'],[/юан|cny|yuan/,'CNY'],[/рубл|rub/,'RUB'],[/лир|\btry\b|lira/,'TRY'],[/евро|eur/,'EUR'],[/дирхам|aed/,'AED']];
+function m52Intent(q){ const s=String(q||'').toLowerCase().replace(/ё/g,'е').trim(); if(!s||s.length>120) return null;
+  if(M52_RX.guard.test(s)||M52_RX.cmd.test(s)) return null;
+  if(M52_RX.free.test(s)) return {k:'free'}; if(M52_RX.next.test(s)) return {k:'next'}; if(M52_RX.debt.test(s)) return {k:'debt'}; if(M52_RX.owed.test(s)) return {k:'owed'}; if(M52_RX.exp.test(s)){ if(/семь|домашн|(^|\s)дом|оила|хона|famil|househ|\bhome/.test(s)) return null; return {k:'exp'}; }
+  if(M52_RX.sales.test(s)) return {k:'sales',p:/вчера|дирӯз|yesterday/.test(s)?'yest':/недел|ҳафта|week/.test(s)?'week':/месяц|моҳ|month/.test(s)?'month':'today'};
+  if(M52_RX.rate.test(s)){ const c=M52_CUR.find(x=>x[0].test(s)); if(c) return {k:'rate',c:c[1]}; }
+  return null; }
+function m52Loans(){ try{ return activeList().filter(x=>x&&x.loan&&!x.loan.example&&x.a&&!x.a.done); }catch(e){ return []; } }
+function m52DayS(n){ const d=new Date(); d.setHours(12,0,0,0); d.setDate(d.getDate()+n); return ymd(d); }
+function m52Ev(metric){ try{ return m45Ev(metric)||[]; }catch(e){ return []; } }
+function m52When(d){ return d<0?L.m52WLate(-d):d===0?L.m52WToday:d===1?L.m52WTom:L.m52WIn(d); }
+function m52Answer(it){ const Q=L.m52Q;
+  if(it.k==='debt'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'debt'}};
+    const left=a.reduce((s,x)=>s+(+x.a.remaining||0),0), tot=a.reduce((s,x)=>s+Math.max(+x.loan.total||0,+x.a.remaining||0),0), int=a.reduce((s,x)=>s+(+x.a.interestLeft||0),0), p=tot>0?Math.round((1-left/tot)*100):0;
+    const rows=a.slice().sort((x,y)=>(+y.a.remaining||0)-(+x.a.remaining||0)).slice(0,5).map(x=>[String(x.loan.name||''),money(+x.a.remaining||0)]); if(int>0) rows.push([L.m52AInt,money(int)]);
+    return {t:L.m52ADebt(money(left),a.length),loc:{k:'debt',big:money(left),rows,bar:p>0&&p<100?{p,l:L.m52APaid(p)}:null,fu:[Q.next,Q.free,Q.chartLoan]}}; }
+  if(it.k==='next'){ const a=m52Loans().filter(x=>x.a.days!=null).sort((x,y)=>x.a.days-y.a.days); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'next'}};
+    const amt=x=>+x.a.monthly||+x.a.amt||0, f=a[0], w7=a.filter(x=>x.a.days<=7).reduce((s,x)=>s+amt(x),0);
+    const rows=a.slice(0,4).map(x=>[String(x.loan.name||''),money(amt(x))+' · '+m52When(x.a.days),x.a.days<0?'bad':'']); if(a.filter(x=>x.a.days<=7).length>1) rows.push([L.m52AWeek7,money(w7)]);
+    return {t:L.m52ANext(String(f.loan.name||''),money(amt(f)),m52When(f.a.days)),loc:{k:'next',big:money(amt(f)),sub:String(f.loan.name||'')+' · '+m52When(f.a.days),warn:f.a.days<0,rows:a.length>1?rows:null,fu:[Q.enough,Q.debt]}}; }
+  if(it.k==='free'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'free'}}; let fr=null; try{ fr=m8Free(activeList()); }catch(e){}
+    if(!fr||!fr.d) return {t:L.m52ANoFree,loc:{k:'free',fu:[Q.debt,Q.next]}}; let ds=''; try{ ds=fr.d instanceof Date?MONTHS[lang].short[fr.d.getMonth()]+' '+fr.d.getFullYear():String(fr.d); }catch(e){ ds=String(fr.d); }
+    const int=a.reduce((s,x)=>s+(+x.a.interestLeft||0),0);
+    return {t:L.m52AFree(ds,fr.months),loc:{k:'free',big:ds,rows:int>0?[[L.m52AInt,money(int)]]:null,fu:[Q.first,Q.debt]}}; }
+  if(it.k==='owed'){ let all=[]; try{ all=(state.cust||[]).map(c=>({c,b:+custState(c).bal||0})).filter(x=>x.b>0).sort((x,y)=>y.b-x.b); }catch(e){}
+    if(!all.length) return {t:L.m52ANoOwed,loc:{k:'owed'}}; const tot=all.reduce((s,x)=>s+x.b,0);
+    return {t:L.m52AOwed(money(tot),all.length),loc:{k:'owed',big:money(tot),rows:all.slice(0,5).map(x=>[String(x.c.name||''),money(x.b)]),fu:[L.m52Q.remind]}}; }
+  if(it.k==='exp'){ const from=ymd(new Date()).slice(0,8)+'01', to=ymd(new Date()), by={}; let tot=0; for(const e of m52Ev('expenses')){ if(e.d>=from&&e.d<=to){ tot+=e.v; const c=e.c||'—'; by[c]=(by[c]||0)+e.v; } }
+    let home=0; for(const e of m52Ev('home')) if(e.d>=from&&e.d<=to) home+=e.v;
+    if(!(tot>0)) return {t:L.m52ANoExp,loc:{k:'exp',rows:home>0?[[L.m52AHome,money(home)]]:null}}; const top=Object.entries(by).sort((x,y)=>y[1]-x[1]).slice(0,5), mx=top[0][1]||1;
+    return {t:L.m52AExp(money(tot)),loc:{k:'exp',big:money(tot),bars:top.map(x=>[x[0],Math.round(x[1]/mx*100),money(x[1])]),rows:home>0?[[L.m52AHome,money(home)]]:null,fu:[Q.month]}}; }
+  if(it.k==='sales'){ const p=it.p, t0=m52DayS(0); let from=t0, to=t0, pf, pt;
+    if(p==='yest'){ from=to=m52DayS(-1); pf=pt=m52DayS(-8); } else if(p==='week'){ from=m52DayS(-6); pf=m52DayS(-13); pt=m52DayS(-7); }
+    else if(p==='month'){ from=t0.slice(0,8)+'01'; const d=new Date(); d.setHours(12,0,0,0); const day=d.getDate(); d.setDate(1); d.setMonth(d.getMonth()-1); pf=ymd(d); const last=new Date(d.getFullYear(),d.getMonth()+1,0).getDate(); d.setDate(Math.min(day,last)); pt=ymd(d); }
+    else { pf=pt=m52DayS(-7); }
+    const ev=m52Ev('sales'), sum=(a,b)=>ev.reduce((s,e)=>s+(e.d>=a&&e.d<=b?e.v:0),0), cur=sum(from,to), prev=sum(pf,pt);
+    if(!(cur>0)) return {t:L.m52ANoSales,loc:{k:'sales',fu:p==='today'?[L.m52Q.week]:[]}};
+    let t=L.m52ASales(L.m52P[p],money(cur)), cmp=null; if(prev>0){ const pc=Math.round((cur/prev-1)*100); if(pc!==0){ cmp={up:pc>0,p:Math.abs(pc)}; t+=' '+(pc>0?L.m52AUp(pc):L.m52ADown(-pc)); } }
+    const rows=[]; let sp=null; if(prev>0) rows.push([L.m52APrev,money(prev)]);
+    if(p==='week'||p==='month'){ const by={}; for(const e of ev) if(e.d>=from&&e.d<=to) by[e.d]=(by[e.d]||0)+e.v; const days=Object.entries(by).sort((x,y)=>y[1]-x[1]);
+      if(days.length){ const bd=days[0][0]; rows.unshift([L.m52ABest,bd.slice(8)+'.'+bd.slice(5,7)+' · '+money(days[0][1])]); const nd=Math.max(1,Math.round((Date.parse(to)-Date.parse(from))/864e5)+1); rows.push([L.m52AAvg,money(cur/nd)]); }
+      if(p==='week'){ sp=[]; for(let i=-6;i<=0;i++){ const d=m52DayS(i); sp.push([d.slice(8),by[d]||0]); } } }
+    return {t,loc:{k:'sales',big:money(cur),sub:L.m52P[p],cmp,rows:rows.length?rows:null,sp,fu:p==='week'?[Q.chartWeek,Q.exp]:p==='month'?[Q.exp,Q.week]:[Q.week,Q.month]}}; }
+  if(it.k==='rate'){ let v=null; try{ v=rateOf(it.c); }catch(e){} if(!(v>0)) return null; const vs=String(Math.round(v*(v<1?10000:100))/(v<1?10000:100)).replace('.',lang==='en'?'.':',')+' '+L.cur;
+    return {t:L.m52ARate(it.c,vs),loc:{k:'rate',big:vs,sub:L.m52ARateSub}}; }
+  return null; }
+function m52Local(q,voice,a){ const log=sfLog(); log.push({r:'u',t:q,v:voice?1:0,ts:Date.now()}); const m={r:'a',t:a.t,ts:Date.now()}; if(a.loc) m.loc=a.loc; if(a.err) m.err=1; if(a.mem) m.mem=1; log.push(m);
+  log.splice(0,Math.max(0,log.length-SF_KEEP)); persist(); M52.draft=''; const inp=$('#sf-in'); if(inp){ inp.value=''; inp.style.height=''; }
+  if($('#sf-log')&&overlay.classList.contains('open')) sfRedraw();
+  try{ if(sfT){ sfT.said=1; sfCapShow(); sfTalkSet('speak'); sfSay(a.t,()=>{ if(!sfT) return; if(sfTalkHere()) sfTalkListen(); else sfTalkEnd(); }); } else if(voice) sfSay(a.t); }catch(e){} }
+const M52_MEM=/^(?:сифра[,!]?\s+)?(?:запомни|помни)(?:\s+что)?[,:]?\s+(.{3,160})$|^(?:дар (?:ёд|хотир) (?:дор|гир))[,:]?\s+(.{3,160})$|^remember(?:\s+that)?[,:]?\s+(.{3,160})$/i;
+try{ const m52Ask0=sfAsk; sfAsk=function(q,voice){ try{ const s=String(q||'').trim(), skip=M52.skip; M52.skip=0;
+      if(s&&!sfBusy&&!sfImg){ const mm=s.match(M52_MEM);
+        if(mm){ const t=(mm[1]||mm[2]||mm[3]||'').trim(), r=m52MemAdd(t); m52Local(s,voice,{t:r<0?L.m52MemFull:L.m52MemSaved(t.slice(0,160)),mem:1}); return Promise.resolve(); }
+        let chart=null; try{ chart=m45Intent(s); }catch(e){}
+        if(!chart){ if(!skip){ const it=m52Intent(s); if(it){ const a=m52Answer(it); if(a){ m52Local(s,voice,a); return Promise.resolve(); } } }
+          if(!navigator.onLine){ m52Local(s,voice,{t:L.m52OffMsg,err:1}); return Promise.resolve(); } } }
+    }catch(e){} return m52Ask0.apply(this,arguments); }; }catch(e){}
+/* память уходит Сифре вместе с вопросом */
+try{ const m52Ctx0=sfCtx; sfCtx=function(){ const o=m52Ctx0.apply(this,arguments); try{ const a=m52Mem(); if(a.length) o.memory=a.slice(0,20).map(x=>String(x.t).slice(0,160)); }catch(e){} return o; }; }catch(e){}
+
+/* ---------- вид сообщений ---------- */
+function m52Spark(sp){ const mx=Math.max(1,...sp.map(x=>x[1])), n=sp.length, W=280, H=64, bw=W/n; let h='';
+  sp.forEach((x,i)=>{ const bh=Math.max(x[1]>0?3:1,Math.round(x[1]/mx*44)); h+=`<rect x="${(i*bw+bw*.2).toFixed(1)}" y="${48-bh}" width="${(bw*.6).toFixed(1)}" height="${bh}" rx="3" class="${i===n-1?'on':''}${x[1]>0?'':' z'}"/><text x="${(i*bw+bw/2).toFixed(1)}" y="61" text-anchor="middle">${esc(x[0])}</text>`; });
+  return `<svg class="m52-sp" viewBox="0 0 ${W} ${H}" aria-hidden="true">${h}</svg>`; }
+function m52LocHTML(m,i){ const c=m.loc||{}, last=i===sfLog().length-1;
+  return `<div class="sf-m a m52-loc${c.warn?' warn':''}"><span class="m52-tag" title="${esc(L.m52LocSub)}">${M52_I.bolt}${esc(L.m52Loc)}</span>
+    ${c.big?`<p class="m52-big">${esc(c.big)}${c.cmp?`<span class="m52-cmp ${c.cmp.up?'up':'dn'}">${c.cmp.up?'+':'−'}${c.cmp.p}%</span>`:''}</p>`:''}${c.sub?`<p class="m52-sub">${esc(c.sub)}</p>`:''}
+    <p class="m52-txt">${esc(m.t)}</p>
+    ${c.bar?`<div class="m52-bar" role="img" aria-label="${esc(c.bar.l)}"><i style="width:${Math.max(3,Math.min(100,+c.bar.p||0))}%"></i></div><small class="m52-barl">${esc(c.bar.l)}</small>`:''}
+    ${Array.isArray(c.sp)&&c.sp.length?m52Spark(c.sp):''}
+    ${Array.isArray(c.bars)&&c.bars.length?`<div class="m52-bars">${c.bars.map(b=>`<div><span>${esc(b[0])}</span><i><u style="width:${Math.max(3,+b[1]||0)}%"></u></i><b>${esc(b[2])}</b></div>`).join('')}</div>`:''}
+    ${Array.isArray(c.rows)&&c.rows.length?`<ul class="m52-rows">${c.rows.map(r=>`<li class="${r[2]||''}"><span>${esc(r[0])}</span><b>${esc(r[1])}</b></li>`).join('')}</ul>`:''}
+    <div class="m52-acts"><button type="button" data-m52a="srv" data-i="${i}">${esc(L.m52AskSrv)}</button><button type="button" data-m52a="copy" data-i="${i}">${esc(L.m52Copy)}</button></div>
+    ${last&&Array.isArray(c.fu)&&c.fu.length?`<div class="m52-fu">${c.fu.filter(Boolean).slice(0,3).map(q=>`<button type="button" class="chip" data-m52q="${esc(q)}">${esc(q)}</button>`).join('')}</div>`:''}</div>`; }
+function m52Acts(h,m,i){ const log=sfLog(), last=i===log.length-1, k=h.lastIndexOf('</div>'); if(k<0) return h; let b='';
+  if(m.mem) b=`<button type="button" data-m52p="mem">${esc(L.m52MemOpen)}</button>`;
+  else if(m.err){ if(i>0&&log[i-1]&&log[i-1].r==='u') b=`<button type="button" data-m52a="retry" data-i="${i}">${esc(L.m52Retry)}</button>`; }
+  else if(m.t){ b=`<button type="button" data-m52a="copy" data-i="${i}">${esc(L.m52Copy)}</button>`+(last&&!m.ch?`<button type="button" data-m52a="simple" data-i="${i}">${esc(L.m52Simple)}</button><button type="button" data-m52a="more" data-i="${i}">${esc(L.m52More)}</button>`:'')+`<button type="button" data-m52a="pin" data-i="${i}">${esc(L.m52Pin)}</button>`; }
+  return b?h.slice(0,k)+`<div class="m52-acts">${b}</div>`+h.slice(k):h; }
+function m52DayMark(m,i){ if(!m||!m.ts) return ''; const log=sfLog(), d=ymd(new Date(m.ts)), p=i>0&&log[i-1]&&log[i-1].ts?ymd(new Date(log[i-1].ts)):''; if(d===p) return '';
+  const lbl=d===m52DayS(0)?L.m52Today:d===m52DayS(-1)?L.m52Yest:d.slice(8)+'.'+d.slice(5,7)+'.'+d.slice(0,4); return `<div class="m52-day"><span>${esc(lbl)}</span></div>`; }
+try{ const m52Msg0=sfMsgHTML; sfMsgHTML=function(m,i){ let h=''; try{ if(m&&m.r==='a'&&m.loc&&typeof m.loc==='object') h=m52LocHTML(m,i); }catch(e){ h=''; }
+    if(!h){ h=m52Msg0.apply(this,arguments); try{ if(m&&m.r==='a') h=m52Acts(h,m,i); }catch(e){} }
+    try{ h=m52DayMark(m,i)+h; }catch(e){} return h; }; }catch(e){}
+
+/* ---------- приветствие: «Сейчас важно» и «Что я умею» ---------- */
+function m52NowQs(){ const Q=L.m52Q, out=[]; try{ const a=m52Loans(); if(a.some(x=>x.a.days!=null&&x.a.days<=7)) out.push(Q.next);
+    const t=m52DayS(0), ev=m52Ev('sales'); if(ev.some(e=>e.d===t)) out.push(Q.today); else if(ev.length) out.push(Q.week);
+    let owed=false; try{ owed=(state.cust||[]).some(c=>(+custState(c).bal||0)>0); }catch(e){} if(owed) out.push(Q.owed);
+    if(a.length&&out.length<3) out.push(Q.debt); if(a.length&&out.length<3) out.push(Q.free); if(ev.length&&out.length<3) out.push(Q.month); }catch(e){} return [...new Set(out)].slice(0,3); }
+function m52HelloHTML(){ const now=m52NowQs();
+  return `<p class="m52-hi-t">${esc(L.m52Hi)}</p><p class="m52-hi-s">${esc(L.m52HiSub)}</p>
+    ${now.length?`<p class="m52-cap">${esc(L.m52Now)}</p><div class="m52-now">${now.map(q=>`<button type="button" data-m52q="${esc(q)}"><span>${M52_I.bolt}</span><b>${esc(q)}</b>${M52_I.go}</button>`).join('')}</div>`:''}
+    <p class="m52-cap">${esc(L.m52Can)}</p><div class="m52-grid">${L.m52Caps.map((c,k)=>`<button type="button" data-m52cap="${k}"><span>${m52Svg(M52_I.cap[k])}</span><b>${esc(c[0])}</b><small>${esc(c[1])}</small></button>`).join('')}</div>`; }
+
+/* ---------- переодеть окно ---------- */
+function m52Status(){ const e=document.getElementById('m52-st'); if(!e) return; const on=navigator.onLine; e.innerHTML=`<i class="m52-dot${on?'':' off'}"></i>${esc(on?L.m52On:L.m52Off)}`; }
+function m52Scroll(){ const box=$('#sf-log'), b=document.getElementById('m52-down'); if(!box||!b) return; b.hidden=!(box.scrollHeight-box.scrollTop-box.clientHeight>160); }
+function m52Undress(){ try{ sheet.classList.remove('m52','m52-p'); overlay.classList.remove('m52-ov'); M52.pop=false; }catch(e){} }
+function m52Dress(){ const sh=sheet; if(!sh||!sh.querySelector('.sf-head')||!sh.querySelector('#sf-log')) return; sh.classList.add('m52'); sh.classList.remove('m52-p'); overlay.classList.add('m52-ov');
+  const sm=sh.querySelector('.sf-head small'); if(sm){ sm.id='m52-st'; m52Status(); }
+  const x=sh.querySelector('.sf-head .sf-x'); if(x&&!sh.querySelector('#m52-menu')) x.insertAdjacentHTML('beforebegin',`<button type="button" class="sf-tic" id="m52-menu" aria-haspopup="true" aria-expanded="false" aria-label="${esc(L.m52Menu)}">${M52_I.dots}</button>`);
+  const hello=sh.querySelector('#sf-log .sf-hello'); if(hello){ hello.className='sf-hello m52-hi'; hello.innerHTML=m52HelloHTML(); }
+  const log=sh.querySelector('#sf-log'); if(!sh.querySelector('#m52-down')){ log.insertAdjacentHTML('afterend',`<button type="button" id="m52-down" hidden aria-label="${esc(L.m52Down)}">${M52_I.down}</button><div id="m52-panel" hidden></div>`); log.addEventListener('scroll',m52Scroll,{passive:true}); }
+  const note=sh.querySelector('.sf-note'); if(note&&note.firstChild&&note.firstChild.nodeType===3) note.firstChild.textContent=L.m52Note+' ';
+  const inp=sh.querySelector('#sf-in'); if(inp){ if(M52.draft&&!inp.value){ inp.value=M52.draft; inp.dispatchEvent(new Event('input')); } inp.addEventListener('input',()=>{ M52.draft=inp.value; }); }
+  try{ sfCapsLoad(); }catch(e){} log.scrollTop=hello?0:log.scrollHeight; }
+try{ const m52Open0=sifraOpen; sifraOpen=function(){ const r=m52Open0.apply(this,arguments); try{ m52Dress(); }catch(e){} return r; }; }catch(e){}
+try{ const m52Os0=openSheet; openSheet=function(){ try{ m52Undress(); }catch(e){} return m52Os0.apply(this,arguments); }; }catch(e){}
+try{ const m52Rd0=sfRedraw; sfRedraw=function(){ const r=m52Rd0.apply(this,arguments); try{ m52Scroll(); }catch(e){} return r; }; }catch(e){}
+addEventListener('online',m52Status); addEventListener('offline',m52Status);
+
+/* ---------- меню и страницы: память, отправки, сохранённое ---------- */
+function m52Pop(on){ const sh=sheet; if(!sh) return; let p=sh.querySelector('#m52-pop'); M52.pop=!!on; const b=sh.querySelector('#m52-menu'); if(b) b.setAttribute('aria-expanded',on?'true':'false');
+  if(!on){ if(p) p.remove(); return; } if(p) return;
+  sh.querySelector('.sf-head').insertAdjacentHTML('afterend',`<div id="m52-pop" role="menu">${[['mem',L.m52MMem,m52Mem().length],['saved',L.m52MSaved,m52Pins().length],['sent',L.m52MSent,m52Sent().length]].map(x=>`<button type="button" role="menuitem" data-m52p="${x[0]}"><span>${esc(x[1])}</span>${x[2]?`<i>${x[2]}</i>`:''}</button>`).join('')}${sfLog().length?`<button type="button" role="menuitem" class="warn" data-m52a="clear"><span>${esc(L.m52MClear)}</span></button>`:''}</div>`); }
+function m52Time(ts){ try{ const d=new Date(ts), day=ymd(d), hm=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); return (day===m52DayS(0)?L.m52Today:day===m52DayS(-1)?L.m52Yest:day.slice(8)+'.'+day.slice(5,7))+' '+hm; }catch(e){ return ''; } }
+function m52PanelHTML(k){ const head=t=>`<div class="m52-ph"><button type="button" class="sf-tic" data-m52back="1" aria-label="${esc(L.m52Back)}">${M52_I.back}</button><h4>${esc(t)}</h4></div>`;
+  if(k==='mem'){ const a=m52Mem(); let auto=[]; try{ const c=sfCtx(), A=L.m52MemA; if(Array.isArray(c.loans)&&c.loans.length) auto.push(A.loans(c.loans.length)); if(c.shop_month_tjs&&(c.shop_month_tjs.revenue||c.shop_month_tjs.expenses)) auto.push(A.shop); if(c.rates_tjs) auto.push(A.rates); if(c.invest) auto.push(A.invest); if(c.recent_trips) auto.push(A.trips); if(c.earn) auto.push(A.earn); }catch(e){}
+    return head(L.m52MemT)+`<p class="m52-lead">${esc(L.m52MemLead)}</p><div class="m52-add"><input id="m52-mi" type="text" maxlength="160" data-nodirty placeholder="${esc(L.m52MemPh)}" aria-label="${esc(L.m52MemT)}"><button type="button" class="btn btn-primary" data-m52a="memadd">${esc(L.m52MemAdd)}</button></div>
+      ${a.length?`<ul class="m52-list">${a.map((x,i)=>`<li><span>${esc(x.t)}</span><button type="button" class="link-btn" data-m52a="memdel" data-i="${i}">${esc(L.m52Del)}</button></li>`).join('')}</ul>`:`<p class="m52-empty">${esc(L.m52MemEmpty)}</p>`}
+      ${auto.length?`<p class="m52-cap">${esc(L.m52MemAuto)}</p><ul class="m52-auto">${auto.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''}`; }
+  if(k==='sent'){ const a=m52Sent().slice().reverse(), H=L.m52SentH;
+    return head(L.m52SentT)+`<p class="m52-lead">${esc(L.m52SentLead)}</p>${a.length?`<ul class="m52-list sent">${a.map(x=>`<li><div><b>${esc(m52Time(x.ts))}</b><small>${esc(L.m52SentKb(String(x.kb).replace('.',lang==='en'?'.':',')))}${x.img?' · '+esc(L.m52SentImg)+(x.img>1?' ×'+x.img:''):''}</small></div><span>«${esc(x.q)}»</span>${Array.isArray(x.has)&&x.has.length?`<small>${esc(L.m52SentHas)}: ${x.has.map(h=>esc(H[h]||h)).join(', ')}</small>`:''}</li>`).join('')}</ul>`:`<p class="m52-empty">${esc(L.m52SentEmpty)}</p>`}`; }
+  const a=m52Pins().slice().reverse(), n=m52Pins().length;
+  return head(L.m52SavedT)+(a.length?`<ul class="m52-list saved">${a.map((x,j)=>`<li><small>${esc(m52Time(x.ts))}${x.q?' · «'+esc(String(x.q).slice(0,80))+'»':''}</small><div class="m52-pt">${sfMd(String(x.t||''))}</div><div class="m52-acts"><button type="button" data-m52a="pincopy" data-i="${n-1-j}">${esc(L.m52Copy)}</button><button type="button" data-m52a="pindel" data-i="${n-1-j}">${esc(L.m52Del)}</button></div></li>`).join('')}</ul>`:`<p class="m52-empty">${esc(L.m52SavedEmpty)}</p>`); }
+function m52Panel(k){ const sh=sheet, p=sh&&sh.querySelector('#m52-panel'); if(!p) return; m52Pop(false); if(!k){ p.hidden=true; p.innerHTML=''; sh.classList.remove('m52-p'); delete p.dataset.k; return; }
+  p.dataset.k=k; p.innerHTML=m52PanelHTML(k); p.hidden=false; sh.classList.add('m52-p'); p.scrollTop=0; }
+function m52Copy(t){ t=String(t||''); const ok=()=>toast(L.m52Copied); try{ navigator.clipboard.writeText(t).then(ok,()=>m52CopyFb(t,ok)); }catch(e){ m52CopyFb(t,ok); } }
+function m52CopyFb(t,ok){ try{ const a=document.createElement('textarea'); a.value=t; a.setAttribute('readonly',''); a.style.cssText='position:fixed;left:-99px;top:0;opacity:0'; document.body.appendChild(a); a.select(); document.execCommand('copy'); a.remove(); ok(); }catch(e){} }
+function m52Text(m){ try{ return sfPlain(String(m.t||'').replace(/<viz>[\s\S]*?<\/viz>/g,' ')).trim(); }catch(e){ return String(m.t||''); } }
+document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) return; const sh=t.closest('#sheet'); if(!sh||!sh.classList.contains('m52')){ return; } let el;
+  if((el=t.closest('#m52-menu'))){ m52Pop(!M52.pop); return; }
+  if(M52.pop&&!t.closest('#m52-pop')) m52Pop(false);
+  if((el=t.closest('[data-m52back]'))){ m52Panel(''); return; }
+  if((el=t.closest('[data-m52p]'))){ m52Panel(el.dataset.m52p); return; }
+  if((el=t.closest('#m52-down'))){ const box=$('#sf-log'); if(box) box.scrollTo({top:box.scrollHeight,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); return; }
+  if((el=t.closest('[data-m52q]'))){ const q=el.dataset.m52q; if(q) sfAsk(q,false); return; }
+  if((el=t.closest('[data-m52cap]'))){ const k=+el.dataset.m52cap, q=L.m52CapQ[k]; if(k===2){ try{ sfPickPhoto(); }catch(x){} } else if(k===1){ const i=$('#sf-in'); if(i){ i.value=q; i.dispatchEvent(new Event('input')); i.focus(); } } else if(q) sfAsk(q,false); return; }
+  if((el=t.closest('[data-m52a]'))){ const a=el.dataset.m52a, i=+el.dataset.i, log=sfLog(), m=log[i];
+    if(a==='clear'){ m52Pop(false); try{ sfTalkEnd(); }catch(x){} log.length=0; persist(); sifraOpen(); return; }
+    if(a==='memadd'){ const inp=$('#m52-mi'), r=m52MemAdd(inp?inp.value:''); if(r<0) toast(L.m52MemFull); m52Panel('mem'); const j=$('#m52-mi'); if(j&&r>0) j.focus(); return; }
+    if(a==='memdel'){ m52Mem().splice(i,1); persist(); m52Panel('mem'); return; }
+    if(a==='pindel'){ m52Pins().splice(i,1); persist(); m52Panel('saved'); return; }
+    if(a==='pincopy'){ const p=m52Pins()[i]; if(p) m52Copy(m52Text(p)); return; }
+    if(!m) return;
+    if(a==='copy'){ m52Copy(m52Text(m)); return; }
+    if(a==='pin'){ const P=m52Pins(), q=i>0&&log[i-1]&&log[i-1].r==='u'?log[i-1].t:''; P.push({q:String(q||'').slice(0,200),t:String(m.t||'').slice(0,6000),ts:Date.now()}); P.splice(0,Math.max(0,P.length-30)); persist(); toast(L.m52Pinned); return; }
+    if(a==='simple'||a==='more'){ sfAsk(a==='simple'?L.m52SimpleQ:L.m52MoreQ,false); return; }
+    if(a==='retry'||a==='srv'){ const u=i>0&&log[i-1]&&log[i-1].r==='u'?log[i-1]:null; if(!u) return; const q=u.t; log.splice(i-1,2); persist(); if(a==='srv') M52.skip=1; sfAsk(q,false); return; } }
+});
+document.addEventListener('keydown',e=>{ if(e.key==='Enter'&&e.target&&e.target.id==='m52-mi'){ e.preventDefault(); const b=sheet.querySelector('[data-m52a="memadd"]'); if(b) b.click(); } });
+
+/* ---------- ход работы и ответ по мере набора (сервер v28: /api/mk/ais) ---------- */
+function m52StreamOk(b){ try{ return !M52.noStream&&!!sfCaps&&+sfCaps.v>=28&&!b.voice&&!sfT&&!!document.querySelector('#sheet.m52 #sf-log .sf-wait')&&typeof ReadableStream!=='undefined'&&typeof TextDecoder!=='undefined'; }catch(e){ return false; } }
+function m52Live(ev){ const w=document.querySelector('#sheet.m52 #sf-log .sf-wait'); if(!w||!ev) return; let lv=w.querySelector('.m52-live'); if(!lv){ w.classList.add('m52-w'); w.insertAdjacentHTML('beforeend','<div class="m52-live"><ol class="m52-steps"></ol><div class="m52-ltxt" hidden></div></div>'); lv=w.querySelector('.m52-live'); lv._t=''; }
+  const ol=lv.querySelector('ol'), tx=lv.querySelector('.m52-ltxt'), box=$('#sf-log'), near=box?box.scrollHeight-box.scrollTop-box.clientHeight<140:false;
+  const step=s=>{ const p=ol.lastElementChild; if(p&&p.dataset.s===s) return; ol.querySelectorAll('li.now').forEach(x=>{ x.classList.remove('now'); x.classList.add('ok'); }); const li=document.createElement('li'); li.className='now'; li.dataset.s=s; li.innerHTML='<i>'+M52_I.ok+'</i><span></span>'; li.querySelector('span').textContent=s; ol.appendChild(li); while(ol.children.length>6) ol.removeChild(ol.firstElementChild); };
+  if(ev.step==='sent') step(L.m52StSent);
+  else if(ev.step==='mode'){ const m=L.m52StMode[ev.m]; if(m&&ev.m!=='chat') step(m); }
+  else if(ev.step==='begin'){ lv._t=''; tx.hidden=true; tx.innerHTML=''; w.classList.remove('m52-wt'); }
+  else if(ev.step==='search'){ if(ev.q) step(L.m52StSearch(String(ev.q).slice(0,70))); }
+  else if(ev.step==='found'){ if(+ev.n>0) step(L.m52StFound(+ev.n)); }
+  else if(ev.step==='read'){ if(ev.u) step(L.m52StRead(String(ev.u).slice(0,40))); }
+  else if(ev.step==='tool') step(L.m52StTool);
+  else if(ev.step==='write') step(L.m52StWrite);
+  else if(typeof ev.delta==='string'){ lv._t+=ev.delta; let s=lv._t; const cut=s.search(/<(viz|niche)\b/i); if(cut>=0) s=s.slice(0,cut); s=s.replace(/<[a-z\/][^>]{0,40}$/i,''); if(s.trim()){ tx.hidden=false; w.classList.add('m52-wt'); tx.innerHTML=sfMd(s); } }
+  if(box&&near) box.scrollTop=box.scrollHeight; }
+function m52Expert(j){ try{ if(!j||!j.expert) return; const was=f34xNiche(); if(j.expert.off){ if(was){ f34xSet(''); toast(L.f34xOffOk); } } else if(j.expert.niche&&j.expert.niche!==was){ f34xSet(j.expert.niche); toast(L.f34xOnOk(f34xNiche())); } setTimeout(sfX,30); }catch(e){} }
+try{ const m52F0=window.fetch; window.fetch=function(u,o){
+    try{ if(typeof u==='string'&&/\/api\/mk\/ai$/.test(u)&&o&&typeof o.body==='string'&&!/"img_only"/.test(o.body)){ let b=null; try{ b=JSON.parse(o.body); }catch(e){}
+        if(b&&typeof b.q==='string'){ const st=m52StreamOk(b); m52SentAdd(b,o.body.length,st);
+          if(st){ let got=0; const classic=()=>{ M52.noStream=1; return m52F0.call(window,u,o); };
+            return m52F0.call(window,u.replace(/\/ai$/,'/ais'),o).then(async r=>{
+              if(!r.ok||!r.body||!/event-stream/i.test(r.headers.get('content-type')||'')) return classic();
+              const rd=r.body.getReader(), dec=new TextDecoder(); let buf='', fin=null;
+              for(;;){ const x=await rd.read(); if(x.done) break; buf+=dec.decode(x.value,{stream:true}); let i;
+                while((i=buf.indexOf('\n\n'))>=0){ const ch=buf.slice(0,i); buf=buf.slice(i+2); const ln=ch.split('\n').find(s=>s.startsWith('data:')); if(!ln) continue; let ev=null; try{ ev=JSON.parse(ln.slice(5)); }catch(e){ continue; } got++; if(ev.done||ev.error) fin=ev; else { try{ m52Live(ev); }catch(e){} } } }
+              if(!fin){ if(!got) return classic(); fin={error:'ai',status:502}; }
+              const body=fin.done&&typeof fin.done==='object'?fin.done:{error:String(fin.error||'ai')}; if(fin.done) m52Expert(body);
+              return new Response(JSON.stringify(body),{status:fin.done?200:(+fin.status||502),headers:{'content-type':'application/json'}});
+            }).catch(e=>{ if(e&&e.name==='AbortError') throw e; if(!got) return classic(); throw e; }); } } } }catch(e){}
+    return m52F0.apply(this,arguments); }; }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
