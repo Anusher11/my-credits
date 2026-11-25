@@ -5527,6 +5527,276 @@ html .sheet.m52:has(.sf-head), html.m40[data-sk] .sheet.m52:has(.sf-head){width:
 .m53-nx small{flex-basis:100%;font-size:.74rem;color:var(--muted)}
 .m53-nx .chip{max-width:100%;white-space:normal;text-align:left;line-height:1.25}
 @media (prefers-color-scheme: dark){ .m53-k.good em,.m53-gz.good,.m53-pc .p b{color:#5FD3A4} .m53-k.bad em,.m53-gz.bad,.m53-pc .c b{color:#FF8FA9} .m53-k.warn em,.m53-gz.warn{color:#F2C063} }
+/* ===================== v54 ===================== */
+/* ---------- экран «Кредиты»: итог → кредиты → месяц → дорога к свободе ---------- */
+html.m54 #view-loans>#m8Sum,html.m54 #view-loans>#m8Sum>.m8-sum{display:contents;}
+html.m54 #view-loans .m12-sum.m49-sum{order:1; background:var(--surface); border-radius:26px; padding:18px 16px 14px; margin-bottom:14px; box-shadow:var(--shadow);}
+html.m54 #view-loans>#tip{order:5;}
+html.m54 #view-loans .m49-sum .m12-stats{margin-bottom:2px;}
+html.m54 #view-loans>.section-h{order:3; margin-top:6px; margin-bottom:8px;}
+html.m54 #view-loans>#m54-sort{order:3;}
+html.m54 #view-loans>#cards{order:4;}
+html.m54 #view-loans>#c29Entry{order:4;}
+html.m54 #view-loans>#monthCheck{order:5;}
+html.m54 #view-loans .m8-load{order:6;}
+html.m54 #view-loans .m8-load.m41-on{background:var(--surface); border-radius:26px; padding:18px 16px 16px; margin:16px 0 0; box-shadow:var(--shadow); border-top:0;}
+html.m54 #view-loans .w29-row{order:6; margin:8px 0 0;}
+html.m54 #view-loans>#victory{order:7;} html.m54 #view-loans>#m36Gantt{order:8;} html.m54 #view-loans>#strategy{order:9;}
+html.m54 #view-loans>#dynamics{order:10;} html.m54 #view-loans>#goldSection{order:11;} html.m54 #view-loans>#closed{order:12;} html.m54 #view-loans>#exampleNote{order:13;}
+/* подписи под полосой убраны: карточки кредитов тех же цветов стоят сразу ниже */
+html.m54 #view-loans .m49-leg2{display:none;}
+html.m54 #view-loans .m49-track{margin-bottom:26px;}
+html.m54 #view-loans .m49-st i[data-m54seg]{cursor:pointer;}
+
+.m54-sort{display:flex; align-items:center; gap:6px; overflow-x:auto; margin:0 -16px 10px; padding:2px 16px 4px; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+.m54-sort::-webkit-scrollbar{display:none;}
+.m54-sort>span{flex:none; font:700 .78rem var(--font-body); color:var(--muted); margin-right:2px;}
+.m54-sort button{flex:none; min-height:36px; padding:0 13px; border-radius:99px; border:1px solid var(--line); background:var(--surface); color:var(--muted); font:700 .82rem var(--font-body); white-space:nowrap;}
+.m54-sort button.on{background:var(--ink); border-color:var(--ink); color:var(--surface);}
+
+/* карточка кредита: свой цвет — полоса слева, кольцо и шкала; значок в кольце; платёж и подробности — во всю ширину */
+html.m54 #cards .card.m54-c{position:relative; display:grid; grid-template-columns:58px minmax(0,1fr) 18px; gap:0 12px; align-items:start; padding:14px 12px 14px 17px; overflow:hidden; border-radius:22px;}
+html.m54 #cards .card.m54-c::before{content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--lc);}
+html.m54 #cards .card.m54-c>.c-main{display:contents;}
+html.m54 #cards .card.m54-c>.m54-rg{grid-column:1; grid-row:1 / span 3;}
+html.m54 #cards .card.m54-c>.c-chev{grid-column:3; grid-row:1 / span 3; align-self:center; color:var(--muted);}
+html.m54 #cards .card.m54-c .c-top{grid-column:2; grid-row:1; align-items:flex-start;}
+html.m54 #cards .card.m54-c .cbar{grid-column:2; grid-row:2;}
+html.m54 #cards .card.m54-c .c-sub{grid-column:2; grid-row:3;}
+html.m54 #cards .card.m54-c .m54-np,html.m54 #cards .card.m54-c .m12-meta{grid-column:1 / -1;}
+html.m54 #cards .card.m54-c .cbar i{background:var(--lc);}
+html.m54 #cards .card.m54-c .c-name{white-space:normal; display:flex; flex-wrap:wrap; align-items:center; gap:4px 7px; overflow:visible; line-height:1.2;}
+html.m54 #cards .card.m54-c .c-rem{font-size:1.06rem; line-height:1.2;}
+html.m54 #cards .card.m54-c .m12-meta span{flex-wrap:wrap;}
+.m54-rg{position:relative; flex:none; width:58px; height:58px; display:grid; place-items:center; margin-top:1px;}
+.m54-rg svg{position:absolute; inset:0; width:100%; height:100%; transform:rotate(-90deg);}
+.m54-rg circle{fill:none; stroke-width:4.5;}
+.m54-rg .t{stroke:var(--track);}
+.m54-rg .f{stroke:var(--lc); stroke-linecap:round; stroke-dashoffset:var(--o);}
+.m54-rg .ava{width:42px; height:42px; border-radius:50%; font-size:1.02rem;}
+.m54-tag{font-style:normal; display:inline-block; padding:2px 8px; border-radius:99px; background:color-mix(in srgb,var(--lc) 15%,var(--surface)); color:color-mix(in srgb,var(--lc) 62%,var(--ink)); font:800 .74rem var(--font-num); white-space:nowrap; font-variant-numeric:tabular-nums;}
+.m54-np{display:flex; align-items:center; gap:10px; margin-top:11px; padding:9px 12px; border-radius:13px; background:var(--surface-2); font-size:.84rem; min-width:0;}
+.m54-np .d{display:inline-flex; align-items:center; gap:6px; color:var(--ink); flex:none;} .m54-np .d b{font-weight:800; white-space:nowrap;} .m54-np .d svg{flex:none; color:var(--lc);}
+.m54-np .a{margin-left:auto; font:800 .9rem var(--font-num); font-variant-numeric:tabular-nums; white-space:nowrap;}
+.m54-np em{flex:none; font-style:normal; font-weight:700; font-size:.74rem; color:var(--muted); padding:3px 8px; border-radius:99px; background:var(--surface); white-space:nowrap;}
+.m54-np.soon em{background:var(--warn-weak); color:var(--warn);} .m54-np.urg em,.m54-np.late em,.m54-np.chk em{background:var(--danger-weak); color:var(--danger);}
+.m12-meta .m54-sh i{width:12px; height:12px; border-radius:50%; background:conic-gradient(var(--lc) calc(var(--p)*1%),var(--track) 0); flex:none;}
+.m12-meta .m36-int u{text-decoration:none; opacity:.85;}
+
+.m54-file{display:flex; align-items:center; gap:14px; width:100%; text-align:left; padding:12px 16px; border-radius:20px; border:0; background:var(--surface); box-shadow:var(--shadow); color:var(--ink); font-family:inherit; min-height:64px; margin-top:10px; cursor:pointer;}
+.m54-fi{flex:none; width:40px; height:40px; border-radius:13px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m54-file b{display:block; font-size:1rem;} .m54-file small{display:block; color:var(--muted); font-size:.84rem; line-height:1.35;}
+.m54-all{display:inline-flex; align-items:center; gap:6px; min-height:44px; margin:2px 0 4px;}
+#m54-txt{width:100%; font:500 .8rem ui-monospace,Menlo,Consolas,monospace; min-height:88px;}
+
+.m54-sw{display:flex; flex-wrap:wrap; gap:8px;}
+.m54-sw button{width:40px; height:40px; border-radius:50%; border:3px solid var(--surface); background:var(--c); padding:0; box-shadow:0 0 0 1px var(--line);}
+.m54-sw button.au{width:auto; padding:0 14px; border-radius:99px; background:var(--surface-2); color:var(--ink); font:700 .84rem var(--font-body);}
+.m54-sw button.on{box-shadow:0 0 0 2.5px var(--ink);}
+
+/* появление — только онлайн (html.m48-live ставит приложение) и если не просили меньше движения */
+@keyframes m54up{from{opacity:0; transform:translateY(14px);}}
+@keyframes m54ring{from{stroke-dashoffset:var(--c);}}
+@keyframes m54grow{from{transform:scaleX(0);}}
+@keyframes m54hit{0%,100%{box-shadow:var(--shadow);} 25%,60%{box-shadow:0 0 0 3px var(--lc),var(--shadow);}}
+html.m48-live #cards.m54-in .card.m54-c{animation:m54up .5s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(var(--i)*70ms);}
+html.m48-live #cards.m54-in .m54-rg .f{animation:m54ring 1s cubic-bezier(.3,.1,.2,1) both; animation-delay:calc(var(--i)*70ms + .15s);}
+html.m48-live #cards.m54-in .card.m54-c .cbar i{transform-origin:left center; animation:m54grow .9s cubic-bezier(.3,.1,.2,1) both; animation-delay:calc(var(--i)*70ms + .15s);}
+#cards .card.m54-hit{animation:m54hit 1.5s ease;}
+@media (prefers-reduced-motion: reduce){
+  html.m48-live #cards.m54-in .card.m54-c,html.m48-live #cards.m54-in .m54-rg .f,html.m48-live #cards.m54-in .card.m54-c .cbar i,#cards .card.m54-hit{animation:none;}
+}
+html.m54 #view-loans>.section-h{flex-wrap:nowrap;}
+html.m54 #view-loans>.section-h h2{white-space:nowrap;}
+html.m54 #view-loans>.section-h .count{flex:none; min-width:26px; height:26px; padding:0 8px; border-radius:99px; background:var(--surface-2); color:var(--muted); font:800 .82rem var(--font-num); display:inline-grid; place-items:center;}
+html.m54 #view-loans>.section-h .count:empty{display:none;}
+html.m54 #view-loans>.section-h .m8-addh{white-space:nowrap; flex:none;}
+html.m54 #cards .card.m54-c .c-name .gb{display:none;}
+.m12-meta .m54-gd{background:color-mix(in srgb,var(--gold) 16%,var(--surface)); color:color-mix(in srgb,var(--gold) 55%,var(--ink));}
+
+/* ===================== окно Сифры ===================== */
+.sheet.m52.m54w{isolation:isolate;}
+.m54-bg{position:absolute; left:0; right:0; top:0; height:48vh; z-index:-1; pointer-events:none; overflow:hidden; background:radial-gradient(220px 200px at 50% -60px,rgba(169,240,209,.36),transparent 70%); -webkit-mask-image:linear-gradient(#000 30%,transparent); mask-image:linear-gradient(#000 30%,transparent);}
+.m54-bg::before,.m54-bg::after{content:''; position:absolute; border-radius:50%; filter:blur(48px); opacity:.5; will-change:transform;}
+.m54-bg::before{width:300px; height:300px; left:-100px; top:-140px; background:#B79BFF;}
+.m54-bg::after{width:260px; height:260px; right:-90px; top:-120px; background:#FFC6A8;}
+:root[data-theme="dark"] .m54-bg::before,:root[data-theme="dark"] .m54-bg::after{opacity:.2;}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .m54-bg::before,:root:not([data-theme="light"]) .m54-bg::after{opacity:.2;} }
+@keyframes m54drift{to{transform:translate(46px,30px) scale(1.12);}}
+@keyframes m54drift2{to{transform:translate(-40px,36px) scale(.92);}}
+html.m48-live .m54w .m54-bg::before{animation:m54drift 19s ease-in-out infinite alternate;}
+html.m48-live .m54w .m54-bg::after{animation:m54drift2 23s ease-in-out infinite alternate;}
+html.m48-live .m54w[data-m54st="think"] .m54-bg::before,html.m48-live .m54w[data-m54st="think"] .m54-bg::after,html.m48-live .m54w[data-m54st="write"] .m54-bg::before,html.m48-live .m54w[data-m54st="write"] .m54-bg::after{animation-duration:7s;}
+.m54w[data-m54st="off"] .m54-bg{filter:grayscale(1); opacity:.6;}
+
+/* шапка */
+.sheet.m52.m54w .sf-head{background:transparent; border-bottom:0; gap:8px; padding-bottom:8px;}
+.sheet.m52.m54w .sf-head h3{font-size:1.12rem; letter-spacing:-.01em;}
+.sheet.m52.m54w .sf-head .sf-tic{background:color-mix(in srgb,var(--surface) 80%,transparent); border:0; box-shadow:0 1px 2px rgba(20,16,40,.08); color:var(--ink);}
+.m54-hid{display:none !important;}
+.sheet.m52.m54w .sf-ava.m54-orb{position:relative; flex:none; width:42px; height:42px; border-radius:50%; overflow:hidden; display:grid; place-items:center; background:linear-gradient(135deg,#9B6BFF,#6D28D9); isolation:isolate; box-shadow:0 6px 16px -6px rgba(109,40,217,.55);}
+.m54-orb::before{content:''; position:absolute; inset:-35%; background:conic-gradient(from 0deg,#A78BFA,#F0ABFC,#FDBA74,#6EE7B7,#A78BFA); filter:blur(8px); opacity:.95;}
+.m54-orb::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 30% 24%,rgba(255,255,255,.6),transparent 46%);}
+.sheet.m52.m54w .m54-orb svg{position:relative; z-index:1; width:60%; height:60%; display:block; filter:drop-shadow(0 1px 2px rgba(60,20,120,.35));}
+@keyframes m54spin{to{transform:rotate(360deg);}}
+@keyframes m54beat{50%{transform:scale(.82);}}
+html.m48-live .m54w .m54-orb::before{animation:m54spin 16s linear infinite;}
+html.m48-live .m54w[data-m54st="think"] .m54-orb::before{animation-duration:2.4s;}
+html.m48-live .m54w[data-m54st="write"] .m54-orb::before,html.m48-live .m54w[data-m54st="speak"] .m54-orb::before{animation-duration:5s;}
+html.m48-live .m54w[data-m54st="think"] .m54-orb svg,html.m48-live .m54w[data-m54st="listen"] .m54-orb svg{animation:m54beat 1.1s ease-in-out infinite;}
+.m54w[data-m54st="off"] .m54-orb{filter:grayscale(.95);}
+#m54-off{flex:none; margin:0 14px 6px; padding:8px 12px; border-radius:14px; background:var(--warn-weak); color:var(--warn); font-size:.82rem; font-weight:700; display:flex; gap:8px; align-items:center; line-height:1.3;}
+#m54-off[hidden]{display:none;}
+
+/* лента: вопрос — пузырёк справа, ответ Сифры — открытый текст во всю ширину */
+.sheet.m52.m54w .sf-log{position:relative; padding-top:6px; gap:14px;}
+.sheet.m52.m54w .sf-m.u{max-width:86%; border-radius:22px 22px 7px 22px; padding:10px 15px; box-shadow:0 8px 18px -10px color-mix(in srgb,var(--brand) 80%,transparent);}
+.sheet.m52.m54w .sf-m.a{max-width:100%; width:100%; background:none; border:0; border-radius:0; padding:0 2px; font-size:1rem; line-height:1.55;}
+.sheet.m52.m54w .sf-m.a.m52-loc{background:var(--surface); border:1px solid color-mix(in srgb,var(--brand) 22%,var(--line)); border-radius:22px; padding:14px;}
+.sheet.m52.m54w .sf-m.a.sf-wait{padding:4px 2px;}
+.sheet.m52.m54w .sf-say{display:none !important;}
+.sheet.m52.m54w .sf-m.a .m52-acts{margin-right:0;}
+.m54-acts{display:flex; flex-wrap:wrap; align-items:center; gap:2px; margin-top:8px;}
+.m52-acts.m54-acts button{min-height:38px; border:0; background:none; color:var(--muted); border-radius:12px; padding:0 10px; font:700 .8rem var(--font-body);}
+.m52-acts.m54-acts button.ic{width:40px; padding:0; display:grid; place-items:center;}
+.m52-acts.m54-acts button:not(.ic){border:1px solid var(--line); color:var(--brand-ink); margin-left:6px; border-radius:99px; min-height:34px; padding:0 13px;}
+.m52-acts.m54-acts button:active{background:var(--surface-2);}
+.m52-acts.m54-acts button.on{color:var(--brand); background:var(--brand-weak);}
+
+/* поле ввода: «+», камера, текст с диктовкой, одна кнопка действия — голос / отправить / стоп */
+.sheet.m52.m54w .sf-bar.m54-bar{display:flex; align-items:flex-end; gap:6px; padding:7px; border-radius:30px; background:var(--surface); border:1px solid var(--line); box-shadow:0 12px 32px -14px rgba(20,16,40,.28);}
+.sheet.m52.m54w .m54-ib,.sheet.m52.m54w .m54-bar .sf-cam{flex:none; width:44px; height:44px; border-radius:50%; border:0; display:grid; place-items:center; background:var(--surface-2); color:var(--ink); cursor:pointer;}
+.sheet.m52.m54w .m54-bar .sf-cam{background:none; color:var(--muted); width:40px;}
+#m54-plus svg{transition:transform .25s cubic-bezier(.3,1.4,.5,1);}
+#m54-plus[aria-expanded="true"]{background:var(--ink); color:var(--surface);} #m54-plus[aria-expanded="true"] svg{transform:rotate(45deg);}
+.m54-field{flex:1; min-width:0; display:flex; align-items:flex-end; min-height:44px;}
+.sheet.m52.m54w .m54-field textarea{flex:1; min-width:0; border:0; background:none; resize:none; padding:11px 2px 11px 4px; font:inherit; font-size:1rem; line-height:1.35; color:var(--ink); outline:none; max-height:120px;}
+.sheet.m52.m54w .m54-field .sf-mic{flex:none; width:38px; height:44px; border:0; background:none; color:var(--muted); display:grid; place-items:center; border-radius:50%;}
+.sheet.m52.m54w .m54-field .sf-mic.rec{background:#C8381F; color:#fff; width:44px;}
+.sheet.m52.m54w .sf-send.m54-act{flex:none; width:46px; height:46px; border-radius:50%; border:0; display:grid; place-items:center; background:var(--brand); color:#fff; position:relative; opacity:1; transition:background .2s,transform .12s;}
+.m54-act:active{transform:scale(.94);}
+.m54-act svg{position:absolute; inset:0; margin:auto; opacity:0; transform:scale(.5) rotate(-40deg); transition:opacity .16s,transform .24s cubic-bezier(.3,1.4,.5,1);}
+.m54-act[data-mode="voice"] .i-wave,.m54-act[data-mode="send"] .i-send,.m54-act[data-mode="stop"] .i-stop{opacity:1; transform:none;}
+.sheet.m52.m54w .sf-send.m54-act[data-mode="voice"],.sheet.m52.m54w .sf-send.m54-act[data-mode="stop"]{background:var(--ink); color:var(--surface);}
+.sheet.m52.m54w.m54-typing .m54-bar .sf-cam{display:none;}
+/* кнопки-режимы («Путь к цели», «Найти фабрику»…) остаются под рукой и в разговоре; убираются только пока человек печатает, открыт лоток или идёт ответ */
+.m54w.m54-typing #sf-qs,.m54w.m54-tr #sf-qs,.m54w.m54-busy #sf-qs{display:none;}
+.m54w.m54-has .sf-note,.m54w.m54-typing .sf-note,.m54w.m54-tr .sf-note{display:none;}
+.sheet.m52.m54w.m54-has .sf-bar,.sheet.m52.m54w.m54-typing .sf-bar,.sheet.m52.m54w.m54-tr .sf-bar{margin-bottom:calc(10px + env(safe-area-inset-bottom,0px));}
+.sheet.m52.m54w #m52-down{bottom:calc(86px + env(safe-area-inset-bottom,0px));}
+
+/* подсказки при наборе */
+#m54-type{flex:none; margin:0 12px 6px; display:flex; flex-direction:column; gap:4px;}
+#m54-type[hidden],#m54-tray[hidden]{display:none;}
+#m54-type button{display:flex; align-items:center; gap:10px; min-height:44px; padding:0 14px; border-radius:16px; border:1px solid var(--line); background:var(--surface); color:var(--ink); font:600 .92rem var(--font-body); text-align:left; cursor:pointer;}
+#m54-type button>svg{flex:none; color:var(--muted);} #m54-type button span{flex:1; min-width:0;}
+#m54-type em{flex:none; font-style:normal; display:inline-flex; align-items:center; gap:3px; font-size:.7rem; font-weight:800; color:var(--brand-ink); background:var(--brand-weak); border-radius:99px; padding:3px 8px 3px 5px;}
+
+/* лоток «+» */
+#m54-tray{flex:none; margin:0 12px 8px; padding:8px; border-radius:26px; background:var(--surface); border:1px solid var(--line); box-shadow:0 14px 34px -16px rgba(20,16,40,.3);}
+.m54-tg{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4px;}
+.m54-tg button{display:flex; flex-direction:column; align-items:center; gap:5px; padding:10px 3px 8px; border:0; border-radius:18px; background:none; color:var(--ink); font:inherit; text-align:center; min-height:92px; cursor:pointer;}
+.m54-tg button span{width:46px; height:46px; border-radius:16px; display:grid; place-items:center; background:var(--brand-weak); color:var(--brand-ink);}
+.m54-tg b{font-size:.8rem; font-weight:800; line-height:1.15;} .m54-tg small{font-size:.66rem; color:var(--muted); line-height:1.2;}
+.m54-tg button:active{background:var(--surface-2);}
+@keyframes m54pop{from{opacity:0; transform:translateY(12px) scale(.98);}}
+@keyframes m54fade{from{opacity:0;}}
+@keyframes m54sheet{from{transform:translateY(100%);}}
+html.m48-live .m54w #m54-tray:not([hidden]),html.m48-live .m54w #m54-type:not([hidden]){animation:m54pop .22s cubic-bezier(.2,.8,.2,1) both;}
+html.m48-live .m54w .m54-tg button{animation:m54up .32s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(var(--i)*24ms);}
+
+/* меню — лист снизу */
+.sheet.m52.m54w #m52-pop.m54-menu{position:absolute; inset:0; top:0; right:0; z-index:8; min-width:0; max-width:none; width:auto; background:rgba(20,16,40,.4); display:flex; align-items:flex-end; padding:0; border:0; border-radius:0; box-shadow:none;}
+.m54-ms{width:100%; background:var(--surface); border-radius:28px 28px 0 0; padding:8px 12px calc(14px + env(safe-area-inset-bottom,0px)); max-height:88%; overflow:auto; box-shadow:0 -12px 44px rgba(20,16,40,.22);}
+.m54-grab{display:block; width:40px; height:4px; border-radius:2px; background:var(--line); margin:4px auto 4px;}
+.m54-ms>p{margin:12px 8px 2px; font-size:.74rem; font-weight:800; color:var(--muted);}
+#m52-pop.m54-menu button[role="menuitem"]{display:flex; align-items:center; justify-content:flex-start; gap:12px; width:100%; min-height:54px; padding:6px 8px; border:0; border-radius:16px; background:none; color:var(--ink); font:700 .98rem var(--font-body); text-align:left; cursor:pointer;}
+#m52-pop.m54-menu button[role="menuitem"] .i{flex:none; width:40px; height:40px; border-radius:14px; display:grid; place-items:center; background:var(--surface-2); color:var(--ink);}
+#m52-pop.m54-menu button[role="menuitem"]>span:nth-child(2){flex:1; min-width:0;}
+#m52-pop.m54-menu button[role="menuitem"]>i{font-style:normal; font:800 .78rem var(--font-num); color:var(--muted); background:var(--surface-2); border-radius:99px; padding:3px 9px;}
+#m52-pop.m54-menu button.warn{color:var(--danger);} #m52-pop.m54-menu button.warn .i{background:var(--danger-weak); color:var(--danger);}
+.m54-seg{padding:6px 8px 4px;} .m54-seg>span{display:flex; align-items:center; gap:8px; font-weight:700; font-size:.96rem; margin-bottom:8px;}
+.m54-seg>div{display:flex; gap:4px; background:var(--surface-2); border-radius:15px; padding:4px;}
+#m52-pop.m54-menu .m54-seg button{flex:1; min-height:42px; border:0; border-radius:11px; background:none; color:var(--muted); font:700 .8rem var(--font-body); padding:0 4px; justify-content:center; text-align:center; display:block;}
+#m52-pop.m54-menu .m54-seg button.on{background:var(--surface); color:var(--ink); box-shadow:0 1px 3px rgba(20,16,40,.14);}
+html.m48-live .m54w #m52-pop.m54-menu{animation:m54fade .18s both;} html.m48-live .m54w .m54-ms{animation:m54sheet .3s cubic-bezier(.2,.8,.2,1) both;}
+.m54-hl li{display:flex; align-items:center; gap:8px;} .m54-hb{flex:1; min-width:0; text-align:left; border:0; background:none; color:var(--ink); font:inherit; padding:6px 0; min-height:48px; cursor:pointer;}
+.m54-hb b{display:block; font-size:.96rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;} .m54-hb small{display:block; color:var(--muted); font-size:.78rem;}
+
+/* приветствие */
+.sheet.m52.m54w .sf-hello.m52-hi{padding:8px 2px 0;}
+.m54-hi-t{margin:0 !important; font:800 1.75rem/1.15 var(--font-num); letter-spacing:-.02em;}
+.m54-hi-s{margin:6px 0 16px !important; color:var(--muted); font-size:.98rem; line-height:1.4;}
+.m54-ins{display:flex; gap:10px; overflow-x:auto; margin:0 -14px 16px; padding:2px 14px 8px; scroll-snap-type:x proximity; scrollbar-width:none; -webkit-overflow-scrolling:touch;}
+.m54-ins::-webkit-scrollbar{display:none;}
+.m54-ic{flex:none; width:200px; min-height:122px; scroll-snap-align:start; display:flex; flex-direction:column; align-items:flex-start; gap:3px; text-align:left; padding:13px 14px 12px; border-radius:22px; border:0; background:var(--surface); box-shadow:var(--shadow); color:var(--ink); font:inherit; position:relative; overflow:hidden; cursor:pointer;}
+.m54-ic small{font-size:.74rem; font-weight:800; color:var(--muted);}
+.m54-ic b{font:800 1.3rem/1.15 var(--font-num); font-variant-numeric:tabular-nums; letter-spacing:-.01em;}
+.m54-ic em{font-style:normal; font-size:.76rem; color:var(--muted); line-height:1.3;}
+.m54-iv{margin-top:auto; width:100%; height:22px; display:block;} .m54-iv .ax{stroke:var(--line); stroke-width:2; stroke-linecap:round; fill:none;} .m54-iv .now{stroke:var(--ink); stroke-width:2; stroke-linecap:round; fill:none;}
+.m54-iv.rg{position:absolute; right:12px; top:12px; width:30px; height:30px; margin:0; transform:rotate(-90deg);} .m54-iv.rg circle{fill:none; stroke-width:3.4;} .m54-iv.rg .t{stroke:var(--track);} .m54-iv.rg .f{stroke:var(--brand); stroke-linecap:round;}
+.m54-iv.sp rect{fill:color-mix(in srgb,var(--brand) 42%,transparent);} .m54-iv.sp rect:last-child{fill:var(--brand);}
+.m54-ic.late{background:var(--danger-weak);} .m54-ic.late b{color:var(--danger); font-size:1.02rem;}
+.m54-ic.free b{color:var(--m-leaf,#0E8F5B);}
+.m54-ic.next{padding-left:18px;} .m54-ic.next::before{content:''; position:absolute; left:0; top:0; bottom:0; width:5px; background:var(--lc,var(--brand));}
+.m54-ic:active{transform:scale(.98);}
+html.m48-live .m54w .m54-ic{animation:m54up .5s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(var(--i)*70ms + .05s);}
+.sheet.m52.m54w .m52-grid.m54-grid{grid-template-columns:1fr 1fr; gap:8px;}
+.sheet.m52.m54w .m54-grid button{display:grid; grid-template-columns:38px minmax(0,1fr); gap:0 10px; align-items:center; padding:10px 11px; border-radius:18px; min-height:66px; text-align:left;}
+.sheet.m52.m54w .m54-grid button span{grid-row:1 / span 2; width:38px; height:38px; margin:0;}
+.sheet.m52.m54w .m54-grid button b{font-size:.84rem; line-height:1.2; align-self:end;}
+.sheet.m52.m54w .m54-grid button small{font-size:.7rem; line-height:1.2; align-self:start; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+
+/* ползунки «что если» */
+.m54-calc{display:flex; flex-direction:column; gap:10px;}
+.m54-cl{display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; margin:0 -2px; padding:1px 2px;} .m54-cl::-webkit-scrollbar{display:none;}
+.m54-cl button{flex:none; display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 12px; border-radius:99px; border:1px solid var(--line); background:var(--surface); color:var(--muted); font:700 .8rem var(--font-body); white-space:nowrap; cursor:pointer;}
+.m54-cl button.on{border-color:var(--ink); color:var(--ink);} .m54-cl i{width:9px; height:9px; border-radius:50%; flex:none;}
+.m54-cf{margin:0 !important; font-size:.82rem; color:var(--muted); line-height:1.5;} .m54-cf b{color:var(--ink); white-space:nowrap;}
+.m54-cr{display:grid; grid-template-columns:1fr auto; gap:0 10px; align-items:baseline;} .m54-cr span{font-size:.86rem; font-weight:700;} .m54-cr output{font:800 1.08rem var(--font-num); font-variant-numeric:tabular-nums;}
+.m54-cr input[type="range"]{grid-column:1 / -1; width:100%; height:40px; margin:0; accent-color:var(--brand); background:none;}
+.m54-ch,.m54-cb{display:grid; grid-template-columns:4.4em minmax(0,1fr) minmax(0,1fr); gap:8px; align-items:center;} .m54-ch small{font-size:.72rem; font-weight:800; color:var(--muted);}
+.m54-co{display:flex; flex-direction:column; gap:6px;}
+.m54-cb>span{font-size:.82rem; font-weight:700; color:var(--muted);}
+.m54-cb>div{position:relative; height:32px; border-radius:10px; background:var(--surface-2); overflow:hidden; display:flex; align-items:center;}
+.m54-cb>div i{position:absolute; left:0; top:0; bottom:0; border-radius:10px; background:color-mix(in srgb,var(--brand) 24%,transparent); transition:width .4s cubic-bezier(.3,.1,.2,1);}
+.m54-cb>div.in i{background:color-mix(in srgb,var(--danger) 22%,transparent);}
+.m54-cb.b>div i{background:color-mix(in srgb,var(--brand) 55%,transparent);} .m54-cb.b>div.in i{background:color-mix(in srgb,var(--danger) 48%,transparent);}
+.m54-cb b{position:relative; padding:0 9px; font:800 .82rem var(--font-num); white-space:nowrap; font-variant-numeric:tabular-nums;}
+.m54-cn{margin:2px 0 0 !important; font-size:.9rem; font-weight:700; color:var(--muted); line-height:1.35;} .m54-cn.good{color:var(--m-leaf,#0E8F5B);} .m54-cn.bad{color:var(--danger);}
+.m54-kp{display:grid; grid-template-columns:1fr 1fr; gap:8px;} .m54-kp>div{background:var(--surface-2); border-radius:14px; padding:10px 12px; min-width:0;} .m54-kp small{display:block; font-size:.74rem; font-weight:700; color:var(--muted);} .m54-kp b{font:800 1.12rem var(--font-num); font-variant-numeric:tabular-nums;} .m54-kp .good b{color:var(--m-leaf,#0E8F5B);} .m54-kp .bad b{color:var(--danger);}
+.m54-gb{height:10px; border-radius:5px; background:var(--track); overflow:hidden;} .m54-gb i{display:block; height:100%; border-radius:5px; background:var(--brand); transition:width .4s;}
+.m54-ce{color:var(--muted); font-size:.72rem; line-height:1.3;}
+
+/* графики в ответах оживают один раз — когда дошли до экрана */
+@keyframes m54fig{from{opacity:0; transform:translateY(10px);}}
+@keyframes m54wipe{from{clip-path:inset(0 100% 0 0);} to{clip-path:inset(0 0 0 0);}}
+@keyframes m54growc{from{transform:scaleX(0);}}
+@keyframes m54gp{from{left:0;}}
+html.m48-live #sf-log [data-m54="w"]{opacity:0;}
+#sf-log [data-m54="go"]{animation:m54fig .5s cubic-bezier(.2,.7,.2,1) both;}
+#sf-log [data-m54="go"] .m45-rb i,#sf-log [data-m54="go"] .m52-bar i,#sf-log [data-m54="go"] .m52-bars u{transform-origin:left center; animation:m54grow .9s cubic-bezier(.3,.1,.2,1) .2s both;}
+#sf-log [data-m54="go"] .m46-sb,#sf-log [data-m54="go"] .m45-svg,#sf-log [data-m54="go"] .m53-gt,#sf-log [data-m54="go"] .m52-sp{animation:m54wipe 1s cubic-bezier(.3,.1,.2,1) .2s both;}
+#sf-log [data-m54="go"] .m46-tr i{transform-origin:center; animation:m54growc .8s cubic-bezier(.3,.1,.2,1) .25s both;}
+#sf-log [data-m54="go"] .m53-gp{animation:m54gp 1s cubic-bezier(.3,1.3,.5,1) .25s both;}
+#sf-log [data-m54="go"] :is(.m46-steps,.m46-math,.m46-rk,.m46-lgl,.m52-rows,.m53-pc ul)>li,#sf-log [data-m54="go"] .m53-k,#sf-log [data-m54="go"] .m46-tb tbody tr,#sf-log [data-m54="go"] .m45-r{animation:m54up .45s cubic-bezier(.2,.7,.2,1) both; animation-delay:.15s;}
+#sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(2){animation-delay:.22s;} #sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(3){animation-delay:.29s;}
+#sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(4){animation-delay:.36s;} #sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(5){animation-delay:.43s;}
+#sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(6){animation-delay:.5s;} #sf-log [data-m54="go"] :is(li,.m53-k,tr,.m45-r):nth-child(n+7){animation-delay:.57s;}
+#sf-log [data-m54="go"] .m45-r:nth-child(2) .m45-rb i{animation-delay:.27s;} #sf-log [data-m54="go"] .m45-r:nth-child(3) .m45-rb i{animation-delay:.34s;} #sf-log [data-m54="go"] .m45-r:nth-child(4) .m45-rb i{animation-delay:.41s;} #sf-log [data-m54="go"] .m45-r:nth-child(n+5) .m45-rb i{animation-delay:.48s;}
+@media (prefers-reduced-motion: reduce){
+  html.m48-live #sf-log [data-m54="w"]{opacity:1;}
+  #sf-log [data-m54],#sf-log [data-m54] *,.m54w .m54-bg::before,.m54w .m54-bg::after,.m54w .m54-orb::before,.m54w .m54-orb svg,.m54w #m54-tray,.m54w #m54-type,.m54w .m54-tg button,.m54w #m52-pop.m54-menu,.m54w .m54-ms,.m54w .m54-ic{animation:none !important;}
+  .m54-act svg,.m54-cb>div i,.m54-gb i,#m54-plus svg{transition:none;}
+}
+.sheet.m52.m54w .sf-m.a.m54-lc .m46-vn,.sheet.m52.m54w .sf-m.a.m54-lc .m46-fb{display:none;}
+/* узкий экран и крупный шрифт: строка платежа и плашки переносятся, а не вылезают за карточку */
+html.m54 #cards .card.m54-c .m54-np{flex-wrap:wrap; row-gap:4px; min-width:0; max-width:100%;}
+html.m54 #cards .card.m54-c .m54-np .d{flex:0 1 auto; min-width:0;} html.m54 #cards .card.m54-c .m54-np .d b{white-space:normal;}
+html.m54 #cards .card.m54-c .m12-meta{min-width:0; max-width:100%;}
+html.m54 #cards .card.m54-c .m12-meta span{white-space:normal; max-width:100%; text-align:left;}
+html.m54 #cards .card.m54-c .c-top,html.m54 #cards .card.m54-c .c-sub{min-width:0; flex-wrap:wrap;}
+html.m54 #cards .card.m54-c .c-rem{margin-left:auto;}
 /* <</v44 css>> */
 
 
@@ -23050,7 +23320,7 @@ for(const k of ['ru','tg','en']){ try{ m44Wrap(M46S[k]); }catch(e){} Object.assi
   try{ const w0=D[k].sfWait; if(typeof w0==='function') D[k].sfWait=s=>s>=25?w0(s)+' · '+M46S[k].m46Deep:w0(s); }catch(e){} }
 /* ===================== v46: «Путь к цели» (план эксперта), графики в ответах Сифры, «Найти фабрику» ===================== */
 /* ---------- графики из ответа: math, table, steps, line, bars, ranges, stack, cal, risk, sup ---------- */
-const M46VI={math:'calc',table:'flow',steps:'flag',line:'chart',bars:'stats',ranges:'ruler',stack:'coins',cal:'calendar',risk:'warn',sup:'truck',kpi:'stats',pros:'flag',gauge:'ruler'};
+const M46VI={math:'calc',table:'flow',steps:'flag',line:'chart',bars:'stats',ranges:'ruler',stack:'coins',cal:'calendar',risk:'warn',sup:'truck',kpi:'stats',pros:'flag',gauge:'ruler',calc:'calc'};
 const m46F=(v,u)=>{ if(v==null||!isFinite(v)) return ''; const s=new Intl.NumberFormat(lang==='en'?'en-US':'ru-RU',{maximumFractionDigits:Math.abs(v)<10?2:0}).format(v); return u?s+' '+u:s; };
 const m46Usd=v=>m46F(Math.round(+v||0),'$');
 function m46Rows(items,u){ const mx=Math.max(1e-9,...items.map(p=>Math.abs(p.v)));
@@ -23085,6 +23355,7 @@ function m46Viz(o){ try{ if(!o||!o.t) return ''; const t=o.t, u=o.u||''; let b='
   else if(t==='pros') b=`<div class="m53-pc"><div class="p"><b>${ico('check',14)} ${esc(o.pl||L.m53Pro)}</b><ul>${(o.pro||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div class="c"><b>${ico('warn',14)} ${esc(o.cl||L.m53Con)}</b><ul>${(o.con||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div>`;
   else if(t==='gauge'){ const mn=+o.min||0, mx=+o.max, sp=(mx-mn)||1, p=Math.max(0,Math.min(100,(o.v-mn)/sp*100)); let prev=mn; const zs=(o.zones||[]).filter(z=>z.to>mn).map(z=>{ const to=Math.min(mx,z.to), w=(to-prev)/sp*100; prev=to; return {w,l:z.l,s:z.s}; }).filter(z=>z.w>0), cur=(o.zones||[]).find(z=>o.v<=z.to);
     b=`<div class="m53-g"><div class="m53-gv"><b>${esc(m46F(o.v,u))}</b>${o.l?`<small>${esc(o.l)}</small>`:''}${cur&&cur.l?`<span class="m53-gz ${esc(cur.s||'')}">${esc(cur.l)}</span>`:''}</div><div class="m53-gt" aria-hidden="true">${zs.length?zs.map(z=>`<i class="${esc(z.s||'')}" style="width:${z.w.toFixed(2)}%"></i>`).join(''):'<i style="width:100%"></i>'}<span class="m53-gp" style="left:${p.toFixed(1)}%"></span></div><div class="m53-gs" aria-hidden="true"><span>${esc(m46F(mn,u))}</span><span>${esc(m46F(mx,u))}</span></div></div>`; }
+  else if(t==='calc'){ b=typeof m54CalcHTML==='function'?m54CalcHTML(o):''; if(!b) return ''; if(!o.title){ try{ o=Object.assign({},o,{title:L.m54CalcT[o.k]||''}); }catch(e){} } }
   else return '';
   return `<figure class="m45-ch m46-v m46-${t}">${o.title?`<figcaption class="m45-t">${ico(M46VI[t]||'chart',16)} ${esc(o.title)}</figcaption>`:''}${b}</figure>`; }catch(e){ return ''; } }
 function m46Body(t){ const parts=String(t||'').split(/<viz>([\s\S]*?)<\/viz>/); let h=''; parts.forEach((p,k)=>{ if(k%2){ try{ h+=m46Viz(JSON.parse(p)); }catch(e){} } else if(p.trim()) h+=sfMd(p.trim()); }); return h; }
@@ -23864,10 +24135,11 @@ function m49Wait(n){ const y=Math.floor(n/12), m=n%12; return L.m49In(y,m); }
 function m49Sig(){ try{ return mIdx(today0())+'|'+JSON.stringify((state.loans||[]).map(l=>[l.id,l.name,l.total,l.paid,l.monthly,l.rate,l.dueDay,l.pt,l.closed,l.example,l.part,(l.sched||[]).length,(l.sched||[]).reduce((s,e)=>s+(+e.a||0),0)]))+'|'+(state.payments||[]).length; }catch(e){ return String(Math.random()); } }
 function m49Data(){ const sig=m49Sig(); if(M49.dc!==undefined&&M49.sig===sig) return M49.dc; M49.sig=sig; let real=[]; try{ real=activeList().filter(x=>!x.loan.example); }catch(e){ return (M49.dc=null); }
   const act=real.filter(x=>!x.a.done); if(!act.length) return (M49.dc=null); const i0=mIdx(today0()), L0={};
-  for(const {loan,a} of act) L0[loan.id]={id:loan.id,n:loan.name,col:m8Col(loan),r:(+loan.rate||0)/1200,rate:+loan.rate||0,sum:0,pv:0,last:-1,a};
-  const months=[]; for(let i=0;i<120;i++){ const dm=dueInMonth(i0+i,real)||{}, rows=[]; for(const r of (dm.rows||[])){ const o=r.kind==='loan'&&L0[r.id]; if(!o) continue; o.sum+=r.amt; o.pv+=r.amt/Math.pow(1+o.r,i+1); o.last=i; rows.push(r); }
+  for(const {loan,a} of act) L0[loan.id]={loan,id:loan.id,n:(typeof m54Nm==='function'?m54Nm(loan):loan.name),col:m8Col(loan),r:(+loan.rate||0)/1200,rate:+loan.rate||0,sum:0,pv:0,last:-1,a};
+  const months=[]; for(let i=0;i<120;i++){ const dm=dueInMonth(i0+i,real)||{}, rows=[]; for(const r of (dm.rows||[])){ const o=r.kind==='loan'&&L0[r.id]; if(!o) continue; if(r.paid){ if(i===0) o.sh=1; continue; } o.sum+=r.amt; o.pv+=r.amt/Math.pow(1+o.r,Math.max(1,i+1-(o.sh||0))); o.last=i; rows.push(r); }
     months.push({i,d:new Date(Math.floor((i0+i)/12),(i0+i)%12,1),rows,t:rows.reduce((s,r)=>s+r.amt,0)}); }
-  for(const id in L0){ const o=L0[id]; if(!(o.sum>0)){ o.pv=Math.max(0,(+o.a.remaining||0)-(+o.a.interestLeft||0)); } o.int=(+o.a.interestLeft||0)>0?+o.a.interestLeft:Math.max(0,o.sum-o.pv); }
+  for(const id in L0){ const o=L0[id]; if(!(o.sum>0)){ o.pv=Math.max(0,(+o.a.remaining||0)-(+o.a.interestLeft||0)); }
+    else { try{ const s=schedOf(o.loan), pt=curPt(o.loan), from=pt!=null?pt:(o.a.per!=null?o.a.per-1:i0-1), rest=s?s.filter(e=>mIdx(parseYmd(e.d))>from):[]; if(rest.length&&rest.every(e=>e.p!=null)){ const sp=rest.reduce((t,e)=>t+(+e.p||0),0); if(sp>0) o.pv=sp; } }catch(e){} } o.int=(+o.a.interestLeft||0)>0?+o.a.interestLeft:Math.max(0,o.sum-o.pv); }
   return (M49.dc={i0,L0,months}); }
 function m49PerDay(){ const D=m49Data(); if(!D) return 0; let s=0; for(const id in D.L0){ const o=D.L0[id]; s+=o.pv*o.rate/100/365; } return s; }
 function m49Nice(v){ if(v<=0) return 0; const p=Math.pow(10,Math.floor(Math.log10(v))), k=v/p; return Math.round((k<1.5?1:k<3.5?2:k<7.5?5:10)*p); }
@@ -23888,7 +24160,7 @@ function m49Extra(x){ if(!(x>0)) return null; try{ const base=m41Sim(0), now=m41
 /* «Когда закроются кредиты» (v41) считал долг как «осталось выплатить» вместе с процентами по графику — проценты и экономия выходили завышенными.
    Теперь долг — сегодняшняя стоимость оставшихся платежей (как у линии «Дорога к свободе»); без графика — как раньше. */
 try{ m41Sim=function(extra){ const D=m49Data(); const L0=m41Loans().map(({loan,a})=>{ const o=D&&D.L0[loan.id], b0=o&&o.pv>0?o.pv:(+a.remaining||0)-(+a.interestLeft||0);
-      return {id:loan.id,name:loan.name,col:m8Col(loan),rate:+loan.rate||0,r:(+loan.rate||0)/1200,bal:Math.max(1,b0),pay:Math.max(1,m7Amt(a)||a.monthly||0),end:null,int:0}; });
+      return {id:loan.id,name:(typeof m54Nm==='function'?m54Nm(loan):loan.name),col:m8Col(loan),rate:+loan.rate||0,r:(+loan.rate||0)/1200,bal:Math.max(1,b0),pay:Math.max(1,m7Amt(a)||a.monthly||0),end:null,int:0}; });
     for(let m=0;m<600&&L0.some(l=>l.end==null);m++){ let pool=extra;
       for(const l of L0){ if(l.end!=null) continue; const i=l.bal*l.r; l.int+=i; l.bal+=i; l.bal-=Math.min(l.bal,l.pay); if(l.bal<=0.5){ l.bal=0; l.end=m; } }
       for(const l of L0.filter(l=>l.end==null).sort((a,b)=>b.r-a.r||a.bal-b.bal)){ if(pool<=0) break; const q=Math.min(l.bal,pool); l.bal-=q; pool-=q; if(l.bal<=0.5){ l.bal=0; l.end=m; } } }
@@ -23899,8 +24171,8 @@ function m49XOpts(P){ const m=P.pay||0; const a=[m49Nice(m*0.1),m49Nice(m*0.25),
 function m49Checks(){ const out=[]; for(const {loan,a} of m49Act()){ const s=schedOf(loan); if(!s) continue; const pt=curPt(loan), from=pt!=null?pt:(a.per!=null?a.per-1:mIdx(today0())-1);
     const rest=s.filter(e=>mIdx(parseYmd(e.d))>from); if(rest.length<3) continue; const as=rest.map(e=>+e.a||0), body=as.slice(0,-1).slice().sort((x,y)=>x-y), med=body[Math.floor(body.length/2)], lastA=as[as.length-1];
     const ck=loan.ck49||{};
-    if(med>0&&lastA>med*1.6&&lastA-med>300){ const sig='last:'+Math.round(lastA/m53K(loan)); if(ck.last!==sig) out.push({k:'last',sig,loan,txt:L.m49ChkLast(loan.name,m53M(loan,lastA),m53M(loan,med),m8MonLabel(parseYmd(rest[rest.length-1].d)))}); }
-    const sum=as.reduce((t,v)=>t+v,0), rem=+a.remaining||0; if(rem>0&&Math.abs(sum-rem)>Math.max(300,rem*0.05)){ const sig='sum:'+Math.round(sum/m53K(loan))+':'+Math.round(rem/m53K(loan)); if(ck.sum!==sig) out.push({k:'sum',sig,loan,txt:L.m49ChkSum(loan.name,m53M(loan,sum),m53M(loan,rem))}); } }
+    if(med>0&&lastA>med*1.6&&lastA-med>300&&!rest[rest.length-1].d2){ const sig='last:'+Math.round(lastA/m53K(loan)); if(ck.last!==sig) out.push({k:'last',sig,loan,txt:L.m49ChkLast(loan.name,m53M(loan,lastA),m53M(loan,med),m8MonLabel(parseYmd(rest[rest.length-1].d)))}); }
+    const hasP=rest.every(e=>e.p!=null), sum=hasP?rest.reduce((t,e)=>t+(+e.p||0),0):as.reduce((t,v)=>t+v,0), rem=+a.remaining||0; if(rem>0&&Math.abs(sum-rem)>Math.max(300,rem*0.05)){ const sig='sum:'+Math.round(sum/m53K(loan))+':'+Math.round(rem/m53K(loan)); if(ck.sum!==sig) out.push({k:'sum',sig,loan,txt:L.m49ChkSum(loan.name,m53M(loan,sum),m53M(loan,rem))}); } }
   return out; }
 function m49ChkHTML(){ const a=m49Checks(); if(!a.length) return '';
   return `<div class="m49-chk" role="alert"><b>${ico('warn',16)} ${esc(L.m49ChkT)}</b>${a.map(c=>`<div class="m49-ck"><p>${esc(c.txt)}</p><div class="m49-cb"><button type="button" class="btn btn-ghost" data-action="sched" data-id="${esc(String(c.loan.id))}">${ico('cal',16)} ${esc(L.m49ChkSch)}</button>${c.k==='sum'?`<button type="button" class="btn btn-ghost" data-action="edit" data-id="${esc(String(c.loan.id))}">${esc(L.m49ChkEdit)}</button>`:''}<button type="button" class="link-btn" data-m49ok="${esc(String(c.loan.id))}|${c.k}|${esc(c.sig)}">${esc(L.m49ChkOk)}</button></div></div>`).join('')}<small>${esc(L.m49ChkWhy)}</small></div>`; }
@@ -23934,7 +24206,7 @@ function m49RoadHTML(){ const P=m49Path(); if(!P) return ''; M49.path=P; try{ M4
   const T=today0(), endIdx=P.n, pc0=P.first.t>0?Math.round(P.first.it/P.first.t*100):0;
   /* вехи списком */
   const ms=[{i:0,c:'now',t:L.m49MsNow(money(P.B0),money(P.pay))}];
-  for(const c of P.close.slice(0,-1)){ const nx=P.M[c.i+1]; ms.push({i:c.i+1,c:'cl',col:c.col,t:L.m49MsClose(c.n,m8MonLabel(P.M[c.i].d),money(nx?nx.t:0))}); }
+  for(const c of P.close.slice(0,-1)){ const nx=P.M[c.i+1]; ms.push({i:c.i+1,c:'cl',col:c.col,t:(nx&&nx.t>0.5)||!L.m54MsEnd?L.m49MsClose(c.n,m8MonLabel(P.M[c.i].d),money(nx?nx.t:0)):L.m54MsEnd(c.n,m8MonLabel(P.M[c.i].d))}); }
   if(P.half>=0) ms.push({i:P.half+1,c:'hf',t:L.m49MsHalf(m8MonLabel(P.M[P.half].d))});
   ms.push({i:endIdx+0.5,c:'fr',t:L.m49MsFree(m8MonLabel(P.end),m49Wait(Math.max(0,mIdx(P.end)-mIdx(T))))}); ms.sort((a,b)=>a.i-b.i);
   const tg=(()=>{ try{ return m41Target(); }catch(e){ return null; } })();
@@ -23973,8 +24245,8 @@ document.addEventListener('change',e=>{ if(e.target&&e.target.id==='m41x') m49Re
 function m49Ring(p){ const R=21, C=2*Math.PI*R; return `<span class="m49-ring" role="img" aria-label="${esc(L.m12PaidPct(p))}"><svg viewBox="0 0 52 52" aria-hidden="true"><circle class="t" cx="26" cy="26" r="${R}"/><circle class="f" cx="26" cy="26" r="${R}" stroke-dasharray="${C.toFixed(2)}" style="--o:${(C*(1-p/100)).toFixed(2)};--c:${C.toFixed(2)}"/></svg><span><b>${p}%</b> <small>${esc(L.m49PaidL)}</small></span></span>`; }
 function m49SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.filter(x=>!x.a.done); if(!act.length) return '';
   const T=m8Totals(real), fr=m8Free(real);
-  const parts=act.map(x=>({n:x.loan.name,v:Math.max(0,x.a.remaining),col:m8Col(x.loan),pct:x.a.pct})).filter(p=>p.v>0).sort((p,q)=>q.v-p.v);
-  const top=parts.slice(0,4); if(parts.length>4) top.push({n:L.m8Other,v:parts.slice(4).reduce((s,p)=>s+p.v,0),col:'var(--muted)',pct:null});
+  const parts=act.map(x=>({id:x.loan.id,n:(typeof m54Nm==='function'?m54Nm(x.loan):x.loan.name),v:Math.max(0,x.a.remaining),col:m8Col(x.loan),pct:x.a.pct})).filter(p=>p.v>0).sort((p,q)=>q.v-p.v);
+  const top=parts.slice(0,8); if(parts.length>8) top.push({n:L.m8Other,v:parts.slice(8).reduce((s,p)=>s+p.v,0),col:'var(--muted)',pct:null});
   const DD=m49Data(); let mon=0, int=0, rw=0, rb=0; for(const {loan,a} of act){ mon+=Math.min(m7Amt(a),Math.max(0,a.remaining)); const o=DD&&DD.L0[loan.id]; int+=o?o.int:Math.max(0,+a.interestLeft||0); if(+loan.rate>0&&a.remaining>0){ rw+=(+loan.rate)*a.remaining; rb+=a.remaining; } }
   /* следующая ступенька платежа */
   let step=null; try{ const ms=DD?DD.months:[], k0=ms.findIndex(m=>m.t>0.5); if(k0>=0){ const v0=ms[k0].t; for(let k=k0+1;k<ms.length;k++){ const v=ms[k].t; if(v<=0.5) break; if(v<v0-0.5){ step={d:ms[k].d,v}; break; } } } }catch(e){}
@@ -23989,7 +24261,7 @@ function m49SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.
   const paid=Math.max(0,T.total-T.left), tot=Math.max(1,T.total);
   return `<div class="m12-sum m49-sum" data-m49io="sum">
     <div class="m12-st m49-top"><div><small>${L.m8SumT}</small><b class="m49-big" data-m49cnt="${Math.round(T.left)}">${money(T.left)}</b><span class="m49-of">${esc(L.m49PaidOf(money(paid),money(T.total)))}</span></div>${m49Ring(T.pct)}</div>
-    <div class="m49-track" aria-hidden="true"><span class="pd" style="flex:${Math.max(0.001,paid/tot)}"></span>${top.length>1?`<span class="m12-stack m49-st" style="flex:${Math.max(0.001,T.left/tot)}">${top.map((p,k)=>`<i style="flex:${Math.max(1,Math.round(p.v))};background:${p.col};--i:${k}"></i>`).join('')}</span>`:`<span class="m49-st one" style="flex:${Math.max(0.001,T.left/tot)};background:${top[0]?top[0].col:'var(--brand)'}"></span>`}<em class="m49-here" style="left:${(paid/tot*100).toFixed(1)}%"><span>${esc(L.m49Here)}</span></em></div>
+    <div class="m49-track" aria-hidden="true"><span class="pd" style="flex:${Math.max(0.001,paid/tot)}"></span>${top.length>1?`<span class="m12-stack m49-st" style="flex:${Math.max(0.001,T.left/tot)}">${top.map((p,k)=>`<i${p.id?` data-m54seg="${esc(String(p.id))}"`:''} style="flex:${Math.max(1,Math.round(p.v))};background:${p.col};--i:${k}"></i>`).join('')}</span>`:`<span class="m49-st one" style="flex:${Math.max(0.001,T.left/tot)};background:${top[0]?top[0].col:'var(--brand)'}"></span>`}<em class="m49-here" style="left:${(paid/tot*100).toFixed(1)}%"><span>${esc(L.m49Here)}</span></em></div>
     <div class="m12-leg m49-leg2">${top.map(p=>`<span><i style="background:${p.col}"></i><em>${esc(p.n)}</em><b>${money(p.v)}</b>${p.pct!=null?`<span class="m49-lp" title="${esc(L.m49LoanPaid(p.pct))}"><u style="width:${Math.max(2,p.pct)}%;background:${p.col}"></u></span><small>${esc(L.m49LoanPaid(p.pct))}</small>`:''}</span>`).join('')}</div>
     <div class="m12-stats m49-stats n${st.length}">${st.join('')}</div></div>`; }
 function m49DayFrac(){ const n=new Date(); return (n.getHours()*3600+n.getMinutes()*60+n.getSeconds())/86400; }
@@ -24802,11 +25074,11 @@ function m52When(d){ return d<0?L.m52WLate(-d):d===0?L.m52WToday:d===1?L.m52WTom
 function m52Answer(it){ const Q=L.m52Q;
   if(it.k==='debt'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'debt'}};
     const left=a.reduce((s,x)=>s+(+x.a.remaining||0),0), tot=a.reduce((s,x)=>s+Math.max(+x.loan.total||0,+x.a.remaining||0),0), int=a.reduce((s,x)=>s+(+x.a.interestLeft||0),0), p=tot>0?Math.round((1-left/tot)*100):0;
-    const rows=a.slice().sort((x,y)=>(+y.a.remaining||0)-(+x.a.remaining||0)).slice(0,5).map(x=>[String(x.loan.name||''),m53M(x.loan,+x.a.remaining||0)]); if(int>0) rows.push([L.m52AInt,money(int)]);
+    const rows=a.slice().sort((x,y)=>(+y.a.remaining||0)-(+x.a.remaining||0)).slice(0,5).map(x=>[String((typeof m54Nm==='function'?m54Nm(x.loan):x.loan.name)||''),m53M(x.loan,+x.a.remaining||0)]); if(int>0) rows.push([L.m52AInt,money(int)]);
     return {t:L.m52ADebt(money(left),a.length),loc:{k:'debt',big:money(left),rows,bar:p>0&&p<100?{p,l:L.m52APaid(p)}:null,fu:[Q.next,Q.free,Q.chartLoan]}}; }
   if(it.k==='next'){ const a=m52Loans().filter(x=>x.a.days!=null).sort((x,y)=>x.a.days-y.a.days); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'next'}};
     const amt=x=>+x.a.monthly||+x.a.amt||0, f=a[0], w7=a.filter(x=>x.a.days<=7).reduce((s,x)=>s+amt(x),0);
-    const rows=a.slice(0,4).map(x=>[String(x.loan.name||''),m53M(x.loan,amt(x))+' · '+m52When(x.a.days),x.a.days<0?'bad':'']); if(a.filter(x=>x.a.days<=7).length>1) rows.push([L.m52AWeek7,money(w7)]);
+    const rows=a.slice(0,4).map(x=>[String((typeof m54Nm==='function'?m54Nm(x.loan):x.loan.name)||''),m53M(x.loan,amt(x))+' · '+m52When(x.a.days),x.a.days<0?'bad':'']); if(a.filter(x=>x.a.days<=7).length>1) rows.push([L.m52AWeek7,money(w7)]);
     return {t:L.m52ANext(String(f.loan.name||''),m53M(f.loan,amt(f)),m52When(f.a.days)),loc:{k:'next',big:m53M(f.loan,amt(f)),sub:String(f.loan.name||'')+' · '+m52When(f.a.days),warn:f.a.days<0,rows:a.length>1?rows:null,fu:[Q.enough,Q.debt]}}; }
   if(it.k==='free'){ const a=m52Loans(); if(!a.length) return {t:L.m52ANoLoans,loc:{k:'free'}}; let fr=null; try{ fr=m8Free(activeList()); }catch(e){}
     if(!fr||!fr.d) return {t:L.m52ANoFree,loc:{k:'free',fu:[Q.debt,Q.next]}}; let ds=''; try{ ds=fr.d instanceof Date?MONTHS[lang].short[fr.d.getMonth()]+' '+fr.d.getFullYear():String(fr.d); }catch(e){ ds=String(fr.d); }
@@ -25312,6 +25584,526 @@ try{ const a0=sfAsk; sfAsk=function(){ const im=sfImg; M53.im=im&&im.m53?im:null
 try{ const f1=window.fetch; window.fetch=function(u,o){ const p=f1.apply(this,arguments); try{ if(typeof u==='string'&&/\/api\/mk\/ai$/.test(u)&&o&&typeof o.body==='string'&&!/"img_only"/.test(o.body)) return p.then(r=>{ try{ r.clone().json().then(j=>{ M53.nx=j&&Array.isArray(j.next)&&j.next.length?{a:j.next.slice(0,3).map(x=>String(x).slice(0,80)).filter(Boolean)}:null; }).catch(()=>{}); }catch(e){} return r; }); }catch(e){} return p; }; }catch(e){}
 try{ const m0=sfMsgHTML; sfMsgHTML=function(m,i){ let h=m0.apply(this,arguments); try{ if(m&&m.r==='a'&&Array.isArray(m.nx)&&m.nx.length&&i===sfLog().length-1) h+=`<div class="m53-nx" role="group" aria-label="${esc(L.m53NextT)}"><small>${esc(L.m53NextT)}</small>${m.nx.map(q=>`<button type="button" class="chip" data-m52q="${esc(q)}">${esc(q)}</button>`).join('')}</div>`; }catch(e){} return h; }; }catch(e){}
 try{ const s1=sfCtx; sfCtx=function(){ const o=s1.apply(this,arguments); try{ if(M53.im){ const x=m53Imgs(M53.im); if(x.list.length>1){ o.__imgs=x.list.slice(1); o.__imgl=x.lbl; } } }catch(e){ console.error(e); } return o; }; }catch(e){}
+/* v54: строки — кредиты из файла, экран «Кредиты», новое окно Сифры */
+const M54S={
+ru:{
+  m54ImpBtn:'Добавить из файла', m54ImpSub:'готовый файл с графиками банка — все кредиты разом',
+  m54ImpT:'Кредиты из файла',
+  m54ImpLead:'Файл с кредитами и графиками банка. Mira покажет, что в нём, и запишет только после вашего согласия.',
+  m54ImpPick:'Выбрать файл', m54ImpOr:'или вставьте сюда текст файла', m54ImpGo:'Проверить',
+  m54ImpBad:'Это не файл кредитов Mira. Проверьте файл и попробуйте ещё раз.',
+  m54ImpNone:'В файле нет кредитов.',
+  m54ImpPvLead:n=>'В файле кредитов: '+n+'. Проверьте и снимите галочку с тех, что не нужны.',
+  m54ImpNote:'Платежи с датой до сегодняшнего дня считаются внесёнными по графику банка. Если какой-то не внесён — откройте кредит и нажмите «Сверка с банком». Файл читается в телефоне и никуда не отправляется.',
+  m54ImpUpd:'Этот кредит уже есть в Mira — обновится по файлу',
+  m54Gold:g=>'Залог: золото '+g+' г', m54GoldChip:g=>'залог: золото '+g+' г', m54MsEnd:(n,m)=>'«'+n+'» закрыт — '+m, m54ImpDone:n=>'Добавлено из файла: '+n,
+  m54AlLink:'Есть файл с кредитами? Добавить из файла',
+  m54MyLoans:'Мои кредиты', m54Cnt:n=>String(n),
+  m54SortL:'Порядок', m54Sort:{add:'как добавлены',due:'ближайший платёж',left:'больше долг',rate:'выше ставка'},
+  m54Share:p=>p+'% всего долга', m54ShareA:'Доля этого кредита во всём долге',
+  m54IntPct:p=>'('+p+'% платежа)',
+  m54NpL:'Платёж', m54NpCheck:'проверьте дату платежа', m54NpLate:d=>'просрочен на '+d+' дн.',
+  m54Tick:'проценты сегодня',
+  m54ColorL:'Цвет кредита', m54ColorAuto:'Сам', m54MonoL:'Значок', m54MonoHint:'1–3 буквы или цифры — чтобы отличать похожие кредиты', m54MonoPh:'К1',
+  m54SegA:n=>'Показать кредит: '+n,
+  m54Day:d=>d+'-го',
+
+  /* окно Сифры */
+  m54StOn:'на связи', m54StOff:'нет сети — отвечаю по записям в телефоне', m54StThink:'думаю…', m54StWrite:'пишу ответ…', m54StListen:'слушаю…', m54StSpeak:'говорю…',
+  m54New:'Новый разговор', m54Menu:'Меню', m54Plus:'Добавить: фото, файл, голос', m54Stop:'Остановить ответ', m54Voice:'Разговор голосом',
+  m54NewDone:'Начали заново. Прошлый разговор — в «Истории».',
+  m54Hi:{m:'Доброе утро',d:'Добрый день',e:'Добрый вечер',n:'Доброй ночи'},
+  m54HiSub:'Спросите о своих деньгах или скажите, что записать.',
+  m54InsK:{chk:'Платёж: проверьте дату',next:'Ближайший платёж',late:'Просрочен платёж',debt:'Осталось по кредитам',free:'Без кредитов',int:'Проценты сегодня',sales:'Выручка за 7 дней',owed:'Вам должны'},
+  m54InsS:{debt:p=>'выплачено '+p+'%',int:'набегает, пока долг не уменьшился',owed:n=>'должников: '+n},
+  m54InsQ:{next:'Когда ближайший платёж?',late:'Какой платёж просрочен и что делать?',debt:'Сколько осталось по кредитам?',free:'Когда я закрою кредиты?',int:'Как платить меньше процентов?',sales:'Сколько выручки за неделю?',owed:'Кто мне должен?'},
+  m54Can:'Что я умею',
+  m54Tray:{photo:['Фото','чек, график, договор'],file:['Файл с кредитами','добавить всё разом'],voice:['Разговор','голосом, без рук'],calc:['Что если…','ползунки: платить больше'],write:['Записать','расход, выручку, платёж'],plan:['Мой план','кредиты и свобода'],find:['Найти','цены, фабрики, ставки'],hist:['История','прошлые разговоры']},
+  m54TrayQ:{calc:'Что если платить больше по кредиту?',plan:'Покажи мой план по кредитам наглядно',write:'Запиши расход ',find:'Найди '},
+  m54TypeT:'Спросить', m54Fast:'сразу',
+  m54MSec:{talk:'Разговор',know:'Что знает Сифра',set:'Как отвечать'},
+  m54MHist:'История разговоров', m54MNew:'Новый разговор', m54MMem:'Память', m54MSaved:'Сохранённые ответы', m54MSent:'Что уходило на сервер', m54MClear:'Стереть этот разговор',
+  m54MViz:'Графики в ответах', m54Viz:{more:'больше',std:'как обычно',less:'меньше'},
+  m54MVoice:'Голос и скорость',
+  m54HistT:'История разговоров', m54HistLead:'Последние разговоры хранятся в телефоне. Нажмите, чтобы вернуться к разговору.', m54HistEmpty:'Пока пусто. Прошлый разговор попадёт сюда, когда начнёте новый.',
+  m54HistN:n=>n+' '+ruPlural(n,['сообщение','сообщения','сообщений']), m54HistDel:'Убрать', m54HistBack:'Разговор открыт',
+  m54Listen:'Слушать', m54ListenStop:'Остановить', m54ShareB:'Поделиться', m54Shared:'Скопировано — можно отправить',
+  m54Acts:{copy:'Копировать',simple:'Проще',more:'Подробнее',pin:'Сохранить',listen:'Слушать',share:'Поделиться',retry:'Ещё раз'},
+  m54Photo1:'Фото добавлено — напишите вопрос или просто отправьте',
+  m54CalcT:{loan:'Что если платить больше',profit:'Сколько останется',goal:'Когда накоплю'},
+  m54Calc:{
+    extra:'Сверху каждый месяц', pay:'Платёж в месяц', left:'Остаток долга', rate:'Ставка в год',
+    now:'Сейчас', then:'Станет', months:'Срок', interest:'Проценты', saved:(m,i)=>'Быстрее на '+m+' и дешевле на '+i, same:'Подвиньте ползунок — увидите, что изменится', never:'Платёж меньше процентов — долг не уменьшается',
+    price:'Цена продажи', cost:'Себестоимость', qty:'Штук в месяц', fix:'Расходы в месяц', profit:'Прибыль в месяц', margin:'Наценка', be:n=>'В ноль: '+n+' шт. в месяц', loss:'Убыток',
+    goal:'Цель', have:'Уже есть', save:'Откладывать в месяц', when:'Накопите', inM:n=>'через '+n,
+    mo:n=>n+' '+ruPlural(n,['месяц','месяца','месяцев']), yr:(y,m)=>(y?y+' '+ruPlural(y,['год','года','лет']):'')+(y&&m?' ':'')+(m?m+' мес.':''), est:'Расчёт примерный: банк считает проценты по дням.'
+  },
+  m54LocCalcQ:'что если платить больше',
+  m54LocCalcT:n=>'Кредит «'+n+'» — самый дорогой по ставке. Подвиньте ползунок: сколько сверху в месяц — и увидите срок и проценты.',
+  m54LocCalcNone:'Сначала добавьте кредит — тогда покажу, что даст доплата.'
+},
+tg:{
+  m54ImpBtn:'Аз файл илова кардан', m54ImpSub:'файли тайёр бо ҷадвалҳои бонк — ҳамаи қарзҳо якбора',
+  m54ImpT:'Қарзҳо аз файл',
+  m54ImpLead:'Файл бо қарзҳо ва ҷадвалҳои бонк. Mira нишон медиҳад, ки дар он чӣ ҳаст, ва танҳо баъди розигии шумо сабт мекунад.',
+  m54ImpPick:'Интихоби файл', m54ImpOr:'ё матни файлро ин ҷо гузоред', m54ImpGo:'Санҷидан',
+  m54ImpBad:'Ин файли қарзҳои Mira нест. Файлро санҷед ва боз кӯшиш кунед.',
+  m54ImpNone:'Дар файл қарз нест.',
+  m54ImpPvLead:n=>'Дар файл қарзҳо: '+n+'. Санҷед ва аз нолозимҳо аломатро гиред.',
+  m54ImpNote:'Пардохтҳое, ки санаашон то имрӯз аст, аз рӯи ҷадвали бонк пардохташуда ҳисоб мешаванд. Агар ягонтааш пардохт нашуда бошад — қарзро кушоед ва «Муқоиса бо бонк»-ро пахш кунед. Файл дар телефон хонда мешавад ва ба ҷое фиристода намешавад.',
+  m54ImpUpd:'Ин қарз аллакай дар Mira ҳаст — аз рӯи файл нав мешавад',
+  m54Gold:g=>'Гарав: тилло '+g+' г', m54GoldChip:g=>'гарав: тилло '+g+' г', m54MsEnd:(n,m)=>'«'+n+'» пӯшида мешавад — '+m, m54ImpDone:n=>'Аз файл илова шуд: '+n,
+  m54AlLink:'Файли қарзҳо доред? Аз файл илова кунед',
+  m54MyLoans:'Қарзҳои ман', m54Cnt:n=>String(n),
+  m54SortL:'Тартиб', m54Sort:{add:'чӣ тавре илова шуд',due:'пардохти наздик',left:'қарзи калонтар',rate:'фоизи баландтар'},
+  m54Share:p=>p+'% ҳамаи қарз', m54ShareA:'Ҳиссаи ин қарз дар ҳамаи қарз',
+  m54IntPct:p=>'('+p+'% пардохт)',
+  m54NpL:'Пардохт', m54NpCheck:'санаи пардохтро санҷед', m54NpLate:d=>d+' рӯз дер шуд',
+  m54Tick:'фоизи имрӯз',
+  m54ColorL:'Ранги қарз', m54ColorAuto:'Худаш', m54MonoL:'Нишона', m54MonoHint:'1–3 ҳарф ё рақам — барои фарқ кардани қарзҳои монанд', m54MonoPh:'К1',
+  m54SegA:n=>'Нишон додани қарз: '+n,
+  m54Day:d=>'рӯзи '+d,
+
+  m54StOn:'дар тамос', m54StOff:'шабака нест — аз рӯи сабтҳои телефон ҷавоб медиҳам', m54StThink:'фикр мекунам…', m54StWrite:'ҷавоб менависам…', m54StListen:'гӯш мекунам…', m54StSpeak:'мегӯям…',
+  m54New:'Сӯҳбати нав', m54Menu:'Меню', m54Plus:'Илова: акс, файл, овоз', m54Stop:'Қатъ кардани ҷавоб', m54Voice:'Сӯҳбат бо овоз',
+  m54NewDone:'Аз нав сар кардем. Сӯҳбати пешина — дар «Таърих».',
+  m54Hi:{m:'Субҳ ба хайр',d:'Рӯз ба хайр',e:'Шом ба хайр',n:'Шаб ба хайр'},
+  m54HiSub:'Дар бораи пулатон пурсед ё гӯед, ки чиро сабт кунам.',
+  m54InsK:{chk:'Пардохт: санаро санҷед',next:'Пардохти наздик',late:'Пардохт дер шудааст',debt:'Аз қарзҳо мондааст',free:'Бе қарз',int:'Фоизи имрӯз',sales:'Даромад дар 7 рӯз',owed:'Ба шумо қарздоранд'},
+  m54InsS:{debt:p=>p+'% пардохт шуд',int:'то қарз кам нашавад, ҷамъ мешавад',owed:n=>'қарздорон: '+n},
+  m54InsQ:{next:'Пардохти наздик кай аст?',late:'Кадом пардохт дер шудааст ва чӣ кор кунам?',debt:'Аз қарзҳо чӣ қадар мондааст?',free:'Қарзҳоро кай мепӯшам?',int:'Чӣ тавр фоизи камтар диҳам?',sales:'Даромади ҳафта чӣ қадар аст?',owed:'Кӣ ба ман қарздор аст?'},
+  m54Can:'Ман чӣ метавонам',
+  m54Tray:{photo:['Акс','чек, ҷадвал, шартнома'],file:['Файли қарзҳо','ҳамаашро якбора'],voice:['Сӯҳбат','бо овоз, бе даст'],calc:['Агар…','лағжонак: бештар пардохтан'],write:['Сабт кардан','хароҷот, даромад, пардохт'],plan:['Нақшаи ман','қарзҳо ва озодӣ'],find:['Ёфтан','нарх, фабрика, фоиз'],hist:['Таърих','сӯҳбатҳои пешина']},
+  m54TrayQ:{calc:'Агар аз рӯи қарз бештар пардохт кунам чӣ мешавад?',plan:'Нақшаи қарзҳоямро аёнӣ нишон деҳ',write:'Хароҷотро сабт кун ',find:'Ёб '},
+  m54TypeT:'Пурсидан', m54Fast:'дарҳол',
+  m54MSec:{talk:'Сӯҳбат',know:'Сифра чиро медонад',set:'Чӣ тавр ҷавоб диҳад'},
+  m54MHist:'Таърихи сӯҳбатҳо', m54MNew:'Сӯҳбати нав', m54MMem:'Хотира', m54MSaved:'Ҷавобҳои сабтшуда', m54MSent:'Чӣ ба сервер рафт', m54MClear:'Тоза кардани ин сӯҳбат',
+  m54MViz:'Графикҳо дар ҷавоб', m54Viz:{more:'бештар',std:'чун ҳамеша',less:'камтар'},
+  m54MVoice:'Овоз ва суръат',
+  m54HistT:'Таърихи сӯҳбатҳо', m54HistLead:'Сӯҳбатҳои охирин дар телефон нигоҳ дошта мешаванд. Пахш кунед, то ба сӯҳбат баргардед.', m54HistEmpty:'Ҳоло холӣ аст. Вақте сӯҳбати нав сар мекунед, сӯҳбати пешина ба ин ҷо меояд.',
+  m54HistN:n=>n+' паём', m54HistDel:'Гирифтан', m54HistBack:'Сӯҳбат кушода шуд',
+  m54Listen:'Шунидан', m54ListenStop:'Қатъ', m54ShareB:'Фиристодан', m54Shared:'Нусха шуд — метавонед фиристед',
+  m54Acts:{copy:'Нусха',simple:'Соддатар',more:'Муфассал',pin:'Сабт',listen:'Шунидан',share:'Фиристодан',retry:'Боз'},
+  m54Photo1:'Акс илова шуд — савол нависед ё фиристед',
+  m54CalcT:{loan:'Агар бештар пардохт кунам',profit:'Чӣ қадар мемонад',goal:'Кай ҷамъ мекунам'},
+  m54Calc:{
+    extra:'Ҳар моҳ иловатан', pay:'Пардохт дар як моҳ', left:'Бақияи қарз', rate:'Фоизи солона',
+    now:'Ҳоло', then:'Мешавад', months:'Мӯҳлат', interest:'Фоизҳо', saved:(m,i)=>m+' тезтар ва '+i+' арзонтар', same:'Лағжонакро ҷунбонед — мебинед, ки чӣ иваз мешавад', never:'Пардохт аз фоиз кам аст — қарз кам намешавад',
+    price:'Нархи фурӯш', cost:'Арзиши аслӣ', qty:'Дона дар як моҳ', fix:'Хароҷот дар як моҳ', profit:'Фоида дар як моҳ', margin:'Иловапулӣ', be:n=>'Ба сифр: '+n+' дона дар як моҳ', loss:'Зарар',
+    goal:'Мақсад', have:'Аллакай ҳаст', save:'Ҳар моҳ ҷамъ кардан', when:'Ҷамъ мекунед', inM:n=>'баъди '+n,
+    mo:n=>n+' моҳ', yr:(y,m)=>(y?y+' сол':'')+(y&&m?' ':'')+(m?m+' моҳ':''), est:'Ҳисоб тахминист: бонк фоизро рӯз ба рӯз ҳисоб мекунад.'
+  },
+  m54LocCalcQ:'агар бештар пардохт кунам',
+  m54LocCalcT:n=>'Қарзи «'+n+'» — аз рӯи фоиз гаронтарин. Лағжонакро ҷунбонед: ҳар моҳ чӣ қадар иловатан — мӯҳлат ва фоизро мебинед.',
+  m54LocCalcNone:'Аввал қарз илова кунед — он гоҳ нишон медиҳам, ки пардохти иловагӣ чӣ медиҳад.'
+},
+en:{
+  m54ImpBtn:'Add from a file', m54ImpSub:'a ready file with bank schedules — all loans at once',
+  m54ImpT:'Loans from a file',
+  m54ImpLead:'A file with loans and bank schedules. Mira shows what is inside and saves only after you agree.',
+  m54ImpPick:'Choose file', m54ImpOr:'or paste the file text here', m54ImpGo:'Check',
+  m54ImpBad:'This is not a Mira loans file. Check the file and try again.',
+  m54ImpNone:'The file has no loans.',
+  m54ImpPvLead:n=>'Loans in the file: '+n+'. Check them and untick the ones you do not need.',
+  m54ImpNote:'Payments dated before today are treated as paid on the bank schedule. If one was not paid, open the loan and tap “Check with the bank”. The file is read on your phone and is not sent anywhere.',
+  m54ImpUpd:'This loan is already in Mira — it will be updated from the file',
+  m54Gold:g=>'Collateral: gold '+g+' g', m54GoldChip:g=>'collateral: gold '+g+' g', m54MsEnd:(n,m)=>'“'+n+'” closes — '+m, m54ImpDone:n=>'Added from the file: '+n,
+  m54AlLink:'Have a loans file? Add from a file',
+  m54MyLoans:'My loans', m54Cnt:n=>String(n),
+  m54SortL:'Order', m54Sort:{add:'as added',due:'next payment',left:'largest debt',rate:'highest rate'},
+  m54Share:p=>p+'% of all debt', m54ShareA:'Share of this loan in all debt',
+  m54IntPct:p=>'('+p+'% of the payment)',
+  m54NpL:'Payment', m54NpCheck:'check the payment date', m54NpLate:d=>d+' days late',
+  m54Tick:'interest today',
+  m54ColorL:'Loan colour', m54ColorAuto:'Auto', m54MonoL:'Badge', m54MonoHint:'1–3 letters or digits — to tell similar loans apart', m54MonoPh:'K1',
+  m54SegA:n=>'Show loan: '+n,
+  m54Day:d=>'day '+d,
+
+  m54StOn:'online', m54StOff:'offline — answering from records on your phone', m54StThink:'thinking…', m54StWrite:'writing…', m54StListen:'listening…', m54StSpeak:'speaking…',
+  m54New:'New chat', m54Menu:'Menu', m54Plus:'Add: photo, file, voice', m54Stop:'Stop the answer', m54Voice:'Voice conversation',
+  m54NewDone:'Started fresh. The previous chat is in “History”.',
+  m54Hi:{m:'Good morning',d:'Good afternoon',e:'Good evening',n:'Good night'},
+  m54HiSub:'Ask about your money or tell me what to record.',
+  m54InsK:{chk:'Payment: check the date',next:'Next payment',late:'Payment overdue',debt:'Left on loans',free:'Debt-free',int:'Interest today',sales:'Sales in 7 days',owed:'You are owed'},
+  m54InsS:{debt:p=>p+'% paid',int:'accrues until the debt goes down',owed:n=>'people: '+n},
+  m54InsQ:{next:'When is my next payment?',late:'Which payment is overdue and what should I do?',debt:'How much is left on my loans?',free:'When will I close my loans?',int:'How do I pay less interest?',sales:'What are my sales this week?',owed:'Who owes me?'},
+  m54Can:'What I can do',
+  m54Tray:{photo:['Photo','receipt, schedule, contract'],file:['Loans file','add everything at once'],voice:['Talk','by voice, hands-free'],calc:['What if…','sliders: pay more'],write:['Record','expense, sales, payment'],plan:['My plan','loans and freedom'],find:['Find','prices, factories, rates'],hist:['History','previous chats']},
+  m54TrayQ:{calc:'What if I pay more on a loan?',plan:'Show my loan plan visually',write:'Record an expense ',find:'Find '},
+  m54TypeT:'Ask', m54Fast:'instant',
+  m54MSec:{talk:'Chat',know:'What Sifra knows',set:'How to answer'},
+  m54MHist:'Chat history', m54MNew:'New chat', m54MMem:'Memory', m54MSaved:'Saved answers', m54MSent:'What went to the server', m54MClear:'Erase this chat',
+  m54MViz:'Charts in answers', m54Viz:{more:'more',std:'as usual',less:'fewer'},
+  m54MVoice:'Voice and speed',
+  m54HistT:'Chat history', m54HistLead:'Recent chats are kept on your phone. Tap to return to a chat.', m54HistEmpty:'Nothing yet. The previous chat appears here when you start a new one.',
+  m54HistN:n=>n+(n===1?' message':' messages'), m54HistDel:'Remove', m54HistBack:'Chat opened',
+  m54Listen:'Listen', m54ListenStop:'Stop', m54ShareB:'Share', m54Shared:'Copied — ready to send',
+  m54Acts:{copy:'Copy',simple:'Simpler',more:'More detail',pin:'Save',listen:'Listen',share:'Share',retry:'Try again'},
+  m54Photo1:'Photo added — type a question or just send',
+  m54CalcT:{loan:'What if I pay more',profit:'What is left',goal:'When will I save it'},
+  m54Calc:{
+    extra:'Extra each month', pay:'Monthly payment', left:'Debt left', rate:'Rate per year',
+    now:'Now', then:'Becomes', months:'Term', interest:'Interest', saved:(m,i)=>m+' sooner and '+i+' cheaper', same:'Move the slider to see what changes', never:'The payment is below the interest — the debt does not go down',
+    price:'Selling price', cost:'Unit cost', qty:'Units per month', fix:'Monthly costs', profit:'Profit per month', margin:'Markup', be:n=>'Break-even: '+n+' units a month', loss:'Loss',
+    goal:'Goal', have:'Already have', save:'Save per month', when:'You will have it', inM:n=>'in '+n,
+    mo:n=>n+(n===1?' month':' months'), yr:(y,m)=>(y?y+(y===1?' year':' years'):'')+(y&&m?' ':'')+(m?m+' mo.':''), est:'An estimate: the bank counts interest by the day.'
+  },
+  m54LocCalcQ:'what if i pay more',
+  m54LocCalcT:n=>'“'+n+'” has the highest rate. Move the slider: how much extra a month — and see the term and the interest.',
+  m54LocCalcNone:'Add a loan first — then I will show what an extra payment gives.'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M54S[k]); }catch(e){} Object.assign(D[k],M54S[k]); }
+/* ===================== v54: кредиты из личного файла; экран «Кредиты» — у каждого кредита своё лицо ===================== */
+var M54={id:null, idSig:'', seenTab:0, flip:null, vz:new Set(), st:'', tray:false};
+try{ document.documentElement.classList.add('m54'); }catch(e){}
+const m54Motion=()=>{ try{ return document.documentElement.classList.contains('m48-live')&&!matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } };
+
+/* ---------- 1. у каждого кредита свой цвет, значок и метка ---------- */
+/* десять хорошо различимых цветов; красного нет — он занят просрочкой */
+const M54PAL=['#12A37A','#F2793B','#9B5CF6','#E0508F','#D6A21E','#0FA3B1','#5B6CF0','#8D6E63','#7CB342','#B0489C'];
+function m54Hash(s){ let h=0; for(const c of String(s||'')) h=(h*31+c.charCodeAt(0))%9973; return h; }
+function m54Ident(){ let real=[]; try{ real=(state.loans||[]).filter(l=>l&&!l.example); }catch(e){}
+  const sig=lang+'|'+real.map(l=>[l.id,l.name,l.color||'',l.short||'',l.total||0,l.dueDay||'',l.cur||'',l.fx||'',(+l.total||0)<=(+l.paid||0)?1:0].join('~')).join(';');
+  if(M54.id&&M54.idSig===sig) return M54.id;
+  const col={}, tag={}, mono={}, used=new Set(), isDone=l=>(+l.total||0)>0&&(+l.total||0)<=(+l.paid||0);
+  const order=real.filter(l=>!isDone(l)).concat(real.filter(isDone));
+  /* цвет закрепляется за кредитом (l.c54 — номер в палитре), чтобы не менялся, когда другой кредит закрыт или удалён; свой цвет человека — главнее */
+  const N=M54PAL.length, ok=l=>Number.isInteger(l.c54)&&l.c54>=0&&l.c54<N;
+  for(const l of order){ if(l.color){ col[l.id]=l.color; const k=M54PAL.indexOf(String(l.color).toUpperCase()); if(k>=0&&!isDone(l)) used.add(k); } else if(ok(l)&&!isDone(l)){ if(used.has(l.c54)) delete l.c54; else used.add(l.c54); } }
+  for(const l of order){ if(col[l.id]) continue; if(!ok(l)){ let k=0; while(used.has(k)&&k<N) k++; if(k>=N) k=order.indexOf(l)%N; l.c54=k; if(!isDone(l)) used.add(k); } col[l.id]=M54PAL[l.c54]; }
+  /* одинаковые названия: метка — сумма кредита (а если и суммы равны — ещё день платежа), значок — буква с номером */
+  const groups={}; for(const l of real){ const k=String(l.name||'').trim().toLowerCase(); (groups[k]=groups[k]||[]).push(l); }
+  for(const k in groups){ const g=groups[k]; if(g.length<2) continue; const amt=l=>{ try{ return m53M(l,+l.total||0); }catch(e){ return String(Math.round(+l.total||0)); } };
+    g.forEach((l,i)=>{ const a=amt(l), twin=g.some(x=>x!==l&&amt(x)===a); tag[l.id]=a+(twin&&l.dueDay?' · '+L.m54Day(l.dueDay):''); const ch=(String(l.name||'?').trim().charAt(0)||'?').toUpperCase(); mono[l.id]=ch+(i+1); }); }
+  M54.idSig=sig; return (M54.id={col,tag,mono}); }
+function m54Nm(l){ try{ const t=l&&m54Ident().tag[l.id]; return t?l.name+' · '+t:(l?l.name:''); }catch(e){ return l?l.name:''; } }
+{ const f0=m8Col; m8Col=function(loan){ try{ if(loan&&loan.id&&!loan.example){ const c=m54Ident().col[loan.id]; if(c) return c; } }catch(e){} return f0.apply(this,arguments); }; }
+{ const f0=avaHTML; avaHTML=function(l,cls){ try{ if(l&&l.id&&!l.icon&&!l.example&&byId(l.id)){ const I=m54Ident(), c=I.col[l.id], s=I.mono[l.id]; if(c||s) return f0.call(this,Object.assign({},l,{color:l.color||c,short:l.short||s}),cls); } }catch(e){} return f0.apply(this,arguments); }; }
+/* название с меткой — там, где кредиты перечислены рядом: подписи Сифры, проверка графика, вехи */
+try{ f31Nm=function(l){ return m54Nm(l); }; }catch(e){}
+
+/* ---------- 2. кредиты из личного файла ---------- */
+/* файл: {"mira":"loans","currency":"TJS","loans":[{name,principal,rate,term,due_day,gold_g,pen_pct_day,pen_base,note,schedule:[[дата,платёж,долг,проценты,остаток],…]}]} */
+function m54ImpParse(text){ let j; try{ j=JSON.parse(String(text||'').replace(/^﻿/,'').trim()); }catch(e){ return null; }
+  const arr=Array.isArray(j)?j:(j&&Array.isArray(j.loans)?j.loans:null); if(!arr) return null;
+  const cur0=String((j&&!Array.isArray(j)&&j.currency)||'TJS').toUpperCase().slice(0,3), out=[];
+  for(const x of arr.slice(0,30)){ if(!x||typeof x!=='object') continue; const name=f31Str(x.name,60), principal=f31Num(x.principal!=null?x.principal:x.total); if(!name||!principal) continue;
+    const sch=(Array.isArray(x.schedule)?x.schedule:[]).slice(0,400).map(r=>Array.isArray(r)?{date:r[0],payment:r[1],principal:r[2],interest:r[3],balance:r[4]}:r).filter(r=>r&&typeof r==='object'&&f31Date(r.date)&&f31Num(r.payment))
+      .map(r=>({date:ymd(f31Date(r.date)),payment:f31Num(r.payment),principal:f31Num0(r.principal),interest:f31Num0(r.interest),balance:f31Num0(r.balance)})).sort((a,b)=>a.date.localeCompare(b.date));
+    out.push({name,principal,cur:String(x.currency||cur0).toUpperCase().slice(0,3),rate:f31Num(x.rate),term:f31Int(x.term,1,600),due:f31Int(x.due_day,1,31),gold:f31Num(x.gold_g),pen:f31Num(x.pen_pct_day),penb:x.pen_base==='rem'||x.pen_base==='pay'?x.pen_base:null,note:f31Str(x.note,80),sch}); }
+  return out; }
+function m54ImpItems(loans){ const t0=today0(), used=new Set(), items=[];
+  for(const x of loans){ const inp={_m54:1,name:x.name,principal:x.principal}; if(x.cur&&x.cur!=='TJS') inp.currency=x.cur;
+    if(x.rate) inp.rate=x.rate; if(x.term) inp.term=x.term; if(x.due) inp.due_day=x.due; if(x.note) inp.note=x.note; if(x.pen){ inp.pen_pct_day=x.pen; if(x.penb) inp.pen_base=x.penb; } if(x.gold) inp.gold_g=x.gold;
+    if(x.sch.length>=2){ inp.schedule=x.sch; const past=x.sch.filter(r=>parseYmd(r.date)<t0), fut=x.sch.find(r=>parseYmd(r.date)>=t0);
+      if(!past.length) inp.bank_left=x.principal; else { const b=past[past.length-1].balance; if(b!=null) inp.bank_left=b; } if(fut) inp.next_due=fut.date; }
+    /* такой кредит уже есть (та же валюта и та же сумма) — обновляем его, а не заводим второй */
+    const same=l=>{ try{ return !l.example&&!used.has(l.id)&&String(l.cur||'TJS')===String(x.cur||'TJS')&&Math.abs((+l.total||0)/m53K(l)-x.principal)<=1; }catch(e){ return false; } };
+    const cand=(state.loans||[]).filter(same), ex=cand.find(l=>String(l.name).trim().toLowerCase()===x.name.toLowerCase())||cand[0];
+    if(ex){ used.add(ex.id); const u=Object.assign({loan_id:ex.id},inp); delete u.name; delete u.principal; delete u.currency; items.push({name:'update_loan',input:u}); }
+    else items.push({name:'create_loan',input:inp}); }
+  return items; }
+function m54ImpText(text){ const loans=m54ImpParse(text); if(!loans){ toast(L.m54ImpBad); return false; } if(!loans.length){ toast(L.m54ImpNone); return false; }
+  const items=m54ImpItems(loans); M54.impN=loans.length; f31Preview(items); return true; }
+function m54ImpPick(){ const i=document.createElement('input'); i.type='file'; i.accept='.json,.txt,application/json,text/plain';
+  i.onchange=()=>{ const f=i.files&&i.files[0]; if(!f) return; if(f.size>2e6){ toast(L.m54ImpBad); return; } const r=new FileReader(); r.onload=()=>m54ImpText(String(r.result||'')); r.onerror=()=>toast(L.m54ImpBad); r.readAsText(f); };
+  i.click(); }
+function m54ImpSheet(){ openSheet(`<h3>${ico('doc',22)} ${esc(L.m54ImpT)}</h3><p class="lead">${esc(L.m54ImpLead)}</p>
+    <button type="button" class="btn btn-primary btn-full" id="m54-pick">${ico('download',18)} ${esc(L.m54ImpPick)}</button>
+    <div class="field" style="margin-top:16px"><label for="m54-txt">${esc(L.m54ImpOr)}</label><textarea id="m54-txt" rows="4" data-nodirty spellcheck="false" autocomplete="off" placeholder='{"mira":"loans", …}'></textarea></div>
+    <div class="err" id="m54-ierr"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button><button class="btn btn-primary" id="m54-go">${esc(L.m54ImpGo)}</button></div>`);
+  $('#m54-pick').onclick=m54ImpPick;
+  $('#m54-go').onclick=()=>{ const t=$('#m54-txt').value; if(!String(t).trim()) return showErr($('#m54-ierr'),L.m54ImpBad); if(!m54ImpParse(t)) return showErr($('#m54-ierr'),L.m54ImpBad); m54ImpText(t); }; }
+/* золото в залоге — из файла; строка о нём в окне проверки */
+function m54After(i,r){ if(!i||!r||r.err||!r.loanId) return r; const l=byId(r.loanId); if(!l) return r;
+  const g=+i.gold_g; if(g>0&&g<1e5&&Math.abs((+l.gold||0)-g)>0.004){ l.gold=Math.round(g*100)/100; (r.lines=r.lines||[]).push(L.m54Gold(rf.format(l.gold))); if(r.warn) r.warn=r.warn.filter(w=>w!==L.f31NoCh); }
+  if(i._m54&&r.lines) r.lines=r.lines.filter(x=>x!==L.f31NoPen);
+  if(i._m54&&i.loan_id) (r.lines=r.lines||[]).unshift(L.m54ImpUpd); return r; }
+{ const f0=f31Create; f31Create=function(i){ return m54After(i,f0.apply(this,arguments)); }; }
+{ const f0=f31Update; f31Update=function(i){ return m54After(i,f0.apply(this,arguments)); }; }
+/* окно проверки: когда это файл, а не Сифра — свои слова */
+{ const f0=f31Preview; f31Preview=function(items){ const imp=Array.isArray(items)&&items.some(x=>x&&x.input&&x.input._m54); const r=f0.apply(this,arguments);
+    try{ if(imp&&sheet.querySelector('#f31-go')){ const h=sheet.querySelector('h3'), le=sheet.querySelector('p.lead'), no=sheet.querySelector('p.note'); if(h) h.innerHTML=ico('doc',22)+' '+esc(L.m54ImpT); if(le) le.textContent=L.m54ImpPvLead(items.length); if(no) no.textContent=L.m54ImpNote; sheet.classList.add('m54-imp'); const go=sheet.querySelector('#f31-go'), h0=go.onclick; go.onclick=function(){ M54.impGo=1; try{ return h0&&h0.apply(this,arguments); } finally{ M54.impGo=0; } }; } }catch(e){}
+    return r; }; }
+{ const f0=f30Bar; f30Bar=function(t,snap){ try{ if(M54.impGo){ const m=String(t||'').match(/\d+/); if(m) t=L.m54ImpDone(+m[0]); } }catch(e){} return f0.call(this,t,snap); }; }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m54imp]'); if(!t) return; e.preventDefault(); m54ImpSheet(); });
+/* в быстрой форме «Новый кредит» — ссылка на файл */
+{ const f0=m7AddLoan; m7AddLoan=function(){ const r=f0.apply(this,arguments); try{ const b=sheet.querySelector('.sheet-row'); if(b&&$('#al-name')&&!sheet.querySelector('.m54-all')) b.insertAdjacentHTML('beforebegin',`<button type="button" class="link-btn m54-all" data-m54imp="1">${ico('doc',16)} ${esc(L.m54AlLink)}</button>`); }catch(e){} return r; }; }
+
+/* ---------- 3. экран «Кредиты»: порядок, карточки, движение ---------- */
+function m54SortGet(){ try{ const k=localStorage.getItem('m54sort'); return ['add','due','left','rate'].includes(k)?k:'add'; }catch(e){ return 'add'; } }
+{ const f0=renderCards; renderCards=function(list){ try{ const k=m54SortGet(), key={due:x=>x.a.done?9e9:(x.a.check?-1e6:(x.a.days==null?9e8:x.a.days)), left:x=>-(+x.a.remaining||0), rate:x=>-(+x.loan.rate||0)}[k];
+      if(key&&Array.isArray(list)) list=list.map((x,i)=>({x,i})).sort((a,b)=>(key(a.x)-key(b.x))||(a.i-b.i)).map(o=>o.x); }catch(e){} return f0.call(this,list); }; }
+function m54Ring(p,ava){ const R=25, C=2*Math.PI*R, o=C*(1-Math.max(0,Math.min(100,p))/100); return `<span class="m54-rg"><svg viewBox="0 0 58 58" aria-hidden="true"><circle class="t" cx="29" cy="29" r="${R}"/><circle class="f" cx="29" cy="29" r="${R}" stroke-dasharray="${C.toFixed(1)}" style="--c:${C.toFixed(1)};--o:${o.toFixed(1)}"/></svg>${ava}</span>`; }
+function m54IntShare(loan,a){ try{ const se=a.per!=null?schedAt(loan,a.per):null; if(se&&se.i!=null&&+se.a>0) return Math.round((+se.i||0)/(+se.a)*100); const m=+a.amtFull||+a.monthly||0, r=+loan.rate||0; if(m>0&&r>0) return Math.min(100,Math.round(a.remaining*r/1200/m*100)); }catch(e){} return null; }
+function m54Cards(){ const box=$('#cards'), v=$('#view-loans'); if(!box||!v) return; let list=[]; try{ list=activeList().filter(x=>!x.loan.example); }catch(e){ return; }
+  const act=list.filter(x=>!x.a.done), left=act.reduce((s,x)=>s+Math.max(0,x.a.remaining),0)||1, I=m54Ident();
+  /* заголовок и порядок */
+  const h=$('#myBanksH2'); if(h){ h.textContent=L.m54MyLoans; const c=$('#bankCount'); if(c) c.textContent=act.length?L.m54Cnt(act.length):''; }
+  let so=$('#m54-sort'); if(act.length>1){ const k=m54SortGet(), html=`<span>${esc(L.m54SortL)}</span>${['add','due','left','rate'].map(x=>`<button type="button" class="chip${x===k?' on':''}" role="radio" aria-checked="${x===k}" data-m54sort="${x}">${esc(L.m54Sort[x])}</button>`).join('')}`;
+    if(!so){ box.insertAdjacentHTML('beforebegin','<div id="m54-sort" class="m54-sort" role="radiogroup"></div>'); so=$('#m54-sort'); so.setAttribute('aria-label',L.m54SortL); } if(so.dataset.h!==html){ so.innerHTML=html; so.dataset.h=html; } }
+  else if(so) so.remove();
+  box.querySelectorAll('.card[data-id]').forEach((c,k)=>{ const it=list.find(x=>String(x.loan.id)===c.dataset.id); if(!it||c.classList.contains('m54-c')) return; const {loan,a}=it, col=m8Col(loan);
+    c.classList.add('m54-c'); c.style.setProperty('--lc',col); c.style.setProperty('--i',k); c.setAttribute('aria-label',m54Nm(loan));
+    const nm=c.querySelector('.c-name'); if(nm&&I.tag[loan.id]&&!nm.querySelector('.m54-tag')){ const gb=nm.querySelector('.gb'); const t=`<em class="m54-tag">${esc(I.tag[loan.id])}</em>`; if(gb) gb.insertAdjacentHTML('beforebegin',t); else nm.insertAdjacentHTML('beforeend',t); }
+    const av=c.querySelector(':scope > .ava'); if(av){ const tmp=document.createElement('span'); tmp.innerHTML=m54Ring(a.pct,av.outerHTML); av.replaceWith(tmp.firstChild); }
+    /* строка платежа: когда и сколько */
+    const main=c.querySelector('.c-main'), sub=c.querySelector('.c-sub');
+    if(main&&sub&&!a.done&&!main.querySelector('.m54-np')){ const amt=m53M(loan,a.amt||a.monthly||0), cls=a.check?'chk':a.overdue?'late':a.days<=3?'urg':a.days<=7?'soon':'';
+      const when=a.check?L.m54NpCheck:a.overdue?L.m54NpLate(-a.days):whenText(a.days);
+      sub.insertAdjacentHTML('afterend',`<div class="m54-np ${cls}"><span class="d">${ico('cal',15)}<b>${esc(fmtDate(a.due))}</b></span><span class="a">${esc(amt)}</span><em>${esc(when)}</em></div>`); }
+    /* доля во всём долге и доля процентов в платеже */
+    const meta=c.querySelector('.m12-meta'); if(meta&&!a.done&&!meta.querySelector('.m54-sh')){ const sh=Math.round(Math.max(0,a.remaining)/left*100); if(act.length>1&&sh>0) meta.insertAdjacentHTML('beforeend',`<span class="m54-sh" title="${esc(L.m54ShareA)}"><i style="--p:${sh}"></i>${esc(L.m54Share(sh))}</span>`);
+      if(+loan.gold>0&&!meta.querySelector('.m54-gd')) meta.insertAdjacentHTML('beforeend',`<span class="m54-gd">${ico('gold',14)}${esc(L.m54GoldChip(rf.format(+loan.gold)))}</span>`);
+      const ip=m54IntShare(loan,a), mi=meta.querySelector('.m36-int'); if(ip!=null&&ip>0){ if(mi) mi.insertAdjacentHTML('beforeend',` <u>${esc(L.m54IntPct(ip))}</u>`); } }
+  });
+  /* кнопка «из файла» рядом с «Добавить кредит» */
+  if(!box.querySelector('.m54-file')){ const add=box.querySelector('.m8-addc'), emp=box.querySelector('#addEmpty'); const b=`<button type="button" class="m54-file" data-m54imp="1"><span class="m54-fi">${ico('doc',20)}</span><span><b>${esc(L.m54ImpBtn)}</b><small>${esc(L.m54ImpSub)}</small></span></button>`;
+    if(add) add.insertAdjacentHTML('afterend',b); else if(emp) emp.insertAdjacentHTML('afterend',b); }
+  m54Enter(); m54Flip(); }
+/* появление: один раз за открытие вкладки, только онлайн и если человек не просил меньше движения */
+function m54Enter(){ const v=$('#view-loans'), box=$('#cards'); if(!v||!box) return; const vis=!v.hidden&&v.offsetParent!==null, was=M54.vis; M54.vis=vis; if(!vis||was||!m54Motion()) return;
+  box.classList.add('m54-in');
+  clearTimeout(M54.inT); M54.inT=setTimeout(()=>{ try{ box.classList.remove('m54-in'); }catch(e){} },1900); }
+/* смена порядка: карточки плавно переезжают на новые места */
+function m54Flip(){ const prev=M54.flip; M54.flip=null; if(!prev||!m54Motion()) return; document.querySelectorAll('#cards .card[data-id]').forEach(c=>{ const y0=prev[c.dataset.id]; if(y0==null) return; const dy=y0-c.getBoundingClientRect().top; if(Math.abs(dy)<2) return;
+    try{ c.animate([{transform:`translateY(${dy}px)`},{transform:'none'}],{duration:Math.min(700,320+Math.abs(dy)*0.5),easing:'cubic-bezier(.3,.1,.2,1)'}); }catch(e){} }); }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest&&e.target.closest('[data-m54sort],[data-m54seg]'); if(!t) return;
+  if(t.hasAttribute('data-m54sort')){ const k=t.dataset.m54sort; if(k===m54SortGet()) return; const pos={}; document.querySelectorAll('#cards .card[data-id]').forEach(c=>{ pos[c.dataset.id]=c.getBoundingClientRect().top; }); M54.flip=pos; try{ localStorage.setItem('m54sort',k); }catch(x){} render(); return; }
+  const c=document.querySelector(`#cards .card[data-id="${CSS.escape(t.dataset.m54seg)}"]`); if(c){ c.scrollIntoView({behavior:m54Motion()?'smooth':'auto',block:'center'}); c.classList.remove('m54-hit'); void c.offsetWidth; c.classList.add('m54-hit'); setTimeout(()=>c.classList.remove('m54-hit'),1600); } });
+{ const f0=render; render=function(){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){ console.error(e); } return r; }; }
+{ const f0=setTab; setTab=function(t){ const r=f0.apply(this,arguments); try{ m54Cards(); }catch(e){} return r; }; }
+/* полоса долга: части стали кнопками — нажатие показывает карточку кредита */
+/* (сама полоса рисуется в m49SumHTML; здесь — только подписи для чтения с экрана) */
+
+/* ---------- 4. цвет и значок кредита выбирает человек ---------- */
+function m54FormUI(loan,isNew){ const nt=$('#f-note'); if(!nt||$('#m54f-col')) return; const f=nt.closest('.field'); if(!f) return; let col=(loan&&loan.color)||'', I=m54Ident(), auto=loan&&loan.id?I.col[loan.id]:'';
+  f.insertAdjacentHTML('afterend',`<div class="field m54-cf"><label>${esc(L.m54ColorL)}</label><div class="m54-sw" id="m54f-col" role="radiogroup" aria-label="${esc(L.m54ColorL)}"><button type="button" class="au${col?'':' on'}" role="radio" aria-checked="${col?'false':'true'}" data-c="">${esc(L.m54ColorAuto)}</button>${M54PAL.map(c=>`<button type="button" role="radio" aria-checked="${col.toUpperCase()===c?'true':'false'}" class="${col.toUpperCase()===c?'on':''}" data-c="${c}" style="--c:${c}" aria-label="${c}"></button>`).join('')}</div></div>
+    <div class="field m54-cf"><label for="m54f-mono">${esc(L.m54MonoL)} <span class="hint">${esc(L.m54MonoHint)}</span></label><input id="m54f-mono" maxlength="3" autocomplete="off" value="${esc((loan&&loan.short)||'')}" placeholder="${esc((loan&&loan.id&&I.mono[loan.id])||L.m54MonoPh)}"></div>`);
+  const sw=$('#m54f-col'); sw.addEventListener('click',e=>{ const b=e.target.closest('button[data-c]'); if(!b) return; col=b.dataset.c; sw.querySelectorAll('button').forEach(x=>{ const on=x===b; x.classList.toggle('on',on); x.setAttribute('aria-checked',on?'true':'false'); }); });
+  const btn=$('#f-save'), h=btn.onclick; btn.onclick=function(ev){ const n0=state.loans.length, mono=String(($('#m54f-mono')||{}).value||'').replace(/[<>&"]/g,'').trim().slice(0,3), er=$('#f-err'); if(er) er.classList.remove('show');
+    const c0=loan&&loan.color, s0=loan&&loan.short; if(!isNew&&loan){ if(col) loan.color=col; else delete loan.color; if(mono) loan.short=mono; else delete loan.short; }
+    try{ M49.sig=''; }catch(x){} M54.idSig='';
+    let r; try{ r=h&&h.call(this,ev); }catch(e){ console.error(e); }
+    const failed=!!(er&&er.classList.contains('show'));
+    if(!isNew&&loan&&failed){ if(c0) loan.color=c0; else delete loan.color; if(s0) loan.short=s0; else delete loan.short; M54.idSig=''; }
+    if(isNew&&!failed&&state.loans.length>n0&&(col||mono)){ const l=state.loans[state.loans.length-1]; if(col) l.color=col; if(mono) l.short=mono; M54.idSig=''; persist(); render(); }
+    return r; }; }
+{ const f0=loanForm; loanForm=function(loan,prefill){ const r=f0.apply(this,arguments); try{ if($('#f-total')) m54FormUI(loan||null,!loan); }catch(e){ console.error(e); } return r; }; }
+/* ===================== v54: окно Сифры с нуля — шапка, поле ввода, меню, приветствие, живые графики, ползунки «что если» ===================== */
+const m54Sv=(p,s,w)=>`<svg viewBox="0 0 24 24" width="${s||22}" height="${s||22}" fill="none" stroke="currentColor" stroke-width="${w||2.1}" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${p}</svg>`;
+const M54_I={
+  plus:m54Sv('<path d="M12 5v14M5 12h14"/>',22,2.4),
+  newc:m54Sv('<path d="M12 20h8"/><path d="M16.5 3.6a2.1 2.1 0 0 1 3 3L8 18l-4 1 1-4z"/>'),
+  send:'<svg class="i-send" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V6M6 12l6-6 6 6"/></svg>',
+  stop:'<svg class="i-stop" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="6.5" y="6.5" width="11" height="11" rx="3" fill="currentColor"/></svg>',
+  wave:'<svg class="i-wave" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4"/></svg>',
+  spk:m54Sv('<path d="M4 9.5v5h3.5L12 18V6L7.5 9.5z"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/>',19),
+  share:m54Sv('<path d="M12 15V4M8 8l4-4 4 4"/><path d="M5 13v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5"/>',19),
+  copy:m54Sv('<rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V6.5A2.5 2.5 0 0 1 7.5 4H15"/>',19),
+  pin:m54Sv('<path d="M7 4h10v16l-5-3.6L7 20z"/>',19),
+  star:'<svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 8.5C25.3 18.2 29.8 22.7 39.500 24 29.800 25.300 25.300 29.800 24 39.500 22.700 29.800 18.200 25.300 8.500 24 18.200 22.700 22.700 18.200 24 8.500Z" fill="#fff"/></svg>'
+};
+function m54On(){ try{ return !!sheet&&sheet.classList.contains('m54w'); }catch(e){ return false; } }
+
+/* ---------- память окна: история разговоров, «наглядность» ---------- */
+function m54Hist(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.m54h)) state.misc.m54h=[]; return state.misc.m54h; }
+function m54Archive(){ const log=sfLog(), first=log.find(m=>m&&m.r==='u'); if(!first) return false; const H=m54Hist();
+  H.push({ts:Date.now(),t:String(first.t||'').slice(0,80),n:log.length,log:log.slice(-SF_KEEP).map(m=>{ const o=Object.assign({},m); delete o.img; delete o.nx; return o; })});
+  H.splice(0,Math.max(0,H.length-6)); try{ while(H.length>1&&JSON.stringify(H).length>300000) H.shift(); }catch(e){} return true; }
+function m54NewChat(){ try{ sfTalkEnd(); }catch(e){} try{ if(sfBusy) sfAskCut(); }catch(e){} try{ sfHush(); }catch(e){} const ok=m54Archive(); sfLog().length=0; M52.draft=''; persist(); sifraOpen(); if(ok) toast(L.m54NewDone); }
+function m54Restore(i){ const H=m54Hist(), h=H[i]; if(!h||!Array.isArray(h.log)) return; try{ if(sfBusy) sfAskCut(); }catch(e){} H.splice(i,1); m54Archive(); const cur=sfLog(); cur.length=0; h.log.forEach(m=>cur.push(m)); persist(); sifraOpen(); toast(L.m54HistBack); }
+function m54VizPref(){ try{ const v=localStorage.getItem('m54viz'); return v==='more'||v==='less'?v:'std'; }catch(e){ return 'std'; } }
+{ const f0=sfCtx; sfCtx=function(){ const o=f0.apply(this,arguments); try{ const v=m54VizPref(); if(v!=='std'&&o&&typeof o==='object') o.viz_pref=v; }catch(e){} return o; }; }
+
+/* ---------- состояние: шапка, кнопка действия, подсказки ---------- */
+function m54Status(){ const sh=sheet; if(!m54On()) return; const on=navigator.onLine!==false; let st='on';
+  try{ if(sfT){ const ph=sfT.phase; st=ph==='listen'?'listen':ph==='speak'?'speak':ph==='think'?'think':'on'; } else if(sfBusy) st=sh.querySelector('#sf-log .sf-wait .m52-ltxt:not([hidden])')?'write':'think'; else if(!on) st='off'; }catch(e){}
+  if(sh.dataset.m54st!==st) sh.dataset.m54st=st;
+  const e=document.getElementById('m52-st'), txt={on:L.m52On,off:L.m52Off,think:L.m54StThink,write:L.m54StWrite,listen:L.m54StListen,speak:L.m54StSpeak}[st];
+  if(e){ const h=`<i class="m52-dot${st==='off'?' off':''}"></i>${esc(txt)}`; if(e.dataset.h!==h){ e.innerHTML=h; e.dataset.h=h; } }
+  const off=sh.querySelector('#m54-off'); if(off) off.hidden=on; }
+{ const f0=m52Status; m52Status=function(){ if(m54On()) return m54Status(); return f0.apply(this,arguments); }; }
+function m54Sync(){ if(!m54On()) return; const sh=sheet, inp=$('#sf-in'), send=$('#sf-send'); if(!inp||!send) return; let busy=false, img=false; try{ busy=!!sfBusy; img=!!sfImg; }catch(e){}
+  const has=!!inp.value.trim()||img, mode=busy?'stop':has?'send':'voice';
+  if(send.dataset.mode!==mode){ send.dataset.mode=mode; send.setAttribute('aria-label',mode==='stop'?L.m54Stop:mode==='voice'?L.m54Voice:L.sfSend); }
+  send.disabled=false; sh.classList.toggle('m54-typing',has&&!busy); sh.classList.toggle('m54-busy',busy); sh.classList.toggle('m54-has',sfLog().length>0);
+  m54Status(); m54Type(); }
+function m54Stop(){ const log=sfLog(); let q=''; for(let i=log.length-1;i>=0;i--){ if(log[i].r==='u'){ q=log[i].t; break; } } M54.stopQ=q; M54.stopN=log.length; try{ sfAskCut(); }catch(e){} }
+/* подсказки, пока человек печатает: готовые вопросы, на часть из которых ответ приходит сразу */
+function m54TypeList(v){ v=String(v||'').toLowerCase().replace(/ё/g,'е').trim(); if(v.length<2||v.length>60) return []; const words=v.split(/\s+/).filter(Boolean);
+  const pool=[...new Set([].concat(Object.values(L.m52Q||{}),Object.values(L.m54InsQ||{}),[L.m54TrayQ.calc,L.m54TrayQ.plan],(L.m52CapQ||[])).filter(x=>typeof x==='string'&&x.trim().length>3))];
+  const hit=pool.filter(q=>{ const s=q.toLowerCase().replace(/ё/g,'е'); return s!==v&&words.every(w=>s.includes(w)); });
+  const st=q=>q.toLowerCase().replace(/ё/g,'е').startsWith(v)?0:1; hit.sort((a,b)=>st(a)-st(b)||a.length-b.length); return hit.slice(0,3); }
+function m54Type(){ if(!m54On()) return; const box=sheet.querySelector('#m54-type'), inp=$('#sf-in'); if(!box||!inp) return; let a=[]; try{ if(!sfBusy&&!sfT&&!M54.tray&&document.activeElement===inp) a=m54TypeList(inp.value); }catch(e){}
+  if(!a.length){ if(!box.hidden){ box.hidden=true; box.innerHTML=''; } return; }
+  const h=a.map(q=>{ let fast=false; try{ fast=!!m52Intent(q)||m54CalcQ(q); }catch(e){} return `<button type="button" data-m52q="${esc(q)}">${ico('search',16)}<span>${esc(q)}</span>${fast?`<em>${M52_I.bolt}${esc(L.m54Fast)}</em>`:''}</button>`; }).join('');
+  if(box.dataset.h!==h){ box.innerHTML=h; box.dataset.h=h; } box.hidden=false; }
+
+/* ---------- «+»: всё, что можно добавить или запустить ---------- */
+function m54Tray(on){ if(!m54On()) return; const sh=sheet, t=sh.querySelector('#m54-tray'), b=sh.querySelector('#m54-plus'); if(!t||!b) return; M54.tray=!!on; b.setAttribute('aria-expanded',on?'true':'false'); sh.classList.toggle('m54-tr',!!on);
+  if(!on){ t.hidden=true; return; } const T=L.m54Tray, ic={photo:'camera',file:'doc',voice:'',calc:'calc',write:'edit',plan:'flag',find:'search',hist:'history'};
+  t.innerHTML=`<div class="m54-tg" role="menu" aria-label="${esc(L.m54Plus)}">${Object.keys(ic).map((k,n)=>`<button type="button" role="menuitem" data-m54t="${k}" style="--i:${n}"><span>${k==='voice'?M54_I.wave:ico(ic[k],22)}</span><b>${esc(T[k][0])}</b><small>${esc(T[k][1])}</small></button>`).join('')}</div>`;
+  t.hidden=false; m54Type(); }
+function m54TrayDo(k){ m54Tray(false); const inp=$('#sf-in'), put=t=>{ if(inp){ inp.value=t; inp.dispatchEvent(new Event('input')); inp.focus(); try{ inp.setSelectionRange(t.length,t.length); }catch(e){} } };
+  if(k==='photo'){ try{ sfPickPhoto(); }catch(e){} } else if(k==='file'){ m54ImpSheet(); } else if(k==='voice'){ try{ sfTalkStart(); }catch(e){} }
+  else if(k==='calc') sfAsk(L.m54TrayQ.calc,false); else if(k==='plan') sfAsk(L.m54TrayQ.plan,false);
+  else if(k==='write') put(L.m54TrayQ.write); else if(k==='find') put(L.m54TrayQ.find); else if(k==='hist') m52Panel('hist'); }
+
+/* ---------- меню: лист снизу ---------- */
+{ const f0=m52Pop; m52Pop=function(on){ if(!m54On()) return f0.apply(this,arguments); const sh=sheet; let p=sh.querySelector('#m52-pop'); M52.pop=!!on; const b=sh.querySelector('#m52-menu'); if(b) b.setAttribute('aria-expanded',on?'true':'false');
+    if(!on){ if(p) p.remove(); return; } if(p) return; m54Tray(false);
+    const row=(attr,icon,label,n,cls)=>`<button type="button" role="menuitem" ${attr}${cls?` class="${cls}"`:''}><span class="i">${icon}</span><span>${esc(label)}</span>${n?`<i>${n}</i>`:''}</button>`, vp=m54VizPref();
+    sh.insertAdjacentHTML('beforeend',`<div id="m52-pop" class="m54-menu" role="menu" aria-label="${esc(L.m54Menu)}"><div class="m54-ms"><span class="m54-grab" aria-hidden="true"></span>
+      <p>${esc(L.m54MSec.talk)}</p>${row('data-m54a="new"',M54_I.newc,L.m54MNew)}${row('data-m52p="hist"',ico('history',20),L.m54MHist,m54Hist().length)}${sfLog().length?row('data-m52a="clear"',ico('trash',20),L.m54MClear,0,'warn'):''}
+      <p>${esc(L.m54MSec.know)}</p>${row('data-m52p="mem"',ico('bulb',20),L.m54MMem,m52Mem().length)}${row('data-m52p="saved"',M54_I.pin,L.m54MSaved,m52Pins().length)}${row('data-m52p="sent"',ico('cloud',20),L.m54MSent,m52Sent().length)}
+      <p>${esc(L.m54MSec.set)}</p><div class="m54-seg" role="radiogroup" aria-label="${esc(L.m54MViz)}"><span>${ico('chart',18)} ${esc(L.m54MViz)}</span><div>${['more','std','less'].map(k=>`<button type="button" role="radio" aria-checked="${vp===k}" class="${vp===k?'on':''}" data-m54viz="${k}">${esc(L.m54Viz[k])}</button>`).join('')}</div></div>
+    </div></div>`); }; }
+{ const f0=m52PanelHTML; m52PanelHTML=function(k){ if(k!=='hist') return f0.apply(this,arguments); const H=m54Hist();
+    return `<div class="m52-ph"><button type="button" class="sf-tic" data-m52back="1" aria-label="${esc(L.m52Back)}">${M52_I.back}</button><h4>${esc(L.m54HistT)}</h4></div><p class="m52-lead">${esc(L.m54HistLead)}</p>`
+      +(H.length?`<ul class="m52-list m54-hl">${H.map((h,i)=>({h,i})).reverse().map(({h,i})=>`<li><button type="button" class="m54-hb" data-m54h="${i}"><b>${esc(h.t||'…')}</b><small>${esc(m52Time(h.ts))} · ${esc(L.m54HistN(h.n||0))}</small></button><button type="button" class="link-btn" data-m54hd="${i}">${esc(L.m54HistDel)}</button></li>`).join('')}</ul>`:`<p class="m52-empty">${esc(L.m54HistEmpty)}</p>`); }; }
+
+/* ---------- приветствие: что важно сейчас — карточками с маленькими графиками ---------- */
+function m54Greet(){ const h=new Date().getHours(), G=L.m54Hi; return h<5?G.n:h<12?G.m:h<18?G.d:G.e; }
+function m54Insights(){ const out=[], K=L.m54InsK, S=L.m54InsS; let act=[], real=[]; try{ act=m52Loans(); real=activeList().filter(x=>!x.loan.example); }catch(e){}
+  if(act.length){ try{
+    const late=act.filter(x=>x.a.overdue).sort((a,b)=>a.a.days-b.a.days)[0]; if(late) out.push({id:'late',k:K.late,v:m54Nm(late.loan),s:L.m54NpLate(-late.a.days)});
+    const ups=act.filter(x=>!x.a.overdue&&x.a.days!=null&&x.a.days>=0).sort((a,b)=>a.a.days-b.a.days), nx=ups[0];
+    if(nx) out.push({id:'next',col:m8Col(nx.loan),dots:ups.filter(x=>x.a.days<=30).slice(0,8).map((x,i,arr)=>[x.a.days+arr.slice(0,i).filter(y=>y.a.days===x.a.days).length*1.6,m8Col(x.loan)]),k:K.next,v:m53M(nx.loan,nx.a.amt||nx.a.monthly||0),s:m54Nm(nx.loan)+' · '+fmtDate(nx.a.due)+' · '+whenText(nx.a.days)});
+    else { const ck=act.filter(x=>x.a.check)[0]; if(ck) out.push({id:'next',col:m8Col(ck.loan),k:K.chk,v:m54Nm(ck.loan),s:fmtDate(ck.a.due)+' · '+L.m54NpCheck}); }
+    const T=m8Totals(real); out.push({id:'debt',pct:T.pct,k:K.debt,v:money(T.left),s:S.debt(T.pct)});
+    let pd=0; try{ pd=m49PerDay(); }catch(e){} if(pd>0.5) out.push({id:'int',pd,k:K.int,v:fx(pd*m49DayFrac(),2)+' '+L.cur,s:S.int});
+    const fr=m8Free(real); if(fr) out.push({id:'free',pct:T.pct,k:K.free,v:m8MonLabel(fr.d),s:m49Wait(Math.max(0,fr.months-1))});
+  }catch(e){ console.error(e); } }
+  try{ const ev=m52Ev('sales'), days=[]; for(let i=6;i>=0;i--){ const d=m52DayS(-i); days.push(ev.filter(e=>e.d===d).reduce((s,e)=>s+(+e.v||0),0)); } const sum=days.reduce((s,v)=>s+v,0); if(sum>0) out.push({id:'sales',sp:days,k:K.sales,v:money(sum),s:''}); }catch(e){}
+  try{ const ow=(state.cust||[]).map(c=>+custState(c).bal||0).filter(v=>v>0); if(ow.length) out.push({id:'owed',k:K.owed,v:money(ow.reduce((s,v)=>s+v,0)),s:S.owed(ow.length)}); }catch(e){}
+  return out.slice(0,6); }
+function m54InsViz(x){ if(x.id==='next'&&x.dots&&x.dots.length) return `<svg class="m54-iv" viewBox="0 0 120 22" aria-hidden="true"><path d="M4 11H116" class="ax"/><path d="M4 6v10" class="now"/>${x.dots.map(d=>`<circle cx="${(6+Math.min(30,Math.max(0,d[0]))/30*108).toFixed(1)}" cy="11" r="4.5" fill="${esc(d[1])}"/>`).join('')}</svg>`;
+  if((x.id==='debt'||x.id==='free')&&x.pct!=null){ const R=9, C=2*Math.PI*R; return `<svg class="m54-iv rg" viewBox="0 0 24 24" aria-hidden="true"><circle class="t" cx="12" cy="12" r="${R}"/><circle class="f" cx="12" cy="12" r="${R}" stroke-dasharray="${C.toFixed(1)}" stroke-dashoffset="${(C*(1-x.pct/100)).toFixed(1)}"/></svg>`; }
+  if(x.id==='sales'&&x.sp){ const mx=Math.max(1,...x.sp); return `<svg class="m54-iv sp" viewBox="0 0 120 22" aria-hidden="true">${x.sp.map((v,i)=>{ const h=Math.max(2,v/mx*20); return `<rect x="${4+i*16.4}" y="${(22-h).toFixed(1)}" width="11" height="${h.toFixed(1)}" rx="3"/>`; }).join('')}</svg>`; }
+  return ''; }
+m52HelloHTML=function(){ const ins=m54Insights();
+  return `<p class="m54-hi-t">${esc(m54Greet())}</p><p class="m54-hi-s">${esc(L.m54HiSub)}</p>
+    ${ins.length?`<div class="m54-ins" role="list">${ins.map((x,k)=>`<button type="button" role="listitem" class="m54-ic ${esc(x.id)}" data-m52q="${esc(L.m54InsQ[x.id]||'')}" style="--i:${k}${x.col?';--lc:'+esc(x.col):''}"><small>${esc(x.k)}</small><b${x.id==='int'?` data-m54pd="${(+x.pd).toFixed(4)}"`:''}>${esc(x.v)}</b>${x.s?`<em>${esc(x.s)}</em>`:''}${m54InsViz(x)}</button>`).join('')}</div>`:''}
+    <p class="m52-cap">${esc(L.m54Can)}</p><div class="m52-grid m54-grid">${L.m52Caps.map((c,k)=>`<button type="button" data-m52cap="${k}"><span>${m52Svg(M52_I.cap[k])}</span><b>${esc(c[0])}</b><small>${esc(c[1])}</small></button>`).join('')}</div>`; };
+if(!M54.tick) M54.tick=setInterval(()=>{ try{ if(document.hidden||!document.documentElement.classList.contains('m48-live')) return; document.querySelectorAll('[data-m54pd]').forEach(b=>{ b.textContent=fx(+b.dataset.m54pd*m49DayFrac(),2)+' '+L.cur; }); }catch(e){} },1000);
+
+/* ---------- сообщения: действия значками, «слушать», «поделиться» ---------- */
+{ const f0=m52Acts; m52Acts=function(h,m,i){ try{ const log=sfLog(), last=i===log.length-1, k=h.lastIndexOf('</div>'); if(k<0) return h; const A=L.m54Acts;
+      const ib=(attr,icon,label)=>`<button type="button" class="ic" ${attr} data-i="${i}" aria-label="${esc(label)}" title="${esc(label)}">${icon}</button>`, tb=(attr,label)=>`<button type="button" ${attr} data-i="${i}">${esc(label)}</button>`; let b='';
+      if(m.mem) b=`<button type="button" data-m52p="mem">${esc(L.m52MemOpen)}</button>`;
+      else if(m.err){ if(i>0&&log[i-1]&&log[i-1].r==='u') b=tb('data-m52a="retry"',L.m52Retry); }
+      else if(m.t) b=ib('data-m52a="copy"',M54_I.copy,A.copy)+ib('data-m54a="listen"',M54_I.spk,A.listen)+ib('data-m54a="share"',M54_I.share,A.share)+ib('data-m52a="pin"',M54_I.pin,A.pin)+(last&&!m.ch?tb('data-m52a="simple"',L.m52Simple)+tb('data-m52a="more"',L.m52More):'');
+      return b?h.slice(0,k)+`<div class="m52-acts m54-acts">${b}</div>`+h.slice(k):h; }catch(e){ return f0.apply(this,arguments); } }; }
+{ const f0=sfMsgHTML; sfMsgHTML=function(m,i){ let h=f0.apply(this,arguments); try{ if(m&&m.ts) h=h.replace('<div class="sf-m ',`<div data-m54ts="${+m.ts}" class="sf-m ${m.lc?'m54-lc ':''}`); }catch(e){} return h; }; }
+
+/* ---------- новый ответ остаётся на виду сверху: экран не убегает в конец, пока Сифра пишет ---------- */
+function m54Anchor(){ if(!m54On()) return; const box=$('#sf-log'); if(!box) return; const us=box.querySelectorAll('.sf-m.u'), u=us[us.length-1], lastEl=box.lastElementChild;
+  if(!u||!lastEl){ box.style.paddingBottom=''; return; }
+  const top=u.offsetTop, tail=lastEl.offsetTop+lastEl.offsetHeight-top, pad=Math.max(14,Math.round(box.clientHeight-tail-22)); box.style.paddingBottom=pad+'px';
+  if(M54.anchor) box.scrollTop=Math.max(0,top-10); try{ m52Scroll(); }catch(e){} }
+/* графики появляются в движении — один раз, когда дошли до экрана; без сети и при «меньше движения» — сразу готовые */
+M54.live=new Set();
+const M54IO=('IntersectionObserver' in window)?new IntersectionObserver(es=>{ for(const e of es){ if(!e.isIntersecting) continue; M54IO.unobserve(e.target); m54VizPlay(e.target); } },{threshold:0.15}):null;
+function m54VizPlay(f){ try{ if(f._m54l!=null) M54.live.add(f._m54l); else if(f._m54k) M54.vz.add(f._m54k); if(M54.vz.size>500) M54.vz.clear(); f.dataset.m54='go'; }catch(e){} }
+function m54VizScan(){ const box=$('#sf-log'); if(!box) return; const go=m54Motion();
+  box.querySelectorAll('figure.m46-v:not([data-m54]),.m52-loc:not([data-m54])').forEach(f=>{ const host=f.closest('[data-m54ts]'), wait=f.closest('.sf-wait'), scope=host||wait||box, all=[...scope.querySelectorAll('figure.m46-v,.m52-loc')], k=all.indexOf(f), key=host?host.dataset.m54ts+':'+k:'';
+    if(!go||(key&&M54.vz.has(key))||(!host&&wait&&M54.live.has(k))||(!host&&!wait)){ f.dataset.m54='done'; return; }
+    f.dataset.m54='w'; f._m54k=key; f._m54l=host?null:k; if(M54IO) M54IO.observe(f); else m54VizPlay(f); }); }
+function m54Post(final){ if(!m54On()) return; const log=sfLog();
+  if(final&&M54.live.size){ const last=log[log.length-1]; if(last&&last.r==='a'&&last.ts) M54.live.forEach(k=>M54.vz.add(last.ts+':'+k)); M54.live.clear(); }
+  m54Sync(); m54VizScan(); m54Anchor(); }
+{ const f0=sfRedraw; sfRedraw=function(){ const r=f0.apply(this,arguments); try{ m54Post(true); }catch(e){ console.error(e); } return r; }; }
+{ const f0=m52Live; m52Live=function(ev){ const r=f0.apply(this,arguments); try{ if(m54On()){ if(ev&&ev.step==='begin') M54.live.clear(); m54Status(); m54VizScan(); m54Anchor(); } }catch(e){} return r; }; }
+{ const f0=sfImgShow; sfImgShow=function(){ const r=f0.apply(this,arguments); try{ m54Sync(); }catch(e){} return r; }; }
+try{ const f0=sfTalkUI; sfTalkUI=function(){ const r=f0.apply(this,arguments); try{ m54Status(); }catch(e){} return r; }; }catch(e){}
+
+/* ---------- ползунки «что если»: считает приложение, а не модель ---------- */
+/* только прямой вопрос «что если платить больше»; советы («стоит ли», «выгодно ли», «как лучше») — это к Сифре на сервере */
+const M54_CALC_RX=/(что|а)\s+(будет\s+)?если.{0,40}(плат|внос|вноси|гас|доплач)|если\s+(я\s+)?(буду\s+|стану\s+)?(платить|вносить|гасить|доплачивать)\s.{0,24}(больше|сверху|досрочно)|агар.{0,40}(бештар|зиёдтар).{0,12}(пардохт|диҳам|супор)|what if.{0,30}\bpay|if i pa(y|id) (more|extra)/i;
+const M54_CALC_NO=/стоит ли|почему|зачем|посовет|совет|выгодн|лучше|как мне|маслиҳат|беҳтар|should|why|advice|better|worth/i;
+function m54CalcQ(q){ q=String(q||'').trim().toLowerCase().replace(/ё/g,'е'); return q.length>0&&q.length<=70&&M54_CALC_RX.test(q)&&!M54_CALC_NO.test(q); }
+function m54Nice(v){ if(!(v>0)) return 1; const p=Math.pow(10,Math.floor(Math.log10(v))), k=v/p; return (k<=1?1:k<=2?2:k<=5?5:10)*p; }
+function m54Sim(P,M,r){ if(!(P>0)) return {m:0,i:0}; const s=payoffSim(P,M,r); return s?{m:s.months,i:s.interest}:null; }
+function m54Dur(n){ const C=L.m54Calc; return n<12?C.mo(n):C.yr(Math.floor(n/12),n%12); }
+function m54CalcOut(o,v){ const C=L.m54Calc, u=o.u||L.cur, F=x=>m46F(Math.round(x),u), k=o.k;
+  if(k==='loan'){ const a=m54Sim(o.left,o.pay,o.rate), x=+v.x||0, b=m54Sim(o.left,o.pay+x,o.rate); if(!a||!b) return `<p class="m54-cn bad">${esc(C.never)}</p>`;
+    const row=(lab,s,cls,w1,w2)=>`<div class="m54-cb ${cls}"><span>${esc(lab)}</span><div><i style="width:${w1.toFixed(1)}%"></i><b>${esc(m54Dur(s.m))}</b></div><div class="in"><i style="width:${w2.toFixed(1)}%"></i><b>${esc(F(s.i))}</b></div></div>`, mm=Math.max(1,a.m), mi=Math.max(1,a.i);
+    return `<div class="m54-ch"><span></span><small>${esc(C.months)}</small><small>${esc(C.interest)}</small></div>${row(C.now,a,'a',100,100)}${row(C.then,b,'b',Math.max(3,b.m/mm*100),Math.max(3,b.i/mi*100))}<p class="m54-cn${x>0&&(a.m>b.m||a.i>b.i)?' good':''}">${esc(x>0&&(a.m>b.m||a.i>b.i)?C.saved(m54Dur(Math.max(0,a.m-b.m)),F(Math.max(0,a.i-b.i))):C.same)}</p>`; }
+  if(k==='profit'){ const p=+v.price, c=+v.cost, q=+v.qty, f=+o.fix||0, pr=(p-c)*q-f, mk=c>0?(p-c)/c*100:0, be=p>c&&f>0?Math.ceil(f/(p-c)):0;
+    return `<div class="m54-kp"><div class="${pr>=0?'good':'bad'}"><small>${esc(pr>=0?C.profit:C.loss)}</small><b>${esc(F(Math.abs(pr)))}</b></div><div><small>${esc(C.margin)}</small><b>${esc(m46F(Math.round(mk)))}%</b></div></div>${be?`<p class="m54-cn">${esc(C.be(m46F(be)))}</p>`:''}`; }
+  if(k==='goal'){ const G=+o.goal, H=+o.have||0, S=+v.save, need=Math.max(0,G-H), n=S>0?Math.ceil(need/S):0, d=addMonths(today0(),n), pc=G>0?Math.min(100,H/G*100):0;
+    return `<div class="m54-kp"><div class="good"><small>${esc(C.when)}</small><b>${esc(need<=0?m8MonLabel(today0()):m8MonLabel(d))}</b></div><div><small>${esc(C.goal)}</small><b>${esc(F(G))}</b></div></div><div class="m54-gb"><i style="width:${pc.toFixed(1)}%"></i></div>${need>0&&n>0?`<p class="m54-cn">${esc(C.inM(m54Dur(n)))}</p>`:''}`; }
+  return ''; }
+function m54CalcSpec(o){ const C=L.m54Calc, k=o.k, R=(name,label,val,min,max,step)=>({name,label,val,min,max,step});
+  if(k==='loan'){ const mx=m54Nice(Math.max(o.pay*1.5,o.left/24,100)); return [R('x',C.extra,0,0,mx,m54Nice(mx/40))]; }
+  if(k==='profit'){ const sp=m54Nice(o.price/50), sc=m54Nice(o.cost/50), q=Math.max(1,o.qty); return [R('price',C.price,o.price,Math.max(sp,Math.round(o.price*0.5/sp)*sp),Math.round(o.price*2/sp)*sp,sp),R('cost',C.cost,o.cost,Math.max(sc,Math.round(o.cost*0.5/sc)*sc),Math.round(o.cost*1.5/sc)*sc,sc),R('qty',C.qty,q,0,Math.max(10,m54Nice(q*3)),Math.max(1,m54Nice(q/20)))]; }
+  if(k==='goal'){ const s=Math.max(1,o.save), st=m54Nice(s/20); return [R('save',C.save,s,st,m54Nice(s*4),st)]; }
+  return []; }
+function m54CalcOk(o){ const p=x=>typeof x==='number'&&isFinite(x)&&x>0; if(!o) return false; if(o.k==='loan') return p(o.left)&&p(o.pay)&&typeof o.rate==='number'&&o.rate>=0&&o.rate<400; if(o.k==='profit') return p(o.price)&&p(o.cost)&&p(o.qty); if(o.k==='goal') return p(o.goal)&&p(o.save); return false; }
+function m54CalcHTML(o){ if(!m54CalcOk(o)) return ''; const spec=m54CalcSpec(o), v={}, u=o.u||L.cur; spec.forEach(s=>{ v[s.name]=s.val; });
+  const pick=Array.isArray(o.list)&&o.list.length>1?`<div class="m54-cl" role="radiogroup">${o.list.slice(0,6).map((x,i)=>`<button type="button" role="radio" aria-checked="${i===(o.sel||0)}" class="${i===(o.sel||0)?'on':''}" data-m54cl="${i}"><i style="background:${esc(x.col||'var(--brand)')}"></i>${esc(x.n)}</button>`).join('')}</div>`:'';
+  const facts=o.k==='loan'?`<p class="m54-cf">${esc(L.m54Calc.left)}: <b>${esc(m46F(Math.round(o.left),u))}</b> · ${esc(L.m54Calc.pay)}: <b>${esc(m46F(Math.round(o.pay),u))}</b> · <b>${esc(m12Pct(o.rate))}% ${esc(L.m12Year||'')}</b></p>`:'';
+  return `<div class="m54-calc" data-m54calc="${esc(JSON.stringify(o))}">${pick}${facts}${spec.map(s=>`<label class="m54-cr"><span>${esc(s.label)}</span><output>${esc((s.name==='x'&&s.val>0?'+':'')+m46F(s.val,s.name==='qty'?'':u))}</output><input type="range" data-m54c="${s.name}" min="${s.min}" max="${s.max}" step="${s.step}" value="${s.val}" aria-label="${esc(s.label)}"></label>`).join('')}<div class="m54-co" aria-live="polite">${m54CalcOut(o,v)}</div>${o.k==='loan'?`<small class="m54-ce">${esc(L.m54Calc.est)}</small>`:''}</div>`; }
+function m54CalcRun(root){ let o=null; try{ o=JSON.parse(root.dataset.m54calc); }catch(e){ return; } const v={}, u=o.u||L.cur; root.querySelectorAll('[data-m54c]').forEach(i=>{ const n=i.dataset.m54c; v[n]=+i.value; const out=i.parentNode.querySelector('output'); if(out) out.textContent=(n==='x'&&v[n]>0?'+':'')+m46F(v[n],n==='qty'?'':u); });
+  const co=root.querySelector('.m54-co'); if(co) m54Morph(co,m54CalcOut(o,v)); }
+function m54Morph(el,html){ const t=document.createElement('div'); t.innerHTML=html; const a=el.querySelectorAll('*'), b=t.querySelectorAll('*'); if(a.length!==b.length){ el.innerHTML=html; return; }
+  for(let i=0;i<a.length;i++){ const x=a[i], y=b[i]; if(x.tagName!==y.tagName){ el.innerHTML=html; return; } }
+  for(let i=0;i<a.length;i++){ const x=a[i], y=b[i]; if(x.className!==y.className) x.className=y.className; const sx=x.getAttribute('style'), sy=y.getAttribute('style'); if(sx!==sy){ if(sy==null) x.removeAttribute('style'); else x.setAttribute('style',sy); } if(!y.children.length&&x.textContent!==y.textContent) x.textContent=y.textContent; } }
+document.addEventListener('input',e=>{ const t=e.target; if(t&&t.dataset&&t.dataset.m54c){ const r=t.closest('.m54-calc'); if(r) m54CalcRun(r); } });
+/* «что если платить больше» — ответ сразу, из записей в телефоне */
+function m54LocCalc(){ const a=m52Loans().filter(x=>(+x.a.remaining||0)>0&&(x.a.amtFull||x.a.monthly)>0); if(!a.length) return {t:L.m54LocCalcNone};
+  const list=a.slice().sort((x,y)=>(+y.loan.rate||0)-(+x.loan.rate||0)||(+x.a.remaining||0)-(+y.a.remaining||0)).slice(0,6).map(x=>{ const k=m53K(x.loan); return {n:m54Nm(x.loan),col:m8Col(x.loan),left:Math.round((+x.a.remaining||0)/k*100)/100,rate:+x.loan.rate||0,pay:Math.round((+x.a.amtFull||+x.a.monthly||0)/k*100)/100,u:m53Sym(x.loan.cur)}; });
+  const f=list[0], o={t:'calc',k:'loan',title:L.m54CalcT.loan,left:f.left,rate:f.rate,pay:f.pay,u:f.u,list,sel:0};
+  return {t:L.m54LocCalcT(f.n)+'\n<viz>'+JSON.stringify(o)+'</viz>'}; }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest&&e.target.closest('[data-m54cl]'); if(!b) return; const root=b.closest('.m54-calc'); if(!root) return; let o=null; try{ o=JSON.parse(root.dataset.m54calc); }catch(x){ return; } const x=o.list&&o.list[+b.dataset.m54cl]; if(!x) return;
+  Object.assign(o,{left:x.left,rate:x.rate,pay:x.pay,u:x.u,sel:+b.dataset.m54cl}); const tmp=document.createElement('div'); tmp.innerHTML=m54CalcHTML(o); if(tmp.firstChild) root.replaceWith(tmp.firstChild); });
+
+/* ---------- вопрос: мгновенный расчёт, состояние кнопки, вернуть текст после «стоп» ---------- */
+{ const f0=sfAsk; sfAsk=function(q,voice){ let p; try{ const s=String(q||'').trim(); let img=false, busy=false; try{ img=!!sfImg; busy=!!sfBusy; }catch(e){}
+      if(m54On()){ M54.anchor=true; m54Tray(false); }
+      if(s&&!busy&&!img&&!M52.skip&&m54CalcQ(s)){ m52Local(s,voice,m54LocCalc()); try{ const lg=sfLog(), last=lg[lg.length-1]; if(last&&last.r==='a'){ last.lc=1; persist(); const el=document.querySelector('#sf-log .sf-m.a[data-m54ts="'+(+last.ts)+'"]'); if(el) el.classList.add('m54-lc'); } }catch(e){} return Promise.resolve(); } }catch(e){ console.error(e); }
+    p=f0.apply(this,arguments); try{ m54Sync(); m54Anchor(); }catch(e){}
+    const fin=()=>{ try{ if(M54.stopQ){ const log=sfLog(), i=$('#sf-in'), gone=log.length<(M54.stopN||0); if(gone&&i&&!i.value){ i.value=M54.stopQ; i.dispatchEvent(new Event('input')); } M54.stopQ=''; } m54Sync(); }catch(e){} };
+    if(p&&typeof p.then==='function') p.then(fin,fin); else fin(); return p; }; }
+
+/* ---------- переодеть окно ---------- */
+function m54Dress(){ const sh=sheet; if(!sh||!sh.classList.contains('m52')) return; const head=sh.querySelector('.sf-head'), log=sh.querySelector('#sf-log'), bar=sh.querySelector('.sf-bar'); if(!head||!log||!bar) return; sh.classList.add('m54w');
+  if(!sh.querySelector('.m54-bg')) sh.insertAdjacentHTML('afterbegin','<div class="m54-bg" aria-hidden="true"></div>');
+  const ava=head.querySelector('.sf-ava'); if(ava&&!ava.classList.contains('m54-orb')){ ava.classList.add('m54-orb'); ava.innerHTML=M54_I.star; }
+  const talk=head.querySelector('#sf-talk'); if(talk) talk.classList.add('m54-hid');
+  const menu=head.querySelector('#m52-menu'); if(menu&&!head.querySelector('#m54-new')) menu.insertAdjacentHTML('beforebegin',`<button type="button" class="sf-tic" id="m54-new" aria-label="${esc(L.m54New)}" title="${esc(L.m54New)}">${M54_I.newc}</button>`);
+  if(!sh.querySelector('#m54-off')) head.insertAdjacentHTML('afterend',`<p id="m54-off" hidden>${ico('cloud',15)}<span>${esc(L.m54StOff)}</span></p>`);
+  if(!bar.classList.contains('m54-bar')){ bar.classList.add('m54-bar'); const mic=bar.querySelector('#sf-mic'), inp=bar.querySelector('#sf-in'), send=bar.querySelector('#sf-send');
+    bar.insertAdjacentHTML('afterbegin',`<button type="button" class="m54-ib" id="m54-plus" aria-expanded="false" aria-controls="m54-tray" aria-label="${esc(L.m54Plus)}">${M54_I.plus}</button>`);
+    const f=document.createElement('div'); f.className='m54-field'; inp.before(f); f.appendChild(inp); if(mic) f.appendChild(mic);
+    send.innerHTML=M54_I.wave+M54_I.send+M54_I.stop; send.classList.add('m54-act');
+    send.onclick=()=>{ const mode=send.dataset.mode; if(mode==='stop'){ m54Stop(); return; } if(mode==='voice'){ try{ sfTalkStart(); }catch(e){} return; } sfAsk(inp.value,false); };
+    inp.addEventListener('input',m54Sync); inp.addEventListener('focus',()=>{ m54Tray(false); m54Type(); }); inp.addEventListener('blur',()=>setTimeout(m54Type,180));
+    bar.insertAdjacentHTML('beforebegin','<div id="m54-type" hidden></div><div id="m54-tray" hidden></div>'); }
+  if(!log.dataset.m54){ log.dataset.m54='1'; try{ if('ResizeObserver' in window){ let h0=log.clientHeight; new ResizeObserver(()=>{ const h=log.clientHeight; if(Math.abs(h-h0)>1){ h0=h; try{ m54Anchor(); }catch(e){} } }).observe(log); } }catch(e){} const off=()=>{ M54.anchor=false; }; log.addEventListener('touchmove',off,{passive:true}); log.addEventListener('wheel',off,{passive:true}); log.addEventListener('keydown',off); }
+  M54.tray=false; M54.anchor=true; try{ M54.y0=scrollY; }catch(e){} m54Post(false); }
+{ const f0=sifraOpen; sifraOpen=function(){ const r=f0.apply(this,arguments); try{ m54Dress(); }catch(e){ console.error(e); } return r; }; }
+/* пока окно открыто, страница под ним стоит на месте: браузер норовит прокрутить её вслед за курсором в поле ввода */
+addEventListener('scroll',()=>{ try{ if(M54.y0!=null&&m54On()&&overlay.classList.contains('open')&&Math.abs(scrollY-M54.y0)>1) scrollTo(0,M54.y0); }catch(e){} },{passive:true});
+{ const f0=openSheet; openSheet=function(){ try{ sheet.classList.remove('m54w','m54-typing','m54-busy','m54-has','m54-tr','m54-imp'); delete sheet.dataset.m54st; }catch(e){} return f0.apply(this,arguments); }; }
+addEventListener('online',()=>{ try{ m54Status(); }catch(e){} }); addEventListener('offline',()=>{ try{ m54Status(); }catch(e){} });
+document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest||!m54On()||!t.closest('#sheet')) return; let el;
+  if((el=t.closest('#m54-plus'))){ m54Tray(!M54.tray); return; }
+  if((el=t.closest('[data-m54t]'))){ m54TrayDo(el.dataset.m54t); return; }
+  if(M54.tray&&!t.closest('#m54-tray')) m54Tray(false);
+  if(t.id==='m52-pop'){ m52Pop(false); return; }
+  if((el=t.closest('#m54-new'))){ m54NewChat(); return; }
+  if((el=t.closest('[data-m54viz]'))){ try{ localStorage.setItem('m54viz',el.dataset.m54viz); }catch(x){} el.parentNode.querySelectorAll('button').forEach(b=>{ const on=b===el; b.classList.toggle('on',on); b.setAttribute('aria-checked',on?'true':'false'); }); return; }
+  if((el=t.closest('[data-m54h]'))){ m54Restore(+el.dataset.m54h); return; }
+  if((el=t.closest('[data-m54hd]'))){ m54Hist().splice(+el.dataset.m54hd,1); persist(); m52Panel('hist'); return; }
+  if((el=t.closest('[data-m54a]'))){ const a=el.dataset.m54a, m=sfLog()[+el.dataset.i];
+    if(a==='new'){ m52Pop(false); m54NewChat(); return; }
+    if(!m) return;
+    if(a==='listen'){ if(el.classList.contains('on')){ try{ sfHush(); }catch(x){} el.classList.remove('on'); return; } sheet.querySelectorAll('.m54-acts .on').forEach(x=>x.classList.remove('on')); el.classList.add('on'); try{ sfSay(m.t,()=>{ try{ el.classList.remove('on'); }catch(x){} }); }catch(x){ el.classList.remove('on'); } return; }
+    if(a==='share'){ const txt=m52Text(m); try{ if(navigator.share){ navigator.share({text:txt}).catch(()=>{}); return; } }catch(x){} m52Copy(txt); return; } }
+});
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
