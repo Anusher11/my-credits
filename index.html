@@ -6741,6 +6741,135 @@ button.m65-sr{cursor:pointer;} .m65-sr b{flex:1; min-width:0; font-weight:600; f
 .m65-sr.cur > span{background:color-mix(in srgb,var(--brand) 14%,transparent); color:var(--brand);} .m65-sr.ok b{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px;} .m65-sr.ok > span{background:color-mix(in srgb,var(--in,#0E7D5A) 14%,transparent); color:var(--in,#0E7D5A);} .m65-sr small{color:var(--muted); font-size:max(.78rem,8.25pt);} .m65-sr > svg{flex:none; color:var(--muted);}
 /* на узком телефоне в строке «Мои кредиты · число · Добавить кредит» значку не хватает места — там остаётся значок кнопки */
 @media (max-width:23.7em){ #myBanksH2 .m65-ic{display:none;} }
+/* v66: начертания видов — «Бумага»: заголовки с засечками; «Стекло» и «Ночь» — свои шрифты. Во всех есть таджикские буквы. */
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:100 600;src:url(fonts/ss-latin-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:700 900;src:url(fonts/ss-latin-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:100 600;src:url(fonts/ss-cyrillic-600.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:700 900;src:url(fonts/ss-cyrillic-700.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:100 600;src:url(fonts/ss-cyrillic-ext-600.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Serif';font-style:normal;font-display:swap;font-weight:700 900;src:url(fonts/ss-cyrillic-ext-700.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/ge-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/ge-latin-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/ge-latin-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/ge-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/ge-cyrillic-600.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/ge-cyrillic-700.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/ge-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/ge-cyrillic-ext-600.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Geologica';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/ge-cyrillic-ext-700.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/mu-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/mu-latin-600.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/mu-latin-700.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/mu-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/mu-cyrillic-600.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/mu-cyrillic-700.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:100 500;src:url(fonts/mu-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:600 700;src:url(fonts/mu-cyrillic-ext-600.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Mulish';font-style:normal;font-display:swap;font-weight:800 900;src:url(fonts/mu-cyrillic-ext-700.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+@font-face{font-family:'Mira Nunito X';font-style:normal;font-display:swap;font-weight:100 900;src:url(fonts/ns-latin-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;}
+@font-face{font-family:'Mira Nunito X';font-style:normal;font-display:swap;font-weight:100 900;src:url(fonts/ns-cyrillic-800.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face{font-family:'Mira Nunito X';font-style:normal;font-display:swap;font-weight:100 900;src:url(fonts/ns-cyrillic-ext-800.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;}
+
+/* ===================== v66: четыре вида заново — шрифты, карточки, нижняя панель =====================
+   «Бумага» — лист и квитанция: заголовки и крупные суммы с засечками, карточка-лист с мягкой тенью,
+              пунктир «линии отрыва» в главной карточке, панель-плашка с чернильной меткой.
+   «Стекло» — толстое стекло: свой лёгкий шрифт, блик по верхней кромке и мягкий свет внутри карточки,
+              активная вкладка — стеклянная капля.
+   «Ночь»   — глубина: свой шрифт с открытыми буквами, фиолетовый отсвет сверху карточки, свечение под вкладкой.
+   «Сочный» — настоящий жирный округлый шрифт в заголовках, карточки с цветной кромкой, цветная панель с жёлтой меткой. */
+
+/* ---- общее: заголовки плотнее, цифры в один столбец ---- */
+html.m59 .m7-hello h1{letter-spacing:-.022em;}
+html.m59 #view-today h2,html.m59 #view-loans h2,html.m59 #view-loans h3,html.m59 #view-shop h2,html.m59 #view-money h2,html.m59 #moreView h2,html.m59 .sheet h3{letter-spacing:-.014em;}
+html.m59 .m7-h-amt,html.m59 .m49-big,html.m59 .c-rem,html.m59 .m11-h b,html.m59 .m38-tv,html.m59 .m65-r b{font-variant-numeric:tabular-nums lining-nums; letter-spacing:-.022em;}
+html.m59 .bnav .bl{font-variant-numeric:normal;}
+@keyframes m66Chip{from{transform:scale(.62); opacity:.35;} to{transform:none; opacity:1;}}
+@media (prefers-reduced-motion:no-preference){ html.m59 .bnav button.on .bi{animation:m66Chip .3s cubic-bezier(.2,.9,.3,1.2);} }
+
+/* ---- Бумага ---- */
+:root.m40.m59[data-lk="paper"]{--m66-head:'Mira Serif','Source Serif 4',Georgia,'Times New Roman',serif;
+  --surface:#FFFEFB; --m40-card:#FFFEFB; --m40-bd:transparent; --m40-r:calc(var(--k)*20px); --line:#E4E0D6; --m8-glass:rgba(255,254,251,.97);
+  --shadow:0 0 0 1px #E7E3D8,0 1px 2px rgba(29,26,36,.05),0 calc(var(--k)*14px) calc(var(--k)*28px) calc(var(--k)*-24px) rgba(29,26,36,.34); --shadow-lg:0 0 0 1px #E7E3D8,0 calc(var(--k)*20px) calc(var(--k)*44px) calc(var(--k)*-26px) rgba(29,26,36,.38);}
+html.m40.m59[data-lk="paper"] :is(h1,h2,h3,h4,.fo-h > b,.sd-empty > b,.m7-h-amt,.m49-big){font-family:var(--m66-head)!important; letter-spacing:-.008em!important;}
+html.m40.m59[data-lk="paper"] :is(.card,.m38-t,.m40-cd,.m38-c,.m11-hero,.hb-idea,.sh-card,.m10-card){box-shadow:var(--shadow)!important;}
+html.m40.m59[data-lk="paper"] .m7-hello h1,html.m40.m59[data-lk="paper"] h1.m7-h1{font-weight:700!important; font-size:1.72rem!important;}
+html.m40.m59[data-lk="paper"] .section-h h2,html.m40.m59[data-lk="paper"] .m40-h h2,html.m40.m59[data-lk="paper"] .fo-h > b{font-weight:700!important; font-size:1.12rem!important;}
+html.m40.m59[data-lk="paper"] .m7-hero .m7-h-amt{font-weight:700!important; font-size:2.5rem!important;}
+html.m40.m59[data-lk="paper"] .m7-hero .m7-h-btns{border-top:1.5px dashed #D8D2C2; padding-top:calc(var(--k)*12px); margin-top:2px;}
+html.m40.m59[data-lk="paper"] .bnav{left:calc(var(--k)*10px)!important; right:calc(var(--k)*10px)!important; bottom:calc(calc(var(--k)*8px) + env(safe-area-inset-bottom,0px))!important; border-radius:calc(var(--k)*22px)!important; border:0!important; border-top:0!important; background:#FFFEFB!important; box-shadow:0 0 0 1px #E7E3D8,0 calc(var(--k)*16px) calc(var(--k)*32px) calc(var(--k)*-18px) rgba(29,26,36,.4)!important; padding-bottom:0!important;}
+html.m40.m59[data-lk="paper"] .bnav button .bi{border-radius:calc(var(--k)*12px)!important;}
+html.m40.m59[data-lk="paper"] .bnav button.on .bi{background:var(--brand)!important; color:#FFFFFF!important;}
+html.m40.m59[data-lk="paper"] .bnav button.on{color:var(--brand)!important;} html.m40.m59[data-lk="paper"] .bnav button.on .bl{font-weight:700!important;}
+@media (max-width:21.56em){ html.m40.m59[data-lk="paper"] .bnav{left:calc(var(--k)*4px)!important; right:calc(var(--k)*4px)!important;} }
+
+/* ---- Стекло ---- */
+:root.m40.m59[data-lk="glass"]{--font-body:'Mira Mulish','Mulish','Segoe UI',system-ui,sans-serif; --font-num:'Mira Mulish','Mulish','Segoe UI',system-ui,sans-serif;
+  --m40-r:calc(var(--k)*24px); --m40-bd:rgba(255,255,255,.9);
+  --shadow:inset 0 1px 0 rgba(255,255,255,.98),inset 0 calc(var(--k)*22px) calc(var(--k)*26px) calc(var(--k)*-22px) rgba(255,255,255,.7),inset 0 -1px 0 rgba(46,22,96,.06),0 calc(var(--k)*20px) calc(var(--k)*42px) calc(var(--k)*-26px) rgba(46,22,96,.5);
+  --shadow-lg:inset 0 1px 0 #FFFFFF,inset 0 calc(var(--k)*26px) calc(var(--k)*30px) calc(var(--k)*-24px) rgba(255,255,255,.75),inset 0 -1px 0 rgba(46,22,96,.07),0 calc(var(--k)*28px) calc(var(--k)*56px) calc(var(--k)*-28px) rgba(46,22,96,.56);}
+html.m40.m59[data-lk="glass"] .m7-hello h1{font-weight:800!important;}
+html.m40.m59[data-lk="glass"] .bnav{border-radius:calc(var(--k)*26px)!important; box-shadow:inset 0 1px 0 rgba(255,255,255,.95),0 calc(var(--k)*20px) calc(var(--k)*44px) calc(var(--k)*-20px) rgba(46,22,96,.5)!important;}
+html.m40.m59[data-lk="glass"] .bnav button.on .bi{background:rgba(255,255,255,.86)!important; color:var(--brand)!important; box-shadow:inset 0 1px 0 #FFFFFF,0 calc(var(--k)*8px) calc(var(--k)*16px) calc(var(--k)*-10px) rgba(46,22,96,.5)!important;}
+html.m40.m59[data-lk="glass"] .bnav button.on{color:var(--brand)!important;} html.m40.m59[data-lk="glass"] .bnav button.on .bl{font-weight:800!important;}
+@media (prefers-reduced-transparency: reduce){ html.m40.m59[data-lk="glass"] .bnav button.on .bi{background:var(--brand-weak)!important; box-shadow:none!important;} }
+html[data-hc].m40.m59[data-lk="glass"] .bnav button.on .bi{background:var(--brand-weak)!important; box-shadow:none!important;}
+
+/* ---- Ночь ---- */
+:root.m40.m59[data-lk="night"]{--font-body:'Mira Geologica','Geologica','Segoe UI',system-ui,sans-serif; --font-num:'Mira Geologica','Geologica','Segoe UI',system-ui,sans-serif;
+  --m40-r:calc(var(--k)*22px); --m40-card:#1A1921; --surface:#1A1921; --m40-bd:transparent;
+  --shadow:inset 0 1px 0 rgba(255,255,255,.08),inset 0 calc(var(--k)*26px) calc(var(--k)*30px) calc(var(--k)*-28px) rgba(181,163,255,.2),0 0 0 1px rgba(255,255,255,.06),0 calc(var(--k)*28px) calc(var(--k)*48px) calc(var(--k)*-34px) #000000;
+  --shadow-lg:inset 0 1px 0 rgba(255,255,255,.1),inset 0 calc(var(--k)*30px) calc(var(--k)*34px) calc(var(--k)*-30px) rgba(181,163,255,.24),0 0 0 1px rgba(255,255,255,.08),0 calc(var(--k)*32px) calc(var(--k)*64px) calc(var(--k)*-30px) #000000;}
+html.m40.m59[data-lk="night"] :is(.card,.m38-t,.m40-cd,.m38-c,.sh-card,.m10-card){box-shadow:var(--shadow)!important;}
+html.m40.m59[data-lk="night"] body{letter-spacing:-.012em;}
+html.m40.m59[data-lk="night"] .m7-hello h1{font-weight:600!important; letter-spacing:-.03em;}
+html.m40.m59[data-lk="night"] .bnav{border:0!important; background:rgba(26,25,33,.94)!important; box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 0 0 1px rgba(255,255,255,.07),0 calc(var(--k)*22px) calc(var(--k)*46px) calc(var(--k)*-18px) #000000!important;}
+html.m40.m59[data-lk="night"] .bnav button.on .bi{background:rgba(181,163,255,.2)!important; color:#D6CCFF!important; box-shadow:0 0 calc(var(--k)*20px) -2px rgba(181,163,255,.6)!important;}
+html.m40.m59[data-lk="night"] .bnav button.on{color:#D6CCFF!important;} html.m40.m59[data-lk="night"] .bnav button.on .bl{font-weight:700!important;}
+
+/* ---- Сочный ---- */
+:root.m40.m59[data-lk="color"]{--m66-head:'Mira Nunito X','Mira Nunito','Nunito','Segoe UI',system-ui,sans-serif;
+  --m40-r:calc(var(--k)*28px); --shadow:0 calc(var(--k)*3px) 0 rgba(108,43,217,.1),0 calc(var(--k)*18px) calc(var(--k)*36px) calc(var(--k)*-22px) rgba(108,43,217,.46); --shadow-lg:0 calc(var(--k)*4px) 0 rgba(108,43,217,.12),0 calc(var(--k)*26px) calc(var(--k)*52px) calc(var(--k)*-24px) rgba(108,43,217,.5);}
+html.m40.m59[data-lk="color"] :is(h1,h2,h3,h4,.fo-h > b,.sd-empty > b,.m7-h-amt,.m49-big),html.m40.m59[data-lk="color"] #appTitle{font-family:var(--m66-head)!important;}
+html.m40.m59[data-lk="color"] .bnav{background:#5A1FC4!important; border:0!important; box-shadow:0 calc(var(--k)*20px) calc(var(--k)*40px) calc(var(--k)*-16px) rgba(90,31,196,.7),inset 0 1px 0 rgba(255,255,255,.18)!important; -webkit-backdrop-filter:none!important; backdrop-filter:none!important;}
+html.m40.m59[data-lk="color"] .bnav button,html.m40.m59[data-lk="color"] .bnav .m10-plus .bl{color:rgba(255,255,255,.88)!important;}
+html.m40.m59[data-lk="color"] .bnav button .bl{font-weight:700!important;}
+html.m40.m59[data-lk="color"] .bnav button.on{color:#FFFFFF!important;} html.m40.m59[data-lk="color"] .bnav button.on .bl{font-weight:800!important;}
+html.m40.m59[data-lk="color"] .bnav button.on .bi{background:#FFCC33!important; color:#1A1033!important;}
+html.m40.m59[data-lk="color"] .m10-plus .m10-pi{background:#FFFFFF!important; color:#5A1FC4!important; box-shadow:0 0 0 calc(var(--k)*4px) #5A1FC4,0 calc(var(--k)*14px) calc(var(--k)*22px) calc(var(--k)*-10px) rgba(26,16,51,.55)!important;}
+
+/* ---- Сифра вверху, рядом с профилем (вместо кнопки в нижней панели) ---- */
+html:not([data-simple]) header .hbtns > #bnSifra{display:inline-flex!important;}
+html[data-simple] #bnSifra.m66-sf{display:none!important;}
+#bnSifra.m66-sf{padding:0!important; border:0!important; background:none!important; border-radius:50%!important; position:relative; overflow:visible; box-shadow:0 calc(var(--k)*8px) calc(var(--k)*16px) calc(var(--k)*-8px) rgba(108,43,217,.6)!important; transition:transform .15s;}
+#bnSifra.m66-sf:active{transform:scale(.92);}
+#bnSifra.m66-sf .bi{display:block; width:100%; height:100%; border-radius:50%;}
+#bnSifra.m66-sf .bi svg{width:100%!important; height:100%!important; display:block;}
+#bnSifra.m66-sf.m56-new .bi::after{top:-1px; right:-1px;}
+html.m40.m59[data-lk="night"] #bnSifra.m66-sf{box-shadow:0 0 0 1px rgba(255,255,255,.12),0 0 calc(var(--k)*22px) calc(var(--k)*-4px) rgba(181,163,255,.75)!important;}
+html.m40.m59[data-lk="glass"] #bnSifra.m66-sf{box-shadow:0 0 0 2px rgba(255,255,255,.85),0 calc(var(--k)*10px) calc(var(--k)*18px) calc(var(--k)*-8px) rgba(46,22,96,.6)!important;}
+@media (prefers-reduced-motion:reduce){ #bnSifra.m66-sf{transition:none;} }
+
+/* ---- «Ещё»: выбор дела ничего не закрывает ---- */
+.m66-all{display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:calc(var(--k)*6px) calc(var(--k)*10px); margin:calc(var(--k)*18px) 0 calc(var(--k)*6px); padding:0 calc(var(--k)*4px); color:var(--muted); font-size:.88rem; text-align:center;}
+.m66-all span{min-width:0; overflow-wrap:anywhere;}
+.m66-allb{min-height:calc(var(--k)*44px); padding:0 calc(var(--k)*16px); border-radius:calc(var(--k)*99px); border:1px solid var(--line); background:var(--surface); color:var(--brand); font-weight:700; font-size:.92rem;}
+
+/* подпись под названием в шапке: с тремя кнопками справа ей тесно — пусть переносится, а не обрывается многоточием */
+html.m66-sft header .title small{white-space:normal!important; overflow:visible!important; text-overflow:clip!important; line-height:1.15!important; overflow-wrap:anywhere;}
+
+/* ---- «Оформление»: название каждого вида набрано его же шрифтом — разницу видно до выбора ---- */
+.m59-sty button[data-m59lk="paper"] > b{font-family:'Mira Serif','Source Serif 4',Georgia,'Times New Roman',serif!important; font-size:1.06em;}
+.m59-sty button[data-m59lk="glass"] > b{font-family:'Mira Mulish','Mulish','Segoe UI',system-ui,sans-serif!important;}
+.m59-sty button[data-m59lk="night"] > b{font-family:'Mira Geologica','Geologica','Segoe UI',system-ui,sans-serif!important;}
+.m59-sty button[data-m59lk="color"] > b{font-family:'Mira Nunito X','Mira Nunito','Nunito','Segoe UI',system-ui,sans-serif!important;}
+
+/* ---- строка «Мои кредиты · N · Добавить кредит» не распирает экран ----
+   Раньше строка была в одну линию без переноса: на узких телефонах, с длинной подписью (таджикский) или с заголовком с засечками
+   кнопка вылезала за край, и весь экран становился шире. Теперь, если не помещается, кнопка уходит на вторую строку, а значок раздела
+   в этой строке показывается только на широких экранах. */
+html.m59 #view-loans>.section-h{flex-wrap:wrap!important; row-gap:calc(var(--k)*6px);}
+html.m59 #view-loans>.section-h h2{min-width:0;}
+@media (max-width:26.5em){ html.m59 #myBanksH2 .m65-ic{display:none;} }
 /* <</v44 css>> */
 
 
@@ -8488,11 +8617,11 @@ ru:{
   ctrNone:'На этой странице Сифра не нашла условий. Попробуйте другую страницу или более чёткое фото.', ctrErr:'Не получилось прочитать. Проверьте интернет и попробуйте ещё раз.',
   ctrQ:'Это фото страницы кредитного договора. Найди условия и ответь ТОЛЬКО одним JSON без пояснений: {"rate": годовая ставка в процентах или null, "pen": пеня в процентах за день или null, "penBase": "pay" если пеня от суммы просроченного платежа, "rem" если от всего остатка долга, иначе null, "monthly": ежемесячный платёж или null, "total": сумма кредита или null, "term": срок в месяцах или null, "fee": комиссии коротко или "", "early": условия досрочного погашения коротко или "", "ins": страховка коротко или "", "other": самое важное, о чём заёмщику стоит знать, одной фразой или ""}. Пиши по-русски. Если чего-то нет на фото — null или "". Не придумывай.',
   tdBtn:'Взято из кассы домой', tdT:'Из кассы — домой', tdLead:'Запишите деньги, которые взяли из кассы магазина на дом. Так видно, не съедает ли дом деньги магазина.', tdWhat:'На что', tdWhatPh:'продукты, детям, долг соседке…', tdNote:'Взято домой', tdSaved:'Записано: из кассы домой',
-  tdWeekSal:(a,b)=>'На этой неделе домой уже ушло '+a+' из '+b+' зарплаты себе.', tdWeekNo:a=>'На этой неделе домой уже ушло '+a+'.', tdOver:(a,b)=>'Станет '+a+' — это на '+b+' больше зарплаты себе.',
-  tdCard:'Касса и дом: эта неделя', tdSal:'Зарплата себе', tdDraw:'Взято домой', tdHome:'Домашние расходы из кассы',
-  tdCardOk:(a,b)=>'Зарплата себе — '+a+' в неделю. До неё осталось '+b+'.', tdCardOver:(a,b)=>'Зарплата себе — '+a+' в неделю. Домой ушло на '+b+' больше: это деньги магазина.', tdCardNo:'Назначьте себе зарплату в неделю — Mira покажет, если домой уходит больше.',
-  tdPrev:a=>'Прошлая неделя: '+a, tdWhy:'Исследование 1 193 владельцев небольших дел: кто держит деньги дела и дома раздельно и платит себе постоянную зарплату, лучше переживает плохие недели.',
-  tdSalSet:'Назначить зарплату себе', tdSalEdit:'Изменить зарплату', tdFromTill:'Оплачено из кассы магазина',
+  tdWeekNo:a=>'На этой неделе домой уже ушло '+a+'.',
+  tdCard:'Касса и дом: эта неделя', tdDraw:'Взято домой', tdHome:'Домашние расходы из кассы',
+  tdCardNo:'Сколько денег на этой неделе ушло из кассы домой.',
+  tdPrev:a=>'Прошлая неделя: '+a, tdWhy:'Простое правило из исследования 1 193 владельцев небольших дел: держать деньги дела и дома раздельно.',
+  tdFromTill:'Оплачено из кассы магазина',
   rcnBtn:'Сверить с банком', rcnT:'Сверка с банком', rcnHow:'Посмотрите остаток долга в приложении банка или в выписке и впишите сюда. Mira сравнит со своим расчётом.', rcnBank:'Остаток долга по данным банка', rcnMine:'По расчёту Mira', rcnDiff:'Разница', rcnSame:'совпадает',
   rcnOk:'Цифры совпадают.', rcnMore:'У банка долг больше. Так бывает из-за пени, комиссий или если часть платежей ушла на проценты.', rcnLess:'У банка долг меньше. Возможно, какой-то платёж не записан в Mira.',
   rcnSave:'Поправить по банку', rcnErr:'Впишите остаток долга из банка', rcnDone:v=>'Остаток поправлен: '+v, rcnNever:'С банком ещё не сверяли. Раз в три месяца стоит проверить остаток.', rcnLast:d=>'Сверено с банком: '+d+'.', rcnOld:d=>'Последняя сверка — '+d+'. Пора сверить снова.',
@@ -8591,11 +8720,11 @@ tg:{
   ctrNone:'Дар ин саҳифа Сифра шартҳоро наёфт. Саҳифаи дигар ё акси равшантарро санҷед.', ctrErr:'Хондан нашуд. Интернетро санҷед ва боз кӯшиш кунед.',
   ctrQ:'Ин акси саҳифаи шартномаи қарз аст. Шартҳоро ёб ва ТАНҲО бо як JSON бе шарҳ ҷавоб деҳ: {"rate": фоизи солона ё null, "pen": ҷарима бо фоиз дар як рӯз ё null, "penBase": "pay" агар ҷарима аз маблағи пардохти гузашта бошад, "rem" агар аз тамоми бақияи қарз бошад, вагарна null, "monthly": пардохти моҳона ё null, "total": маблағи қарз ё null, "term": мӯҳлат бо моҳ ё null, "fee": комиссияҳо кӯтоҳ ё "", "early": шартҳои пардохти пеш аз мӯҳлат кӯтоҳ ё "", "ins": суғурта кӯтоҳ ё "", "other": муҳимтарин чиз барои қарзгир бо як ҷумла ё ""}. Бо забони тоҷикӣ навис. Агар чизе дар акс набошад — null ё "". Аз худ насоз.',
   tdBtn:'Аз хазина ба хона гирифтам', tdT:'Аз хазина — ба хона', tdLead:'Пулеро, ки аз хазинаи мағоза ба хона гирифтед, сабт кунед. Ҳамин тавр дида мешавад, ки хона пули мағозаро намехӯрад.', tdWhat:'Барои чӣ', tdWhatPh:'озуқа, барои кӯдакон, қарзи ҳамсоя…', tdNote:'Ба хона гирифтам', tdSaved:'Сабт шуд: аз хазина ба хона',
-  tdWeekSal:(a,b)=>'Дар ин ҳафта ба хона аллакай '+a+' аз '+b+' маоши худ рафт.', tdWeekNo:a=>'Дар ин ҳафта ба хона аллакай '+a+' рафт.', tdOver:(a,b)=>a+' мешавад — ин аз маоши худ '+b+' зиёд аст.',
-  tdCard:'Хазина ва хона: ин ҳафта', tdSal:'Маоши худ', tdDraw:'Ба хона гирифтам', tdHome:'Хароҷоти хона аз хазина',
-  tdCardOk:(a,b)=>'Маоши худ — '+a+' дар ҳафта. То он '+b+' мондааст.', tdCardOver:(a,b)=>'Маоши худ — '+a+' дар ҳафта. Ба хона '+b+' зиёдтар рафт: ин пули мағоза аст.', tdCardNo:'Ба худ маоши ҳафтаина муайян кунед — Mira нишон медиҳад, агар ба хона зиёдтар равад.',
-  tdPrev:a=>'Ҳафтаи гузашта: '+a, tdWhy:'Тадқиқоти 1 193 соҳиби кори хурд: касе ки пули кор ва хонаро ҷудо нигоҳ медорад ва ба худ маоши доимӣ медиҳад, ҳафтаҳои бадро беҳтар мегузаронад.',
-  tdSalSet:'Маоши худро муайян кардан', tdSalEdit:'Тағйири маош', tdFromTill:'Аз хазинаи мағоза пардохтам',
+  tdWeekNo:a=>'Дар ин ҳафта ба хона аллакай '+a+' рафт.',
+  tdCard:'Хазина ва хона: ин ҳафта', tdDraw:'Ба хона гирифтам', tdHome:'Хароҷоти хона аз хазина',
+  tdCardNo:'Дар ин ҳафта аз хазина ба хона чӣ қадар пул рафт.',
+  tdPrev:a=>'Ҳафтаи гузашта: '+a, tdWhy:'Қоидаи содда аз тадқиқоти 1 193 соҳиби корҳои хурд: пули кор ва пули хонаро ҷудо нигоҳ доред.',
+  tdFromTill:'Аз хазинаи мағоза пардохтам',
   rcnBtn:'Муқоиса бо бонк', rcnT:'Муқоиса бо бонк', rcnHow:'Бақияи қарзро дар барномаи бонк ё дар иқтибос бинед ва ин ҷо нависед. Mira бо ҳисоби худ муқоиса мекунад.', rcnBank:'Бақияи қарз аз рӯи маълумоти бонк', rcnMine:'Аз рӯи ҳисоби Mira', rcnDiff:'Фарқ', rcnSame:'мувофиқ аст',
   rcnOk:'Рақамҳо мувофиқанд.', rcnMore:'Дар бонк қарз зиёдтар аст. Ин аз ҷарима, комиссия ё аз он мешавад, ки як қисми пардохтҳо ба фоиз рафтааст.', rcnLess:'Дар бонк қарз камтар аст. Шояд ягон пардохт дар Mira сабт нашудааст.',
   rcnSave:'Аз рӯи бонк ислоҳ кардан', rcnErr:'Бақияи қарзро аз бонк нависед', rcnDone:v=>'Бақия ислоҳ шуд: '+v, rcnNever:'Ҳанӯз бо бонк муқоиса нашудааст. Ҳар се моҳ як бор бақияро санҷидан хуб аст.', rcnLast:d=>'Бо бонк муқоиса шуд: '+d+'.', rcnOld:d=>'Муқоисаи охирин — '+d+'. Вақти муқоисаи нав расид.',
@@ -8694,11 +8823,11 @@ en:{
   ctrNone:'Sifra found no terms on this page. Try another page or a sharper photo.', ctrErr:'Could not read it. Check your connection and try again.',
   ctrQ:'This is a photo of a loan contract page. Find the terms and reply ONLY with one JSON object, no explanations: {"rate": annual interest rate in percent or null, "pen": daily penalty in percent or null, "penBase": "pay" if the penalty is on the overdue payment, "rem" if on the whole remaining debt, otherwise null, "monthly": monthly payment or null, "total": loan amount or null, "term": term in months or null, "fee": fees briefly or "", "early": early repayment terms briefly or "", "ins": insurance briefly or "", "other": the most important thing the borrower should know, in one sentence, or ""}. Write in English. If something is not in the photo, use null or "". Do not invent anything.',
   tdBtn:'Took cash home', tdT:'From the till — home', tdLead:'Record money you took from the shop till for home. That way you can see whether home is eating into the shop’s money.', tdWhat:'What for', tdWhatPh:'groceries, children, a debt…', tdNote:'Took home', tdSaved:'Saved: from the till to home',
-  tdWeekSal:(a,b)=>'This week '+a+' of your '+b+' salary has already gone home.', tdWeekNo:a=>'This week '+a+' has already gone home.', tdOver:(a,b)=>'That makes '+a+' — '+b+' more than your salary.',
-  tdCard:'Till and home: this week', tdSal:'Your salary', tdDraw:'Took home', tdHome:'Home expenses paid from the till',
-  tdCardOk:(a,b)=>'Your salary is '+a+' a week. '+b+' left until you reach it.', tdCardOver:(a,b)=>'Your salary is '+a+' a week. '+b+' more went home — that is the shop’s money.', tdCardNo:'Set yourself a weekly salary and Mira will show when more goes home.',
-  tdPrev:a=>'Last week: '+a, tdWhy:'A study of 1,193 small business owners: those who keep business and home money apart and pay themselves a fixed salary get through bad weeks better.',
-  tdSalSet:'Set your salary', tdSalEdit:'Change salary', tdFromTill:'Paid from the shop till',
+  tdWeekNo:a=>'This week '+a+' has already gone home.',
+  tdCard:'Till and home: this week', tdDraw:'Took home', tdHome:'Home expenses paid from the till',
+  tdCardNo:'How much money went from the till to home this week.',
+  tdPrev:a=>'Last week: '+a, tdWhy:'A simple rule from a study of 1,193 small business owners: keep business money and home money apart.',
+  tdFromTill:'Paid from the shop till',
   rcnBtn:'Check against the bank', rcnT:'Check against the bank', rcnHow:'Look up the remaining debt in your bank app or statement and enter it here. Mira will compare it with its own figure.', rcnBank:'Remaining debt according to the bank', rcnMine:'According to Mira', rcnDiff:'Difference', rcnSame:'matches',
   rcnOk:'The figures match.', rcnMore:'The bank shows more debt. This happens because of penalties, fees, or part of the payments going to interest.', rcnLess:'The bank shows less debt. A payment may be missing in Mira.',
   rcnSave:'Correct to the bank figure', rcnErr:'Enter the remaining debt from the bank', rcnDone:v=>'Balance corrected: '+v, rcnNever:'Not checked against the bank yet. It is worth checking the balance every three months.', rcnLast:d=>'Checked against the bank: '+d+'.', rcnOld:d=>'Last check: '+d+'. Time to check again.',
@@ -8893,10 +9022,6 @@ for(const k of ['ru','tg','en']) Object.assign(D[k],M9S[k]);
 const M10S={
 ru:{
   m11Free:'Свобода от кредитов', m11In:n=>'через '+n+' мес.', m11Paid:'Уже выплачено', m11Done:(k,m)=>k+' из '+m+' платежей позади', m11Step:p=>'До '+p+'% осталось', m11NoLate:'Без просрочек', m11Months:n=>n+' мес. подряд', m11Passed:'Пройдено', m11Of:(k,m)=>k+' из '+m,
-  m10Split:'Разложите выручку', m10SplitLead:v=>'В кассе сегодня '+v+' — разложите сразу, чтобы деньги не смешались.',
-  m10SplitPay:'На платежи банкам', m10SplitPayH:(n,d)=>'ближайший: '+n+', '+d, m10SplitHome:'Домой — зарплата себе', m10SplitHomeH:w=>w>0?'ваша зарплата: '+w+' в неделю':'назначьте себе зарплату — и берите только её',
-  m10SplitStock:'На товар', m10SplitStockH:'отложить на закупку', m10SplitLeft:'Останется в кассе', m10SplitDo:'Разложить', m10SplitSkip:'Не сейчас', m10SplitDone:'Разложено ✓', m10SplitOver:'Сумма больше, чем есть в кассе',
-  m10Sal:'Зарплата себе', m10SalLead:'Исследование 1 193 владельцев лавок: кто платит себе фиксированную зарплату и не берёт из кассы сверх неё, лучше переживает плохие недели.', m10SalWeek:'Сколько в неделю', m10SalSet:'изменить', m10SalNote:'Зарплата себе',
   m10Streak:n=>n+' мес. подряд без просрочек',
   m10Rules:'5 простых правил', m10RulesSub:'Простые правила работают лучше длинных курсов — это проверили на 1 193 владельцах лавок.',
   m10RulesList:['Деньги магазина и дома — отдельно.','Платите себе фиксированную зарплату раз в неделю.','Сначала отложите на платёж — потом тратьте.','Каждый вечер записывайте выручку — это минута.','Гасите первым самый маленький долг.'],
@@ -8914,10 +9039,6 @@ ru:{
 },
 tg:{
   m11Free:'Озодӣ аз қарзҳо', m11In:n=>'баъди '+n+' моҳ', m11Paid:'Аллакай пардохт шуд', m11Done:(k,m)=>k+' аз '+m+' пардохт гузашт', m11Step:p=>'То '+p+'% мондааст', m11NoLate:'Бе таъхир', m11Months:n=>n+' моҳ паиҳам', m11Passed:'Гузашт', m11Of:(k,m)=>k+' аз '+m,
-  m10Split:'Даромадро тақсим кунед', m10SplitLead:v=>'Имрӯз дар касса '+v+' — дарҳол тақсим кунед, то пулҳо омехта нашаванд.',
-  m10SplitPay:'Барои пардохти бонкҳо', m10SplitPayH:(n,d)=>'наздиктарин: '+n+', '+d, m10SplitHome:'Ба хона — маоши худ', m10SplitHomeH:w=>w>0?'маоши шумо: '+w+' дар ҳафта':'ба худ маош таъин кунед — ва танҳо онро гиред',
-  m10SplitStock:'Барои мол', m10SplitStockH:'барои харид нигоҳ доштан', m10SplitLeft:'Дар касса мемонад', m10SplitDo:'Тақсим кардан', m10SplitSkip:'Ҳоло не', m10SplitDone:'Тақсим шуд ✓', m10SplitOver:'Маблағ аз пули касса зиёд аст',
-  m10Sal:'Маоши худ', m10SalLead:'Тадқиқоти 1 193 соҳиби дӯкон: касе ки ба худ маоши муайян медиҳад ва аз касса зиёда намегирад, ҳафтаҳои бадро беҳтар мегузаронад.', m10SalWeek:'Дар як ҳафта чанд', m10SalSet:'тағйир додан', m10SalNote:'Маоши худ',
   m10Streak:n=>n+' моҳ паиҳам бе таъхир',
   m10Rules:'5 қоидаи оддӣ', m10RulesSub:'Қоидаҳои оддӣ аз курсҳои дароз беҳтар кор мекунанд — инро дар 1 193 соҳиби дӯкон санҷидаанд.',
   m10RulesList:['Пули мағоза ва хона — ҷудо.','Ба худ ҳар ҳафта маоши муайян диҳед.','Аввал барои пардохт ҷудо кунед — баъд харҷ кунед.','Ҳар бегоҳ даромадро сабт кунед — як дақиқа.','Аввал қарзи хурдтаринро пӯшед.'],
@@ -8935,10 +9056,6 @@ tg:{
 },
 en:{
   m11Free:'Debt-free', m11In:n=>'in '+n+' mo.', m11Paid:'Already paid', m11Done:(k,m)=>k+' of '+m+' payments done', m11Step:p=>'To '+p+'% you need', m11NoLate:'No late payments', m11Months:n=>n+' mo. in a row', m11Passed:'Done', m11Of:(k,m)=>k+' of '+m,
-  m10Split:'Split today’s takings', m10SplitLead:v=>'The till has '+v+' today — split it now so the money doesn’t mix.',
-  m10SplitPay:'For loan payments', m10SplitPayH:(n,d)=>'next: '+n+', '+d, m10SplitHome:'Home — your salary', m10SplitHomeH:w=>w>0?'your salary: '+w+' a week':'set yourself a salary and take only that',
-  m10SplitStock:'For stock', m10SplitStockH:'set aside for buying', m10SplitLeft:'Stays in the till', m10SplitDo:'Split', m10SplitSkip:'Not now', m10SplitDone:'Split ✓', m10SplitOver:'That’s more than the till has',
-  m10Sal:'Your salary', m10SalLead:'A study of 1,193 shop owners: those who pay themselves a fixed salary and take nothing extra from the till cope better with bad weeks.', m10SalWeek:'How much a week', m10SalSet:'change', m10SalNote:'Own salary',
   m10Streak:n=>n+' months in a row with no late payments',
   m10Rules:'5 simple rules', m10RulesSub:'Simple rules work better than long courses — tested on 1,193 shop owners.',
   m10RulesList:['Keep shop money and home money separate.','Pay yourself a fixed salary once a week.','Set aside for the payment first, then spend.','Record sales every evening — it takes a minute.','Pay off the smallest debt first.'],
@@ -9135,7 +9252,6 @@ ru:{
   ofDue:(n,d)=>'До платежа в «'+n+'» — '+d+' дн.', ofDueD:v=>'Сначала отложите '+v+' на платёж, потом решайте про товар.', ofDueQ:(n,v)=>'Мне скоро платить '+v+' в «'+n+'». Как собрать эти деньги и не сорвать закупку?',
   ofInsta:'Витрина в Instagram и Telegram', ofInstaD:'В Таджикистане многие продают напрямую через соцсети. Выложите 20 фото и принимайте заказы.', ofInstaQ:'Хочу продавать свой товар в Instagram и Telegram: выкладывать фото и принимать заказы.',
   ofWb:'Wildberries уже в Таджикистане', ofWbD:'С 2025 года есть пункты выдачи в Душанбе и Худжанде. Узнайте, выгодно ли выйти туда с вашим товаром.', ofWbQ:'Хочу продавать свой товар на Wildberries в Таджикистане. Выгодно ли это?',
-  ofSal:'Назначьте себе зарплату', ofSalD:'Берите из кассы одну и ту же сумму раз в неделю — магазин легче переживает плохие недели.', ofSalQ:'Хочу платить себе фиксированную зарплату из магазина. Сколько можно брать?',
   ofTest:'Новый товар — пробной партией', ofTestD:'Возьмите 10–20 штук нового товара, а дозаказ делайте, когда увидите продажи.', ofTestQ:'Хочу попробовать новый товар малой партией. Какой и сколько взять?',
   ofRes:'Запас на месяц', ofResD:v=>'Держите отдельно '+v+' — месяц расходов магазина. Так закупка не сорвёт платежи.', ofResQ:'Хочу собрать запас на месяц расходов магазина. Как это сделать быстрее?',
 },
@@ -9160,7 +9276,6 @@ tg:{
   ofDue:(n,d)=>'То пардохти «'+n+'» — '+d+' рӯз', ofDueD:v=>'Аввал '+v+' барои пардохт ҷудо кунед, баъд дар бораи мол қарор кунед.', ofDueQ:(n,v)=>'Ба наздикӣ бояд '+v+' ба «'+n+'» пардозам. Ин пулро чӣ тавр ҷамъ кунам ва харидро вайрон накунам?',
   ofInsta:'Витрина дар Instagram ва Telegram', ofInstaD:'Дар Тоҷикистон бисёриҳо мустақиман тавассути шабакаҳои иҷтимоӣ мефурӯшанд. 20 акс гузоред ва фармоиш қабул кунед.', ofInstaQ:'Мехоҳам моламро дар Instagram ва Telegram фурӯшам: акс гузорам ва фармоиш қабул кунам.',
   ofWb:'Wildberries аллакай дар Тоҷикистон', ofWbD:'Аз соли 2025 дар Душанбе ва Хуҷанд нуқтаҳои додани мол ҳаст. Фаҳмед, ки бо моли шумо ба он ҷо баромадан фоида дорад ё не.', ofWbQ:'Мехоҳам моламро дар Wildberries дар Тоҷикистон фурӯшам. Ин фоида дорад?',
-  ofSal:'Ба худ маош таъин кунед', ofSalD:'Аз касса ҳар ҳафта як хел маблағ гиред — мағоза ҳафтаҳои бадро осонтар мегузаронад.', ofSalQ:'Мехоҳам аз мағоза ба худ маоши муайян диҳам. Чанд гирифтан мумкин?',
   ofTest:'Моли нав — бо партияи санҷишӣ', ofTestD:'Аз моли нав 10–20 дона гиред, фармоиши такрориро баъди дидани фурӯш диҳед.', ofTestQ:'Мехоҳам моли навро бо партияи хурд санҷам. Кадомашро ва чанд дона гирам?',
   ofRes:'Захира барои як моҳ', ofResD:v=>v+'-ро алоҳида нигоҳ доред — хароҷоти якмоҳаи мағоза. Он гоҳ харид пардохтҳоро вайрон намекунад.', ofResQ:'Мехоҳам барои як моҳи хароҷоти мағоза захира ҷамъ кунам. Чӣ тавр тезтар?',
 },
@@ -9185,7 +9300,6 @@ en:{
   ofDue:(n,d)=>'“'+n+'” payment in '+d+' days', ofDueD:v=>'Set aside '+v+' for the payment first, then decide about goods.', ofDueQ:(n,v)=>'I soon have to pay '+v+' into “'+n+'”. How do I gather it without derailing my buying?',
   ofInsta:'A shop window on Instagram and Telegram', ofInstaD:'In Tajikistan many sell directly through social media. Post 20 photos and take orders.', ofInstaQ:'I want to sell my goods on Instagram and Telegram: post photos and take orders.',
   ofWb:'Wildberries is already in Tajikistan', ofWbD:'Since 2025 there are pickup points in Dushanbe and Khujand. Find out whether it pays to list your goods there.', ofWbQ:'I want to sell my goods on Wildberries in Tajikistan. Does it pay?',
-  ofSal:'Set yourself a salary', ofSalD:'Take the same amount from the till once a week — the shop copes better with bad weeks.', ofSalQ:'I want to pay myself a fixed salary from the shop. How much can I take?',
   ofTest:'New product — a trial batch first', ofTestD:'Take 10–20 pieces of a new product and reorder once you see sales.', ofTestQ:'I want to try a new product in a small batch. Which one and how many?',
   ofRes:'A month’s reserve', ofResD:v=>'Keep '+v+' apart — a month of shop costs. Then buying won’t derail payments.', ofResQ:'I want to build a reserve of one month of shop costs. How do I do it faster?',
 }};
@@ -14306,7 +14420,7 @@ function billSheet(b){ const d=billDue(b); if(!d.paid) return billPay(b);
 
 /* ---- домашний бюджет: отдельно от магазина ---- */
 function renderHomeB(){
-  { const tb=$('#tillB'); if(tb){ tb.innerHTML=tillCardHTML(); const a=$('#td-add'), b=$('#td-sal'); if(a) a.onclick=()=>tillHomeForm(); if(b) b.onclick=()=>m10SalForm(()=>{ closeSheet(); render(); }); } }
+  { const tb=$('#tillB'); if(tb){ tb.innerHTML=tillCardHTML(); const a=$('#td-add'); if(a) a.onclick=()=>tillHomeForm(); } }
   const box=$('#homeB'); if(!box) return;
   const now=new Date(), mk=monthKey(now), pk=monthKey(new Date(now.getFullYear(),now.getMonth()-1,1)), dd=now.getDate();
   const cur=state.home.filter(h=>String(h.d).slice(0,7)===mk), tot=cur.reduce((s,h)=>s+(+h.sum||0),0);
@@ -17902,60 +18016,31 @@ try{ if(window.visualViewport) visualViewport.addEventListener('resize',()=>{ m1
 document.addEventListener('pointerdown',e=>{ const t=e.target; if(t&&t.matches&&t.matches('input:not([autocomplete]),textarea:not([autocomplete])')) t.setAttribute('autocomplete','off'); },true);
 try{ const _os10=openSheet; openSheet=function(){ const x=_os10.apply(this,arguments); try{ sheet.querySelectorAll('input:not([autocomplete]),textarea:not([autocomplete])').forEach(i=>i.setAttribute('autocomplete','off')); }catch(e){} return x; }; }catch(e){}
 
-/* ---- раскладка выручки: записали день — сразу раскладываем на платежи, домой (зарплата себе) и на товар.
-   Основа: «раскладка зарплаты» Monzo и исследование Drexler–Fischer–Schoar о простых правилах для владельцев лавок. ---- */
-/* № 89. Касса и дом: всё, что ушло из кассы магазина домой (зарплата себе, «взяла домой», домашние расходы из кассы), против зарплаты себе за неделю */
+/* № 89. Касса и дом: всё, что ушло из кассы дела домой за неделю («взято домой», домашние расходы из кассы).
+   v66: «Зарплата себе» и окно «Разложите выручку» убраны; старые записи зарплаты считаются как «взято домой». */
 function tillWeek(off){ const t=today0(), wd=(t.getDay()+6)%7, st=addDays(t,-wd-7*(off||0)), en=addDays(st,6), a=dkey(st), b=dkey(en), sh=ensureShop();
   const sal=sh.exp.filter(e=>e.date>=a&&e.date<=b&&e.cat==='salary'&&(e.m10||e.draw)), hm=state.home.filter(h=>h.till&&h.d>=a&&h.d<=b);
-  const salS=sumOf(sal.filter(e=>!e.draw)), drawS=sumOf(sal.filter(e=>e.draw)), homeS=sumOf(hm);
-  return {a,b,salS,drawS,homeS,tot:salS+drawS+homeS,n:sal.length+hm.length}; }
-function tillHomeForm(){ const sw=m10SalW(), w=tillWeek(0);
+  const drawS=sumOf(sal), homeS=sumOf(hm);
+  return {a,b,drawS,homeS,tot:drawS+homeS,n:sal.length+hm.length}; }
+function tillHomeForm(){ const w=tillWeek(0);
   openSheet(`<h3>🏠 ${L.tdT}</h3><p class="lead">${L.tdLead}</p>
     <div class="field n big-in"><label for="td-a">${L.amountW}</label><input id="td-a" type="number" inputmode="numeric" min="0" placeholder="0"></div>
     <div class="field"><label for="td-n">${L.tdWhat} ${L.optional}</label><input id="td-n" maxlength="60" placeholder="${esc(L.tdWhatPh)}"></div>
-    <p class="note" id="td-info">${sw>0?L.tdWeekSal(money(w.tot),money(sw)):L.tdWeekNo(money(w.tot))}</p>
+    <p class="note" id="td-info">${L.tdWeekNo(money(w.tot))}</p>
     <div class="err" id="td-e"></div><button class="btn btn-primary btn-full" id="td-s">${L.save}</button><div class="sheet-row"><button class="btn btn-ghost" data-close>${L.cancel}</button></div>`);
   const i=$('#td-a'); i.focus();
-  i.addEventListener('input',()=>{ const v=Math.max(0,Math.round(+i.value||0)), after=w.tot+v; $('#td-info').textContent=sw>0?(after>sw?L.tdOver(money(after),money(after-sw)):L.tdWeekSal(money(after),money(sw))):L.tdWeekNo(money(after)); });
+  i.addEventListener('input',()=>{ const v=Math.max(0,Math.round(+i.value||0)), after=w.tot+v; $('#td-info').textContent=L.tdWeekNo(money(after)); });
   $('#td-s').onclick=()=>{ const v=Math.round(+i.value); if(!(v>0)) return showErr($('#td-e'),L.errSum); const sh=ensureShop(), ts=Date.now();
     sh.exp.push({id:'e'+ts+'_td',date:dkey(),cat:'salary',sum:v,note:$('#td-n').value.trim()||L.tdNote,ts,draw:1}); persist(); closeSheet(); render(); toast(L.tdSaved); }; }
-function tillCardHTML(){ const sw=m10SalW(), w=tillWeek(0), p=tillWeek(1); if(!(sw>0)&&!w.n&&!p.n) return '';
-  const over=sw>0&&w.tot>sw, cls=!sw?'':over?'z-bad':'z-ok';
-  const rows=[[L.tdSal,w.salS],[L.tdDraw,w.drawS],[L.tdHome,w.homeS]].filter(r=>r[1]>0).map(r=>`<div class="co-row"><span>${r[0]}</span><b>${money(r[1])}</b></div>`).join('');
-  return `<div class="pcard"><div class="pc-h"><span>🏠 ${L.tdCard}</span><b class="${cls}">${money(w.tot)}</b></div>
-    <p class="pc-t">${sw>0?(over?L.tdCardOver(money(sw),money(w.tot-sw)):L.tdCardOk(money(sw),money(sw-w.tot))):L.tdCardNo}</p>
+function tillCardHTML(){ const w=tillWeek(0), p=tillWeek(1); if(!w.n&&!p.n) return '';
+  const rows=[[L.tdDraw,w.drawS],[L.tdHome,w.homeS]].filter(r=>r[1]>0).map(r=>`<div class="co-row"><span>${r[0]}</span><b>${money(r[1])}</b></div>`).join('');
+  return `<div class="pcard"><div class="pc-h"><span>🏠 ${L.tdCard}</span><b>${money(w.tot)}</b></div>
+    <p class="pc-t">${L.tdCardNo}</p>
     ${rows?`<div class="calc-out td-rows">${rows}</div>`:''}
     ${p.n?`<p class="pc-t muted">${L.tdPrev(money(p.tot))}</p>`:''}
     <p class="pc-t muted">${L.tdWhy}</p>
-    <div class="sheet-row"><button class="btn btn-ghost" id="td-sal">${sw>0?L.tdSalEdit:L.tdSalSet}</button><button class="btn btn-ghost" id="td-add">${L.tdBtn}</button></div></div>`; }
-function m10SalW(){ return Math.max(0,Math.round(+((state.misc||{}).salW)||0)); }
-function m10SalForm(back){ openSheet(`<h3>${L.m10Sal}</h3><p class="lead">${L.m10SalLead}</p>
-    <div class="field n big-in"><label for="m10-sw">${L.m10SalWeek}, ${L.cur}</label><input id="m10-sw" type="number" inputmode="numeric" min="0" value="${m10SalW()||''}"></div>
-    <div class="sheet-row"><button type="button" class="btn btn-ghost" id="m10-sb">${L.back}</button><button type="button" class="btn btn-primary" id="m10-ss">${L.save}</button></div>`);
-  $('#m10-sb').onclick=()=>back(); $('#m10-ss').onclick=()=>{ state.misc.salW=Math.max(0,Math.round(+$('#m10-sw').value||0)); persist(); back(); }; }
-function m10Split(){ const sh=ensureShop(), t=dkey(), rev=sumOf(sh.sales.filter(e=>e.date===t)), ex=sumOf(sh.exp.filter(e=>e.date===t)); const till=Math.max(0,Math.round(rev-ex));
-  if(!(till>0)) return false; let pp={perDay:0,next:null}; try{ pp=piggyPlan(activeList()); }catch(e){}
-  const sal=m10SalW(), salDay=sal>0?round10(sal/7):0; if(!(pp.perDay>0)&&!sal) return false;
-  const paidHome=sumOf(sh.exp.filter(e=>e.date===t&&e.cat==='salary'&&e.m10)); /* уже разложено сегодня — не предлагаем второй раз */
-  if(paidHome>0||(state.misc.splitDay===t)) return false;
-  const d1=Math.min(till,Math.round(pp.perDay||0)), d2=Math.min(Math.max(0,till-d1),salDay);
-  const row=(id,lab,hint,v)=>`<div class="m10-sp"><label for="${id}"><b>${lab}</b><small>${hint}</small></label><input id="${id}" type="number" inputmode="numeric" min="0" value="${v||''}" placeholder="0"></div>`;
-  openSheet(`<h3>${L.m10Split}</h3><p class="lead">${L.m10SplitLead(money(till))}</p>
-    ${row('m10-s1',L.m10SplitPay,pp.next?L.m10SplitPayH(esc(pp.next.name),fmtDate(pp.next.due)):'',d1)}
-    ${row('m10-s2',L.m10SplitHome,L.m10SplitHomeH(sal>0?money(sal):0)+` · <button type="button" class="link-btn" id="m10-sal">${L.m10SalSet}</button>`,d2)}
-    ${row('m10-s3',L.m10SplitStock,L.m10SplitStockH,0)}
-    <div class="calc-out"><div class="co-row"><span>${L.m10SplitLeft}</span><b id="m10-left"></b></div></div><p class="err" id="m10-serr"></p>
-    <div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${L.m10SplitSkip}</button><button type="button" class="btn btn-primary" id="m10-sdo">${L.m10SplitDo}</button></div>`);
-  const val=id=>Math.max(0,Math.round(+$(id).value||0)), calc=()=>{ const left=till-val('#m10-s1')-val('#m10-s2')-val('#m10-s3'); $('#m10-left').textContent=money(left); $('#m10-left').style.color=left<0?'var(--m-clay,#B4531F)':''; return left; };
-  ['#m10-s1','#m10-s2','#m10-s3'].forEach(q=>$(q).addEventListener('input',calc)); calc();
-  $('#m10-sal').onclick=()=>m10SalForm(()=>{ if(!m10Split()) closeSheet(); });
-  $('#m10-sdo').onclick=()=>{ if(calc()<0){ showErr($('#m10-serr'),L.m10SplitOver); return; }
-    const a=val('#m10-s1'), b=val('#m10-s2'), c=val('#m10-s3'), ts=Date.now();
-    if(a>0) envAdd('loan',a,L.ppFromRev); if(c>0) envAdd('stock',c,L.ppFromRev);
-    if(b>0) sh.exp.push({id:'e'+ts+'_sal',date:t,cat:'salary',sum:b,note:L.m10SalNote,ts,m10:1});
-    state.misc.splitDay=t; persist(); closeSheet(); render(); toast(L.m10SplitDone); };
-  return true; }
-try{ const _pp10=piggyPrompt; piggyPrompt=function(){ try{ if(state.misc&&state.misc.splitDay===dkey()) return false; if(m10Split()) return true; }catch(e){} return _pp10.apply(this,arguments); }; }catch(e){}
+    <div class="sheet-row"><button class="btn btn-ghost" id="td-add">${L.tdBtn}</button></div></div>`; }
+/* v66: окно «Разложите выручку» и форма «Зарплата себе» убраны — после записи дня спрашивает «Отложить» (v37) */
 
 /* ---- 5 простых правил в «Советах» и серия «без просрочек» на главной ---- */
 function m10RulesInject(){ const box=$('#tips'); if(!box||box.querySelector('.m10-rules')) return; const lead=box.querySelector('.view-h'); if(!lead) return;
@@ -18497,7 +18582,6 @@ function ofLocal(){ const out=[], seed=Math.floor(today0().getTime()/864e5);
     if(exp&&!(soon&&seed%2===0)){ const x=m7Amt(exp.a)>=2000?500:200, r=m7Extra(exp.loan,exp.a,x); if(r&&r.months>0){ out.push({k:'loan',t:L.ofLoan(exp.loan.name,fx(+exp.loan.rate,(+exp.loan.rate)%1?1:0)),d:L.ofLoanD(money(x),money(r.saved),r.months),q:L.ofLoanQ(exp.loan.name,money(x))}); done=true; } }
     if(!done&&soon) out.push({k:'loan',t:L.ofDue(soon.loan.name,soon.a.days),d:L.ofDueD(money(m7Amt(soon.a))),q:L.ofDueQ(soon.loan.name,money(m7Amt(soon.a)))}); }catch(e){}
   const pool=[{k:'sell',t:L.ofInsta,d:L.ofInstaD,q:L.ofInstaQ},{k:'sell',t:L.ofWb,d:L.ofWbD,q:L.ofWbQ},{k:'save',t:L.ofTest,d:L.ofTestD,q:L.ofTestQ}];
-  try{ if(!(+state.misc.salW>0)) pool.push({k:'save',t:L.ofSal,d:L.ofSalD,q:L.ofSalQ}); }catch(e){}
   try{ const ex=expEst(); if(ex&&ex.v>0) pool.push({k:'save',t:L.ofRes,d:L.ofResD(money(Math.round(ex.v))),q:L.ofResQ}); }catch(e){}
   let i=seed%pool.length; while(out.length<3&&pool.length){ out.push(pool.splice(i%pool.length,1)[0]); i++; }
   return out.slice(0,3); }
@@ -29361,6 +29445,63 @@ try{ const _r=render; render=function(){ const x=_r.apply(this,arguments); try{ 
 try{ const _s=setTab; setTab=function(){ const x=_s.apply(this,arguments); try{ m65Icons(); }catch(e){} return x; }; }catch(e){}
 try{ const mv=document.getElementById('view-more'); if(mv){ let tm=0; new MutationObserver(()=>{ if(tm) return; tm=setTimeout(()=>{ tm=0; m65Icons(); },120); }).observe(mv,{childList:true,subtree:true}); } }catch(e){}
 try{ m65Steps(); m65Icons(); }catch(e){}
+/* ===================== v66: тексты (26.11.2026) ===================== */
+const M66S={ru:{
+  m60SfT:'Сифра вверху, рядом с профилем',
+  m66AllOff:n=>`Под ваше дело скрыто разделов: ${n}`, m66AllShow:'Показать все разделы', m66AllOn:'Показаны все разделы', m66AllHide:'Спрятать лишние'
+},tg:{
+  m60SfT:'Сифра дар боло, дар паҳлӯи профил',
+  m66AllOff:n=>`Мувофиқи кори шумо пинҳон шудааст: ${n} бахш`, m66AllShow:'Ҳамаи бахшҳоро нишон диҳед', m66AllOn:'Ҳамаи бахшҳо нишон дода шудаанд', m66AllHide:'Зиёдатиро пинҳон кунед'
+},en:{
+  m60SfT:'Sifra at the top, next to your profile',
+  m66AllOff:n=>`Hidden for your kind of work: ${n}`, m66AllShow:'Show all sections', m66AllOn:'All sections are shown', m66AllHide:'Hide the extra ones'
+}};
+/* Знакомство и окно «Что вы ведёте?» говорят прямо, что именно меняет выбор дела, — и что остаётся обо всём. */
+const M66_ONB={ru:{q1s:'От ответа зависят слова, товары и подсказки. Идеи, рынок дня и учёба остаются обо всём.', sf:['Сифра отвечает на любые вопросы','О ваших цифрах, о другом бизнесе, товаре или идее — разберёт подробно.'], keep:'Идеи, рынок дня, учёба и все разделы остаются обо всём — не только о вашем деле'},
+  tg:{q1s:'Аз ҷавоб калимаҳо, мол ва маслиҳатҳо вобастаанд. Ғояҳо, бозори рӯз ва омӯзиш дар бораи ҳама чиз мемонанд.', sf:['Сифра ба ҳар савол ҷавоб медиҳад','Дар бораи рақамҳои шумо, тиҷорати дигар, мол ё ғоя — муфассал шарҳ медиҳад.'], keep:'Ғояҳо, бозори рӯз, омӯзиш ва ҳамаи бахшҳо дар бораи ҳама чиз мемонанд — на танҳо дар бораи кори шумо'},
+  en:{q1s:'Your answer changes the words, goods and hints. Ideas, the daily market and lessons stay about everything.', sf:['Sifra answers any question','Your numbers, another business, a product or an idea — she works through it in detail.'], keep:'Ideas, the daily market, lessons and every section stay about everything — not only your kind of work'}};
+/* v66: разделы про товар и закупку больше не прячутся — строка в списке изменений говорит только о подсказках */
+const M66_NOG={ru:'в делах дня нет подсказок про товар и поставщиков', tg:'дар корҳои рӯз маслиҳат дар бораи мол ва таъминкунандагон нест', en:'no goods or supplier reminders in today’s list'};
+for(const k of ['ru','tg','en']){ try{ M64S[k].m64ChNoGoods=M66_NOG[k]; }catch(e){} }
+for(const k of ['ru','tg','en']){ M66S[k].m66Keep=M66_ONB[k].keep; try{ M65S[k].m65Q1s=M66_ONB[k].q1s; M65S[k].m65F=Object.assign({},M65S[k].m65F,{sifra:M66_ONB[k].sf}); }catch(e){} }
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M66S[k]); }catch(e){} try{ D[k].m60SfT=M66S[k].m60SfT; }catch(e){} }
+/* ===================== v66: четыре вида заново, Сифра вверху, все разделы доступны (26.11.2026) =====================
+   1) Сифра ушла из нижней панели наверх, к значку профиля. В панели остаётся: слева от плюса «Сегодня» и «Кредиты», справа — «Магазин» (или «Деньги») и «Ещё».
+      Настройка «Оформление → Сифра вверху, рядом с профилем» по-прежнему выключает кнопку и возвращает плавающий круг.
+   2) Выбор дела ничего не закрывает: разделы про закупку, поставщиков, фабрики, цену, праздники и «Заработок» видны всем; внизу «Ещё» — строка «Показать все разделы».
+   Сами виды («Бумага», «Стекло», «Ночь», «Сочный») — в m66.css и m66_fonts.css. */
+function m66T(){ return M66S[lang]||M66S.ru; }
+/* ---------- 1: Сифра вверху ---------- */
+m60Nav=function(){ try{ const hb=document.querySelector('header .hbtns'), r=document.documentElement; let b=document.getElementById('bnSifra');
+    if(!m60SfNav()||!hb){ if(b) b.remove(); r.classList.remove('m60'); r.classList.remove('m66-sft'); return; }
+    if(!b){ b=document.createElement('button'); b.type='button'; b.id='bnSifra'; b.className='icon-btn m66-sf'; b.innerHTML=`<span class="bi">${SF_AVA}</span>`; b.addEventListener('click',()=>{ try{ sifraOpen(); }catch(e){} }); }
+    else if(!b.classList.contains('m66-sf')){ /* кнопка осталась от прежней панели: тот же элемент, новое место */ b.className='icon-btn m66-sf'+(b.classList.contains('m56-new')?' m56-new':''); const bl=b.querySelector('.bl'); if(bl) bl.remove(); }
+    /* пишем только при изменении — иначе наблюдатель за страницей будит сам себя */
+    if(b.parentNode!==hb||hb.firstElementChild!==b) hb.insertBefore(b,hb.firstChild);
+    const al=L.sfFabTip?String(L.sfFabTip).split('.')[0]:L.m60Nav; if(b.getAttribute('aria-label')!==al) b.setAttribute('aria-label',al);
+    if(!r.classList.contains('m60')) r.classList.add('m60'); if(!r.classList.contains('m66-sft')) r.classList.add('m66-sft');
+    { const f=document.getElementById('sfFab'); if(f&&!f._m60o){ f._m60o=1; try{ new MutationObserver(m60SfSync).observe(f,{attributes:true,attributeFilter:['class']}); }catch(e){} } m60SfSync(); } }catch(e){} };
+try{ m60Nav(); }catch(e){}
+/* ---------- 2: выбор дела ничего не закрывает ---------- */
+/* Вид дела меняет саму Mira (слова, товары, подсказки), но не прячет разделы: закупка, поставщики, «Где закупать», фабрики, цена, карточка товара, праздники,
+   «Когда ехать» и «Заработок» видны всем. Скрыто по умолчанию только то, чему без своих данных нечего показать: размеры и ярлыки одежды — не у одежды,
+   дневник магазина (итоги, тетрадь по фото, «сказать выручку») — у того, кто ведёт только личные деньги. И это возвращается строкой «Показать все разделы». */
+function m66AllOn(){ return lsGet('m66all')==='1'; }
+function m66Hid0(k){ if(!M64.set) return false; if(!M64.cl&&(k==='sizes'||k==='labels')) return true; return M64.mode==='personal'&&['nb','voice','stats','week'].includes(k); }
+m64Hidden=function(k){ return m66AllOn()?false:m66Hid0(k); };
+function m66AllRow(){ try{ const v=document.getElementById('moreView'); if(!v) return; let row=document.getElementById('m66All'), n=0;
+    v.querySelectorAll('[data-mk]').forEach(b=>{ if(m66Hid0(b.getAttribute('data-mk'))) n++; });
+    if(!n){ if(row) row.remove(); return; }
+    const T=m66T(), on=m66AllOn(), html=`<span>${esc(on?T.m66AllOn:T.m66AllOff(n))}</span><button type="button" class="m66-allb" data-m66all="${on?'0':'1'}">${esc(on?T.m66AllHide:T.m66AllShow)}</button>`;
+    if(!row){ row=document.createElement('div'); row.id='m66All'; row.className='m66-all'; }
+    if(row.parentNode!==v||v.lastElementChild!==row) v.appendChild(row);
+    if(row._h!==html){ row._h=html; row.innerHTML=html; } }catch(e){} }
+/* в списке «Соберу под вас» последней строкой стоит то, что выбор дела НЕ меняет */
+{ const _ch66=m64Changes; m64Changes=function(){ const a=_ch66.apply(this,arguments); try{ if(Array.isArray(a)&&a.length) a.push(m66T().m66Keep); }catch(e){} return a; }; }
+{ const _mm66=m64More; m64More=function(){ const r=_mm66.apply(this,arguments); m66AllRow(); return r; }; }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('[data-m66all]'):null; if(!b) return; e.preventDefault();
+  lsSet('m66all',b.getAttribute('data-m66all')==='1'?'1':'0'); try{ m64More(); }catch(_){} try{ render(); }catch(_){} try{ const nb=document.querySelector('#m66All .m66-allb'); if(nb) nb.focus(); }catch(_){} });
+try{ m64More(); }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{

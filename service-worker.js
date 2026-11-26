@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v82';
+const CACHE='mira-v83';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -50,7 +50,31 @@ const CORE = [
   './fonts/gl-cyrillic-ext-700.woff2',
   './fonts/gl-latin-800.woff2',
   './fonts/gl-cyrillic-800.woff2',
-  './fonts/gl-cyrillic-ext-800.woff2'
+  './fonts/gl-cyrillic-ext-800.woff2',
+  './fonts/ss-latin-600.woff2',
+  './fonts/ss-latin-700.woff2',
+  './fonts/ss-cyrillic-600.woff2',
+  './fonts/ss-cyrillic-700.woff2',
+  './fonts/ss-cyrillic-ext-600.woff2',
+  './fonts/ss-cyrillic-ext-700.woff2',
+  './fonts/ge-latin-400.woff2',
+  './fonts/ge-latin-600.woff2',
+  './fonts/ge-latin-700.woff2',
+  './fonts/ge-cyrillic-400.woff2',
+  './fonts/ge-cyrillic-600.woff2',
+  './fonts/ge-cyrillic-700.woff2',
+  './fonts/ge-cyrillic-ext-400.woff2',
+  './fonts/ge-cyrillic-ext-600.woff2',
+  './fonts/ge-cyrillic-ext-700.woff2',
+  './fonts/mu-latin-400.woff2',
+  './fonts/mu-latin-600.woff2',
+  './fonts/mu-latin-700.woff2',
+  './fonts/mu-cyrillic-400.woff2',
+  './fonts/mu-cyrillic-600.woff2',
+  './fonts/mu-cyrillic-700.woff2',
+  './fonts/mu-cyrillic-ext-400.woff2',
+  './fonts/mu-cyrillic-ext-600.woff2',
+  './fonts/mu-cyrillic-ext-700.woff2'
 ];
 
 self.addEventListener('install', e => {
