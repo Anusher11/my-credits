@@ -6605,6 +6605,26 @@ html.m61-nc .m10-plus .m10-pi{transform:scale(.8); margin-top:calc(var(--k)*-14p
 /* ---------- 30: «Сказать разработчику» ---------- */
 .m62-fl{display:block; margin-top:calc(var(--k)*4px); color:var(--muted); font-size:max(.76rem,8.25pt); text-align:right;}
 @media (prefers-reduced-motion:reduce){ .m62-lb u{transition:none;} .hb-idea.m62-hit{animation:none;} }
+
+/* ===================== v63: исправления ошибок ===================== */
+/* карточка ближайшего платежа: дата не обрезается — сжимается только название */
+.m7-h-n b.m63-nd{display:flex; min-width:0; overflow:visible; text-overflow:clip;}
+.m63-nm{flex:0 1 auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m63-dt{flex:none; white-space:pre;}
+/* свёрнутая строка главной: сводка в две строки, а не обрывается на полуслове */
+.m61-tx small{white-space:normal; display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden;}
+/* Сифра, «Что я умею»: пример вопроса виден целиком */
+.sheet.m52.m54w .m54-grid button small{-webkit-line-clamp:3;}
+/* «Что выгоднее сейчас»: название вида товара переносится, а не обрывается */
+.hb-bar{grid-template-columns:minmax(0,8fr) minmax(0,5fr) calc(var(--k)*46px) calc(var(--k)*14px);}
+.hb-bn{white-space:normal; overflow:visible; text-overflow:clip; overflow-wrap:break-word; -webkit-hyphens:auto; hyphens:auto; line-height:1.2;}
+/* «Где закупать»: название места — до трёх строк */
+html.m40[data-sk] .m33-wc .c-name{-webkit-line-clamp:3;}
+/* «Оформление»: почему на экране «Ночь», хотя выбран другой вид */
+.m63-now{display:flex; gap:calc(var(--k)*8px); align-items:flex-start; margin:0 0 calc(var(--k)*12px); padding:calc(var(--k)*10px) calc(var(--k)*12px); border-radius:calc(var(--k)*14px); background:var(--surface-2); border:1px solid var(--line); color:var(--ink); font-size:.82rem; line-height:1.4;}
+.m63-now svg{flex:none; margin-top:1px; color:var(--brand);}
+/* «Рынок дня», сервер действительно старый: ничего не загружается — мерцающих полос нет */
+.hb-hero.m63-old .hb-skel{display:none;}
 /* <</v44 css>> */
 
 
@@ -28529,7 +28549,7 @@ function m61NumGo(e,node,d){ try{ if(m61Rm()) return; const R=e.getBoundingClien
   const full=node.nodeValue, sm=d.s.match(/[\s\u00a0\u202f]/), fmt=v=>sm?String(v).replace(/\B(?=(\d{3})+(?!\d))/g,sm[0]):String(v), pre=full.slice(0,d.at), post=full.slice(d.at+d.s.length);
   const sp=document.createElement('span'); sp.className='m61-n m61-tw'; sp.setAttribute('data-m61v',pre+fmt(d.from)+post); e.insertBefore(sp,node); sp.appendChild(node);
   const t0=performance.now(), D=560; const end=()=>{ try{ if(sp.isConnected&&sp.firstChild) sp.replaceWith(sp.firstChild); }catch(_){} };
-  const step=t=>{ if(!sp.isConnected) return; const k=Math.min(1,(t-t0)/D), q=1-Math.pow(1-k,3); sp.setAttribute('data-m61v',pre+fmt(Math.round(d.from+(d.to-d.from)*q))+post); if(k<1) requestAnimationFrame(step); else end(); }; requestAnimationFrame(step); setTimeout(end,D+400); }catch(e){} }
+  const step=t=>{ if(!sp.isConnected) return; const k=Math.max(0,Math.min(1,(t-t0)/D)) /* время кадра бывает раньше t0 — без нижней границы число на миг показывалось меньше прежнего (v63) */, q=1-Math.pow(1-k,3); sp.setAttribute('data-m61v',pre+fmt(Math.round(d.from+(d.to-d.from)*q))+post); if(k<1) requestAnimationFrame(step); else end(); }; requestAnimationFrame(step); setTimeout(end,D+400); }catch(e){} }
 function m61Nums(){ try{ const seen=new Map(); for(const [sel,kf] of M61_NUM){ document.querySelectorAll(sel).forEach((e,i)=>{ if(e.hasAttribute('data-m49cnt')||e.hasAttribute('data-to')||e.querySelector('.m61-tw')) return; const n=m61NumNode(e); if(!n) return; const k=kf(e,i), s=n.nodeValue; seen.set(k,s);
       if(M61.nums.has(k)&&M61.nums.get(k)!==s){ const d=m61Diff(M61.nums.get(k),s); if(d) m61NumGo(e,n,d); } }); } seen.forEach((v,k)=>M61.nums.set(k,v)); }catch(e){} }
 
@@ -28739,6 +28759,81 @@ window.addEventListener('click',e=>{ const t=e.target&&e.target.closest?e.target
 { const _r62=render; render=function(){ try{ m62Tick(); }catch(e){} const x=_r62.apply(this,arguments); try{ m62Badge(); }catch(e){} return x; }; }
 try{ m62Tick(); m62Badge(); }catch(e){}
 try{ setInterval(()=>{ try{ if(M62.snap!==dkey()){ m62Tick(); render(); } }catch(e){} },60000); }catch(e){}
+/* ---------- v63: строки исправлений ---------- */
+const M63S={ru:{
+  m63NoSrv:'Нет связи с сервером Mira. Проверьте интернет и попробуйте ещё раз — записи и расчёты в телефоне работают как обычно.',
+  m63Now:n=>`Сейчас на экране «Ночь»: в телефоне включена тёмная тема. «${n}» вернётся, когда она выключится. Чтобы видеть «${n}» всегда, выключите переключатель выше.`,
+  m63PushDemo:'В демо напоминания выключены. Выйдите из демо — и включите их для своих платежей.',
+  pushServerOld:'Не получилось включить напоминания: нет связи с сервером Mira. Попробуйте ещё раз чуть позже.',
+  /* слова, понятные в любой стране */
+  hol_fitr:'Ураза-байрам', hol_adha:'Курбан-байрам', holLead:'Когда готовить товар заранее. Даты Рамадана, Ураза-байрама и Курбан-байрама — по исламскому календарю, могут сдвинуться на день.', m7NHolD:'Перед праздниками, когда банки закрыты, — напомню на 2 дня раньше',
+  custEmpty:'Пока никто не должен. Нажмите «Дал(а) в долг», когда отдадите товар в долг.', nlTitle:'Лимит продаж в долг', nlSet:'Поставить лимит долга',
+  nlOverTot:(a,b)=>'Все долги покупателей станут '+a+' — больше лимита '+b+'. Всё равно записать?', loyLead:'Каждая N-я покупка — со скидкой. Покупки в долг тоже считаются.',
+  m33DTitlePh:'например: Аренда места на рынке', simCal:'Сезоны: в марте — весенние праздники, в августе — подготовка к школе, в декабре — Новый год. Летом и в январе спрос ниже.'
+},tg:{
+  m63NoSrv:'Бо сервери Mira алоқа нест. Интернетро санҷед ва боз кӯшиш кунед — сабтҳо ва ҳисобҳо дар телефон мисли ҳамеша кор мекунанд.',
+  m63Now:n=>`Ҳоло дар экран «Шаб» аст: дар телефон намуди торик фаъол аст. «${n}» бармегардад, вақте он хомӯш шавад. Барои ҳамеша дидани «${n}» калиди болоро хомӯш кунед.`,
+  m63PushDemo:'Дар намоиш ёдраскуниҳо хомӯшанд. Аз намоиш бароед ва онҳоро барои пардохтҳои худ фаъол кунед.',
+  pushServerOld:'Ёдраскуниҳо фаъол нашуданд: бо сервери Mira алоқа нест. Каме дертар боз кӯшиш кунед.'
+},en:{
+  m63NoSrv:'No connection to the Mira server. Check your internet and try again — records and calculations on the phone work as usual.',
+  m63Now:n=>`“Night” is on screen now because your phone is in dark mode. “${n}” comes back when dark mode is off. To always see “${n}”, turn off the switch above.`,
+  m63PushDemo:'Reminders are off in the demo. Exit the demo and turn them on for your own payments.',
+  pushServerOld:'Could not turn reminders on: no connection to the Mira server. Try again a little later.',
+  hol_navruz:'Nowruz', m7NHolD:'Before holidays when banks are closed — I remind you 2 days earlier', loyLead:'Every N-th purchase gets a discount. Purchases on credit count too.',
+  m33DTitlePh:'e.g. Market stall lease', simCal:'Seasons: spring holidays in March, back to school in August, New Year in December. Demand is lower in summer and January.'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M63S[k]); }catch(e){} Object.assign(D[k],M63S[k]); }
+/* ===================== v63: исправления ошибок (26.11.2026) =====================
+   1) «Сервер Mira ещё старый — залейте mira-api.zip» показывалось и тогда, когда до сервера просто не дошёл запрос
+      (нет сети, медленная связь: ответа не было 2,5 с). Теперь без ответа сервера — «нет связи», а про версию — только если сервер ответил и он правда старый.
+   2) Запретили уведомления — причину тут же затирало «Сервер напоминаний ещё не обновлён».
+   3) «Оформление»: выбран светлый вид, а на экране «Ночь» из-за тёмной темы телефона — теперь это объяснено.
+   4) Карточка ближайшего платежа: дата больше не обрезается.
+   5) Форма кредита: «Первый платёж — …» не показывается, пока человек не ответил, внесён ли платёж этого месяца.
+   6) Демо: полоса «Демо» не закрывает шапку.
+   7) «Рынок дня»: мерцающие полосы только когда что-то действительно загружается. */
+const M63={ver:'63', tN:0, pushWhy:0, hbWait:0, touched:false};
+function m63NetDown(){ try{ return !sfCaps||!(+sfCaps.v>0); }catch(e){ return true; } }
+
+/* ---- 1. «нет связи» вместо «сервер старый» ---- */
+(function(){ const KEYS=['bpOld','f34Old','hbOld10','m44Old','m46Old','m47RtOld','m48Old','m50TeamOld','m51Old','p29Old'];
+  for(const lg of ['ru','tg','en']){ const d=D[lg]; if(!d) continue;
+    for(const k of KEYS){ try{ const orig=d[k]; if(typeof orig!=='string') continue;
+        Object.defineProperty(d,k,{configurable:true,enumerable:true,get(){ return m63NetDown()?D[lg].m63NoSrv:orig; },set(v){ Object.defineProperty(d,k,{configurable:true,enumerable:true,writable:true,value:v}); }}); }catch(e){} } } })();
+/* «рынок дня»: не дождались ответа сервера — это ошибка связи с кнопкой «Повторить»; когда сервер ответит, выпуск запросится сам */
+try{ const _hf=hbFetch; hbFetch=function(){ return Promise.resolve(_hf.apply(this,arguments)).then(r=>{ if(!(r&&r.old&&m63NetDown())) return r;
+      try{ if(!M63.hbWait&&navigator.onLine){ M63.hbWait=1; sfCapsLoad().then(c=>{ M63.hbWait=0; if(c&&+c.v>=10&&!hbToday()) setTimeout(()=>{ try{ hbKick(); }catch(e){} },80); }).catch(()=>{ M63.hbWait=0; }); } }catch(e){}
+      return {err:'net'}; }); }; }catch(e){}
+/* сервер ответил, и он старый: текст остаётся, мерцающие полосы убираем — ничего не загружается */
+try{ const _hh=hbHeroHTML; hbHeroHTML=function(){ let h=_hh.apply(this,arguments); try{ if(hbState==='old'&&h.indexOf('hb-hero wait')>=0) h=h.replace('hb-hero wait','hb-hero wait m63-old'); }catch(e){} return h; }; }catch(e){}
+
+/* ---- 2. уведомления: названная причина не затирается общим сообщением ---- */
+try{ const _t=toast; toast=function(m){ try{ M63.tN++; if(m===L.pushServerOld){ if(Date.now()-M63.pushWhy<2500) return; if(typeof DEMO!=='undefined'&&DEMO) m=L.m63PushDemo; } }catch(e){} return _t.call(this,m); }; }catch(e){}
+try{ const _pe=pushEnable; pushEnable=async function(){ const n0=M63.tN; const ok=await _pe.apply(this,arguments); if(!ok&&M63.tN>n0) M63.pushWhy=Date.now(); return ok; }; }catch(e){}
+
+/* ---- 3. «Оформление»: объяснить, почему на экране «Ночь» ---- */
+try{ const _ts=m8ThemeSheet; m8ThemeSheet=function(){ const r=_ts.apply(this,arguments);
+    try{ const lk=m59Pref(); if(m59Auto()&&m40Dark()&&lk!=='night'&&!sheet.querySelector('.m63-now')){ const row=sheet.querySelector('#m59Au')&&sheet.querySelector('#m59Au').closest('.m59-row'); if(row){ const n={paper:L.m59P,glass:L.m59G,color:L.m59C}[lk]||'';
+          const p=document.createElement('p'); p.className='m63-now'; p.setAttribute('role','note'); p.innerHTML=ico('info',18)+'<span>'+esc(L.m63Now(n))+'</span>'; row.insertAdjacentElement('afterend',p); } } }catch(e){}
+    return r; }; }catch(e){}
+
+/* ---- 4. карточка ближайшего платежа: дата всегда видна ---- */
+try{ const _h7=m7HeroHTML; m7HeroHTML=function(){ let h=_h7.apply(this,arguments);
+    try{ if(typeof h==='string'&&h.indexOf('m7-multi')<0) h=h.replace(/(<div class="m7-h-n"><span>[^<]*<\/span>)<b>([^<]*?) · ([^<]*)<\/b>/,(m,a,n,d)=>a+'<b class="m63-nd"><span class="m63-nm">'+n+'</span><span class="m63-dt"> · '+d+'</span></b>'); }catch(e){}
+    return h; }; }catch(e){}
+
+/* ---- 5. форма кредита: даты первого и последнего платежа — только после ответа «уже внесли?» ---- */
+function m63AlHint(){ try{ const pq=document.getElementById('al-pq'), s=document.getElementById('al-sum'); if(!pq||!s) return; s.hidden=!pq.hidden&&pq.dataset.f30==='1'&&pq.dataset.v===''; }catch(e){} }
+try{ const _al=m7AddLoan; m7AddLoan=function(){ const r=_al.apply(this,arguments); try{ m63AlHint(); }catch(e){} return r; }; }catch(e){}
+try{ for(const ev of ['input','click']) document.addEventListener(ev,e=>{ try{ if(document.getElementById('al-pq')&&e.target&&e.target.closest&&e.target.closest('#sheet')) setTimeout(m63AlHint,0); }catch(x){} },true); }catch(e){}
+
+/* ---- 6. демо: полоса «Демо» вставляется над страницей и сдвигает её на свою высоту — шапка оставалась под полосой ---- */
+function m63DemoTop(){ try{ const b=document.getElementById('demoBar'); if(!b||M63.touched) return; const y=window.scrollY; if(y>0&&y<=b.offsetHeight+2) window.scrollTo(0,0); }catch(e){} }
+try{ for(const ev of ['pointerdown','touchstart','wheel','keydown']) window.addEventListener(ev,()=>{ M63.touched=true; },{passive:true,capture:true,once:true}); }catch(e){}
+try{ const _rd=renderDemoBar; renderDemoBar=function(){ const had=!!document.getElementById('demoBar'); const r=_rd.apply(this,arguments); try{ if(!had&&document.getElementById('demoBar')){ M63.touched=false; m63DemoTop(); requestAnimationFrame(m63DemoTop); setTimeout(m63DemoTop,150); setTimeout(m63DemoTop,600);
+        for(const ev of ['pointerdown','touchstart','wheel','keydown']) window.addEventListener(ev,()=>{ M63.touched=true; },{passive:true,capture:true,once:true}); } }catch(e){} return r; }; }catch(e){}
+try{ window.addEventListener('scroll',()=>{ if(!M63.touched&&performance.now()<4000) m63DemoTop(); },{passive:true}); setTimeout(m63DemoTop,0); window.addEventListener('load',()=>setTimeout(m63DemoTop,60)); }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{

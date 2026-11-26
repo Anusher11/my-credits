@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v79';
+const CACHE='mira-v80';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -121,22 +121,20 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // Остальное (иконки, шрифты) — сначала кэш, затем сеть
+  // Остальное (иконки, шрифты) — сначала кэш, затем сеть.
+  // Чужие адреса (сервер Mira, курсы валют) сервис-воркер не трогает: без сети такой запрос должен честно
+  // не пройти. Раньше на любой сбой отдавалась страница приложения с кодом 200 — приложение принимало её
+  // за ответ сервера (v63).
+  let own = false, font = false;
+  try { const url = new URL(req.url); own = url.origin === location.origin; font = url.host.endsWith('gstatic.com') || url.host.endsWith('googleapis.com'); } catch (_) {}
+  if (!own && !font) return;
   e.respondWith(
     caches.match(req).then(hit => {
       if (hit) return hit;
       return fetch(req).then(res => {
-        try {
-          const url = new URL(req.url);
-          if (url.origin === location.origin ||
-              url.host.endsWith('gstatic.com') ||
-              url.host.endsWith('googleapis.com')) {
-            const copy = res.clone();
-            caches.open(CACHE).then(c => c.put(req, copy));
-          }
-        } catch (_) {}
+        try { if (res && (res.ok || res.type === 'opaque')) { const copy = res.clone(); caches.open(CACHE).then(c => c.put(req, copy)); } } catch (_) {}
         return res;
-      }).catch(() => caches.match('./index.html'));
+      }).catch(() => Response.error());
     })
   );
 });
