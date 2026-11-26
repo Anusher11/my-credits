@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v78';
+const CACHE='mira-v79';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -181,6 +181,8 @@ self.addEventListener('push', e => {
     else {
       tag='mk-pay';
       const items=(g.items||[]).map(it=>Object.assign({},it,{days:mkDays(it.due)})).filter(it=>it.days<=3+(+it.pre||0)).sort((a,b)=>a.days-b.days);
+      /* v62: число на значке — платежи, срок которых сегодня или прошёл; покупатели, которые должны вам, не считаются */
+      try{ if(g.badge!==0&&self.navigator&&self.navigator.setAppBadge){ const bn=(g.items||[]).filter(it=>!it.cust&&mkDays(it.due)<=0).length; await (bn>0?self.navigator.setAppBadge(bn):self.navigator.clearAppBadge()); } }catch(_){}
       if(items.length){ const f=items[0];
         title=f.cust?T.cust(f.name):f.days<0?T.late(f.name):f.days===0?T.due(f.name):T.soon(f.name,f.days);
         body=items.slice(0,3).map(it=>it.name+(g.hide?'':' · '+mkMoney(it.amt,g.cur,lang)+(it.cust?' '+T.custW:''))+' · '+(it.days<0?T.lateW(-it.days):it.days===0?T.dueW:T.soonW(it.days))).join('\n')+(items.length>3?'\n'+T.more(items.length-3):''); if(f.loan&&g.free&&f.days>=0) body+='\n'+T.goal(g.free); }
