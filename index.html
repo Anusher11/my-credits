@@ -6425,6 +6425,34 @@ html.m59[data-lk="color"] .me-btn .me-ava:not(.noava){background:#6C2BD9!importa
 .m59-sz button{min-height:calc(var(--k)*46px); border-radius:calc(var(--k)*12px); border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; font-size:max(.78rem,8.25pt); font-weight:600; line-height:1.15; padding:calc(var(--k)*4px) 2px; cursor:pointer;}
 .m59-sz button[aria-pressed="true"]{border-color:var(--brand); background:var(--brand-weak); color:var(--brand-ink);}
 @media (prefers-reduced-motion: reduce){ .m59-sw::after{transition:none;} }
+/* ================== v60: первая партия выбранных идей (1, 4, 8, 17, 22, 24) ================== */
+/* 1: остаток не введён — строка платежа нейтральная, без красного «не хватит» */
+.m47-pr.q .m47-ps{color:var(--muted); font-weight:600;}
+.m47-df.q{background:var(--surface-2)!important; color:var(--muted)!important;}
+.m40-ins.m60-nt{background:var(--brand-weak)!important; color:var(--ink)!important;} .m40-ins.m60-nt svg{color:var(--brand)!important;}
+.m47-fc.unk .m47-pd.bad{fill:var(--muted)!important;}
+/* 24: готовый вопрос под графиком */
+.m60-askq{display:flex; align-items:center; gap:calc(var(--k)*8px); width:100%; margin:calc(var(--k)*10px) 0 2px; padding:calc(var(--k)*9px) calc(var(--k)*12px); min-height:calc(var(--k)*44px); border-radius:calc(var(--k)*14px); border:1px solid var(--line); background:var(--brand-weak); color:var(--brand-ink); font:inherit; font-size:.86rem; font-weight:600; line-height:1.3; text-align:left; cursor:pointer;}
+.m60-askq span{flex:1; min-width:0;}
+.m60-askq svg{flex:none;} .m60-askq svg:last-child{opacity:.55;}
+#m8Sum .m60-askq{margin-top:calc(var(--k)*12px);}
+/* 22: «Учла: …» под ответом Сифры */
+.m60-used{display:flex; align-items:flex-start; gap:calc(var(--k)*6px); width:100%; margin:calc(var(--k)*8px) 0 0; padding:calc(var(--k)*7px) 0 0; min-height:calc(var(--k)*32px); border:0; border-top:1px dashed var(--line); background:none; color:var(--muted); font:inherit; font-size:max(.76rem,8.25pt); line-height:1.35; text-align:left; cursor:pointer;}
+.m60-used span{flex:1; min-width:0;} .m60-used svg{flex:none; margin-top:2px;}
+/* 8: Сифра в нижней панели; плавающий круг остаётся только там, где панели нет */
+html.m60:not(.bp-lock) #sfFab{display:none!important;}
+#bnSifra .bi svg{width:calc(var(--k)*26px); height:calc(var(--k)*26px); display:block;}
+#bnSifra .bi{background:none!important;}
+.m60-sfrow{margin-top:calc(var(--k)*12px);}
+#bnSifra.m56-new .bi{position:relative;} #bnSifra.m56-new .bi::after{content:""; position:absolute; top:-1px; right:calc(var(--k)*-4px); width:calc(var(--k)*10px); height:calc(var(--k)*10px); border-radius:50%; background:var(--ok,#12A37A); border:2px solid var(--surface);}
+/* узкий экран (320): шесть подписей панели должны помещаться целиком */
+@media (max-width:345px){ html.m60 .bnav{left:calc(var(--k)*4px)!important; right:calc(var(--k)*4px)!important;} html.m60 .bn-in > button .bl{letter-spacing:-.035em; font-weight:500;} html.m60 .bn-in > button.on .bl{font-weight:600;} }
+/* 2: число, которое открывает свой состав, — тонкое пунктирное подчёркивание */
+.m60-num{padding-block:.17em; margin-block:-.17em; /* поле нажатия вмещает цифры целиком, а вёрстка не сдвигается */ cursor:pointer; text-decoration:underline dotted; text-decoration-thickness:1.5px; text-underline-offset:.16em; text-decoration-color:currentColor; text-decoration-color:color-mix(in srgb,currentColor 38%,transparent); -webkit-tap-highlight-color:transparent;}
+.m60-num:focus-visible{outline:2px solid var(--brand); outline-offset:calc(var(--k)*3px); border-radius:calc(var(--k)*6px);}
+.w29-s.m60-hl{background:var(--brand-weak); border-radius:calc(var(--k)*12px); box-shadow:0 0 0 calc(var(--k)*8px) var(--brand-weak);}
+/* 12: полоса «Вернуть» — значки в один ряд с текстом */
+#undoBar span,#undoBar button{display:inline-flex; align-items:center; gap:calc(var(--k)*6px);}
 /* <</v44 css>> */
 
 
@@ -24157,9 +24185,9 @@ function m47Data(N){ const f=m40FcData(N), n=f.days.length, start=Math.max(0,f.s
   return {n,days:f.days,start,hasInc,O,A,pay,grp,rec,save,needDay,firstShort:grp.find(g=>!g.ok)||null,base}; }
 function m47Geo(D){ const W=320,H=190,pT=14,pB=24,pR=44, n=D.n, hi=Math.max(1,...D.O,...D.A.map(v=>Math.max(0,v)))*1.12, lo=Math.min(0,...D.A);
   const X=i=>i*(W-pR)/Math.max(1,n-1), Y=v=>pT+(hi-v)/((hi-lo)||1)*(H-pT-pB); return {W,H,pT,pB,pR,n,hi,lo,X,Y,yb:H-pB}; }
-function m47Rd(D,i){ const d=D.days[i]; if(!d) return ''; const ok=D.A[i]>=D.O[i]-0.5, diff=Math.abs(D.A[i]-D.O[i]);
+function m47Rd(D,i){ const d=D.days[i]; if(!d) return ''; const ok=D.A[i]>=D.O[i]-0.5, diff=Math.abs(D.A[i]-D.O[i]), U=!!M47.unk;
   const its=D.pay[i]>0?`<span class="m40-evs">${(D.grp.find(g=>g.i===i)||{items:[]}).items.map(x=>`<span>${esc(x.n)} −${money(x.a)}</span>`).join('')}</span>`:'';
-  return `<small>${esc(m40Dn(d.d))}${i===0?' · '+esc(L.m47Today):''}</small><div class="m47-rv"><span><em>${esc(L.m47Need)}</em><b>${money(D.O[i])}</b></span><span><em>${esc(L.m47Have)}</em><b class="${ok?'':'neg'}">${D.A[i]<0?'−':''}${money(Math.abs(D.A[i]))}</b></span><span class="m47-df ${ok?'ok':'bad'}">${esc(L.m47Diff(ok,money(diff)))}</span></div>${its}`; }
+  return `<small>${esc(m40Dn(d.d))}${i===0?' · '+esc(L.m47Today):''}</small><div class="m47-rv"><span><em>${esc(L.m47Need)}</em><b>${money(D.O[i])}</b></span><span><em>${esc(L.m47Have)}</em><b class="${ok||U?'':'neg'}">${D.A[i]<0?'−':''}${money(Math.abs(D.A[i]))}</b></span><span class="m47-df ${ok?'ok':U?'q':'bad'}">${esc(!ok&&U?L.m60RdQ:L.m47Diff(ok,money(diff)))}</span></div>${its}`; }
 function m47Plot(D,sel){ const g=m47Geo(D), {W,H,X,Y,yb,pT,pR,n}=g; const f=m47Fx;
   let st=`M0,${f(Y(0))}`; for(let i=0;i<n;i++){ const y=Y(D.O[i]); if(i===0) st=`M0,${f(y)}`; else if(D.O[i]!==D.O[i-1]) st+=` H${f(X(i))} V${f(y)}`; } st+=` H${f(X(n-1))}`;
   const stA=st+` V${f(yb)} H0 Z`, ln=D.A.map((v,i)=>(i?'L':'M')+f(X(i))+','+f(Y(v))).join(' '), lnA=ln+` L${f(X(n-1))},${f(yb)} L0,${f(yb)} Z`;
@@ -24173,18 +24201,21 @@ function m47Plot(D,sel){ const g=m47Geo(D), {W,H,X,Y,yb,pT,pR,n}=g; const f=m47F
 function m47FcHTML(){ if(!m40FcOn()) return ''; const D=m47Data(M40F.n); if(!D.grp.length) return ''; M47.f=D;
   M40F.f={days:D.days,minI:D.firstShort?D.firstShort.i:(D.grp[0]?D.grp[0].i:0)}; const sel=M40F.sel==null||M40F.sel>=D.n?M40F.f.minI:M40F.sel; M40F.sel=sel;
   const fs=m47Fresh(), env=Math.max(0,envBal('loan'))+Math.max(0,envBal('cush'));
-  const ask=(!fs&&D.start<=0)||M47.edit?`<div class="m47-ask"><label for="m47-st"><b>${esc(L.m47StartQ)}</b><small>${esc(L.m47StartSub)}</small></label><div class="m47-ar"><input id="m47-st" type="number" inputmode="numeric" min="0" placeholder="0" value="${fs?esc(String(fs.v)):''}"><button type="button" class="btn btn-primary" data-m47st="1">${esc(L.m47Save)}</button></div></div>`
+  /* v60 (идеи 1 и 4): остаток не введён и в конвертах пусто — прогноз считал бы от нуля; тогда не пугаем нехваткой, а говорим, сколько нужно, и спрашиваем */
+  const unk=!fs&&D.start<=0&&!M47.edit, old0=unk&&state.misc&&state.misc.fcStart&&state.misc.fcStart.d?state.misc.fcStart:null, g0=D.grp[0], need0=g0?g0.items.reduce((t,x)=>t+(+x.a||0),0):0; M47.unk=unk;
+  const ask=(!fs&&D.start<=0)||M47.edit?`<div class="m47-ask"><label for="m47-st"><b>${esc(unk&&g0?L.m60FcQ(fmtShort(g0.d),money(need0)):L.m47StartQ)}</b><small>${esc(old0?L.m60FcOld(money(+old0.v||0),fmtShort(parseYmd(old0.d))):unk?L.m60FcSub:L.m47StartSub)}</small></label><div class="m47-ar"><input id="m47-st" type="number" inputmode="numeric" min="0" placeholder="0" value="${fs?esc(String(fs.v)):''}"><button type="button" class="btn btn-primary" data-m47st="1">${esc(L.m47Save)}</button></div></div>`
     :`<p class="m47-have">${ico('paid',16)} ${esc(fs?L.m47StartAt(money(+fs.v||0),fmtShort(parseYmd(fs.d))):L.m47StartAt(money(env),L.env_loan||''))} <button type="button" class="link-btn" data-m47ed="1">${esc(L.m47Edit)}</button></p>`;
-  const sh=D.base, ins=sh?`<div class="m40-ins bad">${ico('warn',20)}<span><b>${esc(L.m47Short(fmtShort(sh.d),money(D.hasInc?sh.O-sh.A:sh.O-D.start)))}</b><small>${esc(D.hasInc?(D.needDay?L.m47ShortS(money(D.needDay)):L.m47ShortS2):L.m47ShortS(money(D.rec)))}</small></span></div>`:`<div class="m40-ins ok">${ico('paid',20)}<span><b>${esc(L.m47Ok)}</b></span></div>`;
+  /* остаток не введён: вместо красного «не хватит» — спокойный совет, сколько откладывать (сам совет был и раньше) */
+  const sh=D.base, ins=sh&&unk?`<div class="m40-ins m60-nt">${ico('piggy',20)}<span><b>${esc(D.hasInc?(D.needDay?L.m47ShortS(money(D.needDay)):L.m47ShortS2):L.m47ShortS(money(D.rec)))}</b></span></div>`:sh?`<div class="m40-ins bad">${ico('warn',20)}<span><b>${esc(L.m47Short(fmtShort(sh.d),money(D.hasInc?sh.O-sh.A:sh.O-D.start)))}</b><small>${esc(D.hasInc?(D.needDay?L.m47ShortS(money(D.needDay)):L.m47ShortS2):L.m47ShortS(money(D.rec)))}</small></span></div>`:`<div class="m40-ins ok">${ico('paid',20)}<span><b>${esc(L.m47Ok)}</b></span></div>`;
   const step=Math.max(10,round10((D.rec||500)*0.1)), put=D.hasInc?D.needDay:D.save;
   const plan=D.hasInc?`<p class="m47-mode">${esc(L.m47ModeS)}</p>`:`<div class="m47-plan"><span>${esc(L.m47PerDay)}</span><div class="m47-stp"><button type="button" data-m47sv="-${step}" aria-label="−${step}">−</button><b>${money(D.save)}</b><button type="button" data-m47sv="${step}" aria-label="+${step}">+</button></div>${D.rec&&D.save!==D.rec?`<button type="button" class="link-btn" data-m47sv="rec">${esc(L.m47Rec(money(D.rec)))}</button>`:`<small>${esc(D.rec?L.m47Rec(money(D.rec)):L.m47ModeP)}</small>`}</div>`;
-  const list=`<div class="m47-pl"><b class="m47-plh">${esc(L.m47Pays)}</b>${D.grp.slice(0,8).map(g=>`<div class="m47-pr ${g.ok?'ok':'bad'}"><span class="m47-pdt">${esc(fmtShort(g.d))}</span><span class="m47-pn">${g.items.map(x=>esc(x.n)+' · '+money(x.a)).join('<br>')}</span><span class="m47-ps">${g.ok?ico('check',14)+' '+esc(L.m47Ready):esc(L.m47Lack(money(g.O-g.A)))}</span></div>`).join('')}</div>`;
-  return `<section class="m40-cd m47-fc" aria-labelledby="m40FcH"><div class="m40-h"><h2 id="m40FcH">${ico('zap',20)} ${esc(L.m47T)}</h2><div class="m40-chips" role="group" aria-label="${esc(L.m47T)}">${[7,30,90].map(k=>`<button type="button" data-m40fn="${k}" aria-pressed="${k===M40F.n}">${esc(L.m40Dn(k))}</button>`).join('')}</div></div>
+  const list=`<div class="m47-pl"><b class="m47-plh">${esc(L.m47Pays)}</b>${D.grp.slice(0,8).map(g=>`<div class="m47-pr ${g.ok?'ok':unk?'q':'bad'}"><span class="m47-pdt">${esc(fmtShort(g.d))}</span><span class="m47-pn">${g.items.map(x=>esc(x.n)+' · '+money(x.a)).join('<br>')}</span><span class="m47-ps">${g.ok?ico('check',14)+' '+esc(L.m47Ready):esc(unk?L.m60FcRow:L.m47Lack(money(g.O-g.A)))}</span></div>`).join('')}</div>`;
+  return `<section class="m40-cd m47-fc${unk?' unk':''}" aria-labelledby="m40FcH"><div class="m40-h"><h2 id="m40FcH">${ico('zap',20)} ${esc(L.m47T)}</h2><div class="m40-chips" role="group" aria-label="${esc(L.m47T)}">${[7,30,90].map(k=>`<button type="button" data-m40fn="${k}" aria-pressed="${k===M40F.n}">${esc(L.m40Dn(k))}</button>`).join('')}</div></div>
     ${ask}${ins}
     <div class="m40-rd m47-rd" aria-live="polite">${m47Rd(D,sel)}</div>
-    <div class="m40-plot m47-plot" data-m40p="fc" tabindex="0" role="img" aria-label="${esc(L.m47A(D.n,sh?L.m47Short(fmtShort(sh.d),money(D.hasInc?sh.O-sh.A:sh.O-D.start)):L.m47Ok))}">${m47Plot(D,sel)}</div>
+    <div class="m40-plot m47-plot" data-m40p="fc" tabindex="0" role="img" aria-label="${esc(L.m47A(D.n,sh&&unk&&g0?L.m60FcQ(fmtShort(g0.d),money(need0)):sh?L.m47Short(fmtShort(sh.d),money(D.hasInc?sh.O-sh.A:sh.O-D.start)):L.m47Ok))}">${m47Plot(D,sel)}</div>
     <div class="m40-leg m47-leg"><span><i class="m47-li"></i>${esc(L.m47Leg.have)}</span><span><i class="m47-ls"></i>${esc(L.m47Leg.need)}</span></div>
-    ${typeof m44HomeRow==='function'?m44HomeRow():''}${plan}${put>0?`<button type="button" class="btn btn-ghost m47-put" data-env-add="loan" data-amt="${put}" data-n="${esc(L.m47T)}">${ico('piggy',18)} ${esc(L.m47Put(money(put)))}</button>`:''}
+    ${typeof m60AskBtn==='function'?m60AskBtn(unk&&g0?L.m60QFcU(fmtShort(g0.d)):sh?L.m60QFcS(fmtShort(sh.d)):L.m60QFcOk(D.n)):''}${typeof m44HomeRow==='function'?m44HomeRow():''}${plan}${put>0?`<button type="button" class="btn btn-ghost m47-put" data-env-add="loan" data-amt="${put}" data-n="${esc(L.m47T)}">${ico('piggy',18)} ${esc(L.m47Put(money(put)))}</button>`:''}
     ${list}<span class="m40-hint">${esc(L.m47Hint)}</span></section>`; }
 try{ m40FcHTML=m47FcHTML; }catch(e){}
 try{ m40FcSel=function(i){ const D=M47.f, box=$('#m40Fc'); if(!D||!box) return; i=Math.max(0,Math.min(D.n-1,i)); M40F.sel=i;
@@ -28051,6 +28082,111 @@ m8ThemeSheet=function(){ const cur=m59Pref(), au=m59Auto(), sc=m59Scale(), near=
 const _rp59=renderProfile; renderProfile=function(){ const x=_rp59.apply(this,arguments); try{ const p=state.profile, sub=$('#appSub'), ti=$('#appTitle'), nm=!!(p&&p.first); if(nm&&sub) sub.textContent=L.appName; if(ti) ti.style.textTransform=nm?'none':''; /* имя пишем как ввели: строчными оставляем только название «mira» */ }catch(e){} return x; };
 try{ applyLook(); m40Apply(); }catch(e){}
 try{ renderProfile(); }catch(e){}
+/* ===================== v60: первая партия выбранных идей — 1, 4, 8, 17, 22, 24 — строки ===================== */
+const M60S={
+ru:{ m60FcQ:(d,v)=>d+' нужно '+v+'. Сколько уже отложено?', m60FcSub:'Наличные и на карте, что можно отдать банку. Введите — и Mira скажет, хватит ли.',
+  m60FcOld:(v,d)=>'Прошлый остаток — '+v+' от '+d+' — старше недели, поэтому не учтён. Введите сегодняшний.', m60FcRow:'к оплате', m60RdQ:'остаток не введён',
+  m60QFcU:d=>'Сколько мне откладывать в день, чтобы хватило к '+d+'?', m60QFcS:d=>'Почему '+d+' не хватит и что сделать?', m60QFcOk:n=>'Что может помешать платежам в ближайшие '+n+' дней?',
+  m60QLoans:'Какой кредит гасить первым, чтобы отдать меньше процентов?',
+  m60Nav:'Сифра', m60SfT:'Сифра в нижней панели', m60SfS:'Выключите — вернётся плавающий круг, его можно перетащить в удобное место.', m60Deleted:'Удалено', m60NumA:'нажмите, чтобы увидеть, из чего сложилось',
+  m60Used:'Учла', m60UsedL:n=>n+' '+ruPlural(n,['кредит','кредита','кредитов']), m60UsedLx:'кредиты', m60UsedShop:'выручку магазина', m60UsedRates:'курс валют', m60UsedEarn:'записи о заработке', m60UsedTrips:'поездки за товаром', m60UsedInv:'вложения',
+  m60UsedMem:n=>n?n+' '+ruPlural(n,['строку','строки','строк'])+' памяти':'память', m60UsedExp:'знания эксперта', m60UsedImg:'фото', m60UsedNone:'только ваш вопрос', m60UsedA:'Открыть, что уходило Сифре',
+  m60ErrOff:'Нет интернета — рынок дня не обновился. Ваши записи сохраняются на телефоне.', m60ErrSrv:'Сервер Mira не ответил — рынок дня не обновился. Ваши записи на телефоне, с ними всё в порядке.', m60ErrOld:t=>' Показываю выпуск: '+t+'.',
+  sfErr:'Сифра не ответила: сервер занят или пропала связь. Подождите минуту и отправьте вопрос ещё раз.',
+  hbLDErr:'Учёба дня не загрузилась: сервер не ответил. Откройте раздел позже — ваши записи на месте.', hbLearnErr:'Урок не подготовлен: сервер не ответил. Проверьте интернет и нажмите ещё раз.' },
+tg:{ m60FcQ:(d,v)=>d+' '+v+' лозим аст. Чӣ қадар аллакай ҷудо шудааст?', m60FcSub:'Нақд ва дар корт — он чӣ ба бонк дода метавонед. Ворид кунед — Mira мегӯяд, ки мерасад ё не.',
+  m60FcOld:(v,d)=>'Бақияи пешина — '+v+' аз '+d+' — аз як ҳафта кӯҳнатар аст, бинобар ин ба ҳисоб гирифта нашуд. Бақияи имрӯзаро ворид кунед.', m60FcRow:'барои пардохт', m60RdQ:'бақия ворид нашудааст',
+  m60QFcU:d=>'Ҳар рӯз чӣ қадар ҷудо кунам, ки то '+d+' расад?', m60QFcS:d=>'Чаро '+d+' намерасад ва чӣ кор кунам?', m60QFcOk:n=>'Дар '+n+' рӯзи наздик ба пардохтҳо чӣ халал расонда метавонад?',
+  m60QLoans:'Кадом қарзро аввал пӯшонам, ки фоиз камтар диҳам?',
+  m60Nav:'Сифра', m60SfT:'Сифра дар панели поён', m60SfS:'Хомӯш кунед — доираи шинокунанда бармегардад, онро ба ҷои қулай кашидан мумкин аст.', m60Deleted:'Нест карда шуд', m60NumA:'пахш кунед, то бубинед, ки аз чӣ ҷамъ шудааст',
+  m60Used:'Ба ҳисоб гирифтам', m60UsedL:n=>n+' қарз', m60UsedLx:'қарзҳо', m60UsedShop:'даромади мағоза', m60UsedRates:'қурби асъор', m60UsedEarn:'сабтҳои даромад', m60UsedTrips:'сафарҳо барои мол', m60UsedInv:'сармоягузорӣ',
+  m60UsedMem:n=>n?n+' сатри хотира':'хотира', m60UsedExp:'дониши коршинос', m60UsedImg:'акс', m60UsedNone:'танҳо саволи шумо', m60UsedA:'Кушодани он чӣ ба Сифра рафт',
+  m60ErrOff:'Интернет нест — бозори рӯз нав нашуд. Сабтҳои шумо дар телефон нигоҳ дошта мешаванд.', m60ErrSrv:'Сервери Mira ҷавоб надод — бозори рӯз нав нашуд. Сабтҳои шумо дар телефон, бо онҳо ҳама чиз хуб аст.', m60ErrOld:t=>' Нашри пешинаро нишон медиҳам: '+t+'.',
+  sfErr:'Сифра ҷавоб надод: сервер банд аст ё алоқа канда шуд. Як дақиқа интизор шавед ва саволро боз фиристед.',
+  hbLDErr:'Дарси рӯз бор нашуд: сервер ҷавоб надод. Бахшро дертар кушоед — сабтҳои шумо дар ҷояшон.', hbLearnErr:'Дарс тайёр нашуд: сервер ҷавоб надод. Интернетро санҷед ва боз пахш кунед.' },
+en:{ m60FcQ:(d,v)=>v+' is due on '+d+'. How much is already set aside?', m60FcSub:'Cash and card money you can give to the bank. Enter it and Mira will tell you if it is enough.',
+  m60FcOld:(v,d)=>'Your last balance — '+v+' from '+d+' — is over a week old, so it was not counted. Enter today’s.', m60FcRow:'to pay', m60RdQ:'balance not entered',
+  m60QFcU:d=>'How much should I set aside each day to have enough by '+d+'?', m60QFcS:d=>'Why will I be short on '+d+' and what can I do?', m60QFcOk:n=>'What could get in the way of my payments in the next '+n+' days?',
+  m60QLoans:'Which loan should I pay off first to pay less interest?',
+  m60Nav:'Sifra', m60SfT:'Sifra in the bottom bar', m60SfS:'Turn off to bring back the floating circle; you can drag it where you like.', m60Deleted:'Deleted', m60NumA:'tap to see what it is made of',
+  m60Used:'Used', m60UsedL:n=>n+(n===1?' loan':' loans'), m60UsedLx:'loans', m60UsedShop:'shop revenue', m60UsedRates:'exchange rates', m60UsedEarn:'earnings records', m60UsedTrips:'buying trips', m60UsedInv:'investments',
+  m60UsedMem:n=>n?n+(n===1?' memory line':' memory lines'):'memory', m60UsedExp:'expert knowledge', m60UsedImg:'photo', m60UsedNone:'only your question', m60UsedA:'Open what was sent to Sifra',
+  m60ErrOff:'No internet — the market of the day was not updated. Your records are saved on the phone.', m60ErrSrv:'The Mira server did not answer — the market of the day was not updated. Your records are on the phone and safe.', m60ErrOld:t=>' Showing the edition: '+t+'.',
+  sfErr:'Sifra did not answer: the server is busy or the connection dropped. Wait a minute and send the question again.',
+  hbLDErr:'The lesson of the day did not load: the server did not answer. Open the section later — your records are in place.', hbLearnErr:'The lesson was not prepared: the server did not answer. Check the internet and tap again.' } };
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M60S[k]); }catch(e){} Object.assign(D[k],M60S[k]);
+  /* 17: ошибка «рынка дня» говорит, что случилось, что на экране и что с записями */
+  try{ Object.defineProperty(D[k],'hbErr',{configurable:true,enumerable:true,get(){ const S=D[k]; let s=(typeof navigator!=='undefined'&&navigator.onLine===false)?S.m60ErrOff:S.m60ErrSrv; try{ const t=hbToday(); if(t&&t.at) s+=S.m60ErrOld(bpTime(t.at)); }catch(e){} return s; }}); }catch(e){} }
+/* ===================== v60: первая партия выбранных идей =====================
+   1  «Нужно, а не „не хватит“»      — правка в m47.js (m47FcHTML): пока остаток не введён, прогноз спрашивает, а не пугает.
+   4  «Свежесть данных»              — там же: остаток старше недели назван и объяснён, почему не учтён.
+   8  «Сифра не закрывает кнопки»    — звезда в нижней панели рядом с плюсом; плавающий круг остаётся только на страницах без панели.
+   17 «Ошибка, которая говорит…»     — строки в m60_strings.js.
+   22 «Видно, что ответ — про вас»   — под ответом Сифры строка «Учла: …» из журнала «Что уходило Сифре».
+   24 «Готовый вопрос под графиком»  — кнопка с конкретным вопросом: одно нажатие — и Сифра отвечает.
+   2  «Нажал на число — увидел состав» — крупные суммы сами открывают лист «Как посчитано?» (w29Sheet) на нужном разделе.
+   12 «Вернуть вместо „Вы уверены?“»   — удаление сразу, внизу полоса «… · Вернуть» (та же #undoBar); вопрос остаётся там, где вернуть нельзя (фото договора, аккаунт). */
+/* ---------- 24: готовый вопрос ---------- */
+function m60AskBtn(q){ return q?`<button type="button" class="m60-askq" data-m60q="${esc(q)}">${ico('sparkle',16)}<span>${esc(q)}</span>${ico('next',14)}</button>`:''; }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('[data-m60q]'):null; if(!b) return; e.preventDefault(); const q=b.getAttribute('data-m60q');
+  try{ sifraOpen(); setTimeout(()=>{ try{ sfAsk(q,false); }catch(_){} },380); }catch(_){} });
+function m60AskLoans(){ try{ const box=document.querySelector('#m8Sum .m49-sum'); if(!box||box.querySelector('.m60-askq')) return; if(!activeList().some(x=>!x.a.done)) return; box.insertAdjacentHTML('beforeend',m60AskBtn(L.m60QLoans)); }catch(e){} }
+/* ---------- 8: Сифра в нижней панели ---------- */
+/* человек сам решает, где Сифра: в панели (по умолчанию) или прежним плавающим кругом — «Оформление → Сифра в нижней панели» */
+function m60SfNav(){ return lsGet('m60sf')!=='fab'; }
+function m60Nav(){ try{ const box=document.querySelector('#bnav .bn-in'); if(!box) return; let b=document.getElementById('bnSifra');
+  if(!m60SfNav()){ if(b) b.remove(); document.documentElement.classList.remove('m60'); return; }
+  if(!b){ b=document.createElement('button'); b.type='button'; b.id='bnSifra'; b.className='m60-sf'; b.innerHTML=`<span class="bi">${SF_AVA}</span><span class="bl"></span>`;
+    box.appendChild(b); b.addEventListener('click',()=>{ try{ sifraOpen(); }catch(e){} }); }
+  /* место — сразу после плюса: «записать» и «спросить» стоят парой посередине (плюс появляется позже панели, поэтому проверяем каждый раз) */
+  { const plus=document.getElementById('m10Plus'); if(plus&&plus.parentNode===box&&plus.nextElementSibling!==b) box.insertBefore(b,plus.nextSibling); }
+  /* пишем только при изменении: иначе запись будит наблюдателя за страницей, тот снова зовёт эту функцию — и так восемь раз в секунду без конца */
+  { const bl=b.querySelector('.bl'), al=L.sfFabTip?String(L.sfFabTip).split('.')[0]:L.m60Nav; if(bl.textContent!==L.m60Nav) bl.textContent=L.m60Nav; if(b.getAttribute('aria-label')!==al) b.setAttribute('aria-label',al); } document.documentElement.classList.add('m60');
+  /* точка «Сифра ответила, пока вас не было» раньше горела на круге — теперь и на кнопке панели */
+  { const f=document.getElementById('sfFab'); if(f&&!f._m60o){ f._m60o=1; try{ new MutationObserver(m60SfSync).observe(f,{attributes:true,attributeFilter:['class']}); }catch(e){} } m60SfSync(); } }catch(e){} }
+function m60SfSync(){ try{ const f=document.getElementById('sfFab'), b=document.getElementById('bnSifra'); if(f&&b) b.classList.toggle('m56-new',f.classList.contains('m56-new')); }catch(e){} }
+{ const _ts60=m8ThemeSheet; m8ThemeSheet=function(){ const r=_ts60.apply(this,arguments); try{ const row=sheet.querySelector('.m59-szr'); if(row&&!sheet.querySelector('#m60Sf')){ const d=document.createElement('div'); d.className='m59-row m60-sfrow';
+      d.innerHTML=`<div><b id="m60SfL">${esc(L.m60SfT)}</b><small>${esc(L.m60SfS)}</small></div><button type="button" class="m59-sw" id="m60Sf" role="switch" aria-checked="${m60SfNav()}" aria-labelledby="m60SfL"></button>`; row.parentNode.insertBefore(d,row.nextSibling);
+      d.querySelector('#m60Sf').onclick=()=>{ lsSet('m60sf',m60SfNav()?'fab':'nav'); m60Nav(); m8ThemeSheet(); try{ sheet.querySelector('#m60Sf').focus(); }catch(e){} }; } }catch(e){} return r; }; }
+/* ---------- 22: «Учла: …» ---------- */
+{ const _sa60=m52SentAdd; m52SentAdd=function(b){ const r=_sa60.apply(this,arguments); try{ const C=b&&b.ctx&&typeof b.ctx==='object'?b.ctx:{}, a=m52Sent(), x=a[a.length-1]; if(x){ x.nl=Array.isArray(C.loans)?C.loans.length:(Array.isArray(C.loans_full)?C.loans_full.length:0); x.nm=Array.isArray(C.memory)?C.memory.length:0; localStorage.setItem('m52sent',JSON.stringify(a.slice(-40))); } }catch(e){} return r; }; }
+function m60UsedList(x){ const a=[]; if(!x||!Array.isArray(x.has)) return a; const h=x.has;
+  if(h.includes('loans')||h.includes('loans_full')) a.push(x.nl?L.m60UsedL(x.nl):L.m60UsedLx); if(h.includes('shop_month_tjs')) a.push(L.m60UsedShop); if(h.includes('earn')) a.push(L.m60UsedEarn); if(h.includes('rates_tjs')) a.push(L.m60UsedRates);
+  if(h.includes('recent_trips')) a.push(L.m60UsedTrips); if(h.includes('invest')) a.push(L.m60UsedInv); if(h.includes('memory')) a.push(L.m60UsedMem(x.nm||0)); if(h.includes('expert')) a.push(L.m60UsedExp); if(x.img) a.push(L.m60UsedImg); return a; }
+/* запись журнала, относящаяся к ответу i: отправка между вопросом человека и этим ответом */
+function m60SentFor(i){ try{ const log=sfLog(), m=log[i]; let u=null; for(let k=i-1;k>=0;k--){ if(log[k].r==='u'){ u=log[k]; break; } } if(!u||!u.ts) return null; const t1=(m&&m.ts)||Date.now(), S=m52Sent(); let best=null;
+  for(const x of S){ if(x.ts>=u.ts-1500&&x.ts<=t1+1500){ if(!best||x.ts>best.ts) best=x; } } return best; }catch(e){ return null; } }
+{ const _sm60=sfMsgHTML; sfMsgHTML=function(m,i){ let h=_sm60.apply(this,arguments); try{ if(m&&m.r==='a'&&m.t){ const x=m60SentFor(i); if(x){ const a=m60UsedList(x);
+      h=h.replace(/<\/div>\s*$/,`<button type="button" class="m60-used" data-m60used="1" aria-label="${esc(L.m60UsedA)}">${ico('eye',14)}<span>${esc(L.m60Used)}: ${esc(a.length?a.join(' · '):L.m60UsedNone)}</span></button></div>`); } } }catch(e){} return h; }; }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('[data-m60used]'):null; if(!b) return; e.preventDefault(); try{ m52Panel('sent'); }catch(_){} });
+/* ---------- 2: число открывает свой состав ---------- */
+function m60Nums(){ try{ const tag=(el,k,sec)=>{ if(!el||el.dataset.m60why) return; el.dataset.m60why=k; if(sec!=null) el.dataset.m60sec=String(sec); el.classList.add('m60-num'); el.setAttribute('role','button'); el.setAttribute('tabindex','0'); el.setAttribute('aria-label',(el.textContent||'').replace(/\s+/g,' ').trim()+' — '+L.m60NumA); };
+  const one=document.querySelector('#view-today .m7-hero:not(.m7-multi)'); if(one){ const pb=one.querySelector('[data-action="pay"][data-id]'), am=one.querySelector('.m7-h-amt'); if(am&&pb) tag(am,'loan:'+pb.dataset.id); }
+  const S=document.getElementById('m8Sum'); if(S){ tag(S.querySelector('.m49-big'),'loans',0); let n=1; S.querySelectorAll('.m49-stats > div:not(.go)').forEach(d=>{ tag(d.querySelector('b'),'loans',n++); }); } }catch(e){} }
+function m60NumOpen(el){ const k=el.dataset.m60why, sec=el.dataset.m60sec; try{ w29Sheet(k); if(sec!=null){ const ss=sheet.querySelectorAll('.w29-body .w29-s'), x=ss[+sec]; if(x){ x.classList.add('m60-hl'); setTimeout(()=>{ try{ x.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'}); }catch(_){} },60); } } }catch(e){} }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('.m60-num[data-m60why]'):null; if(!b) return; e.preventDefault(); e.stopPropagation(); m60NumOpen(b); });
+document.addEventListener('keydown',e=>{ if(e.key!=='Enter'&&e.key!==' ') return; const b=e.target&&e.target.matches&&e.target.matches('.m60-num[data-m60why]')?e.target:null; if(!b) return; e.preventDefault(); m60NumOpen(b); });
+/* ---------- 12: «Вернуть» вместо «Вы уверены?» ---------- */
+const M60U={snap:null,t:0,tm:0};
+function m60Bar(msg,snap){ let bar=$('#undoBar'); if(!bar){ bar=document.createElement('div'); bar.id='undoBar'; bar.className='undo'; document.body.appendChild(bar); }
+  bar.innerHTML=`<span>${ico('trash',16)} ${esc(msg)}</span><button id="undoBtn" type="button">${ico('repeat',16)} ${esc(L.undoBtn)}</button><i></i>`; bar.classList.remove('show'); void bar.offsetWidth; bar.classList.add('show');
+  clearTimeout(undoT); undoT=setTimeout(()=>bar.classList.remove('show'),6000);
+  $('#undoBtn').onclick=()=>{ clearTimeout(undoT); bar.classList.remove('show'); try{ const c=JSON.parse(snap); for(const k in c) state[k]=c[k]; ensureShop(); ensureV5(); ensureV6(); persist(); closeSheet(); render(); try{ if(document.documentElement.classList.contains('bp-lock')) bpRender(); }catch(_){} toast(L.undoDone); }catch(e){ toast(L.undoFail); } }; }
+/* запоминаем состояние перед удалением; полоса появится с тем сообщением, которое покажет само удаление, либо с «Удалено» */
+function m60Arm(){ try{ M60U.snap=JSON.stringify(state); M60U.t=Date.now(); clearTimeout(M60U.tm); M60U.tm=setTimeout(()=>{ if(M60U.snap){ const s=M60U.snap; M60U.snap=null; m60Bar(L.m60Deleted,s); } },450); }catch(e){ M60U.snap=null; } }
+{ const _t60=toast; toast=function(msg){ if(M60U.snap&&Date.now()-M60U.t<900&&msg!==L.undoDone&&msg!==L.undoFail){ const s=M60U.snap; M60U.snap=null; clearTimeout(M60U.tm); return m60Bar(msg,s); } return _t60.apply(this,arguments); }; }
+/* «нажмите ещё раз»: удаляем с первого нажатия */
+{ const _ct60=confirmTwice; confirmTwice=function(btn){ /* документ с фото: фото вернуть нельзя — там остаётся второе нажатие */ if(btn&&btn.id==='m33-dfx') return _ct60.apply(this,arguments); m60Arm(); return true; }; }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest?e.target.closest('#m44Del,#chk-del,[data-m46del],[data-m51del],#ps-del'):null; if(!t) return;
+  if(t.id==='ps-del'){ m60Arm(); setTimeout(()=>{ const y=document.getElementById('ps-yes'); if(y) y.click(); else { M60U.snap=null; clearTimeout(M60U.tm); } },0); return; }
+  if(t.dataset.sure!=='1'){ m60Arm(); t.dataset.sure='1'; } },true);
+/* кредит: без фото договора удаляем сразу с «Вернуть»; с фото — прежний вопрос (фото вернуть нельзя) */
+{ const _cd60=confirmDelete; confirmDelete=function(loan){ const docs=loan&&Array.isArray(loan.docs)&&loan.docs.length>0; if(docs) return _cd60.apply(this,arguments); m60Arm(); const r=_cd60.apply(this,arguments); try{ const y=document.getElementById('d-yes'); if(y) y.click(); }catch(e){} return r; }; }
+/* ---------- после каждой перерисовки ---------- */
+{ const _r60=render; render=function(){ const x=_r60.apply(this,arguments); try{ m60Nav(); m60AskLoans(); m60Nums(); }catch(e){} return x; }; }
+try{ m60Nav(); m60AskLoans(); m60Nums(); }catch(e){}
+/* главная и сводка перерисовываются и по частям, без общего render(): следим за изменениями и размечаем заново (не чаще раза в 120 мс) */
+{ let tm=0; try{ new MutationObserver(()=>{ clearTimeout(tm); tm=setTimeout(()=>{ try{ m60Nums(); m60AskLoans(); m60Nav(); }catch(e){} },120); }).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
