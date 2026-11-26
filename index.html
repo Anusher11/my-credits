@@ -6227,6 +6227,13 @@ html.m59[data-lk="paper"] .m7-hero::before,html.m59[data-lk="paper"] .m7-hero::a
 html.m59[data-lk="glass"] .bp-page{background:radial-gradient(62% 30% at 4% 2%,#CDB8FF 0%,rgba(205,184,255,0) 72%),radial-gradient(56% 26% at 104% 30%,#FFCDB8 0%,rgba(255,205,184,0) 70%),radial-gradient(64% 28% at -6% 70%,#F4BEDD 0%,rgba(244,190,221,0) 72%),#EAE6F3!important; background-attachment:fixed!important;}
 html.m59 .m49-ring small{display:none!important;}   /* слово «выплачено» в кольце не помещалось; оно уже написано рядом, строкой ниже суммы */
 html.m59[data-lk="paper"] .m54-bg{opacity:.4;} html.m59[data-lk="night"] .m54-bg{opacity:.55;}
+/* v59.1, по снимку с телефона 360px. Несколько платежей в один день: кнопка короче и без тени, названию банка хватает места — слово не рвётся посередине */
+html.m59 .m7-h-row{gap:calc(var(--k)*10px)!important; padding:calc(var(--k)*11px) calc(var(--k)*11px) calc(var(--k)*11px) calc(var(--k)*13px)!important;}
+html.m59 .m7-h-rn>b{font-size:1rem!important; font-weight:700!important;}
+html.m59 .m7-h-rn span{font-size:.86rem!important;}
+html.m59 .m7-h-rb{min-height:calc(var(--k)*44px)!important; padding:0 calc(var(--k)*14px)!important; font-size:.9rem!important; box-shadow:none!important; border-radius:calc(var(--m40-r) * .55)!important;}
+/* под парящей панелью содержимое мягко гаснет и не выглядывает из-под неё снизу («Бумаге» не нужно: там панель прижата к краю) */
+html.m59:not([data-lk="paper"]) body::after{content:""; position:fixed; left:0; right:0; bottom:0; height:calc(calc(var(--k)*62px) + env(safe-area-inset-bottom,0px)); background:linear-gradient(to bottom,transparent,var(--bg) 80%); pointer-events:none; z-index:24;}
 /* значки одного ряда размеров; размер идёт за общим масштабом */
 :where(svg.mi[width="14"]){width:.875rem; height:.875rem;}
 :where(svg.mi[width="16"]){width:1rem; height:1rem;}
@@ -16422,7 +16429,7 @@ function m7HeroHTML(list){
     if(lateG){ const pp=grp.map(x=>penaltyPerDay(x.loan,x.a)), mx=Math.max(...pp);
       if(mx>0&&pp.filter(v=>v===mx).length===1){ first=grp[pp.indexOf(mx)]; firstWhy=L.m7FirstPen; }
       else if(!(mx>0)){ const rr=grp.map(x=>+x.loan.rate||0), mr=Math.max(...rr); if(mr>0&&rr.filter(v=>v===mr).length===1){ first=grp[rr.indexOf(mr)]; firstWhy=L.m7FirstRate; } } }
-    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn">${x===first?`<span class="m7-h-first">${firstWhy}</span>`:''}<b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${m53M(x.loan,m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${x.a.part>0?`<span>${L.m7PartOf(money(x.a.part),money(x.a.amtFull))}</span>`:''}${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${m53M(x.loan,m7Amt(x.a))}">${L.m7Paid}</button></div>`).join('');
+    const rows=grp.map(x=>`<div class="m7-h-row"><div class="m7-h-rn">${x===first?`<span class="m7-h-first">${firstWhy}</span>`:''}<b>${esc(x.loan.name)}</b><span><b class="m7-h-ra">${m53M(x.loan,m7Amt(x.a))}</b> · ${fmtDate(x.a.due)}</span>${x.a.part>0?`<span>${L.m7PartOf(money(x.a.part),money(x.a.amtFull))}</span>`:''}${lateG?`<span>${L.m7Late(-x.a.days)}</span>`:''}</div><button class="m7-b1 m7-h-rb" data-action="pay" data-id="${x.loan.id}" aria-label="${L.m7Paid}: ${esc(x.loan.name)}, ${m53M(x.loan,m7Amt(x.a))}">${L.m59Mark||L.m7Paid}</button></div>`).join('');
     return `<div class="m7-hero m7-multi ${lateG?'late':''}">
       <div class="m7-h-top"><div class="m7-h-n"><span>${lateG?L.m7LateN(grp.length):L.m7SameDay(grp.length)}</span><b>${lateG?L.m7LateSum:fmtDate(nx.a.due)+' · '+whenText(nx.a.days)}</b></div></div>
       <div class="m7-h-amt">${m7Num0(tot)}<small>${esc(L.cur)}</small></div>
@@ -24838,7 +24845,7 @@ function m49SumHTML(list){ const real=list.filter(x=>!x.loan.example), act=real.
   let step=null; try{ const ms=DD?DD.months:[], k0=ms.findIndex(m=>m.t>0.5); if(k0>=0){ const v0=ms[k0].t; for(let k=k0+1;k<ms.length;k++){ const v=ms[k].t; if(v<=0.5) break; if(v<v0-0.5){ step={d:ms[k].d,v:(ms[k].rows||[]).reduce((s,r)=>s+Math.round(+r.amt||0),0)||v}; break; } } } }catch(e){}
   const S=state.misc&&state.misc.lr47, rep=S&&S.rep, avg=rb>0?rw/rb:0; let rateSub='';
   if(rep&&+rep.avg_lo>0&&+rep.avg_hi>0&&avg>0){ const lo=+rep.avg_lo, hi=+rep.avg_hi, cls=avg>hi+0.5?'hi':avg<lo-0.5?'lo':'ok'; rateSub=`<em class="m49-rt ${cls}">${esc(L.m49RateMkt(m12Pct(lo),m12Pct(hi)))} · ${esc(cls==='hi'?L.m49RateHi:cls==='lo'?L.m49RateLo:L.m49RateOk)}</em>`; }
-  else if(avg>0) rateSub=`<em class="m49-rt cmp" data-m49rt>${esc(L.m49RateCmp)} ↓</em>`;
+  else if(avg>0) rateSub=`<em class="m49-rt cmp" data-m49rt>${esc(L.m49RateCmp)}&nbsp;↓</em>`;
   const pd=m49PerDay();
   const st=[`<div><small>${L.m12Month}</small><b>${money(mon)}</b><em>${esc(step?L.m49MonSub(lang==='ru'?MONTHS.ru.long[step.d.getMonth()]+' '+step.d.getFullYear():m8MonLabel(step.d),money(step.v)):L.m49MonFlat)}</em></div>`];
   if(rb>0) st.push(`<div><small>${L.m12AvgRate}</small><b>${m12Pct(avg)}%</b>${rateSub}</div>`);
@@ -27982,12 +27989,12 @@ ru:{ m59ThT:'Оформление', m59ThL:'Четыре разных вида. 
   m59P:'Бумага', m59Ps:'светлое и спокойное, ничего лишнего', m59G:'Стекло', m59Gs:'полупрозрачные слои и мягкий свет',
   m59N:'Ночь', m59Ns:'тёмное, бережёт глаза вечером', m59C:'Сочный', m59Cs:'яркий цвет и круглые формы',
   m59Auto:'В темноте включать «Ночь»', m59AutoS:'когда в телефоне включена тёмная тема',
-  m59Sz:'Размер', m59Sz1:'Мельче', m59Sz2:'Обычный', m59Sz3:'Крупнее', m59Sz4:'Самый крупный' },
+  m59Mark:'Отметить', m59Sz:'Размер', m59Sz1:'Мельче', m59Sz2:'Обычный', m59Sz3:'Крупнее', m59Sz4:'Самый крупный' },
 tg:{ m59ThT:'Ороиш', m59ThL:'Чор намуди гуногун. Ҳамонашро интихоб кунед, ки ба чашм форам аст — маълумот ва ҷойгиршавӣ тағйир намеёбад.',
   m59P:'Коғаз', m59Ps:'равшан ва ором, бе чизи зиёдатӣ', m59G:'Шиша', m59Gs:'қабатҳои нимшаффоф ва нури нарм',
   m59N:'Шаб', m59Ns:'торик, шабона чашмро эҳтиёт мекунад', m59C:'Шодоб', m59Cs:'ранги тез ва шаклҳои гирд',
   m59Auto:'Дар торикӣ «Шаб»-ро фаъол кардан', m59AutoS:'вақте дар телефон намуди торик фаъол аст',
-  m59Sz:'Андоза', m59Sz1:'Хурдтар', m59Sz2:'Оддӣ', m59Sz3:'Калонтар', m59Sz4:'Аз ҳама калон' },
+  m59Mark:'Пардохтам', m59Sz:'Андоза', m59Sz1:'Хурдтар', m59Sz2:'Оддӣ', m59Sz3:'Калонтар', m59Sz4:'Аз ҳама калон' },
 en:{ m59ThT:'Appearance', m59ThL:'Four different looks. Pick the one that is easy on your eyes — your data and layout stay the same.',
   m59P:'Paper', m59Ps:'light and calm, nothing extra', m59G:'Glass', m59Gs:'translucent layers and soft light',
   m59N:'Night', m59Ns:'dark, easy on the eyes in the evening', m59C:'Juicy', m59Cs:'bright colour and round shapes',
@@ -28040,7 +28047,10 @@ m8ThemeSheet=function(){ const cur=m59Pref(), au=m59Auto(), sc=m59Scale(), near=
   sheet.querySelectorAll('[data-m59lk]').forEach(b=>b.onclick=()=>{ m59Set(b.dataset.m59lk); m8ThemeSheet(); back(`[data-m59lk="${b.dataset.m59lk}"]`); });
   const a=sheet.querySelector('#m59Au'); if(a) a.onclick=()=>{ m59SetAuto(!m59Auto()); m8ThemeSheet(); back('#m59Au'); };
   sheet.querySelectorAll('[data-m59sz]').forEach(b=>b.onclick=()=>{ lsSet('fscale_v1',b.dataset.m59sz); applyLook(); m8ThemeSheet(); back(`[data-m59sz="${b.dataset.m59sz}"]`); }); };
+/* v59.1: у человека с именем в шапке стояло «имя / Добрый день», а ниже на главной ещё раз «Добрый день, имя». В шапке теперь «имя / Mira» — приветствие одно. */
+const _rp59=renderProfile; renderProfile=function(){ const x=_rp59.apply(this,arguments); try{ const p=state.profile, sub=$('#appSub'), ti=$('#appTitle'), nm=!!(p&&p.first); if(nm&&sub) sub.textContent=L.appName; if(ti) ti.style.textTransform=nm?'none':''; /* имя пишем как ввели: строчными оставляем только название «mira» */ }catch(e){} return x; };
 try{ applyLook(); m40Apply(); }catch(e){}
+try{ renderProfile(); }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
