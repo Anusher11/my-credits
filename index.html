@@ -6453,6 +6453,115 @@ html.m60:not(.bp-lock) #sfFab{display:none!important;}
 .w29-s.m60-hl{background:var(--brand-weak); border-radius:calc(var(--k)*12px); box-shadow:0 0 0 calc(var(--k)*8px) var(--brand-weak);}
 /* 12: полоса «Вернуть» — значки в один ряд с текстом */
 #undoBar span,#undoBar button{display:inline-flex; align-items:center; gap:calc(var(--k)*6px);}
+/* ================== v61: вторая партия выбранных идей (6, 10, 14, 15, 16, 18, 19) ================== */
+/* ---------- 6: главная в два экрана — свёрнутая карточка это строка «название · итог» ---------- */
+#view-today > section.m61-c:not(.m61-o){display:none!important;}
+#view-today > .m61-hd{margin:0 0 calc(var(--k)*10px);}
+#view-today > .m61-hd[hidden]{display:none!important;}
+.m61-row{display:flex; align-items:center; gap:calc(var(--k)*12px); width:100%; min-height:calc(var(--k)*60px); padding:calc(var(--k)*10px) calc(var(--k)*12px) calc(var(--k)*10px) calc(var(--k)*12px); background:var(--surface); border:1px solid var(--line); border-radius:calc(var(--k)*18px); color:var(--ink); font:inherit; text-align:left; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+html.m40[data-sk] .m61-row, html.m40[data-sk] .m61-qb{background:var(--m40-card)!important; border:1px solid var(--m40-bd)!important; border-radius:var(--m40-r)!important; box-shadow:var(--shadow)!important; -webkit-backdrop-filter:var(--m40-blur); backdrop-filter:var(--m40-blur);}
+.m61-row:focus-visible,.m61-qb:focus-visible,.m61-gh:focus-visible,.m61-x:focus-visible,.m61-grab:focus-visible{outline:calc(var(--k)*3px) solid var(--brand); outline-offset:2px;}
+.m61-row:active,.m61-qb:active{transform:scale(.985);}
+.m61-i,.m61-qi{flex:none; width:calc(var(--k)*36px); height:calc(var(--k)*36px); border-radius:calc(var(--k)*12px); display:grid; place-items:center; background:var(--brand-weak); color:var(--brand);}
+.m61-tx{flex:1; min-width:0; display:grid; gap:1px;}
+.m61-tx b{font-size:.92rem; font-weight:700; line-height:1.25; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m61-tx small{font-size:.8rem; line-height:1.3; color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m61-row > svg{flex:none; color:var(--muted);}
+/* раскрытая карточка: над ней остаётся только тихая кнопка «Свернуть» */
+#view-today > .m61-hd.o{margin:0 0 2px; display:flex; justify-content:flex-end;}
+html.m40[data-sk] .m61-hd.o .m61-row, .m61-hd.o .m61-row{width:auto; min-height:calc(var(--k)*44px); padding:0 calc(var(--k)*6px) 0 calc(var(--k)*12px); gap:calc(var(--k)*6px); background:none!important; border:0!important; box-shadow:none!important; -webkit-backdrop-filter:none; backdrop-filter:none; color:var(--muted); font-size:.82rem; font-weight:600;}
+.m61-all{margin-bottom:0!important;}
+
+/* ---------- 10: «Ещё» — сначала вопрос, разделы свёрнуты ---------- */
+.m61-q{margin:calc(var(--k)*4px) 0 calc(var(--k)*6px);}
+.m61-q h2{margin:0 calc(var(--k)*4px) calc(var(--k)*8px); font-size:.9rem; font-weight:800; color:var(--muted);}
+.m61-qg{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:calc(var(--k)*10px);}
+.m61-qb{display:flex; flex-direction:column; align-items:flex-start; gap:calc(var(--k)*8px); min-height:calc(var(--k)*104px); padding:calc(var(--k)*12px); background:var(--surface); border:1px solid var(--line); border-radius:calc(var(--k)*18px); color:var(--ink); font:inherit; text-align:left; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.m61-qt{display:grid; gap:2px; min-width:0; max-width:100%;}
+.m61-qt b{font-size:.92rem; font-weight:700; line-height:1.22; overflow-wrap:anywhere;}
+.m61-qt small{font-size:max(.76rem,8.25pt); line-height:1.3; color:var(--muted); overflow-wrap:anywhere;}
+html.m40[data-sk] .m61-qb.on, .m61-qb.on{border-color:var(--brand)!important; box-shadow:0 0 0 1px var(--brand)!important;}
+.m61-qb.on .m61-qi{background:var(--brand); color:var(--m40-act-ink,#FFFFFF);}
+.m61-ql{margin-top:calc(var(--k)*10px);}
+.m61-ql[hidden]{display:none!important;}
+.m61-ql .m61-qr:first-child{border-top:0!important;}
+#moreView .m61-g{margin-top:0;}
+#moreView .m61-g > h2{margin:0;}
+.m61-gh{display:flex; align-items:center; gap:calc(var(--k)*10px); width:100%; min-height:calc(var(--k)*52px); padding:0 calc(var(--k)*4px); border:0; border-top:1px solid var(--line); background:none; color:var(--ink); font:inherit; font-size:1rem; font-weight:700; text-align:left; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+#moreView .m61-q + .m61-g .m61-gh{border-top:0; margin-top:calc(var(--k)*8px);}
+.m61-gt{flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.m61-gn{flex:none; min-width:calc(var(--k)*28px); padding:2px calc(var(--k)*8px); border-radius:calc(var(--k)*99px); background:var(--surface-2); color:var(--muted); font-size:max(.76rem,8.25pt); font-weight:600; text-align:center;}
+.m61-gn::before{content:attr(data-n);}   /* число инструментов — оформление: в текст заголовка раздела оно не попадает */
+.m61-gh > svg{flex:none; color:var(--muted);}
+.m61-g:not(.m61-go) > :not(h2){display:none!important;}
+.m61-g.m61-go > h2{margin-bottom:calc(var(--k)*8px)!important;}
+.m61-g.m61-go{margin-bottom:calc(var(--k)*14px);}
+.m61-gall{margin-top:calc(var(--k)*14px)!important;}
+/* одна стрелка на «раскрыть» и «свернуть»: во втором случае она перевёрнута */
+.m61-hd.o .m61-row > svg, .m61-all[data-m61all="0"] > svg, .m61-gh[aria-expanded="true"] > svg, .m61-gall[data-m61gall="0"] > svg{transform:rotate(180deg);}
+
+/* ---------- 14: окна с двумя высотами и крестиком ---------- */
+.sheet.m61-hasx::before{display:none!important;}
+.sheet.m61-hasx{transition:max-height .26s cubic-bezier(.2,.75,.2,1);}
+.sheet.m61-half{max-height:58vh!important; max-height:58dvh!important;}
+.m61-sx{position:sticky; top:calc(var(--k)*-22px); z-index:6; display:flex; justify-content:center; align-items:center; height:calc(var(--k)*40px); margin:calc(var(--k)*-22px) calc(var(--k)*-20px) 2px; background:var(--surface); border-radius:calc(var(--k)*28px) calc(var(--k)*28px) 0 0;}
+html.m40[data-sk] .m61-sx{background:var(--bg);}
+html.m40[data-sk="a"] .m61-sx, html.m40[data-sk="c"] .m61-sx{background:#FFFFFF;}
+html.m59[data-lk="glass"] .m61-sx{background:transparent; -webkit-backdrop-filter:blur(calc(var(--k)*18px)) saturate(160%); backdrop-filter:blur(calc(var(--k)*18px)) saturate(160%);}   /* у «Стекла» окно полупрозрачное: своя заливка дала бы полосу другого тона, поэтому полоса прозрачна, а то, что прокручено под неё, размыто */
+.m61-grab{display:grid; place-items:center; width:calc(var(--k)*88px); height:calc(var(--k)*40px); padding:0; border:0; background:none; cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.m61-grab[hidden]{display:grid!important; pointer-events:none;}   /* у короткого окна ручка остаётся видна (за неё тянут вниз), но не нажимается */
+.m61-grab i{display:block; width:calc(var(--k)*40px); height:calc(var(--k)*5px); border-radius:calc(var(--k)*99px); background:color-mix(in srgb,var(--muted) 38%,transparent);}
+.m61-x{position:absolute; right:calc(var(--k)*4px); top:0; display:grid; place-items:center; width:calc(var(--k)*44px); height:calc(var(--k)*44px); padding:0; border:0; border-radius:50%; background:none; color:var(--muted); cursor:pointer; -webkit-tap-highlight-color:transparent;}
+.m61-x::before{content:""; position:absolute; inset:calc(var(--k)*7px); border-radius:50%; background:var(--surface-2);}
+.m61-x svg{position:relative;}
+@media (min-width:540px){ .m61-grab{visibility:hidden;} }
+@media (prefers-reduced-motion:reduce){ .sheet.m61-hasx{transition:none;} }
+
+/* ---------- 15: плавный переход ---------- */
+@keyframes m61vtOutF{to{opacity:0; transform:translateX(calc(var(--k)*-16px));}}
+@keyframes m61vtInF{from{opacity:0; transform:translateX(calc(var(--k)*16px));}}
+@keyframes m61vtOutB{to{opacity:0; transform:translateX(calc(var(--k)*16px));}}
+@keyframes m61vtInB{from{opacity:0; transform:translateX(calc(var(--k)*-16px));}}
+html.m61-vt[data-m61dir="f"]::view-transition-old(root){animation:m61vtOutF .13s ease-in both;}
+html.m61-vt[data-m61dir="f"]::view-transition-new(root){animation:m61vtInF .22s cubic-bezier(.2,.75,.2,1) both;}
+html.m61-vt[data-m61dir="b"]::view-transition-old(root){animation:m61vtOutB .13s ease-in both;}
+html.m61-vt[data-m61dir="b"]::view-transition-new(root){animation:m61vtInB .22s cubic-bezier(.2,.75,.2,1) both;}
+html.m61-vt .bnav{view-transition-name:m61nav;}
+html.m61-vt .wrap > header{view-transition-name:m61head;}
+html.m61-vt #demoBar{view-transition-name:m61demo;}
+::view-transition-group(m61nav),::view-transition-group(m61head),::view-transition-group(m61demo){animation-duration:.01s;}
+html.m61-vt .m8-fade{animation:none!important;}
+.m61-gw{position:fixed; inset:0; z-index:41; background:rgba(12,8,24,.46); pointer-events:none;}
+.m61-ghost{pointer-events:none;}
+
+/* ---------- 16: число, которое считает ---------- */
+.m61-n.m61-tw{display:inline-grid; -webkit-text-fill-color:transparent;}
+.m61-n.m61-tw::after{content:attr(data-m61v); grid-area:1/1; -webkit-text-fill-color:currentColor; white-space:nowrap;}
+@keyframes m61fl{0%{background-color:var(--brand-weak); box-shadow:0 0 0 calc(var(--k)*5px) var(--brand-weak);} 100%{background-color:transparent; box-shadow:0 0 0 calc(var(--k)*5px) transparent;}}
+.m61-fl{animation:m61fl 1.4s ease-out 1; border-radius:calc(var(--k)*6px);}
+#m8Prog .m11-nums b, #miraMonth .m7-m-s b, #m8Sum .m49-stats b{font-variant-numeric:tabular-nums;}
+@media (prefers-reduced-motion:reduce){ .m61-fl{animation:none;} }
+
+/* ---------- 18: панель, которая уступает место ---------- */
+.bnav button{transition:height .2s ease;}
+.bnav .bl{transition:max-height .2s ease, opacity .16s ease; max-height:calc(var(--k)*18px);}
+.m10-plus .m10-pi{transition:transform .2s ease, margin .2s ease;}
+html.m61-nc .bnav button{height:calc(var(--k)*46px)!important;}
+html.m61-nc .bnav .bl{max-height:0!important; opacity:0!important;}
+html.m61-nc .m10-plus .m10-pi{transform:scale(.8); margin-top:calc(var(--k)*-14px)!important;}
+@media (prefers-reduced-motion:reduce){ .bnav button,.bnav .bl,.m10-plus .m10-pi{transition:none;} }
+
+/* ---------- 19: загрузка без пустоты ---------- */
+@keyframes m61shim{from{background-position:200% 0;} to{background-position:-200% 0;}}
+@keyframes m61skin{from{opacity:0;} to{opacity:1;}}
+.m61-sk{display:grid; gap:calc(var(--k)*10px); margin:calc(var(--k)*16px) 0 calc(var(--k)*4px); animation:m61skin .3s ease both;}
+.m61-sk i,.m61-skl i{display:block; height:calc(var(--k)*12px); border-radius:calc(var(--k)*6px); background:linear-gradient(90deg,color-mix(in srgb,var(--muted) 12%,transparent) 0%,color-mix(in srgb,var(--muted) 24%,transparent) 50%,color-mix(in srgb,var(--muted) 12%,transparent) 100%); background-size:200% 100%; animation:m61shim 1.5s linear infinite;}
+.m61-sk i.h{height:calc(var(--k)*18px); width:54%;} .m61-sk i.s,.m61-skl i.s{width:66%;}
+.m61-sk .c{display:grid; gap:calc(var(--k)*10px); margin-top:calc(var(--k)*6px); padding:calc(var(--k)*16px); border:1px solid var(--line); border-radius:calc(var(--k)*18px);}
+.m61-skl{display:grid; gap:calc(var(--k)*8px); width:100%; flex-basis:100%; margin-top:calc(var(--k)*10px); min-width:calc(var(--k)*180px);}
+.sf-wait.m52-w .m61-skl{display:none;}
+.sf-m.a.sf-wait:has(.m61-skl){flex-wrap:wrap;}
+@media (prefers-reduced-motion:reduce){ .m61-sk,.m61-sk i,.m61-skl i{animation:none;} }
 /* <</v44 css>> */
 
 
@@ -28187,6 +28296,225 @@ document.addEventListener('click',e=>{ const t=e.target&&e.target.closest?e.targ
 try{ m60Nav(); m60AskLoans(); m60Nums(); }catch(e){}
 /* главная и сводка перерисовываются и по частям, без общего render(): следим за изменениями и размечаем заново (не чаще раза в 120 мс) */
 { let tm=0; try{ new MutationObserver(()=>{ clearTimeout(tm); tm=setTimeout(()=>{ try{ m60Nums(); m60AskLoans(); m60Nav(); }catch(e){} },120); }).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
+/* ---------- v61: строки второй партии идей (6, 10, 14, 15, 16, 18, 19) ---------- */
+const M61S={ru:{
+  m61Open:t=>`Раскрыть: ${t}`, m61Fold:'Свернуть', m61FoldA:t=>`Свернуть: ${t}`, m61AllOpen:'Раскрыть все карточки', m61AllFold:'Свернуть карточки',
+  m61TFc:'Хватит ли на платежи', m61TProg:'Путь к свободе', m61TBento:'Коротко о главном', m61TCal:'Ближайшие 2 недели', m61TMonth:'Этот месяц', m61TTip:'Совет дня',
+  m61Left:v=>`осталось ${v}`, m61More:n=>`ещё ${n}`,
+  m61QT:'С каким вопросом вы пришли?', m61Q:{money:'Хватит ли денег?',buy:'Что и где купить?',debt:'Как гасить кредиты?',paper:'Проверить бумагу'},
+  m61QS:{money:'прогноз, календарь, конверты',buy:'закупка, фабрики, цена',debt:'порядок, новый кредит, план Б',paper:'договор, документы, тетрадь'},
+  m61GAll:'Показать все инструменты', m61GFold:'Свернуть разделы', m61GN:n=>`${n}`, m61GOpenA:t=>`Раскрыть раздел: ${t}`, m61GFoldA:t=>`Свернуть раздел: ${t}`,
+  m61MoreLead:'Начните с вопроса или откройте раздел',
+  m61X:'Закрыть окно', m61Grab:'Развернуть окно на весь экран', m61GrabS:'Вернуть окно к половине экрана',
+  m61Sk:'Загружаю…'
+},tg:{
+  m61Open:t=>`Кушодан: ${t}`, m61Fold:'Пӯшидан', m61FoldA:t=>`Пӯшидан: ${t}`, m61AllOpen:'Ҳамаи кортҳоро кушодан', m61AllFold:'Кортҳоро пӯшидан',
+  m61TFc:'Барои пардохтҳо мерасад?', m61TProg:'Роҳ ба озодӣ', m61TBento:'Мухтасар дар бораи асосӣ', m61TCal:'2 ҳафтаи наздик', m61TMonth:'Ҳамин моҳ', m61TTip:'Маслиҳати рӯз',
+  m61Left:v=>`боқӣ ${v}`, m61More:n=>`боз ${n}`,
+  m61QT:'Бо кадом савол омадед?', m61Q:{money:'Пул мерасад?',buy:'Чӣ ва аз куҷо харам?',debt:'Қарзро чӣ тавр пӯшам?',paper:'Ҳуҷҷатро санҷидан'},
+  m61QS:{money:'пешгӯӣ, тақвим, лифофаҳо',buy:'харид, фабрикаҳо, нарх',debt:'тартиб, қарзи нав, нақшаи Б',paper:'шартнома, ҳуҷҷатҳо, дафтар'},
+  m61GAll:'Ҳамаи асбобҳоро нишон додан', m61GFold:'Бахшҳоро пӯшидан', m61GN:n=>`${n}`, m61GOpenA:t=>`Кушодани бахш: ${t}`, m61GFoldA:t=>`Пӯшидани бахш: ${t}`,
+  m61MoreLead:'Аз савол оғоз кунед ё бахшро кушоед',
+  m61X:'Пӯшидани тиреза', m61Grab:'Тирезаро ба тамоми экран кушодан', m61GrabS:'Тирезаро ба нисфи экран баргардондан',
+  m61Sk:'Бор мешавад…'
+},en:{
+  m61Open:t=>`Expand: ${t}`, m61Fold:'Collapse', m61FoldA:t=>`Collapse: ${t}`, m61AllOpen:'Expand all cards', m61AllFold:'Collapse cards',
+  m61TFc:'Enough for payments?', m61TProg:'Road to freedom', m61TBento:'The main things, briefly', m61TCal:'Next 2 weeks', m61TMonth:'This month', m61TTip:'Tip of the day',
+  m61Left:v=>`${v} left`, m61More:n=>`${n} more`,
+  m61QT:'What brought you here?', m61Q:{money:'Will I have enough?',buy:'What to buy and where?',debt:'How to pay off loans?',paper:'Check a document'},
+  m61QS:{money:'forecast, calendar, envelopes',buy:'purchasing, factories, price',debt:'order, new loan, plan B',paper:'contract, documents, notebook'},
+  m61GAll:'Show all tools', m61GFold:'Collapse sections', m61GN:n=>`${n}`, m61GOpenA:t=>`Expand section: ${t}`, m61GFoldA:t=>`Collapse section: ${t}`,
+  m61MoreLead:'Start with a question or open a section',
+  m61X:'Close window', m61Grab:'Expand window to full screen', m61GrabS:'Return window to half screen',
+  m61Sk:'Loading…'
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M61S[k]); }catch(e){} Object.assign(D[k],M61S[k]); }
+/* ===================== v61: вторая партия выбранных идей =====================
+   6  «Главная в два экрана»        — длинные карточки главной свёрнуты в строку с итогом и раскрываются по нажатию; порядок по-прежнему меняет только человек.
+   10 «Инструменты по вопросам»     — во вкладке «Ещё» сверху четыре вопроса, разделы ниже свёрнуты в строки.
+   14 «Окна с двумя высотами»       — длинное окно для чтения открывается на половину экрана и тянется до полной высоты; сверху крестик.
+   15 «Плавный переход»             — смена вкладок по нажатию в нижней панели идёт через переход между видами (где браузер умеет).
+   16 «Число, которое считает»      — крупные суммы докручиваются до нового значения и один раз подсвечиваются.
+   18 «Панель уступает место»       — нижняя панель сжимается при прокрутке вниз и возвращается при прокрутке вверх.
+   19 «Загрузка без пустоты»        — если ждать дольше секунды, на месте будущего ответа появляются серые контуры. */
+const M61={q:'', full:false, nums:new Map(), navT:0};
+function m61Map(key){ const v=lsGet(key); if(v==='all') return 'all'; try{ const o=JSON.parse(v||'{}'); return o&&typeof o==='object'&&!Array.isArray(o)?o:{}; }catch(e){ return {}; } }
+const m61Tx=e=>e?String(e.textContent||'').replace(/\s+/g,' ').trim():'';
+function m61Rm(){ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } }
+
+/* ---------- 6: главная в два экрана ---------- */
+const M61_HOME={m8Prog:['flag','m61TProg'],m40Fc:['zap','m61TFc'],m38Bento:['stats','m61TBento'],m10Box:['cal','m61TCal'],miraMonth:['money','m61TMonth'],dayTip:['bulb','m61TTip']};
+function m61IsOpen(id){ const m=m61Map('m61c'); return m==='all'||!!m[id]; }
+function m61SetOpen(id,on){ let m=m61Map('m61c'); if(m==='all'){ m={}; for(const k in M61_HOME) m[k]=1; } if(on) m[id]=1; else delete m[id]; lsSet('m61c',JSON.stringify(m)); }
+function m61AllOpen(){ const m=m61Map('m61c'); return m==='all'||Object.keys(M61_HOME).every(k=>m[k]); }
+/* итог одной строкой — только из того, что карточка уже показывает сама */
+function m61Sum(id,s){ try{
+  if(id==='m8Prog'){ const w=m61Tx(s.querySelector('.m11-h b')), r=s.querySelector('.m11-nums div:not(.p) b'); return [w,r?L.m61Left(m61Tx(r)):''].filter(Boolean).join(' · '); }
+  if(id==='m40Fc') return m61Tx(s.querySelector('.m47-fc.unk .m47-ask label b')||s.querySelector('.m40-ins b')||s.querySelector('.m47-ask label b'));
+  if(id==='m38Bento'){ const ts=[...s.querySelectorAll('.m38-t')], one=t=>{ const h=t.querySelector('.m38-th'), v=t.querySelector('.m38-tv'); const lab=h?[...h.childNodes].filter(n=>n.nodeType===3).map(n=>n.textContent).join(' ').replace(/\s+/g,' ').trim():''; return (lab+' '+m61Tx(v)).trim(); };
+    return ts.slice(0,2).map(one).filter(Boolean).join(' · ')+(ts.length>2?' · '+L.m61More(ts.length-2):''); }
+  if(id==='m10Box'){ const c=s.querySelector('.m10-cal'); if(!c) return ''; let x=[...c.children].filter(e=>!e.classList.contains('m10-lbl')&&!e.classList.contains('m10-days'))[0]; while(x&&x.children.length>1&&m61Tx(x).length>44) x=x.children[0]; return m61Tx(x); }
+  if(id==='miraMonth') return m61Tx(s.querySelector('.m7-m-s span'));
+  if(id==='dayTip') return m61Tx(s.querySelector('.daytip b'));
+ }catch(e){} return ''; }
+function m61Title(id,s){ try{ if(id==='miraMonth'){ const b=m61Tx(s.querySelector('.m7-m-h b')); if(b) return b; } }catch(e){} return L[M61_HOME[id][1]]; }
+function m61Home(){ try{ const v=document.getElementById('view-today'); if(!v) return; const simple=(typeof isSimple==='function')&&isSimple(); let lk=''; try{ lk=m59Look(); }catch(e){}
+  let shown=0;
+  for(const id in M61_HOME){ const s=document.getElementById(id); let h=v.querySelector(':scope > .m61-hd[data-m61for="'+id+'"]');
+    if(!s||s.parentElement!==v||simple){ if(h) h.remove(); if(s) s.classList.remove('m61-c','m61-o'); continue; }
+    const open=m61IsOpen(id), off=!m61Tx(s)||s.classList.contains('m39-off'); s.classList.add('m61-c'); s.classList.toggle('m61-o',open);
+    if(!h){ h=document.createElement('div'); h.className='m61-hd'; h.dataset.m61for=id; v.insertBefore(h,s); } else if(h.nextElementSibling!==s) v.insertBefore(h,s);
+    if(h.hidden!==off) h.hidden=off; if(off) continue; shown++;
+    const ord=getComputedStyle(s).order; if(h.style.order!==ord) h.style.order=ord;
+    const t=m61Title(id,s), sum=open?'':m61Sum(id,s), key=(open?'o':'c')+'|'+t+'|'+sum+'|'+lk+'|'+lang;
+    if(h.dataset.k!==key){ h.dataset.k=key; h.classList.toggle('o',open);
+      h.innerHTML=open?`<button type="button" class="m61-row" data-m61tg="${id}" aria-expanded="true" aria-controls="${id}" aria-label="${esc(L.m61FoldA(t))}"><span>${esc(L.m61Fold)}</span>${ico('down',16)}</button>`
+        :`<button type="button" class="m61-row" data-m61tg="${id}" aria-expanded="false" aria-controls="${id}" aria-label="${esc(L.m61Open(t))}${sum?'. '+esc(sum):''}"><span class="m61-i">${ico(M61_HOME[id][0],20)}</span><span class="m61-tx"><b>${esc(t)}</b>${sum?`<small>${esc(sum)}</small>`:''}</span>${ico('down',18)}</button>`; } }
+  /* одна кнопка на все карточки — рядом с «Настроить главную» */
+  let a=document.getElementById('m61All'); const ln=document.getElementById('m39Link');
+  if(simple||!shown||!ln||ln.parentElement!==v){ if(a) a.remove(); }
+  else { if(!a){ a=document.createElement('section'); a.id='m61All'; } if(a.nextElementSibling!==ln) v.insertBefore(a,ln); const ord=getComputedStyle(ln).order; if(a.style.order!==ord) a.style.order=ord;
+    const all=m61AllOpen(), key=(all?1:0)+'|'+lk+'|'+lang; if(a.dataset.k!==key){ a.dataset.k=key; a.innerHTML=`<button type="button" class="m39-lnk m61-all" data-m61all="${all?0:1}">${ico('down',18)}<span>${esc(all?L.m61AllFold:L.m61AllOpen)}</span></button>`; } }
+ }catch(e){} }
+function m61Redraw(id){ try{ if(id==='m40Fc'&&typeof m40FcDraw==='function') m40FcDraw(); }catch(e){} try{ if(typeof m38Reveal==='function') m38Reveal(); }catch(e){} try{ window.dispatchEvent(new Event('resize')); }catch(e){} }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest?e.target:null; if(!t) return;
+  const b=t.closest('[data-m61tg]'); if(b){ e.preventDefault(); const id=b.getAttribute('data-m61tg'), on=!m61IsOpen(id); m61SetOpen(id,on); m61Home(); if(on) m61Redraw(id);
+    try{ const h=document.querySelector('.m61-hd[data-m61for="'+id+'"] button'); if(h) h.focus({preventScroll:true}); }catch(_){} return; }
+  const a=t.closest('[data-m61all]'); if(a){ e.preventDefault(); const on=a.getAttribute('data-m61all')==='1'; lsSet('m61c',on?'all':'{}'); m61Home(); if(on) for(const id in M61_HOME) m61Redraw(id); else { try{ window.scrollTo({top:0,behavior:m61Rm()?'auto':'smooth'}); }catch(_){} }
+    try{ const h=document.querySelector('#m61All button'); if(h) h.focus({preventScroll:true}); }catch(_){} return; } });
+/* переход к месту внутри свёрнутой карточки сначала раскрывает её */
+{ const _siv=Element.prototype.scrollIntoView; Element.prototype.scrollIntoView=function(){ try{ const s=this.closest?this.closest('#view-today > section.m61-c:not(.m61-o)'):null; if(s&&M61_HOME[s.id]){ m61SetOpen(s.id,true); m61Home(); m61Redraw(s.id); } }catch(e){} return _siv.apply(this,arguments); }; }
+
+/* ---------- 10: «Ещё» — сначала вопрос, разделы свёрнуты ---------- */
+const M61_Q={money:['zap',['fc','cal','envs','homeb','bills']],buy:['bag',['buy','where','src46','vend','bigbuy','price']],debt:['flag',['prio','loans','newloan','planb','calc']],paper:['doc',['contract','docs','nb']]};
+{ const _mh61=m17MoreHTML; m17MoreHTML=function(){ const base=_mh61.apply(this,arguments); try{ if((typeof isSimple==='function')&&isSimple()) return base;
+    const d=document.createElement('div'); d.innerHTML=base; const top=d.querySelector('.mr-top'), groups=[...d.querySelectorAll('.m38-g')]; if(!top||!groups.length) return base;
+    const gm=m61Map('m61g'), all=gm==='all', by=k=>d.querySelector('.m38-g [data-mk="'+k+'"]');
+    const qs=Object.keys(M61_Q).map(q=>{ const items=M61_Q[q][1].map(by).filter(Boolean); return items.length?{q,items}:null; }).filter(Boolean), cur=qs.some(x=>x.q===M61.q)?M61.q:'';
+    const row=b=>{ const c=b.cloneNode(true); c.removeAttribute('id'); c.className='m7-li mr-li m38-r g-d m61-qr'; c.insertAdjacentHTML('beforeend','<span class="m38-chev" aria-hidden="true">›</span>'); return c.outerHTML; };
+    const qh=qs.length?`<div class="m61-q"><h2 id="m61QH">${esc(L.m61QT)}</h2><div class="m61-qg" role="group" aria-labelledby="m61QH">${qs.map(x=>`<button type="button" class="m61-qb${x.q===cur?' on':''}" data-m61q="${x.q}" aria-expanded="${x.q===cur}" aria-controls="m61QL"><span class="m61-qi">${ico(M61_Q[x.q][0],20)}</span><span class="m61-qt"><b>${esc(L.m61Q[x.q])}</b><small>${esc(L.m61QS[x.q])}</small></span></button>`).join('')}</div><div class="m61-ql m38-list" id="m61QL"${cur?'':' hidden'}>${cur?qs.find(x=>x.q===cur).items.map(row).join(''):''}</div></div>`:'';
+    groups.forEach(g=>{ const k=(g.className.match(/(?:^|\s)g-([a-z])(?:\s|$)/)||[])[1]||'x', h=g.querySelector('h2'); if(!h) return; const n=g.querySelectorAll('[data-mk]').length, open=all||!!gm[k], t=h.textContent.trim();
+      h.innerHTML=`<button type="button" class="m61-gh" data-m61g="${k}" aria-expanded="${open}" aria-label="${esc(open?L.m61GFoldA(t):L.m61GOpenA(t))}"><span class="m61-gt">${esc(t)}</span><span class="m61-gn" data-n="${n}"></span>${ico('down',18)}</button>`; g.classList.add('m61-g'); if(open) g.classList.add('m61-go'); });
+    const lead=d.querySelector('.m38-lead'); if(lead) lead.textContent=L.m61MoreLead;
+    top.insertAdjacentHTML('afterend',qh);
+    const ver=d.querySelector('.m7-ver'), allOpen=all||groups.every(g=>g.classList.contains('m61-go')); const tg=`<button type="button" class="m39-lnk m61-gall" data-m61gall="${allOpen?0:1}">${ico('down',18)}<span>${esc(allOpen?L.m61GFold:L.m61GAll)}</span></button>`;
+    if(ver) ver.insertAdjacentHTML('beforebegin',tg); else d.insertAdjacentHTML('beforeend',tg);
+    return d.innerHTML; }catch(e){ console.error(e); return base; } }; }
+function m61MoreRe(sel){ try{ if(typeof m17After==='function') m17After(); const b=sel?document.querySelector('#moreView '+sel):null; if(b) b.focus({preventScroll:true}); }catch(e){} }
+document.addEventListener('click',e=>{ const t=e.target&&e.target.closest?e.target:null; if(!t||!t.closest('#moreView')) return;
+  const q=t.closest('[data-m61q]'); if(q){ e.preventDefault(); const k=q.getAttribute('data-m61q'); M61.q=M61.q===k?'':k; m61MoreRe('[data-m61q="'+k+'"]'); return; }
+  const g=t.closest('[data-m61g]'); if(g){ e.preventDefault(); const k=g.getAttribute('data-m61g'); let m=m61Map('m61g'); if(m==='all'){ m={}; document.querySelectorAll('#moreView [data-m61g]').forEach(x=>m[x.getAttribute('data-m61g')]=1); } if(m[k]) delete m[k]; else m[k]=1; lsSet('m61g',JSON.stringify(m)); m61MoreRe('[data-m61g="'+k+'"]'); return; }
+  const a=t.closest('[data-m61gall]'); if(a){ e.preventDefault(); lsSet('m61g',a.getAttribute('data-m61gall')==='1'?'all':'{}'); m61MoreRe('[data-m61gall]'); return; } });
+
+/* ---------- запуск ---------- */
+{ const _r61=render; render=function(){ const x=_r61.apply(this,arguments); try{ m61Home(); }catch(e){} return x; }; }
+try{ const _ta61=m38TodayAfter; m38TodayAfter=function(){ const x=_ta61.apply(this,arguments); try{ m61Home(); }catch(e){} return x; }; }catch(e){}
+try{ m61Home(); }catch(e){}
+{ let tm=0; try{ const go=()=>{ if(tm) return; tm=setTimeout(()=>{ tm=0; try{ m61Home(); }catch(e){} },100); }; const v=document.getElementById('view-today'); if(v) new MutationObserver(go).observe(v,{childList:true,subtree:true,characterData:true}); }catch(e){} }
+/* ===================== v61, продолжение: окна (14), переходы (15), числа (16), панель (18), контуры загрузки (19) ===================== */
+
+/* ---------- 14: окна с двумя высотами и крестиком ----------
+   Обычное окно получает сверху ручку и крестик. Длинное окно для чтения (без полей ввода и почти без кнопок) открывается на половину экрана:
+   видно, откуда пришли. Потянули вверх, прокрутили или нажали на ручку — окно на всю высоту. Окна Сифры и другие особые окна не трогаем. */
+function m61Plain(){ try{ if([...sheet.classList].some(c=>c!=='sheet'&&c!=='shake'&&!/^m61-/.test(c))) return false; return !sheet.querySelector('.sf-head,#sf-log'); }catch(e){ return false; } }
+function m61Full(on){ M61.full=!!on; try{ sheet.classList.toggle('m61-half',!on); const g=sheet.querySelector(':scope > .m61-sx .m61-grab'); if(g){ g.setAttribute('aria-expanded',on?'true':'false'); g.setAttribute('aria-label',on?L.m61GrabS:L.m61Grab); } }catch(e){} }
+function m61SheetFit(){ try{ if(!overlay.classList.contains('open')) return; const old=sheet.querySelector(':scope > .m61-sx');
+  if(!m61Plain()){ if(old) old.remove(); sheet.classList.remove('m61-half','m61-hasx','m61-two'); return; }
+  if(!old) sheet.insertAdjacentHTML('afterbegin',`<div class="m61-sx"><button type="button" class="m61-grab" data-m61grab="1" aria-label="${esc(L.m61Grab)}"><i></i></button><button type="button" class="m61-x" data-close aria-label="${esc(L.m61X)}">${ico('close',20)}</button></div>`);
+  sheet.classList.add('m61-hasx');
+  const fields=!!sheet.querySelector('input:not([type=hidden]),textarea,select,[contenteditable="true"]'), btns=[...sheet.querySelectorAll('button,a[href],[role="button"],[role="switch"]')].filter(b=>!b.closest('.m61-sx')&&!b.hasAttribute('data-close')).length;
+  sheet.classList.remove('m61-half'); const tall=sheet.scrollHeight>innerHeight*.72, two=!fields&&btns<=3&&tall;
+  sheet.classList.toggle('m61-two',two); const g=sheet.querySelector(':scope > .m61-sx .m61-grab'); if(g) g.hidden=!two;
+  if(two) m61Full(M61.full); }catch(e){} }
+document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('[data-m61grab]'):null; if(!b) return; e.preventDefault(); m61Full(sheet.classList.contains('m61-half')); });
+(function(){ let y0=null; const half=()=>sheet.classList.contains('m61-half');
+  sheet.addEventListener('touchstart',e=>{ y0=(half()&&e.touches.length===1)?e.touches[0].clientY:null; },{passive:true});
+  sheet.addEventListener('touchmove',e=>{ if(y0==null) return; if(e.touches[0].clientY-y0<-14){ y0=null; m61Full(true); } },{passive:true});
+  sheet.addEventListener('wheel',e=>{ if(e.deltaY>0&&half()) m61Full(true); },{passive:true});
+  sheet.addEventListener('scroll',()=>{ if(sheet.scrollTop>8&&half()) m61Full(true); },{passive:true});
+  try{ new MutationObserver(()=>{ if(overlay.classList.contains('open')&&!sheet.querySelector(':scope > .m61-sx')) m61SheetFit(); }).observe(sheet,{childList:true}); }catch(e){} })();
+
+/* ---------- 15: плавный переход ----------
+   а) вкладки по нажатию в нижней панели сменяются со сдвигом в сторону нажатой (переход между видами; где его нет — прежнее мягкое появление);
+   б) окно, открытое с карточки кредита, вырастает из этой карточки;
+   в) закрытое окно уезжает вниз, а не пропадает: состояние меняется сразу, уезжает его снимок. */
+document.addEventListener('click',e=>{ try{ const t=e.target&&e.target.closest?e.target:null; if(!t) return;
+  const nb=t.closest('.bnav [data-tab]'); if(nb){ M61.vt=nb.dataset.tab; setTimeout(()=>{ M61.vt=''; },0); }
+  const op=t.closest('[data-action="open"]'); if(op){ const c=op.closest('.card,.m7-hero,.mc-r,.m7-r')||op, r=c.getBoundingClientRect(); if(r.width>40&&r.height>20) M61.from={r,at:Date.now()}; } }catch(_){} },true);
+{ const _st61=setTab; setTab=function(t){ const self=this, args=arguments;
+    try{ if(M61.vt&&document.startViewTransition&&!m61Rm()&&!document.hidden&&!overlay.classList.contains('open')){ M61.vt='';
+        const bs=[...document.querySelectorAll('.bnav [data-tab]')].map(b=>b.dataset.tab), nt=x=>(x==='buy'||x==='stats')?'more':x, from=bs.indexOf(nt(curTab)), to=bs.indexOf(nt(TAB_MAP[t]||t));
+        if(from>=0&&to>=0&&from!==to){ const H=document.documentElement; H.dataset.m61dir=to>from?'f':'b'; H.classList.add('m61-vt'); let done=false; const fin=()=>{ if(done) return; done=true; H.classList.remove('m61-vt'); delete H.dataset.m61dir; };
+          const tr=document.startViewTransition(()=>{ _st61.apply(self,args); }); tr.finished.then(fin,fin); setTimeout(fin,900); return; } } }catch(e){}
+    return _st61.apply(this,arguments); }; }
+function m61GhostOff(){ try{ document.querySelectorAll('.m61-gw').forEach(x=>x.remove()); }catch(e){} }
+function m61Ghost(){ try{ if(m61Rm()||!m61Plain()||sheet.style.transform) return null; const r=sheet.getBoundingClientRect(); if(r.height<60||r.top>innerHeight-40) return null;
+  const w=document.createElement('div'); w.className='m61-gw'; w.setAttribute('aria-hidden','true'); try{ w.inert=true; }catch(e){}
+  const c=sheet.cloneNode(true); c.removeAttribute('id'); c.querySelectorAll('[id]').forEach(x=>x.removeAttribute('id')); c.querySelectorAll('[name]').forEach(x=>x.removeAttribute('name')); c.querySelectorAll('[for]').forEach(x=>x.removeAttribute('for'));
+  c.className='sheet m61-ghost'+(sheet.classList.contains('m61-hasx')?' m61-hasx':''); c.style.cssText=`position:fixed; left:${r.left}px; top:${r.top}px; width:${r.width}px; height:${r.height}px; max-height:none; margin:0; animation:none; overflow:hidden;`;
+  w.appendChild(c); return {w,c,st:sheet.scrollTop}; }catch(e){ return null; } }
+{ const _cs61=closeSheet; closeSheet=function(){ let g=null; try{ if(overlay.classList.contains('open')) g=m61Ghost(); }catch(e){}
+    const x=_cs61.apply(this,arguments);
+    try{ sheet.style.animation=''; if(g&&!overlay.classList.contains('open')){ m61GhostOff(); document.body.appendChild(g.w); g.c.scrollTop=g.st; const kill=()=>{ try{ g.w.remove(); }catch(e){} };
+        g.w.animate([{opacity:1},{opacity:0}],{duration:190,easing:'ease-in',fill:'forwards'}); g.c.animate([{transform:'none'},{transform:'translateY(56px)'}],{duration:190,easing:'ease-in',fill:'forwards'}).finished.then(kill,kill); setTimeout(kill,420); } }catch(e){}
+    return x; }; }
+{ const _os61=openSheet; openSheet=function(){ const was=overlay.classList.contains('open'); if(!was){ M61.full=false; try{ sheet.style.animation=''; }catch(e){} } m61GhostOff();
+    const r=_os61.apply(this,arguments);
+    try{ m61SheetFit(); queueMicrotask(m61SheetFit);
+      if(!was&&M61.from&&Date.now()-M61.from.at<600&&!m61Rm()&&m61Plain()&&sheet.animate){ const a=M61.from.r; sheet.style.animation='none'; const b=sheet.getBoundingClientRect();
+        if(b.width>0&&b.height>0){ const sx=a.width/b.width, sy=Math.max(.14,a.height/b.height), dx=a.left-b.left, dy=a.top-b.top;
+          sheet.animate([{transformOrigin:'0 0',transform:`translate(${dx}px,${dy}px) scale(${sx},${sy})`,opacity:.25},{transformOrigin:'0 0',transform:'none',opacity:1}],{duration:280,easing:'cubic-bezier(.2,.8,.2,1)'}); } }
+      M61.from=null; }catch(e){}
+    return r; }; }
+
+/* ---------- 16: число, которое считает ----------
+   После отметки оплаты крупные суммы докручиваются от прежнего значения к новому и один раз подсвечиваются.
+   Настоящий текст сразу содержит новое значение (для чтения с экрана и поиска), счёт идёт поверх него. */
+const M61_NUM=[['#miraNext .m7-h-amt',e=>'hero:'+(e.getAttribute('data-m60why')||'')],['#m8Prog .m11-nums .p b',()=>'prog.paid'],['#m8Prog .m11-nums div:not(.p) b',()=>'prog.left'],['#miraMonth .m7-m-s b',()=>'month.paid'],['#m8Sum .m49-stats b',(e,i)=>'sum.'+i],
+  ['#view-today > .m61-hd .m61-tx small',e=>'row:'+e.closest('.m61-hd').dataset.m61for],['#view-loans .card.m54-c[data-id] .c-rem',e=>'loan:'+e.closest('[data-id]').dataset.id]];
+const M61_RE=/\d+(?:[\s\u00a0\u202f]\d{3})*/g;
+const m61Int=s=>+String(s).replace(/\D/g,'');
+/* текстовый узел с числом (первый в блоке) */
+function m61NumNode(e){ for(const c of e.childNodes){ if(c.nodeType===3&&/\d/.test(c.nodeValue)) return c; } return null; }
+/* что изменилось между прежней и новой строкой: ровно одно число при тех же словах вокруг; мелочь вроде числа месяца и дроби не считаем */
+function m61Diff(a,b){ try{ const A=[...a.matchAll(M61_RE)], B=[...b.matchAll(M61_RE)]; if(!B.length||A.length!==B.length||a.replace(M61_RE,'#')!==b.replace(M61_RE,'#')) return null; let d=null;
+  for(let i=0;i<B.length;i++){ const x=m61Int(A[i][0]), y=m61Int(B[i][0]); if(x===y) continue; if(d) return {many:true}; if(/^[.,]\d/.test(b.slice(B[i].index+B[i][0].length))) return null; d={at:B[i].index,s:B[i][0],from:x,to:y}; }
+  return d&&Math.max(d.from,d.to)>=100?d:null; }catch(e){ return null; } }
+function m61NumGo(e,node,d){ try{ if(m61Rm()) return; const R=e.getBoundingClientRect(); if(!R.width||R.bottom<0||R.top>innerHeight) return;
+  e.classList.remove('m61-fl'); void e.offsetWidth; e.classList.add('m61-fl'); setTimeout(()=>{ try{ e.classList.remove('m61-fl'); }catch(_){} },1500);
+  if(d.many||String(d.from).length!==String(d.to).length||node.parentNode!==e) return;   /* другое число цифр — ширина изменится, поэтому только подсветка */
+  const full=node.nodeValue, sm=d.s.match(/[\s\u00a0\u202f]/), fmt=v=>sm?String(v).replace(/\B(?=(\d{3})+(?!\d))/g,sm[0]):String(v), pre=full.slice(0,d.at), post=full.slice(d.at+d.s.length);
+  const sp=document.createElement('span'); sp.className='m61-n m61-tw'; sp.setAttribute('data-m61v',pre+fmt(d.from)+post); e.insertBefore(sp,node); sp.appendChild(node);
+  const t0=performance.now(), D=560; const end=()=>{ try{ if(sp.isConnected&&sp.firstChild) sp.replaceWith(sp.firstChild); }catch(_){} };
+  const step=t=>{ if(!sp.isConnected) return; const k=Math.min(1,(t-t0)/D), q=1-Math.pow(1-k,3); sp.setAttribute('data-m61v',pre+fmt(Math.round(d.from+(d.to-d.from)*q))+post); if(k<1) requestAnimationFrame(step); else end(); }; requestAnimationFrame(step); setTimeout(end,D+400); }catch(e){} }
+function m61Nums(){ try{ const seen=new Map(); for(const [sel,kf] of M61_NUM){ document.querySelectorAll(sel).forEach((e,i)=>{ if(e.hasAttribute('data-m49cnt')||e.hasAttribute('data-to')||e.querySelector('.m61-tw')) return; const n=m61NumNode(e); if(!n) return; const k=kf(e,i), s=n.nodeValue; seen.set(k,s);
+      if(M61.nums.has(k)&&M61.nums.get(k)!==s){ const d=m61Diff(M61.nums.get(k),s); if(d) m61NumGo(e,n,d); } }); } seen.forEach((v,k)=>M61.nums.set(k,v)); }catch(e){} }
+
+/* ---------- 18: панель, которая уступает место ---------- */
+(function(){ let y0=window.scrollY||0, acc=0; const H=document.documentElement, set=on=>{ if(H.classList.contains('m61-nc')!==on) H.classList.toggle('m61-nc',on); };
+  M61.navOpen=()=>{ acc=0; set(false); };
+  window.addEventListener('scroll',()=>{ const y=window.scrollY||0, d=y-y0; y0=y; if(y<80){ acc=0; set(false); return; }
+    if(y>=H.scrollHeight-innerHeight-4) return;   /* у самого низа ничего не меняем: резинка прокрутки не должна дёргать панель */
+    acc=(d>0)===(acc>0)?acc+d:d; if(acc>36) set(true); else if(acc<-24) set(false); },{passive:true}); })();
+try{ const _st61b=setTab; setTab=function(){ const x=_st61b.apply(this,arguments); try{ M61.navOpen(); }catch(e){} return x; }; }catch(e){}
+try{ const _cs61b=closeSheet; closeSheet=function(){ const x=_cs61b.apply(this,arguments); try{ M61.navOpen(); }catch(e){} return x; }; }catch(e){}
+
+/* ---------- 19: загрузка без пустоты ----------
+   Ожидание дольше секунды: под словами «собираю…» появляются серые контуры будущего ответа. Короткое ожидание остаётся как было — мигать нечему. */
+const M61_WAIT='.p29-busy,.bp-wait';
+const M61_SK='<div class="m61-sk" aria-hidden="true"><i class="h"></i><i></i><i></i><i class="s"></i><div class="c"><i class="h"></i><i></i><i class="s"></i></div></div>';
+function m61SkOk(w){ try{ if(!w.isConnected||!w.matches(M61_WAIT)||w.closest('button,.m61-gw')) return false;
+  if(w.nextElementSibling&&!w.nextElementSibling.classList.contains('m61-sk')) return false; return w.getBoundingClientRect().width>=220; }catch(e){ return false; } }
+function m61SkScan(){ try{ document.querySelectorAll('.m61-sk').forEach(k=>{ const a=k._a; if(!a||!m61SkOk(a)) k.remove(); });
+  document.querySelectorAll(M61_WAIT).forEach(w=>{ if(w._m61) return; w._m61=1; setTimeout(()=>{ try{ w._m61=0; if(!m61SkOk(w)||(w.nextElementSibling&&w.nextElementSibling.classList.contains('m61-sk'))) return; w.insertAdjacentHTML('afterend',M61_SK); w.nextElementSibling._a=w; }catch(e){} },1000); });
+  /* Сифра думает: через секунду в её пузыре появляются строки-контуры, пока не пошли шаги или текст */
+  document.querySelectorAll('.sf-m.a.sf-wait').forEach(w=>{ if(w._m61) return; w._m61=1; setTimeout(()=>{ try{ if(!w.isConnected||!w.classList.contains('sf-wait')||w.querySelector('.m52-live,.m61-skl')) return; w.insertAdjacentHTML('beforeend','<span class="m61-skl" aria-hidden="true"><i></i><i></i><i class="s"></i></span>'); }catch(e){} },1000); }); }catch(e){} }
+
+/* ---------- запуск ---------- */
+{ const _r61b=render; render=function(){ const x=_r61b.apply(this,arguments); try{ m61Nums(); }catch(e){} return x; }; }
+try{ m61Nums(); }catch(e){}
+/* не «подождать тишины», а «не чаще раза в 150 мс»: страница, где что-то тикает, не должна отменять проверку навсегда */
+{ let tm=0; try{ new MutationObserver(()=>{ if(tm) return; tm=setTimeout(()=>{ tm=0; m61SkScan(); },150); }).observe(document.body,{childList:true,subtree:true}); }catch(e){} }
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
