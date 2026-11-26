@@ -6651,6 +6651,96 @@ html.m40[data-sk] .m64-card{background:var(--m40-card)!important; border:1px sol
 .sheet.m64-nosz [data-ivset], .sheet.m64-nosz .szc.add{display:none!important;}
 .sheet.m64-nosz .br-h{display:none;}
 .sheet.m64-nosz .szgrid{margin-top:calc(var(--k)*4px);}
+
+/* ===================== v65: знакомство, значки разделов, слой оформления ===================== */
+/* --- значок раздела --- */
+.m65-ic{display:inline-grid; place-items:center; flex:none; width:calc(var(--k)*28px); height:calc(var(--k)*28px); margin-right:calc(var(--k)*8px); border-radius:calc(var(--k)*9px); vertical-align:calc(var(--k)*-7px); background:color-mix(in srgb,var(--brand) 13%,transparent); color:var(--brand);}
+.m61-gh .m65-ic{margin-right:0;}
+html.m59[data-lk="color"] .m65-ic{border-radius:50%; background:color-mix(in srgb,var(--brand) 18%,transparent);}
+html.m59[data-lk="glass"] .m65-ic{background:rgba(255,255,255,.6); box-shadow:0 0 0 1px rgba(120,100,220,.16) inset;}
+/* --- фон: мягкие пятна света вместо ровной заливки --- */
+html.m59[data-lk="paper"] #m11Aurora{background:radial-gradient(120% 46% at 50% -12%,rgba(74,52,150,.07) 0%,rgba(74,52,150,0) 62%),radial-gradient(70% 36% at 104% 96%,rgba(200,140,30,.07) 0%,rgba(200,140,30,0) 70%),var(--bg)!important;}
+html.m59[data-lk="night"] #m11Aurora{background:radial-gradient(110% 42% at 50% -8%,rgba(150,130,250,.16) 0%,rgba(150,130,250,0) 68%),radial-gradient(70% 34% at -6% 100%,rgba(233,178,76,.07) 0%,rgba(233,178,76,0) 70%),var(--bg)!important;}
+/* --- главные кнопки: глубина и отклик на нажатие --- */
+html.m40.m59[data-lk] .btn.btn-primary, html.m40.m59[data-lk] .m7-hero .m7-b1{background-image:linear-gradient(180deg,rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 58%)!important; box-shadow:0 1px 0 rgba(255,255,255,.2) inset,0 calc(var(--k)*10px) calc(var(--k)*22px) calc(var(--k)*-12px) color-mix(in srgb,var(--brand) 70%,transparent)!important; transition:transform .12s ease,box-shadow .12s ease,filter .12s ease;}
+html.m40.m59[data-lk] .btn.btn-primary:active, html.m40.m59[data-lk] .m7-hero .m7-b1:active{transform:translateY(1px) scale(.985); box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 calc(var(--k)*4px) calc(var(--k)*10px) calc(var(--k)*-8px) color-mix(in srgb,var(--brand) 70%,transparent)!important; filter:brightness(.97);}
+html.m40.m59[data-lk] .btn.btn-primary:disabled{background-image:none!important; box-shadow:none!important; opacity:.5;}
+html.m40.m59[data-lk] .btn.btn-ghost{transition:transform .12s ease;} html.m40.m59[data-lk] .btn.btn-ghost:active{transform:scale(.985);}
+/* --- каталог видов дела --- */
+.m65-find{display:flex; align-items:center; gap:calc(var(--k)*8px); padding:0 calc(var(--k)*12px); min-height:calc(var(--k)*48px); border:1px solid var(--line); border-radius:calc(var(--k)*14px); background:var(--surface); color:var(--muted);}
+.m65-find input{flex:1; min-width:0; border:0; background:none; color:var(--ink); font:inherit; font-size:1rem; padding:calc(var(--k)*10px) 0; outline:0;}
+.m65-find:focus-within{outline:calc(var(--k)*3px) solid var(--brand); outline-offset:1px;}
+.m65-sel{margin:calc(var(--k)*8px) 2px 2px; font-size:.82rem; font-weight:600; color:var(--brand);}
+.m65-g h4{margin:calc(var(--k)*14px) 0 calc(var(--k)*8px); font-size:.82rem; font-weight:700; color:var(--muted); letter-spacing:.01em;}
+.m65-has{display:grid; grid-template-columns:1fr 1fr; gap:calc(var(--k)*10px);}
+.m65-hb{display:flex; align-items:center; gap:calc(var(--k)*10px); min-height:calc(var(--k)*60px); padding:calc(var(--k)*10px) calc(var(--k)*12px); border-radius:calc(var(--k)*16px); border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; text-align:left; cursor:pointer;}
+.m65-hb b{font-size:.9rem; line-height:1.25; font-weight:600;} .m65-hb span{flex:none; color:var(--brand); display:grid;}
+.m65-hb.on{border-color:var(--brand); box-shadow:0 0 0 2px var(--brand) inset; background:color-mix(in srgb,var(--brand) 8%,var(--surface));}
+.m65-hb:focus-visible,.m65-modes button:focus-visible,.m65-skip:focus-visible,.m65-back:focus-visible,.m65-sr:focus-visible,.m65-stx:focus-visible{outline:calc(var(--k)*3px) solid var(--brand); outline-offset:2px;}
+/* --- знакомство --- */
+html.m65-open{overflow:hidden;}
+.m65{position:fixed; inset:0; z-index:9990; display:flex; flex-direction:column; background:radial-gradient(120% 44% at 50% -10%,color-mix(in srgb,var(--brand) 16%,transparent) 0%,transparent 66%),radial-gradient(70% 34% at 105% 100%,rgba(224,161,43,.14) 0%,transparent 70%),var(--bg); color:var(--ink);}
+.m65-top{display:flex; align-items:center; gap:calc(var(--k)*10px); min-height:calc(var(--k)*56px); padding:calc(calc(var(--k)*8px) + env(safe-area-inset-top,0px)) calc(var(--k)*14px) calc(var(--k)*6px);}
+.m65-back,.m65-skip{min-height:calc(var(--k)*44px); border:0; background:none; color:var(--muted); font:inherit; font-weight:600; cursor:pointer; border-radius:calc(var(--k)*12px);}
+.m65-back{width:calc(var(--k)*44px); display:grid; place-items:center; color:var(--ink);} .m65-skip{padding:0 calc(var(--k)*10px); margin-left:auto;}
+.m65-back[hidden]+.m65-dots{margin-left:calc(var(--k)*4px);}
+.m65-dots{display:flex; gap:calc(var(--k)*6px); flex:1;} .m65-dots i{width:calc(var(--k)*18px); height:calc(var(--k)*5px); border-radius:calc(var(--k)*99px); background:var(--line); transition:width .25s ease,background .25s ease;} .m65-dots i.on{width:calc(var(--k)*34px); background:var(--brand);} .m65-dots i.ok{background:color-mix(in srgb,var(--brand) 45%,var(--line));}
+.m65-body{flex:1; min-height:0; overflow-y:auto; -webkit-overflow-scrolling:touch; padding:calc(var(--k)*10px) calc(var(--k)*20px) calc(var(--k)*24px); max-width:calc(var(--k)*560px); width:100%; margin:0 auto;}
+.m65-foot{padding:calc(var(--k)*10px) calc(var(--k)*20px) calc(calc(var(--k)*14px) + env(safe-area-inset-bottom,0px)); max-width:calc(var(--k)*560px); width:100%; margin:0 auto;} .m65-foot .btn{min-height:calc(var(--k)*54px); font-size:1.02rem;}
+.m65-h{font-size:1.62rem; line-height:1.15; font-weight:800; letter-spacing:-.01em; margin:calc(var(--k)*6px) 0 calc(var(--k)*10px); outline:0; text-wrap:balance;}
+.m65-s{font-size:1rem; line-height:1.45; color:var(--muted); margin:0 0 calc(var(--k)*18px);}
+.m65-hero{display:flex; flex-direction:column; align-items:center; gap:calc(var(--k)*6px); margin:calc(var(--k)*4px) 0 calc(var(--k)*14px);} .m65-logo{display:grid; filter:drop-shadow(0 calc(var(--k)*12px) calc(var(--k)*22px) rgba(224,161,43,.28));} .m65-brand{font-family:var(--font-num); font-weight:800; font-size:1.5rem; letter-spacing:-.02em;}
+.m65-pr{list-style:none; margin:0 0 calc(var(--k)*22px); padding:0; display:grid; gap:calc(var(--k)*10px);}
+.m65-pr li{display:flex; align-items:center; gap:calc(var(--k)*12px); padding:calc(var(--k)*13px) calc(var(--k)*14px); border-radius:calc(var(--k)*16px); background:var(--surface); border:1px solid var(--line); font-weight:600; font-size:.98rem; line-height:1.3;}
+.m65-pr li span{flex:none; width:calc(var(--k)*36px); height:calc(var(--k)*36px); display:grid; place-items:center; border-radius:calc(var(--k)*11px); background:color-mix(in srgb,var(--brand) 13%,transparent); color:var(--brand);}
+.m65-lang{display:grid; grid-template-columns:repeat(3,1fr); margin:0 0 calc(var(--k)*18px);} .m65-lang button{min-height:calc(var(--k)*44px);}
+.m65-modes{display:grid; gap:calc(var(--k)*12px);}
+.m65-modes button{display:grid; grid-template-columns:auto 1fr; column-gap:calc(var(--k)*14px); row-gap:2px; align-items:center; text-align:left; min-height:calc(var(--k)*92px); padding:calc(var(--k)*16px); border-radius:calc(var(--k)*20px); border:1.5px solid var(--line); background:var(--surface); color:var(--ink); font:inherit; cursor:pointer; transition:transform .12s ease,box-shadow .15s ease,border-color .15s ease;}
+.m65-modes button .m65-mi{grid-row:1 / span 2; width:calc(var(--k)*54px); height:calc(var(--k)*54px); display:grid; place-items:center; border-radius:calc(var(--k)*16px); background:color-mix(in srgb,var(--brand) 13%,transparent); color:var(--brand);}
+.m65-modes button b{font-size:1.06rem; line-height:1.25; align-self:end;} .m65-modes button small{font-size:.86rem; color:var(--muted); line-height:1.3; align-self:start;}
+.m65-modes button[aria-checked="true"]{border-color:var(--brand); box-shadow:0 0 0 2px var(--brand) inset,0 calc(var(--k)*14px) calc(var(--k)*28px) calc(var(--k)*-18px) color-mix(in srgb,var(--brand) 80%,transparent);}
+.m65-modes button:active{transform:scale(.985);}
+.m65-my{display:flex; flex-wrap:wrap; gap:calc(var(--k)*6px); margin:0 0 calc(var(--k)*16px);} .m65-my span{padding:calc(var(--k)*6px) calc(var(--k)*12px); border-radius:calc(var(--k)*99px); background:color-mix(in srgb,var(--brand) 13%,transparent); color:var(--brand); font-size:.84rem; font-weight:700;} .m65-my .more{background:var(--surface-2); color:var(--muted);}
+.m65-feats{display:grid; gap:calc(var(--k)*12px);}
+.m65-f{padding:calc(var(--k)*16px); border-radius:calc(var(--k)*20px); background:var(--surface); border:1px solid var(--line); display:grid; gap:calc(var(--k)*12px);}
+.m65-fh{display:flex; gap:calc(var(--k)*12px); align-items:flex-start;} .m65-fi{flex:none; width:calc(var(--k)*42px); height:calc(var(--k)*42px); display:grid; place-items:center; border-radius:calc(var(--k)*13px); background:color-mix(in srgb,var(--brand) 13%,transparent); color:var(--brand);}
+.m65-fh b{display:block; font-size:1.02rem; line-height:1.25;} .m65-fh p{margin:calc(var(--k)*3px) 0 0; font-size:.88rem; line-height:1.4; color:var(--muted);}
+.m65-demo{display:grid; gap:calc(var(--k)*8px); padding:calc(var(--k)*12px); border-radius:calc(var(--k)*14px); background:var(--surface-2); font-size:.9rem;}
+.m65-r{display:flex; justify-content:space-between; align-items:center; gap:calc(var(--k)*10px); min-width:0;} .m65-r span{min-width:0; overflow-wrap:anywhere;} .m65-r b{flex:none; font-family:var(--font-num); font-variant-numeric:tabular-nums;} .m65-r b.g,.m65-ok{color:var(--in,#0E7D5A);}
+.m65-ringw{display:flex; align-items:center; gap:calc(var(--k)*14px);} .m65-ring{flex:none; width:calc(var(--k)*64px); height:calc(var(--k)*64px); border-radius:50%; display:grid; place-items:center; background:conic-gradient(var(--brand) calc(var(--p)*1%),var(--line) 0);} .m65-ring b{width:calc(var(--k)*46px); height:calc(var(--k)*46px); border-radius:50%; background:var(--surface-2); display:block; text-align:center; line-height:calc(var(--k)*46px); font-size:.82rem; font-family:var(--font-num); white-space:nowrap;}
+.m65-free{font-size:1.2rem; font-family:var(--font-num);}
+.m65-bars{display:grid; gap:calc(var(--k)*8px);} .m65-bars div{display:flex; align-items:center; gap:calc(var(--k)*10px);} .m65-bars i{display:block; height:calc(var(--k)*12px); width:var(--p); max-width:calc(100% - calc(var(--k)*52px)); border-radius:calc(var(--k)*99px); background:var(--brand); transform-origin:left;} .m65-bars i.b{opacity:.45;} .m65-bars span{font-family:var(--font-num); font-weight:700; font-size:.86rem;}
+.m65-fc{display:grid; gap:calc(var(--k)*6px);} .m65-fc svg{width:100%; height:calc(var(--k)*54px); overflow:visible;} .m65-fc polyline{fill:none; stroke:var(--brand); stroke-width:3; stroke-linecap:round; stroke-linejoin:round; vector-effect:non-scaling-stroke; stroke-dasharray:420; stroke-dashoffset:0;} .m65-ok{font-weight:700; font-size:.88rem;}
+.m65-chat{display:grid; gap:calc(var(--k)*8px);} .m65-chat p{margin:0; padding:calc(var(--k)*9px) calc(var(--k)*12px); border-radius:calc(var(--k)*14px); max-width:92%; line-height:1.35;} .m65-chat .q{justify-self:end; background:var(--brand); color:var(--m59-on-brand,#fff);} .m65-chat .a{justify-self:start; background:var(--surface); border:1px solid var(--line); color:var(--muted); display:flex; align-items:center; gap:calc(var(--k)*4px);}
+.m65-chat .a i{width:calc(var(--k)*6px); height:calc(var(--k)*6px); border-radius:50%; background:var(--muted); opacity:.5;} .m65-chat .a span{margin-left:calc(var(--k)*6px);}
+.m65-done{margin-top:calc(var(--k)*14px); padding:calc(var(--k)*16px); border-radius:calc(var(--k)*20px); background:color-mix(in srgb,var(--in,#0E7D5A) 10%,var(--surface)); border:1px solid color-mix(in srgb,var(--in,#0E7D5A) 26%,var(--line));}
+.m65-done ul{list-style:none; margin:calc(var(--k)*8px) 0 0; padding:0; display:grid; gap:calc(var(--k)*7px);} .m65-done li{display:flex; gap:calc(var(--k)*8px); align-items:flex-start; font-size:.93rem; line-height:1.35;} .m65-done li svg{flex:none; margin-top:2px; color:var(--in,#0E7D5A);}
+@media (prefers-reduced-motion:no-preference){
+  .m65-in > *{animation:m65Up .46s cubic-bezier(.2,.7,.2,1) both;} .m65-in > *:nth-child(2){animation-delay:.06s;} .m65-in > *:nth-child(3){animation-delay:.12s;} .m65-in > *:nth-child(4){animation-delay:.18s;} .m65-in > *:nth-child(n+5){animation-delay:.24s;}
+  .m65-pr li,.m65-f,.m65-done{animation:m65Up .5s cubic-bezier(.2,.7,.2,1) both; animation-delay:calc(.18s + var(--i,0)*.11s);}
+  .m65-done li{animation:m65Up .4s ease both; animation-delay:calc(.75s + var(--j,0)*.12s);}
+  .m65-logo{animation:m65Pop .7s cubic-bezier(.2,.9,.2,1.2) both;}
+  .m65-ring{animation:m65Pop .6s cubic-bezier(.2,.9,.2,1.2) both; animation-delay:.35s;}
+  .m65-bars i{animation:m65Grow .7s cubic-bezier(.2,.7,.2,1) both; animation-delay:.45s;}
+  .m65-fc polyline{animation:m65Line 1.1s ease both; animation-delay:.5s;}
+  .m65-chat .a i{animation:m65Dot .9s ease 3;} .m65-chat .a i:nth-child(2){animation-delay:.15s;} .m65-chat .a i:nth-child(3){animation-delay:.3s;} .m65-chat .a span{animation:m65Up .4s ease both; animation-delay:1.6s;}
+}
+@keyframes m65Up{from{opacity:0; transform:translateY(calc(var(--k)*14px));} to{opacity:1; transform:none;}}
+@keyframes m65Pop{from{opacity:0; transform:scale(.7);} to{opacity:1; transform:none;}}
+@keyframes m65Grow{from{transform:scaleX(0);} to{transform:none;}}
+@keyframes m65Line{from{stroke-dashoffset:420;} to{stroke-dashoffset:0;}}
+@keyframes m65Dot{0%,100%{opacity:.35; transform:none;} 50%{opacity:1; transform:translateY(calc(var(--k)*-3px));}}
+/* --- «С чего начать» --- */
+.m65-st{margin:0 0 calc(var(--k)*12px); padding:calc(var(--k)*14px) calc(var(--k)*14px) calc(var(--k)*10px); border-radius:calc(var(--k)*18px); background:var(--surface); border:1px solid var(--line); display:grid; gap:calc(var(--k)*8px);}
+html.m40[data-sk] .m65-st{background:var(--m40-card)!important; border:1px solid var(--m40-bd)!important; border-radius:var(--m40-r)!important; box-shadow:var(--shadow)!important; -webkit-backdrop-filter:var(--m40-blur); backdrop-filter:var(--m40-blur);}
+.m65-sth{display:flex; align-items:center; gap:calc(var(--k)*8px);} .m65-sth h2{margin:0; font-size:1.02rem; flex:1; min-width:0;} .m65-sth small{color:var(--muted); font-size:.8rem; white-space:nowrap;}
+.m65-stx{width:calc(var(--k)*40px); height:calc(var(--k)*40px); margin:calc(var(--k)*-6px) calc(var(--k)*-8px) calc(var(--k)*-6px) 0; border:0; background:none; color:var(--muted); display:grid; place-items:center; border-radius:calc(var(--k)*12px); cursor:pointer;}
+.m65-stp{height:calc(var(--k)*6px); border-radius:calc(var(--k)*99px); background:var(--line); overflow:hidden;} .m65-stp i{display:block; height:100%; width:var(--p); border-radius:calc(var(--k)*99px); background:var(--brand); transition:width .4s ease;}
+.m65-sr{display:flex; align-items:center; gap:calc(var(--k)*10px); width:100%; min-height:calc(var(--k)*48px); padding:calc(var(--k)*6px) calc(var(--k)*4px); border:0; border-top:1px solid var(--line); background:none; color:var(--ink); font:inherit; text-align:left; border-radius:0;}
+button.m65-sr{cursor:pointer;} .m65-sr b{flex:1; min-width:0; font-weight:600; font-size:.95rem; line-height:1.3;} .m65-sr > span{flex:none; width:calc(var(--k)*32px); height:calc(var(--k)*32px); display:grid; place-items:center; border-radius:calc(var(--k)*10px); background:var(--surface-2); color:var(--muted);}
+.m65-sr.cur > span{background:color-mix(in srgb,var(--brand) 14%,transparent); color:var(--brand);} .m65-sr.ok b{color:var(--muted); text-decoration:line-through; text-decoration-thickness:1px;} .m65-sr.ok > span{background:color-mix(in srgb,var(--in,#0E7D5A) 14%,transparent); color:var(--in,#0E7D5A);} .m65-sr small{color:var(--muted); font-size:max(.78rem,8.25pt);} .m65-sr > svg{flex:none; color:var(--muted);}
+/* на узком телефоне в строке «Мои кредиты · число · Добавить кредит» значку не хватает места — там остаётся значок кнопки */
+@media (max-width:23.7em){ #myBanksH2 .m65-ic{display:none;} }
 /* <</v44 css>> */
 
 
@@ -28943,6 +29033,7 @@ const M64={ver:'64', fw:new WeakMap(), ow:new WeakMap(), on:false, set:false, mo
 const M64_GOODS=['clothes','food','veg','dry','elec','build','beauty','home','cafe','make'];
 const M64_KINDS=['clothes','food','veg','dry','elec','build','beauty','home','cafe','make','serv','it','med'];
 const M64_HAS=['shop','wh','online','make'];
+const M64_CLS=['clothes'];   /* виды дела, которым нужны размеры и ярлыки; v65 дополняет список */
 const M64_UNITS=['pcs','kg','l','pack','box','bag','m'];
 const M64_W={ru:{wh:'склад',make:'цех',biz:'бизнес'},tg:{wh:'анбор',make:'коргоҳ',biz:'тиҷорат'},en:{wh:'warehouse',make:'workshop',biz:'business'}};
 const M64_RU_END={'ь':'','я':'а','ю':'у','ем':'ом','е':'е','и':'ы','ей':'ов','ям':'ам','ями':'ами','ях':'ах'};
@@ -28950,9 +29041,10 @@ const M64_RU_FEM={'ьница':'ка','ьницы':'ки','ьнице':'ке','�
 
 function m64P(){ try{ return m57P(); }catch(e){ return {}; } }
 function m64Calc(p){ p=p||{}; const set=!!p.m64, mode=set?(p.mode==='personal'?'personal':'biz'):'', kinds=Array.isArray(p.kinds)?p.kinds.filter(k=>M64_KINDS.includes(k)):[], has=Array.isArray(p.has)?p.has.filter(k=>M64_HAS.includes(k)):[], own=String(p.own||'').trim();
-  const biz=set&&mode==='biz', incomplete=biz&&!kinds.length&&!has.length&&!own, cl=biz&&kinds.includes('clothes');
+  const biz=set&&mode==='biz', incomplete=biz&&!kinds.length&&!has.length&&!own, cl=biz&&kinds.some(k=>M64_CLS.includes(k));
   let goods=true; if(set){ goods=mode==='personal'?false:(has.length>0||kinds.some(k=>M64_GOODS.includes(k))||!!own||!kinds.length); }
   let pl='shop'; if(biz&&!incomplete&&!has.includes('shop')) pl=has.includes('wh')?'wh':(has.includes('make')||(kinds.includes('make')&&!has.length))?'make':'biz';
+  if(pl==='biz'&&typeof m65Place==='function'){ try{ const x=m65Place(kinds); if(x) pl=x; }catch(e){} }
   return {set,mode,kinds,has,own,cl,goods,pl,cli:biz&&!goods,incomplete}; }
 function m64Flags(){ const c=m64Calc(m64P()); let lg='ru'; try{ lg=lang; }catch(e){} const sig=[c.set?1:0,c.mode,c.pl,c.cli?1:0,c.cl?1:0,c.goods?1:0,c.incomplete?1:0,lg].join('|');
   if(sig!==M64.sig){ M64.set=c.set; M64.mode=c.mode; M64.pl=c.pl; M64.cli=c.cli; M64.cl=c.cl; M64.goods=c.goods; M64.incomplete=c.incomplete; M64.on=c.set&&(c.pl!=='shop'||c.cli); M64.sig=sig; M64.ow=new WeakMap(); } return c; }
@@ -29048,7 +29140,7 @@ function m64Sheet(pre){ const S=M64S[lang]||M64S.ru, c0=m64Calc(m64P()), d={mode
 
 /* ---- приветствие, окно «Страна», форма товара: вставки переживают перерисовку окна ---- */
 function m64SheetFix(){ try{ if(typeof sheet==='undefined'||!sheet) return; const S=M64S[lang]||M64S.ru, add=sheet.querySelector('#wl-add');
-    if(add&&!sheet.querySelector('.m64-wl')){ const c=m64Calc(m64P()), w=document.createElement('div'); w.className='m64-wl'; w.innerHTML=`<b>${esc(S.m64WlQ)}</b><div class="seg" role="group" aria-label="${esc(S.m64WlQ)}"><button type="button" data-m64wl="personal" class="${c.set&&c.mode==='personal'?'on':''}">${esc(S.m64WlP)}</button><button type="button" data-m64wl="biz" class="${c.set&&c.mode==='biz'?'on':''}">${esc(S.m64WlB)}</button></div>`; add.parentNode.insertBefore(w,add); }
+    if(add&&!M64.set&&!sheet.querySelector('.m64-wl')){ const c=m64Calc(m64P()), w=document.createElement('div'); w.className='m64-wl'; w.innerHTML=`<b>${esc(S.m64WlQ)}</b><div class="seg" role="group" aria-label="${esc(S.m64WlQ)}"><button type="button" data-m64wl="personal" class="${c.set&&c.mode==='personal'?'on':''}">${esc(S.m64WlP)}</button><button type="button" data-m64wl="biz" class="${c.set&&c.mode==='biz'?'on':''}">${esc(S.m64WlB)}</button></div>`; add.parentNode.insertBefore(w,add); }
     const pr=sheet.querySelector('.m57-prof'); if(pr&&!pr.querySelector('.m64-reg')){ const b=document.createElement('button'); b.type='button'; b.className='btn btn-ghost btn-full m64-reg'; b.setAttribute('data-m64open','1'); b.textContent=S.m64RegBtn; pr.insertBefore(b,pr.firstChild);
       const p=m64P(); M64.keep=p.m64?{m64:1,mode:p.mode,kinds:p.kinds,own:p.own,has:p.has}:null; const back=()=>{ try{ if(M64.keep){ state.misc.m57prof=Object.assign({},state.misc.m57prof,M64.keep); persist(); m64Flags(); } }catch(e){} }; pr.querySelectorAll('input').forEach(i=>{ for(const ev of ['change','blur']) i.addEventListener(ev,back); }); pr.addEventListener('click',ev=>{ if(ev.target&&ev.target.closest&&ev.target.closest('[data-m57k]')) setTimeout(back,0); }); }
     if(sheet.querySelector('#iv-save')&&!sheet.querySelector('.m64-unit')) m64FormFix(); }catch(e){} }
@@ -29060,6 +29152,215 @@ document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) retu
   const u=t.closest('[data-m64u]'); if(u){ M64.formU=u.getAttribute('data-m64u'); u.parentNode.querySelectorAll('[data-m64u]').forEach(b=>{ const on=b===u; b.classList.toggle('on',on); b.setAttribute('aria-pressed',String(on)); }); m64FormLabels(); return; }
   if(t.closest('#iv-save')){ M64.pendU=M64.formU; M64.pendAt=Date.now(); M64.lastU=M64.formU; } },true);
 try{ m64All(); }catch(e){}
+/* ---------- v65: первый запуск и полный список видов дела — строки ---------- */
+/* Каталог: [id, группа, товар 1/0, одежда 1/0, русский, тоҷикӣ, English]. Первые 13 id — те же, что в v64. */
+const M65_GROUPS=[
+ ['trade','Торговля','Савдо','Trade'],['food','Еда и напитки','Хӯрок ва нӯшокӣ','Food and drinks'],['make','Производство','Истеҳсолот','Manufacturing'],
+ ['serv','Услуги','Хизматрасонӣ','Services'],['look','Красота и спорт','Зебоӣ ва варзиш','Beauty and fitness'],['it','ИТ и цифровое','ТИ ва рақамӣ','IT and digital'],
+ ['med','Медицина','Тиб','Medicine'],['edu','Образование','Маориф','Education'],['agro','Сельское хозяйство','Кишоварзӣ','Farming'],
+ ['move','Транспорт и стройка','Нақлиёт ва сохтмон','Transport and construction'],['rent','Недвижимость и аренда','Амвол ва иҷора','Property and rentals'],['art','Творчество и праздники','Эҷодиёт ва идҳо','Creative and events']];
+const M65_CAT=[
+ ['clothes','trade',1,1,'Одежда и обувь','Либос ва пойафзол','Clothing and shoes'],['kidswear','trade',1,1,'Детская одежда','Либоси кӯдакона','Children’s clothing'],
+ ['fabric','trade',1,0,'Ткани и текстиль','Матоъ ва нассоҷӣ','Fabrics and textiles'],['food','trade',1,0,'Продукты и напитки','Хӯрокворӣ ва нӯшокиҳо','Groceries and drinks'],
+ ['veg','trade',1,0,'Овощи и фрукты','Сабзавот ва мева','Vegetables and fruit'],['dry','trade',1,0,'Сухофрукты и орехи','Меваи хушк ва чормағз','Dried fruit and nuts'],
+ ['meat','trade',1,0,'Мясо и рыба','Гӯшт ва моҳӣ','Meat and fish'],['sweets','trade',1,0,'Сладости и чай','Шириниҳо ва чой','Sweets and tea'],
+ ['elec','trade',1,0,'Электроника и техника','Электроника ва техника','Electronics and appliances'],['phones','trade',1,0,'Телефоны и аксессуары','Телефонҳо ва лавозимот','Phones and accessories'],
+ ['build','trade',1,0,'Стройматериалы','Масолеҳи сохтмон','Building materials'],['furn','trade',1,0,'Мебель','Мебел','Furniture'],
+ ['auto','trade',1,0,'Автозапчасти и масла','Қисмҳои эҳтиётӣ ва равғанҳо','Car parts and oils'],['beauty','trade',1,0,'Косметика и парфюмерия','Косметика ва атриёт','Cosmetics and perfume'],
+ ['home','trade',1,0,'Товары для дома','Молҳои рӯзгор','Home goods'],['kids','trade',1,0,'Детские товары и игрушки','Молҳои кӯдакона ва бозичаҳо','Kids’ goods and toys'],
+ ['books','trade',1,0,'Книги и канцтовары','Китобҳо ва лавозимоти идорӣ','Books and stationery'],['jewel','trade',1,0,'Ювелирные изделия','Ҷавоҳирот','Jewellery'],
+ ['flowers','trade',1,0,'Цветы','Гулҳо','Flowers'],['pharm','trade',1,0,'Аптека','Дорухона','Pharmacy'],['pets','trade',1,0,'Зоотовары','Молҳо барои ҳайвонот','Pet supplies'],
+ ['eshop','trade',1,0,'Интернет-магазин','Мағозаи интернетӣ','Online shop'],
+ ['cafe','food',1,0,'Кафе и ресторан','Қаҳвахона ва тарабхона','Café or restaurant'],['fast','food',1,0,'Фастфуд и доставка еды','Фастфуд ва расонидани хӯрок','Fast food and delivery'],
+ ['bakery','food',1,0,'Пекарня и кондитерская','Нонвойхона ва қаннодӣ','Bakery and pastry'],['drinks','food',1,0,'Напитки: делаю и продаю','Нӯшокиҳо: месозам ва мефурӯшам','Drinks: making and selling'],
+ ['catering','food',1,0,'Кейтеринг и столовая','Кейтеринг ва ошхона','Catering and canteen'],
+ ['make','make',1,0,'Производство','Истеҳсолот','Manufacturing'],['sewing','make',1,1,'Швейный цех','Сехи дӯзандагӣ','Sewing workshop'],['foodmake','make',1,0,'Производство продуктов','Истеҳсоли хӯрокворӣ','Food production'],
+ ['furnmake','make',1,0,'Мебель на заказ','Мебел бо фармоиш','Custom furniture'],['craft','make',1,0,'Ремесло и рукоделие','Ҳунармандӣ','Crafts and handmade'],['pack','make',1,0,'Упаковка и печать','Бастабандӣ ва чоп','Packaging and printing'],
+ ['serv','serv',0,0,'Услуги','Хизматрасонӣ','Services'],['repair','serv',0,0,'Ремонт техники и телефонов','Таъмири техника ва телефон','Device and phone repair'],
+ ['carserv','serv',0,0,'Автосервис и мойка','Таъмир ва шустани мошин','Car service and wash'],['clean','serv',0,0,'Уборка и химчистка','Тозакунӣ ва химчистка','Cleaning and laundry'],
+ ['law','serv',0,0,'Юридические услуги','Хизматрасонии ҳуқуқӣ','Legal services'],['consult','serv',0,0,'Консультации и учёт','Машварат ва ҳисобдорӣ','Consulting and bookkeeping'],
+ ['tailor','serv',0,0,'Ателье и ремонт одежды','Ателье ва таъмири либос','Tailoring and alterations'],['photo','serv',0,0,'Фото и видео','Акс ва видео','Photo and video'],
+ ['travel','serv',0,0,'Туризм и гостиница','Сайёҳӣ ва меҳмонхона','Travel and hospitality'],
+ ['salon','look',0,0,'Салон красоты и парикмахерская','Толори ҳусн ва сартарошхона','Beauty salon and barber'],['nails','look',0,0,'Маникюр и косметология','Маникюр ва косметология','Nails and cosmetology'],
+ ['fitness','look',0,0,'Фитнес и спортзал','Фитнес ва толори варзиш','Fitness and gym'],['massage','look',0,0,'Массаж и спа','Масҳ ва спа','Massage and spa'],
+ ['it','it',0,0,'ИТ и разработка','ТИ ва барномасозӣ','IT and software'],['webdev','it',0,0,'Сайты и приложения на заказ','Сайтҳо ва барномаҳо бо фармоиш','Websites and apps for clients'],
+ ['saas','it',0,0,'Свой продукт или стартап','Маҳсулоти худ ё стартап','Own product or startup'],['design','it',0,0,'Дизайн','Дизайн','Design'],
+ ['smm','it',0,0,'Маркетинг и соцсети','Маркетинг ва шабакаҳои иҷтимоӣ','Marketing and social media'],['freelance','it',0,0,'Фриланс','Фриланс','Freelance'],['blog','it',0,0,'Блог и контент','Блог ва контент','Blog and content'],
+ ['med','med',0,0,'Медицина и медтех','Тиб ва технологияи тиббӣ','Medicine and medtech'],['clinic','med',0,0,'Клиника или кабинет врача','Клиника ё кабинети духтур','Clinic or doctor’s office'],
+ ['dental','med',0,0,'Стоматология','Стоматология','Dentistry'],['lab','med',0,0,'Лаборатория и диагностика','Лаборатория ва ташхис','Laboratory and diagnostics'],
+ ['medtech','med',0,0,'Медтех-стартап','Стартапи медтех','Medtech startup'],['medgoods','med',1,0,'Медтехника и расходники','Таҷҳизоти тиббӣ ва маводи масрафӣ','Medical equipment and supplies'],['vet','med',0,0,'Ветеринария','Байторӣ','Veterinary care'],
+ ['school','edu',0,0,'Школа или лицей','Мактаб ё литсей','School'],['kinder','edu',0,0,'Детский сад','Кӯдакистон','Kindergarten'],['courses','edu',0,0,'Учебный центр и курсы','Маркази таълимӣ ва курсҳо','Training centre and courses'],
+ ['lang','edu',0,0,'Языковые курсы','Курсҳои забон','Language courses'],['tutor','edu',0,0,'Репетитор','Муаллими хусусӣ','Tutor'],['onedu','edu',0,0,'Онлайн-школа','Мактаби онлайн','Online school'],['sportsch','edu',0,0,'Спортивная секция','Сексияи варзишӣ','Sports club'],
+ ['farm','agro',1,0,'Сад и огород','Боғ ва полиз','Orchard and vegetable farm'],['green','agro',1,0,'Теплица','Гармхона','Greenhouse'],['cattle','agro',1,0,'Скот и птица','Чорво ва парранда','Livestock and poultry'],
+ ['bees','agro',1,0,'Пчёлы и мёд','Занбӯр ва асал','Bees and honey'],['grain','agro',1,0,'Зерно и корма','Ғалла ва хӯроки чорво','Grain and feed'],['dairy','agro',1,0,'Молочная продукция','Маҳсулоти ширӣ','Dairy'],
+ ['taxi','move',0,0,'Такси и перевозка людей','Такси ва мусофиркашонӣ','Taxi and passenger transport'],['cargo','move',0,0,'Грузоперевозки и карго','Боркашонӣ ва карго','Freight and cargo'],
+ ['construct','move',0,0,'Строительство и ремонт','Сохтмон ва таъмир','Construction and renovation'],['rentcar','move',0,0,'Аренда техники и машин','Иҷораи техника ва мошин','Equipment and car rental'],
+ ['realty','rent',0,0,'Аренда жилья и помещений','Иҷораи манзил ва бино','Property rental'],['agent','rent',0,0,'Риелтор','Риелтор','Real-estate agent'],
+ ['events','art',0,0,'Праздники и свадьбы','Идҳо ва тӯйҳо','Events and weddings'],['music','art',0,0,'Музыка и творчество','Мусиқӣ ва эҷодиёт','Music and arts']];
+(function(){ const col={ru:4,tg:5,en:6}; for(const lg of ['ru','tg','en']){ const S=M64S[lg]; S.m64K=Object.assign({},S.m64K); for(const c of M65_CAT) S.m64K[c[0]]=c[col[lg]]; S.m65G={}; M65_GROUPS.forEach((g,i)=>{ S.m65G[g[0]]=g[{ru:1,tg:2,en:3}[lg]]; }); } })();
+Object.assign(M64S.ru.m64Tab,{salon:'Салон',center:'Центр'}); Object.assign(M64S.tg.m64Tab,{salon:'Толор',center:'Марказ'}); Object.assign(M64S.en.m64Tab,{salon:'Salon',center:'Centre'});
+
+const M65S={ru:{
+  m65Skip:'Пропустить', m65Next:'Дальше', m65Start:'Начать', m65Back:'Назад', m65Step:(a,b)=>`Шаг ${a} из ${b}`,
+  m65H1:'Деньги, платежи и ваше дело — в одном спокойном месте', m65H1s:'Два коротких вопроса — и Mira соберётся под вас. Без регистрации и паролей: записи хранятся в телефоне.',
+  m65P:['Напомнит о платеже заранее','Покажет, хватит ли денег','Говорит словами вашего дела'],
+  m65Q1:'Что вы ведёте?', m65Q1s:'От ответа зависит, что будет на экране.',
+  m65Q2:'Чем занимаетесь?', m65Q2s:'Отметьте всё своё — можно несколько. Не нашли — впишите.', m65Find:'Найти: кафе, школа, такси…', m65Sel:n=>`Выбрано: ${n}`, m65None:'Ничего не нашлось — впишите своё ниже.', m65Clear:'Сбросить поиск',
+  m65Q3:'Что у вас есть?', m65Q3s:'От этого зависят вкладки и слова. Можно ничего не отмечать.',
+  m65TP:'Mira — для ваших денег и кредитов', m65TB:'Mira — для вашего дела', m65TMore:n=>`и ещё ${n}`, m65TDone:'Собрала под вас',
+  m65F:{pay:['Платежи без сюрпризов','Напомню заранее и покажу день, когда долгов не станет.'],free:['Какой кредит гасить первым','Покажу, где досрочный платёж сбережёт больше всего.'],fc:['Хватит ли денег','Прогноз на 30 дней: где может не хватить и сколько отложить.'],
+    goods:['Товар в ваших единицах','Килограммы, литры, ящики, штуки — и сигнал, когда заканчивается.'],debt:['Кто должен вам и кому должны вы','Долги со сроками: ничего не теряется и не забывается.'],
+    cli:['Клиенты и регулярные счета','Аренда, зарплаты, подписки — по датам и без просрочек.'],sifra:['Сифра знает ваше дело','Спросите о своих цифрах или попросите план — ответит по делу.']},
+  m65Ex:{free:'июнь 2027', fcOk:'28-го хватит', left:'осталось', owes:'должен вам', youOwe:'вы должны', rent:'Аренда', pay:'Зарплаты', paid:'оплачено', due:'через 3 дня', askP:'Сколько отложить на платёж до пятницы?', askB:k=>`Как поднять продажи: ${k}?`, ans:'Смотрю ваши записи…', goods:'Товар', client:'Клиент', supplier:'Поставщик'},
+  m65WelT:'Последний шаг', m65A11y:'Знакомство с Mira',
+  m65StT:'С чего начать', m65StS:(a,b)=>`сделано ${a} из ${b}`, m65StHide:'Скрыть', m65StOk:'готово', m65St:{loan:'Добавить кредит или рассрочку',day:'Записать сегодняшний день',goods:'Добавить первый товар',rem:'Включить напоминания о платежах',sifra:'Задать вопрос Сифре'}
+},tg:{
+  m65Skip:'Гузаштан', m65Next:'Давом', m65Start:'Оғоз', m65Back:'Бозгашт', m65Step:(a,b)=>`Қадами ${a} аз ${b}`,
+  m65H1:'Пул, пардохтҳо ва кори шумо — дар як ҷои ором', m65H1s:'Ду саволи кӯтоҳ — ва Mira ба шумо мувофиқ мешавад. Бе бақайдгирӣ ва рамз: сабтҳо дар телефон нигоҳ дошта мешаванд.',
+  m65P:['Пардохтро пешакӣ ёдрас мекунад','Нишон медиҳад, ки пул мерасад ё не','Бо калимаҳои кори шумо гап мезанад'],
+  m65Q1:'Шумо чиро пеш мебаред?', m65Q1s:'Аз ҷавоб вобаста аст, ки дар экран чӣ мешавад.',
+  m65Q2:'Бо чӣ машғулед?', m65Q2s:'Ҳамаи кори худро қайд кунед — якчанд мумкин. Наёфтед — нависед.', m65Find:'Ёфтан: қаҳвахона, мактаб, такси…', m65Sel:n=>`Интихоб шуд: ${n}`, m65None:'Чизе ёфт нашуд — дар поён аз худ нависед.', m65Clear:'Тоза кардани ҷустуҷӯ',
+  m65Q3:'Шумо чӣ доред?', m65Q3s:'Қисмҳо ва калимаҳо аз ин вобастаанд. Ҳеҷ чизро қайд накардан ҳам мумкин.',
+  m65TP:'Mira — барои пул ва қарзҳои шумо', m65TB:'Mira — барои кори шумо', m65TMore:n=>`ва боз ${n}`, m65TDone:'Барои шумо ҷамъ кардам',
+  m65F:{pay:['Пардохтҳо бе ногаҳонӣ','Пешакӣ ёдрас мекунам ва рӯзеро нишон медиҳам, ки қарз намемонад.'],free:['Кадом қарзро аввал пӯшонам','Нишон медиҳам, ки пардохти пеш аз мӯҳлат дар куҷо бештар сарфа мекунад.'],fc:['Пул мерасад ё не','Пешгӯӣ барои 30 рӯз: дар куҷо намерасад ва чӣ қадар ҷудо кардан лозим.'],
+    goods:['Мол бо воҳидҳои шумо','Килограмм, литр, қуттӣ, дона — ва огоҳӣ, вақте тамом мешавад.'],debt:['Кӣ ба шумо қарздор ва шумо ба кӣ','Қарзҳо бо мӯҳлат: чизе гум ва фаромӯш намешавад.'],
+    cli:['Мизоҷон ва ҳисобҳои доимӣ','Иҷора, маош, обунаҳо — бо сана ва бе таъхир.'],sifra:['Сифра кори шуморо медонад','Дар бораи рақамҳои худ пурсед ё нақша хоҳед — аниқ ҷавоб медиҳад.']},
+  m65Ex:{free:'июн 2027', fcOk:'28-ум мерасад', left:'монд', owes:'ба шумо қарздор', youOwe:'шумо қарздоред', rent:'Иҷора', pay:'Маошҳо', paid:'пардохт шуд', due:'баъди 3 рӯз', askP:'То ҷумъа барои пардохт чӣ қадар ҷудо кунам?', askB:k=>`Фурӯшро чӣ тавр зиёд кунам: ${k}?`, ans:'Сабтҳои шуморо мебинам…', goods:'Мол', client:'Мизоҷ', supplier:'Таъминкунанда'},
+  m65WelT:'Қадами охирин', m65A11y:'Шиносоӣ бо Mira',
+  m65StT:'Аз чӣ оғоз кунем', m65StS:(a,b)=>`${a} аз ${b} иҷро шуд`, m65StHide:'Пинҳон кардан', m65StOk:'тайёр', m65St:{loan:'Қарз ё қисташавиро илова кардан',day:'Рӯзи имрӯзаро сабт кардан',goods:'Моли аввалро илова кардан',rem:'Ёдраскунии пардохтро фаъол кардан',sifra:'Ба Сифра савол додан'}
+},en:{
+  m65Skip:'Skip', m65Next:'Next', m65Start:'Start', m65Back:'Back', m65Step:(a,b)=>`Step ${a} of ${b}`,
+  m65H1:'Money, payments and your business — in one calm place', m65H1s:'Two short questions and Mira sets itself up for you. No sign-up, no passwords: your records stay on the phone.',
+  m65P:['Reminds you before a payment','Shows whether you have enough','Speaks the language of your business'],
+  m65Q1:'What do you run?', m65Q1s:'The answer decides what you see.',
+  m65Q2:'What do you do?', m65Q2s:'Tick everything that is yours — several is fine. Not listed? Type it in.', m65Find:'Find: café, school, taxi…', m65Sel:n=>`Selected: ${n}`, m65None:'Nothing found — type your own below.', m65Clear:'Clear search',
+  m65Q3:'What do you have?', m65Q3s:'Tabs and wording depend on it. You can leave everything unticked.',
+  m65TP:'Mira — for your money and loans', m65TB:'Mira — for your business', m65TMore:n=>`and ${n} more`, m65TDone:'Set up for you',
+  m65F:{pay:['Payments without surprises','A reminder ahead of time and the day you become debt-free.'],free:['Which loan to pay first','Where an early payment saves you the most.'],fc:['Will there be enough','A 30-day forecast: where you may fall short and how much to set aside.'],
+    goods:['Stock in your own units','Kilograms, litres, boxes, pieces — and a signal when you run low.'],debt:['Who owes you and whom you owe','Debts with due dates: nothing gets lost or forgotten.'],
+    cli:['Clients and regular bills','Rent, salaries, subscriptions — by date, never late.'],sifra:['Sifra knows your business','Ask about your numbers or for a plan — she answers to the point.']},
+  m65Ex:{free:'June 2027', fcOk:'enough on the 28th', left:'left', owes:'owes you', youOwe:'you owe', rent:'Rent', pay:'Salaries', paid:'paid', due:'in 3 days', askP:'How much should I set aside before Friday?', askB:k=>`How do I grow sales: ${k}?`, ans:'Looking at your records…', goods:'Goods', client:'Client', supplier:'Supplier'},
+  m65WelT:'Last step', m65A11y:'Getting to know Mira',
+  m65StT:'Where to start', m65StS:(a,b)=>`${a} of ${b} done`, m65StHide:'Hide', m65StOk:'done', m65St:{loan:'Add a loan or instalment plan',day:'Record today',goods:'Add your first item',rem:'Turn on payment reminders',sifra:'Ask Sifra a question'}
+}};
+for(const k of ['ru','tg','en']){ try{ m44Wrap(M65S[k]); }catch(e){} }
+/* ===================== v65: первый запуск, полный список видов дела, значки разделов (26.11.2026) =====================
+   1) Знакомство при первом запуске (#m65Onb): привет → «Что вы ведёте?» → виды дела (каталог по группам, поиск, несколько сразу, своё) → «Что у вас есть» →
+      «Mira под вас»: карточки возможностей, собранные по ответу. «Пропустить» видно на каждом шаге. Потом — прежнее окно приветствия (страна, валюта, первое действие).
+   2) Тот же каталог — в окне «Что вы ведёте?» (m64Sheet).
+   3) «С чего начать»: три шага по роли на главной, пока не сделаны.
+   4) Значок у каждого заголовка раздела, у которого его не было.
+   Ключи в памяти телефона: m65onb ('1' — знакомство пройдено или пропущено), m65st ('1' — блок «С чего начать» скрыт). */
+const M65={ver:'65', i:0, d:null, q:'', after:null};
+(function(){ for(const c of M65_CAT){ if(!M64_KINDS.includes(c[0])) M64_KINDS.push(c[0]); const gi=M64_GOODS.indexOf(c[0]); if(c[2]&&gi<0) M64_GOODS.push(c[0]); if(!c[2]&&gi>=0) M64_GOODS.splice(gi,1); if(c[3]&&!M64_CLS.includes(c[0])) M64_CLS.push(c[0]); }
+  Object.assign(M64_W.ru,{salon:'салон',center:'центр'}); Object.assign(M64_W.tg,{salon:'толор',center:'марказ'}); Object.assign(M64_W.en,{salon:'salon',center:'centre'}); })();
+function m65Grp(k){ const c=M65_CAT.find(x=>x[0]===k); return c?c[1]:''; }
+function m65Place(kinds){ if(!kinds||!kinds.length) return ''; const g=kinds.map(m65Grp); if(g.every(x=>x==='look')) return 'salon'; if(g.every(x=>x==='med'||x==='edu')) return 'center'; return ''; }
+function m65T(){ return M65S[lang]||M65S.ru; }
+try{ m64Flags(); }catch(e){}
+
+/* ---- общий каталог: группы, поиск, несколько сразу ---- */
+function m65CatHTML(sel,q){ const S=M64S[lang]||M64S.ru, col={ru:4,tg:5,en:6}[lang]||4, qq=String(q||'').trim().toLowerCase(); let h='';
+  for(const g of M65_GROUPS){ const gn=S.m65G[g[0]], hit=!qq||gn.toLowerCase().indexOf(qq)>=0, items=M65_CAT.filter(c=>c[1]===g[0]&&(hit||c[col].toLowerCase().indexOf(qq)>=0)); if(!items.length) continue;
+    h+=`<div class="m65-g" data-m65g="${g[0]}"><h4>${esc(gn)}</h4><div class="chips m64-chips">${items.map(c=>`<button type="button" class="chip ${sel.includes(c[0])?'on':''}" data-m64c="kinds:${c[0]}" aria-pressed="${sel.includes(c[0])}">${esc(c[col])}</button>`).join('')}</div></div>`; }
+  return h||`<p class="note m65-none">${esc(m65T().m65None)}</p>`; }
+function m65KindsHTML(d,q){ const S=M64S[lang]||M64S.ru, T=m65T(); return `<div class="m65-find"><span aria-hidden="true">${ico('search',18)}</span><input id="m65-q" type="search" autocomplete="off" enterkeyhint="search" value="${esc(q||'')}" placeholder="${esc(T.m65Find)}" aria-label="${esc(T.m65Find)}"></div>
+    <p class="m65-sel" id="m65-sel" aria-live="polite">${esc(T.m65Sel(d.kinds.length))}</p><div id="m65-cat">${m65CatHTML(d.kinds,q)}</div>
+    <div class="field"><label for="m64-own">${esc(S.m64OwnL)}</label><input id="m64-own" type="text" maxlength="60" autocomplete="off" value="${esc(d.own)}" placeholder="${esc(S.m64OwnPh)}"></div>`; }
+function m65HasHTML(d){ const S=M64S[lang]||M64S.ru, ic={shop:'shop',wh:'box',online:'globe',make:'gear'}; return `<div class="m65-has">${M64_HAS.map(k=>`<button type="button" class="m65-hb ${d.has.includes(k)?'on':''}" data-m64c="has:${k}" aria-pressed="${d.has.includes(k)}"><span aria-hidden="true">${ico(ic[k],22)}</span><b>${esc(S.m64H[k])}</b></button>`).join('')}</div><p class="note" id="m64-none">${d.has.length?'':esc(S.m64HNone)}</p>`; }
+/* одна привязка на корень: нажатия по видам дела, поиск, «своё» */
+function m65Bind(root,d,st,upd){ root.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m64c]'); if(!b||!root.contains(b)) return; const [g,k]=b.getAttribute('data-m64c').split(':'), i=d[g].indexOf(k); if(i>=0) d[g].splice(i,1); else d[g].push(k); b.classList.toggle('on',i<0); b.setAttribute('aria-pressed',String(i<0)); upd(); });
+  root.addEventListener('input',e=>{ const t=e.target; if(!t) return; if(t.id==='m65-q'){ st.q=t.value; const c=root.querySelector('#m65-cat'); if(c) c.innerHTML=m65CatHTML(d.kinds,st.q); } else if(t.id==='m64-own'){ d.own=t.value.trim(); upd(); } }); }
+
+/* ---- окно «Что вы ведёте?» с полным каталогом ---- */
+m64Sheet=function(pre){ const S=M64S[lang]||M64S.ru, T=m65T(), c0=m64Calc(m64P()), d={mode:(pre&&pre.mode)||c0.mode||'', kinds:c0.kinds.slice(), has:c0.has.slice(), own:c0.own}, st={q:''};
+  openSheet(`<div class="m64-sh m65-sh"><h3>${esc(S.m64T)}</h3><p class="lead">${esc(S.m64Lead)}</p>
+    <div class="m64-modes" role="radiogroup" aria-label="${esc(S.m64T)}"><button type="button" role="radio" data-m64m="personal" aria-checked="${d.mode==='personal'}"><b>${esc(S.m64Mp)}</b><small>${esc(S.m64MpS)}</small></button><button type="button" role="radio" data-m64m="biz" aria-checked="${d.mode==='biz'}"><b>${esc(S.m64Mb)}</b><small>${esc(S.m64MbS)}</small></button></div>
+    <div id="m64-biz" ${d.mode==='biz'?'':'hidden'}><h4>${esc(S.m64KT)} <small>${esc(S.m64Multi)}</small></h4>${m65KindsHTML(d,'')}<h4>${esc(S.m64HT)} <small>${esc(S.m64Multi)}</small></h4>${m65HasHTML(d)}</div>
+    <div class="m64-out" id="m64-out" aria-live="polite"></div>
+    <button type="button" class="btn btn-primary btn-full" id="m64-save">${esc(S.m64Save)}</button><div class="sheet-row"><button type="button" class="btn btn-ghost" data-close>${esc(L.cancel)}</button></div></div>`);
+  const root=sheet.querySelector('.m64-sh'), q=s=>sheet.querySelector(s), upd=()=>{ const biz=q('#m64-biz'); if(biz) biz.hidden=d.mode!=='biz'; sheet.querySelectorAll('[data-m64m]').forEach(b=>b.setAttribute('aria-checked',String(b.dataset.m64m===d.mode)));
+      const nn=q('#m64-none'); if(nn) nn.textContent=d.mode==='biz'&&!d.has.length?S.m64HNone:''; const sl=q('#m65-sel'); if(sl) sl.textContent=T.m65Sel(d.kinds.length);
+      const ch=d.mode?m64Changes(d):[], out=q('#m64-out'); if(out) out.innerHTML=ch.length?`<b>${esc(S.m64OutT)}</b><ul>${ch.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''; const sv=q('#m64-save'); if(sv) sv.disabled=!d.mode; };
+  m65Bind(root,d,st,upd); sheet.querySelectorAll('[data-m64m]').forEach(b=>b.onclick=()=>{ d.mode=b.dataset.m64m; upd(); });
+  q('#m64-save').onclick=()=>{ upd(); if(!d.mode) return; const was=M64.mode; m64Save(d); try{ lsSet('m64later',''); }catch(e){} closeSheet(); try{ renderTabs(); }catch(e){} try{ render(); }catch(e){} try{ if(M64.mode==='personal'&&curTab==='shop') setTab('today'); else if(was==='personal'&&M64.mode!=='personal'&&curTab==='money') setTab('today'); }catch(e){} toast(S.m64Saved); };
+  upd(); };
+
+/* ---- «Mira под вас»: карточки возможностей по ответу ---- */
+function m65Feat(c){ if(c.mode==='personal') return ['pay','free','fc','sifra']; return c.goods?['goods','fc','debt','sifra']:['cli','fc','debt','sifra']; }
+function m65Demo(f,c,d){ const T=m65T(), X=T.m65Ex, S=M64S[lang]||M64S.ru, U=S.m64U, row=(a,b,cls)=>`<div class="m65-r"><span>${esc(a)}</span><b class="${cls||''}">${b}</b></div>`;
+  if(f==='pay') return `<div class="m65-ringw"><div class="m65-ring" style="--p:58"><b><span data-m65n="58">0</span>%</b></div><b class="m65-free">${esc(X.free)}</b></div>`;
+  if(f==='free') return `<div class="m65-bars"><div><i style="--p:92%"></i><span>24%</span></div><div><i style="--p:70%" class="b"></i><span>20%</span></div></div>`;
+  if(f==='fc') return `<div class="m65-fc"><svg viewBox="0 0 200 54" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,40 30,34 55,37 80,22 105,28 130,14 160,19 200,8"/></svg><span class="m65-ok">${esc(X.fcOk)}</span></div>`;
+  if(f==='goods'){ const ks=c.kinds.filter(k=>M64_GOODS.includes(k)).slice(0,2).map(k=>S.m64K[k]); if(d.own&&ks.length<2) ks.push(d.own.split(/[,;]/)[0].trim()); while(ks.length<2) ks.push(X.goods); const u=c.cl?[['pcs',6],['pcs',12]]:[['kg',40],['box',12]];
+    return ks.map((n,i)=>row(n,`<span data-m65n="${u[i][1]}">0</span> ${esc(U[u[i][0]])}`)).join(''); }
+  if(f==='debt') return row(X.client,esc(X.owes)+' '+money(400),'g')+row(X.supplier,esc(X.youOwe)+' '+money(3000));
+  if(f==='cli') return row(X.rent,esc(X.due))+row(X.pay,esc(X.paid),'g');
+  const k0=c.kinds.length?String(S.m64K[c.kinds[0]]||'').toLowerCase():(d.own||''); return `<div class="m65-chat"><p class="q">${esc(c.mode==='personal'||!k0?X.askP:X.askB(k0))}</p><p class="a"><i></i><i></i><i></i><span>${esc(X.ans)}</span></p></div>`; }
+function m65TourHTML(d){ const T=m65T(), S=M64S[lang]||M64S.ru, c=m64Calc(Object.assign({m64:1},d)), ic={pay:'bell',free:'flag',fc:'chart',goods:'box',debt:'people',cli:'receipt',sifra:'sparkle'};
+  const names=c.kinds.map(k=>S.m64K[k]).concat(d.own?[d.own]:[]), chips=names.slice(0,4).map(n=>`<span>${esc(n)}</span>`).join('')+(names.length>4?`<span class="more">${esc(T.m65TMore(names.length-4))}</span>`:'');
+  const ch=m64Changes(d);
+  return `<h2 class="m65-h" tabindex="-1">${esc(c.mode==='personal'?T.m65TP:T.m65TB)}</h2>${chips?`<div class="m65-my">${chips}</div>`:''}
+    <div class="m65-feats">${m65Feat(c).map((f,i)=>`<section class="m65-f" style="--i:${i}"><div class="m65-fh"><span class="m65-fi" aria-hidden="true">${ico(ic[f],22)}</span><div><b>${esc(T.m65F[f][0])}</b><p>${esc(T.m65F[f][1])}</p></div></div><div class="m65-demo" aria-hidden="true">${m65Demo(f,c,d)}</div></section>`).join('')}</div>
+    ${ch.length?`<div class="m65-done" style="--i:4"><b>${esc(T.m65TDone)}</b><ul>${ch.map((x,i)=>`<li style="--j:${i}">${ico('check',16)}<span>${esc(x)}</span></li>`).join('')}</ul></div>`:''}`; }
+
+/* ---- знакомство при первом запуске ---- */
+function m65Need(){ try{ return !(typeof DEMO!=='undefined'&&DEMO)&&!hasRealData()&&lsGet('m7w_v1')!=='1'&&lsGet('m65onb')!=='1'; }catch(e){ return false; } }
+function m65StepsList(){ return M65.d&&M65.d.mode==='biz'?['hello','mode','kinds','has','tour']:['hello','mode','tour']; }
+function m65Rm(){ try{ return matchMedia('(prefers-reduced-motion: reduce)').matches; }catch(e){ return false; } }
+function m65Count(root){ root.querySelectorAll('[data-m65n]').forEach(e=>{ const to=+e.getAttribute('data-m65n')||0; if(m65Rm()){ e.textContent=String(to); return; } const t0=performance.now(), D=900; const step=t=>{ if(!e.isConnected) return; const k=Math.max(0,Math.min(1,(t-t0)/D)); e.textContent=String(Math.round(to*(1-Math.pow(1-k,3)))); if(k<1) requestAnimationFrame(step); }; requestAnimationFrame(step); }); }
+function m65Draw(focus){ const el=document.getElementById('m65Onb'); if(!el) return; const T=m65T(), S=M64S[lang]||M64S.ru, d=M65.d, steps=m65StepsList(); if(M65.i>=steps.length) M65.i=steps.length-1; const st=steps[M65.i]; let body='';
+  if(st==='hello') body=`<div class="m65-hero"><span class="m65-logo" aria-hidden="true">${typeof m8RingSVG==='function'?m8RingSVG(96,{s:96,w:16}):''}</span><div class="m65-brand">mira</div></div>
+      <div class="seg m65-lang" role="group" aria-label="Language"><button type="button" data-m65lang="ru" class="${lang==='ru'?'on':''}">Русский</button><button type="button" data-m65lang="tg" class="${lang==='tg'?'on':''}">Тоҷикӣ</button><button type="button" data-m65lang="en" class="${lang==='en'?'on':''}">English</button></div>
+      <h2 class="m65-h" tabindex="-1">${esc(T.m65H1)}</h2><p class="m65-s">${esc(T.m65H1s)}</p>
+      <ul class="m65-pr">${T.m65P.map((x,i)=>`<li style="--i:${i}"><span aria-hidden="true">${ico(['bell','chart','chat'][i],20)}</span>${esc(x)}</li>`).join('')}</ul>`;
+  else if(st==='mode') body=`<h2 class="m65-h" tabindex="-1">${esc(T.m65Q1)}</h2><p class="m65-s">${esc(T.m65Q1s)}</p><div class="m65-modes" role="radiogroup" aria-label="${esc(T.m65Q1)}">
+      <button type="button" role="radio" data-m64m="personal" aria-checked="${d.mode==='personal'}"><span class="m65-mi" aria-hidden="true">${ico('piggy',28)}</span><b>${esc(S.m64Mp)}</b><small>${esc(S.m64MpS)}</small></button>
+      <button type="button" role="radio" data-m64m="biz" aria-checked="${d.mode==='biz'}"><span class="m65-mi" aria-hidden="true">${ico('shop',28)}</span><b>${esc(S.m64Mb)}</b><small>${esc(S.m64MbS)}</small></button></div>`;
+  else if(st==='kinds') body=`<h2 class="m65-h" tabindex="-1">${esc(T.m65Q2)}</h2><p class="m65-s">${esc(T.m65Q2s)}</p>${m65KindsHTML(d,M65.q)}`;
+  else if(st==='has') body=`<h2 class="m65-h" tabindex="-1">${esc(T.m65Q3)}</h2><p class="m65-s">${esc(T.m65Q3s)}</p>${m65HasHTML(d)}`;
+  else body=m65TourHTML(d);
+  const last=M65.i===steps.length-1;
+  el.setAttribute('aria-label',T.m65A11y); el.setAttribute('data-step',st);
+  el.innerHTML=`<div class="m65-top"><button type="button" class="m65-back" data-m65back="1" aria-label="${esc(T.m65Back)}" ${M65.i?'':'hidden'}>${ico('back',22)}</button><div class="m65-dots" role="img" aria-label="${esc(T.m65Step(M65.i+1,steps.length))}">${steps.map((x,i)=>`<i class="${i===M65.i?'on':i<M65.i?'ok':''}"></i>`).join('')}</div><button type="button" class="m65-skip" data-m65skip="1" ${last?'hidden':''}>${esc(T.m65Skip)}</button></div>
+    <div class="m65-body ${m65Rm()?'':'m65-in'}" id="m65Body">${body}</div>
+    <div class="m65-foot"><button type="button" class="btn btn-primary btn-full" id="m65Next" ${st==='mode'&&!d.mode?'disabled':''}>${esc(st==='hello'?T.m65Start:T.m65Next)}</button></div>`;
+  const bd=el.querySelector('#m65Body'); if(st==='kinds'||st==='has') m65Bind(bd,d,M65,()=>{ const sl=bd.querySelector('#m65-sel'); if(sl) sl.textContent=T.m65Sel(d.kinds.length); const nn=bd.querySelector('#m64-none'); if(nn) nn.textContent=d.has.length?'':S.m64HNone; });
+  if(st==='tour') m65Count(bd); if(focus!==false){ const h=el.querySelector('.m65-h'); try{ if(h) h.focus({preventScroll:true}); }catch(e){} } bd.scrollTop=0; }
+function m65Open(after){ M65.after=after||null; M65.d={mode:'',kinds:[],has:[],own:''}; M65.q=''; M65.i=0; let el=document.getElementById('m65Onb'); if(!el){ el=document.createElement('div'); el.id='m65Onb'; el.className='m65'; el.setAttribute('role','dialog'); el.setAttribute('aria-modal','true'); document.body.appendChild(el);
+    el.addEventListener('click',e=>{ const t=e.target; if(!t.closest) return; const lg=t.closest('[data-m65lang]'); if(lg){ try{ setLang(lg.getAttribute('data-m65lang')); }catch(x){} m65Draw(); return; }
+      const m=t.closest('[data-m64m]'); if(m){ M65.d.mode=m.getAttribute('data-m64m'); el.querySelectorAll('[data-m64m]').forEach(b=>b.setAttribute('aria-checked',String(b===m))); const n=el.querySelector('#m65Next'); if(n) n.disabled=false; return; }
+      if(t.closest('[data-m65skip]')){ m65Close(true); return; } if(t.closest('[data-m65back]')){ if(M65.i>0){ M65.i--; m65Draw(); } return; }
+      if(t.closest('#m65Next')){ const steps=m65StepsList(); if(M65.i<steps.length-1){ M65.i++; m65Draw(); } else m65Close(false); } }); }
+  document.documentElement.classList.add('m65-open'); m65Draw(); }
+function m65Close(skip){ try{ lsSet('m65onb','1'); }catch(e){} try{ if(!skip&&M65.d&&M65.d.mode) m64Save(M65.d); }catch(e){} const el=document.getElementById('m65Onb'); if(el) el.remove(); document.documentElement.classList.remove('m65-open');
+  try{ renderTabs(); render(); }catch(e){} const a=M65.after; M65.after=null; if(a) setTimeout(()=>{ try{ a(); }catch(e){} },80); }
+try{ const _w=m7Welcome; m7Welcome=function(){ const self=this, args=arguments; if(m65Need()){ m65Open(()=>{ try{ _w.apply(self,args); }catch(e){} }); return true; } return _w.apply(this,arguments); }; }catch(e){}
+
+/* ---- «С чего начать»: три шага по роли ---- */
+function m65StList(){ const done={loan:()=>state.loans.some(l=>!l.example), day:()=>!!(state.shop&&state.shop.sales&&state.shop.sales.length), goods:()=>!!(state.inv&&state.inv.length), rem:()=>{ try{ return !!pushSt().on; }catch(e){ return false; } }, sifra:()=>{ try{ return sfLog().length>0; }catch(e){ return false; } }};
+  const ids=M64.mode==='personal'?['loan','rem','sifra']:M64.goods?['day','goods','loan']:['day','loan','rem']; return ids.map(id=>({id,ok:!!done[id]()})); }
+function m65Steps(){ try{ const v=document.getElementById('view-today'); if(!v) return; let el=document.getElementById('m65Steps'); const show=M64.set&&!M64.incomplete&&!(typeof DEMO!=='undefined'&&DEMO)&&lsGet('m65st')!=='1'; const list=show?m65StList():[], n=list.filter(x=>x.ok).length;
+    if(!show||n===list.length){ if(el) el.remove(); if(show&&n===list.length){ try{ lsSet('m65st','1'); }catch(e){} } return; }
+    const T=m65T(), key=list.map(x=>x.id+(x.ok?1:0)).join()+'|'+lang; if(el&&el.getAttribute('data-k')===key) return;
+    if(!el){ el=document.createElement('section'); el.id='m65Steps'; el.className='m65-st'; const ref=document.getElementById('miraNext'); if(ref&&ref.parentNode===v){ v.insertBefore(el,ref); try{ el.style.order=getComputedStyle(ref).order||'3'; }catch(e){} } else v.insertBefore(el,v.firstChild); }
+    el.setAttribute('data-k',key); const ic={loan:'loans',day:'edit',goods:'box',rem:'bell',sifra:'sparkle'}, first=list.find(x=>!x.ok);
+    el.innerHTML=`<div class="m65-sth"><h2><span class="m65-ic" aria-hidden="true">${ico('flag',18)}</span>${esc(T.m65StT)}</h2><small>${esc(T.m65StS(n,list.length))}</small><button type="button" class="m65-stx" data-m65sthide="1" aria-label="${esc(T.m65StHide)}">${ico('close',18)}</button></div>
+      <div class="m65-stp" role="img" aria-label="${esc(T.m65StS(n,list.length))}"><i style="--p:${Math.round(n/list.length*100)}%"></i></div>
+      ${list.map(x=>x.ok?`<div class="m65-sr ok"><span aria-hidden="true">${ico('check',18)}</span><b>${esc(T.m65St[x.id])}</b><small>${esc(T.m65StOk)}</small></div>`:`<button type="button" class="m65-sr ${x===first?'cur':''}" data-m65st="${x.id}" ${x.id==='day'?'data-shop="day"':''}><span aria-hidden="true">${ico(ic[x.id],18)}</span><b>${esc(T.m65St[x.id])}</b>${ico('next',16)}</button>`).join('')}`; }catch(e){} }
+document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) return; if(t.closest('[data-m65sthide]')){ try{ lsSet('m65st','1'); }catch(x){} m65Steps(); return; }
+  const b=t.closest('[data-m65st]'); if(!b) return; const id=b.getAttribute('data-m65st'); try{ if(id==='loan') m7AddLoan(); else if(id==='goods') invForm(null); else if(id==='rem') m7NotifySheet(); else if(id==='sifra') sifraOpen(); }catch(x){} });
+
+/* ---- значок у каждого заголовка раздела ---- */
+const M65_IC=[['#m38Bento h2.m38-bh','stats'],['#myBanksH2','loans'],['#goldSection h2','gold'],['#dynamics h3','chart'],['#closed h2','history'],['#shopSub .section-h h2','calendar'],['#moneyTop .section-h h2','money'],['#m61QH','chat'],['#moreView h2','star'],['#focus h2','check'],['#miraOwed h2','owed']];
+const M65_GI=['piggy','shop','loans','mentor','calc','gear'];
+function m65Icons(){ try{ const put=(h,name)=>{ if(!h||h.querySelector('.m65-ic')||h.querySelector(':scope > svg')||h.querySelector('.m61-gh')) return; const s=document.createElement('span'); s.className='m65-ic'; s.setAttribute('aria-hidden','true'); s.innerHTML=ico(name,18); h.insertBefore(s,h.firstChild); };
+    for(const [sel,name] of M65_IC) document.querySelectorAll(sel).forEach(h=>put(h,name));
+    document.querySelectorAll('#view-more .m61-gh').forEach((b,i)=>{ if(b.querySelector('.m65-ic')) return; const s=document.createElement('span'); s.className='m65-ic'; s.setAttribute('aria-hidden','true'); s.innerHTML=ico(M65_GI[i%M65_GI.length],18); b.insertBefore(s,b.firstChild); }); }catch(e){} }
+try{ const _r=render; render=function(){ const x=_r.apply(this,arguments); try{ m65Steps(); m65Icons(); }catch(e){} return x; }; }catch(e){}
+try{ const _s=setTab; setTab=function(){ const x=_s.apply(this,arguments); try{ m65Icons(); }catch(e){} return x; }; }catch(e){}
+try{ const mv=document.getElementById('view-more'); if(mv){ let tm=0; new MutationObserver(()=>{ if(tm) return; tm=setTimeout(()=>{ tm=0; m65Icons(); },120); }).observe(mv,{childList:true,subtree:true}); } }catch(e){}
+try{ m65Steps(); m65Icons(); }catch(e){}
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
