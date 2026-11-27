@@ -7222,6 +7222,267 @@ html.m69-kpon .sheet{padding-bottom:calc(var(--k)*330px)!important;}
 
 /* Сифра: текст ответа мягко уходит под шапку, а не режется пополам */
 .sheet.m52 #sf-log{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 calc(var(--k)*28px));mask-image:linear-gradient(to bottom,transparent 0,#000 calc(var(--k)*28px));}
+/* ===== v70 ===== */
+/* 145: Мастерская */
+.m70-tl{border:1px solid var(--line);background:var(--surface);border-radius:calc(var(--k)*16px);padding:calc(var(--k)*12px) calc(var(--k)*14px);margin:calc(var(--k)*10px) 0;display:flex;flex-direction:column;gap:calc(var(--k)*8px);}
+.sf-m .m70-tl{margin-top:calc(var(--k)*10px);}
+.m70-tl .t{display:flex;align-items:center;gap:calc(var(--k)*6px);font-size:1rem;}
+.m70-tl .ld{margin:0;color:var(--muted);font-size:.88rem;}
+.m70-tl .fs{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--k)*130px),1fr));gap:calc(var(--k)*8px);}
+.m70-tl .fs label{display:flex;flex-direction:column;gap:calc(var(--k)*4px);font-size:.82rem;min-width:0;}
+.m70-tl .fs label span{color:var(--muted);}
+.m70-tl .fs input{font:inherit;font-size:1rem;font-weight:700;border:1px solid var(--line);border-radius:calc(var(--k)*10px);padding:calc(var(--k)*8px) calc(var(--k)*10px);background:var(--bg);color:var(--ink);min-width:0;width:100%;}
+.m70-tl .rs{display:flex;flex-wrap:wrap;gap:calc(var(--k)*8px);}
+.m70-tl .rs div{flex:1 1 calc(var(--k)*140px);background:var(--brand-weak);border-radius:calc(var(--k)*12px);padding:calc(var(--k)*8px) calc(var(--k)*10px);display:flex;flex-direction:column;gap:2px;}
+.m70-tl .rs small{color:var(--brand-ink);font-size:.84rem;}
+.m70-tl .rs b{font-size:1.2rem;font-variant-numeric:tabular-nums;}
+.m70-tl .nt{margin:0;font-size:.84rem;color:var(--muted);display:flex;gap:calc(var(--k)*5px);align-items:flex-start;}
+.m70-tl .ac{display:flex;gap:calc(var(--k)*12px);flex-wrap:wrap;align-items:center;}
+.m70-tl .ok{color:var(--ok,#12A37A);font-weight:700;font-size:.86rem;display:inline-flex;gap:calc(var(--k)*4px);align-items:center;}
+.m70p .btn-full{margin:calc(var(--k)*8px) 0;}
+
+/* 174: карманы */
+.m70-pkt{display:flex;flex-direction:column;gap:calc(var(--k)*3px);margin:calc(var(--k)*8px) 0 calc(var(--k)*12px);}
+.m70-pkt small{color:var(--muted);}
+.m70-pkt b{font-size:2rem;font-weight:800;font-variant-numeric:tabular-nums;}
+.m70-pkt em{font-style:normal;font-size:.84rem;}
+.m70-pkt em.up{color:var(--ok,#12A37A);} .m70-pkt em.dn{color:var(--muted);}
+.m70-pkb{display:flex;flex-direction:column;gap:calc(var(--k)*6px);margin:0 0 calc(var(--k)*12px);}
+.m70-pkb div{display:grid;grid-template-columns:calc(var(--k)*44px) 1fr auto;gap:calc(var(--k)*8px);align-items:center;font-size:.84rem;}
+.m70-pkb i{height:calc(var(--k)*10px);border-radius:calc(var(--k)*6px);background:var(--brand);display:block;}
+.m70-pkb b{font-variant-numeric:tabular-nums;}
+.m70-pkl{list-style:none;margin:0 0 calc(var(--k)*12px);padding:0;display:flex;flex-direction:column;gap:calc(var(--k)*8px);}
+.m70-pkl li{display:flex;justify-content:space-between;align-items:center;gap:calc(var(--k)*8px);border:1px solid var(--line);border-radius:calc(var(--k)*14px);padding:calc(var(--k)*10px) calc(var(--k)*12px);background:var(--surface);}
+.m70-pkl li div{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.m70-pkl small{color:var(--muted);font-variant-numeric:tabular-nums;}
+
+/* 155: купить / продать */
+.m70-dir{display:inline-flex;gap:calc(var(--k)*4px);padding:calc(var(--k)*4px);border-radius:calc(var(--k)*999px);background:color-mix(in srgb,var(--ink) 7%,var(--surface));margin:0 0 calc(var(--k)*10px);}
+.m70-dir button{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;padding:calc(var(--k)*8px) calc(var(--k)*16px);border-radius:calc(var(--k)*999px);cursor:pointer;min-height:calc(var(--k)*40px);}
+.m70-dir button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px calc(var(--k)*4px) rgba(0,0,0,.12);}
+
+/* 152 */
+.m70-once{display:inline-flex;align-items:center;gap:calc(var(--k)*4px);font-style:normal;font-size:.84rem;font-weight:700;color:var(--brand-ink);background:var(--brand-weak);border-radius:calc(var(--k)*999px);padding:2px calc(var(--k)*8px);margin-left:calc(var(--k)*6px);vertical-align:middle;}
+
+/* 166 */
+.m70-tu{display:inline-flex;align-items:center;gap:calc(var(--k)*5px);margin-top:calc(var(--k)*8px);font-size:.86rem;}
+
+/* 154 */
+.m70-phm{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);border:1px solid var(--line);background:var(--surface);color:var(--brand-ink);border-radius:calc(var(--k)*999px);padding:calc(var(--k)*6px) calc(var(--k)*12px);font:inherit;font-size:.82rem;font-weight:700;margin-left:calc(var(--k)*8px);cursor:pointer;}
+
+/* 162: график у новости */
+.m70-sp{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);margin:calc(var(--k)*4px) 0 2px;}
+.m70-sp svg{width:calc(var(--k)*120px);height:calc(var(--k)*28px);display:block;}
+.m70-sp path{fill:none;stroke:var(--brand);stroke-width:1.8;vector-effect:non-scaling-stroke;}
+.m70-sp em{font-style:normal;font-size:.84rem;font-weight:700;font-variant-numeric:tabular-nums;}
+.m70-sp em.up{color:#B5552F;} .m70-sp em.dn{color:var(--ok,#12A37A);}
+
+/* 163 */
+.m70-fb{display:flex;gap:calc(var(--k)*6px);margin-top:calc(var(--k)*8px);}
+.m70-fb button{display:inline-flex;align-items:center;gap:calc(var(--k)*4px);border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:calc(var(--k)*999px);padding:calc(var(--k)*4px) calc(var(--k)*10px);font:inherit;font-size:.84rem;cursor:pointer;min-height:calc(var(--k)*30px);}
+.m70-fb button.on{border-color:var(--brand);color:var(--brand-ink);background:var(--brand-weak);font-weight:700;}
+.m48-it.m70-hid>*:not(.m70-hn){display:none!important;}
+.m70-hn{display:flex;justify-content:space-between;align-items:center;gap:calc(var(--k)*8px);font-size:.82rem;color:var(--muted);}
+.m70-hn span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;}
+
+/* 153 */
+.m70-band{fill:color-mix(in srgb,var(--brand) 18%,transparent);stroke:var(--brand);stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none;}
+svg.m70-selon{touch-action:none;}
+.m70-selh{display:flex;align-items:center;gap:calc(var(--k)*5px);font-size:.84rem;color:var(--muted);margin:calc(var(--k)*6px) 0 0;}
+.m70-sela{position:fixed;z-index:2147483000;display:inline-flex;align-items:center;gap:calc(var(--k)*6px);border:0;border-radius:calc(var(--k)*999px);background:var(--brand);color:#fff;font:inherit;font-weight:700;font-size:.88rem;padding:calc(var(--k)*10px) calc(var(--k)*16px);box-shadow:0 calc(var(--k)*8px) calc(var(--k)*22px) rgba(0,0,0,.2);cursor:pointer;min-width:calc(var(--k)*220px);justify-content:center;}
+
+/* 181 */
+
+
+/* 183 */
+.m70-sk{display:flex;flex-direction:column;gap:calc(var(--k)*10px);margin:calc(var(--k)*10px) 0;}
+.m70-sk .c{border:1px solid var(--line);border-radius:calc(var(--k)*16px);padding:calc(var(--k)*14px);display:flex;flex-direction:column;gap:calc(var(--k)*10px);background:var(--surface);}
+.m70-sk i{display:block;height:calc(var(--k)*12px);border-radius:calc(var(--k)*6px);background:linear-gradient(90deg,var(--line),color-mix(in srgb,var(--line) 40%,var(--surface)),var(--line));background-size:200% 100%;animation:m70sk 1.4s linear infinite;}
+.m70-sk i.w9{width:90%;} .m70-sk i.w7{width:70%;} .m70-sk i.w5{width:50%;}
+@keyframes m70sk{to{background-position:-200% 0;}}
+@media (prefers-reduced-motion:reduce){.m70-sk i{animation:none;}}
+
+/* 185 + 186 */
+.m70-w{display:block;color:var(--muted);font-size:.84rem;margin-top:calc(var(--k)*4px);line-height:1.3;}
+.m70-kw{min-height:1.2em;text-align:right;color:var(--muted);font-size:.82rem;padding:0 calc(var(--k)*6px) calc(var(--k)*6px);display:flex;justify-content:flex-end;align-items:center;gap:calc(var(--k)*8px);flex-wrap:wrap;}
+.m70-kw button{border:0;background:var(--brand);color:#fff;border-radius:calc(var(--k)*999px);padding:calc(var(--k)*5px) calc(var(--k)*12px);font:inherit;font-weight:700;font-size:.84rem;cursor:pointer;}
+.m70-kc{display:block;margin:calc(var(--k)*8px) auto 0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:calc(var(--k)*999px);padding:calc(var(--k)*5px) calc(var(--k)*14px);font:inherit;font-weight:700;font-size:.82rem;cursor:pointer;}
+
+/* 190 */
+html.m70-hide body>*{filter:blur(calc(var(--k)*18px))!important;}
+/* ===== v71: новый «Рынок дня» ===== */
+/* шапка */
+.hb-hero.m71-mh{padding:calc(var(--k)*16px) calc(var(--k)*16px) calc(var(--k)*14px);border-radius:calc(var(--k)*22px);display:flex;flex-direction:column;gap:calc(var(--k)*10px);}
+.m71-mh .m71-top{display:grid;grid-template-columns:auto 1fr auto;gap:calc(var(--k)*10px);align-items:center;}
+.m71-mh .m71-top .bp-ava{width:calc(var(--k)*40px);height:calc(var(--k)*40px);}
+.m71-mh .m71-ti{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.m71-mh .m71-ti b{font-size:1.06rem;line-height:1.2;}
+.m71-mh .m71-ti small{opacity:.78;font-size:.84rem;line-height:1.3;}
+.m71-rf{position:relative;display:inline-flex!important;align-items:center;gap:calc(var(--k)*6px);min-height:calc(var(--k)*44px);padding:0 calc(var(--k)*14px)!important;border-radius:calc(var(--k)*999px)!important;width:auto!important;flex:none;font-weight:700;}
+.m71-rf .m71-ring{display:none;}
+.m71-rf.busy{opacity:1!important;}
+.m71-rf.busy svg{animation:m71spin 1.1s linear infinite;}
+@keyframes m71spin{to{transform:rotate(360deg);}}
+@media (prefers-reduced-motion:reduce){.m71-rf.busy svg{animation:none;}}
+.m71-st{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--k)*6px) calc(var(--k)*10px);}
+.m71-st small{display:inline-flex;align-items:center;gap:calc(var(--k)*4px);opacity:.8;font-size:.84rem;}
+.m71-pill{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);font-size:.84rem;font-weight:700;border-radius:calc(var(--k)*999px);padding:calc(var(--k)*4px) calc(var(--k)*10px);background:rgba(255,255,255,.14);}
+.m71-pill::before{content:"";width:calc(var(--k)*8px);height:calc(var(--k)*8px);border-radius:50%;background:currentColor;opacity:.9;}
+.m71-pill.ok{color:#9FE6C6;} .m71-pill.old{color:#F3D18B;} .m71-pill.busy{color:#fff;}
+.m71-pill.busy::before{animation:m71pulse 1.2s ease-in-out infinite;}
+@keyframes m71pulse{50%{opacity:.25;}}
+.m71-bar{display:block;height:calc(var(--k)*4px);border-radius:calc(var(--k)*4px);background:rgba(255,255,255,.18);overflow:hidden;margin-top:-2px;}
+.m71-bar i{display:block;height:100%;background:#fff;border-radius:calc(var(--k)*4px);transition:width .4s ease;}
+.m71-mh .m71-sum{margin:0;font-size:1rem;line-height:1.45;}
+/* лента курсов */
+.m71-tk{display:flex;gap:calc(var(--k)*8px);overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--k)*-16px);padding:2px calc(var(--k)*16px);scroll-snap-type:x proximity;scroll-padding-inline:calc(var(--k)*16px);}
+.m71-tk::-webkit-scrollbar{display:none;}
+.m71-tk1{flex:none;min-width:calc(var(--k)*96px);scroll-snap-align:start;display:grid;grid-template-columns:auto auto;grid-template-areas:"c sp" "v sp" "e sp";column-gap:calc(var(--k)*8px);row-gap:1px;align-items:center;text-align:left;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:inherit;border-radius:calc(var(--k)*14px);padding:calc(var(--k)*8px) calc(var(--k)*10px);font:inherit;cursor:pointer;min-height:calc(var(--k)*44px);}
+.m71-tk1.on{background:rgba(255,255,255,.2);border-color:rgba(255,255,255,.5);}
+.m71-tk1 .c{grid-area:c;font-size:.84rem;opacity:.8;}
+.m71-tk1 b{grid-area:v;font-size:.98rem;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.m71-tk1 b small{font-weight:500;opacity:.75;font-size:.84rem;}
+.m71-tk1 em{grid-area:e;font-style:normal;font-size:.84rem;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.m71-tk1.up em{color:#FFB39A;} .m71-tk1.dn em{color:#9FE6C6;}
+.m71-tk1 .m71-sp{grid-area:sp;width:calc(var(--k)*64px);height:calc(var(--k)*20px);}
+.m71-sp path{fill:none;stroke:currentColor;stroke-width:1.6;vector-effect:non-scaling-stroke;opacity:.85;}
+.m71-fxs{display:block;opacity:.7;font-size:.84rem;margin-top:calc(var(--k)*-4px);}
+/* действия */
+.m71-mh .f34-hact{display:block!important;margin:0!important;padding:0!important;}
+.hb-hero .m71-act{display:flex!important;flex-wrap:nowrap!important;gap:calc(var(--k)*6px)!important;margin:0!important;}
+.hb-hero .m71-act > .m71-ab{position:relative;flex:1 1 0!important;min-width:0!important;width:auto!important;display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:calc(var(--k)*4px);min-height:calc(var(--k)*58px)!important;height:auto!important;border:0!important;border-radius:calc(var(--k)*14px)!important;background:rgba(255,255,255,.1)!important;color:inherit!important;font:inherit;font-size:.84rem!important;font-weight:700;cursor:pointer;padding:calc(var(--k)*6px) 2px!important;box-shadow:none!important;}
+.hb-hero .m71-act > .m71-ab.on{background:#fff!important;color:var(--brand-ink,#3B2A8C)!important;}
+.m71-ab em{position:absolute;top:calc(var(--k)*4px);right:calc(var(--k)*6px);font-style:normal;font-size:.84rem;background:#fff;color:var(--brand-ink,#3B2A8C);border-radius:calc(var(--k)*999px);min-width:calc(var(--k)*18px);padding:1px calc(var(--k)*5px);}
+.m71-ab span{line-height:1.15;text-align:center;overflow:hidden;max-width:100%;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:normal;overflow-wrap:normal;}
+.m71-mh .f34-hf{display:none;}
+/* вкладки и разделы — компактнее и липкие */
+#bpg-m .hb-tabs{gap:calc(var(--k)*6px);display:flex!important;overflow-x:auto;scrollbar-width:none;}
+#bpg-m .hb-tabs::-webkit-scrollbar{display:none;}
+#bpg-m .hb-tabs button{flex:none!important;width:auto!important;white-space:nowrap;flex-direction:row!important;gap:calc(var(--k)*6px)!important;min-height:calc(var(--k)*44px)!important;padding:calc(var(--k)*6px) calc(var(--k)*12px)!important;border-radius:calc(var(--k)*999px)!important;}
+#bpg-m .hb-tabs button svg{width:calc(var(--k)*18px);height:calc(var(--k)*18px);}
+.m43-eb{padding:calc(var(--k)*10px) calc(var(--k)*12px)!important;}
+.m43-eb > p{font-size:.84rem;}
+.f34-nav.m71-nav{position:sticky;top:0;z-index:5;background:var(--bg);margin-left:calc(var(--k)*-16px)!important;margin-right:calc(var(--k)*-16px)!important;padding:calc(var(--k)*8px) calc(var(--k)*16px)!important;box-shadow:0 1px 0 var(--line);}
+.f34-nav.m71-nav .chip{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);}
+.f34-nav.m71-nav .chip[data-m71n]::after{content:attr(data-m71n);font-size:.84rem;font-weight:700;color:var(--muted);background:color-mix(in srgb,var(--ink) 8%,transparent);border-radius:calc(var(--k)*999px);padding:0 calc(var(--k)*6px);}
+.f34-nav.m71-nav .chip.m71-on{background:var(--brand)!important;color:#fff!important;border-color:var(--brand)!important;}
+.f34-nav.m71-nav .chip.m71-on[data-m71n]::after{background:rgba(255,255,255,.25);color:#fff;}
+.f34-s{scroll-margin-top:calc(var(--k)*64px);}
+/* карточки */
+.m71-cd{position:relative;cursor:pointer;transition:box-shadow .2s ease;}
+.m71-cd:not(.m71-open) > :not(.m71-k):not(.m70-sp){display:none!important;}
+.m71-cd:not(.m71-open) .m71-lead{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:2px;}
+.m71-cd .m71-cf{display:flex!important;flex-wrap:nowrap!important;align-items:center;justify-content:space-between;gap:calc(var(--k)*8px);margin-top:calc(var(--k)*6px);}
+.m71-x{display:inline-flex;align-items:center;gap:calc(var(--k)*4px);border:0;background:transparent;color:var(--brand-ink);font:inherit;font-size:.82rem;font-weight:700;padding:calc(var(--k)*6px) 0;min-height:calc(var(--k)*36px);cursor:pointer;}
+.m71-x svg{transition:transform .2s ease;}
+.m71-open .m71-x svg{transform:rotate(180deg);}
+.m71-star{display:inline-flex!important;align-items:center;justify-content:center;width:calc(var(--k)*36px)!important;height:calc(var(--k)*36px)!important;min-width:0!important;padding:0!important;flex:none!important;border-radius:50%;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;flex:none;}
+.m71-star.on{color:#C98A00;border-color:#E9C46A;background:color-mix(in srgb,#F5C542 18%,transparent);}
+.m71-nb{font-style:normal;font-size:.84rem;font-weight:800;color:#fff;background:var(--brand);border-radius:calc(var(--k)*999px);padding:1px calc(var(--k)*7px);vertical-align:middle;letter-spacing:.01em;}
+.m71-fu{display:flex;flex-wrap:wrap;gap:calc(var(--k)*6px);margin-top:calc(var(--k)*10px);}
+.m71-fu .chip{font-size:.84rem;}
+.m71-flash{box-shadow:0 0 0 calc(var(--k)*3px) var(--brand)!important;}
+.f34-s:not(.m71-all) .m71-h:not(.m71-hit){display:none!important;}
+.m71-mo{display:flex;align-items:center;justify-content:center;gap:calc(var(--k)*6px);width:100%;margin-top:calc(var(--k)*8px);min-height:calc(var(--k)*44px);border:1px dashed var(--line);border-radius:calc(var(--k)*14px);background:transparent;color:var(--brand-ink);font:inherit;font-weight:700;font-size:.88rem;cursor:pointer;}
+.m71-all > .m71-mo svg{transform:rotate(180deg);}
+/* поиск */
+.m71-fd{position:sticky;top:0;z-index:6;display:grid;grid-template-columns:1fr auto;gap:calc(var(--k)*6px) calc(var(--k)*8px);align-items:center;background:var(--bg);padding:calc(var(--k)*8px) 0;margin:calc(var(--k)*6px) 0;}
+.m71-fi{display:flex;align-items:center;gap:calc(var(--k)*8px);border:1px solid var(--line);background:var(--surface);border-radius:calc(var(--k)*14px);padding:0 calc(var(--k)*12px);min-height:calc(var(--k)*46px);}
+.m71-fi input{flex:1;min-width:0;border:0;background:transparent;font:inherit;font-size:1rem;color:var(--ink);outline:none;}
+.m71-fn{grid-column:1/-1;color:var(--muted);font-size:.84rem;}
+.m71-fn:empty{display:none;}
+.m71-finding .m71-cd:not(.m71-hit){display:none!important;}
+.m71-finding section.f34-s:not(.m71-hits){display:none!important;}
+.m71-finding > :not(section){display:none!important;}
+.m71-finding .m71-hit{box-shadow:0 0 0 2px color-mix(in srgb,var(--brand) 45%,transparent);}
+.m71-finding .m71-mo{display:none!important;}
+/* потяните вниз */
+.m71-pl{display:flex;align-items:flex-end;justify-content:center;gap:calc(var(--k)*6px);overflow:hidden;color:var(--muted);font-size:.82rem;font-weight:700;padding-bottom:calc(var(--k)*6px);}
+.m71-pl.go{color:var(--brand-ink);}
+/* сохранённое */
+.m71-svl{list-style:none;margin:0 0 calc(var(--k)*12px);padding:0;display:flex;flex-direction:column;gap:calc(var(--k)*8px);max-height:60vh;overflow:auto;}
+.m71-svl li{display:flex;gap:calc(var(--k)*6px);align-items:center;border:1px solid var(--line);border-radius:calc(var(--k)*14px);padding:calc(var(--k)*4px) calc(var(--k)*6px) calc(var(--k)*4px) calc(var(--k)*12px);background:var(--surface);}
+.m71-svl li.m71-svt{display:block;border-style:dashed;padding:calc(var(--k)*8px) calc(var(--k)*12px);}
+.m71-svl li.m71-svt p{margin:0 0 calc(var(--k)*4px);font-size:.88rem;}
+.m71-svi{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;text-align:left;border:0;background:transparent;font:inherit;color:inherit;padding:calc(var(--k)*8px) 0;cursor:pointer;}
+.m71-svi small{color:var(--muted);font-size:.84rem;}
+/* «Учиться» */
+.m71-ltoc{position:sticky;top:0;z-index:5;background:var(--bg);margin:0 calc(var(--k)*-16px) calc(var(--k)*6px)!important;padding:calc(var(--k)*8px) calc(var(--k)*16px)!important;box-shadow:0 1px 0 var(--line);align-items:center;}
+.m71-lrd{flex:none;font-weight:700;color:var(--brand-ink);font-size:.84rem;margin-right:calc(var(--k)*4px);white-space:nowrap;}
+.m71-lx > h4[data-m71lx]{cursor:pointer;display:flex;align-items:center;gap:calc(var(--k)*8px);}
+.m71-lx > h4 .m71-lv{margin-left:auto;display:inline-flex;color:var(--muted);transition:transform .2s ease;}
+.m71-lx:not(.m71-lc) > h4 .m71-lv{transform:rotate(180deg);}
+.m71-lx.m71-lc > :not(h4):not(.m71-lp){display:none!important;}
+.m71-lx.m71-lc > .m71-lp{max-height:3.1em;overflow:hidden;-webkit-mask-image:linear-gradient(#000 55%,transparent);mask-image:linear-gradient(#000 55%,transparent);pointer-events:none;margin-bottom:0;}
+.m71-lx{scroll-margin-top:calc(var(--k)*60px);}
+
+/* ===== «Ещё» ===== */
+.m71-hi{font-size:.92rem!important;}
+.m71-hi b{color:var(--ink);}
+.m71-sum3{max-width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--k)*8px);margin:calc(var(--k)*10px) 0;}
+.m71-kpi{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:calc(var(--k)*16px);padding:calc(var(--k)*8px) calc(var(--k)*10px);font:inherit;color:inherit;cursor:pointer;min-width:0;min-height:calc(var(--k)*66px);}
+.m71-kpi .i{display:inline-flex;width:calc(var(--k)*26px);height:calc(var(--k)*26px);border-radius:calc(var(--k)*10px);align-items:center;justify-content:center;background:var(--brand-weak);color:var(--brand-ink);}
+.m71-kpi small{color:var(--muted);font-size:.84rem;line-height:1.2;}
+.m71-kpi b{font-size:.84rem;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;word-break:normal;overflow-wrap:normal;hyphens:manual;}
+.m71-kpi.warn .i{background:color-mix(in srgb,#E5484D 14%,transparent);color:#B42318;}
+.m71-kpi.md-ok .i{background:color-mix(in srgb,#12A37A 16%,transparent);color:#0B7A5A;}
+.m71-kpi.md-tight .i{background:color-mix(in srgb,#E9A23B 18%,transparent);color:#9A5B00;}
+.m71-kpi.md-low .i{background:color-mix(in srgb,#E5484D 14%,transparent);color:#B42318;}
+.m71-qk{display:flex;gap:calc(var(--k)*8px);overflow-x:auto;scrollbar-width:none;margin:calc(var(--k)*8px) 0 2px;padding:2px 0;max-width:100%;}
+.m71-qk::-webkit-scrollbar{display:none;}
+.m71-q{flex:none;display:inline-flex;align-items:center;gap:calc(var(--k)*6px);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:calc(var(--k)*999px);padding:0 calc(var(--k)*14px);min-height:calc(var(--k)*42px);font:inherit;font-size:.86rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+.m71-q svg{color:var(--brand);}
+.m71-sh{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--k)*8px);}
+.m71-sh h2{margin:0;}
+.m71-edb{font-weight:700;}
+.m71-pg{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:calc(var(--k)*8px);margin-top:calc(var(--k)*8px);}
+.m71-tile{display:flex!important;align-items:center;gap:calc(var(--k)*10px);text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:calc(var(--k)*16px);padding:calc(var(--k)*12px);font:inherit;color:inherit;cursor:pointer;min-height:calc(var(--k)*64px);min-width:0;overflow:hidden;}
+.m71-tile .m7-li-t{display:flex;flex-direction:column;min-width:0;overflow:hidden;}
+.m71-tile .m7-li-t b{font-size:.9rem;line-height:1.2;}
+.m71-tile .m7-li-t small{font-size:.84rem;color:var(--muted);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;display:block;}
+.m71-tile .m7-li-i{flex:none;}
+.m71-rec{margin:calc(var(--k)*10px) 0 2px;}
+.m71-rec h2{margin:0 0 calc(var(--k)*8px);}
+.m71-rc{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);}
+.m71-gi{display:inline-flex;gap:calc(var(--k)*3px);margin-left:calc(var(--k)*8px);}
+.m71-gi i{display:inline-flex;width:calc(var(--k)*24px);height:calc(var(--k)*24px);border-radius:calc(var(--k)*8px);align-items:center;justify-content:center;background:var(--brand-weak);color:var(--brand-ink);}
+.m71-gi i svg{width:calc(var(--k)*14px);height:calc(var(--k)*14px);}
+.m61-go .m71-gi{display:none;}
+.m71-pe{position:relative;outline:2px dashed color-mix(in srgb,var(--brand) 35%,transparent);outline-offset:-2px;}
+.m71-pe .m71-ps{position:absolute;top:calc(var(--k)*8px);right:calc(var(--k)*8px);color:var(--muted);}
+.m71-pe.m71-pon .m71-ps{color:#C98A00;}
+.m71-new{border:1px solid var(--line);border-radius:calc(var(--k)*20px);padding:calc(var(--k)*10px) calc(var(--k)*14px);margin:calc(var(--k)*8px) 0;background:linear-gradient(135deg,color-mix(in srgb,var(--brand) 10%,var(--surface)),var(--surface));}
+.m71-nh{display:flex;flex-direction:column;gap:2px;margin-bottom:calc(var(--k)*6px);}
+.m71-nh b{font-size:1.02rem;}
+.m71-nh small{display:none;}
+.m71-nl{display:flex;gap:calc(var(--k)*8px);overflow-x:auto;scrollbar-width:none;margin:0;padding:0 0 2px;scroll-snap-type:x proximity;max-width:100%;}
+.m71-nl::-webkit-scrollbar{display:none;}
+.m71-ni{flex:none;width:calc(var(--k)*176px);scroll-snap-align:start;display:grid;grid-template-columns:auto 1fr;grid-template-areas:"i t" "e e";gap:calc(var(--k)*6px) calc(var(--k)*10px);align-items:center;text-align:left;border:0;background:var(--surface);border-radius:calc(var(--k)*14px);padding:calc(var(--k)*10px);font:inherit;color:inherit;cursor:pointer;min-height:calc(var(--k)*50px);}
+.m71-ni .i{grid-area:i;} .m71-ni .t{grid-area:t;} .m71-ni em{grid-area:e;}
+.m71-ni .t small{display:none;}
+.m71-ni .i{display:inline-flex;width:calc(var(--k)*36px);height:calc(var(--k)*36px);border-radius:calc(var(--k)*12px);align-items:center;justify-content:center;background:var(--brand-weak);color:var(--brand-ink);}
+.m71-ni .t{display:flex;flex-direction:column;gap:1px;min-width:0;}
+.m71-ni .t b{font-size:.9rem;}
+.m71-ni .t small{font-size:.84rem;color:var(--muted);}
+.m71-ni em{font-style:normal;font-size:.84rem;font-weight:700;color:var(--brand-ink);white-space:nowrap;}
+@media (max-width:370px){.m71-sum3{grid-template-columns:1fr 1fr;}.m71-sum3 .m71-kpi:last-child{grid-column:1/-1;min-height:0;}}
+
+/* вопросы «С каким вопросом» — компактнее */
+#moreView .m61-qg{gap:calc(var(--k)*8px)!important;}
+#moreView .m61-qb{flex-direction:row!important;align-items:center!important;gap:calc(var(--k)*10px)!important;min-height:0!important;padding:calc(var(--k)*12px)!important;}
+#moreView .m61-qb .m61-qt b{font-size:.92rem!important;}
+#moreView .m61-qb .m61-qt small{font-size:.84rem!important;}
+@media (max-width:380px){.m71-gi{display:none;}}
+#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh .m71-tk,#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh .m71-fxs,#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh #f35-fxw,#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh .m71-act{display:none!important;}
+#moreView .m71-tile.mr-tile{flex-direction:row!important;align-items:center!important;min-height:calc(var(--k)*64px)!important;padding:calc(var(--k)*12px)!important;border:1px solid var(--line)!important;border-radius:calc(var(--k)*16px)!important;gap:calc(var(--k)*10px)!important;}
+#moreView .m71-tile.mr-tile b{font-size:.9rem;}
+#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh .f34-hact{display:none!important;}
+#bpg-m[data-m71tab]:not([data-m71tab="today"]) .m71-mh .m71-sum{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:.9rem;}
+.m71-vw{display:inline-flex;gap:calc(var(--k)*4px);padding:calc(var(--k)*4px);border-radius:calc(var(--k)*999px);background:color-mix(in srgb,var(--ink) 7%,var(--surface));margin:calc(var(--k)*8px) 0 calc(var(--k)*4px);}
+.m71-vw button{display:inline-flex;align-items:center;gap:calc(var(--k)*6px);border:0;background:transparent;color:var(--muted);font:inherit;font-weight:700;font-size:.84rem;padding:calc(var(--k)*6px) calc(var(--k)*14px);border-radius:calc(var(--k)*999px);cursor:pointer;min-height:calc(var(--k)*36px);}
+.m71-vw button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px calc(var(--k)*4px) rgba(0,0,0,.12);}
+.m71-bl{margin-left:auto;display:inline-flex!important;align-items:center;gap:calc(var(--k)*5px);border:1px solid rgba(255,255,255,.28)!important;background:transparent!important;color:inherit!important;border-radius:calc(var(--k)*999px)!important;padding:calc(var(--k)*4px) calc(var(--k)*10px)!important;min-height:calc(var(--k)*32px)!important;width:auto!important;font:inherit;font-size:.8rem!important;font-weight:700;cursor:pointer;}
+.m71-bl.on{background:#fff!important;color:var(--brand-ink,#3B2A8C)!important;}
 /* <</v44 css>> */
 
 
@@ -30968,6 +31229,570 @@ function m69SfBtns(){ try{ const inp=sheet.querySelector('#sf-in'), send=sheet.q
     for(const id of ['m56-up','m52-down']){ const b=sheet.querySelector('#'+id); if(!b) continue; const op=b.offsetParent||sheet; const pr=op.getBoundingClientRect(), cr=c.getBoundingClientRect(); const bot=Math.max(0,Math.round(pr.bottom-cr.top+10)); b.style.bottom=bot+'px'; } }catch(e){} }
 try{ const _us=m56UpSync; m56UpSync=function(){ const r=_us.apply(this,arguments); m69SfBtns(); return r; }; }catch(e){}
 document.addEventListener('input',e=>{ if(e.target&&e.target.id==='sf-in') requestAnimationFrame(m69SfBtns); });
+/* v70: строки — Мастерская Сифры (145), «сообщу ответ» (152), обвести на графике (153), фото и голос (154), «Где продать» (155),
+   график у новости (162), «полезно / не то» (163), репетитор (166), карманы в валютах (174), цифры перекатываются (180), тёмная по закату (181),
+   тихие звуки (182), заготовки при загрузке (183), ввод в другой валюте (185), сумма прописью (186), вопрос ждёт сеть (189), размытие при сворачивании (190), голос */
+const M70S={
+ru:{
+  tlT:'Мастерская Сифры', tlSub:'Ваши калькуляторы, которые Сифра сделала по просьбе', tlLead:'Попросите Сифру: «Сделай мне калькулятор…» — он появится здесь и будет считать без интернета.',
+  tlAsk:'Попросить новый', tlAskQ:'Сделай мне калькулятор: ', tlEmpty:'Пока пусто. Нажмите «Попросить новый» и опишите, что нужно считать.',
+  tlSave:'Сохранить в Мастерскую', tlSaved:'Сохранено в Мастерской', tlOpen:'Открыть Мастерскую', tlDel:'Удалить', tlDelOk:'Удалено', tlReset:'Сначала', tlAct:'Калькулятор', tlNote:'Основа',
+  rcT:d=>`Сообщу ответ ${d}`, rcBtn:'Да, сообщить', rcDone:d=>`Хорошо: ${d} проверю и пришлю уведомление`, rcOld:'Нужен новый сервер Mira (41).', rcAct:'Сообщить ответ', rcOnce:d=>`разовая проверка ${d}`, rcGot:'Проверено',
+  selHint:'Удерживайте палец на графике и ведите — спрошу Сифру про этот отрезок', selAsk:'Спросить Сифру про это', selQ:(a,b,list)=>`Почему так на графике с ${a} по ${b}? Вот точки: ${list}. Объясни простыми словами и скажи, что сделать.`,
+  phMic:'Скажите вопрос про фото',
+  sellT:'Где продать', sellSub:'Покупатели, оптовики и ярмарки для вашего товара — с ценами и проверкой', sellBuy:'Купить', sellSell:'Продать',
+  sellL:{m51T:'Где продать',m51Lead:'Напишите, что продаёте. Исследователи Сифры ищут покупателей: оптовиков, импортёров, сети, ярмарки и площадки — с ценами, по которым там берут. Потом проверяющий перепроверяет, а главный собирает план.',m51What:'Что продаёте',m51WhatPh:'Например: курага, мёд, хлопковые полотенца',m51From:'Где искать покупателей',m51Any:'Весь мир — найти, где выгоднее продать',m51City:'Город (если знаете)',m51CityPh:'Например: Алматы, Москва',m51Qty:'Сколько продаёте',m51QtyPh:'Например: 2 тонны в месяц, 500 штук',m51ToL:'Откуда товар',m51Go:'Найти покупателей',m51Need:'Напишите, что хотите продать.',m51WaitT:'Сифра ищет покупателей',m51CT:'Страны: где выгоднее продать',m51CLead:'Полоса — цена, по которой там берут, кружок — сколько останется у вас после доставки и сборов. Нажмите страну — покажу её покупателей.',m51PT:'Покупатели и каналы сбыта',m51LT:'Сколько останется у вас',m51MT:'Первое письмо покупателю'},
+  sellPre:'Продать: ',
+  roles:{buyers:'Кто покупает оптом',fair:'Выставки, ярмарки и B2B'},
+  sparkT:c=>`${c}: 30 дней`,
+  fbUp:'Полезно', fbDn:'Не то', fbHid:'Скрыто', fbBack:'Вернуть', fbThx:'Учту: таких будет больше выше', fbLocal:'Отметки хранятся на этом телефоне',
+  tuBtn:'Разобрать с репетитором', tuQ:t=>`Разбери со мной тему «${t}» шаг за шагом, как репетитор: по одному шагу и вопросу.`, tuOn:'Режим репетитора', tuOff:'Выйти из режима',
+  pkT:'Карманы в валютах', pkSub:'Сомони, доллары, рубли — дома, на карте, в кассе — и итог по курсу', pkLead:'Запишите, сколько и где лежит в каждой валюте. Итог считается по сегодняшнему курсу.',
+  pkAdd:'Добавить карман', pkName:'Где лежит', pkNamePh:'Например: дома, карта Алиф, касса', pkCur:'Валюта', pkAmt:'Сколько', pkSave:'Сохранить', pkDel:'Удалить', pkTot:'Всего', pkFx:v=>`${v} из-за курса с прошлого раза`, pkNoRate:c=>`нет курса ${c}`, pkEmpty:'Пока пусто. Добавьте первый карман.',
+  sunT:'«Ночь» по закату', sunD:(a,b)=>`Тёмный вид с ${a} до ${b} — по солнцу в вашей стране, а не по настройке телефона`,
+  sndT:'Тихие звуки', sndD:'Короткий мягкий звук, когда платёж отмечен или запись сохранена',
+  fxConv:(a,b)=>`${a} = ${b}`, fxIns:v=>`Вставить ${v}`, fxCur:'Валюта ввода',
+  wPre:'',
+  qWait:'Нет интернета. Вопрос сохранён — отвечу, когда появится сеть.', qSent:'Сеть появилась — Сифра отвечает на ваш вопрос',
+  blurT:'Прятать суммы при сворачивании', blurD:'В списке открытых приложений суммы размыты',
+  sayAll:'Слушать весь выпуск', saySec:{brief:'Главное.',world:'Теперь — мир.',lens:'По сферам.',outlook:'Прогнозы.',ideas:'Идеи дня.',todo:'Что сделать сегодня.',end:'Это всё на сегодня.'}
+},
+tg:{
+  tlT:'Устохонаи Сифра', tlSub:'Ҳисобкунакҳои шумо, ки Сифра бо хоҳиш сохт', tlLead:'Аз Сифра пурсед: «Барои ман ҳисобкунак соз…» — он дар ин ҷо пайдо мешавад ва бе интернет ҳисоб мекунад.',
+  tlAsk:'Нав пурсидан', tlAskQ:'Барои ман ҳисобкунак соз: ', tlEmpty:'Ҳоло холӣ. «Нав пурсидан»-ро пахш кунед ва нависед, ки чӣ ҳисоб кардан лозим.',
+  tlSave:'Дар Устохона нигоҳ доштан', tlSaved:'Дар Устохона нигоҳ дошта шуд', tlOpen:'Устохонаро кушодан', tlDel:'Нест кардан', tlDelOk:'Нест шуд', tlReset:'Аз аввал', tlAct:'Ҳисобкунак', tlNote:'Асос',
+  rcT:d=>`Ҷавобро ${d} мегӯям`, rcBtn:'Ҳа, хабар деҳ', rcDone:d=>`Хуб: ${d} месанҷам ва огоҳинома мефиристам`, rcOld:'Сервери нави Mira (41) лозим аст.', rcAct:'Ҷавобро хабар деҳ', rcOnce:d=>`санҷиши якдафъаина ${d}`, rcGot:'Санҷида шуд',
+  selHint:'Ангуштро дар график нигоҳ доред ва гузаронед — дар бораи ин қисм аз Сифра мепурсам', selAsk:'Дар ин бора аз Сифра пурсидан', selQ:(a,b,list)=>`Чаро дар график аз ${a} то ${b} чунин аст? Нуқтаҳо: ${list}. Содда фаҳмон ва бигӯ, чӣ кор кунам.`,
+  phMic:'Саволро дар бораи акс гӯед',
+  sellT:'Куҷо фурӯхтан', sellSub:'Харидорон, яклухтфурӯшон ва ярмаркаҳо барои моли шумо — бо нарх ва санҷиш', sellBuy:'Харидан', sellSell:'Фурӯхтан',
+  sellL:{m51T:'Куҷо фурӯхтан',m51Lead:'Нависед, ки чӣ мефурӯшед. Тадқиқотчиёни Сифра харидор меҷӯянд: яклухтфурӯшон, воридкунандагон, шабакаҳо, ярмаркаҳо ва майдончаҳо — бо нархе, ки дар он ҷо мегиранд. Баъд санҷанда месанҷад ва сардор нақша месозад.',m51What:'Чӣ мефурӯшед',m51WhatPh:'Масалан: қайсӣ, асал, дастмоли пахтагӣ',m51From:'Харидорро аз куҷо ҷустан',m51Any:'Тамоми ҷаҳон — ҷои фоиданоктарро ёфтан',m51City:'Шаҳр (агар донед)',m51CityPh:'Масалан: Алмаато, Маскав',m51Qty:'Чӣ қадар мефурӯшед',m51QtyPh:'Масалан: 2 тонна дар як моҳ, 500 дона',m51ToL:'Мол аз куҷост',m51Go:'Харидор ёфтан',m51Need:'Нависед, ки чӣ фурӯхтан мехоҳед.',m51WaitT:'Сифра харидор меҷӯяд',m51CT:'Кишварҳо: куҷо фурӯхтан фоиданоктар',m51CLead:'Хат — нархе, ки дар он ҷо мегиранд, доира — баъд аз интиқол ва пардохтҳо чӣ қадар ба шумо мемонад. Кишварро пахш кунед — харидоронашро нишон медиҳам.',m51PT:'Харидорон ва роҳҳои фурӯш',m51LT:'Чӣ қадар ба шумо мемонад',m51MT:'Номаи аввал ба харидор'},
+  sellPre:'Фурӯхтан: ',
+  roles:{buyers:'Кӣ яклухт мехарад',fair:'Намоишгоҳ, ярмарка ва B2B'},
+  sparkT:c=>`${c}: 30 рӯз`,
+  fbUp:'Муфид', fbDn:'Не он', fbHid:'Пинҳон шуд', fbBack:'Баргардондан', fbThx:'Ба назар мегирам: чунинҳо болотар мешаванд', fbLocal:'Қайдҳо дар ҳамин телефон нигоҳ дошта мешаванд',
+  tuBtn:'Бо омӯзгор таҳлил кардан', tuQ:t=>`Мавзӯи «${t}»-ро бо ман қадам ба қадам, мисли омӯзгор, таҳлил кун: як қадам ва як савол.`, tuOn:'Ҳолати омӯзгор', tuOff:'Баромадан',
+  pkT:'Ҷайбҳо бо асъор', pkSub:'Сомонӣ, доллар, рубл — дар хона, дар корт, дар касса — ва ҷамъ аз рӯи қурб', pkLead:'Нависед, ки дар ҳар асъор чӣ қадар ва дар куҷо ҳаст. Ҷамъ аз рӯи қурби имрӯза ҳисоб мешавад.',
+  pkAdd:'Ҷайб илова кардан', pkName:'Дар куҷо', pkNamePh:'Масалан: хона, корти Алиф, касса', pkCur:'Асъор', pkAmt:'Чӣ қадар', pkSave:'Нигоҳ доштан', pkDel:'Нест кардан', pkTot:'Ҳамагӣ', pkFx:v=>`${v} аз ҳисоби қурб аз дафъаи гузашта`, pkNoRate:c=>`қурби ${c} нест`, pkEmpty:'Ҳоло холӣ. Ҷайби аввалро илова кунед.',
+  sunT:'«Шаб» аз рӯи ғуруб', sunD:(a,b)=>`Намуди торик аз ${a} то ${b} — аз рӯи офтоб дар кишвари шумо, на аз рӯи танзими телефон`,
+  sndT:'Садоҳои ором', sndD:'Садои кӯтоҳи нарм, вақте пардохт қайд ё сабт нигоҳ дошта мешавад',
+  fxConv:(a,b)=>`${a} = ${b}`, fxIns:v=>`${v}-ро гузоштан`, fxCur:'Асъори воридот',
+  wPre:'',
+  qWait:'Интернет нест. Савол нигоҳ дошта шуд — вақте шабака пайдо шавад, ҷавоб медиҳам.', qSent:'Шабака пайдо шуд — Сифра ба саволи шумо ҷавоб медиҳад',
+  blurT:'Ҳангоми печондан маблағҳоро пинҳон кардан', blurD:'Дар рӯйхати барномаҳои кушода маблағҳо хира мешаванд',
+  sayAll:'Тамоми нашрро гӯш кардан', saySec:{brief:'Асосӣ.',world:'Акнун — ҷаҳон.',lens:'Аз рӯи соҳаҳо.',outlook:'Пешгӯиҳо.',ideas:'Ғояҳои рӯз.',todo:'Имрӯз чӣ кор кардан.',end:'Барои имрӯз ҳамин.'}
+},
+en:{
+  tlT:'Sifra’s Workshop', tlSub:'Your calculators that Sifra made on request', tlLead:'Ask Sifra: “Make me a calculator…” — it will appear here and work offline.',
+  tlAsk:'Ask for a new one', tlAskQ:'Make me a calculator: ', tlEmpty:'Nothing yet. Tap “Ask for a new one” and describe what to calculate.',
+  tlSave:'Save to Workshop', tlSaved:'Saved to Workshop', tlOpen:'Open Workshop', tlDel:'Delete', tlDelOk:'Deleted', tlReset:'Reset', tlAct:'Calculator', tlNote:'Basis',
+  rcT:d=>`I’ll tell you the answer on ${d}`, rcBtn:'Yes, tell me', rcDone:d=>`OK: I’ll check on ${d} and send a notification`, rcOld:'A newer Mira server is needed (41).', rcAct:'Tell me the answer', rcOnce:d=>`one-time check ${d}`, rcGot:'Checked',
+  selHint:'Hold your finger on the chart and drag — I’ll ask Sifra about that stretch', selAsk:'Ask Sifra about this', selQ:(a,b,list)=>`Why does the chart look like this from ${a} to ${b}? Points: ${list}. Explain simply and tell me what to do.`,
+  phMic:'Say your question about the photo',
+  sellT:'Where to sell', sellSub:'Buyers, wholesalers and fairs for your product — with prices and checks', sellBuy:'Buy', sellSell:'Sell',
+  sellL:{m51T:'Where to sell',m51Lead:'Write what you sell. Sifra’s researchers look for buyers: wholesalers, importers, chains, fairs and platforms — with the prices they pay. Then the checker re-checks and the lead builds the plan.',m51What:'What you sell',m51WhatPh:'E.g.: dried apricots, honey, cotton towels',m51From:'Where to look for buyers',m51Any:'Whole world — find where it pays best',m51City:'City (if you know)',m51CityPh:'E.g.: Almaty, Moscow',m51Qty:'How much you sell',m51QtyPh:'E.g.: 2 tons a month, 500 pieces',m51ToL:'Where the goods are',m51Go:'Find buyers',m51Need:'Write what you want to sell.',m51WaitT:'Sifra is looking for buyers',m51CT:'Countries: where it pays to sell',m51CLead:'Bar — the price buyers pay there, dot — what stays with you after delivery and fees. Tap a country to see its buyers.',m51PT:'Buyers and sales channels',m51LT:'What stays with you',m51MT:'First message to a buyer'},
+  sellPre:'Sell: ',
+  roles:{buyers:'Who buys wholesale',fair:'Fairs, exhibitions and B2B'},
+  sparkT:c=>`${c}: 30 days`,
+  fbUp:'Useful', fbDn:'Not for me', fbHid:'Hidden', fbBack:'Show again', fbThx:'Noted: more like this, higher up', fbLocal:'Marks are stored on this phone',
+  tuBtn:'Go through it with a tutor', tuQ:t=>`Go through “${t}” with me step by step like a tutor: one step and one question at a time.`, tuOn:'Tutor mode', tuOff:'Leave tutor mode',
+  pkT:'Currency pockets', pkSub:'Somoni, dollars, roubles — at home, on a card, in the till — and the total at today’s rate', pkLead:'Write how much is where in each currency. The total uses today’s rate.',
+  pkAdd:'Add a pocket', pkName:'Where it is', pkNamePh:'E.g.: home, Alif card, till', pkCur:'Currency', pkAmt:'Amount', pkSave:'Save', pkDel:'Delete', pkTot:'Total', pkFx:v=>`${v} from rate changes since last time`, pkNoRate:c=>`no rate for ${c}`, pkEmpty:'Nothing yet. Add your first pocket.',
+  sunT:'“Night” by sunset', sunD:(a,b)=>`Dark look from ${a} to ${b} — by the sun in your country, not the phone setting`,
+  sndT:'Soft sounds', sndD:'A short soft sound when a payment is marked or a record is saved',
+  fxConv:(a,b)=>`${a} = ${b}`, fxIns:v=>`Insert ${v}`, fxCur:'Entry currency',
+  wPre:'',
+  qWait:'No internet. Your question is saved — I’ll answer when you are back online.', qSent:'Back online — Sifra is answering your question',
+  blurT:'Hide amounts when the app is in the background', blurD:'Amounts are blurred in the recent apps list',
+  sayAll:'Listen to the whole issue', saySec:{brief:'The main news.',world:'Now, the world.',lens:'By sector.',outlook:'Forecasts.',ideas:'Ideas of the day.',todo:'What to do today.',end:'That’s all for today.'}
+}};
+function m70T(){ return M70S[lang]||M70S.ru; }
+try{ for(const k of ['ru','tg','en']){ const d=D[k], T=M70S[k]; if(!d) continue; if(d.m51Roles) Object.assign(d.m51Roles,T.roles); if(d.m50Roles) Object.assign(d.m50Roles,T.roles); } }catch(e){}
+try{ if(typeof M50_RICO!=='undefined'){ M50_RICO.buyers='people'; M50_RICO.fair='flag'; } }catch(e){}
+/* ===================== v70: второй выбор Анушера (145–194) + естественный голос =====================
+   145 Мастерская · 152 «сообщу ответ» · 153 обвести на графике · 154 фото и голос · 155 «Где продать» · 162 график у новости
+   163 «полезно / не то» · 166 репетитор · 174 карманы в валютах · 180 цифры перекатываются · 181 тёмная по закату · 182 тихие звуки
+   183 заготовки при загрузке · 185 ввод в другой валюте · 186 сумма прописью · 189 вопрос ждёт сеть · 190 размытие при сворачивании */
+const M70={tut:null,snd:{},sel:null};
+const m70Srv=()=>{ try{ return !!(sfCaps&&+sfCaps.v>=41); }catch(e){ return false; } };
+
+/* ---------- 145: Мастерская Сифры ---------- */
+function m70TlSt(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.tl70)) state.misc.tl70=[]; return state.misc.tl70; }
+function m70TlOk(t){ try{ if(!t||typeof t!=='object') return null; const seen=new Set(); const fields=(Array.isArray(t.fields)?t.fields:[]).slice(0,6).map(f=>{ const k=String(f&&f.k||'').toLowerCase(); if(!/^[a-z][a-z0-9_]{0,11}$/.test(k)||seen.has(k)) return null; seen.add(k); return {k,label:hbTx(f.label,40),unit:hbTx(f.unit,10),def:Number.isFinite(+f.def)?+f.def:0}; }).filter(Boolean);
+    if(!fields.length) return null; const rows=(Array.isArray(t.rows)?t.rows:[]).slice(0,4).map(r=>{ const e=String(r&&r.expr||'').toLowerCase(); if(!e||/[^a-z0-9_+\-*\/(). ]/.test(e)) return null; if((e.match(/[a-z_][a-z0-9_]*/g)||[]).some(n=>!seen.has(n))) return null; return {label:hbTx(r.label,60),expr:e,unit:['m','p','n','x','mo'].includes(r.unit)?r.unit:'n'}; }).filter(Boolean);
+    if(!rows.length) return null; return {title:hbTx(t.title,60)||'—',lead:hbTx(t.lead,160),fields,rows,note:hbTx(t.note,200)}; }catch(e){ return null; } }
+function m70TlCalc(T,v){ return T.rows.map(r=>{ let y=NaN; try{ y=m67Eval(r.expr,v); }catch(e){} return {label:r.label,y,unit:r.unit}; }); }
+function m70TlHTML(T,o){ o=o||{}; const v=Object.assign({},...T.fields.map(f=>({[f.k]:f.def})),o.v||{}); const M=m70T(), res=m70TlCalc(T,v);
+  return `<div class="m70-tl" data-m70tl="${esc(encodeURIComponent(JSON.stringify(T)))}"${o.id?` data-m70tid="${esc(o.id)}"`:''}><b class="t">${ico('calc',16)} ${esc(T.title)}</b>${T.lead?`<p class="ld">${esc(T.lead)}</p>`:''}
+    <div class="fs">${T.fields.map(f=>`<label><span>${esc(f.label)}${f.unit?` <small>${esc(f.unit)}</small>`:''}</span><input type="text" inputmode="decimal" data-m70tf="${esc(f.k)}" value="${esc(String(v[f.k]))}"></label>`).join('')}</div>
+    <div class="rs" aria-live="polite">${res.map(r=>`<div><small>${esc(r.label)}</small><b>${Number.isFinite(r.y)?esc(m67FxFmt(r.y,r.unit)):'—'}</b></div>`).join('')}</div>
+    ${T.note?`<p class="nt">${ico('info',13)} <b>${esc(M.tlNote)}:</b> ${esc(T.note)}</p>`:''}
+    <div class="ac">${o.chat?(o.saved?`<span class="ok">${ico('check',14)} ${esc(M.tlSaved)}</span> <button type="button" class="link-btn" data-m70tl="open">${esc(M.tlOpen)}</button>`:`<button type="button" class="btn btn-ghost" data-m70tl="save">${ico('plus',14)} ${esc(M.tlSave)}</button>`):`<button type="button" class="link-btn" data-m70tl="reset">${ico('repeat',13)} ${esc(M.tlReset)}</button><button type="button" class="link-btn" data-m70tl="del">${ico('trash',13)} ${esc(M.tlDel)}</button>`}</div></div>`; }
+function m70TlRead(card){ let T=null; try{ T=JSON.parse(decodeURIComponent(card.dataset.m70tl)); }catch(e){} if(!T) return null; const v={}; T.fields.forEach(f=>{ const i=card.querySelector(`[data-m70tf="${f.k}"]`); const n=m69Num(i?i.value:''); v[f.k]=Number.isFinite(n)?n:0; }); return {T,v}; }
+document.addEventListener('input',e=>{ const i=e.target&&e.target.closest&&e.target.closest('[data-m70tf]'); if(!i) return; const card=i.closest('.m70-tl'), r=m70TlRead(card); if(!r) return; const res=m70TlCalc(r.T,r.v);
+  card.querySelectorAll('.rs b').forEach((b,k)=>{ const y=res[k]&&res[k].y; b.textContent=Number.isFinite(y)?m67FxFmt(y,res[k].unit):'—'; });
+  const id=card.dataset.m70tid; if(id){ const it=m70TlSt().find(x=>x.id===id); if(it){ it.v=r.v; clearTimeout(M70.tlT); M70.tlT=setTimeout(persist,400); } } });
+try{ const _ms=sfMsgHTML; sfMsgHTML=function(m,i){ try{ if(m&&m.r==='a'&&m.act&&m.act.name==='make_tool'&&!m.tl70){ const T=m70TlOk(m.act.input); delete m.act; if(T) m.tl70=T; if(!m.t||m.t===L.sfDone) m.t=T?T.title:m.t; } }catch(e){}
+    let h=_ms.apply(this,arguments); try{ if(m&&m.r==='a'&&m.tl70){ const c=m70TlHTML(m.tl70,{chat:true,saved:!!m.tl70s}), k=h.lastIndexOf('</div>'); if(k>=0) h=h.slice(0,k)+c+h.slice(k); } }catch(e){} return h; }; }catch(e){}
+try{ const _al=sfActLabel; sfActLabel=function(a){ const T=m70T(); if(a&&a.name==='make_tool') return T.tlAct; if(a&&a.name==='remind_check') return T.rcAct; return _al.apply(this,arguments); }; }catch(e){}
+try{ const _do=sfDo; sfDo=function(a){ if(a&&a.name==='make_tool') return; if(a&&a.name==='remind_check'){ m70RcDo(a.input||{}); return; } return _do.apply(this,arguments); }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('button[data-m70tl]'); if(!b) return; const M=m70T(), card=b.closest('.m70-tl'), act=b.dataset.m70tl;
+  if(act==='open'){ m70TlOpen(); return; }
+  if(act==='save'){ const r=m70TlRead(card); if(!r) return; const L0=m70TlSt(); L0.unshift({id:'t'+Date.now().toString(36),T:r.T,v:r.v,ts:Date.now()}); if(L0.length>30) L0.length=30;
+    try{ const log=sfLog(); const msg=log.find(x=>x.tl70&&JSON.stringify(x.tl70)===JSON.stringify(r.T)); if(msg) msg.tl70s=1; }catch(x){} persist(); toast(M.tlSaved); try{ sfRedraw(); }catch(x){} return; }
+  const id=card&&card.dataset.m70tid, L0=m70TlSt(), it=L0.find(x=>x.id===id); if(!it) return;
+  if(act==='del'){ L0.splice(L0.indexOf(it),1); persist(); toast(M.tlDelOk); bpRender(); return; }
+  if(act==='reset'){ delete it.v; persist(); bpRender(); } });
+function m70TlOpen(){ try{ bpGo('tools70','list'); }catch(e){ console.error(e); } }
+function m70TlPage(m){ const M=m70T(), L0=m70TlSt(); $('#bpg-t').textContent=M.tlT;
+  m.innerHTML=`<div class="m44 m70p"><p class="lead">${esc(M.tlLead)}</p><button type="button" class="btn btn-primary btn-full" data-sifra="${esc(M.tlAskQ)}" data-m70ask="1">${ico('sparkle',16)} ${esc(M.tlAsk)}</button>
+    ${L0.length?L0.map(x=>m70TlHTML(x.T,{id:x.id,v:x.v})).join(''):`<p class="m48-empty">${esc(M.tlEmpty)}</p>`}</div>`; }
+
+/* ---------- 174: карманы в валютах ---------- */
+const M70_CURS=['TJS','USD','RUB','EUR','CNY','KZT','UZS','KGS','TRY','AED'];
+function m70PkSt(){ state.misc=state.misc||{}; const s=state.misc.pk70&&typeof state.misc.pk70==='object'?state.misc.pk70:(state.misc.pk70={list:[],snap:null}); if(!Array.isArray(s.list)) s.list=[]; return s; }
+function m70Rate(c){ try{ return c==='TJS'?1:(+rateOf(c)||null); }catch(e){ return null; } }
+function m70PkTot(list){ let t=0, miss=[]; for(const p of list){ const r=m70Rate(p.cur); if(r) t+=(+p.amt||0)*r; else miss.push(p.cur); } return {t,miss:[...new Set(miss)]}; }
+function m70PkPage(m){ const M=m70T(), S=m70PkSt(), tot=m70PkTot(S.list); $('#bpg-t').textContent=M.pkT;
+  let fxd=null; if(S.snap&&S.snap.r){ let d=0; for(const p of S.list){ const a=m70Rate(p.cur), b=S.snap.r[p.cur]; if(a&&b) d+=(+p.amt||0)*(a-b); } if(Math.abs(d)>=1) fxd=d; }
+  const by={}; S.list.forEach(p=>{ const r=m70Rate(p.cur); by[p.cur]=(by[p.cur]||0)+(r?(+p.amt||0)*r:0); }); const mx=Math.max(1,...Object.values(by));
+  m.innerHTML=`<div class="m44 m70p"><p class="lead">${esc(M.pkLead)}</p>
+    <div class="m70-pkt"><small>${esc(M.pkTot)}</small><b data-m70odo>${esc(money(tot.t))}</b>${fxd!=null?`<em class="${fxd>0?'up':'dn'}">${esc(M.pkFx((fxd>0?'+':'−')+money(Math.abs(fxd))))}</em>`:''}${tot.miss.length?`<em class="dn">${esc(tot.miss.map(M.pkNoRate).join(', '))}</em>`:''}</div>
+    ${Object.keys(by).length>1?`<div class="m70-pkb">${Object.entries(by).sort((a,b)=>b[1]-a[1]).map(([c,v])=>`<div><span>${esc(c)}</span><i style="width:${Math.max(3,Math.round(v/mx*100))}%"></i><b>${esc(money(v))}</b></div>`).join('')}</div>`:''}
+    ${S.list.length?`<ul class="m70-pkl">${S.list.map(p=>{ const r=m70Rate(p.cur); return `<li><div><b>${esc(p.name)}</b><small>${esc(m69Fx(+p.amt||0)+' '+p.cur)}${p.cur!=='TJS'&&r?' · '+esc(money((+p.amt||0)*r)):''}</small></div><button type="button" class="link-btn" data-m70pk="edit" data-id="${esc(p.id)}">${ico('edit',14)}</button></li>`; }).join('')}</ul>`:`<p class="m48-empty">${esc(M.pkEmpty)}</p>`}
+    <button type="button" class="btn btn-primary btn-full" data-m70pk="add">${ico('plus',16)} ${esc(M.pkAdd)}</button></div>`;
+  try{ const r={}; M70_CURS.forEach(c=>{ const v=m70Rate(c); if(v) r[c]=v; }); if(!S.snap||Date.now()-(S.snap.at||0)>20*3600e3){ S.snap={at:Date.now(),r}; persist(); } }catch(e){} }
+function m70PkForm(p){ const M=m70T(), S=m70PkSt(), isNew=!p; p=p||{name:'',cur:'USD',amt:''};
+  openSheet(`<h3>${ico('cash',20)} ${esc(isNew?M.pkAdd:p.name)}</h3><div class="field"><label for="m70pkn">${esc(M.pkName)}</label><input id="m70pkn" maxlength="40" value="${esc(p.name)}" placeholder="${esc(M.pkNamePh)}"></div>
+    <span class="bp-lab">${esc(M.pkCur)}</span><div class="chips" id="m70pkc">${M70_CURS.map(c=>`<button type="button" class="chip ${c===p.cur?'on':''}" data-c="${c}">${c}</button>`).join('')}</div>
+    <div class="field"><label for="m70pka">${esc(M.pkAmt)}</label><input id="m70pka" type="text" inputmode="decimal" value="${esc(String(p.amt))}"></div>
+    <div class="sheet-row">${isNew?`<button class="btn btn-ghost" data-close>${L.cancel}</button>`:`<button class="btn btn-ghost" id="m70pkd">${esc(M.pkDel)}</button>`}<button class="btn btn-primary" id="m70pks">${esc(M.pkSave)}</button></div>`);
+  let cur=p.cur; sheet.querySelectorAll('#m70pkc [data-c]').forEach(b=>b.onclick=()=>{ cur=b.dataset.c; sheet.querySelectorAll('#m70pkc [data-c]').forEach(x=>x.classList.toggle('on',x===b)); });
+  $('#m70pks').onclick=()=>{ const name=String($('#m70pkn').value||'').trim()||cur, amt=m69Num($('#m70pka').value); if(!Number.isFinite(amt)){ toast(m69T().vNum); return; }
+    if(isNew) S.list.push({id:'p'+Date.now().toString(36),name,cur,amt}); else Object.assign(p,{name,cur,amt}); persist(); closeSheet(); bpRender(); };
+  const d=$('#m70pkd'); if(d) d.onclick=()=>{ S.list.splice(S.list.indexOf(p),1); persist(); closeSheet(); bpRender(); }; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70pk]'); if(!b) return; if(b.dataset.m70pk==='add') m70PkForm(null); else { const p=m70PkSt().list.find(x=>x.id===b.dataset.id); if(p) m70PkForm(p); } });
+
+/* страницы Мастерской и карманов */
+{ const _br=bpRender; bpRender=function(restore){ const t=bpTop(); if(!t||(t.name!=='tools70'&&t.name!=='pk70')){ return _br.apply(this,arguments); } const d=bpPage(), m=d.querySelector('#bpg-m'), f=d.querySelector('#bpg-f'); if(f) f.innerHTML='';
+    try{ if(t.name==='tools70') m70TlPage(m); else m70PkPage(m); }catch(e){ console.error('m70 page',e); } if(!restore) m.scrollTop=0; }; }
+try{ const _mi=moreItems; moreItems=function(){ const a=_mi.apply(this,arguments); try{ const T=m70T(), i=a.findIndex(x=>x.k==='debate68'||x.k==='idea'), g=i>=0?a[i].g:'m';
+    a.splice(i<0?a.length:i+1,0,{k:'tools70',g,a:'data-m70open="tools"',i:'calc',t:T.tlT,s:T.tlSub},{k:'sell70',g,a:'data-m70open="sell"',i:'tag',t:T.sellT,s:T.sellSub});
+    const j=a.findIndex(x=>x.k==='money'||x.k==='rates'); a.splice(j<0?a.length:j+1,0,{k:'pk70',g:j>=0?a[j].g:'m',a:'data-m70open="pk"',i:'cash',t:T.pkT,s:T.pkSub}); }catch(e){} return a; }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70open]'); if(!b) return; e.preventDefault(); const k=b.dataset.m70open;
+  try{ moreUse(k==='tools'?'tools70':k==='sell'?'sell70':'pk70'); }catch(x){}
+  if(k==='tools') m70TlOpen(); else if(k==='pk'){ try{ bpGo('pk70','list'); }catch(x){} } else if(k==='sell'){ try{ m51Open('new',{dir:'sell'}); }catch(x){ console.error(x); } } },true);
+
+/* ---------- 155: «Где продать» — поиск закупки в обратную сторону ---------- */
+function m70SellOn(arg){ try{ if(arg==='new') return !!(M51.Q&&M51.Q.dir==='sell'); const e=m51E(arg); return !!(e&&e.Q&&e.Q.dir==='sell'); }catch(e){ return false; } }
+function m70WithSell(fn){ const T=m70T(), keep={}, rk=M50_ROLES.src; for(const k of Object.keys(T.sellL)){ keep[k]=L[k]; try{ L[k]=T.sellL[k]; }catch(e){} } M50_ROLES.src=['buyers','local','fair','price','ship','ins'];
+  try{ return fn(); } finally { for(const k of Object.keys(keep)){ try{ L[k]=keep[k]; }catch(e){} } M50_ROLES.src=rk; } }
+try{ const _r=m51R; m51R=function(m,f,arg){ if(!m70SellOn(arg)) return _r.apply(this,arguments); return m70WithSell(()=>_r.apply(this,arguments)); }; }catch(e){}
+try{ const _fh=m51FormHTML; m51FormHTML=function(Q){ const h=_fh.apply(this,arguments); try{ const T=m70T(), s=Q&&Q.dir==='sell';
+    return `<div class="m70-dir" role="radiogroup" aria-label="${esc(T.sellT)}"><button type="button" role="radio" aria-checked="${!s}" class="${s?'':'on'}" data-m70dir="buy">${ico('bag',15)} ${esc(T.sellBuy)}</button><button type="button" role="radio" aria-checked="${s}" class="${s?'on':''}" data-m70dir="sell">${ico('tag',15)} ${esc(T.sellSell)}</button></div>`+h; }catch(e){ return h; } }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70dir]'); if(!b) return; try{ M51.Q=M51.Q||m51Def(); document.querySelectorAll('#bpg-m [data-m51f]').forEach(i=>{ M51.Q[i.dataset.m51f]=i.value; }); M51.Q.dir=b.dataset.m70dir==='sell'?'sell':'buy'; bpRender(true); }catch(x){} });
+try{ const _ti=m51Title; m51Title=function(Q){ const t=_ti.apply(this,arguments); return Q&&Q.dir==='sell'?m70T().sellPre+t:t; }; }catch(e){}
+
+/* ---------- 152: «сообщу ответ, когда станет известно» ---------- */
+async function m70RcDo(i){ const T=m70T(); const q=String(i.q||'').trim(), day=String(i.day||''); if(!q||!/^\d{4}-\d\d-\d\d$/.test(day)) return;
+  if(!m70Srv()){ toast(T.rcOld); return; } try{ const j=await m68WtCall({op:'add',q,once:{day,why:String(i.why||'')}}); if(j&&j.error==='full'){ toast(m68T().wtFull); return; } if(m68WtSet(j)) m68WtDraw(); toast(T.rcDone(fmtShort(parseYmd(day)))); }catch(e){ toast(m68T().wtErr); } }
+try{ const _wh=m68WtHTML; m68WtHTML=function(){ const h=_wh.apply(this,arguments); try{ const list=M68.wt.at?M68.wt.list:[]; if(!list.some(w=>w.once)) return h; const T=m70T(), d=document.createElement('div'); d.innerHTML=h;
+    d.querySelectorAll('.m68-wl li[data-k]').forEach(li=>{ const w=list.find(x=>x.k===li.dataset.k); if(!w||!w.once) return; const b=li.querySelector('.hd b'); if(b) b.insertAdjacentHTML('afterend',`<em class="m70-once">${ico('bell',12)} ${esc(w.done?T.rcGot:T.rcOnce(fmtShort(parseYmd(w.once.day))))}</em>`); }); return d.innerHTML; }catch(e){ return h; } }; }catch(e){}
+
+/* ---------- 166: репетитор ---------- */
+function m70Tutor(topic){ const T=m70T(); M70.tut={t:String(topic||'').slice(0,120),at:Date.now()}; try{ sifraOpen(T.tuQ(M70.tut.t)); }catch(e){} }
+try{ const _cx=sfCtx; sfCtx=function(){ const o=_cx.apply(this,arguments); try{ if(M70.tut&&Date.now()-M70.tut.at<45*60e3) o.tutor={topic:M70.tut.t}; else M70.tut=null; }catch(e){} return o; }; }catch(e){}
+try{ const _nc=m54NewChat; m54NewChat=function(){ M70.tut=null; return _nc.apply(this,arguments); }; }catch(e){}
+/* кнопка у уроков, методов и формулы дня в «Учёбе» */
+function m70TuOn(){ try{ const t=bpTop(); return !!(t&&t.name==='hub'&&t.tab==='learn'); }catch(e){ return false; } }
+(function(){ const add=root=>{ try{ if(!m70TuOn()) return; (root||document).querySelectorAll('#bpg-m .id-sec:not(.hb-ask):not(.hb-book):not(.m68-ms):not(.m67-es):not(.hb-task):not(.hb-quiz):not(.hb-lib)').forEach(a=>{ if(a.querySelector('.m70-tu')) return; const hd=a.querySelector('h3'), it=[...a.querySelectorAll('h4, b')].find(x=>x!==hd&&!(hd&&hd.contains(x))&&x.textContent.trim().length>3);
+      const ht=hd?hd.textContent.trim():'', itx=it?it.textContent.trim():'', t=ht&&itx?ht+': '+itx:(itx||ht); if(!t) return;
+      a.insertAdjacentHTML('beforeend',`<button type="button" class="link-btn m70-tu" data-m70tu="${esc(t.slice(0,120))}">${ico('people',14)} ${esc(m70T().tuBtn)}</button>`); }); }catch(e){} };
+  try{ const _ld=bpRender; bpRender=function(){ const r=_ld.apply(this,arguments); setTimeout(()=>add(document),60); return r; }; }catch(e){}
+  try{ const _hr0=hbRedraw; hbRedraw=function(){ const r=_hr0.apply(this,arguments); setTimeout(()=>add(document),60); return r; }; }catch(e){}
+  try{ const _ha0=hbAfter; hbAfter=function(){ const r=_ha0.apply(this,arguments); setTimeout(()=>add(document),30); return r; }; }catch(e){}
+  document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70tu]'); if(!b) return; e.preventDefault(); m70Tutor(b.dataset.m70tu); }); })();
+
+/* ---------- 154: фото и голос вместе ---------- */
+try{ const _is=sfImgShow; sfImgShow=function(){ const r=_is.apply(this,arguments); try{ const p=$('#sf-pv'); if(p&&!p.querySelector('.m70-phm')){ p.insertAdjacentHTML('beforeend',`<button type="button" class="m70-phm" data-m70phm="1">${ico('mic',15)} ${esc(m70T().phMic)}</button>`); } }catch(e){} return r; }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70phm]'); if(!b) return; e.preventDefault(); try{ sfListen(); }catch(x){} });
+
+/* ---------- 162: маленький график у новости про курс ---------- */
+const M70_CW={USD:/доллар|\$|usd|dollar|долл/i,EUR:/евро|€|eur/i,CNY:/юан|cny|yuan|renminbi|юань/i,RUB:/рубл|₽|rub|ruble|rouble/i};
+function m70Spark(cur){ let s=[]; try{ s=f35Series(cur); }catch(e){} if(s.length<5) return ''; const v=s.map(x=>x.v), mn=Math.min(...v), mx=Math.max(...v), W=120,H=28, X=i=>2+i/(v.length-1)*(W-4), Y=y=>H-3-(y-mn)/((mx-mn)||1)*(H-6);
+  const ch=(v[v.length-1]-v[0])/v[0]*100; const P=s.map((x,i)=>[+X(i).toFixed(1),+Y(x.v).toFixed(1),fmtShort(parseYmd(x.d))+' · '+fx(x.v,f35Dg(x.v))]);
+  return `<span class="m70-sp" title="${esc(m70T().sparkT(cur))}"><svg class="m69-scr" viewBox="0 0 ${W} ${H}"${m69Pts(P)} aria-hidden="true"><path d="${v.map((y,i)=>(i?'L':'M')+X(i).toFixed(1)+','+Y(y).toFixed(1)).join(' ')}"/></svg><em class="${ch>=0?'up':'dn'}">${cur} ${ch>=0?'+':'−'}${fx(Math.abs(ch),2)}%</em></span>`; }
+function m70SparkAdd(root){ try{ (root||document).querySelectorAll('#bpg-m .m48-it').forEach(a=>{ if(a.querySelector('.m70-sp')||a.dataset.m70sp) return; a.dataset.m70sp='1'; const tx=(a.querySelector('h5,h4,h3,b')||{}).textContent||''; const cur=Object.keys(M70_CW).find(c=>M70_CW[c].test(tx)); if(!cur) return; const h=m70Spark(cur); if(!h) return; const hd=a.querySelector(':scope > .f34-bt')||a.querySelector('h5,h4,h3'); if(hd) hd.insertAdjacentHTML('afterend',h); }); }catch(e){} }
+
+/* ---------- 163: «Полезно / Не то» у каждой новости ---------- */
+function m70FbSt(){ const h=hbSt(); if(!h.fb70||typeof h.fb70!=='object') h.fb70={i:{},l:{}}; return h.fb70; }
+function m70FbKey(a){ const t=((a.querySelector('h5,h4,h3,b')||{}).textContent||'').replace(/\s+/g,' ').trim().slice(0,80); return t; }
+function m70FbAdd(root){ try{ const F=m70FbSt(), T=m70T(); (root||document).querySelectorAll('#bpg-m .m48-it').forEach(a=>{ if(a.querySelector('.m70-fb')) return; const k=m70FbKey(a); if(!k) return; const v=F.i[k];
+      a.insertAdjacentHTML('beforeend',`<div class="m70-fb"><button type="button" data-m70fb="up" class="${v==='up'?'on':''}" aria-pressed="${v==='up'}">${ico('check',13)} ${esc(T.fbUp)}</button><button type="button" data-m70fb="dn" aria-pressed="${v==='dn'}">${ico('close',13)} ${esc(T.fbDn)}</button></div>`);
+      if(v==='dn') m70FbHide(a,true); }); }catch(e){} }
+function m70FbHide(a,on){ const T=m70T(); a.classList.toggle('m70-hid',on); let n=a.querySelector('.m70-hn'); if(on&&!n){ a.insertAdjacentHTML('afterbegin',`<div class="m70-hn"><span>${esc(T.fbHid)}: ${esc(m70FbKey(a).slice(0,50))}</span><button type="button" class="link-btn" data-m70fb="back">${esc(T.fbBack)}</button></div>`); } else if(!on&&n) n.remove(); }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m70fb]'); if(!b) return; const a=b.closest('.m48-it'); if(!a) return; const F=m70FbSt(), k=m70FbKey(a), v=b.dataset.m70fb, lens=a.dataset.m48l||'';
+  if(v==='back'){ delete F.i[k]; m70FbHide(a,false); a.querySelectorAll('[data-m70fb="dn"]').forEach(x=>x.setAttribute('aria-pressed','false')); }
+  else { const was=F.i[k]; F.i[k]=was===v?undefined:v; if(!F.i[k]) delete F.i[k]; if(lens) F.l[lens]=(F.l[lens]||0)+(F.i[k]==='up'?1:F.i[k]==='dn'?-1:0);
+    a.querySelectorAll('[data-m70fb]').forEach(x=>{ const on=x.dataset.m70fb===F.i[k]; x.classList.toggle('on',on); x.setAttribute('aria-pressed',on); }); m70FbHide(a,F.i[k]==='dn'); if(F.i[k]==='up') toast(m70T().fbThx); }
+  const ks=Object.keys(F.i); if(ks.length>300) for(const x of ks.slice(0,ks.length-300)) delete F.i[x]; persist(); });
+/* сферы, отмеченные полезными, — выше в строке сфер (порядок только внутри «Рынка дня») */
+try{ const _lh=m48LensHTML; m48LensHTML=function(t){ try{ const F=m70FbSt(); if(t&&Array.isArray(t.lens)&&Object.keys(F.l).length){ const w=k=>F.l[k]||0; t=Object.assign({},t,{lens:t.lens.map((x,i)=>({x,i})).sort((a,b)=>w(b.x.lens)-w(a.x.lens)||a.i-b.i).map(o=>o.x)}); } }catch(e){} return _lh.call(this,t); }; }catch(e){}
+try{ const _hr=hbRedraw; hbRedraw=function(){ const r=_hr.apply(this,arguments); setTimeout(()=>{ m70SparkAdd(document); m70FbAdd(document); },40); return r; }; }catch(e){}
+try{ const _br2=bpRender; bpRender=function(){ const r=_br2.apply(this,arguments); try{ const t=bpTop(); if(t&&t.name==='hub') setTimeout(()=>{ m70SparkAdd(document); m70FbAdd(document); },60); }catch(e){} return r; }; }catch(e){}
+
+/* ---------- 153: обвести отрезок на графике и спросить Сифру ---------- */
+try{ const _fc=m40FcHTML; m40FcHTML=function(){ const h=_fc.apply(this,arguments); try{ const f=M40F.f; if(!h||!f||!f.days) return h; const g=m40FcGeo(f); const P=f.days.map((d,i)=>[+g.X(i).toFixed(1),+g.Y(d.bal).toFixed(1),fmtShort(d.d)+' · '+money(d.bal)]);
+    return h.replace(/<div class="(m40-plot[^"]*)" data-m40p="fc"/,'<div class="$1" data-m40p="fc" data-m70sel="1"').replace(/(<div class="m40-plot[^"]*" data-m40p="fc"[^>]*>\s*<svg )/,'$1 data-m69pts="'+esc(JSON.stringify(P))+'" ')+`<p class="m70-selh">${ico('sparkle',13)} ${esc(m70T().selHint)}</p>`; }catch(e){ return h; } }; }catch(e){}
+(function(){ let hold=0, S=null; const svgOf=t=>t&&t.closest&&(t.closest('svg[data-m69pts]')); const vx=(svg,e)=>{ const vb=svg.viewBox.baseVal, r=svg.getBoundingClientRect(); return (e.clientX-r.left)/r.width*vb.width; };
+  const band=()=>{ if(!S) return; const vb=S.svg.viewBox.baseVal; let b=S.svg.querySelector('rect.m70-band'); if(!b){ b=document.createElementNS('http://www.w3.org/2000/svg','rect'); b.setAttribute('class','m70-band'); S.svg.insertBefore(b,S.svg.firstChild); }
+    const a=Math.min(S.a,S.b), c=Math.max(S.a,S.b); b.setAttribute('x',a); b.setAttribute('width',Math.max(2,c-a)); b.setAttribute('y',0); b.setAttribute('height',vb.height); };
+  document.addEventListener('pointerdown',e=>{ const svg=svgOf(e.target); if(!svg) return; clearTimeout(hold); const x0=e.clientX, y0=e.clientY; const st={svg,id:e.pointerId,x:vx(svg,e)};
+    hold=setTimeout(()=>{ S={svg,a:st.x,b:st.x}; svg.classList.add('m70-selon'); try{ m40Vib(); }catch(x){} band(); },450);
+    const cancel=ev=>{ if(!S&&Math.hypot(ev.clientX-x0,ev.clientY-y0)>10){ clearTimeout(hold); document.removeEventListener('pointermove',cancel,true); } }; document.addEventListener('pointermove',cancel,true); },{passive:true,capture:true});
+  document.addEventListener('pointermove',e=>{ if(!S) return; S.b=vx(S.svg,e); band(); e.preventDefault(); },{passive:false,capture:true});
+  document.addEventListener('pointerup',()=>{ clearTimeout(hold); if(!S) return; const s=S; S=null; s.svg.classList.remove('m70-selon'); let P=[]; try{ P=JSON.parse(s.svg.getAttribute('data-m69pts')); }catch(x){}
+    const a=Math.min(s.a,s.b), c=Math.max(s.a,s.b), pts=P.filter(p=>p[0]>=a-1&&p[0]<=c+1); if(pts.length<2){ const b=s.svg.querySelector('rect.m70-band'); if(b) b.remove(); return; } m70SelAsk(s.svg,pts); },true);
+  document.addEventListener('contextmenu',e=>{ if(svgOf(e.target)) e.preventDefault(); }); })();
+function m70SelAsk(svg,pts){ const T=m70T(); document.querySelectorAll('.m70-sela').forEach(x=>x.remove()); const r=svg.getBoundingClientRect(), b=document.createElement('button'); b.type='button'; b.className='m70-sela'; b.innerHTML=ico('sparkle',15)+' '+esc(T.selAsk);
+  b.style.left=Math.max(8,Math.min(innerWidth-230,r.left+r.width/2-110))+'px'; b.style.top=Math.max(8,r.top-48)+'px'; document.body.appendChild(b);
+  const lab=p=>String(p[2]||''), first=lab(pts[0]).split(' · ')[0], last=lab(pts[pts.length-1]).split(' · ')[0], step=Math.max(1,Math.ceil(pts.length/12)), list=pts.filter((p,i)=>i%step===0||i===pts.length-1).map(lab).join('; ');
+  b.onclick=()=>{ b.remove(); const bd=svg.querySelector('rect.m70-band'); if(bd) bd.remove(); try{ sifraOpen(T.selQ(first,last,list)); }catch(e){} };
+  setTimeout(()=>{ const off=ev=>{ if(ev.target.closest&&ev.target.closest('.m70-sela')) return; b.remove(); const bd=svg.querySelector('rect.m70-band'); if(bd) bd.remove(); document.removeEventListener('pointerdown',off,true); }; document.addEventListener('pointerdown',off,true); },50); }
+
+/* ---------- 180: цифры перекатываются ---------- */
+function m70Odo(el,from,to){ if(matchMedia('(prefers-reduced-motion: reduce)').matches||document.documentElement.classList.contains('m69-big')) return; const txt=el.textContent, t0=performance.now(), D=650;
+  const fmt=v=>txt.replace(/[−-]?\d[\d\s  .,]*/,m=>money(v).match(/[−-]?\d[\d\s  .,]*/)[0]);
+  (function f(){ const p=Math.min(1,(performance.now()-t0)/D), e=1-Math.pow(1-p,3); el.textContent=fmt(from+(to-from)*e); if(p<1) requestAnimationFrame(f); else el.textContent=txt; })(); }
+function m70NumOf(s){ const m=String(s||'').match(/[−-]?\d[\d\s  ]*(?:[.,]\d+)?/); if(!m) return NaN; return parseFloat(m[0].replace(/[\s  ]/g,'').replace('−','-').replace(',','.')); }
+const M70_ODO='#view-today .m38-tv, [data-m70odo]';
+try{ const _rn=render; render=function(){ const prev=new Map(); try{ document.querySelectorAll(M70_ODO).forEach((el,i)=>{ prev.set((el.id||el.className)+'#'+i,m70NumOf(el.textContent)); }); }catch(e){}
+    const r=_rn.apply(this,arguments); try{ document.querySelectorAll(M70_ODO).forEach((el,i)=>{ const a=prev.get((el.id||el.className)+'#'+i), b=m70NumOf(el.textContent); if(Number.isFinite(a)&&Number.isFinite(b)&&a!==b&&Math.abs(b)<1e10) m70Odo(el,a,b); }); }catch(e){} return r; }; }catch(e){}
+
+/* ---------- 181: тёмная тема по закату ---------- */
+const M70_CITY={TJ:[38.56,68.77],UZ:[41.31,69.24],KZ:[43.24,76.89],KG:[42.87,74.59],RU:[55.75,37.62],TR:[41.01,28.98],AE:[25.2,55.27],CN:[39.9,116.4],US:[40.71,-74.0],GB:[51.5,-0.12],DE:[52.52,13.4],AF:[34.53,69.17],IR:[35.69,51.39],IN:[28.61,77.21],PK:[33.68,73.05],AZ:[40.41,49.87],TM:[37.96,58.33]};
+function m70Sun(d){ let r='TJ'; try{ r=m8Region(); }catch(e){} const [lat,lon]=M70_CITY[r]||M70_CITY.TJ; const rad=Math.PI/180, n=Math.floor((Date.UTC(d.getFullYear(),d.getMonth(),d.getDate())-Date.UTC(2000,0,1,12))/864e5)+0.0008;
+  const J=n-lon/360, M=(357.5291+0.98560028*J)%360, C=1.9148*Math.sin(M*rad)+0.02*Math.sin(2*M*rad)+0.0003*Math.sin(3*M*rad), Lm=(M+C+180+102.9372)%360, Jt=2451545+J+0.0053*Math.sin(M*rad)-0.0069*Math.sin(2*Lm*rad);
+  const dec=Math.asin(Math.sin(Lm*rad)*Math.sin(23.44*rad)), cw=(Math.sin(-0.833*rad)-Math.sin(lat*rad)*Math.sin(dec))/(Math.cos(lat*rad)*Math.cos(dec)); if(cw<-1||cw>1) return null; const w=Math.acos(cw)/rad;
+  const toD=j=>new Date((j-2440587.5)*864e5); return {rise:toD(Jt-w/360),set:toD(Jt+w/360)}; }
+function m70SunDark(){ const now=new Date(), s=m70Sun(now); if(!s) return false; return now<s.rise||now>=s.set; }
+/* «Ночь» включается по закату у человека (страна из настроек), а не по теме телефона */
+try{ const _dk=m40Dark; m40Dark=function(){ try{ if(lsGet('m70sun')==='1'){ const d=m70SunDark(); return d; } }catch(e){} return _dk.apply(this,arguments); }; }catch(e){}
+try{ const _ts=m8ThemeSheet; m8ThemeSheet=function(){ const r=_ts.apply(this,arguments); try{ if(!sheet.querySelector('#m70Sun')){ const T=m70T(), s=m70Sun(new Date()), hm=d=>String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'), on=lsGet('m70sun')==='1'&&m59Auto();
+      const row=`<div class="m59-row m70-sunrow"><div><b id="m70SunL">${esc(T.sunT)}</b><small>${esc(s?T.sunD(hm(s.set),hm(s.rise)):T.sunT)}</small></div><button type="button" class="m59-sw" id="m70Sun" role="switch" aria-checked="${on}" aria-labelledby="m70SunL"></button></div>`;
+      const au=sheet.querySelector('#m59Au'), host=au&&au.closest('.m59-row'), sty=sheet.querySelector('.m59-sty'); if(host) host.insertAdjacentHTML('afterend',row); else if(sty) sty.insertAdjacentHTML('afterend',row); else return r;
+      sheet.querySelector('#m70Sun').onclick=()=>{ const now=!(lsGet('m70sun')==='1'&&m59Auto()); lsSet('m70sun',now?'1':'0'); if(now&&!m59Auto()) m59SetAuto(true); else m8ApplyTheme(); m8ThemeSheet(); const b=sheet.querySelector('#m70Sun'); if(b) b.focus({preventScroll:true}); }; } }catch(e){} return r; }; }catch(e){}
+M70.look=''; setInterval(()=>{ try{ if(lsGet('m70sun')==='1'&&m59Auto()){ const lk=m59Look(); if(M70.look&&lk!==M70.look) m8ApplyTheme(); M70.look=lk; } }catch(e){} },5*60e3);
+try{ if(lsGet('m70sun')==='1'&&m59Auto()) m8ApplyTheme(); }catch(e){}
+
+/* ---------- 182: тихие звуки ---------- */
+function m70Chime(kind){ if(!m69Is('m70snd')) return; try{ const C=window.AudioContext||window.webkitAudioContext; M70.ac=M70.ac||new C(); const c=M70.ac; if(c.state==='suspended') c.resume(); const t=c.currentTime;
+    const tone=(f,dt,dur,v)=>{ const o=c.createOscillator(), g=c.createGain(); o.type='sine'; o.frequency.setValueAtTime(f,t+dt); g.gain.setValueAtTime(0.0001,t+dt); g.gain.exponentialRampToValueAtTime(v,t+dt+0.02); g.gain.exponentialRampToValueAtTime(0.0001,t+dt+dur); o.connect(g); g.connect(c.destination); o.start(t+dt); o.stop(t+dt+dur+0.05); };
+    if(kind==='pay'){ tone(660,0,0.22,0.09); tone(990,0.09,0.3,0.07); } else tone(740,0,0.18,0.06); }catch(e){} }
+try{ const _ps=persist; const cnt=()=>{ try{ return {p:(state.payments||[]).length,s:(ensureShop().sales||[]).length,c:(state.cdebt||[]).length,e:(ensureShop().exp||[]).length}; }catch(e){ return null; } }; let last=cnt();
+  persist=function(){ const r=_ps.apply(this,arguments); try{ const now=cnt(); if(last&&now){ if(now.p>last.p) m70Chime('pay'); else if(now.s>last.s||now.c>last.c||now.e>last.e) m70Chime('rec'); } last=now; }catch(e){} return r; }; }catch(e){}
+
+/* ---------- 183: серые заготовки при загрузке ---------- */
+function m70Skel(n){ return `<div class="m70-sk" aria-hidden="true">${Array.from({length:n||3},()=>`<div class="c"><i class="w9"></i><i class="w7"></i><i class="w5"></i></div>`).join('')}</div>`; }
+try{ const _hh=hbTodayHTML; hbTodayHTML=function(){ const h=_hh.apply(this,arguments); try{ if(!hbToday()&&h&&!/m48-it/.test(h)) return h+m70Skel(4); }catch(e){} return h; }; }catch(e){}
+
+/* ---------- 185 + 186: валюта ввода в своей клавиатуре и сумма прописью ---------- */
+const M70W={
+  ru:{u:['','один','два','три','четыре','пять','шесть','семь','восемь','девять'],uf:['','одна','две','три','четыре','пять','шесть','семь','восемь','девять'],t:['десять','одиннадцать','двенадцать','тринадцать','четырнадцать','пятнадцать','шестнадцать','семнадцать','восемнадцать','девятнадцать'],d:['','','двадцать','тридцать','сорок','пятьдесят','шестьдесят','семьдесят','восемьдесят','девяносто'],h:['','сто','двести','триста','четыреста','пятьсот','шестьсот','семьсот','восемьсот','девятьсот']},
+  tg:{u:['','як','ду','се','чор','панҷ','шаш','ҳафт','ҳашт','нӯҳ'],t:['даҳ','ёздаҳ','дувоздаҳ','сенздаҳ','чордаҳ','понздаҳ','шонздаҳ','ҳабдаҳ','ҳаждаҳ','нуздаҳ'],d:['','','бист','сӣ','чил','панҷоҳ','шаст','ҳафтод','ҳаштод','навад'],h:['','сад','дусад','сесад','чорсад','панҷсад','шашсад','ҳафтсад','ҳаштсад','нӯҳсад']},
+  en:{u:['','one','two','three','four','five','six','seven','eight','nine'],t:['ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen'],d:['','','twenty','thirty','forty','fifty','sixty','seventy','eighty','ninety']}};
+function m70Words(n,lg){ n=Math.floor(Math.abs(+n)); if(!Number.isFinite(n)||n>=1e12) return ''; lg=lg||lang; const W=M70W[lg]||M70W.ru; if(n===0) return lg==='en'?'zero':lg==='tg'?'сифр':'ноль';
+  if(lg==='en'){ const tri=x=>{ const r=[], h=Math.floor(x/100), tt=x%100; if(h) r.push(W.u[h]+' hundred'); if(tt>=10&&tt<20) r.push(W.t[tt-10]); else { const d=Math.floor(tt/10), u=tt%10; if(d) r.push(W.d[d]+(u?'-'+W.u[u]:'')); else if(u) r.push(W.u[u]); } return r.join(' '); };
+    const out=[]; [[1e9,'billion'],[1e6,'million'],[1e3,'thousand'],[1,'']].forEach(([b,nm])=>{ const x=Math.floor(n/b)%1000; if(x) out.push(tri(x)+(nm?' '+nm:'')); }); return out.join(' '); }
+  if(lg==='tg'){ const tri=x=>{ const r=[], h=Math.floor(x/100), tt=x%100; if(h) r.push(h===1?'яксад':W.h[h]); if(tt>=10&&tt<20) r.push(W.t[tt-10]); else { const d=Math.floor(tt/10), u=tt%10; if(d) r.push(W.d[d]); if(u) r.push(W.u[u]); } return r.join('у '); };
+    const out=[]; [[1e9,'миллиард'],[1e6,'миллион'],[1e3,'ҳазор'],[1,'']].forEach(([b,nm])=>{ const x=Math.floor(n/b)%1000; if(x) out.push((b===1e3&&x===1?'як':tri(x))+(nm?' '+nm:'')); }); return out.join('у '); }
+  const pl=(x,a,b,c)=>{ x=x%100; if(x>10&&x<20) return c; x=x%10; return x===1?a:x>=2&&x<=4?b:c; };
+  const tri=(x,f)=>{ const r=[], h=Math.floor(x/100), tt=x%100; if(h) r.push(W.h[h]); if(tt>=10&&tt<20) r.push(W.t[tt-10]); else { const d=Math.floor(tt/10), u=tt%10; if(d) r.push(W.d[d]); if(u) r.push((f?W.uf:W.u)[u]); } return r.join(' '); };
+  const out=[], b=Math.floor(n/1e9)%1000, m=Math.floor(n/1e6)%1000, th=Math.floor(n/1e3)%1000, r=n%1000;
+  if(b) out.push(tri(b)+' '+pl(b,'миллиард','миллиарда','миллиардов')); if(m) out.push(tri(m)+' '+pl(m,'миллион','миллиона','миллионов')); if(th) out.push(tri(th,true)+' '+pl(th,'тысяча','тысячи','тысяч')); if(r) out.push(tri(r)); return out.join(' '); }
+function m70CurName(){ try{ return ({TJS:{ru:'сомони',tg:'сомонӣ',en:'somoni'}})[m58Base()]?.[lang]||m58Base(); }catch(e){ return ''; } }
+function m70WordsLine(i){ try{ if(!m69NumField(i)||i.closest('.m69-kp')) return; let w=i.parentElement.querySelector(':scope > .m70-w'); const n=m69Num(i.value); const show=Number.isFinite(n)&&Math.abs(n)>=1000&&document.activeElement===i;
+    if(!show){ if(w) w.remove(); return; } if(!w){ w=document.createElement('small'); w.className='m70-w'; i.insertAdjacentElement('afterend',w); } w.textContent=m70Words(n)+(n%1?'':' '+m70CurName()); }catch(e){} }
+document.addEventListener('input',e=>m70WordsLine(e.target),true); document.addEventListener('focusin',e=>m70WordsLine(e.target)); document.addEventListener('focusout',e=>{ const i=e.target; setTimeout(()=>m70WordsLine(i),10); });
+/* своя клавиатура: строка прописью и пересчёт из другой валюты (вставляется только по нажатию) */
+const M70K={cur:''};
+try{ const _ks=m69KpShow; m69KpShow=function(){ const r=_ks.apply(this,arguments); try{ const el=M69K.el, i=M69K.inp; if(!el||!i) return r; let w=el.querySelector('.m70-kw'); if(!w){ el.querySelector('.m69-kd').insertAdjacentHTML('afterend','<div class="m70-kw" aria-live="polite"></div>'); w=el.querySelector('.m70-kw'); }
+      const n=m69Num(i.value), T=m70T(), base=(()=>{ try{ return m58Base(); }catch(e){ return 'TJS'; } })();
+      if(M70K.cur&&M70K.cur!==base&&Number.isFinite(n)){ const rt=m70Rate(M70K.cur), rb=m70Rate(base); const conv=rt&&rb?n*rt/rb:NaN; w.innerHTML=Number.isFinite(conv)?`<span>${esc(T.fxConv(m69Fx(n)+' '+M70K.cur,money(conv*(rb||1))))}</span> <button type="button" data-m70kins="${Math.round(conv*100)/100}">${esc(T.fxIns(money(conv*(rb||1))))}</button>`:esc(M70K.cur); }
+      else w.textContent=Number.isFinite(n)&&Math.abs(n)>=1000?m70Words(n)+(n%1?'':' '+m70CurName()):'';
+      let cb=el.querySelector('[data-m70kc]'); if(!cb){ el.querySelector('.m69-ks').insertAdjacentHTML('beforebegin',`<button type="button" class="m70-kc" data-m70kc="1" aria-label="${esc(T.fxCur)}"></button>`); cb=el.querySelector('[data-m70kc]'); } cb.textContent=(M70K.cur||base)+' ⇄'; }catch(e){} return r; }; }catch(e){}
+document.addEventListener('pointerdown',e=>{ const b=e.target.closest&&e.target.closest('.m69-kp [data-m70kc], .m69-kp [data-m70kins]'); if(b) e.preventDefault(); },true);
+document.addEventListener('click',e=>{ const c=e.target.closest&&e.target.closest('.m69-kp [data-m70kc]'); if(c){ let base='TJS'; try{ base=m58Base(); }catch(x){} const list=[base,...['USD','CNY','RUB','EUR'].filter(x=>x!==base)]; const k=list.indexOf(M70K.cur||base); M70K.cur=list[(k+1)%list.length]; if(M70K.cur===base) M70K.cur=''; m69KpShow(); return; }
+  const ins=e.target.closest&&e.target.closest('.m69-kp [data-m70kins]'); if(ins&&M69K.inp){ M69K.inp.value=String(+ins.dataset.m70kins); M69K.inp.dispatchEvent(new Event('input',{bubbles:true})); M70K.cur=''; m69KpShow(); } });
+try{ const _kc=m69KpClose; m69KpClose=function(){ M70K.cur=''; return _kc.apply(this,arguments); }; }catch(e){}
+
+/* ---------- 189: вопрос Сифре ждёт сеть ---------- */
+function m70Qs(){ state.misc=state.misc||{}; if(!Array.isArray(state.misc.sfq70)) state.misc.sfq70=[]; return state.misc.sfq70; }
+/* без сети приложение уже отвечает из записей, а остальное — сообщением «Нет интернета» с «Повторить» (v52).
+   Теперь такой вопрос ещё и запоминается и уходит сам, когда сеть появится. */
+try{ const _ml=m52Local; m52Local=function(q,voice,a){ try{ const t=String(q||'').trim(); if(a&&a.err&&navigator.onLine===false&&t){ const r=_ml.call(this,q,voice,Object.assign({},a,{t:m70T().qWait})); const log=sfLog(), m=log[log.length-1]; if(m&&m.r==='a') m.q70=1; m70Qs().push(t); persist(); try{ sfRedraw(); }catch(x){} return r; } }catch(e){} return _ml.apply(this,arguments); }; }catch(e){}
+async function m70QsFlush(){ const Q=m70Qs(); if(!Q.length||navigator.onLine===false||sfBusy) return; const T=m70T(); toast(T.qSent);
+  while(Q.length&&navigator.onLine!==false){ const t=Q.shift(); try{ const log=sfLog(); for(let i=log.length-1;i>=0;i--){ if(log[i].q70&&log[i-1]&&log[i-1].r==='u'&&log[i-1].t===t){ log.splice(i-1,2); break; } } persist(); }catch(e){} await sfAsk(t,false); } }
+addEventListener('online',()=>setTimeout(m70QsFlush,1200)); setTimeout(()=>{ if(m70Qs().length) m70QsFlush(); },5000);
+
+/* ---------- 190: суммы размываются при сворачивании ---------- */
+document.addEventListener('visibilitychange',()=>{ try{ document.documentElement.classList.toggle('m70-hide',document.hidden&&m69On('m70blur')); }catch(e){} });
+addEventListener('pagehide',()=>{ try{ if(m69On('m70blur')) document.documentElement.classList.add('m70-hide'); }catch(e){} });
+addEventListener('pageshow',()=>document.documentElement.classList.remove('m70-hide')); addEventListener('focus',()=>document.documentElement.classList.remove('m70-hide'));
+
+/* ---------- настройки: звуки и размытие — в «Удобство» ---------- */
+try{ const _sh=m69SetHTML; m69SetHTML=function(){ const h=_sh.apply(this,arguments); try{ const T=m70T(), tg=(id,t,d,on)=>`<label class="m7-tg"><span><b>${esc(t)}</b><small>${esc(d)}</small></span><input type="checkbox" id="${id}" ${on?'checked':''}><i></i></label>`;
+    return h.replace(/<\/div><\/div>$/,tg('m70s-snd',T.sndT,T.sndD,m69Is('m70snd'))+tg('m70s-blur',T.blurT,T.blurD,m69On('m70blur'))+'</div></div>'); }catch(e){ return h; } }; }catch(e){}
+try{ const _sb=m69SetBind; m69SetBind=function(){ const r=_sb.apply(this,arguments); try{ const a=sheet.querySelector('#m70s-snd'), b=sheet.querySelector('#m70s-blur'); if(a) a.onchange=e=>{ lsSet('m70snd',e.target.checked?'1':'0'); if(e.target.checked) m70Chime('pay'); }; if(b) b.onchange=e=>lsSet('m70blur',e.target.checked?'1':'0'); }catch(e){} return r; }; }catch(e){}
+
+/* ---------- голос: естественнее и весь выпуск ---------- */
+/* куски побольше (до ~520 знаков) — модель держит интонацию через предложения; в живом разговоре просим быструю модель */
+try{ const _ch=sfChunks; sfChunks=function(s){ const out=[]; let cur=''; for(const p of String(s||'').split(/(?<=[.!?…;:])\s+/)){ if(cur&&(cur+' '+p).length>520){ out.push(cur); cur=p; } else cur=cur?cur+' '+p:p; } if(cur) out.push(cur);
+    return out.flatMap(c=>c.length>700?(c.match(/[\s\S]{1,600}(\s|$)/g)||[c]):[c]).map(c=>c.trim()).filter(Boolean); }; }catch(e){}
+(function(){ const F=window.fetch; window.fetch=function(u,o){ try{ if(typeof u==='string'&&/\/api\/mk\/tts$/.test(u)&&o&&typeof o.body==='string'){ const b=JSON.parse(o.body); if(sfT) b.fast=1; o=Object.assign({},o,{body:JSON.stringify(b)}); } }catch(e){} return F.call(this,u,o); }; })();
+/* «Слушать» в «Рынке дня»: весь выпуск по частям — главное с «почему важно», мир, сферы, прогнозы, идеи, что сделать */
+function m70SayParts(t){ const T=m70T(), P=[], tx=(v,n)=>hbTx(v,n||400).replace(/\s+/g,' ').trim(), j=a=>a.filter(Boolean).join(' ');
+  /* начало — как раньше: выпуск, вывод, главное с «что сделать», дело дня; дальше — остальное */
+  try{ P.push(L.f34Say(L.f34Ed[f34Ed(t)],t.summary,(t.brief||[]).slice(0,5),t.todo&&t.todo.title)); }catch(e){ P.push(tx(t.summary,600)); }
+  const br=(t.brief||[]).slice(5,9).map(x=>j([tx(x.title||x.t,160)+'.',x.why?tx(x.why,240):'',x.act?(L.f34Act+': '+tx(x.act,200)+'.'):''])); if(br.length) P.push(br.join(' '));
+  const w=(t.world||[]).slice(0,5).map(x=>tx(x.title||x.t,160)+'.'+(x.why?' '+tx(x.why,200):'')); if(w.length) P.push(T.saySec.world+' '+w.join(' '));
+  const ln=(t.lens||[]).slice(0,10).map(x=>j([tx(x.title,160)+'.',tx(x.what,200)])); for(let i=0;i<ln.length;i+=4) P.push((i?'':T.saySec.lens+' ')+ln.slice(i,i+4).join(' '));
+  const ou=(t.outlook||[]).slice(0,4).map(x=>tx(x.title||x.what||x.t,200)+'.'); if(ou.length) P.push(T.saySec.outlook+' '+ou.join(' '));
+  const id=(t.ideas||[]).slice(0,4).map(x=>tx(x.title||x.t,140)+'.'); if(id.length) P.push(T.saySec.ideas+' '+id.join(' '));
+  P.push(T.saySec.end); return P.filter(x=>x&&x.length>2); }
+try{ f34Listen=function(){ const t=hbToday(); if(!t) return; if(f34Saying){ f34Saying=false; M70.say=null; try{ sfHush(); }catch(e){} hbHeroDraw(); return; }
+    const parts=m70SayParts(t), run={k:0}; M70.say=run; f34Saying=true; hbHeroDraw();
+    const next=()=>{ if(M70.say!==run||!f34Saying) return; if(run.k>=parts.length){ f34Saying=false; M70.say=null; hbHeroDraw(); return; } const p=parts[run.k++]; sfSay(p,()=>{ if(M70.say===run) next(); }); }; next(); }; }catch(e){}
+/* v71: строки — новый «Рынок дня» (шапка, лента курсов, карточки, поиск, сохранённое, «потяните — обновится») и новый экран «Ещё» */
+const M71S={
+ru:{
+  fresh:'Свежий выпуск', stale:'Не самые свежие данные', upd:'Обновить', updA:'Обновить весь выпуск', prog:(d,t)=>`Обновляется: ${d} из ${t}`, progS:(d,t)=>`${d}/${t}`,
+  next:t=>`Следующий — в ${t}`, meta:(d,t,m)=>`${d} · ${t} · ≈ ${m} мин чтения`,
+  listen:'Слушать', stop:'Остановить', ask:'Спросить', askS:' Сифру', find:'Поиск', saved:'Закладки', bell:'Сообщать',
+  more:n=>`Показать ещё ${n}`, less:'Свернуть', open:'Подробнее', close:'Свернуть', newB:'новое', read:(a,b)=>`Прочитано ${a} из ${b}`,
+  save:'Сохранить', unsave:'Убрать из сохранённого', savedT:'Сохранённое', savedE:'Здесь будут новости, идеи и советы, которые вы сохраните звёздочкой.', savedOk:'Сохранено', savedRm:'Убрано',
+  savedFrom:(s,d)=>`${s} · ${d}`, savedGo:'Показать в выпуске', savedOld:'Этой новости уже нет в выпуске — вот что было сохранено:',
+  findPh:'Найти в выпуске: юань, карго, Эсхата…', findN:n=>n?`Найдено: ${n}`:'Ничего не нашлось — попробуйте другое слово', findX:'Закрыть поиск',
+  fu:['Что это значит для меня?','Почему так?','Что будет дальше?','Объясни проще'], fuQ:(q,t)=>`${q} — про новость «${t}»`,
+  pull:'Потяните, чтобы обновить', pullGo:'Отпустите — обновлю', pullBusy:'Обновляю выпуск…',
+  tkA:'Курсы к сомони: нажмите — график за 30 дней', tkDay:'за день',
+  secCount:n=>String(n), vwA:'Как показывать новости', vwS:'Коротко', vwF:'Целиком',
+  /* Ещё */
+  mHi:['Доброй ночи','Доброе утро','Добрый день','Добрый вечер'], mSub:'Всё, что не поместилось на главном — по делу',
+  mSum:'Сводка', mPay:'Ближайший платёж', mPayNo:'Платежей нет', mCash:'Деньги', mBk:'Копия данных',
+  mQuick:'Быстро', mQ:{sale:'Записать выручку',pay:'Внести платёж',ask:'Спросить Сифру',rate:'Курс',calc:'Калькулятор'},
+  mPins:'Закреплённое', mEdit:'Изменить', mDone:'Готово', mPinA:t=>`Закрепить «${t}»`, mUnpinA:t=>`Открепить «${t}»`, mPinH:'Нажмите на звёздочку у раздела — он появится здесь. Порядок: как вы закрепили.',
+  mRecent:'Недавно открывали', mAllN:n=>`Все ${n}`,
+  mNew:'Новое в Mira', mNewSub:'Последние обновления — попробуйте',
+  mNewI:[['calc','Мастерская Сифры','Калькуляторы, которые Сифра делает под вас','tools'],['cash','Карманы в валютах','Сколько всего денег в сомони по курсу','pk'],['tag','Где продать','Команда найдёт покупателей и цены','sell'],['chart','Новый «Рынок дня»','Короткие карточки, поиск и сохранённое','hub']],
+  mTry:'Попробовать', mSet:'Настройки'
+},
+tg:{
+  fresh:'Нашри тоза', stale:'Маълумот на он қадар тоза', upd:'Нав кардан', updA:'Тамоми нашрро нав кардан', prog:(d,t)=>`Нав мешавад: ${d} аз ${t}`, progS:(d,t)=>`${d}/${t}`,
+  next:t=>`Навбатӣ — соати ${t}`, meta:(d,t,m)=>`${d} · ${t} · ≈ ${m} дақ. хондан`,
+  listen:'Гӯш кардан', stop:'Қатъ кардан', ask:'Пурсидан', askS:' аз Сифра', find:'Ҷустуҷӯ', saved:'Нишонаҳо', bell:'Огоҳӣ',
+  more:n=>`Боз ${n}-тоашро нишон деҳ`, less:'Пӯшидан', open:'Муфассал', close:'Пӯшидан', newB:'нав', read:(a,b)=>`Хонда шуд ${a} аз ${b}`,
+  save:'Нигоҳ доштан', unsave:'Аз нигоҳдошта бардоштан', savedT:'Нигоҳдошта', savedE:'Дар ин ҷо хабарҳо, ғояҳо ва маслиҳатҳое меоянд, ки бо ситорача нигоҳ медоред.', savedOk:'Нигоҳ дошта шуд', savedRm:'Бардошта шуд',
+  savedFrom:(s,d)=>`${s} · ${d}`, savedGo:'Дар нашр нишон додан', savedOld:'Ин хабар дигар дар нашр нест — ин аст он чи нигоҳ дошта шуда буд:',
+  findPh:'Дар нашр ёфтан: юан, карго, Эсхата…', findN:n=>n?`Ёфт шуд: ${n}`:'Чизе ёфт нашуд — калимаи дигарро санҷед', findX:'Пӯшидани ҷустуҷӯ',
+  fu:['Ин барои ман чӣ маъно дорад?','Чаро ин тавр?','Баъд чӣ мешавад?','Соддатар фаҳмон'], fuQ:(q,t)=>`${q} — дар бораи хабари «${t}»`,
+  pull:'Кашед, то нав шавад', pullGo:'Раҳо кунед — нав мекунам', pullBusy:'Нашрро нав мекунам…',
+  tkA:'Қурб ба сомонӣ: пахш кунед — графики 30 рӯз', tkDay:'дар як рӯз',
+  secCount:n=>String(n), vwA:'Хабарҳоро чӣ тавр нишон додан', vwS:'Кӯтоҳ', vwF:'Пурра',
+  mHi:['Шаби хуш','Субҳ ба хайр','Рӯз ба хайр','Шом ба хайр'], mSub:'Ҳар чизе, ки дар саҳифаи асосӣ ҷой нашуд — ба кор',
+  mSum:'Хулоса', mPay:'Пардохти наздиктарин', mPayNo:'Пардохт нест', mCash:'Пул', mBk:'Нусхаи маълумот',
+  mQuick:'Зуд', mQ:{sale:'Даромадро сабт кардан',pay:'Пардохт кардан',ask:'Аз Сифра пурсидан',rate:'Қурб',calc:'Ҳисобкунак'},
+  mPins:'Часпонидашуда', mEdit:'Тағйир додан', mDone:'Тайёр', mPinA:t=>`Часпонидани «${t}»`, mUnpinA:t=>`Ҷудо кардани «${t}»`, mPinH:'Ба ситорачаи бахш пахш кунед — он дар ин ҷо пайдо мешавад. Тартиб: чӣ тавре ки часпондед.',
+  mRecent:'Охирин кушодашуда', mAllN:n=>`Ҳамаи ${n}`,
+  mNew:'Навигариҳо дар Mira', mNewSub:'Навсозиҳои охирин — санҷед',
+  mNewI:[['calc','Устохонаи Сифра','Ҳисобкунакҳое, ки Сифра барои шумо месозад','tools'],['cash','Кисаҳо бо асъор','Ҳамаи пул ба сомонӣ аз рӯи қурб','pk'],['tag','Дар куҷо фурӯхтан','Даста харидорон ва нархҳоро меёбад','sell'],['chart','«Бозори рӯз»-и нав','Кортҳои кӯтоҳ, ҷустуҷӯ ва нигоҳдошта','hub']],
+  mTry:'Санҷидан', mSet:'Танзимот'
+},
+en:{
+  fresh:'Fresh issue', stale:'Data is not the freshest', upd:'Refresh', updA:'Refresh the whole issue', prog:(d,t)=>`Updating: ${d} of ${t}`, progS:(d,t)=>`${d}/${t}`,
+  next:t=>`Next one at ${t}`, meta:(d,t,m)=>`${d} · ${t} · ≈ ${m} min read`,
+  listen:'Listen', stop:'Stop', ask:'Ask', askS:' Sifra', find:'Search', saved:'Saved', bell:'Notify',
+  more:n=>`Show ${n} more`, less:'Show less', open:'More', close:'Less', newB:'new', read:(a,b)=>`Read ${a} of ${b}`,
+  save:'Save', unsave:'Remove from saved', savedT:'Saved', savedE:'News, ideas and tips you save with the star will appear here.', savedOk:'Saved', savedRm:'Removed',
+  savedFrom:(s,d)=>`${s} · ${d}`, savedGo:'Show in the issue', savedOld:'This story is no longer in the issue — here is what you saved:',
+  findPh:'Search the issue: yuan, cargo, Eskhata…', findN:n=>n?`Found: ${n}`:'Nothing found — try another word', findX:'Close search',
+  fu:['What does it mean for me?','Why is this happening?','What happens next?','Explain it simply'], fuQ:(q,t)=>`${q} — about the story “${t}”`,
+  pull:'Pull to refresh', pullGo:'Release to refresh', pullBusy:'Refreshing the issue…',
+  tkA:'Rates to somoni: tap for a 30-day chart', tkDay:'per day',
+  secCount:n=>String(n), vwA:'How to show stories', vwS:'Short', vwF:'Full',
+  mHi:['Good night','Good morning','Good afternoon','Good evening'], mSub:'Everything that didn’t fit on the home screen',
+  mSum:'Summary', mPay:'Next payment', mPayNo:'No payments', mCash:'Money', mBk:'Data backup',
+  mQuick:'Quick', mQ:{sale:'Record takings',pay:'Make a payment',ask:'Ask Sifra',rate:'Rates',calc:'Calculator'},
+  mPins:'Pinned', mEdit:'Edit', mDone:'Done', mPinA:t=>`Pin “${t}”`, mUnpinA:t=>`Unpin “${t}”`, mPinH:'Tap the star next to a section and it appears here, in the order you pinned it.',
+  mRecent:'Recently opened', mAllN:n=>`All ${n}`,
+  mNew:'New in Mira', mNewSub:'Latest updates — give them a try',
+  mNewI:[['calc','Sifra’s Workshop','Calculators Sifra builds for you','tools'],['cash','Currency pockets','All your money in somoni at today’s rate','pk'],['tag','Where to sell','A team finds buyers and prices','sell'],['chart','New Market of the Day','Short cards, search and saved stories','hub']],
+  mTry:'Try it', mSet:'Settings'
+}};
+function m71T(){ return M71S[lang]||M71S.ru; }
+/* ===================== v71: новый «Рынок дня» и новый экран «Ещё» =====================
+   Шапка выпуска: одна строка состояния (без двойного «обновляется 0 из 9»), кнопка обновления с кольцом прогресса, лента курсов с мини-графиками.
+   Выпуск: короткие карточки (заголовок + две строки, остальное — по нажатию), «Показать ещё», «новое» с прошлого раза, звёздочка «Сохранить»,
+   вопросы-продолжения к новости, поиск по выпуску, липкая строка разделов с подсветкой, «потяните вниз — обновится».
+   «Учиться»: разделы урока сворачиваются, вверху — оглавление и сколько прочитано.
+   «Ещё»: сводка (платёж, деньги, копия), быстрые действия, закреплённое (порядок задаёт человек), недавние, «Новое в Mira», группы-карточки. */
+const M71={ed:false,fq:'',pull:null};
+const m71Full=()=>lsGet('m71full')==='1';
+
+/* ---------- шапка выпуска ---------- */
+function m71Spark(cur){ let s=[]; try{ s=f35Series(cur); }catch(e){} if(s.length<5) return ''; s=s.slice(-30); const v=s.map(x=>x.v), mn=Math.min(...v), mx=Math.max(...v), W=64, H=20;
+  const d=v.map((y,i)=>(i?'L':'M')+(1+i/(v.length-1)*(W-2)).toFixed(1)+','+(H-2-(y-mn)/((mx-mn)||1)*(H-4)).toFixed(1)).join(' '); return `<svg class="m71-sp" viewBox="0 0 ${W} ${H}" aria-hidden="true"><path d="${d}"/></svg>`; }
+function m71TickHTML(t){ const T=m71T(); const tiles=F34_FX.filter(([k])=>+(t.fx||{})[k]>0).map(([k,s])=>{ const v=+t.fx[k], c=f34Chg(t,k), C=k.toUpperCase();
+    return `<button type="button" data-m42no class="m71-tk1 ${c>0?'up':c<0?'dn':''}${typeof f35Cur!=='undefined'&&f35Cur===C?' on':''}" data-m71tk="${C}"><span class="c">1 ${esc(s)} =</span> <b>${fx(v,v<0.1?3:2)} <small>${L.hbSom}</small></b> ${c!=null?`<em>${c>0?'▲':c<0?'▼':'·'} ${f34Pct(c)}</em>`:''}${m71Spark(C)}</button>`; }).join('');
+  return tiles?`<div class="hb-fx m71-fxw"><div class="m71-tk" role="group" aria-label="${esc(T.tkA)}">${tiles}</div>${t.fxs?`<small class="m71-fxs f32-fxs">${esc(L.f32FxSrc(t.fxs))}</small>`:''}</div>`:''; }
+function m71SvList(){ const h=hbSt(); if(!Array.isArray(h.sv71)) h.sv71=[]; return h.sv71; }
+function m71HeroHTML(t){ const T=m71T(), fresh=hbFresh(), busy=hbState==='load'||hbState==='pend', ed=f34Ed(t), pr=busy&&hbProg&&hbProg.t?hbProg:null, pct=pr?Math.round(pr.d/pr.t*100):0;
+  let nx=''; if(fresh&&t.next&&!busy){ try{ const nd=new Date(t.next), h=nd.getHours(); nx=L.f34Next(h<11?'am':h<17?'mid':'pm',nd.toDateString()===new Date().toDateString(),hbHM(t.next)); }catch(e){ nx=T.next(hbHM(t.next)); } } const nsv=m71SvList().length;
+  const st=busy?`<span class="m71-pill busy" role="status">${esc(pr?L.f34Prog(pr.d,pr.t):L.hbUpdating)}</span>`:fresh?`<span class="m71-pill ok">${esc(T.fresh)}</span>`:`<span class="m71-pill old hb-old">${esc(T.stale)}</span>`;
+  return `<section class="hb-hero f34h m71-mh${busy?' busy':''}"><div class="m71-top"><span class="bp-ava">${SF_AVA}</span><div class="m71-ti"><b>${L.f34Ed[ed]}</b><small>${esc(T.meta(fmtDate(parseYmd(t.day)||new Date()),hbHM(t.at),f34Min(t)))}${t.model?' · '+esc(L.hbModel(t.model)):''}</small></div>
+      <button type="button" data-m42no class="hb-upd m71-rf${busy?' busy':''}" data-hbupd="1" ${busy?'disabled':''} aria-label="${esc(pr?T.prog(pr.d,pr.t):T.updA)}" style="--p:${pct}"><span class="m71-ring" aria-hidden="true"></span>${ico('repeat',18)}<span class="m71-rl">${busy?(pr?esc(T.progS(pr.d,pr.t)):'…'):esc(T.upd)}</span>${busy?`<span class="sr">${esc(L.hbUpdating)}</span>`:''}</button></div>
+    <div class="m71-st">${st}${nx?`<small>${ico('clock',13)} ${esc(nx)}</small>`:''}${f34BellOk()?`<button type="button" data-m42no class="m71-bl f34-bell${f34BellOn()?' on':''}" data-f34bell="1" aria-pressed="${f34BellOn()}">${ico('bell',18)}<span>${T.bell}</span></button>`:''}</div>${busy?`<i class="m71-bar" aria-hidden="true"><i style="width:${Math.max(4,pct)}%"></i></i>`:''}
+    <p class="m71-sum">${esc(t.summary)}</p>${m71TickHTML(t)}
+    <div class="f34-hact"><div class="m71-act"><button type="button" data-m42no class="m71-ab${f34Saying?' on':''}" data-f34say="1" aria-pressed="${f34Saying}">${ico(f34Saying?'close':'sound',18)}<span>${f34Saying?T.stop:T.listen}</span></button><button type="button" data-m42no class="m71-ab" data-sifra="${esc(L.f34AskQ)}">${ico('chat',18)}<span>${T.ask}<i class="sr">${T.askS}</i></span></button><button type="button" data-m42no class="m71-ab" data-m71find="1">${ico('search',18)}<span>${T.find}</span></button><button type="button" data-m42no class="m71-ab" data-m71sv="1">${ico('star',18)}<span>${T.saved}</span>${nsv?`<em>${nsv}</em>`:''}</button></div></div></section>`; }
+try{ const _fh=f34HeroHTML; f34HeroHTML=function(t){ try{ return m71HeroHTML(t); }catch(e){ console.error('m71 hero',e); return _fh.apply(this,arguments); } }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m71tk]'); if(!b) return; const c=b.dataset.m71tk;
+  try{ if(f35Series(c).length>=5){ f35Cur=c; const w=BPG.el&&BPG.el.querySelector('#f35-fxw'); if(w){ w.innerHTML=f35FxHTML(); f35Mount(w); w.scrollIntoView({block:'nearest',behavior:'smooth'}); } document.querySelectorAll('[data-m71tk]').forEach(x=>x.classList.toggle('on',x===b)); }
+    else { const had=rates(); ratesSheet(); if(!had||had.day!==dkey()) fetchRates(false); } }catch(x){} });
+
+/* ---------- карточки выпуска ---------- */
+const M71_IT='.f34-bi, .m67-out, .f32-nw, .hb-tc, .hb-idea, .hb-tip';
+const M71_FOLD={'hb-s-outlook':3,'hb-s-world':3,'hb-s-news':3,'hb-s-trends':3,'hb-s-ideas':3,'hb-s-tips':3};
+function m71Title(a){ const h=a.querySelector(':scope > .f34-bt h5, :scope > h5, :scope > b, :scope > .m48-eb > b'); return h?h.textContent.replace(/\s+/g,' ').replace(/новое$/,'').trim():''; }
+function m71Key(a){ return m71Title(a).toLowerCase().slice(0,70); }
+function m71SecT(a){ const s=a.closest('section'); const h=s&&s.querySelector('h4'); return h?h.textContent.trim():''; }
+function m71SvHas(k){ return m71SvList().some(x=>x.k===k); }
+function m71SeenSt(){ const h=hbSt(); if(!h.sn71||!Array.isArray(h.sn71.k)) h.sn71={k:[],init:0}; return h.sn71; }
+function m71Card(a,T,S){ if(a.dataset.m71) return; const k=m71Key(a); if(!k) return; a.dataset.m71='1'; a.classList.add('m71-cd'); let lead=false;
+  let tg=false; [...a.children].forEach(c=>{ if(c.matches('.lv-tags')){ if(!tg){ c.classList.add('m71-k'); tg=true; } } else if(c.matches('.f34-bt, h5, b, .hb-ih')) c.classList.add('m71-k'); else if(!lead&&c.tagName==='P'&&(!c.className||c.className==='m71-k')){ c.classList.add('m71-k','m71-lead'); lead=true; } });
+  if(S.init&&!S.k.includes(k)){ const h=a.querySelector(':scope > .f34-bt h5, :scope > h5, :scope > b'); if(h&&!h.querySelector('.m71-nb')) h.insertAdjacentHTML('beforeend',` <em class="m71-nb">${esc(T.newB)}</em>`); a.classList.add('m71-new'); }
+  const sv=m71SvHas(k), star=a.classList.contains('hb-idea')?'':`<button type="button" data-m42no class="m71-star${sv?' on':''}" data-m71star="1" aria-pressed="${sv}" aria-label="${esc(sv?T.unsave:T.save)}">${ico('star',16)}</button>`;
+  if(m71Full()) a.classList.add('m71-open');
+  a.insertAdjacentHTML('beforeend',`<div class="m71-fu">${T.fu.map((q,i)=>`<button type="button" class="chip" data-m71fu="${i}">${esc(q)}</button>`).join('')}</div><div class="m71-cf m71-k"><button type="button" data-m42no class="m71-x" data-m71x="1" aria-expanded="false">${ico('down',16)}<span>${esc(T.open)}</span></button>${star}</div>`); }
+const M71_FX={'hb-s-lens':['.m48-lg .m48-it',5],'hb-s-goods':['.hb-bars > .hb-bar',6]};
+function m71Fold(sec,T){ if(sec.dataset.m71f||m71Full()) return; let its, n;
+  if(M71_FX[sec.id]){ const [sel,k]=M71_FX[sec.id]; n=k; its=[...sec.querySelectorAll(sel)].filter(x=>!x.hidden&&getComputedStyle(x).display!=='none'); }
+  else { n=M71_FOLD[sec.id]; if(!n) return; its=[...sec.querySelectorAll(':scope > '+M71_IT.split(', ').join(', :scope > '))]; }
+  if(its.length<=n) return; sec.dataset.m71f='1';
+  its.slice(n).forEach(x=>x.classList.add('m71-h')); const last=its[its.length-1], host=M71_FX[sec.id]?(last.closest('.m48-lg, .hb-bars')||last):last; host.insertAdjacentHTML('afterend',`<button type="button" data-m42no class="m71-mo" data-m71mo="1" aria-expanded="false">${ico('down',16)}<span>${esc(T.more(its.length-n))}</span></button>`); }
+function m71Nav(root){ const nav=root.querySelector('.f34-nav'); if(!nav||nav.dataset.m71) return; nav.dataset.m71='1'; nav.classList.add('m71-nav');
+  nav.querySelectorAll('[data-hbjump]').forEach(b=>{ const s=root.querySelector('#hb-s-'+b.dataset.hbjump); if(!s) return; const n=s.querySelectorAll(M71_IT).length; if(n>1) b.dataset.m71n=n; });
+  if(!root.querySelector('.m71-vw')){ const T=m71T(), f=m71Full(); nav.insertAdjacentHTML('beforebegin',`<div class="m71-vw" role="radiogroup" aria-label="${esc(T.vwA)}"><button type="button" data-m42no role="radio" aria-checked="${!f}" class="${f?'':'on'}" data-m71vw="0">${ico('list',15)} ${esc(T.vwS)}</button><button type="button" data-m42no role="radio" aria-checked="${f}" class="${f?'on':''}" data-m71vw="1">${ico('doc',15)} ${esc(T.vwF)}</button></div>`); } }
+function m71Mount(root){ try{ if(!root||!root.querySelector) return; const T=m71T(), S=m71SeenSt(); const pane=root.matches&&root.matches('[data-hbpane]')?root:root.querySelector('[data-hbpane="today"]:not([hidden])')||root.querySelector('[data-hbpane]:not([hidden])');
+    if(!pane) return; const k=pane.dataset.hbpane; try{ const mm=pane.closest('#bpg-m'); if(mm) mm.dataset.m71tab=k; }catch(e){}
+    if(k==='today'){ pane.querySelectorAll(M71_IT).forEach(a=>{ if(!a.closest('.m71-skip')) m71Card(a,T,S); }); pane.querySelectorAll('section.f34-s').forEach(s=>m71Fold(s,T)); m71Nav(pane);
+      clearTimeout(M71.snT); M71.snT=setTimeout(()=>{ try{ const keys=[...document.querySelectorAll('#bpg-m [data-hbpane="today"] .m71-cd')].map(m71Key).filter(Boolean); const set=new Set(S.k); keys.forEach(x=>set.add(x)); S.k=[...set].slice(-500); S.init=1; persist(); }catch(e){} },2500);
+      if(M71.fq) m71Find(M71.fq); }
+    if(k==='learn') m71Learn(pane,T); }catch(e){ console.error('m71 mount',e); } }
+try{ const _ha=hbAfter; hbAfter=function(root){ const r=_ha.apply(this,arguments); try{ m71Mount(root||BPG.el); }catch(e){} return r; }; }catch(e){}
+/* после дорисовок других модулей (графики у новостей, «Полезно / Не то») — ещё раз, только новое */
+try{ const _hr=hbRedraw; hbRedraw=function(){ const r=_hr.apply(this,arguments); setTimeout(()=>{ try{ if(hbOn()) m71Mount(BPG.el.querySelector('#bpg-m')); }catch(e){} },80); return r; }; }catch(e){}
+
+function m71Toggle(a,on){ const T=m71T(); on=on==null?!a.classList.contains('m71-open'):on; a.classList.toggle('m71-open',on); const x=a.querySelector('[data-m71x]'); if(x){ x.setAttribute('aria-expanded',on); x.querySelector('span').textContent=on?T.close:T.open; }
+  if(on){ try{ const h=hbSt(); h.rd71=h.rd71&&h.rd71.d===dkey()?h.rd71:{d:dkey(),k:[]}; const k=m71Key(a); if(k&&!h.rd71.k.includes(k)){ h.rd71.k.push(k); persist(); } }catch(e){} } }
+document.addEventListener('click',e=>{ const t=e.target; if(!t.closest) return; const a=t.closest('.m71-cd');
+  const mo=t.closest('[data-m71mo]'); if(mo){ const s=mo.closest('section'); const on=!s.classList.contains('m71-all'); s.classList.toggle('m71-all',on); mo.setAttribute('aria-expanded',on); const T=m71T(), n=s.querySelectorAll('.m71-h').length; mo.querySelector('span').textContent=on?T.less:T.more(n); if(!on) s.scrollIntoView({block:'start'}); return; }
+  if(!a) return;
+  const st=t.closest('[data-m71star]'); if(st){ e.preventDefault(); m71Star(a,st); return; }
+  const fu=t.closest('[data-m71fu]'); if(fu){ const T=m71T(); try{ sifraOpen(T.fuQ(T.fu[+fu.dataset.m71fu],m71Title(a))); }catch(x){} return; }
+  if(t.closest('[data-m71x]')){ m71Toggle(a); return; }
+  if(t.closest('button, a, input, select, textarea, label, details, summary, [role="button"], .m48-ch, svg[data-m69pts]')) return;
+  if(getSelection&&String(getSelection())) return; m71Toggle(a); });
+function m71Star(a,b){ const T=m71T(), L0=m71SvList(), k=m71Key(a), i=L0.findIndex(x=>x.k===k);
+  if(i>=0){ L0.splice(i,1); toast(T.savedRm); } else { const p=a.querySelector('.m71-lead')||a.querySelector('p'); L0.unshift({k,t:m71Title(a),w:p?p.textContent.trim().slice(0,300):'',sec:m71SecT(a),day:(hbToday()||{}).day||dkey(),ts:Date.now()}); if(L0.length>100) L0.length=100; toast(T.savedOk); }
+  const on=i<0; b.classList.toggle('on',on); b.setAttribute('aria-pressed',on); b.setAttribute('aria-label',on?T.unsave:T.save); persist(); m71SvBadge(); }
+function m71SvBadge(){ const b=document.querySelector('[data-m71sv]'); if(!b) return; const n=m71SvList().length; let em=b.querySelector('em'); if(!n){ if(em) em.remove(); return; } if(!em){ b.insertAdjacentHTML('beforeend','<em></em>'); em=b.querySelector('em'); } em.textContent=n; }
+function m71SvSheet(){ const T=m71T(), L0=m71SvList();
+  openSheet(`<h3>${ico('star',20)} ${esc(T.savedT)}</h3>${L0.length?`<ul class="m71-svl">${L0.map((x,i)=>`<li><button type="button" class="m71-svi" data-m71svo="${i}"><b>${esc(x.t)}</b><small>${esc(T.savedFrom(x.sec||L.hbT,fmtShort(parseYmd(x.day)||new Date(x.ts))))}</small></button><button type="button" class="link-btn" data-m71svd="${i}" aria-label="${esc(T.unsave)}">${ico('trash',16)}</button></li>`).join('')}</ul>`:`<p class="m48-empty">${esc(T.savedE)}</p>`}<div class="sheet-row"><button class="btn btn-ghost" data-close>${L.close}</button></div>`);
+  sheet.querySelectorAll('[data-m71svd]').forEach(b=>b.onclick=()=>{ L0.splice(+b.dataset.m71svd,1); persist(); m71SvSheet(); m71SvBadge(); document.querySelectorAll('.m71-cd').forEach(a=>{ const s=a.querySelector('[data-m71star]'); if(s){ const on=m71SvHas(m71Key(a)); s.classList.toggle('on',on); s.setAttribute('aria-pressed',on); } }); });
+  sheet.querySelectorAll('[data-m71svo]').forEach(b=>b.onclick=()=>{ const x=L0[+b.dataset.m71svo]; const a=[...document.querySelectorAll('#bpg-m .m71-cd')].find(c=>m71Key(c)===x.k);
+    if(a){ closeSheet(); const s=a.closest('section'); if(s&&a.classList.contains('m71-h')) s.classList.add('m71-all'); m71Toggle(a,true); setTimeout(()=>{ a.scrollIntoView({block:'center',behavior:'smooth'}); a.classList.add('m71-flash'); setTimeout(()=>a.classList.remove('m71-flash'),1600); },120); }
+    else { b.closest('li').insertAdjacentHTML('afterend',`<li class="m71-svt"><p><small>${esc(T.savedOld)}</small></p><p>${esc(x.w||'')}</p></li>`); b.onclick=null; } }); }
+document.addEventListener('click',e=>{ if(e.target.closest&&e.target.closest('[data-m71sv]')){ e.preventDefault(); m71SvSheet(); } });
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m71vw]'); if(!b) return; lsSet('m71full',b.dataset.m71vw==='1'?'1':'0'); try{ const k=(bpTop()||{}).tab||'today'; hbPaneDraw(k); }catch(x){} });
+
+/* ---------- поиск по выпуску ---------- */
+function m71FindOpen(){ const T=m71T(); try{ if((bpTop()||{}).tab!=='today') hbTab('today'); }catch(e){} const m=BPG.el.querySelector('#bpg-m'); let bar=m.querySelector('.m71-fd');
+  if(!bar){ const nav=m.querySelector('.hb-tabs'); (nav||m.firstElementChild).insertAdjacentHTML(nav?'afterend':'beforebegin',`<div class="m71-fd" role="search"><span class="m71-fi">${ico('search',18)}<input type="search" id="m71fq" placeholder="${esc(T.findPh)}" autocomplete="off" enterkeyhint="search"></span><button type="button" class="link-btn" data-m71fx="1" aria-label="${esc(T.findX)}">${ico('close',18)}</button><small class="m71-fn" aria-live="polite"></small></div>`); bar=m.querySelector('.m71-fd'); }
+  const i=bar.querySelector('input'); i.value=M71.fq||''; i.oninput=()=>{ clearTimeout(M71.fT); M71.fT=setTimeout(()=>{ M71.fq=i.value.trim(); m71Find(M71.fq); },140); }; i.focus(); bar.scrollIntoView({block:'nearest'}); }
+function m71Find(q){ const T=m71T(), pane=BPG.el&&BPG.el.querySelector('[data-hbpane="today"]'); if(!pane) return 0; const w=String(q||'').toLowerCase().split(/\s+/).filter(x=>x.length>1); let n=0;
+  pane.classList.toggle('m71-finding',!!w.length);
+  pane.querySelectorAll('.m71-cd').forEach(a=>{ const hit=w.length&&w.every(x=>a.textContent.toLowerCase().includes(x)); a.classList.toggle('m71-hit',!!hit); if(hit) n++; });
+  pane.querySelectorAll('section.f34-s').forEach(s=>s.classList.toggle('m71-hits',!!s.querySelector('.m71-hit')));
+  const fn=BPG.el.querySelector('.m71-fn'); if(fn) fn.textContent=w.length?T.findN(n):''; return n; }
+function m71FindClose(){ M71.fq=''; m71Find(''); const b=BPG.el&&BPG.el.querySelector('.m71-fd'); if(b) b.remove(); }
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target; if(!t) return; if(t.closest('[data-m71find]')){ e.preventDefault(); m71FindOpen(); } else if(t.closest('[data-m71fx]')) m71FindClose(); });
+try{ const _bc=bpPop; bpPop=function(){ M71.fq=''; return _bc.apply(this,arguments); }; }catch(e){}
+
+/* ---------- подсветка раздела в липкой строке ---------- */
+document.addEventListener('scroll',e=>{ const m=e.target; if(!m||m.id!=='bpg-m'||!hbOn()) return; if(M71.spy) return; M71.spy=requestAnimationFrame(()=>{ M71.spy=0; try{ const nav=m.querySelector('.m71-nav'); if(!nav) return; const top=nav.getBoundingClientRect().bottom+12; let cur='';
+    nav.querySelectorAll('[data-hbjump]').forEach(b=>{ const s=m.querySelector('#hb-s-'+b.dataset.hbjump); if(s&&s.getBoundingClientRect().top<=top) cur=b.dataset.hbjump; });
+    nav.querySelectorAll('[data-hbjump]').forEach(b=>{ const on=b.dataset.hbjump===cur; if(b.classList.contains('m71-on')!==on){ b.classList.toggle('m71-on',on); if(on){ try{ nav.scrollLeft=Math.max(0,b.offsetLeft-nav.clientWidth/2+b.offsetWidth/2); }catch(x){} } } }); }catch(x){} }); },true);
+
+/* ---------- потяните вниз — выпуск обновится ---------- */
+(function(){ const TH=72; let P=null;
+  document.addEventListener('touchstart',e=>{ const m=e.target.closest&&e.target.closest('#bpg-m'); if(!m||!hbOn()||m.scrollTop>0||document.querySelector('.overlay.open')) { P=null; return; } P={m,y:e.touches[0].clientY,dy:0}; },{passive:true});
+  document.addEventListener('touchmove',e=>{ if(!P) return; P.dy=e.touches[0].clientY-P.y; if(P.dy<=4||P.m.scrollTop>0){ m71PullUI(P.m,0); return; } m71PullUI(P.m,P.dy); },{passive:true});
+  document.addEventListener('touchend',()=>{ if(!P) return; const go=P.dy>TH&&P.m.scrollTop<=0; const m=P.m; P=null; if(go){ const b=m.querySelector('[data-hbupd]:not([disabled])'); if(b){ m71PullUI(m,TH,true); b.click(); setTimeout(()=>m71PullUI(m,0),900); return; } } m71PullUI(m,0); },{passive:true}); })();
+function m71PullUI(m,dy,busy){ const T=m71T(); let el=m.querySelector(':scope > .m71-pl'); if(!dy){ if(el) el.remove(); return; } if(!el){ m.insertAdjacentHTML('afterbegin',`<div class="m71-pl" aria-hidden="true">${ico('repeat',16)}<span></span></div>`); el=m.querySelector(':scope > .m71-pl'); }
+  const h=Math.min(64,dy*0.5); el.style.height=h+'px'; el.classList.toggle('go',dy>72); el.querySelector('span').textContent=busy?T.pullBusy:dy>72?T.pullGo:T.pull; el.querySelector('svg').style.transform=`rotate(${Math.min(360,dy*3)}deg)`; }
+
+/* ---------- «Учиться»: оглавление и сворачиваемые разделы ---------- */
+const M71_LX_KEEP='.hb-ask, .m68-ms, .m67-es, .hb-task, .hb-quiz, .hb-lib';
+function m71Learn(pane,T){ if(pane.dataset.m71l||m71Full()) return; const secs=[...pane.querySelectorAll(':scope > section.id-sec')].filter(s=>s.querySelector(':scope > h4')); if(secs.length<4) return; pane.dataset.m71l='1';
+  const h=hbSt(), D=dkey(); h.lx71=h.lx71&&h.lx71.d===D?h.lx71:{d:D,o:[]};
+  secs.forEach((s,i)=>{ const hd=s.querySelector(':scope > h4'); if(!s.id) s.id='m71l-'+i; if(s.matches(M71_LX_KEEP)) return; s.classList.add('m71-lx'); const fc=[...s.children].find(c=>c!==hd&&c.tagName!=='BUTTON'&&c.textContent.trim().length>2); if(fc) fc.classList.add('m71-lp'); const open=i<2||h.lx71.o.includes(s.id); if(!open) s.classList.add('m71-lc');
+    hd.setAttribute('role','button'); hd.tabIndex=0; hd.setAttribute('aria-expanded',open); hd.dataset.m71lx='1'; if(!hd.querySelector('.m71-lv')) hd.insertAdjacentHTML('beforeend',`<span class="m71-lv" aria-hidden="true">${ico('down',16)}</span>`); });
+  const toc=secs.map(s=>{ const t=(s.querySelector(':scope > h4').textContent||'').trim(); return `<button type="button" class="chip" data-m71lj="${s.id}">${esc(t.replace(/\s*≈.*$/,'').slice(0,28))}</button>`; }).join('');
+  const rd=secs.filter(s=>s.classList.contains('m71-lx')&&!s.classList.contains('m71-lc')).length, all=secs.filter(s=>s.classList.contains('m71-lx')).length;
+  secs[0].insertAdjacentHTML('beforebegin',`<nav class="chips hb-scroll m71-ltoc" aria-label="${esc(L.hbTabN.learn)}"><small class="m71-lrd">${esc(T.read(rd,all))}</small>${toc}</nav>`); }
+function m71LxSet(s,open){ s.classList.toggle('m71-lc',!open); const hd=s.querySelector(':scope > h4'); if(hd) hd.setAttribute('aria-expanded',open);
+  try{ const h=hbSt(); if(open&&h.lx71&&!h.lx71.o.includes(s.id)){ h.lx71.o.push(s.id); persist(); } const p=s.closest('[data-hbpane]'), r=p&&p.querySelector('.m71-lrd'); if(r){ const all=p.querySelectorAll('.m71-lx').length, op=p.querySelectorAll('.m71-lx:not(.m71-lc)').length; r.textContent=m71T().read(op,all); } }catch(e){} }
+document.addEventListener('click',e=>{ const t=e.target.closest&&e.target; if(!t) return; const hd=t.closest('[data-m71lx]'); if(hd&&!t.closest('button:not([data-m71lx]), a')){ const s=hd.closest('section'); m71LxSet(s,s.classList.contains('m71-lc')); return; }
+  const j=t.closest('[data-m71lj]'); if(j){ const s=document.getElementById(j.dataset.m71lj); if(s){ if(s.classList.contains('m71-lc')) m71LxSet(s,true); s.scrollIntoView({block:'start',behavior:'smooth'}); } } });
+document.addEventListener('keydown',e=>{ if((e.key==='Enter'||e.key===' ')&&e.target.dataset&&e.target.dataset.m71lx){ e.preventDefault(); e.target.click(); } });
+
+/* ===================== «Ещё» ===================== */
+function m71Pins(){ try{ const v=JSON.parse(lsGet('m71pin')||'null'); return Array.isArray(v)?v.filter(x=>typeof x==='string').slice(0,8):null; }catch(e){ return null; } }
+function m71Rec(){ try{ const v=JSON.parse(lsGet('m71rec')||'[]'); return Array.isArray(v)?v.slice(0,8):[]; }catch(e){ return []; } }
+try{ const _mu=moreUse; moreUse=function(k){ try{ const r=m71Rec().filter(x=>x!==k); r.unshift(k); lsSet('m71rec',JSON.stringify(r.slice(0,8))); }catch(e){} return _mu.apply(this,arguments); }; }catch(e){}
+function m71Hi(){ const h=new Date().getHours(); return m71T().mHi[h<5?0:h<12?1:h<18?2:3]; }
+function m71SumHTML(){ const T=m71T(), s=fn=>{ try{ return fn(); }catch(e){ return null; } };
+  const up=s(()=>m10Upcoming().slice().sort((x,y)=>x.d-y.d)[0]), md=s(()=>m69Mood()), bk=s(()=>lastBackup());
+  const bd=bk?Math.floor((Date.now()-bk)/864e5):null;
+  const kpi=(a,ic,lab,val,cls)=>`<button type="button" data-m42no class="m71-kpi ${cls||''}" ${a}><span class="i">${ico(ic,18)}</span><small>${esc(lab)}</small><b>${esc(val)}</b></button>`;
+  return `<div class="m71-sum3" aria-label="${esc(T.mSum)}">${kpi('data-m-cal="1"','cal',T.mPay,up?(up.late?L.mrLate:fmtShort(up.d))+' · '+money(up.v):T.mPayNo,up&&up.late?'warn':'')}${kpi('data-tab="money"','money',T.mCash,md?m69MoodTxt(md):L.m10MoneySub||'—',md?'md-'+md.k:'')}${kpi('data-m-data="1"','shield',T.mBk,bk?(bd<1?L.mrBkToday:L.mrBk(bd)):L.mrBkNo,!bk||bd>14?'warn':'')}</div>`; }
+function m71QuickHTML(){ const T=m71T(); const q=(a,ic,t)=>`<button type="button" data-m42no class="m71-q" ${a}>${ico(ic,18)}<span>${esc(t)}</span></button>`;
+  return `<div class="m71-qk" role="group" aria-label="${esc(T.mQuick)}">${q('data-m71q="sale"','plus',T.mQ.sale)}${q('data-qa="pay"','cash',T.mQ.pay)}${q('data-m71q="ask"','sparkle',T.mQ.ask)}${q('data-rates="1"','rate',T.mQ.rate)}${q('data-m-calc="1"','calc',T.mQ.calc)}</div>`; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m71q]'); if(!b) return; const k=b.dataset.m71q; if(k==='sale'){ try{ dayForm(); }catch(x){} } else if(k==='ask'){ try{ sifraOpen(); }catch(x){} } });
+function m71NewHTML(){ const T=m71T(); return `<div class="m71-new"><div class="m71-nh"><b>${esc(T.mNew)}</b><small>${esc(T.mNewSub)}</small></div><div class="m71-nl">${T.mNewI.map(([ic,t,s,k])=>`<button type="button" data-m42no class="m71-ni" ${k==='hub'?'data-invest="1"':`data-m70open="${k}"`}><span class="i">${ico(ic,20)}</span><span class="t"><b>${esc(t)}</b><small>${esc(s)}</small></span><em>${esc(T.mTry)}</em></button>`).join('')}</div></div>`; }
+try{ const _m71m=m17MoreHTML; m17MoreHTML=function(){ const base=_m71m.apply(this,arguments); try{ if((typeof isSimple==='function')&&isSimple()) return base;
+    const T=m71T(), d=document.createElement('div'); d.innerHTML=base; const h1=d.querySelector('.m7-h1'), srch=d.querySelector('.mr-search'), top=d.querySelector('.mr-top'); if(!h1||!srch) return base;
+    const by=k=>d.querySelector('.m38-g [data-mk="'+k+'"], .m38-set [data-mk="'+k+'"]'), clone=(k,cls)=>{ const o=by(k); if(!o) return ''; const c=o.cloneNode(true); c.removeAttribute('id'); c.className='m71-tile mr-tile '+(cls||''); c.setAttribute('data-m42no',''); c.querySelectorAll('.m38-chev').forEach(x=>x.remove()); const bb=c.querySelector('b'); if(bb) bb.textContent=bb.textContent.replace(/ · \d+$/,''); return c.outerHTML; };
+    let pins=m71Pins(); const defP=top?[...top.querySelectorAll('[data-mk]')].map(b=>b.dataset.mk):[]; if(!pins) pins=defP; pins=pins.filter(k=>by(k));
+    const rec=m71Rec().filter(k=>by(k)&&!pins.includes(k)).slice(0,6);
+    const ph=`<div class="m71-pins mr-top"><div class="m71-sh"><h2>${esc(T.mPins)}</h2><button type="button" class="link-btn m71-edb" data-m71ed="1" aria-pressed="${M71.ed}">${esc(M71.ed?T.mDone:T.mEdit)}</button></div>${pins.length?`<div class="m71-pg mr-tiles">${pins.map(k=>clone(k,'m71-pin')).join('')}</div>`:''}${M71.ed||!pins.length?`<p class="bp-hint">${esc(T.mPinH)}</p>`:''}</div>`;
+    const rh=rec.length?`<div class="m71-rec"><h2>${esc(T.mRecent)}</h2><div class="chips hb-scroll">${rec.map(k=>{ const o=by(k); const t=o?(o.querySelector('b')||o).textContent.trim():k; const c=o.cloneNode(true); c.removeAttribute('id'); return `<button type="button" data-m42no class="chip m71-rc" ${[...c.attributes].filter(a=>/^data-|^id$/.test(a.name)&&a.name!=='id').map(a=>`${a.name}="${esc(a.value)}"`).join(' ')}>${ico((moreItems().find(x=>x.k===k)||{}).i||'next',15)} ${esc(t.replace(/ · \d+$/,''))}</button>`; }).join('')}</div></div>`:'';
+    /* группы: свёрнутая — с иконками внутри; в режиме «Изменить» — звёздочки */
+    d.querySelectorAll('.m38-g').forEach(g=>{ const its=[...g.querySelectorAll('[data-mk]')]; const gh=g.querySelector('.m61-gh'); if(gh&&!gh.querySelector('.m71-gi')) gh.querySelector('.m61-gt').insertAdjacentHTML('afterend',`<span class="m71-gi" aria-hidden="true">${its.slice(0,3).map(b=>{ const i=b.querySelector('.m7-li-i'); return i?`<i>${i.innerHTML}</i>`:''; }).join('')}</span>`);
+      if(M71.ed) its.forEach(b=>{ b.classList.add('m71-pe'); if(pins.includes(b.dataset.mk)) b.classList.add('m71-pon'); b.setAttribute('aria-label',(pins.includes(b.dataset.mk)?T.mUnpinA:T.mPinA)(((b.querySelector('b')||b).textContent||'').trim())); b.insertAdjacentHTML('beforeend',`<span class="m71-ps" aria-hidden="true">${ico('star',18)}</span>`); }); });
+    if(M71.ed) d.querySelectorAll('.m38-g').forEach(g=>g.classList.add('m61-go','m71-edg'));
+    /* в режиме «Изменить» разделы не открываются: у кнопок остаётся только ключ для звёздочки */
+    const strip=root=>root.querySelectorAll('[data-mk]').forEach(b=>{ const k=b.dataset.mk; [...b.attributes].forEach(at=>{ if(/^data-|^id$/.test(at.name)) b.removeAttribute(at.name); }); b.dataset.m71k=k; });
+    const lead=d.querySelector('.m38-lead'); if(lead){ const lt=lead.textContent.trim(); lead.className='m38-lead m71-hi'; lead.innerHTML=`<b>${esc(m71Hi())}.</b> ${esc(lt||T.mSub)}`; }
+    if(M71.ed){ d.querySelectorAll('.m38-g').forEach(strip); }
+    srch.insertAdjacentHTML('beforebegin',m71SumHTML()); srch.insertAdjacentHTML('afterend',m71QuickHTML());
+    if(top) top.outerHTML=ph+rh; else d.querySelector('.m71-qk').insertAdjacentHTML('afterend',ph+rh);
+    if(M71.ed){ const pg=d.querySelector('.m71-pins'); if(pg) strip(pg); }
+    const set=d.querySelector('.m38-set'); if(set) set.insertAdjacentHTML('beforebegin',m71NewHTML()); else d.insertAdjacentHTML('beforeend',m71NewHTML());
+    d.insertAdjacentHTML('afterbegin','<span class="m71-mv" hidden></span>');
+    return d.innerHTML; }catch(e){ console.error('m71 more',e); return base; } }; }catch(e){}
+window.addEventListener('click',e=>{ const t=e.target.closest&&e.target; if(!t||!t.closest('#moreView')) return;
+  if(t.closest('[data-m71ed]')){ e.preventDefault(); e.stopImmediatePropagation(); M71.ed=!M71.ed; try{ m17After(); }catch(x){} const b=document.querySelector('#moreView [data-m71ed]'); if(b) b.focus({preventScroll:true}); return; }
+  if(M71.ed){ const it=t.closest('[data-m71k]'); if(it){ e.preventDefault(); e.stopImmediatePropagation(); const k=it.dataset.m71k; let p=m71Pins(); if(!p){ const top=[...document.querySelectorAll('#moreView .m71-pin[data-m71k]')].map(b=>b.dataset.m71k); p=top; } const i=p.indexOf(k); if(i>=0) p.splice(i,1); else if(p.length<8) p.push(k); lsSet('m71pin',JSON.stringify(p)); try{ m17After(); }catch(x){} } } },true);
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
