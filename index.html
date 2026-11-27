@@ -7108,6 +7108,120 @@ p.m68-cs{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; font-size
 .m68-tr .t3 .ta{background:transparent!important; border:0!important; box-shadow:none!important; min-height:calc(var(--k)*40px); padding:0!important; margin:0!important;}
 
 .m68-po{display:flex; align-items:center; gap:calc(var(--k)*8px); font-size:calc(var(--k)*13px); color:var(--muted); min-height:calc(var(--k)*40px); cursor:pointer;} .m68-po input{width:calc(var(--k)*18px); height:calc(var(--k)*18px); accent-color:var(--brand);}
+/* ===== v69 ===== */
+/* 130: фон «погода денег» — мягкое пятно цвета сверху главного экрана, за карточками; смысл всегда продублирован словами в шапке */
+html{--m69mc:transparent;}
+html[data-m69mood="ok"]{--m69mc:rgba(46,178,120,.20);}
+html[data-m69mood="tight"]{--m69mc:rgba(226,160,48,.22);}
+html[data-m69mood="low"]{--m69mc:rgba(206,96,74,.20);}
+html[data-theme="dark"][data-m69mood="ok"]{--m69mc:rgba(56,200,140,.16);}
+html[data-theme="dark"][data-m69mood="tight"]{--m69mc:rgba(236,176,64,.15);}
+html[data-theme="dark"][data-m69mood="low"]{--m69mc:rgba(232,120,96,.15);}
+html[data-m69mood][data-curtab="today"] body{background-image:radial-gradient(130% calc(var(--k)*520px) at 18% 0,var(--m69mc) 0,transparent 72%)!important;background-repeat:no-repeat!important;}
+html[data-m69mood][data-curtab="today"] #m11Aurora::after{content:"";position:absolute;inset:0;background:radial-gradient(130% calc(var(--k)*520px) at 18% 0,var(--m69mc) 0,transparent 72%);}
+/* зернистость авроры: убирает полосы градиента */
+:root[data-theme="light"] #m11Aurora::before{content:"";position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='120' height='120' filter='url(%23n)'/></svg>");}
+
+/* 134: без прозрачности (по выбору, в «Крупно и просто» и на слабом телефоне) */
+html.m69-solid *{-webkit-backdrop-filter:none!important;backdrop-filter:none!important;}
+html.m69-solid{--m40-blur:none;--m8-glass:var(--surface);}
+html.m69-solid.m40.m59[data-lk="glass"]{--surface:#FBFAFE;--m40-card:#FBFAFE;--m8-glass:#FBFAFE;--m40-hero:#FFFFFF;}
+html.m69-solid.m59[data-lk="glass"] .bnav,html.m69-solid.m59[data-lk="glass"] .sheet,html.m69-solid.m59[data-lk="glass"] .m38-ai{background:#FBFAFE!important;}
+html.m69-solid .bnav{background:var(--surface)!important;}
+html.m69-solid #m11Aurora::before{display:none;}
+
+/* 143: «Крупно и просто» — шрифт и контраст ставит сама настройка, здесь — размер касаний и покой */
+html.m69-big *,html.m69-big *::before,html.m69-big *::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important;}
+html.m69-big .btn,html.m69-big button.chip,html.m69-big .chip{min-height:calc(var(--k)*48px);}
+html.m69-big .btn{font-weight:700;}
+html.m69-big .muted,html.m69-big small,html.m69-big .note{color:var(--ink)!important;opacity:.85;}
+html.m69-big input,html.m69-big select{min-height:calc(var(--k)*50px);font-size:1.05rem;}
+
+/* настройки «Удобство» */
+.m69-set{margin:calc(var(--k)*14px) 0 calc(var(--k)*6px);}
+.m69-set h4{margin:0 0 calc(var(--k)*6px);font-size:.95rem;}
+.m69-lite{display:block;margin-top:calc(var(--k)*4px);color:var(--brand-ink);}
+
+/* 107: плитки сфер */
+.m69-mos{margin:0 0 calc(var(--k)*10px);}
+.m69-tls{display:grid;grid-template-columns:repeat(auto-fill,minmax(calc(var(--k)*104px),1fr));grid-auto-rows:minmax(calc(var(--k)*58px),auto);grid-auto-flow:dense;gap:calc(var(--k)*8px);}
+@supports (display:grid-lanes){.m69-tls{display:grid-lanes;grid-template-columns:repeat(auto-fill,minmax(calc(var(--k)*104px),1fr));}}
+.m69-tl{display:flex;flex-direction:column;align-items:flex-start;gap:calc(var(--k)*3px);text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:calc(var(--k)*16px);padding:calc(var(--k)*9px) calc(var(--k)*10px);cursor:pointer;min-width:0;font:inherit;}
+.m69-tl.big{grid-row:span 2;grid-column:span 2;background:var(--brand-weak);}
+.m69-tl.good{border-color:color-mix(in srgb,#2EB278 45%,var(--line));}
+.m69-tl.bad{border-color:color-mix(in srgb,#CE604A 45%,var(--line));}
+.m69-tl .hd{display:flex;align-items:center;gap:calc(var(--k)*5px);font-size:.84rem;min-width:0;}
+.m69-tl .hd b{min-width:0;line-height:1.25;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;overflow-wrap:anywhere;}
+.m69-tl .hd{align-items:flex-start;}
+.m69-tl .hd svg{flex:none;margin-top:2px;}
+.m69-tl em{font-style:normal;font-size:max(.76rem,8.25pt);color:var(--muted);}
+.m69-tl small{font-size:.8rem;line-height:1.35;color:var(--ink);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;}
+.m69-tl.on{outline:2px solid var(--brand);outline-offset:1px;}
+.m69-tl:focus-visible{outline:2px solid var(--brand);outline-offset:2px;}
+@media (max-width:360px){.m69-tl.big{grid-column:span 2;}}
+
+/* 109: нет сети */
+.m69-off{display:flex;gap:calc(var(--k)*10px);align-items:flex-start;background:color-mix(in srgb,#E2A030 16%,var(--surface));border:1px solid color-mix(in srgb,#E2A030 40%,var(--line));border-radius:calc(var(--k)*14px);padding:calc(var(--k)*10px) calc(var(--k)*12px);margin:0 0 calc(var(--k)*12px);}
+.m69-off span{display:flex;flex-direction:column;gap:2px;}.m69-off small{color:var(--muted);font-size:.8rem;}
+
+/* 104: сторож — график и порог */
+.m69-wc{margin:calc(var(--k)*8px) 0 calc(var(--k)*4px);}
+.m69-wc svg{display:block;width:100%;height:calc(var(--k)*78px);touch-action:none;background:color-mix(in srgb,var(--brand) 5%,transparent);border-radius:calc(var(--k)*10px);}
+.m69-wc .ln{fill:none;stroke:var(--brand);stroke-width:2.2;vector-effect:non-scaling-stroke;stroke-linejoin:round;}
+.m69-wc .pt{fill:var(--brand);}
+.m69-wc .th{stroke:#D08A1E;stroke-width:2.2;stroke-dasharray:6 4;vector-effect:non-scaling-stroke;}
+.m69-wc .th.off{opacity:.35;}
+.m69-wc .hit{fill:transparent;cursor:ns-resize;}
+.m69-wn{display:block;color:var(--muted);font-size:max(.78rem,8.25pt);margin:calc(var(--k)*4px) 0;}
+.m69-wt{display:flex;flex-wrap:wrap;align-items:center;gap:calc(var(--k)*6px);font-size:.86rem;}
+.m69-wt select{width:auto!important;flex:none;}
+.m69-wt select,.m69-wt input{font:inherit;border:1px solid var(--line);border-radius:calc(var(--k)*10px);padding:calc(var(--k)*6px) calc(var(--k)*8px);background:var(--surface);color:var(--ink);min-width:0;}
+.m69-wt input{width:calc(var(--k)*90px);}
+.m69-wt .btn{padding:calc(var(--k)*6px) calc(var(--k)*12px);min-height:0;}
+.m69-hit{display:flex;align-items:center;gap:calc(var(--k)*6px);color:#B5552F;font-weight:700;margin:calc(var(--k)*6px) 0 0;font-size:.86rem;}
+.m69-wl{display:block;color:var(--muted);font-size:max(.76rem,8.25pt);margin-top:calc(var(--k)*4px);}
+
+/* 111: живые числа во фразе */
+.m69-say{font-size:1rem;line-height:1.9;margin:calc(var(--k)*8px) 0;}
+.m69-sv{display:inline-block;padding:0 calc(var(--k)*5px);border-radius:calc(var(--k)*7px);background:var(--brand-weak);color:var(--brand-ink);font-weight:800;border-bottom:2px dashed var(--brand);cursor:ew-resize;touch-action:none;user-select:none;-webkit-user-select:none;font-variant-numeric:tabular-nums;line-height:1.5;}
+.m69-sv.on,.m69-sv:focus-visible{outline:2px solid var(--brand);outline-offset:1px;}
+.m69-so{font-variant-numeric:tabular-nums;}
+
+/* 116: палец по графику */
+svg.m69-scr{touch-action:pan-y;cursor:crosshair;}
+.m69-sl{stroke:var(--muted);stroke-width:1;vector-effect:non-scaling-stroke;pointer-events:none;}
+.m69-tip{position:fixed;z-index:2147483000;background:var(--ink);color:var(--surface);font-size:.8rem;font-weight:600;border-radius:calc(var(--k)*9px);padding:calc(var(--k)*5px) calc(var(--k)*9px);pointer-events:none;white-space:nowrap;font-variant-numeric:tabular-nums;box-shadow:0 calc(var(--k)*4px) calc(var(--k)*14px) rgba(0,0,0,.18);}
+
+/* 139: поля */
+input.m69-bad{border-color:#C0563F!important;box-shadow:0 0 0 2px rgba(192,86,63,.18)!important;}
+input.m69-ok{border-color:#2EB278!important;}
+.m69-vm{display:block;color:#B5482F;font-size:.8rem;margin-top:calc(var(--k)*4px);}
+.sheet .field textarea{field-sizing:content;min-height:calc(var(--k)*72px);max-height:40vh;}
+
+/* 135: денежная клавиатура */
+.m69-kp{position:fixed;left:0;right:0;bottom:0;z-index:2147482000;background:var(--surface);border-top:1px solid var(--line);box-shadow:0 calc(var(--k)*-10px) calc(var(--k)*30px) rgba(0,0,0,.14);padding:calc(var(--k)*8px) max(calc(var(--k)*10px),env(safe-area-inset-right,0px)) calc(calc(var(--k)*8px) + env(safe-area-inset-bottom,0px)) max(calc(var(--k)*10px),env(safe-area-inset-left,0px));}
+.m69-kd{font-size:1.5rem;font-weight:800;text-align:right;padding:calc(var(--k)*4px) calc(var(--k)*6px) calc(var(--k)*8px);font-variant-numeric:tabular-nums;min-height:2em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.m69-kg{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--k)*6px);}
+.m69-kg button{height:calc(var(--k)*50px);border:0;border-radius:calc(var(--k)*12px);background:color-mix(in srgb,var(--ink) 6%,var(--surface));color:var(--ink);font-weight:700;font-size:1.25rem;line-height:1;font-family:inherit;cursor:pointer;touch-action:manipulation;}
+.m69-kg button.f{background:var(--brand-weak);color:var(--brand-ink);font-size:1rem;}
+.m69-kg button.ok{background:var(--brand);color:#fff;font-size:1rem;}
+.m69-kg button:active{transform:scale(.96);}
+.m69-ks{display:flex;align-items:center;gap:calc(var(--k)*6px);margin:calc(var(--k)*8px) auto 0;border:0;background:none;color:var(--muted);font:inherit;font-size:.82rem;cursor:pointer;}
+html.m69-kpon .sheet{padding-bottom:calc(var(--k)*330px)!important;}
+
+/* 136: фраза */
+.m69-ph{margin:calc(var(--k)*12px) 0 calc(var(--k)*4px);}
+.m69-ph label{display:block;font-weight:700;font-size:.9rem;margin-bottom:calc(var(--k)*6px);}
+.m69-ph .r,.m69-ivbc .r{display:flex;gap:calc(var(--k)*8px);}
+.m69-ph input,.m69-ivbc input{flex:1;min-width:0;}
+.m69-phn{color:var(--muted);font-size:.86rem;margin:calc(var(--k)*8px) 0 0;}
+.m69-dr .co-row input{width:calc(var(--k)*130px);text-align:right;font:inherit;font-weight:700;border:1px solid var(--line);border-radius:calc(var(--k)*10px);padding:calc(var(--k)*6px) calc(var(--k)*8px);background:var(--surface);color:var(--ink);}
+.m69-bcb{margin-top:calc(var(--k)*8px);}
+
+.m69-kg button svg{width:1.4em;height:1.4em;vertical-align:middle;}
+
+/* Сифра: текст ответа мягко уходит под шапку, а не режется пополам */
+.sheet.m52 #sf-log{-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 calc(var(--k)*28px));mask-image:linear-gradient(to bottom,transparent 0,#000 calc(var(--k)*28px));}
 /* <</v44 css>> */
 
 
@@ -30495,6 +30609,365 @@ document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) retu
     if(d.m68wt!=null){ m68WtDo(d.m68wt,d.k||''); return; }
     if(d.m68tp!=null){ m68TreeGo(d.m68tp); return; }
   }catch(x){ console.error('m68 click',x); } },true);
+/* v69: строки — сторож с порогом (104), плитки сфер (107), выпуск без сети (109), живые числа (111), палец по графику (116),
+   «Назад» на то же место (123), фон «погода денег» (130), читаемые плашки (133), без прозрачности (134), денежная клавиатура (135),
+   запись фразой и голосом (136, 137), штрихкод (138), формы (139), значок на неделю (141), «Крупно и просто» (143) */
+const M69S={
+ru:{
+  wtTh:'Сообщить, если', wtUp:'выше', wtDn:'ниже', wtSave:'Сохранить', wtOff:'Убрать порог', wtThA:'Порог',
+  wtDrag:'Потяните линию на графике или впишите число', wtSet:(d,v)=>`Сообщу, если станет ${d==='down'?'ниже':'выше'} ${v}`,
+  wtHit:'Перешло порог', wtLocal:'Сервер ещё старый: порог сохранён только на этом телефоне, уведомления по нему не будет',
+  wtNeedNum:'Впишите число, например 7,2', wtSaved:'Порог сохранён', wtRm:'Порог убран', wtPts:n=>`${n} ${n===1?'проверка':n<5?'проверки':'проверок'}`,
+  mosT:'Сегодня по сферам', mosH:'Чем больше плитка, тем больше сегодня новостей в сфере. Нажмите — останутся только они.',
+  mosN:n=>`${n} ${n===1?'новость':n<5?'новости':'новостей'}`,
+  off:(t,d)=>`Нет сети · выпуск от ${t}${d?', '+d:''}`, offSub:'Он сохранён на телефоне. Новый придёт, когда появится интернет.',
+  bgT:'Обновлять выпуск ночью', bgD:'Android: «Рынок дня» скачивается сам, и утром открывается сразу, даже без сети',
+  bgNo:'На этом телефоне фоновое обновление недоступно: выпуск скачивается при открытии',
+  sayA:'Потяните число пальцем влево или вправо',
+  scrA:'Ведите пальцем по графику — видно число и дату',
+  moodOk:'На платежи хватает', moodTight:d=>`Впритык до ${d}`, moodLow:(d,s)=>`Не хватает ${s} к ${d}`,
+  moodT:'Фон показывает деньги', moodD:'Мягкий цвет на главном: зелёный — хватает, песочный — впритык, красноватый — не хватает',
+  solidT:'Без прозрачности', solidD:'Плотный фон вместо размытия: текст читается лучше, телефон тратит меньше сил',
+  liteOn:'На этом телефоне размытие выключено само: так быстрее',
+  kpT:'Своя клавиатура для сумм', kpD:'Крупные цифры, «000», «+100», «+500» и «к» — тысяча',
+  kpDone:'Готово', kpSys:'Обычная клавиатура', kpK:'к', kpA:'Клавиатура для суммы',
+  phT:'Или напишите фразой', phPh:'например: продала на 1 200', phGo:'Разобрать',
+  phNo:'Не поняла. Напишите сумму и что это: «продала на 1200», «Зарина взяла в долг 300», «оплатила кредит 900».',
+  phAsk:'Спросить Сифру', phWhat:'Что', phWho:'Кто', phSum:'Сумма', phSave:'Записать', phNot:'Не надо',
+  bcScan:'Штрихкод', bcScanL:'Сканировать штрихкод', bcCode:'Код товара', bcPh:'Цифры под штрихкодом', bcFind:'Найти',
+  bcNone:'Камера не нашла код. Впишите цифры под штрихкодом.', bcNo:'Этот телефон не читает штрихкоды камерой. Впишите цифры под штрихкодом.',
+  bcFound:n=>`Найдено: ${n}`, bcNew:'Такого кода ещё нет — заполните новый товар', bcT:'Найти товар по коду',
+  vNum:'Здесь только число, например 1200', vK:v=>`= ${v}`,
+  bwT:'Считать платежи на 7 дней вперёд', bwD:'На значке — сколько платежей до конца недели, а не только просроченные',
+  bigT:'Крупно и просто', bigD:'Крупный текст и кнопки, выше контраст, без анимаций и прозрачности',
+  setH:'Удобство',
+  sfLost:'Ответ на этот вопрос не пришёл: приложение закрыли, пока Сифра работала. Спросите ещё раз.', sfStopped:'Остановлено.'
+},
+tg:{
+  wtTh:'Хабар диҳам, агар', wtUp:'баланд', wtDn:'паст', wtSave:'Нигоҳ доштан', wtOff:'Ҳадро бардоштан', wtThA:'Ҳад',
+  wtDrag:'Хатро дар график кашед ё рақам нависед', wtSet:(d,v)=>`Хабар медиҳам, агар аз ${v} ${d==='down'?'паст':'баланд'} шавад`,
+  wtHit:'Аз ҳад гузашт', wtLocal:'Сервер ҳоло кӯҳна аст: ҳад танҳо дар ҳамин телефон нигоҳ дошта шуд, огоҳинома намеояд',
+  wtNeedNum:'Рақам нависед, масалан 7,2', wtSaved:'Ҳад нигоҳ дошта шуд', wtRm:'Ҳад бардошта шуд', wtPts:n=>`${n} санҷиш`,
+  mosT:'Имрӯз аз рӯи соҳаҳо', mosH:'Плитка ҳар қадар калон бошад, имрӯз дар он соҳа хабар ҳамон қадар бисёр аст. Пахш кунед — танҳо онҳо мемонанд.',
+  mosN:n=>`${n} хабар`,
+  off:(t,d)=>`Интернет нест · нашри ${t}${d?', '+d:''}`, offSub:'Он дар телефон нигоҳ дошта шудааст. Нашри нав бо пайдо шудани интернет меояд.',
+  bgT:'Нашрро шабона нав кардан', bgD:'Android: «Бозори рӯз» худаш боргирӣ мешавад ва субҳ фавран, ҳатто бе интернет, кушода мешавад',
+  bgNo:'Дар ин телефон навсозии пасзамина нест: нашр ҳангоми кушодан боргирӣ мешавад',
+  sayA:'Рақамро бо ангушт ба чап ё рост кашед',
+  scrA:'Ангуштро аз рӯи график гузаронед — рақам ва сана намоён мешавад',
+  moodOk:'Барои пардохтҳо мерасад', moodTight:d=>`То ${d} базӯр мерасад`, moodLow:(d,s)=>`То ${d} ${s} намерасад`,
+  moodT:'Замина пулро нишон медиҳад', moodD:'Ранги нарм дар саҳифаи асосӣ: сабз — мерасад, зардчатоб — базӯр, сурхчатоб — намерасад',
+  solidT:'Бе шаффофӣ', solidD:'Заминаи зич ба ҷои хиракунӣ: матн беҳтар хонда мешавад, телефон камтар қувва сарф мекунад',
+  liteOn:'Дар ин телефон хиракунӣ худ ба худ хомӯш шуд: ҳамин тавр тезтар аст',
+  kpT:'Клавиатураи худӣ барои маблағ', kpD:'Рақамҳои калон, «000», «+100», «+500» ва «к» — ҳазор',
+  kpDone:'Тайёр', kpSys:'Клавиатураи оддӣ', kpK:'к', kpA:'Клавиатура барои маблағ',
+  phT:'Ё бо як ҷумла нависед', phPh:'масалан: ба 1 200 фурӯхтам', phGo:'Таҳлил кардан',
+  phNo:'Нафаҳмидам. Маблағ ва чӣ будани онро нависед: «ба 1200 фурӯхтам», «Зарина 300 қарз гирифт», «барои қарз 900 пардохтам».',
+  phAsk:'Аз Сифра пурсидан', phWhat:'Чӣ', phWho:'Кӣ', phSum:'Маблағ', phSave:'Сабт кардан', phNot:'Лозим нест',
+  bcScan:'Штрихкод', bcScanL:'Штрихкодро скан кардан', bcCode:'Рамзи мол', bcPh:'Рақамҳои зери штрихкод', bcFind:'Ёфтан',
+  bcNone:'Камера рамзро наёфт. Рақамҳои зери штрихкодро нависед.', bcNo:'Ин телефон штрихкодро бо камера намехонад. Рақамҳои зери штрихкодро нависед.',
+  bcFound:n=>`Ёфт шуд: ${n}`, bcNew:'Чунин рамз ҳоло нест — моли навро пур кунед', bcT:'Ёфтани мол аз рӯи рамз',
+  vNum:'Дар ин ҷо танҳо рақам, масалан 1200', vK:v=>`= ${v}`,
+  bwT:'Пардохтҳои 7 рӯзи ояндаро шумурдан', bwD:'Дар нишона — чанд пардохт то охири ҳафта, на танҳо гузаронидашудаҳо',
+  bigT:'Калон ва содда', bigD:'Матн ва тугмаҳои калон, контрасти баланд, бе аниматсия ва шаффофӣ',
+  setH:'Қулайӣ',
+  sfLost:'Ба ин савол ҷавоб наомад: барнома ҳангоми кори Сифра баста шуд. Боз пурсед.', sfStopped:'Қатъ шуд.'
+},
+en:{
+  wtTh:'Tell me if it goes', wtUp:'above', wtDn:'below', wtSave:'Save', wtOff:'Remove threshold', wtThA:'Threshold',
+  wtDrag:'Drag the line on the chart or type a number', wtSet:(d,v)=>`I’ll tell you if it goes ${d==='down'?'below':'above'} ${v}`,
+  wtHit:'Crossed the threshold', wtLocal:'The server is still old: the threshold is saved on this phone only, no notification for it',
+  wtNeedNum:'Type a number, e.g. 7.2', wtSaved:'Threshold saved', wtRm:'Threshold removed', wtPts:n=>`${n} ${n===1?'check':'checks'}`,
+  mosT:'Today by sector', mosH:'The bigger the tile, the more news in that sector today. Tap one to see only its news.',
+  mosN:n=>`${n} ${n===1?'story':'stories'}`,
+  off:(t,d)=>`Offline · issue from ${t}${d?', '+d:''}`, offSub:'It is saved on your phone. A new one will come when you are back online.',
+  bgT:'Update the issue overnight', bgD:'Android: Market of the Day downloads by itself and opens instantly in the morning, even offline',
+  bgNo:'Background updates are not available on this phone: the issue downloads when you open it',
+  sayA:'Drag the number left or right',
+  scrA:'Move your finger along the chart to see the number and date',
+  moodOk:'Enough for payments', moodTight:d=>`Tight until ${d}`, moodLow:(d,s)=>`Short by ${s} by ${d}`,
+  moodT:'Background shows your money', moodD:'A soft colour on the home screen: green — enough, sand — tight, reddish — short',
+  solidT:'No transparency', solidD:'Solid background instead of blur: text reads better and the phone works less',
+  liteOn:'Blur is turned off on this phone automatically: it is faster this way',
+  kpT:'Own keypad for amounts', kpD:'Big digits, “000”, “+100”, “+500” and “k” for thousand',
+  kpDone:'Done', kpSys:'Regular keyboard', kpK:'k', kpA:'Keypad for the amount',
+  phT:'Or type a phrase', phPh:'e.g.: sold for 1,200', phGo:'Read it',
+  phNo:'I didn’t get it. Write the amount and what it is: “sold for 1200”, “Zarina took 300 on credit”, “paid the loan 900”.',
+  phAsk:'Ask Sifra', phWhat:'What', phWho:'Who', phSum:'Amount', phSave:'Save', phNot:'Discard',
+  bcScan:'Barcode', bcScanL:'Scan a barcode', bcCode:'Product code', bcPh:'Digits under the barcode', bcFind:'Find',
+  bcNone:'The camera didn’t find a code. Type the digits under the barcode.', bcNo:'This phone can’t read barcodes with the camera. Type the digits under the barcode.',
+  bcFound:n=>`Found: ${n}`, bcNew:'No product with this code yet — fill in a new one', bcT:'Find a product by code',
+  vNum:'Numbers only here, e.g. 1200', vK:v=>`= ${v}`,
+  bwT:'Count payments for the next 7 days', bwD:'The badge shows payments until the end of the week, not only overdue ones',
+  bigT:'Big and simple', bigD:'Big text and buttons, higher contrast, no animations or transparency',
+  setH:'Comfort',
+  sfLost:'No answer came for this question: the app was closed while Sifra was working. Please ask again.', sfStopped:'Stopped.'
+}};
+function m69T(){ return M69S[lang]||M69S.ru; }
+/* ===================== v69: выбор Анушера из 95–144 =====================
+   104 порог сторожа пальцем · 107 плитки сфер · 109 выпуск без сети · 111 живые числа в модели · 116 палец по графику
+   123 «Назад» на то же место · 130 фон «погода денег» · 133 читаемые плашки · 134 без прозрачности · 135 денежная клавиатура
+   136–137 запись фразой и голосом · 138 штрихкод · 139 формы · 141 значок на неделю · 143 «Крупно и просто» */
+const M69={sy:{},moodT:0,kp:null};
+const m69On=k=>lsGet(k)!=='0';                 /* включено, пока человек не выключил */
+const m69Is=k=>lsGet(k)==='1';                 /* выключено, пока человек не включил */
+const m69Fx=v=>{ try{ return fx(+v,Math.abs(+v-Math.round(+v))<1e-9?0:(Math.abs(+v)<100?2:1)); }catch(e){ return String(v); } };
+const m69Num=s=>{ /* «15 000», «15к», «1,5 тыс», «7,2» → число; не число → NaN */
+  let t=String(s==null?'':s).toLowerCase().replace(/[\s  ]/g,'').replace(/сом(они)?\.?|tjs|смн/g,''); if(!t) return NaN;
+  let k=1; const m=t.match(/^(-?[\d.,]+)(к|k|тыс\.?|тысяч[аи]?|ҳазор|млн|m)?$/); if(!m) return NaN; t=m[1]; if(m[2]) k=/млн|^m$/.test(m[2])?1e6:1e3;
+  if(/,\d{3}(,\d{3})*$/.test(t)&&!/\./.test(t)&&t.split(',').length>2) t=t.replace(/,/g,''); else t=t.replace(',','.');
+  if(!/^-?\d+(\.\d+)?$/.test(t)) return NaN; return +t*k; };
+
+/* ---------- 134 + 143: без прозрачности, лёгкий режим на слабом телефоне, «Крупно и просто» ---------- */
+function m69Lite(){ try{ const dm=navigator.deviceMemory, hc=navigator.hardwareConcurrency; return (dm&&dm<=2)||(hc&&hc<=1); }catch(e){ return false; } }
+function m69Look(){ const r=document.documentElement; r.classList.toggle('m69-solid',m69Is('m69solid')||m69Is('m69big')||m69Lite()); r.classList.toggle('m69-lite',m69Lite()); r.classList.toggle('m69-big',m69Is('m69big')); }
+function m69Big(on){ if(on){ let prev={}; try{ prev={fs:lsGet('fscale_v1'),hc:lsGet('hc_v1')}; }catch(e){} lsSet('m69bigprev',JSON.stringify(prev)); lsSet('fscale_v1','1.3'); lsSet('hc_v1','1'); lsSet('m69big','1'); }
+  else { let p={}; try{ p=JSON.parse(lsGet('m69bigprev')||'{}'); }catch(e){} if(p.fs!=null) lsSet('fscale_v1',p.fs); else try{ localStorage.removeItem('fscale_v1'); }catch(e){} lsSet('hc_v1',p.hc==='1'?'1':'0'); lsSet('m69big','0'); }
+  try{ applyLook(); }catch(e){} m69Look(); }
+try{ const _al=applyLook; applyLook=function(){ const r=_al.apply(this,arguments); try{ m69Look(); }catch(e){} return r; }; }catch(e){}
+m69Look();
+
+/* ---------- 130: фон «погода денег» ---------- */
+function m69Mood(){ try{ if(!m40FcOn()) return null; const f=m40FcData(30); if(!f||!f.ev||!f.ev.length) return null;
+  if(f.firstNeg!=null) return {k:'low',d:f.days[f.firstNeg].d,s:-f.minBal}; return f.minBal>Math.max(500,f.start*0.25)?{k:'ok'}:{k:'tight',d:f.days[f.minI].d}; }catch(e){ return null; } }
+function m69MoodTxt(m){ const T=m69T(); return m.k==='ok'?T.moodOk:m.k==='tight'?T.moodTight(fmtShort(m.d)):T.moodLow(fmtShort(m.d),money(m.s)); }
+function m69MoodApply(){ const r=document.documentElement, m=m69On('m69mood')?m69Mood():null; if(m) r.dataset.m69mood=m.k; else delete r.dataset.m69mood; M69.mood=m;
+  try{ const sub=document.getElementById('appSub'), p=state.profile; if(sub&&!(p&&p.first)) sub.textContent=m?m69MoodTxt(m):L.appSub; }catch(e){} }
+try{ const _rn=render; render=function(){ const x=_rn.apply(this,arguments); clearTimeout(M69.moodT); M69.moodT=setTimeout(m69MoodApply,250); return x; }; }catch(e){}
+setTimeout(m69MoodApply,900);
+
+/* ---------- 123: «Назад» и вкладки — на то же место ---------- */
+try{ const _st=setTab; setTab=function(t){ const from=curTab; let to=(typeof TAB_MAP!=='undefined'&&TAB_MAP[t])||t; if(!TABS.includes(to)) to='today';
+    if(from&&from!==to) M69.sy[from]={y:window.scrollY,at:Date.now()}; const r=_st.apply(this,arguments);
+    if(from!==to){ const s=M69.sy[to]; if(s&&s.y>0&&Date.now()-s.at<30*60e3){ const go=()=>{ if(curTab===to&&window.scrollY<4) window.scrollTo(0,s.y); }; requestAnimationFrame(()=>requestAnimationFrame(go)); } }
+    return r; }; }catch(e){}
+
+/* ---------- 133: текст на цветной плашке всегда читается ---------- */
+function m69Rgb(c){ const m=String(c||'').match(/rgba?\(([^)]+)\)/); if(!m) return null; const p=m[1].split(/[\s,\/]+/).filter(Boolean).map(parseFloat); if(p.length<3) return null; return {r:p[0],g:p[1],b:p[2],a:p.length>3?p[3]:1}; }
+function m69L(c){ const f=v=>{ v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4); }; return 0.2126*f(c.r)+0.7152*f(c.g)+0.0722*f(c.b); }
+function m69Cr(a,b){ const x=m69L(a), y=m69L(b); return (Math.max(x,y)+0.05)/(Math.min(x,y)+0.05); }
+const M69C_SEL='.chip,.pill,.tag,[class*="-tag"],[class*="pill"],[class*="badge"],[class*="-chip"]';
+function m69FixContrast(root){ try{ const R=document.documentElement, tk=R.className+'|'+(R.dataset.theme||'')+'|'+(R.dataset.lk||'')+'|'+(R.hasAttribute('data-hc')?1:0);
+  (root||document).querySelectorAll(M69C_SEL).forEach(el=>{ const key=tk+'|'+el.className; if(el._m69k===key) return; el._m69k=key; if(!el.textContent.trim()||el.closest('svg')) return;
+    if(el.dataset.m69c==='fix') el.style.removeProperty('color'); const cs=getComputedStyle(el), bg=m69Rgb(cs.backgroundColor), fg=m69Rgb(cs.color);
+    if(!bg||bg.a<0.6||!fg||cs.backgroundImage!=='none'){ if(el.dataset.m69c==='fix'){ delete el.dataset.m69c; } return; }
+    if(m69Cr(fg,bg)>=3){ if(el.dataset.m69c==='fix') delete el.dataset.m69c; return; }
+    const dk={r:20,g:20,b:24}, lt={r:255,g:255,b:255}; el.style.setProperty('color',m69Cr(dk,bg)>=m69Cr(lt,bg)?'#141418':'#ffffff','important'); el.dataset.m69c='fix'; }); }catch(e){} }
+(function(){ let t=0; const run=()=>{ t=0; m69FixContrast(document); }; const q=()=>{ if(t) return; t=setTimeout(()=>{ (window.requestIdleCallback||setTimeout)(run); },450); };
+  try{ new MutationObserver(q).observe(document.body,{subtree:true,childList:true,attributes:true,attributeFilter:['class','data-theme','data-lk']}); new MutationObserver(q).observe(document.documentElement,{attributes:true,attributeFilter:['class','data-theme','data-lk','data-hc']}); }catch(e){} q(); })();
+
+/* ---------- 141: значок — платежи на 7 дней вперёд ---------- */
+try{ const _bn=m62BadgeN; m62BadgeN=function(){ if(!m69Is('m69bw')) return _bn.apply(this,arguments); try{ if(!hasRealData()) return 0; let n=0;
+    for(const {loan,a} of activeList()){ if(loan.example||a.done||a.check) continue; if(a.overdue||a.days<=7) n++; }
+    for(const s of state.sup){ if(!s.paid&&s.due&&daysUntil(parseYmd(s.due))<=7) n++; } for(const b of state.bills){ const bd=billDue(b); if(!bd.paid&&bd.days<=7) n++; } return n; }catch(e){ return 0; } }; }catch(e){}
+try{ const _ns=m7NotifySheet; m7NotifySheet=function(){ const r=_ns.apply(this,arguments); try{ const c=sheet.querySelector('#ns-badge'); if(c&&!sheet.querySelector('#m69-bw')){ const T=m69T(), box=c.closest('.m7-tgs');
+      box.insertAdjacentHTML('beforeend',`<label class="m7-tg"><span><b>${esc(T.bwT)}</b><small>${esc(T.bwD)}</small></span><input type="checkbox" id="m69-bw" ${m69Is('m69bw')?'checked':''}><i></i></label>`);
+      sheet.querySelector('#m69-bw').onchange=e=>{ lsSet('m69bw',e.target.checked?'1':'0'); try{ M62.badge=-1; m62Badge(); }catch(x){} }; } }catch(e){} return r; }; }catch(e){}
+
+/* ---------- настройки «Удобство» — в «Оформлении» ---------- */
+function m69SetHTML(){ const T=m69T(), ps=m69PsOk(), tg=(id,t,d,on,extra)=>`<label class="m7-tg"><span><b>${esc(t)}</b><small>${esc(d)}</small>${extra||''}</span><input type="checkbox" id="${id}" ${on?'checked':''}><i></i></label>`;
+  return `<div class="m69-set"><h4>${esc(T.setH)}</h4><div class="m7-tgs">${tg('m69s-big',T.bigT,T.bigD,m69Is('m69big'))}${tg('m69s-solid',T.solidT,T.solidD,m69Is('m69solid')||m69Is('m69big'),m69Lite()?`<small class="m69-lite">${esc(T.liteOn)}</small>`:'')}
+    ${tg('m69s-mood',T.moodT,T.moodD,m69On('m69mood'))}${tg('m69s-kp',T.kpT,T.kpD,m69On('m69kp'))}${ps?tg('m69s-bg',T.bgT,T.bgD,m69On('m69bg')):''}</div></div>`; }
+function m69SetBind(){ const g=id=>sheet.querySelector('#'+id), on=(id,f)=>{ const c=g(id); if(c) c.onchange=e=>f(e.target.checked); };
+  on('m69s-big',v=>{ m69Big(v); const s=g('m69s-solid'); if(s) s.checked=v||m69Is('m69solid'); });
+  on('m69s-solid',v=>{ lsSet('m69solid',v?'1':'0'); m69Look(); }); on('m69s-mood',v=>{ lsSet('m69mood',v?'1':'0'); m69MoodApply(); });
+  on('m69s-kp',v=>{ lsSet('m69kp',v?'1':'0'); }); on('m69s-bg',v=>{ lsSet('m69bg',v?'1':'0'); m69BgSetup(); }); }
+try{ const _th=m8ThemeSheet; m8ThemeSheet=function(){ const r=_th.apply(this,arguments); try{ if(!sheet.querySelector('.m69-set')){ const rows=sheet.querySelectorAll('.sheet-row'), last=rows[rows.length-1]; const h=m69SetHTML(); if(last) last.insertAdjacentHTML('beforebegin',h); else sheet.insertAdjacentHTML('beforeend',h); m69SetBind(); } }catch(e){ console.error('m69 set',e); } return r; }; }catch(e){}
+
+/* ---------- 107: плитки сфер ---------- */
+function m69MosHTML(t){ const a=(t&&t.lens)||[]; if(a.length<3) return ''; const T=m69T(), by={};
+  a.forEach(x=>{ const k=x.lens||'other'; const b=by[k]||(by[k]={k,n:0,w:0,bad:0,good:0,first:null,name:''}); b.n++; b.w+=2+(x.num?1:0); if(x.tone==='bad') b.bad++; if(x.tone==='good') b.good++; if(!b.first) b.first=x; if(!b.name&&x.sphere) b.name=x.sphere; });
+  const bs=Object.values(by).sort((p,q)=>q.w-p.w||q.n-p.n); if(bs.length<2) return ''; const top=bs[0].w;
+  const tile=(b,i)=>{ const big=(i===0&&bs.length>=3)||(i>0&&b.w>=Math.max(5,top*0.75)), lab=(L.m48Lens&&L.m48Lens[b.k])||b.name||b.k, tone=b.bad>b.good?'bad':b.good>b.bad?'good':'', ic=(typeof M48_LICO!=='undefined'&&M48_LICO[b.k])||'globe';
+    return `<button type="button" class="m69-tl ${big?'big':''} ${tone}" data-m69lens="${esc(b.k)}" aria-label="${esc(lab+': '+T.mosN(b.n))}"><span class="hd">${ico(ic,14)} <b>${esc(lab)}</b></span><em>${esc(T.mosN(b.n))}</em>${big&&b.first?`<small>${esc(hbTx(b.first.title,90))}</small>`:''}</button>`; };
+  return `<div class="m69-mos"><p class="bp-hint">${esc(T.mosH)}</p><div class="m69-tls">${bs.map((b,i)=>tile(b,i)).join('')}</div></div>`; }
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m69lens]'); if(!b) return; const k=b.dataset.m69lens; try{ m48LensSet(k); }catch(x){}
+  document.querySelectorAll('[data-m69lens]').forEach(x=>x.classList.toggle('on',x===b)); const lg=document.querySelector('.m48-lg'); if(lg){ const f=lg.querySelector('.m48-it:not([hidden])')||lg; f.scrollIntoView({behavior:'smooth',block:'start'}); } });
+try{ const _lh=m48LensHTML; m48LensHTML=function(t){ const h=_lh.apply(this,arguments); if(!h) return h; try{ const m=m69MosHTML(t); return m?m+h:h; }catch(e){ return h; } }; }catch(e){}
+
+/* ---------- 109: выпуск без сети + обновление ночью (Android) ---------- */
+function m69PsOk(){ try{ return 'serviceWorker' in navigator&&'periodicSync' in ServiceWorkerRegistration.prototype; }catch(e){ return false; } }
+async function m69BgSetup(){ if(!m69PsOk()) return; try{ const reg=await navigator.serviceWorker.ready; if(!m69On('m69bg')){ try{ await reg.periodicSync.unregister('m69-today'); }catch(e){} return; }
+    const c=await caches.open('m69-data'); await c.put('/__m69/cfg',new Response(JSON.stringify({body:{id:mkId(),lang},at:Date.now()}),{headers:{'content-type':'application/json'}}));
+    let st='prompt'; try{ st=(await navigator.permissions.query({name:'periodic-background-sync'})).state; }catch(e){} if(st!=='granted') return;
+    await reg.periodicSync.register('m69-today',{minInterval:12*3600e3}); }catch(e){} }
+async function m69BgTake(){ try{ if(!('caches' in window)) return; const c=await caches.open('m69-data'), r=await c.match('/__m69/today'); if(!r) return; const o=await r.json(); const j=o&&o.j; if(!j||!j.summary||o.lang&&o.lang!==lang) return;
+    const t=hbToday(), nj=Date.parse(j.at||''), nt=t?Date.parse(t.at||''):0; if(t&&(String(j.day||'')<String(t.day||'')||(j.day===t.day&&!(nj>nt)))) return; hbSave(j); await c.delete('/__m69/today'); }catch(e){} }
+setTimeout(()=>{ m69BgTake(); m69BgSetup(); },2500);
+function m69OffHTML(t){ if(navigator.onLine!==false||!t) return ''; const T=m69T(); let tm='', d='';
+  try{ if(t.at) tm=hbHM(t.at); if(t.day&&t.day!==hbDay()) d=fmtShort(parseYmd(t.day)); }catch(e){} return `<div class="m69-off" role="status">${ico('cloud',16)}<span><b>${esc(T.off(tm||'—',d))}</b><small>${esc(T.offSub)}</small></span></div>`; }
+try{ const _td=f34TodayHTML; f34TodayHTML=function(t){ const h=_td.apply(this,arguments); try{ const o=m69OffHTML(t); return o?o+h:h; }catch(e){ return h; } }; }catch(e){}
+['online','offline'].forEach(ev=>addEventListener(ev,()=>{ try{ if(hbOn()){ const m=BPG.el.querySelector('#bpg-m'), y=m?m.scrollTop:0; hbRedraw(); if(m) m.scrollTop=y; } }catch(e){} }));
+
+/* ---------- 104: сторож — история и порог ---------- */
+function m69WtH(){ const h=hbSt(); if(!h.wt69||typeof h.wt69!=='object') h.wt69={}; return h.wt69; }
+try{ const _ws=m68WtSet; m68WtSet=function(j){ const r=_ws.apply(this,arguments); try{ if(r&&j&&Array.isArray(j.list)){ const H=m69WtH(); for(const w of j.list){ const o=H[w.k]||(H[w.k]={h:[],t:null});
+      if(Array.isArray(w.hist)&&w.hist.length) o.h=w.hist.filter(x=>x&&Number.isFinite(+x.n)).slice(-30).map(x=>({d:x.d,n:+x.n}));
+      else if(w.last&&Number.isFinite(+w.last.num)){ const d=w.last.day||hbDay(); if(!o.h.length||o.h[o.h.length-1].d!==d) o.h.push({d,n:+w.last.num}); else o.h[o.h.length-1].n=+w.last.num; o.h=o.h.slice(-30); }
+      if('thr' in w) o.t=w.thr||null; o.srv='thr' in w; }
+    for(const k of Object.keys(H)) if(!j.list.some(w=>w.k===k)) delete H[k]; persist(); } }catch(e){} return r; }; }catch(e){}
+function m69WtGeo(o){ const pts=(o.h||[]).map(x=>+x.n), thv=o.t&&Number.isFinite(+o.t.v)?+o.t.v:null; let lo=Math.min(...pts,thv==null?Infinity:thv), hi=Math.max(...pts,thv==null?-Infinity:thv);
+  if(!Number.isFinite(lo)) return null; if(hi-lo<Math.abs(hi)*0.01||hi===lo){ const p=Math.max(Math.abs(hi)*0.02,0.5); lo-=p; hi+=p; } const pad=(hi-lo)*0.18; lo-=pad; hi+=pad;
+  const W=260,H=78, X=i=>pts.length<2?W/2:8+i/(pts.length-1)*(W-16), Y=v=>6+(hi-v)/(hi-lo)*(H-12), V=y=>hi-(y-6)/(H-12)*(hi-lo); return {pts,thv,lo,hi,W,H,X,Y,V}; }
+function m69WtBlock(w){ const T=m69T(), H=m69WtH(), o=H[w.k]||{h:[],t:null}; if(!(o.h&&o.h.length)) return ''; const g=m69WtGeo(o); if(!g) return '';
+  const d=g.pts.map((v,i)=>(i?'L':'M')+g.X(i).toFixed(1)+','+g.Y(v).toFixed(1)).join(' '), dir=o.t&&o.t.dir==='down'?'down':'up', thv=g.thv;
+  const hit=w.last&&w.last.hit;
+  return `<div class="m69-wc" data-m69wc="${esc(w.k)}"><svg viewBox="0 0 ${g.W} ${g.H}" preserveAspectRatio="none" role="img" aria-label="${esc(T.wtDrag)}"><path class="ln" d="${d}"/>${g.pts.length===1?`<circle class="pt" cx="${g.X(0)}" cy="${g.Y(g.pts[0]).toFixed(1)}" r="4"/>`:`<circle class="pt" cx="${g.X(g.pts.length-1).toFixed(1)}" cy="${g.Y(g.pts[g.pts.length-1]).toFixed(1)}" r="4"/>`}
+      <line class="th${thv==null?' off':''}" x1="0" x2="${g.W}" y1="${(thv==null?g.H/2:g.Y(thv)).toFixed(1)}" y2="${(thv==null?g.H/2:g.Y(thv)).toFixed(1)}"/><rect class="hit" x="0" y="0" width="${g.W}" height="${g.H}"/></svg>
+    <small class="m69-wn">${esc(T.wtPts(g.pts.length))}${thv!=null?' · '+esc(T.wtSet(dir,m69Fx(thv))):' · '+esc(T.wtDrag)}</small>
+    <div class="m69-wt"><span>${esc(T.wtTh)}</span><select data-m69wd aria-label="${esc(T.wtTh)}"><option value="up" ${dir==='up'?'selected':''}>${esc(T.wtUp)}</option><option value="down" ${dir==='down'?'selected':''}>${esc(T.wtDn)}</option></select>
+      <input type="text" inputmode="decimal" data-m69wv data-nokp value="${thv==null?'':esc(m69Fx(thv))}" aria-label="${esc(T.wtThA)}" placeholder="${esc(m69Fx(g.pts[g.pts.length-1]))}"><button type="button" class="btn btn-ghost" data-m69ws="${esc(w.k)}">${esc(T.wtSave)}</button>${thv!=null?`<button type="button" class="link-btn" data-m69wx="${esc(w.k)}">${esc(T.wtOff)}</button>`:''}</div>
+    ${hit?`<p class="m69-hit">${ico('warn',14)} ${esc(T.wtHit)}</p>`:''}${o.t&&!o.srv?`<small class="m69-wl">${esc(T.wtLocal)}</small>`:''}</div>`; }
+try{ const _wh=m68WtHTML; m68WtHTML=function(){ const h=_wh.apply(this,arguments); try{ const list=M68.wt.at?M68.wt.list:m68WtCache(); if(!list.length) return h; const w=document.createElement('div'); w.innerHTML=h;
+    w.querySelectorAll('.m68-wl li[data-k]').forEach(li=>{ const it=list.find(x=>x.k===li.dataset.k); if(!it) return; const b=m69WtBlock(it); if(!b) return; const ft=li.querySelector('.ft'); if(ft) ft.insertAdjacentHTML('beforebegin',b); else li.insertAdjacentHTML('beforeend',b); });
+    return w.innerHTML; }catch(e){ return h; } }; }catch(e){}
+async function m69WtThr(k,v,dir){ const T=m69T(), H=m69WtH(), o=H[k]||(H[k]={h:[],t:null}); o.t=v==null?null:{v,dir}; persist();
+  try{ const j=await m68WtCall({op:'thr',k,thr:v==null?null:{v,dir}}); const srv=j&&Array.isArray(j.list)&&j.list.some(w=>'thr' in w); if(srv){ m68WtSet(j); } else { o.srv=false; persist(); }
+    toast(srv?(v==null?T.wtRm:T.wtSaved):T.wtLocal); }catch(e){ o.srv=false; persist(); toast(T.wtLocal); } m68WtDraw(); }
+document.addEventListener('click',e=>{ const t=e.target; if(!t||!t.closest) return; const s=t.closest('[data-m69ws]'), x=t.closest('[data-m69wx]');
+  if(s){ const box=s.closest('.m69-wc'), v=m69Num((box.querySelector('[data-m69wv]')||{}).value), d=(box.querySelector('[data-m69wd]')||{}).value==='down'?'down':'up'; if(!Number.isFinite(v)){ toast(m69T().wtNeedNum); return; } m69WtThr(s.dataset.m69ws,v,d); return; }
+  if(x){ m69WtThr(x.dataset.m69wx,null,'up'); } });
+(function(){ let drag=null; const at=(svg,e)=>{ const r=svg.getBoundingClientRect(); return Math.max(2,Math.min(r.height-2,e.clientY-r.top))/r.height; };
+  document.addEventListener('pointerdown',e=>{ const hit=e.target.closest&&e.target.closest('.m69-wc .hit'); if(!hit) return; const box=hit.closest('.m69-wc'), k=box.dataset.m69wc, o=m69WtH()[k]; if(!o) return; const g=m69WtGeo(o); if(!g) return;
+    drag={box,k,g,svg:hit.ownerSVGElement}; try{ hit.setPointerCapture(e.pointerId); }catch(x){} e.preventDefault(); move(e); });
+  const move=e=>{ if(!drag) return; const y=at(drag.svg,e)*drag.g.H, v=drag.g.V(y), ln=drag.box.querySelector('line.th'), inp=drag.box.querySelector('[data-m69wv]'); ln.setAttribute('y1',y.toFixed(1)); ln.setAttribute('y2',y.toFixed(1)); ln.classList.remove('off');
+    const step=Math.pow(10,Math.floor(Math.log10(Math.max(1e-9,(drag.g.hi-drag.g.lo)/60)))); drag.v=Math.round(v/step)*step; drag.v=+drag.v.toPrecision(8); if(inp) inp.value=m69Fx(drag.v); };
+  document.addEventListener('pointermove',move); document.addEventListener('pointerup',()=>{ if(!drag) return; const d=drag; drag=null; if(d.v==null) return; const sel=d.box.querySelector('[data-m69wd]'); m69WtThr(d.k,d.v,sel&&sel.value==='down'?'down':'up'); }); })();
+
+/* ---------- 111: живые числа во фразе модели ---------- */
+function m69Say(t,vars){ const s=String(t||'').replace(/<[^>]*>/g,'').slice(0,200).trim(); if(s.length<8) return ''; const ks=new Set(vars.map(v=>v.k)); let out=false, any=false, bad=false;
+  s.replace(/\{([^{}]*)\}/g,(m,k)=>{ k=String(k).toLowerCase(); if(k==='out') out=true; else if(ks.has(k)) any=true; else bad=true; return m; }); if(bad||!out||!any) return ''; if(/[{}]/.test(s.replace(/\{[a-z0-9_]{1,10}\}/gi,''))) return ''; return s; }
+try{ const _mo=m68ModelOk; m68ModelOk=function(m){ const M=_mo.apply(this,arguments); try{ if(M&&m&&m.say){ const s=m69Say(m.say,M.vars); if(s) M.say=s; } }catch(e){} return M; }; }catch(e){}
+function m69SayHTML(M,o){ const T=m69T(), y=m67Eval(M.expr,o); return `<p class="m69-say">${String(M.say).split(/(\{[a-z0-9_]{1,10}\})/i).map(p=>{ const m=p.match(/^\{([a-z0-9_]+)\}$/i); if(!m) return esc(p); const k=m[1].toLowerCase();
+    if(k==='out') return `<b class="m69-so">${esc(m67FxFmt(y,M.unit))}</b>`; const v=M.vars.find(x=>x.k===k); if(!v) return '';
+    return `<span class="m69-sv" data-m69sv="${esc(k)}" tabindex="0" role="slider" aria-label="${esc(v.label+'. '+T.sayA)}" aria-valuemin="${v.min}" aria-valuemax="${v.max}" aria-valuenow="${o[k]}">${esc(m68MdNum(o[k],v.step))}</span>`; }).join('')}</p>`; }
+try{ const _mb=m68MdBody; m68MdBody=function(M,o,st){ const h=_mb.apply(this,arguments); try{ if(M&&M.say) return h.replace('<div class="m68-sl">',m69SayHTML(M,o)+'<div class="m68-sl">'); }catch(e){} return h; }; }catch(e){}
+try{ const _md=m68MdDraw; m68MdDraw=function(card,keep){ const r=_md.apply(this,arguments); try{ if(keep){ const rd=m68MdRead(card); const p=card.querySelector('.m69-say'); if(rd&&rd.M.say&&p){ const w=document.createElement('div'); w.innerHTML=m69SayHTML(rd.M,rd.o); const n=w.firstChild;
+        p.querySelectorAll('[data-m69sv]').forEach(sp=>{ const nn=n.querySelector(`[data-m69sv="${sp.dataset.m69sv}"]`); if(nn){ sp.textContent=nn.textContent; sp.setAttribute('aria-valuenow',nn.getAttribute('aria-valuenow')); } }); const a=p.querySelector('.m69-so'), b=n.querySelector('.m69-so'); if(a&&b) a.textContent=b.textContent; } } }catch(e){} return r; }; }catch(e){}
+function m69SayStep(sp,steps){ const card=sp.closest('.m68-md'), k=sp.dataset.m69sv, inp=card&&card.querySelector(`[data-m68v="${k}"]`); if(!inp) return; const st=+inp.step||1, mn=+inp.min, mx=+inp.max, v=Math.max(mn,Math.min(mx,(sp._v0!=null?sp._v0:+inp.value)+steps*st));
+  const vv=Math.round(v/st)*st; inp.value=String(+vv.toPrecision(10)); inp.dispatchEvent(new Event('input',{bubbles:true})); }
+(function(){ let cur=null; document.addEventListener('pointerdown',e=>{ const sp=e.target.closest&&e.target.closest('.m69-sv'); if(!sp) return; const card=sp.closest('.m68-md'), inp=card&&card.querySelector(`[data-m68v="${sp.dataset.m69sv}"]`); if(!inp) return;
+    cur={sp,x0:e.clientX,last:0}; sp._v0=+inp.value; sp.classList.add('on'); try{ sp.setPointerCapture(e.pointerId); }catch(x){} e.preventDefault(); });
+  document.addEventListener('pointermove',e=>{ if(!cur) return; const n=Math.round((e.clientX-cur.x0)/9); if(n!==cur.last){ cur.last=n; m69SayStep(cur.sp,n); try{ m40Vib(); }catch(x){} } });
+  const end=()=>{ if(!cur) return; cur.sp.classList.remove('on'); cur.sp._v0=null; cur=null; }; document.addEventListener('pointerup',end); document.addEventListener('pointercancel',end);
+  document.addEventListener('keydown',e=>{ const sp=e.target&&e.target.classList&&e.target.classList.contains('m69-sv')?e.target:null; if(!sp) return; const d=e.key==='ArrowRight'||e.key==='ArrowUp'?1:e.key==='ArrowLeft'||e.key==='ArrowDown'?-1:0; if(!d) return; e.preventDefault(); sp._v0=null; m69SayStep(sp,d);
+    setTimeout(()=>{ const card=sp.closest('.m68-md'); const n=card&&card.querySelector(`.m69-sv[data-m69sv="${sp.dataset.m69sv}"]`); if(n) n.focus(); },0); }); })();
+
+/* ---------- 116: палец по графику — число и дата ---------- */
+function m69Pts(pts){ try{ return ' data-m69pts="'+esc(JSON.stringify(pts))+'"'; }catch(e){ return ''; } }
+try{ const _iv=ivCurveSVG; ivCurveSVG=function(D){ const h=_iv.apply(this,arguments); try{ const pl=D&&D.pl; if(!pl||!pl.ok||!h) return h; const W=320,H=132,px=10,pt=14,pb=24,M=pl.m, X=m=>px+(W-2*px)*Math.min(1,m/M), Y=v=>H-pb-(H-pt-pb)*Math.max(0,Math.min(1,(v-D.cap)/(D.tgt-D.cap)));
+    const pts=[[0,D.cap]]; for(const c of pl.cyc){ if(c.A>=M) break; pts.push([c.A,c.v0]); if(c.E>=M){ pts.push([M,D.tgt]); break; } pts.push([c.E,c.v1]); } if(pts.length<2) return h;
+    const lab=(m,v)=>{ const d=new Date(); d.setMonth(d.getMonth()+Math.round(m)); let t=''; try{ t=MONTHS[lang].short[d.getMonth()]+' '+d.getFullYear(); }catch(e){} return t+' · '+ivUsd(v); };
+    const P=pts.map(p=>[+X(p[0]).toFixed(1),+Y(p[1]).toFixed(1),lab(p[0],p[1])]); return h.replace('<svg class="gp-curve"','<svg class="gp-curve m69-scr"'+m69Pts(P)); }catch(e){ return h; } }; }catch(e){}
+try{ const _sp=m52Spark; m52Spark=function(sp){ const h=_sp.apply(this,arguments); try{ if(!Array.isArray(sp)||sp.length<2) return h; const W=280, bw=W/sp.length, mx=Math.max(1,...sp.map(x=>x[1]));
+    const P=sp.map((x,i)=>[+(i*bw+bw/2).toFixed(1),48-Math.max(x[1]>0?3:1,Math.round(x[1]/mx*44)),String(x[0])+' · '+m69Fx(x[1])]); return h.replace('<svg class="m52-sp"','<svg class="m52-sp m69-scr"'+m69Pts(P)); }catch(e){ return h; } }; }catch(e){}
+(function(){ let cur=null, tip=null, ln=null, lastI=-1, lastV=0;
+  const show=(svg,e)=>{ let P=null; try{ P=JSON.parse(svg.getAttribute('data-m69pts')); }catch(x){} if(!P||!P.length) return; const vb=svg.viewBox.baseVal, r=svg.getBoundingClientRect(); if(!vb||!r.width) return;
+    const vx=(e.clientX-r.left)/r.width*vb.width; let bi=0; P.forEach((p,i)=>{ if(Math.abs(p[0]-vx)<Math.abs(P[bi][0]-vx)) bi=i; }); const p=P[bi];
+    if(!ln){ ln=document.createElementNS('http://www.w3.org/2000/svg','line'); ln.setAttribute('class','m69-sl'); } if(ln.ownerSVGElement!==svg) svg.appendChild(ln); ln.setAttribute('x1',p[0]); ln.setAttribute('x2',p[0]); ln.setAttribute('y1',0); ln.setAttribute('y2',vb.height);
+    if(!tip){ tip=document.createElement('div'); tip.className='m69-tip'; tip.setAttribute('role','status'); document.body.appendChild(tip); } tip.textContent=p[2]; tip.hidden=false;
+    const px=r.left+p[0]/vb.width*r.width, py=r.top+p[1]/vb.height*r.height, tw=tip.offsetWidth||120; tip.style.left=Math.max(6,Math.min(innerWidth-tw-6,px-tw/2))+'px'; tip.style.top=Math.max(6,py-40)+'px';
+    if(bi!==lastI&&Date.now()-lastV>60){ lastV=Date.now(); try{ if(lastI>=0) m40Vib(); }catch(x){} } lastI=bi; };
+  const hide=()=>{ cur=null; lastI=-1; setTimeout(()=>{ if(cur) return; if(tip) tip.hidden=true; if(ln&&ln.parentNode) ln.parentNode.removeChild(ln); },1400); };
+  document.addEventListener('pointerdown',e=>{ const svg=e.target.closest&&e.target.closest('svg.m69-scr'); if(!svg) return; cur=svg; show(svg,e); },{passive:true});
+  document.addEventListener('pointermove',e=>{ if(cur) show(cur,e); else if(e.pointerType==='mouse'){ const svg=e.target.closest&&e.target.closest('svg.m69-scr'); if(svg) show(svg,e); } },{passive:true});
+  document.addEventListener('pointerup',hide); document.addEventListener('pointercancel',hide); document.addEventListener('scroll',()=>{ if(tip&&!cur) tip.hidden=true; },{passive:true,capture:true}); })();
+
+/* ---------- 139: поля сумм — понятная проверка, «15к» → 15000 ---------- */
+function m69NumField(i){ return i&&i.tagName==='INPUT'&&!i.readOnly&&!i.disabled&&i.type!=='range'&&i.type!=='checkbox'&&!i.hasAttribute('data-nov')&&(i.type==='number'||/^(numeric|decimal)$/.test(i.getAttribute('inputmode')||i.dataset.m69im||'')); }
+function m69VMsg(i,show){ let m=i.nextElementSibling&&i.nextElementSibling.classList&&i.nextElementSibling.classList.contains('m69-vm')?i.nextElementSibling:null;
+  if(!show){ if(m) m.remove(); i.classList.remove('m69-bad'); i.removeAttribute('aria-invalid'); return; }
+  if(!m){ m=document.createElement('small'); m.className='m69-vm'; m.id='m69vm'+Math.random().toString(36).slice(2,7); i.insertAdjacentElement('afterend',m); } m.textContent=m69T().vNum; i.classList.add('m69-bad'); i.setAttribute('aria-invalid','true'); i.setAttribute('aria-describedby',m.id); }
+document.addEventListener('focusout',e=>{ const i=e.target; if(!m69NumField(i)) return; if(i.type==='number'){ m69VMsg(i,!!(i.validity&&i.validity.badInput)); return; }
+  const raw=i.value.trim(); if(!raw){ m69VMsg(i,false); return; } const n=m69Num(raw); if(!Number.isFinite(n)){ m69VMsg(i,true); return; } m69VMsg(i,false);
+  const s=String(+n.toFixed(2)); if(s!==raw){ i.value=s; i.dispatchEvent(new Event('input',{bubbles:true})); i.dispatchEvent(new Event('change',{bubbles:true})); } },true);
+document.addEventListener('input',e=>{ const i=e.target; if(!i||!i.classList||!i.classList.contains('m69-bad')) return; const ok=i.type==='number'?!(i.validity&&i.validity.badInput):Number.isFinite(m69Num(i.value))||!i.value.trim(); if(ok){ m69VMsg(i,false); i.classList.add('m69-ok'); setTimeout(()=>i.classList.remove('m69-ok'),900); } },true);
+
+/* ---------- 135: своя денежная клавиатура (только при касании пальцем) ---------- */
+const M69K={touch:0,inp:null,el:null,sys:null};
+function m69KpWant(i){ return m69On('m69kp')&&m69NumField(i)&&!i.closest('[data-nokp]')&&!i.hasAttribute('data-nokp')&&M69K.sys!==i; }
+document.addEventListener('pointerdown',e=>{ M69K.pt=e.pointerType; M69K.tgt=e.target; if(e.pointerType!=='touch') return; M69K.touch=Date.now(); const i=e.target; if(m69KpWant(i)&&!i.hasAttribute('data-m69im')){ i.setAttribute('data-m69im',i.getAttribute('inputmode')||''); i.setAttribute('inputmode','none'); } },true);
+document.addEventListener('focusin',e=>{ const i=e.target; if(!m69KpWant(i)||M69K.pt!=='touch'||M69K.tgt!==i||Date.now()-M69K.touch>900) return; m69KpOpen(i); });
+document.addEventListener('click',e=>{ const i=e.target; if(M69K.inp===i||!m69KpWant(i)||document.activeElement!==i) return; if(e.pointerType?e.pointerType!=='touch':Date.now()-M69K.touch>900) return;
+  if(!i.hasAttribute('data-m69im')){ i.setAttribute('data-m69im',i.getAttribute('inputmode')||''); i.setAttribute('inputmode','none'); } m69KpOpen(i); },true);
+document.addEventListener('focusout',e=>{ if(e.target!==M69K.inp) return; setTimeout(()=>{ if(document.activeElement!==M69K.inp) m69KpClose(); },120); });
+function m69KpRestore(i){ if(i&&i.hasAttribute('data-m69im')){ const v=i.getAttribute('data-m69im'); if(v) i.setAttribute('inputmode',v); else i.removeAttribute('inputmode'); i.removeAttribute('data-m69im'); } }
+function m69KpOpen(i){ const T=m69T(), dec=(i.getAttribute('data-m69im')||i.getAttribute('inputmode'))==='decimal'; M69K.inp=i;
+  if(!M69K.el){ M69K.el=document.createElement('div'); M69K.el.className='m69-kp'; M69K.el.setAttribute('role','group'); document.body.appendChild(M69K.el);
+    M69K.el.addEventListener('pointerdown',e=>{ e.preventDefault(); },true); M69K.el.addEventListener('mousedown',e=>e.preventDefault(),true);
+    M69K.el.addEventListener('click',e=>{ const b=e.target.closest('button[data-k]'); if(b) m69KpKey(b.dataset.k); }); }
+  const K=(k,t,c)=>`<button type="button" data-k="${k}" class="${c||''}">${t}</button>`;
+  M69K.el.setAttribute('aria-label',T.kpA);
+  M69K.el.innerHTML=`<div class="m69-kd" aria-live="polite"></div><div class="m69-kg">${K('1','1')}${K('2','2')}${K('3','3')}${K('+100','+100','f')}${K('4','4')}${K('5','5')}${K('6','6')}${K('+500','+500','f')}${K('7','7')}${K('8','8')}${K('9','9')}${K('k',T.kpK,'f')}${K(dec?'.':'000',dec?',':'000','f')}${K('0','0')}${K('bs','<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 5H9l-6 7 6 7h12z"/><path d="M17 9l-6 6M11 9l6 6"/></svg><span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">⌫</span>','f')}${K('ok',T.kpDone,'ok')}</div><button type="button" class="m69-ks" data-k="sys">${ico('edit',14)} ${esc(T.kpSys)}</button>`;
+  M69K.el.hidden=false; document.documentElement.classList.add('m69-kpon'); m69KpShow(); setTimeout(()=>{ try{ i.scrollIntoView({block:'center',behavior:'smooth'}); }catch(e){} },60); }
+function m69KpShow(){ const i=M69K.inp, d=M69K.el&&M69K.el.querySelector('.m69-kd'); if(!i||!d) return; const n=m69Num(i.value); d.textContent=i.value===''?'0':Number.isFinite(n)?money(n):i.value; }
+function m69KpKey(k){ const i=M69K.inp; if(!i) return; let v=String(i.value||'').replace(/[\s ]/g,'');
+  if(k==='ok'){ i.blur(); m69KpClose(); return; } if(k==='sys'){ m69KpClose(); M69K.sys=i; m69KpRestore(i); i.blur(); setTimeout(()=>{ i.focus(); },30); i.addEventListener('blur',()=>{ if(M69K.sys===i) M69K.sys=null; },{once:true}); return; }
+  const n=Number.isFinite(m69Num(v))?m69Num(v):0;
+  if(k==='bs') v=v.slice(0,-1); else if(k==='k') v=v===''?'1000':String(+(n*1000).toFixed(2)); else if(k==='+100'||k==='+500') v=String(+(n+(+k.slice(1))).toFixed(2)); else if(k==='000'){ if(v&&v!=='0') v+='000'; } else if(k==='.'){ if(!v.includes('.')) v=(v||'0')+'.'; } else { v=v==='0'?k:v+k; }
+  if(v.replace(/\D/g,'').length>12) return; i.value=v; i.dispatchEvent(new Event('input',{bubbles:true})); m69KpShow(); }
+function m69KpClose(){ const i=M69K.inp; M69K.inp=null; if(M69K.el) M69K.el.hidden=true; document.documentElement.classList.remove('m69-kpon'); if(i) m69KpRestore(i); }
+
+/* ---------- 136–137: запись одной фразой (и голосом — уже был) ---------- */
+function m69PhInject(){ try{ if(!sheet||!sheet.querySelector('#v-mic')||sheet.querySelector('#m69ph')) return; const T=m69T(), st=sheet.querySelector('#v-st'); if(!st) return;
+    st.insertAdjacentHTML('afterend',`<div class="m69-ph"><label for="m69ph">${esc(T.phT)}</label><div class="r"><input id="m69ph" type="text" enterkeyhint="go" data-nov placeholder="${esc(T.phPh)}" maxlength="160" autocomplete="off"><button type="button" class="btn btn-primary" id="m69phgo">${esc(T.phGo)}</button></div><p class="m69-phn" id="m69phn" hidden></p></div>`);
+    const go=()=>m69PhGo(String(sheet.querySelector('#m69ph').value||'').trim()); sheet.querySelector('#m69phgo').onclick=go; sheet.querySelector('#m69ph').onkeydown=e=>{ if(e.key==='Enter'){ e.preventDefault(); go(); } }; }catch(e){} }
+try{ new MutationObserver(()=>m69PhInject()).observe(sheet,{childList:true,subtree:true}); }catch(e){}
+function m69PhGo(txt){ const T=m69T(); if(txt.length<3) return; let res=null; try{ res=m7VParse(txt); }catch(e){}
+  const n=sheet.querySelector('#m69phn'); if(!res){ if(n){ n.hidden=false; n.innerHTML=`${esc(T.phNo)} <button type="button" class="link-btn" id="m69phs">${esc(T.phAsk)}</button>`; const b=n.querySelector('#m69phs'); if(b) b.onclick=()=>{ closeSheet(); try{ sfAsk(txt,false); }catch(e){ try{ sifraOpen(); }catch(x){} } }; } return; }
+  m69PhDraft(txt,res); }
+function m69PhDraft(txt,res){ const T=m69T(), lab=({pay:L.m7VKPay,ret:L.m7VKRet,debt:L.m7VKDebt,day:L.m7VKDay})[res.k], who=res.k==='pay'?esc(res.loan.name):res.k==='day'?'—':res.c?esc(res.c.name):esc(res.nn)+` <small class="muted">(${L.m7VNew(esc(res.nn))})</small>`;
+  openSheet(`<h3>${esc(T.phT)}</h3><div class="m7-heard"><small>${L.m7VHeard}</small><span>«${esc(txt)}»</span></div>
+    <div class="calc-out m69-dr"><div class="co-row"><span>${esc(T.phWhat)}</span><b>${lab}</b></div><div class="co-row"><span>${esc(T.phWho)}</span><b>${who}</b></div>
+      <div class="co-row"><label for="m69dra">${esc(T.phSum)}</label><input id="m69dra" type="text" inputmode="numeric" value="${res.amt}"></div><div class="co-row"><span>${L.m7VWhen}</span><b>${L.m7VToday}, ${fmtDate(new Date())}</b></div></div>
+    <div class="sheet-row"><button class="btn btn-ghost" id="m69drn">${esc(T.phNot)}</button><button class="btn btn-primary" id="m69drs">${esc(T.phSave)}</button></div>`);
+  $('#m69drn').onclick=()=>closeSheet();
+  $('#m69drs').onclick=()=>{ const a=m69Num($('#m69dra').value); if(!(a>0)){ toast(T.vNum); return; } res.amt=Math.round(a*100)/100; m69PhSave(res); }; }
+function m69PhSave(res){
+  if(res.k==='pay'){ const l=res.loan; closeSheet(); payForm(l); const i=$('#p-amt'); if(i){ try{ i.value=m53R(res.amt*m53K(l),l); }catch(e){ i.value=res.amt; } i.dispatchEvent(new Event('input')); } toast(L.m7VPayOpen); return; }
+  if(res.k==='day'){ closeSheet(); dayForm(); const c=$('#dy-cash'), k=$('#dy-card'); const p=res.p||{}; if(c){ const same=p.cash!=null&&p.cash===res.amt; c.value=res.amt; if(k&&same&&p.card!=null) k.value=p.card; c.dispatchEvent(new Event('input')); } return; }
+  let c=res.c, cid=null; if(!c){ c={id:uid('c'),name:res.nn,phone:'',size:'',note:'',reg:false}; state.cust.push(c); cid=c.id; }
+  const rid=uid('cd'); state.cdebt.push({id:rid,c:c.id,t:res.k==='ret'?'pay':'debt',a:res.amt,d:dkey(),n:'',ts:Date.now()}); persist(); render();
+  openSheet(`<div class="ap"><div class="m7-ok">${ico('check',40)}</div><h3 style="justify-content:center">${L.m7VSaved}</h3><p class="lead m7-center">${esc(c.name)}: ${res.k==='ret'?'−':'+'}${money(res.amt)}</p>
+    <div class="sheet-row"><button class="btn btn-ghost" id="m69dru">${L.m7VUndo}</button><button class="btn btn-primary" data-close>${L.m7VDone}</button></div></div>`);
+  $('#m69dru').onclick=()=>{ state.cdebt=state.cdebt.filter(r=>r.id!==rid); if(cid) state.cust=state.cust.filter(x=>x.id!==cid); persist(); render(); closeSheet(); }; }
+
+/* ---------- 138: штрихкод товара ---------- */
+async function m69BcRead(src){ try{ if(!('BarcodeDetector' in window)) return {no:true}; const fm=await BarcodeDetector.getSupportedFormats().catch(()=>[]); const want=['ean_13','ean_8','upc_a','upc_e','code_128','code_39','itf','qr_code'].filter(f=>!fm.length||fm.includes(f)); if(!want.length) return {no:true};
+    const bd=new BarcodeDetector({formats:want}), im=new Image(); im.src=src; await im.decode(); const r=await bd.detect(im); return {code:r&&r[0]?String(r[0].rawValue||'').trim().slice(0,40):''}; }catch(e){ return {code:''}; } }
+function m69BcFind(code){ const c=String(code||'').replace(/\s/g,''); if(!c) return null; return (state.inv||[]).find(x=>x&&x.bc&&String(x.bc).replace(/\s/g,'')===c)||null; }
+function m69BcGo(code){ const T=m69T(), x=m69BcFind(code); if(x){ toast(T.bcFound(x.name)); invSheet(x); return; } toast(T.bcNew); M69.bcNew=String(code).replace(/\s/g,'').slice(0,40); invForm(null); }
+function m69BcSheet(msg){ const T=m69T(), can='BarcodeDetector' in window;
+  openSheet(`<h3>${ico('search',20)} ${esc(T.bcT)}</h3>${msg?`<p class="note">${esc(msg)}</p>`:''}${can?`<button type="button" class="btn btn-primary btn-full" id="m69bcc">📷 ${esc(T.bcScanL)}</button>`:`<p class="note">${esc(T.bcNo)}</p>`}
+    <div class="field"><label for="m69bci">${esc(T.bcCode)}</label><input id="m69bci" type="text" inputmode="numeric" data-nov data-nokp maxlength="40" placeholder="${esc(T.bcPh)}"></div>
+    <div class="sheet-row"><button class="btn btn-ghost" data-close>${L.m7Close}</button><button class="btn btn-primary" id="m69bcf">${esc(T.bcFind)}</button></div>`);
+  const f=()=>{ const v=String($('#m69bci').value||'').trim(); if(v.length<3) return; closeSheet(); m69BcGo(v); }; $('#m69bcf').onclick=f; $('#m69bci').onkeydown=e=>{ if(e.key==='Enter'){ e.preventDefault(); f(); } };
+  const c=$('#m69bcc'); if(c) c.onclick=()=>camera(async s=>{ const r=await m69BcRead(s); if(r.code){ closeSheet(); m69BcGo(r.code); } else m69BcSheet(r.no?T.bcNo:T.bcNone); }); }
+try{ const _ri=renderInv; renderInv=function(){ const r=_ri.apply(this,arguments); try{ document.querySelectorAll('.iv-phq').forEach(b=>{ if(b.nextElementSibling&&b.nextElementSibling.classList.contains('m69-bcb')) return; b.insertAdjacentHTML('afterend',`<button type="button" class="btn btn-ghost btn-full m69-bcb" data-m69bc="1">${ico('search',16)} ${esc(m69T().bcScanL)}</button>`); }); }catch(e){} return r; }; }catch(e){}
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m69bc]'); if(!b) return; e.stopImmediatePropagation(); m69BcSheet(''); },true);
+/* поле «Код товара» в форме товара: сохраняется вместе с товаром */
+try{ const _if=invForm; invForm=function(x,pre){ M69.bc={x:x||null,before:new Set((state.inv||[]).map(y=>y.id)),v:x&&x.bc?String(x.bc):(M69.bcNew||''),touched:!!M69.bcNew}; M69.bcNew=''; return _if.apply(this,arguments); }; }catch(e){}
+function m69BcInject(){ try{ if(!M69.bc||!sheet) return; const n=sheet.querySelector('#iv-n'); if(!n){ return; } if(sheet.querySelector('#m69ivbc')) return; const T=m69T(), fld=n.closest('.field');
+    fld.insertAdjacentHTML('afterend',`<div class="field m69-ivbc"><label for="m69ivbc">${esc(T.bcCode)} <span class="hint">${L.optional}</span></label><div class="r"><input id="m69ivbc" type="text" inputmode="numeric" data-nov data-nokp maxlength="40" value="${esc(M69.bc.v)}" placeholder="${esc(T.bcPh)}">${'BarcodeDetector' in window?`<button type="button" class="btn btn-ghost" id="m69ivbs" aria-label="${esc(T.bcScanL)}">📷</button>`:''}</div></div>`);
+    const i=sheet.querySelector('#m69ivbc'); i.oninput=()=>{ M69.bc.v=i.value.trim(); M69.bc.touched=true; };
+    const s=sheet.querySelector('#m69ivbs'); if(s) s.onclick=()=>{ const keep=M69.bc; camera(async src=>{ const r=await m69BcRead(src); if(r.code){ keep.v=r.code; keep.touched=true; const ii=sheet.querySelector('#m69ivbc'); if(ii) ii.value=r.code; } else toast(m69T().bcNone); }); }; }catch(e){} }
+try{ new MutationObserver(()=>m69BcInject()).observe(sheet,{childList:true,subtree:true}); }catch(e){}
+try{ const _ps=persist; persist=function(){ try{ const B=M69.bc; if(B&&B.touched){ let it=B.x; if(!it) it=(state.inv||[]).find(y=>!B.before.has(y.id)); if(it){ if(B.v) it.bc=B.v; else delete it.bc; if(!B.x){ B.x=it; } } } }catch(e){} return _ps.apply(this,arguments); }; }catch(e){}
+try{ const _cs=closeSheet; closeSheet=function(){ const r=_cs.apply(this,arguments); setTimeout(()=>{ try{ if(M69.bc&&!(sheet&&sheet.querySelector('#iv-n'))) M69.bc=null; }catch(e){} },0); return r; }; }catch(e){}
+/* поиск по приложению находит товар и по коду */
+
+/* ---------- Сифра: старый вопрос не «висит», отмена старого не возвращает его в поле, кнопка «К началу ответа» — над полем ввода ---------- */
+function m69SfOrphan(j){ try{ m56Pend(null); const log=sfLog(), last=log[log.length-1]; if(last&&last.r==='u'&&String(last.t||'').slice(0,700)===String(j.q||'')){ log.push({r:'a',t:m69T().sfLost,err:1,ts:Date.now()}); persist(); } if($('#sf-log')&&overlay.classList.contains('open')) sfRedraw(); }catch(e){} }
+try{ const _rc=m56Recover; m56Recover=function(){ try{ const j=state.misc&&state.misc.m56j; if(j&&j.job&&Date.now()-(+j.ts||0)>15*60e3){ if(M69.rc) return; M69.rc=1;
+      m56Poll(window.fetch,j.job).then(r=>{ M69.rc=0; if(r&&r.net) return; if(r&&(r.done||r.text||r.answer)) return _rc(); m69SfOrphan(j); }).catch(()=>{ M69.rc=0; }); return; } }catch(e){} return _rc.apply(this,arguments); }; }catch(e){}
+try{ const _so=m54Stop; m54Stop=function(){ let u=null; try{ const log=sfLog(); for(let i=log.length-1;i>=0;i--){ if(log[i].r==='u'){ u=log[i]; break; } } }catch(e){}
+    const old=u&&Date.now()-(+u.ts||0)>120e3, r=_so.apply(this,arguments);
+    if(old){ try{ M54.stopQ=''; }catch(e){} const keep={r:'u',t:u.t,ts:u.ts}; if(u.img) keep.img=u.img; let n=0; const back=()=>{ if(sfBusy&&n++<40){ setTimeout(back,100); return; } try{ const log=sfLog(); if(!log.includes(u)){ log.push(keep); log.push({r:'a',t:m69T().sfStopped,err:1,ts:Date.now()}); persist(); if($('#sf-log')&&overlay.classList.contains('open')) sfRedraw(); } }catch(e){} }; setTimeout(back,60); }
+    return r; }; }catch(e){}
+function m69SfBtns(){ try{ const inp=sheet.querySelector('#sf-in'), send=sheet.querySelector('#sf-send'); if(!inp) return; let c=inp.parentElement; while(c&&send&&!c.contains(send)&&c!==sheet) c=c.parentElement; if(!c) return;
+    for(const id of ['m56-up','m52-down']){ const b=sheet.querySelector('#'+id); if(!b) continue; const op=b.offsetParent||sheet; const pr=op.getBoundingClientRect(), cr=c.getBoundingClientRect(); const bot=Math.max(0,Math.round(pr.bottom-cr.top+10)); b.style.bottom=bot+'px'; } }catch(e){} }
+try{ const _us=m56UpSync; m56UpSync=function(){ const r=_us.apply(this,arguments); m69SfBtns(); return r; }; }catch(e){}
+document.addEventListener('input',e=>{ if(e.target&&e.target.id==='sf-in') requestAnimationFrame(m69SfBtns); });
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{

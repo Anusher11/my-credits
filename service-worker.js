@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v85';
+const CACHE='mira-v86';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -86,7 +86,7 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(k => k !== CACHE && k !== 'mk-state' && k !== 'mira-share').map(k => caches.delete(k))))
+      .then(keys => Promise.all(keys.filter(k => k !== CACHE && k !== 'mk-state' && k !== 'mira-share' && k !== 'm69-data').map(k => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });
@@ -226,3 +226,16 @@ self.addEventListener('periodicsync', e => {
   if(e.tag!=='mira-brief') return;
   e.waitUntil((async()=>{ const g=await mkDigest(), l=['ru','tg','en'].includes(g.lang)?g.lang:'ru'; try{ await fetch(MK_API+'/api/mk/warm?l='+l,{cache:'no-store'}); }catch(_){} })());
 });
+
+/* v69: «Рынок дня» ночью сам (Android, установленное приложение, если система разрешила фоновое обновление).
+   Приложение кладёт в кэш m69-data, с какими id и языком спрашивать выпуск; здесь — только запрос и сохранение ответа. */
+self.addEventListener('periodicsync', e => { if (e.tag === 'm69-today') e.waitUntil(m69Today()); });
+async function m69Today() {
+  try {
+    const c = await caches.open('m69-data'); const r = await c.match('/__m69/cfg'); if (!r) return;
+    const cfg = await r.json(); if (!cfg || !cfg.body || !cfg.body.id) return;
+    const res = await fetch(MK_API + '/api/mk/today', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ id: cfg.body.id, lang: cfg.body.lang || 'ru' }) });
+    if (!res.ok) return; const j = await res.json().catch(() => null);
+    if (j && j.summary) await c.put('/__m69/today', new Response(JSON.stringify({ at: Date.now(), lang: cfg.body.lang || 'ru', j }), { headers: { 'content-type': 'application/json' } }));
+  } catch (e) {}
+}
