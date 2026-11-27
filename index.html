@@ -6870,6 +6870,85 @@ html.m66-sft header .title small{white-space:normal!important; overflow:visible!
 html.m59 #view-loans>.section-h{flex-wrap:wrap!important; row-gap:calc(var(--k)*6px);}
 html.m59 #view-loans>.section-h h2{min-width:0;}
 @media (max-width:26.5em){ html.m59 #myBanksH2 .m65-ic{display:none;} }
+/* ===================== v67: «всё обо всём» ===================== */
+/* прогнозы */
+.m67-out{padding:calc(var(--k)*12px) calc(var(--k)*14px); border-radius:calc(var(--k)*16px); background:var(--surface); border:1px solid var(--line); margin-bottom:calc(var(--k)*10px); min-width:0;}
+.m67-out h5{margin:calc(var(--k)*8px) 0 calc(var(--k)*6px); font-size:calc(var(--k)*15px); line-height:1.3; text-wrap:balance; overflow-wrap:anywhere;}
+.m67-out p{margin:0 0 calc(var(--k)*6px); overflow-wrap:anywhere;}
+.m67-out .m67-ar{font-family:var(--font-num); font-weight:800;}
+.m67-out.up .m67-ar{color:var(--m-leaf,var(--brand));} .m67-out.down .m67-ar{color:var(--danger);}
+.m67-oa{background:var(--brand-weak); color:var(--brand-ink); font-weight:700;}
+.m67-cf.high{color:var(--m-leaf,var(--brand)); font-weight:700;} .m67-cf.low{color:var(--warn); font-weight:700;}
+.m67-who{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; color:var(--muted); font-size:calc(var(--k)*13px);}
+.m67-who svg{flex:none; margin-top:2px;}
+/* настроение денег по частям */
+.m67-mp{margin:-2px 0 calc(var(--k)*10px); border-radius:calc(var(--k)*14px); background:var(--surface); border:1px solid var(--line); padding:0 calc(var(--k)*12px);}
+.m67-mp>summary{display:flex; align-items:center; gap:calc(var(--k)*6px); min-height:calc(var(--k)*44px); cursor:pointer; font-weight:700; font-size:calc(var(--k)*14px); list-style:none;}
+.m67-mp>summary::-webkit-details-marker{display:none;}
+.m67-mp>summary em{font-style:normal; font-family:var(--font-num); color:var(--muted); font-weight:600;}
+.m67-mp ul{list-style:none; margin:0; padding:0 0 calc(var(--k)*10px);}
+.m67-mp li{display:grid; grid-template-columns:minmax(0,7.2em) minmax(0,1fr) 2.2em; gap:calc(var(--k)*4px) calc(var(--k)*8px); align-items:center; padding:calc(var(--k)*5px) 0;}
+.m67-mp li b{font-size:calc(var(--k)*13px); font-weight:600; overflow-wrap:anywhere;}
+.m67-mp li em{font-style:normal; font-family:var(--font-num); font-weight:700; text-align:right; font-variant-numeric:tabular-nums;}
+.m67-mp li small{grid-column:1 / -1; color:var(--muted); font-size:calc(var(--k)*12px); overflow-wrap:anywhere;}
+.m67-mb{display:block; height:calc(var(--k)*8px); border-radius:calc(var(--k)*6px); background:var(--track); overflow:hidden;}
+.m67-mb i{display:block; height:100%; width:var(--p); border-radius:calc(var(--k)*6px); background:var(--muted);}
+.m67-mp li.f .m67-mb i{background:var(--danger);} .m67-mp li.c .m67-mb i{background:var(--gold);} .m67-mp li.g .m67-mb i{background:var(--m-leaf,var(--brand));}
+@media (prefers-reduced-motion:no-preference){ .m67-mp[open] .m67-mb i{animation:m67Grow .5s ease-out both; animation-delay:calc(var(--i)*40ms);} }
+@keyframes m67Grow{from{width:0;}}
+/* товары всех отраслей */
+.m67-sf{margin-bottom:calc(var(--k)*6px);} .m67-sf .chip em{font-style:normal; font-family:var(--font-num); opacity:.7; margin-left:2px;}
+.m67-gn{margin:2px 0 calc(var(--k)*8px); color:var(--muted); font-size:calc(var(--k)*12px);}
+.m67-cut{margin-top:calc(var(--k)*-4px);}
+.m67-tags{margin:calc(var(--k)*6px) 0;}
+.m67-rk.low{color:var(--m-leaf,var(--brand)); font-weight:700;} .m67-rk.mid{color:var(--gold); font-weight:700;} .m67-rk.high{color:var(--danger); font-weight:700;}
+.m67-sc{font-family:var(--font-num);} .m67-sc.hi{color:var(--m-leaf,var(--brand));} .m67-sc.lo{color:var(--danger);}
+.m67-nc,.m67-cn,.m67-ob{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; color:var(--muted); font-size:calc(var(--k)*13px);}
+.m67-nc svg,.m67-cn svg,.m67-ob svg{flex:none; margin-top:2px;}
+/* команда: что ещё проверить */
+.m67-more{display:flex; gap:calc(var(--k)*8px); align-items:flex-start; margin:calc(var(--k)*8px) 0 0; padding:calc(var(--k)*10px) calc(var(--k)*12px); border-radius:calc(var(--k)*14px); background:var(--surface-2,var(--surface)); border:1px dashed var(--line); font-size:calc(var(--k)*14px); overflow-wrap:anywhere;}
+.m67-more svg{flex:none; margin-top:2px;}
+/* формула дня: расчёт */
+.m67-fx{margin-top:calc(var(--k)*10px); border-top:1px dashed var(--line); padding-top:calc(var(--k)*4px);}
+.m67-fx>summary{display:inline-flex; align-items:center; gap:calc(var(--k)*6px); min-height:calc(var(--k)*44px); cursor:pointer; font-weight:700; color:var(--brand); list-style:none;}
+.m67-fx>summary::-webkit-details-marker{display:none;}
+.m67-fx .lx-in{margin-top:calc(var(--k)*4px);} .m67-fx .lx-out b{font-family:var(--font-num); font-variant-numeric:tabular-nums;}
+.m67-fld{display:inline-block; margin:calc(var(--k)*6px) 0 0; padding:2px calc(var(--k)*8px); border-radius:calc(var(--k)*999px); background:var(--brand-weak); color:var(--brand-ink); font-size:calc(var(--k)*12px); font-weight:700;}
+.m67-free{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; margin:calc(var(--k)*8px) 0 0; font-size:calc(var(--k)*14px); overflow-wrap:anywhere;} .m67-free svg{flex:none; margin-top:calc(var(--k)*3px);}
+/* избранное */
+.m67-fw{position:relative; min-width:0;}
+.m67-fw>:first-child{padding-right:calc(var(--k)*44px);}
+.m67-fav{position:absolute; top:calc(var(--k)*4px); right:calc(var(--k)*4px); width:calc(var(--k)*44px); height:calc(var(--k)*44px); display:grid; place-items:center; border:0; background:transparent; color:var(--muted); font-size:calc(var(--k)*20px); line-height:1; border-radius:50%; cursor:pointer;}
+.m67-fav.on{color:var(--gold);}
+.m67-fav:focus-visible{outline:2px solid var(--brand); outline-offset:-2px;}
+.m67-fc.on{background:var(--gold); color:#1A1033; border-color:transparent;}
+/* опыт дня */
+.m67-exp{padding:calc(var(--k)*12px) calc(var(--k)*14px); border-radius:calc(var(--k)*16px); background:var(--surface); border:1px solid var(--line); min-width:0;}
+.m67-exp p{margin:calc(var(--k)*6px) 0; overflow-wrap:anywhere;}
+.m67-eq{display:block; margin:calc(var(--k)*6px) 0 calc(var(--k)*4px); font-size:calc(var(--k)*16px); line-height:1.3; text-wrap:balance; overflow-wrap:anywhere;}
+.m67-ab{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:calc(var(--k)*8px); margin:calc(var(--k)*10px) 0 calc(var(--k)*6px);}
+@media (max-width:21.5em){ .m67-ab{grid-template-columns:minmax(0,1fr);} }
+.m67-op{display:flex; flex-direction:column; align-items:flex-start; gap:calc(var(--k)*4px); min-height:calc(var(--k)*112px); padding:calc(var(--k)*10px) calc(var(--k)*12px); border-radius:calc(var(--k)*14px); border:1.5px solid var(--line); background:var(--surface-2,var(--surface)); color:inherit; font:inherit; text-align:left; cursor:pointer; min-width:0;}
+.m67-op:disabled{cursor:default; opacity:1;}
+.m67-op em{font-style:normal; font-weight:800; font-size:calc(var(--k)*12px); width:calc(var(--k)*24px); height:calc(var(--k)*24px); display:grid; place-items:center; border-radius:50%; background:var(--brand-weak); color:var(--brand-ink);}
+.m67-op b{font-size:calc(var(--k)*15px); overflow-wrap:anywhere;} .m67-op span{font-size:calc(var(--k)*13px); color:var(--muted); overflow-wrap:anywhere;}
+.m67-op strong{margin-top:auto; font-family:var(--font-num); font-size:calc(var(--k)*22px); font-variant-numeric:tabular-nums;}
+.m67-op strong.q{color:var(--muted);}
+.m67-op:not(:disabled):hover,.m67-op:focus-visible{border-color:var(--brand); outline:none;}
+.m67-op.win{border-color:var(--m-leaf,var(--brand));} .m67-op.win strong{color:var(--m-leaf,var(--brand));}
+.m67-op.lose strong{color:var(--muted);}
+.m67-op.me{box-shadow:inset 0 0 0 2px var(--brand);}
+.m67-pb{display:block; width:100%; height:calc(var(--k)*8px); border-radius:calc(var(--k)*6px); background:var(--track); overflow:hidden; margin-top:auto;}
+.m67-pb+strong{margin-top:2px;}
+.m67-pb u{display:block; height:100%; width:var(--p); border-radius:calc(var(--k)*6px); background:var(--muted);}
+.m67-op.win .m67-pb u{background:var(--m-leaf,var(--brand));}
+@media (prefers-reduced-motion:no-preference){ .m67-exp.open .m67-pb u{animation:m67Grow .6s ease-out both;} }
+.m67-ev{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; font-size:calc(var(--k)*14px);} .m67-ev svg{flex:none; margin-top:2px;}
+.m67-ev.ok{color:var(--m-leaf,var(--brand));} .m67-ev.no{color:var(--warn);}
+.m67-lim{display:flex; gap:calc(var(--k)*6px); align-items:flex-start; padding:calc(var(--k)*8px) calc(var(--k)*10px); border-radius:calc(var(--k)*12px); background:var(--warn-weak,var(--surface-2)); font-size:calc(var(--k)*14px);} .m67-lim svg{flex:none; margin-top:2px;}
+.m67-exp h5{margin:calc(var(--k)*10px) 0 calc(var(--k)*4px); font-size:calc(var(--k)*14px);}
+.m67-er:focus{outline:none;}
+.m67-fw>.m67-exp{padding-right:calc(var(--k)*14px);} .m67-fw>.m67-exp .m67-eq{padding-right:calc(var(--k)*36px);}
 /* <</v44 css>> */
 
 
@@ -19865,7 +19944,7 @@ function hbCmpHTML(a){ const {C,cap,capE,re,H,G,S,S0v,stISO,t,cat,c}=a, P=C.cmp|
         ${tr('end',ivUsd(S.ex.end),ivUsd(B.ex.end))}${tr('prof',ivUsd(S.ex.prof),ivUsd(B.ex.prof))}${tr('rev',ivUsd(S.ex.rev),ivUsd(B.ex.rev))}${tr('pm',pm(S.ex),pm(B.ex))}${G?tr('goal',gm(S.ex),gm(B.ex)):''}</tbody></table></div>
       ${hbChartHTML('hb-cmpch',{ex:S.ex.pts,b:B.ex.pts},{H,st:stISO,label:L.hbCmpT,nm:{ex:L.hbCmpA,b:L.hbCmpB}})}
       <div class="bp-acts two"><button type="button" class="btn btn-ghost" data-hbcmp="swap">${ico('repeat',16)} ${L.hbCmpSwap}</button><button type="button" class="btn btn-ghost" data-hbcmp="off">${ico('close',16)} ${L.hbCmpOff}</button></div></section>`; }
-function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=IV_CATS.includes(C.cat)?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, h0=Math.round(+C.h), H=h0>=1&&h0<=120?h0:12;
+function hbCalcHTML(){ const h=hbSt(), C=h.calc, cap=+C.cap>0?+C.cap:Math.round(ivCapUSD()||20000), cat=(IV_CATS.includes(C.cat)||(typeof m67CatOk==='function'&&m67CatOk(C.cat)))?C.cat:(ivP().cat||'kids'), c=IV_C.includes(C.c)?C.c:'CN', re=[100,70,50].includes(+C.re)?+C.re:100, h0=Math.round(+C.h), H=h0>=1&&h0<=120?h0:12;
   C.cap=cap; C.cat=cat; C.c=c; C.re=re; C.h=H; C.lv=(C.lv||[]).filter(k=>HB_LV.includes(k)&&!(k==='re'&&re>=100)); C.ch=C.ch||{};
   const gon=C.gx==='own'||HB_GX.includes(+C.gx), gk=HB_GK.includes(C.gk)?C.gk:'cap', G=gon?hbGoal(C,cap):null;
   const S0b=ivCapMUSD(), mk0=ivDef(cat).mk[Math.max(0,IV_C.indexOf(c))], O=hbOpts(C,S0b.v,mk0), reE=O.re!=null?1:re/100, capE=Math.max(100,cap-O.setup);
@@ -29502,6 +29581,361 @@ function m66AllRow(){ try{ const v=document.getElementById('moreView'); if(!v) r
 document.addEventListener('click',e=>{ const b=e.target&&e.target.closest?e.target.closest('[data-m66all]'):null; if(!b) return; e.preventDefault();
   lsSet('m66all',b.getAttribute('data-m66all')==='1'?'1':'0'); try{ m64More(); }catch(_){} try{ render(); }catch(_){} try{ const nb=document.querySelector('#m66All .m66-allb'); if(nb) nb.focus(); }catch(_){} });
 try{ m64More(); }catch(e){}
+/* ===================== v67: «всё обо всём» — строки (27.11.2026) ===================== */
+const M67S={
+ru:{
+  all:'Все', goodsLead:'Товары всех отраслей: наценка, как быстро уходит, оценка и риск. Выберите отрасль — или смотрите всё сразу.',
+  goodsN:n=>'В списке: '+n, mapTop:(n,a)=>'На карте — '+n+' самых выгодных из '+a, onlyBase:'Пока в списке только встроенные виды товара. Остальные отрасли появятся со следующим выпуском.',
+  score:'Оценка', risk:{low:'риск низкий',mid:'риск средний',high:'риск высокий'}, start:'На первую партию', whole:(p,u)=>'Опт: '+p+' $ за '+u, whole1:p=>'Опт: '+p+' $', where:'Где брать', act:'Что сделать', season:'Сезон',
+  calcNote:'Цена закупки и вес единицы — оценка Сифры из выпуска, одна для всех стран. Уточните у поставщика и поправьте, если знаете точнее.',
+  noCalc:'Для расчёта нужны цена и вес единицы — в этом выпуске их нет. Нажмите «В план»: там расчёт для любого товара.',
+  sect:{wear:'Одежда и обувь',home:'Дом и быт',tech:'Электроника',appl:'Бытовая техника',tools:'Инструменты',auto:'Авто',build:'Стройка и ремонт',furn:'Мебель',food:'Еда и напитки',beauty:'Красота',health:'Здоровье',kids:'Детям',sport:'Спорт и отдых',agro:'Село и сад',office:'Учёба и офис',gifts:'Подарки',energy:'Энергия',raw:'Сырьё и материалы',pets:'Животные',other:'Другое'},
+  lens:{econ:'Экономика',geo:'Страны и политика',retail:'Розница и спрос',crypto:'Криптовалюты',law:'Законы и налоги',med:'Медицина и фарма',auto:'Авто и транспорт',build:'Стройка',agro:'Сельское хозяйство',tourism:'Туризм и услуги',media:'Медиа и реклама',jobs:'Работа и зарплаты',other:'Другое'},
+  outT:'Прогнозы', outLead:'Что ждут те, кто отвечает за цифры. Прогноз — не обещание: смотрите, кто его дал и насколько с ним согласны другие.', outWho:'Кто', outMean:'Что это значит', outAct:'Что сделать заранее',
+  hor:{month:'на месяц',quarter:'на квартал',year:'на год',years:'на несколько лет'}, conf:{high:'прогнозы сходятся',mid:'мнения близки',low:'мнения расходятся'},
+  outA:{economy:'Экономика',rates:'Ставки',inflation:'Цены',fx:'Валюты',commodities:'Сырьё',energy:'Энергия',trade:'Торговля',markets:'Рынки',tech:'Технологии',ai:'ИИ',health:'Медицина',realty:'Недвижимость',jobs:'Работа',agro:'Урожай и еда',other:'Другое'},
+  moodT:'Из чего складывается', moodK:{stocks:'Акции',bonds:'Облигации',gold:'Золото',oil:'Нефть и сырьё',fx:'Валюты',crypto:'Криптовалюты',credit:'Кредиты',consumer:'Покупатели',business:'Бизнес'},
+  kind:{agro:'Село',build:'Стройка',auto:'Авто',tourism:'Туризм',energy:'Энергия',logistics:'Доставка',health:'Медицина',edu:'Образование',finance:'Финансы',media:'Медиа',ai:'ИИ',deeptech:'Новые технологии'},
+  bArea:{economy:'Экономика',finance:'Финансы',companies:'Компании',health:'Медицина',energy:'Энергия',industry:'Производство',politics:'Политика',jobs:'Работа',science:'Наука',ai:'ИИ'},
+  nArea:{economy:'Экономика',industry:'Производство',agro:'Село',build:'Стройка',energy:'Энергия',health:'Медицина',edu:'Образование',transport:'Транспорт',jobs:'Работа',it:'ИТ'},
+  wArea:{economy:'Экономика',health:'Медицина',science:'Наука',industry:'Производство',policy:'Политика',energy:'Энергия',ai:'ИИ'},
+  tArea:{economy:'экономика',ai:'ИИ',health:'медицина',industry:'производство',auto:'авто',build:'стройка',energy:'энергия',agro:'село',edu:'образование',travel:'туризм',media:'медиа'},
+  lArea:{economy:'экономика',investing:'вложения',law:'законы',tech:'технологии',negotiation:'переговоры',production:'производство',ai:'ИИ'},
+  roleFuture:'Тренды, технологии, прогнозы', roleReg:'Реестры, выставки и таможня', roleSmall:'Малые фабрики, которые знают единицы', more:'Что ещё стоит проверить',
+  track:{finance:'Финансы и вложения',build:'Стройка и недвижимость',auto:'Авто и транспорт',edu:'Образование',tourism:'Туризм',logistics:'Доставка и склад',media:'Медиа и блог',ai:'ИИ в деле'},
+  topic:{finance:'Личные финансы и вложения',economy:'Как читать экономику',banks:'Как работать с банком',build:'Стройка и ремонт',realty:'Недвижимость',auto:'Авто-бизнес',health:'Клиника и аптека',edu:'Курсы и обучение',tourism:'Туризм и гостиницы',logistics:'Доставка и склад',production:'Производство',services:'Услуги',wholesale:'Опт и дистрибуция',import:'Импорт товара',marketing:'Цифровой маркетинг',data:'Цифры и аналитика',product:'Как создать продукт',trends:'Как находить тренды',bigtech:'Заработок рядом с бигтехом',creator:'Блог и личный бренд',energy:'Энергия как дело',freelance:'Фриланс на весь мир',career:'Карьера и доход'},
+  biz:{it:'IT и приложения',medtech:'Клиника и медтех',finance:'Финансы и вложения',startup:'Стартап',build:'Стройка',auto:'Автосервис',agro:'Село',hotel:'Гостиница',edu:'Курсы',logistics:'Перевозки',realty:'Аренда жилья'},
+  fav:'В избранное', favOn:'В избранном', favT:'Избранное', favEmpty:'Здесь будет то, что вы отметите звёздочкой: уроки, секреты, формулы, книги.', favAdd:'Добавлено в избранное', favDel:'Убрано из избранного',
+  fxTry:'Посчитать на своих цифрах', fxRes:'Получается', uniFree:'Пройти бесплатно', field:'Область',
+  F:{
+    realrate:['Доходность после инфляции','Настоящая доходность = (1 + Ставка) ÷ (1 + Инфляция) − 1','Сколько вклад или вложение приносит на самом деле, когда цены растут.','Если ставка ниже инфляции, деньги дешевеют, даже когда сумма на счёте растёт.'],
+    runway:['Запас денег','Запас, месяцев = Деньги ÷ (Расходы в месяц − Доходы в месяц)','На сколько месяцев хватит денег при нынешних тратах.','Искать деньги или резать расходы начинают, когда осталось шесть месяцев, а не два.'],
+    clinic:['Загрузка и выручка кабинета','Загрузка = Приёмы ÷ Возможные приёмы; Выручка = Приёмы × Чек × Дни','Насколько занят кабинет врача, мастера или специалиста и сколько он приносит за месяц.','Сначала поднимают загрузку — запись, напоминания, повторные визиты — и только потом цену.'],
+    device:['Окупаемость оборудования','Срок = Цена ÷ (Услуг в месяц × (Цена услуги − Расходник) − Постоянные расходы)','За сколько месяцев вернётся цена аппарата, станка или машины.','Считайте с осторожным числом услуг: первые полгода загрузка обычно ниже плана.'],
+    sqm:['Цена квадратного метра','Себестоимость м² = (Материалы + Работа + Накладные) ÷ Площадь; Цена = Себестоимость ÷ (1 − Маржа)','Во что вам обходится квадратный метр ремонта или стройки и какую цену назвать клиенту.','Закладывайте запас на материалы: к концу объекта их почти всегда докупают.'],
+    bay:['Выручка поста автосервиса','Выручка = Нормо-часы в день × Цена часа × Дни × Загрузка','Сколько приносит один пост за месяц и сколько остаётся после оплаты мастеру.','Пост зарабатывает, только когда на нём машина: запись по времени поднимает загрузку сильнее скидок.'],
+    yield:['Прибыль с гектара','Прибыль = Гектары × Урожай × Цена − Гектары × Затраты на гектар','Сколько принесёт поле и во что обходится одна тонна урожая.','Себестоимость тонны показывает, до какой цены можно опускаться при продаже без убытка.'],
+    revpar:['Загрузка гостиницы и выручка на номер','Загрузка = Проданные ночи ÷ (Номера × Дни); Выручка на номер = Выручка ÷ (Номера × Дни)','Насколько заняты номера и сколько каждый приносит в день, даже когда пустует.','Смотрите на выручку на номер, а не только на загрузку: полная гостиница по низкой цене может зарабатывать меньше.'],
+    course:['Экономика учебной группы','Прибыль = Ученики × (Цена − Расходы на ученика) − Расходы на группу','Сколько приносит одна группа и сколько учеников нужно, чтобы не уйти в минус.','Набирайте группу с запасом: до конца курса обычно доходят не все.'],
+    km:['Себестоимость рейса и километра','Себестоимость рейса = Топливо + Водитель + Прочее; километра = Себестоимость рейса ÷ Километры','Во что обходятся рейс и километр пути — чтобы не брать заказы в убыток.','Обратный путь без груза удваивает себестоимость: ищите попутный груз заранее.'],
+    rent:['Доходность аренды','Доходность = (Аренда × 12 × (1 − Простой) − Расходы в год) ÷ Цена','Сколько процентов в год приносит квартира или помещение, сданное в аренду.','Сравните со ставкой по вкладу: если вклад даёт больше, аренда выгодна только при росте цены жилья.']},
+  In:{zrate:'Ставка в год, %',zinfl:'Инфляция в год, %',zcash:'Денег на счёте',zburn:'Расходы в месяц',zrevm:'Доходы в месяц',zslots:'Приёмов в день можно',zvisits:'Приёмов в день на деле',zchk:'Средний чек',zdays:'Рабочих дней в месяце',zcostm:'Расходы в месяц',zdev:'Цена оборудования',zn:'Услуг в месяц',zfee:'Цена одной услуги',zcons:'Расходники на одну услугу',zfix:'Постоянные расходы в месяц',zmat:'Материалы на объект',zwork:'Работа на объект',zover:'Накладные на объект',zarea:'Площадь, м²',zmg:'Маржа, %',zhrs:'Нормо-часов в день',zhr:'Цена нормо-часа',zload:'Загрузка, %',zshare:'Доля мастера, %',zha:'Гектаров',zt:'Урожай, тонн с гектара',zpt:'Цена за тонну',zcha:'Затраты на гектар',zrooms:'Номеров',zsold:'Продано ночей за месяц',zrevh:'Выручка за номера',zdm:'Дней в месяце',zpc:'Цена курса',zst:'Учеников в группе',zvar:'Расходы на ученика',zgrp:'Расходы на группу',zl100:'Топливо, л на 100 км',zfuel:'Цена литра',zkm:'Километров в рейсе',zdrv:'Водителю за рейс',zoth:'Прочее за рейс',zfr:'Плата за рейс',zprice:'Цена жилья',zrent:'Аренда в месяц',zcy:'Расходы в год',zvac:'Простой без жильцов, %'},
+  Out:{zreal:'Настоящая доходность',zrw:'Денег хватит на',zloadp:'Загрузка',zrevmo:'Выручка в месяц',zleft:'Остаётся в месяц',zprofm:'Прибыль в месяц',zpb:'Окупится за',zcm:'Себестоимость м²',zpm:'Цена м² для клиента',zpr:'Прибыль с объекта',zrevb:'Выручка поста в месяц',zleftb:'Остаётся сервису',zrevf:'Выручка с поля',zproff:'Прибыль с поля',zct:'Себестоимость тонны',zocc:'Загрузка',zadr:'Средняя цена ночи',zrp:'Выручка на номер в день',zcp:'Прибыль с группы',zbe:'Учеников для нуля',zckm:'Себестоимость километра',zctr:'Себестоимость рейса',zptr:'Прибыль с рейса',zyld:'Доходность в год',zpby:'Окупится за'}
+},
+tg:{
+  all:'Ҳама', goodsLead:'Молҳои ҳамаи соҳаҳо: иловапулӣ, чӣ қадар зуд фурӯхта мешавад, баҳо ва хатар. Соҳаро интихоб кунед — ё ҳамаро якҷоя бинед.',
+  goodsN:n=>'Дар рӯйхат: '+n, mapTop:(n,a)=>'Дар харита — '+n+' фоиданоктарин аз '+a, onlyBase:'Ҳоло дар рӯйхат танҳо намудҳои дарунсохти мол ҳастанд. Соҳаҳои дигар бо барориши оянда пайдо мешаванд.',
+  score:'Баҳо', risk:{low:'хатар кам',mid:'хатар миёна',high:'хатар баланд'}, start:'Барои партияи аввал', whole:(p,u)=>'Яклухт: '+p+' $ барои '+u, whole1:p=>'Яклухт: '+p+' $', where:'Аз куҷо гирифтан', act:'Чӣ кор кардан', season:'Мавсим',
+  calcNote:'Нархи харид ва вазни як дона — баҳои Сифра аз барориш, барои ҳамаи кишварҳо якхела. Аз таъминкунанда дақиқ кунед ва ислоҳ намоед.',
+  noCalc:'Барои ҳисоб нарх ва вазни як дона лозим аст — дар ин барориш онҳо нестанд. «Ба нақша»-ро пахш кунед: он ҷо ҳисоб барои ҳар мол ҳаст.',
+  sect:{wear:'Либос ва пойафзол',home:'Хона ва рӯзгор',tech:'Электроника',appl:'Техникаи маишӣ',tools:'Асбобҳо',auto:'Мошин',build:'Сохтмон ва таъмир',furn:'Мебел',food:'Хӯрок ва нӯшокӣ',beauty:'Зебоӣ',health:'Саломатӣ',kids:'Барои кӯдакон',sport:'Варзиш ва истироҳат',agro:'Деҳа ва боғ',office:'Таҳсил ва офис',gifts:'Туҳфаҳо',energy:'Энергия',raw:'Ашёи хом',pets:'Ҳайвонот',other:'Дигар'},
+  lens:{econ:'Иқтисод',geo:'Кишварҳо ва сиёсат',retail:'Чаканафурӯшӣ ва талабот',crypto:'Криптоасъор',law:'Қонунҳо ва андозҳо',med:'Тиб ва дорусозӣ',auto:'Мошин ва нақлиёт',build:'Сохтмон',agro:'Кишоварзӣ',tourism:'Сайёҳӣ ва хизматрасонӣ',media:'ВАО ва реклама',jobs:'Кор ва маош',other:'Дигар'},
+  outT:'Пешгӯиҳо', outLead:'Онҳое, ки барои рақамҳо ҷавобгаранд, чиро интизоранд. Пешгӯӣ ваъда нест: бинед, ки кӣ гуфтааст ва дигарон то чӣ андоза розӣ ҳастанд.', outWho:'Кӣ', outMean:'Ин чӣ маъно дорад', outAct:'Пешакӣ чӣ кор кардан',
+  hor:{month:'барои як моҳ',quarter:'барои як семоҳа',year:'барои як сол',years:'барои чанд сол'}, conf:{high:'пешгӯиҳо якхелаанд',mid:'ақидаҳо наздиканд',low:'ақидаҳо гуногунанд'},
+  outA:{economy:'Иқтисод',rates:'Меъёрҳо',inflation:'Нархҳо',fx:'Асъор',commodities:'Ашёи хом',energy:'Энергия',trade:'Савдо',markets:'Бозорҳо',tech:'Технология',ai:'Ҳуши сунъӣ',health:'Тиб',realty:'Амволи ғайриманқул',jobs:'Кор',agro:'Ҳосил ва хӯрок',other:'Дигар'},
+  moodT:'Аз чӣ иборат аст', moodK:{stocks:'Саҳмияҳо',bonds:'Вомбаргҳо',gold:'Тилло',oil:'Нафт ва ашёи хом',fx:'Асъор',crypto:'Криптоасъор',credit:'Қарзҳо',consumer:'Харидорон',business:'Тиҷорат'},
+  kind:{agro:'Кишоварзӣ',build:'Сохтмон',auto:'Мошин',tourism:'Сайёҳӣ',energy:'Энергия',logistics:'Расонидан',health:'Тиб',edu:'Маориф',finance:'Молия',media:'ВАО',ai:'Ҳуши сунъӣ',deeptech:'Технологияҳои нав'},
+  bArea:{economy:'Иқтисод',finance:'Молия',companies:'Ширкатҳо',health:'Тиб',energy:'Энергия',industry:'Истеҳсолот',politics:'Сиёсат',jobs:'Кор',science:'Илм',ai:'Ҳуши сунъӣ'},
+  nArea:{economy:'Иқтисод',industry:'Истеҳсолот',agro:'Кишоварзӣ',build:'Сохтмон',energy:'Энергия',health:'Тиб',edu:'Маориф',transport:'Нақлиёт',jobs:'Кор',it:'ТИ'},
+  wArea:{economy:'Иқтисод',health:'Тиб',science:'Илм',industry:'Истеҳсолот',policy:'Сиёсат',energy:'Энергия',ai:'Ҳуши сунъӣ'},
+  tArea:{economy:'иқтисод',ai:'ҳуши сунъӣ',health:'тиб',industry:'истеҳсолот',auto:'мошин',build:'сохтмон',energy:'энергия',agro:'кишоварзӣ',edu:'маориф',travel:'сайёҳӣ',media:'ВАО'},
+  lArea:{economy:'иқтисод',investing:'сармоягузорӣ',law:'қонунҳо',tech:'технология',negotiation:'гуфтушунид',production:'истеҳсолот',ai:'ҳуши сунъӣ'},
+  roleFuture:'Трендҳо, технология, пешгӯиҳо', roleReg:'Феҳристҳо, намоишгоҳҳо ва гумрук', roleSmall:'Фабрикаҳои хурд, ки каме медонанд', more:'Боз чиро санҷидан лозим аст',
+  track:{finance:'Молия ва сармоягузорӣ',build:'Сохтмон ва амвол',auto:'Мошин ва нақлиёт',edu:'Маориф',tourism:'Сайёҳӣ',logistics:'Расонидан ва анбор',media:'ВАО ва блог',ai:'Ҳуши сунъӣ дар кор'},
+  topic:{finance:'Молияи шахсӣ ва сармоягузорӣ',economy:'Иқтисодро чӣ гуна хондан',banks:'Бо бонк чӣ гуна кор кардан',build:'Сохтмон ва таъмир',realty:'Амволи ғайриманқул',auto:'Тиҷорати мошин',health:'Клиника ва дорухона',edu:'Курсҳо ва таълим',tourism:'Сайёҳӣ ва меҳмонхонаҳо',logistics:'Расонидан ва анбор',production:'Истеҳсолот',services:'Хизматрасонӣ',wholesale:'Яклухтфурӯшӣ ва тақсимот',import:'Воридоти мол',marketing:'Маркетинги рақамӣ',data:'Рақамҳо ва таҳлил',product:'Маҳсулотро чӣ гуна сохтан',trends:'Трендҳоро чӣ гуна ёфтан',bigtech:'Даромад дар паҳлӯи бигтех',creator:'Блог ва бренди шахсӣ',energy:'Энергия ҳамчун кор',freelance:'Фриланс барои тамоми ҷаҳон',career:'Мансаб ва даромад'},
+  biz:{it:'IT ва барномаҳо',medtech:'Клиника ва медтех',finance:'Молия ва сармоягузорӣ',startup:'Стартап',build:'Сохтмон',auto:'Автосервис',agro:'Кишоварзӣ',hotel:'Меҳмонхона',edu:'Курсҳо',logistics:'Боркашонӣ',realty:'Иҷораи манзил'},
+  fav:'Ба интихобшудаҳо', favOn:'Дар интихобшудаҳо', favT:'Интихобшудаҳо', favEmpty:'Ин ҷо он чизе мешавад, ки шумо бо ситорача қайд мекунед: дарсҳо, сирҳо, формулаҳо, китобҳо.', favAdd:'Ба интихобшудаҳо илова шуд', favDel:'Аз интихобшудаҳо гирифта шуд',
+  fxTry:'Бо рақамҳои худ ҳисоб кардан', fxRes:'Мебарояд', uniFree:'Ройгон гузаштан', field:'Соҳа',
+  F:{
+    realrate:['Даромаднокӣ пас аз таваррум','Даромаднокии ҳақиқӣ = (1 + Меъёр) ÷ (1 + Таваррум) − 1','Вақте нархҳо боло мераванд, амонат ё сармоя дар асл чӣ қадар меорад.','Агар меъёр аз таваррум паст бошад, пул қувваи харидро гум мекунад, ҳарчанд маблағ дар ҳисоб меафзояд.'],
+    runway:['Захираи пул','Захира, моҳ = Пул ÷ (Хароҷот дар як моҳ − Даромад дар як моҳ)','Бо хароҷоти ҳозира пул барои чанд моҳ мерасад.','Ҷустуҷӯи пул ё кам кардани хароҷотро вақте оғоз мекунанд, ки шаш моҳ мондааст, на ду.'],
+    clinic:['Бандӣ ва даромади кабинет','Бандӣ = Қабулҳо ÷ Қабулҳои имконпазир; Даромад = Қабулҳо × Чек × Рӯзҳо','Кабинети духтур, усто ё мутахассис то чӣ андоза банд аст ва дар як моҳ чӣ қадар меорад.','Аввал бандиро боло мебаранд — сабти ном, ёдоварӣ, ташрифи такрорӣ — ва танҳо баъд нархро.'],
+    device:['Пӯшиши таҷҳизот','Мӯҳлат = Нарх ÷ (Хизматҳо дар як моҳ × (Нархи хизмат − Масолеҳ) − Хароҷоти доимӣ)','Нархи дастгоҳ, станок ё мошин дар чанд моҳ бармегардад.','Бо шумораи эҳтиёткоронаи хизматҳо ҳисоб кунед: шаш моҳи аввал бандӣ одатан аз нақша паст аст.'],
+    sqm:['Нархи як метри мураббаъ','Арзиши аслии м² = (Масолеҳ + Кор + Хароҷоти иловагӣ) ÷ Масоҳат; Нарх = Арзиши аслӣ ÷ (1 − Маржа)','Як метри мураббаи таъмир ё сохтмон ба шумо чӣ қадар меафтад ва ба муштарӣ кадом нархро гуфтан лозим.','Барои масолеҳ захира гузоред: то охири объект қариб ҳамеша боз мехаранд.'],
+    bay:['Даромади як ҷойи автосервис','Даромад = Меъёр-соатҳо дар як рӯз × Нархи соат × Рӯзҳо × Бандӣ','Як ҷойи корӣ дар як моҳ чӣ қадар меорад ва пас аз пардохт ба усто чӣ қадар мемонад.','Ҷой танҳо вақте пул меорад, ки дар он мошин бошад: сабти ном аз рӯи вақт бандиро аз тахфиф беҳтар боло мебарад.'],
+    yield:['Фоида аз як гектар','Фоида = Гектарҳо × Ҳосил × Нарх − Гектарҳо × Хароҷот барои гектар','Замин чӣ қадар меорад ва як тонна ҳосил ба чанд пул меафтад.','Арзиши аслии як тонна нишон медиҳад, ки то кадом нарх бе зарар фуромадан мумкин аст.'],
+    revpar:['Бандии меҳмонхона ва даромад аз як ҳуҷра','Бандӣ = Шабҳои фурӯхташуда ÷ (Ҳуҷраҳо × Рӯзҳо); Даромад аз ҳуҷра = Даромад ÷ (Ҳуҷраҳо × Рӯзҳо)','Ҳуҷраҳо то чӣ андоза банданд ва ҳар кадом дар як рӯз чӣ қадар меорад, ҳатто вақте холӣ аст.','Ба даромад аз як ҳуҷра нигаред, на танҳо ба бандӣ: меҳмонхонаи пур бо нархи паст метавонад камтар кор кунад.'],
+    course:['Иқтисоди гурӯҳи таълимӣ','Фоида = Шогирдон × (Нарх − Хароҷот барои шогирд) − Хароҷоти гурӯҳ','Як гурӯҳ чӣ қадар меорад ва чанд шогирд лозим аст, то зарар набошад.','Гурӯҳро бо захира ҷамъ кунед: то охири курс одатан ҳама намерасанд.'],
+    km:['Арзиши аслии сафар ва километр','Арзиши сафар = Сӯзишворӣ + Ронанда + Дигар; километр = Арзиши сафар ÷ Километрҳо','Сафар ва як километр роҳ ба чанд пул меафтад — то фармоишҳои зарароварро нагиред.','Роҳи бозгашт бе бор арзишро ду баробар мекунад: бори ҳамроҳро пешакӣ ҷӯед.'],
+    rent:['Даромаднокии иҷора','Даромаднокӣ = (Иҷора × 12 × (1 − Бекорӣ) − Хароҷоти солона) ÷ Нарх','Манзил ё бинои ба иҷора додашуда дар як сол чанд фоиз меорад.','Бо меъёри амонат муқоиса кунед: агар амонат зиёдтар диҳад, иҷора танҳо ҳангоми болоравии нархи манзил фоиданок аст.']},
+  In:{zrate:'Меъёр дар як сол, %',zinfl:'Таваррум дар як сол, %',zcash:'Пул дар ҳисоб',zburn:'Хароҷот дар як моҳ',zrevm:'Даромад дар як моҳ',zslots:'Қабул дар як рӯз имкон дорад',zvisits:'Қабул дар як рӯз дар амал',zchk:'Чеки миёна',zdays:'Рӯзҳои корӣ дар як моҳ',zcostm:'Хароҷот дар як моҳ',zdev:'Нархи таҷҳизот',zn:'Хизматҳо дар як моҳ',zfee:'Нархи як хизмат',zcons:'Масолеҳ барои як хизмат',zfix:'Хароҷоти доимӣ дар як моҳ',zmat:'Масолеҳ барои объект',zwork:'Кор барои объект',zover:'Хароҷоти иловагӣ барои объект',zarea:'Масоҳат, м²',zmg:'Маржа, %',zhrs:'Меъёр-соат дар як рӯз',zhr:'Нархи меъёр-соат',zload:'Бандӣ, %',zshare:'Ҳиссаи усто, %',zha:'Гектар',zt:'Ҳосил, тонна аз гектар',zpt:'Нархи як тонна',zcha:'Хароҷот барои гектар',zrooms:'Ҳуҷраҳо',zsold:'Шабҳои фурӯхташуда дар як моҳ',zrevh:'Даромад аз ҳуҷраҳо',zdm:'Рӯзҳо дар як моҳ',zpc:'Нархи курс',zst:'Шогирдон дар гурӯҳ',zvar:'Хароҷот барои як шогирд',zgrp:'Хароҷоти гурӯҳ',zl100:'Сӯзишворӣ, л барои 100 км',zfuel:'Нархи як литр',zkm:'Километр дар як сафар',zdrv:'Ба ронанда барои сафар',zoth:'Дигар хароҷоти сафар',zfr:'Пардохт барои сафар',zprice:'Нархи манзил',zrent:'Иҷора дар як моҳ',zcy:'Хароҷот дар як сол',zvac:'Бекорӣ бе иҷоранишин, %'},
+  Out:{zreal:'Даромаднокии ҳақиқӣ',zrw:'Пул мерасад барои',zloadp:'Бандӣ',zrevmo:'Даромад дар як моҳ',zleft:'Дар як моҳ мемонад',zprofm:'Фоида дар як моҳ',zpb:'Мепӯшад дар',zcm:'Арзиши аслии м²',zpm:'Нархи м² барои муштарӣ',zpr:'Фоида аз объект',zrevb:'Даромади ҷой дар як моҳ',zleftb:'Ба сервис мемонад',zrevf:'Даромад аз замин',zproff:'Фоида аз замин',zct:'Арзиши аслии як тонна',zocc:'Бандӣ',zadr:'Нархи миёнаи як шаб',zrp:'Даромад аз ҳуҷра дар як рӯз',zcp:'Фоида аз гурӯҳ',zbe:'Шогирдон барои сифр',zckm:'Арзиши аслии километр',zctr:'Арзиши аслии сафар',zptr:'Фоида аз сафар',zyld:'Даромаднокӣ дар як сол',zpby:'Мепӯшад дар'}
+},
+en:{
+  all:'All', goodsLead:'Goods from every industry: markup, how fast they sell, score and risk. Pick an industry — or see everything at once.',
+  goodsN:n=>'In the list: '+n, mapTop:(n,a)=>'The map shows the '+n+' best of '+a, onlyBase:'For now the list has only the built-in product types. Other industries will appear with the next briefing.',
+  score:'Score', risk:{low:'low risk',mid:'medium risk',high:'high risk'}, start:'First batch', whole:(p,u)=>'Wholesale: $'+p+' per '+u, whole1:p=>'Wholesale: $'+p, where:'Where to buy', act:'What to do', season:'Season',
+  calcNote:'Purchase price and unit weight are Sifra’s estimate from the briefing, the same for every country. Check with a supplier and adjust if you know better.',
+  noCalc:'The calculation needs a unit price and weight — this briefing has none. Tap “To plan”: it works for any product.',
+  sect:{wear:'Clothing & shoes',home:'Home',tech:'Electronics',appl:'Appliances',tools:'Tools',auto:'Auto',build:'Building & repair',furn:'Furniture',food:'Food & drinks',beauty:'Beauty',health:'Health',kids:'Kids',sport:'Sport & leisure',agro:'Farm & garden',office:'Study & office',gifts:'Gifts',energy:'Energy',raw:'Raw materials',pets:'Pets',other:'Other'},
+  lens:{econ:'Economy',geo:'Countries & politics',retail:'Retail & demand',crypto:'Crypto',law:'Laws & taxes',med:'Medicine & pharma',auto:'Auto & transport',build:'Construction',agro:'Agriculture',tourism:'Tourism & services',media:'Media & ads',jobs:'Jobs & pay',other:'Other'},
+  outT:'Forecasts', outLead:'What the people responsible for the numbers expect. A forecast is not a promise: look at who made it and how much others agree.', outWho:'Who', outMean:'What it means', outAct:'What to do ahead',
+  hor:{month:'one month',quarter:'one quarter',year:'one year',years:'several years'}, conf:{high:'forecasters agree',mid:'views are close',low:'views differ'},
+  outA:{economy:'Economy',rates:'Rates',inflation:'Prices',fx:'Currencies',commodities:'Commodities',energy:'Energy',trade:'Trade',markets:'Markets',tech:'Technology',ai:'AI',health:'Medicine',realty:'Property',jobs:'Jobs',agro:'Crops & food',other:'Other'},
+  moodT:'What it is made of', moodK:{stocks:'Stocks',bonds:'Bonds',gold:'Gold',oil:'Oil & commodities',fx:'Currencies',crypto:'Crypto',credit:'Credit',consumer:'Shoppers',business:'Business'},
+  kind:{agro:'Farming',build:'Construction',auto:'Auto',tourism:'Tourism',energy:'Energy',logistics:'Delivery',health:'Healthcare',edu:'Education',finance:'Finance',media:'Media',ai:'AI',deeptech:'Deep tech'},
+  bArea:{economy:'Economy',finance:'Finance',companies:'Companies',health:'Medicine',energy:'Energy',industry:'Industry',politics:'Politics',jobs:'Jobs',science:'Science',ai:'AI'},
+  nArea:{economy:'Economy',industry:'Industry',agro:'Farming',build:'Construction',energy:'Energy',health:'Medicine',edu:'Education',transport:'Transport',jobs:'Jobs',it:'IT'},
+  wArea:{economy:'Economy',health:'Medicine',science:'Science',industry:'Industry',policy:'Policy',energy:'Energy',ai:'AI'},
+  tArea:{economy:'economy',ai:'AI',health:'medicine',industry:'industry',auto:'auto',build:'construction',energy:'energy',agro:'farming',edu:'education',travel:'tourism',media:'media'},
+  lArea:{economy:'economy',investing:'investing',law:'law',tech:'technology',negotiation:'negotiation',production:'production',ai:'AI'},
+  roleFuture:'Trends, technology, forecasts', roleReg:'Registries, trade fairs and customs', roleSmall:'Small factories few people know', more:'What else is worth checking',
+  track:{finance:'Finance & investing',build:'Construction & property',auto:'Auto & transport',edu:'Education',tourism:'Tourism',logistics:'Delivery & warehouse',media:'Media & blogging',ai:'AI at work'},
+  topic:{finance:'Personal finance & investing',economy:'How to read the economy',banks:'Working with a bank',build:'Construction & repair',realty:'Property',auto:'Auto business',health:'Clinic & pharmacy',edu:'Courses & teaching',tourism:'Tourism & hotels',logistics:'Delivery & warehouse',production:'Manufacturing',services:'Services',wholesale:'Wholesale & distribution',import:'Importing goods',marketing:'Digital marketing',data:'Numbers & analytics',product:'Building a product',trends:'Spotting trends',bigtech:'Earning next to big tech',creator:'Blog & personal brand',energy:'Energy as a business',freelance:'Freelancing worldwide',career:'Career & income'},
+  biz:{it:'IT & apps',medtech:'Clinic & medtech',finance:'Finance & investing',startup:'Startup',build:'Construction',auto:'Auto repair',agro:'Farming',hotel:'Hotel',edu:'Courses',logistics:'Trucking',realty:'Rental property'},
+  fav:'Add to favourites', favOn:'In favourites', favT:'Favourites', favEmpty:'Whatever you star will appear here: lessons, secrets, formulas, books.', favAdd:'Added to favourites', favDel:'Removed from favourites',
+  fxTry:'Try your own numbers', fxRes:'Result', uniFree:'Take it for free', field:'Field',
+  F:{
+    realrate:['Return after inflation','Real return = (1 + Rate) ÷ (1 + Inflation) − 1','What a deposit or investment really earns while prices rise.','If the rate is below inflation, money loses buying power even as the balance grows.'],
+    runway:['Cash runway','Runway, months = Cash ÷ (Monthly costs − Monthly income)','How many months the money lasts at today’s spending.','People start raising money or cutting costs with six months left, not two.'],
+    clinic:['Room utilisation and revenue','Utilisation = Visits ÷ Possible visits; Revenue = Visits × Average bill × Days','How busy a doctor’s, craftsman’s or specialist’s room is and what it brings in a month.','Raise utilisation first — booking, reminders, repeat visits — and only then the price.'],
+    device:['Equipment payback','Payback = Price ÷ (Services per month × (Service price − Consumables) − Fixed costs)','How many months it takes to earn back a device, machine or vehicle.','Use a cautious number of services: in the first six months utilisation is usually below plan.'],
+    sqm:['Price per square metre','Cost per m² = (Materials + Labour + Overheads) ÷ Area; Price = Cost ÷ (1 − Margin)','What a square metre of repair or construction costs you and what price to quote.','Keep a reserve for materials: by the end of a job more is almost always bought.'],
+    bay:['Service bay revenue','Revenue = Billable hours per day × Hourly rate × Days × Utilisation','What one bay earns in a month and what is left after paying the mechanic.','A bay earns only with a car on it: booking by time lifts utilisation more than discounts do.'],
+    yield:['Profit per hectare','Profit = Hectares × Yield × Price − Hectares × Cost per hectare','What the field earns and what one tonne of crop costs to grow.','Cost per tonne shows how low you can go on price without a loss.'],
+    revpar:['Hotel occupancy and revenue per room','Occupancy = Nights sold ÷ (Rooms × Days); Revenue per room = Revenue ÷ (Rooms × Days)','How full the rooms are and what each earns per day, even when empty.','Watch revenue per room, not occupancy alone: a full hotel at a low price can earn less.'],
+    course:['Course group economics','Profit = Students × (Price − Cost per student) − Group costs','What one group earns and how many students you need to break even.','Recruit with a margin: not everyone stays to the end of a course.'],
+    km:['Cost per trip and per kilometre','Trip cost = Fuel + Driver + Other; per km = Trip cost ÷ Kilometres','What a trip and a kilometre cost — so you do not take loss-making orders.','An empty return leg doubles the cost: look for a backhaul in advance.'],
+    rent:['Rental yield','Yield = (Rent × 12 × (1 − Vacancy) − Yearly costs) ÷ Price','What percentage a year a rented flat or premises brings.','Compare with a deposit rate: if the deposit pays more, renting out only wins when property prices rise.']},
+  In:{zrate:'Rate per year, %',zinfl:'Inflation per year, %',zcash:'Cash in the account',zburn:'Monthly costs',zrevm:'Monthly income',zslots:'Possible visits per day',zvisits:'Actual visits per day',zchk:'Average bill',zdays:'Working days per month',zcostm:'Monthly costs',zdev:'Equipment price',zn:'Services per month',zfee:'Price of one service',zcons:'Consumables per service',zfix:'Fixed costs per month',zmat:'Materials for the job',zwork:'Labour for the job',zover:'Overheads for the job',zarea:'Area, m²',zmg:'Margin, %',zhrs:'Billable hours per day',zhr:'Hourly rate',zload:'Utilisation, %',zshare:'Mechanic’s share, %',zha:'Hectares',zt:'Yield, tonnes per hectare',zpt:'Price per tonne',zcha:'Cost per hectare',zrooms:'Rooms',zsold:'Nights sold per month',zrevh:'Room revenue',zdm:'Days in the month',zpc:'Course price',zst:'Students in the group',zvar:'Cost per student',zgrp:'Group costs',zl100:'Fuel, l per 100 km',zfuel:'Price per litre',zkm:'Kilometres per trip',zdrv:'Driver pay per trip',zoth:'Other costs per trip',zfr:'Trip fee',zprice:'Property price',zrent:'Rent per month',zcy:'Costs per year',zvac:'Vacancy, %'},
+  Out:{zreal:'Real return',zrw:'Money lasts',zloadp:'Utilisation',zrevmo:'Revenue per month',zleft:'Left per month',zprofm:'Profit per month',zpb:'Pays back in',zcm:'Cost per m²',zpm:'Price per m² for the client',zpr:'Profit from the job',zrevb:'Bay revenue per month',zleftb:'Left for the service',zrevf:'Field revenue',zproff:'Field profit',zct:'Cost per tonne',zocc:'Occupancy',zadr:'Average night price',zrp:'Revenue per room per day',zcp:'Profit per group',zbe:'Students to break even',zckm:'Cost per kilometre',zctr:'Cost per trip',zptr:'Profit per trip',zyld:'Yield per year',zpby:'Pays back in'}
+}};
+function m67T(){ return M67S[lang]||M67S.ru; }
+/* подписи — в общие словари приложения, чтобы новые ключи с сервера показывались словами, а не кодами */
+try{ for(const k of ['ru','tg','en']){ const S=M67S[k], d=D[k], put=(name,o)=>{ try{ if(d[name]&&typeof d[name]==='object') Object.assign(d[name],o); else d[name]=Object.assign({},o); }catch(e){} };
+    put('m48Lens',S.lens); put('hbKindN',S.kind); put('f34BArea',S.bArea); put('f32NArea',S.nArea); put('f32WArea',S.wArea); put('hbArea',S.tArea); put('hbAreaL',S.lArea);
+    put('m50Roles',{future:S.roleFuture}); put('m51Roles',{reg:S.roleReg,small:S.roleSmall}); put('hbTrackN',S.track); put('hbTopicN',S.topic); put('lxBiz',S.biz); put('lxF',S.F); put('lxIn',S.In); put('lxOut',S.Out);
+    try{ if(d.f34Nav&&typeof d.f34Nav==='object') d.f34Nav.outlook=S.outT; }catch(e){} } }catch(e){ console.error('m67 strings',e); }
+
+/* «Опыт дня» — настоящий эксперимент как выбор из двух вариантов */
+Object.assign(M67S.ru,{expT:'Опыт дня',expLead:'Настоящий эксперимент. Сначала угадайте — потом смотрите цифры.',expAsk:'Как вы думаете, что сработало лучше? Нажмите на вариант.',expYes:'Вы угадали',expNo:'На деле лучше сработал другой вариант',expWho:'Кто проводил',expWhy:'Почему так',expLimit:'Когда это не работает',expApply:'Как применить у себя',expA:'А',expB:'Б',expHide:'Спрятать ответ',libExp:'Опыты'});
+Object.assign(M67S.tg,{expT:'Таҷрибаи рӯз',expLead:'Таҷрибаи ҳақиқӣ. Аввал тахмин кунед — баъд рақамҳоро бинед.',expAsk:'Ба фикри шумо, кадомаш беҳтар кор кард? Вариантро пахш кунед.',expYes:'Шумо ёфтед',expNo:'Дар асл варианти дигар беҳтар кор кард',expWho:'Кӣ гузаронд',expWhy:'Чаро чунин шуд',expLimit:'Кай ин кор намекунад',expApply:'Дар кори худ чӣ гуна истифода бурдан',expA:'А',expB:'Б',expHide:'Ҷавобро пинҳон кардан',libExp:'Таҷрибаҳо'});
+Object.assign(M67S.en,{expT:'Experiment of the day',expLead:'A real experiment. Guess first — then see the numbers.',expAsk:'Which do you think worked better? Tap an option.',expYes:'You got it',expNo:'In fact the other option worked better',expWho:'Who ran it',expWhy:'Why',expLimit:'When it does not work',expApply:'How to use it yourself',expA:'A',expB:'B',expHide:'Hide the answer',libExp:'Experiments'});
+try{ for(const k of ['ru','tg','en']){ if(D[k].hbLibK&&typeof D[k].hbLibK==='object') D[k].hbLibK.experiments=M67S[k].libExp; } }catch(e){}
+/* ===================== v67: «всё обо всём» (27.11.2026) =====================
+   Анушер (27.11): вид дела — только справка в самой Mira; Сифра, её агенты, «Рынок дня», «Куда вложить», идеи, учёба — анализируют всё, без границ по темам.
+   Что здесь:
+   1) вид дела и места продаж на сервер не отправляются вообще;
+   2) «Товары» — все отрасли (сервер 38: all_cats), отбор по отрасли, оценка, риск, сезон и «что сделать» у каждого товара; расчёт — для любого товара с ценой и весом;
+   3) сферы — 28 и своя сфера; раздел «Прогнозы»; настроение денег по частям; новые области идей, новостей, трендов;
+   4) команда агентов: новые исследователи (тренды и прогнозы; реестры и выставки; малые фабрики), строка «Что ещё стоит проверить»;
+   5) «Учиться»: избранное в библиотеке, формула дня с расчётом на своих цифрах, 11 новых формул и десять новых видов дела, новые темы и направления.
+   Старый сервер (до 38) — всё работает как раньше: новые части просто не приходят. */
+const M67={sect:'all', def:{}, favOn:false, cut:null};
+const m67Srv=()=>!!(typeof sfCaps!=='undefined'&&sfCaps&&+sfCaps.v>=38);
+
+/* ---------- 1. профиль: анализ не зависит от вида дела ---------- */
+try{ const _p67=m57Prof; m57Prof=function(){ const o=_p67.apply(this,arguments); try{ delete o.kind; delete o.markets; }catch(e){} return o; }; }catch(e){}
+
+/* ---------- 2. сферы, области, роли, темы ---------- */
+try{ for(const k of ['econ','geo','retail','crypto','law','med','auto','build','agro','tourism','media','jobs','other']) if(!M48_LENS.includes(k)) M48_LENS.push(k);
+  Object.assign(M48_LICO,{econ:'chart',geo:'flag',retail:'shop',crypto:'cash',law:'shield',med:'heart',auto:'truck',build:'home',agro:'leaf',tourism:'plane',media:'chat',jobs:'people',other:'star'}); }catch(e){}
+try{ for(const k of ['agro','build','auto','tourism','energy','logistics','health','edu','finance','media','ai','deeptech']) if(!HB_KINDS.includes(k)) HB_KINDS.push(k); }catch(e){}
+try{ const add=['economy','ai','health','industry','auto','build','energy','agro','edu','travel','media'].filter(k=>!M43_AREA.includes(k)); const i=M43_AREA.indexOf('other'); M43_AREA.splice(i>=0?i:M43_AREA.length,0,...add); }catch(e){}
+try{ for(const k of ['finance','build','auto','edu','tourism','logistics','media','ai']) if(!LD_TRACKS.includes(k)) LD_TRACKS.push(k); }catch(e){}
+const M67_TOPICS=['finance','economy','banks','build','realty','auto','health','edu','tourism','logistics','production','services','wholesale','import','marketing','data','product','trends','bigtech','creator','energy','freelance','career'];
+try{ Object.assign(HB_TICO,{finance:'piggy',economy:'chart',banks:'loans',build:'home',realty:'home',auto:'truck',health:'heart',edu:'doc',tourism:'plane',logistics:'truck',production:'gear',services:'check',wholesale:'folder',import:'globe',marketing:'chat',data:'stats',product:'sparkle',trends:'eye',bigtech:'zap',creator:'star',energy:'zap',freelance:'phone',career:'flag'}); }catch(e){}
+try{ Object.assign(M50_RICO,{future:'chart',reg:'doc',small:'eye'}); }catch(e){}
+/* то, чего старый сервер не знает (новые темы гайдов и новые исследователи), показываем только с сервером 38 */
+function m67Sync(){ try{ const on=m67Srv();
+    for(const k of M67_TOPICS){ const i=HB_TOPICS.indexOf(k); if(on&&i<0) HB_TOPICS.push(k); if(!on&&i>=0) HB_TOPICS.splice(i,1); }
+    const set=(arr,k,after,on2)=>{ if(!Array.isArray(arr)) return; const i=arr.indexOf(k); if(on2&&i<0){ const j=arr.indexOf(after); arr.splice(j>=0?j:arr.length,0,k); } if(!on2&&i>=0) arr.splice(i,1); };
+    set(M50_ROLES.goal,'future','now',on); if(M50_ROLES.mentor) set(M50_ROLES.mentor,'future','skills',on);
+    if(M50_ROLES.src){ set(M50_ROLES.src,'reg','price',on); set(M50_ROLES.src,'small','price',on); } }catch(e){} }
+m67Sync(); setTimeout(m67Sync,0);
+try{ const _cl67=sfCapsLoad; sfCapsLoad=function(){ const p=_cl67.apply(this,arguments); try{ if(p&&typeof p.then==='function') return p.then(c=>{ m67Sync(); return c; }); }catch(e){} return p; }; }catch(e){}
+
+/* ---------- 3. данные выпуска ---------- */
+try{ const _hs67=hbSave; hbSave=function(j){ const r=_hs67.apply(this,arguments); try{ const t=hbSt().today; if(t&&j&&typeof j==='object'){ const A=(a,n)=>(Array.isArray(a)?a:[]).filter(x=>x&&typeof x==='object').slice(0,n);
+      t.all_cats=A(j.all_cats,40).filter(x=>x.name&&+x.markup_pct>0);
+      t.lens=A(j.lens,40).filter(x=>x.title&&x.what&&M48_LENS.includes(x.lens)&&(x.lens!=='other'||x.sphere));
+      t.brief=A(j.brief,10).filter(x=>x.title&&x.what);
+      t.pulse=A(j.pulse,16).filter(x=>x.name&&x.value);
+      t.outlook=A(j.outlook,8).filter(x=>x.title&&x.what&&/^https?:\/\//.test(String(x.src||'')));
+      if(Array.isArray(j.trends)&&j.trends.length>(t.trends||[]).length) t.trends=A(j.trends,12);
+      try{ m48StoryRec(t); }catch(e){}
+      try{ m67Reg(); }catch(e){}
+      persist(); } }catch(e){ console.error('m67 save',e); } return r; }; }catch(e){}
+
+/* своя сфера: вместо «Другое» — её название */
+try{ const _it67=m48ItemHTML; m48ItemHTML=function(x){ let h=_it67.apply(this,arguments); try{ if(x&&x.lens==='other'&&x.sphere){ const a=esc(L.m48Lens.other)+'</i>', i=h.indexOf(a); if(i>=0) h=h.slice(0,i)+esc(hbTx(x.sphere,40))+'</i>'+h.slice(i+a.length); } }catch(e){} return h; }; }catch(e){}
+/* идея вне списка областей — со своим названием области */
+try{ const _ih67=hbIdeaHTML; hbIdeaHTML=function(x){ let h=_ih67.apply(this,arguments); try{ if(x&&x.kind==='other'&&x.field&&L.hbKindN&&L.hbKindN.other){ const a='>'+esc(L.hbKindN.other)+'<', i=h.indexOf(a); if(i>=0) h=h.slice(0,i)+'>'+esc(hbTx(x.field,40))+'<'+h.slice(i+a.length); } }catch(e){} return h; }; }catch(e){}
+
+/* ---------- 4. «Прогнозы» ---------- */
+function m67OutHTML(t){ const a=(t&&t.outlook)||[], T=m67T(); if(!a.length) return '';
+  return `<p class="bp-hint">${esc(T.outLead)}</p>`+a.map((x,i)=>`<article class="m67-out ${esc(['up','down'].includes(x.dir)?x.dir:'flat')}"><div class="lv-tags"><i class="m67-oa">${esc(T.outA[x.area]||T.outA.other)}</i>${T.hor[x.horizon]?`<i>${ico('clock',12)} ${esc(T.hor[x.horizon])}</i>`:''}${T.conf[x.conf]?`<i class="m67-cf ${esc(x.conf)}">${esc(T.conf[x.conf])}</i>`:''}${x.where?`<i>${esc(hbTx(x.where,60))}</i>`:''}</div>
+    <h5>${x.dir==='up'?'<span class="m67-ar" aria-hidden="true">↑</span> ':x.dir==='down'?'<span class="m67-ar" aria-hidden="true">↓</span> ':''}${esc(hbTx(x.title,100))}</h5><p>${esc(hbTx(x.what,300))}</p>
+    <p class="m67-who">${ico('people',13)}<span><b>${esc(T.outWho)}:</b> ${esc(hbTx(x.who,80))}</span></p>
+    ${x.mean?`<p class="f34-why"><b>${esc(T.outMean)}:</b> ${esc(hbTx(x.mean,260))}</p>`:''}${x.act?`<p class="f34-act">${ico('next',14)}<span><b>${esc(T.outAct)}:</b> ${esc(hbTx(x.act,200))}</span></p>`:''}${f34Ft('o:'+i,x.src)}</article>`).join(''); }
+try{ const _rq67=f34ResQ; f34ResQ=function(k){ const t=hbToday(), [a,b]=String(k).split(':'); if(t&&a==='o'){ const x=(t.outlook||[])[+b]; return x?L.f34Q.b({title:x.title,what:x.what+' — '+x.who,why:x.mean}):''; } return _rq67.apply(this,arguments); }; }catch(e){}
+try{ const _td67=f34TodayHTML; f34TodayHTML=function(t){ let h=_td67.apply(this,arguments); try{ const T=m67T(), sec=f34Sec('outlook',f34Head('outlook','chart',T.outT),m67OutHTML(t),'m67-os'); if(sec){
+      let i=h.indexOf('<section class="id-sec f34-s m48-cs0"'); if(i<0) i=h.indexOf('<section class="id-sec f34-s " id="hb-s-world"'); if(i<0) i=h.indexOf('<p class="note f34-how">'); if(i<0) i=h.length;
+      h=h.slice(0,i)+sec+h.slice(i);
+      const n=h.indexOf('class="chips f34-nav"'), e=n>=0?h.indexOf('</nav>',n):-1; if(e>=0){ const calB='data-hbjump="cal"', c=h.indexOf(calB,n), at=c>=0&&c<e?h.lastIndexOf('<button',c):e; h=h.slice(0,at)+`<button type="button" class="chip" data-hbjump="outlook">${esc(T.outT)}</button>`+h.slice(at); } } }catch(e){ console.error('m67 out',e); } return h; }; }catch(e){}
+
+/* ---------- 5. настроение денег — из чего складывается ---------- */
+try{ const _md67=m48MoodHTML; m48MoodHTML=function(m){ const h=_md67.apply(this,arguments); try{ const T=m67T(), a=(m&&Array.isArray(m.parts)?m.parts:[]).filter(x=>x&&T.moodK[x.k]&&Number.isFinite(+x.score)).slice(0,9); if(!h||a.length<3) return h;
+    const rows=a.map((x,i)=>{ const s=Math.max(0,Math.min(100,Math.round(+x.score))), c=s<40?'f':s<60?'c':'g'; return `<li class="${c}" style="--i:${i}"><b>${esc(T.moodK[x.k])}</b><span class="m67-mb"><i style="--p:${s}%"></i></span><em>${s}</em>${x.note?`<small>${esc(hbTx(x.note,140))}</small>`:''}</li>`; }).join('');
+    return h+`<details class="m67-mp"><summary>${ico('stats',14)} ${esc(T.moodT)} <em>${a.length}</em></summary><ul>${rows}</ul></details>`; }catch(e){ return h; } }; }catch(e){}
+
+/* ---------- 6. товары: все отрасли ---------- */
+const M67_SECT=['wear','home','tech','appl','tools','auto','build','furn','food','beauty','health','kids','sport','agro','office','gifts','energy','raw','pets','other'];
+const M67_SICO={wear:'👕',home:'🏠',tech:'📱',appl:'🔌',tools:'🛠️',auto:'🚗',build:'🧱',furn:'🛋️',food:'🥜',beauty:'💄',health:'🩺',kids:'🧸',sport:'⚽',agro:'🌱',office:'✏️',gifts:'🎁',energy:'🔋',raw:'🧵',pets:'🐾',other:'📦'};
+const M67_BASE={kids:'wear',teen:'wear',women:'wear',men:'wear',dress:'wear',shoes:'wear',bed:'home',hh:'home',acc:'gifts',toys:'kids',cosm:'beauty',elec:'tech',appl:'appl'};
+function m67Id(name){ let h=7; const s=String(name||'').toLowerCase(); for(let i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0; return 'g'+h.toString(36); }
+function m67Open(t){ return (t&&Array.isArray(t.all_cats)?t.all_cats:[]).filter(x=>x&&x.name&&+x.markup_pct>0); }
+try{ const _r67=hbRows; hbRows=function(t){ const rows=_r67.apply(this,arguments); try{ for(const r of rows) if(!r.sector) r.sector=r.isNew?'other':(M67_BASE[r.id]||'other');
+      const have=new Set(rows.map(r=>String(r.name).toLowerCase())), def={};
+      for(const x of m67Open(t)){ const nm=hbTx(x.name,60), lk=nm.toLowerCase(); if(!nm||have.has(lk)) continue; have.add(lk);
+        const id=m67Id(nm), sec=M67_SECT.includes(x.sector)?x.sector:'other', can=+x.buy_usd>0&&+x.unit_kg>0, m=+x.sell_months>0?+x.sell_months:3;
+        if(can){ def[id]={p:+x.buy_usd,w:+x.unit_kg,mk:+x.markup_pct,m,from:x.best_from||''}; try{ D[lang]['whC_'+id]=nm; WH_CIC[id]=M67_SICO[sec]; }catch(e){} }
+        rows.push({id,name:nm,ico:M67_SICO[sec],mk:+x.markup_pct,m,live:true,isNew:!can,isAll:true,can,sector:sec,sectorName:sec==='other'?hbTx(x.sector_name,40):'',demand:['hot','cold'].includes(x.demand)?x.demand:'normal',trend:['up','down'].includes(x.trend)?x.trend:'flat',
+          from:x.best_from||'',buy:0,note:hbTx(x.note,220),where:hbTx(x.where,80),start:+x.start_usd||0,src:/^https?:\/\//.test(String(x.src||''))?x.src:'',sc:x.score!=null&&x.score!==''&&Number.isFinite(+x.score)?+x.score:null,risk:['low','mid','high'].includes(x.risk)?x.risk:'',rn:hbTx(x.risk_note,180),season:hbTx(x.season,80),act:hbTx(x.act,180),buyUsd:+x.buy_usd||0,unit:hbTx(x.unit,16)}); }
+      M67.def=def; }catch(e){ console.error('m67 rows',e); } return rows; }; }catch(e){}
+function m67Reg(){ try{ hbRows(hbToday()); }catch(e){} }
+function m67CatOk(k){ if(M67.def&&M67.def[k]) return true; m67Reg(); return !!(M67.def&&M67.def[k]); }
+setTimeout(m67Reg,0);
+/* расчёт для товара из выпуска: цена и вес единицы — оценка Сифры, одна для всех стран; наценка — из выпуска */
+try{ const _d67=ivDef; ivDef=function(cat){ const d=M67.def&&M67.def[cat]; if(!d) return _d67.apply(this,arguments);
+    let f=1; try{ if(typeof hbMkF!=='undefined'&&hbMkF>0) f=hbMkF; }catch(e){} const mk=((1+d.mk/100)*f-1)*100;
+    return {p:IV_C.map(()=>d.p),src:IV_C.map(()=>'def'),mk:IV_C.map(()=>mk),base:d.mk,w:d.w,m:d.m}; }; }catch(e){}
+try{ const _c67=hbCalcHTML; hbCalcHTML=function(){ let h=_c67.apply(this,arguments); try{ const C=hbSt().calc; if(M67.def[C.cat]){ const i=h.indexOf('id="hb-s-det"'), j=i>=0?h.indexOf('</h3>',i):-1; if(j>=0) h=h.slice(0,j+5)+`<p class="m m67-cn">${ico('info',14)} <span>${esc(m67T().calcNote)}</span></p>`+h.slice(j+5); } }catch(e){} return h; }; }catch(e){}
+/* карта выгоды: у товаров из выпуска — их оценка и риск; выбранная отрасль; не больше 24 точек */
+try{ const _pt67=m43Pts; m43Pts=function(t){ let pts=_pt67.apply(this,arguments); try{ const src=new Map(hbRows(t).map(r=>[r.id,r]));
+      pts=pts.map(p=>{ const o=src.get(p.id); return o&&o.isAll?Object.assign({},p,{sc:o.sc,risk:o.risk,rn:o.rn,season:o.season,act:o.act}):p; });
+      if(M67.sect!=='all') pts=pts.filter(p=>p.sector===M67.sect); M67.cut=null;
+      if(pts.length>24){ const has=pts.some(p=>p.sc!=null), all=pts.length; pts=pts.slice().sort((p,q)=>m43Score(q,has)-m43Score(p,has)||q.yr-p.yr).slice(0,24); M67.cut={n:24,all}; } }catch(e){} return pts; }; }catch(e){}
+f34GoodsHTML=function(t){ const T=m67T(), h=hbSt(), all=hbSorted(t), cnt={}; all.forEach(r=>{ cnt[r.sector]=(cnt[r.sector]||0)+1; }); const ks=M67_SECT.filter(k=>cnt[k]); if(M67.sect!=='all'&&!cnt[M67.sect]) M67.sect='all';
+  const rows=M67.sect==='all'?all:all.filter(r=>r.sector===M67.sect), sort=h.sort||'mk', open=h.openRow, max=Math.max(1,...rows.map(r=>sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk));
+  const mine=new Set(); try{ for(const p of state.tprods||[]) if(p.dec==='buy'&&p.kind) mine.add(p.kind); for(const i of state.inv||[]) if(i.cat) mine.add(i.cat); }catch(e){}
+  const fm=v=>fx(v,Math.round(v*10)%10?1:0), val=r=>sort==='speed'?L.hbMo(fm(r.m)):sort==='year'?'+'+Math.round(hbYear(r))+'%':'+'+Math.round(r.mk)+'%', w=r=>Math.max(4,Math.round((sort==='speed'?1/r.m:sort==='year'?hbYear(r):r.mk)/max*100));
+  const canCalc=r=>r.isAll?!!r.can:!r.isNew;
+  const bars=rows.map(r=>`<button type="button" class="hb-bar ${r.live?'':'dim'} ${open===r.id?'on':''} ${mine.has(r.id)?'f34-mine':''}" data-hbrow="${esc(r.id)}" data-m67s="${esc(r.sector)}" aria-expanded="${open===r.id}"><span class="hb-bn">${r.ico} ${esc(r.name)}${r.isNew&&!r.isAll?` <em class="hb-new">${L.hbNew}</em>`:''}</span><span class="hb-bt"><i data-w="${w(r)}"></i></span><b>${esc(val(r))}</b><em class="hb-tr ${r.trend}">${r.trend==='up'?'↑':r.trend==='down'?'↓':'·'}</em></button>
+    ${open===r.id?`<div class="hb-det"><div class="id-nums"><div><small>${L.hbMkL}</small><b>+${Math.round(r.mk)}%</b></div><div><small>${L.hbSellL}</small><b>${esc(L.hbMo(fm(r.m)))}</b></div>${r.sc!=null?`<div><small>${esc(T.score)}</small><b class="m67-sc ${r.sc>=70?'hi':r.sc>=50?'mid':'lo'}">${Math.round(r.sc)}</b></div>`:''}${r.buy?`<div><small>${L.hbBuyL}</small><b>${r.buy>0?'+':''}${Math.round(r.buy)}%</b></div>`:''}${r.from?`<div><small>${L.hbBestL}</small><b>${HB_FLAG[r.from]||''} ${esc(L['cn_'+r.from]||L.hbCtry[r.from]||r.from)}</b></div>`:''}${r.start>0?`<div><small>${r.isAll?esc(T.start):L.hbStartL}</small><b>${esc(ivUsd(r.start))}</b></div>`:''}</div>
+      <div class="lv-tags m67-tags"><i>${esc(r.sector==='other'&&r.sectorName?r.sectorName:T.sect[r.sector]||T.sect.other)}</i>${r.risk?`<i class="m67-rk ${r.risk}">${esc(T.risk[r.risk])}</i>`:''}${r.buyUsd>0?`<i>${esc(r.unit?T.whole(fx(r.buyUsd,r.buyUsd<10?2:0),r.unit):T.whole1(fx(r.buyUsd,r.buyUsd<10?2:0)))}</i>`:''}</div>
+      <p>${esc(r.note||(r.live?'':L.hbNoLive))}${r.where?' · '+esc(r.where):''}</p>
+      ${r.act?`<p class="m43-act">${ico('next',14)}<span><b>${esc(T.act)}:</b> ${esc(r.act)}</span></p>`:''}${r.season||r.rn?`<p class="m43-sub">${r.season?`${ico('calendar',14)} ${esc(r.season)}`:''}${r.season&&r.rn?' · ':''}${r.rn?`<span class="rk ${r.risk||''}">${ico('warn',13)} ${esc(r.rn)}</span>`:''}</p>`:''}
+      ${r.src?`<a class="hb-src1" href="${esc(r.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}
+      ${r.isAll&&!r.can?`<p class="m m67-nc">${ico('info',14)} <span>${esc(T.noCalc)}</span></p>`:''}
+      <div class="bp-acts two">${canCalc(r)?`<button type="button" class="btn btn-ghost" data-hbcalc="${esc(r.id)}">${ico('cash',16)} ${L.hbCount}</button>`:''}<button type="button" class="btn btn-ghost" data-hbplan="row:${esc(r.id)}">${ico('doc',16)} ${L.hbToPlan}</button></div></div>`:''}`).join('');
+  const chip=(k,n,lab,ic)=>`<button type="button" class="chip ${M67.sect===k?'on':''}" data-m67sect="${k}" aria-pressed="${M67.sect===k}">${ic?`<span aria-hidden="true">${ic}</span> `:''}${esc(lab)} <em>${n}</em></button>`;
+  const chips=ks.length>1?`<div class="chips hb-scroll m67-sf" role="group" aria-label="${esc(L.hbBarsT)}">${chip('all',all.length,T.all)}${ks.map(k=>chip(k,cnt[k],T.sect[k],M67_SICO[k])).join('')}</div>`:'';
+  let map=''; try{ map=m43MapHTML(t); }catch(e){}
+  const cut=map&&M67.cut?`<p class="bp-hint m67-cut">${esc(T.mapTop(M67.cut.n,M67.cut.all))}</p>`:'';
+  const base=!all.some(r=>r.isAll)&&m67Srv()===false&&t?`<p class="bp-hint m67-ob">${ico('info',14)} ${esc(T.onlyBase)}</p>`:'';
+  return `<p class="bp-hint">${esc(T.goodsLead)}</p>${chips}<p class="m67-gn">${esc(T.goodsN(rows.length))}</p>${map}${cut}<div class="chips bp-wrap hb-sort" role="radiogroup">${['mk','speed','year'].map(k=>`<button type="button" class="chip ${sort===k?'on':''}" role="radio" aria-checked="${sort===k}" data-hbsort="${k}">${L.hbSortN[k]}</button>`).join('')}</div><div class="hb-bars">${bars}</div>${base}`; };
+function m67Today(){ try{ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m?m.scrollTop:0; hbPaneDraw('today'); if(m) m.scrollTop=y; }catch(e){} }
+
+/* ---------- 7. Сифра видит товары всех отраслей из выпуска ---------- */
+try{ const _cx67=sfCtx; sfCtx=function(){ const o=_cx67.apply(this,arguments); try{ const t=hbToday(), a=m67Open(t).slice().sort((x,y)=>(+y.score||0)-(+x.score||0)).slice(0,16).map(x=>({name:hbTx(x.name,60),sector:x.sector||'other',markup_pct:Math.round(+x.markup_pct),sell_months:+x.sell_months||null,score:x.score!=null?Math.round(+x.score):null,start_usd:+x.start_usd||null,from:x.best_from||''}));
+      if(a.length&&o&&typeof o==='object') o.market_all={day:t.day,note:'Товары разных отраслей из выпуска «Рынка дня» (score 0–100). Это пример, а не граница выбора.',goods:a}; }catch(e){} return o; }; }catch(e){}
+
+/* ---------- 8. команда агентов: что ещё стоит проверить ---------- */
+try{ const _pl67=m51PlanHTML; m51PlanHTML=function(e){ let h=_pl67.apply(this,arguments); try{ const mo=e&&e.plan&&e.plan.more; if(mo){ const a='<p class="m51-vd">', i=h.indexOf(a), j=i>=0?h.indexOf('</p>',i):-1; if(j>=0) h=h.slice(0,j+4)+`<p class="m67-more">${ico('eye',14)}<span><b>${esc(m67T().more)}:</b> ${esc(hbTx(mo,420))}</span></p>`+h.slice(j+4); } }catch(e2){} return h; }; }catch(e){}
+
+/* ---------- 9. «Учиться»: новые формулы ---------- */
+try{ for(const k of ['medtech','finance','startup','build','auto','agro','hotel','edu','logistics','realty']) if(!LX_BIZ.includes(k)) LX_BIZ.push(k);
+  const pw=Math.pow, F=[
+  {id:'realrate',cat:'special',biz:['finance'],in:[['zrate',14],['zinfl',8]],out:v=>[['zreal',v.zinfl>-100?((1+v.zrate/100)/(1+v.zinfl/100)-1)*100:NaN,'p']]},
+  {id:'runway',cat:'special',biz:['startup','it'],in:[['zcash',30000],['zburn',6000],['zrevm',2000]],out:v=>[['zrw',v.zburn>v.zrevm?v.zcash/(v.zburn-v.zrevm):NaN,'mo']]},
+  {id:'clinic',cat:'special',biz:['medtech','service'],in:[['zslots',16],['zvisits',11],['zchk',25],['zdays',24],['zcostm',4500]],out:v=>{ const r=v.zvisits*v.zchk*v.zdays; return [['zloadp',v.zslots>0?v.zvisits/v.zslots*100:NaN,'p'],['zrevmo',r,'m'],['zleft',r-v.zcostm,'m']]; }},
+  {id:'device',cat:'special',biz:['medtech','production'],in:[['zdev',40000],['zn',120],['zfee',30],['zcons',6],['zfix',800]],out:v=>{ const p=v.zn*(v.zfee-v.zcons)-v.zfix; return [['zprofm',p,'m'],['zpb',p>0?v.zdev/p:NaN,'mo']]; }},
+  {id:'sqm',cat:'special',biz:['build'],in:[['zmat',9000],['zwork',6000],['zover',2000],['zarea',80],['zmg',20]],out:v=>{ const c=v.zmat+v.zwork+v.zover, cm=v.zarea>0?c/v.zarea:NaN, pr=v.zmg<100?c/(1-v.zmg/100):NaN; return [['zcm',cm,'m'],['zpm',v.zarea>0?pr/v.zarea:NaN,'m'],['zpr',pr-c,'m']]; }},
+  {id:'bay',cat:'special',biz:['auto'],in:[['zhrs',8],['zhr',12],['zdays',26],['zload',65],['zshare',40]],out:v=>{ const r=v.zhrs*v.zhr*v.zdays*v.zload/100; return [['zrevb',r,'m'],['zleftb',r*(1-v.zshare/100),'m']]; }},
+  {id:'yield',cat:'special',biz:['agro'],in:[['zha',2],['zt',25],['zpt',180],['zcha',2600]],out:v=>{ const r=v.zha*v.zt*v.zpt; return [['zrevf',r,'m'],['zproff',r-v.zha*v.zcha,'m'],['zct',v.zt>0?v.zcha/v.zt:NaN,'m']]; }},
+  {id:'revpar',cat:'special',biz:['hotel'],in:[['zrooms',12],['zsold',230],['zrevh',9200],['zdm',30]],out:v=>{ const cap=v.zrooms*v.zdm; return [['zocc',cap>0?v.zsold/cap*100:NaN,'p'],['zadr',v.zsold>0?v.zrevh/v.zsold:NaN,'m'],['zrp',cap>0?v.zrevh/cap:NaN,'m']]; }},
+  {id:'course',cat:'special',biz:['edu','service'],in:[['zpc',120],['zst',25],['zvar',15],['zgrp',1200]],out:v=>[['zcp',v.zst*(v.zpc-v.zvar)-v.zgrp,'m'],['zbe',v.zpc>v.zvar?Math.ceil(v.zgrp/(v.zpc-v.zvar)):NaN,'n']]},
+  {id:'km',cat:'special',biz:['logistics'],in:[['zl100',28],['zfuel',0.9],['zkm',600],['zdrv',60],['zoth',40],['zfr',420]],out:v=>{ const c=v.zl100/100*v.zfuel*v.zkm+v.zdrv+v.zoth; return [['zckm',v.zkm>0?c/v.zkm:NaN,'m'],['zctr',c,'m'],['zptr',v.zfr-c,'m']]; }},
+  {id:'rent',cat:'special',biz:['realty','finance'],in:[['zprice',60000],['zrent',450],['zcy',600],['zvac',8]],out:v=>{ const n=v.zrent*12*(1-v.zvac/100)-v.zcy; return [['zyld',v.zprice>0?n/v.zprice*100:NaN,'p'],['zpby',n>0?v.zprice/n:NaN,'yr']]; }}];
+  for(const f of F) if(!LX_F.some(x=>x.id===f.id)) LX_F.push(f);
+  /* формулы, которые уже были (доход на вложения, сложный процент, цена клиента и другие), показываются и в новых видах дела */
+  const PR={roi:['finance','startup','realty'],compound:['finance'],rule72:['finance'],reserve:['finance','startup'],cac:['startup','medtech','edu','hotel'],ltv:['startup','medtech','edu'],romi:['startup','edu','hotel','medtech'],be:['startup','build','auto','agro','hotel','edu','logistics','medtech'],net:['build','auto','logistics','agro'],conv:['edu','hotel']};
+  for(const f of LX_F){ const add=PR[f.id]; if(add&&f.cat!=='special'){ const cur=Array.isArray(f.biz)?f.biz:[]; f.biz=cur.concat(add.filter(k=>!cur.includes(k))); } } }catch(e){ console.error('m67 formulas',e); }
+
+/* ---------- 10. формула дня: расчёт на своих цифрах (выражение разбирается своим разборщиком, без eval) ---------- */
+function m67Eval(expr,vars){ const src=String(expr||''); if(!src||src.length>160||!/^[a-z0-9_ .+\-*/()]+$/i.test(src)) return NaN;
+  const tk=src.match(/[a-z_][a-z0-9_]*|\d+(?:\.\d+)?|[+\-*/()]/gi); if(!tk||tk.join('')!==src.replace(/\s+/g,'')) return NaN; let i=0;
+  const prim=()=>{ const t=tk[i++]; if(t===undefined) throw 0; if(t==='('){ const v=sum(); if(tk[i++]!==')') throw 0; return v; } if(t==='-') return -prim(); if(t==='+') return prim();
+    if(/^\d/.test(t)) return parseFloat(t); if(/^[a-z_]/i.test(t)){ if(!Object.prototype.hasOwnProperty.call(vars,t)) throw 0; const v=+vars[t]; if(!Number.isFinite(v)) throw 0; return v; } throw 0; };
+  const mul=()=>{ let v=prim(); while(tk[i]==='*'||tk[i]==='/'){ const o=tk[i++], r=prim(); v=o==='*'?v*r:v/r; } return v; };
+  const sum=()=>{ let v=mul(); while(tk[i]==='+'||tk[i]==='-'){ const o=tk[i++], r=mul(); v=o==='+'?v+r:v-r; } return v; };
+  try{ const v=sum(); return i===tk.length&&Number.isFinite(v)?v:NaN; }catch(e){ return NaN; } }
+function m67FxOk(f){ const c=f&&f.calc; if(!c||typeof c!=='object'||!Array.isArray(c.vars)||c.vars.length<2||typeof c.expr!=='string') return null;
+  const vars=c.vars.filter(v=>v&&/^[a-z][a-z0-9_]{0,9}$/.test(String(v.k||''))&&Number.isFinite(+v.def)).slice(0,5); if(vars.length<2) return null; const o={}; vars.forEach(v=>o[v.k]=+v.def);
+  return Number.isFinite(m67Eval(c.expr,o))?{vars,expr:c.expr,out:hbTx(c.out,60),unit:['m','p','n','x','mo'].includes(c.unit)?c.unit:'n'}:null; }
+function m67FxFmt(v,u){ try{ return lxFmt(v,u==='n'?'':u); }catch(e){ return Number.isFinite(v)?String(Math.round(v*100)/100):'—'; } }
+function m67FxHTML(f){ const c=m67FxOk(f); if(!c) return ''; const T=m67T(), o={}; c.vars.forEach(v=>o[v.k]=+v.def); const id='m67fx'+m67Id(f.name||c.expr);
+  return `<details class="m67-fx" data-m67fx="${esc(encodeURIComponent(JSON.stringify({vars:c.vars.map(v=>v.k),expr:c.expr,unit:c.unit})))}"><summary>${ico('cash',14)} ${esc(T.fxTry)}</summary>
+    <div class="lx-in">${c.vars.map(v=>`<div class="field n"><label for="${id}-${v.k}">${esc(hbTx(v.label,40))}</label><input id="${id}-${v.k}" data-m67fxi="${v.k}" type="number" inputmode="decimal" step="any" value="${+v.def}"></div>`).join('')}</div>
+    <div class="id-nums lx-out" aria-live="polite"><div><small>${esc(c.out||T.fxRes)}</small><b data-m67fxo="1">${esc(m67FxFmt(m67Eval(c.expr,o),c.unit))}</b></div></div></details>`; }
+document.addEventListener('input',e=>{ const box=e.target.closest&&e.target.closest('.m67-fx'); if(!box) return; try{ const c=JSON.parse(decodeURIComponent(box.dataset.m67fx||'')), o={};
+    for(const k of c.vars){ const i=box.querySelector(`[data-m67fxi="${k}"]`), n=i?parseFloat(String(i.value).replace(',','.')):NaN; o[k]=Number.isFinite(n)?n:0; }
+    const out=box.querySelector('[data-m67fxo]'); if(out) out.textContent=m67FxFmt(m67Eval(c.expr,o),c.unit); }catch(e2){} });
+try{ const _px67=lxPackExtra; lxPackExtra=function(p){ let h=_px67.apply(this,arguments); try{ const f=p&&p.formula, T=m67T(); const exh=p&&p.experiment?m67ExpHTML(p.experiment):''; if(exh) h=bpSec('sparkle',T.expT,`<p class="bp-hint">${esc(T.expLead)}</p>`+exh,'m67-es')+h; if(f){ const fxh=m67FxHTML(f), tag=f.field?`<span class="m67-fld">${esc(hbTx(f.field,40))}</span>`:''; if(fxh||tag){ const a='<div class="lx-fd">', i=h.indexOf(a), j=i>=0?h.indexOf('</div>',i):-1; if(j>=0) h=h.slice(0,j)+tag+fxh+h.slice(j); } }
+      const u=p&&p.uni; if(u&&u.free){ const k=h.indexOf(esc(u.school)); const e2=k>=0?h.indexOf('</section>',k):-1; if(e2>=0) h=h.slice(0,e2)+`<p class="m67-free">${ico('external',14)}<span><b>${esc(T.uniFree)}:</b> ${esc(hbTx(u.free,120))}</span></p>`+h.slice(e2); } }catch(e){} return h; }; }catch(e){}
+
+/* ---------- 10б. «Опыт дня»: настоящий эксперимент как выбор из двух вариантов — сначала угадать, потом цифры ---------- */
+try{ if(!LD_LIBK.includes('experiments')) LD_LIBK.push('experiments'); }catch(e){}
+function m67ExpHTML(x){ if(!x||!x.a||!x.b||!x.title||!x.question) return ''; const T=m67T(), key=m67Id(x.title), st=hbSt(), pk=(st.exp67&&st.exp67[key])||'', shown=pk==='a'||pk==='b';
+  const va=+x.a.value, vb=+x.b.value, mx=Math.max(Math.abs(va)||0,Math.abs(vb)||0,1e-9), win=x.winner==='a'||x.winner==='b'?x.winner:(va>=vb?'a':'b'), u=hbTx(x.unit,8);
+  const fv=v=>fx(+v,Math.abs(+v)<10&&Math.round(+v*10)%10?1:0)+(u?(u==='%'?'%':' '+u):'');
+  const opt=(k,o,lab)=>`<button type="button" class="m67-op${shown?(k===win?' win':' lose'):''}${pk===k?' me':''}" data-m67pick="${k}"${shown?' disabled':''} aria-pressed="${pk===k}"><em>${esc(lab)}</em><b>${esc(hbTx(o.name,50))}</b>${o.what?`<span>${esc(hbTx(o.what,160))}</span>`:''}${shown?`<i class="m67-pb"><u style="--p:${Math.max(4,Math.round(Math.abs(+o.value)/mx*100))}%"></u></i><strong>${esc(fv(o.value))}</strong>`:`<strong class="q" aria-hidden="true">?</strong>`}</button>`;
+  return `<div class="m67-exp${shown?' open':''}" data-m67ex="${esc(encodeURIComponent(JSON.stringify(x)))}">${x.field?`<span class="m67-fld">${esc(hbTx(x.field,40))}</span>`:''}<b class="m67-eq">${esc(hbTx(x.question,200))}</b>${x.setup?`<p>${esc(hbTx(x.setup,320))}</p>`:''}
+    <div class="m67-ab">${opt('a',x.a,T.expA)}${opt('b',x.b,T.expB)}</div>
+    ${shown?`<div class="m67-er" aria-live="polite"><p class="m67-ev ${pk===win?'ok':'no'}">${ico(pk===win?'check':'info',16)}<span><b>${esc(pk===win?T.expYes:T.expNo)}.</b>${x.metric?' '+esc(hbTx(x.metric,90))+': '+esc(fv(va))+' — '+esc(fv(vb))+'.':''}</span></p><p>${esc(hbTx(x.result,320))}</p>
+      ${x.why?`<p class="f34-why"><b>${esc(T.expWhy)}:</b> ${esc(hbTx(x.why,300))}</p>`:''}${x.limit?`<p class="m67-lim">${ico('warn',14)}<span><b>${esc(T.expLimit)}:</b> ${esc(hbTx(x.limit,320))}</span></p>`:''}
+      ${(x.apply||[]).length?`<h5>${esc(T.expApply)}</h5><ol class="hb-steps">${x.apply.slice(0,3).map(s=>`<li><span>${esc(hbTx(s,200))}</span></li>`).join('')}</ol>`:''}
+      <p class="m67-who">${ico('people',13)}<span><b>${esc(T.expWho)}:</b> ${esc(hbTx(x.who,140))}</span></p>
+      <div class="f34-ft">${/^https?:\/\//.test(String(x.src||''))?`<a class="hb-src1" href="${esc(x.src)}" target="_blank" rel="noopener noreferrer">${ico('external',14)} ${L.hbSrc1}</a>`:''}<button type="button" class="gp-mini" data-m67pick="">${ico('repeat',14)} ${esc(T.expHide)}</button></div></div>`
+      :`<p class="bp-hint m67-ea">${esc(T.expAsk)}</p>`}</div>`; }
+function m67ExpPick(b){ const card=b.closest('.m67-exp'); if(!card) return; let x=null; try{ x=JSON.parse(decodeURIComponent(card.dataset.m67ex||'')); }catch(e){} if(!x) return;
+  const st=hbSt(); if(!st.exp67||typeof st.exp67!=='object'||Array.isArray(st.exp67)) st.exp67={}; const key=m67Id(x.title), v=b.dataset.m67pick;
+  if(v==='a'||v==='b') st.exp67[key]=v; else delete st.exp67[key]; const ks=Object.keys(st.exp67); if(ks.length>300) delete st.exp67[ks[0]]; persist();
+  const w=document.createElement('div'); w.innerHTML=m67ExpHTML(x); const n=w.firstElementChild; if(!n) return; card.replaceWith(n); try{ m40Vib(); }catch(e){}
+  try{ const f=n.querySelector(v?'.m67-er':'.m67-op'); if(f){ if(v) f.setAttribute('tabindex','-1'); f.focus({preventScroll:true}); } }catch(e){} }
+
+/* ---------- 11. избранное в библиотеке ---------- */
+function m67Favs(){ const h=hbSt(); if(!Array.isArray(h.fav67)) h.fav67=[]; return h.fav67; }
+function m67FavKey(kind,x){ return kind+':'+String((x&&(x.title||x.name||x.term||x.school||x.company||x.text||x.q||x.question))||'').toLowerCase().slice(0,80); }
+function m67FavHas(kind,x){ const k=m67FavKey(kind,x); return m67Favs().some(f=>f.key===k&&f.lang===lang); }
+function m67FavToggle(kind,x){ if(!x) return; const a=m67Favs(), k=m67FavKey(kind,x), i=a.findIndex(f=>f.key===k&&f.lang===lang), T=m67T();
+  if(i>=0){ a.splice(i,1); toast(T.favDel); } else { let c=null; try{ c=JSON.parse(JSON.stringify(x)); }catch(e){} if(!c) return; a.unshift({key:k,kind,lang,at:dkey(),x:c}); if(a.length>300) a.length=300; toast(T.favAdd); }
+  persist(); try{ m40Vib(); }catch(e){} }
+function m67ItemHTML(kind,x){ try{ if(kind==='secrets') return ldSecretHTML(x); if(kind==='methods') return ldMethodHTML(x); if(kind==='terms') return ldTermHTML(x); if(kind==='mistakes') return ldMistHTML(x);
+    if(kind==='experiments') return m67ExpHTML(x);
+    if(kind==='formulas') return `<div class="lx-fd hb-tip"><b>${esc(x.name||'')}</b><code>${esc(x.f||'')}</code><p>${esc(x.what||'')}</p>${x.example?`<small>${esc(x.example)}</small>`:''}${m67FxHTML(x)}</div>`;
+    if(kind==='unis') return `<div class="lx-ud hb-tip"><b>${esc(x.school||'')}</b>${x.course?`<small>${esc(x.course)}</small>`:''}<p>${esc(x.idea||'')}</p></div>`;
+    if(kind==='books') return `<div class="hb-tip"><b>${esc(x.title||'')}</b>${x.author?`<small>${esc(x.author)}</small>`:''}${(x.ideas||[]).length?`<ul class="id-ul">${x.ideas.slice(0,4).map(s=>`<li>${ico('check',14)}<span>${esc(s)}</span></li>`).join('')}</ul>`:''}${x.apply?`<p>${esc(x.apply)}</p>`:''}</div>`;
+    if(kind==='cases') return `<div class="hb-tip"><b>${esc(x.company||x.title||'')}</b><p>${esc(x.story||x.lesson||'')}</p>${x.lesson&&x.story?`<small>${esc(x.lesson)}</small>`:''}</div>`;
+    return `<div class="hb-tip"><b>${esc(x.title||'')}</b><p>${esc(x.lead||'')}</p>${(x.points||[]).length?`<ul class="id-ul">${x.points.slice(0,6).map(s=>`<li>${ico('check',14)}<span>${esc(s)}</span></li>`).join('')}</ul>`:''}</div>`; }catch(e){ return ''; } }
+function m67Star(kind,i,on){ const T=m67T(); return `<button type="button" class="m67-fav ${on?'on':''}" data-m67fav="${esc(kind)}:${i}" aria-pressed="${!!on}" aria-label="${esc(on?T.favOn:T.fav)}" title="${esc(on?T.favOn:T.fav)}">${on?'★':'☆'}</button>`; }
+try{ const _lb67=ldLibHTML; ldLibHTML=function(){ const h=_lb67.apply(this,arguments); try{ const T=m67T(), w=document.createElement('div'); w.innerHTML=h; const sec=w.querySelector('.hb-lib'); if(!sec) return h;
+      const favs=m67Favs().filter(f=>f.lang===lang); if(!favs.length) M67.favOn=false;
+      let chips=sec.querySelector('.chips'); const list=sec.querySelector('.hb-libl'); if(!chips&&!list&&!favs.length) return h;
+      if(!chips&&favs.length){ chips=document.createElement('div'); chips.className='chips hb-scroll'; const h4=sec.querySelector('h4'); if(h4) h4.after(chips); else sec.prepend(chips); }
+      const cur=chips&&chips.querySelector('.chip.on[data-hblib]'), kind=cur?cur.dataset.hblib:'';
+      if(chips){ const b=document.createElement('button'); b.type='button'; b.className='chip m67-fc'+(M67.favOn?' on':''); b.dataset.m67lib='fav'; b.innerHTML=`<span aria-hidden="true">★</span> ${esc(T.favT)} <small>${favs.length}</small>`; chips.prepend(b); if(M67.favOn) chips.querySelectorAll('.chip[data-hblib].on').forEach(c=>c.classList.remove('on')); }
+      if(M67.favOn){ let box=list; if(!box){ box=document.createElement('div'); box.className='hb-libl'; sec.appendChild(box); }
+        box.innerHTML=favs.length?favs.map((f,i)=>`<div class="m67-fw">${m67ItemHTML(f.kind,f.x)}${m67Star('fav',i,true)}</div>`).join(''):`<p class="bp-hint">${esc(T.favEmpty)}</p>`;
+        sec.querySelectorAll('[data-hblibmore]').forEach(b=>b.remove()); sec.querySelectorAll('p.bp-hint').forEach(p=>{ if(!box.contains(p)) p.remove(); }); }
+      else if(list&&kind){ const arr=(ldLib()[kind]||[]); [...list.children].forEach((el,i)=>{ const x=arr[i]; if(!x) return; const wr=document.createElement('div'); wr.className='m67-fw'; el.replaceWith(wr);
+          if(kind==='experiments'){ wr.innerHTML=m67ExpHTML(x)||''; if(!wr.firstElementChild){ wr.remove(); return; } el=wr.firstElementChild; } else wr.appendChild(el);
+          if(kind==='formulas'){ const fxh=m67FxHTML(x); if(fxh) el.insertAdjacentHTML('beforeend',fxh); }
+          wr.insertAdjacentHTML('beforeend',m67Star(kind,i,m67FavHas(kind,x))); }); }
+      return w.innerHTML; }catch(e){ console.error('m67 lib',e); return h; } }; }catch(e){}
+function m67Learn(){ try{ if(!hbOn()) return; const m=BPG.el.querySelector('#bpg-m'), y=m?m.scrollTop:0; hbPaneDraw('learn'); if(m) m.scrollTop=y; }catch(e){} }
+
+/* ---------- 12. нажатия ---------- */
+document.addEventListener('click',e=>{ const b=e.target.closest&&e.target.closest('[data-m67pick],[data-m67sect],[data-hbcalc],[data-m67fav],[data-m67lib],[data-hblib]'); if(!b) return;
+  if(b.hasAttribute('data-m67pick')){ e.preventDefault(); e.stopPropagation(); m67ExpPick(b); return; }
+  if(b.hasAttribute('data-m67sect')){ M67.sect=b.dataset.m67sect||'all'; try{ M43.sel=null; }catch(e2){} try{ m40Vib(); }catch(e2){} m67Today(); return; }
+  if(b.hasAttribute('data-hbcalc')){ const id=b.dataset.hbcalc; if(m67CatOk(id)){ e.preventDefault(); e.stopImmediatePropagation(); const C=hbSt().calc, d=M67.def[id]; C.cat=id; if(IV_C.includes(d.from)) C.c=d.from; persist(); try{ hbTab('calc'); }catch(e2){ try{ hubOpen('calc'); }catch(e3){} } } return; }
+  if(b.hasAttribute('data-m67lib')){ M67.favOn=!M67.favOn; m67Learn(); return; }
+  if(b.hasAttribute('data-hblib')){ M67.favOn=false; return; }
+  if(b.hasAttribute('data-m67fav')){ e.preventDefault(); e.stopPropagation(); const [kind,i]=String(b.dataset.m67fav).split(':'); let x=null, k=kind;
+    if(kind==='fav'){ const f=m67Favs().filter(z=>z.lang===lang)[+i]; if(f){ x=f.x; k=f.kind; } } else x=(ldLib()[kind]||[])[+i];
+    if(x){ m67FavToggle(k,x); m67Learn(); } } },true);
 /* <</v44 js>> */
 /* ===================== Клики ===================== */
 document.addEventListener('click', e=>{
