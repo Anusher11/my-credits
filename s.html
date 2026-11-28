@@ -6,16 +6,16 @@
 <meta name="robots" content="noindex">
 <title>Выписка</title>
 <style>
-@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-cyrillic-800.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F}
-@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-cyrillic-ext-800.woff2) format('woff2');unicode-range:U+0460-052F}
-@font-face{font-family:'Nunito Sans';font-weight:400;font-display:swap;src:url(fonts/ns-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-@font-face{font-family:'Nunito Sans';font-weight:800;font-display:swap;src:url(fonts/ns-latin-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+2000-206F}
-:root{--bg:#F5F7FB;--card:#fff;--ink:#0F1E3D;--muted:#5A6680;--line:#DDE3EF;--leaf:#0E7D5A;--sun:#F2B53A}
-@media (prefers-color-scheme:dark){:root{--bg:#0B1430;--card:#121E3C;--ink:#EEF2FB;--muted:#A6B4D6;--line:#24365F;--leaf:#4CC79A}}
+@font-face{font-family:'Golos Text';font-weight:400;font-display:swap;src:url(fonts/gl-cyrillic-400.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Golos Text';font-weight:800;font-display:swap;src:url(fonts/gl-cyrillic-800.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Golos Text';font-weight:400;font-display:swap;src:url(fonts/gl-cyrillic-ext-400.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Golos Text';font-weight:800;font-display:swap;src:url(fonts/gl-cyrillic-ext-800.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Golos Text';font-weight:400;font-display:swap;src:url(fonts/gl-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Golos Text';font-weight:800;font-display:swap;src:url(fonts/gl-latin-800.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#F1F4F2;--card:#fff;--ink:#0F1F1A;--muted:#56665F;--line:#DCE4DF;--leaf:#0A7A5A;--sun:#FFB224}
+@media (prefers-color-scheme:dark){:root{--bg:#0E0F11;--card:#16181B;--ink:#ECEEF0;--muted:#9DA4AC;--line:#2A2E33;--leaf:#7FE3B8}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito Sans',system-ui,sans-serif;line-height:1.45}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Golos Text',system-ui,sans-serif;line-height:1.45}
 main{max-width:520px;margin:0 auto;padding:24px 16px 40px}
 .shop{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
 h1{font-size:1.6rem;letter-spacing:-.02em;margin:18px 0 4px}
@@ -53,7 +53,7 @@ footer{color:var(--muted);font-size:.8rem;text-align:center;margin-top:22px}
   function d(s){ var p=String(s).split('-'); return (+p[2])+' '+L.m[(+p[1]||1)-1]+' '+p[0]; }
   var took=0, ret=0; o.r.forEach(function(x){ if(x[1]) ret+=x[2]; else took+=x[2]; });
   document.title=L.t+' — '+(o.n||'');
-  el.innerHTML='<div class="shop"><svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="38" fill="none" stroke="#DDE3EF" stroke-width="16"/><circle cx="60" cy="60" r="38" fill="none" stroke="#F2B53A" stroke-width="16" stroke-linecap="round" stroke-dasharray="179 60" transform="rotate(-90 60 60)"/></svg>'+esc(o.s||'Mira')+'</div>'
+  el.innerHTML='<div class="shop"><svg width="30" height="30" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="38" fill="none" stroke="#DCE4DF" stroke-width="16"/><circle cx="60" cy="60" r="38" fill="none" stroke="#FFB224" stroke-width="16" stroke-linecap="round" stroke-dasharray="179 60" transform="rotate(-90 60 60)"/></svg>'+esc(o.s||'Mira')+'</div>'
     +'<h1>'+L.t+': '+esc(o.n)+'</h1>'
     +'<div class="big"><div class="k">'+L.left+'</div><div class="v">'+nf(o.b)+' '+L.cur+'</div>'+(o.d?'<div class="d">'+L.due+': '+d(o.d)+'</div>':'')+'</div>'
     +'<div class="sum"><div><span>'+L.took+'</span><b>'+nf(took)+'</b></div><div><span>'+L.ret+'</span><b>'+nf(ret)+'</b></div></div>'

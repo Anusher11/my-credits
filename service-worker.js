@@ -3,7 +3,7 @@
    если интернет медленный, сразу открывается сохранённая копия, а свежая
    версия докачивается в фоне и откроется в следующий раз.
    Для иконок/шрифтов — «сначала кэш» (быстро). */
-const CACHE='mira-v87';
+const CACHE='mira-v88';
 const MK_API='https://mira-1sq.pages.dev';
 const CORE = [
   './',
@@ -15,18 +15,6 @@ const CORE = [
   './badge-96.png',
   './apple-touch-icon.png',
   './s.html',
-  './fonts/ns-latin-400.woff2',
-  './fonts/ns-latin-600.woff2',
-  './fonts/ns-latin-700.woff2',
-  './fonts/ns-latin-800.woff2',
-  './fonts/ns-cyrillic-400.woff2',
-  './fonts/ns-cyrillic-600.woff2',
-  './fonts/ns-cyrillic-700.woff2',
-  './fonts/ns-cyrillic-800.woff2',
-  './fonts/ns-cyrillic-ext-400.woff2',
-  './fonts/ns-cyrillic-ext-600.woff2',
-  './fonts/ns-cyrillic-ext-700.woff2',
-  './fonts/ns-cyrillic-ext-800.woff2',
   './fonts/on-latin-400.woff2',
   './fonts/on-cyrillic-400.woff2',
   './fonts/on-cyrillic-ext-400.woff2',
